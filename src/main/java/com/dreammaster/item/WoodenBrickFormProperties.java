@@ -2,6 +2,7 @@ package com.dreammaster.item;
 
 import eu.usrv.yamcore.iface.IExtendedItemProperties;
 
+import net.minecraft.item.Item;
 
 public class WoodenBrickFormProperties implements IExtendedItemProperties
 {
@@ -20,4 +21,7 @@ public class WoodenBrickFormProperties implements IExtendedItemProperties
 
     @Override
     public boolean getDontConsumeInRecipes() { return true; }
+    
+    @Override
+    public Item getCustomItem() { return new CraftingItem(); }
 }
