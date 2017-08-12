@@ -1214,6 +1214,38 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.QuantumStar.get(1L, new Object[0]), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iridium, 1), ItemList.Circuit_Crystalcomputer.get(1, null)}, GT_Values.NF, ItemList.Sensor_IV.get(1),200, 30);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.QuantumStar.get(1L, new Object[0]), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iridium, 1), ItemList.Circuit_Neuroprocessor.get(1, null)}, GT_Values.NF, ItemList.Sensor_IV.get(1),200, 30);
 
+        if(Loader.isModLoaded("OpenComputers"))
+        {
+            //cable
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.RedAlloy, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RedstoneAlloy, 1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "cable", 1), 200, 30);
+            //keyboard
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.stone_button, 64), new ItemStack(Blocks.stone_button, 40), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1), CustomItemList.AluminiumItemCasing.get(1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "keyboard", 1, 0), 200, 30);
+            //case 1
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 6), ItemList.Circuit_Board_Plastic_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Plastic, 2), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "case1", 1), 200, 30);
+            //case 2
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 6), ItemList.Circuit_Board_Epoxy_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Plastic, 2), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "case2", 1), 200, 30);
+            //case 3
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 6), ItemList.Circuit_Board_Fiberglass_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Plastic, 2), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "case3", 1), 200, 30);
+            //micro case 1
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Epoxy_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 82), 200, 30);
+            //mirco case 2
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Fiberglass_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), CustomItemList.TitaniumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 86), 200, 30);
+            //drone case 1
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 82), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Aluminium, 4), CustomItemList.AluminiumItemCasing.get(1), ItemList.Electric_Motor_MV.get(4)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 82), 200, 30);
+            //drone case 2
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 86), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Titanium, 4), CustomItemList.TitaniumItemCasing.get(1), ItemList.Electric_Motor_HV.get(4)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 86), 200, 30);
+            //Card
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.rod, Materials.Iron, 1), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1L, 33), 200, 30);
+            //HDD 1
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1, 19), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1, 5), 200, 30);
+            //HDD 2
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 2, 19), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1, 6), 200, 30);
+            //HDD 3
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 4, 19), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1, 7), 200, 30);
+            //disk
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1)}, Materials.Cobalt.getMolten(36L), GT_ModHandler.getModItem("OpenComputers", "item", 1, 19), 200, 30);
+        }
+
         for (Materials tMat : Materials.values()) {//TODO dream things using soldering go in here!
             if (tMat.mStandardMoltenFluid != null && tMat.contains(SubTag.SOLDERING_MATERIAL) && !(GregTech_API.mUseOnlyGoodSolderingMaterials && !tMat.contains(SubTag.SOLDERING_MATERIAL_GOOD))) {
                 int tMultiplier = tMat.contains(SubTag.SOLDERING_MATERIAL_GOOD) ? 1 : tMat.contains(SubTag.SOLDERING_MATERIAL_BAD) ? 4 : 2;
@@ -1296,24 +1328,6 @@ public class GT_MachineRecipeLoader implements Runnable{
 
                 if(Loader.isModLoaded("OpenComputers"))
                 {
-                    //cable
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.RedAlloy, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RedstoneAlloy, 1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "cable", 1), 200, 30);
-                    //keyboard
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.stone_button, 64), new ItemStack(Blocks.stone_button, 40), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1), CustomItemList.AluminiumItemCasing.get(1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "keyboard", 1, 0), 200, 30);
-                    //case 1
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 6), ItemList.Circuit_Board_Plastic_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Plastic, 2), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "case1", 1), 200, 30);
-                    //case 2
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 6), ItemList.Circuit_Board_Epoxy_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Plastic, 2), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "case2", 1), 200, 30);
-                    //case 3
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 6), ItemList.Circuit_Board_Fiberglass_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Plastic, 2), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "case3", 1), 200, 30);
-                    //micro case 1
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Epoxy_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 82), 200, 30);
-                    //mirco case 2
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Fiberglass_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), CustomItemList.TitaniumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 86), 200, 30);
-                    //drone case 1
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 82), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Aluminium, 4), CustomItemList.AluminiumItemCasing.get(1), ItemList.Electric_Motor_MV.get(4)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 82), 200, 30);
-                    //drone case 2
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 86), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Titanium, 4), CustomItemList.TitaniumItemCasing.get(1), ItemList.Electric_Motor_HV.get(4)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 86), 200, 30);
                     //ALU
                     GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Chip_ILC.get(4), ItemList.Circuit_Board_Phenolic_Good.get(1)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "item", 1, 27), 200, 30);
                     //CU
@@ -1324,8 +1338,6 @@ public class GT_MachineRecipeLoader implements Runnable{
                     GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 12, 27), GT_ModHandler.getModItem("OpenComputers", "item", 2, 28), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), CustomItemList.AluminiumItemCasing.get(1)}, tMat.getMolten(288L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 42), 200, 30);
                     //CPU 3
                     GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 16, 27), GT_ModHandler.getModItem("OpenComputers", "item", 4, 28), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), CustomItemList.AluminiumItemCasing.get(1)}, tMat.getMolten(288L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 43), 200, 30);
-                    //Card
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.rod, Materials.Iron, 1), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1L, 33), 200, 30);
                     //Graphics Card 1
                     GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 8, 27), GT_ModHandler.getModItem("OpenComputers", "item", 1, 28), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1), ItemList.Circuit_Board_Plastic_Advanced.get(1), GT_ModHandler.getModItem("OpenComputers", "item", 1, 33)}, tMat.getMolten(288L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 8), 200, 30);
                     //Graphics Card 2
@@ -1336,14 +1348,6 @@ public class GT_MachineRecipeLoader implements Runnable{
                     GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 32, 27), GT_ModHandler.getModItem("OpenComputers", "item", 4, 28), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), CustomItemList.AluminiumItemCasing.get(1)}, tMat.getMolten(288L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 102), 200, 30);
                     //APU 3
                     GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 64, 27), GT_ModHandler.getModItem("OpenComputers", "item", 8, 28), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1), CustomItemList.AluminiumItemCasing.get(1)}, tMat.getMolten(288L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 103), 200, 30);
-                    //disk
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1)}, Materials.Cobalt.getMolten(36L), GT_ModHandler.getModItem("OpenComputers", "item", 1, 19), 200, 30);
-                    //HDD 1
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1, 19), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1, 5), 200, 30);
-                    //HDD 2
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 2, 19), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1, 6), 200, 30);
-                    //HDD 3
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 4, 19), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), CustomItemList.AluminiumItemCasing.get(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1, 7), 200, 30);
                     //RAM 1
                     GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Chip_Ram.get(6), ItemList.Circuit_Board_Plastic_Advanced.get(1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1), ItemList.Circuit_Integrated.getWithDamage(0L, 1)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "item", 1, 1), 200, 30);
                     //RAM 2
