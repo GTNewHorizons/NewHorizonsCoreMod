@@ -224,7 +224,9 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.MysteriousCrystal, 1L), CustomItemList.BedrockiumPlate.get(8L), ItemList.Casing_Tank_10.get(1L), 100, 16);
 
-        GT_Values.RA.addAssemblerRecipe(CustomItemList.RawLapotronCrystal.get(1L),  GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L), ItemList.IC2_LapotronCrystal.get(1L), 600, 1024);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RawLapotronCrystal.get(1L), GT_ModHandler.getIC2Item("itemPartCircuitAdv", 2L), ItemList.IC2_LapotronCrystal.get(1L), 600, 1024);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RawLapotronCrystal.get(1L), ItemList.Circuit_Advanced.get(2L), ItemList.IC2_LapotronCrystal.get(1L), 600, 1024);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RawLapotronCrystal.get(1L), ItemList.Circuit_Nanoprocessor.get(2L), ItemList.IC2_LapotronCrystal.get(1L), 600, 1024);
 
         GT_Values.RA.addAssemblerRecipe(ItemList.Firebrick.get(24, new Object[0]), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 8L), new FluidStack(FluidRegistry.getFluid("concrete"), 4608),  ItemList.Casing_Firebricks.get(4L),200, 30);
         GT_Values.RA.addAssemblerRecipe(ItemList.Firebrick.get(24, new Object[0]), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 8L), Materials.Concrete.getMolten(4608),  ItemList.Casing_Firebricks.get(4L),200, 30);
