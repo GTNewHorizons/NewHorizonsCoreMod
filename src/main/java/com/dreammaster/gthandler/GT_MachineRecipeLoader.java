@@ -224,6 +224,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.MysteriousCrystal, 1L), CustomItemList.BedrockiumPlate.get(8L), ItemList.Casing_Tank_10.get(1L), 100, 16);
 
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.paneGlass, Materials.Glass, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 39), 100, 16);
+
         GT_Values.RA.addAssemblerRecipe(CustomItemList.RawLapotronCrystal.get(1L), GT_ModHandler.getIC2Item("itemPartCircuitAdv", 2L), ItemList.IC2_LapotronCrystal.get(1L), 600, 1024);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.RawLapotronCrystal.get(1L), ItemList.Circuit_Advanced.get(2L), ItemList.IC2_LapotronCrystal.get(1L), 600, 1024);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.RawLapotronCrystal.get(1L), ItemList.Circuit_Nanoprocessor.get(2L), ItemList.IC2_LapotronCrystal.get(1L), 600, 1024);
