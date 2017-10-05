@@ -5,6 +5,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Transformer;
+import gtPlusPlus.core.lib.CORE;
 
 import static gregtech.api.enums.GT_Values.V;
 
@@ -43,6 +44,11 @@ public class GT_MetaTileEntity_WetTransformer extends GT_MetaTileEntity_Transfor
     }
 
     @Override
+    public String[] getDescription() {
+        return new String[]{this.mDescription, "Accepts 16A and outputs 64A", CORE.GT_Tooltip};
+    }
+
+    @Override
     public long getMinimumStoredEU() {
         return V[mTier + 1];
     }
@@ -55,11 +61,11 @@ public class GT_MetaTileEntity_WetTransformer extends GT_MetaTileEntity_Transfor
 
     @Override
     public long maxAmperesOut() {
-        return getBaseMetaTileEntity().isActive() ? 64 : 16;
+        return getBaseMetaTileEntity().isAllowedToWork() ? 64 : 16;
     }
 
     @Override
     public long maxAmperesIn() {
-        return getBaseMetaTileEntity().isActive() ? 16 : 64;
+        return getBaseMetaTileEntity().isAllowedToWork() ? 16 : 64;
     }
 }
