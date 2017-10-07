@@ -140,6 +140,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 16), true, false, true);
         //Vanilla
         GT_ModHandler.removeRecipeByOutput(new ItemStack(Blocks.iron_bars, 1, 32767), true, false, true);
+        //Natural Compass
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("naturescompass", "NaturesCompass", 1L, 0), true, false, true);
 
         //Add recipes
 
