@@ -1396,21 +1396,21 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GregTech_API.mIC2Classic ? Materials.Water.getFluid(10000) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 10000)
         }, ItemList.Circuit_Wetwaremainframe.get(1), 2000, 300000);
 
-        GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1, o), 288000, new ItemStack[]{
-                ItemList.Circuit_Board_Multifiberglass.get(1,o),
+        GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1), 288000, new ItemStack[]{
+                ItemList.Circuit_Board_Multifiberglass.get(1),
                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Europium, 32L),
-                ItemList.Circuit_Neuroprocessor.get(4, o),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L,o),
-                ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L,o),
-                ItemList.Circuit_Chip_HPIC.get(64, o),
-                ItemList.Circuit_Parts_DiodeSMD.get(32, o),
-                ItemList.Circuit_Parts_CapacitorSMD.get(32, o),
-                ItemList.Circuit_Parts_ResistorSMD.get(32, o),
-                ItemList.Circuit_Parts_TransistorSMD.get(32, o),
+                ItemList.Circuit_Neuroprocessor.get(4),
+                ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L),
+                ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L),
+                ItemList.Circuit_Chip_HPIC.get(64),
+                ItemList.Circuit_Parts_DiodeSMD.get(32),
+                ItemList.Circuit_Parts_CapacitorSMD.get(32),
+                ItemList.Circuit_Parts_ResistorSMD.get(32),
+                ItemList.Circuit_Parts_TransistorSMD.get(32),
                 GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 64),
         }, new FluidStack[]{
                 Materials.SolderingAlloy.getMolten(720)
-        }, ItemList.Energy_LapotronicOrb2.get(1, o), 1000, 80000);
+        }, ItemList.Energy_LapotronicOrb2.get(1), 1000, 80000);
 
 
 
