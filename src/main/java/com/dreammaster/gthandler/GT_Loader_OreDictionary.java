@@ -151,5 +151,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.set(OrePrefixes.ingot, Materials.Ichorium, GT_ModHandler.getModItem("ThaumicTinkerer", "kamiResource", 1L, 2));
         GT_OreDictUnificator.set(OrePrefixes.nugget, Materials.Ichorium, GT_ModHandler.getModItem("ThaumicTinkerer", "kamiResource", 1L, 3));
 
+        GT_OreDictUnificator.registerOre("dyeLime", GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 1L, 2877));
+
     }
 }
