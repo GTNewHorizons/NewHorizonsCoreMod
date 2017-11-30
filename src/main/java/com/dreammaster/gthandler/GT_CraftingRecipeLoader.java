@@ -350,8 +350,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1, 0), bits, new Object[] {"CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S', OrePrefixes.dust.get(Materials.Stone), 'Y',  OrePrefixes.dust.get(Materials.Clay), 'A', CustomItemList.SandDust, 'W', GT_ModHandler.getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0), 'B', new ItemStack(Items.bucket, 1, 0)});
 
         if (Loader.isModLoaded("GraviSuite")) {
-            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("GraviSuite", "advJetpack", 1));
-            GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("GraviSuite", "advJetpack", 1), new Object[]{"PJP", "BLB", "WCW", 'P', OrePrefixes.plateAlloy.get(Materials.Advanced), 'J', GT_ModHandler.getIC2Item("itemArmorAlloyChestplate", 1), 'B', OrePrefixes.plate.get(Materials.Titanium), 'L', GT_ModHandler.getModItem("IC2", "itemArmorNanoChestplate", 1, GT_Values.W), 'W', OrePrefixes.wireGt04.get(Materials.Platinum), 'C', OrePrefixes.circuit.get(Materials.Data)});
 
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 3));
             GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 3), new Object[]{"OCO", "XWX", "OCO", 'C', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 1), 'X',  GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 2), 'O', GT_ModHandler.getModItem("IC2", "blockMachine2", 1, 1), 'W', ItemList.Transformer_LuV_IV.get(1, o)});
