@@ -3030,21 +3030,21 @@ public class GT_Loader_Machines
 				11240, "batterybuffer.16.tier.10", "Extremely Ultimate Battery Buffer",10,"", 16).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_4by4_UEV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UEV, 'W', OrePrefixes.wireGt16.get(Materials.Draconium), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_4by4_UIV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11241, "batterybuffer.16.tier.11", "Insanely Ultimate Battery Buffer",11,"", 16).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_4by4_UIV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UIV, 'W', OrePrefixes.wireGt16.get(Materials.NetherStar), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_4by4_UMV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11242, "batterybuffer.16.tier.12", "Mega Ultimate Battery Buffer",12,"", 16).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_4by4_UMV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UMV, 'W', OrePrefixes.wireGt16.get(Materials.Quantium), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_4by4_UXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -3065,21 +3065,21 @@ public class GT_Loader_Machines
 				11250, "batterybuffer.09.tier.10", "Extremely Ultimate Battery Buffer",10,"", 9).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_3by3_UEV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UEV, 'W', OrePrefixes.wireGt08.get(Materials.Draconium), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_3by3_UIV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11251, "batterybuffer.09.tier.11", "Insanely Ultimate Battery Buffer",11,"", 9).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_3by3_UIV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UIV, 'W', OrePrefixes.wireGt08.get(Materials.NetherStar), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_3by3_UMV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11252, "batterybuffer.09.tier.12", "Mega Ultimate Battery Buffer",12,"", 9).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_3by3_UMV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UMV, 'W', OrePrefixes.wireGt08.get(Materials.Quantium), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_3by3_UXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -3100,21 +3100,21 @@ public class GT_Loader_Machines
 				11260, "batterybuffer.04.tier.10", "Extremely Ultimate Battery Buffer",10,"", 4).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_2by2_UEV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UEV, 'W', OrePrefixes.wireGt04.get(Materials.Draconium), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_2by2_UIV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11261, "batterybuffer.04.tier.11", "Insanely Ultimate Battery Buffer",11,"", 4).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_2by2_UIV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UIV, 'W', OrePrefixes.wireGt04.get(Materials.NetherStar), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_2by2_UMV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11262, "batterybuffer.04.tier.12", "Mega Ultimate Battery Buffer",12,"", 4).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_2by2_UMV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UMV, 'W', OrePrefixes.wireGt04.get(Materials.Quantium), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_2by2_UXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -3135,21 +3135,21 @@ public class GT_Loader_Machines
 				11270, "batterybuffer.01.tier.10", "Extremely Ultimate Battery Buffer",10,"", 1).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_1by1_UEV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UEV, 'W', OrePrefixes.wireGt01.get(Materials.Draconium), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_1by1_UIV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11271, "batterybuffer.01.tier.11", "Insanely Ultimate Battery Buffer",11,"", 1).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_1by1_UIV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UIV, 'W', OrePrefixes.wireGt01.get(Materials.NetherStar), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_1by1_UMV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11272, "batterybuffer.01.tier.12", "Mega Ultimate Battery Buffer",12,"", 1).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Battery_Buffer_1by1_UMV.get(1L, new Object[0]),
-				bitsd, new Object[]{"WTW", "TMT",
+				bitsd, new Object[]{"WTW", "WMW",
 						'M', CustomItemList.Hull_UMV, 'W', OrePrefixes.wireGt01.get(Materials.Quantium), 'T', OreDictNames.craftingChest});
 
 		CustomItemList.Battery_Buffer_1by1_UXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
