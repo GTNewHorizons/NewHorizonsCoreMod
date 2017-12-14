@@ -704,6 +704,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addForgeHammerRecipe(new ItemStack(Items.nether_star, 1, 0), CustomItemList.NetherStarFragment.get(2L), 16, 30);
 
+        GT_Values.RA.addForgeHammerRecipe(GT_ModHandler.getModItem("Thaumcraft", "ItemEldritchObject", 1L, 3), CustomItemList.PrimordialPearlFragment.get(4L), 16, 7680);
+
         GT_Values.RA.addFormingPressRecipe(CustomItemList.MicaBasedPulp.get(4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L), CustomItemList.MicaBasedSheet.get(4L), 400, 28);
 
         GT_Values.RA.addBenderRecipe(GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Steel, 1L), ItemList.Shape_Empty.get(1L), 200, 120);

@@ -545,5 +545,6 @@ public class GT_Loader_Items
 		CustomItemList.MysteriousCrystalLens.set(ItemList.MysteriousCrystalLens.getIS());
 		CustomItemList.MysteriousCrystalGemFlawless.set(ItemList.MysteriousCrystalGemFlawless.getIS());
 		CustomItemList.MysteriousCrystalGemExquisite.set(ItemList.MysteriousCrystalGemExquisite.getIS());
+		CustomItemList.PrimordialPearlFragment.set(ItemList.PrimordialPearlFragment.getIS());
 	}
 }
