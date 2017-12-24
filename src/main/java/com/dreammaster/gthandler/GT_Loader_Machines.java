@@ -1385,7 +1385,7 @@ public class GT_Loader_Machines
 						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
 						'C', AdvancedGTMaterials.LuV.getCircuit(),
 						'W', AdvancedGTMaterials.LuV.getCable(),
-						'G', AdvancedGTMaterials.LuV.getGlass() }).getStackForm(1L));
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP}).getStackForm(1L));
 
 		CustomItemList.OreWashingPlantZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10971, "basicmachine.orewasher.tier.07", "Elite Ore Washing Plant II", 7, "Getting more Byproducts from your Ores",
@@ -1397,7 +1397,7 @@ public class GT_Loader_Machines
 						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
 						'C', AdvancedGTMaterials.ZPM.getCircuit(),
 						'W', AdvancedGTMaterials.ZPM.getCable(),
-						'G', AdvancedGTMaterials.ZPM.getGlass() }).getStackForm(1L));
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP}).getStackForm(1L));
 
 		CustomItemList.OreWashingPlantUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10972, "basicmachine.orewasher.tier.08", "Ultimate Ore Washing Machine", 8, "Getting more Byproducts from your Ores",
@@ -1409,7 +1409,7 @@ public class GT_Loader_Machines
 						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
 						'C', AdvancedGTMaterials.UV.getCircuit(),
 						'W', AdvancedGTMaterials.UV.getCable(),
-						'G', AdvancedGTMaterials.UV.getGlass() }).getStackForm(1L));
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP}).getStackForm(1L));
 
 		CustomItemList.OreWashingPlantUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10973, "basicmachine.orewasher.tier.09", "Epic Ore Washing Machine", 9, "Getting more Byproducts from your Ores",
