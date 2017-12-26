@@ -68,21 +68,25 @@ public class ContainerBabyChest extends Container
             //merges the item into player inventory since its in the tileEntity
             if (pSlot < _mTileEntity.getSizeInventory())
             {
-                if (!mergeItemStack(tStackInSlot, _mTileEntity.getSizeInventory(), 36 + _mTileEntity.getSizeInventory(), true))
+                if (!mergeItemStack(tStackInSlot, _mTileEntity.getSizeInventory(), 36 + _mTileEntity.getSizeInventory(), true)) {
                     return null;
+                }
             }
             //places it into the tileEntity is possible since its in the player inventory
-            else if (!mergeItemStack(tStackInSlot, 0, _mTileEntity.getSizeInventory(), false))
+            else if (!mergeItemStack(tStackInSlot, 0, _mTileEntity.getSizeInventory(), false)) {
                 return null;
+            }
 
-            if (tStackInSlot.stackSize == 0)
+            if (tStackInSlot.stackSize == 0) {
                 tSlotObject.putStack(null);
-            else
+            } else {
                 tSlotObject.onSlotChanged();
+            }
 
 
-            if (tStackInSlot.stackSize == tStack.stackSize)
+            if (tStackInSlot.stackSize == tStack.stackSize) {
                 return null;
+            }
 
             tSlotObject.onPickupFromSlot(pPlayer, tStackInSlot);
         }

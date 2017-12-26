@@ -84,7 +84,7 @@ public class BlockBabyChest extends BlockContainer implements ITileEntityProvide
         } 
         else 
         {
-            if (!pWorld.isRemote && pWorld.getTileEntity(pX, pY, pZ) instanceof TileEntityBabyChest)
+            if (pWorld.getTileEntity(pX, pY, pZ) instanceof TileEntityBabyChest)
             {
                 TileEntityBabyChest tileEntity = (TileEntityBabyChest) pWorld.getTileEntity(pX, pY, pZ);
                 pPlayer.openGui(MainRegistry.instance, 0, pWorld, pX, pY, pZ);
@@ -123,8 +123,9 @@ public class BlockBabyChest extends BlockContainer implements ITileEntityProvide
 
                 EntityItem tEntityItem = new EntityItem(pWorld, pX + tx, pY + ty, pZ + tz, new ItemStack(tItem.getItem(), tItem.stackSize, tItem.getItemDamage()));
 
-                if (tItem.hasTagCompound()) 
+                if (tItem.hasTagCompound()) {
                     tEntityItem.getEntityItem().setTagCompound((NBTTagCompound) tItem.getTagCompound().copy());
+                }
 
                 float tFactor = 0.05F;
                 tEntityItem.motionX = tRand.nextGaussian() * tFactor;

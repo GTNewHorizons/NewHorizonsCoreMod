@@ -30,25 +30,31 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
         super(aName, aTier, 1, aDescription, aTextures, 1, 1, aGUIName, aNEIName);
     }
 
+    @Override
     public MetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new NameRemover(this.mName, this.mTier, this.mDescription, this.mTextures, this.mGUIName, this.mNEIName);
+        return new NameRemover(mName, mTier, mDescription, mTextures, mGUIName, mNEIName);
     }
 
+    @Override
     public int checkRecipe() {
         ItemStack output=getInputAt(0).copy();
         NBTTagCompound nbt=output.getTagCompound();
         if(nbt!=null) {
             if (nbt.hasKey("display")) {
                 nbt.getCompoundTag("display").removeTag("Name");
-                if (nbt.getCompoundTag("display").hasNoTags()) nbt.removeTag("display");
+                if (nbt.getCompoundTag("display").hasNoTags()) {
+                    nbt.removeTag("display");
+                }
             }
-            if (nbt.hasNoTags()) output.setTagCompound(null);
+            if (nbt.hasNoTags()) {
+                output.setTagCompound(null);
+            }
         }
         if(canOutput(output)) {
             getInputAt(0).stackSize =0;
             mEUt=0;
             mMaxProgresstime=20;
-            this.mOutputItems[0] = output;
+            mOutputItems[0] = output;
             return 2;
         }
         return 0;

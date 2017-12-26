@@ -12,15 +12,16 @@ import net.minecraft.item.ItemStack;
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader
         implements Runnable {
-    private final static String aTextRailcraft = "Railcraft";
-    private final static String aTextMachineBeta = "machine.beta";
-    private final static String aTextMachineAlpha = "machine.alpha";
-    private final static String aTextIron1 = "X X";
-    private final static String aTextIron2 = "XXX";
+    private static final String aTextRailcraft = "Railcraft";
+    private static final String aTextMachineBeta = "machine.beta";
+    private static final String aTextMachineAlpha = "machine.alpha";
+    private static final String aTextIron1 = "X X";
+    private static final String aTextIron2 = "XXX";
     private final String aTextForestry = "Forestry";
-    private final static long bits = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.BUFFERED;
+    private static final long bits = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.BUFFERED;
 
 
+    @Override
     public void run() {
         long tBitMask = GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE;
 
@@ -328,7 +329,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(ItemList.Circuit_Parts_Vacuum_Tube.get(1, o), new Object[]{"WWW", "FGF", "SAS", 'G', ItemList.Circuit_Parts_Glass_Tube.get(1, o), 'F', OrePrefixes.wireFine.get(Materials.Copper), 'W', OrePrefixes.wireGt01.get(Materials.Copper), 'S', OrePrefixes.stick.get(Materials.Steel), 'A', OrePrefixes.bolt.get(Materials.RedAlloy)});
 
         //Vent Casing
-        GT_ModHandler.addCraftingRecipe(ItemList.Casing_Vent.get(1L, new Object[0]), bits, new Object[]{"PPP", "SSS", "MFV", 'P', CustomItemList.SteelBars.get(1, o), 'F', OrePrefixes.frameGt.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_MV, 'V', OrePrefixes.rotor.get(Materials.Aluminium),'S',ItemList.Component_Filter});
+        GT_ModHandler.addCraftingRecipe(ItemList.Casing_Vent.get(1L), bits, new Object[]{"PPP", "SSS", "MFV", 'P', CustomItemList.SteelBars.get(1, o), 'F', OrePrefixes.frameGt.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_MV, 'V', OrePrefixes.rotor.get(Materials.Aluminium),'S',ItemList.Component_Filter});
 
         //Modular Armor
         GT_ModHandler.addCraftingRecipe(ItemList.ModularBasicHelmet.getWildcard(1), bits, new Object[]{"AAA", "BCB", 'A', GT_ModHandler.getModItem("harvestcraft", "hardenedleatherItem", 1L, 0), 'B', OrePrefixes.ring.get(Materials.DamascusSteel), 'C', OrePrefixes.plate.get(Materials.Steel)});
@@ -344,7 +345,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(ItemList.ModularElectric2Leggings.getWildcard(1), bits, new Object[]{"BCB", "ADA", "ADA", 'A', OrePrefixes.stick.get(Materials.TungstenSteel), 'B', OrePrefixes.plateAlloy.get(Materials.Carbon), 'C', OrePrefixes.battery.get(Materials.Master), 'D', OrePrefixes.ring.get(Materials.Osmium)});
         GT_ModHandler.addCraftingRecipe(ItemList.ModularElectric2Boots.getWildcard(1), bits, new Object[]{"ADA", "BCB", "ADA", 'A', OrePrefixes.stick.get(Materials.TungstenSteel), 'B', OrePrefixes.plateAlloy.get(Materials.Carbon), 'C', OrePrefixes.battery.get(Materials.Master), 'D', OrePrefixes.ring.get(Materials.Osmium)});
 
-        GT_ModHandler.addCraftingRecipe(ItemList.Casing_Firebricks.get(1L, new Object[0]), bits, new Object[] {"BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1, new Object[0]), 'C', OrePrefixes.dust.get(Materials.Gypsum), 'W',  GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1L)});
+        GT_ModHandler.addCraftingRecipe(ItemList.Casing_Firebricks.get(1L), bits, new Object[] {"BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C', OrePrefixes.dust.get(Materials.Gypsum), 'W',  GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1L)});
 
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1, 0), bits, new Object[] {"CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S', OrePrefixes.dust.get(Materials.Stone), 'Y',  OrePrefixes.dust.get(Materials.Clay), 'A', CustomItemList.SandDust, 'W', new ItemStack(Items.water_bucket, 1, 0), 'B',  new ItemStack(Items.bucket, 1, 0)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1, 0), bits, new Object[] {"CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S', OrePrefixes.dust.get(Materials.Stone), 'Y',  OrePrefixes.dust.get(Materials.Clay), 'A', CustomItemList.SandDust, 'W', GT_ModHandler.getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0), 'B', new ItemStack(Items.bucket, 1, 0)});

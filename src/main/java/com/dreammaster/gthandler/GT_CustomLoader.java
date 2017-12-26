@@ -49,26 +49,19 @@ public class GT_CustomLoader
         		Materials.Osmium,
         		Materials.Neutronium);
         
-        private Object _mCircuit = null;
-        private Object _mHeatingCoil = null;
-        private Object _mCoilWire = null;
-        private Object _mMachineCable = null;
-        private Object _mMachineCable4 = null;
-        private Object _mGem = null;
-        private Object _mPowerGem = null;
-        private Object _mPlate = null;
-        private Object _mReinfGlass = null;
-        private Object _mPipe = null;
-        private Object _mPipeL = null;
+        private Object _mCircuit;
+        private Object _mHeatingCoil;
+        private Object _mCoilWire;
+        private Object _mMachineCable;
+        private Object _mMachineCable4;
+        private Object _mGem;
+        private Object _mPowerGem;
+        private Object _mPlate;
+        private Object _mReinfGlass;
+        private Object _mPipe;
+        private Object _mPipeL;
         
-        private AdvancedGTMaterials(Object pCircuit,
-        		Object pHeatingCoil,
-        		Materials pCable,
-        		Object pCoilWire,
-        		Object pGem,
-        		Object pPowerGem,
-        		Materials pPlateMaterial,
-        		Materials pPipe)
+        AdvancedGTMaterials(Object pCircuit, Object pHeatingCoil, Materials pCable, Object pCoilWire, Object pGem, Object pPowerGem, Materials pPlateMaterial, Materials pPipe)
         {
             _mCircuit = pCircuit;
             _mHeatingCoil = pHeatingCoil;
@@ -152,16 +145,16 @@ public class GT_CustomLoader
         OreDictionary = new GT_Loader_OreDictionary();
     }
     
-    private GT_Loader_Items ItemLoader = null;
-    private GT_Loader_CasingsNH CasingLoader = null;
-    private GT_Loader_Machines MachineLoader = null;
-    private GT_Loader_FluidPipes FluidPipeLoader = null;
-    private GT_Loader_Materials MaterialLoader = null;
-    private GT_Loader_Wires WireLoader = null;
-    private GT_Loader_Batteries BatteryLoader = null;
-    private GT_MachineRecipeLoader MachineRecipeLoader = null;
-    private GT_CraftingRecipeLoader CraftingRecipeLoader = null;
-    private GT_Loader_OreDictionary OreDictionary = null;
+    private GT_Loader_Items ItemLoader;
+    private GT_Loader_CasingsNH CasingLoader;
+    private GT_Loader_Machines MachineLoader;
+    private GT_Loader_FluidPipes FluidPipeLoader;
+    private GT_Loader_Materials MaterialLoader;
+    private GT_Loader_Wires WireLoader;
+    private GT_Loader_Batteries BatteryLoader;
+    private GT_MachineRecipeLoader MachineRecipeLoader;
+    private GT_CraftingRecipeLoader CraftingRecipeLoader;
+    private GT_Loader_OreDictionary OreDictionary;
 
     public void run()
     {

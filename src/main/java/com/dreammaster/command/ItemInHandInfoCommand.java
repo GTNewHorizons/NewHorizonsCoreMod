@@ -1,7 +1,6 @@
 package com.dreammaster.command;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -19,8 +18,8 @@ public class ItemInHandInfoCommand implements ICommand
 
     public ItemInHandInfoCommand()
     {
-        this.aliases = new ArrayList();
-        this.aliases.add("iih");
+        aliases = new ArrayList();
+        aliases.add("iih");
     }
 
     @Override
@@ -45,7 +44,7 @@ public class ItemInHandInfoCommand implements ICommand
     public List getCommandAliases()
     {
 
-        return this.aliases;
+        return aliases;
     }
 
 
@@ -72,7 +71,7 @@ public class ItemInHandInfoCommand implements ICommand
                 }
             }
     
-            UniqueIdentifier UID = GameRegistry.findUniqueIdentifierFor(inHand.getItem());
+            GameRegistry.UniqueIdentifier UID = GameRegistry.findUniqueIdentifierFor(inHand.getItem());
             
             PlayerChatHelper.SendPlain(pCmdSender, "== Item info");
             PlayerChatHelper.SendPlain(pCmdSender, String.format("Unloc.Name:  [%s]", inHand.getUnlocalizedName()));
@@ -108,10 +107,7 @@ public class ItemInHandInfoCommand implements ICommand
     
     private boolean InGame(ICommandSender pCmdSender)
     {
-        if (!(pCmdSender instanceof EntityPlayer))
-            return false;
-        else
-            return true;
+        return pCmdSender instanceof EntityPlayer;
     }
 
     private void SendHelpToPlayer(ICommandSender pCmdSender)

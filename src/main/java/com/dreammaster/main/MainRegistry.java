@@ -29,8 +29,6 @@ import com.dreammaster.railcraftStones.NH_QuarryPopulator;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -64,31 +62,33 @@ public class MainRegistry
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
     public static CommonProxy proxy;
 
-    @Instance(Refstrings.MODID)
+    @Mod.Instance(Refstrings.MODID)
     public static MainRegistry instance;
 
-    public static ModItemManager ItemManager = null;
-    public static CreativeTabsManager TabManager = null;
-    public static ModFluidManager FluidManager = null;
-    public static ModBlockManager BlockManager = null;
-    public static HazardousItemsHandler Module_HazardousItems = null;
-    public static CustomToolTipsHandler Module_CustomToolTips = null;
-    public static CustomFuelsHandler Module_CustomFuels = null;
-    public static CustomDropsHandler Module_CustomDrops = null;
-    public static IngameErrorLog Module_AdminErrorLogs = null;
-    public static GT_CustomLoader GTCustomLoader = null;
+    public static ModItemManager ItemManager;
+    public static CreativeTabsManager TabManager;
+    public static ModFluidManager FluidManager;
+    public static ModBlockManager BlockManager;
+    public static HazardousItemsHandler Module_HazardousItems;
+    public static CustomToolTipsHandler Module_CustomToolTips;
+    public static CustomFuelsHandler Module_CustomFuels;
+    public static CustomDropsHandler Module_CustomDrops;
+    public static IngameErrorLog Module_AdminErrorLogs;
+    public static GT_CustomLoader GTCustomLoader;
     public static CoreModConfig CoreConfig;
     public static CoreModDispatcher NW;
-    public static Random Rnd = null;
+    public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
-    private static SpaceDimRegisterer SpaceDimReg = null;
+    private static SpaceDimRegisterer SpaceDimReg;
 
     public static void AddLoginError(String pMessage)
     {
-        if (Module_AdminErrorLogs != null) Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
+        if (Module_AdminErrorLogs != null) {
+            Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
+        }
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void PreLoad(FMLPreInitializationEvent PreEvent)
     {
         Logger.setDebugOutput(true);
@@ -98,7 +98,9 @@ public class MainRegistry
         // ------------------------------------------------------------
         // Init coremod config file. Create it if it's not there
         CoreConfig = new CoreModConfig(PreEvent.getModConfigurationDirectory(), Refstrings.COLLECTIONID, Refstrings.MODID);
-        if (!CoreConfig.LoadConfig()) Logger.error(String.format("%s could not load its config file. Things are going to be weird!", Refstrings.MODID));
+        if (!CoreConfig.LoadConfig()) {
+            Logger.error(String.format("%s could not load its config file. Things are going to be weird!", Refstrings.MODID));
+        }
         // ------------------------------------------------------------
 
         if (CoreConfig.ModAdminErrorLogs_Enabled)
@@ -131,7 +133,9 @@ public class MainRegistry
         // ------------------------------------------------------------
 
         //Materials init
-        if (!GT_Mod.gregtechproxy.mEnableAllMaterials) new GT_CoreModSupport();
+        if (!GT_Mod.gregtechproxy.mEnableAllMaterials) {
+            new GT_CoreModSupport();
+        }
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
@@ -220,19 +224,25 @@ public class MainRegistry
     private static boolean RegisterNonEnumItems()
     {
         boolean tResult = true;
-        if (!(ItemManager.RegisterNonEnumItem(TabManager, OvenGlove.Instance("OvenGlove", ModTabList.ModGenericTab)))) tResult = false;
-        if (!(ItemManager.RegisterNonEnumItem(TabManager, WitherProtectionRing.Instance("WitherProtectionRing", ModTabList.ModThaumcraftTab)))) tResult = false;
+        if (!ItemManager.RegisterNonEnumItem(TabManager, OvenGlove.Instance("OvenGlove", ModTabList.ModGenericTab))) {
+            tResult = false;
+        }
+        if (!ItemManager.RegisterNonEnumItem(TabManager, WitherProtectionRing.Instance("WitherProtectionRing", ModTabList.ModThaumcraftTab))) {
+            tResult = false;
+        }
 
         return tResult;
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void load(FMLInitializationEvent event)
     {
         // register events in modules
         RegisterModuleEvents();
 
-        if (CoreConfig.ModBabyChest_Enabled) InitAdditionalBlocks();
+        if (CoreConfig.ModBabyChest_Enabled) {
+            InitAdditionalBlocks();
+        }
 
         // Register Dimensions in GalacticGregGT5
         if (Loader.isModLoaded("galacticgreg"))
@@ -267,9 +277,13 @@ public class MainRegistry
 
     private void RegisterModuleEvents()
     {
-        if (CoreConfig.ModAdminErrorLogs_Enabled) FMLCommonHandler.instance().bus().register(Module_AdminErrorLogs);
+        if (CoreConfig.ModAdminErrorLogs_Enabled) {
+            FMLCommonHandler.instance().bus().register(Module_AdminErrorLogs);
+        }
 
-        if (CoreConfig.ModHazardousItems_Enabled) FMLCommonHandler.instance().bus().register(Module_HazardousItems);
+        if (CoreConfig.ModHazardousItems_Enabled) {
+            FMLCommonHandler.instance().bus().register(Module_HazardousItems);
+        }
 
         if (CoreConfig.ModCustomToolTips_Enabled)
         {
@@ -277,9 +291,13 @@ public class MainRegistry
             FMLCommonHandler.instance().bus().register(Module_CustomToolTips);
         }
 
-        if (CoreConfig.ModCustomFuels_Enabled) GameRegistry.registerFuelHandler(Module_CustomFuels);
+        if (CoreConfig.ModCustomFuels_Enabled) {
+            GameRegistry.registerFuelHandler(Module_CustomFuels);
+        }
 
-        if (CoreConfig.ModCustomDrops_Enabled) MinecraftForge.EVENT_BUS.register(Module_CustomDrops);
+        if (CoreConfig.ModCustomDrops_Enabled) {
+            MinecraftForge.EVENT_BUS.register(Module_CustomDrops);
+        }
 
         if(Loader.isModLoaded("Railcraft")){
             MinecraftForge.EVENT_BUS.register(NH_GeodePopulator.instance());//instead of RC
@@ -287,24 +305,32 @@ public class MainRegistry
         }
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void PostLoad(FMLPostInitializationEvent PostEvent)
     {
 
-        if (CoreConfig.ModHazardousItems_Enabled) Module_HazardousItems.LoadConfig();
+        if (CoreConfig.ModHazardousItems_Enabled) {
+            Module_HazardousItems.LoadConfig();
+        }
 
-        if (CoreConfig.ModCustomToolTips_Enabled) Module_CustomToolTips.LoadConfig();
+        if (CoreConfig.ModCustomToolTips_Enabled) {
+            Module_CustomToolTips.LoadConfig();
+        }
 
-        if (CoreConfig.ModCustomFuels_Enabled) Module_CustomFuels.LoadConfig();
+        if (CoreConfig.ModCustomFuels_Enabled) {
+            Module_CustomFuels.LoadConfig();
+        }
 
-        if (CoreConfig.ModCustomDrops_Enabled) Module_CustomDrops.LoadConfig();
+        if (CoreConfig.ModCustomDrops_Enabled) {
+            Module_CustomDrops.LoadConfig();
+        }
 
         GT_Loader_ItemPipes.registerPipes();
         GTCustomLoader = new GT_CustomLoader();
         GTCustomLoader.run();
-        
+
         registerModFixes();
-        
+
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
@@ -316,23 +342,39 @@ public class MainRegistry
      */
     private void registerModFixes()
     {
-      if (CoreConfig.AvaritiaFixEnabled) ModFixesMaster.registerModFix( new SkullFireSwordDropFix() );
-      if (CoreConfig.OilFixConfig.OilFixEnabled) ModFixesMaster.registerModFix( new OilGeneratorFix() );
+      if (CoreConfig.AvaritiaFixEnabled) {
+          ModFixesMaster.registerModFix(new SkullFireSwordDropFix());
+      }
+      if (CoreConfig.OilFixConfig.OilFixEnabled) {
+          ModFixesMaster.registerModFix(new OilGeneratorFix());
+      }
     }
-    
+
     /**
      * Do some stuff once the server starts
-     * 
+     *
      * @param pEvent
      */
-    @EventHandler
+    @Mod.EventHandler
     public void serverLoad(FMLServerStartingEvent pEvent)
     {
-        if (CoreConfig.ModHazardousItems_Enabled) pEvent.registerServerCommand(new HazardousItemsCommand());
-        if (CoreConfig.ModCustomToolTips_Enabled) pEvent.registerServerCommand(new CustomToolTipsCommand());
-        if (CoreConfig.ModItemInHandInfo_Enabled) pEvent.registerServerCommand(new ItemInHandInfoCommand());
-        if (CoreConfig.ModCustomFuels_Enabled) pEvent.registerServerCommand(new CustomFuelsCommand());
-        if (CoreConfig.ModCustomDrops_Enabled) pEvent.registerServerCommand(new CustomDropsCommand());
-        if (YAMCore.isDebug()) pEvent.registerServerCommand( new AllPurposeDebugCommand() );
+        if (CoreConfig.ModHazardousItems_Enabled) {
+            pEvent.registerServerCommand(new HazardousItemsCommand());
+        }
+        if (CoreConfig.ModCustomToolTips_Enabled) {
+            pEvent.registerServerCommand(new CustomToolTipsCommand());
+        }
+        if (CoreConfig.ModItemInHandInfo_Enabled) {
+            pEvent.registerServerCommand(new ItemInHandInfoCommand());
+        }
+        if (CoreConfig.ModCustomFuels_Enabled) {
+            pEvent.registerServerCommand(new CustomFuelsCommand());
+        }
+        if (CoreConfig.ModCustomDrops_Enabled) {
+            pEvent.registerServerCommand(new CustomDropsCommand());
+        }
+        if (YAMCore.isDebug()) {
+            pEvent.registerServerCommand(new AllPurposeDebugCommand());
+        }
     }
 }

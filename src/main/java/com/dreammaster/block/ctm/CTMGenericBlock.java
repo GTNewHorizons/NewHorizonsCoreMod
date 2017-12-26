@@ -17,7 +17,7 @@ public abstract class CTMGenericBlock extends Block
 	public static int[] textureRefByID = { 0, 0, 6, 6, 0, 0, 6, 6, 3, 3, 19, 15, 3, 3, 19, 15, 1, 1, 18, 18, 1, 1, 13, 13, 2, 2, 23, 31, 2, 2, 27, 14, 0, 0, 6, 6, 0, 0, 6, 6, 3, 3, 19, 15, 3, 3, 19, 15, 1, 1, 18, 18, 1, 1, 13, 13, 2, 2, 23, 31, 2, 2, 27, 14, 4, 4, 5, 5, 4, 4, 5, 5, 17, 17, 22, 26, 17, 17, 22, 26, 16, 16, 20, 20, 16, 16, 28, 28, 21, 21, 46, 42, 21, 21, 43, 38, 4, 4, 5, 5, 4, 4, 5, 5, 9, 9, 30, 12, 9, 9, 30, 12, 16, 16, 20, 20, 16, 16, 28, 28, 25, 25, 45, 37, 25, 25, 40, 32, 0, 0, 6, 6, 0, 0, 6, 6, 3, 3, 19, 15, 3, 3, 19, 15, 1, 1, 18, 18, 1, 1, 13, 13, 2, 2, 23, 31, 2, 2, 27, 14, 0, 0, 6, 6, 0, 0, 6, 6, 3, 3, 19, 15, 3, 3, 19, 15, 1, 1, 18, 18, 1, 1, 13, 13, 2, 2, 23, 31, 2, 2, 27, 14, 4, 4, 5, 5, 4, 4, 5, 5, 17, 17, 22, 26, 17, 17, 22, 26, 7, 7, 24, 24, 7, 7, 10, 10, 29, 29, 44, 41, 29, 29, 39, 33, 4, 4, 5, 5, 4, 4, 5, 5, 9, 9, 30, 12, 9, 9, 30, 12, 7, 7, 24, 24, 7, 7, 10, 10, 8, 8, 36, 35, 8, 8, 34, 11 };
 	private final String _mInternalName;
 	
-	public CTMGenericBlock(String pInternalBlockName)
+	protected CTMGenericBlock(String pInternalBlockName)
 	{
 		super(Material.iron);
 		setHardness(1.2F);
@@ -34,13 +34,16 @@ public abstract class CTMGenericBlock extends Block
 		return _mInternalName;
 	}
 	
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		for (int i = 0; i < 47; i++)
-			textures[i] = iconRegister.registerIcon(String.format("%s:sets/atlantis/%s/forgeCtm_%d", Refstrings.MODID.toLowerCase(), _mInternalName.toLowerCase(),  i+1));
+		for (int i = 0; i < 47; i++) {
+            textures[i] = iconRegister.registerIcon(String.format("%s:sets/atlantis/%s/forgeCtm_%d", Refstrings.MODID.toLowerCase(), _mInternalName.toLowerCase(), i + 1));
+        }
 	}
 	
+	@Override
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
 	{
@@ -97,11 +100,12 @@ public abstract class CTMGenericBlock extends Block
 		 for (int i = 0; i <= 7; i++)
 		 {
 			 
-			 idBuilder = idBuilder + (bitMatrix[i]?(i==0?1:(i==1?2:(i==2?4:(i==3?8:(i==4?16:(i==5?32:(i==6?64:128))))))):0);
+			 idBuilder = idBuilder + (bitMatrix[i]? i==0?1: i==1?2: i==2?4: i==3?8: i==4?16: i==5?32: i==6?64:128 :0);
 		 }
 		
-		 if (idBuilder > 255 || idBuilder < 0)
-			 return textures[0];
+		 if (idBuilder > 255 || idBuilder < 0) {
+             return textures[0];
+         }
 		 
 		 return textures[textureRefByID[idBuilder]];
 	}

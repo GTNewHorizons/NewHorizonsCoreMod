@@ -14,20 +14,19 @@ public abstract class ModFixBase implements IModFix
 {
   private String _mModFixName;
 
-  public abstract boolean needsForgeEventBus();
-
-  public abstract boolean needsFMLEventBus();
-
-  public ModFixBase( String pModFixName )
+  protected ModFixBase(String pModFixName)
   {
     _mModFixName = pModFixName;
       
-    if( needsForgeEventBus() )
-      MinecraftForge.EVENT_BUS.register( this );
-    if( needsFMLEventBus() )
-      FMLCommonHandler.instance().bus().register( this );
+    if( needsForgeEventBus() ) {
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+    if( needsFMLEventBus() ) {
+        FMLCommonHandler.instance().bus().register(this);
+    }
   }
 
+  @Override
   public final String getModFixName()
   {
     return _mModFixName;

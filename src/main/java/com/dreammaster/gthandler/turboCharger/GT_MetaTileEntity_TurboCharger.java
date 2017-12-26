@@ -34,9 +34,9 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
     @Override
     public ITexture[][][] getTextureSet(ITexture[] aTextures) {
         ITexture[][][] rTextures = new ITexture[2][17][];
-        for (byte i = -1; i < 16; i++) {
-            rTextures[0][i + 1] = new ITexture[]{Textures.BlockIcons.MACHINE_CASINGS[mTier][i + 1]};
-            rTextures[1][i + 1] = new ITexture[]{Textures.BlockIcons.MACHINE_CASINGS[mTier][i + 1], Textures.BlockIcons.OVERLAYS_ENERGY_OUT_POWER[mTier]};
+        for (byte b = -1; b < 16; b++) {
+            rTextures[0][b + 1] = new ITexture[]{Textures.BlockIcons.MACHINE_CASINGS[mTier][b + 1]};
+            rTextures[1][b + 1] = new ITexture[]{Textures.BlockIcons.MACHINE_CASINGS[mTier][b + 1], Textures.BlockIcons.OVERLAYS_ENERGY_OUT_POWER[mTier]};
         }
         return rTextures;
     }
@@ -72,13 +72,16 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
             mDecharge = aBaseMetaTileEntity.getStoredEU() < aBaseMetaTileEntity.getEUCapacity() / 3 && aBaseMetaTileEntity.isAllowedToWork();
             mBatteryCount = 0;
             mChargeableCount = 0;
-            for (ItemStack tStack : mInventory)
+            for (ItemStack tStack : mInventory) {
                 if (GT_ModHandler.isElectricItem(tStack, mTier)) {
-                    if (GT_ModHandler.isChargerItem(tStack)) mBatteryCount++;
+                    if (GT_ModHandler.isChargerItem(tStack)) {
+                        mBatteryCount++;
+                    }
                     mChargeableCount++;
                 }
+            }
 
-            if (this.getBaseMetaTileEntity() instanceof BaseMetaTileEntity) {
+            if (getBaseMetaTileEntity() instanceof BaseMetaTileEntity) {
                 BaseMetaTileEntity mBaseMetaTileEntity = (BaseMetaTileEntity) getBaseMetaTileEntity();
                 if (mBaseMetaTileEntity.getMetaTileEntity() instanceof MetaTileEntity) {
                     MetaTileEntity mMetaTileEntity = (MetaTileEntity) mBaseMetaTileEntity.getMetaTileEntity();
@@ -88,8 +91,9 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
                             if (mMetaTileEntity.mInventory[i] != null && mBaseMetaTileEntity.getStoredEU() < mBaseMetaTileEntity.getEUCapacity()) {
                                 //CODE
                                 mBaseMetaTileEntity.increaseStoredEnergyUnits(GT_ModHandler.dischargeElectricItem(mMetaTileEntity.mInventory[i], GT_Utility.safeInt(Math.min(V[mTier] * 120, mBaseMetaTileEntity.getEUCapacity() - mBaseMetaTileEntity.getStoredEU())), (int) Math.min(Integer.MAX_VALUE, mMetaTileEntity.getInputTier()), true, false, false), true);
-                                if (mMetaTileEntity.mInventory[i].stackSize <= 0)
+                                if (mMetaTileEntity.mInventory[i].stackSize <= 0) {
                                     mMetaTileEntity.mInventory[i] = null;
+                                }
                             }
                         }
                     }
@@ -98,8 +102,9 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
                             if (mBaseMetaTileEntity.getStoredEU() > 0 && mMetaTileEntity.mInventory[i] != null) {
                                 //CODE
                                 mBaseMetaTileEntity.decreaseStoredEU(GT_ModHandler.chargeElectricItem(mMetaTileEntity.mInventory[i], GT_Utility.safeInt(Math.min(V[mTier] * 120, mBaseMetaTileEntity.getStoredEU())), (int) Math.min(Integer.MAX_VALUE, mMetaTileEntity.getOutputTier()), true, false), true);
-                                if (mMetaTileEntity.mInventory[i].stackSize <= 0)
+                                if (mMetaTileEntity.mInventory[i].stackSize <= 0) {
                                     mMetaTileEntity.mInventory[i] = null;
+                                }
                             }
                         }
                         //}

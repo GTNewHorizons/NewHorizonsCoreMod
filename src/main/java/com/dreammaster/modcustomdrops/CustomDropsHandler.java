@@ -2,8 +2,6 @@ package com.dreammaster.modcustomdrops;
 
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
-import com.dreammaster.modcustomdrops.CustomDrops.CustomDrop;
-import com.dreammaster.modcustomdrops.CustomDrops.CustomDrop.Drop;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
@@ -16,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
 import javax.xml.bind.JAXBContext;
@@ -32,25 +31,25 @@ public class CustomDropsHandler
     private LogHelper _mLogger = MainRegistry.Logger;
     private String _mConfigFileName;
     private CustomDropsFactory _mCfF = new CustomDropsFactory();
-    private CustomDrops _mCustomDrops = null;
-    private eu.usrv.yamcore.persisteddata.PersistedDataBase _mPersistedDB = null;
-    private List<UUID> _mDeathDebugPlayers = null;
+    private CustomDrops _mCustomDrops;
+    private PersistedDataBase _mPersistedDB;
+    private List<UUID> _mDeathDebugPlayers;
 
     public CustomDropsHandler(File pConfigBaseDir)
     {
         _mConfigFileName = String.format("config/%s/CustomDrops.xml", Refstrings.COLLECTIONID);
         // _mPersistedDB = new PersistedDataBase(pConfigBaseDir,
         // "CustomDrops.ser", Refstrings.COLLECTIONID);
-        _mDeathDebugPlayers = new ArrayList<UUID>();
+        _mDeathDebugPlayers = new ArrayList<>();
     }
 
     public void InitSampleConfig()
     {
-        Drop pigDiamondLimitedDrop = _mCfF.createDrop("minecraft:diamond", "sample_Pig_DiamondDrop", "{Lore: [\"Oh, shiny!\"]}", 1, false, 100, 5);
-        Drop pigCakeUnlimitedDrop = _mCfF.createDrop("minecraft:cake", "sample_Pig_CakeDrop", 1, false, 100, 0);
-        Drop pigRandomCharcoalDrop = _mCfF.createDrop("minecraft:coal:1", "sample_Pig_CharcoalDrop", 5, true, 100, 0);
+        CustomDrops.CustomDrop.Drop pigDiamondLimitedDrop = _mCfF.createDrop("minecraft:diamond", "sample_Pig_DiamondDrop", "{Lore: [\"Oh, shiny!\"]}", 1, false, 100, 5);
+        CustomDrops.CustomDrop.Drop pigCakeUnlimitedDrop = _mCfF.createDrop("minecraft:cake", "sample_Pig_CakeDrop", 1, false, 100, 0);
+        CustomDrops.CustomDrop.Drop pigRandomCharcoalDrop = _mCfF.createDrop("minecraft:coal:1", "sample_Pig_CharcoalDrop", 5, true, 100, 0);
 
-        CustomDrop pigDrop = _mCfF.createCustomDropEntry("eu.usrv.dummyEntity.ImbaSampleDragon");
+        CustomDrops.CustomDrop pigDrop = _mCfF.createCustomDropEntry("eu.usrv.dummyEntity.ImbaSampleDragon");
         pigDrop.getDrops().add(pigDiamondLimitedDrop);
         pigDrop.getDrops().add(pigCakeUnlimitedDrop);
         pigDrop.getDrops().add(pigRandomCharcoalDrop);
@@ -105,9 +104,9 @@ public class CustomDropsHandler
     {
         boolean tSuccess = true;
 
-        for (CustomDrop X : pDropListToCheck.getCustomDrops())
+        for (CustomDrops.CustomDrop X : pDropListToCheck.getCustomDrops())
         {
-            for (Drop Y : X.getDrops())
+            for (CustomDrops.CustomDrop.Drop Y : X.getDrops())
             {
                 if (ItemDescriptor.fromString(Y.getItemName()) == null)
                 {
@@ -120,7 +119,9 @@ public class CustomDropsHandler
                     try
                     {
                         NBTTagCompound tNBT = (NBTTagCompound) JsonToNBT.func_150315_a(Y.mTag);
-                        if (tNBT == null) tSuccess = false;
+                        if (tNBT == null) {
+                            tSuccess = false;
+                        }
                     }
                     catch (Exception e)
                     {
@@ -172,7 +173,7 @@ public class CustomDropsHandler
         try
         {
             EntityLivingBase tEntity = pEvent.entityLiving;
-            UUID tUUID = null;
+            UUID tUUID;
             EntityPlayer tEP = null;
 
             if (pEvent.source.getEntity() != null)
@@ -181,19 +182,27 @@ public class CustomDropsHandler
                 {
                     tEP = (EntityPlayer) pEvent.source.getEntity();
                     tUUID = tEP.getUniqueID();
-                    if (_mDeathDebugPlayers.contains(tUUID)) PlayerChatHelper.SendInfo(tEP, String.format("Killed entity: [%s]", tEntity.getClass().getName()));
+                    if (_mDeathDebugPlayers.contains(tUUID)) {
+                        PlayerChatHelper.SendInfo(tEP, String.format("Killed entity: [%s]", tEntity.getClass().getName()));
+                    }
                 }
             }
 
             if (tEP == null) // Not doing anything, only players are valid
-            return;
-            if (tEP instanceof net.minecraftforge.common.util.FakePlayer) // Nope,
+            {
+                return;
+            }
+            if (tEP instanceof FakePlayer) // Nope,
                                                                           // no
                                                                           // fakeplayers
-            return;
+            {
+                return;
+            }
 
-            CustomDrop tCustomDrop = _mCustomDrops.FindDropEntry(tEntity);
-            if (tCustomDrop == null) return; // no custom drop defined for this
+            CustomDrops.CustomDrop tCustomDrop = _mCustomDrops.FindDropEntry(tEntity);
+            if (tCustomDrop == null) {
+                return; // no custom drop defined for this
+            }
                                              // mob, skipping
 
             HandleCustomDrops(tCustomDrop, tEntity, tEP, pEvent.drops);
@@ -209,25 +218,25 @@ public class CustomDropsHandler
      * LivingDeathEvent(net.minecraftforge.event.entity.living.LivingDeathEvent
      * pEvent) { try { EntityLivingBase tEntity = pEvent.entityLiving; UUID
      * tUUID = null; EntityPlayer tEP = null;
-     * 
+     *
      * if (pEvent.source.getEntity() != null) { if (pEvent.source.getEntity()
      * instanceof EntityPlayer) { tEP = (EntityPlayer)pEvent.source.getEntity();
      * tUUID = tEP.getUniqueID(); if (_mDeathDebugPlayers.contains(tUUID))
      * PlayerChatHelper.SendInfo(tEP, String.format("Killed entity: [%s]",
      * tEntity.getClass().getName())); } }
-     * 
+     *
      * if (tEP == null) // Not doing anything, only players are valid return; if
      * (tEP instanceof net.minecraftforge.common.util.FakePlayer) // Nope, no
      * fakeplayers return;
-     * 
+     *
      * CustomDrop tCustomDrop = _mCustomDrops.FindDropEntry(tEntity); if
      * (tCustomDrop == null) return; // no custom drop defined for this mob,
      * skipping
-     * 
+     *
      * HandleCustomDrops(tCustomDrop, tEntity, tEP); } catch (Exception e) {
      * e.printStackTrace(); } }
      */
-    private void HandleCustomDrops(CustomDrop tCustomDrop, EntityLivingBase tEntity, EntityPlayer tEP, ArrayList<EntityItem> pDropList)
+    private void HandleCustomDrops(CustomDrops.CustomDrop tCustomDrop, EntityLivingBase tEntity, EntityPlayer tEP, ArrayList<EntityItem> pDropList)
     {
         try
         {
@@ -236,14 +245,16 @@ public class CustomDropsHandler
                 _mPersistedDB = new PersistedDataBase(DimensionManager.getCurrentSaveRootDirectory(), "CustomDrops.dat", Refstrings.COLLECTIONID);
             }
 
-            for (Drop dr : tCustomDrop.getDrops())
+            for (CustomDrops.CustomDrop.Drop dr : tCustomDrop.getDrops())
             {
                 String tDropID = dr.getIdentifier();
                 String tUserID = tEP.getUniqueID().toString();
                 String tFinalDropID = String.format("%s.%s", tUserID, tDropID);
                 int tFinalAmount = dr.getAmount();
 
-                if (MainRegistry.Rnd.nextInt(100) > dr.getChance()) continue;
+                if (MainRegistry.Rnd.nextInt(100) > dr.getChance()) {
+                    continue;
+                }
 
                 // Is this drop limited?
                 if (dr.getLimitedDropCount() > 0)
@@ -251,8 +262,9 @@ public class CustomDropsHandler
                     // if it is, check if player already got this item. If so,
                     // skip this drop
                     int tDropCount = _mPersistedDB.getValueAsInt(tFinalDropID, 0);
-                    if (tDropCount >= dr.getLimitedDropCount()) continue;
-                    else
+                    if (tDropCount >= dr.getLimitedDropCount()) {
+                        continue;
+                    } else
                     {
                         // Player will get the drop this time, increase his
                         // counter
@@ -260,11 +272,14 @@ public class CustomDropsHandler
                     }
                 }
 
-                if (dr.getIsRandomAmount()) tFinalAmount = 1 + MainRegistry.Rnd.nextInt(dr.getAmount() - 1);
+                if (dr.getIsRandomAmount()) {
+                    tFinalAmount = 1 + MainRegistry.Rnd.nextInt(dr.getAmount() - 1);
+                }
 
                 ItemStack tDropStack = ItemDescriptor.fromString(dr.getItemName()).getItemStackwNBT(tFinalAmount, dr.mTag);
-                if (tDropStack == null) _mLogger.error(String.format("CustomDrop ID %s failed to drop"));
-                else
+                if (tDropStack == null) {
+                    _mLogger.error(String.format("CustomDrop ID %s failed to drop",dr.getIdentifier()));
+                } else
                 {
                     EntityItem tDropEntity = new EntityItem(tEntity.worldObj, tEntity.posX, tEntity.posY, tEntity.posZ, tDropStack);
                     pDropList.add(tDropEntity);

@@ -3,12 +3,15 @@ package com.dreammaster.baubles;
 
 
 import baubles.api.BaubleType;
+import baubles.api.IBauble;
 import baubles.common.container.InventoryBaubles;
+import baubles.common.lib.PlayerHandler;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
 import eu.usrv.yamcore.auxiliary.FluidHelper;
+import eu.usrv.yamcore.client.Notification;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.iface.IExtendedModItem;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -29,7 +32,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedModItem
+public final class OvenGlove extends Item implements IBauble, IExtendedModItem
 {
   private static final String NBTTAG_DURABILITY = "Durability";
 
@@ -40,7 +43,7 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
   private static int MaxDurability = 1000;
   private boolean WrongSidePopupShown = false;
 
-  private static OvenGlove _mInstance = null;
+  private static OvenGlove _mInstance;
 
   private static int potionDuration = MainRegistry.CoreConfig.PotionTimer;
   private static int potionAmplifier = 1;
@@ -48,17 +51,20 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
 
   public static OvenGlove Instance( String pItemName, String pCreativeTab )
   {
-    if( _mInstance == null )
-      _mInstance = new OvenGlove( pItemName, pCreativeTab );
+    if( _mInstance == null ) {
+      _mInstance = new OvenGlove(pItemName, pCreativeTab);
+    }
 
     return _mInstance;
   }
 
+  @Override
   public OvenGlove getConstructedItem()
   {
     return _mInstance;
   }
 
+  @Override
   public String getCreativeTabName()
   {
     return _mCreativeTab;
@@ -90,15 +96,16 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
     if( FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT )
     {
       long curTime = System.currentTimeMillis();
-      if( ( curTime - prevTime > 1000L ) || ( curRand == -1 ) )
+      if( curTime - prevTime > 1000L || curRand == -1)
       {
         curRand = _mRnd.nextInt( 4 );
       }
       prevTime = curTime;
-      return String.format( "%s_%d_%d", this.getUnlocalizedName(), stack.getItemDamage(), curRand );
+      return String.format( "%s_%d_%d", getUnlocalizedName(), stack.getItemDamage(), curRand );
     }
-    else
-      return super.getUnlocalizedName( stack );
+    else {
+      return super.getUnlocalizedName(stack);
+    }
     // return this.getUnlocalizedName() + "_" + stack.getItemDamage();
   }
 
@@ -109,14 +116,14 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
   {
     for( int i = 0; i < 2; i++ )
     {
-      this.icons[i] = reg.registerIcon( String.format( "%s:item%s_%d", Refstrings.MODID, _mItemName, i ) );
+      icons[i] = reg.registerIcon( String.format( "%s:item%s_%d", Refstrings.MODID, _mItemName, i ) );
     }
   }
 
   @Override
   public IIcon getIconFromDamage( int meta )
   {
-    return this.icons[meta];
+    return icons[meta];
   }
 
   @Override
@@ -161,8 +168,9 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
 
   private void RemoveFireProtection( EntityLivingBase pEntityBase )
   {
-    if( !( pEntityBase instanceof EntityPlayer ) )
+    if( !( pEntityBase instanceof EntityPlayer ) ) {
       return;
+    }
 
     try
     { // As soon as one glove gets unequipped, remove the fire resistance. onWornTick takes care to not reapply the
@@ -210,8 +218,9 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
 
     list.add( "Protecting your fingers since 1890" );
     list.add( String.format( "Durability: %d/%d", GetNBTDurability( pItemStack ), MaxDurability ) );
-    if( pItemStack.stackTagCompound.getInteger( NBTTAG_DURABILITY ) <= 1 )
-      list.add( "This glove is too damaged to protect you. You need to repair it" );
+    if( pItemStack.stackTagCompound.getInteger( NBTTAG_DURABILITY ) <= 1 ) {
+      list.add("This glove is too damaged to protect you. You need to repair it");
+    }
   }
 
   private void CreateOrInitNBTTag( ItemStack pItemStack )
@@ -241,19 +250,21 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
   {
     boolean tResult = false;
 
-    if( pHeldItem.getUnlocalizedName().toLowerCase().contains( "lava" ) )
+    if( pHeldItem.getUnlocalizedName().toLowerCase().contains( "lava" ) ) {
       tResult = true;
+    }
 
     if( pHeldItem.getItem() instanceof IFluidContainerItem )
     {
       FluidStack tStackFluid = FluidHelper.getFluidStackFromContainer( pHeldItem );
       if( tStackFluid != null )
       {
-        if( tStackFluid.amount > 0 && tStackFluid.getFluid().getName().equalsIgnoreCase( "lava" ) )
+        if( tStackFluid.amount > 0 && "lava".equalsIgnoreCase(tStackFluid.getFluid().getName())) {
           tResult = true;
+        }
       }
     }
-    else if( pHeldItem.getItem().getClass().getName().equals( "tconstruct.smeltery.itemblocks.LavaTankItemBlock" ) )
+    else if("tconstruct.smeltery.itemblocks.LavaTankItemBlock".equals(pHeldItem.getItem().getClass().getName()))
     {
       NBTTagCompound tNBT = pHeldItem.getTagCompound();
       if( tNBT != null && tNBT.hasKey( "Fluid" ) )
@@ -263,10 +274,11 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
         if( tFluidCompound != null && tFluidCompound.hasKey( "FluidName" ) )
         {
           String tFluidName = tFluidCompound.getString( "FluidName" );
-          if( tFluidName != null && tFluidName.length() > 0 )
+          if( tFluidName != null && !tFluidName.isEmpty())
           {
-            if( tFluidName.equalsIgnoreCase( "lava" ) )
+            if("lava".equalsIgnoreCase(tFluidName)) {
               tResult = true;
+            }
           }
         }
       }
@@ -277,9 +289,7 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
 
   private boolean isResistActive ( EntityPlayer tPlayer )
   {
-    if( tPlayer.isPotionActive( Potion.fireResistance.id ) )
-      return true;
-    return false;
+    return tPlayer.isPotionActive(Potion.fireResistance.id);
   }
 
   private boolean isGlovesResistActive ( EntityPlayer tPlayer )
@@ -287,8 +297,9 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
     if( isResistActive( tPlayer ) )
     {
       PotionEffect potion = tPlayer.getActivePotionEffect( Potion.fireResistance );
-      if( potion.getDuration() <= potionDuration && potion.getAmplifier() == potionAmplifier && potion.getIsAmbient() == potionAmbient )
+      if( potion.getDuration() <= potionDuration && potion.getAmplifier() == potionAmplifier && potion.getIsAmbient() == potionAmbient ) {
         return true;
+      }
     }
     return false;
   }
@@ -298,19 +309,23 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
   {
     try
     {
-      if( !( pEntity instanceof EntityPlayer ) )
+      if( !( pEntity instanceof EntityPlayer ) ) {
         return;
+      }
   
       if( arg0.getItemDamage() == 1 ) // MetaItem 0 is running this loop only
+      {
         return;
+      }
   
       EntityPlayer tPlayer = (EntityPlayer) pEntity;
-      InventoryBaubles tBaubles = baubles.common.lib.PlayerHandler.getPlayerBaubles( tPlayer );
+      InventoryBaubles tBaubles = PlayerHandler.getPlayerBaubles( tPlayer );
   
       if( tPlayer.isBurning() ) // no fire/lava cheat!
       {
-        if( isGlovesResistActive( tPlayer ) )
-          RemoveFireProtection( pEntity );
+        if( isGlovesResistActive( tPlayer ) ) {
+          RemoveFireProtection(pEntity);
+        }
         return;
       }
   
@@ -335,7 +350,7 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
               if( !WrongSidePopupShown )
               {
                 WrongSidePopupShown = true;
-                eu.usrv.yamcore.client.Notification noti = new eu.usrv.yamcore.client.Notification( tBaubleRing1, "Wrong place", "The gloves feel weird..." );
+                Notification noti = new Notification( tBaubleRing1, "Wrong place", "The gloves feel weird..." );
                 NotificationTickHandler.guiNotification.queueNotification( noti );
               }
             }
@@ -344,10 +359,13 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
           }
           
           if( tBaubleRing1.stackTagCompound == null || tBaubleRing2.stackTagCompound == null ) // Cheated gloves don't have NBT tags sometimes
+          {
             return;
+          }
   
-          if( tBaubleRing1.stackTagCompound.getInteger( NBTTAG_DURABILITY ) <= 1 || tBaubleRing2.stackTagCompound.getInteger( NBTTAG_DURABILITY ) <= 1 )
+          if( tBaubleRing1.stackTagCompound.getInteger( NBTTAG_DURABILITY ) <= 1 || tBaubleRing2.stackTagCompound.getInteger( NBTTAG_DURABILITY ) <= 1 ) {
             return;
+          }
   
           ItemStack tHeldItem = tPlayer.getCurrentEquippedItem();
           if( tHeldItem != null )
@@ -361,10 +379,11 @@ public class OvenGlove extends Item implements baubles.api.IBauble, IExtendedMod
   
                 int tRandomDamage = _mRnd.nextInt( 10 ); // Randomly damage gloves while giving the protection effect
   
-                if( tRandomDamage == 1 )
-                  DamageItem( tBaubleRing1 );
-                else if( tRandomDamage == 2 )
-                  DamageItem( tBaubleRing2 );
+                if( tRandomDamage == 1 ) {
+                  DamageItem(tBaubleRing1);
+                } else if( tRandomDamage == 2 ) {
+                  DamageItem(tBaubleRing2);
+                }
               }
             }
           }

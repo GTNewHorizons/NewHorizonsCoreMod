@@ -3,11 +3,11 @@ package com.dreammaster.modctt;
 
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
-import com.dreammaster.modctt.CustomToolTips.ItemToolTip;
 import com.dreammaster.network.msg.CTTClientSyncMessage;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import eu.usrv.yamcore.auxiliary.LogHelper;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
@@ -26,7 +26,7 @@ public class CustomToolTipsHandler
   private LogHelper _mLogger = MainRegistry.Logger;
   private String _mConfigFileName;
   private CustomToolTipsObjectFactory _mCttFactory = new CustomToolTipsObjectFactory();
-  private CustomToolTips _mCustomToolTips = null;
+  private CustomToolTips _mCustomToolTips;
   private boolean _mInitialized;
 
   /**
@@ -36,10 +36,11 @@ public class CustomToolTipsHandler
    */
   public void processServerConfig( String pServerXML )
   {
-    if( ReloadCustomToolTips( pServerXML ) )
-      _mLogger.info( "[CTT] Received and activated configuration from server" );
-    else
-      _mLogger.warn( "[CTT] Received invalid configuration from server; Not activated!" );
+    if( ReloadCustomToolTips( pServerXML ) ) {
+      _mLogger.info("[CTT] Received and activated configuration from server");
+    } else {
+      _mLogger.warn("[CTT] Received invalid configuration from server; Not activated!");
+    }
   }
 
   public CustomToolTipsHandler()
@@ -150,10 +151,11 @@ public class CustomToolTipsHandler
     boolean tState = ReloadCustomToolTips( "" );
     if( _mInitialized )
     {
-      if( tState )
+      if( tState ) {
         sendClientUpdate();
-      else
-        _mLogger.error( "[CTT.ReloadCustomToolTips] Reload of tooltip file failed. Not sending client update" );
+      } else {
+        _mLogger.error("[CTT.ReloadCustomToolTips] Reload of tooltip file failed. Not sending client update");
+      }
     }
     return tState;
   }
@@ -163,28 +165,32 @@ public class CustomToolTipsHandler
     sendClientUpdate( null );
   }
 
-  private void sendClientUpdate( EntityPlayerMP pPlayer )
+  private void sendClientUpdate( EntityPlayer pPlayer )
   {
     String tPayload = getXMLStream();
     if( !tPayload.isEmpty() )
     {
       List<CTTClientSyncMessage> tPendingMessages = CTTClientSyncMessage.getPreparedNetworkMessages( tPayload );
 
-      if( pPlayer != null && pPlayer instanceof EntityPlayerMP )
+      if(pPlayer instanceof EntityPlayerMP)
       {
-        for( CTTClientSyncMessage tMsg : tPendingMessages )
-          MainRegistry.NW.sendTo( tMsg, pPlayer );
+        for( CTTClientSyncMessage tMsg : tPendingMessages ) {
+          MainRegistry.NW.sendTo(tMsg, (EntityPlayerMP) pPlayer);
+        }
       }
       else if( pPlayer == null )
       {
-        for( CTTClientSyncMessage tMsg : tPendingMessages )
-          MainRegistry.NW.sendToAll( tMsg );
+        for( CTTClientSyncMessage tMsg : tPendingMessages ) {
+          MainRegistry.NW.sendToAll(tMsg);
+        }
       }
-      else
-        _mLogger.error( "[CTT.sendClientUpdate] Target is no EntityPlayer and not null" );
+      else {
+        _mLogger.error("[CTT.sendClientUpdate] Target is no EntityPlayer and not null");
+      }
     }
-    else
-      _mLogger.error( "[CTT.sendClientUpdate] Unable to send update to clients; Received empty serialized object" );
+    else {
+      _mLogger.error("[CTT.sendClientUpdate] Unable to send update to clients; Received empty serialized object");
+    }
   }
 
   /**
@@ -203,7 +209,7 @@ public class CustomToolTipsHandler
       JAXBContext tJaxbCtx = JAXBContext.newInstance( CustomToolTips.class );
       Unmarshaller jaxUnmarsh = tJaxbCtx.createUnmarshaller();
 
-      CustomToolTips tNewItemCollection = null;
+      CustomToolTips tNewItemCollection;
 
       if( pXMLContent.isEmpty() )
       {
@@ -233,22 +239,25 @@ public class CustomToolTipsHandler
   @SubscribeEvent
   public void onPlayerJoin( PlayerEvent.PlayerLoggedInEvent pEvent )
   {
-    if( pEvent.player instanceof EntityPlayerMP )
-      sendClientUpdate( (EntityPlayerMP) pEvent.player );
+    if( pEvent.player instanceof EntityPlayerMP ) {
+      sendClientUpdate(pEvent.player);
+    }
   }
 
   @SubscribeEvent
   public void onToolTip( ItemTooltipEvent pEvent )
   {
-    if( pEvent.entity == null )
+    if( pEvent.entity == null ) {
       return;
-    ItemToolTip itt = _mCustomToolTips.FindItemToolTip( pEvent.itemStack );
+    }
+    CustomToolTips.ItemToolTip itt = _mCustomToolTips.FindItemToolTip( pEvent.itemStack );
     if( itt != null )
     {
-      String tToolTips[] = itt.getToolTip().split( "\\\\n" );
+        String[] tToolTips = itt.getToolTip().split("\\\\n");
 
-      for( String tPartTip : tToolTips )
-        pEvent.toolTip.add( tPartTip.replace( "&", "§" ) );
+      for( String tPartTip : tToolTips ) {
+        pEvent.toolTip.add(tPartTip.replace("&", "§"));
+      }
     }
   }
 }

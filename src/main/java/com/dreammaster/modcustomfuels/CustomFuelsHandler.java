@@ -2,7 +2,6 @@ package com.dreammaster.modcustomfuels;
 
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
-import com.dreammaster.modcustomfuels.CustomFuels.FuelItem;
 import cpw.mods.fml.common.IFuelHandler;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import net.minecraft.item.ItemStack;
@@ -18,7 +17,7 @@ public class CustomFuelsHandler implements IFuelHandler
     private LogHelper _mLogger = MainRegistry.Logger;
     private String _mConfigFileName;
     private CustomFuelsFactory _mCfF = new CustomFuelsFactory();
-    private CustomFuels _mCustomFuels = null;
+    private CustomFuels _mCustomFuels;
 
     public CustomFuelsHandler()
     {
@@ -105,9 +104,12 @@ public class CustomFuelsHandler implements IFuelHandler
         {
             int tReturnValue = 0;
 
-            FuelItem tFI = _mCustomFuels.FindFuelValue(pIS);
-            if (tFI != null) return tFI.getBurnTime();
-            else return 0;
+            CustomFuels.FuelItem tFI = _mCustomFuels.FindFuelValue(pIS);
+            if (tFI != null) {
+                return tFI.getBurnTime();
+            } else {
+                return 0;
+            }
         }
         catch (Exception e)
         {

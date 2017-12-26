@@ -55,11 +55,12 @@ public enum BlockList {
 	
 	// ################################################################################
 	public ModSimpleBaseBlock Block;
-	private BlockList(ModSimpleBaseBlock pBlock)
+	BlockList(ModSimpleBaseBlock pBlock)
 	{
 		Block = pBlock;
-		if (Block != null)
-			Block.setModIDName(Refstrings.MODID);
+		if (Block != null) {
+            Block.setModIDName(Refstrings.MODID);
+        }
 	}
 	
 	public static boolean AddToItemManager(ModBlockManager pBlockManager)
@@ -67,12 +68,12 @@ public enum BlockList {
 		boolean tResult = true;
 		for (BlockList bl : BlockList.values())
 		{
-			if (bl.Block != null)
-				if (!pBlockManager.AddItemToManagedRegistry(bl.Block))
-				{
-				    MainRegistry.Logger.error(String.format("Block [%s] failed to register", bl.toString()));
-					tResult = false;
-				}
+			if (bl.Block != null) {
+                if (!pBlockManager.AddItemToManagedRegistry(bl.Block)) {
+                    MainRegistry.Logger.error(String.format("Block [%s] failed to register", bl.toString()));
+                    tResult = false;
+                }
+            }
 		}
 		
 		return tResult;

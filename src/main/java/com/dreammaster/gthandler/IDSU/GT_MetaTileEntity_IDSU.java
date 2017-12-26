@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.IDSU;
 
-import gregtech.api.enums.Textures.BlockIcons.CustomIcon;
+import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
@@ -18,12 +18,12 @@ import static gregtech.api.enums.GT_Values.V;
 
 public class GT_MetaTileEntity_IDSU extends MetaTileEntity
 {
-    public static final Map<Integer, Long> mIDSUList = new HashMap<Integer, Long>(); 
+    public static final Map<Integer, Long> mIDSUList = new HashMap<>();
     public int mFrequency = 0;
     public static int mTier = 8;
-    private static CustomIcon _mIDSU;
-    private static CustomIcon _mIDSU_Out;
-    
+    private static Textures.BlockIcons.CustomIcon _mIDSU;
+    private static Textures.BlockIcons.CustomIcon _mIDSU_Out;
+
     public GT_MetaTileEntity_IDSU(int aID, String aBasicName, String aRegionalName, int aInvSlotCount)
     {
         super(aID, aBasicName, aRegionalName, aInvSlotCount);
@@ -33,8 +33,8 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity
     public void registerIcons(IIconRegister aBlockIconRegister)
     {
         super.registerIcons(aBlockIconRegister);
-        _mIDSU = new CustomIcon("IDSU");           
-        _mIDSU_Out = new CustomIcon("IDSU_Out");  
+        _mIDSU = new Textures.BlockIcons.CustomIcon("IDSU");
+        _mIDSU_Out = new Textures.BlockIcons.CustomIcon("IDSU_Out");
     }
     
     @Override
@@ -206,8 +206,9 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity
     public long getEUVar()
     {
         Long tEU = mIDSUList.get(mFrequency);
-        if (tEU == null)
+        if (tEU == null) {
             tEU = 0L;
+        }
         
         return tEU;
     }

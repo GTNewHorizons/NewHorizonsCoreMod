@@ -7,8 +7,10 @@ import gregtech.api.util.GT_LanguageManager;
 import gregtech.api.util.GT_OreDictUnificator;
 
 
-public class GT_Loader_ItemPipes {
+public final class GT_Loader_ItemPipes {
 
+
+    private GT_Loader_ItemPipes() {}
 
     public static void registerPipes() {
 
@@ -46,7 +48,7 @@ public class GT_Loader_ItemPipes {
         displayName = GT_LanguageManager.i18nPlaceholder ? "%material" : Materials.Tin.mDefaultLocalName;
         GT_OreDictUnificator.registerOre(OrePrefixes.pipeTiny.get(Materials.Tin), new GT_MetaPipeEntity_Item(5589, "GT_Pipe_Tin_Tiny", "Tiny " + displayName + " Item Pipe", 0.25F, Materials.Tin, 1, 262144, false, 160).getStackForm(1L));
         GT_OreDictUnificator.registerOre(OrePrefixes.pipeSmall.get(Materials.Tin), new GT_MetaPipeEntity_Item(5590, "GT_Pipe_Tin_Small", "Small " + displayName + " Item Pipe", 0.375F, Materials.Tin, 1, 131072, false, 80).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(OrePrefixes.pipeMedium.get(Materials.Tin), new GT_MetaPipeEntity_Item(5591, "GT_Pipe_Tin", "" + displayName + " Item Pipe", 0.5F, Materials.Tin, 1, 65536, false, 40).getStackForm(1L));
+        GT_OreDictUnificator.registerOre(OrePrefixes.pipeMedium.get(Materials.Tin), new GT_MetaPipeEntity_Item(5591, "GT_Pipe_Tin", displayName + " Item Pipe", 0.5F, Materials.Tin, 1, 65536, false, 40).getStackForm(1L));
         GT_OreDictUnificator.registerOre(OrePrefixes.pipeLarge.get(Materials.Tin), new GT_MetaPipeEntity_Item(5592, "GT_Pipe_Tin_Large", "Large " + displayName + " Item Pipe", 0.75F, Materials.Tin, 1, 32768, false).getStackForm(1L));
         GT_OreDictUnificator.registerOre(OrePrefixes.pipeHuge.get(Materials.Tin), new GT_MetaPipeEntity_Item(5593, "GT_Pipe_Tin_Huge", "Huge " + displayName + " Item Pipe", 0.875F, Materials.Tin, 2, 16384, false).getStackForm(1L));
 

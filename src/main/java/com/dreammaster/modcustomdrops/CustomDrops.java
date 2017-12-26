@@ -11,9 +11,9 @@ import java.util.List;
 public class CustomDrops
 {
     @XmlElement(name = "CustomDrop")
-    protected List<CustomDrops.CustomDrop> mCustomDrops;
+    protected List<CustomDrop> mCustomDrops;
 
-    public List<CustomDrops.CustomDrop> getCustomDrops()
+    public List<CustomDrop> getCustomDrops()
     {
         Init();
         return mCustomDrops;
@@ -24,12 +24,16 @@ public class CustomDrops
         try
         {
             Init();
-            if (pEntity == null) return null;
+            if (pEntity == null) {
+                return null;
+            }
 
             String tEntityClassName = pEntity.getClass().getName();
             for (CustomDrop drop : mCustomDrops)
             {
-                if (drop.mEntityClassName.equalsIgnoreCase(tEntityClassName)) return drop;
+                if (drop.mEntityClassName.equalsIgnoreCase(tEntityClassName)) {
+                    return drop;
+                }
             }
 
             return null;
@@ -42,7 +46,9 @@ public class CustomDrops
 
     private void Init()
     {
-        if (mCustomDrops == null) mCustomDrops = new ArrayList<CustomDrops.CustomDrop>();
+        if (mCustomDrops == null) {
+            mCustomDrops = new ArrayList<>();
+        }
     }
 
     @XmlAccessorType(XmlAccessType.FIELD)
@@ -53,9 +59,9 @@ public class CustomDrops
         protected String mEntityClassName;
 
         @XmlElement(name = "Drop")
-        protected List<CustomDrops.CustomDrop.Drop> mDrops;
+        protected List<Drop> mDrops;
 
-        public List<CustomDrops.CustomDrop.Drop> getDrops()
+        public List<Drop> getDrops()
         {
             Init();
             return mDrops;
@@ -63,7 +69,9 @@ public class CustomDrops
 
         private void Init()
         {
-            if (mDrops == null) mDrops = new ArrayList<CustomDrops.CustomDrop.Drop>();
+            if (mDrops == null) {
+                mDrops = new ArrayList<>();
+            }
         }
 
         public String getEntityName()

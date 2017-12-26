@@ -16,7 +16,7 @@ public class ItemBlockBabyChest extends ItemBlock
     public ItemBlockBabyChest(Block block)
     {
         super(block);
-        this.setHasSubtypes(false);
+        setHasSubtypes(false);
     }
 
     @Override
@@ -24,6 +24,7 @@ public class ItemBlockBabyChest extends ItemBlock
         return meta;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack pItemStack, EntityPlayer pEntityPlayer, List pList, boolean pFlag)
     {

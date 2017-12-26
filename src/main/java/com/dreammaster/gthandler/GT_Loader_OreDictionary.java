@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 
 public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_OreDictionary
         implements Runnable {
+    @Override
     public void run() {
         GT_Log.out.println("Core-Mod: Register OreDict Entries of Non-GT-Items.");
 
@@ -51,7 +52,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre("lensReinforcedGlass", ItemList.ReinforcedGlassLense.getIS());
         GT_OreDictUnificator.registerOre("plateReinforcedGlass", ItemList.ReinforcedGlassPlate.getIS());
         GT_OreDictUnificator.registerOre("blockQuantium", GT_ModHandler.getModItem("dreamcraft", "tile.Quantinum", 1L, 0));
-        GT_OreDictUnificator.registerOre(OrePrefixes.compressed, Materials.Quantium, com.dreammaster.item.ItemList.QuantinumCompressedPlate.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.compressed, Materials.Quantium, ItemList.QuantinumCompressedPlate.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Quantium, ItemList.QuantinumDust.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.plateDense, Materials.Quantium, ItemList.QuantinumDensePlate.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.plate, Materials.Quantium, ItemList.QuantinumPlate.getIS());

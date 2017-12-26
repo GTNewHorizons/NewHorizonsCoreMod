@@ -23,8 +23,9 @@ public class RenderBabyChest extends TileEntitySpecialRenderer
             TileEntityBabyChest tTileEntityBabyChest = (TileEntityBabyChest) pTileEntity;
             ForgeDirection tDirection = null;
 
-            if (tTileEntityBabyChest.getWorldObj() != null)
+            if (tTileEntityBabyChest.getWorldObj() != null) {
                 tDirection = tTileEntityBabyChest.getOrientation();
+            }
 
             World tWorld = tTileEntityBabyChest.getWorldObj();
             Block tBlock = tWorld.getBlock(tTileEntityBabyChest.xCoord, tTileEntityBabyChest.yCoord, tTileEntityBabyChest.zCoord);
@@ -32,7 +33,7 @@ public class RenderBabyChest extends TileEntitySpecialRenderer
             if (tBlock instanceof BlockBabyChest)
             {
                 BlockBabyChest blockBabyChest = (BlockBabyChest) tBlock;
-                this.bindTexture(new ResourceLocation("minecraft:textures/entity/chest/normal.png"));
+                bindTexture(new ResourceLocation("minecraft:textures/entity/chest/normal.png"));
             }
 
             GL11.glPushMatrix();

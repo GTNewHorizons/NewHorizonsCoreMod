@@ -81,8 +81,9 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
     public ItemStack getStackInSlotOnClosing(int pSlot) 
     {
         ItemStack tStack = getStackInSlot(pSlot);
-        if (tStack != null) 
+        if (tStack != null) {
             setInventorySlotContents(pSlot, null);
+        }
 
         return tStack;
     }
@@ -127,7 +128,7 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
     protected void readSyncedNBT(NBTTagCompound pTag)
     {
         if (pTag.hasKey(NBTVAL_DIRECTION)) {
-            this._mOrientation = ForgeDirection.getOrientation(pTag.getByte(NBTVAL_DIRECTION));
+            _mOrientation = ForgeDirection.getOrientation(pTag.getByte(NBTVAL_DIRECTION));
         }
     }
 
@@ -187,14 +188,14 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
     public void openInventory()
     {
         ++_mNumPlayersUsing;
-        worldObj.addBlockEvent(xCoord, yCoord, zCoord, this.worldObj.getBlock(xCoord, yCoord, zCoord), 1, _mNumPlayersUsing);
+        worldObj.addBlockEvent(xCoord, yCoord, zCoord, worldObj.getBlock(xCoord, yCoord, zCoord), 1, _mNumPlayersUsing);
     }
 
     @Override
     public boolean receiveClientEvent(int pEventID, int pNumUsingPlayers)
     {
         if (pEventID == 1) {
-            this._mNumPlayersUsing = pNumUsingPlayers;
+            _mNumPlayersUsing = pNumUsingPlayers;
             return true;
         } else {
             return super.receiveClientEvent(pEventID, pNumUsingPlayers);
@@ -205,7 +206,7 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
     public void closeInventory()
     {
         --_mNumPlayersUsing;
-        worldObj.addBlockEvent(xCoord, yCoord, zCoord, this.worldObj.getBlock(xCoord, yCoord, zCoord), 1, _mNumPlayersUsing);
+        worldObj.addBlockEvent(xCoord, yCoord, zCoord, worldObj.getBlock(xCoord, yCoord, zCoord), 1, _mNumPlayersUsing);
     }
 
     @Override
@@ -237,7 +238,7 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
 
         if (++_mLastSyncTicks % 20 * 4 == 0)
         {
-            worldObj.addBlockEvent(xCoord, yCoord, zCoord, this.worldObj.getBlock(xCoord, yCoord, zCoord), 1, _mNumPlayersUsing);
+            worldObj.addBlockEvent(xCoord, yCoord, zCoord, worldObj.getBlock(xCoord, yCoord, zCoord), 1, _mNumPlayersUsing);
         }
 
         _mPrevLidAngle = _mLidAngle;
@@ -283,7 +284,7 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
     @Override
     public boolean canInsertItem(int pSlotID, ItemStack pStack, int pBlockSide) 
     {
-        return this.isItemValidForSlot(pSlotID, pStack);
+        return isItemValidForSlot(pSlotID, pStack);
     }
 
     @Override

@@ -11,6 +11,9 @@ import eu.usrv.yamcore.auxiliary.IntHelper;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.BlockGravel;
+import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.BlockStaticLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.Vec3;
@@ -19,6 +22,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.IFluidBlock;
 
@@ -46,9 +50,9 @@ public class OilGeneratorFix extends ModFixBase
     public int OilFountainSizeSmall = 5;
     public int OilFountainSizeLarge = 16;
     public double OilBiomeBoostFactor = 2.5D;
-    public List<Integer> OilDimensionWhitelist = new ArrayList<Integer>();
-    public List<Integer> OilBiomeIDBlackList = new ArrayList<Integer>();
-    public List<Integer> OilBoostBiomes = new ArrayList<Integer>();
+    public List<Integer> OilDimensionWhitelist = new ArrayList<>();
+    public List<Integer> OilBiomeIDBlackList = new ArrayList<>();
+    public List<Integer> OilBoostBiomes = new ArrayList<>();
 
     public OilConfig( Configuration pConfigObject )
     {
@@ -72,12 +76,13 @@ public class OilGeneratorFix extends ModFixBase
 
     private List<Integer> parseStringListToIntList( String[] pSource )
     {
-      List<Integer> tLst = new ArrayList<Integer>();
+      List<Integer> tLst = new ArrayList<>();
 
       for( String tEntry : pSource )
       {
-        if( IntHelper.tryParse( tEntry ) )
-          tLst.add( Integer.parseInt( tEntry ) );
+        if( IntHelper.tryParse( tEntry ) ) {
+            tLst.add(Integer.parseInt(tEntry));
+        }
       }
 
       return tLst;
@@ -98,7 +103,7 @@ public class OilGeneratorFix extends ModFixBase
   @Override
   public boolean getIsActive()
   {
-    return !( _mBuildCraftOilBlock == null );
+    return _mBuildCraftOilBlock != null;
   }
 
   @Override
@@ -133,20 +138,23 @@ public class OilGeneratorFix extends ModFixBase
   {
     try
     {
-      if( _mBuildCraftOilBlock == null )
-        return;
+      if( _mBuildCraftOilBlock == null ) {
+          return;
+      }
 
       int tMinDist = MainRegistry.CoreConfig.OilFixConfig.OilDepostMinDistance;
       if (tMinDist > 1)
       {
-        if (((event.chunkX % tMinDist) != 0) || ((event.chunkZ % tMinDist) != 0))
-          return;
+        if (event.chunkX % tMinDist != 0 || event.chunkZ % tMinDist != 0) {
+            return;
+        }
       }
       
-      boolean doGen = net.minecraftforge.event.terraingen.TerrainGen.populate( event.chunkProvider, event.world, event.rand, event.chunkX, event.chunkZ, event.hasVillageGenerated, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.CUSTOM );
+      boolean doGen = TerrainGen.populate( event.chunkProvider, event.world, event.rand, event.chunkX, event.chunkZ, event.hasVillageGenerated, PopulateChunkEvent.Populate.EventType.CUSTOM );
 
-      if( !doGen )
-        return;
+      if( !doGen ) {
+          return;
+      }
 
       int worldX = event.chunkX << 4;
       int worldZ = event.chunkZ << 4;
@@ -173,19 +181,22 @@ public class OilGeneratorFix extends ModFixBase
       
       int r = rand.nextInt(tMaxRadius + 1 - tMinRadius) + tMinRadius;
       
-      if( ( testFirst ) && ( checkOilPresent( world, x, cy, z, r ) ) )
-        return;
+      if( testFirst && checkOilPresent( world, x, cy, z, r )) {
+          return;
+      }
 
-      if( YAMCore.isDebug() )
-        _mLog.info( String.format( "About to generate OilSphere, centered at %d/%d/%d, radius %d", x, cy, z, r ) );
+      if( YAMCore.isDebug() ) {
+          _mLog.info(String.format("About to generate OilSphere, centered at %d/%d/%d, radius %d", x, cy, z, r));
+      }
 
       // Taken from BuildCraft; Dont' generate if topblock is at y = 5
       // Should already be covered in shouldSpawnOil, but you never know..
       int groundLevel = getTopBlock( world, x, z );
       if( groundLevel < 5 )
       {
-        if( YAMCore.isDebug() )
-          _mLog.warn( "OilGenerator stopped; World-height is below 5" );
+        if( YAMCore.isDebug() ) {
+            _mLog.warn("OilGenerator stopped; World-height is below 5");
+        }
         return;
       }
 
@@ -197,7 +208,7 @@ public class OilGeneratorFix extends ModFixBase
   {
     // Make sure to not exceed the max-build height of minecraft
 
-    EDEPOSIT_SIZE eSize = EDEPOSIT_SIZE.SMALL;
+    EDEPOSIT_SIZE eSize;
     int tSpringHeight = 0;
 
     if( pRadius >= MainRegistry.CoreConfig.OilFixConfig.OilDepositThresholdLarge )
@@ -210,14 +221,16 @@ public class OilGeneratorFix extends ModFixBase
       tSpringHeight = MainRegistry.CoreConfig.OilFixConfig.OilFountainSizeSmall;
       eSize = EDEPOSIT_SIZE.MEDIUM;
     }
-    else
-      eSize = EDEPOSIT_SIZE.SMALL;
+    else {
+        eSize = EDEPOSIT_SIZE.SMALL;
+    }
 
     int pMaxHeight = pGroundLevel + tSpringHeight;
     if( pMaxHeight >= pWorld.getActualHeight() - 1 )
     {
-      if( YAMCore.isDebug() )
-        _mLog.warn( "The total height of the calculated OilDeposit would exceed the maximum world-size." );
+      if( YAMCore.isDebug() ) {
+          _mLog.warn("The total height of the calculated OilDeposit would exceed the maximum world-size.");
+      }
       return;
     }
 
@@ -291,17 +304,17 @@ public class OilGeneratorFix extends ModFixBase
       if( !tBlock.isAir( pWorld, pLocX, y, pLocZ ) )
       {
 
-        if( ( tBlock instanceof BlockStaticLiquid ) )
+        if(tBlock instanceof BlockStaticLiquid)
         {
           return y;
         }
 
-        if( ( tBlock instanceof BlockFluidBase ) )
+        if(tBlock instanceof BlockFluidBase)
         {
           return y;
         }
 
-        if( ( tBlock instanceof IFluidBlock ) )
+        if(tBlock instanceof IFluidBlock)
         {
           return y;
         }
@@ -347,8 +360,9 @@ public class OilGeneratorFix extends ModFixBase
                       if( !checkBlockAbove( pWorld, bx + pLocX, by + pLocY + 1, bz + pLocZ ) )
                       {
 
-                        if( pWorld.getBlock( bx + pLocX, by + pLocY, bz + pLocZ ) == _mBuildCraftOilBlock )
-                          return true;
+                        if( pWorld.getBlock( bx + pLocX, by + pLocY, bz + pLocZ ) == _mBuildCraftOilBlock ) {
+                            return true;
+                        }
                       }
                     }
                   }
@@ -364,14 +378,9 @@ public class OilGeneratorFix extends ModFixBase
 
   // This is supposed to check if the block in question to be replaced is NOT air, and if it's a liquid
   // that it is NOT our BC oil. (The logic in checkOilPresent is inverted)
-  private boolean checkBlock( World pWorld, int pLocX, int pLocY, int pLocZ )
-  {
-    Block tBlock = pWorld.getBlock( pLocX, pLocY, pLocZ );
-    if( tBlock.getMaterial() == Material.air )
-    {
-      return true;
-    }
-    return ( ( tBlock instanceof net.minecraft.block.BlockLiquid ) ) && ( tBlock != _mBuildCraftOilBlock );
+  private boolean checkBlock( World pWorld, int pLocX, int pLocY, int pLocZ ) {
+    Block tBlock = pWorld.getBlock(pLocX, pLocY, pLocZ);
+    return tBlock.getMaterial() == Material.air || tBlock instanceof BlockLiquid && tBlock != _mBuildCraftOilBlock;
   }
 
   // This is supposed to make sure no falling blocks are above the block to be placed,
@@ -379,11 +388,11 @@ public class OilGeneratorFix extends ModFixBase
   private static boolean checkBlockAbove( World pWorld, int pLocX, int pLocY, int pLocZ )
   {
     Block tBlock = pWorld.getBlock( pLocX, pLocY, pLocZ );
-    if( ( tBlock instanceof net.minecraft.block.BlockSand ) )
+    if(tBlock instanceof BlockSand)
     {
       return true;
     }
-    if( ( tBlock instanceof net.minecraft.block.BlockGravel ) )
+    if(tBlock instanceof BlockGravel)
     {
       return true;
     }
@@ -396,8 +405,9 @@ public class OilGeneratorFix extends ModFixBase
     // Limited to Whitelisted Dimensions
     if( !MainRegistry.CoreConfig.OilFixConfig.OilDimensionWhitelist.contains( pWorld.provider.dimensionId ) )
     {
-      if( YAMCore.isDebug() )
-        _mLog.info( String.format( "Not generating OilDeposit; Dimension is not Whitelisted %d", pWorld.provider.dimensionId ) );
+      if( YAMCore.isDebug() ) {
+          _mLog.info(String.format("Not generating OilDeposit; Dimension is not Whitelisted %d", pWorld.provider.dimensionId));
+      }
       return false;
     }
 
@@ -406,8 +416,9 @@ public class OilGeneratorFix extends ModFixBase
     // Skip blacklisted DimensionIDs
     if( MainRegistry.CoreConfig.OilFixConfig.OilBiomeIDBlackList.contains( biomegenbase.biomeID ) )
     {
-      if( YAMCore.isDebug() )
-        _mLog.info( String.format( "Not generating OilDeposit; BiomeID %d is Blacklisted", biomegenbase.biomeID ) );
+      if( YAMCore.isDebug() ) {
+          _mLog.info(String.format("Not generating OilDeposit; BiomeID %d is Blacklisted", biomegenbase.biomeID));
+      }
       return false;
     }
 
@@ -427,17 +438,18 @@ public class OilGeneratorFix extends ModFixBase
       randMod *= 1.8D;
     }
 
-    if( MainRegistry.CoreConfig.OilFixConfig.OilBoostBiomes.contains( biomegenbase.biomeID ) )
-      randMod *= MainRegistry.CoreConfig.OilFixConfig.OilBiomeBoostFactor;
+    if( MainRegistry.CoreConfig.OilFixConfig.OilBoostBiomes.contains( biomegenbase.biomeID ) ) {
+        randMod *= MainRegistry.CoreConfig.OilFixConfig.OilBiomeBoostFactor;
+    }
 
     boolean flag1 = pRand.nextDouble() <= randMod;
     boolean flag2 = pRand.nextDouble() <= randMod;
 
-    if( ( flag1 ) || ( flag2 ) )
+    if( flag1 || flag2)
     {
-      pPos.yCoord = ( 17 + pRand.nextInt( 10 ) + pRand.nextInt( 5 ) );
-      pPos.xCoord = ( pX + pRand.nextInt( 16 ) );
-      pPos.zCoord = ( pZ + pRand.nextInt( 16 ) );
+      pPos.yCoord = 17 + pRand.nextInt( 10 ) + pRand.nextInt( 5 );
+      pPos.xCoord = pX + pRand.nextInt( 16 );
+      pPos.zCoord = pZ + pRand.nextInt( 16 );
       return true;
     }
     return false;

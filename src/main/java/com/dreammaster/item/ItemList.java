@@ -500,10 +500,12 @@ public enum ItemList
     // ################################################################################
     public ModSimpleBaseItem Item;
 
-    private ItemList(ModSimpleBaseItem pItem)
+    ItemList(ModSimpleBaseItem pItem)
     {
         Item = pItem;
-        if (Item != null) Item.setModIDName(Refstrings.MODID);
+        if (Item != null) {
+            Item.setModIDName(Refstrings.MODID);
+        }
     }
 
     public static boolean AddToItemManager(ModItemManager pItemManager)
@@ -511,10 +513,11 @@ public enum ItemList
         boolean tResult = true;
         for (ItemList il : ItemList.values())
         {
-            if (il.Item != null) if (!pItemManager.AddItemToManagedRegistry(il.Item))
-            {
-                MainRegistry.Logger.error(String.format("Item [%s] failed to register", il.toString()));
-                tResult = false;
+            if (il.Item != null) {
+                if (!pItemManager.AddItemToManagedRegistry(il.Item)) {
+                    MainRegistry.Logger.error(String.format("Item [%s] failed to register", il.toString()));
+                    tResult = false;
+                }
             }
         }
 

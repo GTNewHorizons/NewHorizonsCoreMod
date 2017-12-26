@@ -17,9 +17,9 @@ public class CustomToolTipsCommand implements ICommand
 
     public CustomToolTipsCommand()
     {
-        this.aliases = new ArrayList();
-        this.aliases.add("ctooltip");
-        this.aliases.add("ctt");
+        aliases = new ArrayList();
+        aliases.add("ctooltip");
+        aliases.add("ctt");
     }
 
     @Override
@@ -44,7 +44,7 @@ public class CustomToolTipsCommand implements ICommand
     public List getCommandAliases()
     {
 
-        return this.aliases;
+        return aliases;
     }
 
 
@@ -53,44 +53,45 @@ public class CustomToolTipsCommand implements ICommand
     {
         if (pArgs.length == 0)
         {
-            if (InGame(pCmdSender))
+            if (InGame(pCmdSender)) {
                 PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /customtooltips help for help");
-            else
+            } else {
                 PlayerChatHelper.SendPlain(pCmdSender, "[CTT] Syntax error. Type /customtooltips help for help");
+            }
             return;
         }
-        else if (pArgs[0].equalsIgnoreCase("help"))
+        else if ("help".equalsIgnoreCase(pArgs[0]))
         {
             SendHelpToPlayer(pCmdSender);
         }
-        else if (pArgs[0].equalsIgnoreCase("reload"))
+        else if ("reload".equalsIgnoreCase(pArgs[0]))
         {
             boolean tFlag = MainRegistry.Module_CustomToolTips.reload();
             if (!tFlag)
             {
-                if (!InGame(pCmdSender))
+                if (!InGame(pCmdSender)) {
                     PlayerChatHelper.SendPlain(pCmdSender, "[CTT] Reload failed. Check your log for syntax errors");
-                else
+                } else {
                     PlayerChatHelper.SendWarn(pCmdSender, "Reload failed. Check your log for syntax errors");
+                }
             }
             else
             {
-                if (!InGame(pCmdSender))
+                if (!InGame(pCmdSender)) {
                     PlayerChatHelper.SendPlain(pCmdSender, "[CTT] Reload done. New config is activated");
-                else
+                } else {
                     PlayerChatHelper.SendInfo(pCmdSender, "Reload done. New config is activated");
+                }
             }
         }
-        else
+        else {
             SendHelpToPlayer(pCmdSender);
+        }
     }
 
     private boolean InGame(ICommandSender pCmdSender)
     {
-        if (!(pCmdSender instanceof EntityPlayer))
-            return false;
-        else
-            return true;
+        return pCmdSender instanceof EntityPlayer;
     }
 
     private void SendHelpToPlayer(ICommandSender pCmdSender)
@@ -115,10 +116,9 @@ public class CustomToolTipsCommand implements ICommand
     		//boolean tIncreative = tEP.capabilities.isCreativeMode;
     		return tPlayerOpped; // && tIncreative;
     	}
-    	else if (pCommandSender instanceof MinecraftServer)
-    		return true;
-    	else
-    		return false;
+    	else {
+            return pCommandSender instanceof MinecraftServer;
+        }
     }
 
     @Override

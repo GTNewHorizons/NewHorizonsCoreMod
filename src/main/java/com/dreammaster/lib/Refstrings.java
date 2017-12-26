@@ -1,6 +1,6 @@
 package com.dreammaster.lib;
 
-public class Refstrings {
+public final class Refstrings {
 	
 	public static final String MODID = "dreamcraft";		
 	public static final String NAME = "GT: New Horizons";
@@ -9,4 +9,5 @@ public class Refstrings {
 	public static final String SERVERSIDE = "com.dreammaster.main.CommonProxy";
 	public static final String COLLECTIONID = "GTNewHorizons";
 
+    private Refstrings() {}
 }

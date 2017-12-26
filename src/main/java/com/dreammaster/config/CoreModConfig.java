@@ -2,7 +2,7 @@
 package com.dreammaster.config;
 
 
-import com.dreammaster.modfixes.oilgen.OilGeneratorFix.OilConfig;
+import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 import eu.usrv.yamcore.config.ConfigManager;
 
 import java.io.File;
@@ -29,7 +29,7 @@ public class CoreModConfig extends ConfigManager
   public String[] SkullFireSwordEntityTargets;
   public String[] BlacklistedTileEntiyClassNames;
 
-  public OilConfig OilFixConfig;
+  public OilGeneratorFix.OilConfig OilFixConfig;
 
   @Override
   protected void PreInit()
@@ -64,7 +64,7 @@ public class CoreModConfig extends ConfigManager
     AvaritiaFixEnabled = _mainConfig.getBoolean( "AvaritiaFixEnabled", "ModFixes", AvaritiaFixEnabled, "Set to true to enable the modfix for Avaritia SkullFireSword" );
     SkullFireSwordEntityTargets = _mainConfig.getStringList( "Avaritia_SkullFireSwordEntityTargets", "ModFixes.Avaritia", SkullFireSwordEntityTargets, "The Canonical Class-Name of the Entity" );
     BlacklistedTileEntiyClassNames = _mainConfig.getStringList( "BlacklistedTileEntiyClassNames", "Modules.Worldaccelerator", BlacklistedTileEntiyClassNames, "The Canonical Class-Names of TileEntities that should be ignored by the WorldAccelerator" );
-    OilFixConfig = new OilConfig( _mainConfig );
+    OilFixConfig = new OilGeneratorFix.OilConfig( _mainConfig );
   }
 
   @Override

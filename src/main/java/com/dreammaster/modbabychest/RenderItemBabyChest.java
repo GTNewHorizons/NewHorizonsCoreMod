@@ -32,7 +32,7 @@ public class RenderItemBabyChest implements IItemRenderer
     public void renderItem(ItemRenderType pItemRenderType, ItemStack pItemStack, Object... pData) 
     {
         // Scaling
-        float tScale = 1F;
+        float tScale;
         // Translating
         float tTransX = 0F, transY = 0F, transZ = 0F;
 

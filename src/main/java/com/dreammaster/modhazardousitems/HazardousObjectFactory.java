@@ -1,19 +1,10 @@
 package com.dreammaster.modhazardousitems;
 
-import com.dreammaster.modhazardousitems.HazardousItems.HazardousFluid;
-import com.dreammaster.modhazardousitems.HazardousItems.HazardousItem;
-import com.dreammaster.modhazardousitems.HazardousItems.ItmDamageEffect;
-import com.dreammaster.modhazardousitems.HazardousItems.ItmPotionEffect;
-
 public class HazardousObjectFactory
 {
-    public HazardousObjectFactory()
+    public HazardousItems.HazardousFluid createHazardousFluid(String pFluidName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory)
     {
-    }
-
-    public HazardousFluid createHazardousFluid(String pFluidName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory)
-    {
-        HazardousFluid hi = new HazardousFluid();
+        HazardousItems.HazardousFluid hi = new HazardousItems.HazardousFluid();
         hi.setFluidName(pFluidName);
         hi.setExactMatch(pExactMatch);
         hi.setCheckInventory(pOnInventory);
@@ -21,9 +12,9 @@ public class HazardousObjectFactory
         return hi;
     }
 
-    public HazardousItem createHazardousItemsHazardousItem(String pItemName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory)
+    public HazardousItems.HazardousItem createHazardousItemsHazardousItem(String pItemName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory)
     {
-        HazardousItem hi = new HazardousItem();
+        HazardousItems.HazardousItem hi = new HazardousItems.HazardousItem();
         hi.setItemName(pItemName);
         hi.setExactMatch(pExactMatch);
         hi.setCheckInventory(pOnInventory);
@@ -31,9 +22,9 @@ public class HazardousObjectFactory
         return hi;
     }
 
-    public ItmDamageEffect createDamageEffect(Float pAmount, String pSource)
+    public HazardousItems.ItmDamageEffect createDamageEffect(Float pAmount, String pSource)
     {
-        ItmDamageEffect dEf = new ItmDamageEffect();
+        HazardousItems.ItmDamageEffect dEf = new HazardousItems.ItmDamageEffect();
 
         dEf.setAmount(pAmount);
         dEf.setDamageSource(pSource);
@@ -41,9 +32,9 @@ public class HazardousObjectFactory
         return dEf;
     }
 
-    public ItmPotionEffect createPotionEffect(int pDuration, int pPotionID, int pLevel)
+    public HazardousItems.ItmPotionEffect createPotionEffect(int pDuration, int pPotionID, int pLevel)
     {
-        ItmPotionEffect pEf = new ItmPotionEffect();
+        HazardousItems.ItmPotionEffect pEf = new HazardousItems.ItmPotionEffect();
 
         pEf.setDuration(pDuration);
         pEf.setId(pPotionID);

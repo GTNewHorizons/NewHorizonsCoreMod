@@ -4,8 +4,8 @@ package com.dreammaster.gthandler.accelerator;
 import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import gregtech.api.enums.Textures;
-import gregtech.api.enums.Textures.BlockIcons.CustomIcon;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -30,20 +30,20 @@ import static gregtech.api.enums.GT_Values.V;
 public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_TieredMachineBlock
 {
   private byte mMode = 0; // 0: RandomTicks around 1: TileEntities with range 1
-  private static CustomIcon _mGTIco_Norm_Idle;
-  private static CustomIcon _mGTIco_Norm_Active;
-  private static CustomIcon _mGTIco_TE_Idle;
-  private static CustomIcon _mGTIco_TE_Active;
+  private static Textures.BlockIcons.CustomIcon _mGTIco_Norm_Idle;
+  private static Textures.BlockIcons.CustomIcon _mGTIco_Norm_Active;
+  private static Textures.BlockIcons.CustomIcon _mGTIco_TE_Idle;
+  private static Textures.BlockIcons.CustomIcon _mGTIco_TE_Active;
   private static int[] mAccelerateStatic = { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 512, 512, 512, 512, 512, 512 };
 
   @Override
   public void registerIcons( IIconRegister aBlockIconRegister )
   {
     super.registerIcons( aBlockIconRegister );
-    _mGTIco_Norm_Idle = new CustomIcon( "iconsets/OVERLAY_ACCELERATOR" );
-    _mGTIco_Norm_Active = new CustomIcon( "iconsets/OVERLAY_ACCELERATOR_ACTIVE" );
-    _mGTIco_TE_Idle = new CustomIcon( "iconsets/OVERLAY_ACCELERATOR_TE" );
-    _mGTIco_TE_Active = new CustomIcon( "iconsets/OVERLAY_ACCELERATOR_TE_ACTIVE" );
+    _mGTIco_Norm_Idle = new Textures.BlockIcons.CustomIcon( "iconsets/OVERLAY_ACCELERATOR" );
+    _mGTIco_Norm_Active = new Textures.BlockIcons.CustomIcon( "iconsets/OVERLAY_ACCELERATOR_ACTIVE" );
+    _mGTIco_TE_Idle = new Textures.BlockIcons.CustomIcon( "iconsets/OVERLAY_ACCELERATOR_TE" );
+    _mGTIco_TE_Active = new Textures.BlockIcons.CustomIcon( "iconsets/OVERLAY_ACCELERATOR_TE_ACTIVE" );
   }
 
   @SideOnly( Side.CLIENT )
@@ -90,10 +90,11 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   @Override
   public ITexture[] getTexture( IGregTechTileEntity pBaseMetaTileEntity, byte pSide, byte pFacing, byte pColorIndex, boolean pActive, boolean pRedstone )
   {
-    if( mMode == 0 )
-      return new ITexture[] { Textures.BlockIcons.MACHINE_CASINGS[mTier][pColorIndex + 1], ( pSide < 2 ) ? null : pActive ? new GT_RenderedTexture( _mGTIco_Norm_Active ) : new GT_RenderedTexture( _mGTIco_Norm_Idle ) };
-    else
-      return new ITexture[] { Textures.BlockIcons.MACHINE_CASINGS[mTier][pColorIndex + 1], ( pSide < 2 ) ? null : pActive ? new GT_RenderedTexture( _mGTIco_TE_Active ) : new GT_RenderedTexture( _mGTIco_TE_Idle ) };
+    if( mMode == 0 ) {
+        return new ITexture[]{Textures.BlockIcons.MACHINE_CASINGS[mTier][pColorIndex + 1], pSide < 2 ? null : pActive ? new GT_RenderedTexture(_mGTIco_Norm_Active) : new GT_RenderedTexture(_mGTIco_Norm_Idle)};
+    } else {
+        return new ITexture[]{Textures.BlockIcons.MACHINE_CASINGS[mTier][pColorIndex + 1], pSide < 2 ? null : pActive ? new GT_RenderedTexture(_mGTIco_TE_Active) : new GT_RenderedTexture(_mGTIco_TE_Idle)};
+    }
   }
 
   @Override
@@ -192,7 +193,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   {
     mMode = (byte) ( mMode == 0x00 ? 0x01 : 0x00 );
     markDirty();
-    eu.usrv.yamcore.auxiliary.PlayerChatHelper.SendInfo( pPlayer, String.format( "Switched mode to: %s", mModeStr[mMode] ) );
+    PlayerChatHelper.SendInfo( pPlayer, String.format( "Switched mode to: %s", mModeStr[mMode] ) );
   }
 
   @Override
@@ -200,18 +201,20 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   {
     try
     {
-      if( !pBaseMetaTileEntity.isServerSide() )
-        return;
+      if( !pBaseMetaTileEntity.isServerSide() ) {
+          return;
+      }
 
-      long tEnergyDemand = getEnergyDemand( mTier, ( mMode == 1 ) );
+      long tEnergyDemand = getEnergyDemand( mTier, mMode == 1);
       //  public static final long[] V = new long[]{8, 32, 128, 512, 2048, 8192, 32768, 131072, 524288, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE};
 
       // Do we have enough energy to run? Or are we not allowed to run?
       if( pBaseMetaTileEntity.getStoredEU() < tEnergyDemand || !pBaseMetaTileEntity.isAllowedToWork() )
       {
         // Check if machine was active before
-        if( pBaseMetaTileEntity.isActive() )
-          pBaseMetaTileEntity.setActive( false ); // Then disable it now
+        if( pBaseMetaTileEntity.isActive() ) {
+            pBaseMetaTileEntity.setActive(false); // Then disable it now
+        }
       }
       else
       {
@@ -222,18 +225,21 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
           // Limit the random ticks to once per second
           if( mMode == 0 )
           {
-            if( pTick % 20 == 0 )
-              doAccelerateNormalBlocks( pBaseMetaTileEntity, tWorld );
+            if( pTick % 20 == 0 ) {
+                doAccelerateNormalBlocks(pBaseMetaTileEntity, tWorld);
+            }
           }
-          else
-            doAccelerateTileEntities( pBaseMetaTileEntity, tWorld );
+          else {
+              doAccelerateTileEntities(pBaseMetaTileEntity, tWorld);
+          }
 
         }
         else
         {
           // Energy drain failed. Disable machine
-          if( pBaseMetaTileEntity.isActive() )
-            pBaseMetaTileEntity.setActive( false ); // Then disable it now
+          if( pBaseMetaTileEntity.isActive() ) {
+              pBaseMetaTileEntity.setActive(false); // Then disable it now
+          }
         }
       }
     }
@@ -247,21 +253,24 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   {
     try
     {
-      if( !pBaseMetaTileEntity.isActive() )
-        getBaseMetaTileEntity().setActive( true );
+      if( !pBaseMetaTileEntity.isActive() ) {
+          getBaseMetaTileEntity().setActive(true);
+      }
 
       for( ForgeDirection tDir : ForgeDirection.VALID_DIRECTIONS )
       {
         TileEntity tTile = pBaseMetaTileEntity.getTileEntityAtSide( (byte) tDir.ordinal() );
-        if( isTEBlackListed( tTile ) )
-          continue;
+        if( isTEBlackListed( tTile ) ) {
+            continue;
+        }
 
         long tMaxTime = System.nanoTime() + 1000000;
         for( int j = 0; j < mAccelerateStatic[mTier]; j++ )
         {
           tTile.updateEntity();
-          if( System.nanoTime() > tMaxTime )
-            break;
+          if( System.nanoTime() > tMaxTime ) {
+              break;
+          }
         }
       }
     }
@@ -271,28 +280,35 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     }
   }
 
-  private static List<String> _mBlacklistedTileEntities = new ArrayList<String>();
+  private static List<String> _mBlacklistedTileEntities = new ArrayList<>();
 
   // Inspired by ChromatiCraft's TileAccelerator
   private boolean isTEBlackListed( TileEntity pTile )
   {
-    if( pTile == null )
-      return true; // Obvious
-    if( !pTile.canUpdate() )
-      return true; // Skip if TE can't update at all
-    if( pTile.isInvalid() )
-      return true; // Obvious
+    if( pTile == null ) {
+        return true; // Obvious
+    }
+    if( !pTile.canUpdate() ) {
+        return true; // Skip if TE can't update at all
+    }
+    if( pTile.isInvalid() ) {
+        return true; // Obvious
+    }
 
     String tSimpleClassName = pTile.getClass().getSimpleName().toLowerCase();
     String tCanonicalName = pTile.getClass().getCanonicalName().toLowerCase();
-    if( tSimpleClassName.contains( "conduit" ) || tSimpleClassName.contains( "wire" ) || tSimpleClassName.contains( "cable" ) )
-      return true;
+    if( tSimpleClassName.contains( "conduit" ) || tSimpleClassName.contains( "wire" ) || tSimpleClassName.contains( "cable" ) ) {
+        return true;
+    }
     if( tCanonicalName.contains( "appeng" ) || tCanonicalName.contains( "gregtech" ) ) // Don't accelerate ANY gregtech machines
-      return true;
+    {
+        return true;
+    }
     for( String tS : MainRegistry.CoreConfig.BlacklistedTileEntiyClassNames )
     {
-      if( tCanonicalName.equalsIgnoreCase( tS ) )
-        return true;
+      if( tCanonicalName.equalsIgnoreCase( tS ) ) {
+          return true;
+      }
     }
 
     return false;
@@ -306,8 +322,9 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
    */
   private void doAccelerateNormalBlocks( IGregTechTileEntity pBaseMetaTileEntity, World pWorld )
   {
-    if( !pBaseMetaTileEntity.isActive() )
-      getBaseMetaTileEntity().setActive( true );
+    if( !pBaseMetaTileEntity.isActive() ) {
+        getBaseMetaTileEntity().setActive(true);
+    }
 
     Random rnd = new Random();
     int tX = pBaseMetaTileEntity.getXCoord();
@@ -321,10 +338,13 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     int tZ1 = tZ - mTier;
     int tZ2 = tZ + mTier;
 
-    for( int xi = tX1; xi <= tX2; xi++ )
-      for( int yi = tY1; yi <= tY2; yi++ )
-        for( int zi = tZ1; zi <= tZ2; zi++ )
-          tryTickBlock( pWorld, xi, yi, zi, rnd );
+    for( int xi = tX1; xi <= tX2; xi++ ) {
+        for (int yi = tY1; yi <= tY2; yi++) {
+            for (int zi = tZ1; zi <= tZ2; zi++) {
+                tryTickBlock(pWorld, xi, yi, zi, rnd);
+            }
+        }
+    }
 
   }
 
@@ -344,8 +364,9 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
       for( int j = 0; j < mTier; j++ )
       {
         Block tBlock = pWorld.getBlock( pX, pY, pZ );
-        if( tBlock.getTickRandomly() )
-          tBlock.updateTick( pWorld, pX, pY, pZ, pRnd );
+        if( tBlock.getTickRandomly() ) {
+            tBlock.updateTick(pWorld, pX, pY, pZ, pRnd);
+        }
       }
     }
     catch( Exception e )

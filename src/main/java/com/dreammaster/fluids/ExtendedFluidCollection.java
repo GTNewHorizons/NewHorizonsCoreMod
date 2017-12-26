@@ -9,15 +9,19 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.Fluid;
 
-public class ExtendedFluidCollection
+public final class ExtendedFluidCollection
 {
-    final static boolean bop_loaded= Loader.isModLoaded("BiomesOPlenty");
+    static final boolean bop_loaded= Loader.isModLoaded("BiomesOPlenty");
 
     private static ModSimpleBaseFluid _mAmmonia;
+
+    private ExtendedFluidCollection() {}
+
     public static ModSimpleBaseFluid getAmmonia()
     {
-        if (_mAmmonia == null)
+        if (_mAmmonia == null) {
             populateAmmonia();
+        }
         
         return _mAmmonia;
     }
@@ -56,8 +60,9 @@ public class ExtendedFluidCollection
     private static ModSimpleBaseFluid _mNitricAcid;
     public static ModSimpleBaseFluid getNitricAcid()
     {
-        if (_mNitricAcid == null)
+        if (_mNitricAcid == null) {
             populateNitricAcid();
+        }
 
         return _mNitricAcid;
     }
@@ -96,8 +101,9 @@ public class ExtendedFluidCollection
     private static ModSimpleBaseFluid _mFermentedBacterialSludge;
     public static ModSimpleBaseFluid getFermentedBacterialSludge()
     {
-        if (_mFermentedBacterialSludge == null)
+        if (_mFermentedBacterialSludge == null) {
             populateFermentedBacterialSludge();
+        }
 
         return _mFermentedBacterialSludge;
     }
@@ -137,8 +143,9 @@ public class ExtendedFluidCollection
     private static ModSimpleBaseFluid _mEnrichedBacterialSludge;
     public static ModSimpleBaseFluid getEnrichedBacterialSludge()
     {
-        if (_mEnrichedBacterialSludge == null)
+        if (_mEnrichedBacterialSludge == null) {
             populateEnrichedBacterialSludge();
+        }
 
         return _mEnrichedBacterialSludge;
     }
@@ -178,8 +185,9 @@ public class ExtendedFluidCollection
     private static ModSimpleBaseFluid _mCompressedOxygen;
     public static ModSimpleBaseFluid getCompressedOxygen()
     {
-        if (_mCompressedOxygen == null)
+        if (_mCompressedOxygen == null) {
             populateCompressedOxygen();
+        }
 
         return _mCompressedOxygen;
     }
@@ -218,8 +226,9 @@ public class ExtendedFluidCollection
     private static ModSimpleBaseFluid _mCompressedNitrogen;
     public static ModSimpleBaseFluid getCompressedNitrogen()
     {
-        if (_mCompressedNitrogen == null)
+        if (_mCompressedNitrogen == null) {
             populateCompressedNitrogen();
+        }
 
         return _mCompressedNitrogen;
     }
@@ -257,8 +266,9 @@ public class ExtendedFluidCollection
     private static ModSimpleBaseFluid _mPollution;
     public static ModSimpleBaseFluid getPollution()
     {
-        if (_mPollution == null)
+        if (_mPollution == null) {
             populatePollution();
+        }
 
         return _mPollution;
     }

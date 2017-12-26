@@ -19,23 +19,25 @@ public class HazardousItems
 {
 
   @XmlElement( name = "Item" )
-  protected List<HazardousItems.HazardousItem> hazardousItem;
+  protected List<HazardousItem> hazardousItem;
 
   @XmlElement( name = "Fluid" )
-  protected List<HazardousItems.HazardousFluid> hazardousFluid;
+  protected List<HazardousFluid> hazardousFluid;
 
-  public List<HazardousItems.HazardousFluid> getHazardousFluids()
+  public List<HazardousFluid> getHazardousFluids()
   {
-    if( hazardousFluid == null )
-      hazardousFluid = new ArrayList<HazardousItems.HazardousFluid>();
+    if( hazardousFluid == null ) {
+        hazardousFluid = new ArrayList<>();
+    }
 
     return hazardousFluid;
   }
 
-  public List<HazardousItems.HazardousItem> getHazardousItems()
+  public List<HazardousItem> getHazardousItems()
   {
-    if( hazardousItem == null )
-      hazardousItem = new ArrayList<HazardousItems.HazardousItem>();
+    if( hazardousItem == null ) {
+        hazardousItem = new ArrayList<>();
+    }
 
     return hazardousItem;
   }
@@ -50,8 +52,9 @@ public class HazardousItems
   {
     for( HazardousFluid hf : hazardousFluid )
     {
-      if( hf.fluidName.equals( pFluidName ) )
-        return hf;
+      if( hf.fluidName.equals( pFluidName ) ) {
+          return hf;
+      }
     }
 
     return null;
@@ -67,8 +70,9 @@ public class HazardousItems
   {
     for( HazardousItem hi : hazardousItem )
     {
-      if( hi.itemName.equals( pItemName ) )
-        return hi;
+      if( hi.itemName.equals( pItemName ) ) {
+          return hi;
+      }
     }
 
     return null;
@@ -84,7 +88,7 @@ public class HazardousItems
   {
     try
     {
-      List<HazardousItems.HazardousItem> tNewList = new ArrayList<HazardousItems.HazardousItem>();
+      List<HazardousItem> tNewList = new ArrayList<>();
 
       for( HazardousItem hi : hazardousItem )
       {
@@ -92,8 +96,9 @@ public class HazardousItems
         {
           // Exact match
           // if (hi.itemName.equals(pInHand.getUnlocalizedName()))
-          if( hi.itemName.equals( ItemDescriptor.fromItem( pInHand.getItem() ) ) )
-            continue; // Dont read to new list
+          if( hi.itemName.equals( ItemDescriptor.fromItem( pInHand.getItem() ) ) ) {
+              continue; // Dont read to new list
+          }
         }
         else
         {
@@ -105,8 +110,9 @@ public class HazardousItems
             // pInHand.getUnlocalizedName().toLowerCase();
             String p2 = ItemDescriptor.fromItem( pInHand.getItem() ).toString().toLowerCase();
 
-            if( p2.contains( p1 ) )
-              continue;
+            if( p2.contains( p1 ) ) {
+                continue;
+            }
           }
         }
 
@@ -133,7 +139,7 @@ public class HazardousItems
   {
     try
     {
-      List<HazardousItems.HazardousFluid> tNewList = new ArrayList<HazardousItems.HazardousFluid>();
+      List<HazardousFluid> tNewList = new ArrayList<>();
       Fluid tContainerFluid = FluidHelper.getFluidFromContainer( pInHand );
 
       for( HazardousFluid hi : hazardousFluid )
@@ -141,8 +147,9 @@ public class HazardousItems
         if( hi.exactMatch )
         {
           // Exact match
-          if( hi.fluidName.equals( tContainerFluid.getName() ) )
-            continue; // Dont read to new list
+          if( hi.fluidName.equals( tContainerFluid.getName() ) ) {
+              continue; // Dont read to new list
+          }
         }
         else
         {
@@ -152,8 +159,9 @@ public class HazardousItems
             String p1 = hi.fluidName.toLowerCase();
             String p2 = tContainerFluid.getName().toLowerCase();
 
-            if( p2.contains( p1 ) )
-              continue;
+            if( p2.contains( p1 ) ) {
+                continue;
+            }
           }
         }
 
@@ -182,11 +190,12 @@ public class HazardousItems
   {
     for( HazardousItem hi : hazardousItem )
     {
-      String p1 = pIgnoreCase == true ? hi.itemName.toLowerCase() : hi.itemName;
-      String p2 = pIgnoreCase == true ? pSearchString.toLowerCase() : pSearchString;
+      String p1 = pIgnoreCase ? hi.itemName.toLowerCase() : hi.itemName;
+      String p2 = pIgnoreCase ? pSearchString.toLowerCase() : pSearchString;
 
-      if( p1.contains( p2 ) )
-        return hi;
+      if( p1.contains( p2 ) ) {
+          return hi;
+      }
     }
 
     return null;
@@ -204,13 +213,14 @@ public class HazardousItems
   {
     for( HazardousFluid hi : hazardousFluid )
     {
-      String p1 = pIgnoreCase == true ? hi.fluidName.toLowerCase()
+      String p1 = pIgnoreCase ? hi.fluidName.toLowerCase()
           : hi.fluidName;
-      String p2 = pIgnoreCase == true ? pSearchString.toLowerCase()
+      String p2 = pIgnoreCase ? pSearchString.toLowerCase()
           : pSearchString;
 
-      if( p1.contains( p2 ) )
-        return hi;
+      if( p1.contains( p2 ) ) {
+          return hi;
+      }
     }
 
     return null;
@@ -231,8 +241,9 @@ public class HazardousItems
         // Exact match
         // if (hi.itemName.equals(pItemStack.getUnlocalizedName()))
         if( hi.itemName.equals( ItemDescriptor.fromStack( pItemStack )
-            .toString() ) )
-          return hi;
+            .toString() ) ) {
+            return hi;
+        }
       }
       else
       {
@@ -242,8 +253,9 @@ public class HazardousItems
         String p2 = ItemDescriptor.fromStack( pItemStack ).toString()
             .toLowerCase();
 
-        if( p2.contains( p1 ) )
-          return hi;
+        if( p2.contains( p1 ) ) {
+            return hi;
+        }
       }
     }
 
@@ -259,19 +271,22 @@ public class HazardousItems
   public HazardousFluid FindHazardousFluid( ItemStack pItemStack )
   {
     FluidStack tStackFluid = FluidHelper.getFluidStackFromContainer( pItemStack );
-    if( tStackFluid == null )
-      return null;
+    if( tStackFluid == null ) {
+        return null;
+    }
 
-    if( tStackFluid.amount == 0 )
-      return null;
+    if( tStackFluid.amount == 0 ) {
+        return null;
+    }
 
     for( HazardousFluid hi : hazardousFluid )
     {
       if( hi.exactMatch )
       {
         // Exact match
-        if( hi.fluidName.equals( tStackFluid.getFluid().getName() ) )
-          return hi;
+        if( hi.fluidName.equals( tStackFluid.getFluid().getName() ) ) {
+            return hi;
+        }
       }
       else
       {
@@ -279,8 +294,9 @@ public class HazardousItems
         String p1 = hi.fluidName.toLowerCase();
         String p2 = tStackFluid.getFluid().getName().toLowerCase();
 
-        if( p2.contains( p1 ) )
-          return hi;
+        if( p2.contains( p1 ) ) {
+            return hi;
+        }
       }
     }
 
@@ -303,9 +319,9 @@ public class HazardousItems
     protected boolean checkInventory;
 
     @XmlElement( name = "DamageEffect" )
-    protected List<HazardousItems.ItmDamageEffect> damageEffect;
+    protected List<ItmDamageEffect> damageEffect;
     @XmlElement( name = "PotionEffect" )
-    protected List<HazardousItems.ItmPotionEffect> potionEffect;
+    protected List<ItmPotionEffect> potionEffect;
 
     public void setCheckInventory( boolean pVal )
     {
@@ -334,7 +350,7 @@ public class HazardousItems
 
     public void setItemName( String value )
     {
-      this.itemName = value;
+        itemName = value;
     }
 
     public boolean getExactMatch()
@@ -344,25 +360,27 @@ public class HazardousItems
 
     public void setExactMatch( boolean value )
     {
-      this.exactMatch = value;
+        exactMatch = value;
     }
 
-    public List<HazardousItems.ItmPotionEffect> getPotionEffects()
+    @Override
+    public List<ItmPotionEffect> getPotionEffects()
     {
       if( potionEffect == null )
       {
-        potionEffect = new ArrayList<HazardousItems.ItmPotionEffect>();
+        potionEffect = new ArrayList<>();
       }
-      return this.potionEffect;
+      return potionEffect;
     }
 
-    public List<HazardousItems.ItmDamageEffect> getDamageEffects()
+    @Override
+    public List<ItmDamageEffect> getDamageEffects()
     {
       if( damageEffect == null )
       {
-        damageEffect = new ArrayList<HazardousItems.ItmDamageEffect>();
+        damageEffect = new ArrayList<>();
       }
-      return this.damageEffect;
+      return damageEffect;
     }
   }
 
@@ -382,9 +400,9 @@ public class HazardousItems
     protected boolean checkInventory;
 
     @XmlElement( name = "DamageEffect" )
-    protected List<HazardousItems.ItmDamageEffect> damageEffect;
+    protected List<ItmDamageEffect> damageEffect;
     @XmlElement( name = "PotionEffect" )
-    protected List<HazardousItems.ItmPotionEffect> potionEffect;
+    protected List<ItmPotionEffect> potionEffect;
 
     public void setCheckInventory( boolean pVal )
     {
@@ -413,7 +431,7 @@ public class HazardousItems
 
     public void setFluidName( String value )
     {
-      this.fluidName = value;
+        fluidName = value;
     }
 
     public boolean getExactMatch()
@@ -423,25 +441,27 @@ public class HazardousItems
 
     public void setExactMatch( boolean value )
     {
-      this.exactMatch = value;
+        exactMatch = value;
     }
 
-    public List<HazardousItems.ItmPotionEffect> getPotionEffects()
+    @Override
+    public List<ItmPotionEffect> getPotionEffects()
     {
       if( potionEffect == null )
       {
-        potionEffect = new ArrayList<HazardousItems.ItmPotionEffect>();
+        potionEffect = new ArrayList<>();
       }
-      return this.potionEffect;
+      return potionEffect;
     }
 
-    public List<HazardousItems.ItmDamageEffect> getDamageEffects()
+    @Override
+    public List<ItmDamageEffect> getDamageEffects()
     {
       if( damageEffect == null )
       {
-        damageEffect = new ArrayList<HazardousItems.ItmDamageEffect>();
+        damageEffect = new ArrayList<>();
       }
-      return this.damageEffect;
+      return damageEffect;
     }
   }
 
@@ -462,7 +482,7 @@ public class HazardousItems
 
     public void setDamageSource( String value )
     {
-      this.damageSource = value;
+        damageSource = value;
     }
 
     public Float getAmount()
@@ -472,7 +492,7 @@ public class HazardousItems
 
     public void setAmount( Float value )
     {
-      this.amount = value;
+        amount = value;
     }
 
   }
@@ -496,7 +516,7 @@ public class HazardousItems
 
     public void setId( Integer value )
     {
-      this.id = value;
+        id = value;
     }
 
     public Integer getDuration()
@@ -506,7 +526,7 @@ public class HazardousItems
 
     public void setDuration( Integer value )
     {
-      this.duration = value;
+        duration = value;
     }
 
     public Integer getLevel()
@@ -516,7 +536,7 @@ public class HazardousItems
 
     public void setLevel( Integer value )
     {
-      this.level = value;
+        level = value;
     }
   }
 }

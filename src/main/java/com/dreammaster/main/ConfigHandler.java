@@ -11,7 +11,7 @@ import net.minecraftforge.common.MinecraftForge;
  * Created by danie_000 on 19.11.2016.
  */
 public class ConfigHandler {
-    public static final ConfigHandler ch=new ConfigHandler();
+    public static final ConfigHandler CONFIG_HANDLER =new ConfigHandler();
 
 
     @SubscribeEvent
@@ -78,6 +78,6 @@ public class ConfigHandler {
         //    if(E instanceof IOException)throw e;
         //}
 
-        MinecraftForge.EVENT_BUS.unregister(ch);
+        MinecraftForge.EVENT_BUS.unregister(CONFIG_HANDLER);
     }
 }

@@ -54,7 +54,7 @@ public class SkullFireSwordDropFix extends ModFixBase
   @Override
   public boolean getIsActive()
   {
-    return !( mSkullFireSword == null );
+    return mSkullFireSword != null;
   }
 
   /**
@@ -64,7 +64,7 @@ public class SkullFireSwordDropFix extends ModFixBase
   @Override
   public boolean init()
   {
-    return( mSkullFireSword != null );
+    return mSkullFireSword != null;
   }
 
   /**
@@ -115,36 +115,39 @@ public class SkullFireSwordDropFix extends ModFixBase
   {
     try
     {
-      if( mSkullFireSword == null )
-        return;
+      if( mSkullFireSword == null ) {
+          return;
+      }
 
       // MainRegistry.Logger.info( "SkullFireSwordDropFix::onLivingDrops" );
-      if( event.recentlyHit && ( isValidSkeletonEntity( event.entityLiving ) && ( event.source.getEntity() instanceof EntityPlayer ) ) )
+      if( event.recentlyHit && isValidSkeletonEntity( event.entityLiving ) && event.source.getEntity() instanceof EntityPlayer)
       {
         EntityPlayer player = (EntityPlayer) event.source.getEntity();
-        if( ( player.getHeldItem() != null ) && ( player.getHeldItem().getItem() == mSkullFireSword.getItem() ) )
+        if( player.getHeldItem() != null && player.getHeldItem().getItem() == mSkullFireSword.getItem())
         {
           // MainRegistry.Logger.info( "SkullFireSwordDropFix::Perform DropAction" );
 
-          if( event.drops.isEmpty() )
-            dropWitherHeadsInWorld( event, new ItemStack( Items.skull, 1, 1 ) );
-          else
+          if( event.drops.isEmpty() ) {
+              dropWitherHeadsInWorld(event, new ItemStack(Items.skull, 1, 1));
+          } else
           {
             int skulls = 0;
             for( int i = 0; i < event.drops.size(); i++ )
             {
-              EntityItem drop = (EntityItem) event.drops.get( i );
+              EntityItem drop = event.drops.get( i );
               ItemStack stack = drop.getEntityItem();
               if( stack.getItem() == Items.skull )
               {
-                if( stack.getItemDamage() == 1 )
-                  dropWitherHeadsInWorld( event, new ItemStack( Items.skull, ( skulls + 1 ), 1 ) );
-                else if( stack.getItemDamage() == 0 )
-                  dropWitherHeadsInWorld( event, new ItemStack( Items.skull, 1, 1 ) );
+                if( stack.getItemDamage() == 1 ) {
+                    dropWitherHeadsInWorld(event, new ItemStack(Items.skull, skulls + 1, 1));
+                } else if( stack.getItemDamage() == 0 ) {
+                    dropWitherHeadsInWorld(event, new ItemStack(Items.skull, 1, 1));
+                }
               }
             }
-            if( skulls == 0 )
-              dropWitherHeadsInWorld( event, new ItemStack( Items.skull, 1, 1 ) );
+            if( skulls == 0 ) {
+                dropWitherHeadsInWorld(event, new ItemStack(Items.skull, 1, 1));
+            }
           }
         }
       }

@@ -20,9 +20,9 @@ public class CustomDropsCommand implements ICommand
 
   public CustomDropsCommand()
   {
-    this.aliases = new ArrayList();
-    this.aliases.add( "cdrops" );
-    this.aliases.add( "cdr" );
+      aliases = new ArrayList();
+      aliases.add( "cdrops" );
+      aliases.add( "cdr" );
   }
 
   @Override
@@ -47,7 +47,7 @@ public class CustomDropsCommand implements ICommand
   public List getCommandAliases()
   {
 
-    return this.aliases;
+    return aliases;
   }
 
   @Override
@@ -55,54 +55,55 @@ public class CustomDropsCommand implements ICommand
   {
     if( pArgs.length == 0 )
     {
-      if( InGame( pCmdSender ) )
-        PlayerChatHelper.SendError( pCmdSender, "Syntax error. Type /customdrops help for help" );
-      else
-        PlayerChatHelper.SendPlain( pCmdSender, "[CDRP] Syntax error. Type /customdrops help for help" );
+      if( InGame( pCmdSender ) ) {
+          PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /customdrops help for help");
+      } else {
+          PlayerChatHelper.SendPlain(pCmdSender, "[CDRP] Syntax error. Type /customdrops help for help");
+      }
       return;
     }
-    else if( pArgs[0].equalsIgnoreCase( "help" ) )
+    else if("help".equalsIgnoreCase(pArgs[0]))
     {
       SendHelpToPlayer( pCmdSender );
     }
-    else if( pArgs[0].equalsIgnoreCase( "toggleinfo" ) )
+    else if("toggleinfo".equalsIgnoreCase(pArgs[0]))
     {
-      if( !InGame( pCmdSender ) )
-        PlayerChatHelper.SendPlain( pCmdSender, "[CDRP] This command can only be executed ingame" );
-      else
+      if( !InGame( pCmdSender ) ) {
+          PlayerChatHelper.SendPlain(pCmdSender, "[CDRP] This command can only be executed ingame");
+      } else
       {
         EntityPlayer tEP = (EntityPlayer) pCmdSender;
         MainRegistry.Module_CustomDrops.toggleDeathInfoForPlayer( tEP );
       }
     }
-    else if( pArgs[0].equalsIgnoreCase( "reload" ) )
+    else if("reload".equalsIgnoreCase(pArgs[0]))
     {
       boolean tFlag = MainRegistry.Module_CustomDrops.ReloadCustomDrops();
       if( !tFlag )
       {
-        if( !InGame( pCmdSender ) )
-          PlayerChatHelper.SendPlain( pCmdSender, "[CDRP] Reload failed. Check your log for syntax errors" );
-        else
-          PlayerChatHelper.SendWarn( pCmdSender, "Reload failed. Check your log for syntax errors" );
+        if( !InGame( pCmdSender ) ) {
+            PlayerChatHelper.SendPlain(pCmdSender, "[CDRP] Reload failed. Check your log for syntax errors");
+        } else {
+            PlayerChatHelper.SendWarn(pCmdSender, "Reload failed. Check your log for syntax errors");
+        }
       }
       else
       {
-        if( !InGame( pCmdSender ) )
-          PlayerChatHelper.SendPlain( pCmdSender, "[CDRP] Reload done. New config is activated" );
-        else
-          PlayerChatHelper.SendInfo( pCmdSender, "Reload done. New config is activated" );
+        if( !InGame( pCmdSender ) ) {
+            PlayerChatHelper.SendPlain(pCmdSender, "[CDRP] Reload done. New config is activated");
+        } else {
+            PlayerChatHelper.SendInfo(pCmdSender, "Reload done. New config is activated");
+        }
       }
     }
-    else
-      SendHelpToPlayer( pCmdSender );
+    else {
+        SendHelpToPlayer(pCmdSender);
+    }
   }
 
   private boolean InGame( ICommandSender pCmdSender )
   {
-    if( !( pCmdSender instanceof EntityPlayer ) )
-      return false;
-    else
-      return true;
+      return pCmdSender instanceof EntityPlayer;
   }
 
   private void SendHelpToPlayer( ICommandSender pCmdSender )
@@ -127,10 +128,9 @@ public class CustomDropsCommand implements ICommand
       // boolean tIncreative = tEP.capabilities.isCreativeMode;
       return tPlayerOpped; // && tIncreative;
     }
-    else if( pCommandSender instanceof MinecraftServer )
-      return true;
-    else
-      return false;
+    else {
+      return pCommandSender instanceof MinecraftServer;
+    }
   }
 
   @Override

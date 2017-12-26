@@ -15,7 +15,7 @@ import java.util.List;
 
 import static com.dreammaster.gthandler.casings.GT_Container_CasingsNH.sBlockCasingsNH;
 
-public class ModTabList {
+public final class ModTabList {
 	public static String ModGenericTab = "tabDreamCraftItems_Generic";
 	public static String ModShapesTab = "tabDreamCraftItems_Shapes";
 	public static String ModMoldsTab = "tabDreamCraftItems_Molds";
@@ -27,8 +27,10 @@ public class ModTabList {
 	public static String ModSolarTab = "tabDreamCraftSolar";
 	public static String ModBarsAndCasingsTab = "tabDreamCraftBars_Casings";
 	public static String ModAdditionsToGregTechTab = "tabDreamGregTechAdditions";
-	
-	public static void InitModTabs(CreativeTabsManager pTabManager, ModItemManager pItemManager)
+
+    private ModTabList() {}
+
+    public static void InitModTabs(CreativeTabsManager pTabManager, ModItemManager pItemManager)
 	{
 		pTabManager.AddCreativeTab(new ModCreativeTab(ModGenericTab, ItemList.AsteroidsStoneDust.Item.getConstructedItem()));
 		pTabManager.AddCreativeTab(new ModCreativeTab(ModShapesTab, ItemList.ShapeBlock.Item.getConstructedItem()));

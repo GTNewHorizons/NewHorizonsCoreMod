@@ -112,7 +112,7 @@ public class InventoryItem implements IInventory
     @Override
     public boolean hasCustomInventoryName()
     {
-        return name.length() > 0;
+        return !name.isEmpty();
     }
 
     @Override

@@ -2,7 +2,6 @@ package com.dreammaster.block;
 
 import eu.usrv.yamcore.iface.IExtendedBlockProperties;
 import net.minecraft.block.Block;
-import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
 
 /**
@@ -44,7 +43,7 @@ public class BronzePlatedReinforcedStoneProperties implements IExtendedBlockProp
     public String getHarvestToolClass() { return "pickaxe"; }
 
     @Override
-    public SoundType getStepSound() { return Block.soundTypeMetal; }
+    public Block.SoundType getStepSound() { return Block.soundTypeMetal; }
     @Override
     public boolean getIsOpaqueCube() { return true; }
 }

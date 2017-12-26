@@ -13,13 +13,13 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 
 import java.util.Random;
 
-public class NH_GeodePopulator {
+public final class NH_GeodePopulator {
     public static final PopulateChunkEvent.Populate.EventType EVENT_TYPE = (PopulateChunkEvent.Populate.EventType) EnumHelper.addEnum(PopulateChunkEvent.Populate.EventType.class, "RAILCRAFT_GEODE", new Class[0], new Object[0]);
     private static NH_GeodePopulator instance;
     private final WorldGenerator geode;
 
     private NH_GeodePopulator() {
-        this.geode = new WorldGenGeode(BlockCube.getBlock(), EnumCube.ABYSSAL_STONE.ordinal());
+        geode = new WorldGenGeode(BlockCube.getBlock(), EnumCube.ABYSSAL_STONE.ordinal());
     }
 
     public static NH_GeodePopulator instance() {
@@ -33,16 +33,16 @@ public class NH_GeodePopulator {
     @SubscribeEvent
     public void generate(PopulateChunkEvent.Pre event) {
         if(TerrainGen.populate(event.chunkProvider, event.world, event.rand, event.chunkX, event.chunkZ, event.hasVillageGenerated, EVENT_TYPE)) {
-            this.generateGeode(event.world, event.rand, event.chunkX, event.chunkZ);
+            generateGeode(event.world, event.rand, event.chunkX, event.chunkZ);
         }
     }
 
     public void generateGeode(World world, Random rand, int chunkX, int chunkZ) {
         int x = chunkX * 16 + 8;
         int z = chunkZ * 16 + 8;
-        if(this.canGen(world, rand, x, z)) {
+        if(canGen(world, rand, x, z)) {
             int y = 16 + rand.nextInt(16);
-            this.geode.generate(world, rand, x, y, z);
+            geode.generate(world, rand, x, y, z);
         }
 
     }

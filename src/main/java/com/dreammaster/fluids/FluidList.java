@@ -25,7 +25,7 @@ public enum FluidList {
 	
 	// ################################################################################
 	public ModSimpleBaseFluid Fluid;
-	private FluidList(ModSimpleBaseFluid pFluid, String pCreativeTabName)
+	FluidList(ModSimpleBaseFluid pFluid, String pCreativeTabName)
 	{
 		Fluid = pFluid;
 		if (Fluid != null)
@@ -41,12 +41,12 @@ public enum FluidList {
 		boolean tResult = true;
 		for (FluidList il : FluidList.values())
 		{
-			if (il.Fluid != null)
-				if (!pFluidManager.AddItemToManagedRegistry(il.Fluid))
-				{
-				    MainRegistry.Logger.error(String.format("Fluid [%s] failed to register", il.toString()));
-					tResult = false;
-				}
+			if (il.Fluid != null) {
+                if (!pFluidManager.AddItemToManagedRegistry(il.Fluid)) {
+                    MainRegistry.Logger.error(String.format("Fluid [%s] failed to register", il.toString()));
+                    tResult = false;
+                }
+            }
 		}
 		
 		return tResult;

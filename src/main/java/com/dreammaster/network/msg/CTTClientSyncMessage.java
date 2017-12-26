@@ -51,8 +51,9 @@ public class CTTClientSyncMessage implements IMessage
     List<String> tPayloads = splitByLength( pPayload, 4096 );
 
     int tTotalFrames = tPayloads.size();
-    for( int tFrame = 0; tFrame < tTotalFrames; tFrame++ )
-      tMessages.add( new CTTClientSyncMessage( tPayloads.get( tFrame ), tFrame, tTotalFrames ) );
+    for( int tFrame = 0; tFrame < tTotalFrames; tFrame++ ) {
+        tMessages.add(new CTTClientSyncMessage(tPayloads.get(tFrame), tFrame, tTotalFrames));
+    }
 
     return tMessages;
   }
@@ -63,10 +64,11 @@ public class CTTClientSyncMessage implements IMessage
 
     for( int i = 0; i < pInput.length(); i = i + pChunkSize )
     {
-      if( pInput.length() - i < pChunkSize )
-        tReturnList.add( pInput.substring( i ) );
-      else
-        tReturnList.add( pInput.substring( i, i + pChunkSize ) );
+      if( pInput.length() - i < pChunkSize ) {
+          tReturnList.add(pInput.substring(i));
+      } else {
+          tReturnList.add(pInput.substring(i, i + pChunkSize));
+      }
     }
 
     return tReturnList;
@@ -81,8 +83,9 @@ public class CTTClientSyncMessage implements IMessage
     public IMessage handleClientMessage( EntityPlayer pPlayer, CTTClientSyncMessage pMessage, MessageContext pCtx )
     {
       // Assuming resend or timeout if this happens
-      if( _mLastReceived + 5000 < System.currentTimeMillis() )
-        _mReceivedFrames = new HashMap<>();
+      if( _mLastReceived + 5000 < System.currentTimeMillis() ) {
+          _mReceivedFrames = new HashMap<>();
+      }
 
       if( !_mReceivedFrames.containsKey( pMessage._mFrame ) )
       {
@@ -90,18 +93,21 @@ public class CTTClientSyncMessage implements IMessage
         _mLastReceived = System.currentTimeMillis();
       }
       else // Possible re-send by udp
-        return null;
+      {
+          return null;
+      }
 
       // Seems we got all frames
       if( _mReceivedFrames.size() == pMessage._mNumFrames )
       {
         int tIDX = 0;
-        StringBuilder tSb = new StringBuilder();
+        StringBuilder tSb = new StringBuilder(32);
 
         SortedSet<Integer> keys = new TreeSet<>( _mReceivedFrames.keySet() );
 
-        for( Integer currIdxKey : keys )
-          tSb.append( _mReceivedFrames.get( currIdxKey )._mPayload );
+        for( Integer currIdxKey : keys ) {
+            tSb.append(_mReceivedFrames.get(currIdxKey)._mPayload);
+        }
 
         // Completed the message. Forward it to the submodule
         MainRegistry.Module_CustomToolTips.processServerConfig( tSb.toString() );

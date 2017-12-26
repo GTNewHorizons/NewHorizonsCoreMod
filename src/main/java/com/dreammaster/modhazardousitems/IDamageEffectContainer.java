@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IDamageEffectContainer
 {
-    public List<HazardousItems.ItmPotionEffect> getPotionEffects();
+    List<HazardousItems.ItmPotionEffect> getPotionEffects();
 
-    public List<HazardousItems.ItmDamageEffect> getDamageEffects();
+    List<HazardousItems.ItmDamageEffect> getDamageEffects();
 }

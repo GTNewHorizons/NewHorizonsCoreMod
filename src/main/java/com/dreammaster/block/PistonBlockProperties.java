@@ -2,7 +2,6 @@ package com.dreammaster.block;
 
 import eu.usrv.yamcore.iface.IExtendedBlockProperties;
 import net.minecraft.block.Block;
-import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
 
 /**
@@ -44,7 +43,7 @@ public class PistonBlockProperties implements IExtendedBlockProperties
     public String getHarvestToolClass() { return "pickaxe"; }
 
     @Override
-    public SoundType getStepSound() { return Block.soundTypeStone; }
+    public Block.SoundType getStepSound() { return Block.soundTypeStone; }
     
     @Override
     public boolean getIsOpaqueCube() { return true; }

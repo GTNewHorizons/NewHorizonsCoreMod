@@ -16,14 +16,15 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 
-import static com.dreammaster.main.ConfigHandler.ch;
+import static com.dreammaster.main.ConfigHandler.CONFIG_HANDLER;
 
 public class ClientProxy extends CommonProxy
 {
     @Override
     public void addTexturePage(){
-        if(Textures.BlockIcons.casingTexturePages[8]==null)
-            Textures.BlockIcons.casingTexturePages[8]=new ITexture[128];
+        if(Textures.BlockIcons.casingTexturePages[8]==null) {
+            Textures.BlockIcons.casingTexturePages[8] = new ITexture[128];
+        }
     }
 
     @Override
@@ -35,7 +36,7 @@ public class ClientProxy extends CommonProxy
         MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(MainRegistry._mBlockBabyChest), new RenderItemBabyChest());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBabyChest.class, render);
 
-        MinecraftForge.EVENT_BUS.register(ch);
+        MinecraftForge.EVENT_BUS.register(CONFIG_HANDLER);
     }
 
     @Override

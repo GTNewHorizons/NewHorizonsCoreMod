@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class QuantumBread extends ItemFood
+public final class QuantumBread extends ItemFood
 {
     private static final String QUANTUM_BREAD_NAME = "QuantumBread";
 
@@ -28,11 +28,13 @@ public class QuantumBread extends ItemFood
         setAlwaysEdible();
     }
 
-    private static QuantumBread _mInstance = null;
+    private static QuantumBread _mInstance;
 
     public static QuantumBread Instance()
     {
-        if (_mInstance == null) _mInstance = new QuantumBread();
+        if (_mInstance == null) {
+            _mInstance = new QuantumBread();
+        }
 
         return _mInstance;
     }
@@ -46,14 +48,16 @@ public class QuantumBread extends ItemFood
         if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
         {
             long curTime = System.currentTimeMillis();
-            if ((curTime - prevTime > 250L) || (curRand == -1))
+            if (curTime - prevTime > 250L || curRand == -1)
             {
                 curRand = MainRegistry.Rnd.nextInt(2);
             }
             prevTime = curTime;
-            return String.format("%s_%d", this.getUnlocalizedName(), curRand);
+            return String.format("%s_%d", getUnlocalizedName(), curRand);
         }
-        else return super.getUnlocalizedName(stack);
+        else {
+            return super.getUnlocalizedName(stack);
+        }
     }
 
     @Override
@@ -77,7 +81,9 @@ public class QuantumBread extends ItemFood
     {
         super.addInformation(pStack, pPlayer, pList, pBool);
 
-        if (curRand == 1) pList.add(EnumChatFormatting.AQUA + "...wasn't it sliced just a second ago?");
+        if (curRand == 1) {
+            pList.add(EnumChatFormatting.AQUA + "...wasn't it sliced just a second ago?");
+        }
     }
 
     @Override

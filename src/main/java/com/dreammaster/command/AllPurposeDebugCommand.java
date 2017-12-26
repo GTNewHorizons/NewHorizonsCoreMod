@@ -31,7 +31,7 @@ public class AllPurposeDebugCommand implements ICommand
 
   public AllPurposeDebugCommand()
   {
-    this.aliases = new ArrayList();
+    aliases = new ArrayList();
   }
 
   @Override
@@ -56,7 +56,7 @@ public class AllPurposeDebugCommand implements ICommand
   public List getCommandAliases()
   {
 
-    return this.aliases;
+    return aliases;
   }
 
   private void moarArgs( ICommandSender pCmdSender )
@@ -74,9 +74,9 @@ public class AllPurposeDebugCommand implements ICommand
         moarArgs( pCmdSender );
         return;
       }
-      else if( pArgs[0].equalsIgnoreCase( "ci" ) )
+      else if("ci".equalsIgnoreCase(pArgs[0]))
       {
-        EntityPlayer tEP = ( (EntityPlayer) pCmdSender );
+        EntityPlayer tEP = (EntityPlayer) pCmdSender;
         World tWorldObj = tEP.worldObj;
         int x = (int) tEP.posX;
         int z = (int) tEP.posZ;
@@ -86,12 +86,12 @@ public class AllPurposeDebugCommand implements ICommand
         PlayerChatHelper.SendInfo( pCmdSender, "DimID: %d", tWorldObj.provider.dimensionId );
         PlayerChatHelper.SendInfo( pCmdSender, "BiomeID / Name: %d / %s", tBiomeInfo.biomeID, tBiomeInfo.biomeName );
       }
-      else if( pArgs[0].equalsIgnoreCase( "reloadconfig" ) )
+      else if("reloadconfig".equalsIgnoreCase(pArgs[0]))
       {
         MainRegistry.CoreConfig.LoadConfig();
         PlayerChatHelper.SendInfo( pCmdSender, "Config reloaded" );
       }
-      else if( pArgs[0].equalsIgnoreCase( "test" ) )
+      else if("test".equalsIgnoreCase(pArgs[0]))
       {
         if( pArgs.length == 2 )
         {
@@ -100,12 +100,13 @@ public class AllPurposeDebugCommand implements ICommand
           Vec3 calculatedPos = PlayerHelper.addDistanceByPlayerDirection( (EntityPlayer) pCmdSender, Integer.parseInt( pArgs[1] ) );
 
           PlayerChatHelper.SendInfo( pCmdSender, "Calculated Block: %d %d %d", (int) calculatedPos.xCoord, (int) calculatedPos.yCoord, (int) calculatedPos.zCoord );
-          ( (EntityPlayer) pCmdSender ).getEntityWorld().setBlock( (int) calculatedPos.xCoord, (int) calculatedPos.yCoord, (int) calculatedPos.zCoord, Blocks.bedrock );
+          pCmdSender.getEntityWorld().setBlock( (int) calculatedPos.xCoord, (int) calculatedPos.yCoord, (int) calculatedPos.zCoord, Blocks.bedrock );
         }
-        else
-          moarArgs( pCmdSender );
+        else {
+            moarArgs(pCmdSender);
+        }
       }
-      else if( pArgs[0].equalsIgnoreCase( "oilstruct" ) )
+      else if("oilstruct".equalsIgnoreCase(pArgs[0]))
       {
         IModFix tModFix = ModFixesMaster.getModFixInstance( OilGeneratorFix.ModFixName );
         if( tModFix == null )
@@ -133,8 +134,9 @@ public class AllPurposeDebugCommand implements ICommand
             PlayerChatHelper.SendInfo( pCmdSender, "Creating oilStruct at location %d / %d / %d, radius [%d], virtual groundLevel [%d] with block [%s]", (int) tOilStructPos.xCoord, (int) tOilStructPos.yCoord, (int) tOilStructPos.zCoord, tStructRadius, tStructGroundLevel, pArgs[1] );
             tOilGenFix.buildOilStructure( ( (EntityPlayer) pCmdSender ).worldObj, new Random(), (int) tOilStructPos.xCoord, (int) tOilStructPos.yCoord, (int) tOilStructPos.zCoord, tStructRadius, tStructGroundLevel, tTargetBlock, false );
           }
-          else
-            PlayerChatHelper.SendError( pCmdSender, "Unknown block [%s]", pArgs[1] );
+          else {
+              PlayerChatHelper.SendError(pCmdSender, "Unknown block [%s]", pArgs[1]);
+          }
         }
         else
         {
@@ -152,10 +154,7 @@ public class AllPurposeDebugCommand implements ICommand
 
   private boolean InGame( ICommandSender pCmdSender )
   {
-    if( !( pCmdSender instanceof EntityPlayer ) )
-      return false;
-    else
-      return true;
+    return pCmdSender instanceof EntityPlayer;
   }
 
   private void SendHelpToPlayer( ICommandSender pCmdSender )

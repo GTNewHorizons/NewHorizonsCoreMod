@@ -2,7 +2,6 @@ package com.dreammaster.modctt;
 
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
 import net.minecraft.item.ItemStack;
 
 import javax.xml.bind.annotation.*;
@@ -16,9 +15,9 @@ public class CustomToolTips
 {
 
   @XmlElement( name = "ToolTip" )
-  protected List<CustomToolTips.ItemToolTip> mToolTips;
+  protected List<ItemToolTip> mToolTips;
 
-  public List<CustomToolTips.ItemToolTip> getToolTips()
+  public List<ItemToolTip> getToolTips()
   {
     Init();
 
@@ -30,20 +29,23 @@ public class CustomToolTips
     try
     {
       Init();
-      if( pItem == null )
-        return null;
+      if( pItem == null ) {
+          return null;
+      }
 
       //String tUnlocName = pItem.getUnlocalizedName();
-      UniqueIdentifier UID = GameRegistry.findUniqueIdentifierFor( pItem.getItem() );
+      GameRegistry.UniqueIdentifier UID = GameRegistry.findUniqueIdentifierFor( pItem.getItem() );
       String tCompareName = UID.toString();
-      if( pItem.getItemDamage() > 0 )
-        tCompareName = String.format( "%s:%d", tCompareName, pItem.getItemDamage() );
+      if( pItem.getItemDamage() > 0 ) {
+          tCompareName = String.format("%s:%d", tCompareName, pItem.getItemDamage());
+      }
 
       for( ItemToolTip itt : mToolTips )
       {
         //if (itt.getUnlocalizedName().equalsIgnoreCase(tUnlocName)) return itt;
-        if( itt.mUnlocalizedName.equalsIgnoreCase( tCompareName ) )
-          return itt;
+        if( itt.mUnlocalizedName.equalsIgnoreCase( tCompareName ) ) {
+            return itt;
+        }
       }
 
       return null;
@@ -56,8 +58,9 @@ public class CustomToolTips
 
   private void Init()
   {
-    if( mToolTips == null )
-      mToolTips = new ArrayList<CustomToolTips.ItemToolTip>();
+    if( mToolTips == null ) {
+        mToolTips = new ArrayList<>();
+    }
   }
 
   @XmlAccessorType( XmlAccessType.FIELD )

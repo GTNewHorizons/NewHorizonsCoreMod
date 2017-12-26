@@ -2,7 +2,6 @@ package com.dreammaster.block;
 
 import eu.usrv.yamcore.iface.IExtendedBlockProperties;
 import net.minecraft.block.Block;
-import net.minecraft.block.Block.SoundType;
 import net.minecraft.block.material.Material;
 
 /**
@@ -44,7 +43,7 @@ public class SandClayProperties implements IExtendedBlockProperties
 	public String getHarvestToolClass() { return "shovel"; }
 
 	@Override
-	public SoundType getStepSound() { return Block.soundTypeGravel; }
+	public Block.SoundType getStepSound() { return Block.soundTypeGravel; }
 	
 	@Override
     public boolean getIsOpaqueCube() { return true; }

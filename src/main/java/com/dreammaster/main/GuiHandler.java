@@ -18,7 +18,9 @@ public class GuiHandler implements IGuiHandler
         if (pGuiID == GUI_BABYCHEST)
         {
             TileEntity tTileEntity = pWorld.getTileEntity(pX, pY, pZ);
-            if (tTileEntity instanceof TileEntityBabyChest) return new ContainerBabyChest(pPlayer.inventory, (TileEntityBabyChest) tTileEntity);
+            if (tTileEntity instanceof TileEntityBabyChest) {
+                return new ContainerBabyChest(pPlayer.inventory, (TileEntityBabyChest) tTileEntity);
+            }
         }
 
         return null;
@@ -30,7 +32,9 @@ public class GuiHandler implements IGuiHandler
         if (pGuiID == GUI_BABYCHEST)
         {
             TileEntity tTileEntity = pWorld.getTileEntity(pX, pY, pZ);
-            if (tTileEntity instanceof TileEntityBabyChest) return new GuiBabyChest(pPlayer.inventory, (TileEntityBabyChest) tTileEntity);
+            if (tTileEntity instanceof TileEntityBabyChest) {
+                return new GuiBabyChest(pPlayer.inventory, (TileEntityBabyChest) tTileEntity);
+            }
         }
 
         return null;

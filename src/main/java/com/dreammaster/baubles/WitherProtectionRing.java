@@ -1,7 +1,9 @@
 package com.dreammaster.baubles;
 
 import baubles.api.BaubleType;
+import baubles.api.IBauble;
 import baubles.common.container.InventoryBaubles;
+import baubles.common.lib.PlayerHandler;
 import com.dreammaster.lib.Refstrings;
 import eu.usrv.yamcore.iface.IExtendedModItem;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -17,7 +19,7 @@ import net.minecraft.util.IIcon;
 import java.util.List;
 import java.util.Random;
 
-public class WitherProtectionRing extends Item implements baubles.api.IBauble, IExtendedModItem {
+public final class WitherProtectionRing extends Item implements IBauble, IExtendedModItem {
     Random _mRnd = new Random();
     //private static final String NBTTAG_VISVICTUS = "VisVictus";
     //private static final String NBTTAG_PotionEffectID = "PotionEffectID";
@@ -27,20 +29,23 @@ public class WitherProtectionRing extends Item implements baubles.api.IBauble, I
     private String _mCreativeTab;
     //private static int MaxDurability = 1000;
     
-    private static WitherProtectionRing _mInstance = null;
+    private static WitherProtectionRing _mInstance;
     public static WitherProtectionRing Instance(String pItemName, String pCreativeTab)
     {
-        if (_mInstance == null)
+        if (_mInstance == null) {
             _mInstance = new WitherProtectionRing(pItemName, pCreativeTab);
+        }
         
         return _mInstance;
     }
     
+    @Override
     public WitherProtectionRing getConstructedItem()
     {
         return _mInstance;
     }
     
+    @Override
     public String getCreativeTabName()
     {
         return _mCreativeTab;
@@ -74,12 +79,12 @@ public class WitherProtectionRing extends Item implements baubles.api.IBauble, I
     public IIcon icon;
     @Override
     public void registerIcons(IIconRegister reg) {
-        this.icon = reg.registerIcon(String.format("%s:item%s", Refstrings.MODID, _mItemName));
+        icon = reg.registerIcon(String.format("%s:item%s", Refstrings.MODID, _mItemName));
     }
     
     @Override
     public IIcon getIconFromDamage(int meta) {
-        return this.icon;
+        return icon;
     }
     
     @Override
@@ -180,13 +185,14 @@ public class WitherProtectionRing extends Item implements baubles.api.IBauble, I
     */
     @Override
     public void onWornTick(ItemStack arg0, EntityLivingBase pEntity) {
-        if (!(pEntity instanceof EntityPlayer))
+        if (!(pEntity instanceof EntityPlayer)) {
             return;
+        }
 
         if (_mRnd.nextInt(20) == 0)
         {         
             EntityPlayer tPlayer = (EntityPlayer)pEntity;
-            InventoryBaubles tBaubles = baubles.common.lib.PlayerHandler.getPlayerBaubles(tPlayer);
+            InventoryBaubles tBaubles = PlayerHandler.getPlayerBaubles(tPlayer);
             //PotionEffect tEff = getNBTPotionEffect(arg0);
             //int tStoredVictus = GetNBTVictusVis(arg0);
             

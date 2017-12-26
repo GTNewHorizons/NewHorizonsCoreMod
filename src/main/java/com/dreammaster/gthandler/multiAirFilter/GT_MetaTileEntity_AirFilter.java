@@ -33,7 +33,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
     protected int mPollutionReduction=0;
     protected int baseEff = 2500;
     protected boolean hasPollution=false;
-    final static GT_Recipe tRecipe= new GT_Recipe(
+    static final GT_Recipe tRecipe= new GT_Recipe(
             new ItemStack[]{CustomItemList.AdsorptionFilter.get(1L, new Object())},
             new ItemStack[]{CustomItemList.AdsorptionFilterDirty.get(1L,new Object())},
             null, null, null, null, 1, 1, 0);
@@ -46,10 +46,12 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         super(aName);
     }
 
+    @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new GT_MetaTileEntity_AirFilter(this.mName);
+        return new GT_MetaTileEntity_AirFilter(mName);
     }
 
+    @Override
     public String[] getDescription() {
         return new String[]{
                 "Controller Block for the Air Filter",
@@ -67,6 +69,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         };
     }
 
+    @Override
     public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, byte aSide, byte aFacing, byte aColorIndex, boolean aActive, boolean aRedstone) {
         if (aSide == aFacing) {
             return new ITexture[]{Textures.BlockIcons.CASING_BLOCKS[57], new GT_RenderedTexture(aActive ? Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE : Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE)};
@@ -74,14 +77,17 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         return new ITexture[]{Textures.BlockIcons.CASING_BLOCKS[57]};
     }
 
+    @Override
     public Object getClientGUI(int aID, InventoryPlayer aPlayerInventory, IGregTechTileEntity aBaseMetaTileEntity) {
         return new GT_GUIContainer_MultiMachine(aPlayerInventory, aBaseMetaTileEntity, getLocalName(), "ElectricAirFilter.png");
     }
 
+    @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
         return true;
     }
 
+    @Override
     public boolean isFacingValid(byte aFacing) {
         return aFacing > 1;
     }
@@ -90,14 +96,16 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
     public boolean checkRecipe(ItemStack aStack){
         mPollutionReduction = 0;
         mMaxProgresstime = 0;
-        if(!this.hasPollution || !this.mMachine)return false;
+        if(!hasPollution || !mMachine) {
+            return false;
+        }
 
         try{
             if(aStack.getItem() instanceof GT_MetaGenerated_Tool_01 &&
                     ((GT_MetaGenerated_Tool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier()>0 &&
                     ((GT_MetaGenerated_Tool) aStack.getItem()).getPrimaryMaterial(aStack).mToolSpeed>0 ) {
                 baseEff = GT_Utility.safeInt((long) ((50.0F
-                        + (10.0F * ((GT_MetaGenerated_Tool) aStack.getItem()).getToolCombatDamage(aStack))) * 100));
+                        + 10.0F * ((GT_MetaGenerated_Tool) aStack.getItem()).getToolCombatDamage(aStack)) * 100));
             }
             else {
                 baseEff = 2500;
@@ -109,24 +117,24 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         long tVoltage = getMaxInputVoltage();
         byte tTier = (byte) Math.max(1, GT_Utility.getTier(tVoltage));
 
-        this.mEfficiency = (10000 - (getIdealStatus() - getRepairStatus()) * 1000);
-        this.mEfficiencyIncrease = 10000;
+        mEfficiency = 10000 - (getIdealStatus() - getRepairStatus()) * 1000;
+        mEfficiencyIncrease = 10000;
 
         calculateOverclockedNessMulti(GT_Utility.safeInt(tVoltage-(tVoltage>>2)), 1200, 1, tVoltage);
         //In case recipe is too OP for that machine
         if (mEUt == Integer.MAX_VALUE - 1) {
             return false;
         }
-        if (this.mEUt > 0) {
-            this.mEUt = (-this.mEUt);
+        if (mEUt > 0) {
+            mEUt = -mEUt;
         }
 
         ArrayList<ItemStack> tInputList = getStoredInputs();
         int tInputList_sS=tInputList.size();
         for (int i = 0; i < tInputList_sS - 1; i++) {
             for (int j = i + 1; j < tInputList_sS; j++) {
-                if (GT_Utility.areStacksEqual((ItemStack) tInputList.get(i), (ItemStack) tInputList.get(j))) {
-                    if (((ItemStack) tInputList.get(i)).stackSize >= ((ItemStack) tInputList.get(j)).stackSize) {
+                if (GT_Utility.areStacksEqual(tInputList.get(i), tInputList.get(j))) {
+                    if (tInputList.get(i).stackSize >= tInputList.get(j).stackSize) {
                         tInputList.remove(j--); tInputList_sS=tInputList.size();
                     } else {
                         tInputList.remove(i--); tInputList_sS=tInputList.size();
@@ -142,11 +150,11 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
             }
         }
 
-        ItemStack[] tInputs = (ItemStack[]) Arrays.copyOfRange(tInputList.toArray(new ItemStack[tInputList.size()]), 0, 2);
-        if (tInputList.size() > 0) {
+        ItemStack[] tInputs = Arrays.copyOfRange(tInputList.toArray(new ItemStack[tInputList.size()]), 0, 2);
+        if (!tInputList.isEmpty()) {
             if (tRecipe.isRecipeInputEqual(true, null, tInputs)) {
                 mPollutionReduction*=2;
-                this.mOutputItems = new ItemStack[]{tRecipe.getOutput(0)};
+                mOutputItems = new ItemStack[]{tRecipe.getOutput(0)};
                 updateSlots();
             }
         }
@@ -199,102 +207,197 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
                 if (!aBaseMetaTileEntity.getAirOffset(xDir+i, 4, zDir+j) || !aBaseMetaTileEntity.getAirOffset(xDir+i, 5, zDir+j)) {//check air at on top of top layer
                     return false;
                 }
-                if (aBaseMetaTileEntity.getBlockOffset(xDir+i, 3, zDir+j) != GT_Container_CasingsNH.sBlockCasingsNH) return false;//top casing
-                if (aBaseMetaTileEntity.getMetaIDOffset(xDir+i, 3, zDir+j) != 0) return false;//top casing
+                if (aBaseMetaTileEntity.getBlockOffset(xDir+i, 3, zDir+j) != GT_Container_CasingsNH.sBlockCasingsNH) {
+                    return false;//top casing
+                }
+                if (aBaseMetaTileEntity.getMetaIDOffset(xDir+i, 3, zDir+j) != 0) {
+                    return false;//top casing
+                }
 
             }
         }
-        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, zDir) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, zDir)) return false;
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, zDir)) return false;
-        if (!aBaseMetaTileEntity.getAirOffset(xDir, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir, two, two+zDir)) return false;
-        if (!aBaseMetaTileEntity.getAirOffset(xDir, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(xDir, two, zDir-two)) return false;
+        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, zDir) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, zDir)) {
+            return false;
+        }
+        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, zDir)) {
+            return false;
+        }
+        if (!aBaseMetaTileEntity.getAirOffset(xDir, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir, two, two+zDir)) {
+            return false;
+        }
+        if (!aBaseMetaTileEntity.getAirOffset(xDir, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(xDir, two, zDir-two)) {
+            return false;
+        }
 
 
-        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, one+zDir) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, one+zDir)) return false;
-        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, zDir-one) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, zDir-one)) return false;
+        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, one+zDir) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, one+zDir)) {
+            return false;
+        }
+        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, zDir-one) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, zDir-one)) {
+            return false;
+        }
 
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, one+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, one+zDir)) return false;
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, zDir-one) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, zDir-one)) return false;
+        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, one+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, one+zDir)) {
+            return false;
+        }
+        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, zDir-one) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, zDir-one)) {
+            return false;
+        }
 
-        if (!aBaseMetaTileEntity.getAirOffset(one+xDir, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(one+xDir, two, two+zDir)) return false;
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-one, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-one, two, two+zDir)) return false;
+        if (!aBaseMetaTileEntity.getAirOffset(one+xDir, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(one+xDir, two, two+zDir)) {
+            return false;
+        }
+        if (!aBaseMetaTileEntity.getAirOffset(xDir-one, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-one, two, two+zDir)) {
+            return false;
+        }
 
-        if (!aBaseMetaTileEntity.getAirOffset(one+xDir, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(one+xDir, two, zDir-two)) return false;
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-one, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(xDir-one, two, zDir-two)) return false;
+        if (!aBaseMetaTileEntity.getAirOffset(one+xDir, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(one+xDir, two, zDir-two)) {
+            return false;
+        }
+        if (!aBaseMetaTileEntity.getAirOffset(xDir-one, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(xDir-one, two, zDir-two)) {
+            return false;
+        }
 
         //air check and top casing check done
 
         //muffler check
         mMufflerHatches.clear();
         if(!addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(one+xDir, one, zDir), 57)){
-            if(aBaseMetaTileEntity.getBlockOffset(one+xDir, one, zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-            if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, one, zDir)!= 0) return false;
+            if(aBaseMetaTileEntity.getBlockOffset(one+xDir, one, zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+                return false;
+            }
+            if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, one, zDir)!= 0) {
+                return false;
+            }
         }
         if(!addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(one+xDir, two, zDir), 57)){
-            if(aBaseMetaTileEntity.getBlockOffset(one+xDir, two, zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-            if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, two, zDir)!= 0) return false;
+            if(aBaseMetaTileEntity.getBlockOffset(one+xDir, two, zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+                return false;
+            }
+            if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, two, zDir)!= 0) {
+                return false;
+            }
         }
 
         if(!addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(xDir-one, one, zDir), 57)){
-            if(aBaseMetaTileEntity.getBlockOffset(xDir-one, one, zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-            if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, one, zDir)!= 0) return false;
+            if(aBaseMetaTileEntity.getBlockOffset(xDir-one, one, zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+                return false;
+            }
+            if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, one, zDir)!= 0) {
+                return false;
+            }
         }
         if(!addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(xDir-one, two, zDir), 57)){
-            if(aBaseMetaTileEntity.getBlockOffset(xDir-one, two, zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-            if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, two, zDir)!= 0) return false;
+            if(aBaseMetaTileEntity.getBlockOffset(xDir-one, two, zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+                return false;
+            }
+            if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, two, zDir)!= 0) {
+                return false;
+            }
         }
 
         if(!addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(xDir, one, one+zDir), 57)){
-            if(aBaseMetaTileEntity.getBlockOffset(xDir, one, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-            if(aBaseMetaTileEntity.getMetaIDOffset(xDir, one, one+zDir)!= 0) return false;
+            if(aBaseMetaTileEntity.getBlockOffset(xDir, one, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+                return false;
+            }
+            if(aBaseMetaTileEntity.getMetaIDOffset(xDir, one, one+zDir)!= 0) {
+                return false;
+            }
         }
         if(!addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(xDir, two, one+zDir), 57)){
-            if(aBaseMetaTileEntity.getBlockOffset(xDir, two, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-            if(aBaseMetaTileEntity.getMetaIDOffset(xDir, two, one+zDir)!= 0) return false;
+            if(aBaseMetaTileEntity.getBlockOffset(xDir, two, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+                return false;
+            }
+            if(aBaseMetaTileEntity.getMetaIDOffset(xDir, two, one+zDir)!= 0) {
+                return false;
+            }
         }
 
         if(!addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(xDir, one, zDir-one), 57)){
-            if(aBaseMetaTileEntity.getBlockOffset(xDir, one, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-            if(aBaseMetaTileEntity.getMetaIDOffset(xDir, one, zDir-one)!= 0) return false;
+            if(aBaseMetaTileEntity.getBlockOffset(xDir, one, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+                return false;
+            }
+            if(aBaseMetaTileEntity.getMetaIDOffset(xDir, one, zDir-one)!= 0) {
+                return false;
+            }
         }
         if(!addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(xDir, two, zDir-one), 57)){
-            if(aBaseMetaTileEntity.getBlockOffset(xDir, two, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-            if(aBaseMetaTileEntity.getMetaIDOffset(xDir, two, zDir-one)!= 0) return false;
+            if(aBaseMetaTileEntity.getBlockOffset(xDir, two, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+                return false;
+            }
+            if(aBaseMetaTileEntity.getMetaIDOffset(xDir, two, zDir-one)!= 0) {
+                return false;
+            }
         }
-        if(mMufflerHatches.isEmpty())return false;
+        if(mMufflerHatches.isEmpty()) {
+            return false;
+        }
         //muffler check done
         //pipe casing check
-        if(aBaseMetaTileEntity.getBlockOffset(one+xDir, one, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-        if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, one, one+zDir)!= 1) return false;
-        if(aBaseMetaTileEntity.getBlockOffset(one+xDir, two, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-        if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, two, one+zDir)!= 1) return false;
+        if(aBaseMetaTileEntity.getBlockOffset(one+xDir, one, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, one, one+zDir)!= 1) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getBlockOffset(one+xDir, two, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, two, one+zDir)!= 1) {
+            return false;
+        }
 
-        if(aBaseMetaTileEntity.getBlockOffset(xDir-one, one, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-        if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, one, one+zDir)!= 1) return false;
-        if(aBaseMetaTileEntity.getBlockOffset(xDir-one, two, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-        if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, two, one+zDir)!= 1) return false;
+        if(aBaseMetaTileEntity.getBlockOffset(xDir-one, one, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, one, one+zDir)!= 1) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getBlockOffset(xDir-one, two, one+zDir)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, two, one+zDir)!= 1) {
+            return false;
+        }
 
-        if(aBaseMetaTileEntity.getBlockOffset(one+xDir, one, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-        if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, one, zDir-one)!= 1) return false;
-        if(aBaseMetaTileEntity.getBlockOffset(one+xDir, two, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-        if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, two, zDir-one)!= 1) return false;
+        if(aBaseMetaTileEntity.getBlockOffset(one+xDir, one, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, one, zDir-one)!= 1) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getBlockOffset(one+xDir, two, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getMetaIDOffset(one+xDir, two, zDir-one)!= 1) {
+            return false;
+        }
 
-        if(aBaseMetaTileEntity.getBlockOffset(xDir-one, one, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-        if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, one, zDir-one)!= 1) return false;
-        if(aBaseMetaTileEntity.getBlockOffset(xDir-one, two, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) return false;
-        if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, two, zDir-one)!= 1) return false;
+        if(aBaseMetaTileEntity.getBlockOffset(xDir-one, one, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, one, zDir-one)!= 1) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getBlockOffset(xDir-one, two, zDir-one)!= GT_Container_CasingsNH.sBlockCasingsNH) {
+            return false;
+        }
+        if(aBaseMetaTileEntity.getMetaIDOffset(xDir-one, two, zDir-one)!= 1) {
+            return false;
+        }
         //pipe casing check done
         //bottom casing
         for (int i = -one; i < two; i++) {
             for (int j = -one; j < two; j++) {
-                if ((xDir + i != 0) || (zDir + j != 0)) {//sneak exclusion of the controller block
+                if (xDir + i != 0 || zDir + j != 0) {//sneak exclusion of the controller block
                     IGregTechTileEntity tTileEntity = aBaseMetaTileEntity.getIGregTechTileEntityOffset(xDir + i, 0, zDir + j);
-                    if ((!addMaintenanceToMachineList(tTileEntity, 57)) &&
-                            (!addInputToMachineList(tTileEntity, 57)) &&
-                            (!addOutputToMachineList(tTileEntity, 57)) &&
-                            (!addEnergyInputToMachineList(tTileEntity, 57))) {
-                        if (aBaseMetaTileEntity.getBlockOffset(xDir + i, 0, zDir + j) != GT_Container_CasingsNH.sBlockCasingsNH) return false;
-                        if (aBaseMetaTileEntity.getMetaIDOffset(xDir + i, 0, zDir + j) != 0) return false;
+                    if (!addMaintenanceToMachineList(tTileEntity, 57) && !addInputToMachineList(tTileEntity, 57) && !addOutputToMachineList(tTileEntity, 57) && !addEnergyInputToMachineList(tTileEntity, 57)) {
+                        if (aBaseMetaTileEntity.getBlockOffset(xDir + i, 0, zDir + j) != GT_Container_CasingsNH.sBlockCasingsNH) {
+                            return false;
+                        }
+                        if (aBaseMetaTileEntity.getMetaIDOffset(xDir + i, 0, zDir + j) != 0) {
+                            return false;
+                        }
                     }
                 }
             }
@@ -303,29 +406,30 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         return true;
     }
 
+    @Override
     public int getMaxEfficiency(ItemStack aStack) {
         return 10000;
     }
 
     @Override
     public void onPostTick(IGregTechTileEntity aBaseMetaTileEntity, long aTick) {
-        if (aBaseMetaTileEntity.isClientSide() && (aTick % 20L == 0L)) {
+        if (aBaseMetaTileEntity.isClientSide() && aTick % 20L == 0L) {
             //refresh casing on state change
             int Xpos = aBaseMetaTileEntity.getXCoord() + ForgeDirection.getOrientation(aBaseMetaTileEntity.getBackFacing()).offsetX;
             int Ypos = aBaseMetaTileEntity.getYCoord()+3;
             int Zpos = aBaseMetaTileEntity.getZCoord() + ForgeDirection.getOrientation(aBaseMetaTileEntity.getBackFacing()).offsetZ;
             try {
                 aBaseMetaTileEntity.getWorld().markBlockRangeForRenderUpdate(Xpos - 1, Ypos, Zpos - 1, Xpos + 1, Ypos, Zpos + 1);
-            } catch (Exception e) {}
+            } catch (Exception ignored) {}
         }
         if (aBaseMetaTileEntity.isServerSide()) {
-            if(this.mMachine && (aTick % 200L == 0L)){
-                if(this.mMaxProgresstime>0){
+            if(mMachine && aTick % 200L == 0L){
+                if(mMaxProgresstime >0){
                     GT_Pollution.addPollution(getBaseMetaTileEntity(), -mPollutionReduction);
                     if(mInventory[1].getItem() instanceof GT_MetaGenerated_Tool_01 &&
                             ((GT_MetaGenerated_Tool) mInventory[1].getItem()).getToolStats(mInventory[1]).getSpeedMultiplier()>0 &&
                             ((GT_MetaGenerated_Tool) mInventory[1].getItem()).getPrimaryMaterial(mInventory[1]).mToolSpeed>0 ) {
-                        ((GT_MetaGenerated_Tool) mInventory[1].getItem()).doDamage(mInventory[1], 10L*(long) Math.min(-mEUt / this.damageFactorLow, Math.pow(-mEUt, this.damageFactorHigh)));
+                        ((GT_MetaGenerated_Tool) mInventory[1].getItem()).doDamage(mInventory[1], 10L*(long) Math.min(-mEUt / damageFactorLow, Math.pow(-mEUt, damageFactorHigh)));
                     }
                 }
                 //check for pollution
@@ -337,10 +441,12 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         super.onPostTick(aBaseMetaTileEntity, aTick);
     }
 
+    @Override
     public int getPollutionPerTick(ItemStack aStack) {
         return 0;//set to zero since it will directly affect pollution in chunk
     }
 
+    @Override
     public int getDamageToComponent(ItemStack aStack) {
         try{
             if(aStack.getItem() instanceof GT_MetaGenerated_Tool_01 &&
