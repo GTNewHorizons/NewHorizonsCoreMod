@@ -124,13 +124,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
 
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Wheat, GT_ModHandler.getModItem("harvestcraft", "flourItem", 1L, 0));
 
-        GT_OreDictUnificator.registerOre("beeComp", GT_ModHandler.getModItem("MagicBees", "comb", 1L, 0));
-        GT_OreDictUnificator.registerOre("beeComp", GT_ModHandler.getModItem("MagicBees", "comb", 1L, 1));
-        GT_OreDictUnificator.registerOre("beeComp", GT_ModHandler.getModItem("MagicBees", "comb", 1L, 2));
-        GT_OreDictUnificator.registerOre("beeComp", GT_ModHandler.getModItem("MagicBees", "comb", 1L, 3));
-        GT_OreDictUnificator.registerOre("beeComp", GT_ModHandler.getModItem("MagicBees", "comb", 1L, 4));
-        GT_OreDictUnificator.registerOre("beeComp", GT_ModHandler.getModItem("MagicBees", "comb", 1L, 5));
-        GT_OreDictUnificator.registerOre("beeComp", GT_ModHandler.getModItem("MagicBees", "comb", 1L, 6));
         GT_OreDictUnificator.registerOre("beeComp", GT_ModHandler.getModItem("computronics", "computronics.partsForestry", 1L, 0));
 
         GT_OreDictUnificator.registerOre("craftingToolShears", GT_ModHandler.getModItem("Railcraft", "tool.steel.shears", 1L, 0));
@@ -157,6 +150,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
 
         GT_OreDictUnificator.set(OrePrefixes.ingot, Materials.Ichorium, GT_ModHandler.getModItem("ThaumicTinkerer", "kamiResource", 1L, 2));
         GT_OreDictUnificator.set(OrePrefixes.nugget, Materials.Ichorium, GT_ModHandler.getModItem("ThaumicTinkerer", "kamiResource", 1L, 3));
+
+        GT_OreDictUnificator.registerOre("dyeLime", GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 1L, 2877));
 
     }
 }

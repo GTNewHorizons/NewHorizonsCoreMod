@@ -341,6 +341,7 @@ public enum ItemList
     PlutoIceDust(new ModSimpleBaseItem("PlutoIceDust", ModTabList.ModSpaceTab)),
     PlutoStoneDust(new ModSimpleBaseItem("PlutoStoneDust", ModTabList.ModSpaceTab)),
     PotassiumHydroxideDust(new ModSimpleBaseItem("PotassiumHydroxideDust", ModTabList.ModGenericTab)),
+    PrimordialPearlFragment(new ModSimpleBaseItem("PrimordialPearlFragment", ModTabList.ModThaumcraftTab)),
     ProteusStoneDust(new ModSimpleBaseItem("ProteusStoneDust", ModTabList.ModSpaceTab)),
     PulsatingIronBars(new ModSimpleBaseItem("PulsatingIronBars", ModTabList.ModBarsAndCasingsTab)),
     PulsatingSpatialCoreChip(new ModSimpleBaseItem("PulsatingSpatialCoreChip", ModTabList.ModCircuitsTab)),
