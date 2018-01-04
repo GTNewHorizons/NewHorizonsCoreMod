@@ -564,6 +564,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("Genetics", "misc", 6L, 4), FluidRegistry.getFluidStack("water", 750), FluidRegistry.getFluidStack("binnie.growthmedium", 750), 600, 480, false);
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0), FluidRegistry.getFluidStack("binnie.growthmedium", 750), FluidRegistry.getFluidStack("binnie.bacteria", 750), 1200, 480, false);
 
+        GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("Forestry", "beeCombs", 1L, 9), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("Forestry", "beeswax", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Iridium, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000, 9}, 120, 480);
+
         if (Loader.isModLoaded("gendustry")) {
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("gendustry", "HoneyDrop", 1L, 2005), CustomItemList.SnowQueenBloodDrop.get(1L), Materials.FierySteel.getFluid(200L), 1500, 1600, 2);
 
