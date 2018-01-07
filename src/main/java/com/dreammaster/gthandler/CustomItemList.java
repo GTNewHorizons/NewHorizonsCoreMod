@@ -102,7 +102,7 @@ public enum CustomItemList implements IItemContainer
 	MarshmallowForm, MarshmallowFormMold, UncookedSlush, MalformedSlush, GlowingMarshmallow, Marshmallow,
 	IchoriumCap, CoinTechnician,  CoinTechnicianI,  CoinTechnicianII,  CoinTechnicianIII, CoinDarkWizard, CoinDarkWizardI, CoinDarkWizardII, CoinDarkWizardIII, CoinAdventure, CoinAdventureI, CoinAdventureII, CoinAdventureIII,
 	CoinBees, CoinBeesI, CoinBeesII, CoinBeesIII, CoinBlood, CoinBloodI, CoinBloodII, CoinBloodIII, CoinFarmer, CoinFarmerI, CoinFarmerII, CoinFarmerIII, CoinForestry, CoinForestryI, CoinForestryII, CoinForestryIII,
-	CoinSurvivor, CoinSurvivorI, CoinSurvivorII, CoinSurvivorIII, CoinSpace, CoinSpaceI, CoinSpaceII, CoinSpaceIII, CoinChunkloaderTierI, CoinChunkloaderTierII, CoinChunkloaderTierIII, CoinChemist, CoinChemistI, CoinChemistII, CoinChemistIII,
+	CoinSurvivor, CoinSurvivorI, CoinSurvivorII, CoinSurvivorIII, CoinSpace, CoinSpaceI, CoinSpaceII, CoinSpaceIII, CoinChunkloaderTierI, CoinChunkloaderTierII, CoinChunkloaderTierIII, CoinChunkloaderTierIV, CoinChunkloaderTierV, CoinChemist, CoinChemistI, CoinChemistII, CoinChemistIII,
 	CoinCook, CoinCookI, CoinCookII, CoinCookIII, CoinBlank, CoinBlankI, CoinBlankII, CoinBlankIII, CoinSmith, CoinSmithI, CoinSmithII, CoinSmithIII,
 	WetTofu,
 	WeakOrb, ApprenticeOrb, MasterOrb, MagicianOrb, ArchmageOrb, TranscendentOrb, RawOrbTier1, RawOrbTier2, RawOrbTier3, RawOrbTier4, RawOrbTier5, RawOrbTier6,

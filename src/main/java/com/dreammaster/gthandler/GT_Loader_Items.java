@@ -368,6 +368,10 @@ public class GT_Loader_Items
 		CustomItemList.CoinChunkloaderTierII.getItem().setMaxStackSize(4);
 		CustomItemList.CoinChunkloaderTierIII.set(ItemList.CoinChunkloaderTierIII.getIS());
 		CustomItemList.CoinChunkloaderTierIII.getItem().setMaxStackSize(4);
+		CustomItemList.CoinChunkloaderTierIV.set(ItemList.CoinChunkloaderTierIV.getIS());
+		CustomItemList.CoinChunkloaderTierIV.getItem().setMaxStackSize(4);
+		CustomItemList.CoinChunkloaderTierV.set(ItemList.CoinChunkloaderTierV.getIS());
+		CustomItemList.CoinChunkloaderTierV.getItem().setMaxStackSize(4);
 		CustomItemList.CoinChemist.set(ItemList.CoinChemist.getIS());
 		CustomItemList.CoinChemistI.set(ItemList.CoinChemistI.getIS());
 		CustomItemList.CoinChemistII.set(ItemList.CoinChemistII.getIS());

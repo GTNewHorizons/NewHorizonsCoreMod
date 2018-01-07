@@ -76,6 +76,8 @@ public enum ItemList
     CoinChunkloaderTierI(new ModSimpleBaseItem("CoinChunkloaderTierI", ModTabList.ModGenericTab)),
     CoinChunkloaderTierII(new ModSimpleBaseItem("CoinChunkloaderTierII", ModTabList.ModGenericTab)),
     CoinChunkloaderTierIII(new ModSimpleBaseItem("CoinChunkloaderTierIII", ModTabList.ModGenericTab)),
+    CoinChunkloaderTierIV(new ModSimpleBaseItem("CoinChunkloaderTierIV", ModTabList.ModGenericTab)),
+    CoinChunkloaderTierV(new ModSimpleBaseItem("CoinChunkloaderTierV", ModTabList.ModGenericTab)),
     CoinAdventure(new ModSimpleBaseItem("CoinAdventure", ModTabList.ModGenericTab)),
     CoinAdventureI(new ModSimpleBaseItem("CoinAdventureI", ModTabList.ModGenericTab)),
     CoinAdventureII(new ModSimpleBaseItem("CoinAdventureII", ModTabList.ModGenericTab)),
