@@ -1460,7 +1460,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Polytetrafluoroethylene, 64)
         }, new FluidStack[]{
                 Materials.SolderingAlloy.getMolten(3760),
-                Materials.Naquadria.getMolten(4000),
+                Materials.Naquadria.getMolten(4032),
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 20000)
         }, CustomItemList.NanoCircuit.get(1), 4000, 500000);
 
