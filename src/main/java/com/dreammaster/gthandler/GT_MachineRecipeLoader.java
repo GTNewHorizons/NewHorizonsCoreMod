@@ -236,6 +236,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.log, Materials.Wood, 4L), GT_OreDictUnificator.get(OrePrefixes.treeSapling, 4L), new ItemStack(Items.compass, 1, 0)}, Materials.Glue.getFluid(144L), GT_ModHandler.getModItem("naturescompass", "NaturesCompass", 1L, 0), 200, 30);
 
+        GT_Values.RA.addAssemblerRecipe(new ItemStack(Items.string, 3, 0), ItemList.Circuit_Integrated.getWithDamage(0L, 1L), new ItemStack(Blocks.wool, 1, 0), 100, 4);
+
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.EnergeticAlloy.getMolten(576), CustomItemList.RawLapotronCrystal.get(1L), 10000, 2400, 480);
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.VibrantAlloy.getMolten(288), CustomItemList.RawLapotronCrystal.get(1L), 10000, 1200, 480);
 
