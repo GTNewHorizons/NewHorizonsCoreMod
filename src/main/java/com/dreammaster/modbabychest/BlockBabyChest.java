@@ -1,5 +1,6 @@
 package com.dreammaster.modbabychest;
 
+import com.dreammaster.main.GuiHandler;
 import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -60,7 +61,7 @@ public class BlockBabyChest extends BlockContainer implements ITileEntityProvide
 
     private void updateChestBounds(int pMeta) 
     {
-        setBlockBounds(0.2f, 0.0f, 0.2f, 0.8f, 0.51f, 0.8f);
+        setBlockBounds(0.28f, 0.0f, 0.28f, 0.72f, 0.45f, 0.72f);
     }
 
     @Override
@@ -87,7 +88,7 @@ public class BlockBabyChest extends BlockContainer implements ITileEntityProvide
             if (pWorld.getTileEntity(pX, pY, pZ) instanceof TileEntityBabyChest)
             {
                 TileEntityBabyChest tileEntity = (TileEntityBabyChest) pWorld.getTileEntity(pX, pY, pZ);
-                pPlayer.openGui(MainRegistry.instance, 0, pWorld, pX, pY, pZ);
+                pPlayer.openGui(MainRegistry.instance, GuiHandler.GUI_BABYCHEST, pWorld, pX, pY, pZ);
             }
             return true;
         }

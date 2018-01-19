@@ -118,6 +118,9 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
                 _mInventory[j] = ItemStack.loadItemStackFromNBT(nbttagcompound1);
             }
         }
+
+        if ( pNBTTagCompound.hasKey( "facing" ))
+          setOrientation( pNBTTagCompound.getByte( "facing" ) );
     }
 
     protected void writeSyncedNBT(NBTTagCompound pTag)
@@ -170,6 +173,7 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
         }
 
         pNBTTagCompound.setTag("Items", tNBTTaglist);
+        pNBTTagCompound.setByte("facing", (byte)_mOrientation.ordinal() );
     }
 
     @Override
