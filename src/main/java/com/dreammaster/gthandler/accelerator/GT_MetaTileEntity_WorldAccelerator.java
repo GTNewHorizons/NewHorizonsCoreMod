@@ -17,6 +17,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -26,9 +27,44 @@ import java.util.Random;
 
 import static gregtech.api.enums.GT_Values.V;
 
-
 public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_TieredMachineBlock
 {
+  private int _mRadiusTierOverride = -1;
+  private int _mSpeedTierOverride = -1;
+
+  private int getRadiusTierOverride()
+  {
+    if (_mRadiusTierOverride == -1)
+      _mRadiusTierOverride = mTier;
+    return _mRadiusTierOverride;
+  }
+
+  private int getSpeedTierOverride()
+  {
+    if (_mSpeedTierOverride == -1)
+      _mSpeedTierOverride = mTier;
+    return _mSpeedTierOverride;
+  }
+
+  private int incSpeedTierOverride()
+  {
+    _mSpeedTierOverride = getSpeedTierOverride() + 1;
+    if (_mSpeedTierOverride > mTier)
+      _mSpeedTierOverride = 1;
+
+    return _mSpeedTierOverride;
+  }
+
+  private int incRadiusTierOverride()
+  {
+    // Make sure we get the Override value first, as we check it for initial -1
+    _mRadiusTierOverride = getRadiusTierOverride() + 1;
+    if (_mRadiusTierOverride > mTier)
+      _mRadiusTierOverride = 1;
+
+    return _mRadiusTierOverride;
+  }
+
   private byte mMode = 0; // 0: RandomTicks around 1: TileEntities with range 1
   private static Textures.BlockIcons.CustomIcon _mGTIco_Norm_Idle;
   private static Textures.BlockIcons.CustomIcon _mGTIco_Norm_Active;
@@ -67,7 +103,27 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   @Override
   public String[] getDescription()
   {
-    return new String[] { String.format( "Accelerating things (Radius: %d EU/t: %d Speed Bonus: x%d)", mTier, getEnergyDemand( mTier, false ), mAccelerateStatic[mTier] ), "Use a screwdriver to change mode", "To accelerate TileEntities, this machine has to be adjacent to it", "This machine accepts up to 8 Amps", "Accelerating TileEntities doubles Energy-Demand" };
+    return new String[] { String.format( "Accelerating things (Max Radius: %d | Max Speed Bonus: x%d)", mTier, mAccelerateStatic[mTier] ), "Use a screwdriver to change mode, sneak to change Radius", "Use a wrench to change speed", "To accelerate TileEntities, this machine has to be adjacent to it", "This machine accepts up to 8 Amps", "Accelerating TileEntities doubles Energy-Demand" };
+  }
+
+  @Override
+  public boolean isGivingInformation() {
+    return true;
+  }
+
+  @Override
+  public String[] getInfoData() {
+    List<String> tInfoDisplay = new ArrayList<>(  );
+
+    tInfoDisplay.add( String.format( "Accelerator running in %s mode", mModeStr[mMode] ) );
+    tInfoDisplay.add( String.format( "Speed setting: [%d / %d]", mAccelerateStatic[getSpeedTierOverride()], mAccelerateStatic[mTier] ) );
+    tInfoDisplay.add( String.format( "Consuming %d EU/t", getEnergyDemand( getSpeedTierOverride(), getRadiusTierOverride(), mMode == 1 ) ));
+
+    // Don't show radius setting if in TE Mode
+    if ( mMode == 0 )
+        tInfoDisplay.add( String.format( "Radius setting: [%d / %d]", getRadiusTierOverride(), mTier ) );
+
+    return tInfoDisplay.toArray( new String[0] );
   }
 
   public GT_MetaTileEntity_WorldAccelerator( String pName, int pTier, int pInvSlotCount, String pDescription, ITexture[][][] pTextures )
@@ -113,17 +169,33 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   public void saveNBTData( NBTTagCompound pNBT )
   {
     pNBT.setByte( "mAccelMode", mMode );
+
+    // SpeedOverride can never be larger than mTier; Which will never exceed 255, so it's safe to cast here
+    pNBT.setByte( "mSpeed", (byte)getSpeedTierOverride() );
+    pNBT.setByte( "mRadius", (byte)getRadiusTierOverride() );
   }
 
-  public static long getEnergyDemand( int pTier, boolean pIsAcceleratingTEs )
+  public long getEnergyDemand( int pSpeedTier, int pRangeTier, boolean pIsAcceleratingTEs )
   {
-    return V[pTier] * ( pIsAcceleratingTEs ? 6 : 3 );
+    // Include range setting into power calculation
+    float multiplier = 100.0F / (float)mTier * (float)pRangeTier / 100.0F;
+    long demand = V[pSpeedTier] * ( pIsAcceleratingTEs ? 6 : 3 );
+
+    float tDemand = demand * multiplier;
+
+    return (int)tDemand;
   }
 
   @Override
   public void loadNBTData( NBTTagCompound pNBT )
   {
     mMode = pNBT.getByte( "mAccelMode" );
+
+    // Make sure we're not crashing with old Accelerator Machines
+    if ( pNBT.hasKey( "mSpeed" ) )
+      _mSpeedTierOverride = pNBT.getByte("mSpeed");
+    if ( pNBT.hasKey( "mRadius" ) )
+      _mRadiusTierOverride =  pNBT.getByte("mRadius");
   }
 
   @Override
@@ -188,12 +260,39 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
 
   private static String[] mModeStr = { "Blocks", "TileEntities" };
 
+
+  // This uses the Wrench as second tool to cycle speeds
+  @Override
+  public boolean onWrenchRightClick(byte aSide, byte aWrenchingSide, EntityPlayer pPlayer, float aX, float aY, float aZ) {
+    incSpeedTierOverride();
+
+    markDirty();
+    PlayerChatHelper.SendInfo( pPlayer, String.format( "Machine acceleration changed to x%d", mAccelerateStatic[getSpeedTierOverride()] ));
+
+    return true;
+  }
+
   @Override
   public void onScrewdriverRightClick( byte pSide, EntityPlayer pPlayer, float pX, float pY, float pZ )
   {
-    mMode = (byte) ( mMode == 0x00 ? 0x01 : 0x00 );
-    markDirty();
-    PlayerChatHelper.SendInfo( pPlayer, String.format( "Switched mode to: %s", mModeStr[mMode] ) );
+    if (pPlayer.isSneaking())
+    {
+      if (mMode == 0)
+      {
+        incRadiusTierOverride();
+
+        markDirty();
+        PlayerChatHelper.SendInfo( pPlayer, String.format( "Machine radius changed to %d Blocks", getRadiusTierOverride() ));
+      }
+      else
+        PlayerChatHelper.SendError( pPlayer, String.format( "Can't change radius; Machine is in TileEntity Mode!" ));
+    }
+    else
+    {
+      mMode = (byte) ( mMode == 0x00 ? 0x01 : 0x00 );
+      markDirty();
+      PlayerChatHelper.SendInfo( pPlayer, String.format( "Switched mode to: %s", mModeStr[mMode] ) );
+    }
   }
 
   @Override
@@ -205,7 +304,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
           return;
       }
 
-      long tEnergyDemand = getEnergyDemand( mTier, mMode == 1);
+      long tEnergyDemand = getEnergyDemand( getSpeedTierOverride(), getRadiusTierOverride(), mMode == 1);
       //  public static final long[] V = new long[]{8, 32, 128, 512, 2048, 8192, 32768, 131072, 524288, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE};
 
       // Do we have enough energy to run? Or are we not allowed to run?
@@ -265,7 +364,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
         }
 
         long tMaxTime = System.nanoTime() + 1000000;
-        for( int j = 0; j < mAccelerateStatic[mTier]; j++ )
+        for( int j = 0; j < mAccelerateStatic[getSpeedTierOverride()]; j++ )
         {
           tTile.updateEntity();
           if( System.nanoTime() > tMaxTime ) {
@@ -331,12 +430,12 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     int tY = pBaseMetaTileEntity.getYCoord();
     int tZ = pBaseMetaTileEntity.getZCoord();
 
-    int tX1 = tX - mTier;
-    int tX2 = tX + mTier;
-    int tY1 = Math.max( tY - mTier, 0 ); // Limit to bedrock
-    int tY2 = Math.min( tY + mTier, 255 ); // Limit to build height
-    int tZ1 = tZ - mTier;
-    int tZ2 = tZ + mTier;
+    int tX1 = tX - getRadiusTierOverride();
+    int tX2 = tX + getRadiusTierOverride();
+    int tY1 = Math.max( tY - getRadiusTierOverride(), 0 ); // Limit to bedrock
+    int tY2 = Math.min( tY + getRadiusTierOverride(), 255 ); // Limit to build height
+    int tZ1 = tZ - getRadiusTierOverride();
+    int tZ2 = tZ + getRadiusTierOverride();
 
     for( int xi = tX1; xi <= tX2; xi++ ) {
         for (int yi = tY1; yi <= tY2; yi++) {
@@ -361,7 +460,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   {
     try
     {
-      for( int j = 0; j < mTier; j++ )
+      for( int j = 0; j < getSpeedTierOverride(); j++ )
       {
         Block tBlock = pWorld.getBlock( pX, pY, pZ );
         if( tBlock.getTickRandomly() ) {
