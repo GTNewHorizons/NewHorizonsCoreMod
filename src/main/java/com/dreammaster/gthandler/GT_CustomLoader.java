@@ -22,7 +22,7 @@ public class GT_CustomLoader
 {
     public enum AdvancedGTMaterials
     {
-        LuV(OrePrefixes.circuit.get(Materials.Ultimate),
+        LuV(OrePrefixes.circuit.get(Materials.Master),
         		OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
         		Materials.VanadiumGallium,
         		OrePrefixes.wireGt02.get(Materials.HSSG),
@@ -31,7 +31,7 @@ public class GT_CustomLoader
         		Materials.Chrome,
         		Materials.Enderium),
         
-        ZPM(OrePrefixes.circuit.get(Materials.Superconductor),
+        ZPM(OrePrefixes.circuit.get(Materials.Ultimate),
         		OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
         		Materials.Naquadah,
         		OrePrefixes.wireGt02.get(Materials.Naquadah),
@@ -40,7 +40,7 @@ public class GT_CustomLoader
         		Materials.Iridium,
         		Materials.Naquadah),
         
-        UV(OrePrefixes.circuit.get(Materials.Infinite),
+        UV(OrePrefixes.circuit.get(Materials.Superconductor),
         		OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate), 
         		Materials.ElectrumFlux, 
         		OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
