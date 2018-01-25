@@ -5,6 +5,8 @@ package com.dreammaster.modhazardousitems;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.google.common.collect.EvictingQueue;
+import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.ModClassLoader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -27,6 +29,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.lang.reflect.Field;
 import java.util.Random;
 
 
@@ -176,76 +179,6 @@ public class HazardousItemsHandler
   }
 
   /**
-   * Add new DamageEffect to new or existing item (Must be exact-match)
-   *
-   * @param pItem
-   * The item in question
-   * @param pDamageSource
-   * The source (must be a valid one)
-   * @param pDamageAmount
-   * The amount. 1.0F equals 1 Heart
-   * @return
-   */
-  /*
-   * public boolean AddDamageEffectToItem(ItemStack pItem, String
-   * pDamageSource, float pDamageAmount) { boolean tResult = false; try { if
-   * (!DamageTypeHelper.IsValidDamageSource(pDamageSource)) return false;
-   * if (_mHazardItemsCollection == null) { _mLogger.info("It is .. null??");
-   * return false; }
-   * HazardousItem hi = _mHazardItemsCollection.FindHazardousItem(pItem); if
-   * (hi == null) hi =
-   * _mHazFactory.createHazardousItemsHazardousItem(pItem.getUnlocalizedName
-   * (), true, true, true);
-   * ItmDamageEffect tNewDE = _mHazFactory.createDamageEffect(pDamageAmount,
-   * pDamageSource); hi.getDamageEffects().add(tNewDE);
-   * _mHazardItemsCollection.getHazardousItems().add(hi); IsConfigDirty =
-   * true;
-   * _mLogger.info(String.format(
-   * "Added new Item %s to HazardousItems list with DamageSource: %s DamageAmount: %s"
-   * , pItem.getUnlocalizedName(), pDamageSource, pDamageAmount)); tResult =
-   * true; } catch (Exception e) { _mLogger.error(String.format(
-   * "Something went wrong while processing AddPotionEffectToItem for Item %s"
-   * , pItem.getUnlocalizedName())); e.printStackTrace(); }
-   * return tResult; }
-   */
-
-  /**
-   * Add new PotionEffect to new or existing item (Must be exact-match)
-   *
-   * @param pItem
-   * The item in question
-   * @param pPotionID
-   * The potionID (must be valid
-   * @param pTickDuration
-   * The number of ticks this potion will run, one the item is
-   * dropped. 20 ticks equals 1 second
-   * @param pLevel
-   * The level. Note: Offset is 1, so pLevel = 0 equals Potion
-   * Level I
-   * @return
-   */
-  /*
-   * public boolean AddPotionEffectToItem(ItemStack pItem, int pPotionID, int
-   * pTickDuration, int pLevel) { boolean tResult = false; try { if
-   * (!PotionHelper.IsValidPotionID(pPotionID)) return false;
-   * HazardousItem hi = _mHazardItemsCollection.FindHazardousItem(pItem); if
-   * (hi == null) hi =
-   * _mHazFactory.createHazardousItemsHazardousItem(pItem.getUnlocalizedName
-   * (), true, true, true);
-   * ItmPotionEffect tNewPE = _mHazFactory.createPotionEffect(pTickDuration,
-   * pPotionID, pLevel); hi.getPotionEffects().add(tNewPE);
-   * _mHazardItemsCollection.getHazardousItems().add(hi); IsConfigDirty =
-   * true;
-   * _mLogger.info(String.format(
-   * "Added new Item %s to HazardousItems list with PotionID: %d TickDuration: %d Level %d"
-   * , pItem.getUnlocalizedName(), pPotionID, pTickDuration, pLevel)); tResult
-   * = true; } catch (Exception e) { _mLogger.error(String.format(
-   * "Something went wrong while processing AddPotionEffectToItem for Item %s"
-   * , pItem.getUnlocalizedName())); e.printStackTrace(); }
-   * return tResult; }
-   */
-
-  /**
    * Initial Loading of config with automatic creation of default xml
    */
   public void LoadConfig()
@@ -308,7 +241,7 @@ public class HazardousItemsHandler
   /**
    * Verify defined DamageEffects in configfile
    *
-   * @param pCollection
+   * @param pItemCollection
    * @return true if everything is ok
    */
   public boolean VerifyConfiguredDamageEffects( HazardousItems pItemCollection )
@@ -343,7 +276,7 @@ public class HazardousItemsHandler
   /**
    * Verify defined potioneffects in configfile
    *
-   * @param pCollection
+   * @param pItemCollection
    * @return true if everything is ok
    */
   public boolean VerifyConfiguredPotionEffects( HazardousItems pItemCollection )
@@ -421,6 +354,80 @@ public class HazardousItemsHandler
     }
   }
 
+  private void checkInventoryArray(ItemStack[] pInventory, EntityPlayer pPlayer)
+  {
+    // Derp protection
+    if (pInventory == null)
+      return;
+
+    for( ItemStack pIs : pInventory )
+    {
+      String tCurrIS = "";
+      try
+      {
+        if( pIs == null )
+          continue;
+
+        tCurrIS = ItemDescriptor.fromStack( pIs ).toString();
+        // Check if item is a fluid container
+        if( pIs.getItem() instanceof IFluidContainerItem )
+        {
+          HazardousItems.HazardousFluid hf = _mHazardItemsCollection.FindHazardousFluid( pIs );
+          if( hf != null && hf.getCheckInventory() )
+          {
+            DoHIEffects( hf, pPlayer );
+          }
+        }
+        // Tinkers' construct smeltery tank
+        else if( "tconstruct.smeltery.itemblocks.LavaTankItemBlock".equals( pIs.getItem().getClass().getName() ) )
+        {
+          // _mLogger.info("Found lavatank");
+          NBTTagCompound tNBT = pIs.getTagCompound();
+          if( tNBT != null && tNBT.hasKey( "Fluid" ) )
+          {
+            // _mLogger.info("...Has NBT 'Fluid'...");
+            NBTTagCompound tFluidCompound = tNBT.getCompoundTag( "Fluid" );
+            if( tFluidCompound != null && tFluidCompound.hasKey( "FluidName" ) )
+            {
+              // _mLogger.info("...Has NBT 'FluidName'...");
+              String tFluidName = tFluidCompound.getString( "FluidName" );
+              if( tFluidName != null && !tFluidName.isEmpty() )
+              {
+                // _mLogger.info("...Finding Hazardous Fluids...");
+                HazardousItems.HazardousFluid hf = _mHazardItemsCollection.FindHazardousFluidExact( tFluidName );
+                if( hf != null && hf.getCheckInventory() )
+                {
+                  // _mLogger.info("...Found Hazardous Fluids");
+                  DoHIEffects( hf, pPlayer );
+                }
+                // else
+                // _mLogger.info("...Not found Hazardous Fluids");
+              }
+            }
+            // else
+            // _mLogger.info("...Has no NBT 'FluidName'");
+          }
+          // else
+          // _mLogger.info("...Has no NBT 'Fluid'");
+        }
+        else
+        {
+          HazardousItems.HazardousItem hi = _mHazardItemsCollection.FindHazardousItem( pIs );
+          if( hi != null && hi.getCheckInventory() )
+          {
+            DoHIEffects( hi, pPlayer );
+          }
+        }
+      }
+      catch( Exception e )
+      {
+        _mLogger.debug( String.format( "Something weird happend with item %s", tCurrIS ) );
+        // Silently catching exception and continue
+        continue;
+      }
+    }
+  }
+
   private void CheckInventoryForItems( EntityPlayer pPlayer )
   {
     if( _mRnd.nextInt( _mExecuteChance ) != 0 ) {
@@ -429,76 +436,32 @@ public class HazardousItemsHandler
 
     try
     {
-      ItemStack[] tPlayerInventory = pPlayer.inventory.mainInventory;
-      String tCurrIS = "";
+      checkInventoryArray(pPlayer.inventory.mainInventory, pPlayer);
 
-      for( ItemStack is : tPlayerInventory )
+      // M&B addition ------
+      if (Loader.isModLoaded("battlegear2"))
       {
+        Class<?> c = pPlayer.inventory.getClass();
+        Field extraInv = null;
         try
-        // Safe-loop to enforce dangerous items even if something bad
-        // happens here
         {
-          if( is == null ) {
-              continue;
-          }
+          extraInv = c.getDeclaredField( "extraItems" );
+        } catch (NoSuchFieldException nsfe)
+        { _mLogger.warn( "battlegear.changed.1", "Seems battlegear has updated/changed. Someone has to fix HazardousItems!" ); }
 
-          tCurrIS = ItemDescriptor.fromStack( is ).toString();
+        if (extraInv == null)
+          return;
 
-          // Check if item is a fluid container
-          if( is.getItem() instanceof IFluidContainerItem )
-          {
-            HazardousItems.HazardousFluid hf = _mHazardItemsCollection.FindHazardousFluid( is );
-            if( hf != null && hf.getCheckInventory() ) {
-                DoHIEffects(hf, pPlayer);
-            }
-          }
-          // Tinkers' construct smeltery tank
-          else if("tconstruct.smeltery.itemblocks.LavaTankItemBlock".equals(is.getItem().getClass().getName()))
-          {
-            // _mLogger.info("Found lavatank");
-            NBTTagCompound tNBT = is.getTagCompound();
-            if( tNBT != null && tNBT.hasKey( "Fluid" ) )
-            {
-              // _mLogger.info("...Has NBT 'Fluid'...");
-              NBTTagCompound tFluidCompound = tNBT.getCompoundTag( "Fluid" );
-              if( tFluidCompound != null && tFluidCompound.hasKey( "FluidName" ) )
-              {
-                // _mLogger.info("...Has NBT 'FluidName'...");
-                String tFluidName = tFluidCompound.getString( "FluidName" );
-                if( tFluidName != null && !tFluidName.isEmpty())
-                {
-                  // _mLogger.info("...Finding Hazardous Fluids...");
-                  HazardousItems.HazardousFluid hf = _mHazardItemsCollection.FindHazardousFluidExact( tFluidName );
-                  if( hf != null && hf.getCheckInventory() )
-                  {
-                    // _mLogger.info("...Found Hazardous Fluids");
-                    DoHIEffects( hf, pPlayer );
-                  }
-                  // else
-                  // _mLogger.info("...Not found Hazardous Fluids");
-                }
-              }
-              // else
-              // _mLogger.info("...Has no NBT 'FluidName'");
-            }
-            // else
-            // _mLogger.info("...Has no NBT 'Fluid'");
-          }
-          else
-          {
-            HazardousItems.HazardousItem hi = _mHazardItemsCollection.FindHazardousItem( is );
-            if( hi != null && hi.getCheckInventory() ) {
-                DoHIEffects(hi, pPlayer);
-            }
-          }
-        }
-        catch( Exception e )
+        try
         {
-          _mLogger.debug( String.format( "Something weird happend with item %s", tCurrIS ) );
-          // Silently catching exception and continue
-          continue;
+          ItemStack[] tExtraInv = (ItemStack[])extraInv.get( pPlayer.inventory );
+          checkInventoryArray( tExtraInv, pPlayer );
         }
+        catch (Exception ex)
+        { _mLogger.warn( "battlegear.changed.2", "Seems battlegear has updated/changed. Someone has to fix HazardousItems!" ); }
       }
+      // ------ M&B addition
+
     }
     catch( Exception e )
     {
@@ -518,10 +481,4 @@ public class HazardousItemsHandler
         pPlayer.addPotionEffect(new PotionEffect(iPE.getId(), iPE.getDuration(), iPE.getLevel()));
     }
   }
-  /*
-   * public boolean RemoveItemFromList(ItemStack pInHand, boolean
-   * pIncludeNonExact) { try { return
-   * _mHazardItemsCollection.RemoveItemExact(pInHand, pIncludeNonExact); }
-   * catch (Exception e) { e.printStackTrace(); return false; } }
-   */
 }
