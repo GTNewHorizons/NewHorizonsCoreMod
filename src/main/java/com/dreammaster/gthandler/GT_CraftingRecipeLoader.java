@@ -145,7 +145,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("naturescompass", "NaturesCompass", 1L, 0), true, false, true);
         //IC2
         GT_ModHandler.removeRecipeByOutput(ItemList.IC2_Energium_Dust.get(1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","lapotronCrystal", 1L));
+        GT_ModHandler.removeRecipeByOutput(ItemList.IC2_LapotronCrystal.get(1L));
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorNanoBoots", 1L));
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorNanoChestplate", 1L));
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorNanoHelmet", 1L));
