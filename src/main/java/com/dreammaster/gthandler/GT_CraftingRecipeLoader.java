@@ -131,6 +131,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextForestry, "stamps", 1L, 4), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextForestry, "stamps", 1L, 5), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextForestry, "stamps", 1L, 6), true, false, true);
+
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextForestry, "engine", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextForestry, "engine", 1L, 1), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextForestry, "engine", 1L, 2), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextForestry, "engine", 1L, 4), true, false, true);
         //GT++ recipes remove
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32061), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32062), true, false, true);
@@ -306,6 +311,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addRollingMachineRecipe(GT_ModHandler.getModItem("Railcraft", "post.metal.light.blue", 8L), new Object[]{aTextIron1, aTextIron2, aTextIron1, 'X', OrePrefixes.stick.get(Materials.Aluminium).toString()});
         GT_ModHandler.addRollingMachineRecipe(GT_ModHandler.getModItem("Railcraft", "post.metal.purple", 64L), new Object[]{aTextIron1, aTextIron2, aTextIron1, 'X', OrePrefixes.stick.get(Materials.Titanium).toString()});
         GT_ModHandler.addRollingMachineRecipe(GT_ModHandler.getModItem("Railcraft", "post.metal.black", 64L), new Object[]{aTextIron1, aTextIron2, aTextIron1, 'X', OrePrefixes.stick.get(Materials.Tungsten).toString()});
+
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 0), bits, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.StainlessSteel), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.StainlessSteel), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.circuit.get(Materials.Basic), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 1), bits, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Iron), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Iron), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Iron), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 2), bits, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Bronze), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Bronze), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Bronze), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 4), bits, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Gold), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.WroughtIron), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.WroughtIron), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.UnfiredClayBrick.get(8L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{"CCC", "CFC", "CCC", 'C', new ItemStack(Items.clay_ball, 1, 32767), 'F', CustomItemList.WoodenBrickForm});
         GT_ModHandler.addShapelessCraftingRecipe(CustomItemList.UnfiredClayBrick.get(1L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{new ItemStack(Items.clay_ball, 1, 32767), CustomItemList.WoodenBrickForm});
