@@ -17,7 +17,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
     private static final String aTextMachineAlpha = "machine.alpha";
     private static final String aTextIron1 = "X X";
     private static final String aTextIron2 = "XXX";
-    private final String aTextForestry = "Forestry";
+    private static final String aTextForestry = "Forestry";
     private static final long bits = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.BUFFERED;
 
 
