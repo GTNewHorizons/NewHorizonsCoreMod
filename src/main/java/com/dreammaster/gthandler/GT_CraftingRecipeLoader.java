@@ -123,19 +123,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 1), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 2), true, false, true);
-        //forestry
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 2), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 3), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 4), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 5), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 6), true, false, true);
-
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 2), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 4), true, false, true);
         //GT++ recipes remove
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32061), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32062), true, false, true);
