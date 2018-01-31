@@ -10,6 +10,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
+
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader
         implements Runnable {
     private static final String aTextRailcraft = "Railcraft";
@@ -19,6 +21,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
     private static final String aTextIron2 = "XXX";
     private final static String aTextForestry = "Forestry";
     private static final long bits = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.BUFFERED;
+    private static final long bits2 = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.BUFFERED | DELETE_ALL_OTHER_RECIPES;
 
 
     @Override
@@ -123,6 +126,19 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 1), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 2), true, false, true);
+        //forestry
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 1), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 2), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 3), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 4), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 5), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 6), true, false, true);
+
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 1), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 2), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 4), true, false, true);
         //GT++ recipes remove
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32061), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32062), true, false, true);
@@ -299,10 +315,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addRollingMachineRecipe(GT_ModHandler.getModItem("Railcraft", "post.metal.purple", 64L), new Object[]{aTextIron1, aTextIron2, aTextIron1, 'X', OrePrefixes.stick.get(Materials.Titanium).toString()});
         GT_ModHandler.addRollingMachineRecipe(GT_ModHandler.getModItem("Railcraft", "post.metal.black", 64L), new Object[]{aTextIron1, aTextIron2, aTextIron1, 'X', OrePrefixes.stick.get(Materials.Tungsten).toString()});
 
-        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 0), bits, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.StainlessSteel), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.StainlessSteel), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.circuit.get(Materials.Basic), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
-        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 1), bits, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Iron), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Iron), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Iron), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
-        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 2), bits, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Bronze), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Bronze), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Bronze), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
-        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 4), bits, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Gold), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.WroughtIron), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.WroughtIron), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 0), bits2,  new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.StainlessSteel), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.StainlessSteel), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.circuit.get(Materials.Basic), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 1), bits2, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Iron), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Iron), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Iron), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 2), bits2, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Bronze), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.Bronze), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.Bronze), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Forestry", "engine", 1L, 4), bits2, new Object[]{"BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.Gold), 'L', OrePrefixes.plate.get(Materials.Lapis), 'S', OrePrefixes.spring.get(Materials.WroughtIron), 'P', OreDictNames.craftingPiston, 'G', OrePrefixes.gearGt.get(Materials.WroughtIron), 'C', GT_ModHandler.getModItem(aTextForestry, "sturdyMachine", 1L, 0)});
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.UnfiredClayBrick.get(8L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{"CCC", "CFC", "CCC", 'C', new ItemStack(Items.clay_ball, 1, 32767), 'F', CustomItemList.WoodenBrickForm});
         GT_ModHandler.addShapelessCraftingRecipe(CustomItemList.UnfiredClayBrick.get(1L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{new ItemStack(Items.clay_ball, 1, 32767), CustomItemList.WoodenBrickForm});
