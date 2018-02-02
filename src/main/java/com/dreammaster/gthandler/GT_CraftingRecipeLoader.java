@@ -168,7 +168,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemAdvBat", 1L));
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemNightvisionGoggles", 1L));
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorJetpackElectric", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorJetpack", 1L));
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorJetpack", 1L, GT_Values.W));
         //Add recipes
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier1.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Aluminium), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.AnnealedCopper), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
