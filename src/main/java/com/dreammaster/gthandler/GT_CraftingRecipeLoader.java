@@ -139,11 +139,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 1), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 2), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 4), true, false, true);
-        //GT++ recipes remove
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32061), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32062), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32063), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32064), true, false, true);
         //Steve Carts
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 9), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 16), true, false, true);
