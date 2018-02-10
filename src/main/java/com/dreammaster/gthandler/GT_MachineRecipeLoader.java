@@ -1491,6 +1491,17 @@ public class GT_MachineRecipeLoader implements Runnable{
 
                 //Energy Flow Circuit
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass_Elite.get(1), ItemList.Circuit_Wetwarecomputer.get(2), ItemList.Circuit_Chip_UHPIC.get(4), ItemList.Circuit_Chip_QuantumCPU.get(2), ItemList.Circuit_Chip_NanoCPU.get(2), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Superconductor, 64)},  tMat.getMolten(576L * tMultiplier / 2L), CustomItemList.HighEnergyFlowCircuit.get(1), 2400, 7680, true);
+
+                // --- Advanced Solar Panel
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_LV.get(1),ItemList.Cover_SolarPanel_LV.get(1),  GT_Utility.getIntegratedCircuit(2)}, tMat.getMolten(288L * tMultiplier / 2L), GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 0), 800, 64);
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_MV.get(1),ItemList.Cover_SolarPanel_MV.get(1),  GT_Utility.getIntegratedCircuit(2)}, tMat.getMolten(576L * tMultiplier / 2L), GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 1), 1000, 256);
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_HV.get(1),ItemList.Cover_SolarPanel_HV.get(1),  GT_Utility.getIntegratedCircuit(2)}, tMat.getMolten(864L * tMultiplier / 2L), GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 2), 1200, 1024);
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_EV.get(1),ItemList.Cover_SolarPanel_EV.get(1),  GT_Utility.getIntegratedCircuit(2)}, tMat.getMolten(1152L * tMultiplier / 2L), GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 3), 1400, 4096);
+                // --- Super Solar Panel
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_IV.get(1),ItemList.Cover_SolarPanel_IV.get(1),  GT_Utility.getIntegratedCircuit(2)}, tMat.getMolten(1440 * tMultiplier / 2L), GT_ModHandler.getModItem("supersolarpanel", "SpectralSolarPanel", 1L, 0), 1600, 16384);
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_LuV.get(1),ItemList.Cover_SolarPanel_LuV.get(1),  GT_Utility.getIntegratedCircuit(2)}, tMat.getMolten(1728 * tMultiplier / 2L), GT_ModHandler.getModItem("supersolarpanel", "SpectralSolarPanel", 1L, 0), 1800, 65535);
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_ZPM.get(1),ItemList.Cover_SolarPanel_ZPM.get(1),  GT_Utility.getIntegratedCircuit(2)}, tMat.getMolten(2016 * tMultiplier / 2L), GT_ModHandler.getModItem("supersolarpanel", "AdminSolarPanel", 1L, 0), 2000, 262144);
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_UV.get(1),ItemList.Cover_SolarPanel_UV.get(1),  GT_Utility.getIntegratedCircuit(2)}, tMat.getMolten(2304 * tMultiplier / 2L), GT_ModHandler.getModItem("supersolarpanel", "PhotonicSolarPanel", 1L, 0), 2200, 1048576);
             }
         }
 
