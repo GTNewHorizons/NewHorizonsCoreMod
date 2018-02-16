@@ -908,12 +908,12 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 2L), ItemList.Shape_Extruder_Hoe.get(0L), GT_OreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.StainlessSteel, 1L), 150, 120);
 
-        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 9L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32040), ItemList.IC2_ShaftIron.get(1L, new Object[0]), 640, 120);
-        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 9L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32040), ItemList.IC2_ShaftIron.get(1L, new Object[0]), 640, 120);
-        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32040), ItemList.IC2_ShaftIron.get(1L, new Object[0]), 640, 120);
-        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.block, Materials.WroughtIron, 1L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32040), ItemList.IC2_ShaftIron.get(1L, new Object[0]), 640, 120);
-        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 9L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32040), ItemList.IC2_ShaftSteel.get(1L, new Object[0]), 1280, 120);
-        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.block, Materials.Steel, 1L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 1L, 32040), ItemList.IC2_ShaftSteel.get(1L, new Object[0]), 1280, 120);
+        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 9L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftIron.get(1L, new Object[0]), 640, 120);
+        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 9L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftIron.get(1L, new Object[0]), 640, 120);
+        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftIron.get(1L, new Object[0]), 640, 120);
+        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.block, Materials.WroughtIron, 1L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftIron.get(1L, new Object[0]), 640, 120);
+        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 9L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftSteel.get(1L, new Object[0]), 1280, 120);
+        GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.block, Materials.Steel, 1L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftSteel.get(1L, new Object[0]), 1280, 120);
 
         GT_Values.RA.addFermentingRecipe(Materials.Honey.getFluid(1000), FluidRegistry.getFluidStack("for.honey", 1000), 20, false);
         GT_Values.RA.addFermentingRecipe(FluidRegistry.getFluidStack("for.honey", 1000), Materials.Honey.getFluid(1000),20, false);
