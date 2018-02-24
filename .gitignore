@@ -3,6 +3,7 @@ eclipse/
 .settings/
 .classpath
 .project
+.metadata/
 bin/
 out/
 libs/
