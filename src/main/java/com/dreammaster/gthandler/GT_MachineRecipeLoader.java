@@ -1394,6 +1394,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.QuantumStar.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iridium, 1), ItemList.Circuit_Crystalcomputer.get(1L)}, GT_Values.NF, ItemList.Sensor_IV.get(1L),200, 30);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.QuantumStar.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iridium, 1), ItemList.Circuit_Neuroprocessor.get(1L)}, GT_Values.NF, ItemList.Sensor_IV.get(1L),200, 30);
 
+        GT_Values.RA.addSifterRecipe(GT_OreDictUnificator.get(OrePrefixes.crushedPurified, Materials.Cinnabar,1L), new ItemStack[] {Materials.Mercury.getGems(1),Materials.Mercury.getGems(1),Materials.Mercury.getGems(1),Materials.Mercury.getGems(1),Materials.Mercury.getGems(1),Materials.Mercury.getGems(1),Materials.Mercury.getGems(1),Materials.Mercury.getGems(1),Materials.Cinnabar.getDust(1)}, new int[] {100,300,500,1000,1000,1500,2300,2500,3500}, 7200, 30);
+        
         if(Loader.isModLoaded("thaumicbases")) {
         	GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("thaumicbases","resource",1L,7), new ItemStack[]{GT_ModHandler.getModItem("thaumicbases","tobaccoPowder",1L, 0)}, new int[]{10000}, 10, 2);
         }
