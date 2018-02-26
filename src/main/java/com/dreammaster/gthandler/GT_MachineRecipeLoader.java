@@ -1856,9 +1856,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         if (Loader.isModLoaded("eternalsingularity")&&Loader.isModLoaded("SGCraft")) {
         	GT_Values.RA.addAssemblylineRecipe(GT_OreDictUnificator.get(OrePrefixes.foil,Materials.Infinity,1L), 72000, 
         	new ItemStack[] { 
-        			GT_ModHandler.getModItem("eternalsingularity","combined_singularity",16L,4),
+        			GT_ModHandler.getModItem("eternalsingularity","eternal_singularity",24L),
         			ItemList.Sensor_UV.get(16L),
-        			GT_ModHandler.getModItem("eternalsingularity","eternal_singularity",16L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.Infinity,16L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.CosmicNeutronium,16L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.NaquadahAlloy,64L),
