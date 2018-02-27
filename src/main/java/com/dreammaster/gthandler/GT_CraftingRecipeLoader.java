@@ -5,7 +5,9 @@ import gregtech.api.enums.*;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.common.GT_Proxy;
 import ic2.core.Ic2Items;
+import javafx.scene.paint.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -386,6 +388,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2", "itemNightvisionGoggles", 1, GT_Values.W), bits, new Object[] {"AXA", "RBR", "SdS", 'A', GT_ModHandler.getModItem("IC2", "reactorHeatSwitchDiamond", 1, 1),  'X', OrePrefixes.screw.get(Materials.StainlessSteel),  'B', OrePrefixes.bolt.get(Materials.StainlessSteel), 'R', OrePrefixes.ring.get(Materials.StainlessSteel), 'S', GT_ModHandler.getModItem("GalacticraftCore", "item.sensorLens", 1, 0)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2", "itemArmorJetpackElectric", 1, GT_Values.W), bits, new Object[] {"SCS", "MBM", "EWE", 'S', GT_ModHandler.getModItem("dreamcraft", "item.StainlessSteelItemCasing", 1, 0),  'C', OrePrefixes.circuit.get(Materials.Advanced),  'M', ItemList.Electric_Motor_HV,  'B', GT_ModHandler.getModItem("IC2", "itemArmorBatpack", 1, GT_Values.W), 'W', OrePrefixes.wireGt04.get(Materials.AnnealedCopper), 'E', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 6)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2", "itemArmorJetpack", 1, GT_Values.W), bits, new Object[] {"SXS", "TCT", "EZE", 'S', GT_ModHandler.getModItem("dreamcraft", "item.StainlessSteelItemCasing", 1, 0),  'X', OrePrefixes.circuit.get(Materials.Advanced),  'T', GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1, 0), 'C', GT_ModHandler.getModItem("IC2", "reactorCoolantSix", 1, 1), 'Z', GT_ModHandler.getModItem("adventurebackpack", "backpackComponent", 1, 5), 'E', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 6)});
+
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("OpenComputers", "wrench", 1, 0), GT_Proxy.tBits, new Object[]{"IWI", "III", " I ", 'W', ToolDictNames.craftingToolWrench, 'I', OrePrefixes.ingot.get(Materials.Iron)});
 
         if (Loader.isModLoaded("GraviSuite")) {
 
