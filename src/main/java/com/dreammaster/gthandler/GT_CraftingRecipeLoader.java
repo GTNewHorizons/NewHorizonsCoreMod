@@ -1,18 +1,23 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
+
 import cpw.mods.fml.common.Loader;
-import gregtech.api.enums.*;
+import gregtech.api.enums.Dyes;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OreDictNames;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.common.GT_Proxy;
 import ic2.core.Ic2Items;
-import javafx.scene.paint.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-
-import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader
         implements Runnable {

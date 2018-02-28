@@ -24,6 +24,7 @@ import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 import com.dreammaster.modhazardousitems.HazardousItemsHandler;
 import com.dreammaster.network.CoreModDispatcher;
+import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -243,7 +244,11 @@ public class MainRegistry
         if (CoreConfig.ModBabyChest_Enabled) {
             InitAdditionalBlocks();
         }
-
+        
+        // Register additional OreDictionary Names
+        if(CoreConfig.OreDictItems_Enabled)
+        OreDictHandler.register_all();
+        
         // Register Dimensions in GalacticGregGT5
         if (Loader.isModLoaded("galacticgreg"))
         {

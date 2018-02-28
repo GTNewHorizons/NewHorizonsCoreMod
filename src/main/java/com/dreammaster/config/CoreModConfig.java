@@ -15,7 +15,8 @@ public class CoreModConfig extends ConfigManager
     super( pConfigBaseDirectory, pModCollectionDirectory, pModID );
 
   }
-
+  
+  public boolean OreDictItems_Enabled;
   public boolean ModHazardousItems_Enabled;
   public boolean ModCustomToolTips_Enabled;
   public boolean ModItemInHandInfo_Enabled;
@@ -41,7 +42,8 @@ public class CoreModConfig extends ConfigManager
     ModCustomDrops_Enabled = false;
     ModAdminErrorLogs_Enabled = true;
     ModBabyChest_Enabled = true;
-
+    OreDictItems_Enabled = true;
+    
     AvaritiaFixEnabled = false;
     PotionTimer = 100;
 
@@ -52,6 +54,7 @@ public class CoreModConfig extends ConfigManager
   @Override
   protected void Init()
   {
+	OreDictItems_Enabled = _mainConfig.getBoolean( "OreDictItems", "Modules", OreDictItems_Enabled, "Set to false to prevent the OreDict register for SpaceStones and SpaceDusts");
     ModHazardousItems_Enabled = _mainConfig.getBoolean( "HazardousItems", "Modules", ModHazardousItems_Enabled, "Set to true to enable HazardousItems module. This needs a separate config file which is created once you start with this setting enabled" );
     ModCustomToolTips_Enabled = _mainConfig.getBoolean( "CustomToolTips", "Modules", ModCustomToolTips_Enabled, "Set to true to enable CustomToolTips module. This needs a separate config file which is created once you start with this setting enabled" );
     ModItemInHandInfo_Enabled = _mainConfig.getBoolean( "ItemInHandInfo", "Modules", ModItemInHandInfo_Enabled, "Set to true to enable ItemInHandInfo module. If enabled, type /iih to display the item's name-info" );
