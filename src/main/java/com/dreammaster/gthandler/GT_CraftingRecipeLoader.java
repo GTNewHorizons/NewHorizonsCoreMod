@@ -412,7 +412,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2", "itemArmorJetpack", 1, GT_Values.W), bits, new Object[] {"SXS", "TCT", "EZE", 'S', GT_ModHandler.getModItem("dreamcraft", "item.StainlessSteelItemCasing", 1, 0),  'X', OrePrefixes.circuit.get(Materials.Advanced),  'T', GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1, 0), 'C', GT_ModHandler.getModItem("IC2", "reactorCoolantSix", 1, 1), 'Z', GT_ModHandler.getModItem("adventurebackpack", "backpackComponent", 1, 5), 'E', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 6)});
 
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("OpenComputers", "wrench", 1, 0), GT_Proxy.tBits, new Object[]{"IWI", "ICI", " I ", 'W', ToolDictNames.craftingToolWrench, 'I', OrePrefixes.ingot.get(Materials.Iron), 'C', GT_ModHandler.getModItem("OpenComputers", "item", 1, 24)});
-        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("openprinter", "openprinter.folder", 1L, 0),  GT_Proxy.tBits, new Object[]{"PGP", " P", 'P', new ItemStack(Items.paper, 1,0), 'G', new ItemStack(Items.slime_ball, 1,0)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("openprinter", "openprinter.folder", 1L, 0),  GT_Proxy.tBits, new Object[]{"PGP", " P ", 'P', new ItemStack(Items.paper, 1,0), 'G', new ItemStack(Items.slime_ball, 1,0)});
 
         if (Loader.isModLoaded("GraviSuite")) {
 
