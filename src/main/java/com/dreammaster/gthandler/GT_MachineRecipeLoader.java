@@ -1517,6 +1517,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("OpenComputers", "item", 9L, 96), GT_ModHandler.getModItem("OpenComputers", "chameliumBlock", 1L, 0), 300, 2);
             //Chamelium
             GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 4L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), Materials.Water.getFluid(1000L), GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 9L, 96), 200, 120);
+            //Open Printers
             //Printer
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Machine_MV_Printer.get(1L), ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 24), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("openprinter", "openprinter.printer", 1L, 0), 300, 120);
             //Shredder
@@ -1531,6 +1532,28 @@ public class GT_MachineRecipeLoader implements Runnable{
             //Color Ink Cartridge
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1L, 94), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32415), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32416), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32418), GT_Utility.getIntegratedCircuit(2)}, Materials.Water.getFluid(1000L), GT_ModHandler.getModItem("openprinter", "openprinter.printerInkColor", 1L, GT_Values.W), 300, 120);
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("openprinter", "openprinter.printerInkColor", 1L, GT_Values.W), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32415), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32416), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32418), GT_Utility.getIntegratedCircuit(2)}, Materials.Water.getFluid(1000L), GT_ModHandler.getModItem("openprinter", "openprinter.printerInkColor", 1L, GT_Values.W), 150, 120);
+            //Open Security
+            //Magnetic Card Reader
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 25), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), ItemList.Circuit_Parts_Transistor.get(2L), GT_Utility.getIntegratedCircuit(2)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "magreader", 1L, 0), 300, 256);
+            //RFID Reader
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("opensecurity", "opensecurity.rfidReaderCard", 1L, 0), ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), GT_Utility.getIntegratedCircuit(2)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "rfidreader", 1L, 0), 300, 120);
+            //Card writer
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 25), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 1), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 28), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), ItemList.Circuit_Parts_Transistor.get(2L)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "rfidwriter", 1L, 0), 300, 120);
+            //Alarm
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.noteblock, 1,0), ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "alarm", 1L, 0), 300, 120);
+            //Entity Detector
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1L, 33), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 25), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 1), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 28), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "entitydetector", 1L, 0), 300, 120);
+            //Door Controler
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1L, 28), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 25), ItemList.Circuit_Parts_Transistor.get(2L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 4L),  GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "doorcontroller", 1L, 0), 300, 120);
+            //Data Block
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 104), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), GT_ModHandler.getModItem("OpenComputers", "cable", 1L, 0),  GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.DataBlock", 1L, 0), 300, 120);
+            //swtichable Hub
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "relay", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 25), GT_ModHandler.getModItem("OpenComputers", "cable", 4L, 0), ItemList.Circuit_Parts_Transistor.get(2L),  GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.SwitchableHub", 1L, 0), 300, 120);
+            //kvm Hub
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "relay", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 25), GT_ModHandler.getModItem("OpenComputers", "cable", 4L, 0), ItemList.Circuit_Parts_Transistor.get(2L),  GT_Utility.getIntegratedCircuit(2)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.BlockKVM", 1L, 0), 300, 120);
+            //energy turret
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("openmodularturrets", "laserTurret", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 4L, 25), GT_ModHandler.getModItem("OpenComputers", "cable", 4L, 0), ItemList.Circuit_Parts_Transistor.get(2L),  GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", ":energyTurretBlock", 1L, 0), 300, 120);
+
         }
 
         for (Materials tMat : Materials.values()) {//TODO dream things using soldering go in here!

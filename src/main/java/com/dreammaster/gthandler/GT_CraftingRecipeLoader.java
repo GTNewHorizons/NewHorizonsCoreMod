@@ -183,6 +183,17 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openprinter", "openprinter.printerInkBlack", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openprinter", "openprinter.printerInkColor", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openprinter", "openprinter.folder", 1L, 0), true, false, true);
+        //Open Security
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "magreader", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "rfidreader", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "rfidwriter", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "alarm", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "entitydetector", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "doorcontroller", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "opensecurity.DataBlock", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "opensecurity.SwitchableHub", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "opensecurity.BlockKVM", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "energyTurretBlock", 1L, 0), true, false, true);
 
         //Add recipes
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier1.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Aluminium), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.AnnealedCopper), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
