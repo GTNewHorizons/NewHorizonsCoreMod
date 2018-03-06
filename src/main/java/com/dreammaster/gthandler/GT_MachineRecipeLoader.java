@@ -13,6 +13,7 @@ import gregtech.api.util.GT_Utility;
 import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -1554,7 +1555,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             //energy turret
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("openmodularturrets", "laserTurret", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 4L, 25), GT_ModHandler.getModItem("OpenComputers", "cable", 4L, 0), ItemList.Circuit_Parts_Transistor.get(2L),  GT_Utility.getIntegratedCircuit(2)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "energyTurretBlock", 1L, 0), 300, 120);
             //keypad
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "keyboard", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 24), ItemList.Circuit_Parts_Transistor.get(2L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),  GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "keypadLock", 1L, 0), 300, 120);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "keyboard", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 24), ItemList.Circuit_Parts_Transistor.get(2L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),  GT_Utility.getIntegratedCircuit(2)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "keypadLock", 1L, 0), 300, 120);
             //biometric reader
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 4L),  ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 24), ItemList.Circuit_Parts_Transistor.get(2L), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "biometricScanner", 1L, 0), 300, 120);
             //magnetic stipe card
@@ -1562,13 +1563,13 @@ public class GT_MachineRecipeLoader implements Runnable{
             //RFID Card
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Paper, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IronMagnetic, 2L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 24), ItemList.Circuit_Parts_Transistor.get(1L), GT_Utility.getIntegratedCircuit(2)}, Materials.Glue.getMolten(144L), GT_ModHandler.getModItem("opensecurity", "opensecurity.rfidCard", 2L, 0), 150, 64);
             //RFID Reader Card
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1L, 33), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 13), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 25), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 1), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 28), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.rfidReaderCard", 1L, 0), 300, 120);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1L, 33), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 13), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 25), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 1), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 28), GT_Utility.getIntegratedCircuit(2)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.rfidReaderCard", 1L, 0), 300, 120);
             //Secure Network Card
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1L, 11), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 26), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.secureNetworkCard", 1L, 0), 300, 256);
             //Secure Door
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.iron_door, 1, 0), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), ItemList.Circuit_Parts_Transistor.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 4L), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("opensecurity", "opensecurity.securityDoor", 1L, 0), 300, 120);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Items.iron_door,1), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), ItemList.Circuit_Parts_Transistor.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 4L), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("opensecurity", "opensecurity.securityDoor", 1L, 0), 300, 120);
             //Secure Private Door
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.iron_door, 1, 0), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), ItemList.Circuit_Parts_Transistor.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 4L), GT_Utility.getIntegratedCircuit(2)}, GT_Values.NF, GT_ModHandler.getModItem("opensecurity", "opensecurity.securityDoorPrivate", 1L, 0), 300, 120);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Items.iron_door,1), GT_ModHandler.getModItem("OpenComputers", "cable", 2L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), ItemList.Circuit_Parts_Transistor.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 4L), GT_Utility.getIntegratedCircuit(2)}, GT_Values.NF, GT_ModHandler.getModItem("opensecurity", "opensecurity.securityDoorPrivate", 1L, 0), 300, 120);
             //Damage Upgrade
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Plastic_Advanced.get(1L), new ItemStack(Blocks.tnt, 1 ,0), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 24), GT_Utility.getIntegratedCircuit(1)}, Materials.Redstone.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.damageUpgrade", 1L, 0), 300, 256);
             //Cooldown upgrade
