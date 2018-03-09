@@ -42,6 +42,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Naquadah, 8L), CustomItemList.MicaInsulatorFoil.get(8L), Materials.TungstenSteel.getMolten(144L), ItemList.Casing_Coil_Naquadah.get(1L), 100, 4000);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.NaquadahAlloy, 8L), CustomItemList.MicaInsulatorFoil.get(8L), Materials.Naquadah.getMolten(144L), ItemList.Casing_Coil_NaquadahAlloy.get(1L), 100, 8000);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Superconductor, 8L), CustomItemList.MicaInsulatorFoil.get(8L), Materials.Trinium.getMolten(144L), ItemList.Casing_Coil_Superconductor.get(1L), 100, 9001);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 16L), CustomItemList.MicaInsulatorFoil.get(10L), Materials.Trinium.getMolten(288L), ItemList.Casing_Coil_Superconductor.get(1L), 200, 9001);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 32L), CustomItemList.MicaInsulatorFoil.get(12L), Materials.Trinium.getMolten(576L), ItemList.Casing_Coil_Superconductor.get(1L), 400, 9001);
 
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 3L), ItemList.Circuit_Integrated.getWithDamage(0L, 3L), CustomItemList.SteelBars.get(4L), 400, 48);
