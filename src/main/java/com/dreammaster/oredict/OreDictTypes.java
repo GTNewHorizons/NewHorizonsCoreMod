@@ -19,7 +19,7 @@ public enum OreDictTypes {
     Haumea,
     Io,
     MakeMake,
-    Mercury,
+    PlanetMercury,
     Miranda,
     Oberon,
     Phobos,

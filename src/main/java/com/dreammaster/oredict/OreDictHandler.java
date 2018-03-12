@@ -31,8 +31,8 @@ public class OreDictHandler {
 		reg_dust(OreDictTypes.Io.name(),ItemList.IoStoneDust.getIS());
 		reg_dust(OreDictTypes.MakeMake.name(),ItemList.MakeMakeStoneDust.getIS());
 		reg_dust(OreDictTypes.Mars.name(),ItemList.MarsStoneDust.getIS());
-		reg_dust(OreDictTypes.Mercury.name(),ItemList.MercuryStoneDust.getIS());
-		reg_dust(OreDictTypes.Mercury.name(),ItemList.MercuryCoreDust.getIS());
+		reg_dust(OreDictTypes.PlanetMercury.name(),ItemList.MercuryStoneDust.getIS());
+		reg_dust(OreDictTypes.PlanetMercury.name(),ItemList.MercuryCoreDust.getIS());
 		reg_dust(OreDictTypes.Miranda.name(),ItemList.MirandaStoneDust.getIS());
 		reg_dust(OreDictTypes.Moon.name(),ItemList.MoonStoneDust.getIS());
 		reg_dust(OreDictTypes.Oberon.name(),ItemList.OberonStoneDust.getIS());
@@ -71,7 +71,7 @@ public class OreDictHandler {
 			if(Loader.isModLoaded("GalaxySpace")) {
 				reg_rock(OreDictTypes.Phobos.name(),GT_ModHandler.getModItem("GalaxySpace", "phobosblocks", 1L, i));
 				reg_rock(OreDictTypes.Io.name(),GT_ModHandler.getModItem("GalaxySpace", "ioblocks", 1L, i));
-				reg_rock(OreDictTypes.Mercury.name(),GT_ModHandler.getModItem("GalaxySpace", "mercuryblocks", 1L, i));
+				reg_rock(OreDictTypes.PlanetMercury.name(),GT_ModHandler.getModItem("GalaxySpace", "mercuryblocks", 1L, i));
 				reg_rock(OreDictTypes.Titan.name(),GT_ModHandler.getModItem("GalaxySpace", "titanblocks", 1L, i));
 				reg_rock(OreDictTypes.Oberon.name(),GT_ModHandler.getModItem("GalaxySpace", "oberonblocks", 1L, i));
 				reg_rock(OreDictTypes.Miranda.name(),GT_ModHandler.getModItem("GalaxySpace", "mirandablocks", 1L, i));
