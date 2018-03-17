@@ -1429,9 +1429,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         	GT_Values.RA.addAlloySmelterRecipe(Materials.CertusQuartz.getDust(1), Materials.BorosilicateGlass.getDust(1), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L), 500, 90);
         	GT_Values.RA.addAlloySmelterRecipe(Materials.NetherQuartz.getDust(1), Materials.BorosilicateGlass.getDust(1), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L), 500, 90);
         	
-        	GT_Values.RA.addAlloySmelterRecipe(Materials.Glass.getDust(3), ItemList.Shape_Mold_Block.get(0L), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,1), 500, 30);
-        	GT_Values.RA.addAlloySmelterRecipe(Materials.Quartzite.getDust(4), ItemList.Shape_Mold_Block.get(0L), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,1), 500, 30);
-        	GT_Values.RA.addAlloySmelterRecipe(Materials.BorosilicateGlass.getDust(1), ItemList.Shape_Mold_Block.get(0L), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 2L,1), 500, 90);
+        	GT_Values.RA.addAlloySmelterRecipe(Materials.Glass.getDust(3), ItemList.Circuit_Integrated.getWithDamage(0L, 1L), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,1), 500, 30);
+        	GT_Values.RA.addAlloySmelterRecipe(Materials.Quartzite.getDust(4), ItemList.Circuit_Integrated.getWithDamage(0L, 1L), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,1), 500, 30);
+        	GT_Values.RA.addAlloySmelterRecipe(Materials.BorosilicateGlass.getDust(1), ItemList.Circuit_Integrated.getWithDamage(0L, 1L), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 2L,1), 500, 90);
         	
         	GT_Values.RA.addAlloySmelterRecipe(GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L), Materials.Glowstone.getDust(4), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,2), 500, 30);
         	GT_Values.RA.addAlloySmelterRecipe(GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L), new ItemStack(Blocks.glowstone), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,2), 500, 30);
@@ -1442,6 +1442,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         		GT_Values.RA.addAlloySmelterRecipe(GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L), OreDictionary.getOres("dyeBlack").get(i).splitStack(4), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,4), 500, 30);
         		GT_Values.RA.addAlloySmelterRecipe(GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,1), OreDictionary.getOres("dyeBlack").get(i).splitStack(4), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,5), 500, 30);
         	}
+        	
+        	GT_Values.RA.addChemicalBathRecipe(GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L), new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,4), null, null, new int[]{10000}, 500, 30);
+        	GT_Values.RA.addChemicalBathRecipe(GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,1), new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,5), null, null, new int[]{10000}, 500, 30);
         }
 
         if (Loader.isModLoaded("OpenComputers")) {
