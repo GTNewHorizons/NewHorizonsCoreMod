@@ -1241,9 +1241,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Board_Phenolic.get(1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 4), new FluidStack(ItemList.sIron3Chloride, 100), null, ItemList.Circuit_Board_Phenolic_Good.get(1L), 600, 30);
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Board_Phenolic.get(1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 4), Materials.SodiumPersulfate.getFluid(200), null, ItemList.Circuit_Board_Phenolic_Good.get(1L), 600, 30);
 
-        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1), GT_Utility.getIntegratedCircuit(1), Materials.SulfuricAcid.getFluid(125), null, ItemList.Circuit_Board_Plastic.get(1L), 500, 10);
-        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.PolyvinylChloride, 1), GT_Utility.getIntegratedCircuit(1), Materials.SulfuricAcid.getFluid(125), null, ItemList.Circuit_Board_Plastic.get(2L), 500, 10);
-        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 1), GT_Utility.getIntegratedCircuit(1), Materials.SulfuricAcid.getFluid(125), null, ItemList.Circuit_Board_Plastic.get(4L), 500, 10);
+        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 4), Materials.SulfuricAcid.getFluid(500), null, ItemList.Circuit_Board_Plastic.get(1L), 500, 10);
+        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.PolyvinylChloride, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 4), Materials.SulfuricAcid.getFluid(500), null, ItemList.Circuit_Board_Plastic.get(2L), 500, 10);
+        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 4), Materials.SulfuricAcid.getFluid(500), null, ItemList.Circuit_Board_Plastic.get(4L), 500, 10);
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Board_Plastic.get(1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 6), new FluidStack(ItemList.sIron3Chloride, 250), null, ItemList.Circuit_Board_Plastic_Advanced.get(1L), 800, 30);
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Board_Plastic.get(1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 6), Materials.SodiumPersulfate.getFluid(500), null, ItemList.Circuit_Board_Plastic_Advanced.get(1L), 800, 30);
 
@@ -1253,7 +1253,7 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addChemicalBathRecipe(ItemList.Circuit_Parts_GlassFiber.get(1L), Materials.Epoxid.getMolten(144L), Materials.EpoxidFiberReinforced.getPlates(1), GT_Values.NI, GT_Values.NI, null, 240, 16);
         GT_Values.RA.addChemicalBathRecipe(GT_ModHandler.getIC2Item("carbonFiber", 1), Materials.Epoxid.getMolten(144L), Materials.EpoxidFiberReinforced.getPlates(1), GT_Values.NI, GT_Values.NI, null, 240, 16);
-        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EpoxidFiberReinforced, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 1), Materials.SulfuricAcid.getFluid(125), null, ItemList.Circuit_Board_Fiberglass.get(1L), 500, 10);
+        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EpoxidFiberReinforced, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 12), Materials.SulfuricAcid.getFluid(500), null, ItemList.Circuit_Board_Fiberglass.get(1L), 500, 10);
 
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Board_Fiberglass.get(1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.AnnealedCopper, 12), new FluidStack(ItemList.sIron3Chloride, 1000), null, ItemList.Circuit_Board_Fiberglass_Advanced.get(1L), GT_Values.NI, 1800, 30, true);
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Board_Fiberglass.get(1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.AnnealedCopper, 12), Materials.SodiumPersulfate.getFluid(2000), null, ItemList.Circuit_Board_Fiberglass_Advanced.get(1L), GT_Values.NI, 1800, 30, true);
