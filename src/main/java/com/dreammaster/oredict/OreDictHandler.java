@@ -125,6 +125,7 @@ public class OreDictHandler {
 		OreDictionary.registerOre("cropSpace", GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 1L,i));
 		OreDictionary.registerOre("cropTcetiESeaweed", GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 1L,i));
 		}
+		OreDictionary.registerOre("foodSalt", ItemList.EdibleSalt.getIS());
 	}
 	
 	public static void register_all() {
