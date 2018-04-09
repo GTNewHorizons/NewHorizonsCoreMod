@@ -21,6 +21,7 @@ import com.dreammaster.modcustomdrops.CustomDropsHandler;
 import com.dreammaster.modcustomfuels.CustomFuelsHandler;
 import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
+import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 import com.dreammaster.modhazardousitems.HazardousItemsHandler;
 import com.dreammaster.network.CoreModDispatcher;
@@ -345,14 +346,17 @@ public class MainRegistry
     /**
      * Register your mod-fixes here
      */
-    private void registerModFixes()
-    {
-      if (CoreConfig.AvaritiaFixEnabled) {
-          ModFixesMaster.registerModFix(new SkullFireSwordDropFix());
-      }
-      if (CoreConfig.OilFixConfig.OilFixEnabled) {
-          ModFixesMaster.registerModFix(new OilGeneratorFix());
-      }
+    private void registerModFixes() {
+        if (CoreConfig.AvaritiaFixEnabled) {
+            ModFixesMaster.registerModFix(new SkullFireSwordDropFix());
+        }
+        if (CoreConfig.OilFixConfig.OilFixEnabled) {
+            ModFixesMaster.registerModFix(new OilGeneratorFix());
+        }
+        if (CoreConfig.MinetweakerFurnaceFixEnabled) {
+            ModFixesMaster.registerModFix(new MinetweakerFurnaceFix());
+        }
+
     }
 
     /**
