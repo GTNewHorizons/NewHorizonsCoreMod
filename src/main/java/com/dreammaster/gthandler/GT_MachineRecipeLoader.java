@@ -1460,14 +1460,38 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         // --- Stargates
         if (Loader.isModLoaded("GalaxySpace") && Loader.isModLoaded("SGCraft"))
-            for (int i = 0; i < 6; i++)
+            for (byte i = 0; i < 6; ++i)
                 GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 64L, i), com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(), 3600, 262144);
         GT_Values.RA.addMixerRecipe(com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS().splitStack(64), Materials.Dolomite.getDust(64), Materials.SamariumMagnetic.getDust(21), Materials.ChromiumDioxide.getDust(64), GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 54L), GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 47L), null, null, com.dreammaster.item.ItemList.StargateCrystalDust.getIS(), 3600, 262144);
         GT_Values.RA.addAutoclaveSpaceRecipe(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64), Materials.Silver.getPlasma(8000L), GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L), 5000, 3600, 131000, true);
 
-        //pulverizer recipe for everything that has the oredict tag sand -> Quartz Sand
-        for (int i=0; i<OreDictionary.getOres("sand").size();i++)
+        /*Stuff from CoreMod minetweaker script
+         * AlloySmelter
+         */
+        GT_Values.RA.addAlloySmelterRecipe(Materials.Aluminium.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.AluminiumItemCasing.getIS().splitStack(3), 240, 30);
+        GT_Values.RA.addAlloySmelterRecipe(Materials.StainlessSteel.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.StainlessSteelItemCasing.getIS().splitStack(3), 240, 30);
+        GT_Values.RA.addAlloySmelterRecipe(Materials.Titanium.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.TitaniumItemCasing.getIS().splitStack(3), 480, 64);
+        GT_Values.RA.addAlloySmelterRecipe(Materials.Chrome.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.ChromeItemCasing.getIS().splitStack(3), 480, 64);
+        GT_Values.RA.addAlloySmelterRecipe(Materials.Tungsten.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.TungstenItemCasing.getIS().splitStack(3), 960, 120);
+        GT_Values.RA.addAlloySmelterRecipe(Materials.TungstenSteel.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.TungstenSteelItemCasing.getIS().splitStack(3), 960, 120);
+        GT_Values.RA.addAlloySmelterRecipe(Materials.Iridium.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.IridiumItemCasing.getIS().splitStack(3), 1200, 256);
+        GT_Values.RA.addAlloySmelterRecipe(GT_ModHandler.getModItem("IC2","itemPartIridium",2L), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS().splitStack(3), 1200, 256);
+        GT_Values.RA.addAlloySmelterRecipe(Materials.Osmium.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.OsmiumItemCasing.getIS().splitStack(3), 1200, 256);
+        GT_Values.RA.addAlloySmelterRecipe(Materials.Neutronium.getIngots(2), ItemList.Shape_Mold_Casing.get(0), com.dreammaster.item.ItemList.NeutroniumItemCasing.getIS().splitStack(3), 1800, 480);
+        //Assembler
+        /*GT_Values.RA.addAssemblerRecipe(new ItemStack[] {new ItemStack(Blocks.cobblestone),GT_OreDictUnificator.get(OrePrefixes.gearGtSmall,Materials.AnyIron,1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.block.BlockList.PistonBlock.getIS(), 100, 30, false);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[] {new ItemStack(Blocks.fence),ItemList.Plank_Oak.get(1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.item.ItemList.PistonPlate.getIS(), 100, 30, false);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_ModHandler.getModItem("Natura","Natura.fence",1L),ItemList.Plank_Oak.get(1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.item.ItemList.PistonPlate.getIS(), 100, 30, false);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_ModHandler.getModItem("Forestry","fences",1L),ItemList.Plank_Oak.get(1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.item.ItemList.PistonPlate.getIS(), 100, 30, false);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_ModHandler.getModItem("ExtraTrees","fence",1L),ItemList.Plank_Oak.get(1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.item.ItemList.PistonPlate.getIS(), 100, 30, false);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_ModHandler.getModItem("Forestry","fencesFireproof",1L),ItemList.Plank_Oak.get(1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.item.ItemList.PistonPlate.getIS(), 100, 30, false);
+        */
+        //recipes for everything that uses sand
+        for (byte i=0; i<OreDictionary.getOres("sand").size();++i) {
         	GT_Values.RA.addPulveriserRecipe(OreDictionary.getOres("sand").get(i), new ItemStack[]{CustomItemList.SandDust.get(1L), CustomItemList.SandDust.get(1L), CustomItemList.SandDust.get(1L), CustomItemList.SandDust.get(1L)}, new int[]{10000, 2500, 2000, 1500}, 200, 8);
+        	GT_Values.RA.addAlloySmelterRecipe(OreDictionary.getOres("sand").get(i), new ItemStack(Items.clay_ball), com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2), 200, 8);
+        }
+        
         
         //EnderIO Fused Quartz and Glass
         if (Loader.isModLoaded("EnderIO")){
