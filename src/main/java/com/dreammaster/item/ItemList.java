@@ -536,5 +536,10 @@ public enum ItemList
     {
         return new ItemStack(Item.getConstructedItem(), 1);
     }
+    
+    public ItemStack getIS(int amount)
+    {
+        return new ItemStack(Item.getConstructedItem(), amount);
+    }
 
 }

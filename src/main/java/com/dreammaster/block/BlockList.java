@@ -5,6 +5,8 @@ import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import eu.usrv.yamcore.blocks.ModBlockManager;
 import eu.usrv.yamcore.blocks.ModSimpleBaseBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.block.*;
 
 public enum BlockList {
 
@@ -77,5 +79,17 @@ public enum BlockList {
 		}
 		
 		return tResult;
+	}
+	
+	public Block getBlock() {
+		return Block.getConstructedBlock();
+	}
+	
+	public ItemStack getIS() {
+		return new ItemStack(Block.getConstructedBlock(),1);
+	}
+	
+	public ItemStack getIS(int amount) {
+		return new ItemStack(Block.getConstructedBlock(),amount);
 	}
 }
