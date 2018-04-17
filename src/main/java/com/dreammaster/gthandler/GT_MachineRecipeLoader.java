@@ -1463,7 +1463,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             for (byte i = 0; i < 6; ++i)
                 GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 64L, i), com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(), 3600, 262144);
         GT_Values.RA.addMixerRecipe(com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS().splitStack(64), Materials.Dolomite.getDust(64), Materials.SamariumMagnetic.getDust(21), Materials.ChromiumDioxide.getDust(64), GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 54L), GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 47L), null, null, com.dreammaster.item.ItemList.StargateCrystalDust.getIS(), 3600, 262144);
-        GT_Values.RA.addAutoclaveSpaceRecipe(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64), Materials.Silver.getPlasma(8000L), GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L), 5000, 3600, 131000, true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64), Materials.Silver.getPlasma(8000L), GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L), 10000, 3600, 131000, true);
 
         /*Stuff from CoreMod minetweaker script
          * AlloySmelter
@@ -2144,7 +2144,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         if (Loader.isModLoaded("eternalsingularity")&&Loader.isModLoaded("SGCraft")) {
         	GT_Values.RA.addAssemblylineRecipe(GT_OreDictUnificator.get(OrePrefixes.foil,Materials.Infinity,1L), 72000, 
         	new ItemStack[] { 
-        			GT_ModHandler.getModItem("eternalsingularity","eternal_singularity",24L),
+        			GT_ModHandler.getModItem("eternalsingularity","eternal_singularity",1L),
         			ItemList.Sensor_UV.get(16L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.Infinity,16L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.CosmicNeutronium,16L),
