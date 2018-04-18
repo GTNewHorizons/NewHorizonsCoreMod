@@ -1463,7 +1463,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             for (byte i = 0; i < 6; ++i)
                 GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 64L, i), com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(), 3600, 262144);
         GT_Values.RA.addMixerRecipe(com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS().splitStack(64), Materials.Dolomite.getDust(64), Materials.SamariumMagnetic.getDust(21), Materials.ChromiumDioxide.getDust(64), GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 54L), GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 47L), null, null, com.dreammaster.item.ItemList.StargateCrystalDust.getIS(), 3600, 262144);
-        GT_Values.RA.addAutoclaveSpaceRecipe(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64), Materials.Silver.getPlasma(8000L), GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L), 5000, 3600, 131000, true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64), Materials.Silver.getPlasma(8000L), GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L), 10000, 3600, 131000, true);
 
         /*Stuff from CoreMod minetweaker script
          * AlloySmelter
@@ -1498,6 +1498,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         	GT_Values.RA.addAlloySmelterRecipe(OreDictionary.getOres("sand").get(i), new ItemStack(Items.clay_ball), com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2), 200, 8);
         }
         
+        GT_Values.RA.addChemicalRecipe(new ItemStack(Items.ghast_tear), GT_Utility.getIntegratedCircuit(1), Materials.Water.getFluid(1000L), Materials.SaltWater.getFluid(1000L), Materials.Potassium.getDustTiny(1), Materials.Lithium.getDustTiny(1), 400, 30, false);
+        GT_Values.RA.addBlastRecipe(Materials.Zincite.getDust(2), Materials.Carbon.getDust(1), GT_Values.NF, Materials.CarbonDioxide.getFluid(1000L), Materials.Zinc.getIngots(3), Materials.Ash.getDustTiny(2), 240, 120, 1200);
         
         //EnderIO Fused Quartz and Glass
         if (Loader.isModLoaded("EnderIO")){
@@ -2142,7 +2144,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         if (Loader.isModLoaded("eternalsingularity")&&Loader.isModLoaded("SGCraft")) {
         	GT_Values.RA.addAssemblylineRecipe(GT_OreDictUnificator.get(OrePrefixes.foil,Materials.Infinity,1L), 72000, 
         	new ItemStack[] { 
-        			GT_ModHandler.getModItem("eternalsingularity","eternal_singularity",24L),
+        			GT_ModHandler.getModItem("eternalsingularity","eternal_singularity",1L),
         			ItemList.Sensor_UV.get(16L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.Infinity,16L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.CosmicNeutronium,16L),
