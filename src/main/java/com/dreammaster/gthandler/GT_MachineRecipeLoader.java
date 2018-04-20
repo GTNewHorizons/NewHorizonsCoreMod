@@ -1485,6 +1485,11 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Steel,4L),GT_OreDictUnificator.get(OrePrefixes.frameGt,Materials.Wood,4L)},Materials.Glue.getFluid(72L),GT_ModHandler.getModItem("Railcraft","machine.alpha",3L,14),400,30,false);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Steel,2L),GT_OreDictUnificator.get(OrePrefixes.frameGt,Materials.WoodSealed,1L)},Materials.Plastic.getMolten(36L),GT_ModHandler.getModItem("Railcraft","machine.alpha",3L,14),400,30,false);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.StainlessSteel,4L),GT_OreDictUnificator.get(OrePrefixes.frameGt,Materials.WoodSealed,4L)},Materials.Plastic.getMolten(72L),GT_ModHandler.getModItem("Railcraft","machine.alpha",9L,14),400,120,false);
+        
+        for (byte i=0; i<OreDictionary.getOres("cropCotton").size();++i) {
+        	GT_Values.RA.addAssemblerRecipe(new ItemStack[] {new ItemStack(Items.string,4),OreDictionary.getOres("cropCotton").get(i).splitStack(3)},GT_Values.NF,GT_ModHandler.getModItem("harvestcraft","wovencottonItem",1L,0),400,30,false);
+        }
+        
         /*GT_Values.RA.addAssemblerRecipe(new ItemStack[] {new ItemStack(Blocks.cobblestone),GT_OreDictUnificator.get(OrePrefixes.gearGtSmall,Materials.AnyIron,1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.block.BlockList.PistonBlock.getIS(), 100, 30, false);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {new ItemStack(Blocks.fence),ItemList.Plank_Oak.get(1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.item.ItemList.PistonPlate.getIS(), 100, 30, false);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_ModHandler.getModItem("Natura","Natura.fence",1L),ItemList.Plank_Oak.get(1L)}, Materials.Redstone.getMolten(72L), com.dreammaster.item.ItemList.PistonPlate.getIS(), 100, 30, false);
