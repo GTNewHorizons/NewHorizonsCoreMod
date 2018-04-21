@@ -1,12 +1,18 @@
 package com.dreammaster.galacticgreg;
 
-import bloodasp.galacticgreg.api.*;
-import net.minecraft.init.Blocks;
-import net.minecraft.world.gen.ChunkProviderEnd;
-
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+
+import bloodasp.galacticgreg.api.AsteroidBlockComb;
+import bloodasp.galacticgreg.api.Enums;
+import bloodasp.galacticgreg.api.GTOreTypes;
+import bloodasp.galacticgreg.api.ModContainer;
+import bloodasp.galacticgreg.api.ModDBMDef;
+import bloodasp.galacticgreg.api.ModDimensionDef;
+import bloodasp.galacticgreg.api.SpecialBlockComb;
+import net.minecraft.init.Blocks;
+import net.minecraft.world.gen.ChunkProviderEnd;
 
 /**
  * In this class, you'll find everything you need in order to tell GGreg what to do and where.
@@ -146,30 +152,38 @@ public class SpaceDimRegisterer
 
         // Now lets first define a block here for our dimension. You can add the modID, but you don't have to.
         // It will automatically add the mods name that is defined in the modcontainer.
-        ModDBMDef DBMPhobos = new ModDBMDef("phobosblocks", 2);
-        ModDBMDef DBMDeimos = new ModDBMDef("deimosblocks", 1);
-        ModDBMDef DBMCeres = new ModDBMDef("ceresblocks", 1);
-        ModDBMDef DBMIO = new ModDBMDef("ioblocks", 2);
-        //ModDBMDef DBMEuropa = new ModDBMDef("europagrunt");//Not working
-        ModDBMDef DBMGanymede = new ModDBMDef("ganymedeblocks", 1);
-        ModDBMDef DBMCallisto = new ModDBMDef("callistoblocks", 1);
-        ModDBMDef DBMVenus = new ModDBMDef("venusblocks", 1);
-        ModDBMDef DBMMercury = new ModDBMDef("mercuryblocks", 2);
-        ModDBMDef DBMEnceladus = new ModDBMDef("enceladusblocks", 1);
-        ModDBMDef DBMTitan = new ModDBMDef("titanblocks", 2);
-        ModDBMDef DBMOberon = new ModDBMDef("oberonblocks", 2);
-        ModDBMDef DBMProteus = new ModDBMDef("proteusblocks", 2);
-        ModDBMDef DBMTriton = new ModDBMDef("tritonblocks", 2);
-        ModDBMDef DBMPluto = new ModDBMDef("plutoblocks", 5);
-        ModDBMDef DBMMakemake = new ModDBMDef("makemakegrunt", 1);
-        ModDBMDef DBMHaumea = new ModDBMDef("haumeablocks");
-        //ModDBMDef DBMCentauriA = new ModDBMDef("acentauribbsubgrunt"); //Not working
-        ModDBMDef DBMVegaB = new ModDBMDef("vegabsubgrunt");
-        ModDBMDef DBMbarnardaC = new ModDBMDef("barnardaCdirt");
-        ModDBMDef DBMbarnardaE = new ModDBMDef("barnardaEsubgrunt");
-        ModDBMDef DBMbarnardaF = new ModDBMDef("barnardaFsubgrunt");
-        //ModDBMDef DBMTcetiE = new ModDBMDef("tcetieblocks", 2);
-        ModDBMDef DBMMiranda = new ModDBMDef("mirandablocks", 2);
+        final ModDBMDef DBMPhobos = new ModDBMDef("phobosblocks", 2);
+        final ModDBMDef DBMDeimos = new ModDBMDef("deimosblocks", 1);
+        final ModDBMDef DBMCeres = new ModDBMDef("ceresblocks", 1);
+        final ModDBMDef DBMIO = new ModDBMDef("ioblocks", 2);
+        final ModDBMDef DBMGanymede = new ModDBMDef("ganymedeblocks", 1);
+        final ModDBMDef DBMCallisto = new ModDBMDef("callistoblocks", 1);
+        final ModDBMDef DBMVenus = new ModDBMDef("venusblocks", 1);
+        final ModDBMDef DBMMercury = new ModDBMDef("mercuryblocks", 2);
+        final ModDBMDef DBMEnceladus = new ModDBMDef("enceladusblocks", 1);
+        final ModDBMDef DBMTitan = new ModDBMDef("titanblocks", 2);
+        final ModDBMDef DBMOberon = new ModDBMDef("oberonblocks", 2);
+        final ModDBMDef DBMProteus = new ModDBMDef("proteusblocks", 2);
+        final ModDBMDef DBMTriton = new ModDBMDef("tritonblocks", 2);
+        final ModDBMDef DBMPluto = new ModDBMDef("plutoblocks", 5);
+        final ModDBMDef DBMMakemake = new ModDBMDef("makemakegrunt", 1);
+        final ModDBMDef DBMHaumea = new ModDBMDef("haumeablocks");
+        final ModDBMDef DBMCentauriA = new ModDBMDef("acentauribbsubgrunt");
+        final ModDBMDef DBMVegaB = new ModDBMDef("vegabsubgrunt");
+        final ModDBMDef DBMbarnardaC = new ModDBMDef("barnardaCdirt");
+        final ModDBMDef DBMbarnardaE = new ModDBMDef("barnardaEsubgrunt");
+        final ModDBMDef DBMbarnardaF = new ModDBMDef("barnardaFsubgrunt");
+        final ModDBMDef DBMTcetiE = new ModDBMDef("tcetieblocks", 2);
+        final ModDBMDef DBMMiranda = new ModDBMDef("mirandablocks", 2);
+        
+        List<ModDBMDef> DBMEuropa = new ArrayList<ModDBMDef>();
+        //DBMEuropa.add(new ModDBMDef("europagrunt")); 			//Europa top layer turned off bc ores are too easy to spot
+        DBMEuropa.add(new ModDBMDef("europagrunt",1)); 			//Europa Ice Layer ~55-65 without top layer
+        //DBMEuropa.add(new ModDBMDef(Blocks.water));			//turned off bc. it gave strange results...
+        //DBMEuropa.add(new ModDBMDef(Blocks.flowing_water));	//turned off bc. it gave strange results...
+        DBMEuropa.add(new ModDBMDef(Blocks.ice)); 				//Generates directly over bedrock
+        DBMEuropa.add(new ModDBMDef(Blocks.packed_ice)); 		//Generates directly over bedrock
+        DBMEuropa.add(new ModDBMDef("europaunderwatergeyser")); //Generates directly over bedrock
 
 
         // Now define the available dimensions, and their chunkprovider.
@@ -190,18 +204,18 @@ public class SpaceDimRegisterer
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Deimos", "galaxyspace.SolarSystem.moons.deimos.dimension.ChunkProviderDeimos", Enums.DimensionType.Planet, singleToList(DBMDeimos)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Enceladus", "galaxyspace.SolarSystem.moons.enceladus.dimension.ChunkProviderEnceladus", Enums.DimensionType.Planet, singleToList(DBMEnceladus)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Io", "galaxyspace.SolarSystem.moons.io.dimension.ChunkProviderIo", Enums.DimensionType.Planet, singleToList(DBMIO)));
-        //modCGalaxySpace.addDimensionDef(new ModDimensionDef("Europa", "galaxyspace.SolarSystem.moons.europa.dimension.ChunkProviderEuropa", DimensionType.Planet, singleToList(DBMEuropa))); //Not working//Ice from Y 70-50 for new Ledox Ore
+        modCGalaxySpace.addDimensionDef(new ModDimensionDef("Europa", "galaxyspace.SolarSystem.moons.europa.dimension.ChunkProviderEuropa", Enums.DimensionType.Planet, DBMEuropa));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Phobos", "galaxyspace.SolarSystem.moons.phobos.dimension.ChunkProviderPhobos", Enums.DimensionType.Planet, singleToList(DBMPhobos)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Venus", "galaxyspace.SolarSystem.planets.venus.dimension.ChunkProviderVenus", Enums.DimensionType.Planet, singleToList(DBMVenus)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Mercury", "galaxyspace.SolarSystem.planets.mercury.dimension.ChunkProviderMercury", Enums.DimensionType.Planet, singleToList(DBMMercury)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("MakeMake", "galaxyspace.SolarSystem.planets.makemake.dimension.ChunkProviderMakemake", Enums.DimensionType.Planet, singleToList(DBMMakemake)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Haumea", "galaxyspace.SolarSystem.planets.haumea.dimension.ChunkProviderHaumea", Enums.DimensionType.Planet, singleToList(DBMHaumea)));
-        //modCGalaxySpace.addDimensionDef(new ModDimensionDef("CentauriA", "galaxyspace.ACentauriSystem.planets.aCentauriBb.dimension.ChunkProviderACentauri", DimensionType.Planet, singleToList(DBMCentauriA))); //Not working
+        modCGalaxySpace.addDimensionDef(new ModDimensionDef("CentauriA", "galaxyspace.ACentauriSystem.planets.aCentauriBb.dimension.ChunkProviderACentauri", Enums.DimensionType.Planet, singleToList(DBMCentauriA)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("VegaB", "galaxyspace.VegaSystem.planets.vegaB.dimension.ChunkProviderVegaB", Enums.DimensionType.Planet, singleToList(DBMVegaB)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("BarnardC", "galaxyspace.BarnardsSystem.planets.barnardaC.dimension.ChunkProviderBarnardaC", Enums.DimensionType.Planet, singleToList(DBMbarnardaC)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("BarnardE", "galaxyspace.BarnardsSystem.planets.barnardaE.dimension.ChunkProviderBarnardaE", Enums.DimensionType.Planet, singleToList(DBMbarnardaE)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("BarnardF", "galaxyspace.BarnardsSystem.planets.barnardaF.dimension.ChunkProviderBarnardaF", Enums.DimensionType.Planet, singleToList(DBMbarnardaF)));
-        //modCGalaxySpace.addDimensionDef(new ModDimensionDef("TcetiE", "galaxyspace.TCetiSystem.planets.tcetiE.dimension.ChunkProviderTCetiE", DimensionType.Planet, singleToList(DBMTcetiE)));
+        modCGalaxySpace.addDimensionDef(new ModDimensionDef("TcetiE", "galaxyspace.TCetiSystem.planets.tcetiE.dimension.ChunkProviderTCetiE", Enums.DimensionType.Planet, singleToList(DBMTcetiE)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Miranda", "galaxyspace.SolarSystem.moons.miranda.dimension.ChunkProviderMiranda", Enums.DimensionType.Planet, singleToList(DBMMiranda)));
 
         ModDimensionDef dimKupierBelt = new ModDimensionDef("Kuiperbelt", "galaxyspace.SolarSystem.planets.kuiperbelt.dimension.ChunkProviderKuiper", Enums.DimensionType.Asteroid);
@@ -210,7 +224,6 @@ public class SpaceDimRegisterer
         dimKupierBelt.addAsteroidMaterial(new AsteroidBlockComb(GTOreTypes.RedGranite)); 
         dimKupierBelt.addAsteroidMaterial(new AsteroidBlockComb(GTOreTypes.BlackGranite));
         modCGalaxySpace.addDimensionDef(dimKupierBelt);
-
         return modCGalaxySpace;
     }
 }
