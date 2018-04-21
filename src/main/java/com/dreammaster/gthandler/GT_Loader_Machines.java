@@ -1649,6 +1649,14 @@ public class GT_Loader_Machines
 						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
 
+		GT_ModHandler.addCraftingRecipe(CustomItemList.ScannerUHV.get(1L),
+				bitsd,
+				new Object[] { "CTC", "WMW", "CRC",
+						'M', ItemList.Hull_MAX,
+						'T', ItemList.Emitter_UHV,
+						'R', ItemList.Sensor_UHV,
+						'C', OrePrefixes.circuit.get(Materials.Infinite),
+						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium) });
 		//ScannerLuV
 		//ScannerZPM
 		//ScannerUV
