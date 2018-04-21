@@ -199,7 +199,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.AssemblingMachineLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10780, "basicmachine.assembler.tier.06", "Elite Assembling Machine", 6, "Avengers, Assemble!",
-				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 6, 1, 16000, 0, 1, "Assembler.png",
+				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 6, 1, 24000, 0, 1, "Assembler.png",
 				"", false, false, 0, "ASSEMBLER",
 				new Object[] { "ACA", "VMV", "WCW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -210,7 +210,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.AssemblingMachineZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10781, "basicmachine.assembler.tier.07", "Elite Assembling Machine II", 7, "Avengers, Assemble!",
-				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 6, 1, 16000, 0, 1, "Assembler.png",
+				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 6, 1, 32000, 0, 1, "Assembler.png",
 				"", false, false, 0, "ASSEMBLER",
 				new Object[] { "ACA", "VMV", "WCW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -221,7 +221,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.AssemblingMachineUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10782, "basicmachine.assembler.tier.08", "Ultimate Assembly Constructor", 8, "Avengers, Assemble!",
-				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 6, 1, 16000, 0, 1, "Assembler.png",
+				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 6, 1, 48000, 0, 1, "Assembler.png",
 				"", false, false, 0, "ASSEMBLER",
 				new Object[] { "ACA", "VMV", "WCW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -232,8 +232,14 @@ public class GT_Loader_Machines
 
 		CustomItemList.AssemblingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10783, "basicmachine.assembler.tier.09", "Epic Assembly Constructor", 9, "Avengers, Assemble!",
-				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 6, 1, 16000, 0, 1, "Assembler.png",
-				"", false, false, 0, "ASSEMBLER",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 6, 1, 64000, 0, 1, "Assembler.png",
+				"", false, false, 0, "ASSEMBLER",
+				new Object[] { "ACA", "VMV", "WCW",
+						'M', ItemList.Hull_MAX,
+						'V', ItemList.Conveyor_Module_UHV,
+						'A', ItemList.Robot_Arm_UHV,
+						'C', OrePrefixes.circuit.get(Materials.Infinite),
+						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium), }).getStackForm(1L));
 
 		CustomItemList.AssemblingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10784, "basicmachine.assembler.tier.10", "Epic Assembly Constructor II",10, "Avengers, Assemble!",
@@ -854,7 +860,13 @@ public class GT_Loader_Machines
 		CustomItemList.ExtruderUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10883, "basicmachine.extruder.tier.09", "Epic Shape Driver", 9, "Universal Machine for Metal Working",
 				GT_Recipe.GT_Recipe_Map.sExtruderRecipes, 2, 1, 0, 0, 1, "Extruder.png",
-				GregTech_API.sSoundList.get(208), false, false, 0, "EXTRUDER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(208), false, false, 0, "EXTRUDER",
+                new Object[] { "CCE", "XMP", "CCE",
+                        'M', ItemList.Hull_MAX,
+                        'X', ItemList.Electric_Piston_UHV,
+                        'E', OrePrefixes.circuit.get(Materials.Infinite),
+                        'P', OrePrefixes.pipeMedium.get(Materials.Neutronium),
+                        'C', OrePrefixes.wireGt02.get(Materials.Naquadah) }).getStackForm(1L));
 
 		CustomItemList.ExtruderUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10884, "basicmachine.extruder.tier.10", "Epic Shape Driver II",10, "Universal Machine for Metal Working",
@@ -1160,7 +1172,13 @@ public class GT_Loader_Machines
 		CustomItemList.PrecisionLaserEngraverUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10933, "basicmachine.laserengraver.tier.09", "Epic Exact Photon Cannon", 9, "With the Power of 2.42 GW",
 				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
-				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",
+                new Object[] { "PEP", "CMC", "WCW",
+                        'M', ItemList.Hull_MAX,
+                        'E', ItemList.Emitter_UHV,
+                        'P', ItemList.Electric_Piston_UHV,
+                        'C', OrePrefixes.circuit.get(Materials.Infinite),
+                        'W', OrePrefixes.cableGt01.get(Materials.Bedrockium) }).getStackForm(1L));
 
 		CustomItemList.PrecisionLaserEngraverUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10934, "basicmachine.laserengraver.tier.10", "Epic Exact Photon Cannon II",10, "With the Power of 4.84 GW",
@@ -2898,7 +2916,7 @@ public class GT_Loader_Machines
 						'R', OrePrefixes.rotor.get(Materials.Chrome),
 						'M', ItemList.Electric_Motor_LuV,
 						'B', ItemList.Hull_LuV,
-						'C', OrePrefixes.circuit.get(Materials.Ultimate),
+						'C', OrePrefixes.circuit.get(Materials.Master),
 						'G', new ItemStack(Blocks.glass, 1, 32767)});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.MixerZPM.get(1L),
@@ -2907,7 +2925,7 @@ public class GT_Loader_Machines
 						'R', OrePrefixes.rotor.get(Materials.Iridium),
 						'M', ItemList.Electric_Motor_ZPM,
 						'B', ItemList.Hull_ZPM,
-						'C', OrePrefixes.circuit.get(Materials.Superconductor),
+						'C', OrePrefixes.circuit.get(Materials.Ultimate),
 						'G', new ItemStack(Blocks.glass, 1, 32767)});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.MixerUV.get(1L),
@@ -2916,9 +2934,17 @@ public class GT_Loader_Machines
 						'R', OrePrefixes.rotor.get(Materials.Osmium),
 						'M', ItemList.Electric_Motor_UV,
 						'B', ItemList.Hull_UV,
-						'C', OrePrefixes.circuit.get(Materials.Infinite),
+						'C', OrePrefixes.circuit.get(Materials.Superconductor),
 						'G', new ItemStack(Blocks.glass, 1, 32767)});
 
+        GT_ModHandler.addCraftingRecipe(CustomItemList.MixerUHV.get(1L),
+                bitsd,
+                new Object[]{"GRG", "GMG", "CBC",
+                        'R', OrePrefixes.rotor.get(Materials.Neutronium),
+                        'M', ItemList.Electric_Motor_UHV,
+                        'B', ItemList.Hull_MAX,
+                        'C', OrePrefixes.circuit.get(Materials.Infinite),
+                        'G', new ItemStack(Blocks.glass, 1, 32767)});
 
 		// ===================================================================================================
 		// Hull
