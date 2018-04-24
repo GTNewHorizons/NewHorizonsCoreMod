@@ -97,16 +97,16 @@ public class GT_Loader_Batteries
 		GT.setElectricStats(32000 + tLastID, 6553600000L, GT_Values.V[9], 9L, -3L, true);
 
 		CustomItemList.BatteryHull_UEV_Full.set(GT.addItem(tLastID = 575, "Medium Neutronium Battery", "Reusable", new Object[]{new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 512L), new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 512L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 512L)}));
-		GT.setElectricStats(32000 + tLastID, 6553600000L, GT_Values.V[10], 10L, -3L, true);
+		GT.setElectricStats(32000 + tLastID, 26214400000L, GT_Values.V[10], 10L, -3L, true);
 
 		CustomItemList.BatteryHull_UIV_Full.set(GT.addItem(tLastID = 580, "Large Neutronium Battery", "Reusable", new Object[]{new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 1024L), new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 1024L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 1024L)}));
-		GT.setElectricStats(32000 + tLastID, 26214400000L, GT_Values.V[11], 11L, -3L, true);
+		GT.setElectricStats(32000 + tLastID, 104857600000L, GT_Values.V[11], 11L, -3L, true);
 
 		CustomItemList.BatteryHull_UMV_Full.set(GT.addItem(tLastID = 585, "Medium Infinity Battery", "Reusable", new Object[]{new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 2048L), new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 2048L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 2048L)}));
-		GT.setElectricStats(32000 + tLastID, 104857600000L, GT_Values.V[12], 12L, -3L, true);
+		GT.setElectricStats(32000 + tLastID, 419430400000L, GT_Values.V[12], 12L, -3L, true);
 
 		CustomItemList.BatteryHull_UxV_Full.set(GT.addItem(tLastID = 590, "Large Infinity Battery", "Reusable", new Object[]{new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 4096L), new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 4096L), new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 4096L)}));
-		GT.setElectricStats(32000 + tLastID, 419430400000L, GT_Values.V[13], 13L, -3L, true);
+		GT.setElectricStats(32000 + tLastID, 1677721600000L, GT_Values.V[13], 13L, -3L, true);
 
 	    // Just to be complete, extractor recipes for the filled hulls
 	    GT_ModHandler.addExtractionRecipe(CustomItemList.BatteryHull_EV_Full.get(1L), CustomItemList.BatteryHull_EV.get(1L));

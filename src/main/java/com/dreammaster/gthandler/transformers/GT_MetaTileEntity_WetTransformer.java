@@ -5,7 +5,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Transformer;
-import gtPlusPlus.core.lib.CORE;
+import net.minecraft.util.EnumChatFormatting;
 
 import static gregtech.api.enums.GT_Values.V;
 
@@ -45,7 +45,7 @@ public class GT_MetaTileEntity_WetTransformer extends GT_MetaTileEntity_Transfor
 
     @Override
     public String[] getDescription() {
-        return new String[]{mDescription, "Accepts 16A and outputs 64A", CORE.GT_Tooltip};
+        return new String[]{mDescription, "Accepts 16A and outputs 64A", EnumChatFormatting.BLUE + "Tec" + EnumChatFormatting.DARK_BLUE + "Tech" + EnumChatFormatting.BLUE + ": Interdimensional"};
     }
 
     @Override

@@ -48,7 +48,8 @@ public class GT_CustomLoader
         		new ItemStack(Blocks.dragon_egg, 1),
         		Materials.Osmium,
         		Materials.Neutronium);
-        
+
+
         private Object _mCircuit;
         private Object _mHeatingCoil;
         private Object _mCoilWire;
@@ -131,30 +132,22 @@ public class GT_CustomLoader
 		}
     }
     
-    public GT_CustomLoader()
-    {
-    	ItemLoader = new GT_Loader_Items();
-        CasingLoader = new GT_Loader_CasingsNH();
-    	MachineLoader = new GT_Loader_Machines();
-    	FluidPipeLoader = new GT_Loader_FluidPipes();
-    	MaterialLoader = new GT_Loader_Materials();
-    	WireLoader = new GT_Loader_Wires();
-    	BatteryLoader = new GT_Loader_Batteries();
-        MachineRecipeLoader = new GT_MachineRecipeLoader();
-        CraftingRecipeLoader = new GT_CraftingRecipeLoader();
-        OreDictionary = new GT_Loader_OreDictionary();
-    }
-    
-    private GT_Loader_Items ItemLoader;
-    private GT_Loader_CasingsNH CasingLoader;
-    private GT_Loader_Machines MachineLoader;
-    private GT_Loader_FluidPipes FluidPipeLoader;
-    private GT_Loader_Materials MaterialLoader;
-    private GT_Loader_Wires WireLoader;
-    private GT_Loader_Batteries BatteryLoader;
-    private GT_MachineRecipeLoader MachineRecipeLoader;
-    private GT_CraftingRecipeLoader CraftingRecipeLoader;
-    private GT_Loader_OreDictionary OreDictionary;
+    /*
+     * Changed to static final for performance and clear design reasons.
+     * Since these Classes arent modified anymore, final is a good choice here.
+     * Final variables will help the compiler optimize the code statically, which may result in faster code.
+     */
+    private static final GT_Loader_Items ItemLoader = new GT_Loader_Items();
+    private static final GT_Loader_CasingsNH CasingLoader = new GT_Loader_CasingsNH();
+    private static final GT_Loader_Machines MachineLoader = new GT_Loader_Machines();
+    private static final GT_Loader_FluidPipes FluidPipeLoader = new GT_Loader_FluidPipes();
+    private static final GT_Loader_Materials MaterialLoader = new GT_Loader_Materials();
+    private static final GT_Loader_Wires WireLoader = new GT_Loader_Wires();
+    private static final GT_Loader_Batteries BatteryLoader = new GT_Loader_Batteries();
+    private static final GT_MachineRecipeLoader MachineRecipeLoader = new GT_MachineRecipeLoader();
+    private static final GT_CraftingRecipeLoader CraftingRecipeLoader = new GT_CraftingRecipeLoader();
+    private static final GT_Loader_OreDictionary OreDictionary = new GT_Loader_OreDictionary();
+    private static final GT_Recipe_Remover Remover = new GT_Recipe_Remover();
 
     public void run()
     {
@@ -167,6 +160,7 @@ public class GT_CustomLoader
     	ItemLoader.run();
     	MachineLoader.run();
     	BatteryLoader.run();
+    	Remover.run();
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
         OreDictionary.run();

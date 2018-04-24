@@ -21,9 +21,11 @@ import com.dreammaster.modcustomdrops.CustomDropsHandler;
 import com.dreammaster.modcustomfuels.CustomFuelsHandler;
 import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
+import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 import com.dreammaster.modhazardousitems.HazardousItemsHandler;
 import com.dreammaster.network.CoreModDispatcher;
+import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -54,7 +56,10 @@ import java.util.Random;
         modid = Refstrings.MODID,
         name = Refstrings.NAME,
         version = Refstrings.VERSION,
-        dependencies = "required-after:Forge@[10.13.2.1291,);" + "required-after:YAMCore@[0.5.76,);" + "required-after:Baubles@[1.0.1.10,);",
+        dependencies = 
+        	"required-after:Forge@[10.13.2.1291,);"
+        +	"required-after:YAMCore@[0.5.76,);" 
+        +	"required-after:Baubles@[1.0.1.10,);",
 		certificateFingerprint = "1cca375192a26693475fb48268f350a462208dce")
 public class MainRegistry
 {
@@ -243,7 +248,11 @@ public class MainRegistry
         if (CoreConfig.ModBabyChest_Enabled) {
             InitAdditionalBlocks();
         }
-
+        
+        // Register additional OreDictionary Names
+        if(CoreConfig.OreDictItems_Enabled)
+        OreDictHandler.register_all();
+        
         // Register Dimensions in GalacticGregGT5
         if (Loader.isModLoaded("galacticgreg"))
         {
@@ -340,14 +349,17 @@ public class MainRegistry
     /**
      * Register your mod-fixes here
      */
-    private void registerModFixes()
-    {
-      if (CoreConfig.AvaritiaFixEnabled) {
-          ModFixesMaster.registerModFix(new SkullFireSwordDropFix());
-      }
-      if (CoreConfig.OilFixConfig.OilFixEnabled) {
-          ModFixesMaster.registerModFix(new OilGeneratorFix());
-      }
+    private void registerModFixes() {
+        if (CoreConfig.AvaritiaFixEnabled) {
+            ModFixesMaster.registerModFix(new SkullFireSwordDropFix());
+        }
+        if (CoreConfig.OilFixConfig.OilFixEnabled) {
+            ModFixesMaster.registerModFix(new OilGeneratorFix());
+        }
+        if (CoreConfig.MinetweakerFurnaceFixEnabled) {
+            ModFixesMaster.registerModFix(new MinetweakerFurnaceFix());
+        }
+
     }
 
     /**

@@ -15,7 +15,8 @@ public class CoreModConfig extends ConfigManager
     super( pConfigBaseDirectory, pModCollectionDirectory, pModID );
 
   }
-
+  
+  public boolean OreDictItems_Enabled;
   public boolean ModHazardousItems_Enabled;
   public boolean ModCustomToolTips_Enabled;
   public boolean ModItemInHandInfo_Enabled;
@@ -26,6 +27,7 @@ public class CoreModConfig extends ConfigManager
   public int PotionTimer;
 
   public boolean AvaritiaFixEnabled;
+  public boolean MinetweakerFurnaceFixEnabled;
   public String[] SkullFireSwordEntityTargets;
   public String[] BlacklistedTileEntiyClassNames;
 
@@ -41,8 +43,10 @@ public class CoreModConfig extends ConfigManager
     ModCustomDrops_Enabled = false;
     ModAdminErrorLogs_Enabled = true;
     ModBabyChest_Enabled = true;
+    OreDictItems_Enabled = true;
 
     AvaritiaFixEnabled = false;
+    MinetweakerFurnaceFixEnabled = true;
     PotionTimer = 100;
 
     BlacklistedTileEntiyClassNames = new String[] { "com.rwtema.extrautils.tileentity.enderquarry.TileEntityEnderQuarry" };
@@ -52,6 +56,7 @@ public class CoreModConfig extends ConfigManager
   @Override
   protected void Init()
   {
+	OreDictItems_Enabled = _mainConfig.getBoolean( "OreDictItems", "Modules", OreDictItems_Enabled, "Set to false to prevent the OreDict register for SpaceStones and SpaceDusts");
     ModHazardousItems_Enabled = _mainConfig.getBoolean( "HazardousItems", "Modules", ModHazardousItems_Enabled, "Set to true to enable HazardousItems module. This needs a separate config file which is created once you start with this setting enabled" );
     ModCustomToolTips_Enabled = _mainConfig.getBoolean( "CustomToolTips", "Modules", ModCustomToolTips_Enabled, "Set to true to enable CustomToolTips module. This needs a separate config file which is created once you start with this setting enabled" );
     ModItemInHandInfo_Enabled = _mainConfig.getBoolean( "ItemInHandInfo", "Modules", ModItemInHandInfo_Enabled, "Set to true to enable ItemInHandInfo module. If enabled, type /iih to display the item's name-info" );
@@ -62,6 +67,7 @@ public class CoreModConfig extends ConfigManager
     PotionTimer = _mainConfig.getInt( "PotionTimer", "Limits", PotionTimer, 100, 2048, "The time (in ticks) the potion effect will remain on the player when he drops the bucket. 20 = 1 second" );
 
     AvaritiaFixEnabled = _mainConfig.getBoolean( "AvaritiaFixEnabled", "ModFixes", AvaritiaFixEnabled, "Set to true to enable the modfix for Avaritia SkullFireSword" );
+    MinetweakerFurnaceFixEnabled = _mainConfig.getBoolean( "MinetweakerFurnaceFixEnabled", "ModFixes", MinetweakerFurnaceFixEnabled, "Set to true to allow Minetweaker to override the vanilla furnace fuel handler, allowing the burn value of WOOD material items to be changed." );
     SkullFireSwordEntityTargets = _mainConfig.getStringList( "Avaritia_SkullFireSwordEntityTargets", "ModFixes.Avaritia", SkullFireSwordEntityTargets, "The Canonical Class-Name of the Entity" );
     BlacklistedTileEntiyClassNames = _mainConfig.getStringList( "BlacklistedTileEntiyClassNames", "Modules.Worldaccelerator", BlacklistedTileEntiyClassNames, "The Canonical Class-Names of TileEntities that should be ignored by the WorldAccelerator" );
     OilFixConfig = new OilGeneratorFix.OilConfig( _mainConfig );

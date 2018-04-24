@@ -97,7 +97,10 @@ dependencies {
     compile "codechicken:CodeChickenCore:${config.minecraft.version}-${config.codechickencore.version}:dev"
     compile "codechicken:NotEnoughItems:${config.minecraft.version}-${config.nei.version}:dev"
     compile "net.industrial-craft:industrialcraft-2:${config.ic2.version}:dev"
-    compile "com.enderio:EnderIO:${config.minecraft.version}-${config.enderio.version}:dev"
+    compile ("com.enderio:EnderIO:${config.minecraft.version}-${config.enderio.version}:dev") {
+        exclude group: "mcp.mobius.waila"
+    }
+
     compile "com.enderio.core:EnderCore:${config.minecraft.version}-${config.endercore.version}:dev"
 
     compile fileTree(dir: 'libs', include: '*.jar')

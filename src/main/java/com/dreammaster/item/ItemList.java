@@ -446,6 +446,11 @@ public enum ItemList
     SteelBars(new ModSimpleBaseItem("SteelBars", ModTabList.ModBarsAndCasingsTab)),
     SteelDualCompressedPlates(new ModSimpleBaseItem("SteelDualCompressedPlates", ModTabList.ModSpaceTab)),
     StonePlate(new ModSimpleBaseItem("StonePlate", ModTabList.ModGenericTab)),
+    StargateFramePart(new ModSimpleBaseItem("StargateFramePart", ModTabList.ModSpaceTab)),
+    StargateChevron(new ModSimpleBaseItem("StargateChevron", ModTabList.ModSpaceTab)),
+    StargateShieldingFoil(new ModSimpleBaseItem("StargateShieldingFoil", ModTabList.ModSpaceTab)),
+    StargateCrystalDust(new ModSimpleBaseItem("StargateCrystalDust",ModTabList.ModSpaceTab)),
+    TCetiESeaweedExtract(new ModSimpleBaseItem("TCetiESeaweedExtract",ModTabList.ModSpaceTab)),
     TCetiEStoneDust(new ModSimpleBaseItem("TCetiEStoneDust", ModTabList.ModSpaceTab)),
     TeleposerFrame(new ModSimpleBaseItem("TeleposerFrame", ModTabList.ModThaumcraftTab)),
     Tier2Booster(new ModSimpleBaseItem("Tier2Booster", ModTabList.ModSpaceTab)),
@@ -484,6 +489,11 @@ public enum ItemList
     WaferTier3(new ModSimpleBaseItem("WaferTier3", ModTabList.ModSpaceTab)),
     WandCapAlchemical(new ModSimpleBaseItem("WandCapAlchemical", ModTabList.ModThaumcraftTab)),
     WandCapBloodIron(new ModSimpleBaseItem("WandCapBloodIron", ModTabList.ModThaumcraftTab)),
+    WandCapElementium(new ModSimpleBaseItem("WandCapElementium", ModTabList.ModThaumcraftTab)),
+    WandCapManaSteel(new ModSimpleBaseItem("WandCapManaSteel", ModTabList.ModThaumcraftTab)),
+    WandCapTerraSteel(new ModSimpleBaseItem("WandCapTerraSteel", ModTabList.ModThaumcraftTab)),
+    WandCapVintium(new ModSimpleBaseItem("WandCapVintium", ModTabList.ModThaumcraftTab)),
+    WandCapThaumitite(new ModSimpleBaseItem("WandCapThaumitite", ModTabList.ModThaumcraftTab)),
     WeakOrb(new ModSimpleBaseItem("WeakOrb", ModTabList.ModThaumcraftTab)),
     WetTofu(new ModSimpleBaseItem("WetTofu", ModTabList.ModGenericTab)),
     WirelessTransmitter(new ModSimpleBaseItem("WirelessTransmitter", ModTabList.ModGenericTab)),
@@ -495,6 +505,7 @@ public enum ItemList
     MedalEngineer(new ModSimpleBaseItem("MedalEngineer", ModTabList.ModGenericTab)),
     MedalWarp(new ModSimpleBaseItem("MedalWarp", ModTabList.ModGenericTab)),
     AluminoSilicateWool(new ModSimpleBaseItem("AluminoSilicateWool", ModTabList.ModGenericTab)),
+    EdibleSalt(new ModSimpleBaseItem("EdibleSalt", ModTabList.ModGenericTab)),
 
     // Do not delete this
     EndOfList(null);
@@ -529,6 +540,11 @@ public enum ItemList
     public ItemStack getIS()
     {
         return new ItemStack(Item.getConstructedItem(), 1);
+    }
+    
+    public ItemStack getIS(int amount)
+    {
+        return new ItemStack(Item.getConstructedItem(), amount);
     }
 
 }

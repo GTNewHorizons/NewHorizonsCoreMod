@@ -1,20 +1,27 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
+
 import cpw.mods.fml.common.Loader;
-import gregtech.api.enums.*;
+import gregtech.api.enums.Dyes;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OreDictNames;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.common.GT_Proxy;
 import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
-
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader
         implements Runnable {
-    private static final String aTextRailcraft = "Railcraft";
+	private static final String aTextRailcraft = "Railcraft";
     private static final String aTextMachineBeta = "machine.beta";
     private static final String aTextMachineAlpha = "machine.alpha";
     private static final String aTextIron1 = "X X";
@@ -51,127 +58,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         //Mine and Blade Battlegear remove recipes NBT
         Object[] o = new Object[0];
 
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 2), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 3), true, false, true);
-
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "quiver", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "shield.wood", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "shield.hide", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "shield.iron", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "shield.gold", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "shield.diamond", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "dagger.wood", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "dagger.stone", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "dagger.iron", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "dagger.gold", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "dagger.diamond", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "spear.wood", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "spear.stone", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "spear.iron", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "spear.gold", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "spear.diamond", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "waraxe.wood", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "waraxe.stone", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "waraxe.iron", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "waraxe.gold", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "waraxe.diamond", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "mace.wood", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "mace.stone", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "mace.iron", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "mace.gold", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "mace.diamond", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "chain", 1L, 0), true, false, true);
-        //railcraft
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 2), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 3), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 4), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 5), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 6), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 7), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 8), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 9), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 10), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 11), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 12), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 13), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 14), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 15), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 2), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 3), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 5), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 6), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 8), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 9), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 10), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 11), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 12), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 13), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 14), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineAlpha, 1L, 15), true, false, true);
-
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "tool.crowbar", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "tool.crowbar.reinforced", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "tool.whistle.tuner", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.turbine.blade", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.turbine.disk", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.turbine.rotor", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "borehead.iron", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "borehead.steel", 1L, 0),true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "borehead.diamond", 1L, 0),true, false, true);
-
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "cart.loco.steam.solid", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "cart.loco.electric", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "cart.bore", 1L, 0), true, false, true);
-
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(aTextRailcraft, "part.circuit", 1L, 2), true, false, true);
-        //forestry
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 2), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 3), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 4), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 5), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "stamps", 1L, 6), true, false, true);
-
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 2), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Forestry", "engine", 1L, 4), true, false, true);
-        //Steve Carts
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 9), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 16), true, false, true);
-        //Vanilla
-        GT_ModHandler.removeRecipeByOutput(new ItemStack(Blocks.iron_bars, 1, 32767), true, false, true);
-        //Natural Compass
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("naturescompass", "NaturesCompass", 1L, 0), true, false, true);
-        //IC2
-        GT_ModHandler.removeRecipeByOutput(ItemList.IC2_Energium_Dust.get(1L));
-        GT_ModHandler.removeRecipeByOutput(ItemList.IC2_LapotronCrystal.get(1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorNanoBoots", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorNanoChestplate", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorNanoHelmet", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorNanoLegs", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorQuantumBoots", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorQuantumChestplate", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorQuantumHelmet", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorQuantumLegs", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorBatpack", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorAdvBatpack", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorEnergypack", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemAdvBat", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemNightvisionGoggles", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorJetpackElectric", 1L));
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemArmorJetpack", 1L, GT_Values.W));
         //Add recipes
-
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier1.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Aluminium), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.AnnealedCopper), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier2.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.StainlessSteel), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.RoseGold), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier3.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Titanium), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.PulsatingIron), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
@@ -260,7 +147,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         GT_Log.out.println("GT_Mod: Replacing Railcraft Recipes with slightly more OreDicted Variants");
 
-        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 0), bits, new Object[]{"SPS", "PdP", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S', OrePrefixes.screw.get(Materials.AnyIron)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 0), new Object[]{"SPS", "PdP", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S', OrePrefixes.screw.get(Materials.AnyIron)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 1), bits, new Object[]{"SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S', OrePrefixes.screw.get(Materials.AnyIron), 'L', new ItemStack(Blocks.glass_pane, 1, 32767)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 2), bits, new Object[]{"SPS", "BdB", "SPS", 'S', OrePrefixes.screw.get(Materials.AnyIron), 'B', new ItemStack(Blocks.iron_bars, 1, 32767), 'P', OrePrefixes.pipeLarge.get(Materials.Bronze)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 3), bits, new Object[]{"PPP", "ShS", "PPP", 'P', ItemList.IC2_Item_Casing_Iron, 'S', OrePrefixes.screw.get(Materials.AnyIron)});
@@ -273,7 +160,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 10), bits, new Object[]{"PEP", "GOG", "OOO", 'P', OrePrefixes.plate.get(Materials.Obsidian), 'E', OrePrefixes.gem.get(Materials.EnderPearl), 'O', OrePrefixes.stone.get(Materials.Obsidian), 'G', OrePrefixes.plate.get(Materials.Gold), });
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 11), bits, new Object[]{"SPS", "PRP", "SPS", 'S', OrePrefixes.screw.get(Materials.Steel), 'P', OrePrefixes.plate.get(Materials.Obsidian), 'R', GT_ModHandler.getModItem("ExtraUtilities", "trashcan", 1L, 0)});
         //GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 12), bits, new Object[]{"GPG", "PAP", "GPG", 'P', OreDictNames.craftingPiston, 'A', OreDictNames.craftingAnvil, 'G', GT_ModHandler.getModItem(aTextRailcraft, "part.gear", 1L, 2)});
-        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 13), bits, new Object[]{"SPS", "PdP", "SPS", 'P', OrePrefixes.plate.get(Materials.Steel), 'S', OrePrefixes.screw.get(Materials.Steel)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 13), new Object[]{"SPS", "PdP", "SPS", 'P', OrePrefixes.plate.get(Materials.Steel), 'S', OrePrefixes.screw.get(Materials.Steel)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 14), bits, new Object[]{"SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.Steel), 'S', OrePrefixes.screw.get(Materials.Steel), 'L',GT_ModHandler.getModItem("Railcraft", "machine.beta", 1L, 1)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 15), bits, new Object[]{"SPS", "BdB", "SPS", 'S', OrePrefixes.screw.get(Materials.Steel), 'B', CustomItemList.SteelBars, 'P', OrePrefixes.pipeLarge.get(Materials.Steel)});
 
@@ -387,10 +274,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2", "itemArmorJetpackElectric", 1, GT_Values.W), bits, new Object[] {"SCS", "MBM", "EWE", 'S', GT_ModHandler.getModItem("dreamcraft", "item.StainlessSteelItemCasing", 1, 0),  'C', OrePrefixes.circuit.get(Materials.Advanced),  'M', ItemList.Electric_Motor_HV,  'B', GT_ModHandler.getModItem("IC2", "itemArmorBatpack", 1, GT_Values.W), 'W', OrePrefixes.wireGt04.get(Materials.AnnealedCopper), 'E', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 6)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2", "itemArmorJetpack", 1, GT_Values.W), bits, new Object[] {"SXS", "TCT", "EZE", 'S', GT_ModHandler.getModItem("dreamcraft", "item.StainlessSteelItemCasing", 1, 0),  'X', OrePrefixes.circuit.get(Materials.Advanced),  'T', GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1, 0), 'C', GT_ModHandler.getModItem("IC2", "reactorCoolantSix", 1, 1), 'Z', GT_ModHandler.getModItem("adventurebackpack", "backpackComponent", 1, 5), 'E', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 6)});
 
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("OpenComputers", "wrench", 1, 0), GT_Proxy.tBits, new Object[]{"IWI", "ICI", " I ", 'W', ToolDictNames.craftingToolWrench, 'I', OrePrefixes.ingot.get(Materials.Iron), 'C', GT_ModHandler.getModItem("OpenComputers", "item", 1, 24)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("openprinter", "openprinter.folder", 1L, 0),  GT_Proxy.tBits, new Object[]{"PGP", " P ", 'P', new ItemStack(Items.paper, 1,0), 'G', new ItemStack(Items.slime_ball, 1,0)});
+
         if (Loader.isModLoaded("GraviSuite")) {
 
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 3));
-            GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 3), new Object[]{"OCO", "XWX", "OCO", 'C', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 1), 'X',  GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 2), 'O', GT_ModHandler.getModItem("IC2", "blockMachine2", 1, 1), 'W', ItemList.Transformer_LuV_IV.get(1, o)});
+            GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 3), new Object[]{"OCO", "XWX", "OCO", 'C', OrePrefixes.wireGt12.get(Materials.SuperconductorLuV), 'X',  GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 2), 'O', GT_ModHandler.getModItem("IC2", "blockMachine2", 1, 1), 'W', ItemList.Transformer_LuV_IV.get(1, o)});
         }
     }
 }
