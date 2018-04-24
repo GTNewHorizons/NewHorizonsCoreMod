@@ -492,7 +492,7 @@ public enum ItemList
     WandCapElementium(new ModSimpleBaseItem("WandCapElementium", ModTabList.ModThaumcraftTab)),
     WandCapManaSteel(new ModSimpleBaseItem("WandCapManaSteel", ModTabList.ModThaumcraftTab)),
     WandCapTerraSteel(new ModSimpleBaseItem("WandCapTerraSteel", ModTabList.ModThaumcraftTab)),
-    WandCapVintium(new ModSimpleBaseItem("WandCapVintium", ModTabList.ModThaumcraftTab)),
+    WandCapVinteum(new ModSimpleBaseItem("WandCapVinteum", ModTabList.ModThaumcraftTab)),
     WandCapThaumitite(new ModSimpleBaseItem("WandCapThaumitite", ModTabList.ModThaumcraftTab)),
     WeakOrb(new ModSimpleBaseItem("WeakOrb", ModTabList.ModThaumcraftTab)),
     WetTofu(new ModSimpleBaseItem("WetTofu", ModTabList.ModGenericTab)),
