@@ -48,7 +48,8 @@ public class GT_CustomLoader
         		new ItemStack(Blocks.dragon_egg, 1),
         		Materials.Osmium,
         		Materials.Neutronium);
-        
+
+
         private Object _mCircuit;
         private Object _mHeatingCoil;
         private Object _mCoilWire;
