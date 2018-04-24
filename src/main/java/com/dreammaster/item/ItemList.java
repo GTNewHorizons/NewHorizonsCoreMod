@@ -437,6 +437,8 @@ public enum ItemList
     ShapeTinyPipe(new ModSimpleBaseItem("ShapeTinyPipe", ModTabList.ModShapesTab)),
     ShapeTurbineBlade(new ModSimpleBaseItem("ShapeTurbineBlade", ModTabList.ModShapesTab)),
     ShapeWire(new ModSimpleBaseItem("ShapeWire", ModTabList.ModShapesTab)),
+    SilverString(new ModSimpleBaseItem("SilverString", ModTabList.ModThaumcraftTab)),
+	SilveredFleece(new ModSimpleBaseItem("SilveredFleece", ModTabList.ModThaumcraftTab)),
     SimpleCircuitBoard(new ModSimpleBaseItem("SimpleCircuitBoard", ModTabList.ModCircuitsTab)),
     SnowQueenBlood(new ModSimpleBaseItem("SnowQueenBlood", ModTabList.ModThaumcraftTab)),
     SnowQueenBloodDrop(new ModSimpleBaseItem("SnowQueenBloodDrop", ModTabList.ModThaumcraftTab)),
