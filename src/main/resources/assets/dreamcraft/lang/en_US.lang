@@ -571,5 +571,6 @@ item.WandCapManaSteel.name=Manasteel Cap
 item.WandCapTerraSteel.name=Terrasteel Cap
 item.WandCapVinteum.name=Vinteum Cap
 item.WandCapThauminite.name=Thauminite Cap
-item.VinteumString.name=Vinteum String
+item.VinteumString.name=Vinteum Thread
+item.SilverString.name=Silver Thread
 item.SilveredFleece.name=Silvered Fleece
