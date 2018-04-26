@@ -11,6 +11,8 @@ import bloodasp.galacticgreg.api.ModContainer;
 import bloodasp.galacticgreg.api.ModDBMDef;
 import bloodasp.galacticgreg.api.ModDimensionDef;
 import bloodasp.galacticgreg.api.SpecialBlockComb;
+import gregtech.api.enums.Materials;
+import gregtech.api.util.GT_ModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.ChunkProviderEnd;
 
@@ -170,17 +172,21 @@ public class SpaceDimRegisterer
         final ModDBMDef DBMHaumea = new ModDBMDef("haumeablocks");
         final ModDBMDef DBMCentauriA = new ModDBMDef("acentauribbsubgrunt");
         final ModDBMDef DBMVegaB = new ModDBMDef("vegabsubgrunt");
-        final ModDBMDef DBMbarnardaC = new ModDBMDef("barnardaCdirt");
+        
+        List<ModDBMDef> DBMbarnardaC = new ArrayList<ModDBMDef>();
+        DBMbarnardaC.add(new ModDBMDef("barnardaCdirt"));
+        DBMbarnardaC.add(new ModDBMDef(Blocks.stone));
+        
         final ModDBMDef DBMbarnardaE = new ModDBMDef("barnardaEsubgrunt");
         final ModDBMDef DBMbarnardaF = new ModDBMDef("barnardaFsubgrunt");
         final ModDBMDef DBMTcetiE = new ModDBMDef("tcetieblocks", 2);
         final ModDBMDef DBMMiranda = new ModDBMDef("mirandablocks", 2);
-        
+
         List<ModDBMDef> DBMEuropa = new ArrayList<ModDBMDef>();
         //DBMEuropa.add(new ModDBMDef("europagrunt")); 			//Europa top layer turned off bc ores are too easy to spot
         DBMEuropa.add(new ModDBMDef("europagrunt",1)); 			//Europa Ice Layer ~55-65 without top layer
-        //DBMEuropa.add(new ModDBMDef(Blocks.water));			//turned off bc. it gave strange results...
-        //DBMEuropa.add(new ModDBMDef(Blocks.flowing_water));	//turned off bc. it gave strange results...
+        DBMEuropa.add(new ModDBMDef(Blocks.water));			    
+        DBMEuropa.add(new ModDBMDef(Blocks.flowing_water));	    
         DBMEuropa.add(new ModDBMDef(Blocks.ice)); 				//Generates directly over bedrock
         DBMEuropa.add(new ModDBMDef(Blocks.packed_ice)); 		//Generates directly over bedrock
         DBMEuropa.add(new ModDBMDef("europaunderwatergeyser")); //Generates directly over bedrock
@@ -212,12 +218,14 @@ public class SpaceDimRegisterer
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Haumea", "galaxyspace.SolarSystem.planets.haumea.dimension.ChunkProviderHaumea", Enums.DimensionType.Planet, singleToList(DBMHaumea)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("CentauriA", "galaxyspace.ACentauriSystem.planets.aCentauriBb.dimension.ChunkProviderACentauri", Enums.DimensionType.Planet, singleToList(DBMCentauriA)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("VegaB", "galaxyspace.VegaSystem.planets.vegaB.dimension.ChunkProviderVegaB", Enums.DimensionType.Planet, singleToList(DBMVegaB)));
-        modCGalaxySpace.addDimensionDef(new ModDimensionDef("BarnardC", "galaxyspace.BarnardsSystem.planets.barnardaC.dimension.ChunkProviderBarnardaC", Enums.DimensionType.Planet, singleToList(DBMbarnardaC)));
+        modCGalaxySpace.addDimensionDef(new ModDimensionDef("BarnardC", "galaxyspace.BarnardsSystem.planets.barnardaC.dimension.ChunkProviderBarnardaC", Enums.DimensionType.Planet, DBMbarnardaC));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("BarnardE", "galaxyspace.BarnardsSystem.planets.barnardaE.dimension.ChunkProviderBarnardaE", Enums.DimensionType.Planet, singleToList(DBMbarnardaE)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("BarnardF", "galaxyspace.BarnardsSystem.planets.barnardaF.dimension.ChunkProviderBarnardaF", Enums.DimensionType.Planet, singleToList(DBMbarnardaF)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("TcetiE", "galaxyspace.TCetiSystem.planets.tcetiE.dimension.ChunkProviderTCetiE", Enums.DimensionType.Planet, singleToList(DBMTcetiE)));
         modCGalaxySpace.addDimensionDef(new ModDimensionDef("Miranda", "galaxyspace.SolarSystem.moons.miranda.dimension.ChunkProviderMiranda", Enums.DimensionType.Planet, singleToList(DBMMiranda)));
 
+        
+        
         ModDimensionDef dimKupierBelt = new ModDimensionDef("Kuiperbelt", "galaxyspace.SolarSystem.planets.kuiperbelt.dimension.ChunkProviderKuiper", Enums.DimensionType.Asteroid);
 
         dimKupierBelt.setDimensionType(Enums.DimensionType.Asteroid);
