@@ -76,6 +76,7 @@ public class SpaceDimRegisterer
         registerModContainer(Setup_GalactiCraftCore());
         registerModContainer(Setup_GalactiCraftPlanets());
         registerModContainer(Setup_GalaxySpace());
+        registerModContainer(Setup_ThaumicTinkerer());
     }
 
     /**
@@ -118,6 +119,12 @@ public class SpaceDimRegisterer
         return modGCraftCore;
     }
 
+    private ModContainer Setup_ThaumicTinkerer() {
+    	ModContainer modCThaumicTinkerer = new ModContainer("ThaumicTinkerer");
+    	final ModDBMDef DBMBedrockDim = new ModDBMDef(Blocks.bedrock);
+    	modCThaumicTinkerer.addDimensionDef(new ModDimensionDef("Bedrock","thaumic.tinkerer.common.dim.ChunkProviderBedrock",Enums.DimensionType.Planet, singleToList(DBMBedrockDim)));
+    	return modCThaumicTinkerer;
+    }
 
     /**
      * As GalactiCraftPlanets is an optional mod, don't hardlink it here
@@ -172,6 +179,7 @@ public class SpaceDimRegisterer
         final ModDBMDef DBMHaumea = new ModDBMDef("haumeablocks");
         final ModDBMDef DBMCentauriA = new ModDBMDef("acentauribbsubgrunt");
         final ModDBMDef DBMVegaB = new ModDBMDef("vegabsubgrunt");
+        
         
         List<ModDBMDef> DBMbarnardaC = new ArrayList<ModDBMDef>();
         DBMbarnardaC.add(new ModDBMDef("barnardaCdirt"));
