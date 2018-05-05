@@ -651,7 +651,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                     }
                 }
 
-                GT_Values.RA.addDistilleryRecipe(ItemList.Circuit_Integrated.getWithDamage(0L, 1L, new Object[0]), Materials.Biomass.getFluid(40L), Materials.Ethanol.getFluid(20L), 16, 24, false);
+                GT_Values.RA.addDistilleryRecipe(GT_Utility.getIntegratedCircuit(1), Materials.Biomass.getFluid(40L), Materials.Ethanol.getFluid(20L), 16, 24, false);
             }
             catch(Exception e)
             {
