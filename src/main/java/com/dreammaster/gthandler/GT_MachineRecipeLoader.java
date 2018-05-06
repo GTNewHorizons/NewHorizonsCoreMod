@@ -1,6 +1,9 @@
 package com.dreammaster.gthandler;
 
+import java.lang.reflect.Field;
+
 import cpw.mods.fml.common.Loader;
+import forestry.api.recipes.IFermenterRecipe;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -9,6 +12,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
@@ -620,6 +624,40 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("Genetics", "misc", 6L, 4), FluidRegistry.getFluidStack("water", 750), FluidRegistry.getFluidStack("binnie.growthmedium", 750), 600, 480, false);
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0), FluidRegistry.getFluidStack("binnie.growthmedium", 750), FluidRegistry.getFluidStack("binnie.bacteria", 750), 1200, 480, false);
+
+        // Add fermenter recipes from forestry into gregtech
+        if (Loader.isModLoaded("Forestry")) {
+            try {
+                Class forestryFermenterRecipeManager = Class.forName("forestry.factory.recipes.FermenterRecipeManager");
+                Field fieldFermenterRecipes = forestryFermenterRecipeManager.getDeclaredField("recipes");
+                fieldFermenterRecipes.setAccessible(true);
+
+                Iterable<IFermenterRecipe> recipes = (Iterable<IFermenterRecipe>)fieldFermenterRecipes.get(null);
+
+                for(IFermenterRecipe recipe : recipes) {
+                    ItemStack resource = recipe.getResource();
+
+                    boolean alreadyHasRecipe = GT_Recipe.GT_Recipe_Map.sBrewingRecipes.containsInput(resource);
+                    boolean resultsInBiomass = recipe.getOutput().equals(FluidRegistry.getFluid("biomass"));
+
+                    if(!alreadyHasRecipe && resultsInBiomass) {
+                        int amountIn = recipe.getFermentationValue() * 2;
+                        int amountOut = amountIn;
+                        GT_Values.RA.addBrewingRecipeCustom(resource, FluidRegistry.getFluidStack("water", amountIn), FluidRegistry.getFluidStack("biomass", amountOut), 8 * amountOut, 3, false);
+
+                        amountOut = (int)(amountOut * 1.5);
+                        GT_Values.RA.addBrewingRecipeCustom(resource, FluidRegistry.getFluidStack("juice", amountIn), FluidRegistry.getFluidStack("biomass", amountOut), 8 * amountOut, 3, false);
+                        GT_Values.RA.addBrewingRecipeCustom(resource, FluidRegistry.getFluidStack("honey", amountIn), FluidRegistry.getFluidStack("biomass", amountOut), 8 * amountOut, 3, false);
+                    }
+                }
+
+                GT_Values.RA.addDistilleryRecipe(GT_Utility.getIntegratedCircuit(1), Materials.Biomass.getFluid(40L), Materials.Ethanol.getFluid(20L), 16, 24, false);
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
 
         GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("Forestry", "beeCombs", 1L, 9), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("Forestry", "beeswax", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Iridium, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000, 9}, 120, 480);
 
