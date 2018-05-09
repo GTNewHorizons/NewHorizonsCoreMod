@@ -73,7 +73,7 @@ repositories {
     }
     maven {
          name = "tterrag"
-         url = "https://maven.tterrag.com/"
+         url = "http://maven.tterrag.com/"
     }
     maven { // WAILA
         name "Mobius Repo"
