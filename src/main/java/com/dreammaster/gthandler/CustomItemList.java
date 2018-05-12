@@ -82,6 +82,7 @@ public enum CustomItemList implements IItemContainer
 	PumpLuV, PumpZPM, //PumpUV, PumpUHV, PumpUEV, PumpUIV, PumpUMV,
 	AcceleratorLV, AcceleratorMV, AcceleratorHV, AcceleratorEV, AcceleratorIV, AcceleratorLuV, AcceleratorZPM, AcceleratorUV,
 	Automation_ChestBuffer_UHV, Automation_ChestBuffer_UEV, Automation_ChestBuffer_UIV, Automation_ChestBuffer_UMV,
+	Unboxinator_LuV, Unboxinator_ZPM, Unboxinator_UV,
 
 	//CoreModItems
 	EtchedLowVoltageWiring, EtchedInsaneVoltageWiring, EtchedLudicrousVoltageWiring,

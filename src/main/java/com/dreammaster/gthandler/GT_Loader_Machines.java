@@ -3853,6 +3853,45 @@ public class GT_Loader_Machines
 						'S', OrePrefixes.screw.get(Materials.AnyIron),
 						'X', OreDictNames.craftingPiston});
 
+		// ===================================================================================================
+		// Unboxinator
+		// ===================================================================================================
+        CustomItemList.Unboxinator_LuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+                12080, "basicmachine.unboxinator.tier.06", "Elite Unboxinator", 6, "Grabs things out of Boxes",
+                GT_Recipe.GT_Recipe_Map.sUnboxinatorRecipes, 1, 2, 0, 0, 1, "Unpackager.png",
+                "", false, false, 0, "UNBOXINATOR",
+                new Object[] { "BCB", "VMR", "WCW",
+                        'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+                        'R', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.ROBOT_ARM,
+                        'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+                        'C', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CIRCUIT,
+                        'W', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE,
+                        'B', OreDictNames.craftingChest}).getStackForm(1L));
+
+        CustomItemList.Unboxinator_ZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+                12081, "basicmachine.unboxinator.tier.06", "Elite Unboxinator", 7, "Grabs things out of Boxes",
+                GT_Recipe.GT_Recipe_Map.sUnboxinatorRecipes, 1, 2, 0, 0, 1, "Unpackager.png",
+                "", false, false, 0, "UNBOXINATOR",
+                new Object[] { "BCB", "VMR", "WCW",
+                        'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+                        'R', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.ROBOT_ARM,
+                        'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+                        'C', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CIRCUIT,
+                        'W', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE,
+                        'B', OreDictNames.craftingChest}).getStackForm(1L));
+
+        CustomItemList.Unboxinator_UV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+                12082, "basicmachine.unboxinator.tier.06", "Elite Unboxinator", 8, "Grabs things out of Boxes",
+                GT_Recipe.GT_Recipe_Map.sUnboxinatorRecipes, 1, 2, 0, 0, 1, "Unpackager.png",
+                "", false, false, 0, "UNBOXINATOR",
+                new Object[] { "BCB", "VMR", "WCW",
+                        'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+                        'R', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.ROBOT_ARM,
+                        'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+                        'C', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CIRCUIT,
+                        'W', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE,
+                        'B', OreDictNames.craftingChest}).getStackForm(1L));
+
 		//ID's occupied from 15000-15500!! (in EM branch)
 
 		//TODO new tiered maybe
