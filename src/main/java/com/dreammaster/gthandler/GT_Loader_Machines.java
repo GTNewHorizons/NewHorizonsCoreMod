@@ -1306,9 +1306,18 @@ public class GT_Loader_Machines
 						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable4()});
 
+        GT_ModHandler.addCraftingRecipe(CustomItemList.MassFabricatorUHV.get(1L),
+                bitsd,
+                new Object[] { "CFC", "WMW", "CFC",
+                        'M', ItemList.Hull_MAX,
+                        'F', ItemList.Field_Generator_UHV,
+                        'C', OrePrefixes.circuit.get(Materials.Infinite),
+                        'W', OrePrefixes.cableGt04.get(Materials.Bedrockium) });
+
 		//MassFabricatorLuV
 		//MassFabricatorZPM
 		//MassFabricatorUV
+        //MassFabricatorUHV
 		// ===================================================================================================
 
 		// ===================================================================================================
