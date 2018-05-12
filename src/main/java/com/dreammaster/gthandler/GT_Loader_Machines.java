@@ -228,7 +228,7 @@ public class GT_Loader_Machines
 						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
 						'A', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.ROBOT_ARM,
 						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
-						'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable() }).getStackForm(1L));
+						'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable()}).getStackForm(1L));
 
 		CustomItemList.AssemblingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10783, "basicmachine.assembler.tier.09", "Epic Assembly Constructor", 9, "Avengers, Assemble!",
@@ -239,7 +239,7 @@ public class GT_Loader_Machines
 						'V', ItemList.Conveyor_Module_UHV,
 						'A', ItemList.Robot_Arm_UHV,
 						'C', OrePrefixes.circuit.get(Materials.Infinite),
-						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium), }).getStackForm(1L));
+						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium)}).getStackForm(1L));
 
 		CustomItemList.AssemblingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10784, "basicmachine.assembler.tier.10", "Epic Assembly Constructor II",10, "Avengers, Assemble!",
@@ -2045,8 +2045,14 @@ public class GT_Loader_Machines
 
 		CustomItemList.CentrifugeUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11083, "basicmachine.centrifuge.tier.09", "Epic Molecular Tornado", 9, "Separating Molecules",
-				GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes, 2, 6, 64000, 0, 1, "Centrifuge.png",
-				"", false, false, 0, "CENTRIFUGE",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes, 2, 6, 128000, 0, 1, "Centrifuge.png",
+				"", false, false, 0, "CENTRIFUGE",
+                new Object[] { "CEC", "WMW", "CEC",
+                        'M', ItemList.Hull_MAX,
+                        'E', ItemList.Electric_Motor_UHV,
+                        'C', OrePrefixes.circuit.get(Materials.Infinite),
+                        'W', OrePrefixes.cableGt01.get(Materials.Bedrockium)}).getStackForm(1L));
+
 
 		CustomItemList.CentrifugeUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11084, "basicmachine.centrifuge.tier.10", "Epic Molecular Tornado II",10, "Separating Molecules",
