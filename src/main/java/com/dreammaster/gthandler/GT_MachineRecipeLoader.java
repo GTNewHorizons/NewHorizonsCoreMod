@@ -2293,7 +2293,7 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         if (Loader.isModLoaded("GraviSuite")) {
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("GraviSuite", "graviChestPlate", 1, GT_Values.W));
-            GT_Values.RA.addAssemblylineRecipe(GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, 1), 144000, new ItemStack[]{
+            GT_Values.RA.addAssemblylineRecipe(GT_ModHandler.getIC2Item("quantumBodyarmor", 1L,  GT_Values.W), 144000, new ItemStack[]{
                     GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, 1),
                     ItemList.Transformer_ZPM_LuV.get(1L),
                     GT_ModHandler.getModItem("GraviSuite", "ultimateLappack", 1, 1),
