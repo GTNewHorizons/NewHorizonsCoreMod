@@ -250,7 +250,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.brick_block), Materials.AnyBronze.getPlates(6)}, null, ItemList.Casing_BronzePlatedBricks.get(1L), 200, 30);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{Materials.Steel.getPlates(4), Materials.Iron.getPlates(2),ItemList.Casing_BronzePlatedBricks.get(1L)}, null, CustomItemList.Casing_Pyrolyse.get(1L), 200, 30);
-        
+
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Carbon, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glowstone, 1L), GT_ModHandler.getModItem("FloodLights", "electricIncandescentLightBulb", 1L, 0)}, GT_Values.NF, GT_ModHandler.getModItem("GalacticraftCore", "tile.glowstoneTorch", 32L, 0), 400, 192);
+
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.log, Materials.Wood, 4L), GT_OreDictUnificator.get(OrePrefixes.treeSapling, 4L), new ItemStack(Items.compass, 1, 0)}, Materials.Glue.getFluid(144L), GT_ModHandler.getModItem("naturescompass", "NaturesCompass", 1L, 0), 200, 30);
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack(Items.string, 3, 0), GT_Utility.getIntegratedCircuit(1), new ItemStack(Blocks.wool, 1, 0), 100, 4);
