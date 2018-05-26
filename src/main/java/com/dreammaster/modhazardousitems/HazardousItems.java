@@ -96,7 +96,7 @@ public class HazardousItems
         {
           // Exact match
           // if (hi.itemName.equals(pInHand.getUnlocalizedName()))
-          if( hi.itemName.equals( ItemDescriptor.fromItem( pInHand.getItem() ) ) ) {
+          if( hi.itemName.equals( ItemDescriptor.fromItem( pInHand.getItem() ).getItemName() ) ) {
               continue; // Dont read to new list
           }
         }
