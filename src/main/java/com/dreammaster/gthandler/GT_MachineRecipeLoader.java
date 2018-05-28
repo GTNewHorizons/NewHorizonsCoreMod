@@ -1838,8 +1838,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         
         //Rocket Circuits
         final int[] EUperRecipe = new int[]{
-        		1920,				//t2 = EV
-        		7680,				//t3 = IV
+        		480,				//t2 = HV
+        		1920,				//t3 = EV
         		7680,				//t4 = IV
         		30720,				//t5 = LuV (Gated behind Assline)
         		30720,				//t6 = LuV 
