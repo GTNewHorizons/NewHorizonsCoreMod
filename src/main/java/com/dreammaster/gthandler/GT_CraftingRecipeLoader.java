@@ -246,7 +246,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addShapelessCraftingRecipe(ItemList.Circuit_Integrated_Good.get(1, o), new Object[]{ItemList.Circuit_Processor.get(1, o)});
         GT_ModHandler.addShapelessCraftingRecipe(ItemList.Circuit_Good.get(1, o), new Object[]{ItemList.Circuit_Integrated_Good.get(1, o)});
         GT_ModHandler.addShapelessCraftingRecipe(ItemList.Circuit_Advanced.get(1, o), new Object[]{ItemList.Circuit_Nanoprocessor.get(1, o)});
-        GT_ModHandler.addShapelessCraftingRecipe(GT_ModHandler.getModItem("IC2", "advancedCircuit", 1, 0), new Object[]{ItemList.Circuit_Advanced.get(1, o)});
+        GT_ModHandler.addShapelessCraftingRecipe(GT_ModHandler.getIC2Item("advancedCircuit", 1L), new Object[]{ItemList.Circuit_Advanced.get(1, o)});
 
         //Vent Casing
         GT_ModHandler.addCraftingRecipe(ItemList.Casing_Vent.get(1L), bits, new Object[]{"PPP", "SSS", "MFV", 'P', CustomItemList.SteelBars.get(1, o), 'F', OrePrefixes.frameGt.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_MV, 'V', OrePrefixes.rotor.get(Materials.Aluminium),'S',ItemList.Component_Filter});
