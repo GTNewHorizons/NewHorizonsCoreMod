@@ -262,6 +262,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartLeggings", 1, 0), GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0), Materials.Redstone.getMolten(144L), GT_ModHandler.getModItem("IC2", "itemArmorNanoLegs", 1), 600, 480);
         GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartBoots", 1, 0), GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0), Materials.Redstone.getMolten(144L), GT_ModHandler.getModItem("IC2", "itemArmorNanoBoots", 1), 600, 480);
 
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 2L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L), GT_OreDictUnificator.get(OrePrefixes.gem, Materials.EnderPearl, 1L), GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("Railcraft", "machine.alpha", 1, 0), 600, 480);
+
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.EnergeticAlloy.getMolten(576L), CustomItemList.RawLapotronCrystal.get(1L), 10000, 2400, 480);
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.VibrantAlloy.getMolten(288L), CustomItemList.RawLapotronCrystal.get(1L), 10000, 1200, 480);
 
