@@ -264,6 +264,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 2L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L), GT_OreDictUnificator.get(OrePrefixes.gem, Materials.EnderPearl, 1L), GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("Railcraft", "machine.alpha", 1, 0), 600, 480);
 
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.compressed, Materials.Steel, 8L), GT_ModHandler.getModItem("GalacticraftCore", "item.oilCanisterPartial", 1L, 1001)}, GT_Values.NF, GT_ModHandler.getModItem("GalaxySpace", "item.ModuleSmallCanister", 1L, 0), 200, 120);
+
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.EnergeticAlloy.getMolten(576L), CustomItemList.RawLapotronCrystal.get(1L), 10000, 2400, 480);
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.VibrantAlloy.getMolten(288L), CustomItemList.RawLapotronCrystal.get(1L), 10000, 1200, 480);
 
