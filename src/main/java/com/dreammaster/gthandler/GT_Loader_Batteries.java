@@ -43,38 +43,38 @@ public class GT_Loader_Batteries
 
 		// Recipes
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlueSteel, 2L),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlueSteel, 2L), Materials.Polytetrafluoroethylene.getMolten(144L),
 				CustomItemList.BatteryHull_EV.get(1L), 100, 480);
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Platinum, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 6L),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 6L), Materials.Polytetrafluoroethylene.getMolten(288L),
 				CustomItemList.BatteryHull_IV.get(1L), 200, 1920);
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Naquadah, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 18L),
-				CustomItemList.BatteryHull_LuV.get(1L), 300, 7680);
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 18L), Materials.Polybenzimidazole.getMolten(144L),
+				CustomItemList.BatteryHull_LuV.get(1L),  300, 7680);
 		
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.NaquadahAlloy, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Europium, 6L),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Europium, 6L), Materials.Polybenzimidazole.getMolten(288L),
 				CustomItemList.BatteryHull_ZPM.get(1L), 200, 30720);
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.ElectrumFlux, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Americium, 18L),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Americium, 18L), Materials.Polybenzimidazole.getMolten(567L),
 				CustomItemList.BatteryHull_UV.get(1L), 300, 122880);
 
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.ElectrumFlux, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 24L),
-				CustomItemList.BatteryHull_UHV.get(1L), 100, 491520);
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 24L), Materials.Polybenzimidazole.getMolten(1152L),
+				CustomItemList.BatteryHull_UHV.get(1L), 100, 500000);
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.ElectrumFlux, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahEnriched, 36L),
-				CustomItemList.BatteryHull_UEV.get(1L), 200, 491520);
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahEnriched, 36L), Materials.Polybenzimidazole.getMolten(2304L),
+				CustomItemList.BatteryHull_UEV.get(1L), 200, 2000000);
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.ElectrumFlux, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 48L),
-				CustomItemList.BatteryHull_UIV.get(1L), 300, 491520);
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 48L), Materials.Polybenzimidazole.getMolten(4608L),
+				CustomItemList.BatteryHull_UIV.get(1L), 300, 2000000);
 
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.Superconductor, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 56L),
-				CustomItemList.BatteryHull_UMV.get(1L), 600, 491520);
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 56L), Materials.Polybenzimidazole.getMolten(9216L),
+				CustomItemList.BatteryHull_UMV.get(1L), 600, 2000000);
 		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.Superconductor, 2L),
-				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 64L),
-				CustomItemList.BatteryHull_UxV.get(1L), 1200, 491520);
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 64L), Materials.Polybenzimidazole.getMolten(18432L),
+				CustomItemList.BatteryHull_UxV.get(1L), 1200, 2000000);
 
 		// Actually filled hulls.
 		// I added a gap of 5 to each filled hull, so 4 additional batteries are possible for each voltage tier
