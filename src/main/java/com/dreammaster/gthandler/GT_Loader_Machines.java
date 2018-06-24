@@ -2973,7 +2973,7 @@ public class GT_Loader_Machines
 						'M', CustomItemList.Casing_UEV,
 						'W', OrePrefixes.cableGt08.get(Materials.Draconium),
 						'H', OrePrefixes.plate.get(Materials.Bedrockium),
-						'P', OrePrefixes.plate.get(Materials.Polytetrafluoroethylene)});
+						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
 
 		CustomItemList.Hull_UIV.set(new GT_MetaTileEntity_BasicHull(
 				11231, "hull.tier.11", "UIV Machine Hull",11,
@@ -2985,7 +2985,7 @@ public class GT_Loader_Machines
 						'M', CustomItemList.Casing_UIV,
 						'W', OrePrefixes.cableGt08.get(Materials.NetherStar),
 						'H', OrePrefixes.plate.get(Materials.BlackPlutonium),
-						'P', OrePrefixes.plate.get(Materials.Polytetrafluoroethylene)});
+						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
 
 		CustomItemList.Hull_UMV.set(new GT_MetaTileEntity_BasicHull(
 				11232, "hull.tier.12", "UMV Machine Hull",12,
@@ -2997,7 +2997,7 @@ public class GT_Loader_Machines
 						'M', CustomItemList.Casing_UMV,
 						'W', OrePrefixes.wireGt12.get(Materials.Quantium),
 						'H', OrePrefixes.plate.get(Materials.Draconium),
-						'P', OrePrefixes.plate.get(Materials.Polytetrafluoroethylene)});
+						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
 
 		CustomItemList.Hull_UXV.set(new GT_MetaTileEntity_BasicHull(
 				11233, "hull.tier.13", "UXV Machine Hull",13,

@@ -215,9 +215,9 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.StainlessSteel, 32L), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 8L), CustomItemList.AdsorptionFilterCasing.get(1L), 600, 1920);
 
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 2L), CustomItemList.Casing_UEV.get(1L), Materials.Polytetrafluoroethylene.getMolten(288L), CustomItemList.Hull_UEV.get(1L), 50, 16);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.NetherStar, 2L), CustomItemList.Casing_UIV.get(1L), Materials.Polytetrafluoroethylene.getMolten(288L), CustomItemList.Hull_UIV.get(1L), 50, 16);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.Quantium, 2L), CustomItemList.Casing_UMV.get(1L), Materials.Polytetrafluoroethylene.getMolten(288L), CustomItemList.Hull_UMV.get(1L), 50, 16);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 2L), CustomItemList.Casing_UEV.get(1L), Materials.Polybenzimidazole.getMolten(576L), CustomItemList.Hull_UEV.get(1L), 50, 16);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.NetherStar, 2L), CustomItemList.Casing_UIV.get(1L), Materials.Polybenzimidazole.getMolten(576L), CustomItemList.Hull_UIV.get(1L), 50, 16);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.Quantium, 2L), CustomItemList.Casing_UMV.get(1L), Materials.Polybenzimidazole.getMolten(576L), CustomItemList.Hull_UMV.get(1L), 50, 16);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(CustomItemList.BedrockiumPlate.get(8L)), GT_Utility.getIntegratedCircuit(8),  CustomItemList.Casing_UEV.get(1L), 50, 16);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 8L), GT_Utility.getIntegratedCircuit(8),  CustomItemList.Casing_UIV.get(1L), 50, 16);
