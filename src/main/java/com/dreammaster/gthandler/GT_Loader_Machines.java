@@ -866,7 +866,7 @@ public class GT_Loader_Machines
                         'X', ItemList.Electric_Piston_UHV,
                         'E', OrePrefixes.circuit.get(Materials.Infinite),
                         'P', OrePrefixes.pipeMedium.get(Materials.Neutronium),
-                        'C', OrePrefixes.wireGt02.get(Materials.Naquadah) }).getStackForm(1L));
+                        'C', OrePrefixes.wireGt02.get(Materials.Bedrockium) }).getStackForm(1L));
 
 		CustomItemList.ExtruderUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10884, "basicmachine.extruder.tier.10", "Epic Shape Driver II",10, "Universal Machine for Metal Working",
@@ -988,7 +988,12 @@ public class GT_Loader_Machines
 		CustomItemList.FormingPressUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10903, "basicmachine.press.tier.09", "Epic Surface Shifter", 9, "Imprinting Images into things",
 				GT_Recipe.GT_Recipe_Map.sPressRecipes, 2, 1, 0, 0, 1, "Press.png",
-				GregTech_API.sSoundList.get(203), false, false, 0, "PRESS",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(203), false, false, 0, "PRESS",
+				new Object[] { "WPW", "CMC", "WPW",
+				'M', ItemList.Hull_MAX,
+				'P', ItemList.Electric_Piston_UHV,
+				'C', OrePrefixes.circuit.get(Materials.Infinite),
+				'W', OrePrefixes.cableGt01.get(Materials.Bedrockium)}).getStackForm(1L));
 
 		CustomItemList.FormingPressUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10904, "basicmachine.press.tier.10", "Epic Surface Shifter II",10, "Imprinting Images into things",
