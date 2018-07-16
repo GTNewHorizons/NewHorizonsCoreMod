@@ -1704,6 +1704,20 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 1), ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1), GT_Utility.getIntegratedCircuit(2)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1L, 33), 200, 64);
             //floppy
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "item", 1L, 19), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Plastic, 4), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1L, 4), 200, 64);
+            
+            //floppys w NBT
+            make_floppy("OpenOS (Operating System)","openos", 2, 1);
+            make_floppy("Plan9k (Operating System)","plan9k", 1, 2);
+            make_floppy("Network (Network Stack)","network", 10, 3);
+            make_floppy("Data Card Software","data", 9, 4);
+            make_floppy("OpenLoader (Boot Loader)","openloader", 13, 5);
+            make_floppy("Builder","builder", 11, 6);
+            make_floppy("Generator","generator", 5, 7);
+            make_floppy("OPPM (Package Manager)","oppm", 6, 8);
+            make_floppy("Digger","dig", 3, 9);
+            make_floppy("Mazer","maze", 14, 10);
+            make_floppy("OpenIRC (IRC Client)","irc", 12, 11);
+            
             //HDD 1
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.AluminiumItemCasing.get(2L), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 19), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 24), GT_ModHandler.getModItem("OpenComputers", "item", 4L, 1), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "item", 1L, 5), 300, 120);
             //HDD 2
@@ -2453,5 +2467,20 @@ public class GT_MachineRecipeLoader implements Runnable{
                 	com.dreammaster.item.ItemList.StargateFramePart.getIS(), 72000, 2097152);
         }
 
+    }
+    
+    private boolean make_floppy(String displayname,String name,int color, int circuit) {
+        ItemStack floppy = GT_ModHandler.getModItem("OpenComputers", "item", 1L, 4);
+        NBTTagCompound tag = new NBTTagCompound(),
+        			   subtag = new NBTTagCompound();
+        subtag.setString("Name", displayname);
+        tag.setTag("display", subtag);
+        subtag = new NBTTagCompound();
+        subtag.setString("oc:fs.label", name);
+        tag.setTag("oc:data", subtag);
+        tag.setInteger("oc:color", color);
+        tag.setString("oc:lootFactory","OpenComputers:"+name);
+        floppy.setTagCompound(tag);
+        return GT_Values.RA.addLaserEngraverRecipe(GT_ModHandler.getModItem("OpenComputers", "item", 1L, 4), GT_Utility.getIntegratedCircuit(circuit), floppy, 200, 120);
     }
 }
