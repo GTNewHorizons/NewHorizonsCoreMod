@@ -1406,7 +1406,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.OreWashingPlantLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10970, "basicmachine.orewasher.tier.06", "Elite Ore Washing Plant", 6, "Getting more Byproducts from your Ores",
-				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 16000, 0, 1, "OreWasher.png",
+				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 56000, 0, 1, "OreWasher.png",
 				"", false, false, 0, "ORE_WASHER",
 				new Object[] { "RGR", "CEC", "WMW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -1418,7 +1418,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.OreWashingPlantZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10971, "basicmachine.orewasher.tier.07", "Elite Ore Washing Plant II", 7, "Getting more Byproducts from your Ores",
-				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 16000, 0, 1, "OreWasher.png",
+				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 64000, 0, 1, "OreWasher.png",
 				"", false, false, 0, "ORE_WASHER",
 				new Object[] { "RGR", "CEC", "WMW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -1430,7 +1430,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.OreWashingPlantUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10972, "basicmachine.orewasher.tier.08", "Ultimate Ore Washing Machine", 8, "Getting more Byproducts from your Ores",
-				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 16000, 0, 1, "OreWasher.png",
+				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 72000, 0, 1, "OreWasher.png",
 				"", false, false, 0, "ORE_WASHER",
 				new Object[] { "RGR", "CEC", "WMW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -1442,22 +1442,22 @@ public class GT_Loader_Machines
 
 		CustomItemList.OreWashingPlantUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10973, "basicmachine.orewasher.tier.09", "Epic Ore Washing Machine", 9, "Getting more Byproducts from your Ores",
-				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 16000, 0, 1, "OreWasher.png",
+				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 80000, 0, 1, "OreWasher.png",
 				"", false, false, 0, "ORE_WASHER",null).getStackForm(1L));
 
 		CustomItemList.OreWashingPlantUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10974, "basicmachine.orewasher.tier.10", "Epic Ore Washing Machine II",10, "Getting more Byproducts from your Ores",
-				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 16000, 0, 1, "OreWasher.png",
+				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 88000, 0, 1, "OreWasher.png",
 				"", false, false, 0, "ORE_WASHER",null).getStackForm(1L));
 
 		CustomItemList.OreWashingPlantUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10975, "basicmachine.orewasher.tier.11", "Epic Ore Washing Machine III",11, "Getting more Byproducts from your Ores",
-				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 16000, 0, 1, "OreWasher.png",
+				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 96000, 0, 1, "OreWasher.png",
 				"", false, false, 0, "ORE_WASHER",null).getStackForm(1L));
 
 		CustomItemList.OreWashingPlantUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10976, "basicmachine.orewasher.tier.12", "Epic Ore Washing Machine IV",12, "Getting more Byproducts from your Ores",
-				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 16000, 0, 1, "OreWasher.png",
+				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 104000, 0, 1, "OreWasher.png",
 				"", false, false, 0, "ORE_WASHER",null).getStackForm(1L));
 
 		//OreWashingPlantLuV
