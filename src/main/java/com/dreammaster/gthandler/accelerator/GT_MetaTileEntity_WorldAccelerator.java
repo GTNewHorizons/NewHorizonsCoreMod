@@ -2,6 +2,8 @@ package com.dreammaster.gthandler.accelerator;
 
 
 import com.dreammaster.main.MainRegistry;
+
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
@@ -391,8 +393,11 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     }
     if( pTile.isInvalid() ) {
         return true; // Obvious
-    }
-
+    }   
+    if(Loader.isModLoaded("AdvancedSolarPanel"))
+    	if(pTile instanceof advsolar.common.tiles.TileEntitySolarPanel)
+        return true;
+        
     String tSimpleClassName = pTile.getClass().getSimpleName().toLowerCase();
     String tCanonicalName = pTile.getClass().getCanonicalName().toLowerCase();
     if( tSimpleClassName.contains( "conduit" ) || tSimpleClassName.contains( "wire" ) || tSimpleClassName.contains( "cable" ) ) {
