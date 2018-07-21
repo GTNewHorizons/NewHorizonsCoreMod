@@ -511,7 +511,9 @@ public class GT_Loader_Items
 		CustomItemList.HotNetherrackBrick.set(ItemList.HotNetherrackBrick.getIS());
 		CustomItemList.InfernalBrick.set(ItemList.InfernalBrick.getIS());
 		CustomItemList.AdvancedCokeOvenBrick.set(ItemList.AdvancedCokeOvenBrick.getIS());
+		CustomItemList.AdvancedCokeOvenBrickDust.set(ItemList.AdvancedCokeOvenBrickDust.getIS());
 		CustomItemList.CokeOvenBrick.set(ItemList.CokeOvenBrick.getIS());
+		CustomItemList.CokeOvenBrickDust.set(ItemList.CokeOvenBrickDust.getIS());
 		CustomItemList.MedalDerp.set(ItemList.MedalDerp.getIS());
 		CustomItemList.MedalDerp.getItem().setMaxStackSize(1);
 		CustomItemList.MedalGTExplosion.set(ItemList.MedalGTExplosion.getIS());
