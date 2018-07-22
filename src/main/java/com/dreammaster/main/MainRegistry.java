@@ -44,12 +44,17 @@ import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
+import gregtech.api.GregTech_API;
 import gregtech.GT_Mod;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 
+import static gregtech.api.enums.Dyes.*;
+
+import java.io.*;
 import java.util.Random;
 
 @Mod(
@@ -116,6 +121,23 @@ public class MainRegistry
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Init TexturePage");
+        File tFile = new File(new File(PreEvent.getModConfigurationDirectory(), "GregTech"), "GregTech.cfg");
+        Configuration tMainConfig = new Configuration(tFile);
+        tMainConfig.load();
+        
+        GregTech_API.sUseMachineMetal = tMainConfig.get("machines", "use_machine_metal_tint", true).getBoolean(true);
+        if (GregTech_API.sUseMachineMetal)
+            {
+                // use default in GregTech Dyes enum.
+            }
+        else
+            {
+                // Override MACHINE_METAL dye color with white
+                MACHINE_METAL.mRGBa[0]= 255;
+                MACHINE_METAL.mRGBa[1]= 255;
+                MACHINE_METAL.mRGBa[2]= 255;
+            }
+
         proxy.addTexturePage();
         // ------------------------------------------------------------
 
