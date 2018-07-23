@@ -144,6 +144,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinSmith.get(10L), GT_Utility.getIntegratedCircuit(10), CustomItemList.CoinSmithI.get(1L), 100, 30);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinSmithI.get(10L), GT_Utility.getIntegratedCircuit(10), CustomItemList.CoinSmithII.get(1L), 100, 120);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinSmithII.get(10L), GT_Utility.getIntegratedCircuit(10), CustomItemList.CoinSmithIII.get(1L), 100, 480);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitch.get(10L), GT_Utility.getIntegratedCircuit(10), CustomItemList.CoinWitchI.get(1L), 100, 30);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchI.get(10L), GT_Utility.getIntegratedCircuit(10), CustomItemList.CoinWitchII.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchII.get(10L), GT_Utility.getIntegratedCircuit(10), CustomItemList.CoinWitchIII.get(1L), 100, 480);
 
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinAdventureI.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinAdventure.get(10L), 100, 30);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinAdventureII.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinAdventureI.get(10L), 100, 120);
@@ -181,6 +184,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinSmithI.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinSmith.get(10L), 100, 30);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinSmithII.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinSmithI.get(10L), 100, 120);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinSmithIII.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinSmithII.get(10L), 100, 480);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchI.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinWitch.get(10L), 100, 30);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchII.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinWitchI.get(10L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchIII.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinWitchII.get(10L), 100, 480);
 
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Platinum, 6L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 4L), CustomItemList.NanoBoard.get(1L), 400, 1920);
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 8L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 8L), CustomItemList.QuantumBoard.get(1L), 200, 7680);
