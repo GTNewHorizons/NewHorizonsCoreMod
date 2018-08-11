@@ -130,7 +130,8 @@ public enum CustomItemList implements IItemContainer
 	nameRemover, TwilightCrystal, UnfiredClayBrick, WoodenBrickForm, UnfiredSearedBrick, UnfiredCokeOvenBrick, UnfiredSlimeSoulBrick, RawLapotronCrystal, LapotronDust, SandDust,
 	AluminiumIronPlate, ReinforcedAluminiumIronPlate, IrradiantReinforcedAluminiumPlate, IrradiantReinforcedTitaniumPlate, IrradiantReinforcedTungstenPlate, IrradiantReinforcedTungstenSteelPlate, IrradiantReinforcedChromePlate, IrradiantReinforcedNaquadriaPlate, IrradiantReinforcedNeutroniumPlate,
 	QuantumCrystal, MysteriousCrystalLens, MysteriousCrystalGemFlawless, MysteriousCrystalGemExquisite,
-	PrimordialPearlFragment, SandStoneRod;
+	PrimordialPearlFragment, SandStoneRod,
+	TheBigEgg, MutatedEgg, DraconiumEgg, EnderEgg;
 
 
 	private ItemStack mStack;

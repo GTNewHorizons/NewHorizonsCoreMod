@@ -557,5 +557,9 @@ public class GT_Loader_Items
 		CustomItemList.MysteriousCrystalGemExquisite.set(ItemList.MysteriousCrystalGemExquisite.getIS());
 		CustomItemList.PrimordialPearlFragment.set(ItemList.PrimordialPearlFragment.getIS());
 		CustomItemList.SandStoneRod.set(ItemList.SandStoneRod.getIS());
+		CustomItemList.TheBigEgg.set(ItemList.TheBigEgg.getIS());
+		CustomItemList.MutatedEgg.set(ItemList.MutatedEgg.getIS());
+		CustomItemList.DraconiumEgg.set(ItemList.DraconiumEgg.getIS());
+		CustomItemList.EnderEgg.set(ItemList.EnderEgg.getIS());
 	}
 }
