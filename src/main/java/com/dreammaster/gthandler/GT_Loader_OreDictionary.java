@@ -21,6 +21,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre("blockBloodInfusedIron", GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron_block", 1L, 0));
 
         GT_OreDictUnificator.registerOre(OrePrefixes.log, Materials.Wood, GT_ModHandler.getModItem("BiomesOPlenty", "logs4", 1L, 3));
+        GT_OreDictUnificator.registerOre("cropCarrot", GT_ModHandler.getModItem("BiomesOPlenty", "food", 1L, 2));
 
         GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.Mytryl, ItemList.MytrylIngot.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Mytryl, ItemList.MytrylDust.getIS());
