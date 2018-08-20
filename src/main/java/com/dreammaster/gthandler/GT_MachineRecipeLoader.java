@@ -924,7 +924,9 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("BiomesOPlenty", "flowers", 2L, 13), new ItemStack(Items.spider_eye, 1, 0), 300, 2);
 
-        GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("BiomesOPlenty", "mudball>", 1L, 0), new ItemStack(Items.clay_ball, 1, 0), 200, 2);
+        GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("BiomesOPlenty", "mudball", 1L, 0), new ItemStack(Items.clay_ball, 1, 0), 200, 2);
+
+        GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("harvestcraft", "coconutItem", 1L, 0), GT_ModHandler.getModItem("harvestthenether", "coconutmilkItem", 9L, 0), 100, 2);
 
         GT_Values.RA.addDistillationTowerRecipe(new FluidStack(FluidRegistry.getFluid("pollution"), 1600), new FluidStack[]{Materials.SulfuricAcid.getFluid(50L), Materials.NitrogenDioxide.getGas(50L), Materials.Methane.getGas(50L), Materials.Mercury.getFluid(1L)}, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L), 600, 1920);
 
