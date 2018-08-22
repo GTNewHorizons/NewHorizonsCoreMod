@@ -674,7 +674,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("Genetics", "misc", 6L, 4), FluidRegistry.getFluidStack("water", 750), FluidRegistry.getFluidStack("binnie.growthmedium", 750), 600, 480, false);
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0), FluidRegistry.getFluidStack("binnie.growthmedium", 750), FluidRegistry.getFluidStack("binnie.bacteria", 750), 1200, 480, false);
 
-        GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("harvestthenether", "harvestthenether:ignisfruitItem", 45L, 0), FluidRegistry.getFluidStack("potion.awkward", 750), FluidRegistry.getFluidStack("potion.fireresistance", 750), 120, 8, false);
+        GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("harvestthenether", "ignisfruitItem", 45L, 0), FluidRegistry.getFluidStack("potion.awkward", 750), FluidRegistry.getFluidStack("potion.fireresistance", 750), 120, 8, false);
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 2L),GT_ModHandler.getModItem("TConstruct","GlassPane",2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Tin, 1L) }, GT_Values.NF, GT_ModHandler.getModItem("BuildCraft|Transport","item.buildcraftPipe.pipepowercobblestone",1L), 200, 120);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),GT_ModHandler.getModItem("TConstruct","GlassPane",2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 1L) }, GT_Values.NF, GT_ModHandler.getModItem("BuildCraft|Transport","item.buildcraftPipe.pipepowerwood",1L), 200, 120);
