@@ -19,6 +19,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -1967,6 +1968,43 @@ public class GT_MachineRecipeLoader implements Runnable{
             //Digital Speech Box
             //GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("computronics", "computronics.speaker", 1L, 0), ItemList.Hull_MV.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 2L), GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 2L),  GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("computronics", "computronics.speechBox", 1L, 0), 300, 120);
         }
+        
+        ItemStack[] trophies = {
+        		GT_ModHandler.getModItem("OpenBlocks", "trophy", 1L),
+        		GT_ModHandler.getModItem("OpenBlocks", "trophy", 1L),
+        		GT_ModHandler.getModItem("OpenBlocks", "trophy", 1L),
+        		GT_ModHandler.getModItem("OpenBlocks", "trophy", 1L),
+        };
+        
+        NBTTagCompound[] tag = {
+        		new NBTTagCompound(),
+        		new NBTTagCompound(),
+        		new NBTTagCompound(),
+        		new NBTTagCompound(),
+        };
+        
+        tag[0].setString("entity", "Bat");
+        tag[1].setString("entity", "Cow");
+        tag[2].setString("entity", "Chicken");
+        tag[3].setString("entity", "Sheep");
+        
+        ItemStack flightpotion = GT_ModHandler.getModItem("AWWayofTime","alchemyFlask",1L);
+        NBTTagCompound flighttag = new NBTTagCompound();
+        NBTTagCompound flighsubtag = new NBTTagCompound();
+        flighsubtag.setInteger("concentration", 0);
+        flighsubtag.setInteger("durationFactor", 2);
+        flighsubtag.setInteger("potionID", 104);
+        flighsubtag.setInteger("tickDuration", 1200);
+        flighttag.setTag("CustomFlaskEffects", flighsubtag);
+        flightpotion.setTagCompound(flighttag);
+        
+        for (int i =0; i<4;++i)
+        	trophies[i].setTagCompound(tag[i]);
+        
+        GT_Values.RA.addAssemblerRecipe(trophies[0], new ItemStack(Items.golden_carrot), new ItemStack(Items.potionitem, 1 ,8262), 120, 120);
+        GT_Values.RA.addAssemblerRecipe(trophies[1], new ItemStack(Items.iron_sword), new ItemStack(Items.leather,64), 120, 120);
+        GT_Values.RA.addAssemblerRecipe(trophies[2], new ItemStack(Items.feather), flightpotion, 120, 120);
+        GT_Values.RA.addAssemblerRecipe(trophies[3], new ItemStack(Items.shears), new ItemStack(Blocks.wool,64), 120, 120);
         
         //Rocket Circuits
         final int[] EUperRecipe = new int[]{
