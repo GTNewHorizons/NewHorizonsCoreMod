@@ -927,8 +927,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("BiomesOPlenty", "mudball", 1L, 0), new ItemStack(Items.clay_ball, 1, 0), 200, 2);
 
-        GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("harvestcraft", "coconutItem", 1L, 0), GT_ModHandler.getModItem("harvestthenether", "coconutmilkItem", 9L, 0), 100, 2);
-
+        GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("harvestcraft", "coconutItem", 1L, 0), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("harvestthenether", "coconutmilkItem", 9L, 0), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000},100, 2);
+       
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "florasapling", 1L, 5), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L), 100, 120);
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "floraleavesnocolor", 4L, 2), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L), 100, 120);
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "bloodwood", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L), 100, 120);
