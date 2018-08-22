@@ -394,10 +394,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     if( pTile.isInvalid() ) {
         return true; // Obvious
     }   
-    if(Loader.isModLoaded("AdvancedSolarPanel"))
-    	if(pTile instanceof advsolar.common.tiles.TileEntitySolarPanel)
-        return true;
-        
+    
     String tSimpleClassName = pTile.getClass().getSimpleName().toLowerCase();
     String tCanonicalName = pTile.getClass().getCanonicalName().toLowerCase();
     if( tSimpleClassName.contains( "conduit" ) || tSimpleClassName.contains( "wire" ) || tSimpleClassName.contains( "cable" ) ) {
@@ -407,6 +404,11 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     {
         return true;
     }
+    if (tSimpleClassName.contains( "solar" )|| tCanonicalName.contains( "solar" ))// Don't accelerate ANY solars
+    {	
+    	return true;
+    }
+    	
     for( String tS : MainRegistry.CoreConfig.BlacklistedTileEntiyClassNames )
     {
       if( tCanonicalName.equalsIgnoreCase( tS ) ) {
