@@ -936,7 +936,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "Dark Leaves", 8L, 3), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L), 100, 120);
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "Dark Tree", 2L, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gunpowder, 1L), 100, 120);
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "florasapling", 2L, 6),  GT_ModHandler.getModItem("IC2", "Fertilizer", 1L, 0), 100, 120);
-        GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "Dark Leaves", 8L, 2), GT_ModHandler.getModItem("IC2", "Fertilizer", 1L, 0), 100, 120);
+        GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "Dark Leaves", 8L, 0), GT_ModHandler.getModItem("IC2", "Fertilizer", 1L, 0), 100, 120);
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "Dark Tree", 2L, 0), GT_ModHandler.getModItem("IC2", "Fertilizer", 1L, 0), 100, 120);
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "Natura.netherfood", 1L, 0), GT_ModHandler.getModItem("IC2", "Fertilizer", 4L, 0), 100, 120);
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "florasapling", 2L, 4), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L), 100, 120);
@@ -944,7 +944,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("Natura", "tree", 2L, 2), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bone, 1L), 100, 120);
 
         GT_Values.RA.addChemicalRecipe(GT_ModHandler.getModItem("Natura", "florasapling", 2L, 6), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L), Materials.Water.getFluid(1000L), GT_Values.NF, GT_ModHandler.getModItem("IC2", "Fertilizer", 2L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L),200, 120);
-        GT_Values.RA.addChemicalRecipe(GT_ModHandler.getModItem("Natura", "Dark Leaves", 8L, 2),  GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L), Materials.Water.getFluid(1000L), GT_Values.NF, GT_ModHandler.getModItem("IC2", "Fertilizer", 2L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L), 200, 120);
+        GT_Values.RA.addChemicalRecipe(GT_ModHandler.getModItem("Natura", "Dark Leaves", 8L, 0),  GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L), Materials.Water.getFluid(1000L), GT_Values.NF, GT_ModHandler.getModItem("IC2", "Fertilizer", 2L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L), 200, 120);
         GT_Values.RA.addChemicalRecipe(GT_ModHandler.getModItem("Natura", "Dark Tree", 2L, 0),  GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L), Materials.Water.getFluid(1000L), GT_Values.NF, GT_ModHandler.getModItem("IC2", "Fertilizer", 8L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Phosphorus, 1L), 200, 120);
         GT_Values.RA.addChemicalRecipe(GT_ModHandler.getModItem("Natura", "Natura.netherfood", 1L, 0),  GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L), Materials.Water.getFluid(1000L), GT_Values.NF, GT_ModHandler.getModItem("IC2", "Fertilizer", 32L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Phosphorus, 1L),200, 120);
 
