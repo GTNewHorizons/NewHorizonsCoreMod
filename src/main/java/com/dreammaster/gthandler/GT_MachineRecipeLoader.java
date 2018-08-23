@@ -19,6 +19,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -1990,11 +1991,25 @@ public class GT_MachineRecipeLoader implements Runnable{
         
         ItemStack flightpotion = GT_ModHandler.getModItem("AWWayofTime","alchemyFlask",1L);
         NBTTagCompound flighttag = new NBTTagCompound();
-        NBTTagCompound flighsubtag = new NBTTagCompound();
-        flighsubtag.setInteger("concentration", 0);
-        flighsubtag.setInteger("durationFactor", 2);
-        flighsubtag.setInteger("potionID", 104);
-        flighsubtag.setInteger("tickDuration", 1200);
+        NBTTagList flighsubtag = new NBTTagList();
+        NBTTagCompound temp;
+        
+        temp = new NBTTagCompound();
+        temp.setInteger("concentration", 0);
+        flighsubtag.appendTag(temp);
+        
+        temp = new NBTTagCompound();
+        temp.setInteger("durationFactor", 2);
+        flighsubtag.appendTag(temp);
+        
+        temp = new NBTTagCompound();
+        temp.setInteger("potionID", 104);
+        flighsubtag.appendTag(temp);
+        
+        temp = new NBTTagCompound();
+        temp.setInteger("tickDuration", 1200);
+        flighsubtag.appendTag(temp);
+        
         flighttag.setTag("CustomFlaskEffects", flighsubtag);
         flightpotion.setTagCompound(flighttag);
         
