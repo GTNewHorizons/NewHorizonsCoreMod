@@ -1996,17 +1996,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         
         temp = new NBTTagCompound();
         temp.setInteger("concentration", 0);
-        flighsubtag.appendTag(temp);
-        
-        temp = new NBTTagCompound();
         temp.setInteger("durationFactor", 2);
-        flighsubtag.appendTag(temp);
-        
-        temp = new NBTTagCompound();
         temp.setInteger("potionID", 104);
-        flighsubtag.appendTag(temp);
-        
-        temp = new NBTTagCompound();
         temp.setInteger("tickDuration", 1200);
         flighsubtag.appendTag(temp);
         
