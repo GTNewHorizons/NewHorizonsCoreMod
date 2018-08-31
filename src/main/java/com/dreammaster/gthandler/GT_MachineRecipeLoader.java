@@ -2,6 +2,7 @@ package com.dreammaster.gthandler;
 
 import java.lang.reflect.Field;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import forestry.api.recipes.IFermenterRecipe;
 import gregtech.api.GregTech_API;
@@ -281,7 +282,7 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblerRecipe(ItemList.Firebrick.get(24, new Object[0]), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 8L), new FluidStack(FluidRegistry.getFluid("concrete"), 4608),  ItemList.Casing_Firebricks.get(4L),200, 30);
         GT_Values.RA.addAssemblerRecipe(ItemList.Firebrick.get(24, new Object[0]), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 8L), Materials.Concrete.getMolten(4608L),  ItemList.Casing_Firebricks.get(4L),200, 30);
-        
+
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.brick_block), Materials.AnyBronze.getPlates(6)}, GT_Values.NF, ItemList.Casing_BronzePlatedBricks.get(1L), 200, 30);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{Materials.Steel.getPlates(4), Materials.Iron.getPlates(2),ItemList.Casing_BronzePlatedBricks.get(1L)}, GT_Values.NF, CustomItemList.Casing_Pyrolyse.get(1L), 200, 30);
 
@@ -687,7 +688,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Gold, 2L),GT_ModHandler.getModItem("TConstruct","GlassPane",2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Aluminium, 1L) }, GT_Values.NF, GT_ModHandler.getModItem("BuildCraft|Transport","item.buildcraftPipe.pipepowergold",1L), 200, 120);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Emerald, 2L),GT_ModHandler.getModItem("TConstruct","GlassPane",2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Nichrome, 1L) }, GT_Values.NF, GT_ModHandler.getModItem("BuildCraft|Transport","item.buildcraftPipe.pipepoweremerald",1L), 200, 120);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),GT_ModHandler.getModItem("TConstruct","GlassPane",2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Platinum, 1L) }, GT_Values.NF, GT_ModHandler.getModItem("BuildCraft|Transport","item.buildcraftPipe.pipepowerdiamond",1L), 200, 120);
-        
+
         // Add fermenter recipes from forestry into gregtech
         if (Loader.isModLoaded("Forestry")) {
             try {
@@ -1441,7 +1442,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addWiremillRecipe(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Tungsten, 1L), CustomItemList.TungstenString.get(4L), 1200, 1024);
 
         GT_Values.RA.addWiremillRecipe(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherStar, 1L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.NetherStar, 1L), 100, 4);
-        
+
         // Circuits and Boards
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 8), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 32), Materials.Glue.getFluid(576), ItemList.Circuit_Board_Coated_Basic.get(8L), 1600, 8);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 8), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Copper, 32), Materials.Plastic.getMolten(288L), ItemList.Circuit_Board_Coated_Basic.get(16L), 1600, 8);
@@ -1762,6 +1763,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         	GT_Values.RA.addChemicalBathRecipe(GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,1), new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L,5), GT_Values.NI, GT_Values.NI, new int[]{10000}, 500, 30);
         }
 
+        GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Wafer_SoC2.get(1L),GT_OreDictUnificator.get(OrePrefixes.lens,Materials.NetherStar,1L).copy().splitStack(0), com.dreammaster.item.ItemList.RawPicoWafer.getIS(),6000,(int)(GT_Values.V[8]-(GT_Values.V[8]/10)),true);
+        GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{com.dreammaster.item.ItemList.RawPicoWafer.getIS(),Materials.MysteriousCrystal.getDust(2),GT_OreDictUnificator.get(OrePrefixes.dustTiny,Materials.InfinityCatalyst,1L).copy().splitStack(0), com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(1)},new FluidStack[]{Materials.Neutronium.getMolten(100L)},new FluidStack[]{GT_Values.NF},new ItemStack[]{com.dreammaster.item.ItemList.PicoWafer.getIS()},3000,(int)(GT_Values.V[9]-(GT_Values.V[9]/10)));
+
         if (Loader.isModLoaded("OpenComputers")) {
             //cable
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.RedstoneAlloy, 1), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("OpenComputers", "cable", 1L, 0), 200, 120);
@@ -1974,7 +1978,9 @@ public class GT_MachineRecipeLoader implements Runnable{
             //Digital Speech Box
             //GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("computronics", "computronics.speaker", 1L, 0), ItemList.Hull_MV.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 2L), GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 2L),  GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("computronics", "computronics.speechBox", 1L, 0), 300, 120);
         }
-        
+
+        if (Loader.isModLoaded("OpenBlocks")){
+
         ItemStack[] trophies = {
         		GT_ModHandler.getModItem("OpenBlocks", "trophy", 1L),
         		GT_ModHandler.getModItem("OpenBlocks", "trophy", 1L),
@@ -2016,43 +2022,44 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(trophies[1], new ItemStack(Items.iron_sword), new ItemStack(Items.leather,64), 120, 120);
         GT_Values.RA.addAssemblerRecipe(trophies[2], new ItemStack(Items.feather), flightpotion, 120, 120);
         GT_Values.RA.addAssemblerRecipe(trophies[3], new ItemStack(Items.shears), new ItemStack(Blocks.wool,64), 120, 120);
-        
-        //Rocket Circuits
-        final int[] EUperRecipe = new int[]{
-        		480,				//t2 = HV
-        		1920,				//t3 = EV
-        		7680,				//t4 = IV
-        		30720,				//t5 = LuV (Gated behind Assline)
-        		30720,				//t6 = LuV 
-        		130870,				//t7 = ZPM
-        		520400,				//t8 = UV
-        		};
-        
-        ItemStack[] RocketMaterial = new ItemStack[8];
-        RocketMaterial[0]=GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 1L);
-        RocketMaterial[1]=GT_ModHandler.getModItem("GalacticraftMars","item.null",1L,3);
-        RocketMaterial[2]=GT_ModHandler.getModItem("GalacticraftMars","item.itemBasicAsteroids",1L);
-        RocketMaterial[3]=CustomItemList.HeavyDutyPlateTier4.get(1L);
-        RocketMaterial[4]=CustomItemList.HeavyDutyPlateTier5.get(1L);
-        RocketMaterial[5]=CustomItemList.HeavyDutyPlateTier6.get(1L);
-        RocketMaterial[6]=CustomItemList.HeavyDutyPlateTier7.get(1L);
-        RocketMaterial[7]=CustomItemList.HeavyDutyPlateTier8.get(1L);
-        
-        ItemStack[] RocketChip = new ItemStack[8];
-        RocketChip[0]=CustomItemList.SchematicsTier1.get(1L);
-        RocketChip[1]=CustomItemList.SchematicsTier2.get(1L);
-        RocketChip[2]=CustomItemList.SchematicsTier3.get(1L);
-        RocketChip[3]=CustomItemList.SchematicsTier4.get(1L);
-        RocketChip[4]=CustomItemList.SchematicsTier5.get(1L);
-        RocketChip[5]=CustomItemList.SchematicsTier6.get(1L);
-        RocketChip[6]=CustomItemList.SchematicsTier7.get(1L);
-        RocketChip[7]=CustomItemList.SchematicsTier8.get(1L);
-        
-        ItemStack[] ExtraChips = new ItemStack[3];
-        ExtraChips[0]=CustomItemList.SchematicsMoonBuggy.get(1L);
-        ExtraChips[1]=CustomItemList.SchematicsCargoRocket.get(1L);
-        ExtraChips[2]=CustomItemList.SchematicsAstroMiner.get(1L);
-        
+        }
+
+            //Rocket Circuits
+            final int[] EUperRecipe = new int[]{
+                    480,                //t2 = HV
+                    1920,                //t3 = EV
+                    7680,                //t4 = IV
+                    30720,                //t5 = LuV (Gated behind Assline)
+                    30720,                //t6 = LuV
+                    130870,                //t7 = ZPM
+                    520400,                //t8 = UV
+            };
+
+            ItemStack[] RocketMaterial = new ItemStack[8];
+            RocketMaterial[0] = GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 1L);
+            RocketMaterial[1] = GT_ModHandler.getModItem("GalacticraftMars", "item.null", 1L, 3);
+            RocketMaterial[2] = GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L);
+            RocketMaterial[3] = CustomItemList.HeavyDutyPlateTier4.get(1L);
+            RocketMaterial[4] = CustomItemList.HeavyDutyPlateTier5.get(1L);
+            RocketMaterial[5] = CustomItemList.HeavyDutyPlateTier6.get(1L);
+            RocketMaterial[6] = CustomItemList.HeavyDutyPlateTier7.get(1L);
+            RocketMaterial[7] = CustomItemList.HeavyDutyPlateTier8.get(1L);
+
+            ItemStack[] RocketChip = new ItemStack[8];
+            RocketChip[0] = CustomItemList.SchematicsTier1.get(1L);
+            RocketChip[1] = CustomItemList.SchematicsTier2.get(1L);
+            RocketChip[2] = CustomItemList.SchematicsTier3.get(1L);
+            RocketChip[3] = CustomItemList.SchematicsTier4.get(1L);
+            RocketChip[4] = CustomItemList.SchematicsTier5.get(1L);
+            RocketChip[5] = CustomItemList.SchematicsTier6.get(1L);
+            RocketChip[6] = CustomItemList.SchematicsTier7.get(1L);
+            RocketChip[7] = CustomItemList.SchematicsTier8.get(1L);
+
+            ItemStack[] ExtraChips = new ItemStack[3];
+            ExtraChips[0] = CustomItemList.SchematicsMoonBuggy.get(1L);
+            ExtraChips[1] = CustomItemList.SchematicsCargoRocket.get(1L);
+            ExtraChips[2] = CustomItemList.SchematicsAstroMiner.get(1L);
+
         for (Materials tMat : Materials.values()) {//TODO dream things using soldering go in here!
             if (tMat.mStandardMoltenFluid != null && tMat.contains(SubTag.SOLDERING_MATERIAL) && !(GregTech_API.mUseOnlyGoodSolderingMaterials && !tMat.contains(SubTag.SOLDERING_MATERIAL_GOOD))) {
                 int tMultiplier = tMat.contains(SubTag.SOLDERING_MATERIAL_GOOD) ? 1 : tMat.contains(SubTag.SOLDERING_MATERIAL_BAD) ? 4 : 2;
@@ -2382,6 +2389,42 @@ public class GT_MachineRecipeLoader implements Runnable{
     }
 
     private void run3() {
+        GT_Values.RA.addAssemblylineRecipe(com.dreammaster.item.ItemList.PicoWafer.getIS(), 72000, new ItemStack[]{
+                ItemList.Circuit_Board_Wetware_Extreme.get(1L),
+                com.dreammaster.item.ItemList.PicoWafer.getIS(4),
+                ItemList.Circuit_Parts_TransistorSMD.get(64L),
+                ItemList.Circuit_Parts_ResistorSMD.get(64L),
+                ItemList.Circuit_Parts_CapacitorSMD.get(64L),
+                ItemList.Circuit_Parts_DiodeSMD.get(64L),
+                ItemList.Circuit_Chip_UHPIC.get(4L),
+                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 16),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmium, 32),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Neutronium, 16),
+                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64)
+        }, new FluidStack[]{
+                Materials.SolderingAlloy.getMolten(3760L),
+                Materials.UUMatter.getFluid(8000L),
+                Materials.Osmium.getMolten(1152L)
+        }, com.dreammaster.item.ItemList.PikoCircuit.getIS(), 1200, (int)(GT_Values.V[9]-(GT_Values.V[9]/10)));
+
+        GT_Values.RA.addAssemblylineRecipe(com.dreammaster.item.ItemList.PikoCircuit.getIS(), 144000, new ItemStack[]{
+                GT_OreDictUnificator.get(OrePrefixes.frameGt,Materials.Neutronium, 16),
+                com.dreammaster.item.ItemList.PikoCircuit.getIS(8),
+                ItemList.Circuit_Parts_CapacitorSMD.get(64L),
+                ItemList.Circuit_Parts_DiodeSMD.get(64L),
+                ItemList.Circuit_Parts_TransistorSMD.get(64L),
+                ItemList.Circuit_Parts_ResistorSMD.get(64L),
+                ItemList.Circuit_Chip_UHPIC.get(64L),
+                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 64),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Indium, 64),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Bedrockium, 8),
+                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64)
+        }, new FluidStack[]{
+                Materials.SolderingAlloy.getMolten(3760L),
+                Materials.UUMatter.getFluid(24000L),
+                Materials.Osmium.getMolten(2304L)
+        }, com.dreammaster.item.ItemList.QuantumCircuit.getIS(), 2400, (int)(GT_Values.V[9]-(GT_Values.V[9]/10)));
+
         //Main Frame Circuits and Neuro CPU
         GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Crystalmainframe.get(1L), 72000, new ItemStack[]{
                 ItemList.Circuit_Board_Wetware_Extreme.get(1L),

@@ -154,5 +154,10 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(OrePrefixes.nugget, Materials.Ichorium, GT_ModHandler.getModItem("ThaumicTinkerer", "kamiResource", 1L, 3));
 
         GT_OreDictUnificator.registerOre("dyeLime", GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 1L, 2877));
+
+        //GTNH-Circuits
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Superconductor,ItemList.PikoCircuit.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Infinite,ItemList.QuantumCircuit.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Neutronium,ItemList.NanoCircuit.getIS());
     }
 }
