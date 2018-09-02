@@ -69,10 +69,10 @@ public class GT_Loader_Batteries
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 48L), Materials.Polybenzimidazole.getMolten(4608L),
 				CustomItemList.BatteryHull_UIV.get(1L), 300, 2000000);
 
-		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.Superconductor, 2L),
+		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 2L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 56L), Materials.Polybenzimidazole.getMolten(9216L),
 				CustomItemList.BatteryHull_UMV.get(1L), 600, 2000000);
-		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.Superconductor, 2L),
+		GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 2L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 64L), Materials.Polybenzimidazole.getMolten(18432L),
 				CustomItemList.BatteryHull_UxV.get(1L), 1200, 2000000);
 

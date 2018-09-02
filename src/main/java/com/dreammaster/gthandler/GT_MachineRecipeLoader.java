@@ -52,7 +52,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.NaquadahAlloy, 8L), CustomItemList.MicaInsulatorFoil.get(8L), Materials.Naquadah.getMolten(144L), ItemList.Casing_Coil_NaquadahAlloy.get(1L), 800, 7680);
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorLuV, 64L), CustomItemList.MicaInsulatorFoil.get(32L), Materials.Trinium.getMolten(576L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 32L), CustomItemList.MicaInsulatorFoil.get(16L), Materials.Trinium.getMolten(288L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Superconductor, 8L), CustomItemList.MicaInsulatorFoil.get(8L), Materials.Trinium.getMolten(144L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 8L), CustomItemList.MicaInsulatorFoil.get(8L), Materials.Trinium.getMolten(144L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 3L), GT_Utility.getIntegratedCircuit(3), CustomItemList.SteelBars.get(4L), 400, 48);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 3L), GT_Utility.getIntegratedCircuit(3), CustomItemList.AluminiumBars.get(4L), 400, 64);
@@ -1557,10 +1557,12 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_HPIC.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 8), Materials.Electrum.getMolten(576L), GT_Values.NF, ItemList.Circuit_Wafer_UHPIC.get(1L), GT_Values.NI, 1200, 30720, true);
 
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_CPU.get(1L), GT_Utility.copyAmount(16, Ic2Items.carbonFiber), Materials.Glowstone.getMolten(576L), GT_Values.NF, ItemList.Circuit_Wafer_NanoCPU.get(1L), GT_Values.NI, 1200, 1920, true);
-        GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_NanoCPU.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 1), Materials.Radon.getGas(50), GT_Values.NF, ItemList.Circuit_Wafer_QuantumCPU.get(1L), GT_Values.NI, 1200, 1920, true);
+        GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_NanoCPU.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 1), Materials.Radon.getGas(50L), GT_Values.NF, ItemList.Circuit_Wafer_QuantumCPU.get(1L), GT_Values.NI, 1200, 1920, true);
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_NanoCPU.get(1L), ItemList.QuantumEye.get(2L), Materials.GalliumArsenide.getMolten(288L), GT_Values.NF, ItemList.Circuit_Wafer_QuantumCPU.get(1L), GT_Values.NI, 900, 1920, true);
 
-        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(Materials.Hydrogen.getCells(3)), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnetite, 0), Materials.Nitrogen.getGas(1000), Materials.Ammonia.getGas(1000), ItemList.Cell_Empty.get(3L), 320, 384);
+        GT_Values.RA.addChemicalRecipe(GT_OreDictUnificator.get(Materials.Hydrogen.getCells(3)), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnetite, 0), Materials.Nitrogen.getGas(1000L), Materials.Ammonia.getGas(1000), ItemList.Cell_Empty.get(3L), 320, 384);
+
+        GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Chip_Stemcell.get(4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1), Materials.BioMediumRaw.getFluid(1000L), FluidRegistry.getFluidStack("mutagen", 250), ItemList.Circuit_Chip_Biocell.get(1L), 1200, 1920);
 
         GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1), Materials.Europium.getMolten(16), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 1000, 12000, 320, true);
         GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 1), Materials.Europium.getMolten(16), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 1000, 12000, 320, true);
@@ -2163,7 +2165,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Wetware_Extreme.get(2L), ItemList.Circuit_Wetwarecomputer.get(2L), ItemList.Circuit_Parts_DiodeSMD.get(32L), ItemList.Circuit_Chip_NOR.get(16L), ItemList.Circuit_Chip_Ram.get(64L), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 24)}, tMat.getMolten(144L * tMultiplier), ItemList.Circuit_Wetwaresupercomputer.get(1L), 400, 38400, true);
 
                 //Bio Circuits
-                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Chip_BioCPU.get(1L),ItemList.Circuit_Chip_CrystalSoC2.get(1L), ItemList.Circuit_Chip_NanoCPU.get(2L), ItemList.Circuit_Parts_CapacitorSMD.get(48L),ItemList.Circuit_Parts_TransistorSMD.get(48L),GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16)},tMat.getMolten(144L * tMultiplier / 2L), ItemList.Circuit_Neuroprocessor.get(1L), 400, 153600, true);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Chip_BioCPU.get(1L),ItemList.Circuit_Chip_CrystalSoC2.get(1L), ItemList.Circuit_Chip_NanoCPU.get(2L), ItemList.Circuit_Parts_CapacitorSMD.get(48L),ItemList.Circuit_Parts_TransistorSMD.get(48L),GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16)},tMat.getMolten(144L * tMultiplier / 2L), ItemList.Circuit_Bioprocessor.get(1L), 400, 153600, true);
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Bio_Ultra.get(1L), ItemList.Circuit_Neuroprocessor.get(2L), ItemList.Circuit_Parts_Coil.get(48L), ItemList.Circuit_Parts_CapacitorSMD.get(64L), ItemList.Circuit_Chip_Ram.get(32L), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 24)}, tMat.getMolten(144L * tMultiplier), ItemList.Circuit_Biowarecomputer.get(1L), 600, 153600, true);
 
                 //SoC
@@ -2181,7 +2183,9 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(1L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_HV.get(1L),  ItemList.Sensor_HV.get(1L),  GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 4)},  Materials.GrowthMediumSterilized.getFluid(250L), ItemList.Circuit_Board_Wetware.get(1L), 600, 1920, true);
 
                 //Bio Board
-                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(1L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_EV.get(1L),  ItemList.Sensor_EV.get(1L),  GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 8)},  Materials.BioMediumSterilized.getFluid(500L), ItemList.Circuit_Board_Bio.get(1L), 1200, 7680, true);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(1L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_EV.get(1L),  ItemList.Sensor_EV.get(1L), ItemList.Circuit_Data.get(2L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 8)},  Materials.BioMediumSterilized.getFluid(500L), ItemList.Circuit_Board_Bio.get(1L), 1200, 7680, true);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(1L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_EV.get(1L),  ItemList.Sensor_EV.get(1L), ItemList.Circuit_Nanocomputer.get(2L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 8)},  Materials.BioMediumSterilized.getFluid(500L), ItemList.Circuit_Board_Bio.get(1L), 1200, 7680, true);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(1L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_EV.get(1L),  ItemList.Sensor_EV.get(1L),ItemList.Circuit_Quantumprocessor.get(2L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 8)},  Materials.BioMediumSterilized.getFluid(500L), ItemList.Circuit_Board_Bio.get(1L), 1200, 7680, true);
 
                 //Railcraft Circuits
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Coated_Basic.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1), ItemList.Cover_Controller.get(1L)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("Railcraft", "part.circuit", 1L, 0), 1200, 30);
@@ -2672,7 +2676,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Silicone, 16L),
                   }, new FluidStack[]{
                         Materials.SolderingAlloy.getMolten(1440L),
-                        Materials.BioMediumSterilized.getMolten(1440L),
+                        Materials.BioMediumSterilized.getFluid(1440L),
                         new FluidStack(FluidRegistry.getFluid("ic2coolant"), 10000)
                   },
                    ItemList.Circuit_Biowaresupercomputer.get(1L), 4000, 500000);
@@ -2692,9 +2696,9 @@ public class GT_MachineRecipeLoader implements Runnable{
                     GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Polybenzimidazole, 64)
             }, new FluidStack[]{
                     Materials.SolderingAlloy.getMolten(2880L),
-                    Materials.BioMediumSterilized.getMolten(2880L),
+                    Materials.BioMediumSterilized.getFluid(2880L),
                     new FluidStack(FluidRegistry.getFluid("ic2coolant"), 20000)
-            }, CustomItemList.NanoCircuit.get(1L), 8000, 2000000);
+            }, ItemList.Circuit_Biomainframe.get(1L), 8000, 2000000);
         }
 
     }
