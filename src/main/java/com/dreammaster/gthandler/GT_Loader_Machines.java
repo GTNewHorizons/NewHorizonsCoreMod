@@ -68,7 +68,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Hull_UV,
 						'F', ItemList.Field_Generator_ZPM,
 						'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
-						'W', OrePrefixes.wireGt08.get(Materials.Superconductor),
+						'W', OrePrefixes.wireGt08.get(Materials.SuperconductorUHV),
 						'U', OrePrefixes.stick.get(Materials.Americium) });
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Generator_Plasma_UV.get(1L),
@@ -77,7 +77,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Hull_UV,
 						'F', ItemList.Field_Generator_UV,
 						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
-						'W', OrePrefixes.wireGt12.get(Materials.Superconductor),
+						'W', OrePrefixes.wireGt12.get(Materials.SuperconductorUHV),
 						'U', OrePrefixes.stick.get(Materials.Americium) });
 
 
@@ -3051,7 +3051,7 @@ public class GT_Loader_Machines
 				new Object[] {"KBB", "CM ", "KBB",
 						'M', ItemList.Hull_MAX,
 						'C', OrePrefixes.wireGt01.get(Materials.Draconium),
-						'B', OrePrefixes.wireGt04.get(Materials.Superconductor),
+						'B', OrePrefixes.wireGt04.get(Materials.SuperconductorUHV),
 						'K', ItemList.Circuit_Chip_UHPIC});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Transformer_UIV_UEV.get(1L),
@@ -3393,7 +3393,7 @@ public class GT_Loader_Machines
 			GT_ModHandler.addCraftingRecipe(CustomItemList.Transformer_HA_UEV_UHV.get(1L), bitsd,
 					new Object[] { "KBB", "CM ", "KBB", Character.valueOf('M'), CustomItemList.Transformer_UEV_UHV, Character.valueOf('C'),
 							OrePrefixes.wireGt16.get(Materials.Draconium), Character.valueOf('B'),
-							OrePrefixes.wireGt16.get(Materials.Superconductor), Character.valueOf('K'),
+							OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), Character.valueOf('K'),
 							ItemList.Casing_Coil_Superconductor});
 			GT_ModHandler.addCraftingRecipe(CustomItemList.Transformer_HA_UIV_UEV.get(1L), bitsd,
 					new Object[] { "KBB", "CM ", "KBB", Character.valueOf('M'), CustomItemList.Transformer_UIV_UEV, Character.valueOf('C'),
@@ -3500,7 +3500,7 @@ public class GT_Loader_Machines
 							'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy),
 							'C', OrePrefixes.cableGt16.get(Materials.NaquadahAlloy),
 							'S', OrePrefixes.spring.get(Materials.Neutronium),
-							'X', OrePrefixes.wireGt08.get(Materials.Superconductor),
+							'X', OrePrefixes.wireGt08.get(Materials.SuperconductorUHV),
 							'O', OrePrefixes.cell.get(Materials.Lubricant),
 							'P', ItemList.Electric_Pump_LV,
 							'T', GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 885)});
@@ -3509,7 +3509,7 @@ public class GT_Loader_Machines
 					bitsd,
 					new Object[]{"XOC", "STA", "POC",
 							'A', OrePrefixes.springSmall.get(Materials.Neutronium),
-							'C', OrePrefixes.wireGt16.get(Materials.Superconductor),
+							'C', OrePrefixes.wireGt16.get(Materials.SuperconductorUHV),
 							'S', OrePrefixes.spring.get(Materials.Draconium),
 							'X', OrePrefixes.wireGt08.get(Materials.Draconium),
 							'O', ItemList.Reactor_Coolant_He_1,
@@ -3632,7 +3632,7 @@ public class GT_Loader_Machines
 							'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy),
 							'C', OrePrefixes.cableGt16.get(Materials.NaquadahAlloy),
 							'S', OrePrefixes.spring.get(Materials.Neutronium),
-							'X', OrePrefixes.wireGt08.get(Materials.Superconductor),
+							'X', OrePrefixes.wireGt08.get(Materials.SuperconductorUHV),
 							'O', OrePrefixes.cell.get(Materials.Lubricant),
 							'P', ItemList.Electric_Pump_LV,
 							'T', ItemList.Transformer_MAX_UV});
@@ -3641,7 +3641,7 @@ public class GT_Loader_Machines
 					bitsd,
 					new Object[]{"XOC", "STA", "POC",
 							'A', OrePrefixes.springSmall.get(Materials.Neutronium),
-							'C', OrePrefixes.wireGt16.get(Materials.Superconductor),
+							'C', OrePrefixes.wireGt16.get(Materials.SuperconductorUHV),
 							'S', OrePrefixes.spring.get(Materials.Draconium),
 							'X', OrePrefixes.wireGt08.get(Materials.Draconium),
 							'O', ItemList.Reactor_Coolant_He_1,
@@ -3798,7 +3798,7 @@ public class GT_Loader_Machines
 						'T', CustomItemList.WetTransformer_UEV_UHV,
 						'M', ItemList.Battery_Charger_4by4_MAX,
 						'B', ItemList.ZPM2,
-						'C', OrePrefixes.wireGt16.get(Materials.Superconductor),//DONT COPY THIS it has superconductor: cable->wire
+						'C', OrePrefixes.wireGt16.get(Materials.SuperconductorUHV),//DONT COPY THIS it has superconductor: cable->wire
 						'X', OrePrefixes.circuit.get(Materials.Ultimate)});
 
 		//CustomItemList.Battery_TurboCharger_4by4_UEV.set(new GT_MetaTileEntity_TurboCharger(
