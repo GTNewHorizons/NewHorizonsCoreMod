@@ -131,7 +131,8 @@ public enum CustomItemList implements IItemContainer
 	AluminiumIronPlate, ReinforcedAluminiumIronPlate, IrradiantReinforcedAluminiumPlate, IrradiantReinforcedTitaniumPlate, IrradiantReinforcedTungstenPlate, IrradiantReinforcedTungstenSteelPlate, IrradiantReinforcedChromePlate, IrradiantReinforcedNaquadriaPlate, IrradiantReinforcedNeutroniumPlate,
 	QuantumCrystal, MysteriousCrystalLens, MysteriousCrystalGemFlawless, MysteriousCrystalGemExquisite,
 	PrimordialPearlFragment, SandStoneRod,
-	TheBigEgg, MutatedEgg, DraconiumEgg, EnderEgg;
+	TheBigEgg, MutatedEgg, DraconiumEgg, EnderEgg,
+	ChargedCertusQuartzDust;
 
 
 	private ItemStack mStack;

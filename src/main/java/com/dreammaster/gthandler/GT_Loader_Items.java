@@ -575,5 +575,7 @@ public class GT_Loader_Items
 		CustomItemList.MutatedEgg.set(ItemList.MutatedEgg.getIS());
 		CustomItemList.DraconiumEgg.set(ItemList.DraconiumEgg.getIS());
 		CustomItemList.EnderEgg.set(ItemList.EnderEgg.getIS());
+		CustomItemList.ChargedCertusQuartzDust.set(ItemList.ChargedCertusQuartzDust.getIS());
+
 	}
 }
