@@ -38,6 +38,59 @@ public class GT_Loader_Machines
 
 		// MetaTileEntity ID Range: look at end of file
 		// GT 5.08.30
+		
+// ===================================================================================================
+		// Hull
+		// ===================================================================================================
+		CustomItemList.Hull_UEV.set(new GT_MetaTileEntity_BasicHull(
+				11230, "hull.tier.10", "UEV Machine Hull",10,
+				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.Hull_UEV.get(1L),
+				bitsd,
+				new Object[]{"PHP", "WMW",
+						'M', CustomItemList.Casing_UEV,
+						'W', OrePrefixes.cableGt08.get(Materials.Draconium),
+						'H', OrePrefixes.plate.get(Materials.Bedrockium),
+						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
+
+		CustomItemList.Hull_UIV.set(new GT_MetaTileEntity_BasicHull(
+				11231, "hull.tier.11", "UIV Machine Hull",11,
+				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.Hull_UIV.get(1L),
+				bitsd,
+				new Object[]{"PHP", "WMW",
+						'M', CustomItemList.Casing_UIV,
+						'W', OrePrefixes.cableGt08.get(Materials.NetherStar),
+						'H', OrePrefixes.plate.get(Materials.BlackPlutonium),
+						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
+
+		CustomItemList.Hull_UMV.set(new GT_MetaTileEntity_BasicHull(
+				11232, "hull.tier.12", "UMV Machine Hull",12,
+				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.Hull_UMV.get(1L),
+				bitsd,
+				new Object[]{"PHP", "WMW",
+						'M', CustomItemList.Casing_UMV,
+						'W', OrePrefixes.wireGt12.get(Materials.Quantium),
+						'H', OrePrefixes.plate.get(Materials.Draconium),
+						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
+
+		CustomItemList.Hull_UXV.set(new GT_MetaTileEntity_BasicHull(
+				11233, "hull.tier.13", "UXV Machine Hull",13,
+				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+		CustomItemList.Hull_OPV.set(new GT_MetaTileEntity_BasicHull(
+				11234, "hull.tier.14", "OPV Machine Hull",14,
+				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+		CustomItemList.Hull_MAXV.set(new GT_MetaTileEntity_BasicHull(
+				11235, "hull.tier.15", "MAX Machine Hull",15,
+				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+		//TODO:recipes
 
 
 		// ===================================================================================================
@@ -2969,59 +3022,6 @@ public class GT_Loader_Machines
                         'B', ItemList.Hull_MAX,
                         'C', OrePrefixes.circuit.get(Materials.Infinite),
                         'G', new ItemStack(Blocks.glass, 1, 32767)});
-
-		// ===================================================================================================
-		// Hull
-		// ===================================================================================================
-		CustomItemList.Hull_UEV.set(new GT_MetaTileEntity_BasicHull(
-				11230, "hull.tier.10", "UEV Machine Hull",10,
-				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.Hull_UEV.get(1L),
-				bitsd,
-				new Object[]{"PHP", "WMW",
-						'M', CustomItemList.Casing_UEV,
-						'W', OrePrefixes.cableGt08.get(Materials.Draconium),
-						'H', OrePrefixes.plate.get(Materials.Bedrockium),
-						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
-
-		CustomItemList.Hull_UIV.set(new GT_MetaTileEntity_BasicHull(
-				11231, "hull.tier.11", "UIV Machine Hull",11,
-				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.Hull_UIV.get(1L),
-				bitsd,
-				new Object[]{"PHP", "WMW",
-						'M', CustomItemList.Casing_UIV,
-						'W', OrePrefixes.cableGt08.get(Materials.NetherStar),
-						'H', OrePrefixes.plate.get(Materials.BlackPlutonium),
-						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
-
-		CustomItemList.Hull_UMV.set(new GT_MetaTileEntity_BasicHull(
-				11232, "hull.tier.12", "UMV Machine Hull",12,
-				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.Hull_UMV.get(1L),
-				bitsd,
-				new Object[]{"PHP", "WMW",
-						'M', CustomItemList.Casing_UMV,
-						'W', OrePrefixes.wireGt12.get(Materials.Quantium),
-						'H', OrePrefixes.plate.get(Materials.Draconium),
-						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
-
-		CustomItemList.Hull_UXV.set(new GT_MetaTileEntity_BasicHull(
-				11233, "hull.tier.13", "UXV Machine Hull",13,
-				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-		CustomItemList.Hull_OPV.set(new GT_MetaTileEntity_BasicHull(
-				11234, "hull.tier.14", "OPV Machine Hull",14,
-				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-		CustomItemList.Hull_MAXV.set(new GT_MetaTileEntity_BasicHull(
-				11235, "hull.tier.15", "MAX Machine Hull",15,
-				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-		//TODO:recipes
 
 
 		// ===================================================================================================
