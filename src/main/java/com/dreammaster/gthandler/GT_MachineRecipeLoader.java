@@ -2532,7 +2532,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblylineRecipe(CustomItemList.QuantumPartHelmet.get(1L), 144000, new ItemStack[]{
                 CustomItemList.QuantumPartHelmet.get(1L),
                 CustomItemList.QuantumCrystal.get(1L),
-                ItemList.Circuit_Masterquantumcomputer.get(2L),
+                new ItemStack[]{ItemList.Circuit_Masterquantumcomputer.get(2, new Object(){}), Item.Circuit_Crystalcomputer.get(2, new Object(){}), ItemList.Circuit_Neuroprocessor.get(2, new Object(){})},
                 GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4),
                 ItemList.Energy_LapotronicOrb.get(1L),
                 ItemList.Sensor_IV.get(1L),
@@ -2548,7 +2548,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblylineRecipe(CustomItemList.QuantumPartChestplate.get(1L), 144000, new ItemStack[]{
                 CustomItemList.QuantumPartChestplate.get(1L),
                 CustomItemList.QuantumCrystal.get(1L),
-                ItemList.Circuit_Masterquantumcomputer.get(2L),
+                new ItemStack[]{ItemList.Circuit_Masterquantumcomputer.get(2, new Object(){}), Item.Circuit_Crystalcomputer.get(2, new Object(){}), ItemList.Circuit_Neuroprocessor.get(2, new Object(){})},
                 GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 6),
                 ItemList.Energy_LapotronicOrb.get(1L),
                 ItemList.Field_Generator_EV.get(3L),
@@ -2564,7 +2564,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblylineRecipe(CustomItemList.QuantumPartLeggings.get(1L), 144000, new ItemStack[]{
                 CustomItemList.QuantumPartLeggings.get(1L),
                 CustomItemList.QuantumCrystal.get(1L),
-                ItemList.Circuit_Masterquantumcomputer.get(2L),
+                new ItemStack[]{ItemList.Circuit_Masterquantumcomputer.get(2, new Object(){}), Item.Circuit_Crystalcomputer.get(2, new Object(){}), ItemList.Circuit_Neuroprocessor.get(2, new Object(){})},
                 GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 6),
                 ItemList.Energy_LapotronicOrb.get(1L),
                 ItemList.Field_Generator_EV.get(2L),
@@ -2580,7 +2580,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblylineRecipe(CustomItemList.QuantumPartBoots.get(1L), 144000, new ItemStack[]{
                 CustomItemList.QuantumPartBoots.get(1L),
                 CustomItemList.QuantumCrystal.get(1L),
-                ItemList.Circuit_Masterquantumcomputer.get(2L),
+                new ItemStack[]{ItemList.Circuit_Masterquantumcomputer.get(2, new Object(){}), Item.Circuit_Crystalcomputer.get(2, new Object(){}), ItemList.Circuit_Neuroprocessor.get(2, new Object(){})},
                 GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4),
                 ItemList.Energy_LapotronicOrb.get(1L),
                 ItemList.Field_Generator_EV.get(1L),
