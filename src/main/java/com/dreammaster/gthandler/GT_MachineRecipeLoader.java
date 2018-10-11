@@ -1293,7 +1293,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         
         GT_Values.RA.addMixerRecipe(new ItemStack(Blocks.dirt, 1, 0), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(4), Materials.Water.getFluid(1000L), GT_Values.NF, GT_ModHandler.getModItem("BiomesOPlenty", "mudball", 4L, 0), 50, 8);
 
-        GT_Values.RA.addMixerRecipe(ItemList.IC2_Fertilizer.get(4, new Object[0]), GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 16L, 2809), new ItemStack(Blocks.sand, 4, 0),Materials.Water.getFluid(1000L), new ItemStack(Blocks.dirt, 1, 0), 100, 30);
+        GT_Values.RA.addMixerRecipe(new ItemStack(Blocks.dirt, 1, 0), GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 16L, 2809), new ItemStack(Blocks.sand, 4, 0),GT_Values.NI, Materials.Water.getFluid(1000L), GT_Values.NF, ItemList.IC2_Fertilizer.get(4, new Object[0]), 100, 30);
  
         GT_Values.RA.addVacuumFreezerRecipe(CustomItemList.GlowingMarshmallow.get(1L), CustomItemList.Marshmallow.get(1L), 48000, 1920);
 
