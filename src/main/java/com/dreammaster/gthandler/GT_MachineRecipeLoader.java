@@ -1555,6 +1555,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_Simple_SoC.get(1L), ItemList.Circuit_Chip_Simple_SoC.get(6L), GT_Values.NI, 900, 64, false);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_SoC.get(1L), ItemList.Circuit_Chip_SoC.get(6L), GT_Values.NI, 900, 480, true);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_SoC2.get(1L), ItemList.Circuit_Chip_SoC2.get(6L), GT_Values.NI, 900, 1024, true);
+        GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_ULPIC.get(1L), ItemList.Circuit_Chip_ULPIC.get(6L), GT_Values.NI, 900, 120, false);
+        GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_LPIC.get(1L), ItemList.Circuit_Chip_LPIC.get(4L), GT_Values.NI, 900, 480, false);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_PIC.get(1L), ItemList.Circuit_Chip_PIC.get(4L), GT_Values.NI, 900, 1024, true);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_HPIC.get(1L), ItemList.Circuit_Chip_HPIC.get(2L), GT_Values.NI, 900, 4096, true);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_UHPIC.get(1L), ItemList.Circuit_Chip_UHPIC.get(2L), GT_Values.NI, 900, 7860, true);
