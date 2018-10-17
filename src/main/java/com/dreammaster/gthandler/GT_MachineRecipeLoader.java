@@ -1557,13 +1557,13 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_SoC2.get(1L), ItemList.Circuit_Chip_SoC2.get(6L), GT_Values.NI, 900, 1024, true);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_ULPIC.get(1L), ItemList.Circuit_Chip_ULPIC.get(6L), GT_Values.NI, 900, 120, false);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_LPIC.get(1L), ItemList.Circuit_Chip_LPIC.get(4L), GT_Values.NI, 900, 480, false);
-        GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_PIC.get(1L), ItemList.Circuit_Chip_PIC.get(4L), GT_Values.NI, 900, 1024, true);
-        GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_HPIC.get(1L), ItemList.Circuit_Chip_HPIC.get(2L), GT_Values.NI, 900, 4096, true);
-        GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_UHPIC.get(1L), ItemList.Circuit_Chip_UHPIC.get(2L), GT_Values.NI, 900, 7860, true);
+        GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_PIC.get(1L), ItemList.Circuit_Chip_PIC.get(4L), GT_Values.NI, 900, 1920, true);
+        GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_HPIC.get(1L), ItemList.Circuit_Chip_HPIC.get(2L), GT_Values.NI, 900, 7860, true);
+        GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_UHPIC.get(1L), ItemList.Circuit_Chip_UHPIC.get(2L), GT_Values.NI, 900, 30720, true);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_NanoCPU.get(1L), ItemList.Circuit_Chip_NanoCPU.get(8L), GT_Values.NI, 900, 480, true);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_QuantumCPU.get(1L), ItemList.Circuit_Chip_QuantumCPU.get(4L), GT_Values.NI, 900, 1920, true);
-        GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_PIC.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 2), Materials.RedstoneAlloy.getMolten(288L), GT_Values.NF, ItemList.Circuit_Wafer_HPIC.get(1L), GT_Values.NI, 1200, 1920, true);
-        GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_HPIC.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 8), Materials.Electrum.getMolten(576L), GT_Values.NF, ItemList.Circuit_Wafer_UHPIC.get(1L), GT_Values.NI, 1200, 30720, true);
+        GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_PIC.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 2), Materials.VanadiumGallium.getMolten(288L), GT_Values.NF, ItemList.Circuit_Wafer_HPIC.get(1L), GT_Values.NI, 1200, 7860, true);
+        GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_HPIC.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 8), Materials.Naquadah.getMolten(576L), GT_Values.NF, ItemList.Circuit_Wafer_UHPIC.get(1L), GT_Values.NI, 1200, 30720, true);
 
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_CPU.get(1L), GT_Utility.copyAmount(16, Ic2Items.carbonFiber), Materials.Glowstone.getMolten(576L), GT_Values.NF, ItemList.Circuit_Wafer_NanoCPU.get(1L), GT_Values.NI, 1200, 1920, true);
         GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Wafer_NanoCPU.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 1), Materials.Radon.getGas(50L), GT_Values.NF, ItemList.Circuit_Wafer_QuantumCPU.get(1L), GT_Values.NI, 1200, 1920, true);
