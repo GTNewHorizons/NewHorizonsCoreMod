@@ -3057,7 +3057,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Hull_MAX,
 						'C', OrePrefixes.wireGt01.get(Materials.Draconium),
 						'B', OrePrefixes.wireGt04.get(Materials.SuperconductorUHV),
-						'K', ItemList.Circuit_Chip_UHPIC});
+						'K', ItemList.Circuit_Chip_PPIC});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Transformer_UIV_UEV.get(1L),
 				bitsd,
@@ -3065,7 +3065,7 @@ public class GT_Loader_Machines
 						'M', CustomItemList.Hull_UEV,
 						'C', OrePrefixes.wireGt01.get(Materials.NetherStar),
 						'B', OrePrefixes.wireGt04.get(Materials.Draconium),
-						'K', ItemList.Circuit_Chip_UHPIC});
+						'K', ItemList.Circuit_Chip_QPIC});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Transformer_UMV_UIV.get(1L),
 				bitsd,
@@ -3073,7 +3073,7 @@ public class GT_Loader_Machines
 						'M', CustomItemList.Hull_UIV,
 						'C', OrePrefixes.wireGt01.get(Materials.Quantium),
 						'B', OrePrefixes.wireGt04.get(Materials.NetherStar),
-						'K', ItemList.Circuit_Chip_UHPIC});
+						'K', ItemList.Circuit_Chip_QPIC});
 
 
 		//TODO:recipes
