@@ -145,6 +145,7 @@ public class GT_CustomLoader
     private static final GT_Loader_Wires WireLoader = new GT_Loader_Wires();
     private static final GT_Loader_Batteries BatteryLoader = new GT_Loader_Batteries();
     private static final GT_MachineRecipeLoader MachineRecipeLoader = new GT_MachineRecipeLoader();
+    private static final GT_MachineRecipeLoader2 MachineRecipeLoader2 = new GT_MachineRecipeLoader2();
     private static final GT_CraftingRecipeLoader CraftingRecipeLoader = new GT_CraftingRecipeLoader();
     private static final GT_Loader_OreDictionary OreDictionary = new GT_Loader_OreDictionary();
     private static final GT_Recipe_Remover Remover = new GT_Recipe_Remover();
@@ -162,6 +163,7 @@ public class GT_CustomLoader
     	BatteryLoader.run();
     	Remover.run();
         MachineRecipeLoader.run();
+        MachineRecipeLoader2.run();
         CraftingRecipeLoader.run();
         OreDictionary.run();
     }
