@@ -967,7 +967,10 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalRecipe(GT_ModHandler.getModItem("Natura", "Natura.netherfood", 1L, 0),  GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L), Materials.Water.getFluid(1000L), GT_Values.NF, ItemList.IC2_Fertilizer.get(32, new Object[0]), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Phosphorus, 1L),200, 120);
 
         GT_Values.RA.addDistillationTowerRecipe(new FluidStack(FluidRegistry.getFluid("pollution"), 1600), new FluidStack[]{Materials.SulfuricAcid.getFluid(50L), Materials.NitrogenDioxide.getGas(50L), Materials.Methane.getGas(50L), Materials.Mercury.getFluid(1L)}, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L), 600, 1920);
+        run2();
+    }
 
+    private void run2() {
         GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0L), new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32414), 100, 16);
         GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0L), new FluidStack(FluidRegistry.getFluid("dye.chemical.dyered"), 72), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32415), 100, 16);
         GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0L), new FluidStack(FluidRegistry.getFluid("dye.chemical.dyegreen"), 72), GT_ModHandler.getModItem("gregtech", "gt.metaitem.02", 1L, 32416), 100, 16);
@@ -1357,10 +1360,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addVacuumFreezerRecipe(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Titanium, 1L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L), 144, 480);
         GT_Values.RA.addVacuumFreezerRecipe(CustomItemList.HotNetherrackBrick.get(1L), CustomItemList.InfernalBrick.get(1L), 200, 120);
 
-        run2();
-    }
 
-    private void run2() {
         GT_Values.RA.addLatheRecipe(new ItemStack(Blocks.wooden_slab, 1, 0), new ItemStack(Items.bowl, 1), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1), 50, 8);
         GT_Values.RA.addLatheRecipe(new ItemStack(Blocks.wooden_slab, 1, 1), new ItemStack(Items.bowl, 1), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1), 50, 8);
         GT_Values.RA.addLatheRecipe(new ItemStack(Blocks.wooden_slab, 1, 2), new ItemStack(Items.bowl, 1), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1), 50, 8);
@@ -1742,7 +1742,10 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalRecipe(new ItemStack(Items.ghast_tear), GT_Utility.getIntegratedCircuit(1), Materials.Water.getFluid(1000L), Materials.SaltWater.getFluid(1000L), Materials.Potassium.getDustTiny(1), Materials.Lithium.getDustTiny(1), 400, 30, false);
         GT_Values.RA.addBlastRecipe(Materials.Zincite.getDust(2), Materials.Carbon.getDust(1), GT_Values.NF, Materials.CarbonDioxide.getGas(1000L), Materials.Zinc.getIngots(3), Materials.Ash.getDustTiny(2), 240, 120, 1200);
         GT_Values.RA.addChemicalBathRecipe(GT_ModHandler.getModItem("IC2", "itemBiochaff", 1L, 0), Materials.Water.getFluid(750L), GT_ModHandler.getModItem("Forestry", "mulch", 8L, 0),  GT_ModHandler.getModItem("Forestry", "mulch", 4L, 0), GT_ModHandler.getModItem("Forestry", "mulch", 4L, 0), new int[]{10000,3300,2000}, 500, 30);
-        
+        run3();
+    }
+
+    private void run3() {
         //EnderIO Fused Quartz and Glass
         if (Loader.isModLoaded("EnderIO")){
         	GT_Values.RA.addAlloySmelterRecipe(Materials.CertusQuartz.getDust(2), Materials.Glass.getDust(1), GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L), 500, 30);
@@ -2385,11 +2388,11 @@ public class GT_MachineRecipeLoader implements Runnable{
                 }
             }
         }
-
-        run3();
+        run4();
     }
 
-    private void run3() {
+    private void run4() {
+
         GT_Values.RA.addAssemblylineRecipe(com.dreammaster.item.ItemList.PicoWafer.getIS(), 72000, new ItemStack[]{
                 ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                 com.dreammaster.item.ItemList.PicoWafer.getIS(4),
