@@ -307,16 +307,7 @@ public class GT_Loader_Items
 		CustomItemList.QuantumBoard.set(ItemList.QuantumBoard.getIS());
         CustomItemList.QuantumProcessorBoard.set(ItemList.QuantumProcessorBoard.getIS());
         CustomItemList.EngravedQuantumChip.set(ItemList.EngravedQuantumChip.getIS());
-        CustomItemList.StainlessSteelItemCasing.set(ItemList.StainlessSteelItemCasing.getIS());
         CustomItemList.IridiumAlloyItemCasing.set(ItemList.IridiumAlloyItemCasing.getIS());
-		CustomItemList.AluminiumItemCasing.set(ItemList.AluminiumItemCasing.getIS());
-		CustomItemList.ChromeItemCasing.set(ItemList.ChromeItemCasing.getIS());
-		CustomItemList.IridiumItemCasing.set(ItemList.IridiumItemCasing.getIS());
-		CustomItemList.NeutroniumItemCasing.set(ItemList.NeutroniumItemCasing.getIS());
-		CustomItemList.OsmiumItemCasing.set(ItemList.OsmiumItemCasing.getIS());
-		CustomItemList.TitaniumItemCasing.set(ItemList.TitaniumItemCasing.getIS());
-		CustomItemList.TungstenItemCasing.set(ItemList.TungstenItemCasing.getIS());
-		CustomItemList.TungstenSteelItemCasing.set(ItemList.TungstenSteelItemCasing.getIS());
 		CustomItemList.ReinforcedGlassPLate.set(ItemList.ReinforcedGlassPlate.getIS());
         CustomItemList.ReinforcedGlassLense.set(ItemList.ReinforcedGlassLense.getIS());
 		CustomItemList.MarshmallowForm.set(ItemList.MarshmallowForm.getIS());
