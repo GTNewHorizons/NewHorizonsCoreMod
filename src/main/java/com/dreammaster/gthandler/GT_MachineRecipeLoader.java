@@ -2174,7 +2174,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Fiberglass_Advanced.get(1L), ItemList.Circuit_Chip_HPIC.get(4L), ItemList.Energy_LapotronicOrb.get(8L), ItemList.Circuit_Chip_QuantumCPU.get(2L), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Europium, 8)}, tMat.getMolten(144L * tMultiplier), ItemList.Energy_LapotronicOrb2.get(1L), 1024, 4096, true);
 
                 //Wetware Board
-                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(1L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_HV.get(1L),  ItemList.Sensor_HV.get(1L),  GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 4)},  Materials.GrowthMediumSterilized.getFluid(250L), ItemList.Circuit_Board_Wetware.get(1L), 600, 1920, true);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(16L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_LuV.get(1L),  ItemList.Sensor_LuV.get(1L),  GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 16L)},  Materials.GrowthMediumSterilized.getFluid(4000L), ItemList.Circuit_Board_Wetware.get(16L), 1200, 30720, true);
 
                 //Bio Board
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(1L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_EV.get(1L),  ItemList.Sensor_EV.get(1L), ItemList.Circuit_Data.get(2L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 8)},  Materials.BioMediumSterilized.getFluid(500L), ItemList.Circuit_Board_Bio.get(1L), 1200, 7680, true);
@@ -2425,10 +2425,10 @@ public class GT_MachineRecipeLoader implements Runnable{
                 ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                 ItemList.Circuit_Chip_Stemcell.get(16L),
                 ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
-                GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Plastic, 16),
-                ItemList.IC2_Item_Casing_Gold.get(16L),
+                GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polybenzimidazole, 8L),
+                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.ElectrumFlux, 4L),
                 new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.foil, (Materials.StyreneButadieneRubber), 32L), GT_OreDictUnificator.get(OrePrefixes.foil, (Materials.Silicone), 32L)},
-                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.StainlessSteel, 32),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.HSSS, 32L),
         }, new FluidStack[]{
                 GregTech_API.mIC2Classic ? Materials.Water.getFluid(250L) : Materials.GrowthMediumSterilized.getFluid(250L),
                 Materials.UUMatter.getFluid(250L),
@@ -2441,28 +2441,30 @@ public class GT_MachineRecipeLoader implements Runnable{
                 ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                 GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polybenzimidazole, 16),
                 GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Tungsten, 16L),
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Silicone, 64),
-                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.TungstenSteel, 32),
+                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Silicone, 64L),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.TungstenSteel, 32L),
         }, new FluidStack[]{
                 GregTech_API.mIC2Classic ? Materials.Water.getFluid(500L) : Materials.BioMediumSterilized.getFluid(500L),
                 Materials.UUMatter.getFluid(500L),
                 GregTech_API.mIC2Classic ? Materials.Lava.getFluid(2000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000)
         }, ItemList.Circuit_Chip_BioCPU.get(1L), 2400, 160000);
 
-        GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Wetwaresupercomputer.get(1L), 288000, new ItemStack[]{
+        GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Wetwaresupercomputer.get(1L), 288000, new Object[]{
                 GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 2),
                 ItemList.Circuit_Wetwaresupercomputer.get(2L),
-                ItemList.Circuit_Parts_Coil.get(64L),
+                ItemList.ZPM_Coil.get(16L),
                 ItemList.Circuit_Parts_CapacitorSMD.get(64L),
                 ItemList.Circuit_Parts_ResistorSMD.get(64L),
                 ItemList.Circuit_Parts_TransistorSMD.get(64L),
                 ItemList.Circuit_Parts_DiodeSMD.get(64L),
                 ItemList.Circuit_Chip_Ram.get(48L),
-                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 64),
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Silicone, 64)
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 64L),
+                new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.foil, (Materials.StyreneButadieneRubber), 64L), GT_OreDictUnificator.get(OrePrefixes.ring, (Materials.Silicone), 64L)},
+
         }, new FluidStack[]{
                 Materials.SolderingAlloy.getMolten(2880L),
-                GregTech_API.mIC2Classic ? Materials.Water.getFluid(10000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 10000)
+                GregTech_API.mIC2Classic ? Materials.Water.getFluid(10000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 10000),
+                Materials.Radon.getGas(2500L),
         }, ItemList.Circuit_Wetwaremainframe.get(1L), 2000, 300000);
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1L), 288000, new ItemStack[]{
