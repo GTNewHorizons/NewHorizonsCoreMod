@@ -2459,7 +2459,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 ItemList.Circuit_Parts_DiodeSMD.get(64L),
                 ItemList.Circuit_Chip_Ram.get(48L),
                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 64L),
-                new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.foil, (Materials.StyreneButadieneRubber), 64L), GT_OreDictUnificator.get(OrePrefixes.ring, (Materials.Silicone), 64L)},
+                new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.foil, (Materials.StyreneButadieneRubber), 64L), GT_OreDictUnificator.get(OrePrefixes.foil, (Materials.Silicone), 64L)},
 
         }, new FluidStack[]{
                 Materials.SolderingAlloy.getMolten(2880L),
