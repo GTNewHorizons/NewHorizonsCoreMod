@@ -1059,6 +1059,13 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Small_Gear.get(0L),  ItemList.Shape_Extruder_Small_Gear.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Turbine_Blade.get(0L),  ItemList.Shape_Extruder_Turbine_Blade.get(1L),  200, 256);
 
+        GT_Values.RA.addFormingPressRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L), ItemList.Shape_Mold_Ball.get(0L), ItemList.Circuit_Parts_Glass_Tube.get(1L), 120, 30);
+        GT_Values.RA.addFormingPressRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L), ItemList.Shape_Mold_Bottle.get(0L), ItemList.Bottle_Empty.get(1L), 32, 8);
+        GT_Values.RA.addFormingPressRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L), ItemList.Shape_Mold_Block.get(0L), new ItemStack(Blocks.glass, 1, 0), 100, 30);
+        GT_Values.RA.addFormingPressRecipe(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Glass, 9L), ItemList.Shape_Mold_Block.get(0L), new ItemStack(Blocks.glass, 1, 0), 100, 30);
+        GT_Values.RA.addFormingPressRecipe(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 4L), ItemList.Shape_Mold_Block.get(0L), new ItemStack(Blocks.glass, 1, 0), 100, 30);
+        GT_Values.RA.addFormingPressRecipe(GT_ModHandler.getModItem("BloodArsenal", "glass_shard", 2L, 0), ItemList.Shape_Mold_Block.get(0L), new ItemStack(Blocks.glass, 1, 0), 100, 30);
+
         GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.AnnealedCopper, 1L), ItemList.Shape_Extruder_Rod.get(0L), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnnealedCopper, 2L), 200, 90);
         GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L), ItemList.Shape_Extruder_Rod.get(0L), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 2L), 200, 90);
 
