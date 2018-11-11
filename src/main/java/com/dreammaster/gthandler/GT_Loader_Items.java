@@ -568,6 +568,8 @@ public class GT_Loader_Items
 		CustomItemList.DraconiumEgg.set(ItemList.DraconiumEgg.getIS());
 		CustomItemList.EnderEgg.set(ItemList.EnderEgg.getIS());
 		CustomItemList.ChargedCertusQuartzDust.set(ItemList.ChargedCertusQuartzDust.getIS());
+		CustomItemList.RawPicoWafer.set(ItemList.RawPicoWafer.getIS());
+		CustomItemList.PicoWafer.set(ItemList.PicoWafer.getIS());
 
 	}
 }

@@ -13,13 +13,12 @@ import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
 import gregtech.common.GT_Proxy;
 import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
+
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader
         implements Runnable {
@@ -116,7 +115,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Tank_MV.get(1L), bits,  new Object[]{"DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_IV, 'M', ItemList.Casing_Tank_7, 'G', ItemList.Field_Generator_IV, 'D', OrePrefixes.circuit.get(Materials.Ultimate), 'P', OrePrefixes.plate.get(Materials.HSSG)});
         GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Tank_HV.get(1L), bits,  new Object[]{"DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_LuV, 'M', ItemList.Casing_Tank_8, 'G', ItemList.Field_Generator_LuV, 'D', OrePrefixes.circuit.get(Materials.Superconductor), 'P', OrePrefixes.plate.get(Materials.HSSS)});
         GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Tank_EV.get(1L), bits,  new Object[]{"DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_ZPM, 'M', ItemList.Casing_Tank_9, 'G', ItemList.Field_Generator_ZPM, 'D', OrePrefixes.circuit.get(Materials.Infinite), 'P', OrePrefixes.plate.get(Materials.Europium)});
-        GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Tank_IV.get(1L), bits,  new Object[]{"DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_UV, 'M', ItemList.Casing_Tank_10, 'G', ItemList.Field_Generator_UV, 'D', CustomItemList.NanoCircuit, 'P', OrePrefixes.plate.get(Materials.Americium)});
+        GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Tank_IV.get(1L), bits,  new Object[]{"DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_UV, 'M', ItemList.Casing_Tank_10, 'G', ItemList.Field_Generator_UV, 'D',  OrePrefixes.circuit.get(Materials.Bio), 'P', OrePrefixes.plate.get(Materials.Americium)});
 
         GT_ModHandler.addCraftingRecipe(ItemList.Super_Chest_LV.get(1L), bits,  new Object[]{"DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_LV, 'G', OrePrefixes.plate.get(Materials.PulsatingIron), 'D', OrePrefixes.circuit.get(Materials.Basic),     'P', OrePrefixes.plateDense.get(Materials.Iron)});
         GT_ModHandler.addCraftingRecipe(ItemList.Super_Chest_MV.get(1L), bits,  new Object[]{"DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_MV, 'G', OrePrefixes.plate.get(Materials.VibrantAlloy), 'D', OrePrefixes.circuit.get(Materials.Good),    'P', OrePrefixes.plateDense.get(Materials.Steel)});
@@ -128,7 +127,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Chest_MV.get(1L), bits, new Object[]{"DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_ZPM, 'G', ItemList.Field_Generator_IV, 'D', OrePrefixes.circuit.get(Materials.Ultimate),    'P', OrePrefixes.plateTriple.get(Materials.HSSG)});
         GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Chest_HV.get(1L), bits, new Object[]{"DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UV, 'G', ItemList.Field_Generator_LuV, 'D', OrePrefixes.circuit.get(Materials.Superconductor),   'P', OrePrefixes.plateTriple.get(Materials.HSSS)});
         GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Chest_EV.get(1L), bits, new Object[]{"DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_MAX, 'G', ItemList.Field_Generator_ZPM, 'D', OrePrefixes.circuit.get(Materials.Infinite), 'P', OrePrefixes.plateDouble.get(Materials.Europium)});
-        GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Chest_IV.get(1L), bits, new Object[]{"DPD", "PMP", "DGD", 'M', CustomItemList.Automation_ChestBuffer_UEV, 'G', ItemList.Field_Generator_UV, 'D', CustomItemList.NanoCircuit, 'P', OrePrefixes.plate.get(Materials.Americium)});
+        GT_ModHandler.addCraftingRecipe(ItemList.Quantum_Chest_IV.get(1L), bits, new Object[]{"DPD", "PMP", "DGD", 'M', CustomItemList.Automation_ChestBuffer_UEV, 'G', ItemList.Field_Generator_UV, 'D', OrePrefixes.circuit.get(Materials.Bio), 'P', OrePrefixes.plate.get(Materials.Americium)});
 
         GT_ModHandler.addCraftingRecipe(ItemList.Casing_Tank_1.get(1L), bits, new Object[]{"PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Steel), 'I', OrePrefixes.pipeLarge.get(Materials.Plastic)});
         GT_ModHandler.addCraftingRecipe(ItemList.Casing_Tank_2.get(1L), bits, new Object[]{"PPP", "PIP", "PPP", 'P', OrePrefixes.plate.get(Materials.Aluminium), 'I', OrePrefixes.pipeLarge.get(Materials.PolyvinylChloride)});

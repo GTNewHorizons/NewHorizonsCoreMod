@@ -2,7 +2,6 @@ package com.dreammaster.gthandler;
 
 import java.lang.reflect.Field;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import forestry.api.recipes.IFermenterRecipe;
 import gregtech.api.GregTech_API;
@@ -21,7 +20,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.potion.Potion;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -2398,9 +2396,10 @@ public class GT_MachineRecipeLoader implements Runnable{
 
     private void run4() {
 
-        GT_Values.RA.addAssemblylineRecipe(com.dreammaster.item.ItemList.PicoWafer.getIS(), 72000, new ItemStack[]{
-                ItemList.Circuit_Board_Wetware_Extreme.get(1L),
-                com.dreammaster.item.ItemList.PicoWafer.getIS(4),
+        GT_Values.RA.addAssemblylineRecipe(CustomItemList.PicoWafer.get(1L), 72000, new ItemStack[]{
+                ItemList.Circuit_Board_Bio_Ultra.get(1L),
+                CustomItemList.PicoWafer.get(4L),
+                CustomItemList.NanoCircuit.get(2L),
                 ItemList.Circuit_Parts_TransistorSMD.get(64L),
                 ItemList.Circuit_Parts_ResistorSMD.get(64L),
                 ItemList.Circuit_Parts_CapacitorSMD.get(64L),
@@ -2414,11 +2413,11 @@ public class GT_MachineRecipeLoader implements Runnable{
                 Materials.SolderingAlloy.getMolten(3760L),
                 Materials.UUMatter.getFluid(8000L),
                 Materials.Osmium.getMolten(1152L)
-        }, com.dreammaster.item.ItemList.PikoCircuit.getIS(), 1200, (int)(GT_Values.V[9]-(GT_Values.V[9]/10)));
+        },      CustomItemList.PikoCircuit.get(1L), 1200, 8000000);
 
-        GT_Values.RA.addAssemblylineRecipe(com.dreammaster.item.ItemList.PikoCircuit.getIS(), 144000, new ItemStack[]{
+        GT_Values.RA.addAssemblylineRecipe(CustomItemList.PikoCircuit.get(1L), 144000, new ItemStack[]{
                 GT_OreDictUnificator.get(OrePrefixes.frameGt,Materials.Neutronium, 16),
-                com.dreammaster.item.ItemList.PikoCircuit.getIS(8),
+                CustomItemList.PikoCircuit.get(8L),
                 ItemList.Circuit_Parts_CapacitorSMD.get(64L),
                 ItemList.Circuit_Parts_DiodeSMD.get(64L),
                 ItemList.Circuit_Parts_TransistorSMD.get(64L),
@@ -2432,7 +2431,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 Materials.SolderingAlloy.getMolten(3760L),
                 Materials.UUMatter.getFluid(24000L),
                 Materials.Osmium.getMolten(2304L)
-        }, com.dreammaster.item.ItemList.QuantumCircuit.getIS(), 2400, (int)(GT_Values.V[9]-(GT_Values.V[9]/10)));
+        },      CustomItemList.QuantumCircuit.get(1L), 2400, 16000000);
 
         //Main Frame Circuits and Neuro CPU
         GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Crystalmainframe.get(1L), 72000, new Object[]{
@@ -2500,23 +2499,24 @@ public class GT_MachineRecipeLoader implements Runnable{
 
 
         //Quantum Chip
-        GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Wetwaremainframe.get(1L), 576000, new ItemStack[]{
-                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 4),
-                ItemList.Circuit_Wetwaremainframe.get(2L),
-                ItemList.Circuit_Parts_Coil.get(64L),
+        GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Biomainframe.get(1L), 576000, new ItemStack[]{
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 8),
+                ItemList.Circuit_Biomainframe.get(2L),
+                ItemList.UHV_Coil.get(32L),
                 ItemList.Circuit_Parts_CapacitorSMD.get(64L),
                 ItemList.Circuit_Parts_ResistorSMD.get(64L),
                 ItemList.Circuit_Parts_TransistorSMD.get(64L),
                 ItemList.Circuit_Parts_DiodeSMD.get(64L),
                 ItemList.Circuit_Chip_Ram.get(64L),
                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Draconium, 64),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 64),
                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Silicone, 64),
                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Polybenzimidazole, 64)
         }, new FluidStack[]{
                 Materials.SolderingAlloy.getMolten(3760L),
                 Materials.Naquadria.getMolten(4032L),
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 20000)
-        }, CustomItemList.NanoCircuit.get(1L), 4000, 500000);
+        }, CustomItemList.NanoCircuit.get(1L), 4000, 4000000);
 
         //Quantum Armor and Gravichest
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumHelmet", 1, GT_Values.W));
@@ -2614,7 +2614,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.NaquadahAlloy,64L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.NaquadahAlloy,64L),
         			GT_OreDictUnificator.get(OrePrefixes.block,Materials.NaquadahAlloy,64L),
-        			com.dreammaster.item.ItemList.NanoCircuit.getIS().splitStack(16)
+        			CustomItemList.NanoCircuit.get(1L).splitStack(16)
         	},
         	new FluidStack[] {
         			Materials.Neutronium.getMolten(36864L),
@@ -2636,7 +2636,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 			GT_OreDictUnificator.get(OrePrefixes.plateDense,Materials.Ardite,8L),
                 			GT_OreDictUnificator.get(OrePrefixes.gemExquisite,Materials.Ruby,64L),
                 			GT_OreDictUnificator.get(OrePrefixes.gemExquisite,Materials.Jasper,64L),
-                			com.dreammaster.item.ItemList.NanoCircuit.getIS().splitStack(32)
+                			CustomItemList.NanoCircuit.get(1L).splitStack(32)
                 	},
                 	new FluidStack[] {
                 			Materials.Neutronium.getMolten(9216L),

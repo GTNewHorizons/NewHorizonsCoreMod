@@ -297,7 +297,13 @@ public class GT_Loader_Machines
 		CustomItemList.AssemblingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10784, "basicmachine.assembler.tier.10", "Epic Assembly Constructor II",10, "Avengers, Assemble!",
 				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 9, 1, 224000, 0, 1, "Assembler2.png",
-				"", false, false, 0, "ASSEMBLER",null).getStackForm(1L));
+				"", false, false, 0, "ASSEMBLER",
+				new Object[] { "ACA", "VMV", "WCW",
+						'M', CustomItemList.Hull_UEV,
+						'V', ItemList.Conveyor_Module_UEV,
+						'A', ItemList.Robot_Arm_UEV,
+						'C', OrePrefixes.circuit.get(Materials.Bio),
+						'W', OrePrefixes.cableGt01.get(Materials.Draconium)}).getStackForm(1L));
 
 		CustomItemList.AssemblingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10785, "basicmachine.assembler.tier.11", "Epic Assembly Constructor III",11, "Avengers, Assemble!",
@@ -1051,7 +1057,11 @@ public class GT_Loader_Machines
 		CustomItemList.FormingPressUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10904, "basicmachine.press.tier.10", "Epic Surface Shifter II",10, "Imprinting Images into things",
 				GT_Recipe.GT_Recipe_Map.sPressRecipes, 2, 1, 0, 0, 1, "Press.png",
-				GregTech_API.sSoundList.get(203), false, false, 0, "PRESS",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(203), false, false, 0, "PRESS",			new Object[] { "WPW", "CMC", "WPW",
+				'M', CustomItemList.Hull_UEV,
+				'P', ItemList.Electric_Piston_UEV,
+				'C', OrePrefixes.circuit.get(Materials.Bio),
+				'W', OrePrefixes.cableGt01.get(Materials.Draconium)}).getStackForm(1L));
 
 		CustomItemList.FormingPressUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10905, "basicmachine.press.tier.11", "Epic Surface Shifter III",11, "Imprinting Images into things",
