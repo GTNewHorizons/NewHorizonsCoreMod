@@ -570,6 +570,11 @@ public class GT_Loader_Items
 		CustomItemList.ChargedCertusQuartzDust.set(ItemList.ChargedCertusQuartzDust.getIS());
 		CustomItemList.RawPicoWafer.set(ItemList.RawPicoWafer.getIS());
 		CustomItemList.PicoWafer.set(ItemList.PicoWafer.getIS());
+		CustomItemList.StargateFramePart.set(ItemList.StargateFramePart.getIS());
+		CustomItemList.StargateChevron.set(ItemList.StargateChevron.getIS());
+		CustomItemList.StargateShieldingFoil.set(ItemList.StargateShieldingFoil.getIS());
+		CustomItemList.StargateCrystalDust.set(ItemList.StargateCrystalDust.getIS());
+		CustomItemList.TCetiESeaweedExtract.set(ItemList.TCetiESeaweedExtract.getIS());
 
 	}
 }
