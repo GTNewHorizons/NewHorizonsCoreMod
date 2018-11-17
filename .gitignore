@@ -25,3 +25,4 @@ SetupDevWorkspaces.bat
 *.ipr
 *.iws
 .idea/
+*.db
