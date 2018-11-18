@@ -1959,6 +1959,10 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Plastic_Advanced.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 63), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 24), GT_Utility.getIntegratedCircuit(1)}, Materials.Redstone.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.energyUpgrade", 1L, 0), 300, 256);
             //Movement Upgrade
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Plastic_Advanced.get(1L), ItemList.Electric_Piston_MV.get(1L), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 24), GT_Utility.getIntegratedCircuit(1)}, Materials.Redstone.getMolten(72L), GT_ModHandler.getModItem("opensecurity", "opensecurity.movementUpgrade", 1L, 0), 300, 256);
+            //OpenGlasses Terminal
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "geolyzer", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 43), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 38), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(144L), GT_ModHandler.getModItem("openglasses", "openglassesterminal", 1L, 0), 300, 480);
+            //Open Glasses
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("OpenComputers", "screen3", 2L, 0),  GT_ModHandler.getModItem("OpenComputers", "item", 1L, 10), GT_ModHandler.getModItem("OpenComputers", "item", 1L, 13), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("openglasses", "openglasses", 1L, GT_Values.W), 300, 480);
             //Iron Noteblock
             //GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.noteblock), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 8L), CustomItemList.SteelBars.get(1L), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("computronics", "computronics.ironNoteBlock", 1L, 0), 200, 120);
             //Speaker
