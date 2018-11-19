@@ -166,8 +166,8 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "opensecurity.energyUpgrade", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "opensecurity.movementUpgrade", 1L, 0), true, false, true);
         //Open Glasses
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openglasses", "openglassesterminal", 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openglasses", "openglasses", 1L, 0), true, false, true);
+        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openglasses", "openglassesterminal", 1L, 0), true, false, true);
+        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openglasses", "openglasses", 1L, 0), true, false, true);
         //Computronics
         //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.ironNoteBlock", 1L, 0), true, false, true);
         //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.speaker", 1L, 0), true, false, true);
