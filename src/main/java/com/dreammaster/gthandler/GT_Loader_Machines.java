@@ -2034,7 +2034,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.ArcFurnaceZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11071, "basicmachine.arcfurnace.tier.07", "Elite Arc Furnace II", 7, "",
-				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 1, 128000, 0, 1, "ArcFurnace.png",
+				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
 				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",
 				new Object[] { "WGW", "CMC", "PPP",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -2045,7 +2045,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.ArcFurnaceUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11072, "basicmachine.arcfurnace.tier.08", "Ultimate Short Circuit Heater", 8, "",
-				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 1, 128000, 0, 1, "ArcFurnace.png",
+				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
 				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",
 				new Object[] { "WGW", "CMC", "PPP",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -2056,22 +2056,22 @@ public class GT_Loader_Machines
 
 		CustomItemList.ArcFurnaceUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11073, "basicmachine.arcfurnace.tier.09", "Epic Short Circuit Heater", 9, "",
-				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 1, 128000, 0, 1, "ArcFurnace.png",
+				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
 				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",null).getStackForm(1L));
 
 		CustomItemList.ArcFurnaceUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11074, "basicmachine.arcfurnace.tier.10", "Epic Short Circuit Heater II",10, "",
-				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 1, 128000, 0, 1, "ArcFurnace.png",
+				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
 				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",null).getStackForm(1L));
 
 		CustomItemList.ArcFurnaceUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11075, "basicmachine.arcfurnace.tier.11", "Epic Short Circuit Heater III",11, "",
-				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 1, 128000, 0, 1, "ArcFurnace.png",
+				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
 				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",null).getStackForm(1L));
 
 		CustomItemList.ArcFurnaceUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11076, "basicmachine.arcfurnace.tier.12", "Epic Short Circuit Heater IV",12, "",
-				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 1, 128000, 0, 1, "ArcFurnace.png",
+				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
 				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",null).getStackForm(1L));
 
 		//ArcFurnaceLuV
