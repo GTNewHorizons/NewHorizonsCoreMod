@@ -2023,7 +2023,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.ArcFurnaceLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11070, "basicmachine.arcfurnace.tier.06", "Elite Arc Furnace", 6, "",
-				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 1, 128000, 0, 1, "ArcFurnace.png",
+				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
 				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",
 				new Object[] { "WGW", "CMC", "PPP",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
