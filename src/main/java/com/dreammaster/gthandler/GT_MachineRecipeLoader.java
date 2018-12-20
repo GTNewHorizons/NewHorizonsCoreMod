@@ -786,6 +786,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addCentrifugeRecipe(new ItemStack(Items.fire_charge, 1, 0), GT_Values.NI, GT_Values.NF, GT_Values.NF, new ItemStack(Items.blaze_powder, 1, 0), new ItemStack(Items.gunpowder, 1, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000, 10000, 10000}, 400, 8);
 
+        GT_Values.RA.addElectrolyzerRecipe(ItemList.Cell_Empty.get(1, new Object[0]), GT_ModHandler.getModItem("TwilightForest", "tile.TFAuroraBrick", 1L, 0), GT_Values.NF, Materials.Helium_3.getFluid(100), new ItemStack(Blocks.stone, 1, 0), GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, null, 600, 480);
+
         if (Loader.isModLoaded("gendustry")) {
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("gendustry", "HoneyDrop", 1L, 2005), CustomItemList.SnowQueenBloodDrop.get(1L), Materials.FierySteel.getFluid(200L), 1500, 1600, 48);
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("gendustry", "HoneyDrop", 1L, 2007), GT_ModHandler.getModItem("MagicBees", "propolis", 1L, 3),  new FluidStack(FluidRegistry.getFluid("ic2coolant"), 200), 5000, 1200, 2);
