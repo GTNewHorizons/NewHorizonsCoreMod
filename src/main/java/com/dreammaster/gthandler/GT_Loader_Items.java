@@ -575,6 +575,7 @@ public class GT_Loader_Items
 		CustomItemList.StargateShieldingFoil.set(ItemList.StargateShieldingFoil.getIS());
 		CustomItemList.StargateCrystalDust.set(ItemList.StargateCrystalDust.getIS());
 		CustomItemList.TCetiESeaweedExtract.set(ItemList.TCetiESeaweedExtract.getIS());
+		CustomItemList.RawNeutronium.set(ItemList.RawNeutronium.getIS());
 
 	}
 }

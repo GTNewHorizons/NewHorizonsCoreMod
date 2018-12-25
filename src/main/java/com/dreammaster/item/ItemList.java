@@ -398,6 +398,7 @@ public enum ItemList
     PicoWafer(new ModSimpleBaseItem("PicoWafer",ModTabList.ModCircuitsTab)),
     //AdvancedPicoWafer(new ModSimpleBaseItem("AdvancedPicoWafer",ModTabList.ModCircuitsTab)),
     RawMytryl(new ModSimpleBaseItem("RawMytryl", ModTabList.ModSpaceTab)),
+    RawNeutronium(new ModSimpleBaseItem("RawNeutronium", ModTabList.ModSpaceTab)),
     RawOrbTier1(new ModSimpleBaseItem("RawOrbTier1", ModTabList.ModThaumcraftTab)),
     RawOrbTier2(new ModSimpleBaseItem("RawOrbTier2", ModTabList.ModThaumcraftTab)),
     RawOrbTier3(new ModSimpleBaseItem("RawOrbTier3", ModTabList.ModThaumcraftTab)),
