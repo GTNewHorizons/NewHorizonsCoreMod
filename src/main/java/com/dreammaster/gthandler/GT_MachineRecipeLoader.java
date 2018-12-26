@@ -737,7 +737,7 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("harvestthenether", "ignisfruitItem", 45L, 0), FluidRegistry.getFluidStack("potion.awkward", 750), FluidRegistry.getFluidStack("potion.fireresistance", 750), 120, 8, false);
 
-        GT_Values.RA.addBlastRecipe(CustomItemList.RawNeutronium.get(1L), 		GT_Utility.getIntegratedCircuit(1), 		Materials.Radon.getGas(1000L), 					GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Neutronium, 1L), GT_Values.NI,9000, 10000, 500000);
+        GT_Values.RA.addBlastRecipe(CustomItemList.RawNeutronium.get(1L), 		GT_Utility.getIntegratedCircuit(1), 		Materials.Radon.getGas(1000L), 					GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Neutronium, 1L), GT_Values.NI,10000, 500000, 9000);
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 2L),GT_ModHandler.getModItem("TConstruct","GlassPane",2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Tin, 1L) }, GT_Values.NF, GT_ModHandler.getModItem("BuildCraft|Transport","item.buildcraftPipe.pipepowercobblestone",1L), 200, 120);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),GT_ModHandler.getModItem("TConstruct","GlassPane",2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 1L) }, GT_Values.NF, GT_ModHandler.getModItem("BuildCraft|Transport","item.buildcraftPipe.pipepowerwood",1L), 200, 120);
