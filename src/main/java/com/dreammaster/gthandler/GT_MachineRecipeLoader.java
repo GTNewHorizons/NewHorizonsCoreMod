@@ -1382,7 +1382,7 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lead, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Antimony, 1L), GT_Values.NI, GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BatteryAlloy, 5L), 100, 4);
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Antimony, 1L), GT_Values.NI, GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SolderingAlloy, 10L), 100, 8);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L), GT_Values.NI, GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnalium, 3L), 100, 4);
+        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 2L), GT_Values.NI, GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnalium, 3L), 100, 4);
 
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 16L), GT_Values.NI, GT_Utility.getIntegratedCircuit(1), GT_Values.NI, Materials.Helium.getPlasma(2304L), GT_Values.NF, CustomItemList.RawNeutronium.get(16L), 3600, 500000);
 
