@@ -360,6 +360,7 @@ public enum ItemList
     NeutroniumBars(new ModSimpleBaseItem("NeutroniumBars", ModTabList.ModBarsAndCasingsTab)),
     NeutroniumItemCasing(new ModSimpleBaseItem("NeutroniumItemCasing", ModTabList.ModBarsAndCasingsTab)),
     NeutroniumIronPlate(new ModSimpleBaseItem("NeutroniumIronPlate", ModTabList.ModSolarTab)),
+    NeutronReflectorSmallParts(new ModSimpleBaseItem("NeutronReflectorSmallParts", ModTabList.ModCircuitsTab)),
     NeutronReflectorParts(new ModSimpleBaseItem("NeutronReflectorParts", ModTabList.ModCircuitsTab)),
     NetherStarFragment(new ModSimpleBaseItem("NetherStarFragment", ModTabList.ModGenericTab)),
     Nothing(new ModSimpleBaseItem("Nothing", ModTabList.ModGenericTab)),
