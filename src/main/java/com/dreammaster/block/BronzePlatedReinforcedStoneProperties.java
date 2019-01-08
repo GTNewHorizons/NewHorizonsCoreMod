@@ -19,13 +19,13 @@ public class BronzePlatedReinforcedStoneProperties implements IExtendedBlockProp
     public boolean getUnbreakable() { return false;	}
 
     @Override
-    public int getHarvestLevel() { return 3; }
+    public int getHarvestLevel() { return 4; }
 
     @Override
     public int getOpacity() { return 100; }
 
     @Override
-    public float getHardness() { return 100.0F; }
+    public float getHardness() { return 60.0F; }
 
     @Override
     public float getLightLevel() { return 0; }
