@@ -4,6 +4,7 @@ import com.dreammaster.item.ItemList;
 
 import cpw.mods.fml.common.Loader;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -97,7 +98,6 @@ public class OreDictHandler {
 			reg_rock(OreDictTypes.BarnardaE.name(),GT_ModHandler.getModItem("GalaxySpace", "barnardaEsubgrunt", 1L, 0));
 			reg_rock(OreDictTypes.BarnardaF.name(),GT_ModHandler.getModItem("GalaxySpace", "barnardaFsubgrunt", 1L, 0));
 			reg_rock(OreDictTypes.BarnardaF.name(),GT_ModHandler.getModItem("GalaxySpace", "barnardaFgrunt", 1L, 0));
-			
 			reg_rock(OreDictTypes.Io.name(),GT_ModHandler.getModItem("GalaxySpace", "ioglowstone", 1L, 0));
 			reg_rock(OreDictTypes.Enceladus.name(),GT_ModHandler.getModItem("GalaxySpace", "enceladusglowstone", 1L, 0));
 			reg_rock(OreDictTypes.Pluto.name(),GT_ModHandler.getModItem("GalaxySpace", "plutoglowstone", 1L, 0));
@@ -106,7 +106,7 @@ public class OreDictHandler {
 			
 			for (byte i=0;i<2;i++) {
 				reg_rock(OreDictTypes.Deimos.name(),GT_ModHandler.getModItem("GalaxySpace", "deimosblocks", 1L, i));
-				reg_rock(OreDictTypes.Venus.name(),GT_ModHandler.getModItem("GalaxySpace", "venussblocks", 1L, i));
+				reg_rock(OreDictTypes.Venus.name(),GT_ModHandler.getModItem("GalaxySpace", "venusblocks", 1L, i));
 				reg_rock(OreDictTypes.Ceres.name(),GT_ModHandler.getModItem("GalaxySpace", "ceresblocks", 1L, i));
 				reg_rock(OreDictTypes.Europa.name(),GT_ModHandler.getModItem("GalaxySpace", "europagrunt", 1L, i));
 				reg_rock(OreDictTypes.Ganymede.name(),GT_ModHandler.getModItem("GalaxySpace", "ganymedeblocks", 1L, i));
@@ -122,10 +122,16 @@ public class OreDictHandler {
 	public static void reg_additional() {
 		if(Loader.isModLoaded("GalaxySpace"))
 		for (byte i = 0; i<6; i++) {
-		OreDictionary.registerOre("cropSpace", GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 1L,i));
-		OreDictionary.registerOre("cropTcetiESeaweed", GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 1L,i));
+			OreDictionary.registerOre("cropSpace", GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 1L,i));
+			OreDictionary.registerOre("cropTcetiESeaweed", GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 1L,i));
 		}
+
 		OreDictionary.registerOre("foodSalt", ItemList.EdibleSalt.getIS());
+
+		//Olivine = Peridot
+		for (int i = 0; i < OreDictionary.getOres("blockOlivine").size(); i++) {
+			OreDictionary.registerOre("blockPeridot", OreDictionary.getOres("blockOlivine").get(i));
+		}
 	}
 	
 	public static void register_all() {
@@ -148,5 +154,6 @@ public class OreDictHandler {
 		OreDictionary.registerOre(OreDictTypes.rock.name()+S, I);
 		OreDictionary.registerOre(OreDictTypes.rock.name()+OreDictTypes.Space.name(), I);
 		}
+
 	}
 }
