@@ -31,7 +31,7 @@ public class SteelPlatedReinforcedStoneProperties implements IExtendedBlockPrope
     public float getLightLevel() { return 0; }
 
     @Override
-    public float getResistance() { return 350.0F; }
+    public float getResistance() { return 333.4F; }
 
     @Override
     public String getBlockName() { return "SteelPlatedReinforcedStone"; }

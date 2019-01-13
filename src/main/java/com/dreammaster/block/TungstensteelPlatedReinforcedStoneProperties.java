@@ -31,7 +31,7 @@ public class TungstensteelPlatedReinforcedStoneProperties implements IExtendedBl
     public float getLightLevel() { return 0; }
 
     @Override
-    public float getResistance() { return 667.6F; }
+    public float getResistance() { return 666.7F; }
 
     @Override
     public String getBlockName() { return "TungstensteelPlatedReinforcedStone"; }

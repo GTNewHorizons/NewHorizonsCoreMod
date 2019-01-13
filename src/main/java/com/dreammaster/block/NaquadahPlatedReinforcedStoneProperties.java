@@ -25,7 +25,7 @@ public class NaquadahPlatedReinforcedStoneProperties implements IExtendedBlockPr
     public int getOpacity() { return 100; }
 
     @Override
-    public float getHardness() { return 300.0F; }
+    public float getHardness() { return 1666.7F; }
 
     @Override
     public float getLightLevel() { return 0; }

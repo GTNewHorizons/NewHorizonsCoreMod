@@ -31,7 +31,7 @@ public class TitaniumPlatedReinforcedStoneProperties implements IExtendedBlockPr
     public float getLightLevel() { return 0; }
 
     @Override
-    public float getResistance() { return 400.0F; }
+    public float getResistance() { return 500.0F; }
 
     @Override
     public String getBlockName() { return "TitaniumPlatedReinforcedStone"; }
