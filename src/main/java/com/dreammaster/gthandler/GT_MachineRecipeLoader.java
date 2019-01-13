@@ -1435,6 +1435,17 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addVacuumFreezerRecipe(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Titanium, 1L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L), 144, 480);
         GT_Values.RA.addVacuumFreezerRecipe(CustomItemList.HotNetherrackBrick.get(1L), CustomItemList.InfernalBrick.get(1L), 200, 120);
 
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), GT_Values.NF,                    1,  Materials.Charcoal.getGems(20), Materials.Creosote.getFluid(4000),         640, 64);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), Materials.Nitrogen.getGas(1000), 2,  Materials.Charcoal.getGems(20), Materials.Creosote.getFluid(4000),         320, 96);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), GT_Values.NF,                    3,  Materials.Ash.getDust(4),       Materials.OilHeavy.getFluid(200),          320, 192);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), GT_Values.NF,                    3,  Materials.Charcoal.getGems(20), Materials.CharcoalByproducts.getGas(4000), 640, 64);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), Materials.Nitrogen.getGas(1000), 4,  Materials.Charcoal.getGems(20), Materials.CharcoalByproducts.getGas(4000), 320, 96);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), GT_Values.NF,                    5,  Materials.Charcoal.getGems(20), Materials.WoodGas.getGas(1500),            640, 64);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), Materials.Nitrogen.getGas(1000), 6,  Materials.Charcoal.getGems(20), Materials.WoodGas.getGas(1500),            320, 96);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), GT_Values.NF,                    7,  Materials.Charcoal.getGems(20), Materials.WoodVinegar.getFluid(3000),      640, 64);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), Materials.Nitrogen.getGas(1000), 8,  Materials.Charcoal.getGems(20), Materials.WoodVinegar.getFluid(3000),      320, 96);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), GT_Values.NF,                    9,  Materials.Charcoal.getGems(20), Materials.WoodTar.getFluid(1500),          640, 64);
+        GT_Values.RA.addPyrolyseRecipe(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W), Materials.Nitrogen.getGas(1000), 10, Materials.Charcoal.getGems(20), Materials.WoodTar.getFluid(1500),          320, 96);
 
         GT_Values.RA.addLatheRecipe(new ItemStack(Blocks.wooden_slab, 1, 0), new ItemStack(Items.bowl, 1), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1), 50, 8);
         GT_Values.RA.addLatheRecipe(new ItemStack(Blocks.wooden_slab, 1, 1), new ItemStack(Items.bowl, 1), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1), 50, 8);
