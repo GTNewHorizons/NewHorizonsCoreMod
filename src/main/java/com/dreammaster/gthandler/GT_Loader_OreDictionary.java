@@ -88,6 +88,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(OrePrefixes.block, Materials.MeteoricIron, GT_ModHandler.getModItem("GalacticraftCore", "tile.gcBlockCore", 1L, 12));
 
         GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.HeeEndium, GT_ModHandler.getModItem("HardcoreEnderExpansion", "tile.endium_ingot", 1L, 0));
+        GT_OreDictUnificator.registerOre(OrePrefixes.block, Materials.HeeEndium, GT_ModHandler.getModItem("HardcoreEnderExpansion", "endium_block", 1L, 0));
 
         GT_OreDictUnificator.registerOre("oreAdamantium", GT_ModHandler.getModItem("GalaxySpace", "oberonblocks", 1L, 3));
         GT_OreDictUnificator.registerOre("ingotAdamantium", GT_ModHandler.getModItem("GalaxySpace", "item.Ingots", 1L, 0));
