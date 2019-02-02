@@ -548,7 +548,15 @@ public class GT_Loader_Machines
 		CustomItemList.CuttingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10823, "basicmachine.cutter.tier.09", "Epic Object Divider", 9, "Slice'N Dice",
 				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 1, 2, 1000, 0, 1, "Cutter.png",
-				"", false, false, 0, "CUTTER",null).getStackForm(1L));
+				"", false, false, 0, "CUTTER",
+				new Object[] { "WCG", "VMB", "CWE",
+						'M', ItemList.Hull_MAX,
+						'E', ItemList.Electric_Motor_UHV,
+						'V', ItemList.Conveyor_Module_UHV,
+						'C', OrePrefixes.circuit.get(Materials.Infinite),
+						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(),
+						'B', OreDictNames.craftingDiamondBlade  }).getStackForm(1L));
 
 		CustomItemList.CuttingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10824, "basicmachine.cutter.tier.10", "Epic Object Divider II",10, "Slice'N Dice",
