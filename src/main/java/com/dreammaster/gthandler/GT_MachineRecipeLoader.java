@@ -14,6 +14,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ELEMENT;
 import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -1121,6 +1122,11 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addFormingPressRecipe(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Glass, 9L), ItemList.Shape_Mold_Block.get(0L), new ItemStack(Blocks.glass, 1, 0), 100, 30);
         GT_Values.RA.addFormingPressRecipe(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 4L), ItemList.Shape_Mold_Block.get(0L), new ItemStack(Blocks.glass, 1, 0), 100, 30);
         GT_Values.RA.addFormingPressRecipe(GT_ModHandler.getModItem("BloodArsenal", "glass_shard", 2L, 0), ItemList.Shape_Mold_Block.get(0L), new ItemStack(Blocks.glass, 1, 0), 100, 30);
+
+        //MK4
+        GT_Values.RA.addFusionReactorRecipe(Materials.Plutonium241.getMolten(144), Materials.Helium.getGas(1000), ELEMENT.getInstance().CURIUM.getFluid(144), 96, 98304, 500000000);
+        GT_Values.RA.addFusionReactorRecipe(ELEMENT.getInstance().CURIUM.getFluid(144), Materials.Helium.getPlasma(144), ELEMENT.getInstance().CALIFORNIUM.getFluid(144), 128, 196608, 750000000);
+        GT_Values.RA.addFusionReactorRecipe(Materials.Plutonium241.getMolten(144), Materials.Calcium.getPlasma(144), Materials.Flerovium.getMolten(144), 160, 196608, 1000000000);
 
         GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.AnnealedCopper, 1L), ItemList.Shape_Extruder_Rod.get(0L), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnnealedCopper, 2L), 200, 90);
         GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L), ItemList.Shape_Extruder_Rod.get(0L), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 2L), 200, 90);
