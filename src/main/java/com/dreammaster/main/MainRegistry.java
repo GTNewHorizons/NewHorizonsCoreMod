@@ -1,5 +1,6 @@
 package com.dreammaster.main;
 
+import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
@@ -90,6 +91,7 @@ public class MainRegistry
     public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
     private static SpaceDimRegisterer SpaceDimReg;
+    private static BacteriaRegistry BacteriaRegistry;
 
     public static void AddLoginError(String pMessage)
     {
@@ -246,6 +248,7 @@ public class MainRegistry
         {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
+        BacteriaRegistry = new BacteriaRegistry();
     }
 
     private static boolean RegisterNonEnumItems()
@@ -291,6 +294,7 @@ public class MainRegistry
             }
 
         }
+
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -366,6 +370,7 @@ public class MainRegistry
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
+        BacteriaRegistry.runAllPostinit();
     }
 
     /**
