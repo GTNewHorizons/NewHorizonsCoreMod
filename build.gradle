@@ -40,7 +40,7 @@ group= "com.dreammaster" // http://maven.apache.org/guides/mini/guide-naming-con
 archivesBaseName = "GTNewHorizonsCoreMod"
 
 minecraft {
-    version = "${config.forge.version}-${config.minecraft.version}"
+    version = "${config.minecraft.version}-${config.forge.version}-${config.minecraft.version}"
     runDir = "eclipse"
 
     replaceIn "src/main/java/com/dreammaster/lib/Refstrings.java"
@@ -157,7 +157,16 @@ task getRailCraft(type: Download, dependsOn: "getHEE") {
     mustRunAfter "repackMinecraft"
 }
 
-task getGtPlusPlus(type: Download, dependsOn: "getRailCraft") {
+task getBartworks(type: Download, dependsOn: "getRailCraft") {
+	onlyIf {
+		!file("libs/bartworks.1.7.10.-0.3.22-dev.jar").exists()
+    }
+	src 'https://github.com/bartimaeusnek/bartworks/releases/download/untagged-37a034594f832f88c68d/bartworks.1.7.10.-0.3.22-dev.jar'
+    dest file("libs/bartworks.1.7.10.-0.3.22-dev.jar")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
+task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
     onlyIf {
         !file("libs/GT-PlusPlus-1.6.02-release.jar").exists()
     }

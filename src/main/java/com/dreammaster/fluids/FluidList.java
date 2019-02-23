@@ -8,6 +8,7 @@ import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
 
 public enum FluidList {
 	SodiumPotassium(new ModSimpleBaseFluid(ModFluidManager.GetNewFluid("SodiumPotassium"), Material.water), ModTabList.ModFluidsTab),
@@ -19,7 +20,6 @@ public enum FluidList {
 	CompressedOxygen(ExtendedFluidCollection.getCompressedOxygen(), ModTabList.ModFluidsTab),
 	CompressedNitrogen(ExtendedFluidCollection.getCompressedNitrogen(), ModTabList.ModFluidsTab),
 	Pollution(ExtendedFluidCollection.getPollution(), ModTabList.ModFluidsTab),
-
 	// Do not delete this
 	EndOfList(null, null);
 	
@@ -50,5 +50,13 @@ public enum FluidList {
 		}
 		
 		return tResult;
+	}
+
+	public FluidStack getFluidStack(){
+		return getFluidStack(1000L);
+	}
+
+	public FluidStack getFluidStack(long ammount){
+		return new FluidStack(this.Fluid.getFluid(),(int)ammount);
 	}
 }
