@@ -152,7 +152,12 @@ public class AllPurposeDebugCommand implements ICommand
     catch( Exception e )
     {
       e.printStackTrace();
-      PlayerChatHelper.SendError( pCmdSender, "Unknown error occoured [%s]", e.getMessage() );
+      if (pCmdSender != null){
+        PlayerChatHelper.SendError( pCmdSender, "Unknown error occoured [%s]", e.getMessage() );
+      }
+      else {
+        MainRegistry.Logger.info("Unknown error occoured "+e.getMessage());        
+      }      
     }
   }
 
@@ -165,14 +170,10 @@ public class AllPurposeDebugCommand implements ICommand
   }
 
   private void SendHelpToPlayer( ICommandSender pCmdSender )
-  {    
-    if (pCmdSender == null){
-      MainRegistry.Logger.error("Command can only be executed ingame");
-      return;
-    }
+  {   
     if( !InGame( pCmdSender ) )
     {
-      PlayerChatHelper.SendPlain( pCmdSender, "Command can only be executed ingame" );
+      MainRegistry.Logger.info("Command can only be executed ingame" );
     }
     else
     {
