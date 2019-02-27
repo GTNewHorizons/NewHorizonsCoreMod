@@ -43,7 +43,6 @@ public class ItemInHandInfoCommand implements ICommand
     @Override
     public List getCommandAliases()
     {
-
         return aliases;
     }
 
@@ -55,7 +54,7 @@ public class ItemInHandInfoCommand implements ICommand
         {
             if (!InGame(pCmdSender))
             {
-                PlayerChatHelper.SendPlain(pCmdSender, "You have to execute this command ingame");
+                MainRegistry.Logger.error("Command can only be executed ingame");
                 return;
             }
             
@@ -105,13 +104,20 @@ public class ItemInHandInfoCommand implements ICommand
         return tResult;
     }
     
-    private boolean InGame(ICommandSender pCmdSender)
-    {
-        return pCmdSender instanceof EntityPlayer;
+  private boolean InGame( ICommandSender pCmdSender )
+  {
+    if (pCmdSender == null){
+      return false;
     }
+    return pCmdSender instanceof EntityPlayer;
+}
 
     private void SendHelpToPlayer(ICommandSender pCmdSender)
     {
+        if (pCmdSender == null){
+            MainRegistry.Logger.error("Command can only be executed ingame");
+            return;
+        }
         if (!InGame(pCmdSender))
         {
             PlayerChatHelper.SendPlain(pCmdSender, "Command can only be executed ingame");            
