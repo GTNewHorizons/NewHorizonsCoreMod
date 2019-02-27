@@ -60,7 +60,11 @@ public class AllPurposeDebugCommand implements ICommand
   }
 
   private void moarArgs( ICommandSender pCmdSender )
-  {
+  {    
+    if (pCmdSender == null){
+      MainRegistry.Logger.error("Y U NO GIEV MOAR ARGS?");
+      return;
+    }
     PlayerChatHelper.SendError( pCmdSender, "Y U NO GIEV MOAR ARGS?" );
   }
 
@@ -154,11 +158,18 @@ public class AllPurposeDebugCommand implements ICommand
 
   private boolean InGame( ICommandSender pCmdSender )
   {
+    if (pCmdSender == null){
+      return false;
+    }
     return pCmdSender instanceof EntityPlayer;
   }
 
   private void SendHelpToPlayer( ICommandSender pCmdSender )
-  {
+  {    
+    if (pCmdSender == null){
+      MainRegistry.Logger.error("Command can only be executed ingame");
+      return;
+    }
     if( !InGame( pCmdSender ) )
     {
       PlayerChatHelper.SendPlain( pCmdSender, "Command can only be executed ingame" );
