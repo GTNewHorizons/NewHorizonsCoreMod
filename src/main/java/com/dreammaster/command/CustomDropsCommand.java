@@ -46,7 +46,6 @@ public class CustomDropsCommand implements ICommand
   @Override
   public List getCommandAliases()
   {
-
     return aliases;
   }
 
@@ -55,10 +54,10 @@ public class CustomDropsCommand implements ICommand
   {
     if( pArgs.length == 0 )
     {
-      if( InGame( pCmdSender ) ) {
+      if(InGame( pCmdSender ) ) {
           PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /customdrops help for help");
       } else {
-          PlayerChatHelper.SendPlain(pCmdSender, "[CDRP] Syntax error. Type /customdrops help for help");
+          MainRegistry.Logger.info("[CDRP] Syntax error. Type /customdrops help for help");
       }
       return;
     }
@@ -69,7 +68,7 @@ public class CustomDropsCommand implements ICommand
     else if("toggleinfo".equalsIgnoreCase(pArgs[0]))
     {
       if( !InGame( pCmdSender ) ) {
-          PlayerChatHelper.SendPlain(pCmdSender, "[CDRP] This command can only be executed ingame");
+          MainRegistry.Logger.info("[CDRP] This command can only be executed ingame");
       } else
       {
         EntityPlayer tEP = (EntityPlayer) pCmdSender;
@@ -81,16 +80,16 @@ public class CustomDropsCommand implements ICommand
       boolean tFlag = MainRegistry.Module_CustomDrops.ReloadCustomDrops();
       if( !tFlag )
       {
-        if( !InGame( pCmdSender ) ) {
-            PlayerChatHelper.SendPlain(pCmdSender, "[CDRP] Reload failed. Check your log for syntax errors");
+        if(!InGame( pCmdSender ) ) {
+            MainRegistry.Logger.info("[CDRP] Reload failed. Check your log for syntax errors");
         } else {
             PlayerChatHelper.SendWarn(pCmdSender, "Reload failed. Check your log for syntax errors");
         }
       }
       else
       {
-        if( !InGame( pCmdSender ) ) {
-            PlayerChatHelper.SendPlain(pCmdSender, "[CDRP] Reload done. New config is activated");
+        if(!InGame( pCmdSender ) ) {
+            MainRegistry.Logger.info("[CDRP] Reload done. New config is activated");
         } else {
             PlayerChatHelper.SendInfo(pCmdSender, "Reload done. New config is activated");
         }
@@ -103,14 +102,17 @@ public class CustomDropsCommand implements ICommand
 
   private boolean InGame( ICommandSender pCmdSender )
   {
-      return pCmdSender instanceof EntityPlayer;
+    if (pCmdSender == null){
+        return false;
+    }
+    return pCmdSender instanceof EntityPlayer;
   }
 
   private void SendHelpToPlayer( ICommandSender pCmdSender )
   {
     if( !InGame( pCmdSender ) )
     {
-      PlayerChatHelper.SendPlain( pCmdSender, "[CDRP] Valid options are: reload" );
+      MainRegistry.Logger.info("[CDRP] Valid options are: reload" );
     }
     else
     {
@@ -121,6 +123,9 @@ public class CustomDropsCommand implements ICommand
   @Override
   public boolean canCommandSenderUseCommand( ICommandSender pCommandSender )
   {
+    if (pCommandSender == null){
+      return true;
+    }
     if( pCommandSender instanceof EntityPlayerMP )
     {
       EntityPlayerMP tEP = (EntityPlayerMP) pCommandSender;
