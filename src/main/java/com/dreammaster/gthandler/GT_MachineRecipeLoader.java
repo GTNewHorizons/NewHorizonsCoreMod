@@ -2497,7 +2497,7 @@ public class GT_MachineRecipeLoader implements Runnable{
     private void run4() {
 
         //Arcane Slaps -> Arcane Stone
-        GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSlabStone",4L),GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSolid",4L,6),160,4);
+        GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSlabStone",4L),GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSolid",1L,6),160,4);
         //Astral Silver & Soldering Alloy + reverse
         GT_Values.RA.addMixerRecipe(Materials.Silver.getDust(2),Materials.Thaumium.getDust(1),GT_Utility.getIntegratedCircuit(1),null,null,null,Materials.AstralSilver.getDust(3),60,480);
         GT_Values.RA.addMixerRecipe(Materials.Tin.getDust(9),Materials.Antimony.getDust(1),GT_Utility.getIntegratedCircuit(1),null,null,null,Materials.SolderingAlloy.getDust(10),60,30);
