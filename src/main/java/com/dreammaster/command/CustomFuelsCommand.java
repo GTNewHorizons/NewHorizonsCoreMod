@@ -43,7 +43,6 @@ public class CustomFuelsCommand implements ICommand
     @Override
     public List getCommandAliases()
     {
-
         return aliases;
     }
 
@@ -56,7 +55,7 @@ public class CustomFuelsCommand implements ICommand
             if (InGame(pCmdSender)) {
                 PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /customfuels help for help");
             } else {
-                PlayerChatHelper.SendPlain(pCmdSender, "[CFLS] Syntax error. Type /customfuels help for help");
+                MainRegistry.Logger.info("[CFLS] Syntax error. Type /customfuels help for help");
             }
             return;
         }
@@ -70,7 +69,7 @@ public class CustomFuelsCommand implements ICommand
             if (!tFlag)
             {
                 if (!InGame(pCmdSender)) {
-                    PlayerChatHelper.SendPlain(pCmdSender, "[CFLS] Reload failed. Check your log for syntax errors");
+                    MainRegistry.Logger.info("[CFLS] Reload failed. Check your log for syntax errors");
                 } else {
                     PlayerChatHelper.SendWarn(pCmdSender, "Reload failed. Check your log for syntax errors");
                 }
@@ -78,7 +77,7 @@ public class CustomFuelsCommand implements ICommand
             else
             {
                 if (!InGame(pCmdSender)) {
-                    PlayerChatHelper.SendPlain(pCmdSender, "[CFLS] Reload done. New config is activated");
+                    MainRegistry.Logger.info("[CFLS] Reload done. New config is activated");
                 } else {
                     PlayerChatHelper.SendInfo(pCmdSender, "Reload done. New config is activated");
                 }
@@ -91,6 +90,9 @@ public class CustomFuelsCommand implements ICommand
 
     private boolean InGame(ICommandSender pCmdSender)
     {
+        if (pCmdSender == null){
+            return false;
+        }
         return pCmdSender instanceof EntityPlayer;
     }
 
@@ -98,7 +100,7 @@ public class CustomFuelsCommand implements ICommand
     {
         if (!InGame(pCmdSender))
         {
-            PlayerChatHelper.SendPlain(pCmdSender, "[CFLS] Valid options are: reload");            
+            MainRegistry.Logger.info("[CFLS] Valid options are: reload");            
         }
         else
         {
@@ -109,6 +111,9 @@ public class CustomFuelsCommand implements ICommand
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender pCommandSender)
     {
+        if (pCommandSender == null){
+            return true;
+        }
        	if (pCommandSender instanceof EntityPlayerMP)
     	{
     		EntityPlayerMP tEP = (EntityPlayerMP) pCommandSender;
