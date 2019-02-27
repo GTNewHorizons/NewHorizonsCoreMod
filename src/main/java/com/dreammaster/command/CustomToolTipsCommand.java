@@ -43,7 +43,6 @@ public class CustomToolTipsCommand implements ICommand
     @Override
     public List getCommandAliases()
     {
-
         return aliases;
     }
 
@@ -56,7 +55,7 @@ public class CustomToolTipsCommand implements ICommand
             if (InGame(pCmdSender)) {
                 PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /customtooltips help for help");
             } else {
-                PlayerChatHelper.SendPlain(pCmdSender, "[CTT] Syntax error. Type /customtooltips help for help");
+                MainRegistry.Logger.info("[CTT] Syntax error. Type /customtooltips help for help");
             }
             return;
         }
@@ -70,7 +69,7 @@ public class CustomToolTipsCommand implements ICommand
             if (!tFlag)
             {
                 if (!InGame(pCmdSender)) {
-                    PlayerChatHelper.SendPlain(pCmdSender, "[CTT] Reload failed. Check your log for syntax errors");
+                    MainRegistry.Logger.info("[CTT] Reload failed. Check your log for syntax errors");
                 } else {
                     PlayerChatHelper.SendWarn(pCmdSender, "Reload failed. Check your log for syntax errors");
                 }
@@ -78,7 +77,7 @@ public class CustomToolTipsCommand implements ICommand
             else
             {
                 if (!InGame(pCmdSender)) {
-                    PlayerChatHelper.SendPlain(pCmdSender, "[CTT] Reload done. New config is activated");
+                    MainRegistry.Logger.info("[CTT] Reload done. New config is activated");
                 } else {
                     PlayerChatHelper.SendInfo(pCmdSender, "Reload done. New config is activated");
                 }
@@ -91,6 +90,9 @@ public class CustomToolTipsCommand implements ICommand
 
     private boolean InGame(ICommandSender pCmdSender)
     {
+        if (pCmdSender == null){
+            return false;
+        }
         return pCmdSender instanceof EntityPlayer;
     }
 
@@ -98,7 +100,7 @@ public class CustomToolTipsCommand implements ICommand
     {
         if (!InGame(pCmdSender))
         {
-            PlayerChatHelper.SendPlain(pCmdSender, "[CTT] Valid options are: reload");            
+            MainRegistry.Logger.info("[CTT] Valid options are: reload");            
         }
         else
         {
@@ -109,6 +111,9 @@ public class CustomToolTipsCommand implements ICommand
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender pCommandSender)
     {
+        if (pCommandSender == null){
+            return true;
+        }
     	if (pCommandSender instanceof EntityPlayerMP)
     	{
     		EntityPlayerMP tEP = (EntityPlayerMP) pCommandSender;
