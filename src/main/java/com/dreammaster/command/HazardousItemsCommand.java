@@ -44,7 +44,6 @@ public class HazardousItemsCommand implements ICommand
     @Override
     public List getCommandAliases()
     {
-
         return aliases;
     }
 
@@ -57,7 +56,7 @@ public class HazardousItemsCommand implements ICommand
             if (InGame(pCmdSender)) {
                 PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /hazarditems help for help");
             } else {
-                PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Syntax error. Type /hazarditems help for help");
+                MainRegistry.Logger.info("[HAZIT] Syntax error. Type /hazarditems help for help");
             }
             return;
         }
@@ -71,9 +70,9 @@ public class HazardousItemsCommand implements ICommand
             if (!InGame(pCmdSender))
             {
                 if (tResult) {
-                    PlayerChatHelper.SendPlain(pCmdSender, "[OK] Config has been saved");
+                    MainRegistry.Logger.info("[OK] Config has been saved");
                 } else {
-                    PlayerChatHelper.SendPlain(pCmdSender, "[ERROR] Config could not be saved. Check your logfiles");
+                    MainRegistry.Logger.info("[ERROR] Config could not be saved. Check your logfiles");
                 }
             }
             else
@@ -90,9 +89,9 @@ public class HazardousItemsCommand implements ICommand
         {
             if (!InGame(pCmdSender))
             {
-                PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Valid DamageTypes are:");
-                PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] inFire, onFire, lava, inWall, drown, starve, cactus, fall");
-                PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] outOfWorld, generic, magic, wither, anvil, fallingBlock");
+                MainRegistry.Logger.info("[HAZIT] Valid DamageTypes are:");
+                MainRegistry.Logger.info("[HAZIT] inFire, onFire, lava, inWall, drown, starve, cactus, fall");
+                MainRegistry.Logger.info("[HAZIT] outOfWorld, generic, magic, wither, anvil, fallingBlock");
             }
             else
             {
@@ -121,9 +120,9 @@ public class HazardousItemsCommand implements ICommand
             {
                 if (!InGame(pCmdSender))
                 {
-                    PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Config file has changed and was not saved yet.");
-                    PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] To confirm the reload, type");
-                    PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] /hazarditems reload force");
+                    MainRegistry.Logger.info("[HAZIT] Config file has changed and was not saved yet.");
+                    MainRegistry.Logger.info("[HAZIT] To confirm the reload, type");
+                    MainRegistry.Logger.info("[HAZIT] /hazarditems reload force");
                 }
                 else
                 {
@@ -139,7 +138,7 @@ public class HazardousItemsCommand implements ICommand
                 if (!tFlag)
                 {
                     if (!InGame(pCmdSender)) {
-                        PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Reload failed. Check your log for syntax errors");
+                        MainRegistry.Logger.info("[HAZIT] Reload failed. Check your log for syntax errors");
                     } else {
                         PlayerChatHelper.SendWarn(pCmdSender, "Reload failed. Check your log for syntax errors");
                     }
@@ -147,7 +146,7 @@ public class HazardousItemsCommand implements ICommand
                 else
                 {
                     if (!InGame(pCmdSender)) {
-                        PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Reload done. New config is activated");
+                        MainRegistry.Logger.info("[HAZIT] Reload done. New config is activated");
                     } else {
                         PlayerChatHelper.SendInfo(pCmdSender, "Reload done. New config is activated");
                     }
@@ -221,6 +220,9 @@ public class HazardousItemsCommand implements ICommand
 
     private boolean InGame(ICommandSender pCmdSender)
     {
+        if (pCmdSender == null){
+        return false;
+        }
         return pCmdSender instanceof EntityPlayer;
     }
     
@@ -233,6 +235,7 @@ public class HazardousItemsCommand implements ICommand
         if (!InGame(pCmdSender)) {
             PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] List of known Potions; Name(ID)");
         } else {
+            MainRegistry.Logger.info("List of known Potions; Name(ID)");
             PlayerChatHelper.SendInfo(pCmdSender, "List of known Potions; Name(ID)");
         }
         
@@ -250,7 +253,7 @@ public class HazardousItemsCommand implements ICommand
             if (tMsg.length() + t.length() > 50)
             {
                 if (!InGame(pCmdSender)) {
-                    PlayerChatHelper.SendPlain(pCmdSender, tMsg.toString());
+                    MainRegistry.Logger.info(tMsg.toString());
                 } else {
                     PlayerChatHelper.SendInfo(pCmdSender, tMsg.toString());
                 }
@@ -260,7 +263,7 @@ public class HazardousItemsCommand implements ICommand
             }
         }
         if (!InGame(pCmdSender)) {
-            PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] End of list");
+            MainRegistry.Logger.info("[HAZIT] End of list");
         } else {
             PlayerChatHelper.SendInfo(pCmdSender, "End of list");
         }
@@ -270,7 +273,7 @@ public class HazardousItemsCommand implements ICommand
     {
         if (!InGame(pCmdSender))
         {
-            PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Valid options are: reload|save|listdamagesources|listpotions");            
+            MainRegistry.Logger.info("[HAZIT] Valid options are: reload|save|listdamagesources|listpotions");            
         }
         else
         {
@@ -352,6 +355,9 @@ public class HazardousItemsCommand implements ICommand
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender pCommandSender)
     {
+        if (pCommandSender == null){
+            return true;
+        }
        	if (pCommandSender instanceof EntityPlayerMP)
     	{
     		EntityPlayerMP tEP = (EntityPlayerMP) pCommandSender;
