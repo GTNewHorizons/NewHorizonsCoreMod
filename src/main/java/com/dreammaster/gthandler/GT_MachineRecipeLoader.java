@@ -2496,6 +2496,16 @@ public class GT_MachineRecipeLoader implements Runnable{
 
     private void run4() {
 
+        //Arcane Slaps -> Arcane Stone
+        GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSlabStone",4L),GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSolid",1L,6),160,4);
+        //Astral Silver & Soldering Alloy + reverse
+        GT_Values.RA.addMixerRecipe(Materials.Silver.getDust(2),Materials.Thaumium.getDust(1),GT_Utility.getIntegratedCircuit(1),null,null,null,Materials.AstralSilver.getDust(3),60,480);
+        GT_Values.RA.addMixerRecipe(Materials.Tin.getDust(9),Materials.Antimony.getDust(1),GT_Utility.getIntegratedCircuit(1),null,null,null,Materials.SolderingAlloy.getDust(10),60,30);
+        GT_Values.RA.addCentrifugeRecipe(Materials.AstralSilver.getDust(3),null,null,null,Materials.Silver.getDust(2),Materials.Thaumium.getDust(1),null,null,null,null,null,300,480);
+        GT_Values.RA.addCentrifugeRecipe(Materials.SolderingAlloy.getDust(10),null,null,null,Materials.Tin.getDust(9),Materials.Antimony.getDust(1),null,null,null,null,null,300,30);
+        //Fertilisert Liquid reverse recipe
+        GT_Values.RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(1),null,FluidRegistry.getFluidStack("fluid.fertiliser",144),null,ItemList.IC2_Fertilizer.get(1L),null,null,null,null,null,null,40,16);
+
         //Main Frame Circuits and Neuro CPU
         GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Crystalmainframe.get(1L), 72000, new Object[]{
                 ItemList.Circuit_Board_Wetware_Extreme.get(1L),
