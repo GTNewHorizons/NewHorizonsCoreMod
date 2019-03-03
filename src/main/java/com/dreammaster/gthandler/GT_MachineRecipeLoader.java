@@ -1051,7 +1051,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(0L), CustomItemList.MarshmallowForm.get(0L), CustomItemList.MarshmallowForm.get(1L), 200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L), GT_ModHandler.getModItem("BuildCraft|Silicon", "redstoneChipset", 1L, 4), CustomItemList.EssentiaCircuit.get(1L), 300, 480);
 
-        GT_Values.RA.addFormingPressRecipe(new ItemStack(Blocks.stone_pressure_plate, 1, 32767), CustomItemList.EtchedLowVoltageWiring.get(1L), GT_ModHandler.getModItem("ProjRed|Core", "projectred.core.part", 1L, 0), 100, 16);
+        GT_Values.RA.addFormingPressRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L), CustomItemList.EtchedLowVoltageWiring.get(1L), GT_ModHandler.getModItem("ProjRed|Core", "projectred.core.part", 1L, 0), 100, 16);
 
         GT_Values.RA.addForgeHammerRecipe(new ItemStack(Items.nether_star, 1, 0), CustomItemList.NetherStarFragment.get(2L), 16, 30);
 
