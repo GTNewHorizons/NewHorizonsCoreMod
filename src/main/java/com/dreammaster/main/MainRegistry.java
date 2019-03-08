@@ -14,6 +14,7 @@ import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.lib.Refstrings;
+import com.dreammaster.loginhandler.LoginHandler;
 import com.dreammaster.modbabychest.BlockBabyChest;
 import com.dreammaster.modbabychest.ItemBlockBabyChest;
 import com.dreammaster.modbabychest.TileEntityBabyChest;
@@ -249,6 +250,15 @@ public class MainRegistry
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
         BacteriaRegistry = new BacteriaRegistry();
+
+        if (CoreConfig.ModLoginMessage_Enabled)
+        {
+            FMLCommonHandler.instance().bus().register(new LoginHandler());
+        }
+        Logger.warn( "==================================================" );
+        Logger.warn( "Welcome to Gregtech:New Horizons " + CoreModConfig.ModPackVersion );
+        Logger.warn( "Please bring comments to " + "https://discord.gg/EXshrPV" );
+        Logger.warn( "==================================================" );
     }
 
     private static boolean RegisterNonEnumItems()
