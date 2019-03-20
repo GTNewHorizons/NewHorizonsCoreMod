@@ -249,8 +249,11 @@ public class MainRegistry
         {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
-        BacteriaRegistry = new BacteriaRegistry();
-
+	    
+	if (Loader.isModLoaded("bartworks"))
+	{
+            BacteriaRegistry = new BacteriaRegistry();
+	}
         if (CoreConfig.ModLoginMessage_Enabled)
         {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
@@ -380,7 +383,10 @@ public class MainRegistry
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
-        BacteriaRegistry.runAllPostinit();
+	if (Loader.isModLoaded("bartworks"))
+	{
+            BacteriaRegistry.runAllPostinit();
+	}
     }
 
     /**
