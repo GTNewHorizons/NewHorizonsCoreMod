@@ -1676,7 +1676,11 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer3.get(1L), CustomItemList.ReinforcedGlassLense.get(0), CustomItemList.WaferTier3.get(1L), 200, 1024);
 
         //Field Generator
-        GT_Values.RA.addAssemblerRecipe(ItemList.QuantumStar.get(1L), ItemList.Circuit_Ultimate.get(4L), Materials.HSSS.getMolten(1728), ItemList.Field_Generator_IV.get(1L), 1800, 7680);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4), Materials.RedSteel.getMolten(288), ItemList.Field_Generator_LV.get(1), 600, 30);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4), Materials.TungstenSteel.getMolten(288), ItemList.Field_Generator_MV.get(1), 600, 120);
+        GT_Values.RA.addAssemblerRecipe(ItemList.QuantumEye.get(1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4), Materials.NiobiumTitanium.getMolten(576), ItemList.Field_Generator_HV.get(1), 600, 480);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4), Materials.HSSG.getMolten(576), ItemList.Field_Generator_EV.get(1), 600, 1920);
+        GT_Values.RA.addAssemblerRecipe(ItemList.QuantumStar.get(1L), ItemList.Circuit_Ultimate.get(4L), Materials.HSSS.getMolten(576), ItemList.Field_Generator_IV.get(1L), 600, 7680);
 
         //Motors
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.stick, Materials.IronMagnetic, 1L), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnyCopper, 4L), GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L)}, GT_Values.NF, ItemList.Electric_Motor_LV.get(1L), 200, 30);
