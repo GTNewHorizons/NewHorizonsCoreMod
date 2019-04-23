@@ -3895,6 +3895,60 @@ public class GT_Loader_Machines
 						'S', OrePrefixes.screw.get(Materials.AnyIron),
 						'X', OreDictNames.craftingPiston});
 
+		// ===================================================================================================
+		// Rock Breaker
+		// ===================================================================================================
+		CustomItemList.RockBreakerLuV.set(new GT_MetaTileEntity_RockBreaker(
+				12080 , "rockbreaker.tier.06", "Cryogenic Magma Solidifier R-9200", 6).getStackForm(1L));
+
+		CustomItemList.RockBreakerZPM.set(new GT_MetaTileEntity_RockBreaker(
+				12081, "rockbreaker.tier.07", "Cryogenic Magma Solidifier R-10200", 7).getStackForm(1L));
+
+		CustomItemList.RockBreakerUV.set(new GT_MetaTileEntity_RockBreaker(
+				12082, "rockbreaker.tier.08", "Cryogenic Magma Solidifier R-11200", 8).getStackForm(1L));
+
+		CustomItemList.RockBreakerUHV.set(new GT_MetaTileEntity_RockBreaker(
+				12083 , "rockbreaker.tier.09", "Cryogenic Magma Solidifier R-12200", 9).getStackForm(1L));
+
+		CustomItemList.RockBreakerUEV.set(new GT_MetaTileEntity_RockBreaker(
+				12084, "rockbreaker.tier.10", "Cryogenic Magma Solidifier R-13200", 10).getStackForm(1L));
+
+		CustomItemList.RockBreakerUIV.set(new GT_MetaTileEntity_RockBreaker(
+				12085, "rockbreaker.tier.11", "Cryogenic Magma Solidifier R-14200", 11).getStackForm(1L));
+
+		CustomItemList.RockBreakerUMV.set(new GT_MetaTileEntity_RockBreaker(
+				12086, "rockbreaker.tier.12", "Cryogenic Magma Solidifier R-15200", 12).getStackForm(1L));
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.RockBreakerLuV.get(1L),
+				bitsd,
+				new Object[]{"PED", "WMW", "GGG",
+						'P', ItemList.Electric_Piston_LuV,
+						'E', ItemList.Electric_Motor_LuV,
+						'D', OreDictNames.craftingGrinder,
+						'G', GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0),
+						'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium),
+						'M', ItemList.Hull_LuV});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.RockBreakerZPM.get(1L),
+				bitsd,
+				new Object[]{"PED", "WMW", "GGG",
+						'P', ItemList.Electric_Piston_ZPM,
+						'E', ItemList.Electric_Motor_ZPM,
+						'D', OreDictNames.craftingGrinder,
+						'G', GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0),
+						'W', OrePrefixes.cableGt01.get(Materials.Naquadah),
+						'M', ItemList.Hull_ZPM});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.RockBreakerUV.get(1L),
+				bitsd,
+				new Object[]{"PED", "WMW", "GGG",
+						'P', ItemList.Electric_Piston_UV,
+						'E', ItemList.Electric_Motor_UV,
+						'D', OreDictNames.craftingGrinder,
+						'G', GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0),
+						'W', OrePrefixes.cableGt01.get(Materials.NaquadahAlloy),
+						'M', ItemList.Hull_UV});
+
 		//ID's occupied from 15000-15500!! (in EM branch)
 
 		//TODO new tiered maybe

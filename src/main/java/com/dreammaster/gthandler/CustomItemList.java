@@ -70,7 +70,7 @@ public enum CustomItemList implements IItemContainer
 	PlasmaArcFurnaceLuV, PlasmaArcFurnaceZPM, PlasmaArcFurnaceUV, PlasmaArcFurnaceUHV, PlasmaArcFurnaceUEV, PlasmaArcFurnaceUIV, PlasmaArcFurnaceUMV,
 	PolarizerLuV, PolarizerZPM, PolarizerUV, PolarizerUHV, PolarizerUEV, PolarizerUIV, PolarizerUMV,
 	//PrinterLuV, PrinterZPM, PrinterUV,
-	//RockBreakerLuV, RockBreakerZPM, RockBreakerUV,
+	RockBreakerLuV, RockBreakerZPM, RockBreakerUV, RockBreakerUHV, RockBreakerUEV, RockBreakerUIV, RockBreakerUMV,
 	RecyclerLuV, RecyclerZPM, RecyclerUV, RecyclerUHV, RecyclerUEV, RecyclerUIV, RecyclerUMV,
 	ReplicatorLuV, ReplicatorZPM, ReplicatorUV, ReplicatorUHV, ReplicatorUEV, ReplicatorUIV, ReplicatorUMV,
 	ScannerLuV, ScannerZPM, ScannerUV, ScannerUHV, ScannerUEV, ScannerUIV, ScannerUMV,
