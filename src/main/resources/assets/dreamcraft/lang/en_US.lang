@@ -606,3 +606,6 @@ item.EnderEgg.name=Ender Egg
 item.RawPicoWafer.name=Raw Pico Wafer
 item.PicoWafer.name=Pico Wafer
 item.RawNeutronium.name=Raw Neutronium Dust
+item.itemCollagen.name=Collagen
+item.itemAgar.name=Agar
+item.itemGelatin.name=Gelatin
