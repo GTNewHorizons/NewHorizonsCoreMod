@@ -81,7 +81,6 @@ public class BioItemLoader {
 
         RA.addMultiblockChemicalRecipe(
                 new ItemStack[]{
-                        GT_Utility.getIntegratedCircuit(17),
                         BIOTEMSSTACKS[2].copy().splitStack(8),
                         ItemList.Circuit_Chip_Stemcell.get(16),
                         Materials.Salt.getDust(64)
