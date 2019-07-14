@@ -28,7 +28,7 @@ import static gregtech.api.enums.Materials.*;
 
 public class BacteriaRegistry {
 
-    private final static LinkedHashMap<String,BioCulture> CultureSet = new LinkedHashMap<>();
+    final static LinkedHashMap<String,BioCulture> CultureSet = new LinkedHashMap<>();
 
     public void runAllPostinit(){
         runLateBioOBJs();
@@ -115,14 +115,14 @@ public class BacteriaRegistry {
                         OilHeavy.getFluid(200),
                         Oil.getFluid(100),
                         Creosote.getFluid(250),
-                        Water.getFluid(300),
-                        FluidList.FermentedBacterialSludge.getFluidStack(9),
+                        Water.getFluid(280),
+                        FluidList.FermentedBacterialSludge.getFluidStack(10),
                         FermentedBiomass.getFluid(10),
                         RadoxSuperHeavy.getFluid(10),
                         RadoxHeavy.getFluid(10),
                         DelutedXenoxene.getFluid(10),
                         RadoxLight.getGas(10),
-                        RadoxSuperLight.getGas(1),
+                        RadoxSuperLight.getGas(10),
                 },
                 Ash.getDust(1),
                 600,
@@ -139,8 +139,8 @@ public class BacteriaRegistry {
         GT_Values.RA.addDistillationTowerRecipe(
                 RadoxCracked.getGas(1000),
                 new FluidStack[]{
-                        RadoxGas.getGas(1),
-                        RadoxLight.getGas(999),
+                        RadoxGas.getGas(100),
+                        RadoxLight.getGas(900),
                 },
                 Ash.getDust(1),
                 600,BW_Util.getMachineVoltageFromTier(8)
@@ -202,6 +202,6 @@ public class BacteriaRegistry {
             addBioLabRecipeIncubation(OreDictionary.getOres("cropTcetiESeaweed").get(i),CultureSet.get("TcetiEBac"),new int[]{250}, FluidRegistry.getFluidStack("unknowwater",8000),500, BW_Util.getMachineVoltageFromTier(8),0);
         }
         addBacterialVatRecipe(new ItemStack[]{AntimonyTrioxide.getDust(16),Osmium.getDust(16)},CultureSet.get("CombinedBac"),new FluidStack[]{Oil.getFluid(1000)},new FluidStack[]{Xenoxene.getFluid(1)},3600,BW_Util.getMachineVoltageFromTier(8),Materials.NaquadahEnriched,8,0,false);
-
+        new BioItemLoader();
     }
 }
