@@ -1048,6 +1048,11 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Rod_Long.get(0L),  ItemList.Shape_Mold_Rod_Long.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Rotor.get(0L),  ItemList.Shape_Mold_Rotor.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Turbine_Blade.get(0L),  ItemList.Shape_Mold_Turbine_Blade.get(1L),  200, 256);
+        GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Pipe_Tiny.get(0L),  ItemList.Shape_Mold_Pipe_Tiny.get(1L),  200, 256);
+        GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Pipe_Small.get(0L),  ItemList.Shape_Mold_Pipe_Small.get(1L),  200, 256);
+        GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Pipe_Medium.get(0L),  ItemList.Shape_Mold_Pipe_Medium.get(1L),  200, 256);
+        GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Pipe_Large.get(0L),  ItemList.Shape_Mold_Pipe_Large.get(1L),  200, 256);
+        GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Pipe_Huge.get(0L),  ItemList.Shape_Mold_Pipe_Huge.get(1L),  200, 256);
 
 
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Plate.get(0L),  ItemList.Shape_Extruder_Plate.get(1L),  200, 256);
