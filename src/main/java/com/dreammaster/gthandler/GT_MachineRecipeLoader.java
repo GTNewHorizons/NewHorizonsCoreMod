@@ -819,9 +819,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 e.printStackTrace();
             }
         }
-        if (Loader.isModLoaded("miscutils")) {
-            GT_Values.RA.addBrewingRecipeCustom(GT_Utility.getIntegratedCircuit(13), FluidRegistry.getFluidStack("xpjuice", 666),  FluidRegistry.getFluidStack("mobessence", 50), 50, 120,false);
-        }
+
         GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("Forestry", "beeCombs", 1L, 9), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("Forestry", "beeswax", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Iridium, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000, 100}, 300, 7680);
 
         GT_Values.RA.addCentrifugeRecipe(new ItemStack(Items.fire_charge, 1, 0), GT_Values.NI, GT_Values.NF, GT_Values.NF, new ItemStack(Items.blaze_powder, 1, 0), new ItemStack(Items.gunpowder, 1, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000, 10000, 10000}, 400, 8);
