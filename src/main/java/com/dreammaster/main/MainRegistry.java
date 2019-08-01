@@ -35,7 +35,10 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -47,18 +50,18 @@ import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
-import gregtech.api.GregTech_API;
 import gregtech.GT_Mod;
+import gregtech.api.GregTech_API;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 
-import static gregtech.api.enums.Dyes.*;
-
-import java.io.*;
+import java.io.File;
 import java.util.Random;
+
+import static gregtech.api.enums.Dyes.MACHINE_METAL;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -67,7 +70,9 @@ import java.util.Random;
         dependencies = 
         	"required-after:Forge@[10.13.2.1291,);"
         +	"required-after:YAMCore@[0.5.76,);" 
-        +	"required-after:Baubles@[1.0.1.10,);",
+        +	"required-after:Baubles@[1.0.1.10,);"
+		+   "after:EnderIO;"
+        +   "after:HardcoreEnderExpansion;",
 		certificateFingerprint = "1cca375192a26693475fb48268f350a462208dce")
 public class MainRegistry
 {

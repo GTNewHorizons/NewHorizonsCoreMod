@@ -3,16 +3,13 @@ package com.dreammaster.gthandler;
 import com.dreammaster.gthandler.casings.GT_Loader_CasingsNH;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.food.QuantumBread;
-import cpw.mods.fml.common.event.FMLInterModComms;
+import com.dreammaster.modfixes.enderIO.FrankenskullFix;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
-import crazypants.enderio.EnderIO;
-import crazypants.enderio.machine.soul.SoulBinderRecipeManager;
-import crazypants.enderio.material.FrankenSkull;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 
 /**
  * How to add new Stuff:
@@ -152,7 +149,8 @@ public class GT_CustomLoader
     public void run()
     {
     	GameRegistry.registerItem(QuantumBread.Instance(), "itemQuantumToast");
-        fixEnderIO();
+    	if (Loader.isModLoaded("EnderIO"))
+            FrankenskullFix.fixEnderIO();
     	MaterialLoader.run();
     	FluidPipeLoader.run();
     	WireLoader.run();
@@ -164,27 +162,5 @@ public class GT_CustomLoader
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
         OreDictionary.run();
-    }
-
-    private void fixEnderIO(){
-        //Example of how to add a recipe:
-
-        NBTTagCompound root = new NBTTagCompound();
-        root.setString(SoulBinderRecipeManager.KEY_RECIPE_UID, "sentientEnderMK2");
-        root.setInteger(SoulBinderRecipeManager.KEY_REQUIRED_ENERGY, 100000);
-        root.setInteger(SoulBinderRecipeManager.KEY_REQUIRED_XP, 10);
-        root.setString(SoulBinderRecipeManager.KEY_SOUL_TYPES, "SpecialMobs.SpecialWitch");
-        ItemStack is = new ItemStack(EnderIO.itemFrankenSkull, 1, FrankenSkull.ENDER_RESONATOR.ordinal());
-        NBTTagCompound stackRoot = new NBTTagCompound();
-        is.writeToNBT(stackRoot);
-        root.setTag(SoulBinderRecipeManager.KEY_INPUT_STACK, stackRoot);
-        is = new ItemStack(EnderIO.itemFrankenSkull, 1, FrankenSkull.SENTIENT_ENDER.ordinal());
-        stackRoot = new NBTTagCompound();
-        is.writeToNBT(stackRoot);
-        root.setTag(SoulBinderRecipeManager.KEY_OUTPUT_STACK, stackRoot);
-
-        SoulBinderRecipeManager.getInstance().addRecipeFromNBT(root);
-        FMLInterModComms.sendMessage("EnderIO",  "recipe:soulbinder", root);
-
     }
 }
