@@ -11,6 +11,7 @@ import gregtech.api.GregTech_API;
 import gregtech.api.enums.*;
 import gregtech.api.metatileentity.implementations.*;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.common.tileentities.automation.GT_MetaTileEntity_ChestBuffer;
 import gregtech.common.tileentities.generators.GT_MetaTileEntity_PlasmaGenerator;
@@ -3949,37 +3950,91 @@ public class GT_Loader_Machines
 						'W', OrePrefixes.cableGt01.get(Materials.NaquadahAlloy),
 						'M', ItemList.Hull_UV});
 
-		//ID's occupied from 15000-15500!! (in EM branch)
+		// ===================================================================================================
+		// Circuit Assembling Machine
+		// ===================================================================================================
+		CustomItemList.CircuitAssemblerUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+				12087, "basicmachine.circuitassembler.tier.09", "Ultimate Circuit Assembling Machine", 9, "Avengers, Assemble!",
+				GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+				"", false, false, 0, "CIRCUITASSEMBLER",
+				new Object[] { "RCE", "KHK", "WCW",
+						'R', ItemList.Robot_Arm_UHV,
+						'E', ItemList.Emitter_UHV,
+						'H', ItemList.Hull_MAX,
+						'K', ItemList.Conveyor_Module_UHV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
+		CustomItemList.CircuitAssemblerUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+				12088, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine II", 10, "Avengers, Assemble!",
+				GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+				"", false, false, 0, "CIRCUITASSEMBLER",
+				new Object[] { "RCE", "KHK", "WCW",
+						'R', ItemList.Robot_Arm_UEV,
+						'E', ItemList.Emitter_UEV,
+						'H', CustomItemList.Hull_UEV,
+						'K', ItemList.Conveyor_Module_UEV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
-		//TODO new tiered maybe
-		
-
-
-		/**
-		 * A List of all registered MetaTileEntities
-		 * <p/>
-		 * 0 -  1199 are used by GregTech.
-		 * 1200 -  2047 are used for GregTech Cables.
-		 * 2048 -  2559 are reserved for OvermindDL.
-		 * 2560 -  3071 are reserved for Immibis.
-		 * 3072 -  3583 are reserved for LinusPhoenix.
-		 * 3584 -  4095 are reserved for BloodyAsp.
-		 * 4096 -  5095 are used for GregTech Frames.
-		 * 5096 -  6099 are used for GregTech Pipes.
-		 * 6100 -  8191 are used for GregTech Decoration Blocks.
-		 * 8192 -  8703 are reserved for ZL123.
-		 * 8704 -  9215 are reserved for Mr10Movie.
-		 * 9216 -  9727 are used for GregTech Automation Machines.
-		 * 9728 - 10239 are reserved for 28Smiles.
-		 * 10240 - 10751 are reserved for VirMan.
-		 * 10752 - 11263 are reserved for Briareos81.
-		 * 11264 - 12000 are reserved for the next one who asks me.
-		 * 9728 - 32766 are currently free.
-		 * <p/>
-		 * Contact me if you need a free ID-Range, which doesn't conflict with other Addons.
-		 * You could make an ID-Config, but we all know, what "stupid" customers think about conflicting ID's
-		 */
-		//// WE USE RANGE 10750+  (next free id's start from ... )
-		// 27.01.2016 Namikon
+		//todo: uncomment this when UIV/UMV parts are done in the assembly line
+//		CustomItemList.CircuitAssemblerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+//				12089, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine III", 11, "Avengers, Assemble!",
+//				GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+//				"", false, false, 0, "CIRCUITASSEMBLER",
+//				new Object[] {
+//				"RCE", "KHK", "WCW",
+//						'R', ItemList.Robot_Arm_UIV,
+//						'E', ItemList.Emitter_UIV,
+//						'H', CustomItemList.Hull_UIV,
+//						'K', ItemList.Conveyor_Module_UIV,
+//						'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+//						'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable()
+//						}).getStackForm(1L)
+//		);
+//		CustomItemList.CircuitAssemblerUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+//						12090, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+//						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+//						"", false, false, 0, "CIRCUITASSEMBLER",
+//						new Object[] {
+//						"RCE", "KHK", "WCW",
+//						'R', ItemList.Robot_Arm_UMV,
+//						'E', ItemList.Emitter_UMV,
+//						'H', CustomItemList.Hull_UMV,
+//						'K', ItemList.Conveyor_Module_UMV,
+//						'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
+//						'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable()
+//						}).getStackForm(1L)
+//		);
+	   /*
+ 		* TODO: WE USE RANGE 10750-12500
+ 		*
+ 		* ID's occupied from 15000-15500!! (in EM branch)
+		* ID's occupied from 12500-13000!! (bartimaeusnek)
+		* A List of all registered MetaTileEntities
+		* <p/>
+		* 0 -  1199 are used by GregTech.
+		* 1200 -  2047 are used for GregTech Cables.
+		* 2048 -  2559 are reserved for OvermindDL.
+		* 2560 -  3071 are reserved for Immibis.
+		* 3072 -  3583 are reserved for LinusPhoenix.
+		* 3584 -  4095 are reserved for BloodyAsp.
+		* 4096 -  5095 are used for GregTech Frames.
+		* 5096 -  6099 are used for GregTech Pipes.
+		* 6100 -  8191 are used for GregTech Decoration Blocks.
+		* 8192 -  8703 are reserved for ZL123.
+		* 8704 -  9215 are reserved for Mr10Movie.
+		* 9216 -  9727 are used for GregTech Automation Machines.
+		* 9728 - 10239 are reserved for 28Smiles.
+		* 10240 - 10751 are reserved for VirMan.
+		* 10752 - 11263 are reserved for Briareos81.
+		* 11264 - 12000 are reserved for the next one who asks me.
+		* 12500 - 13000 are reserved for bartimaeusnek
+		* 9728 - 32766 are currently free.
+		* <p/>
+		* Contact me if you need a free ID-Range, which doesn't conflict with other Addons.
+		* You could make an ID-Config, but we all know, what "stupid" customers think about conflicting ID's
+		* 27.01.2016 Namikon
+		* updated: 30.08.2019 bartimaeusnek
+		*/
 	}
 }

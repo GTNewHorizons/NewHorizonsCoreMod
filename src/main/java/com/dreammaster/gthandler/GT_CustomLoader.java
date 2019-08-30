@@ -44,7 +44,31 @@ public class GT_CustomLoader
         		OrePrefixes.gemExquisite.get(Materials.GarnetRed),
         		new ItemStack(Blocks.dragon_egg, 1),
         		Materials.Osmium,
-        		Materials.Neutronium);
+        		Materials.Neutronium),
+        UHV(OrePrefixes.circuit.get(Materials.Infinite),
+        		OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
+                Materials.Bedrockium,
+                null,
+                null,
+                null,
+                Materials.Neutronium,
+                null),
+        UEV(OrePrefixes.circuit.get(Materials.Bio),
+                null,
+                Materials.Draconium,
+                null,
+                null,
+                null,
+                Materials.Bedrockium,
+                null),
+        UIV(null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
 
 
         private Object _mCircuit;
