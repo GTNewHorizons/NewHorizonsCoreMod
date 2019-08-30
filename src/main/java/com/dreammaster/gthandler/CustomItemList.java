@@ -42,6 +42,7 @@ public enum CustomItemList implements IItemContainer
 	CentrifugeLuV, CentrifugeZPM, CentrifugeUV, CentrifugeUHV, CentrifugeUEV, CentrifugeUIV, CentrifugeUMV,
 	ChemicalBathLuV, ChemicalBathZPM, ChemicalBathUV, ChemicalBathUHV, ChemicalBathUEV, ChemicalBathUIV, ChemicalBathUMV,
 	ChemicalReactorLuV, ChemicalReactorZPM, ChemicalReactorUV, ChemicalReactorUHV, ChemicalReactorUEV, ChemicalReactorUIV, ChemicalReactorUMV,
+	CircuitAssemblerUHV,CircuitAssemblerUEV,CircuitAssemblerUIV,CircuitAssemblerUMV,
 	CompressorLuV, CompressorZPM, CompressorUV, CompressorUHV, CompressorUEV, CompressorUIV, CompressorUMV,
 	CuttingMachineLuV, CuttingMachineZPM, CuttingMachineUV, CuttingMachineUHV, CuttingMachineUEV, CuttingMachineUIV, CuttingMachineUMV,
 	DisassemblerLuV, DisassemblerZPM, DisassemblerUV, DisassemblerUHV, DisassemblerUEV, DisassemblerUIV, DisassemblerUMV,
