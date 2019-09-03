@@ -33,6 +33,10 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 4L), 100, 1920);
 
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4L), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, CustomItemList.EmptySpCell.get(1L), 100, 120);
+        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 1L), GT_Values.NI, GT_Values.NI, new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000), Materials.SuperCoolant.getFluid(2000), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L), 200, 480);
+        GT_Values.RA.addFluidSolidifierRecipe(CustomItemList.EmptySpCell.get(1L), Materials.SuperCoolant.getFluid(1000L), ItemList.Reactor_Coolant_Sp_1.get(1L), 128, 16);
+        
         GT_Values.RA.addAlloySmelterRecipe(CustomItemList.MicaBasedSheet.get(4L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),CustomItemList.MicaInsulatorSheet.get(4L),400,30);
         GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),CustomItemList.AluminoSilicateWool.get(2L),1200,30);
         GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L), CustomItemList.AluminoSilicateWool.get(2L), 1200, 30);
