@@ -16,6 +16,7 @@ public enum ItemList
     TenKCell(new ModSimpleBaseItem("TenKCell", ModTabList.ModGenericTab)),
     ThirtyKCell(new ModSimpleBaseItem("ThirtyKCell", ModTabList.ModGenericTab)),
     SixtyKCell(new ModSimpleBaseItem("SixtyKCell", ModTabList.ModGenericTab)),
+    EmptySpCell(new ModSimpleBaseItem("EmptySpCell", ModTabList.ModGenericTab)),
     AdsorptionFilterCasing(new ModSimpleBaseItem("AdsorptionFilterCasing", ModTabList.ModGenericTab)),
     AdsorptionFilter(new ModSimpleBaseItem("AdsorptionFilter", ModTabList.ModGenericTab)),
     AdsorptionFilterDirty(new ModSimpleBaseItem("AdsorptionFilterDirty", ModTabList.ModGenericTab)),
