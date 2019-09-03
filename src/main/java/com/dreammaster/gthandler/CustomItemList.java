@@ -42,6 +42,7 @@ public enum CustomItemList implements IItemContainer
 	CentrifugeLuV, CentrifugeZPM, CentrifugeUV, CentrifugeUHV, CentrifugeUEV, CentrifugeUIV, CentrifugeUMV,
 	ChemicalBathLuV, ChemicalBathZPM, ChemicalBathUV, ChemicalBathUHV, ChemicalBathUEV, ChemicalBathUIV, ChemicalBathUMV,
 	ChemicalReactorLuV, ChemicalReactorZPM, ChemicalReactorUV, ChemicalReactorUHV, ChemicalReactorUEV, ChemicalReactorUIV, ChemicalReactorUMV,
+	CircuitAssemblerUHV,CircuitAssemblerUEV,CircuitAssemblerUIV,CircuitAssemblerUMV,
 	CompressorLuV, CompressorZPM, CompressorUV, CompressorUHV, CompressorUEV, CompressorUIV, CompressorUMV,
 	CuttingMachineLuV, CuttingMachineZPM, CuttingMachineUV, CuttingMachineUHV, CuttingMachineUEV, CuttingMachineUIV, CuttingMachineUMV,
 	DisassemblerLuV, DisassemblerZPM, DisassemblerUV, DisassemblerUHV, DisassemblerUEV, DisassemblerUIV, DisassemblerUMV,
@@ -70,7 +71,7 @@ public enum CustomItemList implements IItemContainer
 	PlasmaArcFurnaceLuV, PlasmaArcFurnaceZPM, PlasmaArcFurnaceUV, PlasmaArcFurnaceUHV, PlasmaArcFurnaceUEV, PlasmaArcFurnaceUIV, PlasmaArcFurnaceUMV,
 	PolarizerLuV, PolarizerZPM, PolarizerUV, PolarizerUHV, PolarizerUEV, PolarizerUIV, PolarizerUMV,
 	//PrinterLuV, PrinterZPM, PrinterUV,
-	//RockBreakerLuV, RockBreakerZPM, RockBreakerUV,
+	RockBreakerLuV, RockBreakerZPM, RockBreakerUV, RockBreakerUHV, RockBreakerUEV, RockBreakerUIV, RockBreakerUMV,
 	RecyclerLuV, RecyclerZPM, RecyclerUV, RecyclerUHV, RecyclerUEV, RecyclerUIV, RecyclerUMV,
 	ReplicatorLuV, ReplicatorZPM, ReplicatorUV, ReplicatorUHV, ReplicatorUEV, ReplicatorUIV, ReplicatorUMV,
 	ScannerLuV, ScannerZPM, ScannerUV, ScannerUHV, ScannerUEV, ScannerUIV, ScannerUMV,
@@ -89,7 +90,7 @@ public enum CustomItemList implements IItemContainer
 	SteelBars, AluminiumBars, StainlessSteelBars, TungstenBars, TungstenSteelBars, IridiumBars, OsmiumBars, ChromeBars, TitaniumBars, NeutroniumBars,
 	RedstoneAlloyBars, ElectricalSteelBars, ConductiveIronBars, EnergeticAlloyBars, VibrantAlloyBars, PulsatingIronBars, SoulariumBars, EnderiumBaseBars, EnderiumBars,
 	PistonBlock, PistonPlate,ReinforcedGlassLense, ReinforcedGlassPLate,
-    StainlessSteelItemCasing, IridiumAlloyItemCasing, AluminiumItemCasing, ChromeItemCasing, IridiumItemCasing, NeutroniumItemCasing, OsmiumItemCasing, TitaniumItemCasing, TungstenItemCasing, TungstenSteelItemCasing,
+    IridiumAlloyItemCasing,
 	NagaScaleChip, NagaScaleFragment, LichBoneChip, LichBoneFragment, LichBone, FieryBloodDrop, CarminiteChip, CarminiteFragment, SnowQueenBloodDrop, SnowQueenBlood, NetherStarFragment,
 	AdvancedBoard, AdvancedProcessorBoard, NanoBoard, NanoProcessorBoard, QuantumBoard, QuantumProcessorBoard, EngravedQuantumChip, HighEnergyCircuitParts, HighEnergyFlowCircuit, NanoCircuit, PikoCircuit, QuantumCircuit,
     EngravedDiamondCrystalChip, EngravedEnergyChip,
@@ -128,10 +129,13 @@ public enum CustomItemList implements IItemContainer
 	MedalDerp,MedalGTExplosion,MedalBuilder,MedalEngineer,MedalWarp,
 	MaceratedPlantmass, BedrockiumPlate, EngineCore, AlumiteDust,
 	nameRemover, TwilightCrystal, UnfiredClayBrick, WoodenBrickForm, UnfiredSearedBrick, UnfiredCokeOvenBrick, UnfiredSlimeSoulBrick, RawLapotronCrystal, LapotronDust, SandDust,
-	AluminiumIronPlate, ReinforcedAluminiumIronPlate, IrradiantReinforcedAluminiumPlate, IrradiantReinforcedTitaniumPlate, IrradiantReinforcedTungstenPlate, IrradiantReinforcedTungstenSteelPlate, IrradiantReinforcedChromePlate, IrradiantReinforcedNaquadriaPlate, IrradiantReinforcedNeutroniumPlate,
+	AluminiumIronPlate, ReinforcedAluminiumIronPlate, IrradiantReinforcedAluminiumPlate, IrradiantReinforcedTitaniumPlate, IrradiantReinforcedTungstenPlate, IrradiantReinforcedTungstenSteelPlate, IrradiantReinforcedChromePlate, IrradiantReinforcedNaquadriaPlate, IrradiantReinforcedNeutroniumPlate, IrradiantReinforcedBedrockiumPlate,
 	QuantumCrystal, MysteriousCrystalLens, MysteriousCrystalGemFlawless, MysteriousCrystalGemExquisite,
 	PrimordialPearlFragment, SandStoneRod,
-	TheBigEgg, MutatedEgg, DraconiumEgg, EnderEgg;
+	TheBigEgg, MutatedEgg, DraconiumEgg, EnderEgg,
+	ChargedCertusQuartzDust, RawNeutronium, NeutronReflectorSmallParts,
+	RawPicoWafer, PicoWafer,
+	StargateFramePart, StargateChevron, StargateShieldingFoil, StargateCrystalDust, TCetiESeaweedExtract;
 
 
 	private ItemStack mStack;

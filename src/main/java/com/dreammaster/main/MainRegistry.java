@@ -1,5 +1,6 @@
 package com.dreammaster.main;
 
+import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
@@ -13,12 +14,14 @@ import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.lib.Refstrings;
+import com.dreammaster.loginhandler.LoginHandler;
 import com.dreammaster.modbabychest.BlockBabyChest;
 import com.dreammaster.modbabychest.ItemBlockBabyChest;
 import com.dreammaster.modbabychest.TileEntityBabyChest;
 import com.dreammaster.modctt.CustomToolTipsHandler;
 import com.dreammaster.modcustomdrops.CustomDropsHandler;
 import com.dreammaster.modcustomfuels.CustomFuelsHandler;
+import com.dreammaster.modfixes.GTpp.GregTechPlusPlusAbandonedAspectsFix;
 import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
@@ -32,7 +35,10 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -44,18 +50,18 @@ import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
-import gregtech.api.GregTech_API;
 import gregtech.GT_Mod;
+import gregtech.api.GregTech_API;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 
-import static gregtech.api.enums.Dyes.*;
-
-import java.io.*;
+import java.io.File;
 import java.util.Random;
+
+import static gregtech.api.enums.Dyes.MACHINE_METAL;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -64,7 +70,9 @@ import java.util.Random;
         dependencies = 
         	"required-after:Forge@[10.13.2.1291,);"
         +	"required-after:YAMCore@[0.5.76,);" 
-        +	"required-after:Baubles@[1.0.1.10,);",
+        +	"required-after:Baubles@[1.0.1.10,);"
+		+   "after:EnderIO;"
+        +   "after:HardcoreEnderExpansion;",
 		certificateFingerprint = "1cca375192a26693475fb48268f350a462208dce")
 public class MainRegistry
 {
@@ -90,6 +98,7 @@ public class MainRegistry
     public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
     private static SpaceDimRegisterer SpaceDimReg;
+    private static BacteriaRegistry BacteriaRegistry;
 
     public static void AddLoginError(String pMessage)
     {
@@ -246,6 +255,26 @@ public class MainRegistry
         {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
+	    
+	    if (Loader.isModLoaded("bartworks"))
+	    {
+            BacteriaRegistry = new BacteriaRegistry();
+	    }
+
+        Logger.debug("LOAD abandoned GT++ Aspects");
+        if (Loader.isModLoaded("Thaumcraft"))
+        {
+            new GregTechPlusPlusAbandonedAspectsFix();
+        }
+
+        if (CoreConfig.ModLoginMessage_Enabled)
+        {
+            FMLCommonHandler.instance().bus().register(new LoginHandler());
+        }
+        Logger.warn( "==================================================" );
+        Logger.warn( "Welcome to Gregtech:New Horizons " + CoreModConfig.ModPackVersion );
+        Logger.warn( "Please bring comments to " + "https://discord.gg/EXshrPV" );
+        Logger.warn( "==================================================" );
     }
 
     private static boolean RegisterNonEnumItems()
@@ -366,6 +395,9 @@ public class MainRegistry
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
+	if (Loader.isModLoaded("bartworks")) {
+            BacteriaRegistry.runAllPostinit();
+	}
     }
 
     /**

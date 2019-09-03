@@ -75,6 +75,12 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(OrePrefixes.plate, Materials.Manyullyn, GT_ModHandler.getModItem("dreamcraft", "item.ManyullynPlate", 1L, 0));
         GT_OreDictUnificator.registerOre(OrePrefixes.plate, Materials.Ardite, GT_ModHandler.getModItem("dreamcraft", "item.ArditePlate", 1L, 0));
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Alumite, ItemList.AlumiteDust.getIS());
+        GT_OreDictUnificator.registerOre("dustQuartzSand", GT_ModHandler.getModItem("dreamcraft", "item.SandDust", 1L, 0));
+        GT_OreDictUnificator.registerOre("dustChargedCertusQuartz", GT_ModHandler.getModItem("dreamcraft", "item.ChargedCertusQuartzDust", 1L, 0));
+        GT_OreDictUnificator.registerOre("plateChargedCertusQuartz", GT_ModHandler.getModItem("dreamcraft", "item.ChargedCertusQuartzPlate", 1L, 0));
+        GT_OreDictUnificator.registerOre("stickChargedCertusQuartz", GT_ModHandler.getModItem("dreamcraft", "item.ChargedCertusQuartzRod", 1L, 0));
+        GT_OreDictUnificator.registerOre("dustCokeOvenBrick", GT_ModHandler.getModItem("dreamcraft", "item.CokeOvenBrickDust", 1L, 0));
+        GT_OreDictUnificator.registerOre("ingotCokeOvenBrick", GT_ModHandler.getModItem("dreamcraft", "item.CokeOvenBrick", 1L, 0));
 
         GT_OreDictUnificator.registerOre(OrePrefixes.ore, Materials.Desh, GT_ModHandler.getModItem("GalacticraftMars", "tile.mars", 1L, 2));
         GT_OreDictUnificator.registerOre(OrePrefixes.stick, Materials.Desh, GT_ModHandler.getModItem("GalacticraftMars", "item.null", 1L, 1));
@@ -82,6 +88,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(OrePrefixes.block, Materials.MeteoricIron, GT_ModHandler.getModItem("GalacticraftCore", "tile.gcBlockCore", 1L, 12));
 
         GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.HeeEndium, GT_ModHandler.getModItem("HardcoreEnderExpansion", "tile.endium_ingot", 1L, 0));
+        GT_OreDictUnificator.registerOre(OrePrefixes.block, Materials.HeeEndium, GT_ModHandler.getModItem("HardcoreEnderExpansion", "endium_block", 1L, 0));
 
         GT_OreDictUnificator.registerOre("oreAdamantium", GT_ModHandler.getModItem("GalaxySpace", "oberonblocks", 1L, 3));
         GT_OreDictUnificator.registerOre("ingotAdamantium", GT_ModHandler.getModItem("GalaxySpace", "item.Ingots", 1L, 0));
@@ -156,8 +163,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre("dyeLime", GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 1L, 2877));
 
         //GTNH-Circuits
-        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Superconductor,ItemList.PikoCircuit.getIS());
-        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Infinite,ItemList.QuantumCircuit.getIS());
-        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Neutronium,ItemList.NanoCircuit.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Piko,ItemList.PikoCircuit.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Quantum,ItemList.QuantumCircuit.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Nano,ItemList.NanoCircuit.getIS());
     }
 }

@@ -25,7 +25,7 @@ public final class ExtendedFluidCollection
         
         return _mAmmonia;
     }
-    
+
     private static void populateAmmonia()
     {
         Fluid tAmmoniaFluid = ModFluidManager.GetNewFluid("Ammonia");

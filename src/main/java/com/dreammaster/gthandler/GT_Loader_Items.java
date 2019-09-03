@@ -307,16 +307,7 @@ public class GT_Loader_Items
 		CustomItemList.QuantumBoard.set(ItemList.QuantumBoard.getIS());
         CustomItemList.QuantumProcessorBoard.set(ItemList.QuantumProcessorBoard.getIS());
         CustomItemList.EngravedQuantumChip.set(ItemList.EngravedQuantumChip.getIS());
-        CustomItemList.StainlessSteelItemCasing.set(ItemList.StainlessSteelItemCasing.getIS());
         CustomItemList.IridiumAlloyItemCasing.set(ItemList.IridiumAlloyItemCasing.getIS());
-		CustomItemList.AluminiumItemCasing.set(ItemList.AluminiumItemCasing.getIS());
-		CustomItemList.ChromeItemCasing.set(ItemList.ChromeItemCasing.getIS());
-		CustomItemList.IridiumItemCasing.set(ItemList.IridiumItemCasing.getIS());
-		CustomItemList.NeutroniumItemCasing.set(ItemList.NeutroniumItemCasing.getIS());
-		CustomItemList.OsmiumItemCasing.set(ItemList.OsmiumItemCasing.getIS());
-		CustomItemList.TitaniumItemCasing.set(ItemList.TitaniumItemCasing.getIS());
-		CustomItemList.TungstenItemCasing.set(ItemList.TungstenItemCasing.getIS());
-		CustomItemList.TungstenSteelItemCasing.set(ItemList.TungstenSteelItemCasing.getIS());
 		CustomItemList.ReinforcedGlassPLate.set(ItemList.ReinforcedGlassPlate.getIS());
         CustomItemList.ReinforcedGlassLense.set(ItemList.ReinforcedGlassLense.getIS());
 		CustomItemList.MarshmallowForm.set(ItemList.MarshmallowForm.getIS());
@@ -565,6 +556,7 @@ public class GT_Loader_Items
 		CustomItemList.IrradiantReinforcedChromePlate.set(ItemList.IrradiantReinforcedChromePlate.getIS());
 		CustomItemList.IrradiantReinforcedNaquadriaPlate.set(ItemList.IrradiantReinforcedNaquadriaPlate.getIS());
 		CustomItemList.IrradiantReinforcedNeutroniumPlate.set(ItemList.IrradiantReinforcedNeutroniumPlate.getIS());
+		CustomItemList.IrradiantReinforcedBedrockiumPlate.set(ItemList.IrradiantReinforcedBedrockiumPlate.getIS());
 		CustomItemList.QuantumCrystal.set(ItemList.QuantumCrystal.getIS());
 		CustomItemList.MysteriousCrystalLens.set(ItemList.MysteriousCrystalLens.getIS());
 		CustomItemList.MysteriousCrystalGemFlawless.set(ItemList.MysteriousCrystalGemFlawless.getIS());
@@ -575,5 +567,16 @@ public class GT_Loader_Items
 		CustomItemList.MutatedEgg.set(ItemList.MutatedEgg.getIS());
 		CustomItemList.DraconiumEgg.set(ItemList.DraconiumEgg.getIS());
 		CustomItemList.EnderEgg.set(ItemList.EnderEgg.getIS());
+		CustomItemList.ChargedCertusQuartzDust.set(ItemList.ChargedCertusQuartzDust.getIS());
+		CustomItemList.RawPicoWafer.set(ItemList.RawPicoWafer.getIS());
+		CustomItemList.PicoWafer.set(ItemList.PicoWafer.getIS());
+		CustomItemList.StargateFramePart.set(ItemList.StargateFramePart.getIS());
+		CustomItemList.StargateChevron.set(ItemList.StargateChevron.getIS());
+		CustomItemList.StargateShieldingFoil.set(ItemList.StargateShieldingFoil.getIS());
+		CustomItemList.StargateCrystalDust.set(ItemList.StargateCrystalDust.getIS());
+		CustomItemList.TCetiESeaweedExtract.set(ItemList.TCetiESeaweedExtract.getIS());
+		CustomItemList.RawNeutronium.set(ItemList.RawNeutronium.getIS());
+		CustomItemList.NeutronReflectorSmallParts.set(ItemList.NeutronReflectorSmallParts.getIS());
+
 	}
 }

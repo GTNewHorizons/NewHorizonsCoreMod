@@ -1,10 +1,15 @@
 buildscript {
     repositories {
         mavenCentral()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
+		jcenter()
+		maven {
+			name = "gt"
+			url = "https://gregtech.overminddl1.com/"
+		}
+        //maven {
+        //    name = "forge"
+        //    url = "http://files.minecraftforge.net/maven"
+        //}
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
@@ -40,7 +45,7 @@ group= "com.dreammaster" // http://maven.apache.org/guides/mini/guide-naming-con
 archivesBaseName = "GTNewHorizonsCoreMod"
 
 minecraft {
-    version = "${config.forge.version}-${config.minecraft.version}"
+    version = "${config.minecraft.version}-${config.forge.version}-${config.minecraft.version}"
     runDir = "eclipse"
 
     replaceIn "src/main/java/com/dreammaster/lib/Refstrings.java"
@@ -83,6 +88,15 @@ repositories {
         name "OpenComputers"
         url "http://maven.cil.li"
     }
+		ivy {
+        name 'gtnh_download_source_stupid_underscore_typo'
+        artifactPattern "http://downloads.gtnewhorizons.com/Mods_for_Jenkins/[module]_[revision].[ext]"
+    }
+
+	ivy {
+        name 'gtnh_download_source'
+        artifactPattern "http://downloads.gtnewhorizons.com/Mods_for_Jenkins/[module]-[revision].[ext]"
+    }
 }
 
 dependencies {
@@ -109,10 +123,10 @@ dependencies {
 
 task getForestryAPI(type: Download) {
     onlyIf {
-        !file("libs/forestry_1.7.10-4.2.10.58-api.jar").exists()
+        !file("libs/forestry_1.7.10-4.2.16.64-api.jar").exists()
     }
-    src "http://maven.ic2.player.to/net/sengir/forestry/forestry_1.7.10/4.2.10.58/forestry_1.7.10-4.2.10.58-api.jar"
-    dest file("libs/forestry_1.7.10-4.2.10.58-api.jar")
+    src "https://gregtech.overminddl1.com/net/sengir/forestry/forestry_1.7.10/4.2.16.64/forestry_1.7.10-4.2.16.64-api.jar"
+    dest file("libs/forestry_1.7.10-4.2.16.64-api.jar")
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
 }
@@ -157,7 +171,16 @@ task getRailCraft(type: Download, dependsOn: "getHEE") {
     mustRunAfter "repackMinecraft"
 }
 
-task getGtPlusPlus(type: Download, dependsOn: "getRailCraft") {
+task getBartworks(type: Download, dependsOn: "getRailCraft") {
+	onlyIf {
+		!file("libs/bartworks.1.7.10.-0.3.22-dev.jar").exists()
+    }
+	src 'https://github.com/bartimaeusnek/bartworks/releases/download/untagged-37a034594f832f88c68d/bartworks.1.7.10.-0.3.22-dev.jar'
+    dest file("libs/bartworks.1.7.10.-0.3.22-dev.jar")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
+task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
     onlyIf {
         !file("libs/GT-PlusPlus-1.6.02-release.jar").exists()
     }
