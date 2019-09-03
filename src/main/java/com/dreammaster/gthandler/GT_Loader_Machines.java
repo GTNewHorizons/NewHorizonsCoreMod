@@ -169,17 +169,24 @@ public class GT_Loader_Machines
 						'C' , GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil() }).getStackForm(1L));
 
 
-		//Nulling recipes for now
 		CustomItemList.AlloySmelterUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10763, "basicmachine.alloysmelter.tier.09", "Epic Alloy Integrator", 9, "HighTech combination Smelter",
 				GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes, 2, 1, 0, 0, 1, "AlloySmelter.png",
-				GregTech_API.sSoundList.get(208), false, false, 0, "ALLOY_SMELTER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(208), false, false, 0, "ALLOY_SMELTER", new Object[] { "ECE", "CMC", "WCW",
+				'M' , GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+				'E' , GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+				'W' , GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+				'C' , GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() }).getStackForm(1L));
 
 		CustomItemList.AlloySmelterUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10764, "basicmachine.alloysmelter.tier.10", "Epic Alloy Integrator II",10, "HighTech combination Smelter",
 				GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes, 2, 1, 0, 0, 1, "AlloySmelter.png",
-				GregTech_API.sSoundList.get(208), false, false, 0, "ALLOY_SMELTER",null).getStackForm(1L));
-
+				GregTech_API.sSoundList.get(208), false, false, 0, "ALLOY_SMELTER", new Object[] { "ECE", "CMC", "WCW",
+				'M' , CustomItemList.Hull_UEV,
+				'E' , GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+				'W' , GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+				'C' , GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() }).getStackForm(1L));
+		//Nulling recipes for now
 		CustomItemList.AlloySmelterUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10765, "basicmachine.alloysmelter.tier.11", "Epic Alloy Integrator III",11, "HighTech combination Smelter",
 				GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes, 2, 1, 0, 0, 1, "AlloySmelter.png",
@@ -227,12 +234,21 @@ public class GT_Loader_Machines
 		CustomItemList.AmplifabricatorUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10773, "basicmachine.amplifab.tier.09", "Epic Amplicreator", 9, "Extracting UU Amplifier",
 				GT_Recipe.GT_Recipe_Map.sAmplifiers, 1, 1, 1000, 0, 1, "Amplifabricator.png",
-				GregTech_API.sSoundList.get(200), false, false, 0, "AMPLIFAB",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(200), false, false, 0, "AMPLIFAB",
+				new Object[] {"WPW", "PMP", "CPC",
+				'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+				'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+				'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+				'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4(), }).getStackForm(1L));
 
 		CustomItemList.AmplifabricatorUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10774, "basicmachine.amplifab.tier.10", "Epic Amplicreator II",10, "Extracting UU Amplifier",
 				GT_Recipe.GT_Recipe_Map.sAmplifiers, 1, 1, 1000, 0, 1, "Amplifabricator.png",
-				GregTech_API.sSoundList.get(200), false, false, 0, "AMPLIFAB",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(200), false, false, 0, "AMPLIFAB",new Object[] { "WPW", "PMP", "CPC",
+				'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+				'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+				'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+				'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4(), }).getStackForm(1L));
 
 		CustomItemList.AmplifabricatorUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10775, "basicmachine.amplifab.tier.11", "Epic Amplicreator III",11, "Extracting UU Amplifier",
@@ -289,22 +305,21 @@ public class GT_Loader_Machines
 				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 9, 1, 192000, 0, 1, "Assembler2.png",
 				"", false, false, 0, "ASSEMBLER",
 				new Object[] { "ACA", "VMV", "WCW",
-						'M', ItemList.Hull_MAX,
-						'V', ItemList.Conveyor_Module_UHV,
-						'A', ItemList.Robot_Arm_UHV,
-						'C', OrePrefixes.circuit.get(Materials.Infinite),
-						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium)}).getStackForm(1L));
-
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'A', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.ROBOT_ARM,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable()}).getStackForm(1L));
 		CustomItemList.AssemblingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10784, "basicmachine.assembler.tier.10", "Epic Assembly Constructor II",10, "Avengers, Assemble!",
 				GT_Recipe.GT_Recipe_Map.sAssemblerRecipes, 9, 1, 224000, 0, 1, "Assembler2.png",
 				"", false, false, 0, "ASSEMBLER",
 				new Object[] { "ACA", "VMV", "WCW",
 						'M', CustomItemList.Hull_UEV,
-						'V', ItemList.Conveyor_Module_UEV,
-						'A', ItemList.Robot_Arm_UEV,
-						'C', OrePrefixes.circuit.get(Materials.Bio),
-						'W', OrePrefixes.cableGt01.get(Materials.Draconium)}).getStackForm(1L));
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'A', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.ROBOT_ARM,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable()}).getStackForm(1L));
 
 		CustomItemList.AssemblingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10785, "basicmachine.assembler.tier.11", "Epic Assembly Constructor III",11, "Avengers, Assemble!",
@@ -363,12 +378,26 @@ public class GT_Loader_Machines
 		CustomItemList.AutoclaveUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10793, "basicmachine.autoclave.tier.09", "Epic Pressure Cooker", 9, "Crystallizing your Dusts",
 				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
-				"", false, false, 0, "AUTOCLAVE",null).getStackForm(1L));
+				"", false, false, 0, "AUTOCLAVE",
+				new Object[] { "IGI", "IMI", "CPC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'I', GT_CustomLoader.AdvancedGTMaterials.UHV.getPlate(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), }).getStackForm(1L));
 
 		CustomItemList.AutoclaveUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10794, "basicmachine.autoclave.tier.10", "Epic Pressure Cooker II",10, "Crystallizing your Dusts",
 				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
-				"", false, false, 0, "AUTOCLAVE",null).getStackForm(1L));
+				"", false, false, 0, "AUTOCLAVE",
+				new Object[] { "IGI", "IMI", "CPC",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'I', GT_CustomLoader.AdvancedGTMaterials.UEV.getPlate(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), }).getStackForm(1L));
 
 		CustomItemList.AutoclaveUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10795, "basicmachine.autoclave.tier.11", "Epic Pressure Cooker III",11, "Crystallizing your Dusts",
@@ -424,12 +453,24 @@ public class GT_Loader_Machines
 		CustomItemList.BendingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10803, "basicmachine.bender.tier.09", "Epic Bending Unit", 9, "Boo, he's bad! We want BENDER!!!",
 				GT_Recipe.GT_Recipe_Map.sBenderRecipes, 2, 1, 0, 0, 1, "Bender.png",
-				GregTech_API.sSoundList.get(203), false, false, 0, "BENDER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(203), false, false, 0, "BENDER",
+				new Object[] { "PWP", "CMC", "EWE",
+				'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+				'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+				'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+				'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+				'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 
 		CustomItemList.BendingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10804, "basicmachine.bender.tier.10", "Epic Bending Unit II",10, "Boo, he's bad! We want BENDER!!!",
 				GT_Recipe.GT_Recipe_Map.sBenderRecipes, 2, 1, 0, 0, 1, "Bender.png",
-				GregTech_API.sSoundList.get(203), false, false, 0, "BENDER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(203), false, false, 0, "BENDER",
+				new Object[] { "PWP", "CMC", "EWE",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.BendingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10805, "basicmachine.bender.tier.11", "Epic Bending Unit III",11, "Boo, he's bad! We want BENDER!!!",
@@ -482,12 +523,22 @@ public class GT_Loader_Machines
 		CustomItemList.CompressorUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10813, "basicmachine.compressor.tier.09", "Epic Matter Constrictor", 9, "Compress-O-Matic C77",
 				GT_Recipe.GT_Recipe_Map.sCompressorRecipes, 1, 1, 0, 0, 1, "Compressor.png",
-				GregTech_API.sSoundList.get(203), false, false, 0, "COMPRESSOR",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(203), false, false, 0, "COMPRESSOR",
+				new Object[] { "WCW", "PMP", "WCW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 
 		CustomItemList.CompressorUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10814, "basicmachine.compressor.tier.10", "Epic Matter Constrictor II",10, "Compress-O-Matic C77",
 				GT_Recipe.GT_Recipe_Map.sCompressorRecipes, 1, 1, 0, 0, 1, "Compressor.png",
-				GregTech_API.sSoundList.get(203), false, false, 0, "COMPRESSOR",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(203), false, false, 0, "COMPRESSOR",
+				new Object[] { "WCW", "PMP", "WCW",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.CompressorUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10815, "basicmachine.compressor.tier.11", "Epic Matter Constrictor III",11, "Compress-O-Matic C77",
@@ -551,18 +602,26 @@ public class GT_Loader_Machines
 				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
-						'M', ItemList.Hull_MAX,
-						'E', ItemList.Electric_Motor_UHV,
-						'V', ItemList.Conveyor_Module_UHV,
-						'C', OrePrefixes.circuit.get(Materials.Infinite),
-						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium),
-						'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(),
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(),
 						'B', OreDictNames.craftingDiamondBlade  }).getStackForm(1L));
 
 		CustomItemList.CuttingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10824, "basicmachine.cutter.tier.10", "Epic Object Divider II",10, "Slice'N Dice",
 				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
-				"", false, false, 0, "CUTTER",null).getStackForm(1L));
+				"", false, false, 0, "CUTTER",
+				new Object[] { "WCG", "VMB", "CWE",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(),
+						'B', OreDictNames.craftingDiamondBlade  }).getStackForm(1L));
 
 		CustomItemList.CuttingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10825, "basicmachine.cutter.tier.11", "Epic Object Divider III",11, "Slice'N Dice",
@@ -621,12 +680,26 @@ public class GT_Loader_Machines
 		CustomItemList.DistilleryUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10833, "basicmachine.distillery.tier.09", "Epic Fraction Splitter", 9, "Extracting the most relevant Parts of Fluids",
 				GT_Recipe.GT_Recipe_Map.sDistilleryRecipes, 1, 1, 1000, 0, 1, "Distillery.png",
-				GregTech_API.sSoundList.get(200), false, false, 0, "DISTILLERY",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(200), false, false, 0, "DISTILLERY",
+				new Object[] { "GBG", "CMC", "WPW",
+					'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+					'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+					'B', OrePrefixes.pipeLarge.get(Materials.Neutronium),
+					'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+					'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+					'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() }).getStackForm(1L));
 
 		CustomItemList.DistilleryUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10834, "basicmachine.distillery.tier.10", "Epic Fraction Splitter II",10, "Extracting the most relevant Parts of Fluids",
 				GT_Recipe.GT_Recipe_Map.sDistilleryRecipes, 1, 1, 1000, 0, 1, "Distillery.png",
-				GregTech_API.sSoundList.get(200), false, false, 0, "DISTILLERY",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(200), false, false, 0, "DISTILLERY",
+				new Object[] { "GBG", "CMC", "WPW",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'B', OrePrefixes.pipeHuge.get(Materials.Neutronium),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() }).getStackForm(1L));
 
 		CustomItemList.DistilleryUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10835, "basicmachine.distillery.tier.11", "Epic Fraction Splitter III",11, "Extracting the most relevant Parts of Fluids",
@@ -677,12 +750,22 @@ public class GT_Loader_Machines
 		CustomItemList.ElectricFurnaceUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10843, "basicmachine.e_furnace.tier.09", "Epic Atom Stimulator", 9, "Not like using a Commodore 64",
 				GT_Recipe.GT_Recipe_Map.sFurnaceRecipes, 1, 1, 0, 0, 1, "E_Furnace.png",
-				GregTech_API.sSoundList.get(207), false, false, 0, "ELECTRIC_FURNACE",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(207), false, false, 0, "ELECTRIC_FURNACE",
+				new Object[] { "WCW", "CMC", "ECE",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() }).getStackForm(1L));
 
 		CustomItemList.ElectricFurnaceUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10844, "basicmachine.e_furnace.tier.10", "Epic Atom Stimulator II",10, "Not like using a Commodore 64",
 				GT_Recipe.GT_Recipe_Map.sFurnaceRecipes, 1, 1, 0, 0, 1, "E_Furnace.png",
-				GregTech_API.sSoundList.get(207), false, false, 0, "ELECTRIC_FURNACE",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(207), false, false, 0, "ELECTRIC_FURNACE",
+				new Object[] { "WCW", "CMC", "ECE",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() }).getStackForm(1L));
 
 		CustomItemList.ElectricFurnaceUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10845, "basicmachine.e_furnace.tier.11", "Epic Atom Stimulator III",11, "Not like using a Commodore 64",
@@ -739,12 +822,26 @@ public class GT_Loader_Machines
 		CustomItemList.ElectrolyzerUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10853, "basicmachine.electrolyzer.tier.09", "Epic Ionizer", 9, "Electrolyzing Molecules",
 				GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes, 2, 6, 64000, 0, 1, "Electrolyzer.png",
-				"", false, false, 0, "ELECTROLYZER",null).getStackForm(1L));
+				"", false, false, 0, "ELECTROLYZER",
+				new Object[] { "IGI", "IMI", "CWC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'I', OrePrefixes.wireGt04.get(Materials.Osmiridium),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() }).getStackForm(1L));
 
 		CustomItemList.ElectrolyzerUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10854, "basicmachine.electrolyzer.tier.10", "Epic Ionizer II",10, "Electrolyzing Molecules",
 				GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes, 2, 6, 64000, 0, 1, "Electrolyzer.png",
-				"", false, false, 0, "ELECTROLYZER",null).getStackForm(1L));
+				"", false, false, 0, "ELECTROLYZER",
+				new Object[] { "IGI", "IMI", "CWC",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'I', OrePrefixes.wireGt04.get(Materials.Draconium),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() }).getStackForm(1L));
 
 		CustomItemList.ElectrolyzerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10855, "basicmachine.electrolyzer.tier.11", "Epic Ionizer III",11, "Electrolyzing Molecules",
@@ -803,12 +900,27 @@ public class GT_Loader_Machines
 		CustomItemList.ElectromagneticSeparatorUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10863, "basicmachine.electromagneticseparator.tier.09", "Epic Magnetar Separator", 9, "Separating the magnetic Ores from the rest",
 				GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes, 1, 3, 0, 0, 1, "ElectromagneticSeparator.png",
-				GregTech_API.sSoundList.get(212), false, false, 0, "ELECTROMAGNETIC_SEPARATOR",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(212), false, false, 0, "ELECTROMAGNETIC_SEPARATOR",
+				new Object[] { "VWZ", "WMS", "CWZ",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'S', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC,
+						'Z', GT_CustomLoader.AdvancedGTMaterials.UHV.getWire(),
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
+
 
 		CustomItemList.ElectromagneticSeparatorUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10864, "basicmachine.electromagneticseparator.tier.10", "Epic Magnetar Separator II",10, "Separating the magnetic Ores from the rest",
 				GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes, 1, 3, 0, 0, 1, "ElectromagneticSeparator.png",
-				GregTech_API.sSoundList.get(212), false, false, 0, "ELECTROMAGNETIC_SEPARATOR",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(212), false, false, 0, "ELECTROMAGNETIC_SEPARATOR",
+				new Object[] { "VWZ", "WMS", "CWZ",
+						'M', CustomItemList.Hull_UEV,
+						'S', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC,
+						'Z', GT_CustomLoader.AdvancedGTMaterials.UEV.getWire(),
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.ElectromagneticSeparatorUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10865, "basicmachine.electromagneticseparator.tier.11", "Epic Magnetar Separator III",11, "Separating the magnetic Ores from the rest",
@@ -867,12 +979,26 @@ public class GT_Loader_Machines
 		CustomItemList.ExtractorUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10873, "basicmachine.extractor.tier.09", "Epic Extractinator", 9, "Dejuicer-Device of Doom - D123",
 				GT_Recipe.GT_Recipe_Map.sExtractorRecipes, 1, 1, 0, 0, 1, "Extractor.png",
-				GregTech_API.sSoundList.get(200), false, false, 0, "EXTRACTOR",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(200), false, false, 0, "EXTRACTOR",
+				new Object[] { "GCG", "EMP", "WCW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() }).getStackForm(1L));
 
 		CustomItemList.ExtractorUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10874, "basicmachine.extractor.tier.10", "Epic Extractinator II",10, "Dejuicer-Device of Doom - D123",
 				GT_Recipe.GT_Recipe_Map.sExtractorRecipes, 1, 1, 0, 0, 1, "Extractor.png",
-				GregTech_API.sSoundList.get(200), false, false, 0, "EXTRACTOR",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(200), false, false, 0, "EXTRACTOR",
+				new Object[] { "GCG", "EMP", "WCW",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() }).getStackForm(1L));
 
 		CustomItemList.ExtractorUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10875, "basicmachine.extractor.tier.11", "Epic Extractinator III",11, "Dejuicer-Device of Doom - D123",
@@ -930,16 +1056,23 @@ public class GT_Loader_Machines
 				GT_Recipe.GT_Recipe_Map.sExtruderRecipes, 2, 1, 0, 0, 1, "Extruder.png",
 				GregTech_API.sSoundList.get(208), false, false, 0, "EXTRUDER",
                 new Object[] { "CCE", "XMP", "CCE",
-                        'M', ItemList.Hull_MAX,
-                        'X', ItemList.Electric_Piston_UHV,
-                        'E', OrePrefixes.circuit.get(Materials.Infinite),
-                        'P', OrePrefixes.pipeMedium.get(Materials.Neutronium),
-                        'C', OrePrefixes.wireGt02.get(Materials.Bedrockium) }).getStackForm(1L));
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'X', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'E', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'P', GT_CustomLoader.AdvancedGTMaterials.UHV.getPipe(),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() }).getStackForm(1L));
 
 		CustomItemList.ExtruderUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10884, "basicmachine.extruder.tier.10", "Epic Shape Driver II",10, "Universal Machine for Metal Working",
 				GT_Recipe.GT_Recipe_Map.sExtruderRecipes, 2, 1, 0, 0, 1, "Extruder.png",
-				GregTech_API.sSoundList.get(208), false, false, 0, "EXTRUDER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(208), false, false, 0, "EXTRUDER",
+				new Object[] { "CCE", "XMP", "CCE",
+						'M', CustomItemList.Hull_UEV,
+						'X', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'E', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'P', GT_CustomLoader.AdvancedGTMaterials.UEV.getPipe(),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() }).getStackForm(1L));
+
 
 		CustomItemList.ExtruderUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10885, "basicmachine.extruder.tier.11", "Epic Shape Driver III",11, "Universal Machine for Metal Working",
@@ -998,12 +1131,26 @@ public class GT_Loader_Machines
 		CustomItemList.FluidSolidifierUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10893, "basicmachine.fluidsolidifier.tier.09", "Epic Fluid Petrificator", 9, "Cools Fluids down to form Solids",
 				GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes, 1, 1, 16000, 0, 1, "FluidSolidifier.png",
-				"", false, false, 0, "FLUID_SOLIDIFIER",null).getStackForm(1L));
+				"", false, false, 0, "FLUID_SOLIDIFIER",
+				new Object[] { "PGP", "WMW", "CBC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(),
+						'B', OreDictNames.craftingChest }).getStackForm(1L));
 
 		CustomItemList.FluidSolidifierUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10894, "basicmachine.fluidsolidifier.tier.10", "Epic Fluid Petrificator II",10, "Cools Fluids down to form Solids",
 				GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes, 1, 1, 16000, 0, 1, "FluidSolidifier.png",
-				"", false, false, 0, "FLUID_SOLIDIFIER",null).getStackForm(1L));
+				"", false, false, 0, "FLUID_SOLIDIFIER",
+				new Object[] { "PGP", "WMW", "CBC",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(),
+						'B', OreDictNames.craftingChest }).getStackForm(1L));
 
 		CustomItemList.FluidSolidifierUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10895, "basicmachine.fluidsolidifier.tier.11", "Epic Fluid Petrificator III",11, "Cools Fluids down to form Solids",
@@ -1058,19 +1205,21 @@ public class GT_Loader_Machines
 				GT_Recipe.GT_Recipe_Map.sPressRecipes, 2, 1, 0, 0, 1, "Press.png",
 				GregTech_API.sSoundList.get(203), false, false, 0, "PRESS",
 				new Object[] { "WPW", "CMC", "WPW",
-				'M', ItemList.Hull_MAX,
-				'P', ItemList.Electric_Piston_UHV,
-				'C', OrePrefixes.circuit.get(Materials.Infinite),
-				'W', OrePrefixes.cableGt01.get(Materials.Bedrockium)}).getStackForm(1L));
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 
 		CustomItemList.FormingPressUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10904, "basicmachine.press.tier.10", "Epic Surface Shifter II",10, "Imprinting Images into things",
 				GT_Recipe.GT_Recipe_Map.sPressRecipes, 2, 1, 0, 0, 1, "Press.png",
-				GregTech_API.sSoundList.get(203), false, false, 0, "PRESS",			new Object[] { "WPW", "CMC", "WPW",
-				'M', CustomItemList.Hull_UEV,
-				'P', ItemList.Electric_Piston_UEV,
-				'C', OrePrefixes.circuit.get(Materials.Bio),
-				'W', OrePrefixes.cableGt01.get(Materials.Draconium)}).getStackForm(1L));
+				GregTech_API.sSoundList.get(203), false, false, 0, "PRESS",
+				new Object[] { "WPW", "CMC", "WPW",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
+
 
 		CustomItemList.FormingPressUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10905, "basicmachine.press.tier.11", "Epic Surface Shifter III",11, "Imprinting Images into things",
@@ -1129,12 +1278,26 @@ public class GT_Loader_Machines
 		CustomItemList.ForgeHammerUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10913, "basicmachine.hammer.tier.09", "Epic Impact Modulator", 9, "Stop, Hammertime!",
 				GT_Recipe.GT_Recipe_Map.sHammerRecipes, 1, 1, 0, 6, 3, "Hammer.png",
-				GregTech_API.sSoundList.get(1), false, false, 0, "HAMMER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(1), false, false, 0, "HAMMER",
+				new Object[] { "WPW", "CMC", "WAW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'O', GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil(),
+						'A', OreDictNames.craftingAnvil }).getStackForm(1L));
 
 		CustomItemList.ForgeHammerUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10914, "basicmachine.hammer.tier.10", "Epic Impact Modulator II",10, "Stop, Hammertime!",
 				GT_Recipe.GT_Recipe_Map.sHammerRecipes, 1, 1, 0, 6, 3, "Hammer.png",
-				GregTech_API.sSoundList.get(1), false, false, 0, "HAMMER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(1), false, false, 0, "HAMMER",
+				new Object[] { "WPW", "CMC", "WAW",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'O', GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil(),
+						'A', OreDictNames.craftingAnvil }).getStackForm(1L));
 
 		CustomItemList.ForgeHammerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10915, "basicmachine.hammer.tier.11", "Epic Impact Modulator III",11, "Stop, Hammertime!",
@@ -1189,11 +1352,25 @@ public class GT_Loader_Machines
 
 		CustomItemList.LatheUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10923, "basicmachine.lathe.tier.09", "Epic Turn-O-Matic", 9, "Produces Rods more efficiently",
-				GT_Recipe.GT_Recipe_Map.sLatheRecipes, 1, 2, 0, 0, 1, "Lathe.png", "", false, false, 0, "LATHE",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sLatheRecipes, 1, 2, 0, 0, 1, "Lathe.png", "", false, false, 0, "LATHE",
+				new Object[] { "WCW", "EMD", "CWP",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'D', OreDictNames.craftingIndustrialDiamond }).getStackForm(1L));
 
 		CustomItemList.LatheUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10924, "basicmachine.lathe.tier.10", "Epic Turn-O-Matic II",10, "Produces Rods more efficiently",
-				GT_Recipe.GT_Recipe_Map.sLatheRecipes, 1, 2, 0, 0, 1, "Lathe.png", "", false, false, 0, "LATHE",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sLatheRecipes, 1, 2, 0, 0, 1, "Lathe.png", "", false, false, 0, "LATHE",
+				new Object[] { "WCW", "EMD", "CWP",
+				'M', CustomItemList.Hull_UEV,
+				'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+				'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+				'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+				'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+				'D', OreDictNames.craftingIndustrialDiamond }).getStackForm(1L));
 
 		CustomItemList.LatheUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10925, "basicmachine.lathe.tier.11", "Epic Turn-O-Matic III",11, "Produces Rods more efficiently",
@@ -1251,16 +1428,22 @@ public class GT_Loader_Machines
 				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
 				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",
                 new Object[] { "PEP", "CMC", "WCW",
-                        'M', ItemList.Hull_MAX,
-                        'E', ItemList.Emitter_UHV,
-                        'P', ItemList.Electric_Piston_UHV,
-                        'C', OrePrefixes.circuit.get(Materials.Infinite),
-                        'W', OrePrefixes.cableGt01.get(Materials.Bedrockium) }).getStackForm(1L));
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.EMITTER,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 
 		CustomItemList.PrecisionLaserEngraverUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10934, "basicmachine.laserengraver.tier.10", "Epic Exact Photon Cannon II",10, "With the Power of 4.84 GW",
 				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
-				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",
+				new Object[] { "PEP", "CMC", "WCW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.EMITTER,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.PrecisionLaserEngraverUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10935, "basicmachine.laserengraver.tier.11", "Epic Exact Photon Cannon III",11, "With the Power of 9.68 GW",
@@ -1319,12 +1502,26 @@ public class GT_Loader_Machines
 		CustomItemList.MaceratorUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10943, "basicmachine.macerator.tier.09", "Epic Shape Eliminator", 9, "Schreddering your Ores with Byproducts",
 				GT_Recipe.GT_Recipe_Map.sMaceratorRecipes, 1, 4, 0, 0, 1, "Macerator4.png",
-				GregTech_API.sSoundList.get(201), false, false, 1, "PULVERIZER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(201), false, false, 1, "PULVERIZER",
+				new Object[] { "PEG", "WWM", "CCW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', OreDictNames.craftingGrinder }).getStackForm(1L));
 
 		CustomItemList.MaceratorUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10944, "basicmachine.macerator.tier.10", "Epic Shape Eliminator II",10, "Schreddering your Ores with Byproducts",
 				GT_Recipe.GT_Recipe_Map.sMaceratorRecipes, 1, 4, 0, 0, 1, "Macerator4.png",
-				GregTech_API.sSoundList.get(201), false, false, 1, "PULVERIZER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(201), false, false, 1, "PULVERIZER",
+				new Object[] { "PEG", "WWM", "CCW",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', OreDictNames.craftingGrinder }).getStackForm(1L));
 
 		CustomItemList.MaceratorUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10945, "basicmachine.macerator.tier.11", "Epic Shape Eliminator III",11, "Schreddering your Ores with Byproducts",
@@ -1388,8 +1585,15 @@ public class GT_Loader_Machines
                 new Object[] { "CFC", "WMW", "CFC",
                         'M', ItemList.Hull_MAX,
                         'F', ItemList.Field_Generator_UHV,
-                        'C', OrePrefixes.circuit.get(Materials.Infinite),
-                        'W', OrePrefixes.cableGt04.get(Materials.Bedrockium) });
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4()});
+		GT_ModHandler.addCraftingRecipe(CustomItemList.MassFabricatorUEV.get(1L),
+				bitsd,
+				new Object[] { "CFC", "WMW", "CFC",
+						'M', CustomItemList.Hull_UEV,
+						'F', ItemList.Field_Generator_UEV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4()});
 
 		//MassFabricatorLuV
 		//MassFabricatorZPM
@@ -1406,27 +1610,63 @@ public class GT_Loader_Machines
 		CustomItemList.MicrowaveLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10960, "basicmachine.microwave.tier.06", "Elite Microwave", 6, "Did you really read the instruction Manual?",
 				GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes, 1, 1, 0, 0, 1, "E_Furnace.png",
-				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE", null).getStackForm(1L));
+				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE",
+				new Object[]{"LWC", "LMR", "LEC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'R', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.EMITTER,
+						'C', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CIRCUIT,
+						'W', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE,
+						'L', OrePrefixes.plateDense.get(Materials.Lead)}).getStackForm(1L));
 
 		CustomItemList.MicrowaveZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10961, "basicmachine.microwave.tier.07", "Elite Microwave II", 7, "Did you really read the instruction Manual?",
 				GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes, 1, 1, 0, 0, 1, "E_Furnace.png",
-				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE", null).getStackForm(1L));
+				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE",
+				new Object[]{"LWC", "LMR", "LEC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'R', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.EMITTER,
+						'C', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CIRCUIT,
+						'W', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE,
+						'L', OrePrefixes.plateDense.get(Materials.Lead)}).getStackForm(1L));
 
 		CustomItemList.MicrowaveUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10962, "basicmachine.microwave.tier.08", "Ultimate UFO Engine", 8, "Did you really remember the instruction Manual?",
 				GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes, 1, 1, 0, 0, 1, "E_Furnace.png",
-				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE", null).getStackForm(1L));
+				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE",
+				new Object[]{"LWC", "LMR", "LEC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'R', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.EMITTER,
+						'C', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CIRCUIT,
+						'W', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE,
+						'L', OrePrefixes.plateDense.get(Materials.Lead)}).getStackForm(1L));
 
 		CustomItemList.MicrowaveUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10963, "basicmachine.microwave.tier.09", "Epic UFO Engine", 9, "Did you really remember the instruction Manual?",
 				GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes, 1, 1, 0, 0, 1, "E_Furnace.png",
-				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE", null).getStackForm(1L));
+				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE",
+				new Object[]{"LWC", "LMR", "LEC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'R', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.EMITTER,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getWire(),
+						'L', OrePrefixes.plateDense.get(Materials.Lead)}).getStackForm(1L));
 
 		CustomItemList.MicrowaveUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10964, "basicmachine.microwave.tier.10", "Epic UFO Engine II",10, "Did you really remember the instruction Manual?",
 				GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes, 1, 1, 0, 0, 1, "E_Furnace.png",
-				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE", null).getStackForm(1L));
+				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE",
+				new Object[]{"LWC", "LMR", "LEC",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'R', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.EMITTER,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getWire(),
+						'L', OrePrefixes.plateDense.get(Materials.Lead)}).getStackForm(1L));
+
 
 		CustomItemList.MicrowaveUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10965, "basicmachine.microwave.tier.11", "Epic UFO Engine III",11, "Did you really remember the instruction Manual?",
@@ -1438,37 +1678,6 @@ public class GT_Loader_Machines
 				GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes, 1, 1, 0, 0, 1, "E_Furnace.png",
 				GregTech_API.sSoundList.get(207), false, false, 0, "MICROWAVE", null).getStackForm(1L));
 
-
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.MicrowaveLuV.get(1L),
-				bitsd,
-				new Object[] { "PWC", "PHE", "PMC",
-						'P', OrePrefixes.plateDense.get(Materials.Lead),
-						'H', ItemList.Hull_LuV,
-						'E', ItemList.Emitter_LuV,
-						'M', ItemList.Electric_Motor_LuV,
-						'C', OrePrefixes.circuit.get(Materials.Ultimate),
-						'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium)});
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.MicrowaveZPM.get(1L),
-				bitsd,
-				new Object[] { "PWC", "PHE", "PMC",
-						'P', OrePrefixes.plateDense.get(Materials.Lead),
-						'H', ItemList.Hull_ZPM,
-						'E', ItemList.Emitter_ZPM,
-						'M', ItemList.Electric_Motor_ZPM,
-						'C', OrePrefixes.circuit.get(Materials.Superconductor),
-						'W', OrePrefixes.cableGt01.get(Materials.Naquadah)});
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.MicrowaveUV.get(1L),
-				bitsd,
-				new Object[] { "PWC", "PHE", "PMC",
-						'P', OrePrefixes.plateDense.get(Materials.Lead),
-						'H', ItemList.Hull_UV,
-						'E', ItemList.Emitter_UV,
-						'M', ItemList.Electric_Motor_UV,
-						'C', OrePrefixes.circuit.get(Materials.Infinite),
-						'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux)});
 
 
 		// ===================================================================================================
@@ -1515,12 +1724,26 @@ public class GT_Loader_Machines
 		CustomItemList.OreWashingPlantUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10973, "basicmachine.orewasher.tier.09", "Epic Ore Washing Machine", 9, "Getting more Byproducts from your Ores",
 				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 80000, 0, 1, "OreWasher.png",
-				"", false, false, 0, "ORE_WASHER",null).getStackForm(1L));
+				"", false, false, 0, "ORE_WASHER",
+				new Object[] { "RGR", "CEC", "WMW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'R', OrePrefixes.rotor.get(Materials.Osmium),
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP}).getStackForm(1L));
 
 		CustomItemList.OreWashingPlantUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10974, "basicmachine.orewasher.tier.10", "Epic Ore Washing Machine II",10, "Getting more Byproducts from your Ores",
 				GT_Recipe.GT_Recipe_Map.sOreWasherRecipes, 1, 3, 88000, 0, 1, "OreWasher.png",
-				"", false, false, 0, "ORE_WASHER",null).getStackForm(1L));
+				"", false, false, 0, "ORE_WASHER",
+				new Object[] { "RGR", "CEC", "WMW",
+						'M', CustomItemList.Hull_UEV,
+						'R', OrePrefixes.rotor.get(Materials.Osmium),
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP}).getStackForm(1L));
 
 		CustomItemList.OreWashingPlantUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10975, "basicmachine.orewasher.tier.11", "Epic Ore Washing Machine III",11, "Getting more Byproducts from your Ores",
@@ -1573,12 +1796,22 @@ public class GT_Loader_Machines
 		CustomItemList.PolarizerUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10983, "basicmachine.polarizer.tier.09", "Epic Magnetism Inducer", 9, "Bipolarising your Magnets",
 				GT_Recipe.GT_Recipe_Map.sPolarizerRecipes, 1, 1, 0, 0, 1, "Polarizer.png",
-				GregTech_API.sSoundList.get(212), false, false, 0, "POLARIZER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(212), false, false, 0, "POLARIZER",
+				new Object[] { "ZSZ", "WMW", "ZSZ",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'S', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC,
+						'Z', OrePrefixes.wireGt08.get(Materials.Osmium),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 
 		CustomItemList.PolarizerUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10984, "basicmachine.polarizer.tier.10", "Epic Magnetism Inducer II",10, "Bipolarising your Magnets",
 				GT_Recipe.GT_Recipe_Map.sPolarizerRecipes, 1, 1, 0, 0, 1, "Polarizer.png",
-				GregTech_API.sSoundList.get(212), false, false, 0, "POLARIZER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(212), false, false, 0, "POLARIZER",
+				new Object[] { "ZSZ", "WMW", "ZSZ",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'S', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC,
+						'Z', OrePrefixes.wireGt08.get(Materials.Osmium),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.PolarizerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10985, "basicmachine.polarizer.tier.11", "Epic Magnetism Inducer III",11, "Bipolarising your Magnets",
@@ -1634,12 +1867,24 @@ public class GT_Loader_Machines
 		CustomItemList.RecyclerUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10993, "basicmachine.recycler.tier.09", "Epic Scrap-O-Matic", 9, "Compress, burn, obliterate and filter EVERYTHING",
 				GT_Recipe.GT_Recipe_Map.sRecyclerRecipes, 1, 1, 0, 0, 1, "Recycler.png",
-				GregTech_API.sSoundList.get(204), false, false, 0, "RECYCLER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(204), false, false, 0, "RECYCLER",
+				new Object[] { "GCG", "PMP", "WCW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', OrePrefixes.dust.get(Materials.NetherStar) }).getStackForm(1L));
 
 		CustomItemList.RecyclerUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10994, "basicmachine.recycler.tier.10", "Epic Scrap-O-Matic II",10, "Compress, burn, obliterate and filter EVERYTHING",
 				GT_Recipe.GT_Recipe_Map.sRecyclerRecipes, 1, 1, 0, 0, 1, "Recycler.png",
-				GregTech_API.sSoundList.get(204), false, false, 0, "RECYCLER",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(204), false, false, 0, "RECYCLER",
+				new Object[] { "GCG", "PMP", "WCW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', OrePrefixes.dust.get(Materials.NetherStar) }).getStackForm(1L));
 
 		CustomItemList.RecyclerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10995, "basicmachine.recycler.tier.11", "Epic Scrap-O-Matic III",11, "Compress, burn, obliterate and filter EVERYTHING",
@@ -1701,6 +1946,23 @@ public class GT_Loader_Machines
 						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable4() });
 
+		GT_ModHandler.addCraftingRecipe(CustomItemList.ReplicatorUHV.get(1L),
+				bitsd,
+				new Object[] { "EFE", "CMC", "EWE",
+						'M', ItemList.Hull_MAX,
+						'F', ItemList.Field_Generator_UHV,
+						'E', ItemList.Emitter_UHV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.ReplicatorUEV.get(1L),
+				bitsd,
+				new Object[] { "EFE", "CMC", "EWE",
+						'M', CustomItemList.Hull_UEV,
+						'F', ItemList.Field_Generator_UEV,
+						'E', ItemList.Emitter_UEV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4() });
 
 		//ReplicatorLuV
 		//ReplicatorZPM
@@ -1760,6 +2022,15 @@ public class GT_Loader_Machines
 						'R', ItemList.Sensor_UHV,
 						'C', OrePrefixes.circuit.get(Materials.Infinite),
 						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium) });
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.ScannerUEV.get(1L),
+				bitsd,
+				new Object[] { "CTC", "WMW", "CRC",
+						'M', CustomItemList.Hull_UEV,
+						'T', ItemList.Emitter_UEV,
+						'R', ItemList.Sensor_UEV,
+						'C', OrePrefixes.circuit.get(Materials.Bio),
+						'W', OrePrefixes.cableGt01.get(Materials.Draconium) });
 		//ScannerLuV
 		//ScannerZPM
 		//ScannerUV
@@ -1800,11 +2071,23 @@ public class GT_Loader_Machines
 
 		CustomItemList.SiftingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11023, "basicmachine.sifter.tier.09", "Epic Pulsation Filter", 9, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
+				new Object[] { "WFW", "PMP", "CFC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'F', OreDictNames.craftingFilter,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 
 		CustomItemList.SiftingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11024, "basicmachine.sifter.tier.10", "Epic Pulsation Filter II",10, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
+				new Object[] { "WFW", "PMP", "CFC",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+						'F', OreDictNames.craftingFilter,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.SiftingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11025, "basicmachine.sifter.tier.11", "Epic Pulsation Filter III",11, "Stay calm and keep sifting",
@@ -1854,11 +2137,22 @@ public class GT_Loader_Machines
 
 		CustomItemList.SlicingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11033, "basicmachine.slicer.tier.09", "Epic Quantum Slicer", 9, "Be careful when slicing bread!",
-				GT_Recipe.GT_Recipe_Map.sSlicerRecipes, 2, 1, 0, 0, 1, "Slicer.png", "", false, false, 0, "SLICER",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sSlicerRecipes, 2, 1, 0, 0, 1, "Slicer.png", "", false, false, 0, "SLICER",
+				new Object[] { "WCW", "PMV", "WCW",
+				'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+				'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+				'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+				'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+				'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 
 		CustomItemList.SlicingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11034, "basicmachine.slicer.tier.10", "Epic Quantum Slicer II",10, "Be careful when slicing bread!",
-				GT_Recipe.GT_Recipe_Map.sSlicerRecipes, 2, 1, 0, 0, 1, "Slicer.png", "", false, false, 0, "SLICER",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sSlicerRecipes, 2, 1, 0, 0, 1, "Slicer.png", "", false, false, 0, "SLICER",new Object[] { "WCW", "PMV", "WCW",
+				'M', CustomItemList.Hull_UEV.get(1),
+				'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
+				'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+				'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+				'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.SlicingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11035, "basicmachine.slicer.tier.11", "Epic Quantum Slicer III",11, "Be careful when slicing bread!",
@@ -1915,12 +2209,24 @@ public class GT_Loader_Machines
 		CustomItemList.ThermalCentrifugeUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11043, "basicmachine.thermalcentrifuge.tier.09", "Epic Fire Cyclone", 9, "Separating Ores more precisely",
 				GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes, 1, 3, 0, 0, 1, "ThermalCentrifuge.png",
-				"", false, false, 0, "THERMAL_CENTRIFUGE",null).getStackForm(1L));
+				"", false, false, 0, "THERMAL_CENTRIFUGE",
+				new Object[] { "CEC", "OMO", "WEW",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'O', GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() }).getStackForm(1L));
 
 		CustomItemList.ThermalCentrifugeUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11044, "basicmachine.thermalcentrifuge.tier.10", "Epic Fire Cyclone II",10, "Separating Ores more precisely",
 				GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes, 1, 3, 0, 0, 1, "ThermalCentrifuge.png",
-				"", false, false, 0, "THERMAL_CENTRIFUGE",null).getStackForm(1L));
+				"", false, false, 0, "THERMAL_CENTRIFUGE",
+				new Object[] { "CEC", "OMO", "WEW",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'O', GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() }).getStackForm(1L));
 
 		CustomItemList.ThermalCentrifugeUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11045, "basicmachine.thermalcentrifuge.tier.11", "Epic Fire Cyclone III",11, "Separating Ores more precisely",
@@ -1973,12 +2279,22 @@ public class GT_Loader_Machines
 		CustomItemList.WiremillUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11053, "basicmachine.wiremill.tier.09", "Epic Wire Transfigurator", 9, "Produces Wires more efficiently",
 				GT_Recipe.GT_Recipe_Map.sWiremillRecipes, 1, 1, 0, 0, 1, "Wiremill.png",
-				GregTech_API.sSoundList.get(204), false, false, 0, "WIREMILL",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(204), false, false, 0, "WIREMILL",
+				new Object[] { "EWE", "CMC", "EWE",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 
 		CustomItemList.WiremillUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11054, "basicmachine.wiremill.tier.10", "Epic Wire Transfigurator II",10, "Produces Wires more efficiently",
 				GT_Recipe.GT_Recipe_Map.sWiremillRecipes, 1, 1, 0, 0, 1, "Wiremill.png",
-				GregTech_API.sSoundList.get(204), false, false, 0, "WIREMILL",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(204), false, false, 0, "WIREMILL",
+				new Object[] { "EWE", "CMC", "EWE",
+						'M', CustomItemList.Hull_UEV,
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.WiremillUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11055, "basicmachine.wiremill.tier.11", "Epic Wire Transfigurator III",11, "Produces Wires more efficiently",
@@ -2066,12 +2382,24 @@ public class GT_Loader_Machines
 		CustomItemList.ArcFurnaceUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11073, "basicmachine.arcfurnace.tier.09", "Epic Short Circuit Heater", 9, "",
 				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
-				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",
+				new Object[] { "WGW", "CMC", "PPP",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', OrePrefixes.plateTriple.get(Materials.Osmium),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4(),
+						'G', OrePrefixes.cell.get(Materials.Graphite)}).getStackForm(1L));
 
 		CustomItemList.ArcFurnaceUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11074, "basicmachine.arcfurnace.tier.10", "Epic Short Circuit Heater II",10, "",
 				GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes, 1, 4, 128000, 0, 1, "ArcFurnace.png",
-				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(202), false, false, 0, "ARC_FURNACE",
+				new Object[] { "WGW", "CMC", "PPP",
+						'M', CustomItemList.Hull_UEV,
+						'P', OrePrefixes.plateQuadruple.get(Materials.Osmium),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4(),
+						'G', OrePrefixes.cell.get(Materials.Graphite)}).getStackForm(1L));
 
 		CustomItemList.ArcFurnaceUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11075, "basicmachine.arcfurnace.tier.11", "Epic Short Circuit Heater III",11, "",
@@ -2126,9 +2454,9 @@ public class GT_Loader_Machines
 				"", false, false, 0, "CENTRIFUGE",
                 new Object[] { "CEC", "WMW", "CEC",
                         'M', ItemList.Hull_MAX,
-                        'E', ItemList.Electric_Motor_UHV,
-                        'C', OrePrefixes.circuit.get(Materials.Infinite),
-                        'W', OrePrefixes.cableGt01.get(Materials.Bedrockium)}).getStackForm(1L));
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable()}).getStackForm(1L));
 
 
 		CustomItemList.CentrifugeUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
@@ -2137,9 +2465,9 @@ public class GT_Loader_Machines
 				"", false, false, 0, "CENTRIFUGE",
 				new Object[] { "CEC", "WMW", "CEC",
 						'M', CustomItemList.Hull_UEV,
-						'E', ItemList.Electric_Motor_UEV,
-						'C', OrePrefixes.circuit.get(Materials.Bio),
-						'W', OrePrefixes.cableGt01.get(Materials.Draconium)}).getStackForm(1L));
+						'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable()}).getStackForm(1L));
 
 		CustomItemList.CentrifugeUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11085, "basicmachine.centrifuge.tier.11", "Epic Molecular Tornado III",11, "Separating Molecules",
@@ -2201,13 +2529,27 @@ public class GT_Loader_Machines
 		CustomItemList.PlasmaArcFurnaceUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11093, "basicmachine.plasmaarcfurnace.tier.09", "Epic Plasma Discharge Heater", 9, "",
 				GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes, 1, 4, 64000, 0, 1, "PlasmaArcFurnace.png",
-				GregTech_API.sSoundList.get(202), false, false, 0, "PLASMA_ARC_FURNACE",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(202), false, false, 0, "PLASMA_ARC_FURNACE",
+				new Object[] { "WGW", "CMC", "TPT",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', OrePrefixes.plateTriple.get(Materials.Osmium),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4(),
+						'T', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'G', OrePrefixes.cell.get(Materials.Graphite)}).getStackForm(1L));
 
 
 		CustomItemList.PlasmaArcFurnaceUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11094, "basicmachine.plasmaarcfurnace.tier.10", "Epic Plasma Discharge Heater II",10, "",
 				GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes, 1, 4, 64000, 0, 1, "PlasmaArcFurnace.png",
-				GregTech_API.sSoundList.get(202), false, false, 0, "PLASMA_ARC_FURNACE",null).getStackForm(1L));
+				GregTech_API.sSoundList.get(202), false, false, 0, "PLASMA_ARC_FURNACE",
+				new Object[] { "WGW", "CMC", "TPT",
+						'M', CustomItemList.Hull_UEV,
+						'P', OrePrefixes.plateQuadruple.get(Materials.Osmium),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4(),
+						'T', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'G', OrePrefixes.cell.get(Materials.Graphite)}).getStackForm(1L));
 
 
 		CustomItemList.PlasmaArcFurnaceUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
@@ -2352,7 +2694,7 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Pump_LuV,
 						'B', ItemList.Hull_LuV,
 						'C', OrePrefixes.circuit.get(Materials.Master),
-						'G', new ItemStack(Blocks.glass, 1, 32767),
+						'G',  GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(),
 						'Z', new ItemStack(Items.brewing_stand, 1, 32767)});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.BreweryZPM.get(1L),
@@ -2362,7 +2704,7 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Pump_ZPM,
 						'B', ItemList.Hull_ZPM,
 						'C', OrePrefixes.circuit.get(Materials.Ultimate),
-						'G', new ItemStack(Blocks.glass, 1, 32767),
+						'G',  GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(),
 						'Z', new ItemStack(Items.brewing_stand, 1, 32767)});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.BreweryUV.get(1L),
@@ -2372,10 +2714,28 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Pump_UV,
 						'B', ItemList.Hull_UV,
 						'C', OrePrefixes.circuit.get(Materials.Infinite),
-						'G', new ItemStack(Blocks.glass, 1, 32767),
+						'G',  GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(),
+						'Z', new ItemStack(Items.brewing_stand, 1, 32767)});
+		GT_ModHandler.addCraftingRecipe(CustomItemList.BreweryUHV.get(1L),
+				bitsd,
+				new Object[]{"GPG", "WBW", "CZC",
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'P', ItemList.Electric_Pump_UHV,
+						'B', ItemList.Hull_MAX,
+						'C', OrePrefixes.circuit.get(Materials.Superconductor),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(),
 						'Z', new ItemStack(Items.brewing_stand, 1, 32767)});
 
-						//TODO:Recipes
+		GT_ModHandler.addCraftingRecipe(CustomItemList.BreweryUEV.get(1L),
+				bitsd,
+				new Object[]{"GPG", "WBW", "CZC",
+						'W', OrePrefixes.cableGt01.get(Materials.Superconductor),
+						'P', ItemList.Electric_Pump_UV,
+						'B', CustomItemList.Hull_UEV,
+						'C', OrePrefixes.circuit.get(Materials.Bio),
+						'G',  GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(),
+						'Z', new ItemStack(Items.brewing_stand, 1, 32767)});
+
 
 		// ===================================================================================================
 		// Canning Machine
@@ -2384,31 +2744,61 @@ public class GT_Loader_Machines
 				11130, "basicmachine.canner.tier.06", "Elite Canning Machine", 6,
 				"Unmobile Food Canning Machine GTA4", GT_Recipe.GT_Recipe_Map.sCannerRecipes,
 				2, 2, 0, 0, 1, "Canner.png", GregTech_API.sSoundList.get(200),
-				false, false, 0, "CANNER", null).getStackForm(1L));
+				false, false, 0, "CANNER",
+				new Object[]{"WPW", "CMC", "GGG",
+							'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+							'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+							'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+							'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(),
+							'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.CanningMachineZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11131, "basicmachine.canner.tier.07", "Elite Canning Machine II", 7,
 				"Unmobile Food Canning Machine GTA4", GT_Recipe.GT_Recipe_Map.sCannerRecipes,
 				2, 2, 0, 0, 1, "Canner.png", GregTech_API.sSoundList.get(200),
-				false, false, 0, "CANNER", null).getStackForm(1L));
+				false, false, 0, "CANNER",
+				new Object[]{"WPW", "CMC", "GGG",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.CanningMachineUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11132, "basicmachine.canner.tier.08", "Ultimate Can Operator", 8,
 				"Unmobile Food Canning Machine GTA4", GT_Recipe.GT_Recipe_Map.sCannerRecipes,
 				2, 2, 0, 0, 1, "Canner.png", GregTech_API.sSoundList.get(200),
-				false, false, 0, "CANNER", null).getStackForm(1L));
+				false, false, 0, "CANNER",
+				new Object[]{"WPW", "CMC", "GGG",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.CanningMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11133, "basicmachine.canner.tier.09", "Epic Can Operator", 9,
 				"Unmobile Food Canning Machine GTA4", GT_Recipe.GT_Recipe_Map.sCannerRecipes,
 				2, 2, 0, 0, 1, "Canner.png", GregTech_API.sSoundList.get(200),
-				false, false, 0, "CANNER", null).getStackForm(1L));
+				false, false, 0, "CANNER",
+				new Object[]{"WPW", "CMC", "GGG",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.CanningMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11134, "basicmachine.canner.tier.10", "Epic Can Operator II",10,
 				"Unmobile Food Canning Machine GTA4", GT_Recipe.GT_Recipe_Map.sCannerRecipes,
 				2, 2, 0, 0, 1, "Canner.png", GregTech_API.sSoundList.get(200),
-				false, false, 0, "CANNER", null).getStackForm(1L));
+				false, false, 0, "CANNER",
+				new Object[]{"WPW", "CMC", "GGG",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.CanningMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11135, "basicmachine.canner.tier.11", "Epic Can Operator III",11,
@@ -2424,35 +2814,6 @@ public class GT_Loader_Machines
 
 
 
-		GT_ModHandler.addCraftingRecipe(CustomItemList.CanningMachineLuV.get(1L),
-				bitsd,
-				new Object[]{"WPW", "CBC", "GGG",
-						'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium),
-						'P', ItemList.Electric_Pump_LuV,
-						'B', ItemList.Hull_LuV,
-						'C', OrePrefixes.circuit.get(Materials.Master),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.CanningMachineZPM.get(1L),
-				bitsd,
-				new Object[]{"WPW", "CBC", "GGG",
-						'W', OrePrefixes.cableGt01.get(Materials.Naquadah),
-						'P', ItemList.Electric_Pump_ZPM,
-						'B', ItemList.Hull_ZPM,
-						'C', OrePrefixes.circuit.get(Materials.Ultimate),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.CanningMachineUV.get(1L),
-				bitsd,
-				new Object[]{"WPW", "CBC", "GGG",
-						'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux),
-						'P', ItemList.Electric_Pump_UV,
-						'B', ItemList.Hull_UV,
-						'C', OrePrefixes.circuit.get(Materials.Superconductor),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
-
-
-
 		// ===================================================================================================
 		// Chemical Bath
 		// ===================================================================================================
@@ -2460,31 +2821,66 @@ public class GT_Loader_Machines
 				11140, "basicmachine.chemicalbath.tier.06", "Elite Chemical Bath", 6,
 				"Bathing Ores in Chemicals to separate them", GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
 				1, 3, 8000, 0, 1, "ChemicalBath.png", "",
-				false, true, 0, "CHEMICAL_BATH", null).getStackForm(1L));
+				false, true, 0, "CHEMICAL_BATH",
+				new Object[]{"VGW", "PGV", "CMC",
+					'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+					'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+					'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+					'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+					'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(),
+					'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.ChemicalBathZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11141, "basicmachine.chemicalbath.tier.07", "Elite Chemical Bath II", 7,
 				"Bathing Ores in Chemicals to separate them", GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
 				1, 3, 8000, 0, 1, "ChemicalBath.png", "",
-				false, true, 0, "CHEMICAL_BATH", null).getStackForm(1L));
+				false, true, 0, "CHEMICAL_BATH",
+				new Object[]{"VGW", "PGV", "CMC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.ChemicalBathUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11142, "basicmachine.chemicalbath.tier.08", "Ultimate Chemical Dunktron", 8,
 				"Bathing Ores in Chemicals to separate them", GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
 				1, 3, 8000, 0, 1, "ChemicalBath.png", "",
-				false, true, 0, "CHEMICAL_BATH", null).getStackForm(1L));
+				false, true, 0, "CHEMICAL_BATH",
+				new Object[]{"VGW", "PGV", "CMC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.ChemicalBathUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11143, "basicmachine.chemicalbath.tier.09", "Epic Chemical Dunktron", 9,
 				"Bathing Ores in Chemicals to separate them", GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
 				1, 3, 8000, 0, 1, "ChemicalBath.png", "",
-				false, true, 0, "CHEMICAL_BATH", null).getStackForm(1L));
+				false, true, 0, "CHEMICAL_BATH",
+				new Object[]{"VGW", "PGV", "CMC",
+						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.ChemicalBathUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11144, "basicmachine.chemicalbath.tier.10", "Epic Chemical Dunktron II",10,
 				"Bathing Ores in Chemicals to separate them", GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
 				1, 3, 8000, 0, 1, "ChemicalBath.png", "",
-				false, true, 0, "CHEMICAL_BATH", null).getStackForm(1L));
+				false, true, 0, "CHEMICAL_BATH",
+				new Object[]{"VGW", "PGV", "CMC",
+						'M', CustomItemList.Hull_UEV,
+						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP,
+						'V', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS}).getStackForm(1L));
 
 		CustomItemList.ChemicalBathUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11145, "basicmachine.chemicalbath.tier.11", "Epic Chemical Dunktron III",11,
@@ -2497,37 +2893,6 @@ public class GT_Loader_Machines
 				"Bathing Ores in Chemicals to separate them", GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
 				1, 3, 8000, 0, 1, "ChemicalBath.png", "",
 				false, true, 0, "CHEMICAL_BATH", null).getStackForm(1L));
-
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.ChemicalBathLuV.get(1L),
-				bitsd,
-				new Object[]{"VGW", "PGV", "CMC",
-						'M', ItemList.Hull_LuV,
-						'V', ItemList.Conveyor_Module_LuV,
-						'P', ItemList.Electric_Pump_LuV,
-						'C', OrePrefixes.circuit.get(Materials.Master),
-						'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.ChemicalBathZPM.get(1L),
-				bitsd,
-				new Object[]{"VGW", "PGV", "CMC",
-						'M', ItemList.Hull_ZPM,
-						'V', ItemList.Conveyor_Module_ZPM,
-						'P', ItemList.Electric_Pump_ZPM,
-						'C', OrePrefixes.circuit.get(Materials.Ultimate),
-						'W', OrePrefixes.cableGt01.get(Materials.Naquadah),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.ChemicalBathUV.get(1L),
-				bitsd,
-				new Object[]{"VGW", "PGV", "CMC",
-						'M', ItemList.Hull_UV,
-						'V', ItemList.Conveyor_Module_UV,
-						'P', ItemList.Electric_Pump_UV,
-						'C', OrePrefixes.circuit.get(Materials.Superconductor),
-						'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
 
 
 		// ===================================================================================================
@@ -2606,6 +2971,26 @@ public class GT_Loader_Machines
 						'C', OrePrefixes.circuit.get(Materials.Superconductor),
 						'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux)});
 
+		GT_ModHandler.addCraftingRecipe(CustomItemList.ChemicalReactorUHV.get(1L),
+				bitsd,
+				new Object[]{"PRP", "WMW", "CHC",
+						'H', ItemList.Hull_MAX,
+						'R', OrePrefixes.rotor.get(Materials.Osmium),
+						'P', OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride),
+						'M', ItemList.Electric_Motor_UHV,
+						'C', OrePrefixes.circuit.get(Materials.Infinite),
+						'W', OrePrefixes.cableGt04.get(Materials.ElectrumFlux)});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.ChemicalReactorUEV.get(1L),
+				bitsd,
+				new Object[]{"PRP", "WMW", "CHC",
+						'H', CustomItemList.Hull_UEV,
+						'R', OrePrefixes.rotor.get(Materials.Osmium),
+						'P', OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride),
+						'M', ItemList.Electric_Motor_UEV,
+						'C', OrePrefixes.circuit.get(Materials.Bio),
+						'W', OrePrefixes.cableGt08.get(Materials.ElectrumFlux)});
+
 
 		// ===================================================================================================
 		// Disassembler
@@ -2651,11 +3036,21 @@ public class GT_Loader_Machines
 						'C', OrePrefixes.circuit.get(Materials.Superconductor),
 						'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux)});
 
-		//TODO:Recipes
+		GT_ModHandler.addCraftingRecipe(CustomItemList.DisassemblerUHV.get(1L),
+				bitsd,
+				new Object[]{"RCR", "WHW", "RCR",
+						'R', ItemList.Robot_Arm_UHV,
+						'H', ItemList.Hull_MAX,
+						'C', OrePrefixes.circuit.get(Materials.Infinite),
+						'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux)});
 
-		// ===================================================================================================
-		// Electric Oven - nah
-		// ===================================================================================================
+		GT_ModHandler.addCraftingRecipe(CustomItemList.DisassemblerUEV.get(1L),
+				bitsd,
+				new Object[]{"RCR", "WHW", "RCR",
+						'R', ItemList.Robot_Arm_UEV,
+						'H', CustomItemList.Hull_UEV,
+						'C', OrePrefixes.circuit.get(Materials.Bio),
+						'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux)});
 
 		// ===================================================================================================
 		// Fermenter
@@ -2732,6 +3127,24 @@ public class GT_Loader_Machines
 						'C', OrePrefixes.circuit.get(Materials.Superconductor),
 						'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass()});
 
+		GT_ModHandler.addCraftingRecipe(CustomItemList.FermenterUHV.get(1L),
+				bitsd,
+				new Object[]{"WPW", "GBG", "WCW",
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'P', ItemList.Electric_Pump_UHV,
+						'B', ItemList.Hull_MAX,
+						'C', OrePrefixes.circuit.get(Materials.Infinite),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass()});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.FermenterUEV.get(1L),
+				bitsd,
+				new Object[]{"WPW", "GBG", "WCW",
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'P', ItemList.Electric_Pump_UEV,
+						'B', CustomItemList.Hull_UEV,
+						'C', OrePrefixes.circuit.get(Materials.Bio),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass()});
+
 
 
 		// ===================================================================================================
@@ -2807,6 +3220,23 @@ public class GT_Loader_Machines
 						'C', OrePrefixes.circuit.get(Materials.Superconductor),
 						'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass()});
 
+		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidCannerUHV.get(1L),
+				bitsd,
+				new Object[]{"GCG", "GBG", "WPW",
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'P', ItemList.Electric_Pump_UHV,
+						'B', ItemList.Hull_MAX,
+						'C', OrePrefixes.circuit.get(Materials.Superconductor),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass()});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidCannerUEV.get(1L),
+				bitsd,
+				new Object[]{"GCG", "GBG", "WPW",
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'P', ItemList.Electric_Pump_UEV,
+						'B', CustomItemList.Hull_UEV,
+						'C', OrePrefixes.circuit.get(Materials.Superconductor),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass()});
 
 
 		// ===================================================================================================
@@ -2862,7 +3292,7 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Pump_LuV,
 						'C', OrePrefixes.circuit.get(Materials.Master),
 						'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G', GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass()});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorZPM.get(1L),
 				bitsd,
@@ -2872,7 +3302,7 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Pump_ZPM,
 						'C', OrePrefixes.circuit.get(Materials.Ultimate),
 						'W', OrePrefixes.cableGt01.get(Materials.Naquadah),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G', GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass()});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorUV.get(1L),
 				bitsd,
@@ -2882,7 +3312,27 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Pump_UV,
 						'C', OrePrefixes.circuit.get(Materials.Superconductor),
 						'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass()});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorUHV.get(1L),
+				bitsd,
+				new Object[]{"GCG", "PME", "WCW",
+						'M', ItemList.Hull_MAX,
+						'E', ItemList.Electric_Piston_UHV,
+						'P', ItemList.Electric_Pump_UHV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass()});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorUEV.get(1L),
+				bitsd,
+				new Object[]{"GCG", "PME", "WCW",
+						'M', CustomItemList.Hull_UEV,
+						'E', ItemList.Electric_Piston_UEV,
+						'P', ItemList.Electric_Pump_UEV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass()});
 
 		// ===================================================================================================
 		// Fluid Heater
@@ -2938,7 +3388,7 @@ public class GT_Loader_Machines
 						'C', OrePrefixes.circuit.get(Materials.Master),
 						'W', OrePrefixes.wireGt04.get(Materials.NiobiumTitanium),
 						'R', OrePrefixes.cableGt01.get(Materials.VanadiumGallium),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G', GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass()});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidHeaterZPM.get(1L),
 				bitsd,
@@ -2948,7 +3398,7 @@ public class GT_Loader_Machines
 						'C', OrePrefixes.circuit.get(Materials.Ultimate),
 						'W', OrePrefixes.wireGt04.get(Materials.Naquadah),
 						'R', OrePrefixes.cableGt01.get(Materials.Naquadah),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G', GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass()});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidHeaterUV.get(1L),
 				bitsd,
@@ -2958,7 +3408,27 @@ public class GT_Loader_Machines
 						'C', OrePrefixes.circuit.get(Materials.Superconductor),
 						'W', OrePrefixes.wireGt04.get(Materials.NaquadahAlloy),
 						'R', OrePrefixes.cableGt01.get(Materials.ElectrumFlux),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass()});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidHeaterUHV.get(1L),
+				bitsd,
+				new Object[]{"WGW", "PMP", "WCW",
+						'M', ItemList.Hull_MAX,
+						'P', ItemList.Electric_Pump_UHV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil(),
+						'R', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass()});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidHeaterUEV.get(1L),
+				bitsd,
+				new Object[]{"WGW", "PMP", "WCW",
+						'M', CustomItemList.Hull_UEV,
+						'P', ItemList.Electric_Pump_UEV,
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil(),
+						'R', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass()});
 
 
 		// ===================================================================================================
@@ -3013,7 +3483,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Electric_Motor_LuV,
 						'B', ItemList.Hull_LuV,
 						'C', OrePrefixes.circuit.get(Materials.Master),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G',  GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass()});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.MixerZPM.get(1L),
 				bitsd,
@@ -3022,7 +3492,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Electric_Motor_ZPM,
 						'B', ItemList.Hull_ZPM,
 						'C', OrePrefixes.circuit.get(Materials.Ultimate),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G',  GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass()});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.MixerUV.get(1L),
 				bitsd,
@@ -3031,7 +3501,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Electric_Motor_UV,
 						'B', ItemList.Hull_UV,
 						'C', OrePrefixes.circuit.get(Materials.Superconductor),
-						'G', new ItemStack(Blocks.glass, 1, 32767)});
+						'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass()});
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.MixerUHV.get(1L),
                 bitsd,
@@ -3040,7 +3510,16 @@ public class GT_Loader_Machines
                         'M', ItemList.Electric_Motor_UHV,
                         'B', ItemList.Hull_MAX,
                         'C', OrePrefixes.circuit.get(Materials.Infinite),
-                        'G', new ItemStack(Blocks.glass, 1, 32767)});
+                        'G',  GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass()});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.MixerUEV.get(1L),
+				bitsd,
+				new Object[]{"GRG", "GMG", "CBC",
+						'R', OrePrefixes.rotor.get(Materials.Neutronium),
+						'M', ItemList.Electric_Motor_UEV,
+						'B', CustomItemList.Hull_UEV,
+						'C', OrePrefixes.circuit.get(Materials.Bio),
+						'G',  GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass()});
 
 
 		// ===================================================================================================
@@ -3926,7 +4405,7 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Piston_LuV,
 						'E', ItemList.Electric_Motor_LuV,
 						'D', OreDictNames.craftingGrinder,
-						'G', GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0),
+						'G', GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(),
 						'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium),
 						'M', ItemList.Hull_LuV});
 
@@ -3936,7 +4415,7 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Piston_ZPM,
 						'E', ItemList.Electric_Motor_ZPM,
 						'D', OreDictNames.craftingGrinder,
-						'G', GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0),
+						'G', GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(),
 						'W', OrePrefixes.cableGt01.get(Materials.Naquadah),
 						'M', ItemList.Hull_ZPM});
 
@@ -3946,15 +4425,34 @@ public class GT_Loader_Machines
 						'P', ItemList.Electric_Piston_UV,
 						'E', ItemList.Electric_Motor_UV,
 						'D', OreDictNames.craftingGrinder,
-						'G', GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0),
+						'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(),
 						'W', OrePrefixes.cableGt01.get(Materials.NaquadahAlloy),
 						'M', ItemList.Hull_UV});
 
+		GT_ModHandler.addCraftingRecipe(CustomItemList.RockBreakerUHV.get(1L),
+				bitsd,
+				new Object[]{"PED", "WMW", "GGG",
+						'P', ItemList.Electric_Piston_UHV,
+						'E', ItemList.Electric_Motor_UHV,
+						'D', OreDictNames.craftingGrinder,
+						'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(),
+						'M', ItemList.Hull_MAX});
+
+		GT_ModHandler.addCraftingRecipe(CustomItemList.RockBreakerUEV.get(1L),
+				bitsd,
+				new Object[]{"PED", "WMW", "GGG",
+						'P', ItemList.Electric_Piston_UEV,
+						'E', ItemList.Electric_Motor_UEV,
+						'D', OreDictNames.craftingGrinder,
+						'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(),
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(),
+						'M', CustomItemList.Hull_UEV});
 		// ===================================================================================================
 		// Circuit Assembling Machine
 		// ===================================================================================================
 		CustomItemList.CircuitAssemblerUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-				12087, "basicmachine.circuitassembler.tier.09", "Ultimate Circuit Assembling Machine", 9, "Avengers, Assemble!",
+				12090, "basicmachine.circuitassembler.tier.09", "Ultimate Circuit Assembling Machine", 9, "Avengers, Assemble!",
 				GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
 				"", false, false, 0, "CIRCUITASSEMBLER",
 				new Object[] { "RCE", "KHK", "WCW",
@@ -3962,10 +4460,10 @@ public class GT_Loader_Machines
 						'E', ItemList.Emitter_UHV,
 						'H', ItemList.Hull_MAX,
 						'K', ItemList.Conveyor_Module_UHV,
-						'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
 		CustomItemList.CircuitAssemblerUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-				12088, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine II", 10, "Avengers, Assemble!",
+				12091, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine II", 10, "Avengers, Assemble!",
 				GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
 				"", false, false, 0, "CIRCUITASSEMBLER",
 				new Object[] { "RCE", "KHK", "WCW",
@@ -3973,14 +4471,14 @@ public class GT_Loader_Machines
 						'E', ItemList.Emitter_UEV,
 						'H', CustomItemList.Hull_UEV,
 						'K', ItemList.Conveyor_Module_UEV,
-						'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
-		//todo: uncomment this when UIV/UMV parts are done in the assembly line
-//		CustomItemList.CircuitAssemblerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-//				12089, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine III", 11, "Avengers, Assemble!",
-//				GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
-//				"", false, false, 0, "CIRCUITASSEMBLER",
+		CustomItemList.CircuitAssemblerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+				12092, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine III", 11, "Avengers, Assemble!",
+				GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+				"", false, false, 0, "CIRCUITASSEMBLER",
+						null
 //				new Object[] {
 //				"RCE", "KHK", "WCW",
 //						'R', ItemList.Robot_Arm_UIV,
@@ -3989,12 +4487,14 @@ public class GT_Loader_Machines
 //						'K', ItemList.Conveyor_Module_UIV,
 //						'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
 //						'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable()
-//						}).getStackForm(1L)
-//		);
-//		CustomItemList.CircuitAssemblerUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-//						12090, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
-//						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
-//						"", false, false, 0, "CIRCUITASSEMBLER",
+//						}
+						).getStackForm(1L)
+		);
+		CustomItemList.CircuitAssemblerUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+						12093, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+						"", false, false, 0, "CIRCUITASSEMBLER",
+				null
 //						new Object[] {
 //						"RCE", "KHK", "WCW",
 //						'R', ItemList.Robot_Arm_UMV,
@@ -4003,8 +4503,63 @@ public class GT_Loader_Machines
 //						'K', ItemList.Conveyor_Module_UMV,
 //						'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
 //						'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable()
-//						}).getStackForm(1L)
-//		);
+//						}
+						).getStackForm(1L)
+		);
+				CustomItemList.CircuitAssemblerUXV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+						12094, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+						"", false, false, 0, "CIRCUITASSEMBLER",
+				null
+//						new Object[] {
+//						"RCE", "KHK", "WCW",
+//						'R', ItemList.Robot_Arm_UXV,
+//						'E', ItemList.Emitter_UXV,
+//						'H', CustomItemList.Hull_UXV,
+//						'K', ItemList.Conveyor_Module_UXV,
+//						'C', GT_CustomLoader.AdvancedGTMaterials.UXV.getCircuit(),
+//						'W', GT_CustomLoader.AdvancedGTMaterials.UXV.getCable()
+//						}
+						).getStackForm(1L)
+		);
+				CustomItemList.CircuitAssemblerOpV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+						12095, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+						"", false, false, 0, "CIRCUITASSEMBLER",
+				null
+//						new Object[] {
+//						"RCE", "KHK", "WCW",
+//						'R', ItemList.Robot_Arm_OpV,
+//						'E', ItemList.Emitter_OpV,
+//						'H', CustomItemList.Hull_OpV,
+//						'K', ItemList.Conveyor_Module_OpV,
+//						'C', GT_CustomLoader.AdvancedGTMaterials.OpV.getCircuit(),
+//						'W', GT_CustomLoader.AdvancedGTMaterials.OpV.getCable()
+//						}
+						).getStackForm(1L)
+		);
+				CustomItemList.CircuitAssemblerMAX.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
+						12096, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
+						"", false, false, 0, "CIRCUITASSEMBLER",
+				null
+//						new Object[] {
+//						"RCE", "KHK", "WCW",
+//						'R', ItemList.Robot_Arm_MAX,
+//						'E', ItemList.Emitter_MAX,
+//						'H', CustomItemList.Hull_MAX,
+//						'K', ItemList.Conveyor_Module_MAX,
+//						'C', GT_CustomLoader.AdvancedGTMaterials.MAX.getCircuit(),
+//						'W', GT_CustomLoader.AdvancedGTMaterials.MAX.getCable()
+//						}
+						).getStackForm(1L)
+		);
+
+		// ===================================================================================================
+		// Electric Oven - nah - daaaah
+		// ===================================================================================================
+
+
 	   /*
  		* TODO: WE USE RANGE 10750-12500
  		*
