@@ -1,7 +1,10 @@
 item.TenKCell.name=10K Cell
 item.ThirtyKCell.name=30K Cell
 item.SixtyKCell.name=60K Cell
-item.EmptySpCell.name=Empty Space Cell
+item.Empty180SpCell.name=180K Space Cell
+item.Empty360SpCell.name=360K Space Cell
+item.Empty540SpCell.name=540K Space Cell
+item.Empty1080SpCell.name=1080K Space Cell
 item.NanoCircuit.name=Nano Circuit
 item.PikoCircuit.name=Piko Circuit
 item.QuantumCircuit.name=Quantum Circuit
