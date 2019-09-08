@@ -2344,7 +2344,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                                 ItemList.Field_Generator_EV.get(1L),
                                 ItemList.Electric_Piston_IV.get(2L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
-                                GT_Utility.getIntegratedCircuit(12)},
+                                GT_Utility.getIntegratedCircuit(13)},
                                 Materials.Titanium.getMolten(1440L),
                         GT_ModHandler.getIC2Item("quantumBoots", 1L, 26), 1500, 7680);
 
