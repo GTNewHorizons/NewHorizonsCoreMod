@@ -551,6 +551,11 @@ public enum ItemList
     MedalWarp(new ModSimpleBaseItem("MedalWarp", ModTabList.ModGenericTab)),
     AluminoSilicateWool(new ModSimpleBaseItem("AluminoSilicateWool", ModTabList.ModGenericTab)),
     EdibleSalt(new ModSimpleBaseItem("EdibleSalt", ModTabList.ModGenericTab)),
+    SchematicsDraconic(new ModSimpleBaseItem("SchematicsDraconic", ModTabList.ModGenericTab)),
+    SchematicsWyvern(new ModSimpleBaseItem("SchematicsWyvern", ModTabList.ModGenericTab)),
+    SchematicsAwakened(new ModSimpleBaseItem("SchematicsAwakened", ModTabList.ModGenericTab)),
+    SchematicsChaotic(new ModSimpleBaseItem("SchematicsChaotic", ModTabList.ModGenericTab)),
+    
 
     // Do not delete this
     EndOfList(null);

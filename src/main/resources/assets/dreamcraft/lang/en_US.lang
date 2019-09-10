@@ -618,3 +618,7 @@ item.RawNeutronium.name=Raw Neutronium Dust
 item.itemCollagen.name=Collagen
 item.itemAgar.name=Agar
 item.itemGelatin.name=Gelatin
+item.SchematicsDraconic.name=Schematic for Draconic Core
+item.SchematicsWyvern.name=Schematic for Wyvern Core
+item.SchematicsAwakened.name=Schematic for Awakened Core
+item.SchematicsChaotic.name=Schematic for Chaotic Core

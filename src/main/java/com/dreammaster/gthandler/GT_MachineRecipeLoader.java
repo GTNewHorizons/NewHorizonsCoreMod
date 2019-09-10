@@ -2542,6 +2542,39 @@ public class GT_MachineRecipeLoader implements Runnable{
                 Materials.SolderingAlloy.getMolten(720L)
         }, ItemList.Energy_LapotronicOrb2.get(1L), 1000, 80000);
 
+        
+        //===============================
+        
+        //Addition for Draconic Evolution
+        
+        //Cores
+        GT_Values.RA.addFusionCraftingRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 4), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ichorium, 1), GT_OreDictUnificator.get(OrePrefixes.gem, Materials.EnderEye, 1), CustomItemList.SchematicsDraconic.get(0L)}, null, null, GT_ModHandler.getModItem("DraconicEvolution", "draconicCore", 1, 0), 400, 30720, 1);
+		GT_Values.RA.addFusionCraftingRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 6), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2), GT_ModHandler.getModItem("DraconicEvolution", "draconicCore", 4, 0), GT_OreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1), CustomItemList.SchematicsWyvern.get(0L)}, null, null, GT_ModHandler.getModItem("DraconicEvolution", "wyvernCore", 1, 0), 800, 65536, 2);
+		GT_Values.RA.addFusionCraftingRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 8), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 4), GT_ModHandler.getModItem("DraconicEvolution", "wyvernCore", 4, 0), CustomItemList.ManyullynCrystal.get(1L), CustomItemList.SchematicsAwakened.get(0L)}, null, null, GT_ModHandler.getModItem("DraconicEvolution", "awakenedCore", 1, 0), 1600, 122880, 3);
+		GT_Values.RA.addFusionCraftingRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 12), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 6), GT_ModHandler.getModItem("DraconicEvolution", "awakenedCore", 4, 0), GT_ModHandler.getModItem("DraconicEvolution", "chaosShard", 1, 0), CustomItemList.SchematicsChaotic.get(0L)}, null, null, GT_ModHandler.getModItem("DraconicEvolution", "chaoticCore", 1, 0), 3200, 500000, 4);
+        
+		//Energy Cores
+		GT_Values.RA.addFusionCraftingRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 8), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 4), GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 4, 1), GT_ModHandler.getModItem("DraconicEvolution", "draconicCore", 1, 0), CustomItemList.SchematicsWyvern.get(0L)}, null, null, GT_ModHandler.getModItem("DraconicEvolution", "draconiumEnergyCore", 1, 0), 1000, 65536, 2);
+		GT_Values.RA.addFusionCraftingRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 8), GT_ModHandler.getModItem("DraconicEvolution", "draconiumEnergyCore", 4, 0), GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 4, 4), GT_ModHandler.getModItem("DraconicEvolution", "wyvernCore", 1, 0), CustomItemList.SchematicsAwakened.get(0L)}, null, null, GT_ModHandler.getModItem("DraconicEvolution", "draconiumEnergyCore", 1, 1), 2000, 122880, 3);
+		
+		//Casings
+		GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 4), GT_ModHandler.getModItem("dreamcraft", "tile.BloodyIchorium", 1, 0)}, Materials.Void.getMolten(288L), ItemList.Casing_BloodyIchorium.get(1L), 200, 7680);
+		GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 4), ItemList.Casing_BloodyIchorium.get(1L), GT_ModHandler.getModItem("DraconicEvolution", "draconicCore", 1, 0)}, Materials.Enderium.getMolten(288L), ItemList.Casing_Wyvern.get(1L), 300, 30720);
+		GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 4), ItemList.Casing_Wyvern.get(1L), GT_ModHandler.getModItem("DraconicEvolution", "wyvernCore", 1, 0)}, Materials.Osmium.getMolten(288L), ItemList.Casing_Draconium.get(1L), 400, 122880);
+		GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 4), ItemList.Casing_Draconium.get(1L), GT_ModHandler.getModItem("DraconicEvolution", "awakenedCore", 1, 0)}, Materials.ElectrumFlux.getMolten(288L), ItemList.Casing_DraconiumAwakened.get(1L), 500, 500000);
+		GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 4), ItemList.Casing_DraconiumAwakened.get(1L), GT_ModHandler.getModItem("DraconicEvolution", "chaoticCore", 1, 0)}, Materials.Neutronium.getMolten(288L), ItemList.Casing_Chaotic.get(1L), 600, 2000000);
+		
+		GT_Values.RA.addAssemblylineRecipe(CustomItemList.AssemblingMachineLuV.get(1L), 144000, new Object[]{
+				CustomItemList.AssemblingMachineLuV.get(1L),
+                ItemList.Robot_Arm_LuV.get(2L),
+                ItemList.Electric_Motor_LuV.get(2L),
+                ItemList.Field_Generator_LuV.get(1L),
+                new Object[]{OrePrefixes.circuit.get(Materials.Master), 2},
+                ItemList.Casing_Coil_Naquadah.get(8L),
+        }, new FluidStack[]{
+                Materials.SolderingAlloy.getMolten(2304L),
+                Materials.Thaumium.getMolten(1440L),
+        }, CustomItemList.Machine_Multi_FusionCrafter.get(1L), 1500, 16384);
 
 
         //Quantum Armor and Gravichest

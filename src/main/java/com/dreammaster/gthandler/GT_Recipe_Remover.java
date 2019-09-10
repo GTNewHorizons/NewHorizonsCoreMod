@@ -21,7 +21,16 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 1), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 2), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 3), true, false, true);
-
+        
+        //DE
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution", "draconicCore", 1, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution", "wyvernCore", 1, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution", "awakenedCore", 1, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution", "chaoticCore", 1, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution", "draconiumEnergyCore", 1, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution", "draconiumEnergyCore", 1, 1), true, false, true);
+        
+        
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "quiver", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "shield.wood", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("battlegear2", "shield.hide", 1L, 0), true, false, true);

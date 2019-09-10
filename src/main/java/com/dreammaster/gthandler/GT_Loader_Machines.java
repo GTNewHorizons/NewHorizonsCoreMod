@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler;
 
 import com.dreammaster.gthandler.accelerator.GT_MetaTileEntity_WorldAccelerator;
+import com.dreammaster.gthandler.fusionCrafter.GT_MetaTileEntity_FusionCrafter;
 import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilter;
 import com.dreammaster.gthandler.nameRemover.NameRemover;
 import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
@@ -3700,7 +3701,8 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.Machine_Multi_AirFilter.set(new GT_MetaTileEntity_AirFilter(12020, "multimachine.airfilter", "Electric Air Filter").getStackForm(1L));
 
-
+		CustomItemList.Machine_Multi_FusionCrafter.set(new GT_MetaTileEntity_FusionCrafter(12021, "multimachine.fusioncrafter", "Fusion Crafter").getStackForm(1L));
+		
 
 		// ===================================================================================================
 		// Turbo Chargers
