@@ -13,10 +13,12 @@ import gregtech.api.metatileentity.implementations.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
+import gregtech.api.util.GT_Utility;
 import gregtech.common.tileentities.automation.GT_MetaTileEntity_ChestBuffer;
 import gregtech.common.tileentities.generators.GT_MetaTileEntity_PlasmaGenerator;
 import gregtech.common.tileentities.machines.basic.*;
 import gregtech.loaders.preload.GT_Loader_MetaTileEntities;
+import gtPlusPlus.core.material.gregtech.CustomGTMaterials;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GregtechMetaTransformerHiAmp;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -4555,6 +4557,72 @@ public class GT_Loader_Machines
 						).getStackForm(1L)
 		);
 
+		// ===================================================================================================
+		// Input Hatches
+		// ===================================================================================================
+		
+		CustomItemList.Hatch_Input_UEV.set(new GT_MetaTileEntity_Hatch_Input(12097, "hatch.input.tier.10", "Input Hatch (UEV)",10).getStackForm(1L));
+		CustomItemList.Hatch_Input_UIV.set(new GT_MetaTileEntity_Hatch_Input(12098, "hatch.input.tier.11", "Input Hatch (UIV)",11).getStackForm(1L));
+		CustomItemList.Hatch_Input_UMV.set(new GT_MetaTileEntity_Hatch_Input(12099, "hatch.input.tier.12", "Input Hatch (UMV)",12).getStackForm(1L));
+		CustomItemList.Hatch_Input_UXV.set(new GT_MetaTileEntity_Hatch_Input(12100, "hatch.input.tier.13", "Input Hatch (UXV)",13).getStackForm(1L));
+		CustomItemList.Hatch_Input_OPV.set(new GT_MetaTileEntity_Hatch_Input(12101, "hatch.input.tier.14", "Input Hatch (OpV)",14).getStackForm(1L));
+		CustomItemList.Hatch_Input_MAX.set(new GT_MetaTileEntity_Hatch_Input(12102, "hatch.input.tier.15", "Input Hatch (MAX)",15).getStackForm(1L));
+
+
+		// ===================================================================================================
+		// Output Hatches
+		// ===================================================================================================
+
+		CustomItemList.Hatch_Output_UEV.set(new GT_MetaTileEntity_Hatch_Output(12103, "hatch.output.tier.10", "Output Hatch (UEV)",10).getStackForm(1L));
+		CustomItemList.Hatch_Output_UIV.set(new GT_MetaTileEntity_Hatch_Output(12104, "hatch.output.tier.11", "Output Hatch (UIV)",11).getStackForm(1L));
+		CustomItemList.Hatch_Output_UMV.set(new GT_MetaTileEntity_Hatch_Output(12105, "hatch.output.tier.12", "Output Hatch (UMV)",12).getStackForm(1L));
+		CustomItemList.Hatch_Output_UXV.set(new GT_MetaTileEntity_Hatch_Output(12106, "hatch.output.tier.13", "Output Hatch (UXV)",13).getStackForm(1L));
+		CustomItemList.Hatch_Output_OPV.set(new GT_MetaTileEntity_Hatch_Output(12107, "hatch.output.tier.14", "Output Hatch (OpV)",14).getStackForm(1L));
+		CustomItemList.Hatch_Output_MAX.set(new GT_MetaTileEntity_Hatch_Output(12108, "hatch.output.tier.15", "Output Hatch (MAX)",15).getStackForm(1L));
+
+		ItemStack[] inHatches = {
+						CustomItemList.Hatch_Input_UEV.get(1),
+						CustomItemList.Hatch_Input_UIV.get(1),
+						CustomItemList.Hatch_Input_UMV.get(1),
+						CustomItemList.Hatch_Input_UXV.get(1),
+						CustomItemList.Hatch_Input_OPV.get(1),
+						CustomItemList.Hatch_Input_MAX.get(1)
+		};
+		ItemStack[] outHatches = {
+						CustomItemList.Hatch_Output_UEV.get(1),
+						CustomItemList.Hatch_Output_UIV.get(1),
+						CustomItemList.Hatch_Output_UMV.get(1),
+						CustomItemList.Hatch_Output_UXV.get(1),
+						CustomItemList.Hatch_Output_OPV.get(1),
+						CustomItemList.Hatch_Output_MAX.get(1)
+		};
+		ItemStack[][] flInputs = new ItemStack[6][3];
+		ItemStack[][] flInputs2 = new ItemStack[6][3];
+		ItemStack[] tanks = {
+				GT_ModHandler.getModItem("gregtech","gt.blockmachines",1,132),
+				GT_ModHandler.getModItem("gregtech","gt.blockmachines",1,133),
+				GT_ModHandler.getModItem("gregtech","gt.blockmachines",1,134),
+				GT_ModHandler.getModItem("gregtech","gt.blockmachines",1,120),
+				GT_ModHandler.getModItem("gregtech","gt.blockmachines",1,121),
+				GT_ModHandler.getModItem("gregtech","gt.blockmachines",1,122),
+		};
+		ItemStack[] hulls = {
+				CustomItemList.Hull_UEV.get(1),
+				CustomItemList.Hull_UIV.get(1),
+				CustomItemList.Hull_UMV.get(1),
+				CustomItemList.Hull_UXV.get(1),
+				CustomItemList.Hull_OPV.get(1),
+				CustomItemList.Hull_MAXV.get(1),
+		};
+		for (int i = 0; i < 6; i++) {
+			flInputs[i]= new ItemStack[]{hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(1)};
+			flInputs2[i]= new ItemStack[]{hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(2)};
+		}
+		//10-15 since MAX crashes., change to 16 somwhen the NEI handler is fixed and MAX is optainable
+		for (int aTier = 10; aTier < 15; aTier++) {
+			GT_Values.RA.addAssemblerRecipe(flInputs[aTier-10], GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2,(aTier-9)))), inHatches[aTier-10], 480, (int) (30 * Math.pow(4, (aTier - 1))), false);
+			GT_Values.RA.addAssemblerRecipe(flInputs2[aTier-10], GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2,(aTier-9)))), outHatches[aTier-10], 480, (int) (30 * Math.pow(4, (aTier - 1))), false);
+		}
 		// ===================================================================================================
 		// Electric Oven - nah - daaaah
 		// ===================================================================================================
