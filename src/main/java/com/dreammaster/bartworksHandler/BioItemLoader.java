@@ -103,7 +103,7 @@ public class BioItemLoader {
                         GT_ModHandler.getModItem("harvestcraft","seaweedItem",64)
                 },
                 CultureSet.get("TcetiEBac"),
-                new FluidStack[]{new FluidStack(BIOFLUIDS[2],8000)},
+                new FluidStack[]{new FluidStack(BIOFLUIDS[2],1600)},
                 new FluidStack[]{new FluidStack(BIOFLUIDS[3],50)},
                 1200,BW_Util.getMachineVoltageFromTier(8),100,8,0,false
         );
