@@ -4477,7 +4477,7 @@ public class GT_Loader_Machines
 						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.CircuitAssemblerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-				12092, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine III", 11, "Avengers, Assemble!",
+				12092, "basicmachine.circuitassembler.tier.11", "Ultimate Circuit Assembling Machine III", 11, "Avengers, Assemble!",
 				GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
 				"", false, false, 0, "CIRCUITASSEMBLER",
 						null
@@ -4493,7 +4493,7 @@ public class GT_Loader_Machines
 						).getStackForm(1L)
 		);
 		CustomItemList.CircuitAssemblerUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-						12093, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+						12093, "basicmachine.circuitassembler.tier.12", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
 						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
 						"", false, false, 0, "CIRCUITASSEMBLER",
 				null
@@ -4509,7 +4509,7 @@ public class GT_Loader_Machines
 						).getStackForm(1L)
 		);
 				CustomItemList.CircuitAssemblerUXV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-						12094, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+						12094, "basicmachine.circuitassembler.tier.13", "Ultimate Circuit Assembling Machine V", 13, "Avengers, Assemble!",
 						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
 						"", false, false, 0, "CIRCUITASSEMBLER",
 				null
@@ -4525,7 +4525,7 @@ public class GT_Loader_Machines
 						).getStackForm(1L)
 		);
 				CustomItemList.CircuitAssemblerOpV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-						12095, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+						12095, "basicmachine.circuitassembler.tier.14", "Ultimate Circuit Assembling Machine VI", 14, "Avengers, Assemble!",
 						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
 						"", false, false, 0, "CIRCUITASSEMBLER",
 				null
@@ -4541,7 +4541,7 @@ public class GT_Loader_Machines
 						).getStackForm(1L)
 		);
 				CustomItemList.CircuitAssemblerMAX.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-						12096, "basicmachine.circuitassembler.tier.10", "Ultimate Circuit Assembling Machine IV", 12, "Avengers, Assemble!",
+						12096, "basicmachine.circuitassembler.tier.15", "MAX Circuit Assembling Machine", 15, "Avengers, Assemble!",
 						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
 						"", false, false, 0, "CIRCUITASSEMBLER",
 				null
