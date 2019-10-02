@@ -8,6 +8,7 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -25,6 +26,7 @@ public class GT_CustomLoader
         		OrePrefixes.wireGt02.get(Materials.HSSG),
         		OrePrefixes.gemExquisite.get(Materials.Diamond),
         		gregtech.api.enums.ItemList.Gravistar,
+        		Loader.isModLoaded("bartworks") ? "blockGlassLuV" : "glassReinforced",
         		Materials.Chrome,
         		Materials.Enderium),
         
@@ -34,6 +36,7 @@ public class GT_CustomLoader
         		OrePrefixes.wireGt02.get(Materials.Naquadah),
         		OrePrefixes.gemExquisite.get(Materials.GarnetYellow),
         		ItemList.MysteriousCrystal.getIS(),
+                Loader.isModLoaded("bartworks") ? "blockGlassZPM" : "glassReinforced",
         		Materials.Iridium,
         		Materials.Naquadah),
         
@@ -43,30 +46,37 @@ public class GT_CustomLoader
         		OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
         		OrePrefixes.gemExquisite.get(Materials.GarnetRed),
         		new ItemStack(Blocks.dragon_egg, 1),
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
         		Materials.Osmium,
         		Materials.Neutronium),
+
         UHV(OrePrefixes.circuit.get(Materials.Infinite),
         		OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
                 Materials.Bedrockium,
+                Materials.Bedrockium,
                 null,
                 null,
-                null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
                 Materials.Neutronium,
-                null),
+                Materials.Neutronium),
+
         UEV(OrePrefixes.circuit.get(Materials.Bio),
-                null,
+                OrePrefixes.wireGt04.get(Materials.Bedrockium),
+                Materials.Draconium,
                 Materials.Draconium,
                 null,
                 null,
-                null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
                 Materials.Bedrockium,
-                null),
-        UIV(null,
+                Materials.Neutronium),
+
+        UIV(OrePrefixes.circuit.get(Materials.Piko),
                 null,
                 null,
                 null,
                 null,
                 null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
                 null,
                 null);
 
@@ -83,7 +93,7 @@ public class GT_CustomLoader
         private Object _mPipe;
         private Object _mPipeL;
         
-        AdvancedGTMaterials(Object pCircuit, Object pHeatingCoil, Materials pCable, Object pCoilWire, Object pGem, Object pPowerGem, Materials pPlateMaterial, Materials pPipe)
+        AdvancedGTMaterials(Object pCircuit, Object pHeatingCoil, Materials pCable, Object pCoilWire, Object pGem, Object pPowerGem, Object glass, Materials pPlateMaterial, Materials pPipe)
         {
             _mCircuit = pCircuit;
             _mHeatingCoil = pHeatingCoil;
@@ -93,7 +103,7 @@ public class GT_CustomLoader
             _mGem = pGem;
             _mPowerGem = pPowerGem;
             _mPlate = OrePrefixes.plate.get(pPlateMaterial);
-            _mReinfGlass = "glassReinforced";
+            _mReinfGlass = glass;
             _mPipe = OrePrefixes.pipeMedium.get(pPipe);
             _mPipeL = OrePrefixes.pipeLarge.get(pPipe);
         }
