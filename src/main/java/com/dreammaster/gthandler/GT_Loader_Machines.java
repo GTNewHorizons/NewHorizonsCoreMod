@@ -4334,10 +4334,10 @@ public class GT_Loader_Machines
 				12060 , "automation.chestbuffer.tier.10", "Ultra High Voltage Chest Buffer", 10).getStackForm(1L));
 
 		CustomItemList.Automation_ChestBuffer_UIV.set(new GT_MetaTileEntity_ChestBuffer(
-				12061, "automation.chestbuffer.tier.11", "UEV Voltage Chest Buffer", 11).getStackForm(1L));
+				12061, "automation.chestbuffer.tier.11", "UIV Voltage Chest Buffer", 11).getStackForm(1L));
 
 		CustomItemList.Automation_ChestBuffer_UMV.set(new GT_MetaTileEntity_ChestBuffer(
-				12062, "automation.chestbuffer.tier.12", "UIV Voltage Chest Buffer", 12).getStackForm(1L));
+				12062, "automation.chestbuffer.tier.12", "UMV Voltage Chest Buffer", 12).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Automation_ChestBuffer_UEV.get(1L),
 				bitsd,
