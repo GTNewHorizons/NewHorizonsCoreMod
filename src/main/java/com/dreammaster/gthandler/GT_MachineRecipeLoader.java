@@ -2588,10 +2588,10 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GregTech_API.mIC2Classic ? Materials.Lava.getFluid(2000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000)
         }, ItemList.Circuit_Chip_BioCPU.get(1L), 2400, 160000);
 
-        GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1L), 288000, new ItemStack[]{
+        GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1L), 288000, new Object[]{
                 ItemList.Circuit_Board_Multifiberglass.get(1L),
                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Europium, 32L),
-                ItemList.Circuit_Neuroprocessor.get(4L),
+                new Object[]{OrePrefixes.circuit.get(Materials.Master), 4L},
                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L),
                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L),
                 ItemList.Circuit_Chip_HPIC.get(64L),
