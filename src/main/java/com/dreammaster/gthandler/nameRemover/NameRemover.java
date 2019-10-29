@@ -42,6 +42,9 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
 
     @Override
     public int checkRecipe() {
+        if(getInputAt(0) == null)
+            return 0;
+
         ItemStack output = getInputAt(0).copy();
         NBTTagCompound nbt=output.getTagCompound();
         boolean removeName = false, removeDisassembly = false;
