@@ -52,6 +52,7 @@ import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.GT_Mod;
 import gregtech.api.GregTech_API;
+import gregtech.api.util.GT_LanguageManager;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -390,6 +391,17 @@ public class MainRegistry
         GTCustomLoader.run();
 
         registerModFixes();
+
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4","Rocket Plate Tier 4!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc","On your way to the T4 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5","Rocket Plate Tier 5!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5.desc","On your way to the T5 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6","Rocket Plate Tier 6!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6.desc","On your way to the T6 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7","Rocket Plate Tier 7!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc","On your way to the T7 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8","Rocket Plate Tier 8!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc","On your way to the T8 Dims!");
 
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself

@@ -261,7 +261,8 @@ public class GT_MachineRecipeLoader implements Runnable{
                 2500,
                 new ItemStack[]{
                         GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
-                        CustomItemList.IceCompressedPlate.get(6L),
+                        CustomItemList.IceCompressedPlate.get(3L),
+                        CustomItemList.IceCompressedPlate.get(3L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Osmiridium,4)
                 },
                 new FluidStack[]{
@@ -274,7 +275,8 @@ public class GT_MachineRecipeLoader implements Runnable{
                 5000,
                 new ItemStack[]{
                         CustomItemList.HeavyDutyPlateTier4.get(1L),
-                        CustomItemList.QuantinumCompressedPlate.get(8L),
+                        CustomItemList.QuantinumCompressedPlate.get(4L),
+                        CustomItemList.QuantinumCompressedPlate.get(4L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.NaquadahAlloy,8)
                 },
                 new FluidStack[]{
@@ -287,7 +289,8 @@ public class GT_MachineRecipeLoader implements Runnable{
                 7500,
                 new ItemStack[]{
                         CustomItemList.HeavyDutyPlateTier5.get(1L),
-                        CustomItemList.LeadOriharukonPlate.get(10L),
+                        CustomItemList.LeadOriharukonPlate.get(5L),
+                        CustomItemList.LeadOriharukonPlate.get(5L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Tritanium,8)
                 },
                 new FluidStack[]{
@@ -296,11 +299,12 @@ public class GT_MachineRecipeLoader implements Runnable{
                 CustomItemList.HeavyDutyAlloyIngotT6.get(1L), 300, 500000
         );
         GT_Values.RA.addAssemblylineRecipe(
-                CustomItemList.HeavyDutyAlloyIngotT6.get(1L),
+                CustomItemList.HeavyDutyPlateTier6.get(1L),
                 10000,
                 new ItemStack[]{
                         CustomItemList.HeavyDutyPlateTier6.get(1L),
-                        CustomItemList.MysteriousCrystalCompressedPlate.get(12L),
+                        CustomItemList.MysteriousCrystalCompressedPlate.get(6L),
+                        CustomItemList.MysteriousCrystalCompressedPlate.get(6L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Neutronium,10)
                 },
                 new FluidStack[]{
@@ -309,11 +313,12 @@ public class GT_MachineRecipeLoader implements Runnable{
                 CustomItemList.HeavyDutyAlloyIngotT7.get(1L), 300, 2000000
         );
         GT_Values.RA.addAssemblylineRecipe(
-                CustomItemList.HeavyDutyAlloyIngotT7.get(1L),
+                CustomItemList.HeavyDutyPlateTier7.get(1L),
                 12500,
                 new ItemStack[]{
-                        CustomItemList.HeavyDutyAlloyIngotT7.get(1L),
-                        CustomItemList.BlackPlutoniumCompressedPlate.get(14L),
+                        CustomItemList.HeavyDutyPlateTier7.get(1L),
+                        CustomItemList.BlackPlutoniumCompressedPlate.get(7L),
+                        CustomItemList.BlackPlutoniumCompressedPlate.get(7L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Neutronium,20)
                 },
                 new FluidStack[]{
