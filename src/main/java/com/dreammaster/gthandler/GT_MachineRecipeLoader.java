@@ -249,12 +249,79 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(ItemList.Circuit_Data.get(1L), GT_ModHandler.getModItem("GalaxySpace", "item.SchematicTier7", 0L, 0), CustomItemList.SchematicsTier7.get(1L), 120, 7680);
         GT_Values.RA.addAssemblerRecipe(ItemList.Circuit_Data.get(1L), GT_ModHandler.getModItem("GalaxySpace", "item.SchematicTier8", 0L, 0), CustomItemList.SchematicsTier8.get(1L), 140, 30720);
         */
-        GT_Values.RA.addAssemblerRecipe(CustomItemList.LedoxCompressedPlate.get(1L), CustomItemList.CallistoIceCompressedPlate.get(1L), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), CustomItemList.IceCompressedPlate.get(2L), 300, 30720);
-        GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0), CustomItemList.IceCompressedPlate.get(6L), Materials.Osmium.getMolten(144L), CustomItemList.HeavyDutyAlloyIngotT4.get(1L), 300, 30720);
-        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier4.get(1L), CustomItemList.QuantinumCompressedPlate.get(8L), Materials.NaquadahAlloy.getMolten(288L), CustomItemList.HeavyDutyAlloyIngotT5.get(1L), 300, 122880);
-        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier5.get(1L), CustomItemList.LeadOriharukonPlate.get(10L),  Materials.Tritanium.getMolten(576L), CustomItemList.HeavyDutyAlloyIngotT6.get(1L), 300, 500000);
-        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier6.get(1L), CustomItemList.MysteriousCrystalCompressedPlate.get(12L), Materials.Neutronium.getMolten(1152L), CustomItemList.HeavyDutyAlloyIngotT7.get(1L), 300, 2000000);
-        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier7.get(1L), CustomItemList.BlackPlutoniumCompressedPlate.get(14L), Materials.Neutronium.getMolten(4608L), CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 1200, 2000000);
+
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.LedoxCompressedPlate.get(1L), CustomItemList.CallistoIceCompressedPlate.get(1L), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), CustomItemList.IceCompressedPlate.get(2L), 300, 7680);
+//        GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0), CustomItemList.IceCompressedPlate.get(6L), Materials.Osmium.getMolten(144L), CustomItemList.HeavyDutyAlloyIngotT4.get(1L), 300, 30720);
+//        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier4.get(1L), CustomItemList.QuantinumCompressedPlate.get(8L), Materials.NaquadahAlloy.getMolten(288L), CustomItemList.HeavyDutyAlloyIngotT5.get(1L), 300, 122880);
+//        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier5.get(1L), CustomItemList.LeadOriharukonPlate.get(10L),  Materials.Tritanium.getMolten(576L), CustomItemList.HeavyDutyAlloyIngotT6.get(1L), 300, 500000);
+//        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier6.get(1L), CustomItemList.MysteriousCrystalCompressedPlate.get(12L), Materials.Neutronium.getMolten(1152L), CustomItemList.HeavyDutyAlloyIngotT7.get(1L), 300, 2000000);
+//        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier7.get(1L), CustomItemList.BlackPlutoniumCompressedPlate.get(14L), Materials.Neutronium.getMolten(4608L), CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 1200, 2000000);
+        GT_Values.RA.addAssemblylineRecipe(
+                GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                2500,
+                new ItemStack[]{
+                        GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                        CustomItemList.IceCompressedPlate.get(6L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Osmiridium,4)
+                },
+                new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(36)
+                },
+                CustomItemList.HeavyDutyAlloyIngotT4.get(1L), 300, 6000
+        );
+        GT_Values.RA.addAssemblylineRecipe(
+                CustomItemList.HeavyDutyPlateTier4.get(1L),
+                5000,
+                new ItemStack[]{
+                        CustomItemList.HeavyDutyPlateTier4.get(1L),
+                        CustomItemList.QuantinumCompressedPlate.get(8L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.NaquadahAlloy,8)
+                },
+                new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(72)
+                },
+                CustomItemList.HeavyDutyAlloyIngotT5.get(1L), 300, 122880
+        );
+        GT_Values.RA.addAssemblylineRecipe(
+                CustomItemList.HeavyDutyPlateTier5.get(1L),
+                7500,
+                new ItemStack[]{
+                        CustomItemList.HeavyDutyPlateTier5.get(1L),
+                        CustomItemList.LeadOriharukonPlate.get(10L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Tritanium,8)
+                },
+                new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(144)
+                },
+                CustomItemList.HeavyDutyAlloyIngotT6.get(1L), 300, 500000
+        );
+        GT_Values.RA.addAssemblylineRecipe(
+                CustomItemList.HeavyDutyAlloyIngotT6.get(1L),
+                10000,
+                new ItemStack[]{
+                        CustomItemList.HeavyDutyPlateTier6.get(1L),
+                        CustomItemList.MysteriousCrystalCompressedPlate.get(12L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Neutronium,10)
+                },
+                new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(288)
+                },
+                CustomItemList.HeavyDutyAlloyIngotT7.get(1L), 300, 2000000
+        );
+        GT_Values.RA.addAssemblylineRecipe(
+                CustomItemList.HeavyDutyAlloyIngotT7.get(1L),
+                12500,
+                new ItemStack[]{
+                        CustomItemList.HeavyDutyAlloyIngotT7.get(1L),
+                        CustomItemList.BlackPlutoniumCompressedPlate.get(14L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Neutronium,20)
+                },
+                new FluidStack[]{
+                        Materials.SolderingAlloy.getMolten(576)
+                },
+                CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 1200, 2000000
+        );
+
         GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("GalaxySpace", "item.CompressedPlates", 1L, 7), GT_ModHandler.getModItem("GalaxySpace", "item.CompressedPlates", 1L, 3), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), CustomItemList.LeadOriharukonPlate.get(2L), 300, 500000);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), 1, 122880);
