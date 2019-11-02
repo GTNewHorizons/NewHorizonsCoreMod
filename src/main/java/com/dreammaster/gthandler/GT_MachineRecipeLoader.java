@@ -319,12 +319,12 @@ public class GT_MachineRecipeLoader implements Runnable{
                         CustomItemList.HeavyDutyPlateTier7.get(1L),
                         CustomItemList.BlackPlutoniumCompressedPlate.get(7L),
                         CustomItemList.BlackPlutoniumCompressedPlate.get(7L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.Neutronium,20)
+                        GT_OreDictUnificator.get(OrePrefixes.bolt,Materials.BlackPlutonium,12)
                 },
                 new FluidStack[]{
                         Materials.SolderingAlloy.getMolten(576)
                 },
-                CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 1200, 2000000
+                CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 300, 8000000
         );
 
         GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("GalaxySpace", "item.CompressedPlates", 1L, 7), GT_ModHandler.getModItem("GalaxySpace", "item.CompressedPlates", 1L, 3), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), CustomItemList.LeadOriharukonPlate.get(2L), 300, 500000);
@@ -1300,7 +1300,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT5.get(1L), 40, CustomItemList.HeavyDutyPlateTier5.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.NaquadahAlloy, 5L));
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT6.get(1L), 48, CustomItemList.HeavyDutyPlateTier6.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Tritanium, 6L));
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT7.get(1L), 54, CustomItemList.HeavyDutyPlateTier7.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Neutronium, 7L));
-        GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 64, CustomItemList.HeavyDutyPlateTier8.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Neutronium, 8L));
+        GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 64, CustomItemList.HeavyDutyPlateTier8.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.BlackPlutonium, 8L));
 
         GT_Values.RA.addLatheRecipe(CustomItemList.ReinforcedGlassPLate.get(1L), CustomItemList.ReinforcedGlassLense.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L), 400, 16);
 
