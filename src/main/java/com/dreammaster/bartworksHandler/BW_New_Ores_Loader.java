@@ -1,5 +1,6 @@
 package com.dreammaster.bartworksHandler;
 
+import bloodasp.galacticgreg.bartworks.BW_Worldgen_Ore_Layer_Space;
 import bloodasp.galacticgreg.bartworks.BW_Worldgen_Ore_SmallOre_Space;
 
 import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.*;
@@ -8,6 +9,12 @@ public class BW_New_Ores_Loader implements Runnable {
 
     @Override
     public void run() {
+        loadSmallOres();
+
+    }
+
+    private void loadSmallOres(){
+        //Small Ores
         new BW_Worldgen_Ore_SmallOre_Space("small.Platinum",true,20,80,8, PTMetallicPowder.getmID(),PTMetallicPowder);
         new BW_Worldgen_Ore_SmallOre_Space("small.Osmium",true,10,30,8, IrOsLeachResidue.getmID(),IrOsLeachResidue);
         new BW_Worldgen_Ore_SmallOre_Space("small.Iridium",true,20,40,8, IrLeachResidue.getmID(),IrLeachResidue);
@@ -16,4 +23,8 @@ public class BW_New_Ores_Loader implements Runnable {
         new BW_Worldgen_Ore_SmallOre_Space("small.Palladium",true,40,60,8, PDMetallicPowder.getmID(),PDMetallicPowder);
         new BW_Worldgen_Ore_SmallOre_Space("small.Arsenopyrite",true,10,70,8, Arsenopyrite.getmID(),Arsenopyrite);
     }
+
+    private void loadVeins(){
+    }
+
 }
