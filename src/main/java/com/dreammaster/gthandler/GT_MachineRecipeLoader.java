@@ -1295,7 +1295,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("GalacticraftCore", "item.basicItem", 2L, 6), 2, CustomItemList.CopperDualCompressedPlates.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L));
         GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("GalacticraftCore", "item.basicItem", 2L, 11), 2, CustomItemList.IronDualCompressedPlates.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L));
         GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("GalacticraftCore", "item.meteoricIronIngot", 2L, 1), 2, CustomItemList.MeteoricIronDualCompressedPlates.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L));
-        GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT4.get(1L), 32, CustomItemList.HeavyDutyPlateTier4.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Osmiridium, 4L));
+        if (!Loader.isModLoaded("bartworks"))
+            GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT4.get(1L), 32, CustomItemList.HeavyDutyPlateTier4.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Osmiridium, 4L));
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT5.get(1L), 40, CustomItemList.HeavyDutyPlateTier5.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.NaquadahAlloy, 5L));
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT6.get(1L), 48, CustomItemList.HeavyDutyPlateTier6.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Tritanium, 6L));
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT7.get(1L), 54, CustomItemList.HeavyDutyPlateTier7.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Neutronium, 7L));
