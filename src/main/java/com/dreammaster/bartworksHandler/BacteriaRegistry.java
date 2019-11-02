@@ -34,6 +34,8 @@ public class BacteriaRegistry {
         runLateBioOBJs();
         runBWRecipes();
         runGTRecipes();
+        new BW_Recipe_Loader().run();
+        new BW_New_Ores_Loader().run();
         CultureSet.clear(); //deletes map, not used anymore
     }
 
