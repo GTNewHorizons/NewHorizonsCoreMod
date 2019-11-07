@@ -4292,7 +4292,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Battery_Charger_4by4_UV,
 						'B', ItemList.ZPM2,
 						'C', OrePrefixes.cableGt16.get(Materials.NaquadahAlloy),
-						'X', OrePrefixes.circuit.get(Materials.Ultimate)});
+						'X', OrePrefixes.circuit.get(Materials.Superconductor)});
 
 		CustomItemList.Battery_TurboCharger_4by4_UHV.set(new GT_MetaTileEntity_TurboCharger(
 				12049, "batteryturbocharger.16.tier.09", "Highly Ultimate Voltage Turbo Charger",9,"64A in /16A out, 120A/item, Disable to force Charge", 4).getStackForm(1L));
@@ -4304,7 +4304,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Battery_Charger_4by4_MAX,
 						'B', ItemList.ZPM2,
 						'C', OrePrefixes.wireGt16.get(Materials.SuperconductorUHV),//DONT COPY THIS it has superconductor: cable->wire
-						'X', OrePrefixes.circuit.get(Materials.Ultimate)});
+						'X', OrePrefixes.circuit.get(Materials.Infinite)});
 
 		//CustomItemList.Battery_TurboCharger_4by4_UEV.set(new GT_MetaTileEntity_TurboCharger(
 		//		12050, "batteryturbocharger.16.tier.10", "Extremely Ultimate Turbo Charger",10,"64A in /16A out", 4).getStackForm(1L));
