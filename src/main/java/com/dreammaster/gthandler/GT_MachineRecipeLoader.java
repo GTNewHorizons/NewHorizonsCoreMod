@@ -1722,8 +1722,12 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer2.get(1L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), ItemList.Circuit_Wafer_NAND.get(1L), 900, 480, true);
         GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer3.get(1L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), ItemList.Circuit_Wafer_NAND.get(4L), 600, 1920, true);
+        GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer4.get(1L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), ItemList.Circuit_Wafer_NAND.get(8L), 600, 7680, true);
+        GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer5.get(1L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), ItemList.Circuit_Wafer_NAND.get(16L), 600, 30720, true);
         GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer2.get(1L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)), ItemList.Circuit_Wafer_NOR.get(1L), 900, 480, true);
         GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer3.get(1L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)), ItemList.Circuit_Wafer_NOR.get(4L), 600, 1920, true);
+        GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer4.get(1L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)), ItemList.Circuit_Wafer_NOR.get(8L), 600, 7680, true);
+        GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Silicon_Wafer5.get(1L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)), ItemList.Circuit_Wafer_NOR.get(16L), 600, 30720, true);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_ILC.get(1L), ItemList.Circuit_Chip_ILC.get(8L), GT_Values.NI, 900, 64);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_Ram.get(1L), ItemList.Circuit_Chip_Ram.get(32L), GT_Values.NI, 900, 96);
         GT_Values.RA.addCutterRecipe(ItemList.Circuit_Wafer_NAND.get(1L),  GT_Values.NI, ItemList.Circuit_Chip_NAND.get(32L), GT_Values.NI, 900, 192, true);
