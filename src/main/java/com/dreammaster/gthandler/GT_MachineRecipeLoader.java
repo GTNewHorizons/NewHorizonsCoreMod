@@ -1414,18 +1414,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Iron, 6L), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Nickel, 1L), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Manganese, 1L), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Chrome, 1L), GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.StainlessSteel, 9L), 900, 120);
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Iron, 6L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Nickel, 1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Manganese, 1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Chrome, 1L), GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.StainlessSteel, 9L), 900, 120);
 
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RoseGold, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedGold, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SterlingSilver, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SolderingAlloy, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RedSteel, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BlueSteel, 1l), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1L), GT_Utility.getIntegratedCircuit(4), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.ElectrumFlux, 4L), 50, 900);
-
-        GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.ElectrumFlux, 4L),
-                GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
-                        OrePrefixes.dust.get(Materials.RoseGold),
-                        OrePrefixes.dust.get(Materials.InfusedGold),
-                        OrePrefixes.dust.get(Materials.AstralSilver),
-                        OrePrefixes.dust.get(Materials.SterlingSilver),
-                        OrePrefixes.dust.get(Materials.SolderingAlloy),
-                        OrePrefixes.dust.get(Materials.RedSteel),
-                        OrePrefixes.dust.get(Materials.BlueSteel),
-                        OrePrefixes.dust.get(Materials.NaquadahAlloy)});
+        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RoseGold, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedGold, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SterlingSilver, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SolderingAlloy, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RedSteel, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BlueSteel, 1l), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 1L), GT_Utility.getIntegratedCircuit(4), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.ElectrumFlux, 4L), 50, 900);
 
         GT_Values.RA.addFermentingRecipe(FluidRegistry.getFluidStack("concrete", 1000), Materials.Concrete.getMolten(1000L), 20, 16, false);
         GT_Values.RA.addFermentingRecipe(Materials.Concrete.getMolten(1000L), Materials.ConstructionFoam.getFluid( 1000), 20, 16, false);
