@@ -2919,7 +2919,7 @@ public class GT_Loader_Machines
 				false, false, 0, "CHEMICAL_REACTOR", null).getStackForm(1L));
 
 		CustomItemList.ChemicalReactorUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-				11153, "basicmachine.chemicalreactor.tier.09", "Epic hemical Performer", 9,
+				11153, "basicmachine.chemicalreactor.tier.09", "Epic Chemical Performer", 9,
 				"Letting Chemicals react with each other", GT_Recipe.GT_Recipe_Map.sChemicalRecipes,
 				2, 2, 16000, 0, 1, "ChemicalReactor.png", GregTech_API.sSoundList.get(200),
 				false, false, 0, "CHEMICAL_REACTOR", null).getStackForm(1L));
