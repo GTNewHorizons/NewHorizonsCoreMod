@@ -2,7 +2,6 @@ package com.dreammaster.gthandler;
 
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 
-import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.Dyes;
 import gregtech.api.enums.GT_Values;
@@ -65,7 +64,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier2.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.StainlessSteel), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.RoseGold), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier3.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Titanium), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.PulsatingIron), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier4.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.TungstenSteel), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.EnergeticAlloy), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
-        GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier5.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(WerkstoffLoader.LuVTierMaterial), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.FierySteel), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
+        GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier5.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Chrome), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.FierySteel), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
         GT_ModHandler.addCraftingRecipe(CustomItemList.RawOrbTier6.get(1L), bits, new Object[]{"XTX", "POP", "PPP", 'X', OrePrefixes.screw.get(Materials.Iridium), 'T', ToolDictNames.craftingToolScrewdriver, 'P', OrePrefixes.plate.get(Materials.Plutonium241), 'O', CustomItemList.ReinforcedGlassLense.get(1L)});
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.WoodenCasing.get(1L), bits, new Object[]{"SSS", "UCU", "SDS", 'S', OrePrefixes.slab.get(Materials.Wood), 'D', ToolDictNames.craftingToolScrewdriver, 'U', OrePrefixes.screw.get(Materials.Iron), 'C', OrePrefixes.frameGt.get(Materials.Wood)});
