@@ -1263,6 +1263,8 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 9L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftSteel.get(1L), 1280, 120);
         GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.block, Materials.Steel, 1L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftSteel.get(1L), 1280, 120);
 
+        GT_ModHandler.addExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
+
         GT_Values.RA.addFermentingRecipe(Materials.Honey.getFluid(1000L), FluidRegistry.getFluidStack("for.honey", 1000), 20, false);
         GT_Values.RA.addFermentingRecipe(FluidRegistry.getFluidStack("for.honey", 1000), Materials.Honey.getFluid(1000L),20, false);
 
