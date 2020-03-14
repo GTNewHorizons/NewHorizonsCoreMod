@@ -1312,6 +1312,11 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT6.get(1L), 48, CustomItemList.HeavyDutyPlateTier6.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Tritanium, 6L));
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT7.get(1L), 54, CustomItemList.HeavyDutyPlateTier7.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Neutronium, 7L));
         GT_Values.RA.addImplosionRecipe(CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 64, CustomItemList.HeavyDutyPlateTier8.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.BlackPlutonium, 8L));
+        //Avaritia recipes
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 2), 1, GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 3), GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 3), 4, GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 4), GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 4), 16, GT_ModHandler.getModItem("Avaritia", "Resource_Block", 1L, 0), GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 6), 64, GT_ModHandler.getModItem("Avaritia", "Resource_Block", 1L, 1), GT_Values.NI);
 
         GT_Values.RA.addLatheRecipe(CustomItemList.ReinforcedGlassPLate.get(1L), CustomItemList.ReinforcedGlassLense.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L), 400, 16);
 
