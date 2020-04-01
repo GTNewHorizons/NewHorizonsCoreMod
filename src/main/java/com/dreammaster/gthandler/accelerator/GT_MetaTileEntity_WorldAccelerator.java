@@ -178,9 +178,13 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
 
   public long getEnergyDemand( int pSpeedTier, int pRangeTier, boolean pIsAcceleratingTEs )
   {
+    // TE mode does not need to consider range setting
+    if (pIsAcceleratingTEs)
+      return V[pSpeedTier] * 6;
+
     // Include range setting into power calculation
     float multiplier = 100.0F / (float)mTier * (float)pRangeTier / 100.0F;
-    long demand = V[pSpeedTier] * ( pIsAcceleratingTEs ? 6 : 3 );
+    long demand = V[pSpeedTier] * 6;
 
     float tDemand = demand * multiplier;
 
