@@ -69,10 +69,8 @@ public enum CustomItemList implements IItemContainer
 	MicrowaveLuV, MicrowaveZPM, MicrowaveUV, MicrowaveUHV, MicrowaveUEV, MicrowaveUIV, MicrowaveUMV,
 	MixerLuV, MixerZPM, MixerUV, MixerUHV, MixerUEV, MixerUIV, MixerUMV,
 	OreWashingPlantLuV, OreWashingPlantZPM, OreWashingPlantUV, OreWashingPlantUHV, OreWashingPlantUEV, OreWashingPlantUIV, OreWashingPlantUMV,
-	//PackagerLuV, PackagerZPM, PackagerUV,
 	PlasmaArcFurnaceLuV, PlasmaArcFurnaceZPM, PlasmaArcFurnaceUV, PlasmaArcFurnaceUHV, PlasmaArcFurnaceUEV, PlasmaArcFurnaceUIV, PlasmaArcFurnaceUMV,
 	PolarizerLuV, PolarizerZPM, PolarizerUV, PolarizerUHV, PolarizerUEV, PolarizerUIV, PolarizerUMV,
-	//PrinterLuV, PrinterZPM, PrinterUV,
 	RockBreakerLuV, RockBreakerZPM, RockBreakerUV, RockBreakerUHV, RockBreakerUEV, RockBreakerUIV, RockBreakerUMV,
 	RecyclerLuV, RecyclerZPM, RecyclerUV, RecyclerUHV, RecyclerUEV, RecyclerUIV, RecyclerUMV,
 	ReplicatorLuV, ReplicatorZPM, ReplicatorUV, ReplicatorUHV, ReplicatorUEV, ReplicatorUIV, ReplicatorUMV,
@@ -80,12 +78,10 @@ public enum CustomItemList implements IItemContainer
 	SiftingMachineLuV, SiftingMachineZPM, SiftingMachineUV, SiftingMachineUHV, SiftingMachineUEV, SiftingMachineUIV, SiftingMachineUMV,
 	SlicingMachineLuV, SlicingMachineZPM, SlicingMachineUV, SlicingMachineUHV, SlicingMachineUEV, SlicingMachineUIV, SlicingMachineUMV,
 	ThermalCentrifugeLuV, ThermalCentrifugeZPM, ThermalCentrifugeUV, ThermalCentrifugeUHV, ThermalCentrifugeUEV, ThermalCentrifugeUIV, ThermalCentrifugeUMV,
-	//UnpackagerLuV, UnpackagerZPM, UnpackagerUV,
 	WiremillLuV, WiremillZPM, WiremillUV, WiremillUHV, WiremillUEV, WiremillUIV, WiremillUMV,
 	PumpLuV, PumpZPM, //PumpUV, PumpUHV, PumpUEV, PumpUIV, PumpUMV,
 	AcceleratorLV, AcceleratorMV, AcceleratorHV, AcceleratorEV, AcceleratorIV, AcceleratorLuV, AcceleratorZPM, AcceleratorUV,
 	Automation_ChestBuffer_UHV, Automation_ChestBuffer_UEV, Automation_ChestBuffer_UIV, Automation_ChestBuffer_UMV,
-	Unboxinator_LuV, Unboxinator_ZPM, Unboxinator_UV,
 
 	//CoreModItems
 	EtchedLowVoltageWiring, EtchedInsaneVoltageWiring, EtchedLudicrousVoltageWiring,

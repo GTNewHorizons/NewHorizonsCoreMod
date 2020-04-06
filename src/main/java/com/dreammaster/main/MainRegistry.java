@@ -9,6 +9,7 @@ import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.galacticgreg.SpaceDimRegisterer;
+import com.dreammaster.gthandler.CoreMod_ProcessingArrayRecipeLoader;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
@@ -402,6 +403,8 @@ public class MainRegistry
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc","On your way to the T7 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8","Rocket Plate Tier 8!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc","On your way to the T8 Dims!");
+
+        CoreMod_ProcessingArrayRecipeLoader.registerMaps();
 
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself
