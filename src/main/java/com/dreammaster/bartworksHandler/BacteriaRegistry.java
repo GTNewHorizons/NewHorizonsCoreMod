@@ -80,6 +80,8 @@ public class BacteriaRegistry {
                 false
         );
 
+        CultureSet.put("CombinedBac",bioCulture);
+        
         bioData = createAndRegisterBioData("OvumBac",EnumRarity.epic, 1500,4);
         bioCulture = createAndRegisterBioCulture(new Color(223, 206, 155),"Ova Evolutionis",
                 BioPlasmid.convertDataToPlasmid(bioData),
@@ -107,7 +109,6 @@ public class BacteriaRegistry {
 
         CultureSet.put("BioCellBac",bioCulture);
 
-        CultureSet.put("CombinedBac",bioCulture);
         regenerateBioFluids(); //this will generate bacteria fluids. needs to be called AFTER ALL breedable bacterias have been registered.
     }
 
