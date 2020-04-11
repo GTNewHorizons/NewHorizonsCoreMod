@@ -61,7 +61,13 @@ public class BacteriaRegistry {
 
         //TCetiE culture, same as above
         bioData = createAndRegisterBioData("TCetiEis Fucus Serratus",EnumRarity.rare, 750,2);
-        bioCulture = createAndRegisterBioCulture(new Color(27, 153, 94),"TCetiEis Fucus Serratus",BioPlasmid.convertDataToPlasmid(bioData),BioDNA.convertDataToDNA(bioData),EnumRarity.rare,true);
+        bioCulture = createAndRegisterBioCulture
+                (new Color(27, 153, 94),
+                "TCetiEis Fucus Serratus",
+                        BioPlasmid.convertDataToPlasmid(bioData),
+                        BioDNA.convertDataToDNA(bioData),
+                        EnumRarity.rare,true);
+
         CultureSet.put("TcetiEBac", bioCulture);
 
         //combined Culture
@@ -73,8 +79,6 @@ public class BacteriaRegistry {
                 EnumRarity.epic,
                 false
         );
-
-        CultureSet.put("CombinedBac",bioCulture);
 
         bioData = createAndRegisterBioData("OvumBac",EnumRarity.epic, 1500,4);
         bioCulture = createAndRegisterBioCulture(new Color(223, 206, 155),"Ova Evolutionis",
@@ -103,6 +107,7 @@ public class BacteriaRegistry {
 
         CultureSet.put("BioCellBac",bioCulture);
 
+        CultureSet.put("CombinedBac",bioCulture);
         regenerateBioFluids(); //this will generate bacteria fluids. needs to be called AFTER ALL breedable bacterias have been registered.
     }
 
@@ -230,24 +235,37 @@ public class BacteriaRegistry {
     }
 
     private void runBWRecipes(){
-        addBioLabRecipeIncubation(GT_ModHandler.getModItem("GalaxySpace","barnardaClog",1L),CultureSet.get("BarnadaCBac"),new int[]{250}, FluidRegistry.getFluidStack("unknowwater",8000),500, BW_Util.getMachineVoltageFromTier(8),0);
-        for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
-            addBioLabRecipeIncubation(OreDictionary.getOres("cropTcetiESeaweed").get(i),CultureSet.get("TcetiEBac"),new int[]{250}, FluidRegistry.getFluidStack("unknowwater",8000),500, BW_Util.getMachineVoltageFromTier(8),0);
-        }
-        addBacterialVatRecipe(new ItemStack[]{AntimonyTrioxide.getDust(16),Osmium.getDust(16)},CultureSet.get("CombinedBac"),new FluidStack[]{Oil.getFluid(1000)},new FluidStack[]{Xenoxene.getFluid(1)},3600,BW_Util.getMachineVoltageFromTier(8),Materials.NaquadahEnriched,8,0,false);
-
         addBioLabRecipeIncubation(
+                GT_ModHandler.getModItem("GalaxySpace","barnardaClog",1L),CultureSet.get("BarnadaCBac"),
+                new int[]{250},
+                FluidRegistry.getFluidStack("unknowwater",8000),
+                500, BW_Util.getMachineVoltageFromTier(8),0);
+
+        for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
+            addBioLabRecipeIncubation(OreDictionary.getOres("cropTcetiESeaweed").get(i),
+                    CultureSet.get("TcetiEBac"),new int[]{250},
+                    FluidRegistry.getFluidStack("unknowwater",8000),
+                    500, BW_Util.getMachineVoltageFromTier(8),0);
+        }
+        addBacterialVatRecipe(
+                new ItemStack[]{AntimonyTrioxide.getDust(16)},
+                CultureSet.get("CombinedBac"),
+                new FluidStack[]{Oil.getFluid(1000)},
+                new FluidStack[]{Xenoxene.getFluid(1)},
+            3600,BW_Util.getMachineVoltageFromTier(8),Materials.NaquadahEnriched,8,0,false);
+
+    addBioLabRecipeIncubation(
                 new ItemStack(Items.egg, 1, 0),
                 CultureSet.get("OvumBac"),
-                new int[]{1500},
-                FluidRegistry.getFluidStack("binnie.bacteria",1000),
-                1200,7680, CLEANROOM);
+                        new int[]{1500},
+            FluidRegistry.getFluidStack("binnie.bacteria",1000),
+            1200,7680, CLEANROOM);
 
-        addBacterialVatRecipe(
+    addBacterialVatRecipe(
                 new ItemStack[]{ItemList.Circuit_Chip_Stemcell.get(64L), GT_ModHandler.getModItem("GalaxySpace","item.UnknowCrystal",16L)},
-                CultureSet.get("StemCellBac"),
-                new FluidStack[]{GrowthMediumRaw.getFluid(1000)},
-                new FluidStack[]{BioMediumRaw.getFluid(100)},
+            CultureSet.get("StemCellBac"),
+            new FluidStack[]{GrowthMediumRaw.getFluid(1000)},
+            new FluidStack[]{BioMediumRaw.getFluid(100)},
                 3600, 30720, Plutonium, 8, CLEANROOM, false);
 
         addBioLabRecipeIncubation(
