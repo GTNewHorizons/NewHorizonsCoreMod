@@ -117,7 +117,7 @@ public class BioItemLoader {
                 CultureSet.get("OvumBac"),
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",1000)},
                 new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(100)},
-                1200, 7680, Materials.Uranium, 6, CLEANROOM, false
+                1200, 7680, Materials.Uranium, 5, CLEANROOM, false
         );
     }
 

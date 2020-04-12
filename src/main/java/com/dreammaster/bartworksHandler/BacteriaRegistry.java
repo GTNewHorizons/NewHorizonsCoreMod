@@ -82,7 +82,7 @@ public class BacteriaRegistry {
         
         CultureSet.put("CombinedBac",bioCulture);
         
-        bioData = createAndRegisterBioData("OvumBac",EnumRarity.epic, 1500,4);
+        bioData = createAndRegisterBioData("OvumBac",EnumRarity.epic, 1500,2);
         bioCulture = createAndRegisterBioCulture(new Color(223, 206, 155),"Ova Evolutionis",
                 BioPlasmid.convertDataToPlasmid(bioData),
                 BioDNA.convertDataToDNA(bioData),
@@ -91,7 +91,7 @@ public class BacteriaRegistry {
 
         CultureSet.put("OvumBac",bioCulture);
 
-        bioData = createAndRegisterBioData("StemCellBac",EnumRarity.epic, 750,6);
+        bioData = createAndRegisterBioData("StemCellBac",EnumRarity.epic, 750,3);
         bioCulture = createAndRegisterBioCulture(new Color(26, 59, 137),"Derivantur Cellula Evolutionis",
                 BioPlasmid.convertDataToPlasmid(bioData),
                 BioDNA.convertDataToDNA(bioData),
@@ -100,7 +100,7 @@ public class BacteriaRegistry {
 
         CultureSet.put("StemCellBac",bioCulture);
 
-        bioData = createAndRegisterBioData("BioCellBac",EnumRarity.epic, 300,8);
+        bioData = createAndRegisterBioData("BioCellBac",EnumRarity.epic, 300,4);
         bioCulture = createAndRegisterBioCulture(new Color(91, 255, 41),"Cellula Biologicum Evolutione",
                 BioPlasmid.convertDataToPlasmid(bioData),
                 BioDNA.convertDataToDNA(bioData),
@@ -267,7 +267,7 @@ public class BacteriaRegistry {
             CultureSet.get("StemCellBac"),
             new FluidStack[]{GrowthMediumRaw.getFluid(1000)},
             new FluidStack[]{BioMediumRaw.getFluid(100)},
-                3600, 30720, Plutonium, 8, CLEANROOM, false);
+                3600, 30720, Plutonium, 6, CLEANROOM, false);
 
         addBioLabRecipeIncubation(
                 ItemList.Circuit_Chip_Stemcell.get(1L),
