@@ -82,6 +82,8 @@ public class BacteriaRegistry {
         
         CultureSet.put("CombinedBac",bioCulture);
 
+        CultureSet.put("CombinedBac",bioCulture);
+        
         bioData = createAndRegisterBioData("OvumBac",EnumRarity.epic, 1500,4);
         bioCulture = createAndRegisterBioCulture(new Color(223, 206, 155),"Ova Evolutionis",
                 BioPlasmid.convertDataToPlasmid(bioData),
