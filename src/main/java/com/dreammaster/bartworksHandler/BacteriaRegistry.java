@@ -111,7 +111,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(new Color(219, 223, 138),"Binni Growth Medium",
                 BioPlasmid.convertDataToPlasmid(bioData),
                 BioDNA.convertDataToDNA(bioData),
-                EnumRarity.common,true
+                EnumRarity.common,false
         );
 
         CultureSet.put("BinniGrowthMedium",bioCulture);
@@ -129,7 +129,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(new Color(10, 62, 13),"Corynebacterium Sludge Marsensis",
                 BioPlasmid.convertDataToPlasmid(bioData),
                 BioDNA.convertDataToDNA(bioData),
-                EnumRarity.uncommon,true
+                EnumRarity.uncommon,false
         );
 
         CultureSet.put("BacterialSludgeBac",bioCulture);
@@ -138,7 +138,7 @@ public class BacteriaRegistry {
         bioCulture = createAndRegisterBioCulture(new Color(29, 149, 50),"Mutagen Bacteria a Spatio",
                 BioPlasmid.convertDataToPlasmid(bioData),
                 BioDNA.convertDataToDNA(bioData),
-                EnumRarity.rare,true
+                EnumRarity.rare,false
         );
 
         CultureSet.put("Mutagen",bioCulture);
@@ -314,9 +314,9 @@ public class BacteriaRegistry {
         addBacterialVatRecipe(
                 new ItemStack[]{ItemList.Circuit_Chip_Biocell.get(8L), CustomItemList.TCetiESeaweedExtract.get(16L), InfinityCatalyst.getDust(4)},
                 CultureSet.get("BioCellBac"),
-                new FluidStack[]{GrowthMediumRaw.getFluid(1000), GT_ModHandler.getDistilledWater(1000L)},
+                new FluidStack[]{GrowthMediumRaw.getFluid(1000)},
                 new FluidStack[]{BioMediumRaw.getFluid(2000)},
-                3600, 500000, NaquadahEnriched, 8, CLEANROOM, true);
+                3600, 500000, Naquadria, 8, CLEANROOM, true);
 
         addBioLabRecipeIncubation(
                 ItemList.Circuit_Chip_Stemcell.get(1L),
