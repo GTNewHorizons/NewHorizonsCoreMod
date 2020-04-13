@@ -298,11 +298,25 @@ public class BacteriaRegistry {
                 1200,7680, CLEANROOM);
 
     addBacterialVatRecipe(
-                new ItemStack[]{ItemList.Circuit_Chip_Stemcell.get(64L), GT_ModHandler.getModItem("GalaxySpace","item.UnknowCrystal",16L), CustomItemList.TCetiESeaweedExtract.get(4L),  Tritanium.getDust(4)},
+                new ItemStack[]{ItemList.Circuit_Chip_Stemcell.get(64L), GT_ModHandler.getModItem("GalaxySpace","item.UnknowCrystal",16L), CustomItemList.TCetiESeaweedExtract.get(4L), Tritanium.getDust(4)},
                 CultureSet.get("StemCellBac"),
                 new FluidStack[]{GrowthMediumRaw.getFluid(1000)},
                 new FluidStack[]{BioMediumRaw.getFluid(250)},
                 3600, 30720, Plutonium, 6, CLEANROOM, true);
+
+        addBacterialVatRecipe(
+                new ItemStack[]{ItemList.Circuit_Chip_Stemcell.get(16L), GT_ModHandler.getModItem("GalaxySpace","item.UnknowCrystal",16L), CustomItemList.TCetiESeaweedExtract.get(8L), InfinityCatalyst.getDustTiny(4)},
+                CultureSet.get("BioCellBac"),
+                new FluidStack[]{GrowthMediumRaw.getFluid(1000)},
+                new FluidStack[]{BioMediumRaw.getFluid(1000)},
+                3600, 122880, NaquadahEnriched, 7, CLEANROOM, true);
+
+        addBacterialVatRecipe(
+                new ItemStack[]{ItemList.Circuit_Chip_Biocell.get(8L), CustomItemList.TCetiESeaweedExtract.get(16L), InfinityCatalyst.getDust(4)},
+                CultureSet.get("BioCellBac"),
+                new FluidStack[]{GrowthMediumRaw.getFluid(1000), GT_ModHandler.getDistilledWater(1000L)},
+                new FluidStack[]{BioMediumRaw.getFluid(2000)},
+                3600, 500000, NaquadahEnriched, 8, CLEANROOM, true);
 
         addBioLabRecipeIncubation(
                 ItemList.Circuit_Chip_Stemcell.get(1L),
