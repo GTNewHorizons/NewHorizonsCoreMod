@@ -319,7 +319,7 @@ public class BacteriaRegistry {
                 3600,500000, CLEANROOM);
 
         addBacterialVatRecipe(
-                new ItemStack[]{null},
+                null,
                 CultureSet.get("BinniGrowthMedium"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",500)},
@@ -342,6 +342,20 @@ public class BacteriaRegistry {
         addBioLabRecipeIncubation(
                 GT_ModHandler.getModItem("Genetics", "misc", 1L, 4),
                 CultureSet.get("BinniGrowthMedium"),
+                new int[]{5000},
+                Water.getFluid(4000),
+                150,480, 0);
+
+        addBioLabRecipeIncubation(
+                GT_ModHandler.getModItem("Genetics", "misc", 1L, 4),
+                CultureSet.get("BinniGrowthMedium"),
+                new int[]{7500},
+                GT_ModHandler.getDistilledWater(2000L),
+                150,480, 0);
+
+        addBioLabRecipeIncubation(
+                GT_ModHandler.getModItem("Genetics", "misc", 1L, 4),
+                CultureSet.get("BinniGrowthMedium"),
                 new int[]{9000},
                 FluidRegistry.getFluidStack("binnie.growthmedium", 1000),
                 150,480, 0);
@@ -354,7 +368,7 @@ public class BacteriaRegistry {
                 150,1920, 0);
 
         addBacterialVatRecipe(
-                new ItemStack[]{null},
+               null,
                 CultureSet.get("BinniBacteria"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",500)},
@@ -438,7 +452,7 @@ public class BacteriaRegistry {
                 600,30720, CLEANROOM);
 
         addBacterialVatRecipe(
-                new ItemStack[]{null},
+                null,
                 CultureSet.get("Mutagen"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("mutagen", 250)},
