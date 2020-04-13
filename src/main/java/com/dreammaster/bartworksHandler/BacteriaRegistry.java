@@ -333,7 +333,7 @@ public class BacteriaRegistry {
                 3600,500000, CLEANROOM);
 
         addBacterialVatRecipe(
-                null,
+                new ItemStack[]{null},
                 CultureSet.get("BinniGrowthMedium"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",500)},
@@ -382,7 +382,7 @@ public class BacteriaRegistry {
                 150,1920, 0);
 
         addBacterialVatRecipe(
-               null,
+                new ItemStack[]{null},
                 CultureSet.get("BinniBacteria"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",500)},
@@ -466,7 +466,7 @@ public class BacteriaRegistry {
                 600,30720, CLEANROOM);
 
         addBacterialVatRecipe(
-                null,
+                new ItemStack[]{null},
                 CultureSet.get("Mutagen"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("mutagen", 250)},
