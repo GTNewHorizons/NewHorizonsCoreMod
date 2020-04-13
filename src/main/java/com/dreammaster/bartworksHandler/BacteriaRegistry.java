@@ -114,7 +114,7 @@ public class BacteriaRegistry {
                 EnumRarity.common,true
         );
 
-        CultureSet.put("BinniBacteria",bioCulture);
+        CultureSet.put("BinniGrowthMedium",bioCulture);
 
         bioData = createAndRegisterBioData("BinniBacteria",EnumRarity.common, 6000,0);
         bioCulture = createAndRegisterBioCulture(new Color(209, 181, 129),"Binni Bacteria",
@@ -333,7 +333,7 @@ public class BacteriaRegistry {
                 3600,500000, CLEANROOM);
 
         addBacterialVatRecipe(
-                new ItemStack[]{GT_Utility.getIntegratedCircuit(1)},
+                null,
                 CultureSet.get("BinniGrowthMedium"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.growthmedium",500)},
@@ -382,7 +382,7 @@ public class BacteriaRegistry {
                 150,1920, 0);
 
         addBacterialVatRecipe(
-                new ItemStack[]{GT_Utility.getIntegratedCircuit(1)},
+                null,
                 CultureSet.get("BinniBacteria"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",500)},
@@ -466,7 +466,7 @@ public class BacteriaRegistry {
                 600,30720, CLEANROOM);
 
         addBacterialVatRecipe(
-                new ItemStack[]{GT_Utility.getIntegratedCircuit(1)},
+                null,
                 CultureSet.get("Mutagen"),
                 new FluidStack[]{GT_ModHandler.getDistilledWater(1000L)},
                 new FluidStack[]{FluidRegistry.getFluidStack("mutagen", 250)},
