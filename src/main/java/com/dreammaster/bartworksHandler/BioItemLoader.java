@@ -117,23 +117,23 @@ public class BioItemLoader {
                 CultureSet.get("OvumBac"),
                 new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",1000)},
                 new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(250)},
-                1200, 7680, Materials.Uranium, 6, CLEANROOM, false
+                1200, 7680, Materials.Uranium, 5, CLEANROOM, false
         );
         addBacterialVatRecipe(
-                new ItemStack[]{Materials.MeatRaw.getDust(8), Materials.Salt.getDust(8), Materials.Calcium.getDust(8), BIOTEMSSTACKS[4]
+                new ItemStack[]{Materials.MeatRaw.getDust(8), Materials.Salt.getDust(8), Materials.Calcium.getDust(8), BIOTEMSSTACKS[2]
                 },
                 CultureSet.get("OvumBac"),
                 new FluidStack[]{FluidRegistry.getFluidStack("bacterialsludge", 1000)},
                 new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(500)},
-                1200, 7680, Materials.Plutonium, 6, CLEANROOM, false
+                1200, 30720, Materials.Plutonium, 6, CLEANROOM, false
         );
         addBacterialVatRecipe(
-                new ItemStack[]{Materials.MeatRaw.getDust(16), Materials.Salt.getDust(16), Materials.Calcium.getDust(16), BIOTEMSSTACKS[8]
+                new ItemStack[]{Materials.MeatRaw.getDust(16), Materials.Salt.getDust(16), Materials.Calcium.getDust(16), BIOTEMSSTACKS[2]
                 },
                 CultureSet.get("OvumBac"),
                 new FluidStack[]{FluidRegistry.getFluidStack("mutagen", 1000)},
                 new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(1000)},
-                1200, 7680, Materials.NaquadahEnriched, 6, CLEANROOM, false
+                1200, 122880, Materials.NaquadahEnriched, 7, CLEANROOM, true
         );
     }
 
