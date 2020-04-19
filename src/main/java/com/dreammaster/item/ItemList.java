@@ -35,6 +35,7 @@ public enum ItemList
     ArcaneSlate(new ModSimpleBaseItem("ArcaneSlate", ModTabList.ModThaumcraftTab)),
     ArchmageOrb(new ModSimpleBaseItem("ArchmageOrb", ModTabList.ModThaumcraftTab)),
     ArditePlate(new ModSimpleBaseItem("ArditePlate", ModTabList.ModGenericTab)),
+    ArtificialLeather(new ModSimpleBaseItem("ArtificialLeather", ModTabList.ModGenericTab)),
     AsteroidsStoneDust(new ModSimpleBaseItem("AsteroidsStoneDust", ModTabList.ModGenericTab)),
     BarnardaEStoneDust(new ModSimpleBaseItem("BarnardaEStoneDust", ModTabList.ModSpaceTab)),
     BarnardaFStoneDust(new ModSimpleBaseItem("BarnardaFStoneDust", ModTabList.ModSpaceTab)),
