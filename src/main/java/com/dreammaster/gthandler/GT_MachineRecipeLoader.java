@@ -1058,6 +1058,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalBathRecipe(CustomItemList.HotNetherrackBrick.get(1L), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), CustomItemList.InfernalBrick.get(1L), GT_Values.NI, GT_Values.NI, new int[]{10000}, 200, 30);
 
         GT_Values.RA.addChemicalBathRecipe(new ItemStack(Items.leather, 2, 0), Materials.PhosphoricAcid.getFluid(144), GT_ModHandler.getModItem("Backpack", "tannedLeather", 1L, 0), GT_Values.NI, GT_Values.NI, new int[]{10000}, 1200 , 8);
+        GT_Values.RA.addChemicalBathRecipe(CustomItemList.ArtificialLeather.get(2L), Materials.PhosphoricAcid.getFluid(144), GT_ModHandler.getModItem("Backpack", "tannedLeather", 1L, 0), GT_Values.NI, GT_Values.NI, new int[]{10000}, 1200 , 8);
 
         GT_Values.RA.addChemicalBathRecipe(CustomItemList.MysteriousCrystalGemExquisite.get(1L), Materials.UUMatter.getFluid(144), CustomItemList.MysteriousCrystalLens.get(1L), GT_Values.NI, GT_Values.NI, new int[]{10000}, 600, 500000);
         GT_Values.RA.addLaserEngraverRecipe(CustomItemList.MysteriousCrystal.get(3L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), CustomItemList.MysteriousCrystalGemFlawless.get(1L), 600, 122880, true);
@@ -1794,7 +1795,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalRecipe(CustomItemList.EnderEgg.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 64), FluidRegistry.getFluidStack("endergoo", 1000), GT_Values.NF, CustomItemList.DraconiumEgg.get(1L), GT_Values.NI, 72000, 1024, true);
         GT_Values.RA.addChemicalRecipe(CustomItemList.DraconiumEgg.get(1L), GT_ModHandler.getModItem("DraconicEvolution", "dragonHeart", 0L, 0), FluidRegistry.getFluidStack("enderium.molten", 1000), GT_Values.NF, new ItemStack(Blocks.dragon_egg, 1, 0), GT_Values.NI, 72000, 1920, true);
 
-        GT_Values.RA.addChemicalRecipe(GT_ModHandler.getModItem("harvestcraft", "wovencottonItem", 2L, 0), GT_Values.NI, Materials.PolyvinylChloride.getFluid(144L), GT_Values.NF, CustomItemList.ArtificialLeather.get(2L), GT_Values.NI, 150, 120, false);
+        GT_Values.RA.addChemicalBathRecipe(GT_ModHandler.getModItem("harvestcraft", "wovencottonItem", 2L, 0), Materials.PolyvinylChloride.getMolten(144L), CustomItemList.ArtificialLeather.get(2L), GT_Values.NI, GT_Values.NI, new int[]{10000},300, 120);
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Parts_Glass_Tube.get(4L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 4)}, Materials.RedAlloy.getMolten(72L), ItemList.Circuit_Parts_Vacuum_Tube.get(4L), 160, 8);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Parts_Glass_Tube.get(4L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 4)}, Materials.RedstoneAlloy.getMolten(72L), ItemList.Circuit_Parts_Vacuum_Tube.get(8L), 160, 8);
