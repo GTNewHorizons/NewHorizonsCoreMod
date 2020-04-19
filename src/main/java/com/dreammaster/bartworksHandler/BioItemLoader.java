@@ -112,12 +112,28 @@ public class BioItemLoader {
             RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(i),NI,new FluidStack(BIOFLUIDS[3],1000),NF,OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64),NI,NI,NI,NI,NI,null,40,BW_Util.getMachineVoltageFromTier(8));
         }
         addBacterialVatRecipe(
-                new ItemStack[]{Materials.MeatRaw.getDust(4), Materials.Salt.getDust(4), Materials.Calcium.getDust(4), BIOTEMSSTACKS[2]
+                new ItemStack[]{Materials.MeatRaw.getDust(4), Materials.Salt.getDust(4), Materials.Calcium.getDust(4), BIOTEMSSTACKS[2].copy().splitStack(4),
                 },
                 CultureSet.get("OvumBac"),
-                new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",1000)},
-                new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(100)},
-                1200, 7680, Materials.Uranium, 6, CLEANROOM, false
+                new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",4)},
+                new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(1)},
+                1200, 7680, Materials.Uranium, 5, CLEANROOM, false
+        );
+        addBacterialVatRecipe(
+                new ItemStack[]{Materials.MeatRaw.getDust(8), Materials.Salt.getDust(8), Materials.Calcium.getDust(8), BIOTEMSSTACKS[2].copy().splitStack(8),
+                },
+                CultureSet.get("OvumBac"),
+                new FluidStack[]{FluidRegistry.getFluidStack("bacterialsludge", 4)},
+                new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(2)},
+                1200, 30720, Materials.Plutonium, 6, CLEANROOM, false
+        );
+        addBacterialVatRecipe(
+                new ItemStack[]{Materials.MeatRaw.getDust(16), Materials.Salt.getDust(16), Materials.Calcium.getDust(16), BIOTEMSSTACKS[2].copy().splitStack(16),
+                },
+                CultureSet.get("OvumBac"),
+                new FluidStack[]{FluidRegistry.getFluidStack("mutagen", 4)},
+                new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(4)},
+                1200, 122880, Materials.NaquadahEnriched, 7, CLEANROOM, true
         );
     }
 
