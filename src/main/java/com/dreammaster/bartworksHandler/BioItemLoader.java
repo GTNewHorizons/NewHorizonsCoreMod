@@ -17,6 +17,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import static com.dreammaster.bartworksHandler.BacteriaRegistry.CultureSet;
+import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.CLEANROOM;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.addBacterialVatRecipe;
 import static gregtech.api.enums.GT_Values.*;
 
@@ -110,6 +111,14 @@ public class BioItemLoader {
         for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
             RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(i),NI,new FluidStack(BIOFLUIDS[3],1000),NF,OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64),NI,NI,NI,NI,NI,null,40,BW_Util.getMachineVoltageFromTier(8));
         }
+        addBacterialVatRecipe(
+                new ItemStack[]{Materials.MeatRaw.getDust(4), Materials.Salt.getDust(4), Materials.Calcium.getDust(4), BIOTEMSSTACKS[2]
+                },
+                CultureSet.get("OvumBac"),
+                new FluidStack[]{FluidRegistry.getFluidStack("binnie.bacteria",1000)},
+                new FluidStack[]{ Materials.GrowthMediumRaw.getFluid(100)},
+                1200, 7680, Materials.Uranium, 6, CLEANROOM, false
+        );
     }
 
 }
