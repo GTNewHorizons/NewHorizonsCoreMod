@@ -581,6 +581,7 @@ public class GT_Loader_Items
 		CustomItemList.Empty360SpCell.set(ItemList.Empty360SpCell.getIS());
 		CustomItemList.Empty540SpCell.set(ItemList.Empty540SpCell.getIS());
 		CustomItemList.Empty1080SpCell.set(ItemList.Empty1080SpCell.getIS());
+		CustomItemList.ArtificialLeather.set(ItemList.ArtificialLeather.getIS());
 		
 	}
 }
