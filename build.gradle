@@ -184,8 +184,8 @@ task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
     onlyIf {
         !file("libs/GT-PlusPlus-1.7.02.09.jar").exists()
     }
-    src 'https://addons-origin.cursecdn.com/files/2608/712/GT-PlusPlus-1.7.02.09.jar'
-    dest file("libs/GT-PlusPlus-1.7.02.09.jar")
+    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/GT-PlusPlus-1.7.05.53.jar'
+    dest file("libs/GT-PlusPlus-1.7.05.53.jar")
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
 }
