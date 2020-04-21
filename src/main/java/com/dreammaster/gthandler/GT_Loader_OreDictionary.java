@@ -81,6 +81,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre("stickChargedCertusQuartz", GT_ModHandler.getModItem("dreamcraft", "item.ChargedCertusQuartzRod", 1L, 0));
         GT_OreDictUnificator.registerOre("dustCokeOvenBrick", GT_ModHandler.getModItem("dreamcraft", "item.CokeOvenBrickDust", 1L, 0));
         GT_OreDictUnificator.registerOre("ingotCokeOvenBrick", GT_ModHandler.getModItem("dreamcraft", "item.CokeOvenBrick", 1L, 0));
+        GT_OreDictUnificator.registerOre("leather", GT_ModHandler.getModItem("dreamcraft", "item.ArtificialLeather", 1L, 0));
+        GT_OreDictUnificator.registerOre("itemLeather", GT_ModHandler.getModItem("dreamcraft", "item.ArtificialLeather", 1L, 0));
 
         GT_OreDictUnificator.registerOre(OrePrefixes.ore, Materials.Desh, GT_ModHandler.getModItem("GalacticraftMars", "tile.mars", 1L, 2));
         GT_OreDictUnificator.registerOre(OrePrefixes.stick, Materials.Desh, GT_ModHandler.getModItem("GalacticraftMars", "item.null", 1L, 1));
