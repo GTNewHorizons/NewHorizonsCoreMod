@@ -180,6 +180,20 @@ task getBartworks(type: Download, dependsOn: "getRailCraft") {
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
 }
+task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
+    onlyIf {
+        !file("libs/GT-PlusPlus-1.7.02.09.jar").exists()
+    }
+    src 'https://addons-origin.cursecdn.com/files/2608/712/GT-PlusPlus-1.7.02.09.jar'
+    dest file("libs/GT-PlusPlus-1.7.02.09.jar")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
+
+tasks.setupCIWorkspace.dependsOn getGtPlusPlus
+tasks.setupDevWorkspace.dependsOn getGtPlusPlus
+tasks.setupDecompWorkspace.dependsOn getGtPlusPlus
+tasks.compileJava.dependsOn getGtPlusPlus
 
 processResources
 {
