@@ -95,7 +95,7 @@ public class BioItemLoader {
                         new FluidStack(BIOFLUIDS[2],8000)
                 },
                 null,
-                1600, BW_Util.getMachineVoltageFromTier(8)
+                1200, BW_Util.getMachineVoltageFromTier(8)
         );
         addBacterialVatRecipe(
                 new ItemStack[]{
