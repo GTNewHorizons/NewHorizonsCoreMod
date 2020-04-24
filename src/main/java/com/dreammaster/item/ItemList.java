@@ -212,7 +212,7 @@ public enum ItemList
     ExtraLargeFuelCanister(new ModSimpleBaseItem("ExtraLargeFuelCanister", ModTabList.ModSpaceTab)),
     ExtruderShapeBoat(new ModSimpleBaseItem("ExtruderShapeBoat", ModTabList.ModShapesTab)),
     FieryBloodDrop(new ModSimpleBaseItem("FieryBloodDrop", ModTabList.ModThaumcraftTab)),
-    GanymedStoneDust(new ModSimpleBaseItem("GanymedStoneDust", ModTabList.ModSpaceTab)),
+    GanymedeStoneDust(new ModSimpleBaseItem("GanymedeStoneDust", ModTabList.ModSpaceTab)),
     GeneticCircuit(new ModSimpleBaseItem("GeneticCircuit", ModTabList.ModCircuitsTab)),
     GlowingMarshmallow(new ModSimpleBaseItem("GlowingMarshmallow", ModTabList.ModThaumcraftTab)),
     GoldCoreChip(new ModSimpleBaseItem("GoldCoreChip", ModTabList.ModCircuitsTab)),

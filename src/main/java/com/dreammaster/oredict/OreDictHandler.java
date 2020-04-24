@@ -28,7 +28,7 @@ public class OreDictHandler {
 		reg_dust(OreDictTypes.Enceladus.name(),ItemList.EnceladusIceDust.getIS());
 		reg_dust(OreDictTypes.Europa.name(),ItemList.EuropaIceDust.getIS());
 		reg_dust(OreDictTypes.Europa.name(),ItemList.EuropaStoneDust.getIS());
-		reg_dust(OreDictTypes.Ganymede.name(),ItemList.GanymedStoneDust.getIS());
+		reg_dust(OreDictTypes.Ganymede.name(),ItemList.GanymedeStoneDust.getIS());
 		reg_dust(OreDictTypes.Haumea.name(),ItemList.HaumeaStoneDust.getIS());
 		reg_dust(OreDictTypes.Io.name(),ItemList.IoStoneDust.getIS());
 		reg_dust(OreDictTypes.MakeMake.name(),ItemList.MakeMakeStoneDust.getIS());
@@ -158,7 +158,7 @@ public class OreDictHandler {
 
 	private static void reg_dust(String S,ItemStack I) {
 		if (I != null) {
-		String p = I.getDisplayName().replaceAll("Dust", "").replaceAll(" ", "").trim();
+		String p = I.getUnlocalizedName().replaceAll("item\\.","").replaceAll("Dust", "").replaceAll(" ", "").trim();
 		OreDictionary.registerOre(OreDictTypes.dust.name()+p, I);
 		OreDictionary.registerOre(OreDictTypes.dust.name()+S, I);
 		OreDictionary.registerOre(OreDictTypes.dust.name()+OreDictTypes.Space.name(),I);
