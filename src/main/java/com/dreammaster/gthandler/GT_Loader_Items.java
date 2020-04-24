@@ -483,7 +483,7 @@ public class GT_Loader_Items
 		CustomItemList.CeresStoneDust.set(ItemList.CeresStoneDust.getIS());
 		CustomItemList.EuropaIceDust.set(ItemList.EuropaIceDust.getIS());
 		CustomItemList.EuropaStoneDust.set(ItemList.EuropaStoneDust.getIS());
-		CustomItemList.GanymedStoneDust.set(ItemList.GanymedStoneDust.getIS());
+		CustomItemList.GanymedeStoneDust.set(ItemList.GanymedeStoneDust.getIS());
 		CustomItemList.CallistoStoneDust.set(ItemList.CallistoStoneDust.getIS());
 		CustomItemList.IoStoneDust.set(ItemList.IoStoneDust.getIS());
 		CustomItemList.VenusStoneDust.set(ItemList.VenusStoneDust.getIS());
@@ -581,6 +581,7 @@ public class GT_Loader_Items
 		CustomItemList.Empty360SpCell.set(ItemList.Empty360SpCell.getIS());
 		CustomItemList.Empty540SpCell.set(ItemList.Empty540SpCell.getIS());
 		CustomItemList.Empty1080SpCell.set(ItemList.Empty1080SpCell.getIS());
+		CustomItemList.ArtificialLeather.set(ItemList.ArtificialLeather.getIS());
 		
 	}
 }

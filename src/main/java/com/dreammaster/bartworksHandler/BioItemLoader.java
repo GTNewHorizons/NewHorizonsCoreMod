@@ -51,6 +51,11 @@ public class BioItemLoader {
                 Materials.Water.getFluid(500),BIOTEMSSTACKS[0],
              800,480
         );
+        RA.addChemicalRecipe(
+                Materials.MeatRaw.getDust(2),Materials.Bone.getDust(4),Materials.DilutedSulfuricAcid.getFluid(500),
+                Materials.Water.getFluid(500),BIOTEMSSTACKS[0],
+                800,480
+        );
 
         RA.addChemicalRecipe(
                 BIOTEMSSTACKS[0],Materials.Water.getCells(1),Materials.PhosphoricAcid.getFluid(1000),

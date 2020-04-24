@@ -117,7 +117,7 @@ public enum CustomItemList implements IItemContainer
 	MediumFuelCanister, LargeFuelCanister, ExtraLargeFuelCanister, HeavyDutyRocketEngineTier3, HeavyDutyRocketEngineTier4, HeavyDutyNoseConeTier3, HeavyDutyNoseConeTier4, HeavyDutyRocketFinsTier3, HeavyDutyRocketFinsTier4,
 	Tier2Booster, Tier3Booster, Tier4Booster, HeavyDutyPlateTier4, HeavyDutyPlateTier5, HeavyDutyPlateTier6, HeavyDutyPlateTier7, HeavyDutyPlateTier8,
 	LeadNickelPlate, LeadOriharukonPlate,
-	MoonStoneDust, MarsStoneDust, AsteroidsStoneDust, PhobosStoneDust, DeimosStoneDust,CeresStoneDust, EuropaIceDust, EuropaStoneDust, GanymedStoneDust, CallistoStoneDust, IoStoneDust, VenusStoneDust, MercuryStoneDust, EnceladusIceDust, EnceladusStoneDust,
+	MoonStoneDust, MarsStoneDust, AsteroidsStoneDust, PhobosStoneDust, DeimosStoneDust,CeresStoneDust, EuropaIceDust, EuropaStoneDust, GanymedeStoneDust, CallistoStoneDust, IoStoneDust, VenusStoneDust, MercuryStoneDust, EnceladusIceDust, EnceladusStoneDust,
 	TitanStoneDust, OberonStoneDust, ProteusStoneDust, TritonStoneDust, PlutoIceDust, PlutoStoneDust, HaumeaStoneDust, MakeMakeStoneDust, MercuryCoreDust, CentauriAStoneDust, CentauriASurfaceDust, VegaBStoneDust, BarnardaEStoneDust, BarnardaFStoneDust,
 	MysteriousCrystalDust, TCetiEStoneDust, MirandaStoneDust, WaferTier3,
 	IndustryFrame,
@@ -133,7 +133,8 @@ public enum CustomItemList implements IItemContainer
 	TheBigEgg, MutatedEgg, DraconiumEgg, EnderEgg,
 	ChargedCertusQuartzDust, RawNeutronium, NeutronReflectorSmallParts, Empty180SpCell, Empty360SpCell, Empty540SpCell, Empty1080SpCell,
 	RawPicoWafer, PicoWafer,
-	StargateFramePart, StargateChevron, StargateShieldingFoil, StargateCrystalDust, TCetiESeaweedExtract;
+	StargateFramePart, StargateChevron, StargateShieldingFoil, StargateCrystalDust, TCetiESeaweedExtract,
+	ArtificialLeather;
 
 
 	private ItemStack mStack;

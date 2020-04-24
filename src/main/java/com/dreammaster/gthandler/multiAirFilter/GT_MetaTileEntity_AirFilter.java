@@ -434,8 +434,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
                 }
                 //check for pollution
                 int pollution=GT_Pollution.getPollution(getBaseMetaTileEntity());
-                hasPollution = pollution > 100000 || hasPollution;//HYSTERESIS :O !!! (trust me i am engineer)
-                hasPollution = pollution !=     0 && hasPollution;
+                hasPollution = pollution>=10000||(hasPollution&&pollution>=1000);//HYSTERESIS :O !!! (trust me i am engineer)
             }
         }
         super.onPostTick(aBaseMetaTileEntity, aTick);
