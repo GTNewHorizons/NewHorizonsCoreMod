@@ -54,6 +54,7 @@ import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.GT_Mod;
 import gregtech.api.GregTech_API;
 import gregtech.api.util.GT_LanguageManager;
+import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -269,7 +270,7 @@ public class MainRegistry
             new GregTechPlusPlusAbandonedAspectsFix();
         }
 
-        if (CoreConfig.ModLoginMessage_Enabled)
+        if (CoreModConfig.ModLoginMessage_Enabled)
         {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
         }
@@ -309,6 +310,11 @@ public class MainRegistry
         // Register Dimensions in GalacticGregGT5
         if (Loader.isModLoaded("galacticgreg"))
         {
+            if (Loader.isModLoaded("bartworks"))
+                GregTech_API.sAfterGTPostload.add(VoidMinerLoader::initDeepDark);
+
+            Logger.debug("Added Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
+
             SpaceDimReg = new SpaceDimRegisterer();
             if (!SpaceDimReg.Init())
             {
