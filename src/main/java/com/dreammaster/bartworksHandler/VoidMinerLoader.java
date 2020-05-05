@@ -8,8 +8,8 @@ import gregtech.api.interfaces.ISubTagContainer;
 
 import java.util.Arrays;
 
+import static com.dreammaster.bartworksHandler.BartWorksMaterials.addVoidMinerDropsToDimension;
 import static gregtech.api.enums.Materials.values;
-import static gregtech.api.util.GT_BartWorks_Compat.addVoidMinerDropsToDimension;
 
 public class VoidMinerLoader {
 

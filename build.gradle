@@ -173,10 +173,10 @@ task getRailCraft(type: Download, dependsOn: "getHEE") {
 
 task getBartworks(type: Download, dependsOn: "getRailCraft") {
 	onlyIf {
-		!file("libs/bartworks.1.7.10.-0.5.2_pre27-dev.jar").exists()
+		!file("libs/bartworks%5B1.7.10%5D-0.5.13_pre10-dev.jar").exists()
     }
-	src 'https://github.com/bartimaeusnek/bartworks/releases/download/dev-zeta/bartworks.1.7.10.-0.5.2_pre27-dev.jar'
-    dest file("libs/bartworks.1.7.10.-0.5.2_pre27-dev.jar")
+	src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/bartworks%5B1.7.10%5D-0.5.13_pre10-dev.jar'
+    dest file("libs/bartworks%5B1.7.10%5D-0.5.13_pre10-dev.jar")
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
 }

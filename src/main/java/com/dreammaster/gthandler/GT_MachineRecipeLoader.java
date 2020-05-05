@@ -20,12 +20,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import java.lang.reflect.Field;
 
-import static gregtech.api.util.GT_BartWorks_Compat.getBartWorksMaterialByIGNName;
-
-
-import java.lang.reflect.Field;
-
-import static gregtech.api.util.GT_BartWorks_Compat.getBartWorksMaterialByIGNName;
+import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 
 
 public class GT_MachineRecipeLoader implements Runnable{
