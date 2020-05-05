@@ -32,6 +32,7 @@ import com.dreammaster.network.CoreModDispatcher;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -53,7 +54,10 @@ import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.GT_Mod;
 import gregtech.api.GregTech_API;
+import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_LanguageManager;
+import com.dreammaster.bartworksHandler.VoidMinerLoader;
+import gregtech.common.items.GT_MetaGenerated_Item_01;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -269,7 +273,7 @@ public class MainRegistry
             new GregTechPlusPlusAbandonedAspectsFix();
         }
 
-        if (CoreConfig.ModLoginMessage_Enabled)
+        if (CoreModConfig.ModLoginMessage_Enabled)
         {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
         }
@@ -305,10 +309,17 @@ public class MainRegistry
         // Register additional OreDictionary Names
         if(CoreConfig.OreDictItems_Enabled)
         OreDictHandler.register_all();
-        
+
         // Register Dimensions in GalacticGregGT5
         if (Loader.isModLoaded("galacticgreg"))
         {
+            if (Loader.isModLoaded("bartworks")) {
+                GregTech_API.sAfterGTPostload.add(() -> {
+                    Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
+                    VoidMinerLoader.initDeepDark();
+                });
+            }
+
             SpaceDimReg = new SpaceDimRegisterer();
             if (!SpaceDimReg.Init())
             {
@@ -368,8 +379,7 @@ public class MainRegistry
     }
 
     @Mod.EventHandler
-    public void PostLoad(FMLPostInitializationEvent PostEvent)
-    {
+    public void PostLoad(FMLPostInitializationEvent PostEvent) {
 
         if (CoreConfig.ModHazardousItems_Enabled) {
             Module_HazardousItems.LoadConfig();
@@ -393,16 +403,16 @@ public class MainRegistry
 
         registerModFixes();
 
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4","Rocket Plate Tier 4!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc","On your way to the T4 Dims!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5","Rocket Plate Tier 5!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5.desc","On your way to the T5 Dims!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6","Rocket Plate Tier 6!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6.desc","On your way to the T6 Dims!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7","Rocket Plate Tier 7!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc","On your way to the T7 Dims!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8","Rocket Plate Tier 8!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc","On your way to the T8 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5.desc", "On your way to the T5 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6", "Rocket Plate Tier 6!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6.desc", "On your way to the T6 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7", "Rocket Plate Tier 7!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc", "On your way to the T7 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8", "Rocket Plate Tier 8!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
 
         CoreMod_ProcessingArrayRecipeLoader.registerMaps();
 
@@ -410,9 +420,16 @@ public class MainRegistry
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
-	if (Loader.isModLoaded("bartworks")) {
+        if (Loader.isModLoaded("bartworks")) {
+            Logger.debug("Add Bacteria Stuff to BartWorks");
             BacteriaRegistry.runAllPostinit();
-	}
+
+            Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
+        }
     }
 
     /**
