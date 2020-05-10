@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler;
 
-import com.dreammaster.item.ItemList;
 import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
