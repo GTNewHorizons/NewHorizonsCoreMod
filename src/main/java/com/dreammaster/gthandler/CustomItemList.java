@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import com.dreammaster.item.ItemList;
 import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -135,7 +136,8 @@ public enum CustomItemList implements IItemContainer
 	RawPicoWafer, PicoWafer,
 	StargateFramePart, StargateChevron, StargateShieldingFoil, StargateCrystalDust, TCetiESeaweedExtract,
 	ArtificialLeather,
-	EctoplasmaChip, EctoplasmaFragment, ArcaneShardChip, ArcaneShardFragment;
+	EctoplasmaChip, EctoplasmaFragment, ArcaneShardChip, ArcaneShardFragment,
+	RuneOfPowerFragment, RuneOfAgilityFragment, RuneOfVigorFragment, RuneOfDefenseFragment, RuneOfMagicFragment, RuneOfVoidFragment;
 
 
 	private ItemStack mStack;

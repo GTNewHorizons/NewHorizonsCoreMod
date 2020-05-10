@@ -122,12 +122,18 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(CustomItemList.EngineCore.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.AnyCopper, 10L), GT_ModHandler.getModItem("Railcraft", "machine.beta", 1L, 7), 600, 30);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.EngineCore.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 10L), GT_ModHandler.getModItem("Railcraft", "machine.beta", 1L, 8), 800, 64);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.EngineCore.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 10L), GT_ModHandler.getModItem("Railcraft", "machine.beta", 1L, 9), 1000, 120);
-
+        //HEE Ectoplasma and Arcane Shards
         GT_Values.RA.addAssemblerRecipe(CustomItemList.EctoplasmaChip.get(4L), GT_Utility.getIntegratedCircuit(4), FluidRegistry.getFluidStack("endergoo",100),  CustomItemList.EctoplasmaFragment.get(1L), 200, 120);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.EctoplasmaFragment.get(6L), GT_Utility.getIntegratedCircuit(6), FluidRegistry.getFluidStack("endergoo",200), GT_ModHandler.getModItem("HardcoreEnderExpansion", "endoplasm", 1L, 0), 200, 240);
-
         GT_Values.RA.addAssemblerRecipe(CustomItemList.ArcaneShardChip.get(4L), GT_Utility.getIntegratedCircuit(4), FluidRegistry.getFluidStack("endergoo",100),  CustomItemList.ArcaneShardFragment.get(1L), 200, 120);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.ArcaneShardFragment.get(6L), GT_Utility.getIntegratedCircuit(6), FluidRegistry.getFluidStack("endergoo",200), GT_ModHandler.getModItem("HardcoreEnderExpansion", "arcane_shard", 1L, 0), 200, 240);
+        //HEE Runes
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RuneOfPowerFragment.get(9L), GT_Utility.getIntegratedCircuit(9), FluidRegistry.getFluidStack("endergoo",1000), GT_ModHandler.getModItem("HardcoreEnderExpansion", "rune", 1L, 0), 2400, 7680);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RuneOfAgilityFragment.get(9L), GT_Utility.getIntegratedCircuit(9), FluidRegistry.getFluidStack("endergoo",1000), GT_ModHandler.getModItem("HardcoreEnderExpansion", "rune", 1L, 1), 2400, 7680);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RuneOfVigorFragment.get(9L), GT_Utility.getIntegratedCircuit(9), FluidRegistry.getFluidStack("endergoo",1000), GT_ModHandler.getModItem("HardcoreEnderExpansion", "rune", 1L, 2), 2400, 7680);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RuneOfDefenseFragment.get(9L), GT_Utility.getIntegratedCircuit(9), FluidRegistry.getFluidStack("endergoo",1000), GT_ModHandler.getModItem("HardcoreEnderExpansion", "rune", 1L, 3), 2400, 7680);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RuneOfMagicFragment.get(9L), GT_Utility.getIntegratedCircuit(9), FluidRegistry.getFluidStack("endergoo",1000), GT_ModHandler.getModItem("HardcoreEnderExpansion", "rune", 1L, 4), 2400, 7680);
+        GT_Values.RA.addAssemblerRecipe(CustomItemList.RuneOfVoidFragment.get(9L), GT_Utility.getIntegratedCircuit(9), FluidRegistry.getFluidStack("endergoo",1000), GT_ModHandler.getModItem("HardcoreEnderExpansion", "rune", 1L, 5), 2400, 7680);
 
         //IC2 Charging Batteries
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2", "itemBatREDischarged", 4L, GT_Values.W), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4L),  GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BatteryAlloy, 1L), GT_Utility.getIntegratedCircuit(1)}, Materials.SolderingAlloy.getGas(144L), GT_ModHandler.getModItem("IC2", "itemBatChargeRE", 1L, 0), 200, 30);
