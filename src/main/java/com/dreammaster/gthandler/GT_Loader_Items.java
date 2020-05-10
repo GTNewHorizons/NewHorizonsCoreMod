@@ -582,6 +582,10 @@ public class GT_Loader_Items
 		CustomItemList.Empty540SpCell.set(ItemList.Empty540SpCell.getIS());
 		CustomItemList.Empty1080SpCell.set(ItemList.Empty1080SpCell.getIS());
 		CustomItemList.ArtificialLeather.set(ItemList.ArtificialLeather.getIS());
+		CustomItemList.EctoplasmaChip.set(ItemList.EctoplasmaChip.getIS());
+		CustomItemList.EctoplasmaFragment.set(ItemList.EctoplasmaFragment.getIS());
+		CustomItemList.ArcaneShardChip.set(ItemList.ArcaneShardChip.getIS());
+		CustomItemList.ArcaneShardFragment.set(ItemList.ArcaneShardFragment.getIS());
 		
 	}
 }
