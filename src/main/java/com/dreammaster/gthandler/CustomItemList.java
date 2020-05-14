@@ -134,7 +134,9 @@ public enum CustomItemList implements IItemContainer
 	ChargedCertusQuartzDust, RawNeutronium, NeutronReflectorSmallParts, Empty180SpCell, Empty360SpCell, Empty540SpCell, Empty1080SpCell,
 	RawPicoWafer, PicoWafer,
 	StargateFramePart, StargateChevron, StargateShieldingFoil, StargateCrystalDust, TCetiESeaweedExtract,
-	ArtificialLeather;
+	ArtificialLeather,
+	EctoplasmaChip, EctoplasmaFragment, ArcaneShardChip, ArcaneShardFragment,
+	RuneOfPowerFragment, RuneOfAgilityFragment, RuneOfVigorFragment, RuneOfDefenseFragment, RuneOfMagicFragment, RuneOfVoidFragment;
 
 
 	private ItemStack mStack;

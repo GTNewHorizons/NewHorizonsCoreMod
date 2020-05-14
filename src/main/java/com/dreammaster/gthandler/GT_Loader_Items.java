@@ -1,6 +1,8 @@
 package com.dreammaster.gthandler;
 
+import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.item.ItemList;
+import eu.usrv.yamcore.items.ModSimpleBaseItem;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 
 
@@ -582,6 +584,16 @@ public class GT_Loader_Items
 		CustomItemList.Empty540SpCell.set(ItemList.Empty540SpCell.getIS());
 		CustomItemList.Empty1080SpCell.set(ItemList.Empty1080SpCell.getIS());
 		CustomItemList.ArtificialLeather.set(ItemList.ArtificialLeather.getIS());
-		
+		CustomItemList.EctoplasmaChip.set(ItemList.EctoplasmaChip.getIS());
+		CustomItemList.EctoplasmaFragment.set(ItemList.EctoplasmaFragment.getIS());
+		CustomItemList.ArcaneShardChip.set(ItemList.ArcaneShardChip.getIS());
+		CustomItemList.ArcaneShardFragment.set(ItemList.ArcaneShardFragment.getIS());
+		CustomItemList.RuneOfPowerFragment.set(ItemList.RuneOfPowerFragment.getIS());
+		CustomItemList.RuneOfAgilityFragment.set(ItemList.RuneOfAgilityFragment.getIS());
+		CustomItemList.RuneOfVigorFragment.set(ItemList.RuneOfVigorFragment.getIS());
+		CustomItemList.RuneOfDefenseFragment.set(ItemList.RuneOfDefenseFragment.getIS());
+		CustomItemList.RuneOfMagicFragment.set(ItemList.RuneOfMagicFragment.getIS());
+		CustomItemList.RuneOfVoidFragment.set(ItemList.RuneOfVoidFragment.getIS());
+
 	}
 }
