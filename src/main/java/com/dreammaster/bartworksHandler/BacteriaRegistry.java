@@ -161,13 +161,13 @@ public class BacteriaRegistry {
         );
 
         //LightRadox + Nq -> Enriched Naquadah condensation int aChance, int aDuration, int aEUt, boolean aCleanroom
-        GT_Values.RA.addAutoclaveSpaceRecipe(Materials.Naquadah.getDust(1), RadoxLight.getGas(2000),Materials.NaquadahEnriched.getDust(3),10000,350,BW_Util.getMachineVoltageFromTier(5),false);
+        GT_Values.RA.addAutoclaveSpaceRecipe(Materials.Naquadah.getDust(1), GT_Values.NI, RadoxLight.getGas(2000),Materials.NaquadahEnriched.getDust(3),10000,350,BW_Util.getMachineVoltageFromTier(5),false);
 
         //super heavy -> heavy radox conversion
         GT_Values.RA.addCentrifugeRecipe(null,null,RadoxSuperHeavy.getFluid(1000),RadoxHeavy.getFluid(2000),null,null,null,null,null,null,null,60000, BW_Util.getMachineVoltageFromTier(8));
 
         //heavy radox + Nq+ -> Nq*
-        GT_Values.RA.addAutoclaveSpaceRecipe(Materials.NaquadahEnriched.getDust(1),  RadoxHeavy.getFluid(4000),Materials.Naquadria.getDust(3),10000,350,BW_Util.getMachineVoltageFromTier(7),false);
+        GT_Values.RA.addAutoclaveSpaceRecipe(Materials.NaquadahEnriched.getDust(1), GT_Values.NI,RadoxHeavy.getFluid(4000),Materials.Naquadria.getDust(3),10000,350,BW_Util.getMachineVoltageFromTier(7),false);
     }
 
     private void runGTRecipes() {
