@@ -343,7 +343,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.AutoclaveLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10790, "basicmachine.autoclave.tier.06", "Elite Autoclave", 6, "Crystallizing your Dusts",
-				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
+				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 2, 1, 8000, 0, 1, "Autoclave.png",
 				"", false, false, 0, "AUTOCLAVE",
 				new Object[] { "IGI", "IMI", "CPC",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -355,7 +355,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.AutoclaveZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10791, "basicmachine.autoclave.tier.07", "Elite Autoclave II", 7, "Crystallizing your Dusts",
-				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
+				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 2, 1, 8000, 0, 1, "Autoclave.png",
 				"", false, false, 0, "AUTOCLAVE",
 				new Object[] { "IGI", "IMI", "CPC",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -367,7 +367,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.AutoclaveUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10792, "basicmachine.autoclave.tier.08", "Ultimate Pressure Cooker", 8, "Crystallizing your Dusts",
-				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
+				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 2, 1, 8000, 0, 1, "Autoclave.png",
 				"", false, false, 0, "AUTOCLAVE",
 				new Object[] { "IGI", "IMI", "CPC",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -379,7 +379,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.AutoclaveUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10793, "basicmachine.autoclave.tier.09", "Epic Pressure Cooker", 9, "Crystallizing your Dusts",
-				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
+				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 2, 1, 8000, 0, 1, "Autoclave.png",
 				"", false, false, 0, "AUTOCLAVE",
 				new Object[] { "IGI", "IMI", "CPC",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -391,7 +391,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.AutoclaveUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10794, "basicmachine.autoclave.tier.10", "Epic Pressure Cooker II",10, "Crystallizing your Dusts",
-				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
+				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 2, 1, 8000, 0, 1, "Autoclave.png",
 				"", false, false, 0, "AUTOCLAVE",
 				new Object[] { "IGI", "IMI", "CPC",
 						'M', CustomItemList.Hull_UEV,
@@ -403,12 +403,12 @@ public class GT_Loader_Machines
 
 		CustomItemList.AutoclaveUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10795, "basicmachine.autoclave.tier.11", "Epic Pressure Cooker III",11, "Crystallizing your Dusts",
-				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
+				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 2, 1, 8000, 0, 1, "Autoclave.png",
 				"", false, false, 0, "AUTOCLAVE",null).getStackForm(1L));
 
 		CustomItemList.AutoclaveUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10796, "basicmachine.autoclave.tier.12", "Epic Pressure Cooker IV",12, "Crystallizing your Dusts",
-				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 1, 1, 8000, 0, 1, "Autoclave.png",
+				GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes, 2, 1, 8000, 0, 1, "Autoclave.png",
 				"", false, false, 0, "AUTOCLAVE",null).getStackForm(1L));
 
 		//AutoclaveLuV
