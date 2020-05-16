@@ -1896,16 +1896,16 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         //GT_Values.RA.addChemicalRecipe(ItemList.Circuit_Chip_Stemcell.get(4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1), Materials.BioMediumRaw.getFluid(1000L), FluidRegistry.getFluidStack("mutagen", 250), ItemList.Circuit_Chip_Biocell.get(1L), 1200, 500000);
 
-        GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1), Materials.Europium.getMolten(16), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 1000, 12000, 320, true);
-        GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 1), Materials.Europium.getMolten(16), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 1000, 12000, 320, true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1), GT_Values.NI, Materials.Europium.getMolten(16), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 1000, 12000, 320, true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 1), GT_Values.NI, Materials.Europium.getMolten(16), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 1000, 12000, 320, true);
 
         GT_Values.RA.addForgeHammerRecipe(ItemList.Circuit_Parts_RawCrystalChip.get(1L), ItemList.Circuit_Parts_RawCrystalParts.get(9), 100, 480);
         GT_Values.RA.addAutoclaveRecipe(ItemList.Circuit_Parts_RawCrystalParts.get(1L), FluidRegistry.getFluidStack("bacterialsludge", 250), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 6000, 12000, 480);
         GT_Values.RA.addAutoclaveRecipe(ItemList.Circuit_Parts_RawCrystalParts.get(1L), FluidRegistry.getFluidStack("mutagen", 250), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 8000, 12000, 480);
         GT_Values.RA.addAutoclaveRecipe(ItemList.Circuit_Parts_RawCrystalParts.get(1L), Materials.Europium.getMolten(16), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 10000, 12000, 480);
 
-        GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 12), Materials.UUMatter.getFluid(250L), ItemList.Tool_DataOrb.get(1L), 10000, 12000, 960, true);
-        GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 12), Materials.UUMatter.getFluid(250L), ItemList.Tool_DataOrb.get(1L), 10000, 12000, 960, true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 12),  GT_Values.NI, Materials.UUMatter.getFluid(250L), ItemList.Tool_DataOrb.get(1L), 10000, 12000, 960, true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 12),  GT_Values.NI, Materials.UUMatter.getFluid(250L), ItemList.Tool_DataOrb.get(1L), 10000, 12000, 960, true);
         //GT_ModHandler.addShapelessCraftingRecipe(ItemList.Circuit_Parts_RawCrystalChip.get(9), new Object[]{ItemList.Circuit_Chip_CrystalCPU.get(1L)});
         GT_Values.RA.addBlastRecipe(ItemList.Circuit_Parts_RawCrystalChip.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1), Materials.Helium.getGas(1000), GT_Values.NF, ItemList.Circuit_Parts_Crystal_Chip_Elite.get(1L), GT_Values.NI, 900, 480, 5000);
         GT_Values.RA.addBlastRecipe(ItemList.Circuit_Parts_RawCrystalChip.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Olivine, 1), Materials.Helium.getGas(1000), GT_Values.NF, ItemList.Circuit_Parts_Crystal_Chip_Elite.get(1L), GT_Values.NI, 900, 480, 5000);
@@ -1999,7 +1999,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             for (byte i = 0; i < 6; ++i)
                 GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("GalaxySpace", "tcetiedandelions", 64L, i), com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(), 3600, 262144);
         GT_Values.RA.addMixerRecipe(com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS().splitStack(64), Materials.Dolomite.getDust(64), Materials.SamariumMagnetic.getDust(21), Materials.ChromiumDioxide.getDust(64), GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 54L), GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 47L), GT_Values.NF, GT_Values.NF, com.dreammaster.item.ItemList.StargateCrystalDust.getIS(), 3600, 262144);
-        GT_Values.RA.addAutoclaveSpaceRecipe(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64), Materials.Silver.getPlasma(8000L), GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L), 10000, 3600, 131000, true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64),  GT_Values.NI, Materials.Silver.getPlasma(8000L), GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L), 10000, 3600, 131000, true);
 
         /*Stuff from CoreMod minetweaker script
          * AlloySmelter
