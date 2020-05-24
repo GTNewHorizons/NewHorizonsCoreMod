@@ -1,5 +1,5 @@
 # GT-NewHorizons-CoreMod
-Master Branch: [![Build Status](http://jenkins.usrv.de:8081/buildStatus/icon?job=GTNewHorizons-Core-Mod)](http://jenkins.usrv.de:8081/job/GTNewHorizons-Core-Mod/)
+Master Branch: [![Build Status](http://jenkins.usrv.eu:8080/buildStatus/icon?job=GTNewHorizons-Core-Mod)](http://jenkins.usrv.eu:8080/job/GTNewHorizons-Core-Mod/)
 
 Core Mod for the GT New Horizons pack
 

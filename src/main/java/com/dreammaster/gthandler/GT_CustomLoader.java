@@ -3,16 +3,14 @@ package com.dreammaster.gthandler;
 import com.dreammaster.gthandler.casings.GT_Loader_CasingsNH;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.food.QuantumBread;
-import cpw.mods.fml.common.event.FMLInterModComms;
+import com.dreammaster.modfixes.enderIO.FrankenskullFix;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
-import crazypants.enderio.EnderIO;
-import crazypants.enderio.machine.soul.SoulBinderRecipeManager;
-import crazypants.enderio.material.FrankenSkull;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 
 /**
  * How to add new Stuff:
@@ -28,6 +26,7 @@ public class GT_CustomLoader
         		OrePrefixes.wireGt02.get(Materials.HSSG),
         		OrePrefixes.gemExquisite.get(Materials.Diamond),
         		gregtech.api.enums.ItemList.Gravistar,
+        		Loader.isModLoaded("bartworks") ? "blockGlassLuV" : "glassReinforced",
         		Materials.Chrome,
         		Materials.Enderium),
         
@@ -37,6 +36,7 @@ public class GT_CustomLoader
         		OrePrefixes.wireGt02.get(Materials.Naquadah),
         		OrePrefixes.gemExquisite.get(Materials.GarnetYellow),
         		ItemList.MysteriousCrystal.getIS(),
+                Loader.isModLoaded("bartworks") ? "blockGlassZPM" : "glassReinforced",
         		Materials.Iridium,
         		Materials.Naquadah),
         
@@ -46,8 +46,39 @@ public class GT_CustomLoader
         		OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
         		OrePrefixes.gemExquisite.get(Materials.GarnetRed),
         		new ItemStack(Blocks.dragon_egg, 1),
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
         		Materials.Osmium,
-        		Materials.Neutronium);
+        		Materials.Neutronium),
+
+        UHV(OrePrefixes.circuit.get(Materials.Infinite),
+        		OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
+                Materials.Bedrockium,
+                Materials.Bedrockium,
+                null,
+                null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
+                Materials.Neutronium,
+                Materials.Neutronium),
+
+        UEV(OrePrefixes.circuit.get(Materials.Bio),
+                OrePrefixes.wireGt04.get(Materials.Bedrockium),
+                Materials.Draconium,
+                Materials.Draconium,
+                null,
+                null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
+                Materials.Bedrockium,
+                Materials.Neutronium),
+
+        UIV(OrePrefixes.circuit.get(Materials.Piko),
+                null,
+                null,
+                null,
+                null,
+                null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
+                null,
+                null);
 
 
         private Object _mCircuit;
@@ -62,7 +93,7 @@ public class GT_CustomLoader
         private Object _mPipe;
         private Object _mPipeL;
         
-        AdvancedGTMaterials(Object pCircuit, Object pHeatingCoil, Materials pCable, Object pCoilWire, Object pGem, Object pPowerGem, Materials pPlateMaterial, Materials pPipe)
+        AdvancedGTMaterials(Object pCircuit, Object pHeatingCoil, Materials pCable, Object pCoilWire, Object pGem, Object pPowerGem, Object glass, Materials pPlateMaterial, Materials pPipe)
         {
             _mCircuit = pCircuit;
             _mHeatingCoil = pHeatingCoil;
@@ -72,7 +103,7 @@ public class GT_CustomLoader
             _mGem = pGem;
             _mPowerGem = pPowerGem;
             _mPlate = OrePrefixes.plate.get(pPlateMaterial);
-            _mReinfGlass = "glassReinforced";
+            _mReinfGlass = glass;
             _mPipe = OrePrefixes.pipeMedium.get(pPipe);
             _mPipeL = OrePrefixes.pipeLarge.get(pPipe);
         }
@@ -152,7 +183,8 @@ public class GT_CustomLoader
     public void run()
     {
     	GameRegistry.registerItem(QuantumBread.Instance(), "itemQuantumToast");
-        fixEnderIO();
+    	if (Loader.isModLoaded("EnderIO"))
+            FrankenskullFix.fixEnderIO();
     	MaterialLoader.run();
     	FluidPipeLoader.run();
     	WireLoader.run();
@@ -164,27 +196,5 @@ public class GT_CustomLoader
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
         OreDictionary.run();
-    }
-
-    private void fixEnderIO(){
-        //Example of how to add a recipe:
-
-        NBTTagCompound root = new NBTTagCompound();
-        root.setString(SoulBinderRecipeManager.KEY_RECIPE_UID, "sentientEnderMK2");
-        root.setInteger(SoulBinderRecipeManager.KEY_REQUIRED_ENERGY, 100000);
-        root.setInteger(SoulBinderRecipeManager.KEY_REQUIRED_XP, 10);
-        root.setString(SoulBinderRecipeManager.KEY_SOUL_TYPES, "SpecialMobs.SpecialWitch");
-        ItemStack is = new ItemStack(EnderIO.itemFrankenSkull, 1, FrankenSkull.ENDER_RESONATOR.ordinal());
-        NBTTagCompound stackRoot = new NBTTagCompound();
-        is.writeToNBT(stackRoot);
-        root.setTag(SoulBinderRecipeManager.KEY_INPUT_STACK, stackRoot);
-        is = new ItemStack(EnderIO.itemFrankenSkull, 1, FrankenSkull.SENTIENT_ENDER.ordinal());
-        stackRoot = new NBTTagCompound();
-        is.writeToNBT(stackRoot);
-        root.setTag(SoulBinderRecipeManager.KEY_OUTPUT_STACK, stackRoot);
-
-        SoulBinderRecipeManager.getInstance().addRecipeFromNBT(root);
-        FMLInterModComms.sendMessage("EnderIO",  "recipe:soulbinder", root);
-
     }
 }

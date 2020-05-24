@@ -1,12 +1,13 @@
 package com.dreammaster.oredict;
 
 import com.dreammaster.item.ItemList;
-
 import cpw.mods.fml.common.Loader;
 import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+
+import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
 public class OreDictHandler {
 	
@@ -27,7 +28,7 @@ public class OreDictHandler {
 		reg_dust(OreDictTypes.Enceladus.name(),ItemList.EnceladusIceDust.getIS());
 		reg_dust(OreDictTypes.Europa.name(),ItemList.EuropaIceDust.getIS());
 		reg_dust(OreDictTypes.Europa.name(),ItemList.EuropaStoneDust.getIS());
-		reg_dust(OreDictTypes.Ganymede.name(),ItemList.GanymedStoneDust.getIS());
+		reg_dust(OreDictTypes.Ganymede.name(),ItemList.GanymedeStoneDust.getIS());
 		reg_dust(OreDictTypes.Haumea.name(),ItemList.HaumeaStoneDust.getIS());
 		reg_dust(OreDictTypes.Io.name(),ItemList.IoStoneDust.getIS());
 		reg_dust(OreDictTypes.MakeMake.name(),ItemList.MakeMakeStoneDust.getIS());
@@ -135,14 +136,29 @@ public class OreDictHandler {
 	}
 	
 	public static void register_all() {
+		reg_woodItems();
 		reg_additional();
 		register_space_rocks();
 		register_space_dust();
 	}
-	
+
+	private static void reg_fenceWood() {
+		for (ItemStack itemStack : new ItemStack[]{
+				new ItemStack(Blocks.fence),
+				GT_ModHandler.getModItem("ExtraTrees", "fence", 1, WILDCARD_VALUE),
+				GT_ModHandler.getModItem("Natura", "Natura.fence", 1, WILDCARD_VALUE)
+		}) {
+			if (itemStack != null) OreDictionary.registerOre("fenceWood", itemStack);
+		}
+	}
+
+	private static void reg_woodItems() {
+		reg_fenceWood(); // Register fenceWood
+	}
+
 	private static void reg_dust(String S,ItemStack I) {
 		if (I != null) {
-		String p = I.getDisplayName().replaceAll("Dust", "").replaceAll(" ", "").trim();
+		String p = I.getUnlocalizedName().replaceAll("item\\.","").replaceAll("Dust", "").replaceAll(" ", "").trim();
 		OreDictionary.registerOre(OreDictTypes.dust.name()+p, I);
 		OreDictionary.registerOre(OreDictTypes.dust.name()+S, I);
 		OreDictionary.registerOre(OreDictTypes.dust.name()+OreDictTypes.Space.name(),I);

@@ -9,6 +9,7 @@ import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.galacticgreg.SpaceDimRegisterer;
+import com.dreammaster.gthandler.CoreMod_ProcessingArrayRecipeLoader;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
@@ -21,6 +22,7 @@ import com.dreammaster.modbabychest.TileEntityBabyChest;
 import com.dreammaster.modctt.CustomToolTipsHandler;
 import com.dreammaster.modcustomdrops.CustomDropsHandler;
 import com.dreammaster.modcustomfuels.CustomFuelsHandler;
+import com.dreammaster.modfixes.GTpp.GregTechPlusPlusAbandonedAspectsFix;
 import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
@@ -30,11 +32,15 @@ import com.dreammaster.network.CoreModDispatcher;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -46,18 +52,22 @@ import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
-import gregtech.api.GregTech_API;
 import gregtech.GT_Mod;
+import gregtech.api.GregTech_API;
+import gregtech.api.enums.Materials;
+import gregtech.api.util.GT_LanguageManager;
+import com.dreammaster.bartworksHandler.VoidMinerLoader;
+import gregtech.common.items.GT_MetaGenerated_Item_01;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 
-import static gregtech.api.enums.Dyes.*;
-
-import java.io.*;
+import java.io.File;
 import java.util.Random;
+
+import static gregtech.api.enums.Dyes.MACHINE_METAL;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -66,7 +76,9 @@ import java.util.Random;
         dependencies = 
         	"required-after:Forge@[10.13.2.1291,);"
         +	"required-after:YAMCore@[0.5.76,);" 
-        +	"required-after:Baubles@[1.0.1.10,);",
+        +	"required-after:Baubles@[1.0.1.10,);"
+		+   "after:EnderIO;"
+        +   "after:HardcoreEnderExpansion;",
 		certificateFingerprint = "1cca375192a26693475fb48268f350a462208dce")
 public class MainRegistry
 {
@@ -249,9 +261,19 @@ public class MainRegistry
         {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
-        BacteriaRegistry = new BacteriaRegistry();
+	    
+	    if (Loader.isModLoaded("bartworks"))
+	    {
+            BacteriaRegistry = new BacteriaRegistry();
+	    }
 
-        if (CoreConfig.ModLoginMessage_Enabled)
+        Logger.debug("LOAD abandoned GT++ Aspects");
+        if (Loader.isModLoaded("Thaumcraft"))
+        {
+            new GregTechPlusPlusAbandonedAspectsFix();
+        }
+
+        if (CoreModConfig.ModLoginMessage_Enabled)
         {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
         }
@@ -287,10 +309,17 @@ public class MainRegistry
         // Register additional OreDictionary Names
         if(CoreConfig.OreDictItems_Enabled)
         OreDictHandler.register_all();
-        
+
         // Register Dimensions in GalacticGregGT5
         if (Loader.isModLoaded("galacticgreg"))
         {
+            if (Loader.isModLoaded("bartworks")) {
+                GregTech_API.sAfterGTPostload.add(() -> {
+                    Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
+                    VoidMinerLoader.initDeepDark();
+                });
+            }
+
             SpaceDimReg = new SpaceDimRegisterer();
             if (!SpaceDimReg.Init())
             {
@@ -304,7 +333,6 @@ public class MainRegistry
             }
 
         }
-
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -351,8 +379,7 @@ public class MainRegistry
     }
 
     @Mod.EventHandler
-    public void PostLoad(FMLPostInitializationEvent PostEvent)
-    {
+    public void PostLoad(FMLPostInitializationEvent PostEvent) {
 
         if (CoreConfig.ModHazardousItems_Enabled) {
             Module_HazardousItems.LoadConfig();
@@ -376,11 +403,33 @@ public class MainRegistry
 
         registerModFixes();
 
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5.desc", "On your way to the T5 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6", "Rocket Plate Tier 6!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6.desc", "On your way to the T6 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7", "Rocket Plate Tier 7!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc", "On your way to the T7 Dims!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8", "Rocket Plate Tier 8!");
+        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
+
+        CoreMod_ProcessingArrayRecipeLoader.registerMaps();
+
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
-        BacteriaRegistry.runAllPostinit();
+        if (Loader.isModLoaded("bartworks")) {
+            Logger.debug("Add Bacteria Stuff to BartWorks");
+            BacteriaRegistry.runAllPostinit();
+
+            Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
+        }
     }
 
     /**

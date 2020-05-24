@@ -14,7 +14,9 @@ public class LoginHandler
     {
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "=================================================="));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.BOLD + "Welcome to Gregtech:New Horizons " + EnumChatFormatting.GREEN + CoreModConfig.ModPackVersion) );
-        event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.RED +  "Please bring comments to " + EnumChatFormatting.BLUE + "https://discord.gg/EXshrPV" ));
+        event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "Experimental recipe acceleration! Vanilla, Forestry Worktable, AE2." ));
+        event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "May cause issues with oredicted wildcard recipes." ));
+        event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "Please bring comments to https://discord.gg/EXshrPV" ));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "=================================================="));
     }
 }

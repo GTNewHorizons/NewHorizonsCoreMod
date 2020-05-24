@@ -1,6 +1,8 @@
 package com.dreammaster.gthandler;
 
+import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.item.ItemList;
+import eu.usrv.yamcore.items.ModSimpleBaseItem;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 
 
@@ -483,7 +485,7 @@ public class GT_Loader_Items
 		CustomItemList.CeresStoneDust.set(ItemList.CeresStoneDust.getIS());
 		CustomItemList.EuropaIceDust.set(ItemList.EuropaIceDust.getIS());
 		CustomItemList.EuropaStoneDust.set(ItemList.EuropaStoneDust.getIS());
-		CustomItemList.GanymedStoneDust.set(ItemList.GanymedStoneDust.getIS());
+		CustomItemList.GanymedeStoneDust.set(ItemList.GanymedeStoneDust.getIS());
 		CustomItemList.CallistoStoneDust.set(ItemList.CallistoStoneDust.getIS());
 		CustomItemList.IoStoneDust.set(ItemList.IoStoneDust.getIS());
 		CustomItemList.VenusStoneDust.set(ItemList.VenusStoneDust.getIS());
@@ -577,6 +579,21 @@ public class GT_Loader_Items
 		CustomItemList.TCetiESeaweedExtract.set(ItemList.TCetiESeaweedExtract.getIS());
 		CustomItemList.RawNeutronium.set(ItemList.RawNeutronium.getIS());
 		CustomItemList.NeutronReflectorSmallParts.set(ItemList.NeutronReflectorSmallParts.getIS());
+		CustomItemList.Empty180SpCell.set(ItemList.Empty180SpCell.getIS());
+		CustomItemList.Empty360SpCell.set(ItemList.Empty360SpCell.getIS());
+		CustomItemList.Empty540SpCell.set(ItemList.Empty540SpCell.getIS());
+		CustomItemList.Empty1080SpCell.set(ItemList.Empty1080SpCell.getIS());
+		CustomItemList.ArtificialLeather.set(ItemList.ArtificialLeather.getIS());
+		CustomItemList.EctoplasmaChip.set(ItemList.EctoplasmaChip.getIS());
+		CustomItemList.EctoplasmaFragment.set(ItemList.EctoplasmaFragment.getIS());
+		CustomItemList.ArcaneShardChip.set(ItemList.ArcaneShardChip.getIS());
+		CustomItemList.ArcaneShardFragment.set(ItemList.ArcaneShardFragment.getIS());
+		CustomItemList.RuneOfPowerFragment.set(ItemList.RuneOfPowerFragment.getIS());
+		CustomItemList.RuneOfAgilityFragment.set(ItemList.RuneOfAgilityFragment.getIS());
+		CustomItemList.RuneOfVigorFragment.set(ItemList.RuneOfVigorFragment.getIS());
+		CustomItemList.RuneOfDefenseFragment.set(ItemList.RuneOfDefenseFragment.getIS());
+		CustomItemList.RuneOfMagicFragment.set(ItemList.RuneOfMagicFragment.getIS());
+		CustomItemList.RuneOfVoidFragment.set(ItemList.RuneOfVoidFragment.getIS());
 
 	}
 }
