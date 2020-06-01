@@ -1,8 +1,6 @@
 package com.dreammaster.gthandler;
 
-import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.item.ItemList;
-import eu.usrv.yamcore.items.ModSimpleBaseItem;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 
 

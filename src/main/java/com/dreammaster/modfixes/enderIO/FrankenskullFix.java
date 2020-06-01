@@ -1,6 +1,5 @@
 package com.dreammaster.modfixes.enderIO;
 
-import com.dreammaster.modfixes.IModFix;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.machine.soul.SoulBinderRecipeManager;

@@ -2,7 +2,6 @@ package com.dreammaster.gthandler;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
