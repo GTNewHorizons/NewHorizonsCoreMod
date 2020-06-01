@@ -136,7 +136,8 @@ public enum CustomItemList implements IItemContainer
 	StargateFramePart, StargateChevron, StargateShieldingFoil, StargateCrystalDust, TCetiESeaweedExtract,
 	ArtificialLeather,
 	EctoplasmaChip, EctoplasmaFragment, ArcaneShardChip, ArcaneShardFragment,
-	RuneOfPowerFragment, RuneOfAgilityFragment, RuneOfVigorFragment, RuneOfDefenseFragment, RuneOfMagicFragment, RuneOfVoidFragment;
+	RuneOfPowerFragment, RuneOfAgilityFragment, RuneOfVigorFragment, RuneOfDefenseFragment, RuneOfMagicFragment, RuneOfVoidFragment,
+	Display;
 
 
 	private ItemStack mStack;

@@ -594,6 +594,7 @@ public class GT_Loader_Items
 		CustomItemList.RuneOfDefenseFragment.set(ItemList.RuneOfDefenseFragment.getIS());
 		CustomItemList.RuneOfMagicFragment.set(ItemList.RuneOfMagicFragment.getIS());
 		CustomItemList.RuneOfVoidFragment.set(ItemList.RuneOfVoidFragment.getIS());
+		CustomItemList.Display.set(ItemList.Display.getIS());
 
 	}
 }
