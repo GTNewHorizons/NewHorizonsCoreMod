@@ -221,6 +221,21 @@ idea {
     }
 }
 
+task devJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'dev'
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+artifacts {
+    archives devJar
+    archives sourceJar
+}
+
 task signJar(dependsOn: 'reobf'){
     doLast {
         ant.signjar(

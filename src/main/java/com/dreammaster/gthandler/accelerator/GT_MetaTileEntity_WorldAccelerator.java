@@ -22,14 +22,27 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import static gregtech.api.enums.GT_Values.V;
 
 public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_TieredMachineBlock
 {
+
+  private static final HashSet<Class<? extends TileEntity>> _mBlacklistedTiles = new HashSet<>();
+
+  public static boolean addTileToBlacklist(Class<? extends TileEntity> clazz) {
+    return _mBlacklistedTiles.add(clazz);
+  }
+
+  public static boolean addTileToBlacklist(TileEntity tileEntity) {
+    return _mBlacklistedTiles.add(tileEntity.getClass());
+  }
+
+  public static HashSet<Class<? extends TileEntity>> get_mBlacklistedTiles() {
+    return _mBlacklistedTiles;
+  }
+
   private int _mRadiusTierOverride = -1;
   private int _mSpeedTierOverride = -1;
 
@@ -384,8 +397,6 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     }
   }
 
-  private static List<String> _mBlacklistedTileEntities = new ArrayList<>();
-
   // Inspired by ChromatiCraft's TileAccelerator
   private boolean isTEBlackListed( TileEntity pTile )
   {
@@ -420,7 +431,10 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
       }
     }
 
-    return false;
+    return GT_MetaTileEntity_WorldAccelerator._mBlacklistedTiles.stream()
+            .map(Class::getCanonicalName)
+            .map(String::toLowerCase)
+            .anyMatch(tCanonicalName::equalsIgnoreCase);
   }
 
   /**
