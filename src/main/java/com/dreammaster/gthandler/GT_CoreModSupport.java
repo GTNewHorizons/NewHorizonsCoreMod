@@ -57,7 +57,7 @@ public class GT_CoreModSupport implements IMaterialHandler {
     public static Materials RadoxHeavy = new MaterialBuilder(-1,TextureSet.SET_DULL,"Heavy Radox").setRGB(115, 0, 115).addFluid().constructMaterial();
     public static Materials RadoxSuperHeavy = new MaterialBuilder(-1,TextureSet.SET_DULL,"Super Heavy Radox").setRGB(100, 0, 100).addFluid().constructMaterial();
     public static Materials Xenoxene = new MaterialBuilder(-1,TextureSet.SET_DULL,"Xenoxene").setRGB(133, 130, 128).addFluid().constructMaterial();
-    public static Materials DelutedXenoxene = new MaterialBuilder(-1,TextureSet.SET_DULL,"Deluted Xenoxene").setRGB(206, 200, 196).addFluid().constructMaterial();
+    public static Materials DelutedXenoxene = new MaterialBuilder(-1,TextureSet.SET_DULL,"Diluted Xenoxene").setRGB(206, 200, 196).addFluid().constructMaterial();
     public static Materials RadoxCracked = new MaterialBuilder(-1,TextureSet.SET_DULL,"Cracked Radox").setRGB(180,130,180).addGas().constructMaterial();
     public static Materials RadoxGas = new MaterialBuilder(-1,TextureSet.SET_DULL,"Radox Gas").setRGB(255,130,255).addGas().constructMaterial();
     public static Materials RadoxPolymer = new Materials(
