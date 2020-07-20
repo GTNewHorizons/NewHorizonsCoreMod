@@ -927,6 +927,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("Genetics", "misc", 6L, 4), FluidRegistry.getFluidStack("water", 750), FluidRegistry.getFluidStack("binnie.growthmedium", 750), 600, 480, false);
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0), FluidRegistry.getFluidStack("binnie.growthmedium", 750), FluidRegistry.getFluidStack("binnie.bacteria", 750), 1200, 480, false);
+        GT_Values.RA.addBrewingRecipeCustom(new ItemStack(Items.blaze_powder,1,0),FluidRegistry.getFluidStack("binnie.bacteria",100),FluidRegistry.getFluidStack("binnie.bacteriavector",100),5,60,false);
+        GT_Values.RA.addBrewingRecipeCustom(new ItemStack(Items.dye,1,15),FluidRegistry.getFluidStack("binnie.bacteria",100),FluidRegistry.getFluidStack("binnie.bacteriapoly",100),5,60,false);
 
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("harvestthenether", "ignisfruitItem", 45L, 0), FluidRegistry.getFluidStack("potion.awkward", 750), FluidRegistry.getFluidStack("potion.fireresistance", 750), 120, 8, false);
 
