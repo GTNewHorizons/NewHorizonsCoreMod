@@ -17,7 +17,7 @@ public class LoginHandler
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + "The Quest Book has a shortcut key," ));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + "check your controls to set it up correctly." ));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "Please report bugs here:" ));
-        event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/issues" ));
+        event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/" ));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "Please bring comments to https://discord.gg/EXshrPV" ));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "==================================================" ));
     }
