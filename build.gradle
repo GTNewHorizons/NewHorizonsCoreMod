@@ -224,6 +224,9 @@ idea {
 task devJar(type: Jar) {
     from sourceSets.main.output
     classifier = 'dev'
+    manifest {
+        attributes 'FMLCorePlugin': 'com.dreammaster.coremod.DepLoader','FMLCorePluginContainsFMLMod': 'true'
+    }
 }
 
 task sourceJar(type: Jar) {
@@ -248,5 +251,11 @@ task signJar(dependsOn: 'reobf'){
             tsaurl: findProperty('signTSAurl') ?: '',
             verbose: true
             )
+    }
+}
+
+jar {
+    manifest {
+        attributes 'FMLCorePlugin': 'com.dreammaster.coremod.DreamCoreMod','FMLCorePluginContainsFMLMod': 'true'
     }
 }
