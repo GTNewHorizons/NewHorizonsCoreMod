@@ -2846,9 +2846,9 @@ public class GT_MachineRecipeLoader implements Runnable{
             // Diamond Tank
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1L, 0),  GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(144L), GT_ModHandler.getModItem("irontank", "diamondTank", 1L, 0), 800, 30);
             // Obsidian Tank
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1L, 0),  GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Obsidian, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(144L), GT_ModHandler.getModItem("irontank", "obsidianTank", 1L, 0), 900, 30);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1L, 0),  GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(144L), GT_ModHandler.getModItem("irontank", "obsidianTank", 1L, 0), 900, 30);
             // Aluminium Tank
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1L, 0),  GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Aluminium, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(144L), GT_ModHandler.getModItem("irontank", "emeraldTank", 1L, 0), 1000, 60);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1L, 0),  GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Aluminium, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(144L), GT_ModHandler.getModItem("irontank", "emeraldTank", 1L, 0), 1000, 60);
             // Stainless Steel Tank
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1L, 0),  GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.StainlessSteel, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(144L), GT_ModHandler.getModItem("irontank", "stainlesssteelTank", 1L, 0), 1100, 120);
             // Titanium Tank
