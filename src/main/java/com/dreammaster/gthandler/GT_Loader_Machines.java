@@ -32,7 +32,7 @@ public class GT_Loader_Machines
 	{
 		long bitsd = GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.NOT_REMOVABLE
 				| GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.BUFFERED;
-		
+
 		//TODO:While adding recipes look at GT_Loader_MetaTileEntities there is some useful info
 		//TODO:Add recipes where u see //TODO:recipes or null in the code
 
@@ -1992,7 +1992,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Hull_LuV,
 						'T', ItemList.Emitter_LuV,
 						'R', ItemList.Sensor_LuV,
-						'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+						'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.ScannerZPM.get(1L),
@@ -2001,7 +2001,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Hull_ZPM,
 						'T', ItemList.Emitter_ZPM,
 						'R', ItemList.Sensor_ZPM,
-						'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.ScannerUV.get(1L),
@@ -2010,7 +2010,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Hull_UV,
 						'T', ItemList.Emitter_UV,
 						'R', ItemList.Sensor_UV,
-						'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+						'C', OrePrefixes.circuit.get(Materials.Infinite),
 						'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.ScannerUHV.get(1L),
@@ -2019,7 +2019,7 @@ public class GT_Loader_Machines
 						'M', ItemList.Hull_MAX,
 						'T', ItemList.Emitter_UHV,
 						'R', ItemList.Sensor_UHV,
-						'C', OrePrefixes.circuit.get(Materials.Infinite),
+						'C', OrePrefixes.circuit.get(Materials.Bio),
 						'W', OrePrefixes.cableGt01.get(Materials.Bedrockium) });
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.ScannerUEV.get(1L),
@@ -2028,7 +2028,7 @@ public class GT_Loader_Machines
 						'M', CustomItemList.Hull_UEV,
 						'T', ItemList.Emitter_UEV,
 						'R', ItemList.Sensor_UEV,
-						'C', OrePrefixes.circuit.get(Materials.Bio),
+						'C', OrePrefixes.circuit.get(Materials.Nano),
 						'W', OrePrefixes.cableGt01.get(Materials.Draconium) });
 		//ScannerLuV
 		//ScannerZPM
@@ -4321,7 +4321,7 @@ public class GT_Loader_Machines
 		//CustomItemList.Battery_TurboCharger_4by4_MAXV.set(new GT_MetaTileEntity_TurboCharger(
 		//		12055, "batteryturbocharger.16.tier.15", "Maximum Turbo Charger",15,"64A in /16A out", 4).getStackForm(1L));
 
-		
+
 
 		//TODO add Conveyor Modules for more Tiers
 		// ===================================================================================================
@@ -4557,7 +4557,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		// Input Hatches
 		// ===================================================================================================
-		
+
 		CustomItemList.Hatch_Input_UEV.set(new GT_MetaTileEntity_Hatch_Input(12097, "hatch.input.tier.10", "Input Hatch (UEV)",10).getStackForm(1L));
 		CustomItemList.Hatch_Input_UIV.set(new GT_MetaTileEntity_Hatch_Input(12098, "hatch.input.tier.11", "Input Hatch (UIV)",11).getStackForm(1L));
 		CustomItemList.Hatch_Input_UMV.set(new GT_MetaTileEntity_Hatch_Input(12099, "hatch.input.tier.12", "Input Hatch (UMV)",12).getStackForm(1L));
