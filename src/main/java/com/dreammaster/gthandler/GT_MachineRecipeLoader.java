@@ -2882,6 +2882,8 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),  GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenSteel, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(72L), GT_ModHandler.getModItem("irontank", "titaniumTungstensteelUpgrade", 1L, 0), 1300, 480);
 
         }
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_Utility.getIntegratedCircuit(5)}, GT_Values.NF, CustomItemList.NeutronReflectorSmallParts.get(1), 300, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_Utility.getIntegratedCircuit(8)}, GT_Values.NF, CustomItemList.NeutronReflectorParts.get(1), 600, 120);
         run4();
     }
 
