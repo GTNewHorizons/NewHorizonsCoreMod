@@ -1070,7 +1070,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalBathRecipe(new ItemStack(Items.leather, 2, 0), Materials.PhosphoricAcid.getFluid(144), GT_ModHandler.getModItem("Backpack", "tannedLeather", 1L, 0), GT_Values.NI, GT_Values.NI, new int[]{10000}, 300 , 30);
         GT_Values.RA.addChemicalBathRecipe(CustomItemList.ArtificialLeather.get(2L), Materials.PhosphoricAcid.getFluid(144), GT_ModHandler.getModItem("Backpack", "tannedLeather", 1L, 0), GT_Values.NI, GT_Values.NI, new int[]{10000}, 300 , 30);
         //- Chlorine cleaning of pistons
-        GT_Values.RA.addChemicalBathRecipe(new ItemStack(Blocks.Sticky_Piston), Materials.Chlorine.getGas(10L), new ItemStack(Blocks.Piston), GT_Values.NI, GT_Values.NI, null, 30, 30);
+        GT_Values.RA.addChemicalBathRecipe(new ItemStack(Blocks.sticky_piston, 1,0), Materials.Chlorine.getGas(10L), new ItemStack(Blocks.piston, 1,0), GT_Values.NI, GT_Values.NI, null, 30, 30);
 
         GT_Values.RA.addChemicalBathRecipe(CustomItemList.MysteriousCrystalGemExquisite.get(1L), Materials.UUMatter.getFluid(144), CustomItemList.MysteriousCrystalLens.get(1L), GT_Values.NI, GT_Values.NI, new int[]{10000}, 600, 500000);
         GT_Values.RA.addLaserEngraverRecipe(CustomItemList.MysteriousCrystal.get(3L), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), CustomItemList.MysteriousCrystalGemFlawless.get(1L), 600, 122880, true);
