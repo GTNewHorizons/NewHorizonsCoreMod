@@ -22,6 +22,7 @@ public class OreDictHandler {
 		reg_dust(OreDictTypes.BarnardaF.name(),ItemList.BarnardaFStoneDust.getIS());
 		reg_dust(OreDictTypes.Callisto.name(),ItemList.CallistoStoneDust.getIS());
 		reg_dust(OreDictTypes.CentauriA.name(),ItemList.CentauriAStoneDust.getIS());
+		reg_dust(OreDictTypes.CentauriA.name(),ItemList.CentauriASurfaceDust.getIS());
 		reg_dust(OreDictTypes.Ceres.name(),ItemList.CeresStoneDust.getIS());
 		reg_dust(OreDictTypes.Deimos.name(),ItemList.DeimosStoneDust.getIS());
 		reg_dust(OreDictTypes.Enceladus.name(),ItemList.EnceladusStoneDust.getIS());
