@@ -71,7 +71,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.WoodenCasing.get(1L), bits, new Object[]{"SSS", "UCU", "SDS", 'S', OrePrefixes.slab.get(Materials.Wood), 'D', ToolDictNames.craftingToolScrewdriver, 'U', OrePrefixes.screw.get(Materials.Iron), 'C', OrePrefixes.frameGt.get(Materials.Wood)});
 
-        GT_ModHandler.addShapelessCraftingRecipe(GT_ModHandler.getIC2Item("miningPipe", 1L), bits, new Object[]{GT_ModHandler.getIC2Item("miningPipeTip", 1L)});
+        //GT_ModHandler.addShapelessCraftingRecipe(GT_ModHandler.getIC2Item("miningPipe", 1L), bits, new Object[]{GT_ModHandler.getIC2Item("miningTip", 1L)});
 
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("GalaxySpace", "item.ModuleSmallCanister", 1L, 0), bits, new Object[]{"PPP", "PCP", "PPP", 'P', OrePrefixes.compressed.get(Materials.Steel), 'C', GT_ModHandler.getModItem("GalacticraftCore", "item.oilCanisterPartial", 1L, 1001)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("GalaxySpace", "item.ModuleSmallFuelCanister", 1L, 0), bits, new Object[]{"SRS", "TCD", "SHS", 'S', OrePrefixes.screw.get(Materials.StainlessSteel), 'R', ToolDictNames.craftingToolScrewdriver, 'T', GT_ModHandler.getModItem("GalaxySpace", "item.CompressedDualBronze", 1L, 0), 'D', GT_ModHandler.getModItem("GalaxySpace", "item.CompressedDualAluminium", 1L, 0), 'C', GT_ModHandler.getModItem("GalaxySpace", "item.ModuleSmallCanister", 1L, 0), 'H', ToolDictNames.craftingToolHardHammer});
