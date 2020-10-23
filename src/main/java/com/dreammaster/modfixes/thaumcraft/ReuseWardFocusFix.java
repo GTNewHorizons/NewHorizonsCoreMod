@@ -17,7 +17,7 @@ public class ReuseWardFocusFix extends ModFixBase {
 
     @Override
     public boolean needsForgeEventBus() {
-        return true;
+        return false;
     }
 
     @Override
