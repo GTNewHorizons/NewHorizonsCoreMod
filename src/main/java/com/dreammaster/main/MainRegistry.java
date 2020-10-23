@@ -27,6 +27,7 @@ import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
+import com.dreammaster.modfixes.thaumcraft.ReuseWardFocusFix;
 import com.dreammaster.modhazardousitems.HazardousItemsHandler;
 import com.dreammaster.network.CoreModDispatcher;
 import com.dreammaster.oredict.OreDictHandler;
@@ -444,6 +445,9 @@ public class MainRegistry
         }
         if (CoreConfig.MinetweakerFurnaceFixEnabled) {
             ModFixesMaster.registerModFix(new MinetweakerFurnaceFix());
+        }
+        if (CoreConfig.ReuseWardFocusFixEnabled) {
+            ModFixesMaster.registerModFix(new ReuseWardFocusFix());
         }
 
     }
