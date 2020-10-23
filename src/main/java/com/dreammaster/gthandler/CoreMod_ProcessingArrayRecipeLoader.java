@@ -9,8 +9,8 @@ public class CoreMod_ProcessingArrayRecipeLoader {
 
         public static void registerMaps() {
 
-            // Centrifuge
-            registerMapBetweenRange(11040, 11046, GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes);
+            // Centrifuge11086
+            registerMapBetweenRange(11080, 11086, GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes);
 
             // Electrolyzer
             registerMapBetweenRange(10850, 10856, GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes);
@@ -34,7 +34,7 @@ public class CoreMod_ProcessingArrayRecipeLoader {
             registerMapBetweenRange(10990, 10996, GT_Recipe.GT_Recipe_Map.sRecyclerRecipes);
 
             //Thermal Centrifuge
-            registerMapBetweenRange(11080, 11086, GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes);
+            registerMapBetweenRange(11040, 11046, GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes);
 
             // Ore Washer
             registerMapBetweenRange(10970, 10976, GT_Recipe.GT_Recipe_Map.sOreWasherRecipes);
