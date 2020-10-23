@@ -9,7 +9,7 @@ public class CoreMod_ProcessingArrayRecipeLoader {
 
         public static void registerMaps() {
 
-            // Centrifuge11086
+            // Centrifuge
             registerMapBetweenRange(11080, 11086, GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes);
 
             // Electrolyzer
