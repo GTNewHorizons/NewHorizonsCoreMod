@@ -2079,7 +2079,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         }
 
         GT_Values.RA.addLaserEngraverRecipe(ItemList.Circuit_Wafer_SoC2.get(1L),GT_OreDictUnificator.get(OrePrefixes.lens,Materials.NetherStar,1L).copy().splitStack(0), com.dreammaster.item.ItemList.RawPicoWafer.getIS(),6000,(int)(GT_Values.V[8]-(GT_Values.V[8]/10)),true);
-        GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{com.dreammaster.item.ItemList.RawPicoWafer.getIS(),Materials.MysteriousCrystal.getDust(2),GT_OreDictUnificator.get(OrePrefixes.dustTiny,Materials.InfinityCatalyst,1L).copy().splitStack(0), com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(1)},new FluidStack[]{Materials.Neutronium.getMolten(100L)},new FluidStack[]{GT_Values.NF},new ItemStack[]{com.dreammaster.item.ItemList.PicoWafer.getIS()},3000,(int)(GT_Values.V[9]-(GT_Values.V[9]/10)));
+        GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{com.dreammaster.item.ItemList.RawPicoWafer.getIS(),Materials.MysteriousCrystal.getDust(2),GT_OreDictUnificator.get(OrePrefixes.dustTiny,Materials.InfinityCatalyst,1L).copy().splitStack(0), com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(1)},new FluidStack[]{Materials.Neutronium.getMolten(144L)},new FluidStack[]{GT_Values.NF},new ItemStack[]{com.dreammaster.item.ItemList.PicoWafer.getIS()},3000,(int)(GT_Values.V[9]-(GT_Values.V[9]/10)));
 
         if (Loader.isModLoaded("OpenComputers")) {
             //cable
