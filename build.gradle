@@ -117,6 +117,7 @@ dependencies {
     }
 
     compile "com.enderio.core:EnderCore:${config.minecraft.version}-${config.endercore.version}:dev"
+    compile "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"
 
     compile fileTree(dir: 'libs', include: '*.jar')
 }
