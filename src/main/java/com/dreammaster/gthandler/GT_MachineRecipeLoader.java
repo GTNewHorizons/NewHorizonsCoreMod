@@ -13,6 +13,7 @@ import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -246,6 +247,11 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchII.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinWitchI.get(10L), 100, 120);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchIII.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinWitchII.get(10L), 100, 480);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchIV.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinWitchIII.get(10L), 100, 1920);
+        //flask recipes
+        //(new ItemStack[]{GT_ModHandler.getModItem("IC2", "itemBatREDischarged", 4L, GT_Values.W), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4L),  GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BatteryAlloy, 1L), GT_Utility.getIntegratedCircuit(1)}, Materials.SolderingAlloy.getGas(144L), GT_ModHandler.getModItem("IC2", "itemBatChargeRE", 1L, 0), 200, 30);
+
+
+
 
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Platinum, 6L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 4L), CustomItemList.NanoBoard.get(1L), 400, 1920);
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 8L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 8L), CustomItemList.QuantumBoard.get(1L), 200, 7680);
@@ -1383,6 +1389,21 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 3), 4, GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 4), GT_Values.NI);
         GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 4), 16, GT_ModHandler.getModItem("Avaritia", "Resource_Block", 1L, 0), GT_Values.NI);
         GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 6), 64, GT_ModHandler.getModItem("Avaritia", "Resource_Block", 1L, 1), GT_Values.NI);
+        //extra utils
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,0),1,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,1),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,1),2,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,2),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,2),4,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,3),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,3),6,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,4),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,4),8,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,5),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,5),10,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,6),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,6),16,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,7),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,14),1,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,15),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,8),1,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,9),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,9),2,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,10),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,10),4,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,11),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,12),1,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,13),GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","bedrockiumIngot",9),8,GT_ModHandler.getModItem("ExtraUtilities","block_bedrockium",1l),GT_Values.NI);
+
 
         GT_Values.RA.addLatheRecipe(CustomItemList.ReinforcedGlassPLate.get(1L), CustomItemList.ReinforcedGlassLense.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L), 400, 16);
 
