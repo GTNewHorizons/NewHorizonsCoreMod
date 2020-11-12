@@ -2918,7 +2918,7 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Chip_NeuroCPU.get(1L), 144000, new Object[]{
                 ItemList.Circuit_Board_Bio_Ultra.get(1L),
-                ItemList.Circuit_Chip_Biocell.get(32L),
+                ItemList.Circuit_Chip_Biocell.get(16L),
                 ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                 GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polybenzimidazole, 16),
                 GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Tungsten, 16L),
@@ -2928,7 +2928,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GregTech_API.mIC2Classic ? Materials.Water.getFluid(500L) : Materials.BioMediumSterilized.getFluid(500L),
                 Materials.UUMatter.getFluid(500L),
                 GregTech_API.mIC2Classic ? Materials.Lava.getFluid(2000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000)
-        }, ItemList.Circuit_Chip_BioCPU.get(1L), 2400, 160000);
+        }, ItemList.Circuit_Chip_BioCPU.get(1L), 1200, 160000);
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1L), 288000, new Object[]{
                 ItemList.Circuit_Board_Multifiberglass.get(1L),
