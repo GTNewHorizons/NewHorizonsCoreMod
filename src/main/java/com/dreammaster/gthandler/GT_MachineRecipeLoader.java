@@ -2914,7 +2914,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GregTech_API.mIC2Classic ? Materials.Water.getFluid(250L) : Materials.GrowthMediumSterilized.getFluid(250L),
                 Materials.UUMatter.getFluid(250L),
                 GregTech_API.mIC2Classic ? Materials.Lava.getFluid(1000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000)
-        }, ItemList.Circuit_Chip_NeuroCPU.get(1L), 1200, 80000);
+        }, ItemList.Circuit_Chip_NeuroCPU.get(1L), 600, 80000);
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Chip_NeuroCPU.get(1L), 144000, new Object[]{
                 ItemList.Circuit_Board_Bio_Ultra.get(1L),
@@ -2928,7 +2928,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GregTech_API.mIC2Classic ? Materials.Water.getFluid(500L) : Materials.BioMediumSterilized.getFluid(500L),
                 Materials.UUMatter.getFluid(500L),
                 GregTech_API.mIC2Classic ? Materials.Lava.getFluid(2000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000)
-        }, ItemList.Circuit_Chip_BioCPU.get(1L), 1200, 160000);
+        }, ItemList.Circuit_Chip_BioCPU.get(1L), 600, 600000);
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1L), 288000, new Object[]{
                 ItemList.Circuit_Board_Multifiberglass.get(1L),
