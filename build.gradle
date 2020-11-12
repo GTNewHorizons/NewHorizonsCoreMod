@@ -183,7 +183,7 @@ task getBartworks(type: Download, dependsOn: "getRailCraft") {
 }
 task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
     onlyIf {
-        !file("libs/GT-PlusPlus-1.7.05.53").exists()
+        !file("libs/GT-PlusPlus-1.7.05.53.jar").exists()
     }
     src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/GT-PlusPlus-1.7.05.53.jar'
     dest file("libs/GT-PlusPlus-1.7.05.53.jar")

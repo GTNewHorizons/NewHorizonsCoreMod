@@ -1824,7 +1824,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalRecipe(CustomItemList.TheBigEgg.get(1L), GT_ModHandler.getModItem("IC2", "itemUran238", 64L, 0), FluidRegistry.getFluidStack("mutagen", 1000), GT_Values.NF, CustomItemList.MutatedEgg.get(1L), GT_Values.NI, 72000, 256, true);
         GT_Values.RA.addChemicalRecipe(CustomItemList.MutatedEgg.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 64), FluidRegistry.getFluidStack("ender", 1000), GT_Values.NF, CustomItemList.EnderEgg.get(1L), GT_Values.NI, 72000, 480, true);
         GT_Values.RA.addChemicalRecipe(CustomItemList.EnderEgg.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 64), FluidRegistry.getFluidStack("endergoo", 1000), GT_Values.NF, CustomItemList.DraconiumEgg.get(1L), GT_Values.NI, 72000, 1024, true);
-        GT_Values.RA.addChemicalRecipe(CustomItemList.DraconiumEgg.get(1L), GT_ModHandler.getModItem("DraconicEvolution", "dragonHeart", 0L, 0), FluidRegistry.getFluidStack("enderium.molten", 1000), GT_Values.NF, new ItemStack(Blocks.dragon_egg, 1, 0), GT_Values.NI, 72000, 1920, true);
+        GT_Values.RA.addChemicalRecipe(CustomItemList.DraconiumEgg.get(1L), GT_ModHandler.getModItem("DraconicEvolution", "dragonHeart", 0L, 0), FluidRegistry.getFluidStack("molten.enderium", 1000), GT_Values.NF, new ItemStack(Blocks.dragon_egg, 1, 0), GT_Values.NI, 72000, 1920, true);
 
         GT_Values.RA.addChemicalBathRecipe(GT_ModHandler.getModItem("harvestcraft", "wovencottonItem", 2L, 0), Materials.PolyvinylChloride.getMolten(144L), CustomItemList.ArtificialLeather.get(2L), GT_Values.NI, GT_Values.NI, new int[]{10000},300, 120);
 
