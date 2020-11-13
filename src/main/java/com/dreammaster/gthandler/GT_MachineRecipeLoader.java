@@ -2535,10 +2535,10 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Fiberglass_Advanced.get(1L), ItemList.Circuit_Chip_HPIC.get(4L), ItemList.Energy_LapotronicOrb.get(8L), ItemList.Circuit_Chip_QuantumCPU.get(2L), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 16)}, tMat.getMolten(144L * tMultiplier), ItemList.Energy_LapotronicOrb2.get(1L), 1024, 4096, true);
 
                 //Wetware Board
-                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(16L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_LuV.get(1L),  ItemList.Sensor_LuV.get(1L),  GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 16L)},  Materials.GrowthMediumSterilized.getFluid(4000L), ItemList.Circuit_Board_Wetware.get(16L), 1200, 30720, true);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass.get(16L), ItemList.Circuit_Parts_PetriDish.get(1L), ItemList.Electric_Pump_LuV.get(1L), ItemList.Sensor_IV.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 16L)},  Materials.GrowthMediumSterilized.getFluid(4000L), ItemList.Circuit_Board_Wetware.get(16L), 1200, 30720, true);
 
                 //Bio Board
-                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Wetware.get(16L), ItemList.Circuit_Parts_PetriDish.get(4L), ItemList.Electric_Pump_UV.get(1L),  ItemList.Sensor_UV.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 2L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 16L)},  Materials.BioMediumSterilized.getFluid(8000L), ItemList.Circuit_Board_Bio.get(16L), 1200, 500000, true);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Wetware.get(32L), ItemList.Circuit_Parts_PetriDish.get(8L), ItemList.Electric_Pump_UV.get(1L),  ItemList.Sensor_LuV.get(2L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 1L), GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 32L)},  Materials.BioMediumSterilized.getFluid(16000L), ItemList.Circuit_Board_Bio.get(32L), 1200, 500000, true);
 
                 //Railcraft Circuits
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Coated_Basic.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1), ItemList.Cover_Controller.get(1L)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("Railcraft", "part.circuit", 1L, 0), 1200, 30);
@@ -2934,11 +2934,11 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GregTech_API.mIC2Classic ? Materials.Water.getFluid(250L) : Materials.GrowthMediumSterilized.getFluid(250L),
                 Materials.UUMatter.getFluid(250L),
                 GregTech_API.mIC2Classic ? Materials.Lava.getFluid(1000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000)
-        }, ItemList.Circuit_Chip_NeuroCPU.get(1L), 1200, 80000);
+        }, ItemList.Circuit_Chip_NeuroCPU.get(1L), 600, 80000);
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Chip_NeuroCPU.get(1L), 144000, new Object[]{
                 ItemList.Circuit_Board_Bio_Ultra.get(1L),
-                ItemList.Circuit_Chip_Biocell.get(32L),
+                ItemList.Circuit_Chip_Biocell.get(16L),
                 ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                 GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polybenzimidazole, 16),
                 GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Tungsten, 16L),
@@ -2948,7 +2948,7 @@ public class GT_MachineRecipeLoader implements Runnable{
                 GregTech_API.mIC2Classic ? Materials.Water.getFluid(500L) : Materials.BioMediumSterilized.getFluid(500L),
                 Materials.UUMatter.getFluid(500L),
                 GregTech_API.mIC2Classic ? Materials.Lava.getFluid(2000L) : new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000)
-        }, ItemList.Circuit_Chip_BioCPU.get(1L), 2400, 160000);
+        }, ItemList.Circuit_Chip_BioCPU.get(1L), 600, 600000);
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1L), 288000, new Object[]{
                 ItemList.Circuit_Board_Multifiberglass.get(1L),
