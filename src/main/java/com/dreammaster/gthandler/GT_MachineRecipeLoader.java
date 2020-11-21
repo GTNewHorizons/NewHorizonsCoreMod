@@ -1101,7 +1101,10 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Carbon, 1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Cobalt, 1L), 300, 2);
 	GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1L), 300, 2);
-	    
+	GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Manyullyn, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Manyullyn, 1L), 300, 2);
+	GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L), 300, 2);
+	GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 9L, 14), GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), 300, 2);
+
         GT_Values.RA.addPulveriserRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),   new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12)}, new int[]{10000}, 300, 2);
 
         GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_11, 1, 0),  new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
