@@ -1,13 +1,16 @@
 package com.dreammaster.witchery;
 
-import alkalus.main.api.RecipeManager;
+import alkalus.main.api.RecipeManager.*;
 import alkalus.main.api.plugin.base.BasePluginWitchery;
+import com.emoniph.witchery.Witchery;
 import com.emoniph.witchery.brewing.AltarPower;
 import com.emoniph.witchery.brewing.BrewItemKey;
 import com.emoniph.witchery.brewing.WitcheryBrewRegistry;
 import com.emoniph.witchery.brewing.action.BrewAction;
 import com.emoniph.witchery.brewing.action.BrewActionModifier;
 import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
@@ -89,7 +92,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
         if (action instanceof BrewActionRitualRecipe) {
             final BrewActionRitualRecipe ritualRecipe = (BrewActionRitualRecipe) action;
             for (BrewActionRitualRecipe.Recipe recipe : ritualRecipe.getExpandedRecipes()) {
-                if (isCauldronRecipeMatch(recipe, items)) {
+                if (isCauldronRecipeMatch(recipe, lastItem, items)) {
                     if (ritualRecipe.getExpandedRecipes().size() > 1) {
                         // preserve other recipes
                         modifyBrewRecipe(ritualRecipe, s -> s.filter(r -> r != recipe));

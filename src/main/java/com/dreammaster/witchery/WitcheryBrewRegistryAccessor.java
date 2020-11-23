@@ -51,7 +51,7 @@ class WitcheryBrewRegistryAccessor {
     static void registerBrewAction(BrewAction action) {
         if (methodRegister != null) {
             try {
-                methodRegister.invoke(null, action);
+                methodRegister.invoke(WitcheryBrewRegistry.INSTANCE, action);
             } catch (IllegalAccessException | InvocationTargetException e) {
                 log.error("Error registering brew action", e);
             }
@@ -75,20 +75,25 @@ class WitcheryBrewRegistryAccessor {
         WitcheryBrewRegistry.INSTANCE.getRecipes().remove(action);
     }
 
-    static boolean isCauldronRecipeMatch(BrewActionRitualRecipe.Recipe recipe, ItemStack[] items) {
+    static boolean isCauldronRecipeMatch(BrewActionRitualRecipe.Recipe recipe, ItemStack lastItem, ItemStack[] items) {
         final ItemStack[] ingredients = recipe.ingredients;
         final int length = ingredients.length;
-        if (length != items.length)
+        if (length != items.length + 1)
             return false;
         boolean[] found = new boolean[length];
         for (ItemStack item : items) {
             boolean foundThisRound = false;
-            for (int i = 0; i < length; i++) {
+            int i;
+            for (i = 0; i < length - 1; i++) {
                 if (!found[i] && item.isItemEqual(ingredients[i])) {
                     found[i] = true;
                     foundThisRound = true;
                     break;
                 }
+            }
+            if (!foundThisRound && !found[i] && lastItem.isItemEqual(ingredients[i])) {
+                found[i] = true;
+                foundThisRound = true;
             }
             if (!foundThisRound)
                 return false;
