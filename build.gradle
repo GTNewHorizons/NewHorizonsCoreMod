@@ -199,7 +199,7 @@ task getWitcheryExtras(type: Download, dependsOn: "getGtPlusPlus") {
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
 }
-task getWitchery(type: Download, dependsOn: "getWitchery") {
+task getWitchery(type: Download, dependsOn: "getWitcheryExtras") {
     onlyIf {
         !file("witchery-1.7.10-0.24.1-deobf.jar").exists()
     }
