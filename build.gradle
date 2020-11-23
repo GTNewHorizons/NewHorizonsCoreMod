@@ -192,7 +192,7 @@ task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
 }
 task getWitcheryExtras(type: Download, dependsOn: "getGtPlusPlus") {
     onlyIf {
-        !file("WitcheryExtras-1.0.1-dev.jar").exists()
+        !file("libs/WitcheryExtras-1.0.1-dev.jar").exists()
     }
     src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/WitcheryExtras-1.0.1-dev.jar'
     dest file("WitcheryExtras-1.0.1-dev.jar")
@@ -201,7 +201,7 @@ task getWitcheryExtras(type: Download, dependsOn: "getGtPlusPlus") {
 }
 task getWitchery(type: Download, dependsOn: "getWitcheryExtras") {
     onlyIf {
-        !file("witchery-1.7.10-0.24.1-deobf.jar").exists()
+        !file("libs/witchery-1.7.10-0.24.1-deobf.jar").exists()
     }
     src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/witchery-1.7.10-0.24.1-deobf.jar'
     dest file("witchery-1.7.10-0.24.1-deobf.jar")
