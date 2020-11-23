@@ -1,21 +1,24 @@
 package com.dreammaster.witchery;
 
-import alkalus.main.api.RecipeManager.*;
+import alkalus.main.api.RecipeManager;
 import alkalus.main.api.plugin.base.BasePluginWitchery;
-import alkalus.main.core.crafting.OvenRecipes;
-import com.emoniph.witchery.Witchery;
-import com.emoniph.witchery.WitcheryItems;
-import com.emoniph.witchery.crafting.DistilleryRecipes;
-import com.emoniph.witchery.infusion.Infusion;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
+import com.emoniph.witchery.brewing.AltarPower;
+import com.emoniph.witchery.brewing.BrewItemKey;
+import com.emoniph.witchery.brewing.WitcheryBrewRegistry;
+import com.emoniph.witchery.brewing.action.BrewAction;
+import com.emoniph.witchery.brewing.action.BrewActionModifier;
+import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
+import java.util.Arrays;
 import java.util.EnumSet;
+import java.util.stream.Stream;
+
+import static com.dreammaster.witchery.WitcheryBrewRegistryAccessor.*;
 
 public class WitcheryPlugin extends BasePluginWitchery {
+
+
     public WitcheryPlugin() {
         super(EnumSet.of(LoadPhase.INIT));
     }
@@ -30,9 +33,79 @@ public class WitcheryPlugin extends BasePluginWitchery {
         return true;
     }
 
+    /**
+     * Add a brew action for given stack. This action will do nothing upon added beyond consuming alter power
+     * This is necessary for an item to be able to tossed into the cauldron.
+     *
+     * @param item  The stack that should be tossed into the cauldron, stack size does not matter
+     * @param power The power to consume. Can be 0.
+     */
+    private static void ensureItemHaveBrewAction(ItemStack item, int power) {
+        if (WitcheryBrewRegistry.INSTANCE.getActionForItemStack(item) == null) {
+            registerBrewAction(new BrewActionModifier(BrewItemKey.fromStack(item), null, new AltarPower(power)) {
+            });
+        }
+    }
+
+    /**
+     * Add a brew recipe matching given items.
+     *
+     * @param lastItem The last item in the recipe, i.e. the recipe you used to complete the brew
+     * @param items    items in recipe. order does not matter. DOES NOT INCLUDE lastItem!
+     */
+    private static void addBrewRecipe(int power, ItemStack result, ItemStack lastItem, ItemStack... items) {
+        if (ingredient == null)
+            return;
+        final BrewItemKey key = BrewItemKey.fromStack(lastItem);
+        final BrewAction action = ingredient.get(key);
+        ensureItemHaveBrewAction(lastItem,0);
+        for (ItemStack item : items) {
+            ensureItemHaveBrewAction(item, 0);
+        }
+        if (action == null) {
+            registerBrewAction(new BrewActionRitualRecipe(key, new AltarPower(power), new BrewActionRitualRecipe.Recipe(result)));
+        } else if (action instanceof BrewActionRitualRecipe) {
+            modifyBrewRecipe((BrewActionRitualRecipe) action, s -> Stream.concat(s, Stream.of(new BrewActionRitualRecipe.Recipe(result, items))));
+        } else {
+            log.warn("Conflicting brew recipe! key: {}", lastItem);
+        }
+    }
+
+    /**
+     * Remove a brew recipe matching given items.
+     *
+     * @param lastItem The last item in the recipe, i.e. the recipe you used to complete the brew
+     * @param items    items in recipe. order does not matter. DOES NOT INCLUDE lastItem!
+     */
+    private static void removeBrewRecipe(ItemStack lastItem, ItemStack... items) {
+        if (ingredient == null)
+            return;
+        final BrewItemKey key = BrewItemKey.fromStack(lastItem);
+        final BrewAction action = ingredient.get(key);
+        if (action == null) {
+            log.warn("There is no brew for this last item: {}", lastItem);
+            return;
+        }
+        if (action instanceof BrewActionRitualRecipe) {
+            final BrewActionRitualRecipe ritualRecipe = (BrewActionRitualRecipe) action;
+            for (BrewActionRitualRecipe.Recipe recipe : ritualRecipe.getExpandedRecipes()) {
+                if (isCauldronRecipeMatch(recipe, items)) {
+                    if (ritualRecipe.getExpandedRecipes().size() > 1) {
+                        // preserve other recipes
+                        modifyBrewRecipe(ritualRecipe, s -> s.filter(r -> r != recipe));
+                    } else {
+                        removeAction(ritualRecipe);
+                    }
+                    return;
+                }
+            }
+        }
+        log.warn("There is no cauldron recipe matching these items: last: {}, rest: " + Arrays.toString(items), lastItem);
+    }
+
     @Override
     public boolean init() {
-        /*
+/*
         // examples:
         // add an oven recipe
 
@@ -54,36 +127,19 @@ public class WitcheryPlugin extends BasePluginWitchery {
         // remove an oven recipe
         // this remove the first recipe that produce an iron ingot
         // this does not respect oredict...
-        {
-            OvenRecipes.OvenRecipe r = WitchesOven.findRecipeForOutput(new ItemStack(Items.iron_ingot));
-            WitchesOven.removeRecipe(r);
-        }
+        WitchesOven.removeRecipe(WitchesOven.findRecipeForOutput(new ItemStack(Items.iron_ingot)));
         // this remove the first recipe that consumes an iron ingot
         // this does not respect oredict...
-        {
-            OvenRecipes.OvenRecipe r = WitchesOven.findRecipeUsingIngredient(new ItemStack(Items.iron_ingot));
-            WitchesOven.removeRecipe(r);
-        }
+        WitchesOven.removeRecipe(WitchesOven.findRecipeUsingIngredient(new ItemStack(Items.iron_ingot)));
+
         // add recipe to distillery
         // distill an apple and a slime ball to an apple and a foul fume, consuming one jar
         // empty slots can be set to null safely
         Distillery.addRecipe(new ItemStack(Items.apple, 1),new ItemStack(Items.slime_ball, 1), 1, new ItemStack(Items.apple, 1),Witchery.Items.GENERIC.itemFoulFume.createStack(), null,null);
         // remove a distillery recipe
         // remove all recipe that uses an apple and a slime ball to produce some output
-        {
-            // witchery extra is unfortunately not useful in this regard...
-            // we have to blow through the cover and call witchery itself
-            // better synchronize on witchery extra even though I don't know how this could help
-            // multiple different synchronized block should be merged together
-            synchronized (Distillery.class) {
-                for (DistilleryRecipes.DistilleryRecipe i : DistilleryRecipes.instance().recipes) {
-                    if (i.uses(new ItemStack(Items.apple, 1)) && i.uses(new ItemStack(Items.slime_ball, 1))) {
-                        Distillery.removeRecipe(i);
-                        break;
-                    }
-                }
-            }
-        }
+        Distillery.removeRecipe(Distillery.getDistillingResult(new ItemStack(Items.apple, 1), new ItemStack(Items.slime_ball, 1), Witchery.Items.GENERIC.itemEmptyClayJar.createStack(jarCount)));
+
         // add a kettle recipe
         // arguments from first to last
         // output, in this case a slime ball
@@ -92,9 +148,8 @@ public class WitcheryPlugin extends BasePluginWitchery {
         Kettle.addRecipe(new ItemStack(Items.slime_ball, 1), 1, 0, 1000.0F, 0xffffff, 0, true, new ItemStack(Items.apple, 1), new ItemStack(Items.sugar, 1))
         // remove a kettle recipe
         // remove the first recipe that produces a slime_ball, if any
-        {
-            Kettle.removeRecipe(new ItemStack(Items.slime_ball, 1));
-        }
+        Kettle.removeRecipe(new ItemStack(Items.slime_ball, 1));
+
         // add a spinning wheel recipe
         // add 2 apple, 1 slime ball and 1 foul fume into string to get 3 cobweb
         SpinningWheel.addRecipe(new ItemStack(Blocks.web, 3), new ItemStack(Items.string), new ItemStack[]{new ItemStack(Items.apple, 2),new ItemStack(Items.slime_ball, 1), Witchery.Items.GENERIC.itemFoulFume.createStack() });
@@ -111,9 +166,17 @@ public class WitcheryPlugin extends BasePluginWitchery {
         // don't know what infusion 1 is though. probably shouldn't do this anyway.
         Infusions.remove(Infusions.getInfusion(1));
 
+        // cauldron
+        // add recipe
+        // add a recipe for apple that takes 1000 alter power and 1 string and 1 iron bar, with string as the last item.
+        addBrewRecipe(1000, new ItemStack(Items.apple, 2), new ItemStack(Items.string), new ItemStack(Blocks.iron_bars));
+        // remove recipe
+        // removes the vanilla recipe for CHALK_OTHERWHERE
+        removeBrewRecipe(new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Items.nether_wart), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), new ItemStack(Items.ender_pearl));
+*/
         // rites
         // TODO write doc
-        */
+
         return true;
     }
 
