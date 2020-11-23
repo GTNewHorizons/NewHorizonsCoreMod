@@ -9,6 +9,11 @@ import com.emoniph.witchery.brewing.WitcheryBrewRegistry;
 import com.emoniph.witchery.brewing.action.BrewAction;
 import com.emoniph.witchery.brewing.action.BrewActionModifier;
 import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
+import com.emoniph.witchery.crafting.SpinningRecipes;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -108,6 +113,41 @@ public class WitcheryPlugin extends BasePluginWitchery {
 
     @Override
     public boolean init() {
+        //OvenRecipes.OvenRecipe r = WitchesOven.findRecipeForOutput(new ItemStack(Items.iron_ingot));
+        //WitchesOven.removeRecipe(r);
+        //WitchesOven.addRecipe(GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSlabStone",4L), null, 2, new ItemStack(Items.coal, 1, 1), 1, Witchery.Items.GENERIC.itemFoulFume.createStack(), 2);
+        //WitchesOven.removeRecipe(WitchesOven.findRecipeForOutput(new ItemStack(Items.iron_ingot)));
+        //WitchesOven.removeRecipe(WitchesOven.getOvenResult(new ItemStack(Items.iron_ingot), 3));
+        //Distillery.removeRecipe(Distillery.findRecipeForOutput(new ItemStack(Items.iron_ingot)));
+        //Distillery.removeRecipe(Distillery.getDistillingResult(new ItemStack(Items.iron_ingot), new ItemStack(Items.string), Witchery.Items.GENERIC.itemEmptyClayJar.createStack(2)));
+        //Distillery.addRecipe(new ItemStack(Items.apple, 1),new ItemStack(Items.slime_ball, 1), 1, new ItemStack(Items.apple, 1),Witchery.Items.GENERIC.itemFoulFume.createStack(), null,null);
+        //Kettle.addRecipe(new ItemStack(Items.slime_ball, 1), 1, 0, 1000.0F, 0xffffff, 0, true, new ItemStack(Items.apple, 1), new ItemStack(Items.sugar, 1));
+        //Kettle.removeRecipe(new ItemStack(Items.slime_ball, 1));
+        //SpinningWheel.addRecipe(new ItemStack(Blocks.web, 3), new ItemStack(Items.string), new ItemStack[]{new ItemStack(Items.apple, 2),new ItemStack(Items.slime_ball, 1), Witchery.Items.GENERIC.itemFoulFume.createStack() });
+
+        //Remove Oven Recipes
+        //WitchesOven.removeRecipe(WitchesOven.findRecipeForOutput(Witchery.Items.GENERIC.itemExhaleOfTheHornedOne.createStack()));
+        //OvenRecipes.OvenRecipe r = WitchesOven.findRecipeForOutput(Witchery.Items.GENERIC.itemExhaleOfTheHornedOne.createStack());
+        //WitchesOven.removeRecipe(r);
+
+        //Add new Oven Recipes
+        //WitchesOven.addRecipe(new ItemStack(Blocks.bookshelf), null,1, new ItemStack(Items.coal, 1, 1), 1, Witchery.Items.GENERIC.itemExhaleOfTheHornedOne.createStack(), 1);
+
+        //remove Spinning Wheel Recipes
+        SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemGoldenThread.createStack(3), new ItemStack(Blocks.hay_block), Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1));
+        //SpinningWheel.removeRecipe(new ItemStack(Items.string, 8, 0), null, new ItemStack(Blocks.web, 1, 0));
+        SpinningRecipes.instance().recipes.remove(SpinningWheel.getRecipe(new ItemStack(Items.string, 8, 0), new ItemStack[0]));
+        SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemTormentedTwine.createStack(1), Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4), new ItemStack(Items.string), Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1));
+        SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemFancifulThread.createStack(1), new ItemStack(Witchery.Blocks.WISPY_COTTON, 4), new ItemStack(Items.string), Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1));
+
+        //Add new Spinning Wheel Recipes
+        SpinningWheel.addRecipe(GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L), Witchery.Items.GENERIC.itemGoldenThread.createStack(1), new ItemStack[]{new ItemStack(Items.string, 8, 0), Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1)});
+        SpinningWheel.addRecipe(Witchery.Items.GENERIC.itemGoldenThread.createStack(1), Witchery.Items.GENERIC.itemFancifulThread.createStack(1), new ItemStack[]{new ItemStack(Witchery.Blocks.WISPY_COTTON, 4), Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1)});
+        SpinningWheel.addRecipe(GT_ModHandler.getModItem("BloodArsenal","blood_burned_string",1L), Witchery.Items.GENERIC.itemTormentedTwine.createStack(1), new ItemStack[]{Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4), Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1)});
+        SpinningWheel.addRecipe(new ItemStack(Items.string, 8, 0), new ItemStack(Blocks.web, 1, 0), new ItemStack[]{Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1)});
+
+
+
 /*
         // examples:
         // add an oven recipe
