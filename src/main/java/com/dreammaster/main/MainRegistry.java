@@ -33,6 +33,7 @@ import com.dreammaster.network.CoreModDispatcher;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -273,6 +274,8 @@ public class MainRegistry
         {
             new GregTechPlusPlusAbandonedAspectsFix();
         }
+
+        new WitcheryPlugin();
 
         if (CoreModConfig.ModLoginMessage_Enabled)
         {
