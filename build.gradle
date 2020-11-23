@@ -199,11 +199,20 @@ task getWitcheryExtras(type: Download, dependsOn: "getGtPlusPlus") {
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
 }
+task getWitchery(type: Download, dependsOn: "WitcheryExtras") {
+    onlyIf {
+        !file("witchery-1.7.10-0.24.1-deobf.jar").exists()
+    }
+    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/witchery-1.7.10-0.24.1-deobf.jar'
+    dest file("witchery-1.7.10-0.24.1-deobf.jar")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
 
-tasks.setupCIWorkspace.dependsOn getWitcheryExtras
-tasks.setupDevWorkspace.dependsOn getWitcheryExtras
-tasks.setupDecompWorkspace.dependsOn getWitcheryExtras
-tasks.compileJava.dependsOn getWitcheryExtras
+tasks.setupCIWorkspace.dependsOn getWitchery
+tasks.setupDevWorkspace.dependsOn getWitchery
+tasks.setupDecompWorkspace.dependsOn getWitchery
+tasks.compileJava.dependsOn getWitchery
 
 processResources
 {
