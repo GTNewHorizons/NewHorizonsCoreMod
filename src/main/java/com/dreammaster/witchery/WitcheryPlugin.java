@@ -1,6 +1,7 @@
 package com.dreammaster.witchery;
 
-import alkalus.main.api.RecipeManager.*;
+import alkalus.main.api.RecipeManager.Kettle;
+import alkalus.main.api.RecipeManager.SpinningWheel;
 import alkalus.main.api.plugin.base.BasePluginWitchery;
 import com.emoniph.witchery.Witchery;
 import com.emoniph.witchery.brewing.AltarPower;
@@ -133,22 +134,44 @@ public class WitcheryPlugin extends BasePluginWitchery {
         //Add new Oven Recipes
         //WitchesOven.addRecipe(new ItemStack(Blocks.bookshelf), null,1, new ItemStack(Items.coal, 1, 1), 1, Witchery.Items.GENERIC.itemExhaleOfTheHornedOne.createStack(), 1);
 
-        //remove Spinning Wheel Recipes
+        //remove a Spinning Wheel Recipes
         SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemGoldenThread.createStack(3), new ItemStack(Blocks.hay_block), Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1));
         //SpinningWheel.removeRecipe(new ItemStack(Items.string, 8, 0), null, new ItemStack(Blocks.web, 1, 0));
         SpinningRecipes.instance().recipes.remove(SpinningWheel.getRecipe(new ItemStack(Items.string, 8, 0), new ItemStack[0]));
         SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemTormentedTwine.createStack(1), Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4), new ItemStack(Items.string), Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1));
         SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemFancifulThread.createStack(1), new ItemStack(Witchery.Blocks.WISPY_COTTON, 4), new ItemStack(Items.string), Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1));
 
-        //Add new Spinning Wheel Recipes
+        //Add a Spinning Wheel Recipes
         SpinningWheel.addRecipe(GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L), Witchery.Items.GENERIC.itemGoldenThread.createStack(1), new ItemStack[]{new ItemStack(Items.string, 8, 0), Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1)});
         SpinningWheel.addRecipe(Witchery.Items.GENERIC.itemGoldenThread.createStack(1), Witchery.Items.GENERIC.itemFancifulThread.createStack(1), new ItemStack[]{new ItemStack(Witchery.Blocks.WISPY_COTTON, 4), Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1)});
         SpinningWheel.addRecipe(GT_ModHandler.getModItem("BloodArsenal","blood_burned_string",1L), Witchery.Items.GENERIC.itemTormentedTwine.createStack(1), new ItemStack[]{Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4), Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1)});
         SpinningWheel.addRecipe(new ItemStack(Items.string, 8, 0), new ItemStack(Blocks.web, 1, 0), new ItemStack[]{Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1)});
 
+        //remove a Kettle recipe
+        Kettle.findRecipeWithSomeInputsAndAnOutput(new ItemStack[]{Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), new ItemStack(Items.potionitem, 1, 8258), new ItemStack(Items.ender_eye), new ItemStack(Items.ender_eye), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack()},Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2));
+        Kettle.findRecipeWithSomeInputsAndAnOutput(new ItemStack[]{Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), new ItemStack(Items.potionitem, 1, 16210), new ItemStack(Items.ender_eye), new ItemStack(Items.ender_eye), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack()},Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2));
 
+        //add a Kettle recipes
+        Kettle.addRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(1), 0, 0, 6000.0F, -7128833, 0, true, Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(), GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 45), GT_ModHandler.getModItem("ThaumicTinkerer","skyPearl",1L), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack());
 
-/*
+        //remove cauldron recipes
+        //removeBrewRecipe(new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Items.nether_wart), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), new ItemStack(Items.ender_pearl));
+        //removeBrewRecipe(new ItemStack(Witchery.Items.CHALK_RITUAL), Witchery.Items.GENERIC.itemMandrakeRoot.createStack(), new ItemStack(Items.gold_nugget));
+        //removeBrewRecipe(new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Items.blaze_powder), new ItemStack(Items.nether_wart));
+
+        //add cauldron recipes
+        //addBrewRecipe(4000, new ItemStack(Witchery.Items.CHALK_OTHERWHERE), new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Items.nether_wart), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",1L, 1506), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), GT_ModHandler.getModItem("dreamcraft","item.ManyullynCrystal",1L, 0));
+        //addBrewRecipe(1000, new ItemStack(Witchery.Items.CHALK_GOLDEN), new ItemStack(Witchery.Items.CHALK_RITUAL), Witchery.Items.GENERIC.itemMandrakeRoot.createStack(), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",4L, 29086), Witchery.Items.GENERIC.itemBreathOfTheGoddess.createStack());
+        //addBrewRecipe(2000, new ItemStack(Witchery.Items.CHALK_INFERNAL), new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Items.blaze_powder, 4, 0), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",1L, 1506), Witchery.Items.GENERIC.itemFoulFume.createStack());
+
+        //addBrewRecipe(1000, new ItemStack(Items.apple, 2), new ItemStack(Items.string), new ItemStack(Blocks.iron_bars));
+
+        //new BrewActionRitualRecipe(new BrewItemKey(Witchery.Items.CHALK_RITUAL), new AltarPower(2000), new BrewActionRitualRecipe.Recipe[]{new BrewActionRitualRecipe.Recipe(new ItemStack(Witchery.Items.CHALK_OTHERWHERE), new ItemStack[]{new ItemStack(Items.nether_wart), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), new ItemStack(Items.ender_pearl)}),
+        //new BrewActionRitualRecipe.Recipe(new ItemStack(Witchery.Items.CHALK_GOLDEN), new ItemStack[]{Witchery.Items.GENERIC.itemMandrakeRoot.createStack(), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",4L, 29086), Witchery.Items.GENERIC.itemBreathOfTheGoddess.createStack()}),
+        //new BrewActionRitualRecipe.Recipe(new ItemStack(Witchery.Items.CHALK_INFERNAL), new ItemStack[]{new ItemStack(Items.blaze_powder, 4, 0), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",1L, 1506), Witchery.Items.GENERIC.itemFoulFume.createStack()})});
+
+        //new BrewActionRitualRecipe(new BrewItemKey(Witchery.Items.CHALK_RITUAL), new AltarPower(4000), new BrewActionRitualRecipe.Recipe[]{new BrewActionRitualRecipe.Recipe(new ItemStack(Witchery.Items.CHALK_OTHERWHERE), new ItemStack[]new ItemStack(Items.nether_wart), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",1L, 1506), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), GT_ModHandler.getModItem("dreamcraft","item.ManyullynCrystal",1L, 0)}), new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Witchery.Items.CHALK_GOLDEN), Witchery.Items.GENERIC.itemMandrakeRoot.createStack(), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",4L, 29086), Witchery.Items.GENERIC.itemBreathOfTheGoddess.createStack(), new ItemStack(Witchery.Items.CHALK_RITUAL));, new BrewActionRitualRecipe.Recipe(new ItemStack(Witchery.Items.CHALK_INFERNAL), new ItemStack[]{new ItemStack(Items.nether_wart), new ItemStack(Items.blaze_powder)})}));
+      /*
         // examples:
         // add an oven recipe
 
