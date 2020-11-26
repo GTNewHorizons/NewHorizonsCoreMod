@@ -1,6 +1,5 @@
 package com.dreammaster.witchery;
 
-import alkalus.main.api.RecipeManager.Kettle;
 import alkalus.main.api.RecipeManager.SpinningWheel;
 import alkalus.main.api.plugin.base.BasePluginWitchery;
 import com.emoniph.witchery.Witchery;
@@ -148,11 +147,14 @@ public class WitcheryPlugin extends BasePluginWitchery {
         SpinningWheel.addRecipe(new ItemStack(Items.string, 8, 0), new ItemStack(Blocks.web, 1, 0), new ItemStack[]{Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1)});
 
         //remove a Kettle recipe
-        Kettle.findRecipeWithSomeInputsAndAnOutput(new ItemStack[]{Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), new ItemStack(Items.potionitem, 1, 8258), new ItemStack(Items.ender_eye), new ItemStack(Items.ender_eye), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack()},Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2));
-        Kettle.findRecipeWithSomeInputsAndAnOutput(new ItemStack[]{Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), new ItemStack(Items.potionitem, 1, 16210), new ItemStack(Items.ender_eye), new ItemStack(Items.ender_eye), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack()},Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2));
+        //KettleRecipes.KettleRecipe r = Kettle.findRecipeWithSomeInputsAndAnOutput(new ItemStack[]{Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), new ItemStack(Items.potionitem, 1, 8258), new ItemStack(Items.ender_eye), new ItemStack(Items.ender_eye), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack()},Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2));
+        //Kettle.removeRecipe (r);
+
+        //Kettle.findRecipeWithSomeInputsAndAnOutput(new ItemStack[]{Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), new ItemStack(Items.potionitem, 1, 8258), new ItemStack(Items.ender_eye), new ItemStack(Items.ender_eye), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack()},Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2));
+        //Kettle.findRecipeWithSomeInputsAndAnOutput(new ItemStack[]{Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), new ItemStack(Items.potionitem, 1, 16210), new ItemStack(Items.ender_eye), new ItemStack(Items.ender_eye), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack()},Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2));
 
         //add a Kettle recipes
-        Kettle.addRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(1), 0, 0, 6000.0F, -7128833, 0, true, Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(), GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 45), GT_ModHandler.getModItem("ThaumicTinkerer","skyPearl",1L), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack());
+        //Kettle.addRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(1), 0, 0, 6000.0F, -7128833, 0, true, Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(), GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 45), GT_ModHandler.getModItem("ThaumicTinkerer","skyPearl",1L), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack());
 
         //remove cauldron recipes
         //removeBrewRecipe(new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Items.nether_wart), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), new ItemStack(Items.ender_pearl));
