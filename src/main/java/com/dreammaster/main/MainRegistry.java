@@ -275,7 +275,6 @@ public class MainRegistry
             new GregTechPlusPlusAbandonedAspectsFix();
         }
 
-        TF_Loot_Chests.init(PreEvent);
 
         if (CoreModConfig.ModLoginMessage_Enabled)
         {
@@ -406,6 +405,7 @@ public class MainRegistry
         GTCustomLoader.run();
 
         registerModFixes();
+        TF_Loot_Chests.init();
 
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
