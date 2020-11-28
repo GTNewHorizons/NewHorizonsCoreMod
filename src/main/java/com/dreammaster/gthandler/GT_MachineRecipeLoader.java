@@ -3507,6 +3507,25 @@ public class GT_MachineRecipeLoader implements Runnable{
                     Materials.Tritanium.getMolten(1440L)
             }, GT_ModHandler.getModItem("GraviSuite", "graviChestPlate", 1, 26), 1500, 16388);
         }
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("GraviSuite", "relocator", 1, GT_Values.W));
+        GT_Values.RA.addAssemblylineRecipe(ItemList.Casing_Coil_Superconductor.get(1L), 288000, new Object[]{
+                ItemList.Casing_Fusion_Coil.get(16L),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 16L),
+                new Object[]{OrePrefixes.circuit.get(Materials.Superconductor), 16L},
+                ItemList.Sensor_UV.get(16L),
+                ItemList.Emitter_UV.get(16L),
+                ItemList.Field_Generator_UV.get(8L),
+                ItemList.Circuit_Wafer_QPIC.get(64L),
+                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Americium, 64L),
+                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Americium, 64L),
+                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Americium, 64L),
+                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Americium, 64L),
+                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Americium, 64L)
+        }, new FluidStack[]{
+                Materials.Longasssuperconductornameforuvwire.getMolten(2880L),
+                Materials.Americium.getPlasma(2880L),
+                Materials.Enderium.getMolten(5760L)
+        }, GT_ModHandler.getModItem("GraviSuite", "relocator", 1, 26), 60000, 500000);
     }
 
     private final static boolean make_floppy(String displayname,String name,int color, int circuit) {
