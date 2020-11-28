@@ -20,7 +20,6 @@ import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
 import java.util.EnumSet;
-import java.util.stream.Stream;
 
 import static com.dreammaster.witchery.WitcheryBrewRegistryAccessor.*;
 
@@ -50,8 +49,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
      */
     private static void ensureItemHaveBrewAction(ItemStack item, int power) {
         if (WitcheryBrewRegistry.INSTANCE.getActionForItemStack(item) == null) {
-            registerBrewAction(new BrewActionModifier(BrewItemKey.fromStack(item), null, new AltarPower(power)) {
-            });
+            registerBrewAction(new EmptyBrewActionModifier(item, power));
         }
     }
 
@@ -65,17 +63,40 @@ public class WitcheryPlugin extends BasePluginWitchery {
         if (ingredient == null)
             return;
         final BrewItemKey key = BrewItemKey.fromStack(lastItem);
-        final BrewAction action = ingredient.get(key);
-        ensureItemHaveBrewAction(lastItem,0);
+        BrewAction action = ingredient.get(key);
+        if (action instanceof EmptyBrewActionModifier) {
+            action = null;
+        }
+        // last item should not have a default action
         for (ItemStack item : items) {
             ensureItemHaveBrewAction(item, 0);
         }
         if (action == null) {
-            registerBrewAction(new BrewActionRitualRecipe(key, new AltarPower(power), new BrewActionRitualRecipe.Recipe(result)));
+            registerBrewAction(new BrewActionRitualRecipe(key, new AltarPower(power), new BrewActionRitualRecipe.Recipe(result, items)));
         } else if (action instanceof BrewActionRitualRecipe) {
-            modifyBrewRecipe((BrewActionRitualRecipe) action, s -> Stream.concat(s, Stream.of(new BrewActionRitualRecipe.Recipe(result, items))));
+            final BrewActionRitualRecipe ritualRecipe = (BrewActionRitualRecipe) action;
+            final BrewActionRitualRecipe.Recipe[] old = getRecipes(ritualRecipe);
+            final BrewActionRitualRecipe.Recipe[] recipes = Arrays.copyOf(old, old.length + 1);
+            recipes[recipes.length - 1] = new BrewActionRitualRecipe.Recipe(result, items);
+            modifyBrewRecipe(ritualRecipe, recipes);
         } else {
             log.warn("Conflicting brew recipe! key: {}", lastItem);
+        }
+    }
+
+    private static void removeAllBrewRecipes(ItemStack lastItem) {
+        if (ingredient == null)
+            return;
+        final BrewItemKey key = BrewItemKey.fromStack(lastItem);
+        final BrewAction action = ingredient.get(key);
+        if (action == null) {
+            log.warn("There is no brew using {} as last item", lastItem);
+            return;
+        }
+        if (action instanceof BrewActionRitualRecipe) {
+            removeAction((BrewActionRitualRecipe) action);
+        } else {
+            log.warn("There is no cauldron recipe matching using {} as last item:", lastItem);
         }
     }
 
@@ -91,7 +112,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
         final BrewItemKey key = BrewItemKey.fromStack(lastItem);
         final BrewAction action = ingredient.get(key);
         if (action == null) {
-            log.warn("There is no brew for this last item: {}", lastItem);
+            log.warn("There is no brew using {} as last item", lastItem);
             return;
         }
         if (action instanceof BrewActionRitualRecipe) {
@@ -100,7 +121,12 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 if (isCauldronRecipeMatch(recipe, lastItem, items)) {
                     if (ritualRecipe.getExpandedRecipes().size() > 1) {
                         // preserve other recipes
-                        modifyBrewRecipe(ritualRecipe, s -> s.filter(r -> r != recipe));
+                        modifyBrewRecipe(ritualRecipe, ritualRecipe.getExpandedRecipes()
+                                .stream()
+                                .filter(r -> r != recipe)
+                                .map(r -> new BrewActionRitualRecipe.Recipe(r.result, Arrays.copyOf(r.ingredients, r.ingredients.length - 1)))
+                                .toArray(BrewActionRitualRecipe.Recipe[]::new)
+                        );
                     } else {
                         removeAction(ritualRecipe);
                     }
@@ -251,5 +277,11 @@ public class WitcheryPlugin extends BasePluginWitchery {
     @Override
     public boolean postInit() {
         return true;
+    }
+
+    private static class EmptyBrewActionModifier extends BrewActionModifier {
+        public EmptyBrewActionModifier(ItemStack item, int power) {
+            super(BrewItemKey.fromStack(item), null, new AltarPower(power));
+        }
     }
 }
