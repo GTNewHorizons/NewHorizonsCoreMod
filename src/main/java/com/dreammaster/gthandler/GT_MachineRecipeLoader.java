@@ -1100,14 +1100,13 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Carbon, 1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Cobalt, 1L), 300, 2);
-		GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1L), 300, 2);
-		GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Manyullyn, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Manyullyn, 1L), 300, 2);
-		GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L), 300, 2);
+	GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1L), 300, 2);
+	GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Manyullyn, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Manyullyn, 1L), 300, 2);
+	GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L), 300, 2);
 	
 	if (Loader.isModLoaded("TConstruct")) {
 		GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 9L, 14), GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), 300, 2);
-		GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2), GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), 300, 2);
-		
+
 		GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 4), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)}, new int[]{10000}, 300, 2);		
 		GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 9L, 38)}, new int[]{10000}, 300, 2);		
 		GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 2), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 2L, 38), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)}, new int[]{10000, 1000}, 400, 2);
@@ -1134,40 +1133,6 @@ public class GT_MachineRecipeLoader implements Runnable{
 		GT_Values.RA.addFluidExtractionRecipe(new ItemStack(Items.ender_pearl, 1, 0), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("ender"), 250), 10000, 48, 100);		
 		GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 10), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("ender"), 2250), 10000, 48, 100);		
 
-		GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.sapling", 1L, 0), GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0), 300, 2);
-		GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 0), GT_ModHandler.getModItem("TConstruct", "strangeFood", 4L, 0), 300, 2);
-		GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 1), new ItemStack(Items.slime_ball, 4, 0), 300, 2);
-		GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.leaves", 16L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L), 300, 2);
-
-		//Assembler
-		GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 1), GT_ModHandler.getModItem("IC2", "blockITNT", 1L, 0)}, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "explosive.slime", 1L, 0), 600, 30);
-		GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 0), GT_ModHandler.getModItem("TConstruct", "explosive.slime", 1L, 0)}, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "explosive.slime", 1L, 2), 600, 64);
-		GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Aluminium, 1L), GT_OreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 4L)}, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "heartCanister", 1L, 0), 2400, 480);
-
-		//Blastfurnace
-		GT_Values.RA.addBlastRecipe(new ItemStack(Blocks.glass, 1, 0), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "GlassBlock", 1L, 0), GT_Values.NI, 100, 120, 1000);
-        GT_Values.RA.addBlastRecipe(new ItemStack(Blocks.glass_pane, 1, 0), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "GlassPane", 1L, 0), GT_Values.NI, 100, 120, 1000);
-
-		//Chemical Reactor
-        GT_Values.RA.addChemicalRecipe(new ItemStack(Blocks.diamond_block, 8, 0), new ItemStack(Items.golden_apple, 1, 1), GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "diamondApple", 1L, 0), GT_Values.NI, 3600, 5);
-
-		//Slime crystals
-		GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 4L, 0), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 1), 1200, 2);
-		GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 4L, 2), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 17), 1200, 2);
-
-		GT_Values.RA.addCompressorRecipe(new ItemStack(Items.paper, 64, 0), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 0), 600, 2);
-
-		//Centrifuge
-        GT_Values.RA.addCentrifugeRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 1L), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000,10000}, 1200, 5);
-
-        GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(50), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 2L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
-        GT_Values.RA.addCentrifugeRecipe(new ItemStack(Items.slime_ball, 1, 0), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(50), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 2L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
-        GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 2), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(200), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 8L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
-
-		//Cutting Saw
-		GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), ItemList.ArditePlate.get(9L), GT_Values.NI, 4800, 30);
-		GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 2), ItemList.ManyullynPlate.get(9L), GT_Values.NI, 9600, 30);
-		
 		//Tool Rods
 		GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 2), 30, 250);
 		GT_Values.RA.addExtruderRecipe(new ItemStack(Items.nether_brick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 7), 30, 122);
@@ -1625,6 +1590,11 @@ public class GT_MachineRecipeLoader implements Runnable{
 		GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 2L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 315), 120, 22500);
 		GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 2L, 8), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 316), 30, 293);
 		GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 2L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 251), 30, 5400);
+
+		GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.sapling", 1L, 0), GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0), 300, 2);
+		GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 0), GT_ModHandler.getModItem("TConstruct", "strangeFood", 4L, 0), 300, 2);
+		GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 1), new ItemStack(Items.slime_ball, 4, 0), 300, 2);
+		GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.leaves", 16L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L), 300, 2);
 	}
 
 
