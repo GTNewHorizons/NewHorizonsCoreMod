@@ -13,34 +13,38 @@ import org.apache.logging.log4j.Logger;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.Hashtable;
-import java.util.function.Function;
-import java.util.stream.Stream;
 
 class WitcheryBrewRegistryAccessor {
     static final Logger log = LogManager.getLogger("WitcheryCompat");
     static final Method methodRegister;
+    static final Field fieldRecipes;
     static final Hashtable<BrewItemKey, BrewAction> ingredient;
 
     static {
         Hashtable<BrewItemKey, BrewAction> ingredient1;
         Method tmp;
-        Field field;
+        Field field, f2;
         try {
-            final Class<?> clazz = Class.forName("com.emoniph.witchery.brewing.WitcheryBrewRegistry", false, WitcheryPlugin.class.getClassLoader());
+            final ClassLoader classLoader = WitcheryPlugin.class.getClassLoader();
+            Class<?> clazz = Class.forName("com.emoniph.witchery.brewing.WitcheryBrewRegistry", false, classLoader);
             tmp = clazz.getDeclaredMethod("register", BrewAction.class);
             tmp.setAccessible(true);
             field = clazz.getDeclaredField("ingredients");
             field.setAccessible(true);
             ingredient1 = getIngredient(field);
+            clazz = Class.forName("com.emoniph.witchery.brewing.action.BrewActionRitualRecipe", false, classLoader);
+            f2 = clazz.getDeclaredField("recipes");
+            f2.setAccessible(true);
         } catch (NoSuchMethodException | ClassNotFoundException | NoSuchFieldException | IllegalAccessException e) {
             log.error("Cannot find Witchery brew registry stuff. Related functionality will have no effect!", e);
             tmp = null;
             ingredient1 = null;
+            f2 = null;
         }
         ingredient = ingredient1;
         methodRegister = tmp;
+        fieldRecipes = f2;
     }
 
     @SuppressWarnings("unchecked")
@@ -58,21 +62,24 @@ class WitcheryBrewRegistryAccessor {
         }
     }
 
-    static void modifyBrewRecipe(BrewActionRitualRecipe ritualRecipe, Function<Stream<BrewActionRitualRecipe.Recipe>, Stream<BrewActionRitualRecipe.Recipe>> modification) {
+    static void modifyBrewRecipe(BrewActionRitualRecipe ritualRecipe, BrewActionRitualRecipe.Recipe[] recipes) {
         removeAction(ritualRecipe);
         AltarPower power = new AltarPower(0);
         ritualRecipe.accumulatePower(power);
-        registerBrewAction(
-                new BrewActionRitualRecipe(ritualRecipe.ITEM_KEY, power, modification.apply(ritualRecipe.getExpandedRecipes()
-                        .stream())
-                        .map(r -> new BrewActionRitualRecipe.Recipe(r.result, Arrays.copyOf(r.ingredients, r.ingredients.length - 1)))
-                        .toArray(BrewActionRitualRecipe.Recipe[]::new))
-        );
+        registerBrewAction(new BrewActionRitualRecipe(ritualRecipe.ITEM_KEY, power, recipes));
     }
 
     static void removeAction(BrewActionRitualRecipe action) {
         ingredient.remove(action.ITEM_KEY);
         WitcheryBrewRegistry.INSTANCE.getRecipes().remove(action);
+    }
+
+    static  BrewActionRitualRecipe.Recipe[] getRecipes(BrewActionRitualRecipe ritualRecipe) {
+        try {
+            return (BrewActionRitualRecipe.Recipe[]) fieldRecipes.get(ritualRecipe);
+        } catch (IllegalAccessException e) {
+            throw new AssertionError(e);
+        }
     }
 
     static boolean isCauldronRecipeMatch(BrewActionRitualRecipe.Recipe recipe, ItemStack lastItem, ItemStack[] items) {
