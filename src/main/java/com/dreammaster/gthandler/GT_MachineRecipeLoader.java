@@ -1095,6 +1095,540 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Carbon, 1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Cobalt, 1L), 300, 2);
+        GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1L), 300, 2);
+        GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Manyullyn, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Manyullyn, 1L), 300, 2);
+        GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L), 300, 2);
+        this.run2();
+    }
+    public void run2() {
+        if (Loader.isModLoaded("TConstruct")) {
+            GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 9L, 14), GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), 300, 2);
+            GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2), GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), 300, 2);
+
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 4), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)}, new int[]{10000}, 300, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 9L, 38)}, new int[]{10000}, 300, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 2), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)}, new int[]{10000, 1000}, 400, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L)}, new int[]{10000}, 300, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 14), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 1L, 42)}, new int[]{10000}, 300, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 9L, 42)}, new int[]{10000}, 300, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 0), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 9L)}, new int[]{10000}, 300, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 5), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 1L)}, new int[]{10000}, 300, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 2), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 9L)}, new int[]{10000}, 300, 2);
+
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 10), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 9L)}, new int[]{10000}, 300, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "woodPattern", 1L, GT_Values.W), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)}, new int[]{10000}, 200, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "Pattern", 1L, GT_Values.W), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L)}, new int[]{10000}, 200, 2);
+
+            GT_Values.RA.addMixerRecipe(new ItemStack(Blocks.sand, 3, 0), new ItemStack(Blocks.gravel, 3, 0), new ItemStack(Blocks.clay, 2, 0), GT_Values.NI, Materials.Water.getFluid(2000L), GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 8L, 1), 200, 16);
+            GT_Values.RA.addMixerRecipe(new ItemStack(Items.nether_wart, 1, 0), new ItemStack(Blocks.soul_sand, 1, 0), new ItemStack(Blocks.gravel, 1, 0), GT_ModHandler.getModItem("Natura", "soil.tainted", 1L, 0), GT_Utility.getIntegratedCircuit(1), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, Materials.Water.getFluid(2000L), GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 2L, 6), 200, 16);
+            GT_Values.RA.addMixerRecipe(new ItemStack(Items.nether_wart, 1, 0), new ItemStack(Blocks.soul_sand, 1, 0), new ItemStack(Blocks.gravel, 1, 0), new ItemStack(Blocks.sand, 1, 32767), GT_Utility.getIntegratedCircuit(2), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, Materials.Water.getFluid(2000L), GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 2L, 6), 200, 16);
+
+            GT_Values.RA.addForgeHammerRecipe(GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), GT_ModHandler.getModItem("TConstruct", "materials", 3L, 2), 20, 16);
+
+            GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0L), new FluidStack(FluidRegistry.getFluid("glue"), 144), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 36), 100, 8); //maybe Materials.Glue.getFluid(144L) instead
+
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "oreBerries", 1L, 5), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("xpjuice"), 250), 10000, 100, 16);
+            GT_Values.RA.addFluidExtractionRecipe(new ItemStack(Items.ender_pearl, 1, 0), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("ender"), 250), 10000, 100, 30);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 10), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("ender"), 2250), 10000, 200, 48);
+
+            GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.sapling", 1L, 0), GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0), 300, 2);
+            GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 0), GT_ModHandler.getModItem("TConstruct", "strangeFood", 4L, 0), 300, 2);
+            GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 1), new ItemStack(Items.slime_ball, 4, 0), 300, 2);
+            GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.leaves", 16L, 0), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L), 300, 2);
+
+            //Assembler
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 1), GT_ModHandler.getModItem("IC2", "blockITNT", 1L, 0), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "explosive.slime", 1L, 0), 600, 30);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 0), GT_ModHandler.getModItem("TConstruct", "explosive.slime", 1L, 0), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "explosive.slime", 1L, 2), 600, 64);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Aluminium, 1L), GT_OreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 4L), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "heartCanister", 1L, 0), 2400, 480);
+
+            //Blastfurnace
+            GT_Values.RA.addBlastRecipe(new ItemStack(Blocks.glass, 1, 0), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "GlassBlock", 1L, 0), GT_Values.NI, 100, 120, 1000);
+            GT_Values.RA.addBlastRecipe(new ItemStack(Blocks.glass_pane, 1, 0), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "GlassPane", 1L, 0), GT_Values.NI, 100, 120, 1000);
+
+            //Chemical Reactor
+            GT_Values.RA.addChemicalRecipe(new ItemStack(Blocks.diamond_block, 8, 0), new ItemStack(Items.golden_apple, 1, 1), Materials.Blaze.getMolten(144), GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "diamondApple", 1L, 0), GT_Values.NI, 3600, 480);
+
+            //Slime crystals
+            GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 4L, 0), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 1), 300, 2);
+            GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 4L, 2), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 17), 300, 2);
+
+            GT_Values.RA.addCompressorRecipe(new ItemStack(Items.paper, 64, 0), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 0), 300, 2);
+
+            //Centrifuge
+            //GT_Values.RA.addCentrifugeRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 1L), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000,10000}, 1200, 5);//auto recipe
+
+            GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(50), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 2L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
+            GT_Values.RA.addCentrifugeRecipe(new ItemStack(Items.slime_ball, 1, 0), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(50), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 2L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
+            GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 2), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(200), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 8L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
+
+            //Cutting Saw
+            GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), Materials.Water.getFluid(1000), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L), GT_Values.NI, 4800, 30);
+            GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), GT_ModHandler.getDistilledWater(750L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L), GT_Values.NI, 4800, 30);
+            GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), Materials.Lubricant.getFluid(250), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L), GT_Values.NI, 2400, 30);
+            GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 2), Materials.Water.getFluid(1000), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L), GT_Values.NI, 9600, 30);
+            GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 2), GT_ModHandler.getDistilledWater(750L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L), GT_Values.NI, 9600, 30);
+            GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 2), Materials.Lubricant.getFluid(250), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L), GT_Values.NI, 4800, 30);
+
+            //Tool Rods
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 2), 250, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 6), 179, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 7), 122, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 10), 800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 11), 606, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 12), 1200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 13), 180, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 14), 380, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 15), 550, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 16), 400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 17), 666, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 314), 100, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 315), 7500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 316), 97, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 1), GT_ModHandler.getModItem("TConstruct", "toolRod", 1L, 251), 1800, 30);
+
+            //Pickaxe Heads
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 2), 501, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 6), 179, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 7), 245, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 10), 1600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 11), 1213, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 12), 2400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 13), 360, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 14), 760, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 15), 1101, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 16), 800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 17), 1333, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 314), 200, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 315), 15000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 316), 195, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 2), GT_ModHandler.getModItem("TConstruct", "pickaxeHead", 1L, 251), 3600, 30);
+
+            //Shovel Heads
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 2), 501, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 6), 179, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 7), 245, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 10), 1600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 11), 1213, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 12), 2400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 13), 360, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 14), 760, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 15), 1101, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 16), 800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 17), 1333, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 314), 200, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 315), 15000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 316), 195, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 3), GT_ModHandler.getModItem("TConstruct", "shovelHead", 1L, 251), 3600, 30);
+
+            //Axe Heads
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 2), 501, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 6), 179, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 7), 245, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 10), 1600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 11), 1213, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 12), 2400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 13), 360, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 14), 760, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 15), 1101, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 16), 800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 17), 1333, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 314), 200, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 315), 15000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 316), 195, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 4), GT_ModHandler.getModItem("TConstruct", "hatchetHead", 1L, 251), 3600, 30);
+
+            //Sword Blade
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 2), 501, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 6), 179, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 7), 245, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 10), 1600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 11), 1213, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 12), 2400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 13), 360, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 14), 760, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 15), 1101, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 16), 800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 17), 1333, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 314), 200, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 315), 15000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 316), 195, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 5), GT_ModHandler.getModItem("TConstruct", "swordBlade", 1L, 251), 3600, 30);
+
+            //Wide Guards
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 2), 250, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 6), 90, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 7), 122, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 10), 800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 11), 606, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 12), 1200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 13), 180, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 14), 380, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 15), 550, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 16), 400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 17), 666, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 314), 100, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 315), 7500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 316), 97, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 6), GT_ModHandler.getModItem("TConstruct", "wideGuard", 1L, 251), 1800, 30);
+
+            //Hand Guards
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 2), 250, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 6), 90, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 7), 122, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 10), 800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 11), 606, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 12), 1200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 13), 180, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 14), 380, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 15), 550, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 16), 400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 17), 666, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 314), 100, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 315), 7500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 316), 97, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 7), GT_ModHandler.getModItem("TConstruct", "handGuard", 1L, 251), 1800, 30);
+
+            //Crossbars
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 2), 250, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 6), 90, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 7), 122, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 10), 800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 11), 606, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 12), 1200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 13), 180, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 14), 380, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 15), 550, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 16), 400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 17), 666, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 314), 100, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 315), 7500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 316), 97, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 8), GT_ModHandler.getModItem("TConstruct", "crossbar", 1L, 251), 1800, 30);
+
+            //Bindings
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 2), 250, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 6), 90, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 7), 122, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 10), 800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 11), 606, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 12), 1200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 13), 180, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 14), 380, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 15), 550, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 16), 400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 17), 666, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 314), 100, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 315), 7500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 316), 97, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 9), GT_ModHandler.getModItem("TConstruct", "binding", 1L, 251), 1800, 30);
+
+            //Fryingpan Heads (Time for Dream to duck!)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 2), 501, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 6), 179, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 7), 245, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 10), 1600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 11), 1213, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 12), 2400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 13), 360, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 14), 760, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 15), 1101, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 16), 800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 17), 1333, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 314), 200, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 315), 15000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 316), 195, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 10), GT_ModHandler.getModItem("TConstruct", "frypanHead", 1L, 251), 3600, 30);
+
+            //Sign Heads (To write on a wall)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 2), 501, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 6), 179, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 7), 245, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 10), 1600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 11), 1213, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 12), 2400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 13), 360, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 14), 760, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 15), 1101, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 16), 800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 17), 1333, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 314), 200, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 315), 15000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 316), 195, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 11), GT_ModHandler.getModItem("TConstruct", "signHead", 1L, 251), 3600, 30);
+
+            //Knife Blades (There are no winners in a knife fight)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 2), 250, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 6), 90, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 7), 122, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 10), 800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 11), 606, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 12), 1200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 13), 180, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 14), 380, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 15), 550, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 16), 400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 17), 666, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 314), 100, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 315), 7500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 316), 97, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 12), GT_ModHandler.getModItem("TConstruct", "knifeBlade", 1L, 251), 1800, 30);
+
+            //Chisel Heads (Stonework galore)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 2), 250, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 6), 90, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 7), 122, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 10), 800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 11), 606, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 12), 1200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 13), 180, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 14), 380, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 15), 550, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 16), 400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 17), 666, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 314), 100, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 315), 7500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 316), 97, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 13), GT_ModHandler.getModItem("TConstruct", "chiselHead", 1L, 251), 1800, 30);
+
+            //Tough Tool Rods (The Tougher the Better)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 2), 1503, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 6), 537, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 3, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 7), 735, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 10), 4800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 11), 3639, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 12), 7200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 13), 1080, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 14), 2280, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 15), 3303, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 16), 2400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 17), 3999, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 3L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 314), 600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 3L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 315), 45000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 3L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 316), 585, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 3L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 14), GT_ModHandler.getModItem("TConstruct", "toughRod", 1L, 251), 10800, 30);
+
+            //Tough Bindings (To keep the toughness together)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 2), 1503, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 6), 537, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 3, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 7), 735, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 10), 4800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 11), 3639, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 12), 7200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 13), 1080, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 14), 2280, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 15), 3303, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 16), 2400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 17), 3999, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 3L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 314), 600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 3L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 315), 45000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 3L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 316), 585, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 3L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 15), GT_ModHandler.getModItem("TConstruct", "toughBinding", 1L, 251), 10800, 30);
+
+            //Large Plates (Different from Small Plates)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 2), 4008, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 6), 1432, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 8, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 7), 1960, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 10), 12800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 11), 9704, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 12), 19200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 13), 2880, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 14), 7680, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 15), 8808, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 16), 6400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 17), 10664, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 8L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 314), 1600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 315), 120000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 8L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 316), 1560, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 16), GT_ModHandler.getModItem("TConstruct", "heavyPlate", 1L, 251), 28800, 30);
+
+            //Broad Axe Heads (Cutting down a tree with every strike)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 2), 4008, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 6), 1432, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 8, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 7), 1960, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 10), 12800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 11), 9704, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 12), 19200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 13), 2880, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 14), 7680, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 15), 8808, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 16), 6400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 17), 10664, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 8L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 314), 1600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 315), 120000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 8L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 316), 1560, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 17), GT_ModHandler.getModItem("TConstruct", "broadAxeHead", 1L, 251), 28800, 30);
+
+            //Scythe Heads (Cutting down a a farm with every strike, or Deaths favorite weapon)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 2), 4008, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 6), 1432, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 8, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 7), 1960, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 10), 12800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 11), 9704, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 12), 19200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 13), 2880, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 14), 7680, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 15), 8808, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 16), 6400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 17), 10664, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 8L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 314), 1600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 315), 120000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 8L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 316), 1560, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 18), GT_ModHandler.getModItem("TConstruct", "scytheBlade", 1L, 251), 28800, 30);
+
+            //Excavator Heads (Getting Dirty digging a hole)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 2), 4008, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 6), 1432, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 8, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 7), 1960, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 10), 12800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 11), 9704, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 12), 19200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 13), 2880, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 14), 7680, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 15), 8808, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 16), 6400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 17), 10664, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 8L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 314), 1600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 315), 120000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 8L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 316), 1560, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 19), GT_ModHandler.getModItem("TConstruct", "excavatorHead", 1L, 251), 28800, 30);
+
+            //Large Sword Blades (Who has the largest sword?)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 2), 4008, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 6), 1432, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 8, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 7), 1960, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 10), 12800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 11), 9704, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 12), 19200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 13), 2880, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 14), 7680, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 15), 8808, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 16), 6400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 17), 10664, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 8L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 314), 1600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 315), 120000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 8L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 316), 1560, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 20), GT_ModHandler.getModItem("TConstruct", "largeSwordBlade", 1L, 251), 28800, 30);
+
+            //Hammer Heads (It's Clobbering Time!)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 2), 4008, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 6), 1432, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 8, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 7), 1960, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 10), 12800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 11), 9704, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 12), 19200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 13), 2880, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 14), 7680, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 15), 8808, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 16), 6400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 17), 10664, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 8L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 314), 1600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 315), 120000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 8L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 316), 1560, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 8L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 21), GT_ModHandler.getModItem("TConstruct", "hammerHead", 1L, 251), 28800, 30);
+
+            //Full Guards (To guard your grip)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 2), 1503, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 6), 537, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 3, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 7), 735, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 10), 4800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 11), 3639, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 12), 7200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 13), 1080, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 14), 2280, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 15), 3303, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 16), 2400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(3), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 17), 3999, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 3L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 314), 600, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 3L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 315), 45000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 3L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 316), 585, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 3L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 22), GT_ModHandler.getModItem("TConstruct", "fullGuard", 1L, 251), 10800, 30);
+
+            //Arrowheads (Hey, flying metal)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 2), 501, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 6), 179, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 7), 245, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 10), 1600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 11), 1213, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 12), 2400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 13), 360, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 14), 760, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 15), 1101, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 16), 800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 17), 1333, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 314), 200, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 315), 15000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 316), 195, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "metalPattern", 0L, 25), GT_ModHandler.getModItem("TConstruct", "arrowhead", 1L, 251), 3600, 30);
+
+            //Shurikens (Hey, Oriental flying metal)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 2), 250, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 6), 90, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 1, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 7), 122, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 10), 800, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 11), 606, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 12), 1200, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 13), 180, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 14), 380, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 15), 550, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 16), 400, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(1), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 17), 666, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 314), 100, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 315), 7500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 1L, 8), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 316), 97, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 1L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 0), GT_ModHandler.getModItem("TConstruct", "ShurikenPart", 1L, 251), 1800, 30);
+
+            //Crossbow Limbs (The Dragon's worst enemy)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 2), 2004, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 6), 716, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 4, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 7), 980, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 10), 6400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 11), 4852, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 12), 9600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 13), 1440, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 14), 3040, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 15), 4404, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 16), 3200, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(4), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 17), 5332, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 4L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 314), 800, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 4L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 315), 60000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 4L, 8), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 316), 780, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 4L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 1), GT_ModHandler.getModItem("TConstruct", "CrossbowLimbPart", 1L, 251), 14400, 30);
+
+            //Crossbow Body (The Dragon's worst enemy, part 2)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 2), 2505, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 6), 895, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 5, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 7), 1225, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 10), 8000, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 11), 6065, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 12), 12000, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 13), 1800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 14), 3800, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 15), 5505, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 16), 4000, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(5), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 17), 6665, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 5L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 314), 1000, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 5L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 315), 75000, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 5L, 8), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 316), 975, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 5L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 2), GT_ModHandler.getModItem("TConstruct", "CrossbowBodyPart", 1L, 251), 18000, 30);
+
+            //Bow Limbs (A skeletons favorite weapon, in pieces.)
+            GT_Values.RA.addExtruderRecipe(Materials.Iron.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 2), 752, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Obsidian.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 6), 269, 120);
+            GT_Values.RA.addExtruderRecipe(new ItemStack(Items.netherbrick, 2, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 7), 368, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Cobalt.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 10), 2400, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Ardite.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 11), 1820, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Manyullyn.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 12), 3600, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Copper.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 13), 540, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Bronze.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 14), 1140, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.Alumite.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 15), 1652, 120);
+            GT_Values.RA.addExtruderRecipe(Materials.Steel.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 16), 1200, 30);
+            GT_Values.RA.addExtruderRecipe(Materials.PigIron.getIngots(2), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 17), 2000, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 2L, GT_Values.W), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 314), 300, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 2L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 315), 22500, 120);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("ExtraUtilities", "decorativeBlock1", 2L, 8), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 316), 293, 30);
+            GT_Values.RA.addExtruderRecipe(GT_ModHandler.getModItem("BloodArsenal", "blood_infused_iron", 2L, 0), GT_ModHandler.getModItem("TConstruct", "Cast", 0L, 3), GT_ModHandler.getModItem("TConstruct", "BowLimbPart", 1L, 251), 5400, 30);
+        }
+
         GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_11, 1, 0),  new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
         GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_13, 1, 0),  new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
         GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_cat, 1, 0),  new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
