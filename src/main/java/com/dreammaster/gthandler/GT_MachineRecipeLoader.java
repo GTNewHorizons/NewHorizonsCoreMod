@@ -1098,7 +1098,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Manyullyn, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Manyullyn, 1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L), 300, 2);
-
+        this.run2();
+    }
+        public void run2() {
 	if (Loader.isModLoaded("TConstruct")) {
 		GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 9L, 14), GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), 300, 2);
 		GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2), GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), 300, 2);
@@ -2343,7 +2345,9 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addChemicalRecipe(CustomItemList.DraconiumEgg.get(1L), GT_ModHandler.getModItem("DraconicEvolution", "dragonHeart", 0L, 0), FluidRegistry.getFluidStack("molten.enderium", 1000), GT_Values.NF, new ItemStack(Blocks.dragon_egg, 1, 0), GT_Values.NI, 72000, 1920, true);
 
         GT_Values.RA.addChemicalBathRecipe(GT_ModHandler.getModItem("harvestcraft", "wovencottonItem", 2L, 0), Materials.PolyvinylChloride.getMolten(144L), CustomItemList.ArtificialLeather.get(2L), GT_Values.NI, GT_Values.NI, new int[]{10000},300, 120);
-
+            this.run3();
+        }
+    public void run3() {
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Parts_Glass_Tube.get(4L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 4)}, Materials.RedAlloy.getMolten(72L), ItemList.Circuit_Parts_Vacuum_Tube.get(4L), 160, 8);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Parts_Glass_Tube.get(4L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 4)}, Materials.RedstoneAlloy.getMolten(72L), ItemList.Circuit_Parts_Vacuum_Tube.get(8L), 160, 8);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Parts_Glass_Tube.get(4L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 4), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 4)}, Materials.RedAlloy.getMolten(72L), ItemList.Circuit_Parts_Vacuum_Tube.get(8L), 160, 8);
