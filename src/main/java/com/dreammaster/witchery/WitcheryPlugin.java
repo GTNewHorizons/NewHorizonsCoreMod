@@ -165,7 +165,8 @@ public class WitcheryPlugin extends BasePluginWitchery {
         SpinningWheel.addRecipe(new ItemStack(Items.string, 8, 0), new ItemStack(Blocks.web, 1, 0), new ItemStack[]{Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1)});
 
         //remove a Kettle recipe
-        removeAllKettleRecipe(Witchery.Items.GENERIC.itemRedstoneSoup.createStack());
+        removeAllKettleRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack());
+        //Kettle.removeRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack());
 
         //add a Kettle recipes
         Kettle.addRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(1), 0, 0, 6000.0F, -7128833, 0, true, Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(), GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 45), GT_ModHandler.getModItem("ThaumicTinkerer","skyPearl",1L), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack());
@@ -247,7 +248,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
 
         //remove cauldron recipes
 
-        Kettle.removeRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack());
+
         return true;
     }
 
