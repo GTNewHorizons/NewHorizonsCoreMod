@@ -1,6 +1,7 @@
 package com.dreammaster.witchery;
 
-import alkalus.main.api.RecipeManager.*;
+import alkalus.main.api.RecipeManager.Kettle;
+import alkalus.main.api.RecipeManager.SpinningWheel;
 import alkalus.main.api.plugin.base.BasePluginWitchery;
 import com.emoniph.witchery.Witchery;
 import com.emoniph.witchery.brewing.AltarPower;
@@ -149,7 +150,26 @@ public class WitcheryPlugin extends BasePluginWitchery {
 
     @Override
     public boolean init() {
-/*
+
+        //remove a Spinning Wheel recipes
+        SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemGoldenThread.createStack(3), new ItemStack(Blocks.hay_block), Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1));
+        //SpinningWheel.removeRecipe(new ItemStack(Items.string, 8, 0), null, new ItemStack(Blocks.web, 1, 0));
+        SpinningRecipes.instance().recipes.remove(SpinningWheel.getRecipe(new ItemStack(Items.string, 8, 0), new ItemStack[0]));
+        SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemTormentedTwine.createStack(1), Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4), new ItemStack(Items.string), Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1));
+        SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemFancifulThread.createStack(1), new ItemStack(Witchery.Blocks.WISPY_COTTON, 4), new ItemStack(Items.string), Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1));
+
+        //add a Spinning Wheel recipes
+        SpinningWheel.addRecipe(GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L), Witchery.Items.GENERIC.itemGoldenThread.createStack(1), new ItemStack[]{new ItemStack(Items.string, 8, 0), Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1)});
+        SpinningWheel.addRecipe(Witchery.Items.GENERIC.itemGoldenThread.createStack(1), Witchery.Items.GENERIC.itemFancifulThread.createStack(1), new ItemStack[]{new ItemStack(Witchery.Blocks.WISPY_COTTON, 4), Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1)});
+        SpinningWheel.addRecipe(GT_ModHandler.getModItem("BloodArsenal","blood_burned_string",1L), Witchery.Items.GENERIC.itemTormentedTwine.createStack(1), new ItemStack[]{Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4), Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1)});
+        SpinningWheel.addRecipe(new ItemStack(Items.string, 8, 0), new ItemStack(Blocks.web, 1, 0), new ItemStack[]{Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1)});
+
+        //remove a Kettle recipe
+        removeAllKettleRecipe(Witchery.Items.GENERIC.itemRedstoneSoup.createStack());
+
+        //add a Kettle recipes
+        Kettle.addRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(1), 0, 0, 6000.0F, -7128833, 0, true, Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(), GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 45), GT_ModHandler.getModItem("ThaumicTinkerer","skyPearl",1L), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack());
+        /*
         // examples:
         // add an oven recipe
 
