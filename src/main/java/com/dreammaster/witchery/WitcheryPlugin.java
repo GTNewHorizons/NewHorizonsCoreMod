@@ -153,7 +153,6 @@ public class WitcheryPlugin extends BasePluginWitchery {
 
         //remove a Spinning Wheel recipes
         SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemGoldenThread.createStack(3), new ItemStack(Blocks.hay_block), Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1));
-        //SpinningWheel.removeRecipe(new ItemStack(Items.string, 8, 0), null, new ItemStack(Blocks.web, 1, 0));
         SpinningRecipes.instance().recipes.remove(SpinningWheel.getRecipe(new ItemStack(Items.string, 8, 0), new ItemStack[0]));
         SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemTormentedTwine.createStack(1), Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4), new ItemStack(Items.string), Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1));
         SpinningWheel.removeRecipe(Witchery.Items.GENERIC.itemFancifulThread.createStack(1), new ItemStack(Witchery.Blocks.WISPY_COTTON, 4), new ItemStack(Items.string), Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1));
@@ -166,10 +165,18 @@ public class WitcheryPlugin extends BasePluginWitchery {
 
         //remove a Kettle recipe
         removeAllKettleRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack());
-        //Kettle.removeRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack());
 
         //add a Kettle recipes
-        Kettle.addRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(1), 0, 0, 6000.0F, -7128833, 0, true, Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(), GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 45), GT_ModHandler.getModItem("ThaumicTinkerer","skyPearl",1L), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack());
+        Kettle.addRecipe(Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2), 0, 0, 6000.0F, -7128833, 0, true, Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(), GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 45), GT_ModHandler.getModItem("HardcoreEnderExpansion","end_powder",1L), Witchery.Items.GENERIC.itemDropOfLuck.createStack(), Witchery.Items.GENERIC.itemBatWool.createStack());
+
+        //remove a Cauldron recipe
+        removeAllBrewRecipes(new ItemStack(Witchery.Items.CHALK_RITUAL));
+
+        //add a Cauldron recipes
+        addBrewRecipe(1000, new ItemStack(Witchery.Items.CHALK_GOLDEN), new ItemStack(Witchery.Items.CHALK_RITUAL), Witchery.Items.GENERIC.itemMandrakeRoot.createStack(), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",1L, 2086), Witchery.Items.GENERIC.itemDiamondVapour.createStack());
+        addBrewRecipe(2000, new ItemStack(Witchery.Items.CHALK_INFERNAL), new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Items.nether_wart), new ItemStack(Items.blaze_rod), new ItemStack(Items.nether_star));
+        addBrewRecipe(4000, new ItemStack(Witchery.Items.CHALK_OTHERWHERE), new ItemStack(Witchery.Items.CHALK_RITUAL), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",1L, 2533), GT_ModHandler.getModItem("HardcoreEnderExpansion","end_powder",1L), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), GT_ModHandler.getModItem("dreamcraft","item.ManyullynCrystal",1L, 0));
+
         /*
         // examples:
         // add an oven recipe
