@@ -45,34 +45,37 @@ public class BioItemLoader {
         for (GT_Fluid gtFluid : BIOFLUIDS){
                 FluidRegistry.registerFluid(gtFluid);
         }
-
+        BIOTEMSSTACKS[0].stackSize = 2;
         RA.addChemicalRecipe(
-                Materials.MeatRaw.getDust(2),new ItemStack(Items.bone,2),Materials.DilutedSulfuricAcid.getFluid(500),
-                Materials.Water.getFluid(500),BIOTEMSSTACKS[0],
-             800,480
+                Materials.MeatRaw.getDust(2),new ItemStack(Items.bone,1),Materials.DilutedSulfuricAcid.getFluid(1000),
+                Materials.Water.getFluid(1000),BIOTEMSSTACKS[0],
+             1600,480
         );
+        BIOTEMSSTACKS[0].stackSize = 1;
         RA.addChemicalRecipe(
-                Materials.MeatRaw.getDust(2),Materials.Bone.getDust(4),Materials.DilutedSulfuricAcid.getFluid(500),
+                Materials.MeatRaw.getDust(1),Materials.Bone.getDust(2),Materials.DilutedSulfuricAcid.getFluid(500),
                 Materials.Water.getFluid(500),BIOTEMSSTACKS[0],
                 800,480
         );
-
+        BIOTEMSSTACKS[0].stackSize = 4;
         RA.addChemicalRecipe(
-                BIOTEMSSTACKS[0],Materials.Water.getCells(1),Materials.PhosphoricAcid.getFluid(1000),
-                new FluidStack(BIOFLUIDS[0],2000),Materials.Empty.getCells(1),
-                400,480
+                BIOTEMSSTACKS[0],Materials.Water.getCells(3),Materials.PhosphoricAcid.getFluid(1000),
+                new FluidStack(BIOFLUIDS[0],4000),Materials.Empty.getCells(3),
+                1600,480
         );
         RA.addChemicalRecipe(
-                BIOTEMSSTACKS[0],Materials.PhosphoricAcid.getCells(1),Materials.Water.getFluid(1000),
-                new FluidStack(BIOFLUIDS[0],2000),Materials.Empty.getCells(1),
-                400,480
+                BIOTEMSSTACKS[0],Materials.PhosphoricAcid.getCells(1),Materials.Water.getFluid(3000),
+                new FluidStack(BIOFLUIDS[0],4000),Materials.Empty.getCells(1),
+                1600,480
         );
-
+        BIOTEMSSTACKS[0].stackSize = 1;
+        BIOTEMSSTACKS[1].stackSize = 4;
         RA.addCentrifugeRecipe(
-                GT_Utility.getIntegratedCircuit(1),NI,new FluidStack(BIOFLUIDS[0],4000),
+                GT_Utility.getIntegratedCircuit(1),NI,new FluidStack(BIOFLUIDS[0],6000),
                 NF,Materials.Phosphorus.getDust(1),BIOTEMSSTACKS[1],NI,NI,NI,NI,
-                null,600,480
+                null,2400,480
         );
+        BIOTEMSSTACKS[1].stackSize = 1;
 
         RA.addMixerRecipe(
                 GT_Utility.getIntegratedCircuit(11),BIOTEMSSTACKS[1],NI,NI,NI,NI, GT_ModHandler.getDistilledWater(1000),
@@ -125,7 +128,7 @@ public class BioItemLoader {
                 1200, 7680, Materials.Uranium, 5, CLEANROOM, false
         );
         addBacterialVatRecipe(
-                new ItemStack[]{Materials.MeatRaw.getDust(8), Materials.Salt.getDust(8), Materials.Calcium.getDust(8), BIOTEMSSTACKS[2].copy().splitStack(8),
+                new ItemStack[]{Materials.MeatRaw.getDust(8), Materials.Salt.getDust(8), Materials.Calcium.getDust(8), BIOTEMSSTACKS[2].copy().splitStack(4),
                 },
                 CultureSet.get("OvumBac"),
                 new FluidStack[]{FluidRegistry.getFluidStack("bacterialsludge", 4)},
@@ -133,7 +136,7 @@ public class BioItemLoader {
                 1200, 30720, Materials.Plutonium, 6, CLEANROOM, false
         );
         addBacterialVatRecipe(
-                new ItemStack[]{Materials.MeatRaw.getDust(16), Materials.Salt.getDust(16), Materials.Calcium.getDust(16), BIOTEMSSTACKS[2].copy().splitStack(16),
+                new ItemStack[]{Materials.MeatRaw.getDust(12), Materials.Salt.getDust(12), Materials.Calcium.getDust(12), BIOTEMSSTACKS[2].copy().splitStack(4),
                 },
                 CultureSet.get("OvumBac"),
                 new FluidStack[]{FluidRegistry.getFluidStack("mutagen", 4)},

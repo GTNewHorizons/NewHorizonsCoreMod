@@ -183,18 +183,45 @@ task getBartworks(type: Download, dependsOn: "getRailCraft") {
 }
 task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
     onlyIf {
-        !file("libs/GT-PlusPlus-1.7.05.53").exists()
+        !file("libs/GT-PlusPlus-1.7.05.53.jar").exists()
     }
     src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/GT-PlusPlus-1.7.05.53.jar'
     dest file("libs/GT-PlusPlus-1.7.05.53.jar")
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
 }
+	task getTwilightForest(type: Download, dependsOn: "getGtPlusPlus") {
+    onlyIf {
+        !file("libs/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar").exists()
+    }
+    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar'
+    dest file("libs/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
+task getWitcheryExtras(type: Download, dependsOn: "getTwilightForest") {
+    onlyIf {
+        !file("libs/WitcheryExtras-1.0.1-dev.jar").exists()
+    }
+    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/WitcheryExtras-1.0.1-dev.jar'
+    dest file("libs/WitcheryExtras-1.0.1-dev.jar")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
+task getWitchery(type: Download, dependsOn: "getWitcheryExtras") {
+    onlyIf {
+        !file("libs/witchery-1.7.10-0.24.1-deobf.jar").exists()
+    }
+    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/witchery-1.7.10-0.24.1-deobf.jar'
+    dest file("libs/witchery-1.7.10-0.24.1-deobf.jar")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
 
-tasks.setupCIWorkspace.dependsOn getGtPlusPlus
-tasks.setupDevWorkspace.dependsOn getGtPlusPlus
-tasks.setupDecompWorkspace.dependsOn getGtPlusPlus
-tasks.compileJava.dependsOn getGtPlusPlus
+tasks.setupCIWorkspace.dependsOn getWitchery
+tasks.setupDevWorkspace.dependsOn getWitchery
+tasks.setupDecompWorkspace.dependsOn getWitchery
+tasks.compileJava.dependsOn getWitchery
 
 processResources
 {
