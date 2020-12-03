@@ -1,5 +1,6 @@
 package com.dreammaster.main;
 
+import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
@@ -277,6 +278,7 @@ public class MainRegistry
 
         new WitcheryPlugin();
 
+
         if (CoreModConfig.ModLoginMessage_Enabled)
         {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
@@ -406,6 +408,7 @@ public class MainRegistry
         GTCustomLoader.run();
 
         registerModFixes();
+        TF_Loot_Chests.init();
 
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");

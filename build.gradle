@@ -190,7 +190,16 @@ task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
     mustRunAfter "deobfBinJar"
     mustRunAfter "repackMinecraft"
 }
-task getWitcheryExtras(type: Download, dependsOn: "getGtPlusPlus") {
+	task getTwilightForest(type: Download, dependsOn: "getGtPlusPlus") {
+    onlyIf {
+        !file("libs/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar").exists()
+    }
+    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar'
+    dest file("libs/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar")
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
+task getWitcheryExtras(type: Download, dependsOn: "getTwilightForest") {
     onlyIf {
         !file("libs/WitcheryExtras-1.0.1-dev.jar").exists()
     }
