@@ -11,6 +11,7 @@ import gregtech.api.items.GT_MetaGenerated_Tool;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Muffler;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_MultiBlockBase;
 import gregtech.api.objects.GT_RenderedTexture;
+import gregtech.api.util.GT_Multiblock_Tooltip_Builder;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.GT_Pollution;
@@ -22,6 +23,8 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import org.lwjgl.input.Keyboard;
 
 import static gregtech.api.enums.GT_Values.V;
 import static gregtech.api.enums.GT_Values.VN;
@@ -55,20 +58,29 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
 
     @Override
     public String[] getDescription() {
-        return new String[]{
-                "Controller Block for the Air Filter",
-                "Size(WxHxD): 3x4x3 (Hollow), Controller (Front middle bottom)",
-                "8x Air Filter Vent Casing (Two middle Layers, corners)",
-                "1-8x Muffler Hatch (Two middle Layers, sides)",
-                "1x Input Bus (Any bottom layer casing)",
-                "1x Output Bus (Any bottom layer casing)",
-                "1x Energy Hatch (Any bottom layer casing)",
-                "1x Maintenance Hatch (Any bottom layer casing)",
-                "Air Filter Turbine Casings for the rest",
-                "Can accept Adsorption filters, Turbine (in controller)",
-                "Machine tier*2 = Maximal useful muffler tier",
-                "Features Hysteresis control (tm)"
-        };
+    	final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
+		tt.addMachineType("Air Filter")
+		.addInfo("Controller block for the Electric Air Filter")
+		.addInfo("Can accept Adsorption filters, Turbine (in controller)")
+		.addInfo("Machine tier*2 = Maximum usable Muffler tier")//What do these even do?
+		.addInfo("Features Hysteresis control (tm)")
+		.addInfo("Seems buggy and currently not worth making")//Maybe change it to be better later?
+		.addSeparator()
+		.beginStructureBlock(3, 4, 3, true)
+		.addController("Front bottom")
+		.addOtherStructurePart("Air Filter Turbine Casing", "Top and bottom")
+		.addOtherStructurePart("Air Filter Vent Casing", "Corners of the middle 2 layers")
+		.addEnergyHatch("Any bottom layer casing")
+		.addMaintenanceHatch("Any bottom layer casing")
+		.addMufflerHatch("8 in the middle layers")
+		.addInputBus("Any bottom layer casing")		
+		.addOutputBus("Any bottom layer casing")		
+		.toolTipFinisher("GTNH Coremod");
+		if (!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+			return tt.getInformation();
+		} else {
+			return tt.getStructureInformation();
+		}  	
     }
 
     @Override
