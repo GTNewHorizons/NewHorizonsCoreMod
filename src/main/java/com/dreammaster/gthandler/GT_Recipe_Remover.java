@@ -176,7 +176,7 @@ public class GT_Recipe_Remover implements Runnable {
         //Translocator
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Translocator","diamondNugget",2L, 0), true, false, true);
         //Draconic Evolution
-        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosShard",1L, 2), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosShard",1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",1L, 2), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",1L, 1), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",1L, 0), true, false, true);
