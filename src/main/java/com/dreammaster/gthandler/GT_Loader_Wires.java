@@ -37,12 +37,24 @@ public class GT_Loader_Wires
         makeWires(Materials.BlackPlutonium, 11390, bEC ? 4L : 16L, bEC ? 16L : 32L, 1L, GT_Values.V[13], false, false);
         makeWires(Materials.DraconiumAwakened, 11410, bEC ? 4L : 16L, bEC ? 16L : 32L, 1L, GT_Values.V[14], false, false);
         makeWires(Materials.Infinity, 11430, 1L, 1L, 8192L, GT_Values.V[15], false, true);
+        makeWires(Materials.InfinityAlloy, 11450, bEC ? 32L : 64L, bEC ? 128L : 256L, 16L, GT_Values.V[10], true, false);
 
         /** ID SPACE RESERVED: to 11800, FOR WIRES
         makeWires(Materials.???, 1920, 4L, 8L, 8L, gregtech.api.enums.GT_Values.V[8], true, false);
         2000 and 2010 are used for RedAlloy and Super Conductor **/
     }
     
+    /**
+     * @param aMaterial Material it's made of
+     * @param aStartID Metadata ID it starts at (uses multiple)
+     * @param aLossInsulated Loss when insulated
+     * @param aLoss Loss when not insulated
+     * @param aAmperage Amperage for 1x, determines the rest too
+     * @param aVoltage Voltage tier, use GT_Values.V[X], where X=tier
+     * @param aInsulatable Can it be insulated (made into a cable)
+     * @param aAutoInsulated Insulated anyway, see Graphene<br>
+     * For bEC, left is easy, right is hard
+     */
     private static void makeWires(Materials aMaterial, int aStartID, long aLossInsulated, long aLoss, long aAmperage, long aVoltage, boolean aInsulatable, boolean aAutoInsulated)
     {
       String displayName = GT_LanguageManager.i18nPlaceholder ? "%material" : aMaterial.mDefaultLocalName;
