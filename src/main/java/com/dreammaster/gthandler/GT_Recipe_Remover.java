@@ -140,6 +140,7 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemBatChargeCrystal", 1L, GT_Values.W));
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemBatChargeLamaCrystal", 1L, GT_Values.W));
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemTreetapElectric",1,GT_Values.W));
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("IC2","itemToolHoe",1,GT_Values.W));
         //Open Printers
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openprinter", "openprinter.printer", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openprinter", "openprinter.shredder", 1L, 0), true, false, true);

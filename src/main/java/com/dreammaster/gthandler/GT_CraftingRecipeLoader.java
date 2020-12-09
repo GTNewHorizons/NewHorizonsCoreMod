@@ -1,17 +1,8 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.OrePrefixes.*;
-import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
-
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.Loader;
-import gregtech.api.enums.Dyes;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OreDictNames;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.ToolDictNames;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -20,6 +11,9 @@ import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
+import static gregtech.api.enums.OrePrefixes.screw;
+import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader
@@ -285,7 +279,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2", "itemArmorJetpackElectric", 1, GT_Values.W), bits, new Object[] {"SCS", "MBM", "EWE", 'S', OrePrefixes.itemCasing.get(Materials.StainlessSteel),  'C', OrePrefixes.circuit.get(Materials.Advanced),  'M', ItemList.Electric_Motor_HV,  'B', GT_ModHandler.getModItem("IC2", "itemArmorBatpack", 1, GT_Values.W), 'W', OrePrefixes.wireGt04.get(Materials.AnnealedCopper), 'E', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 6)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2", "itemArmorJetpack", 1, GT_Values.W), bits, new Object[] {"SXS", "TCT", "EZE", 'S', OrePrefixes.itemCasing.get(Materials.StainlessSteel),  'X', OrePrefixes.circuit.get(Materials.Advanced),  'T', GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 1, 0), 'C', GT_ModHandler.getModItem("IC2", "reactorCoolantSix", 1, 1), 'Z', GT_ModHandler.getModItem("adventurebackpack", "backpackComponent", 1, 5), 'E', GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 6)});
 
-        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2","itemTreetapElectric",1,GT_Values.W),bits,new Object[] {" RD","RPB","EC ",'R', OrePrefixes.stickLong.get(Materials.Steel),'D', OrePrefixes.toolHeadDrill.get(Materials.Steel),'P',ItemList.Electric_Pump_LV,'B',GT_ModHandler.getModItem("IC2","itemBatRE",1,GT_Values.W),'E',GT_ModHandler.getModItem("IC2","itemRecipePart",1,3),'C', OrePrefixes.cableGt01.get(Materials.Tin)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2","itemTreetapElectric",1,GT_Values.W),bits,new Object[] {"dRD","RPB","ECS",'R', OrePrefixes.stickLong.get(Materials.Steel),'D', OrePrefixes.toolHeadDrill.get(Materials.Steel),'P',ItemList.Electric_Pump_LV,'B',GT_ModHandler.getModItem("IC2","itemBatRE",1,GT_Values.W),'E',GT_ModHandler.getModItem("IC2","itemRecipePart",1,3),'C', OrePrefixes.cableGt01.get(Materials.Tin), 'S', screw.get(Materials.Steel)});
+        GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("IC2","itemToolHoe",1,GT_Values.W),bits,new Object[] {"dPH","PGB","ECS", 'S', screw.get(Materials.Steel),'H', OrePrefixes.toolHeadHoe.get(Materials.Steel),'G', OrePrefixes.gearGtSmall.get(Materials.Steel),'B',GT_ModHandler.getModItem("IC2","itemBatRE",1,GT_Values.W),'E',GT_ModHandler.getModItem("IC2","itemRecipePart",1,3), 'P', OrePrefixes.plate.get(Materials.Steel)});
 
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("OpenComputers", "wrench", 1, 0), GT_Proxy.tBits, new Object[]{"IWI", "ICI", " I ", 'W', ToolDictNames.craftingToolWrench, 'I', OrePrefixes.ingot.get(Materials.Iron), 'C', GT_ModHandler.getModItem("OpenComputers", "item", 1, 24)});
         GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("openprinter", "openprinter.folder", 1L, 0),  GT_Proxy.tBits, new Object[]{"PGP", " P ", 'P', new ItemStack(Items.paper, 1,0), 'G', new ItemStack(Items.slime_ball, 1,0)});
