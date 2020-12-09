@@ -170,25 +170,16 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "opensecurity.cooldownUpgrade", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "opensecurity.energyUpgrade", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("opensecurity", "opensecurity.movementUpgrade", 1L, 0), true, false, true);
-        //Open Glasses
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openglasses", "openglassesterminal", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("openglasses", "openglasses", 1L, 0), true, false, true);
-        //Computronics
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.ironNoteBlock", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.speaker", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.tapeReader", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.camera", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.chatBox", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.cipher", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.cipher_advanced", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.radar", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.colorfulLamp", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.locomotiveRelay", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.digitalReceiverBox", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.digitalControllerBox", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.detector", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.ticketMachine", 1L, 0), true, false, true);
-        //GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("computronics", "computronics.speechBox", 1L, 0), true, false, true);
-	}
+        //Steve Carts
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 18),true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 19),true, false, true);
+        //Translocator
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("Translocator","diamondNugget",2L, 0), true, false, true);
+        //Draconic Evolution
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosShard",1L, 2), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",1L, 2), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",1L, 1), true, false, true);
+        GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",1L, 0), true, false, true);
+    }
 
 }
