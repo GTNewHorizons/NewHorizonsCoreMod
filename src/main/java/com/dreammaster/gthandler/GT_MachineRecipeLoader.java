@@ -1934,6 +1934,13 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",9l,12),1,GT_ModHandler.getModItem("ExtraUtilities","cobblestone_compressed",1l,13),GT_Values.NI);
         GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities","bedrockiumIngot",9),8,GT_ModHandler.getModItem("ExtraUtilities","block_bedrockium",1l),GT_Values.NI);
 
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 18),1, GT_ModHandler.getModItem("StevesCarts","ModuleComponents",1L, 19), GT_Values.NI);
+
+        GT_Values.RA.addImplosionRecipe(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Diamond, 1L),2, GT_ModHandler.getModItem("Translocator","diamondNugget",2L, 0), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.DarkAsh, 1L));
+
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",9L, 2),8, GT_ModHandler.getModItem("DraconicEvolution","chaosShard",1L, 0), GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",9L, 1),4, GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",1L, 2), GT_Values.NI);
+        GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",9L, 0),2, GT_ModHandler.getModItem("DraconicEvolution","chaosFragment",1L, 1), GT_Values.NI);
 
         GT_Values.RA.addLatheRecipe(CustomItemList.ReinforcedGlassPLate.get(1L), CustomItemList.ReinforcedGlassLense.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L), 400, 16);
 
