@@ -1540,11 +1540,11 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		// MassFabricatorLuV
 		// ===================================================================================================
-		ItemList.Machine_LuV_Massfab.set(new GT_MetaTileEntity_Massfabricator(
+		CustomItemList.MassFabricatorLuV.set(new GT_MetaTileEntity_Massfabricator(
 				10950, "basicmachine.massfab.tier.06", "Elite Mass Fabricator", 6).getStackForm(1L));
-		ItemList.Machine_ZPM_Massfab.set(new GT_MetaTileEntity_Massfabricator(
+		CustomItemList.MassFabricatorZPM.set(new GT_MetaTileEntity_Massfabricator(
 				10951, "basicmachine.massfab.tier.07", "Elite Mass Fabricator II", 7).getStackForm(1L));
-		ItemList.Machine_UV_Massfab.set(new GT_MetaTileEntity_Massfabricator(
+		CustomItemList.MassFabricatorUV.set(new GT_MetaTileEntity_Massfabricator(
 				10952, "basicmachine.massfab.tier.08", "Ultimate Existence Initiator", 8).getStackForm(1L));
 		CustomItemList.MassFabricatorUHV.set(new GT_MetaTileEntity_Massfabricator(
 				10953, "basicmachine.massfab.tier.09", "Epic Existence Initiator", 9).getStackForm(1L));
