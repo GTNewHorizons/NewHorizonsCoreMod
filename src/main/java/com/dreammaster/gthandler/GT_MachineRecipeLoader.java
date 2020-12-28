@@ -1127,7 +1127,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
             GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0L), new FluidStack(FluidRegistry.getFluid("glue"), 144), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 36), 100, 8); //maybe Materials.Glue.getFluid(144L) instead
 
-            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "oreBerries", 1L, 5), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("xpjuice"), 250), 10000, 100, 16);
+            if (Loader.isModLoaded("OpenBlocks"))
+            	GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "oreBerries", 1L, 5), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("xpjuice"), 250), 10000, 100, 16);
             GT_Values.RA.addFluidExtractionRecipe(new ItemStack(Items.ender_pearl, 1, 0), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("ender"), 250), 10000, 100, 30);
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 10), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("ender"), 2250), 10000, 200, 48);
 
@@ -2868,7 +2869,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             //GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("computronics", "computronics.speaker", 1L, 0), ItemList.Hull_MV.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 2L), GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 2L),  GT_ModHandler.getModItem("OpenComputers", "item", 1L, 25), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(72L), GT_ModHandler.getModItem("computronics", "computronics.speechBox", 1L, 0), 300, 120);
         }
 
-        if (Loader.isModLoaded("OpenBlocks")){
+        if (Loader.isModLoaded("OpenBlocks") && Loader.isModLoaded("AWWayofTime")) {
 
         ItemStack[] trophies = {
         		GT_ModHandler.getModItem("OpenBlocks", "trophy", 1L),
@@ -2904,7 +2905,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         flighttag.setTag("CustomFlaskEffects", flighsubtag);
         flightpotion.setTagCompound(flighttag);
 
-        for (int i =0; i<4;++i)
+        for (int i = 0; i<4;++i)
         	trophies[i].setTagCompound(tag[i]);
 
         GT_Values.RA.addAssemblerRecipe(trophies[0], new ItemStack(Items.golden_carrot), new ItemStack(Items.potionitem, 1 ,8262), 120, 120);

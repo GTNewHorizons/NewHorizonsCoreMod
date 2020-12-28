@@ -276,8 +276,8 @@ public class MainRegistry
             new GregTechPlusPlusAbandonedAspectsFix();
         }
 
-        new WitcheryPlugin();
-
+        if (Loader.isModLoaded("witchery"))
+        	new WitcheryPlugin();
 
         if (CoreModConfig.ModLoginMessage_Enabled)
         {
@@ -408,8 +408,10 @@ public class MainRegistry
         GTCustomLoader.run();
 
         registerModFixes();
-        TF_Loot_Chests.init();
-
+        
+        if (Loader.isModLoaded("twilight"))
+        	TF_Loot_Chests.init();
+        
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");
