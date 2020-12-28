@@ -1540,11 +1540,11 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		// MassFabricatorLuV
 		// ===================================================================================================
-		ItemList.Machine_LuV_Massfab.set(new GT_MetaTileEntity_Massfabricator(
+		CustomItemList.MassFabricatorLuV.set(new GT_MetaTileEntity_Massfabricator(
 				10950, "basicmachine.massfab.tier.06", "Elite Mass Fabricator", 6).getStackForm(1L));
-		ItemList.Machine_ZPM_Massfab.set(new GT_MetaTileEntity_Massfabricator(
+		CustomItemList.MassFabricatorZPM.set(new GT_MetaTileEntity_Massfabricator(
 				10951, "basicmachine.massfab.tier.07", "Elite Mass Fabricator II", 7).getStackForm(1L));
-		ItemList.Machine_UV_Massfab.set(new GT_MetaTileEntity_Massfabricator(
+		CustomItemList.MassFabricatorUV.set(new GT_MetaTileEntity_Massfabricator(
 				10952, "basicmachine.massfab.tier.08", "Ultimate Existence Initiator", 8).getStackForm(1L));
 		CustomItemList.MassFabricatorUHV.set(new GT_MetaTileEntity_Massfabricator(
 				10953, "basicmachine.massfab.tier.09", "Epic Existence Initiator", 9).getStackForm(1L));
@@ -1555,7 +1555,7 @@ public class GT_Loader_Machines
 		CustomItemList.MassFabricatorUMV.set(new GT_MetaTileEntity_Massfabricator(
 				10956, "basicmachine.massfab.tier.12", "Epic Existence Initiator IV",12).getStackForm(1L));
 
-		GT_ModHandler.addCraftingRecipe(ItemList.Machine_LuV_Massfab.get(1L),
+		GT_ModHandler.addCraftingRecipe(CustomItemList.MassFabricatorLuV.get(1L),
 				bitsd,
 				new Object[] { "CFC", "WMW", "CFC",
 						'M', ItemList.Hull_LuV,
@@ -1563,7 +1563,7 @@ public class GT_Loader_Machines
 						'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4()});
 
-		GT_ModHandler.addCraftingRecipe(ItemList.Machine_ZPM_Massfab.get(1L),
+		GT_ModHandler.addCraftingRecipe(CustomItemList.MassFabricatorZPM.get(1L),
 				bitsd,
 				new Object[] { "CFC", "WMW", "CFC",
 						'M', ItemList.Hull_ZPM,
@@ -1571,7 +1571,7 @@ public class GT_Loader_Machines
 						'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
 						'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4()});
 
-		GT_ModHandler.addCraftingRecipe(ItemList.Machine_UV_Massfab.get(1L),
+		GT_ModHandler.addCraftingRecipe(CustomItemList.MassFabricatorUV.get(1L),
 				bitsd,
 				new Object[] { "CFC", "WMW", "CFC",
 						'M', ItemList.Hull_UV,
