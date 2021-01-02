@@ -1799,10 +1799,10 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Pipe_Large.get(0L),  ItemList.Shape_Extruder_Pipe_Large.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Pipe_Huge.get(0L),  ItemList.Shape_Extruder_Pipe_Huge.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Block.get(0L),  ItemList.Shape_Extruder_Block.get(1L),  200, 256);
-        //GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Sword.get(0L),  ItemList.Shape_Extruder_Sword.get(1L),  200, 256);
-        //GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Pickaxe.get(0L),  ItemList.Shape_Extruder_Pickaxe.get(1L),  200, 256);
+        GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Sword.get(0L),  ItemList.Shape_Extruder_Sword.get(1L),  200, 256);
+        GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Pickaxe.get(0L),  ItemList.Shape_Extruder_Pickaxe.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Shovel.get(0L),  ItemList.Shape_Extruder_Shovel.get(1L),  200, 256);
-        //GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Axe.get(0L),  ItemList.Shape_Extruder_Axe.get(1L),  200, 256);
+        GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Axe.get(0L),  ItemList.Shape_Extruder_Axe.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Hoe.get(0L),  ItemList.Shape_Extruder_Hoe.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Hammer.get(0L),  ItemList.Shape_Extruder_Hammer.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_File.get(0L),  ItemList.Shape_Extruder_File.get(1L),  200, 256);
