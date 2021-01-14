@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler;
 
-import com.dreammaster.gthandler.casings.GT_Loader_CasingsNH;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.modfixes.enderIO.FrankenskullFix;
@@ -8,7 +7,6 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
