@@ -6,6 +6,6 @@ package com.dreammaster.gthandler.casings;
 public class GT_Loader_CasingsNH implements Runnable {
     @Override
     public void run(){
-        GT_Container_CasingsNH.sBlockCasingsNH = new GT_Block_CasingsNH();
+
     }
 }

@@ -169,7 +169,6 @@ public class GT_CustomLoader
      * Final variables will help the compiler optimize the code statically, which may result in faster code.
      */
     private static final GT_Loader_Items ItemLoader = new GT_Loader_Items();
-    private static final GT_Loader_CasingsNH CasingLoader = new GT_Loader_CasingsNH();
     private static final GT_Loader_Machines MachineLoader = new GT_Loader_Machines();
     private static final GT_Loader_FluidPipes FluidPipeLoader = new GT_Loader_FluidPipes();
     private static final GT_Loader_Materials MaterialLoader = new GT_Loader_Materials();
@@ -188,7 +187,6 @@ public class GT_CustomLoader
     	MaterialLoader.run();
     	FluidPipeLoader.run();
     	WireLoader.run();
-        CasingLoader.run();
     	ItemLoader.run();
     	MachineLoader.run();
     	BatteryLoader.run();

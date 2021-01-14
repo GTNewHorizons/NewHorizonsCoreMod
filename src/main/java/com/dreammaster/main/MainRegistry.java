@@ -13,6 +13,8 @@ import com.dreammaster.gthandler.CoreMod_ProcessingArrayRecipeLoader;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
+import com.dreammaster.gthandler.casings.GT_Block_CasingsNH;
+import com.dreammaster.gthandler.casings.GT_Container_CasingsNH;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
@@ -73,12 +75,17 @@ import static gregtech.api.enums.Dyes.MACHINE_METAL;
         modid = Refstrings.MODID,
         name = Refstrings.NAME,
         version = Refstrings.VERSION,
-        dependencies = 
-        	"required-after:Forge@[10.13.2.1291,);"
+        dependencies =
+
+            "required-before:gregtech;"
+
+        +	"required-after:Forge@[10.13.2.1291,);"
         +	"required-after:YAMCore@[0.5.76,);" 
         +	"required-after:Baubles@[1.0.1.10,);"
+
 		+   "after:EnderIO;"
-        +   "after:HardcoreEnderExpansion;",
+        +   "after:HardcoreEnderExpansion;"
+	    ,
 		certificateFingerprint = "1cca375192a26693475fb48268f350a462208dce")
 public class MainRegistry
 {
@@ -346,6 +353,7 @@ public class MainRegistry
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
         proxy.registerRenderInfo();
+        GT_Container_CasingsNH.sBlockCasingsNH = new GT_Block_CasingsNH();
     }
 
     private void RegisterModuleEvents()
