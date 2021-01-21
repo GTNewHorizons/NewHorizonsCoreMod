@@ -44,6 +44,16 @@ public class DreamTransformer implements IClassTransformer {
 
 			@Override
 			public void visitInsn(int opcode) {
+				/*
+				 Before:
+					public ItemFocusWarding() {
+						this.func_77637_a(Thaumcraft.tabTC);
+					}
+				 After
+					public ItemFocusWarding() {
+						this.func_77637_a(Thaumcraft.tabTC).setContainerItem(this);
+					}
+				 */
 				if (opcode == POP) {
 					logger.debug("Adding setContainerItem() call");
 					mv.visitVarInsn(ALOAD, 0);
@@ -70,17 +80,23 @@ public class DreamTransformer implements IClassTransformer {
 
 		@Override
 		public void visitEnd() {
+			/*
+			Before:
+			// nothing
+			After
+			@Override
+			public ItemStack getContainerItem(ItemStack stack) {
+				return stack.copy();
+			}
+			 */
 			logger.debug("Adding getContainerItem()");
 			MethodVisitor mv = cv.visitMethod(ACC_PUBLIC, "getContainerItem", "(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;", null, null);
 			mv.visitParameter("stack", 0);
 			mv.visitCode();
 			mv.visitVarInsn(ALOAD, 1);
 			mv.visitMethodInsn(INVOKEVIRTUAL, "net/minecraft/item/ItemStack", deobf ? "copy" : "func_77946_l", "()Lnet/minecraft/item/ItemStack;", false);
-			mv.visitInsn(DUP);
-			mv.visitInsn(ICONST_1);
-			mv.visitFieldInsn(PUTFIELD, "net/minecraft/item/ItemStack", deobf ? "stackSize" : "field_77994_a", "I");
 			mv.visitInsn(ARETURN);
-			mv.visitMaxs(3, 2);
+			mv.visitMaxs(1, 2);
 			mv.visitEnd();
 			super.visitEnd();
 		}
