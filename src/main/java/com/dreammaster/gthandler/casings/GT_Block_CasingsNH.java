@@ -21,8 +21,7 @@ import net.minecraft.world.IBlockAccess;
 /**
  * Created by danie_000 on 03.10.2016.
  */
-public class GT_Block_CasingsNH
-        extends GT_Block_Casings_Abstract {
+public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
     public static boolean mConnectedMachineTextures = true;
 
     public GT_Block_CasingsNH() {
@@ -79,13 +78,8 @@ public class GT_Block_CasingsNH
         }
     }
 
-    private IIcon getTurbineCasing(int meta, int iconIndex, boolean active) {
-        switch (meta) {
-            case 0:
-                return active ? Textures.BlockIcons.TURBINE_ACTIVE[iconIndex].getIcon() : Textures.BlockIcons.TURBINE[iconIndex].getIcon();
-            default:
-                return active ? Textures.BlockIcons.TURBINE_ACTIVE[iconIndex].getIcon() : Textures.BlockIcons.TURBINE[iconIndex].getIcon();
-        }
+    private IIcon getTurbineCasing(int iconIndex, boolean active) {
+        return active ? Textures.BlockIcons.TURBINE_ACTIVE[iconIndex].getIcon() : Textures.BlockIcons.TURBINE[iconIndex].getIcon();
     }
 
     @Override
@@ -104,7 +98,7 @@ public class GT_Block_CasingsNH
 
             for(int xi=-2;xi<=2;xi++){
                 for(int zi=-2;zi<=2;zi++){
-                    if(null != (tTileEntity = aWorld.getTileEntity(xCoord+xi,yCoord-3<0?0:yCoord-3,zCoord+zi)) &&
+                    if(null != (tTileEntity = aWorld.getTileEntity(xCoord+xi, Math.max(yCoord - 3, 0),zCoord+zi)) &&
                             tTileEntity instanceof IGregTechTileEntity &&
                             null != (tMetaTileEntity = ((IGregTechTileEntity)tTileEntity).getMetaTileEntity()) &&
                             tMetaTileEntity instanceof GT_MetaTileEntity_AirFilter){
@@ -117,7 +111,7 @@ public class GT_Block_CasingsNH
                             case 2:
                                 if(xi<2 && xi>-2 && zi<1) {//if invalid position ignore (aka too far away)
                                     try {
-                                        return getTurbineCasing(tMeta, -xi + 1 - zi * 3, active);
+                                        return getTurbineCasing(-xi + 1 - zi * 3, active);
                                     } catch (Exception e) {
                                         return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
                                     }
@@ -126,7 +120,7 @@ public class GT_Block_CasingsNH
                             case 3:
                                 if(xi<2 && xi>-2 && zi>-1) {
                                     try {
-                                        return getTurbineCasing(tMeta, -xi+1+(2-zi)*3, active);
+                                        return getTurbineCasing(-xi+1+(2-zi)*3, active);
                                     }catch(Exception e){
                                         return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
                                     }
@@ -135,7 +129,7 @@ public class GT_Block_CasingsNH
                             case 4:
                                 if(zi<2 && zi>-2 && xi<1) {
                                     try {
-                                        return getTurbineCasing(tMeta, -xi + (1 - zi) * 3, active);
+                                        return getTurbineCasing(-xi + (1 - zi) * 3, active);
                                     } catch (Exception e) {
                                         return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
                                     }
@@ -144,7 +138,7 @@ public class GT_Block_CasingsNH
                             case 5:
                                 if(zi<2 && zi>-2 && xi>-1) {
                                     try {
-                                        return getTurbineCasing(tMeta, -xi + 2 + (1 - zi) * 3, active);
+                                        return getTurbineCasing(-xi + 2 + (1 - zi) * 3, active);
                                     } catch (Exception e) {
                                         return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
                                     }
