@@ -1083,7 +1083,7 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("IC2", "itemWeed", 16L), ItemList.IC2_Plantball.get(1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("ExtraTrees", "food", 64L, 24), ItemList.IC2_Plantball.get(1L), 300, 2);
-        GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 4L), GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 0), 300, 2);
+        GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L), GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 0), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 9L, 9), GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 0), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.WroughtIron, 9L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L), 300, 2);
@@ -1674,6 +1674,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_wait, 1, 0),  new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
 
         GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 0), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L)}, new int[]{10000}, 300, 2);
+        GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 9), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sunnarium, 1L)}, new int[]{10000}, 30, 2);
 
         GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("Railcraft", "machine.beta", 1L, 0), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 2L)}, new int[]{10000}, 300, 2);
         GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("Railcraft", "machine.beta", 1L, 13), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L)}, new int[]{10000}, 300, 2);
