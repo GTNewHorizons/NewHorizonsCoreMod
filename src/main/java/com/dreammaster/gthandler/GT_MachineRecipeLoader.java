@@ -1107,7 +1107,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         this.run2();
     }
     public void run2() {
-        if (Loader.isModLoaded("TConstruct")) {
+        if (Loader.isModLoaded("TConstruct")){
             GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 9L, 14), GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), 300, 2);
             GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2), GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), 300, 2);
 
