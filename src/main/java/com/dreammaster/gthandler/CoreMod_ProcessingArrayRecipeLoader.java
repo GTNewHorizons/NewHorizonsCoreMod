@@ -133,7 +133,7 @@ public class CoreMod_ProcessingArrayRecipeLoader {
             registerMapBetweenRange(10760, 10766, GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes);
 
             // Forming Press
-            registerMapBetweenRange(10900, 10900, GT_Recipe.GT_Recipe_Map.sPressRecipes);
+            registerMapBetweenRange(10900, 10906, GT_Recipe.GT_Recipe_Map.sPressRecipes);
 
         }
 

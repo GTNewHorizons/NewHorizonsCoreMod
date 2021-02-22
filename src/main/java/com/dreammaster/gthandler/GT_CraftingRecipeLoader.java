@@ -291,7 +291,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.NeutronReflectorSmallParts.get(1L), GT_Proxy.tBits, new Object[]{"NNN", "NwN", 'N', GT_ModHandler.getModItem("IC2", "reactorReflector", 1L, 1)});
 
-         if (Loader.isModLoaded("GraviSuite")) {
+        GT_ModHandler.addCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Steel, 1L), GT_Proxy.tBits, new Object[]{"PIh", "f  ", 'P', OrePrefixes.plate.get(Materials.Steel), 'I', OrePrefixes.ingot.get(Materials.Steel)});
+
+        if (Loader.isModLoaded("GraviSuite")) {
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 3));
             GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 3), new Object[]{"OCO", "XWX", "OCO", 'C', OrePrefixes.wireGt12.get(Materials.SuperconductorLuV), 'X',  GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 1, 2), 'O', GT_ModHandler.getModItem("IC2", "blockMachine2", 1, 1), 'W', ItemList.Transformer_LuV_IV.get(1, o)});
         }
