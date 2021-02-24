@@ -250,7 +250,7 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem
   {
     boolean tResult = false;
 
-    if( pHeldItem.getUnlocalizedName().toLowerCase().contains( "lava" ) ) {
+    if( pHeldItem.getUnlocalizedName().toLowerCase().contains( "lava" ) && pHeldItem.getUnlocalizedName().toLowerCase() != "foodbaklava" ) {
       tResult = true;
     }
 
