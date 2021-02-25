@@ -10,12 +10,7 @@ import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.galacticgreg.SpaceDimRegisterer;
-import com.dreammaster.gthandler.CoreMod_ProcessingArrayRecipeLoader;
-import com.dreammaster.gthandler.GT_CoreModSupport;
-import com.dreammaster.gthandler.GT_CustomLoader;
-import com.dreammaster.gthandler.GT_Loader_ItemPipes;
-import com.dreammaster.gthandler.casings.GT_Block_CasingsNH;
-import com.dreammaster.gthandler.casings.GT_Container_CasingsNH;
+import com.dreammaster.gthandler.*;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
@@ -358,7 +353,7 @@ public class MainRegistry
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
         proxy.registerRenderInfo();
-        GT_Container_CasingsNH.sBlockCasingsNH = new GT_Block_CasingsNH();
+        GT_Loader_CasingNH.load();
     }
 
     private void RegisterModuleEvents()
