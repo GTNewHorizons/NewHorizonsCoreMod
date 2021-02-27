@@ -2,18 +2,25 @@
 package com.dreammaster.baubles;
 
 
+import java.util.List;
+import java.util.Random;
+
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.MainRegistry;
+
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import baubles.common.container.InventoryBaubles;
 import baubles.common.lib.PlayerHandler;
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
 import eu.usrv.yamcore.auxiliary.FluidHelper;
 import eu.usrv.yamcore.client.Notification;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.iface.IExtendedModItem;
+import gregtech.api.enums.Materials;
+import gregtech.api.objects.ItemData;
+import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -27,9 +34,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidContainerItem;
-
-import java.util.List;
-import java.util.Random;
 
 
 public final class OvenGlove extends Item implements IBauble, IExtendedModItem
@@ -249,11 +253,12 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem
   private boolean isValidLavaContainerItem( ItemStack pHeldItem )
   {
     boolean tResult = false;
+    ItemData association = GT_OreDictUnificator.getAssociation(pHeldItem);
 
-    if( pHeldItem.getUnlocalizedName().toLowerCase().contains( "lava" ) && pHeldItem.getUnlocalizedName().toLowerCase() != "foodbaklava" ) {
-      tResult = true;
-    }
-
+    if (association != null && association.mMaterial != null && association.mMaterial.mMaterial == Materials.Lava)
+        return true;
+        
+    // Very probably redundant due to the above, but can't take any chances
     if( pHeldItem.getItem() instanceof IFluidContainerItem )
     {
       FluidStack tStackFluid = FluidHelper.getFluidStackFromContainer( pHeldItem );
