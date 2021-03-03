@@ -22,6 +22,7 @@ public class OreDictHandler {
 		reg_dust(OreDictTypes.BarnardaF.name(),ItemList.BarnardaFStoneDust.getIS());
 		reg_dust(OreDictTypes.Callisto.name(),ItemList.CallistoStoneDust.getIS());
 		reg_dust(OreDictTypes.CentauriA.name(),ItemList.CentauriAStoneDust.getIS());
+		reg_dust(OreDictTypes.CentauriA.name(),ItemList.CentauriASurfaceDust.getIS());
 		reg_dust(OreDictTypes.Ceres.name(),ItemList.CeresStoneDust.getIS());
 		reg_dust(OreDictTypes.Deimos.name(),ItemList.DeimosStoneDust.getIS());
 		reg_dust(OreDictTypes.Enceladus.name(),ItemList.EnceladusStoneDust.getIS());
@@ -104,6 +105,7 @@ public class OreDictHandler {
 			reg_rock(OreDictTypes.Pluto.name(),GT_ModHandler.getModItem("GalaxySpace", "plutoglowstone", 1L, 0));
 			reg_rock(OreDictTypes.Proteus.name(),GT_ModHandler.getModItem("GalaxySpace", "proteusglowstone", 1L, 0));
 			reg_rock(OreDictTypes.Ceres.name(),GT_ModHandler.getModItem("GalaxySpace", "ceresglowstone", 1L, 0));
+			reg_rock(OreDictTypes.Enceladus.name(),GT_ModHandler.getModItem("GalaxySpace", "enceladusblocks", 1L, 3));
 			
 			for (byte i=0;i<2;i++) {
 				reg_rock(OreDictTypes.Deimos.name(),GT_ModHandler.getModItem("GalaxySpace", "deimosblocks", 1L, i));

@@ -1,14 +1,27 @@
 package com.dreammaster.coremod;
 
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
+import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.io.*;
+import java.nio.file.Files;
 import java.util.Map;
+import java.util.Properties;
 
+@IFMLLoadingPlugin.MCVersion("1.7.10")
+@IFMLLoadingPlugin.Name("DreamCoreMod")
 @IFMLLoadingPlugin.TransformerExclusions("com.dreammaster.coremod")
 public class DreamCoreMod implements IFMLLoadingPlugin {
+    static Properties coremodConfig = new Properties();
+    static Logger logger = LogManager.getLogger("DreamCoreMod");
+    static boolean deobf;
+    static File debugOutputDir;
+
     @Override
     public String[] getASMTransformerClass() {
-        return new String[0];
+        return new String[]{"com.dreammaster.coremod.DreamTransformer"};
     }
 
     @Override
@@ -23,7 +36,39 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
 
     @Override
     public void injectData(Map<String, Object> data) {
-
+        deobf = !(boolean) data.get("runtimeDeobfuscationEnabled");
+        coremodConfig.setProperty("patchItemWandCrafting", "true");
+        coremodConfig.setProperty("debug", "false");
+        File mcLocation = (File) data.get("mcLocation");
+        File configDir = new File(mcLocation, "config");
+        configDir.mkdir();
+        File config = new File(configDir, "DreamCoreMod.properties");
+        try (Reader r = new FileReader(config)) {
+            coremodConfig.load(r);
+        } catch (FileNotFoundException ignored) {
+            // not a problem
+        } catch (IOException e) {
+            logger.warn("Can't read coremod config. Proceeding with defaults!", e);
+        }
+        try (Writer r = new FileWriter(config)) {
+            coremodConfig.store(r, "Config file for the ASM part of GTNHCoreMod");
+        } catch (IOException e) {
+            logger.warn("Can't write coremod config. Changes may not have been saved!", e);
+        }
+        if ("true".equalsIgnoreCase(coremodConfig.getProperty("debug"))) {
+            debugOutputDir = new File(mcLocation, ".asm_debug");
+            try {
+                if (debugOutputDir.exists())
+                    FileUtils.deleteDirectory(debugOutputDir);
+            } catch (IOException e) {
+                logger.warn("Can't remove old debug stuff. Debug will be effective turned off!", e);
+                debugOutputDir = null;
+            }
+            if (debugOutputDir != null && !debugOutputDir.mkdir()) {
+                logger.warn("Can't make debug output dir. Debug will be effective turned off");
+                debugOutputDir = null;
+            }
+        }
     }
 
     @Override

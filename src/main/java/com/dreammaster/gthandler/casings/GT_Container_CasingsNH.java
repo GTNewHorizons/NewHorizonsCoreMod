@@ -7,6 +7,5 @@ import net.minecraft.block.Block;
  */
 public final class GT_Container_CasingsNH{
     public static Block sBlockCasingsNH;
-
     private GT_Container_CasingsNH() {}
 }
