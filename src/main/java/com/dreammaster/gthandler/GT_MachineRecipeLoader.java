@@ -1134,7 +1134,10 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addForgeHammerRecipe(GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), GT_ModHandler.getModItem("TConstruct", "materials", 3L, 2), 20, 16);
 
             GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0L), new FluidStack(FluidRegistry.getFluid("glue"), 144), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 36), 100, 8); //maybe Materials.Glue.getFluid(144L) instead
-
+	    
+	    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 14), GT_Values.NI, FluidRegistry.getFluidStack("aluminumbrass.molten", 144), 10000, 24, 48);
+            GT_Values.RA.addFluidSolidifierRecipe(GT_Utility.getIntegratedCircuit(1), FluidRegistry.getFluidStack("aluminumbrass.molten", 144), GT_ModHandler.getModItem("TConstruct", "blankPattern", 1L, 1), 48, 32);
+		
             if (Loader.isModLoaded("OpenBlocks"))
             	GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "oreBerries", 1L, 5), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("xpjuice"), 250), 10000, 100, 16);
             GT_Values.RA.addFluidExtractionRecipe(new ItemStack(Items.ender_pearl, 1, 0), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("ender"), 250), 10000, 100, 30);
