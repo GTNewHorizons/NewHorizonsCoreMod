@@ -125,6 +125,7 @@ dependencies {
         exclude group: "mcp.mobius.waila"
     }
     compile "com.enderio.core:EnderCore:${config.minecraft.version}-${config.endercore.version}:dev"
+    compile "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"
 
     //downloads.gtnewhorizons.com
     compile ":HardcoreEnderExpansion:MC-1.7.10_v1.8.6"

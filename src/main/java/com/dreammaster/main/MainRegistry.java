@@ -1,5 +1,6 @@
 package com.dreammaster.main;
 
+import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
@@ -9,10 +10,7 @@ import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.galacticgreg.SpaceDimRegisterer;
-import com.dreammaster.gthandler.CoreMod_ProcessingArrayRecipeLoader;
-import com.dreammaster.gthandler.GT_CoreModSupport;
-import com.dreammaster.gthandler.GT_CustomLoader;
-import com.dreammaster.gthandler.GT_Loader_ItemPipes;
+import com.dreammaster.gthandler.*;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
@@ -32,6 +30,7 @@ import com.dreammaster.network.CoreModDispatcher;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -73,12 +72,17 @@ import static gregtech.api.enums.Dyes.MACHINE_METAL;
         modid = Refstrings.MODID,
         name = Refstrings.NAME,
         version = Refstrings.VERSION,
-        dependencies = 
-        	"required-after:Forge@[10.13.2.1291,);"
+        dependencies =
+
+            "required-before:gregtech;"
+
+        +	"required-after:Forge@[10.13.2.1291,);"
         +	"required-after:YAMCore@[0.5.76,);" 
         +	"required-after:Baubles@[1.0.1.10,);"
+
 		+   "after:EnderIO;"
-        +   "after:HardcoreEnderExpansion;",
+        +   "after:HardcoreEnderExpansion;"
+	    ,
 		certificateFingerprint = "1cca375192a26693475fb48268f350a462208dce")
 public class MainRegistry
 {
@@ -273,6 +277,9 @@ public class MainRegistry
             new GregTechPlusPlusAbandonedAspectsFix();
         }
 
+        if (Loader.isModLoaded("witchery"))
+        	new WitcheryPlugin();
+
         if (CoreModConfig.ModLoginMessage_Enabled)
         {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
@@ -346,6 +353,7 @@ public class MainRegistry
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
         proxy.registerRenderInfo();
+        GT_Loader_CasingNH.load();
     }
 
     private void RegisterModuleEvents()
@@ -402,7 +410,10 @@ public class MainRegistry
         GTCustomLoader.run();
 
         registerModFixes();
-
+        
+        if (Loader.isModLoaded("twilight"))
+        	TF_Loot_Chests.init();
+        
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");

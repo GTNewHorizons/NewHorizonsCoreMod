@@ -6,6 +6,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -170,5 +171,9 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Piko,ItemList.PikoCircuit.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Quantum,ItemList.QuantumCircuit.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.circuit,Materials.Nano,ItemList.NanoCircuit.getIS());
+
+        // Add ore dictionary entries for sand and red sand to craft unfired coke oven bricks.
+        GT_OreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 0));
+        GT_OreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 1));
     }
 }

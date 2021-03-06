@@ -131,7 +131,7 @@ public enum CustomItemList implements IItemContainer
 	QuantumCrystal, MysteriousCrystalLens, MysteriousCrystalGemFlawless, MysteriousCrystalGemExquisite,
 	PrimordialPearlFragment, SandStoneRod,
 	TheBigEgg, MutatedEgg, DraconiumEgg, EnderEgg,
-	ChargedCertusQuartzDust, RawNeutronium, NeutronReflectorSmallParts, Empty180SpCell, Empty360SpCell, Empty540SpCell, Empty1080SpCell,
+	ChargedCertusQuartzDust, RawNeutronium, NeutronReflectorSmallParts, NeutronReflectorParts, Empty180SpCell, Empty360SpCell, Empty540SpCell, Empty1080SpCell,
 	RawPicoWafer, PicoWafer,
 	StargateFramePart, StargateChevron, StargateShieldingFoil, StargateCrystalDust, TCetiESeaweedExtract,
 	ArtificialLeather,

@@ -577,6 +577,7 @@ public class GT_Loader_Items
 		CustomItemList.TCetiESeaweedExtract.set(ItemList.TCetiESeaweedExtract.getIS());
 		CustomItemList.RawNeutronium.set(ItemList.RawNeutronium.getIS());
 		CustomItemList.NeutronReflectorSmallParts.set(ItemList.NeutronReflectorSmallParts.getIS());
+		CustomItemList.NeutronReflectorParts.set(ItemList.NeutronReflectorParts.getIS());
 		CustomItemList.Empty180SpCell.set(ItemList.Empty180SpCell.getIS());
 		CustomItemList.Empty360SpCell.set(ItemList.Empty360SpCell.getIS());
 		CustomItemList.Empty540SpCell.set(ItemList.Empty540SpCell.getIS());
