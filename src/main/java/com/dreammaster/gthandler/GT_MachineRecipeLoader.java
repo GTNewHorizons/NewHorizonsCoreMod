@@ -1906,9 +1906,6 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_ModHandler.addExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
 
-        GT_Values.RA.addFermentingRecipe(Materials.Honey.getFluid(1000L), FluidRegistry.getFluidStack("for.honey", 1000), 20, false);
-        GT_Values.RA.addFermentingRecipe(FluidRegistry.getFluidStack("for.honey", 1000), Materials.Honey.getFluid(1000L),20, false);
-
         GT_Values.RA.addDistilleryRecipe(GT_Utility.getIntegratedCircuit(1), Materials.Milk.getFluid(1000L), FluidRegistry.getFluidStack("fluidmilk", 1000), 100, 2, false);
         GT_Values.RA.addDistilleryRecipe(GT_Utility.getIntegratedCircuit(1), FluidRegistry.getFluidStack("fluidmilk", 1000), Materials.Milk.getFluid(1000L), 100, 2, false);
 
