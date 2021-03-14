@@ -43,7 +43,7 @@ public class GT_Loader_Materials {
 						OrePrefixes.dust.get(Materials.Manganese),
 						OrePrefixes.dust.get(Materials.Magnesium)});
 
-		GT_ModHandler.addShapelessCraftingRecipe(GT_ModHandler.getModItem("dreamcraft", "item.AlumiteDust", 2L),
+		GT_ModHandler.addShapelessCraftingRecipe(GT_ModHandler.getModItem("dreamcraft", "item.AlumiteDust", 9L),
 				GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{
 						OrePrefixes.dust.get(Materials.Aluminium),
 						OrePrefixes.dust.get(Materials.Aluminium),
