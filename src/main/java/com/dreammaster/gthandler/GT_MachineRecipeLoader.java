@@ -1191,7 +1191,7 @@ public class GT_MachineRecipeLoader implements Runnable{
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBlock", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Block.get(1L), 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeSwordBlade", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Sword.get(1L), 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapePlate", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Plate.get(1L), 200, 120);
-	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBoat", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Boat.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBoat", 1, 0), Materials.Steel.getMolten(576L), GT_ModHandler.getModItem("dreamcraft", "item.ExtruderShapeBoat", 1, 0),, 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeCasing", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Casing.get(1L), 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeHugePipe", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Pipe_Huge.get(1L), 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeRod", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Rod.get(1L), 200, 120);
