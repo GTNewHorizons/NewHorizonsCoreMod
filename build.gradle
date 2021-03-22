@@ -1,3 +1,7 @@
+import java.util.concurrent.TimeUnit
+import java.util.Properties
+import groovy.util.ConfigSlurper
+
 buildscript {
     repositories {
         mavenCentral()
@@ -6,32 +10,39 @@ buildscript {
 			name = "gt"
 			url = "https://gregtech.overminddl1.com/"
 		}
-        //maven {
-        //    name = "forge"
-        //    url = "http://files.minecraftforge.net/maven"
-        //}
         maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
         }
         maven {
-            url "https://plugins.gradle.org/m2/"
+            name = "jitpack"
+            url = "https://jitpack.io"
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-        classpath "de.undercouch:gradle-download-task:3.1.2"
+        classpath "com.github.GTNH2:ForgeGradle:FG_1.2-SNAPSHOT"
     }
 }
 
-import de.undercouch.gradle.tasks.download.Download
-apply plugin: 'forge'
-apply plugin: 'signing'
+plugins {
+    id("org.ajoberstar.grgit") version("3.1.1")
+}
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "forge"
+apply plugin: "signing"
 
-allprojects {
-    apply plugin: 'java'
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+idea {
+    module {
+        inheritOutputDirs = true
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 file "build.properties" withReader {
@@ -41,7 +52,7 @@ file "build.properties" withReader {
 }
 
 version = "${config.coremod.version}"
-group= "com.dreammaster" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = "com.dreammaster"
 archivesBaseName = "GTNewHorizonsCoreMod"
 
 minecraft {
@@ -49,64 +60,62 @@ minecraft {
     runDir = "eclipse"
 
     replaceIn "src/main/java/com/dreammaster/lib/Refstrings.java"
-    replace "GRADLETOKEN_VERSION", project.version.split('-')[1]
+    replace "GRADLETOKEN_VERSION", ((String) project.version).split("-")[1]
 }
 
 repositories {
     maven {
-        name 'Forge' // Applied Energistics
-        url 'http://files.minecraftforge.net/maven'
-    }
-    maven { // GalacticGreg, YAMCore,..
-        name 'UsrvDE'
-        url "http://jenkins.usrv.eu:8081/nexus/content/repositories/releases/"
+        name = "UsrvDE"
+        url = "http://jenkins.usrv.eu:8081/nexus/content/repositories/releases/"
     }
     maven { // Baubles
-    	name 'UsrvDE_3rdParty'
-    	url "http://jenkins.usrv.eu:8081/nexus/content/repositories/thirdparty/"
+    	name = "UsrvDE_3rdParty"
+    	url = "http://jenkins.usrv.eu:8081/nexus/content/repositories/thirdparty/"
     }
     maven {
         name = "chickenbones"
         url = "http://chickenbones.net/maven/"
     }
     maven {
-        name = "ic2, forestry"
-        url = "http://maven.ic2.player.to/"
-    }
-    maven { // AppleCore
-        url "http://www.ryanliptak.com/maven/"
+        name = "gt"
+        url = "https://gregtech.overminddl1.com/"
     }
     maven {
-         name = "tterrag"
-         url = "http://maven.tterrag.com/"
+        url = "http://maven.ic2.player.to/"
+        name = "ic2"
     }
-    maven { // WAILA
-        name "Mobius Repo"
-        url "http://mobiusstrip.eu/maven"
+    maven {
+        url = "http://www.ryanliptak.com/maven/"
+        name = "applecore"
     }
-    maven { // OpenComputers
-        name "OpenComputers"
-        url "http://maven.cil.li"
+    maven {
+        url = "http://maven.cil.li/"
+        name = "OpenComputers"
     }
-		ivy {
-        name 'gtnh_download_source_stupid_underscore_typo'
-        artifactPattern "http://downloads.gtnewhorizons.com/Mods_for_Jenkins/[module]_[revision].[ext]"
+    maven {
+        name = "jitpack"
+        url = "https://jitpack.io"
     }
-
-	ivy {
-        name 'gtnh_download_source'
-        artifactPattern "http://downloads.gtnewhorizons.com/Mods_for_Jenkins/[module]-[revision].[ext]"
+    ivy {
+        name = "gtnh_download_source"
+        artifactPattern("http://downloads.gtnewhorizons.com/Mods_for_Jenkins/[module]-[revision].[ext]")
     }
+    ivy {
+        name = "gtnh_download_source_stupid_underscore_typo"
+        artifactPattern("http://downloads.gtnewhorizons.com/Mods_for_Jenkins/[module]_[revision].[ext]")
+    }
+}
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor(0, TimeUnit.SECONDS)
+    setTransitive(false)
 }
 
 dependencies {
     compile "eu.usrv:YAMCore:${config.minecraft.version}-${config.yamcore.version}:deobf"
     compile "com.azanor.baubles:Baubles:${config.baubles.version}:deobf"
-    
     compile ("appeng:appliedenergistics2:${config.ae2.version}:api") {
-        exclude module: '*'
+        exclude module: "*"
     }
-
     compile "applecore:AppleCore:${config.applecore.version}:deobf"
     compile "codechicken:CodeChickenLib:${config.minecraft.version}-${config.codechickenlib.version}:dev"
     compile "codechicken:CodeChickenCore:${config.minecraft.version}-${config.codechickencore.version}:dev"
@@ -115,151 +124,70 @@ dependencies {
     compile ("com.enderio:EnderIO:${config.minecraft.version}-${config.enderio.version}:dev") {
         exclude group: "mcp.mobius.waila"
     }
-
     compile "com.enderio.core:EnderCore:${config.minecraft.version}-${config.endercore.version}:dev"
     compile "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"
 
-    compile fileTree(dir: 'libs', include: '*.jar')
-}
-
-task getForestryAPI(type: Download) {
-    onlyIf {
-        !file("libs/forestry_1.7.10-4.2.16.64-api.jar").exists()
+    //downloads.gtnewhorizons.com
+    compile ":HardcoreEnderExpansion:MC-1.7.10_v1.8.6"
+    compile ":Railcraft:1.7.10-9.12.2.0:dev"
+    compile ":GT-PlusPlus:1.7.05.53"
+    compile ":twilightforest:1.7.10-2.3.8.5-dev-deobf"
+    compile ":WitcheryExtras:1.0.1-dev"
+    compile ":witchery:1.7.10-0.24.1:deobf"
+    //jitpack
+    compile("com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT:dev") {
+        setChanging(true)
     }
-    src "https://gregtech.overminddl1.com/net/sengir/forestry/forestry_1.7.10/4.2.16.64/forestry_1.7.10-4.2.16.64-api.jar"
-    dest file("libs/forestry_1.7.10-4.2.16.64-api.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-
-task getGalacticGreg(type: Download, dependsOn: "getForestryAPI") {
-    onlyIf {
-        !file("libs/GalacticGreg-${config.minecraft.version}-${config.ggreg.version}-deobf.jar").exists()
+    compile("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:deobf") {
+        setChanging(true)
     }
-    src "http://jenkins.usrv.eu:8080/job/GalacticGreg/${config.ggreg.jenkinsbuild}/artifact/build/libs/GalacticGreg-${config.minecraft.version}-${config.ggreg.version}-deobf.jar"
-    dest file("libs/GalacticGreg-${config.minecraft.version}-${config.ggreg.version}-deobf.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-
-task getGregTech(type: Download, dependsOn: "getGalacticGreg") {
-    onlyIf {
-        !file("libs/gregtech-${config.gregtech.version}-dev.jar").exists()
+    compile("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-1.7.10-SNAPSHOT:dev") {
+        setChanging(true)
     }
-    src "http://jenkins.usrv.eu:8080/job/Gregtech-5-Unofficial/${config.gregtech.jenkinsbuild}/artifact/build/libs/gregtech-${config.gregtech.version}-dev.jar"
-    dest file("libs/gregtech-${config.gregtech.version}-dev.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-
-task getHEE(type: Download, dependsOn: "getGregTech") {
-    onlyIf {
-        !file("libs/HardcoreEnderExpansion  MC-1.7.10  v1.8.6.jar").exists()
+    compile("com.github.GTNewHorizons:ForestryMC:GTNH-Fixes-SNAPSHOT:dev") {
+        setChanging(true)
     }
-    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/HardcoreEnderExpansion_MC-1.7.10_v1.8.6.jar'
-    dest file("libs/HardcoreEnderExpansion  MC-1.7.10  v1.8.6.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-
-task getRailCraft(type: Download, dependsOn: "getHEE") {
-    onlyIf {
-        !file("libs/Railcraft_1.7.10-9.12.2.0-dev.jar").exists()
+    compile("com.github.GTNewHorizons:GalacticGregGT5:master-SNAPSHOT") {
+        setChanging(true)
     }
-    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/Railcraft_1.7.10-9.12.2.0-dev.jar'
-    dest file("libs/Railcraft_1.7.10-9.12.2.0-dev.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-
-task getBartworks(type: Download, dependsOn: "getRailCraft") {
-	onlyIf {
-		!file("libs/bartworks%5B1.7.10%5D-0.5.13_pre10-dev.jar").exists()
+    compile("com.github.GTNewHorizons:bartworks:master-SNAPSHOT:dev") {
+        setChanging(true)
     }
-	src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/bartworks%5B1.7.10%5D-0.5.13_pre10-dev.jar'
-    dest file("libs/bartworks%5B1.7.10%5D-0.5.13_pre10-dev.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
+    compile fileTree(dir: "libs", include: "*.jar")
 }
-task getGtPlusPlus(type: Download, dependsOn: "getBartworks") {
-    onlyIf {
-        !file("libs/GT-PlusPlus-1.7.05.53.jar").exists()
-    }
-    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/GT-PlusPlus-1.7.05.53.jar'
-    dest file("libs/GT-PlusPlus-1.7.05.53.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-	task getTwilightForest(type: Download, dependsOn: "getGtPlusPlus") {
-    onlyIf {
-        !file("libs/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar").exists()
-    }
-    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar'
-    dest file("libs/twilightforest-1.7.10-2.3.8.5-dev-deobf.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-task getWitcheryExtras(type: Download, dependsOn: "getTwilightForest") {
-    onlyIf {
-        !file("libs/WitcheryExtras-1.0.1-dev.jar").exists()
-    }
-    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/WitcheryExtras-1.0.1-dev.jar'
-    dest file("libs/WitcheryExtras-1.0.1-dev.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-task getWitchery(type: Download, dependsOn: "getWitcheryExtras") {
-    onlyIf {
-        !file("libs/witchery-1.7.10-0.24.1-deobf.jar").exists()
-    }
-    src 'http://downloads.gtnewhorizons.com/Mods_for_Jenkins/witchery-1.7.10-0.24.1-deobf.jar'
-    dest file("libs/witchery-1.7.10-0.24.1-deobf.jar")
-    mustRunAfter "deobfBinJar"
-    mustRunAfter "repackMinecraft"
-}
-
-tasks.setupCIWorkspace.dependsOn getWitchery
-tasks.setupDevWorkspace.dependsOn getWitchery
-tasks.setupDecompWorkspace.dependsOn getWitchery
-tasks.compileJava.dependsOn getWitchery
 
 processResources
 {
-    def cleanVersion = project.version.split('-')[1]
+    def cleanVersion = ((String) project.version).split("-")[1]
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", cleanVersion
     inputs.property "mcversion", project.minecraft.version
 
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
+        include "mcmod.info"
 
         // replace version and mcversion
-        expand 'version':cleanVersion, 'mcversion':project.minecraft.version
+        expand "version":cleanVersion, "mcversion":project.minecraft.version
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
-}
-idea {
-    module {
-        inheritOutputDirs = true
+        exclude "mcmod.info"
     }
 }
 
 task devJar(type: Jar) {
     from sourceSets.main.output
-    classifier = 'dev'
+    getArchiveClassifier().set("dev")
     manifest {
-        attributes 'FMLCorePlugin': 'com.dreammaster.coremod.DepLoader','FMLCorePluginContainsFMLMod': 'true'
+        attributes "FMLCorePlugin": "com.dreammaster.coremod.DepLoader","FMLCorePluginContainsFMLMod": "true"
     }
 }
 
 task sourceJar(type: Jar) {
     from sourceSets.main.allSource
-    classifier = 'sources'
+    getArchiveClassifier().set("sources")
 }
 
 artifacts {
@@ -267,16 +195,16 @@ artifacts {
     archives sourceJar
 }
 
-task signJar(dependsOn: 'reobf'){
+task signJar(dependsOn: "reobf"){
     doLast {
         ant.signjar(
-            destDir: jar.destinationDir,
-            jar: jar.getArchivePath(),
-            alias: findProperty('keyStoreAlias') ?: '',
-            keystore: findProperty('keyStore') ?: '',
-            storepass: findProperty('keyStorePass') ?: '',
-            digestalg: findProperty('signDigestAlg') ?: '',
-            tsaurl: findProperty('signTSAurl') ?: '',
+            destDir: jar.getDestinationDirectory(),
+            jar: jar.getArchiveFile(),
+            alias: findProperty("keyStoreAlias") ?: "",
+            keystore: findProperty("keyStore") ?: "",
+            storepass: findProperty("keyStorePass") ?: "",
+            digestalg: findProperty("signDigestAlg") ?: "",
+            tsaurl: findProperty("signTSAurl") ?: "",
             verbose: true
             )
     }
@@ -284,6 +212,6 @@ task signJar(dependsOn: 'reobf'){
 
 jar {
     manifest {
-        attributes 'FMLCorePlugin': 'com.dreammaster.coremod.DreamCoreMod','FMLCorePluginContainsFMLMod': 'true'
+        attributes "FMLCorePlugin": "com.dreammaster.coremod.DreamCoreMod","FMLCorePluginContainsFMLMod": "true"
     }
 }

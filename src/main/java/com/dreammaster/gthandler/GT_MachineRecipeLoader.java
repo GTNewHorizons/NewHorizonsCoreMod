@@ -24,7 +24,6 @@ import java.lang.reflect.Field;
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static gregtech.api.enums.GT_Values.W;
 
-
 public class GT_MachineRecipeLoader implements Runnable{
     @Override
     public void run() {
@@ -51,16 +50,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L), GT_ModHandler.getModItem("TConstruct", "materials", 4L, 14), 100, 120);
 
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel, 8L), CustomItemList.AluminoSilicateWool.get(12L), Materials.Tin.getMolten(144L), ItemList.Casing_Coil_Cupronickel.get(1L), 100, 8);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel, 8L), CustomItemList.MicaInsulatorFoil.get(8L), Materials.Tin.getMolten(144L), ItemList.Casing_Coil_Cupronickel.get(1L), 200, 30);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Kanthal, 8L), CustomItemList.MicaInsulatorFoil.get(12L), Materials.Copper.getMolten(144L), ItemList.Casing_Coil_Kanthal.get(1L), 300, 120);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Nichrome, 8L), CustomItemList.MicaInsulatorFoil.get(16L), Materials.Aluminium.getMolten(144L), ItemList.Casing_Coil_Nichrome.get(1L), 400, 480);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.TungstenSteel, 8L), CustomItemList.MicaInsulatorFoil.get(20L), Materials.Nichrome.getMolten(144L), ItemList.Casing_Coil_TungstenSteel.get(1L), 500, 1920);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.HSSG, 8L), CustomItemList.MicaInsulatorFoil.get(24L), Materials.TungstenSteel.getMolten(144L), ItemList.Casing_Coil_HSSG.get(1L), 600, 7680);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Naquadah, 8L), CustomItemList.MicaInsulatorFoil.get(28L), Materials.HSSG.getMolten(144L), ItemList.Casing_Coil_Naquadah.get(1L), 700, 30720);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.NaquadahAlloy, 8L), CustomItemList.MicaInsulatorFoil.get(32L), Materials.Naquadah.getMolten(144L), ItemList.Casing_Coil_NaquadahAlloy.get(1L), 800, 128800);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.ElectrumFlux, 8L), CustomItemList.MicaInsulatorFoil.get(36L), Materials.NaquadahAlloy.getMolten(144L), ItemList.Casing_Coil_ElectrumFlux.get(1L), 900, 500000);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.DraconiumAwakened, 8L), CustomItemList.MicaInsulatorFoil.get(40L), Materials.Neutronium.getMolten(144L), ItemList.Casing_Coil_AwakenedDraconium.get(1L), 1000, 2000000);
+        makeCoilRecipes();
+
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 64L), CustomItemList.MicaInsulatorFoil.get(48L), Materials.Trinium.getMolten(1440L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 32L), CustomItemList.MicaInsulatorFoil.get(32L), Materials.Trinium.getMolten(576L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUV, 16L), CustomItemList.MicaInsulatorFoil.get(16L), Materials.Trinium.getMolten(288L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
@@ -1106,6 +1097,24 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L), 300, 2);
         this.run2();
     }
+
+    private void makeCoilRecipes() {
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel,       8L), CustomItemList.AluminoSilicateWool.get(12L),    Materials.Tin.getMolten(144L),          ItemList.Casing_Coil_Cupronickel.get(1L),       100,          7);
+
+        //TODO: Rework other stuff (that depends on certain Heat Levels, mostly LuV+ stuff) so this can be wrapped into a oneliner.
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel,       8L), CustomItemList.MicaInsulatorFoil.get(   8L),    Materials.Tin.getMolten(144L),          ItemList.Casing_Coil_Cupronickel.get(1L),       200,         30);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Kanthal,           8L), CustomItemList.MicaInsulatorFoil.get(  12L),    Materials.Cupronickel.getMolten(144L),  ItemList.Casing_Coil_Kanthal.get(1L),           300,        120);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Nichrome,          8L), CustomItemList.MicaInsulatorFoil.get(  16L),    Materials.Kanthal.getMolten(144L),      ItemList.Casing_Coil_Nichrome.get(1L),          400,        480);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.TungstenSteel,     8L), CustomItemList.MicaInsulatorFoil.get(  20L),    Materials.Nichrome.getMolten(144L),     ItemList.Casing_Coil_TungstenSteel.get(1L),     500,      1_920);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.HSSG,              8L), CustomItemList.MicaInsulatorFoil.get(  24L),    Materials.TungstenSteel.getMolten(144L),ItemList.Casing_Coil_HSSG.get(1L),              600,      7_680);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.HSSS,              8L), CustomItemList.MicaInsulatorFoil.get(  28L),    Materials.HSSG.getMolten(144L),         ItemList.Casing_Coil_HSSS.get(1L),              700,      7_680);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Naquadah,          8L), CustomItemList.MicaInsulatorFoil.get(  32L),    Materials.HSSS.getMolten(144L),         ItemList.Casing_Coil_Naquadah.get(1L),          800,     30_720);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.NaquadahAlloy,     8L), CustomItemList.MicaInsulatorFoil.get(  36L),    Materials.Naquadah.getMolten(144L),     ItemList.Casing_Coil_NaquadahAlloy.get(1L),     900,     30_720);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Trinium,           8L), CustomItemList.MicaInsulatorFoil.get(  40L),    Materials.NaquadahAlloy.getMolten(144L),ItemList.Casing_Coil_Trinium.get(1L),          1000,    122_880);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.ElectrumFlux,      8L), CustomItemList.MicaInsulatorFoil.get(  44L),    Materials.Trinium.getMolten(144L),      ItemList.Casing_Coil_ElectrumFlux.get(1L),     1100,    491_520);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.DraconiumAwakened, 8L), CustomItemList.MicaInsulatorFoil.get(  48L),    Materials.ElectrumFlux.getMolten(144L), ItemList.Casing_Coil_AwakenedDraconium.get(1L),1200,  1_966_080);
+    }
+
     public void run2() {
         if (Loader.isModLoaded("TConstruct")){
             GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 9L, 14), GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), 300, 2);
@@ -1115,7 +1124,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 9L, 38)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 1), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Cobalt, 2L), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 39)}, new int[]{10000, 1000}, 400, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 2), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)}, new int[]{10000, 1000}, 400, 2);
-            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "GravelOre", 1L, 4), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Aluminium, 2L), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 40)}, new int[]{10000, 1000}, 400, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "GravelOre", 1L, 4), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Aluminium, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 1L)}, new int[]{10000, 1000}, 400, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 14), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 1L, 42)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 9L, 42)}, new int[]{10000}, 300, 2);
@@ -1908,9 +1917,6 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addExtruderRecipe(GT_OreDictUnificator.get(OrePrefixes.block, Materials.Steel, 1L), GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32040), ItemList.IC2_ShaftSteel.get(1L), 1280, 120);
 
         GT_ModHandler.addExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
-
-        GT_Values.RA.addFermentingRecipe(Materials.Honey.getFluid(1000L), FluidRegistry.getFluidStack("for.honey", 1000), 20, false);
-        GT_Values.RA.addFermentingRecipe(FluidRegistry.getFluidStack("for.honey", 1000), Materials.Honey.getFluid(1000L),20, false);
 
         GT_Values.RA.addDistilleryRecipe(GT_Utility.getIntegratedCircuit(1), Materials.Milk.getFluid(1000L), FluidRegistry.getFluidStack("fluidmilk", 1000), 100, 2, false);
         GT_Values.RA.addDistilleryRecipe(GT_Utility.getIntegratedCircuit(1), FluidRegistry.getFluidStack("fluidmilk", 1000), Materials.Milk.getFluid(1000L), 100, 2, false);
