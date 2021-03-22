@@ -24,7 +24,6 @@ import java.lang.reflect.Field;
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static gregtech.api.enums.GT_Values.W;
 
-
 public class GT_MachineRecipeLoader implements Runnable{
     @Override
     public void run() {
@@ -51,16 +50,8 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L), GT_ModHandler.getModItem("TConstruct", "materials", 4L, 14), 100, 120);
 
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel, 8L), CustomItemList.AluminoSilicateWool.get(12L), Materials.Tin.getMolten(144L), ItemList.Casing_Coil_Cupronickel.get(1L), 100, 8);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel, 8L), CustomItemList.MicaInsulatorFoil.get(8L), Materials.Tin.getMolten(144L), ItemList.Casing_Coil_Cupronickel.get(1L), 200, 30);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Kanthal, 8L), CustomItemList.MicaInsulatorFoil.get(12L), Materials.Copper.getMolten(144L), ItemList.Casing_Coil_Kanthal.get(1L), 300, 120);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Nichrome, 8L), CustomItemList.MicaInsulatorFoil.get(16L), Materials.Aluminium.getMolten(144L), ItemList.Casing_Coil_Nichrome.get(1L), 400, 480);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.TungstenSteel, 8L), CustomItemList.MicaInsulatorFoil.get(20L), Materials.Nichrome.getMolten(144L), ItemList.Casing_Coil_TungstenSteel.get(1L), 500, 1920);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.HSSG, 8L), CustomItemList.MicaInsulatorFoil.get(24L), Materials.TungstenSteel.getMolten(144L), ItemList.Casing_Coil_HSSG.get(1L), 600, 7680);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Naquadah, 8L), CustomItemList.MicaInsulatorFoil.get(28L), Materials.HSSG.getMolten(144L), ItemList.Casing_Coil_Naquadah.get(1L), 700, 30720);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.NaquadahAlloy, 8L), CustomItemList.MicaInsulatorFoil.get(32L), Materials.Naquadah.getMolten(144L), ItemList.Casing_Coil_NaquadahAlloy.get(1L), 800, 128800);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.ElectrumFlux, 8L), CustomItemList.MicaInsulatorFoil.get(36L), Materials.NaquadahAlloy.getMolten(144L), ItemList.Casing_Coil_ElectrumFlux.get(1L), 900, 500000);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.DraconiumAwakened, 8L), CustomItemList.MicaInsulatorFoil.get(40L), Materials.Neutronium.getMolten(144L), ItemList.Casing_Coil_AwakenedDraconium.get(1L), 1000, 2000000);
+        makeCoilRecipes();
+
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 64L), CustomItemList.MicaInsulatorFoil.get(48L), Materials.Trinium.getMolten(1440L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 32L), CustomItemList.MicaInsulatorFoil.get(32L), Materials.Trinium.getMolten(576L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUV, 16L), CustomItemList.MicaInsulatorFoil.get(16L), Materials.Trinium.getMolten(288L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
@@ -1106,6 +1097,24 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L), 300, 2);
         this.run2();
     }
+
+    private void makeCoilRecipes() {
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel,       8L), CustomItemList.AluminoSilicateWool.get(12L),    Materials.Tin.getMolten(144L),          ItemList.Casing_Coil_Cupronickel.get(1L),       100,          7);
+
+        //TODO: Rework other stuff (that depends on certain Heat Levels, mostly LuV+ stuff) so this can be wrapped into a oneliner.
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel,       8L), CustomItemList.MicaInsulatorFoil.get(   8L),    Materials.Tin.getMolten(144L),          ItemList.Casing_Coil_Cupronickel.get(1L),       200,         30);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Kanthal,           8L), CustomItemList.MicaInsulatorFoil.get(  12L),    Materials.Cupronickel.getMolten(144L),  ItemList.Casing_Coil_Kanthal.get(1L),           300,        120);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Nichrome,          8L), CustomItemList.MicaInsulatorFoil.get(  16L),    Materials.Kanthal.getMolten(144L),      ItemList.Casing_Coil_Nichrome.get(1L),          400,        480);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.TungstenSteel,     8L), CustomItemList.MicaInsulatorFoil.get(  20L),    Materials.Nichrome.getMolten(144L),     ItemList.Casing_Coil_TungstenSteel.get(1L),     500,      1_920);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.HSSG,              8L), CustomItemList.MicaInsulatorFoil.get(  24L),    Materials.TungstenSteel.getMolten(144L),ItemList.Casing_Coil_HSSG.get(1L),              600,      7_680);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.HSSS,              8L), CustomItemList.MicaInsulatorFoil.get(  28L),    Materials.HSSG.getMolten(144L),         ItemList.Casing_Coil_HSSS.get(1L),              700,      7_680);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Naquadah,          8L), CustomItemList.MicaInsulatorFoil.get(  32L),    Materials.HSSS.getMolten(144L),         ItemList.Casing_Coil_Naquadah.get(1L),          800,     30_720);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.NaquadahAlloy,     8L), CustomItemList.MicaInsulatorFoil.get(  36L),    Materials.Naquadah.getMolten(144L),     ItemList.Casing_Coil_NaquadahAlloy.get(1L),     900,     30_720);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Trinium,           8L), CustomItemList.MicaInsulatorFoil.get(  40L),    Materials.NaquadahAlloy.getMolten(144L),ItemList.Casing_Coil_Trinium.get(1L),          1000,    122_880);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.ElectrumFlux,      8L), CustomItemList.MicaInsulatorFoil.get(  44L),    Materials.Trinium.getMolten(144L),      ItemList.Casing_Coil_ElectrumFlux.get(1L),     1100,    491_520);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.DraconiumAwakened, 8L), CustomItemList.MicaInsulatorFoil.get(  48L),    Materials.ElectrumFlux.getMolten(144L), ItemList.Casing_Coil_AwakenedDraconium.get(1L),1200,  1_966_080);
+    }
+
     public void run2() {
         if (Loader.isModLoaded("TConstruct")){
             GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 9L, 14), GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), 300, 2);
@@ -1115,7 +1124,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 9L, 38)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 1), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Cobalt, 2L), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 39)}, new int[]{10000, 1000}, 400, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 2), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)}, new int[]{10000, 1000}, 400, 2);
-            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "GravelOre", 1L, 4), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Aluminium, 2L), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 40)}, new int[]{10000, 1000}, 400, 2);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "GravelOre", 1L, 4), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Aluminium, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 1L)}, new int[]{10000, 1000}, 400, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 14), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 1L, 42)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 9L, 42)}, new int[]{10000}, 300, 2);
@@ -1134,6 +1143,72 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addForgeHammerRecipe(GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), GT_ModHandler.getModItem("TConstruct", "materials", 3L, 2), 20, 16);
 
             GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0L), new FluidStack(FluidRegistry.getFluid("glue"), 144), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 36), 100, 8); //maybe Materials.Glue.getFluid(144L) instead
+	    
+	    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 14), GT_Values.NI, FluidRegistry.getFluidStack("aluminumbrass.molten", 144), 10000, 24, 48);
+            GT_Values.RA.addFluidSolidifierRecipe(GT_Utility.getIntegratedCircuit(1), FluidRegistry.getFluidStack("aluminumbrass.molten", 144), GT_ModHandler.getModItem("TConstruct", "blankPattern", 1L, 1), 32, 48);
+	    
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormAnvil", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Anvil.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormArrowHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Arrow.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormBaguette", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Baguette.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormBall", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Ball.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormBlock", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Block.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormBolt", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Bolt.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormBottle", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Bottle.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormBread", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Bread.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormBuns", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Bun.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormCasing", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Casing.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormCoinage", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Credit.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormCylinder", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Cylinder.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormGear", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Gear.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormIngot", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Ingot.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MarshmallowFormMold", 1, 0), Materials.Steel.getMolten(576L), CustomItemList.MarshmallowForm.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormName", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Name.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormNuggets", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Nugget.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormPlate", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Plate.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormRing", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Ring.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormRound", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Round.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormRotor", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Rotor.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormScrew", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Screw.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormSmallGear", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Gear_Small.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormStick", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Rod.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormStickLong", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Rod_Long.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormPipeTiny", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Pipe_Tiny.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormPipeSmall", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Pipe_Small.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormPipeMedium", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Pipe_Medium.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormPipeLarge", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Pipe_Large.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormPipeHuge", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Pipe_Huge.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormTurbineBlade", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Turbine_Blade.get(1L), 200, 120);
+
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBolt", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Bolt.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeHoeHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Hoe.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeRing", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Ring.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeTurbineBlade", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Turbine_Blade.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeGear", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Gear.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeLargePipe", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Pipe_Large.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeShovelHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Shovel.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeCell", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Cell.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeAxeHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Axe.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBlock", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Block.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeSwordBlade", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Sword.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapePlate", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Plate.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBoat", 1, 0), Materials.Steel.getMolten(576L), GT_ModHandler.getModItem("dreamcraft", "item.ExtruderShapeBoat", 1, 0), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeCasing", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Casing.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeHugePipe", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Pipe_Huge.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeRod", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Rod.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeWire", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Wire.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeTinyPipe", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Pipe_Tiny.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeHammerHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Hammer.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeNormalPipe", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Pipe_Medium.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeFileHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_File.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBotte", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Bottle.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeSmallGear", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Small_Gear.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeSawBlade", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Saw.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeSmallPipe", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Pipe_Small.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeRotor", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Rotor.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapePickaxeHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Pickaxe.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeIngot", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Ingot.get(1L), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBottle", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Bottle.get(1L), 200, 120);
+
 
             if (Loader.isModLoaded("OpenBlocks"))
             	GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "oreBerries", 1L, 5), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("xpjuice"), 250), 10000, 100, 16);
