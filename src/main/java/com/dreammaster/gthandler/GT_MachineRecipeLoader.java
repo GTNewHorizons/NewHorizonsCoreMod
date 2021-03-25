@@ -1178,7 +1178,11 @@ public class GT_MachineRecipeLoader implements Runnable{
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormPipeLarge", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Pipe_Large.get(1L), 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormPipeHuge", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Pipe_Huge.get(1L), 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormTurbineBlade", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Turbine_Blade.get(1L), 200, 120);
-
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormBoots", 1, 0), Materials.Steel.getMolten(576L), GT_ModHandler.getModItem("dreamcraft", "item.MoldBoots", 1, 0), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormChestplate", 1, 0), Materials.Steel.getMolten(576L), GT_ModHandler.getModItem("dreamcraft", "item.MoldChestplate", 1, 0), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormLeggings", 1, 0), Materials.Steel.getMolten(576L), GT_ModHandler.getModItem("dreamcraft", "item.MoldLeggings", 1, 0), 200, 120);
+	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormHelmet", 1, 0), Materials.Steel.getMolten(576L), GT_ModHandler.getModItem("dreamcraft", "item.MoldHelmet", 1, 0), 200, 120);
+		
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeBolt", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Bolt.get(1L), 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeHoeHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Hoe.get(1L), 200, 120);
 	    GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.ShapeRing", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Extruder_Ring.get(1L), 200, 120);
@@ -1867,7 +1871,13 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Pipe_Medium.get(0L),  ItemList.Shape_Mold_Pipe_Medium.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Pipe_Large.get(0L),  ItemList.Shape_Mold_Pipe_Large.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Mold_Pipe_Huge.get(0L),  ItemList.Shape_Mold_Pipe_Huge.get(1L),  200, 256);
-
+	GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),GT_ModHandler.getModItem("dreamcraft", "item.MoldHelmet", 0, 0), GT_ModHandler.getModItem("dreamcraft", "item.MoldHelmet", 1, 0), 200, 256);
+	GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),GT_ModHandler.getModItem("dreamcraft", "item.MoldChestplate", 0, 0), GT_ModHandler.getModItem("dreamcraft", "item.MoldChestplate", 1, 0), 200, 256);
+	GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),GT_ModHandler.getModItem("dreamcraft", "item.MoldLeggings", 0, 0), GT_ModHandler.getModItem("dreamcraft", "item.MoldLeggings", 1, 0), 200, 256);
+	GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),GT_ModHandler.getModItem("dreamcraft", "item.MoldBoots", 0, 0), GT_ModHandler.getModItem("dreamcraft", "item.MoldBoots", 1, 0), 200, 256);
+	    
+	    
+	    
 
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Plate.get(0L),  ItemList.Shape_Extruder_Plate.get(1L),  200, 256);
         GT_Values.RA.addFormingPressRecipe(ItemList.Shape_Empty.get(1L),ItemList.Shape_Extruder_Rod.get(0L),  ItemList.Shape_Extruder_Rod.get(1L),  200, 256);
