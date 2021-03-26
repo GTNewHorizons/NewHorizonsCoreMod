@@ -240,6 +240,17 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchIII.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinWitchII.get(10L), 100, 480);
         GT_Values.RA.addAssemblerRecipe(CustomItemList.CoinWitchIV.get(1L), GT_Utility.getIntegratedCircuit(1), CustomItemList.CoinWitchIII.get(10L), 100, 1920);
 
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.StainlessSteelBars.get(4L), GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L), GT_Utility.getIntegratedCircuit(1)},  Materials.SolderingAlloy.getFluid(72), CustomItemList.Casing_AirFilter_Vent.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.StainlessSteelBars.get(4L), GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L), GT_Utility.getIntegratedCircuit(1)},  Materials.Tin.getFluid(144), CustomItemList.Casing_AirFilter_Vent.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.StainlessSteelBars.get(4L), GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L), GT_Utility.getIntegratedCircuit(1)},  Materials.Lead.getFluid(288), CustomItemList.Casing_AirFilter_Vent.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.Casing_AirFilter_Vent.get(1L), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 2L), ItemList.Electric_Motor_HV.get(2L), GT_Utility.getIntegratedCircuit(1)},  Materials.SolderingAlloy.getFluid(72), CustomItemList.Casing_AirFilter_Turbine.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.Casing_AirFilter_Vent.get(1L), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 2L), ItemList.Electric_Motor_HV.get(2L), GT_Utility.getIntegratedCircuit(1)},  Materials.Tin.getFluid(144), CustomItemList.Casing_AirFilter_Turbine.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.Casing_AirFilter_Vent.get(1L), GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 2L), ItemList.Electric_Motor_HV.get(2L), GT_Utility.getIntegratedCircuit(1)},  Materials.Lead.getFluid(288), CustomItemList.Casing_AirFilter_Turbine.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_HV.get(1L), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1L), ItemList.Electric_Motor_HV.get(2L), ItemList.Electric_Pump_HV.get(1L), GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L), GT_Utility.getIntegratedCircuit(1)},  Materials.SolderingAlloy.getFluid(72), CustomItemList.Casing_AirFilter_Turbine.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_HV.get(1L), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1L), ItemList.Electric_Motor_HV.get(2L), ItemList.Electric_Pump_HV.get(1L), GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),GT_Utility.getIntegratedCircuit(1)},  Materials.Tin.getFluid(144), CustomItemList.Casing_AirFilter_Turbine.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_HV.get(1L), GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1L), ItemList.Electric_Motor_HV.get(2L), ItemList.Electric_Pump_HV.get(1L), GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),GT_Utility.getIntegratedCircuit(1)},  Materials.Lead.getFluid(288), CustomItemList.Casing_AirFilter_Turbine.get(1L), 100, 120);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.StainlessSteel, 16L), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 4L), CustomItemList.AdsorptionFilterCasing.get(1L), 200, 480);
+        GT_Values.RA.addCannerRecipe(CustomItemList.AdsorptionFilterCasing.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 32L), CustomItemList.AdsorptionFilter.get(1L), GT_Values.NI, 100, 120);
 
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Platinum, 6L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 4L), CustomItemList.NanoBoard.get(1L), 400, 1920);
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 8L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 8L), CustomItemList.QuantumBoard.get(1L), 200, 7680);
@@ -348,10 +359,6 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), 1, 122880);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, 2), 1, 122880);
-
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L), CustomItemList.TitaniumBars.get(6L), CustomItemList.Casing_AirFilter_Vent.get(1L), 50, 16);
-
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.StainlessSteel, 32L), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 8L), CustomItemList.AdsorptionFilterCasing.get(1L), 600, 1920);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 2L), CustomItemList.Casing_UEV.get(1L), Materials.Polybenzimidazole.getMolten(576L), CustomItemList.Hull_UEV.get(1L), 50, 16);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.NetherStar, 2L), CustomItemList.Casing_UIV.get(1L), Materials.Polybenzimidazole.getMolten(576L), CustomItemList.Hull_UIV.get(1L), 50, 16);
@@ -746,8 +753,6 @@ public class GT_MachineRecipeLoader implements Runnable{
         //GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.gem, 		Materials.Magnetite, 1L), 		GT_Utility.getIntegratedCircuit(11),		Materials.Oxygen.getGas(2000L), 					GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.WroughtIron, 5L), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Ash, 1L), 320, 480, 1000);
 
         GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L), GT_Utility.getIntegratedCircuit(11), Materials.Oxygen.getGas(1000L), GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.AnnealedCopper, 1L), GT_Values.NI, 500, 120, 1200);
-
-        GT_Values.RA.addCannerRecipe(CustomItemList.AdsorptionFilterCasing.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 32L), CustomItemList.AdsorptionFilter.get(1L), GT_Values.NI, 100, 120);
 
         GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0), CustomItemList.ReinforcedGlassPLate.get(2L), GT_Values.NI, 1200, 30);
 
