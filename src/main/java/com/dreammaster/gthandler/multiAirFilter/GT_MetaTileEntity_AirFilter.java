@@ -107,6 +107,13 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         return aFacing > 1;
     }
 
+    private static boolean isAnyTurbine(ItemStack aStack) {
+        return aStack != null && aStack.getItem() instanceof GT_MetaGenerated_Tool_01 &&
+                ((GT_MetaGenerated_Tool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier() > 0 &&
+                GT_MetaGenerated_Tool.getPrimaryMaterial(aStack).mToolSpeed > 0 &&
+                aStack.getItemDamage() > 169 && aStack.getItemDamage() < 180;
+    }
+
     @Override
     public boolean checkRecipe(ItemStack aStack){
         mEfficiencyIncrease = 10000;
@@ -119,10 +126,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         }
 
         try{
-            if (aStack != null && aStack.getItem() instanceof GT_MetaGenerated_Tool_01 &&
-                    ((GT_MetaGenerated_Tool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier() > 0 &&
-                    GT_MetaGenerated_Tool.getPrimaryMaterial(aStack).mToolSpeed > 0 &&
-                    aStack.getItemDamage() > 169 && aStack.getItemDamage() < 180) {
+            if (isAnyTurbine(aStack)) {
                 baseEff = GT_Utility.safeInt((long) ((50.0F
                         + 10.0F * ((GT_MetaGenerated_Tool) aStack.getItem()).getToolCombatDamage(aStack)) * 100));
             } else {
@@ -178,11 +182,8 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         mPollutionReduction=GT_Utility.safeInt((long)mPollutionReduction*mEfficiency/10000);
 
         GT_Pollution.addPollution(getBaseMetaTileEntity(), -mPollutionReduction);
-        if (mInventory[1].getItem() instanceof GT_MetaGenerated_Tool_01 &&
-                ((GT_MetaGenerated_Tool) mInventory[1].getItem()).getToolStats(mInventory[1]).getSpeedMultiplier() > 0 &&
-                GT_MetaGenerated_Tool.getPrimaryMaterial(mInventory[1]).mToolSpeed > 0 &&
-                mInventory[1].getItemDamage() > 169 && mInventory[1].getItemDamage() < 180) {
-            ((GT_MetaGenerated_Tool) mInventory[1].getItem()).doDamage(mInventory[1], 10L * (long) min(-mEUt / (float) damageFactorLow, Math.pow(-mEUt, damageFactorHigh)));
+        if (isAnyTurbine(aStack)) {
+            ((GT_MetaGenerated_Tool) aStack.getItem()).doDamage(aStack, 10L * (long) min(-mEUt / (float) damageFactorLow, Math.pow(-mEUt, damageFactorHigh)));
         }
         return true;
     }
