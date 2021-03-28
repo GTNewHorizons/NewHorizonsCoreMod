@@ -17,7 +17,7 @@ import static org.objectweb.asm.Opcodes.*;
 public class DreamTransformer implements IClassTransformer {
 	@Override
 	public byte[] transform(String name, String transformedName, byte[] basicClass) {
-		if (name.equals("thaumcraft.common.items.wands.foci.ItemFocusWarding")) {
+		if (patchItemFocusWarding && name.equals("thaumcraft.common.items.wands.foci.ItemFocusWarding")) {
 			logger.info("Transforming ItemFocusWarding");
 			ClassReader cr = new ClassReader(basicClass);
 			ClassWriter cw = new ClassWriter(0);
