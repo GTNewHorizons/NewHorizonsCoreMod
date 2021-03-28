@@ -12,6 +12,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.channels.Channels;
@@ -32,6 +33,8 @@ public class DepLoader implements IFMLCallHook {
     public static class Dependency {
         private String url;
         private String path;
+        private boolean disabled;
+        private transient boolean found;
 
         public String getUrl() {
             return url;
@@ -48,10 +51,25 @@ public class DepLoader implements IFMLCallHook {
         public void setPath(String path) {
             this.path = path;
         }
+
+        public boolean isDisabled() {
+            return disabled;
+        }
+
+        public void setDisabled(boolean disabled) {
+            this.disabled = disabled;
+        }
+
+        public boolean isFound() {
+            return found;
+        }
+
+        public void setFound(boolean found) {
+            this.found = found;
+        }
     }
 
     private class Downloader implements Runnable {
-        boolean downloaded = false;
         List<Dependency> deps;
         Exception e = null;
 
@@ -64,7 +82,11 @@ public class DepLoader implements IFMLCallHook {
             try {
                 if (deps.size() > 0) {
                     for (Dependency dep : deps) {
-                        download(dep);
+                        if (!dep.isDisabled() && !dep.isFound()) {
+                            download(dep);
+                        }
+                        if (DreamCoreMod.downloadOnlyOnce)
+                            dep.setDisabled(true);
                     }
                 }
             } catch (Exception ex) {
@@ -89,8 +111,7 @@ public class DepLoader implements IFMLCallHook {
             return null;
         }
         try (FileReader fr = new FileReader(config)) {
-            deps = g.fromJson(fr, new TypeToken<List<Dependency>>() {
-            }.getType());
+            deps = g.fromJson(fr, new TypeToken<List<Dependency>>() {}.getType());
         }
         if (deps.size() == 0) {
             LOGGER.info("No dependencies found.");
@@ -147,6 +168,13 @@ public class DepLoader implements IFMLCallHook {
             }
             JOptionPane.showMessageDialog(null, "Download of additional files failed. Please refer to log for more info.", DownloadProgressDialog.WINDOW_TITLE, JOptionPane.ERROR_MESSAGE);
             throw new RuntimeException("Download of additional files failed. Please refer to log for more info.", e);
+        } finally {
+            if (DreamCoreMod.downloadOnlyOnce) {
+                // has a need to modify config
+                try (FileWriter fw = new FileWriter(config)) {
+                    g.toJson(deps, fw);
+                }
+            }
         }
         dialog.dispose();
         if (downloaded) {
@@ -158,13 +186,15 @@ public class DepLoader implements IFMLCallHook {
     }
 
     private void precheck(List<Dependency> deps) {
-        for (Iterator<Dependency> iter = deps.iterator(); iter.hasNext(); ) {
-            Dependency dep = iter.next();
-            File location = new File(mcLocation, dep.path);
+        for (Dependency dep : deps) {
+            if (dep.isDisabled()) {
+                continue;
+            }
+            File location = new File(mcLocation, dep.getPath());
             if (location.exists()) {
                 if (location.isDirectory()) {
                     // stupid user
-                    LOGGER.warn("Directory {} will be removed as it should be a mod jar!", dep.path);
+                    LOGGER.warn("Directory {} will be removed as it should be a mod jar!", dep.getPath());
                     try {
                         Files.delete(location.toPath());
                     } catch (IOException e) {
@@ -173,8 +203,8 @@ public class DepLoader implements IFMLCallHook {
                     }
                 } else {
                     // TODO implement checksum if a big crowd starts to complain about partially downloaded mod jars
-                    LOGGER.debug("Dependency {} found locally", dep.path);
-                    iter.remove();
+                    LOGGER.debug("Dependency {} found locally", dep.getPath());
+                    dep.setFound(true);
                 }
             }
         }
@@ -182,12 +212,12 @@ public class DepLoader implements IFMLCallHook {
 
     private void download(Dependency dep) throws IOException {
         final Path downloadTemp = new File(mcLocation, ".__gtnh_download_temp__").toPath();
-        LOGGER.info("Downloading {} to {}", dep.url, dep.path);
+        LOGGER.info("Downloading {} to {}", dep.getUrl(), dep.getPath());
         try (FileChannel fc = FileChannel.open(downloadTemp, StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-             ReadableByteChannel net = Channels.newChannel(new URL(dep.url).openStream())) {
+             ReadableByteChannel net = Channels.newChannel(new URL(dep.getUrl()).openStream())) {
             fc.transferFrom(net, 0, Long.MAX_VALUE);
         }
-        final Path target = new File(mcLocation, dep.path).toPath();
+        final Path target = new File(mcLocation, dep.getPath()).toPath();
         final Path dir = target.getParent();
         if (!Files.exists(dir)) {
             Files.createDirectories(dir);
