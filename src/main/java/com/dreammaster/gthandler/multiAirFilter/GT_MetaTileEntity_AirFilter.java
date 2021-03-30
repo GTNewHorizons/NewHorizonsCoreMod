@@ -63,9 +63,9 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
 		.addInfo("Controller block for the Electric Air Filter")
         .addInfo("Add Turbine in controller to increase efficiency")
         .addInfo("Add Air Filter in input to double efficiency")
-		.addInfo("Machine tier * 2 = Maximum effective Muffler tier")
+		.addInfo("Machine tier = Maximum effective Muffler tier")
 		.addInfo("Features Hysteresis control (tm)")
-		.addInfo("Each muffler reduce pollution by 30 * TurbineEfficiency * EffectiveMufflerTier every second")
+		.addInfo("Each muffler reduce pollution by 30 * TurbineEfficiency * Floor(2.5^Tier) every second")
 		.addSeparator()
 		.beginStructureBlock(3, 4, 3, true)
 		.addController("Front bottom")
@@ -165,7 +165,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
 
         for (GT_MetaTileEntity_Hatch_Muffler tHatch : mMufflerHatches) {
             if (isValidMetaTileEntity(tHatch)) {
-                mPollutionReduction+= min(tTier*2,tHatch.mTier)*300;//reduction per muffler tier
+                mPollutionReduction += ((int) Math.pow(2.5, min(tTier, tHatch.mTier))) * 300;//reduction per muffler
             }
         }
 
@@ -182,9 +182,6 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         mPollutionReduction=GT_Utility.safeInt((long)mPollutionReduction*mEfficiency/10000);
 
         GT_Pollution.addPollution(getBaseMetaTileEntity(), -mPollutionReduction);
-        if (isAnyTurbine(aStack)) {
-            ((GT_MetaGenerated_Tool) aStack.getItem()).doDamage(aStack, 10L * (long) min(-mEUt / (float) damageFactorLow, Math.pow(-mEUt, damageFactorHigh)));
-        }
         return true;
     }
 
@@ -373,10 +370,8 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
     @Override
     public int getDamageToComponent(ItemStack aStack) {
         try{
-            if(aStack.getItem() instanceof GT_MetaGenerated_Tool_01 &&
-                    ((GT_MetaGenerated_Tool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier()>0 &&
-                    ((GT_MetaGenerated_Tool) aStack.getItem()).getPrimaryMaterial(aStack).mToolSpeed>0 ) {
-                return 10;
+            if(isAnyTurbine(aStack) && hasPollution) { // no pollution no damage
+                return getBaseMetaTileEntity().getRandomNumber(2); // expected to be 0.5 damage in long term
             }
         }catch (Exception e){/**/}
         return 0;
