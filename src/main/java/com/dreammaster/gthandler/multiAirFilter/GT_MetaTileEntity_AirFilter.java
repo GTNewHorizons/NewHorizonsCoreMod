@@ -63,9 +63,9 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
 		.addInfo("Controller block for the Electric Air Filter")
         .addInfo("Add Turbine in controller to increase efficiency")
         .addInfo("Add Air Filter in input to double efficiency")
-		.addInfo("Machine tier * 2 = Maximum effective Muffler tier")
+		.addInfo("Machine tier = Maximum effective Muffler tier")
 		.addInfo("Features Hysteresis control (tm)")
-		.addInfo("Each muffler reduce pollution by 30 * TurbineEfficiency * EffectiveMufflerTier every second")
+		.addInfo("Each muffler reduce pollution by 30 * TurbineEfficiency * Floor(2.5^Tier) every second")
 		.addSeparator()
 		.beginStructureBlock(3, 4, 3, true)
 		.addController("Front bottom")
@@ -165,7 +165,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
 
         for (GT_MetaTileEntity_Hatch_Muffler tHatch : mMufflerHatches) {
             if (isValidMetaTileEntity(tHatch)) {
-                mPollutionReduction+= min(tTier*2,tHatch.mTier)*300;//reduction per muffler tier
+                mPollutionReduction += ((int) Math.pow(2.5, min(tTier, tHatch.mTier))) * 300;//reduction per muffler
             }
         }
 
