@@ -182,9 +182,6 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         mPollutionReduction=GT_Utility.safeInt((long)mPollutionReduction*mEfficiency/10000);
 
         GT_Pollution.addPollution(getBaseMetaTileEntity(), -mPollutionReduction);
-        if (isAnyTurbine(aStack)) {
-            ((GT_MetaGenerated_Tool) aStack.getItem()).doDamage(aStack, 10L * (long) min(-mEUt / (float) damageFactorLow, Math.pow(-mEUt, damageFactorHigh)));
-        }
         return true;
     }
 
@@ -373,10 +370,8 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
     @Override
     public int getDamageToComponent(ItemStack aStack) {
         try{
-            if(aStack.getItem() instanceof GT_MetaGenerated_Tool_01 &&
-                    ((GT_MetaGenerated_Tool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier()>0 &&
-                    ((GT_MetaGenerated_Tool) aStack.getItem()).getPrimaryMaterial(aStack).mToolSpeed>0 ) {
-                return 10;
+            if(isAnyTurbine(aStack) && hasPollution) { // no pollution no damage
+                return getBaseMetaTileEntity().getRandomNumber(2); // expected to be 0.5 damage in long term
             }
         }catch (Exception e){/**/}
         return 0;
