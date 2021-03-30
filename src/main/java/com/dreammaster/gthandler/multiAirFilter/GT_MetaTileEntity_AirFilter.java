@@ -409,7 +409,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
                         EnumChatFormatting.RED+ (getIdealStatus() - getRepairStatus())+EnumChatFormatting.RESET+
                         " Efficiency: "+
                         EnumChatFormatting.YELLOW+Float.toString(mEfficiency / 100.0F)+EnumChatFormatting.RESET + " %",
-                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReduction/60 + EnumChatFormatting.RESET+" gibbl/s"
+                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReduction/10 + EnumChatFormatting.RESET+" gibbl/s"
         };
     }
 }
