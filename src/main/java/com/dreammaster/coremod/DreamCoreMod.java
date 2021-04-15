@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
-import java.nio.file.Files;
 import java.util.Map;
 import java.util.Properties;
 
@@ -17,6 +16,8 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
     static Properties coremodConfig = new Properties();
     static Logger logger = LogManager.getLogger("DreamCoreMod");
     static boolean deobf;
+    static boolean downloadOnlyOnce;
+    static boolean patchItemFocusWarding;
     static File debugOutputDir;
 
     @Override
@@ -37,7 +38,8 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
     @Override
     public void injectData(Map<String, Object> data) {
         deobf = !(boolean) data.get("runtimeDeobfuscationEnabled");
-        coremodConfig.setProperty("patchItemWandCrafting", "true");
+        coremodConfig.setProperty("patchItemFocusWarding", "true");
+        coremodConfig.setProperty("downloadOnlyOnce", "true");
         coremodConfig.setProperty("debug", "false");
         File mcLocation = (File) data.get("mcLocation");
         File configDir = new File(mcLocation, "config");
@@ -55,6 +57,8 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
         } catch (IOException e) {
             logger.warn("Can't write coremod config. Changes may not have been saved!", e);
         }
+        downloadOnlyOnce = "true".equalsIgnoreCase(coremodConfig.getProperty("downloadOnlyOnce"));
+        patchItemFocusWarding = "true".equalsIgnoreCase(coremodConfig.getProperty("patchItemFocusWarding"));
         if ("true".equalsIgnoreCase(coremodConfig.getProperty("debug"))) {
             debugOutputDir = new File(mcLocation, ".asm_debug");
             try {
