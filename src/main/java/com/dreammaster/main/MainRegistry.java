@@ -23,6 +23,7 @@ import com.dreammaster.modcustomfuels.CustomFuelsHandler;
 import com.dreammaster.modfixes.GTpp.GregTechPlusPlusAbandonedAspectsFix;
 import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
+import com.dreammaster.modfixes.gravisuite.HoverModeFix;
 import com.dreammaster.modfixes.minetweaker.MinetweakerFurnaceFix;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 import com.dreammaster.modhazardousitems.HazardousItemsHandler;
@@ -455,6 +456,9 @@ public class MainRegistry
         }
         if (CoreConfig.MinetweakerFurnaceFixEnabled) {
             ModFixesMaster.registerModFix(new MinetweakerFurnaceFix());
+        }
+        if (CoreConfig.HoverModeFixEnabled) {
+            ModFixesMaster.registerModFix(new HoverModeFix());
         }
 
     }
