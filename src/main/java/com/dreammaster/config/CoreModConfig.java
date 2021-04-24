@@ -31,6 +31,7 @@ public class CoreModConfig extends ConfigManager
 
   public boolean AvaritiaFixEnabled;
   public boolean MinetweakerFurnaceFixEnabled;
+  public boolean HoverModeFixEnabled;
   public String[] SkullFireSwordEntityTargets;
   public String[] BlacklistedTileEntiyClassNames;
 
@@ -52,6 +53,7 @@ public class CoreModConfig extends ConfigManager
 
     AvaritiaFixEnabled = false;
     MinetweakerFurnaceFixEnabled = true;
+    HoverModeFixEnabled = true;
     PotionTimer = 100;
 
     BlacklistedTileEntiyClassNames = new String[] { "com.rwtema.extrautils.tileentity.enderquarry.TileEntityEnderQuarry" };
@@ -75,6 +77,7 @@ public class CoreModConfig extends ConfigManager
 
     AvaritiaFixEnabled = _mainConfig.getBoolean( "AvaritiaFixEnabled", "ModFixes", AvaritiaFixEnabled, "Set to true to enable the modfix for Avaritia SkullFireSword" );
     MinetweakerFurnaceFixEnabled = _mainConfig.getBoolean( "MinetweakerFurnaceFixEnabled", "ModFixes", MinetweakerFurnaceFixEnabled, "Set to true to allow Minetweaker to override the vanilla furnace fuel handler, allowing the burn value of WOOD material items to be changed." );
+    HoverModeFixEnabled = _mainConfig.getBoolean( "HoverModeFixEnabled", "ModFixes", HoverModeFixEnabled, "Set to true to prevent gravisuit advanced nano chest plate and advanced jetpack from falling when idle under hover mode." );
     SkullFireSwordEntityTargets = _mainConfig.getStringList( "Avaritia_SkullFireSwordEntityTargets", "ModFixes.Avaritia", SkullFireSwordEntityTargets, "The Canonical Class-Name of the Entity" );
     BlacklistedTileEntiyClassNames = _mainConfig.getStringList( "BlacklistedTileEntiyClassNames", "Modules.Worldaccelerator", BlacklistedTileEntiyClassNames, "The Canonical Class-Names of TileEntities that should be ignored by the WorldAccelerator" );
     OilFixConfig = new OilGeneratorFix.OilConfig( _mainConfig );
