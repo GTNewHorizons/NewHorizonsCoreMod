@@ -3742,25 +3742,12 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		// Dynamo Hatches
 		// ===================================================================================================
+		//See TT for recipes UEV-UMV
 		CustomItemList.Hatch_Dynamo_UEV.set(new GT_MetaTileEntity_Hatch_Dynamo(
 				11290, "hatch.dynamo.tier.10", "UEV Dynamo Hatch",10).getStackForm(1L));
 
-		GT_ModHandler.addCraftingRecipe(CustomItemList.Hatch_Dynamo_UEV.get(1L),
-				bitsd,
-				new Object[]{" MC",
-						'M', CustomItemList.Hull_UEV,
-						'C', OrePrefixes.wireGt01.get(Materials.Draconium)});
-
-
 		CustomItemList.Hatch_Dynamo_UIV.set(new GT_MetaTileEntity_Hatch_Dynamo(
 				11291, "hatch.dynamo.tier.11", "UIV Dynamo Hatch",11).getStackForm(1L));
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.Hatch_Dynamo_UIV.get(1L),
-				bitsd,
-				new Object[]{" MC",
-						'M', CustomItemList.Hull_UIV,
-						'C', OrePrefixes.wireGt01.get(Materials.NetherStar)});
-
 
 		CustomItemList.Hatch_Dynamo_UMV.set(new GT_MetaTileEntity_Hatch_Dynamo(
 				11292, "hatch.dynamo.tier.12", "UMV Dynamo Hatch",12).getStackForm(1L));
@@ -3771,43 +3758,18 @@ public class GT_Loader_Machines
 		CustomItemList.Hatch_Dynamo_OPV.set(new GT_MetaTileEntity_Hatch_Dynamo(
 				11294, "hatch.dynamo.tier.14", "OPV Dynamo Hatch",14).getStackForm(1L));
 
-		//TODO:Recipes
-
 		// ===================================================================================================
 		// Energy Hatches
 		// ===================================================================================================
+		//See TT for recipes
 		CustomItemList.Hatch_Energy_UEV.set(new GT_MetaTileEntity_Hatch_Energy(
 				11300, "hatch.energy.tier.10", "UEV Energy Hatch",10).getStackForm(1L));
-
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.Hatch_Energy_UEV.get(1L),
-				bitsd,
-				new Object[]{"CM ",
-						'M', CustomItemList.Hull_UEV,
-						'C', OrePrefixes.wireGt01.get(Materials.Draconium)});
-
 
 		CustomItemList.Hatch_Energy_UIV.set(new GT_MetaTileEntity_Hatch_Energy(
 				11301, "hatch.energy.tier.11", "UIV Energy Hatch",11).getStackForm(1L));
 
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.Hatch_Energy_UIV.get(1L),
-				bitsd,
-				new Object[]{"CM ",
-						'M', CustomItemList.Hull_UIV,
-						'C', OrePrefixes.wireGt01.get(Materials.NetherStar)});
-
-
 		CustomItemList.Hatch_Energy_UMV.set(new GT_MetaTileEntity_Hatch_Energy(
 				11302, "hatch.energy.tier.12", "UMV Energy Hatch",12).getStackForm(1L));
-
-
-		GT_ModHandler.addCraftingRecipe(CustomItemList.Hatch_Energy_UMV.get(1L),
-				bitsd,
-				new Object[]{"CM ",
-						'M', CustomItemList.Hull_UMV,
-						'C', OrePrefixes.wireGt01.get(Materials.Quantium)});
-
 
 		// ===================================================================================================
 		// Wet Transformers
