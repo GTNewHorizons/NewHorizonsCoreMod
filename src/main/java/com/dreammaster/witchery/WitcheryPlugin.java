@@ -12,6 +12,7 @@ import com.emoniph.witchery.brewing.action.BrewActionModifier;
 import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
 import com.emoniph.witchery.crafting.KettleRecipes;
 import com.emoniph.witchery.crafting.SpinningRecipes;
+import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
@@ -50,7 +51,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
      * @param power The power to consume. Can be 0.
      */
     private static void ensureItemHaveBrewAction(ItemStack item, int power) {
-        if (WitcheryBrewRegistry.INSTANCE.getActionForItemStack(item) == null) {
+        if (item != null && WitcheryBrewRegistry.INSTANCE.getActionForItemStack(item) == null) {
             registerBrewAction(new EmptyBrewActionModifier(item, power));
         }
     }
@@ -175,8 +176,9 @@ public class WitcheryPlugin extends BasePluginWitchery {
         //add a Cauldron recipes
         addBrewRecipe(1000, new ItemStack(Witchery.Items.CHALK_GOLDEN), new ItemStack(Witchery.Items.CHALK_RITUAL), Witchery.Items.GENERIC.itemMandrakeRoot.createStack(), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",1L, 2086), Witchery.Items.GENERIC.itemDiamondVapour.createStack());
         addBrewRecipe(2000, new ItemStack(Witchery.Items.CHALK_INFERNAL), new ItemStack(Witchery.Items.CHALK_RITUAL), new ItemStack(Items.nether_wart), new ItemStack(Items.blaze_rod), new ItemStack(Items.nether_star));
-        addBrewRecipe(4000, new ItemStack(Witchery.Items.CHALK_OTHERWHERE), new ItemStack(Witchery.Items.CHALK_RITUAL), GT_ModHandler.getModItem("gregtech","gt.metaitem.01",1L, 2533), GT_ModHandler.getModItem("HardcoreEnderExpansion","end_powder",1L), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), GT_ModHandler.getModItem("dreamcraft","item.ManyullynCrystal",1L, 0));
-
+        if (Loader.isModLoaded("HardcoreEnderExpansion")) {
+            addBrewRecipe(4000, new ItemStack(Witchery.Items.CHALK_OTHERWHERE), new ItemStack(Witchery.Items.CHALK_RITUAL), GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 1L, 2533), GT_ModHandler.getModItem("HardcoreEnderExpansion", "end_powder", 1L), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), GT_ModHandler.getModItem("dreamcraft", "item.ManyullynCrystal", 1L, 0));
+        }
         /*
         // examples:
         // add an oven recipe
