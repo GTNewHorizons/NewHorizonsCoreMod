@@ -369,6 +369,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 8L), GT_Utility.getIntegratedCircuit(8), CustomItemList.Casing_UIV.get(1L), 50, 16);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 8L), GT_Utility.getIntegratedCircuit(8), CustomItemList.Casing_UMV.get(1L), 50, 16);
 
+        //Hermetic casings
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Plastic, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 8L), GT_Utility.getIntegratedCircuit(4)}, GT_Values.NF, ItemList.Casing_Tank_1.get(1L), 100, 16);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.PolyvinylChloride, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L), GT_Utility.getIntegratedCircuit(4)}, GT_Values.NF, ItemList.Casing_Tank_2.get(1L), 100, 16);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Polytetrafluoroethylene, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 8L), GT_Utility.getIntegratedCircuit(4)}, GT_Values.NF, ItemList.Casing_Tank_3.get(1L), 100, 16);
@@ -379,12 +380,11 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Enderium, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmium, 8L), GT_Utility.getIntegratedCircuit(4)}, GT_Values.NF, ItemList.Casing_Tank_8.get(1L), 100, 16);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Naquadah, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 8L), GT_Utility.getIntegratedCircuit(4)}, GT_Values.NF, ItemList.Casing_Tank_9.get(1L), 100, 16);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.MysteriousCrystal, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 8L), GT_Utility.getIntegratedCircuit(4)}, GT_Values.NF, ItemList.Casing_Tank_10.get(1L), 100, 16);
+
         GT_Values.RA.addAssemblerRecipe(new ItemStack(Items.diamond, 1, 0), ItemList.Circuit_Basic.get(4L), CustomItemList.TwilightCrystal.get(1L), 600, 16);
         GT_Values.RA.addAssemblerRecipe(new ItemStack(Items.diamond, 1, 0), GT_ModHandler.getModItem("IC2", "itemPartCircuit", 4L, 0), CustomItemList.TwilightCrystal.get(1L), 600, 16);
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L), GT_Utility.getIntegratedCircuit(1)}, Materials.Glass.getMolten(72L), GT_ModHandler.getModItem("irontank", "goldDiamondUpgrade", 1L, 0), 600, 120);
-
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.MysteriousCrystal, 1L), CustomItemList.BedrockiumPlate.get(8L), ItemList.Casing_Tank_10.get(1L), 100, 16);
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.RawLapotronCrystal.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L)}, GT_Values.NF, GT_ModHandler.getIC2Item("lapotronCrystal", 1L), 600, 1024);
 
