@@ -29,8 +29,6 @@ public class GT_MachineRecipeLoader implements Runnable{
     public void run() {
         GT_Values.RA.addBenderRecipe(CustomItemList.MicaInsulatorSheet.get(1L), CustomItemList.MicaInsulatorFoil.get(4L), 100, 30);
 
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 4L), 100, 1920);
-
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4L), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, CustomItemList.Empty180SpCell.get(1L), 100, 120);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.Empty180SpCell.get(2L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 3L), GT_Utility.getIntegratedCircuit(2)}, GT_Values.NF, CustomItemList.Empty360SpCell.get(1L), 200, 256);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.Empty180SpCell.get(3L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L), GT_Utility.getIntegratedCircuit(3)}, GT_Values.NF, CustomItemList.Empty540SpCell.get(1L), 300, 480);
@@ -3569,7 +3567,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addMixerRecipe(Materials.Tin.getDust(9),Materials.Antimony.getDust(1),GT_Utility.getIntegratedCircuit(1),null,null,null,Materials.SolderingAlloy.getDust(10),60,30);
         GT_Values.RA.addCentrifugeRecipe(Materials.AstralSilver.getDust(3),null,null,null,Materials.Silver.getDust(2),Materials.Thaumium.getDust(1),null,null,null,null,null,300,480);
         GT_Values.RA.addCentrifugeRecipe(Materials.SolderingAlloy.getDust(10),null,null,null,Materials.Tin.getDust(9),Materials.Antimony.getDust(1),null,null,null,null,null,300,30);
-        //Fertilisert Liquid reverse recipe
+        //Liquid Fertilizer reverse recipe
         GT_Values.RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(1),null,FluidRegistry.getFluidStack("fluid.fertiliser",144),null,ItemList.IC2_Fertilizer.get(1L),null,null,null,null,null,null,40,16);
 
         //Main Frame Circuits and Neuro CPU
