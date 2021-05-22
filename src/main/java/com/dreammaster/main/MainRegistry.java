@@ -341,6 +341,7 @@ public class MainRegistry
             }
 
         }
+        if (Loader.isModLoaded("twilight"))
         TF_Loot_Chests.init();
     }
 
