@@ -1,8 +1,5 @@
 package com.dreammaster.TwilightForest;
 
-import com.dreammaster.gthandler.CustomItemList;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
