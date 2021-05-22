@@ -150,8 +150,8 @@ public class TF_Loot_Chests {
         //Litch Tower Boss Room
         TFTreasure.tower_room.common.add(GT_ModHandler.getModItem("DraconicEvolution", "dezilsMarshmallow", 1, 0), 50);
         TFTreasure.tower_room.common.add(GT_ModHandler.getModItem("Thaumcraft", "ItemLootBag", 1, 0), 70);
-        TFTreasure.tower_room.common.add(CustomItemList.LichBone.get(2),50);
-        TFTreasure.tower_room.common.add(CustomItemList.LichBoneChip.get(8),75);
+        //TFTreasure.tower_room.common.add(CustomItemList.LichBone.get(2),50);
+        //TFTreasure.tower_room.common.add(CustomItemList.LichBoneChip.get(8),75);
         TFTreasure.tower_room.uncommon.add(GT_ModHandler.getModItem("Thaumcraft", "ItemLootBag", 1, 1), 50);
         TFTreasure.tower_room.uncommon.add(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.NetherStar, 4L), 50);
         TFTreasure.tower_room.rare.add(GT_ModHandler.getModItem("Thaumcraft", "ItemLootBag", 1, 2), 30);
