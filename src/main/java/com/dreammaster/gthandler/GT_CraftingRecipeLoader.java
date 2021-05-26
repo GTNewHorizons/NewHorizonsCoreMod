@@ -289,8 +289,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(new ItemStack(Items.clay_ball, 3, 0),  GT_Proxy.tBits, new Object[]{"CCC", "CBC", "CCC", 'C', OrePrefixes.dustSmall.get(Materials.Clay), 'B', new ItemStack(Items.water_bucket, 1,0)});
         GT_ModHandler.addCraftingRecipe(new ItemStack(Items.clay_ball, 3, 0),  GT_Proxy.tBits, new Object[]{"CCC", "CBC", "CCC", 'C', OrePrefixes.dustSmall.get(Materials.Clay), 'B', GT_ModHandler.getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0)});
 
-        GT_ModHandler.addCraftingRecipe(CustomItemList.NeutronReflectorSmallParts.get(1L), GT_Proxy.tBits, new Object[]{"NNN", "NwN", 'N', GT_ModHandler.getModItem("IC2", "reactorReflector", 1L, 1)});
-
         GT_ModHandler.addCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Steel, 1L), GT_Proxy.tBits, new Object[]{"PIh", "f  ", 'P', OrePrefixes.plate.get(Materials.Steel), 'I', OrePrefixes.ingot.get(Materials.Steel)});
 
         if (Loader.isModLoaded("GraviSuite")) {
