@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.multiAirFilter;
 
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.casings.GT_Container_CasingsNH;
+import com.dreammaster.item.ItemList;
 import gregtech.api.enums.Textures;
 import gregtech.api.gui.GT_GUIContainer_MultiMachine;
 import gregtech.api.interfaces.ITexture;
@@ -35,7 +36,8 @@ import static java.lang.Math.min;
  * Created by danie_000 on 03.10.2016.
  */
 public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBase {
-    protected int mPollutionReduction=0;
+    protected int mPollutionReductionWholeCycle =0;
+    protected int mAccumulatedPollutionReduction =0;
     protected int baseEff = 2500;
     protected boolean hasPollution=false;
     static final GT_Recipe tRecipe= new GT_Recipe(
@@ -62,7 +64,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
 		tt.addMachineType("Air Filter")
 		.addInfo("Controller block for the Electric Air Filter")
         .addInfo("Add Turbine in controller to increase efficiency")
-        .addInfo("Add Air Filter in input to double efficiency")
+        .addInfo("Add " + ItemList.AdsorptionFilter.getIS().getDisplayName() + " in input bus to double efficiency")
 		.addInfo("Machine tier = Maximum effective Muffler tier")
 		.addInfo("Features Hysteresis control (tm)")
 		.addInfo("Each muffler reduce pollution by 30 * TurbineEfficiency * Floor(2.5^Tier) every second")
@@ -99,15 +101,6 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
 
     @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
-        return true;
-    }
-
-    @Override
-    public boolean isFacingValid(byte aFacing) {
-        return aFacing > 1;
-    }
-
-    private static boolean isAnyTurbine(ItemStack aStack) {
         return aStack != null && aStack.getItem() instanceof GT_MetaGenerated_Tool_01 &&
                 ((GT_MetaGenerated_Tool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier() > 0 &&
                 GT_MetaGenerated_Tool.getPrimaryMaterial(aStack).mToolSpeed > 0 &&
@@ -115,10 +108,15 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
     }
 
     @Override
+    public boolean isFacingValid(byte aFacing) {
+        return aFacing > 1;
+    }
+
+    @Override
     public boolean checkRecipe(ItemStack aStack){
         mEfficiencyIncrease = 10000;
         mEfficiency = 10000 - (getIdealStatus() - getRepairStatus()) * 1000;
-        mPollutionReduction = 0;
+        mPollutionReductionWholeCycle = 0;
         mMaxProgresstime = 200;
         mEUt=-32;
         if(!hasPollution) {
@@ -126,7 +124,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         }
 
         try{
-            if (isAnyTurbine(aStack)) {
+            if (isCorrectMachinePart(aStack)) {
                 baseEff = GT_Utility.safeInt((long) ((50.0F
                         + 10.0F * ((GT_MetaGenerated_Tool) aStack.getItem()).getToolCombatDamage(aStack)) * 100));
             } else {
@@ -165,24 +163,33 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
 
         for (GT_MetaTileEntity_Hatch_Muffler tHatch : mMufflerHatches) {
             if (isValidMetaTileEntity(tHatch)) {
-                mPollutionReduction += ((int) Math.pow(2.5, min(tTier, tHatch.mTier))) * 300;//reduction per muffler
+                mPollutionReductionWholeCycle += ((int) Math.pow(2.5, min(tTier, tHatch.mTier))) * 300;//reduction per muffler
             }
         }
 
         ItemStack[] tInputs = Arrays.copyOfRange(tInputList.toArray(new ItemStack[0]), 0, 2);
         if (!tInputList.isEmpty()) {
             if (tRecipe.isRecipeInputEqual(true, null, tInputs)) {
-                mPollutionReduction*=2;//bonus for filter
+                mPollutionReductionWholeCycle *=2;//bonus for filter
                 mOutputItems = new ItemStack[]{tRecipe.getOutput(0)};
                 updateSlots();
             }
         }
 
-        mPollutionReduction=GT_Utility.safeInt((long)mPollutionReduction*baseEff)/10000;
-        mPollutionReduction=GT_Utility.safeInt((long)mPollutionReduction*mEfficiency/10000);
-
-        GT_Pollution.addPollution(getBaseMetaTileEntity(), -mPollutionReduction);
+        mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *baseEff)/10000;
+        mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *mEfficiency/10000);
         return true;
+    }
+
+    @Override
+    public boolean onRunningTick(ItemStack aStack) {
+        if (mPollutionReductionWholeCycle > 0) {
+            mAccumulatedPollutionReduction += mPollutionReductionWholeCycle;
+            int tActualReduction = mAccumulatedPollutionReduction / mMaxProgresstime;
+            mAccumulatedPollutionReduction = mAccumulatedPollutionReduction % mMaxProgresstime;
+            GT_Pollution.addPollution(getBaseMetaTileEntity(), -tActualReduction);
+        }
+        return super.onRunningTick(aStack);
     }
 
     @Override
@@ -370,7 +377,7 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
     @Override
     public int getDamageToComponent(ItemStack aStack) {
         try{
-            if(isAnyTurbine(aStack) && hasPollution) { // no pollution no damage
+            if(isCorrectMachinePart(aStack) && hasPollution) { // no pollution no damage
                 return getBaseMetaTileEntity().getRandomNumber(2); // expected to be 0.5 damage in long term
             }
         }catch (Exception e){/**/}
@@ -391,20 +398,21 @@ public class GT_MetaTileEntity_AirFilter extends GT_MetaTileEntity_MultiBlockBas
         return new String[]{
                 "Progress:",
                 EnumChatFormatting.GREEN + Integer.toString(mProgresstime/20) + EnumChatFormatting.RESET +" s / "+
-                        EnumChatFormatting.YELLOW + Integer.toString(mMaxProgresstime/20) + EnumChatFormatting.RESET +" s",
+                        EnumChatFormatting.YELLOW + mMaxProgresstime / 20 + EnumChatFormatting.RESET +" s",
                 "Stored Energy:",
                 EnumChatFormatting.GREEN + Long.toString(getBaseMetaTileEntity().getStoredEU()) + EnumChatFormatting.RESET +" EU / "+
-                        EnumChatFormatting.YELLOW + Long.toString(getBaseMetaTileEntity().getEUCapacity()) + EnumChatFormatting.RESET +" EU",
+                        EnumChatFormatting.YELLOW + getBaseMetaTileEntity().getEUCapacity() + EnumChatFormatting.RESET +" EU",
                 "Probably uses: "+
-                        EnumChatFormatting.RED + Integer.toString(mEUt) + EnumChatFormatting.RESET + " EU/t",
+                        // negative EU triggers special EU consumption behavior. however it does not produce power.
+                        EnumChatFormatting.RED + Math.abs(mEUt) + EnumChatFormatting.RESET + " EU/t",
                 "Max Energy Income: "+
-                        EnumChatFormatting.YELLOW+Long.toString(getMaxInputVoltage())+EnumChatFormatting.RESET+ " EU/t(*2A) Tier: "+
+                        EnumChatFormatting.YELLOW+ getMaxInputVoltage() +EnumChatFormatting.RESET+ " EU/t(*2A) Tier: "+
                         EnumChatFormatting.YELLOW+VN[GT_Utility.getTier(getMaxInputVoltage())]+ EnumChatFormatting.RESET,
                 "Problems: "+
                         EnumChatFormatting.RED+ (getIdealStatus() - getRepairStatus())+EnumChatFormatting.RESET+
                         " Efficiency: "+
-                        EnumChatFormatting.YELLOW+Float.toString(mEfficiency / 100.0F)+EnumChatFormatting.RESET + " %",
-                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReduction/10 + EnumChatFormatting.RESET+" gibbl/s"
+                        EnumChatFormatting.YELLOW+ mEfficiency / 100.0F +EnumChatFormatting.RESET + " %",
+                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReductionWholeCycle /10 + EnumChatFormatting.RESET+" gibbl/s"
         };
     }
 }
