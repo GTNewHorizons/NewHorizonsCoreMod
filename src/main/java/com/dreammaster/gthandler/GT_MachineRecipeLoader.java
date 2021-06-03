@@ -407,9 +407,6 @@ public class GT_MachineRecipeLoader implements Runnable{
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 2L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L), GT_OreDictUnificator.get(OrePrefixes.gem, Materials.EnderPearl, 1L), GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 2L), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("Railcraft", "machine.alpha", 1, 0), 600, 480);
 
-        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.NeutronReflectorSmallParts.get(1L), GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "reactorReflectorThick", 1L, 0), 600, 64);
-        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.NeutronReflectorSmallParts.get(1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenCarbide, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "reactorReflectorThick", 1L, 0), 600, 64);
-
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_LV.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L), GT_ModHandler.getModItem("IronChest", "BlockIronChest", 1L, 0)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "blockPersonal", 1L, 0), 200, 30);
 
         if (Loader.isModLoaded("appliedenergistics2")) {
@@ -3214,18 +3211,23 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),  GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenSteel, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(72L), GT_ModHandler.getModItem("irontank", "titaniumTungstensteelUpgrade", 1L, 0), 1300, 480);
 
         }
-        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_Utility.getIntegratedCircuit(5)}, GT_Values.NF, CustomItemList.NeutronReflectorSmallParts.get(1), 300, 120);
-        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_Utility.getIntegratedCircuit(8)}, GT_Values.NF, CustomItemList.NeutronReflectorParts.get(1), 600, 120);
 
+        //Neutron reflector recipes. NR is in IC2 script, INR in GT script
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2","reactorReflector",1L,1), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, CustomItemList.NeutronReflectorSmallParts.get(1), 300, 120);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.NeutronReflectorSmallParts.get(5L), GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "reactorReflectorThick", 1L, 0), 600, 64);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{CustomItemList.NeutronReflectorSmallParts.get(5L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenCarbide, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "reactorReflectorThick", 1L, 0), 600, 64);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IC2","reactorReflectorThick",1L,0), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, CustomItemList.NeutronReflectorParts.get(1), 600, 120);
+        
         //Arcane Slabs -> Arcane Stone
-        GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSlabStone",4L),GT_ModHandler.getModItem("Thaumcraft","blockCosmeticSolid",1L,6),160,4);
+        if (Loader.isModLoaded("Thaumcraft"))
+        	GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("Thaumcraft", "blockCosmeticSlabStone", 4L), GT_ModHandler.getModItem("Thaumcraft", "blockCosmeticSolid", 1L, 6), 160, 4);
         //Astral Silver & Soldering Alloy + reverse
-        GT_Values.RA.addMixerRecipe(Materials.Silver.getDust(2),Materials.Thaumium.getDust(1),GT_Utility.getIntegratedCircuit(1),null,null,null,Materials.AstralSilver.getDust(3),60,480);
-        GT_Values.RA.addMixerRecipe(Materials.Tin.getDust(9),Materials.Antimony.getDust(1),GT_Utility.getIntegratedCircuit(1),null,null,null,Materials.SolderingAlloy.getDust(10),60,30);
-        GT_Values.RA.addCentrifugeRecipe(Materials.AstralSilver.getDust(3),null,null,null,Materials.Silver.getDust(2),Materials.Thaumium.getDust(1),null,null,null,null,null,300,480);
-        GT_Values.RA.addCentrifugeRecipe(Materials.SolderingAlloy.getDust(10),null,null,null,Materials.Tin.getDust(9),Materials.Antimony.getDust(1),null,null,null,null,null,300,30);
+        GT_Values.RA.addMixerRecipe(Materials.Silver.getDust(2), Materials.Thaumium.getDust(1), GT_Utility.getIntegratedCircuit(1), null, null, null, Materials.AstralSilver.getDust(3), 60, 480);
+        GT_Values.RA.addMixerRecipe(Materials.Tin.getDust(9), Materials.Antimony.getDust(1), GT_Utility.getIntegratedCircuit(1), null, null, null, Materials.SolderingAlloy.getDust(10), 60, 30);
+        GT_Values.RA.addCentrifugeRecipe(Materials.AstralSilver.getDust(3), null, null, null, Materials.Silver.getDust(2), Materials.Thaumium.getDust(1), null, null, null, null, null, 300, 480);
+        GT_Values.RA.addCentrifugeRecipe(Materials.SolderingAlloy.getDust(10), null, null, null, Materials.Tin.getDust(9), Materials.Antimony.getDust(1), null, null, null, null, null, 300, 30);
         //Liquid Fertilizer reverse recipe
-        GT_Values.RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(1),null,FluidRegistry.getFluidStack("fluid.fertiliser",144),null,ItemList.IC2_Fertilizer.get(1L),null,null,null,null,null,null,40,16);
+        GT_Values.RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(1), null, FluidRegistry.getFluidStack("fluid.fertiliser", 144), null, ItemList.IC2_Fertilizer.get(1L), null, null, null, null, null, null, 40, 16);
 
         //Main Frame Circuits and Neuro CPU
         GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Crystalmainframe.get(1L), 72000, new Object[]{
