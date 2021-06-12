@@ -341,6 +341,8 @@ public class MainRegistry
             }
 
         }
+        if (Loader.isModLoaded("TwilightForest"))
+        TF_Loot_Chests.init();
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -411,9 +413,6 @@ public class MainRegistry
         GTCustomLoader.run();
 
         registerModFixes();
-        
-        if (Loader.isModLoaded("twilight"))
-        	TF_Loot_Chests.init();
         
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
