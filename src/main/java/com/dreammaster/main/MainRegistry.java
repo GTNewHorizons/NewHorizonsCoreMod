@@ -341,7 +341,7 @@ public class MainRegistry
             }
 
         }
-        if (Loader.isModLoaded("twilight"))
+        if (Loader.isModLoaded("TwilightForest"))
         TF_Loot_Chests.init();
     }
 
