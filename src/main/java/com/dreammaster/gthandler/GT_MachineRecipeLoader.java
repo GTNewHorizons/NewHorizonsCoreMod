@@ -2094,7 +2094,7 @@ public class GT_MachineRecipeLoader implements Runnable{
         }
 
         GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("IC2", "itemFuelPlantBall", 2L, 0), new ItemStack[]{CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L)}, new int[]{10000, 10000, 5000, 2500}, 200, 30);
-
+        GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.flint, 2, 0), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L)}, null, 800, 2);
         GT_Values.RA.addPulveriserRecipe(CustomItemList.CokeOvenBrick.get(1L), new ItemStack[]{CustomItemList.CokeOvenBrickDust.get(1L), CustomItemList.CokeOvenBrickDust.get(1L), CustomItemList.CokeOvenBrickDust.get(1L), CustomItemList.CokeOvenBrickDust.get(1L)}, new int[]{10000, 2500, 750, 500}, 200, 30);
         GT_Values.RA.addPulveriserRecipe(CustomItemList.AdvancedCokeOvenBrick.get(1L), new ItemStack[]{CustomItemList.AdvancedCokeOvenBrickDust.get(1L), CustomItemList.AdvancedCokeOvenBrickDust.get(1L), CustomItemList.AdvancedCokeOvenBrickDust.get(1L), CustomItemList.AdvancedCokeOvenBrickDust.get(1L)}, new int[]{10000, 2500, 750, 500}, 200, 120);
 
