@@ -132,10 +132,12 @@ public class DepLoader implements IFMLCallHook {
                 }
             });
             precheck(deps);
-            if (deps.size() > 0) {
-                LOGGER.info("{} dependencies to download.", deps.size());
+            int count = 0;
+            for (Dependency d : deps) if (!d.isDisabled() && !d.isFound()) count++;
+            if (count > 0) {
+                LOGGER.info("{} dependencies to download.", count);
                 downloaded = true;
-                dialog.setJobCount(deps.size());
+                dialog.setJobCount(count);
                 SwingUtilities.invokeLater(() ->dialog.setVisible(true));
 
                 final Downloader downloader = new Downloader(deps);
