@@ -98,10 +98,10 @@ public class CoreModConfig extends ConfigManager
 
     DebugPrintAllMaterials = _mainConfig.getBoolean( "DebugPrintAllMaterials", "DeepDarkVoidMiner", DebugPrintAllMaterials, "Set to true to enable logging of all GregTech material names with ores. This is useful for debugging, or finding names to add to the blacklist. See: gregtech.api.enums.Materials" );
     DebugPrintAllWerkstoff = _mainConfig.getBoolean( "DebugPrintAllWerkstoff", "DeepDarkVoidMiner", DebugPrintAllWerkstoff, "Set to true to enable logging of all BartWorks material names with ores. This is useful for debugging, or finding names to add to the blacklist. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
-    DebugPrintMaterials = _mainConfig.getBoolean( "DebugPrintMaterials", "DeepDarkVoidMiner", DebugPrintMaterials, "Set to true to enable logging of GregTech material names added to the Deep Dark void miner. This is useful for debugging. See: gregtech.api.enums.Materials" );
-    DebugPrintWerkstoff = _mainConfig.getBoolean( "DebugPrintWerkstoff", "DeepDarkVoidMiner", DebugPrintWerkstoff, "Set to true to enable logging of BartWorks material names added to the Deep Dark void miner. This is useful for debugging. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
-    BlacklistedMaterials = _mainConfig.getStringList( "BlacklistedMaterials", "DeepDarkVoidMiner", BlacklistedMaterials, "List of names of GregTech materials to blacklist. See: gregtech.api.enums.Materials" );
-    BlacklistedWerkstoff = _mainConfig.getStringList( "BlacklistedWerkstoff", "DeepDarkVoidMiner", BlacklistedWerkstoff, "List of names of BartWorks materials to blacklist. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
+    DebugPrintMaterials = _mainConfig.getBoolean( "DebugPrintMaterials", "DeepDarkVoidMiner", DebugPrintMaterials, "Set to true to enable logging of GregTech material names and ore metadata added to the Deep Dark void miner. This is useful for debugging. See: gregtech.api.enums.Materials" );
+    DebugPrintWerkstoff = _mainConfig.getBoolean( "DebugPrintWerkstoff", "DeepDarkVoidMiner", DebugPrintWerkstoff, "Set to true to enable logging of BartWorks material names and ore metadata added to the Deep Dark void miner. This is useful for debugging. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
+    BlacklistedMaterials = _mainConfig.getStringList( "BlacklistedMaterials", "DeepDarkVoidMiner", BlacklistedMaterials, "List of GregTech material names to blacklist. Use the debug options to get valid values. See: gregtech.api.enums.Materials" );
+    BlacklistedWerkstoff = _mainConfig.getStringList( "BlacklistedWerkstoff", "DeepDarkVoidMiner", BlacklistedWerkstoff, "List of BartWorks material names to blacklist. Use the debug options to get valid values. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
 
     OilFixConfig = new OilGeneratorFix.OilConfig( _mainConfig );
   }

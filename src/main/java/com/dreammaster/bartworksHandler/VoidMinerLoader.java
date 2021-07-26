@@ -26,11 +26,11 @@ public class VoidMinerLoader {
     private static final int DEEPDARK_ID = 100;
 
     private static boolean hasOres(Materials materials){
-        return (materials.mTypes & 8) != 0;
+        return ((materials.mTypes & 8) != 0) && (materials.mMetaItemSubID > 0);
     }
 
-    private static boolean hasOres(Werkstoff materials){
-        return materials.hasItemType(OrePrefixes.ore);
+    private static boolean hasOres(Werkstoff werkstoff){
+        return werkstoff.hasItemType(OrePrefixes.ore) && (werkstoff.getmID() > 0);
     }
 
     private static void addVoidDimerDrops(ISubTagContainer materials){
@@ -74,20 +74,24 @@ public class VoidMinerLoader {
         Arrays.stream(CoreConfig.BlacklistedWerkstoff).forEach(werkstoff::remove);
 
         if (CoreConfig.DebugPrintMaterials) {
+            // Here's how to use the logged metadata:
+            // /give @p gregtech:gt.blockores 1 <metadata>
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintMaterials]: Begin added materials list");
             log.info("==========");
-            materials.keySet().stream().sorted().forEach(name -> log.info("  " + name));
+            materials.keySet().stream().sorted().forEach(name -> log.info(String.format("  %s: %d", name, materials.get(name).mMetaItemSubID)));
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintMaterials]: End added materials list");
             log.info("==========");
         }
 
         if (CoreConfig.DebugPrintWerkstoff) {
+            // Here's how to use the logged metadata:
+            // /give @p bartworks:bw.blockores.01 1 <metadata>
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintWerkstoff]: Begin added werkstoff list");
             log.info("==========");
-            werkstoff.keySet().stream().sorted().forEach(name -> log.info("  " + name));
+            werkstoff.keySet().stream().sorted().forEach(name -> log.info(String.format("  %s: %d", name, werkstoff.get(name).getmID())));
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintWerkstoff]: End added werkstoff list");
             log.info("==========");
