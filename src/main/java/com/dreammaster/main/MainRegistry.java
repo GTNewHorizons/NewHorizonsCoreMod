@@ -56,7 +56,6 @@ import gregtech.GT_Mod;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_LanguageManager;
-import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
 import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 import net.minecraft.block.Block;
@@ -318,11 +317,6 @@ public class MainRegistry
         // Register additional OreDictionary Names
         if(CoreConfig.OreDictItems_Enabled)
         OreDictHandler.register_all();
-
-        GregTech_API.sAfterGTPostload.add(() -> {
-            Logger.debug("Add Runnable to GT to create pyrolyse oven logWood recipes");
-            PyrolyseOvenLoader.registerRecipes();
-        });
 
         // Register Dimensions in GalacticGregGT5
         if (Loader.isModLoaded("galacticgreg"))
