@@ -1965,10 +1965,6 @@ public class GT_MachineRecipeLoader implements Runnable{
         GT_Values.RA.addVacuumFreezerRecipe(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Titanium, 1L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L), 144, 480);
         GT_Values.RA.addVacuumFreezerRecipe(CustomItemList.HotNetherrackBrick.get(1L), CustomItemList.InfernalBrick.get(1L), 200, 120);
 
-        if (Loader.isModLoaded("ExtraTrees")) {
-            ProcessingLog.addPyrolyeOvenRecipes(GT_ModHandler.getModItem("ExtraTrees", "log", 16L, GT_Values.W));
-        }
-
         GT_Values.RA.addLatheRecipe(new ItemStack(Blocks.wooden_slab, 1, 0), new ItemStack(Items.bowl, 1), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1), 50, 8);
         GT_Values.RA.addLatheRecipe(new ItemStack(Blocks.wooden_slab, 1, 1), new ItemStack(Items.bowl, 1), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1), 50, 8);
         GT_Values.RA.addLatheRecipe(new ItemStack(Blocks.wooden_slab, 1, 2), new ItemStack(Items.bowl, 1), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1), 50, 8);
