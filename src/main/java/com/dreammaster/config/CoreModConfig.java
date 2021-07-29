@@ -35,6 +35,14 @@ public class CoreModConfig extends ConfigManager
   public String[] SkullFireSwordEntityTargets;
   public String[] BlacklistedTileEntiyClassNames;
 
+  // Deep Dark void miner configs.
+  public boolean DebugPrintAllMaterials;
+  public boolean DebugPrintAllWerkstoff;
+  public boolean DebugPrintMaterials;
+  public boolean DebugPrintWerkstoff;
+  public String[] BlacklistedMaterials;
+  public String[] BlacklistedWerkstoff;
+
   public OilGeneratorFix.OilConfig OilFixConfig;
 
   @Override
@@ -58,6 +66,13 @@ public class CoreModConfig extends ConfigManager
 
     BlacklistedTileEntiyClassNames = new String[] { "com.rwtema.extrautils.tileentity.enderquarry.TileEntityEnderQuarry" };
     SkullFireSwordEntityTargets = new String[] { "net.minecraft.entity.monster.EntitySkeleton", "galaxyspace.SolarSystem.planets.venus.entities.EntityEvolvedFireSkeleton", "micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton" };
+
+    DebugPrintAllMaterials = false;
+    DebugPrintAllWerkstoff = false;
+    DebugPrintMaterials = false;
+    DebugPrintWerkstoff = false;
+    BlacklistedMaterials = new String[] {};
+    BlacklistedWerkstoff = new String[] {};
   }
 
   @Override
@@ -80,6 +95,14 @@ public class CoreModConfig extends ConfigManager
     HoverModeFixEnabled = _mainConfig.getBoolean( "HoverModeFixEnabled", "ModFixes", HoverModeFixEnabled, "Set to true to prevent gravisuit advanced nano chest plate and advanced jetpack from falling when idle under hover mode." );
     SkullFireSwordEntityTargets = _mainConfig.getStringList( "Avaritia_SkullFireSwordEntityTargets", "ModFixes.Avaritia", SkullFireSwordEntityTargets, "The Canonical Class-Name of the Entity" );
     BlacklistedTileEntiyClassNames = _mainConfig.getStringList( "BlacklistedTileEntiyClassNames", "Modules.Worldaccelerator", BlacklistedTileEntiyClassNames, "The Canonical Class-Names of TileEntities that should be ignored by the WorldAccelerator" );
+
+    DebugPrintAllMaterials = _mainConfig.getBoolean( "DebugPrintAllMaterials", "DeepDarkVoidMiner", DebugPrintAllMaterials, "Set to true to enable logging of all GregTech material names with ores. This is useful for debugging, or finding names to add to the blacklist. See: gregtech.api.enums.Materials" );
+    DebugPrintAllWerkstoff = _mainConfig.getBoolean( "DebugPrintAllWerkstoff", "DeepDarkVoidMiner", DebugPrintAllWerkstoff, "Set to true to enable logging of all BartWorks material names with ores. This is useful for debugging, or finding names to add to the blacklist. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
+    DebugPrintMaterials = _mainConfig.getBoolean( "DebugPrintMaterials", "DeepDarkVoidMiner", DebugPrintMaterials, "Set to true to enable logging of GregTech material names and ore metadata added to the Deep Dark void miner. This is useful for debugging. See: gregtech.api.enums.Materials" );
+    DebugPrintWerkstoff = _mainConfig.getBoolean( "DebugPrintWerkstoff", "DeepDarkVoidMiner", DebugPrintWerkstoff, "Set to true to enable logging of BartWorks material names and ore metadata added to the Deep Dark void miner. This is useful for debugging. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
+    BlacklistedMaterials = _mainConfig.getStringList( "BlacklistedMaterials", "DeepDarkVoidMiner", BlacklistedMaterials, "List of GregTech material names to blacklist. Use the debug options to get valid values. See: gregtech.api.enums.Materials" );
+    BlacklistedWerkstoff = _mainConfig.getStringList( "BlacklistedWerkstoff", "DeepDarkVoidMiner", BlacklistedWerkstoff, "List of BartWorks material names to blacklist. Use the debug options to get valid values. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
+
     OilFixConfig = new OilGeneratorFix.OilConfig( _mainConfig );
   }
 
