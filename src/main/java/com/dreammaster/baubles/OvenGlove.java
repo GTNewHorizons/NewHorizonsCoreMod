@@ -240,7 +240,8 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem
 
   /**
    * Check if given ItemStack is a valid lava-containing container.
-   * Either the "unlocalized name" contains the word "lava"
+   * Either the item is associated with Materials.Lava by GregTech
+   * (see gregtech.loaders.preload.GT_Loader_OreDictionary; this is how we handle filled buckets (vanilla + clay))
    * - OR -
    * The item is a Tinkers-LavaTank block which contains lava
    * - OR -
