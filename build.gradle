@@ -138,6 +138,7 @@ dependencies {
     compile("com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT:dev") {
         setChanging(true)
     }
+    compile "com.github.GTNewHorizons:StructureLib:1.0.6:deobf"
     compile("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:deobf") {
         setChanging(true)
     }
