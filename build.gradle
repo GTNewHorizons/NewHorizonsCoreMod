@@ -80,6 +80,10 @@ repositories {
         name = "gt"
         url = "https://gregtech.overminddl1.com/"
     }
+    maven { // TConstruct
+        name = 'DVS1 Maven FS'
+        url = 'http://dvs1.progwml6.com/files/maven'
+    }
     maven {
         url = "http://maven.ic2.player.to/"
         name = "ic2"
@@ -142,6 +146,7 @@ dependencies {
     compile("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:deobf") {
         setChanging(true)
     }
+    compile("mantle:Mantle:1.7.10-0.3.2.jenkins207:deobf")
     compile("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-1.7.10-SNAPSHOT:dev") {
         setChanging(true)
     }

@@ -5,6 +5,7 @@ import baubles.api.IBauble;
 import baubles.common.container.InventoryBaubles;
 import baubles.common.lib.PlayerHandler;
 import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.NHItems;
 import eu.usrv.yamcore.iface.IExtendedModItem;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -19,30 +20,20 @@ import net.minecraft.util.IIcon;
 import java.util.List;
 import java.util.Random;
 
-public final class WitherProtectionRing extends Item implements IBauble, IExtendedModItem {
+public final class WitherProtectionRing extends Item implements IBauble, IExtendedModItem<WitherProtectionRing> {
     Random _mRnd = new Random();
     //private static final String NBTTAG_VISVICTUS = "VisVictus";
     //private static final String NBTTAG_PotionEffectID = "PotionEffectID";
     //private static final String NBTTAG_PotionLevel = "PotionLevel";
     
-    private String _mItemName;
-    private String _mCreativeTab;
+    private final String _mItemName;
+    private final String _mCreativeTab;
     //private static int MaxDurability = 1000;
-    
-    private static WitherProtectionRing _mInstance;
-    public static WitherProtectionRing Instance(String pItemName, String pCreativeTab)
-    {
-        if (_mInstance == null) {
-            _mInstance = new WitherProtectionRing(pItemName, pCreativeTab);
-        }
-        
-        return _mInstance;
-    }
     
     @Override
     public WitherProtectionRing getConstructedItem()
     {
-        return _mInstance;
+        return NHItems.WITHER_PROTECTION_RING.get();
     }
     
     @Override
@@ -57,7 +48,7 @@ public final class WitherProtectionRing extends Item implements IBauble, IExtend
         return super.getUnlocalizedName();
     }
     
-    private WitherProtectionRing(String pItemName, String pCreativeTab)
+    public WitherProtectionRing(String pItemName, String pCreativeTab)
     {
         _mItemName = pItemName;
         _mCreativeTab = pCreativeTab;
@@ -68,8 +59,8 @@ public final class WitherProtectionRing extends Item implements IBauble, IExtend
         super.setHasSubtypes(false);
     }
 
-    private static long prevTime = Long.MIN_VALUE;
-    private static int curRand = -1;
+    private static final long prevTime = Long.MIN_VALUE;
+    private static final int curRand = -1;
     
     @Override
     public String getUnlocalizedName(ItemStack stack) {

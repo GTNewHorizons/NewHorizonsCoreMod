@@ -4,23 +4,22 @@ package com.dreammaster.modhazardousitems;
 
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
+import com.dreammaster.modhazardousitems.HazardousItems.HazardousItem;
+import com.dreammaster.modhazardousitems.cause.HazardCause;
 import com.google.common.collect.EvictingQueue;
 import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.ModClassLoader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
-import eu.usrv.yamcore.gameregistry.DamageTypeHelper;
 import eu.usrv.yamcore.gameregistry.PotionHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.fluids.IFluidContainerItem;
 
@@ -42,22 +41,24 @@ import java.util.Random;
  */
 public class HazardousItemsHandler
 {
-  private Random _mRnd = new Random();
-  private LogHelper _mLogger = MainRegistry.Logger;
+  private final Random _mRnd = new Random();
+  private final LogHelper _mLogger = MainRegistry.Logger;
   private HazardousItems _mHazardItemsCollection;
-  private String _mConfigFileName;
-  private HazardousObjectFactory _mHazFactory = new HazardousObjectFactory();
+  private final String _mConfigFileName;
+  private final HazardousObjectFactory _mHazFactory = new HazardousObjectFactory();
   private boolean IsConfigDirty = false;
-  private int _mExecuteChance;
   private boolean _mRunProfiler;
 
-  private EvictingQueue<Long> _mTimingQueue = EvictingQueue.create( 20 );
+  private final EvictingQueue<Long> _mTimingQueue = EvictingQueue.create( 20 );
   private long _mLastAverage = 0;
+
+  private long ticks = 0;
+  private int touchBlockChance = 20;
+  private int inventoryCheckPeriod = 3 * 20;
 
   public HazardousItemsHandler()
   {
     _mRunProfiler = true;
-    _mExecuteChance = 20;
     _mConfigFileName = String.format( "config/%s/HazardousItems.xml", Refstrings.COLLECTIONID );
   }
 
@@ -76,6 +77,7 @@ public class HazardousItemsHandler
     long tStart = System.currentTimeMillis();
     CheckInventoryForItems( event.player );
     CheckPlayerTouchesBlock( event.player );
+    ticks++;
     long tEnd = System.currentTimeMillis();
 
     _mTimingQueue.add(tEnd - tStart);
@@ -87,7 +89,7 @@ public class HazardousItemsHandler
       if( getAverageTiming() > 250 )
       {
         // lol wut...
-        if( _mExecuteChance > 500 )
+        if( touchBlockChance > 500 )
         {
           _mLogger.error( "Execution chance is over 500. Not going to increase wait-timer anymore. if it still lags, contact me and we'll find another way" );
           _mRunProfiler = false;
@@ -96,7 +98,8 @@ public class HazardousItemsHandler
         }
 
         _mLogger.warn( "WARNING: The HazardousItems loop has an average timing of > 250ms, which may cause lag. Increasing wait-time between inventory-scan calls" );
-        _mExecuteChance += 1;
+        touchBlockChance++;
+        inventoryCheckPeriod++;
         _mTimingQueue.clear(); // Reset queue to prevent re-warn on next call
       }
       else
@@ -110,7 +113,7 @@ public class HazardousItemsHandler
 
   private long getAverageTiming()
   {
-    if( _mTimingQueue == null || _mTimingQueue.isEmpty() ) {
+    if(_mTimingQueue.isEmpty()) {
         return 0;
     }
 
@@ -136,7 +139,7 @@ public class HazardousItemsHandler
     HazardousItems.ItmPotionEffect tPoisonPotion = _mHazFactory.createPotionEffect( 100, Potion.poison.id, 1 );
 
     // Define a testitem to hold these effects
-    HazardousItems.HazardousItem tHazItem = _mHazFactory.createHazardousItemsHazardousItem( "tfarcenim:stone", true, true, true );
+    HazardousItem tHazItem = _mHazFactory.createHazardousItemsHazardousItem( "tfarcenim:stone", true, true, true );
 
     HazardousItems.HazardousFluid tHazFluid = _mHazFactory.createHazardousFluid( "tfarcenim:water", true, true, true );
 
@@ -247,11 +250,11 @@ public class HazardousItemsHandler
   public boolean VerifyConfiguredDamageEffects( HazardousItems pItemCollection )
   {
     boolean tResult = true;
-    for( HazardousItems.HazardousItem hi : pItemCollection.getHazardousItems() )
+    for( HazardousItem hi : pItemCollection.getHazardousItems() )
     {
       for( HazardousItems.ItmDamageEffect ide : hi.getDamageEffects() )
       {
-        if( !DamageTypeHelper.IsValidDamageSource( ide.getDamageSource() ) )
+        if( !HazardDamageSources.isValid(ide.getDamageSource()) )
         {
           _mLogger.warn( String.format( "HazardousItem [%s] has invalid DamageSource entry: [%s]", hi.getItemName(), ide.getDamageSource() ) );
           tResult = false;
@@ -262,7 +265,7 @@ public class HazardousItemsHandler
     {
       for( HazardousItems.ItmDamageEffect ide : hf.getDamageEffects() )
       {
-        if( !DamageTypeHelper.IsValidDamageSource( ide.getDamageSource() ) )
+        if( !HazardDamageSources.isValid(ide.getDamageSource()) )
         {
           _mLogger.warn( String.format( "HazardousFluid [%s] has invalid DamageSource entry: [%s]", hf.getFluidName(), ide.getDamageSource() ) );
           tResult = false;
@@ -282,7 +285,7 @@ public class HazardousItemsHandler
   public boolean VerifyConfiguredPotionEffects( HazardousItems pItemCollection )
   {
     boolean tResult = true;
-    for( HazardousItems.HazardousItem hi : pItemCollection.getHazardousItems() )
+    for( HazardousItem hi : pItemCollection.getHazardousItems() )
     {
       for( HazardousItems.ItmPotionEffect ipe : hi.getPotionEffects() )
       {
@@ -316,7 +319,7 @@ public class HazardousItemsHandler
    */
   private void CheckPlayerTouchesBlock( EntityPlayer pPlayer )
   {
-    if( _mRnd.nextInt( _mExecuteChance ) != 0 ) {
+    if( _mRnd.nextInt(touchBlockChance) != 0 ) {
         return;
     }
 
@@ -331,19 +334,19 @@ public class HazardousItemsHandler
       UniqueIdentifier tUidFeet = GameRegistry.findUniqueIdentifierFor( pBlockUnderFeet );
 
       // Skip air block and null results
-      if( tUidContact != null && tUidContact.toString() != "minecraft:air" )
+      if( tUidContact != null && !tUidContact.toString().equals("minecraft:air"))
       {
-        HazardousItems.HazardousFluid hf = _mHazardItemsCollection.FindHazardousFluidExact( tUidContact.toString() );
-        if( hf != null && hf.getCheckContact() ) {
-            DoHIEffects(hf, pPlayer);
+        HazardousItems.HazardousFluid hazard = _mHazardItemsCollection.FindHazardousFluidExact( tUidContact.toString() );
+        if( hazard != null && hazard.getCheckContact() ) {
+          doEffects(HazardCause.stepOn(), hazard, pPlayer);
         }
       }
 
-      if( tUidFeet != null && tUidFeet.toString() != "minecraft:air" )
+      if( tUidFeet != null && !tUidFeet.toString().equals("minecraft:air"))
       {
-        HazardousItems.HazardousItem hi = _mHazardItemsCollection.FindHazardousItemExact( tUidFeet.toString() );
-        if( hi != null && hi.getCheckContact() ) {
-            DoHIEffects(hi, pPlayer);
+        HazardousItem hazard = _mHazardItemsCollection.FindHazardousItemExact( tUidFeet.toString() );
+        if( hazard != null && hazard.getCheckContact() ) {
+          doEffects(HazardCause.stepOn(), hazard, pPlayer);
         }
       }
     }
@@ -360,29 +363,29 @@ public class HazardousItemsHandler
     if (pInventory == null)
       return;
 
-    for( ItemStack pIs : pInventory )
+    for( ItemStack stack : pInventory )
     {
       String tCurrIS = "";
       try
       {
-        if( pIs == null )
+        if( stack == null )
           continue;
 
-        tCurrIS = ItemDescriptor.fromStack( pIs ).toString();
+        tCurrIS = ItemDescriptor.fromStack( stack ).toString();
         // Check if item is a fluid container
-        if( pIs.getItem() instanceof IFluidContainerItem )
+        if( stack.getItem() instanceof IFluidContainerItem )
         {
-          HazardousItems.HazardousFluid hf = _mHazardItemsCollection.FindHazardousFluid( pIs );
-          if( hf != null && hf.getCheckInventory() )
+          HazardousItems.HazardousFluid hazardFluid = _mHazardItemsCollection.FindHazardousFluid( stack );
+          if( hazardFluid != null && hazardFluid.getCheckInventory() )
           {
-            DoHIEffects( hf, pPlayer );
+            doEffects(HazardCause.inventoryItem(stack), hazardFluid, pPlayer);
           }
         }
         // Tinkers' construct smeltery tank
-        else if( "tconstruct.smeltery.itemblocks.LavaTankItemBlock".equals( pIs.getItem().getClass().getName() ) )
+        else if( "tconstruct.smeltery.itemblocks.LavaTankItemBlock".equals( stack.getItem().getClass().getName() ) )
         {
           // _mLogger.info("Found lavatank");
-          NBTTagCompound tNBT = pIs.getTagCompound();
+          NBTTagCompound tNBT = stack.getTagCompound();
           if( tNBT != null && tNBT.hasKey( "Fluid" ) )
           {
             // _mLogger.info("...Has NBT 'Fluid'...");
@@ -394,11 +397,11 @@ public class HazardousItemsHandler
               if( tFluidName != null && !tFluidName.isEmpty() )
               {
                 // _mLogger.info("...Finding Hazardous Fluids...");
-                HazardousItems.HazardousFluid hf = _mHazardItemsCollection.FindHazardousFluidExact( tFluidName );
-                if( hf != null && hf.getCheckInventory() )
+                HazardousItems.HazardousFluid hazardFluid = _mHazardItemsCollection.FindHazardousFluidExact( tFluidName );
+                if( hazardFluid != null && hazardFluid.getCheckInventory() )
                 {
                   // _mLogger.info("...Found Hazardous Fluids");
-                  DoHIEffects( hf, pPlayer );
+                  doEffects(HazardCause.inventoryItem(stack), hazardFluid, pPlayer);
                 }
                 // else
                 // _mLogger.info("...Not found Hazardous Fluids");
@@ -412,10 +415,10 @@ public class HazardousItemsHandler
         }
         else
         {
-          HazardousItems.HazardousItem hi = _mHazardItemsCollection.FindHazardousItem( pIs );
-          if( hi != null && hi.getCheckInventory() )
+          HazardousItem hazardItem = _mHazardItemsCollection.FindHazardousItem( stack );
+          if( hazardItem != null && hazardItem.getCheckInventory() )
           {
-            DoHIEffects( hi, pPlayer );
+            doEffects(HazardCause.inventoryItem(stack), hazardItem, pPlayer);
           }
         }
       }
@@ -430,8 +433,8 @@ public class HazardousItemsHandler
 
   private void CheckInventoryForItems( EntityPlayer pPlayer )
   {
-    if( _mRnd.nextInt( _mExecuteChance ) != 0 ) {
-        return;
+    if(ticks % inventoryCheckPeriod != 0) {
+      return;
     }
 
     try
@@ -470,15 +473,12 @@ public class HazardousItemsHandler
     }
   }
 
-  private void DoHIEffects( IDamageEffectContainer pHI, EntityPlayer pPlayer )
-  {
-    // Attack player based on all defined items
-    for( HazardousItems.ItmDamageEffect iDE : pHI.getDamageEffects() ) {
-        pPlayer.attackEntityFrom(DamageTypeHelper.ParseStringToDamageSource(iDE.getDamageSource()), iDE.getAmount());
+  private void doEffects(HazardCause cause, IDamageEffectContainer effectContainer, EntityPlayer player) {
+    for (HazardousItems.ItmDamageEffect effect : effectContainer.getDamageEffects()) {
+      effect.apply(cause, player);
     }
-
-    for( HazardousItems.ItmPotionEffect iPE : pHI.getPotionEffects() ) {
-        pPlayer.addPotionEffect(new PotionEffect(iPE.getId(), iPE.getDuration(), iPE.getLevel()));
+    for (HazardousItems.ItmPotionEffect effect : effectContainer.getPotionEffects()) {
+      effect.apply(cause, player);
     }
   }
 }
