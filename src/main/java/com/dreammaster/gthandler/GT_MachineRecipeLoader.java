@@ -3219,7 +3219,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             // --- Upgrade Steel to Gold Tank
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),  GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(72L), GT_ModHandler.getModItem("irontank", "silverGoldUpgrade", 1L, 0), 700, 30);
             // --- Upgrade Steel to Diamond Tank
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),  GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Diamond, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(72L), GT_ModHandler.getModItem("irontank", "silverDiamondUpgrade", 1L, 0), 800, 30);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),  GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(72L), GT_ModHandler.getModItem("irontank", "silverDiamondUpgrade", 1L, 0), 800, 30);
             // --- Upgrade Diamond to Obsidian
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),  GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L), GT_Utility.getIntegratedCircuit(4)}, Materials.Glass.getMolten(72L), GT_ModHandler.getModItem("irontank", "diamondObsidianUpgrade", 1L, 0), 900, 30);
             // --- Upgrade Diamond to Aluminium Tank
