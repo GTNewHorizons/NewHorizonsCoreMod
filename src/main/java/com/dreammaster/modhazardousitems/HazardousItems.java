@@ -2,15 +2,20 @@
 package com.dreammaster.modhazardousitems;
 
 
+import com.dreammaster.modhazardousitems.cause.HazardCause;
 import eu.usrv.yamcore.auxiliary.FluidHelper;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 
 @XmlAccessorType( XmlAccessType.FIELD )
@@ -467,7 +472,7 @@ public class HazardousItems
 
   @XmlAccessorType( XmlAccessType.FIELD )
   @XmlType
-  public static class ItmDamageEffect
+  public static class ItmDamageEffect extends HazardEffect
   {
 
     @XmlAttribute( name = "Source" )
@@ -495,11 +500,16 @@ public class HazardousItems
         amount = value;
     }
 
+    @Override
+    protected void apply(HazardCause cause, EntityPlayer player) {
+      Function<HazardCause, DamageSource> sourceFactory = HazardDamageSources.getDamageSourceFactoryOrFail(getDamageSource());
+      player.attackEntityFrom(sourceFactory.apply(cause), getAmount());
+    }
   }
 
   @XmlAccessorType( XmlAccessType.FIELD )
   @XmlType
-  public static class ItmPotionEffect
+  public static class ItmPotionEffect extends HazardEffect
   {
 
     @XmlAttribute( name = "PotionID" )
@@ -537,6 +547,11 @@ public class HazardousItems
     public void setLevel( Integer value )
     {
         level = value;
+    }
+
+    @Override
+    protected void apply(HazardCause cause, EntityPlayer player) {
+      player.addPotionEffect(new PotionEffect(getId(), getDuration(), getLevel()));
     }
   }
 }
