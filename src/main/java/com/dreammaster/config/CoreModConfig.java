@@ -48,7 +48,7 @@ public class CoreModConfig extends ConfigManager
   protected void PreInit()
   {
     ModLoginMessage_Enabled = true;
-    ModPackVersion = "2.1.1.2";
+    ModPackVersion = "2.1.1.3";
     ModHazardousItems_Enabled = false;
     ModCustomToolTips_Enabled = false;
     ModItemInHandInfo_Enabled = false;
