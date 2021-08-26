@@ -2,6 +2,8 @@ package com.dreammaster.main;
 
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
+import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
+import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
@@ -56,8 +58,6 @@ import gregtech.GT_Mod;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_LanguageManager;
-import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
-import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -290,15 +290,19 @@ public class MainRegistry
         Logger.warn( "Welcome to Gregtech:New Horizons " + CoreModConfig.ModPackVersion );
         Logger.warn( "Please bring comments to " + "https://discord.gg/EXshrPV" );
         Logger.warn( "==================================================" );
+
+        MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
     }
 
     private static boolean RegisterNonEnumItems()
     {
         boolean tResult = true;
-        if (!ItemManager.RegisterNonEnumItem(TabManager, OvenGlove.Instance("OvenGlove", ModTabList.ModGenericTab))) {
+        NHItems.OVEN_GLOVE.place(new OvenGlove("OvenGlove", ModTabList.ModGenericTab));
+        if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.OVEN_GLOVE.get())) {
             tResult = false;
         }
-        if (!ItemManager.RegisterNonEnumItem(TabManager, WitherProtectionRing.Instance("WitherProtectionRing", ModTabList.ModThaumcraftTab))) {
+        NHItems.WITHER_PROTECTION_RING.place(new WitherProtectionRing("WitherProtectionRing", ModTabList.ModThaumcraftTab));
+        if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.WITHER_PROTECTION_RING.get())) {
             tResult = false;
         }
 
