@@ -958,6 +958,7 @@ public class GT_MachineRecipeLoader implements Runnable{
             GT_Values.RA.addFluidExtractionRecipe(new ItemStack(Items.slime_ball, 1, 0), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("glue"), 144), 10000, 100, 16);
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("glue"), 144), 10000, 100, 16);
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 1), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("glue"), 144), 10000, 100, 16);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 36), GT_Values.NI, new FluidStack(FluidRegistry.getFluid("glue"), 144), 10000, 100, 16);
 
             GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.sapling", 1L, 0), GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0), 300, 2);
             GT_Values.RA.addExtractorRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 0), GT_ModHandler.getModItem("TConstruct", "strangeFood", 4L, 0), 300, 2);
