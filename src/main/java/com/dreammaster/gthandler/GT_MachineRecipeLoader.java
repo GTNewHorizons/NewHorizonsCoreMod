@@ -1793,15 +1793,23 @@ public class GT_MachineRecipeLoader implements Runnable {
         }
         //extra utils
         if (Loader.isModLoaded("ExtraUtilities")) {
-            GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 0), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 4), GT_Values.NI);
+        	//CC
+        	GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 0), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 1), GT_Values.NI);
+        	GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 1), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 2), GT_Values.NI);
+        	GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 2), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 3), GT_Values.NI);
+            GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 3), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 4), GT_Values.NI);
             GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 4), 8, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 5), GT_Values.NI);
             GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 5), 10, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 6), GT_Values.NI);
             GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 6), 16, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 7), GT_Values.NI);
-            GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 14), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 15), GT_Values.NI);
+            //CD
             GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 8), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 9), GT_Values.NI);
             GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 9), 2, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 10), GT_Values.NI);
             GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 10), 4, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 11), GT_Values.NI);
+            //CG
             GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 12), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 13), GT_Values.NI);
+            //CS
+            GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 9L, 14), 1, GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1L, 15), GT_Values.NI);
+            
             GT_Values.RA.addImplosionRecipe(GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 9), 8, GT_ModHandler.getModItem("ExtraUtilities", "block_bedrockium", 1L), GT_Values.NI);
         }
 
