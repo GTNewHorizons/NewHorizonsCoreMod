@@ -2910,8 +2910,10 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 GT_Utility.getIntegratedCircuit(13)},
                         Materials.Titanium.getMolten(1440L),
                         GT_ModHandler.getIC2Item("quantumBoots", 1L, 26), 1500, 7680);
-                make_lua_bios();
+                
                 if (Loader.isModLoaded("OpenComputers")) {
+                	make_lua_bios();
+                	
                     //display t1
                     GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Casing_MV.get(1L), ItemList.Cover_Screen.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2L), ItemList.Circuit_Parts_Transistor.get(2L), GT_Utility.getIntegratedCircuit(1)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "screen1", 1L, 0), 240, 64);
                     GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Casing_MV.get(1L), ItemList.Cover_Screen.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2L), ItemList.Circuit_Parts_TransistorSMD.get(1L), GT_Utility.getIntegratedCircuit(1)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("OpenComputers", "screen1", 1L, 0), 240, 64);
