@@ -295,5 +295,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
             GT_ModHandler.addRollingMachineRecipe(GT_ModHandler.getModItem(aTextRailcraft, "post.metal.purple", 64L), new Object[]{aTextIron1, aTextIron2, aTextIron1, 'X', OrePrefixes.stick.get(Materials.Titanium).toString()});
             GT_ModHandler.addRollingMachineRecipe(GT_ModHandler.getModItem(aTextRailcraft, "post.metal.black", 64L), new Object[]{aTextIron1, aTextIron2, aTextIron1, 'X', OrePrefixes.stick.get(Materials.Tungsten).toString()});
         }
+        
+        if (Loader.isModLoaded("Ztones")) {
+        	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "stoneTile", 8L, 0), bits, new Object[]{"SSS", "STS", "SSS", 'S', new ItemStack(Blocks.stone_slab, 1), 'T', new ItemStack(Blocks.stone, 1)});
+        	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "auroraBlock", 8L, 0), bits, new Object[]{"GGG", "GDG", "GGG", 'G', new ItemStack(Blocks.glass, 1), 'D', new ItemStack(Items.dye, 1, GT_Values.W)});        	
+        	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "minicharcoal", 7L, 0), bits, new Object[]{"T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C', OrePrefixes.dust.get(Materials.Charcoal)});
+        	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "minicoal", 7L, 0), bits, new Object[]{"T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C', OrePrefixes.dust.get(Materials.Coal)});
+        }
     }
 }
