@@ -46,7 +46,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L), CustomItemList.AluminoSilicateWool.get(2L), 1200, 30);
         GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L), CustomItemList.AluminoSilicateWool.get(2L), 1200, 30);
 
-        GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L), GT_ModHandler.getModItem("TConstruct", "materials", 4L, 14), 100, 120);
+        GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L), GT_ModHandler.getModItem("TConstruct", "materials", 4L, 14), 100, 120);
 
         makeCoilRecipes();
 
@@ -536,16 +536,16 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 1L), GT_Utility.getIntegratedCircuit(11), Materials.Nitrogen.getGas(1000L), GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.BlackPlutonium, 1L), GT_Values.NI, 6000, 122880, 9000);
         GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 1L), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.BlackPlutonium, 1L), GT_Values.NI, 7500, 122880, 9000);
 
-        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 1L), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 1L), GT_Values.NI, 1200, 120, 1200);
+        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 12L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L), GT_Utility.getIntegratedCircuit(12),  GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 12L), 400, 30);
+        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 16L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 4L),  GT_Utility.getIntegratedCircuit(16),  GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 16L), 100, 120);
 
-        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 1L), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 1L), GT_Values.NI, 1200, 120, 1200);
+        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 1L), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 1L), GT_Values.NI, 100, 120, 1300);
 
-        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 1L), GT_Utility.getIntegratedCircuit(11), GT_Values.NF, Materials.Water.getFluid(3000L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1L), GT_Values.NI, 1200, 120, 2054);
-        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 1L), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 2L), GT_Values.NI, 1200, 120, 963);
+        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 2L),  GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 2L), GT_Values.NI, 600, 120, 2054);
+        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 6L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 3L), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 6L), GT_Values.NI, 1200, 120, 963);
 
-        GT_Values.RA.addChemicalRecipeForBasicMachineOnly(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 3L), 300, 30);
         GT_Values.RA.addChemicalRecipeForBasicMachineOnly(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.HydrofluoricAcid, 6L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 1L), Materials.SaltWater.getFluid(3000L), Materials.Water.getFluid(1000L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 1L), ItemList.Cell_Empty.get(6), 300, 30);
-        GT_Values.RA.addChemicalRecipeForBasicMachineOnly(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.SaltWater, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 1L), Materials.HydrochloricAcid.getFluid(6000L), Materials.Water.getFluid(1000L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 1L), ItemList.Cell_Empty.get(3), 300, 30);
+        GT_Values.RA.addChemicalRecipeForBasicMachineOnly(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.SaltWater, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 1L), Materials.HydrofluoricAcid.getFluid(6000L), Materials.Water.getFluid(1000L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 1L), ItemList.Cell_Empty.get(3), 300, 30);
         GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 16L), GT_Utility.getIntegratedCircuit(24)}, new FluidStack[]{Materials.HydrofluoricAcid.getFluid(96000L), Materials.SaltWater.getFluid(48000L)}, new FluidStack[]{Materials.Water.getFluid(16000L), Materials.Chlorine.getGas(16000L), Materials.Hydrogen.getGas(112000L)}, new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 16L)}, 600, 480);
 
         //NEEDED TO MOVE FROM GREG, CODE WAS TOO LONG
@@ -660,8 +660,10 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         GT_Values.RA.addBlastRecipe(Materials.Sapphire.getDust(3), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1),  GT_Values.NI, 1200, 120, 1200);
         GT_Values.RA.addBlastRecipe(Materials.GreenSapphire.getDust(3), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1),  GT_Values.NI, 1200, 120, 1200);
+        GT_Values.RA.addBlastRecipe(Materials.Ruby.getDust(3), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1),  GT_Values.NI, 1200, 120, 1200);
         GT_Values.RA.addBlastRecipe(Materials.Sapphire.getDust(3), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1), 600, 120, 1200);
         GT_Values.RA.addBlastRecipe(Materials.GreenSapphire.getDust(3),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1), 600, 120, 1200);
+        GT_Values.RA.addBlastRecipe(Materials.Ruby.getDust(3),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1), 600, 120, 1200);
 
         GT_Values.RA.addBrewingRecipe(GT_ModHandler.getModItem("IC2", "itemBiochaff", 1L, 0), FluidRegistry.getFluid("water"), FluidRegistry.getFluid("ic2biomass"), false);
 
