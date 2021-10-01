@@ -659,7 +659,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         GT_Values.RA.addBlastRecipe(Materials.Sapphire.getDust(3), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1),  GT_Values.NI, 1200, 120, 1200);
         GT_Values.RA.addBlastRecipe(Materials.GreenSapphire.getDust(3), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1),  GT_Values.NI, 1200, 120, 1200);
-        GT_Values.RA.addBlastRecipe(Materials.Ruby.getDust(1), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1),  GT_Values.NI, 1200, 120, 1200);
+        GT_Values.RA.addBlastRecipe(Materials.Ruby.getDust(3), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1),  GT_Values.NI, 1200, 120, 1200);
         GT_Values.RA.addBlastRecipe(Materials.Sapphire.getDust(1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1), 600, 120, 1200);
         GT_Values.RA.addBlastRecipe(Materials.GreenSapphire.getDust(1),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1), 600, 120, 1200);
         GT_Values.RA.addBlastRecipe(Materials.Ruby.getDust(1),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1), 600, 120, 1200);
