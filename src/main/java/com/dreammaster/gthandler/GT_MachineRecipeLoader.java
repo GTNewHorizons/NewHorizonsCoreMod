@@ -2859,7 +2859,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{RocketMaterial[i], ItemList.Circuit_Nanocomputer.get(1L), DataStickWScheme.splitStack(0)}, tMat.getMolten(576L * tMultiplier / 2L), ExtraChips[i], 9000, EUperRecipe[i], true);
                 }
                 //Primitive Circuit
-                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Phenolic_Good.get(1L), ItemList.Circuit_Chip_Simple_SoC.get(1L), GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 2), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tin, 2)}, tMat.getMolten(144L * tMultiplier / 2L), ItemList.NandChip.get(4L), 300, 120);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Coated_Basic.get(1L), ItemList.Circuit_Chip_Simple_SoC.get(1L), GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1)}, tMat.getMolten(36L * tMultiplier / 2L), CustomItemList.NandChipBoard.get(1), 300, 120);
+                GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Coated_Basic.get(1L), ItemList.Circuit_Chip_Simple_SoC.get(1L), GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1)}, tMat.getMolten(36L * tMultiplier / 2L), CustomItemList.NandChipBoard.get(1), 150, 120);
+                GT_Values.RA.addCutterRecipe(CustomItemList.NandChipBoard.get(1), ItemList.NandChip.get(16), null, 100, 480, true);
 
                 //Basic Circuit
                 GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Coated_Basic.get(1L), ItemList.Circuit_Parts_Resistor.get(2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2), ItemList.Circuit_Parts_Vacuum_Tube.get(2L)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("IC2", "itemPartCircuit", 1L, 0), 200, 16);

@@ -137,6 +137,7 @@ public enum CustomItemList implements IItemContainer
 	ArtificialLeather,
 	EctoplasmaChip, EctoplasmaFragment, ArcaneShardChip, ArcaneShardFragment,
 	RuneOfPowerFragment, RuneOfAgilityFragment, RuneOfVigorFragment, RuneOfDefenseFragment, RuneOfMagicFragment, RuneOfVoidFragment,
+	NandChipBoard,
 	Display;
 
 
