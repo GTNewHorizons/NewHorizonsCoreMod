@@ -1,8 +1,9 @@
 package com.dreammaster.gthandler;
 
 import com.dreammaster.item.ItemList;
+import gregtech.api.enums.SubTag;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
-
+import gregtech.api.items.GT_MetaGenerated_Item_X32;
 
 public class GT_Loader_Items
 {
@@ -593,6 +594,7 @@ public class GT_Loader_Items
 		CustomItemList.RuneOfDefenseFragment.set(ItemList.RuneOfDefenseFragment.getIS());
 		CustomItemList.RuneOfMagicFragment.set(ItemList.RuneOfMagicFragment.getIS());
 		CustomItemList.RuneOfVoidFragment.set(ItemList.RuneOfVoidFragment.getIS());
+		CustomItemList.NandChipBoard.set(GT.addItem(81, "NAND Chip Array", "Chips on Board", "circuitPrimitiveArray", SubTag.NO_UNIFICATION));
 		CustomItemList.Display.set(ItemList.Display.getIS());
 
 	}
