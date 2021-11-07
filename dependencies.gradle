@@ -1,0 +1,86 @@
+// Add your dependencies here
+
+dependencies {
+    compile("eu.usrv:YAMCore:1.7.10-0.5.80:deobf") {
+        transitive = false
+    }
+    compile("com.azanor.baubles:Baubles:1.0.1.10:deobf") {
+        transitive = false
+    }
+    compile("applecore:AppleCore:1.7.10-1.1.0:deobf") {
+        transitive = false
+    }
+    compile("codechicken:CodeChickenLib:1.7.10-1.1.3.138:dev") {
+        transitive = false
+    }
+    compile("codechicken:CodeChickenCore:1.7.10-1.0.4.29:dev") {
+        transitive = false
+    }
+    compile("codechicken:NotEnoughItems:1.7.10-1.0.3.74:dev") {
+        transitive = false
+    }
+    compile("net.industrial-craft:industrialcraft-2:2.2.790-experimental:dev") {
+        transitive = false
+    }
+    compile("com.enderio:EnderIO:1.7.10-2.3.0.429_beta:dev") {
+        transitive = false
+        exclude group: "mcp.mobius.waila"
+    }
+    compile("com.enderio.core:EnderCore:1.7.10-0.2.0.39_beta:dev") {
+        transitive = false
+    }
+    compile("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") {
+        transitive = false
+    }
+
+    //downloads.gtnewhorizons.com
+    compile(":HardcoreEnderExpansion:MC-1.7.10_v1.8.6") {
+        transitive = false
+    }
+    compile(":Railcraft:1.7.10-9.12.2.0:dev") {
+        transitive = false
+    }
+    compile(":GT-PlusPlus:1.7.05.53") {
+        transitive = false
+    }
+    compile(":twilightforest:1.7.10-2.3.8.5-dev-deobf") {
+        transitive = false
+    }
+    compile(":WitcheryExtras:1.0.1-dev") {
+        transitive = false
+    }
+    compile(":witchery:1.7.10-0.24.1:deobf") {
+        transitive = false
+    }
+    //jitpack
+    compile("com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT:dev") {
+        transitive = false
+        setChanging(true)
+    }
+    compile("com.github.GTNewHorizons:StructureLib:1.0.6:deobf") {
+        transitive = false
+    }
+    compile("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:deobf") {
+        transitive = false
+        setChanging(true)
+    }
+    compile("mantle:Mantle:1.7.10-0.3.2.jenkins207:deobf") {
+        transitive = false
+    }
+    compile("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-1.7.10-SNAPSHOT:dev") {
+        transitive = false
+        setChanging(true)
+    }
+    compile("com.github.GTNewHorizons:ForestryMC:GTNH-Fixes-SNAPSHOT:dev") {
+        transitive = false
+        setChanging(true)
+    }
+    compile("com.github.GTNewHorizons:GalacticGregGT5:master-SNAPSHOT") {
+        transitive = false
+        setChanging(true)
+    }
+    compile("com.github.GTNewHorizons:bartworks:master-SNAPSHOT:dev") {
+        transitive = false
+        setChanging(true)
+    }
+}

@@ -1,10 +1,10 @@
 [
 {
-  "modid": "dreamcraft",
-  "name": "GT: New Horizons",
+  "modid": "${modId}",
+  "name": "${modName}",
   "description": "Core Mod for the GT: New Horizons Pack.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "version": "${modVersion}",
+  "mcversion": "${minecraftVersion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["DreamMasterXXL, Namikon"],
