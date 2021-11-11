@@ -13,7 +13,7 @@ public class GT_Loader_Materials {
 
 	private void registerMaterialRecipes()
 	{
-		GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahAlloy, 2L),
+		/*GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahAlloy, 2L),
 				GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
 						OrePrefixes.dust.get(Materials.Naquadah),
 						OrePrefixes.dust.get(Materials.Naquadah),
@@ -42,8 +42,8 @@ public class GT_Loader_Materials {
 						OrePrefixes.dust.get(Materials.AnyCopper),
 						OrePrefixes.dust.get(Materials.Manganese),
 						OrePrefixes.dust.get(Materials.Magnesium)});
-
-		GT_ModHandler.addShapelessCraftingRecipe(GT_ModHandler.getModItem("dreamcraft", "item.AlumiteDust", 9L),
+*/
+		GT_ModHandler.addShapelessCraftingRecipe(GT_ModHandler.getModItem("dreamcraft", "item.AlumiteDust", 8L),
 				GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{
 						OrePrefixes.dust.get(Materials.Aluminium),
 						OrePrefixes.dust.get(Materials.Aluminium),
@@ -55,7 +55,7 @@ public class GT_Loader_Materials {
 						OrePrefixes.dust.get(Materials.Obsidian),
 						OrePrefixes.dust.get(Materials.Obsidian)});
 
-		GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.FerriteMixture, 6L),
+		GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.FerriteMixture, 5L),
 				GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
 						OrePrefixes.dust.get(Materials.Nickel),
 						OrePrefixes.dust.get(Materials.Zinc),
@@ -64,7 +64,7 @@ public class GT_Loader_Materials {
 						OrePrefixes.dust.get(Materials.Iron),
 						OrePrefixes.dust.get(Materials.Iron)});
 
-		GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BorosilicateGlass, 8L),
+		GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BorosilicateGlass, 7L),
 				GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{
 						OrePrefixes.dust.get(Materials.Boron),
 						OrePrefixes.dust.get(Materials.Glass),
