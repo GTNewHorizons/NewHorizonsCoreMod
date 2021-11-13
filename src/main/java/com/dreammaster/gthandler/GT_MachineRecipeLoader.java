@@ -2357,7 +2357,8 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 8), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.YttriumBariumCuprate, 32), GT_Utility.getIntegratedCircuit(6)}, Materials.Polybenzimidazole.getMolten(9216L), getBartWorksMaterialByIGNName("Wrap of Advanced SMD Diodes").get(64L), 300, 30720);
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VanadiumGallium, 16), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.HSSG, 64), GT_Utility.getIntegratedCircuit(6)}, Materials.Polybenzimidazole.getMolten(9216L), getBartWorksMaterialByIGNName("Wrap of Advanced SMD Transistors").get(64L), 300, 30720);
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 32), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HSSE, 32), GT_Utility.getIntegratedCircuit(6)}, Materials.Polybenzimidazole.getMolten(9216L), getBartWorksMaterialByIGNName("Wrap of Advanced SMD Capacitors").get(64L), 300, 30720);
-            
+        }
+        
         if (Loader.isModLoaded("JABBA")) {
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2)}, GT_Values.NF, GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 0), 200, 16);
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 2), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Copper, 2)}, GT_Values.NF, GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 1), 200, 16);
