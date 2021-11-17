@@ -49,8 +49,8 @@ public enum ItemList
     BioChunk(new ModSimpleBaseItem("BioChunk", ModTabList.ModGenericTab)),
     Blaster(new ModSimpleBaseItem("Blaster", ModTabList.ModThaumcraftTab)),
     BloodVial(new ModSimpleBaseItem("BloodVial", ModTabList.ModThaumcraftTab)),
-    BowFletchingCast(new ModSimpleBaseItem("BowFletchingCast", ModTabList.ModMoldsTab)),
-    BowStringCast(new ModSimpleBaseItem("BowStringCast", ModTabList.ModMoldsTab)),
+    //BowFletchingCast(new ModSimpleBaseItem("BowFletchingCast", ModTabList.ModMoldsTab)), //moved to CustomPatterns
+    //BowStringCast(new ModSimpleBaseItem("BowStringCast", ModTabList.ModMoldsTab)), //moved to CustomPatterns
     CompressedBioBall(new ModSimpleBaseItem("CompressedBioBall", ModTabList.ModGenericTab)),
     BlackPlutoniumCompressedPlate(new ModSimpleBaseItem("BlackPlutoniumCompressedPlate", ModTabList.ModSpaceTab)),
     BlackPlutoniumDust(new ModSimpleBaseItem("BlackPlutoniumDust", ModTabList.ModSpaceTab)),
