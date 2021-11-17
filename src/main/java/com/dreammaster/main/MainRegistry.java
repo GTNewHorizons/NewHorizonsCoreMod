@@ -14,6 +14,7 @@ import com.dreammaster.fluids.FluidList;
 import com.dreammaster.galacticgreg.SpaceDimRegisterer;
 import com.dreammaster.gthandler.*;
 import com.dreammaster.item.ItemList;
+import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
 import com.dreammaster.modbabychest.BlockBabyChest;
@@ -187,7 +188,8 @@ public class MainRegistry
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
-        if (!ItemList.AddToItemManager(ItemManager))
+
+        if (!ItemList.AddToItemManager(ItemManager) | !CustomPatterns.RegisterPatterns(TabManager))
         {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
