@@ -559,7 +559,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.CuttingMachineLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10820, "basicmachine.cutter.tier.06", "Elite Cutting Machine", 6, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 128000, 0, 1, "Cutter2.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -572,7 +572,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10821, "basicmachine.cutter.tier.07", "Elite Cutting Machine II", 7, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 160000, 0, 1, "Cutter2.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -585,7 +585,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10822, "basicmachine.cutter.tier.08", "Ultimate Object Divider", 8, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 192000, 0, 1, "Cutter2.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -598,7 +598,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10823, "basicmachine.cutter.tier.09", "Epic Object Divider", 9, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 224000, 0, 1, "Cutter2.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -611,7 +611,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10824, "basicmachine.cutter.tier.10", "Epic Object Divider II",10, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 256000, 0, 1, "Cutter2.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', CustomItemList.Hull_UEV,
@@ -624,12 +624,12 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10825, "basicmachine.cutter.tier.11", "Epic Object Divider III",11, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 288000, 0, 1, "Cutter2.png",
 				"", false, false, 0, "CUTTER",null).getStackForm(1L));
 
 		CustomItemList.CuttingMachineUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10826, "basicmachine.cutter.tier.12", "Epic Object Divider IV",12, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 1000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 320000, 0, 1, "Cutter2.png",
 				"", false, false, 0, "CUTTER",null).getStackForm(1L));
 
 		//CuttingMachineLuV
@@ -3436,43 +3436,43 @@ public class GT_Loader_Machines
 		CustomItemList.MixerLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11210, "basicmachine.mixer.tier.06", "Elite Mixer", 6,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11211, "basicmachine.mixer.tier.07", "Elite Mixer II", 7,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11212, "basicmachine.mixer.tier.08", "Ultimate Matter Organizer", 8,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11213, "basicmachine.mixer.tier.09", "Epic Matter Organizer", 9,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11214, "basicmachine.mixer.tier.10", "Epic Matter Organizer II",10,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11215, "basicmachine.mixer.tier.11", "Epic Matter Organizer III",11,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 64000, 0, 1, "Mixer4.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11216, "basicmachine.mixer.tier.12", "Epic Matter Organizer IV",12,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 64000, 0, 1, "Mixer4.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.MixerLuV.get(1L),

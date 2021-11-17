@@ -29,16 +29,21 @@ public class GT_Loader_Wires
         // ===================================================================================================
 
         //Takes 20!!! slots per wire
+        makeWires(Materials.ElectricalSteel, 11490, bEC ? 1L : 2L, bEC ? 2L : 4L, 2L, GT_Values.V[2], true, false);
+        makeWires(Materials.EnergeticAlloy, 11510, bEC ? 2L : 5L, bEC ? 4L : 10L, 2L, gregtech.api.enums.GT_Values.V[3], true, false);
+        makeWires(Materials.VibrantAlloy, 11530, bEC ? 2L : 8L, bEC ? 4L : 16L, 4L, gregtech.api.enums.GT_Values.V[4], true, false);
+        makeWires(Materials.MelodicAlloy, 11550, bEC ? 2L : 16L, bEC ? 4L : 32L, 4L, gregtech.api.enums.GT_Values.V[5], true, false);
+        makeWires(Materials.StellarAlloy, 11570, bEC ? 4L : 16L, bEC ? 8L : 32L, 6L, gregtech.api.enums.GT_Values.V[6], true, false);
+        makeWires(Materials.Trinium, 11450, bEC ? 4L : 16L, bEC ? 8L : 32L, 6L, GT_Values.V[7], true, false);
         makeWires(Materials.ElectrumFlux, 1900, 1L, 2L, 3L, GT_Values.V[8], true, false);
         makeWires(Materials.Bedrockium, 11310, bEC ? 1L : 16L, bEC ? 32L : 64L, 2L, GT_Values.V[9], true, false);
+        makeWires(Materials.HSSS, 11470, bEC ? 4L : 16L, bEC ? 8L : 32L, 6L, GT_Values.V[9], true, false);
         makeWires(Materials.Draconium, 11330, bEC ? 4L : 16L, bEC ? 32L : 64L, 8L, GT_Values.V[10], true, false);
         makeWires(Materials.NetherStar, 11350, bEC ? 4L : 16L, bEC ? 16L : 32L, 4L, GT_Values.V[11], true, false);
         makeWires(Materials.Quantium, 11370, bEC ? 4L : 16L, bEC ? 16L : 32L, 2L, GT_Values.V[12], false, false);
         makeWires(Materials.BlackPlutonium, 11390, bEC ? 4L : 16L, bEC ? 16L : 32L, 1L, GT_Values.V[13], false, false);
         makeWires(Materials.DraconiumAwakened, 11410, bEC ? 4L : 16L, bEC ? 16L : 32L, 1L, GT_Values.V[14], false, false);
         makeWires(Materials.Infinity, 11430, 1L, 1L, 8192L, GT_Values.V[15], false, true);
-        makeWires(Materials.Trinium, 11450, bEC ? 4L : 16L, bEC ? 8L : 32L, 6L, GT_Values.V[7], true, false);
-        makeWires(Materials.HSSS, 11470, bEC ? 4L : 16L, bEC ? 8L : 32L, 6L, GT_Values.V[9], true, false);
 
         /** ID SPACE RESERVED: to 11800, FOR WIRES
         makeWires(Materials.???, 1920, 4L, 8L, 8L, gregtech.api.enums.GT_Values.V[8], true, false);
