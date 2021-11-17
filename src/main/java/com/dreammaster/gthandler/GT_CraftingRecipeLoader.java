@@ -17,7 +17,7 @@ import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPE
 
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader implements Runnable {
-	private static final String aTextRailcraft = "Railcraft";
+    private static final String aTextRailcraft = "Railcraft";
     private static final String aTextMachineBeta = "machine.beta";
     private static final String aTextMachineAlpha = "machine.alpha";
     private static final String aTextIron1 = "X X";
