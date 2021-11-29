@@ -1,6 +1,4 @@
 import java.util.concurrent.TimeUnit
-import java.util.Properties
-import groovy.util.ConfigSlurper
 
 buildscript {
     repositories {
@@ -20,7 +18,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.github.GTNH2:ForgeGradle:FG_1.2-SNAPSHOT"
+        classpath "com.github.GTNewHorizons:ForgeGradle:1.2.4"
     }
 }
 
@@ -143,14 +141,14 @@ dependencies {
         setChanging(true)
     }
     compile "com.github.GTNewHorizons:StructureLib:1.0.6:deobf"
-    compile("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:deobf") {
+    compile("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:dev") {
         setChanging(true)
     }
     compile("mantle:Mantle:1.7.10-0.3.2.jenkins207:deobf")
     compile("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-1.7.10-SNAPSHOT:dev") {
         setChanging(true)
     }
-    compile("com.github.GTNewHorizons:ForestryMC:GTNH-Fixes-SNAPSHOT:dev") {
+    compile("com.github.GTNewHorizons:ForestryMC:master-SNAPSHOT:dev") {
         setChanging(true)
     }
     compile("com.github.GTNewHorizons:GalacticGregGT5:master-SNAPSHOT") {

@@ -188,7 +188,7 @@ public class MainRegistry
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
-        if (!ItemList.AddToItemManager(ItemManager) | !CustomPatterns.RegisterPatterns(TabManager))
+        if (!ItemList.AddToItemManager(ItemManager) | !(!Loader.isModLoaded("TConstruct") || CustomPatterns.RegisterPatterns(TabManager)))
         {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
