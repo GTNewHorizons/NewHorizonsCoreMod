@@ -83,7 +83,7 @@ repositories {
         url = 'http://dvs1.progwml6.com/files/maven'
     }
     maven {
-        url = "http://maven.ic2.player.to/"
+        url = "https://maven.ic2.player.to/"
         name = "ic2"
     }
     maven {
@@ -119,16 +119,16 @@ dependencies {
         exclude module: "*"
     }
     compile "applecore:AppleCore:${config.applecore.version}:deobf"
-    compile "codechicken:CodeChickenLib:${config.minecraft.version}-${config.codechickenlib.version}:dev"
-    compile "codechicken:CodeChickenCore:${config.minecraft.version}-${config.codechickencore.version}:dev"
-    compile "codechicken:NotEnoughItems:${config.minecraft.version}-${config.nei.version}:dev"
+
     compile "net.industrial-craft:industrialcraft-2:${config.ic2.version}:dev"
     compile ("com.enderio:EnderIO:${config.minecraft.version}-${config.enderio.version}:dev") {
         exclude group: "mcp.mobius.waila"
     }
     compile "com.enderio.core:EnderCore:${config.minecraft.version}-${config.endercore.version}:dev"
     compile "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"
-
+    compile "com.github.GTNewHorizons:CodeChickenLib:master-SNAPSHOT:dev"
+    compile "com.github.GTNewHorizons:CodeChickenCore:master-SNAPSHOT:dev"
+    compile "com.github.GTNewHorizons:NotEnoughItems:master-SNAPSHOT:dev"
     //downloads.gtnewhorizons.com
     compile ":HardcoreEnderExpansion:MC-1.7.10_v1.8.6"
     compile ":Railcraft:1.7.10-9.12.2.0:dev"
