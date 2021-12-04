@@ -138,9 +138,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(ItemList.Casing_Firebricks.get(1L), bits, new Object[] {"BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C', OrePrefixes.dust.get(Materials.Gypsum), 'W',  GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1L)});
         
         //Air filter multi blocks
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_AirFilter_Vent.get(1L), bits, new Object[]{"ThT", "TFT", "TwT", 'T', CustomItemList.StainlessSteelBars, 'F', OrePrefixes.frameGt.get(Materials.Steel)});
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_AirFilter_Turbine.get(1L), bits, new Object[]{"SSS", "RVR", "MSM", 'V', CustomItemList.Casing_AirFilter_Vent, 'S', OrePrefixes.stickLong.get(Materials.StainlessSteel), 'R', OrePrefixes.rotor.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_HV, 'R', OrePrefixes.screw.get(Materials.StainlessSteel)});
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Machine_Multi_AirFilter.get(1L), bits, new Object[]{"RPR", "MBM", "CGC", 'B', ItemList.Hull_HV, 'R', OrePrefixes.rotor.get(Materials.StainlessSteel), 'P',  ItemList.Electric_Pump_HV, 'M', ItemList.Electric_Motor_HV, 'C', OrePrefixes.cableGt01.get(Materials.Gold), 'G', ItemList.Casing_Turbine1});
+        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_AirFilter_Vent_T1.get(1L), bits, new Object[]{"ThT", "TFT", "TwT", 'T', CustomItemList.StainlessSteelBars, 'F', OrePrefixes.frameGt.get(Materials.Steel)});
+        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_AirFilter_Turbine_T1.get(1L), bits, new Object[]{"SSS", "RVR", "MSM", 'V', CustomItemList.Casing_AirFilter_Vent_T1, 'S', OrePrefixes.stickLong.get(Materials.StainlessSteel), 'R', OrePrefixes.rotor.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_HV, 'R', OrePrefixes.screw.get(Materials.StainlessSteel)});
+        GT_ModHandler.addCraftingRecipe(CustomItemList.Machine_Multi_AirFilterT1.get(1L), bits, new Object[]{"RPR", "MBM", "CGC", 'B', ItemList.Hull_HV, 'R', OrePrefixes.rotor.get(Materials.StainlessSteel), 'P',  ItemList.Electric_Pump_HV, 'M', ItemList.Electric_Motor_HV, 'C', OrePrefixes.cableGt01.get(Materials.Gold), 'G', ItemList.Casing_Turbine1});
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_Pyrolyse.get(1L), bits, new Object[]{"PhP", "SFS", "PwP", 'P', OrePrefixes.plate.get(Materials.Steel), 'S', OrePrefixes.plate.get(Materials.Iron), 'F', ItemList.Casing_BronzePlatedBricks});
 
