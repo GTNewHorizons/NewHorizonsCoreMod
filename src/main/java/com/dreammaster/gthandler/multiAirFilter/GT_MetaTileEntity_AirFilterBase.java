@@ -25,7 +25,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import org.lwjgl.input.Keyboard;
 
@@ -233,15 +232,12 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     }
 
     public void cleanPollution(){
-        GT_Mod.GT_FML_LOGGER.warn("pollution cleaning rate = "+mPollutionReductionWholeCycle+"gibbl/t");
         if (mPollutionReductionWholeCycle > 0) {
                 /*mAccumulatedPollutionReduction += mPollutionReductionWholeCycle;
                 int tActualReduction = mAccumulatedPollutionReduction / mMaxProgresstime;
                 mAccumulatedPollutionReduction = mAccumulatedPollutionReduction % mMaxProgresstime;*/
-            int tActualReduction = mMaxProgresstime*mPollutionReductionWholeCycle;
             if (mode==0){ //processing chunk normally
-                GT_Mod.GT_FML_LOGGER.warn("pollution cleaning called, gibbl amount: "+-tActualReduction);
-                GT_Pollution.addPollution(getBaseMetaTileEntity().getWorld(), chunkList[chunkIndex][0], chunkList[chunkIndex][1], -tActualReduction);
+                GT_Pollution.addPollution(getBaseMetaTileEntity().getWorld(), chunkList[chunkIndex][0], chunkList[chunkIndex][1], -mPollutionReductionWholeCycle);
                 chunkIndex += 1;
                 if (chunkIndex == chunkList.length) {
                     chunkIndex = 0;
@@ -257,11 +253,11 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 Integer[] pollutedChunk;
                 if (pollutedChunkList.size() > 1){
                     pollutedChunk = pollutedChunkList.get(MainRegistry.Rnd.nextInt(pollutedChunkList.size()-1));
-                    GT_Pollution.addPollution(getBaseMetaTileEntity().getWorld(), pollutedChunk[0], pollutedChunk[1], -tActualReduction);
+                    GT_Pollution.addPollution(getBaseMetaTileEntity().getWorld(), pollutedChunk[0], pollutedChunk[1], -mPollutionReductionWholeCycle);
                 }
                 else if (pollutedChunkList.size() == 1){ // no random on only one element
                     pollutedChunk = pollutedChunkList.get(0);
-                    GT_Pollution.addPollution(getBaseMetaTileEntity().getWorld(), pollutedChunk[0], pollutedChunk[1], -tActualReduction);
+                    GT_Pollution.addPollution(getBaseMetaTileEntity().getWorld(), pollutedChunk[0], pollutedChunk[1], -mPollutionReductionWholeCycle);
                 }
 
             }
@@ -523,7 +519,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                         EnumChatFormatting.RED+ (getIdealStatus() - getRepairStatus())+EnumChatFormatting.RESET+
                         " Efficiency: "+
                         EnumChatFormatting.YELLOW+ mEfficiency / 100.0F +EnumChatFormatting.RESET + " %",
-                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReductionWholeCycle + EnumChatFormatting.RESET+" gibbl/t"
+                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReductionWholeCycle/mMaxProgresstime + EnumChatFormatting.RESET+" gibbl/t"
         };
     }
 }
