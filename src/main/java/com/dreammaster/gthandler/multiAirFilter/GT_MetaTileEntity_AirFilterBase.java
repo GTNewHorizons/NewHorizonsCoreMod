@@ -507,7 +507,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
 
     @Override
     public void onScrewdriverRightClick(byte aSide, EntityPlayer aPlayer, float aX, float aY, float aZ){
-        if (!aPlayer.isSneaking()){ // change mode on sneak
+        if (!aPlayer.isSneaking()){ // change mode
             mode = mode==1 ? 0 : 1;
             if (mode==0){
                 chunkIndex = 0;
@@ -525,6 +525,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
             }
             chunkIndex = 0;
             populateChunkList();
+            PlayerChatHelper.SendInfo(aPlayer, "Electric air filter is now working in a "+size+"x"+size+" area");
         }
     }
 
