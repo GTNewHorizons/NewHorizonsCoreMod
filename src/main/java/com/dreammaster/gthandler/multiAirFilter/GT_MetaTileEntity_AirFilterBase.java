@@ -36,7 +36,7 @@ import static java.lang.Math.min;
 
 public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_MultiBlockBase {
     protected int mPollutionReductionWholeCycle =0;
-    protected int baseEff = 2500;
+    protected int baseEff = 0;
     protected int multiTier = 0;
     protected int chunkIndex = 0;
     protected boolean hasPollution=false;
@@ -91,8 +91,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
         tt.addMachineType("Air Filter")
                 .addInfo("Controller block for the Electric Air Filter T"+ multiTier)
-                .addInfo("Add Turbine in controller to increase efficiency")
-                .addInfo("Add " + ItemList.AdsorptionFilter.getIS().getDisplayName() + " in input bus to double efficiency")
+                .addInfo("Needs a Turbine in the controller")
+                .addInfo("Add " + ItemList.AdsorptionFilter.getIS().getDisplayName() + " in input bus to double efficiency (30 uses per item)")
                 .addInfo("Machine tier = Maximum effective Muffler tier")
                 .addInfo("Can process "+(2*multiTier+1)+"x"+(2*multiTier+1)+" chunks")
                 .addInfo("Each muffler reduce pollution by 30 * TurbineEfficiency * Floor(2.5^Tier) every second")
@@ -166,14 +166,15 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         }
 
         try{
+            // make the turbine to be required
             if (isCorrectMachinePart(aStack)) {
                 baseEff = GT_Utility.safeInt((long) ((50.0F
                         + 10.0F * ((GT_MetaGenerated_Tool) aStack.getItem()).getToolCombatDamage(aStack)) * 100));
             } else {
-                baseEff = 2500;
+                return false;
             }
         }catch (Exception e){
-            baseEff = 2500;
+            return false;
         }
 
         //scan the inventory to search for filter if none has been loaded previously
@@ -207,7 +208,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         byte tTier = (byte) max(1, GT_Utility.getTier(tVoltage));
         for (GT_MetaTileEntity_Hatch_Muffler tHatch : mMufflerHatches) {
             if (isValidMetaTileEntity(tHatch)) {
-                mPollutionReductionWholeCycle += ((int) Math.pow(2.5, min(tTier, tHatch.mTier))) * 300;//reduction per muffler
+                /*reduction per muffler, *1.5 to match the tooltip of 30 * TurbineEff * 2.5 ^ tier per muffler hatch
+                 per second (30/20 = 1.5) */
+                mPollutionReductionWholeCycle += ((int) Math.pow(2.5, min(tTier, tHatch.mTier)) * 1.5);
             }
         }
 
@@ -231,7 +234,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
             }
         }
 
+        //apply turbine eff
         mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *baseEff)/10000;
+        //apply maintenance issue
         mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *mEfficiency/10000);
         cleanPollution();
         return true;
@@ -547,7 +552,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                         EnumChatFormatting.RED+ (getIdealStatus() - getRepairStatus())+EnumChatFormatting.RESET+
                         " Efficiency: "+
                         EnumChatFormatting.YELLOW+ mEfficiency / 100.0F +EnumChatFormatting.RESET + " %",
-                "Pollution reduction: "+ EnumChatFormatting.GREEN + (float) mPollutionReductionWholeCycle/ (float) max(1,mMaxProgresstime)+ //avoid any / 0
+                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReductionWholeCycle / max(1,mMaxProgresstime)+ //avoid any / 0
                         EnumChatFormatting.RESET+" gibbl/t",
                 "Has a filter in it: "+ isFilterLoaded,
                 "remaining cycles for the filter (if present): "+filterUsageRemaining
