@@ -54,8 +54,8 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
         CustomItemList.Casing_Pyrolyse.set(new ItemStack(this, 1, 2));//adding
         CustomItemList.Casing_AirFilter_Turbine_T2.set(new ItemStack(this, 1, 3));//adding
         CustomItemList.Casing_AirFilter_Vent_T2.set(new ItemStack(this, 1, 4));//adding
-        CustomItemList.Casing_AirFilter_Turbine_T2.set(new ItemStack(this, 1, 5));//adding
-        CustomItemList.Casing_AirFilter_Vent_T2.set(new ItemStack(this, 1, 6));//adding
+        CustomItemList.Casing_AirFilter_Turbine_T3.set(new ItemStack(this, 1, 5));//adding
+        CustomItemList.Casing_AirFilter_Vent_T3.set(new ItemStack(this, 1, 6));//adding
 
         CustomItemList.Casing_UEV.set(new ItemStack(this,1,10));
         CustomItemList.Casing_UIV.set(new ItemStack(this,1,11));
