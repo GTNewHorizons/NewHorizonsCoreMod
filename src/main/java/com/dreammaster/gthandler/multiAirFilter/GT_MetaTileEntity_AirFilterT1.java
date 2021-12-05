@@ -1,12 +1,10 @@
 package com.dreammaster.gthandler.multiAirFilter;
 
+import com.dreammaster.main.MainRegistry;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.util.GT_Recipe;
 
-/**
- * Created by danie_000 on 03.10.2016.
- */
 public class GT_MetaTileEntity_AirFilterT1 extends GT_MetaTileEntity_AirFilterBase {
 
     public GT_MetaTileEntity_AirFilterT1(int aID, String aName, String aNameRegional) {
@@ -27,6 +25,11 @@ public class GT_MetaTileEntity_AirFilterT1 extends GT_MetaTileEntity_AirFilterBa
     @Override
     public GT_Recipe getRecipe(){
         return tRecipeT1;
+    }
+
+    @Override
+    public float getBonusByTier() {
+        return MainRegistry.CoreConfig.bonusByTierT1;
     }
 
     @Override

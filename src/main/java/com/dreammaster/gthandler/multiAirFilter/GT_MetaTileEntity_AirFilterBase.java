@@ -17,7 +17,6 @@ import gregtech.api.util.GT_LanguageManager;
 import gregtech.api.util.GT_Multiblock_Tooltip_Builder;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
-import gregtech.common.GT_Pollution;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -36,7 +35,6 @@ import static java.lang.Math.max;
 import static java.lang.Math.min;
 
 public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_MultiBlockBase {
-    protected int mPollutionReductionWholeCycle =0;
     protected int baseEff = 0;
     protected int multiTier = 0;
     protected int chunkIndex = 0;
@@ -92,7 +90,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 .addInfo("Add " + ItemList.AdsorptionFilter.getIS().getDisplayName() + " in input bus to double efficiency (30 uses per item)")
                 .addInfo("Machine tier = Maximum effective Muffler tier")
                 .addInfo("Can process "+(2*multiTier+1)+"x"+(2*multiTier+1)+" chunks")
-                .addInfo("Each muffler reduce pollution by 30 * TurbineEfficiency * Floor(2.5^Tier) every second")
+                .addInfo("Each muffler reduce pollution by "+MainRegistry.CoreConfig.globalMultiplicator+" * bonusMultiTier turbineEff * multiEff * Floor("+MainRegistry.CoreConfig.scalingFactor+"^effectiveTier) every second")
+                .addInfo("The value of bonusMultiTier for this controller is: "+getBonusByTier())
                 .addSeparator()
                 .beginStructureBlock(3, 4, 3, true)
                 .addController("Front bottom")
@@ -119,6 +118,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         return new ITexture[]{Textures.BlockIcons.getCasingTextureForId(getCasingIndex())};
     }
 
+    public abstract float getBonusByTier();
+
     public abstract int getCasingIndex();
 
     @Override
@@ -139,13 +140,43 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         return aFacing > 1;
     }
 
+    public int getPollutionCleaningRatePerTick(int turbineEff, int multiEff, boolean isRateBoosted){
+        return getPollutionCleaningRatePerSecond(turbineEff, multiEff, isRateBoosted) / 20;
+    }
+
+    public int getPollutionCleaningRatePerSecond(int turbineEff, int multiEff, boolean isRateBoosted){
+        long tVoltage = getMaxInputVoltage();
+        byte tTier = (byte) max(1, GT_Utility.getTier(tVoltage));
+        int pollutionPerSecond = 0;
+        for (GT_MetaTileEntity_Hatch_Muffler tHatch : mMufflerHatches) {
+            if (isValidMetaTileEntity(tHatch)) {
+                //applying scaling factor
+                pollutionPerSecond += (int) Math.pow(MainRegistry.CoreConfig.scalingFactor, min(tTier, tHatch.mTier));
+            }
+        }
+        //apply the boost
+        if (isRateBoosted){
+            pollutionPerSecond = (int) (pollutionPerSecond * MainRegistry.CoreConfig.boostPerAbsorptionFilter);
+        }
+
+        //apply turbine eff
+        pollutionPerSecond *= turbineEff;
+        //apply maintenance issue
+        pollutionPerSecond *= pollutionPerSecond * multiEff;
+        //aply the bonus by tier
+        pollutionPerSecond = (int) (pollutionPerSecond * getBonusByTier());
+        //aply the global multiplicator
+        pollutionPerSecond = (int) (pollutionPerSecond * MainRegistry.CoreConfig.globalMultiplicator);
+
+        return pollutionPerSecond;
+    }
+
     @Override
     public boolean checkRecipe(ItemStack aStack){
         mEfficiencyIncrease = 10000;
         mEfficiency = 10000 - (getIdealStatus() - getRepairStatus()) * 1000;
-        mPollutionReductionWholeCycle = 0;
         // check pollution for next cycle:
-        hasPollution = getTotalPollution()>=10000;
+        hasPollution = getTotalPollution() >= MainRegistry.CoreConfig.pollutionThresholdAirFilter;
         mMaxProgresstime = getRecipe().mDuration;
         mEUt=-getRecipe().mEUt;
         if(!hasPollution) {
@@ -185,28 +216,14 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
             if (!tInputList.isEmpty()) {
                 if (getRecipe().isRecipeInputEqual(true, null, tInputs)) {
                     updateSlots();
-                    filterUsageRemaining = 30; //totally arbitrary and 100% unbalanced;
+                    filterUsageRemaining = MainRegistry.CoreConfig.usagesPerAbsorptionFilter;
                     isFilterLoaded = true;
                 }
             }
         }
 
-        long tVoltage = getMaxInputVoltage();
-        byte tTier = (byte) max(1, GT_Utility.getTier(tVoltage));
-        for (GT_MetaTileEntity_Hatch_Muffler tHatch : mMufflerHatches) {
-            if (isValidMetaTileEntity(tHatch)) {
-                /*reduction per muffler in gibbl/t, *1.5 to match the tooltip of 30 * TurbineEff * 2.5 ^ tier per
-                 muffler per second (30/20 = 1.5) */
-                mPollutionReductionWholeCycle += ((int) Math.pow(2.5, min(tTier, tHatch.mTier)) * 1.5);
-            }
-        }
-
-
-
         // if a filter is loaded in
         if (isFilterLoaded){
-            //apply the boost
-            mPollutionReductionWholeCycle *= 2;
 
             // consume one use of the filter
             filterUsageRemaining -= 1;
@@ -221,12 +238,6 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
             }
         }
 
-        //apply turbine eff
-        mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *baseEff)/10000;
-        //apply maintenance issue
-        mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *mEfficiency/10000);
-        //multiply by 20 to get the pollution done in 1s
-        mPollutionReductionWholeCycle *= 20;
         return true;
     }
 
@@ -252,9 +263,10 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     }
 
     public void cleanPollution(){
-        if (mPollutionReductionWholeCycle > 0) {
+        int pollutionCleaningRatePerSecond = getPollutionCleaningRatePerSecond(baseEff/10000, mEfficiency/10000, isFilterLoaded);
+        if (pollutionCleaningRatePerSecond > 0) {
             if (mode==0){ //processing chunk normally
-                chunkList[chunkIndex].removePollution(mPollutionReductionWholeCycle);
+                chunkList[chunkIndex].removePollution(pollutionCleaningRatePerSecond);
                 chunkIndex += 1;
                 if (chunkIndex == chunkList.length) {
                     chunkIndex = 0;
@@ -274,11 +286,11 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 ChunkCoordinates pollutedChunk;
                 if (pollutedChunkList.size() > 1){
                     pollutedChunk = pollutedChunkList.get(MainRegistry.Rnd.nextInt(pollutedChunkList.size()-1));
-                    pollutedChunk.removePollution(mPollutionReductionWholeCycle);
+                    pollutedChunk.removePollution(pollutionCleaningRatePerSecond);
                 }
                 else if (pollutedChunkList.size() == 1){ // no random on only one element
                     pollutedChunk = pollutedChunkList.get(0);
-                    pollutedChunk.removePollution(mPollutionReductionWholeCycle);
+                    pollutedChunk.removePollution(pollutionCleaningRatePerSecond);
                 }
 
             }
@@ -519,7 +531,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                         EnumChatFormatting.RED+ (getIdealStatus() - getRepairStatus())+EnumChatFormatting.RESET+
                         " Efficiency: "+
                         EnumChatFormatting.YELLOW+ mEfficiency / 100.0F +EnumChatFormatting.RESET + " %",
-                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReductionWholeCycle / 20+
+                "Pollution reduction: "+ EnumChatFormatting.GREEN + getPollutionCleaningRatePerTick(baseEff/10000, mEfficiency/10000, isFilterLoaded)+
                         EnumChatFormatting.RESET+" gibbl/t",
                 "Has a filter in it: "+ isFilterLoaded,
                 "remaining cycles for the filter (if present): "+filterUsageRemaining

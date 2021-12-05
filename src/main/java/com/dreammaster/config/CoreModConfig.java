@@ -44,6 +44,16 @@ public class CoreModConfig extends ConfigManager
 
   public OilGeneratorFix.OilConfig OilFixConfig;
 
+  //pollution stuff
+  public int pollutionThresholdAirFilter = 10000;
+  public float globalMultiplicator = 1.5f;
+  public float scalingFactor = 2.5f;
+  public float bonusByTierT1 = 1f;
+  public float bonusByTierT2 = 1f;
+  public float bonusByTierT3 = 1f;
+  public int usagesPerAbsorptionFilter = 30;
+  public float boostPerAbsorptionFilter = 2f;
+
   @Override
   protected void PreInit()
   {
@@ -69,6 +79,8 @@ public class CoreModConfig extends ConfigManager
     DebugPrintAddedOres = false;
     MaterialWeights = new String[] {};
     WerkstoffWeights = new String[] {};
+
+    pollutionThresholdAirFilter = 10000;
   }
 
   @Override
@@ -97,6 +109,16 @@ public class CoreModConfig extends ConfigManager
     WerkstoffWeights = _mainConfig.getStringList( "WerkstoffWeights", "DeepDarkVoidMiner", WerkstoffWeights, "List of BartWorks material names to adjust weight. Example line: \"Bismutite : 0.3\". Intervening whitespace will be ignored. Use the debug options to get valid names. Use weight <= 0 to disable an ore entirely. Anything not specified in the list will have weight 1. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff" );
 
     OilFixConfig = new OilGeneratorFix.OilConfig( _mainConfig );
+
+    pollutionThresholdAirFilter = _mainConfig.getInt("PollutionThresholdAirFilter", "Pollution", pollutionThresholdAirFilter, 0, Integer.MAX_VALUE, "the threshold of pollution above which the electric air filters will start to work");
+    globalMultiplicator = _mainConfig.getFloat("globalMultiplicator", "Pollution", globalMultiplicator, 0, 100, "global multiplicator in this formula: globalMultiplicator * bonusByTier * mufflerAmount * turbineEfficiency * maintenanceEff * Floor(scalingFactor^effectiveTier). This gives the pollution cleaned by the electric air filter per second");
+    scalingFactor = _mainConfig.getFloat("scalingFactor", "Pollution", scalingFactor, 0, 100, "scaling factor in this formula: globalMultiplicator * bonusByTier * mufflerAmount * turbineEfficiency * maintenanceEff * Floor(scalingFactor^effectiveTier). This gives the pollution cleaned by the electric air filter per second");
+    bonusByTierT1 = _mainConfig.getFloat("bonusByTierT1", "Pollution", bonusByTierT1, 0, 100, "T1 bonus tier in this formula: globalMultiplicator * bonusByTier * mufflerAmount * turbineEfficiency * maintenanceEff * Floor(scalingFactor^effectiveTier). This gives the pollution cleaned by the electric air filter per second");
+    bonusByTierT2 = _mainConfig.getFloat("bonusByTierT2", "Pollution", bonusByTierT2, 0, 100, "T2 bonus tier in this formula: globalMultiplicator * bonusByTier * mufflerAmount * turbineEfficiency * maintenanceEff * Floor(scalingFactor^effectiveTier). This gives the pollution cleaned by the electric air filter per second");
+    bonusByTierT3 = _mainConfig.getFloat("bonusByTierT3", "Pollution", bonusByTierT3, 0, 100, "T3 bonus tier in this formula: globalMultiplicator * bonusByTier * mufflerAmount * turbineEfficiency * maintenanceEff * Floor(scalingFactor^effectiveTier). This gives the pollution cleaned by the electric air filter per second");
+    boostPerAbsorptionFilter = _mainConfig.getFloat("boostPerAbsorptionFilter", "Pollution", boostPerAbsorptionFilter, 1, 100, "boost applied when a filter has been set in the electric air filter.");
+    usagesPerAbsorptionFilter = _mainConfig.getInt("usagesPerAbsorptionFilter", "Pollution", usagesPerAbsorptionFilter, 1, 100, "Number of usage per absorption filter.");
+
   }
 
   @Override
