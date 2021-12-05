@@ -49,8 +49,8 @@ public class CoreModConfig extends ConfigManager
   public float globalMultiplicator = 30f;
   public float scalingFactor = 2.5f;
   public float bonusByTierT1 = 1f;
-  public float bonusByTierT2 = 1f;
-  public float bonusByTierT3 = 1f;
+  public float bonusByTierT2 = 1.05f;
+  public float bonusByTierT3 = 1.1f;
   public int usagesPerAbsorptionFilter = 30;
   public float boostPerAbsorptionFilter = 2f;
 
