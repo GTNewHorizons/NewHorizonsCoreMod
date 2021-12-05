@@ -44,6 +44,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     protected int size; //current working size of the multi, max is 2*multiTier + 1
     protected boolean isFilterLoaded = false;
     protected int filterUsageRemaining = 0;
+    protected int tickCounter = 0; //because we can't trust the world tick, it may be in a dim with eternal day, etc
 
     static final GT_Recipe tRecipeT1= new GT_Recipe(
             new ItemStack[]{CustomItemList.AdsorptionFilter.get(1L, new Object())},
@@ -90,7 +91,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 .addInfo("Add " + ItemList.AdsorptionFilter.getIS().getDisplayName() + " in input bus to double efficiency (30 uses per item)")
                 .addInfo("Machine tier = Maximum effective Muffler tier")
                 .addInfo("Can process "+(2*multiTier+1)+"x"+(2*multiTier+1)+" chunks")
-                .addInfo("Each muffler reduce pollution by "+MainRegistry.CoreConfig.globalMultiplicator+" * bonusMultiTier turbineEff * multiEff * Floor("+MainRegistry.CoreConfig.scalingFactor+"^effectiveTier) every second")
+                .addInfo("Each muffler reduce pollution by "+MainRegistry.CoreConfig.globalMultiplicator+" * bonusMultiTier * turbineEff * multiEff * Floor("+MainRegistry.CoreConfig.scalingFactor+"^effectiveTier) every second")
                 .addInfo("The value of bonusMultiTier for this controller is: "+getBonusByTier())
                 .addSeparator()
                 .beginStructureBlock(3, 4, 3, true)
@@ -140,11 +141,10 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         return aFacing > 1;
     }
 
-    public int getPollutionCleaningRatePerTick(int turbineEff, int multiEff, boolean isRateBoosted){
-        return getPollutionCleaningRatePerSecond(turbineEff, multiEff, isRateBoosted) / 20;
+    public int getPollutionCleaningRatePerTick(float turbineEff, float multiEff, boolean isRateBoosted){return getPollutionCleaningRatePerSecond(turbineEff, multiEff, isRateBoosted) / 20;
     }
 
-    public int getPollutionCleaningRatePerSecond(int turbineEff, int multiEff, boolean isRateBoosted){
+    public int getPollutionCleaningRatePerSecond(float turbineEff, float multiEff, boolean isRateBoosted){
         long tVoltage = getMaxInputVoltage();
         byte tTier = (byte) max(1, GT_Utility.getTier(tVoltage));
         int pollutionPerSecond = 0;
@@ -158,16 +158,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         if (isRateBoosted){
             pollutionPerSecond = (int) (pollutionPerSecond * MainRegistry.CoreConfig.boostPerAbsorptionFilter);
         }
-
-        //apply turbine eff
-        pollutionPerSecond *= turbineEff;
-        //apply maintenance issue
-        pollutionPerSecond *= pollutionPerSecond * multiEff;
-        //aply the bonus by tier
-        pollutionPerSecond = (int) (pollutionPerSecond * getBonusByTier());
-        //aply the global multiplicator
-        pollutionPerSecond = (int) (pollutionPerSecond * MainRegistry.CoreConfig.globalMultiplicator);
-
+        //apply the rest of the coefs
+        pollutionPerSecond = (int) (pollutionPerSecond * turbineEff * multiEff * getBonusByTier() * MainRegistry.CoreConfig.globalMultiplicator);
         return pollutionPerSecond;
     }
 
@@ -194,6 +186,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         }catch (Exception e){
             return false;
         }
+        tickCounter = 0; //resetting the counter in case of a power failure, etc
 
         //scan the inventory to search for filter if none has been loaded previously
         if (!isFilterLoaded && isCorrectMachinePart(aStack)) {
@@ -263,7 +256,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     }
 
     public void cleanPollution(){
-        int pollutionCleaningRatePerSecond = getPollutionCleaningRatePerSecond(baseEff/10000, mEfficiency/10000, isFilterLoaded);
+        int pollutionCleaningRatePerSecond = getPollutionCleaningRatePerSecond(baseEff/10000f, mEfficiency/10000f, isFilterLoaded);
         if (pollutionCleaningRatePerSecond > 0) {
             if (mode==0){ //processing chunk normally
                 chunkList[chunkIndex].removePollution(pollutionCleaningRatePerSecond);
@@ -467,8 +460,11 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
 
     @Override
     public boolean onRunningTick(ItemStack aStack){
-        if (this.getBaseMetaTileEntity().getWorld().getWorldTime() % 20 == 0){
+        if (tickCounter == 19 && hasPollution){
             cleanPollution();
+            tickCounter = 0;
+        }else {
+            tickCounter += 1;
         }
         return super.onRunningTick(aStack);
     }
@@ -531,7 +527,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                         EnumChatFormatting.RED+ (getIdealStatus() - getRepairStatus())+EnumChatFormatting.RESET+
                         " Efficiency: "+
                         EnumChatFormatting.YELLOW+ mEfficiency / 100.0F +EnumChatFormatting.RESET + " %",
-                "Pollution reduction: "+ EnumChatFormatting.GREEN + getPollutionCleaningRatePerTick(baseEff/10000, mEfficiency/10000, isFilterLoaded)+
+                "Pollution reduction: "+ EnumChatFormatting.GREEN + getPollutionCleaningRatePerTick(baseEff/10000f, mEfficiency/10000f, isFilterLoaded)+
                         EnumChatFormatting.RESET+" gibbl/t",
                 "Has a filter in it: "+ isFilterLoaded,
                 "remaining cycles for the filter (if present): "+filterUsageRemaining

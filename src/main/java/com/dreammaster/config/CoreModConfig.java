@@ -46,7 +46,7 @@ public class CoreModConfig extends ConfigManager
 
   //pollution stuff
   public int pollutionThresholdAirFilter = 10000;
-  public float globalMultiplicator = 1.5f;
+  public float globalMultiplicator = 30f;
   public float scalingFactor = 2.5f;
   public float bonusByTierT1 = 1f;
   public float bonusByTierT2 = 1f;
