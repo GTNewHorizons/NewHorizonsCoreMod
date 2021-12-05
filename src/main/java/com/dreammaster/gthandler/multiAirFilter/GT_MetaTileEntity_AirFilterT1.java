@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.multiAirFilter;
 
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.util.GT_Recipe;
 
 /**
  * Created by danie_000 on 03.10.2016.
@@ -21,5 +22,25 @@ public class GT_MetaTileEntity_AirFilterT1 extends GT_MetaTileEntity_AirFilterBa
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
         return new GT_MetaTileEntity_AirFilterT1(mName);
+    }
+
+    @Override
+    public GT_Recipe getRecipe(){
+        return tRecipeT1;
+    }
+
+    @Override
+    public int getCasingIndex(){
+        return 57;
+    }
+
+    @Override
+    public int getPipeMeta(){
+        return 1;
+    }
+
+    @Override
+    public int getCasingMeta(){
+        return 0;
     }
 }

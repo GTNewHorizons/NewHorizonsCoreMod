@@ -75,16 +75,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         }
     }
 
-    public GT_Recipe getRecipe(){
-        switch (multiTier){
-            case 3:
-                return tRecipeT3;
-            case 2:
-                return tRecipeT2;
-            default:
-                return tRecipeT1;
-        }
-    }
+    public abstract GT_Recipe getRecipe();
 
     @Override
     public String[] getDescription() {
@@ -122,17 +113,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         return new ITexture[]{Textures.BlockIcons.getCasingTextureForId(getCasingIndex())};
     }
 
-    public int getCasingIndex(){
-        if (multiTier <=1){
-            return 57;
-        }
-        else if (multiTier == 2){
-            return 59;
-        }
-        else{
-            return 60;
-        }
-    }
+    public abstract int getCasingIndex();
 
     @Override
     public Object getClientGUI(int aID, InventoryPlayer aPlayerInventory, IGregTechTileEntity aBaseMetaTileEntity) {
@@ -413,17 +394,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 aBaseMetaTileEntity.getMetaIDOffset(aOffsetX, aOffsetY, aOffsetZ) == getPipeMeta();
     }
 
-    public int getPipeMeta(){
-        if (multiTier == 0 || multiTier == 1){
-            return 1;
-        }
-        else if (multiTier == 2){
-            return 4;
-        }
-        else{
-            return 6;
-        }
-    }
+    public abstract int getPipeMeta();
 
     private boolean tryAddMufflerOrCasing(IGregTechTileEntity aBaseMetaTileEntity, int aOffsetX, int aOffsetY, int aOffsetZ) {
         if (addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(aOffsetX, aOffsetY, aOffsetZ), getCasingIndex()))
@@ -436,17 +407,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 aBaseMetaTileEntity.getMetaIDOffset(aOffsetX, aOffsetY, aOffsetZ) == getCasingMeta();
     }
 
-    public int getCasingMeta(){
-        if (multiTier==0 || multiTier==1) {
-            return 0;
-        }
-        else if(multiTier==2){
-            return 3;
-        }
-        else{
-            return 5;
-        }
-    }
+    public abstract int getCasingMeta();
 
     @Override
     public int getMaxEfficiency(ItemStack aStack) {
