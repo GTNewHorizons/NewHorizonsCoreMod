@@ -4140,9 +4140,9 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		// MULTIBLOCKS ID space up to 12039
 		// ===================================================================================================
-		CustomItemList.Machine_Multi_AirFilterT1.set(new GT_MetaTileEntity_AirFilterT1(12020, "multimachine.airfilter", "Electric Air Filter").getStackForm(1L));
-		CustomItemList.Machine_Multi_AirFilterT2.set(new GT_MetaTileEntity_AirFilterT2(12021, "multimachine.airfilter", "Electric Air Filter").getStackForm(1L));
-		CustomItemList.Machine_Multi_AirFilterT3.set(new GT_MetaTileEntity_AirFilterT3(12022, "multimachine.airfilter", "Electric Air Filter").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT1.set(new GT_MetaTileEntity_AirFilterT1(12020, "multimachine.airfilter.01", "Electric Air Filter T1").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT2.set(new GT_MetaTileEntity_AirFilterT2(12021, "multimachine.airfilter.02", "Electric Air Filter T2").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT3.set(new GT_MetaTileEntity_AirFilterT3(12022, "multimachine.airfilter.03", "Electric Air Filter T3").getStackForm(1L));
 
 
 
