@@ -524,14 +524,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 size -= 2; // always get odd number
             }
             chunkIndex = 0;
-            PlayerChatHelper.SendInfo(aPlayer, "Electric air filter is now working in a "+size+"x"+size+" area");
-            int x = (this.getBaseMetaTileEntity().getXCoord()) >> 4; // xcoord
-            int z = (this.getBaseMetaTileEntity().getZCoord()) >> 4; // zcoord
             populateChunkList();
-            for (int i =0; i < chunkList.length; i++) {
-                PlayerChatHelper.SendInfo(aPlayer,"chunk n°"+i+" X:"+chunkList[i][0]+" Z:"+chunkList[i][1]);
-            }
-
         }
     }
 
