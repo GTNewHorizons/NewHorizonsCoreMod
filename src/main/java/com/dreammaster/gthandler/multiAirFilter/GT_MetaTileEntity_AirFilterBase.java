@@ -44,6 +44,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     protected int[][] chunkList; //list of the chunks, each entry contains the x and z coords of the chunks
     protected int mode = 0; // 0 for processing chunks in order, 1 for processing chunks randomly
     protected int size; //current working size of the multi, max is 2*multiTier + 1
+    protected boolean isFilterLoaded = false;
+    protected int filterUsageRemaining = 0;
 
     static final GT_Recipe tRecipeT1= new GT_Recipe(
             new ItemStack[]{CustomItemList.AdsorptionFilter.get(1L, new Object())},
@@ -198,14 +200,33 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
             }
         }
 
-        ItemStack[] tInputs = Arrays.copyOfRange(tInputList.toArray(new ItemStack[0]), 0, 2);
-        if (!tInputList.isEmpty()) {
-            if (getRecipe().isRecipeInputEqual(true, null, tInputs)) {
-                mPollutionReductionWholeCycle *=2;//bonus for filter
-                mOutputItems = new ItemStack[]{getRecipe().getOutput(0)};
-                updateSlots();
+        //scan the inventory to search for filter if none has been loaded previously
+        if (!isFilterLoaded) {
+            ItemStack[] tInputs = Arrays.copyOfRange(tInputList.toArray(new ItemStack[0]), 0, 2);
+            if (!tInputList.isEmpty()) {
+                if (getRecipe().isRecipeInputEqual(true, null, tInputs)) {
+                    updateSlots();
+                    filterUsageRemaining = 30; //totally arbitrary and 100 unbalanced;
+                    isFilterLoaded = true;
+                }
             }
+        }
 
+        // if a filter is loaded in
+        if (isFilterLoaded){
+            //apply the boost
+            mPollutionReductionWholeCycle *= 2;
+
+            // consume one use of the filter
+            filterUsageRemaining -= 1;
+
+            // when the filter finished its last usage, we give it back in dirty form
+            if (filterUsageRemaining == 0){
+                mOutputItems = new ItemStack[]{getRecipe().getOutput(0)};
+                isFilterLoaded = false;
+            } else {
+                mOutputItems = null; // no return until the filter has been totally consumed
+            }
         }
 
         mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *baseEff)/10000;
@@ -220,6 +241,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         aNBT.setInteger("mode", mode); // running mode
         aNBT.setInteger("chunkIndex", chunkIndex); // chunk index when running in normal mode
         aNBT.setInteger("size", size); // working area
+        aNBT.setBoolean("isFilterLoaded", isFilterLoaded);
+        aNBT.setInteger("filterUsageRemaining", filterUsageRemaining);
 
     }
 
@@ -229,13 +252,12 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         mode = aNBT.getInteger("mode");
         chunkIndex = aNBT.getInteger("chunkIndex");
         size = aNBT.getInteger("size");
+        isFilterLoaded = aNBT.getBoolean("isFilterLoaded");
+        filterUsageRemaining =  aNBT.getInteger("filterUsageRemaining");
     }
 
     public void cleanPollution(){
         if (mPollutionReductionWholeCycle > 0) {
-                /*mAccumulatedPollutionReduction += mPollutionReductionWholeCycle;
-                int tActualReduction = mAccumulatedPollutionReduction / mMaxProgresstime;
-                mAccumulatedPollutionReduction = mAccumulatedPollutionReduction % mMaxProgresstime;*/
             if (mode==0){ //processing chunk normally
                 GT_Pollution.addPollution(getBaseMetaTileEntity().getWorld(), chunkList[chunkIndex][0], chunkList[chunkIndex][1], -mPollutionReductionWholeCycle);
                 chunkIndex += 1;
@@ -244,12 +266,16 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 }
             }
             else{// process chunks randomly
+
+                // list all the polluted chunks
                 ArrayList<Integer[]> pollutedChunkList = new ArrayList<>();
                 for (int[] chunk : chunkList){
                     if (GT_Pollution.getPollution(getBaseMetaTileEntity().getWorld(),chunk[0],chunk[1]) > 0){
-                        pollutedChunkList.add(new Integer[]{Integer.valueOf(chunk[0]), Integer.valueOf(chunk[1])});
+                        pollutedChunkList.add(new Integer[]{chunk[0], chunk[1]});
                     }
                 }
+
+                //pick the chunk randomly
                 Integer[] pollutedChunk;
                 if (pollutedChunkList.size() > 1){
                     pollutedChunk = pollutedChunkList.get(MainRegistry.Rnd.nextInt(pollutedChunkList.size()-1));
