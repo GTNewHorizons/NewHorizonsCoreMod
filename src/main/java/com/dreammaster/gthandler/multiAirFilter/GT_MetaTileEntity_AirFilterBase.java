@@ -5,7 +5,6 @@ import com.dreammaster.gthandler.casings.GT_Container_CasingsNH;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.main.MainRegistry;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
-import gregtech.GT_Mod;
 import gregtech.api.enums.Textures;
 import gregtech.api.gui.GT_GUIContainer_MultiMachine;
 import gregtech.api.interfaces.ITexture;
@@ -177,17 +176,29 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
             baseEff = 2500;
         }
 
-        ArrayList<ItemStack> tInputList = getStoredInputs();
-        int tInputList_sS=tInputList.size();
-        for (int i = 0; i < tInputList_sS - 1; i++) {
-            for (int j = i + 1; j < tInputList_sS; j++) {
-                if (GT_Utility.areStacksEqual(tInputList.get(i), tInputList.get(j))) {
-                    if (tInputList.get(i).stackSize >= tInputList.get(j).stackSize) {
-                        tInputList.remove(j--); tInputList_sS=tInputList.size();
-                    } else {
-                        tInputList.remove(i--); tInputList_sS=tInputList.size();
-                        break;
+        //scan the inventory to search for filter if none has been loaded previously
+        if (!isFilterLoaded && isCorrectMachinePart(aStack)) {
+            ArrayList<ItemStack> tInputList = getStoredInputs();
+            int tInputList_sS=tInputList.size();
+            for (int i = 0; i < tInputList_sS - 1; i++) {
+                for (int j = i + 1; j < tInputList_sS; j++) {
+                    if (GT_Utility.areStacksEqual(tInputList.get(i), tInputList.get(j))) {
+                        if (tInputList.get(i).stackSize >= tInputList.get(j).stackSize) {
+                            tInputList.remove(j--); tInputList_sS=tInputList.size();
+                        } else {
+                            tInputList.remove(i--); tInputList_sS=tInputList.size();
+                            break;
+                        }
                     }
+                }
+            }
+
+            ItemStack[] tInputs = Arrays.copyOfRange(tInputList.toArray(new ItemStack[0]), 0, 2);
+            if (!tInputList.isEmpty()) {
+                if (getRecipe().isRecipeInputEqual(true, null, tInputs)) {
+                    updateSlots();
+                    filterUsageRemaining = 30; //totally arbitrary and 100% unbalanced;
+                    isFilterLoaded = true;
                 }
             }
         }
@@ -200,17 +211,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
             }
         }
 
-        //scan the inventory to search for filter if none has been loaded previously
-        if (!isFilterLoaded) {
-            ItemStack[] tInputs = Arrays.copyOfRange(tInputList.toArray(new ItemStack[0]), 0, 2);
-            if (!tInputList.isEmpty()) {
-                if (getRecipe().isRecipeInputEqual(true, null, tInputs)) {
-                    updateSlots();
-                    filterUsageRemaining = 30; //totally arbitrary and 100 unbalanced;
-                    isFilterLoaded = true;
-                }
-            }
-        }
+
 
         // if a filter is loaded in
         if (isFilterLoaded){
@@ -220,11 +221,12 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
             // consume one use of the filter
             filterUsageRemaining -= 1;
 
-            // when the filter finished its last usage, we give it back in dirty form
+            // when the filter finished its last usage, we give it back in dirty form.
             if (filterUsageRemaining == 0){
                 mOutputItems = new ItemStack[]{getRecipe().getOutput(0)};
                 isFilterLoaded = false;
-            } else {
+            }
+            else {
                 mOutputItems = null; // no return until the filter has been totally consumed
             }
         }
@@ -545,7 +547,10 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                         EnumChatFormatting.RED+ (getIdealStatus() - getRepairStatus())+EnumChatFormatting.RESET+
                         " Efficiency: "+
                         EnumChatFormatting.YELLOW+ mEfficiency / 100.0F +EnumChatFormatting.RESET + " %",
-                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReductionWholeCycle/mMaxProgresstime + EnumChatFormatting.RESET+" gibbl/t"
+                "Pollution reduction: "+ EnumChatFormatting.GREEN + (float) mPollutionReductionWholeCycle/ (float) max(1,mMaxProgresstime)+ //avoid any / 0
+                        EnumChatFormatting.RESET+" gibbl/t",
+                "Has a filter in it: "+ isFilterLoaded,
+                "remaining cycles for the filter (if present): "+filterUsageRemaining
         };
     }
 }
