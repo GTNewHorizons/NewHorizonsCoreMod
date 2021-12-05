@@ -208,8 +208,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         byte tTier = (byte) max(1, GT_Utility.getTier(tVoltage));
         for (GT_MetaTileEntity_Hatch_Muffler tHatch : mMufflerHatches) {
             if (isValidMetaTileEntity(tHatch)) {
-                /*reduction per muffler, *1.5 to match the tooltip of 30 * TurbineEff * 2.5 ^ tier per muffler hatch
-                 per second (30/20 = 1.5) */
+                /*reduction per muffler in gibbl/t, *1.5 to match the tooltip of 30 * TurbineEff * 2.5 ^ tier per
+                 muffler per second (30/20 = 1.5) */
                 mPollutionReductionWholeCycle += ((int) Math.pow(2.5, min(tTier, tHatch.mTier)) * 1.5);
             }
         }
@@ -238,6 +238,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *baseEff)/10000;
         //apply maintenance issue
         mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *mEfficiency/10000);
+        //multiply by the amount of ticks the recipe last, so it cleans the pollution in one pass
+        mPollutionReductionWholeCycle *= mMaxProgresstime;
         cleanPollution();
         return true;
     }
