@@ -238,9 +238,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *baseEff)/10000;
         //apply maintenance issue
         mPollutionReductionWholeCycle =GT_Utility.safeInt((long) mPollutionReductionWholeCycle *mEfficiency/10000);
-        //multiply by the amount of ticks the recipe last, so it cleans the pollution in one pass
-        mPollutionReductionWholeCycle *= mMaxProgresstime;
-        cleanPollution();
+        //multiply by 20 to get the pollution done in 1s
+        mPollutionReductionWholeCycle *= 20;
         return true;
     }
 
@@ -491,6 +490,14 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     }
 
     @Override
+    public boolean onRunningTick(ItemStack aStack){
+        if (this.getBaseMetaTileEntity().getWorld().getWorldTime() % 20 == 0){
+            cleanPollution();
+        }
+        return super.onRunningTick(aStack);
+    }
+
+    @Override
     public int getDamageToComponent(ItemStack aStack) {
         try{
             if(isCorrectMachinePart(aStack) && hasPollution) { // no pollution no damage
@@ -548,7 +555,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                         EnumChatFormatting.RED+ (getIdealStatus() - getRepairStatus())+EnumChatFormatting.RESET+
                         " Efficiency: "+
                         EnumChatFormatting.YELLOW+ mEfficiency / 100.0F +EnumChatFormatting.RESET + " %",
-                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReductionWholeCycle / max(1,mMaxProgresstime)+ //avoid any / 0
+                "Pollution reduction: "+ EnumChatFormatting.GREEN + mPollutionReductionWholeCycle / 20+
                         EnumChatFormatting.RESET+" gibbl/t",
                 "Has a filter in it: "+ isFilterLoaded,
                 "remaining cycles for the filter (if present): "+filterUsageRemaining
