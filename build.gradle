@@ -137,7 +137,7 @@ dependencies {
     compile ":WitcheryExtras:1.0.1-dev"
     compile ":witchery:1.7.10-0.24.1:deobf"
     //jitpack
-    compile("com.github.GTNewHorizons:GT5-Unofficial:experimental-SNAPSHOT:dev") {
+    compile("com.github.GTNewHorizons:GT5-Unofficial:master-SNAPSHOT:dev") {
         setChanging(true)
     }
     compile "com.github.GTNewHorizons:StructureLib:1.0.6:deobf"

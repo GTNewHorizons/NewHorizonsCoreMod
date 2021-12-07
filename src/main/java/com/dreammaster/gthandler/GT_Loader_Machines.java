@@ -1,7 +1,9 @@
 package com.dreammaster.gthandler;
 
 import com.dreammaster.gthandler.accelerator.GT_MetaTileEntity_WorldAccelerator;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilter;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
 import com.dreammaster.gthandler.nameRemover.NameRemover;
 import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
 import com.dreammaster.gthandler.turboCharger.GT_MetaTileEntity_TurboCharger;
@@ -4138,7 +4140,9 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		// MULTIBLOCKS ID space up to 12039
 		// ===================================================================================================
-		CustomItemList.Machine_Multi_AirFilter.set(new GT_MetaTileEntity_AirFilter(12020, "multimachine.airfilter", "Electric Air Filter").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT1.set(new GT_MetaTileEntity_AirFilterT1(12020, "multimachine.airfilter.01", "Electric Air Filter T1").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT2.set(new GT_MetaTileEntity_AirFilterT2(12021, "multimachine.airfilter.02", "Electric Air Filter T2").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT3.set(new GT_MetaTileEntity_AirFilterT3(12022, "multimachine.airfilter.03", "Electric Air Filter T3").getStackForm(1L));
 
 
 
