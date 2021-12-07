@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
 import static gregtech.api.enums.GT_Values.*;
 import static gregtech.api.util.GT_StructureUtility.ofHatchAdder;
 import static gregtech.api.util.GT_StructureUtility.ofHatchAdderOptional;
@@ -56,7 +57,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         protected IStructureDefinition<GT_MetaTileEntity_AirFilterBase> computeValue(Class<?> type) {
             return StructureDefinition.<GT_MetaTileEntity_AirFilterBase>builder()
                     .addShape(STRUCTURE_PIECE_MAIN, transpose(new String[][]{
-                            {"ccc", "ccc", "ccc"},
+                            {"xxx", "xxx", "xxx"},
                             {"vmv", "m-m", "vmv"},
                             {"vmv", "m-m", "vmv"},
                             {"c~c", "ccc", "ccc"},
@@ -68,6 +69,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                             ofHatchAdder(GT_MetaTileEntity_AirFilterBase::addOutputToMachineList, x.getCasingIndex(), 1),
                             ofHatchAdder(GT_MetaTileEntity_AirFilterBase::addEnergyInputToMachineList, x.getCasingIndex(), 1)
                     )))
+                    .addElement('x', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta())))
                     .addElement('v', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getPipeMeta())))
                     .addElement('m', lazy(x -> ofHatchAdderOptional(GT_MetaTileEntity_AirFilterBase::addMufflerToMachineList, x.getCasingIndex(), 2, GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta())))
                     .build();
