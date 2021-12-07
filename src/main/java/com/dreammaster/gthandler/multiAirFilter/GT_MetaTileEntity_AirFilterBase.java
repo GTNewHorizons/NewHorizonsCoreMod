@@ -4,14 +4,17 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.casings.GT_Container_CasingsNH;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.main.MainRegistry;
+import com.gtnewhorizon.structurelib.alignment.IAlignmentLimits;
+import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
+import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import gregtech.api.enums.Textures;
 import gregtech.api.gui.GT_GUIContainer_MultiMachine;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.items.GT_MetaGenerated_Tool;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_EnhancedMultiBlockBase;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Muffler;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_MultiBlockBase;
 import gregtech.api.objects.GT_RenderedTexture;
 import gregtech.api.util.GT_LanguageManager;
 import gregtech.api.util.GT_Multiblock_Tooltip_Builder;
@@ -25,16 +28,18 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-import org.lwjgl.input.Keyboard;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.enums.GT_Values.*;
+import static gregtech.api.util.GT_StructureUtility.ofHatchAdder;
+import static gregtech.api.util.GT_StructureUtility.ofHatchAdderOptional;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
-public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_MultiBlockBase {
+public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_EnhancedMultiBlockBase<GT_MetaTileEntity_AirFilterBase> {
     protected int baseEff = 0;
     protected int multiTier = 0;
     protected int chunkIndex = 0;
@@ -45,6 +50,44 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     protected boolean isFilterLoaded = false;
     protected int filterUsageRemaining = 0;
     protected int tickCounter = 0; //because we can't trust the world tick, it may be in a dim with eternal day, etc
+    protected static final String STRUCTURE_PIECE_MAIN = "main";
+    protected static final ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>> STRUCTURE_DEFINITION = new ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>>() {
+        @Override
+        protected IStructureDefinition<GT_MetaTileEntity_AirFilterBase> computeValue(Class<?> type) {
+            return StructureDefinition.<GT_MetaTileEntity_AirFilterBase>builder()
+                    .addShape(STRUCTURE_PIECE_MAIN, transpose(new String[][]{
+                            {"ccc", "ccc", "ccc"},
+                            {"vmv", "m-m", "vmv"},
+                            {"vmv", "m-m", "vmv"},
+                            {"c~c", "ccc", "ccc"},
+                    }))
+                    .addElement('c', lazy(x -> ofChain(
+                            ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta()),
+                            ofHatchAdder(GT_MetaTileEntity_AirFilterBase::addMaintenanceToMachineList, x.getCasingIndex(), 1),
+                            ofHatchAdder(GT_MetaTileEntity_AirFilterBase::addInputToMachineList, x.getCasingIndex(), 1),
+                            ofHatchAdder(GT_MetaTileEntity_AirFilterBase::addOutputToMachineList, x.getCasingIndex(), 1),
+                            ofHatchAdder(GT_MetaTileEntity_AirFilterBase::addEnergyInputToMachineList, x.getCasingIndex(), 1)
+                    )))
+                    .addElement('v', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getPipeMeta())))
+                    .addElement('m', lazy(x -> ofHatchAdderOptional(GT_MetaTileEntity_AirFilterBase::addMufflerToMachineList, x.getCasingIndex(), 2, GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta())))
+                    .build();
+        }
+    };
+
+    @Override
+    public final IStructureDefinition<GT_MetaTileEntity_AirFilterBase> getStructureDefinition() {
+        return STRUCTURE_DEFINITION.get(getClass());
+    }
+
+    @Override
+    public void construct(ItemStack stackSize, boolean hintsOnly) {
+        buildPiece(STRUCTURE_PIECE_MAIN, stackSize, hintsOnly, 1, 3, 0);
+    }
+
+    @Override
+    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
+        return checkPiece(STRUCTURE_PIECE_MAIN, 1, 3, 0) && !mMufflerHatches.isEmpty() && mMaintenanceHatches.size() == 1;
+    }
 
     static final GT_Recipe tRecipeT1= new GT_Recipe(
             new ItemStack[]{CustomItemList.AdsorptionFilter.get(1L, new Object())},
@@ -83,7 +126,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     public abstract GT_Recipe getRecipe();
 
     @Override
-    public String[] getDescription() {
+    protected GT_Multiblock_Tooltip_Builder createTooltip() {
         final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
         tt.addMachineType("Air Filter")
                 .addInfo("Controller block for the Electric Air Filter T"+ multiTier)
@@ -99,16 +142,13 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 .addOtherStructurePart(GT_LanguageManager.getTranslation(GT_Container_CasingsNH.sBlockCasingsNH.getUnlocalizedName()+"."+getCasingMeta()+".name"), "Top and bottom")
                 .addOtherStructurePart(GT_LanguageManager.getTranslation(GT_Container_CasingsNH.sBlockCasingsNH.getUnlocalizedName()+"."+getPipeMeta()+".name"), "Corners of the middle 2 layers")
                 .addOtherStructurePart("Muffler Hatch Or "+GT_LanguageManager.getTranslation(GT_Container_CasingsNH.sBlockCasingsNH.getUnlocalizedName()+"."+getPipeMeta()+".name"), "8 in the middle layers")
-                .addEnergyHatch("Any bottom layer casing")
-                .addMaintenanceHatch("Any bottom layer casing")
-                .addInputBus("Any bottom layer casing")
-                .addOutputBus("Any bottom layer casing")
+                .addEnergyHatch("Any bottom layer casing", 1)
+                .addMaintenanceHatch("Any bottom layer casing", 1)
+                .addInputBus("Any bottom layer casing", 1)
+                .addOutputBus("Any bottom layer casing", 1)
+                .addMufflerHatch("Middle Center", 2)
                 .toolTipFinisher("GTNH Coremod");
-        if (!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-            return tt.getInformation();
-        } else {
-            return tt.getStructureInformation();
-        }
+        return tt;
     }
 
     @Override
@@ -137,8 +177,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
     }
 
     @Override
-    public boolean isFacingValid(byte aFacing) {
-        return aFacing > 1;
+    protected IAlignmentLimits getInitialAlignmentLimits() {
+        // don't rotate it, it's cursed.
+        return (d, r, f) -> d.offsetY == 0 && r.isNotRotated() && !f.isVerticallyFliped();
     }
 
     public int getPollutionCleaningRatePerTick(float turbineEff, float multiEff, boolean isRateBoosted){return getPollutionCleaningRatePerSecond(turbineEff, multiEff, isRateBoosted) / 20;
@@ -255,7 +296,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         filterUsageRemaining =  aNBT.getInteger("filterUsageRemaining");
     }
 
-    public void cleanPollution(){
+    public void cleanPollution() {
         int pollutionCleaningRatePerSecond = getPollutionCleaningRatePerSecond(baseEff/10000f, mEfficiency/10000f, isFilterLoaded);
         if (pollutionCleaningRatePerSecond > 0) {
             if (mode==0){ //processing chunk normally
@@ -290,133 +331,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
         }
     }
 
-    @Override
-    public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
-        int xDir = ForgeDirection.getOrientation(aBaseMetaTileEntity.getBackFacing()).offsetX;
-        int zDir = ForgeDirection.getOrientation(aBaseMetaTileEntity.getBackFacing()).offsetZ;
-        int one = 1;
-        int two = 2;
-
-        //air check and top casing check
-        if (!aBaseMetaTileEntity.getAirOffset(xDir, one, zDir) || !aBaseMetaTileEntity.getAirOffset(xDir, two, zDir)) {//check air inside
-            return false;
-        }
-        for(int i=-one; i<two; i++) {
-            for (int j = -one; j < two; j++) {
-                if (!aBaseMetaTileEntity.getAirOffset(xDir+i, 4, zDir+j) || !aBaseMetaTileEntity.getAirOffset(xDir+i, 5, zDir+j)) {//check air at on top of top layer
-                    return false;
-                }
-                if (!isCasing(aBaseMetaTileEntity,xDir+i, 3, zDir+j)) {
-                    return false;//top casing
-                }
-            }
-        }
-        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, zDir) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, zDir)) {
-            return false;
-        }
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, zDir)) {
-            return false;
-        }
-        if (!aBaseMetaTileEntity.getAirOffset(xDir, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir, two, two+zDir)) {
-            return false;
-        }
-        if (!aBaseMetaTileEntity.getAirOffset(xDir, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(xDir, two, zDir-two)) {
-            return false;
-        }
-
-
-        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, one+zDir) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, one+zDir)) {
-            return false;
-        }
-        if (!aBaseMetaTileEntity.getAirOffset(two+xDir, one, zDir-one) || !aBaseMetaTileEntity.getAirOffset(two+xDir, two, zDir-one)) {
-            return false;
-        }
-
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, one+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, one+zDir)) {
-            return false;
-        }
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-two, one, zDir-one) || !aBaseMetaTileEntity.getAirOffset(xDir-two, two, zDir-one)) {
-            return false;
-        }
-
-        if (!aBaseMetaTileEntity.getAirOffset(one+xDir, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(one+xDir, two, two+zDir)) {
-            return false;
-        }
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-one, one, two+zDir) || !aBaseMetaTileEntity.getAirOffset(xDir-one, two, two+zDir)) {
-            return false;
-        }
-
-        if (!aBaseMetaTileEntity.getAirOffset(one+xDir, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(one+xDir, two, zDir-two)) {
-            return false;
-        }
-        if (!aBaseMetaTileEntity.getAirOffset(xDir-one, one, zDir-two) || !aBaseMetaTileEntity.getAirOffset(xDir-one, two, zDir-two)) {
-            return false;
-        }
-
-        //air check and top casing check done
-
-        //muffler check
-        mMufflerHatches.clear();
-        if (!tryAddMufflerOrCasing(aBaseMetaTileEntity, one + xDir, one, zDir)) return false;
-        if (!tryAddMufflerOrCasing(aBaseMetaTileEntity, one + xDir, two, zDir)) return false;
-        if (!tryAddMufflerOrCasing(aBaseMetaTileEntity, xDir - one, one, zDir)) return false;
-        if (!tryAddMufflerOrCasing(aBaseMetaTileEntity, xDir - one, two, zDir)) return false;
-        if (!tryAddMufflerOrCasing(aBaseMetaTileEntity, xDir, one, one + zDir)) return false;
-        if (!tryAddMufflerOrCasing(aBaseMetaTileEntity, xDir, two, one + zDir)) return false;
-        if (!tryAddMufflerOrCasing(aBaseMetaTileEntity, xDir, one, zDir - one)) return false;
-        if (!tryAddMufflerOrCasing(aBaseMetaTileEntity, xDir, two, zDir - one)) return false;
-
-        if(mMufflerHatches.isEmpty()) {
-            return false;
-        }
-        //muffler check done
-        //pipe casing check
-        if (!isPipeCasing(aBaseMetaTileEntity, one + xDir, one, one + zDir)) return false;
-        if (!isPipeCasing(aBaseMetaTileEntity, one + xDir, two, one + zDir)) return false;
-        if (!isPipeCasing(aBaseMetaTileEntity, xDir - one, one, one + zDir)) return false;
-        if (!isPipeCasing(aBaseMetaTileEntity, xDir - one, two, one + zDir)) return false;
-        if (!isPipeCasing(aBaseMetaTileEntity, one + xDir, one, zDir - one)) return false;
-        if (!isPipeCasing(aBaseMetaTileEntity, one + xDir, two, zDir - one)) return false;
-        if (!isPipeCasing(aBaseMetaTileEntity, xDir - one, one, zDir - one)) return false;
-        if (!isPipeCasing(aBaseMetaTileEntity, xDir - one, two, zDir - one)) return false;
-        //pipe casing check done
-        //bottom casing
-        for (int i = -one; i < two; i++) {
-            for (int j = -one; j < two; j++) {
-                if (xDir + i == 0 && zDir + j == 0)
-                    // exclusion of the controller block
-                    continue;
-                IGregTechTileEntity tTileEntity = aBaseMetaTileEntity.getIGregTechTileEntityOffset(xDir + i, 0, zDir + j);
-                if (!addMaintenanceToMachineList(tTileEntity, getCasingIndex()) &&
-                        !addInputToMachineList(tTileEntity, getCasingIndex()) &&
-                        !addOutputToMachineList(tTileEntity, getCasingIndex()) &&
-                        !addEnergyInputToMachineList(tTileEntity, getCasingIndex()) &&
-                        !isCasing(aBaseMetaTileEntity, xDir + i, 0, zDir + j)) {
-                    return false;
-                }
-            }
-        }
-        //bottom casing done
-        return true;
-    }
-
-    private boolean isPipeCasing(IGregTechTileEntity aBaseMetaTileEntity, int aOffsetX, int aOffsetY, int aOffsetZ) {
-        return aBaseMetaTileEntity.getBlockOffset(aOffsetX, aOffsetY, aOffsetZ) == GT_Container_CasingsNH.sBlockCasingsNH &&
-                aBaseMetaTileEntity.getMetaIDOffset(aOffsetX, aOffsetY, aOffsetZ) == getPipeMeta();
-    }
-
     public abstract int getPipeMeta();
-
-    private boolean tryAddMufflerOrCasing(IGregTechTileEntity aBaseMetaTileEntity, int aOffsetX, int aOffsetY, int aOffsetZ) {
-        if (addMufflerToMachineList(aBaseMetaTileEntity.getIGregTechTileEntityOffset(aOffsetX, aOffsetY, aOffsetZ), getCasingIndex()))
-            return true;
-        return isCasing(aBaseMetaTileEntity, aOffsetX, aOffsetY, aOffsetZ);
-    }
-
-    private boolean isCasing(IGregTechTileEntity aBaseMetaTileEntity, int aOffsetX, int aOffsetY, int aOffsetZ) {
-        return aBaseMetaTileEntity.getBlockOffset(aOffsetX, aOffsetY, aOffsetZ) == GT_Container_CasingsNH.sBlockCasingsNH &&
-                aBaseMetaTileEntity.getMetaIDOffset(aOffsetX, aOffsetY, aOffsetZ) == getCasingMeta();
-    }
 
     public abstract int getCasingMeta();
 
