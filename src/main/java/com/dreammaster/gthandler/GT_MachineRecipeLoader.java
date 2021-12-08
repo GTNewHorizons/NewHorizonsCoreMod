@@ -443,7 +443,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
                     200,
-                    30
+                    30,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -457,7 +458,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
                     200,
-                    30
+                    30,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -471,7 +473,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
                     200,
-                    30
+                    30,
+                    true
             );
 
             // 16k ME Storage Component
@@ -486,7 +489,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
                     200,
-                    120
+                    120,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -500,7 +504,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
                     200,
-                    120
+                    120,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -514,7 +519,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
                     200,
-                    120
+                    120,
+                    true
             );
 
             // 64k ME Storage Component
@@ -529,7 +535,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
                     200,
-                    480
+                    480,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -543,7 +550,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
                     200,
-                    480
+                    480,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -557,7 +565,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
                     200,
-                    480
+                    480,
+                    true
             );
         }
         if (Loader.isModLoaded("extracells")){
@@ -573,7 +582,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
                     200,
-                    1920
+                    1920,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -587,7 +597,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
                     200,
-                    1920
+                    1920,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -601,7 +612,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
                     200,
-                    1920
+                    1920,
+                    true
             );
 
             // 1024k ME Storage Component
@@ -616,7 +628,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
                     200,
-                    7680
+                    7680,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -630,7 +643,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
                     200,
-                    7680
+                    7680,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -644,7 +658,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
                     200,
-                    7680
+                    7680,
+                    true
             );
 
             // 4096k ME Storage Component
@@ -659,7 +674,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
                     200,
-                    30720
+                    30720,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -673,7 +689,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
                     200,
-                    30720
+                    30720,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -687,7 +704,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
                     200,
-                    30720
+                    30720,
+                    true
             );
 
             // 16384k ME Storage Component
@@ -702,7 +720,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
                     200,
-                    491520
+                    491520,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -716,7 +735,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
                     200,
-                    491520
+                    491520,
+                    true
             );
 
             GT_Values.RA.addCircuitAssemblerRecipe(
@@ -730,7 +750,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
                     200,
-                    491520
+                    491520,
+                    true
             );
         }
 
