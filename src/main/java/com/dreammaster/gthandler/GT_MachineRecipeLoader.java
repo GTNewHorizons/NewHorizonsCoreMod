@@ -720,7 +720,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
                     200,
-                    491520,
+                    500000,
                     true
             );
 
@@ -735,7 +735,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
                     200,
-                    491520,
+                    500000,
                     true
             );
 
@@ -750,7 +750,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
                     200,
-                    491520,
+                    500000,
                     true
             );
         }
