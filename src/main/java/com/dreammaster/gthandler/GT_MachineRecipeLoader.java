@@ -1236,6 +1236,8 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addChemicalBathRecipe(CustomItemList.ArtificialLeather.get(2L), Materials.PhosphoricAcid.getFluid(144), GT_ModHandler.getModItem("Backpack", "tannedLeather", 1L, 0), GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 30);
         //- Chlorine cleaning of pistons
         GT_Values.RA.addChemicalBathRecipe(new ItemStack(Blocks.sticky_piston, 1, 0), Materials.Chlorine.getGas(10L), new ItemStack(Blocks.piston, 1, 0), GT_Values.NI, GT_Values.NI, null, 30, 30);
+        //Cooling Hot Khantal MV
+        GT_Values.RA.addChemicalBathRecipe(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Kanthal, 1L), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Kanthal, 1L), GT_Values.NI, GT_Values.NI, null, 1200, 120);
 
         //Mysterious crystal upgrading
         GT_Values.RA.addLaserEngraverRecipe(CustomItemList.MysteriousCrystalPlate.get(9), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), CustomItemList.MysteriousCrystal.get(1L), 1200, 480, true);
