@@ -432,7 +432,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addMixerRecipe(CustomItemList.ChargedCertusQuartzDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(4), GT_ModHandler.getDistilledWater(500L), GT_Values.NF, GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 2L, 8), 20, 16);
 
             // 4k ME Storage Component
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
@@ -445,7 +445,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     30
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
@@ -458,7 +458,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     30
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
@@ -472,7 +472,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             );
 
             // 16k ME Storage Component
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
@@ -485,7 +485,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     120
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
@@ -498,7 +498,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     120
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
@@ -512,7 +512,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             );
 
             // 64k ME Storage Component
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
@@ -525,7 +525,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     480
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
@@ -538,7 +538,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     480
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
@@ -553,7 +553,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         }
         if (Loader.isModLoaded("extracells")){
             // 256k ME Storage Component
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
@@ -566,7 +566,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     1920
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
@@ -579,7 +579,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     1920
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
@@ -593,7 +593,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             );
 
             // 1024k ME Storage Component
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
@@ -606,7 +606,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     7680
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
@@ -619,7 +619,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     7680
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
@@ -633,7 +633,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             );
 
             // 4096k ME Storage Component
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
@@ -646,7 +646,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     30720
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
@@ -659,7 +659,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     30720
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
@@ -673,7 +673,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             );
 
             // 16384k ME Storage Component
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
@@ -686,7 +686,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     491520
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
@@ -699,7 +699,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     491520
             );
 
-            GT_Values.RA.addAssemblerRecipe(
+            GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
