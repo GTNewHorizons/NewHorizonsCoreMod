@@ -430,6 +430,287 @@ public class GT_MachineRecipeLoader implements Runnable {
 
             GT_Values.RA.addMixerRecipe(CustomItemList.ChargedCertusQuartzDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(4), Materials.Water.getFluid(500L), GT_Values.NF, GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 2L, 8), 20, 16);
             GT_Values.RA.addMixerRecipe(CustomItemList.ChargedCertusQuartzDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(4), GT_ModHandler.getDistilledWater(500L), GT_Values.NF, GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 2L, 8), 20, 16);
+
+            // 4k ME Storage Component
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Coated_Basic.get(1)
+                    },
+                    Materials.Lead.getMolten(288),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
+                    200,
+                    30
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Coated_Basic.get(1)
+                    },
+                    Materials.Tin.getMolten(144),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
+                    200,
+                    30
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Coated_Basic.get(1)
+                    },
+                    Materials.SolderingAlloy.getMolten(72),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
+                    200,
+                    30
+            );
+
+            // 16k ME Storage Component
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Phenolic_Good.get(1)
+                    },
+                    Materials.Lead.getMolten(288),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
+                    200,
+                    120
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Phenolic_Good.get(1)
+                    },
+                    Materials.Tin.getMolten(144),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
+                    200,
+                    120
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Phenolic_Good.get(1)
+                    },
+                    Materials.SolderingAlloy.getMolten(72),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
+                    200,
+                    120
+            );
+
+            // 64k ME Storage Component
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1)
+                    },
+                    Materials.Lead.getMolten(288),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
+                    200,
+                    480
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1)
+                    },
+                    Materials.Tin.getMolten(144),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
+                    200,
+                    480
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Epoxy_Advanced.get(1)
+                    },
+                    Materials.SolderingAlloy.getMolten(72),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
+                    200,
+                    480
+            );
+        }
+        if (Loader.isModLoaded("extracells")){
+            // 256k ME Storage Component
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1)
+                    },
+                    Materials.Lead.getMolten(288),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
+                    200,
+                    1920
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1)
+                    },
+                    Materials.Tin.getMolten(144),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
+                    200,
+                    1920
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Fiberglass_Advanced.get(1)
+                    },
+                    Materials.SolderingAlloy.getMolten(72),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
+                    200,
+                    1920
+            );
+
+            // 1024k ME Storage Component
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Multifiberglass_Elite.get(1)
+                    },
+                    Materials.Lead.getMolten(288),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
+                    200,
+                    7680
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Multifiberglass_Elite.get(1)
+                    },
+                    Materials.Tin.getMolten(144),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
+                    200,
+                    7680
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            ItemList.Circuit_Board_Multifiberglass_Elite.get(1)
+                    },
+                    Materials.SolderingAlloy.getMolten(72),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
+                    200,
+                    7680
+            );
+
+            // 4096k ME Storage Component
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                            CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
+                            ItemList.Circuit_Board_Wetware_Extreme.get(1)
+                    },
+                    Materials.Lead.getMolten(288),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
+                    200,
+                    30720
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                            CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
+                            ItemList.Circuit_Board_Wetware_Extreme.get(1)
+                    },
+                    Materials.Tin.getMolten(144),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
+                    200,
+                    30720
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                            CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
+                            ItemList.Circuit_Board_Wetware_Extreme.get(1)
+                    },
+                    Materials.SolderingAlloy.getMolten(72),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
+                    200,
+                    30720
+            );
+
+            // 16384k ME Storage Component
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                            CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
+                            ItemList.Circuit_Board_Bio_Ultra.get(1)
+                    },
+                    Materials.Lead.getMolten(288),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
+                    200,
+                    491520
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                            CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
+                            ItemList.Circuit_Board_Bio_Ultra.get(1)
+                    },
+                    Materials.Tin.getMolten(144),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
+                    200,
+                    491520
+            );
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                            CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
+                            ItemList.Circuit_Board_Bio_Ultra.get(1)
+                    },
+                    Materials.SolderingAlloy.getMolten(72),
+                    GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
+                    200,
+                    491520
+            );
         }
 
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.EnergeticAlloy.getMolten(576L), CustomItemList.RawLapotronCrystal.get(1L), 10000, 2400, 480);

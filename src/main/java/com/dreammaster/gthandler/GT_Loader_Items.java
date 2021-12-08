@@ -4,6 +4,7 @@ import com.dreammaster.item.ItemList;
 import gregtech.api.enums.SubTag;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 import gregtech.api.items.GT_MetaGenerated_Item_X32;
+import net.minecraft.item.Item;
 
 public class GT_Loader_Items
 {
@@ -595,6 +596,10 @@ public class GT_Loader_Items
 		CustomItemList.RuneOfMagicFragment.set(ItemList.RuneOfMagicFragment.getIS());
 		CustomItemList.RuneOfVoidFragment.set(ItemList.RuneOfVoidFragment.getIS());
 		CustomItemList.NandChipBoard.set(GT.addItem(81, "NAND Chip Array", "Chips on Board", "circuitPrimitiveArray", SubTag.NO_UNIFICATION));
+		CustomItemList.LogicProcessorItemGoldCore.set(ItemList.LogicProcessorItemGoldCore.getIS());
+		CustomItemList.EngineeringProcessorItemDiamondCore.set(ItemList.EngineeringProcessorItemDiamondCore.getIS());
+		CustomItemList.EngineeringProcessorItemEmeraldCore.set(ItemList.EngineeringProcessorItemEmeraldCore.getIS());
+		CustomItemList.EngineeringProcessorItemAdvEmeraldCore.set(ItemList.EngineeringProcessorItemAdvEmeraldCore.getIS());
 		CustomItemList.Display.set(ItemList.Display.getIS());
 
 	}
