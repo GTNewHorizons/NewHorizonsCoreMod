@@ -40,10 +40,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -57,8 +54,13 @@ import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.GT_Mod;
 import gregtech.api.GregTech_API;
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_LanguageManager;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -452,6 +454,17 @@ public class MainRegistry
             GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
             GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
         }
+    }
+
+    @Mod.EventHandler
+    public void onLoadComplete(FMLLoadCompleteEvent event) {
+        if (Loader.isModLoaded("bartworks")) {
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Naquadah, 64), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HSSE, 64), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.YttriumBariumCuprate, 64), GT_Utility.getIntegratedCircuit(6)}, Materials.Polybenzimidazole.getMolten(9216L), GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 64L, 32740), 300, 30720);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 32), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iridium, 64), GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 64L, 88), GT_OreDictUnificator.get(OrePrefixes.stick, Materials.VividAlloy, 64), GT_Utility.getIntegratedCircuit(6)}, Materials.Polybenzimidazole.getMolten(9216L), GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 64L, 32739), 300, 30720);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.stick, Materials.VibrantAlloy, 64), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VanadiumGallium, 32), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.HSSG, 64), GT_Utility.getIntegratedCircuit(6)}, Materials.Polybenzimidazole.getMolten(9216L), GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 64L, 32738), 300, 30720);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.stick, Materials.HSSE, 64), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Enderium, 32), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlueSteel, 64), GT_Utility.getIntegratedCircuit(6)}, Materials.Polybenzimidazole.getMolten(9216L), GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedItem0", 64L, 32737), 300, 30720);
+        }
+
     }
 
     /**
