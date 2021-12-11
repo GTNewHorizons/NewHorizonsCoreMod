@@ -273,7 +273,7 @@ public class CustomDropsHandler
                 }
 
                 if (dr.getIsRandomAmount()) {
-                    tFinalAmount = 1 + MainRegistry.Rnd.nextInt(dr.getAmount() - 1);
+                    tFinalAmount = Math.max(1,MainRegistry.Rnd.nextInt(dr.getAmount() + 1));
                 }
 
                 ItemStack tDropStack = ItemDescriptor.fromString(dr.getItemName()).getItemStackwNBT(tFinalAmount, dr.mTag);
