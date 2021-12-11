@@ -484,7 +484,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
@@ -499,7 +499,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
@@ -514,7 +514,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
-                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
@@ -577,7 +577,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
@@ -592,7 +592,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
@@ -607,7 +607,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
@@ -623,7 +623,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
@@ -638,7 +638,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
@@ -653,7 +653,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[]{
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
-                            CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
+                            CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                             GT_Utility.getIntegratedCircuit(1)
                     },
