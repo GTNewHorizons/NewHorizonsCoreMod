@@ -32,7 +32,7 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
 
     @Override
     public String getSetupClass() {
-        return "com.dreammaster.coremod.DepLoader";
+        return null;
     }
 
     @Override
