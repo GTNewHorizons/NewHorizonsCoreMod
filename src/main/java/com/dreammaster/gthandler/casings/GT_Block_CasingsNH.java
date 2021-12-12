@@ -1,7 +1,11 @@
 package com.dreammaster.gthandler.casings;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilter;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterBase;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
+import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import gregtech.api.enums.Dyes;
@@ -33,6 +37,10 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".0.name", "Air Filter Turbine Casing");//adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".1.name", "Air Filter Vent Casing");//adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".2.name", "Pyrolyse Oven Casing");//adding
+        GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".3.name", "Advanced Air Filter Turbine Casing");//adding
+        GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".4.name", "Advanced Air Filter Vent Casing");//adding
+        GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".5.name", "Super Air Filter Turbine Casing");//adding
+        GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".6.name", "Super Air Filter Vent Casing");//adding
 
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".10.name", "UEV Machine Casing");//adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".11.name", "UIV Machine Casing");//adding
@@ -41,9 +49,13 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".14.name", "OPV Machine Casing");//adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".15.name", "MAX Machine Casing");//adding
 
-        CustomItemList.Casing_AirFilter_Turbine.set(new ItemStack(this, 1, 0));//adding
-        CustomItemList.Casing_AirFilter_Vent.set(new ItemStack(this, 1, 1));//adding
+        CustomItemList.Casing_AirFilter_Turbine_T1.set(new ItemStack(this, 1, 0));//adding
+        CustomItemList.Casing_AirFilter_Vent_T1.set(new ItemStack(this, 1, 1));//adding
         CustomItemList.Casing_Pyrolyse.set(new ItemStack(this, 1, 2));//adding
+        CustomItemList.Casing_AirFilter_Turbine_T2.set(new ItemStack(this, 1, 3));//adding
+        CustomItemList.Casing_AirFilter_Vent_T2.set(new ItemStack(this, 1, 4));//adding
+        CustomItemList.Casing_AirFilter_Turbine_T3.set(new ItemStack(this, 1, 5));//adding
+        CustomItemList.Casing_AirFilter_Vent_T3.set(new ItemStack(this, 1, 6));//adding
 
         CustomItemList.Casing_UEV.set(new ItemStack(this,1,10));
         CustomItemList.Casing_UIV.set(new ItemStack(this,1,11));
@@ -67,6 +79,14 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
                 return Textures.BlockIcons.MACHINE_CASING_PIPE_STEEL.getIcon();
             case 2:
                 return Textures.BlockIcons.MACHINE_8V_SIDE.getIcon();
+            case 3:
+                return Textures.BlockIcons.MACHINE_CASING_STABLE_TITANIUM.getIcon();
+            case 4:
+                return Textures.BlockIcons.MACHINE_CASING_PIPE_TITANIUM.getIcon();
+            case 5:
+                return Textures.BlockIcons.MACHINE_CASING_ROBUST_TUNGSTENSTEEL.getIcon();
+            case 6:
+                return Textures.BlockIcons.MACHINE_CASING_PIPE_TUNGSTENSTEEL.getIcon();
             default:
                 if (aSide == 0) {
                     return Textures.BlockIcons.MACHINECASINGS_BOTTOM[aMeta].getIcon();
@@ -78,18 +98,29 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
         }
     }
 
-    private IIcon getTurbineCasing(int iconIndex, boolean active) {
-        return active ? Textures.BlockIcons.TURBINE_ACTIVE[iconIndex].getIcon() : Textures.BlockIcons.TURBINE[iconIndex].getIcon();
+    private IIcon getTurbineCasing(int meta, int iconIndex, boolean active) {
+        switch (meta) {
+            case 3:
+                return active ? Textures.BlockIcons.TURBINE_ACTIVE2[iconIndex].getIcon() : Textures.BlockIcons.TURBINE2[iconIndex].getIcon();
+            case 5:
+                return active ? Textures.BlockIcons.TURBINE_ACTIVE3[iconIndex].getIcon() : Textures.BlockIcons.TURBINE3[iconIndex].getIcon();
+            default:// 0 or undefined turbine meta casing
+                return active ? Textures.BlockIcons.TURBINE_ACTIVE[iconIndex].getIcon() : Textures.BlockIcons.TURBINE[iconIndex].getIcon();
+        }
+    }
+
+    public boolean isTurbineMeta(int tMeta){
+        return tMeta == 0 || tMeta == 3 || tMeta == 5;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(IBlockAccess aWorld, int xCoord, int yCoord, int zCoord, int aSide) {
         int tMeta = aWorld.getBlockMetadata(xCoord, yCoord, zCoord);
-        if(tMeta>0 && tMeta<9 || tMeta==15){
+        if(!isTurbineMeta(tMeta) && tMeta <9 || tMeta==15){
             return getIcon(aSide,tMeta);
         }
-        if (tMeta != 0 || !mConnectedMachineTextures) {
+        if (!isTurbineMeta(tMeta)|| !mConnectedMachineTextures) {
             return getIcon(aSide, tMeta);
         }
         if (aSide==1) {
@@ -101,7 +132,9 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
                     if(null != (tTileEntity = aWorld.getTileEntity(xCoord+xi, Math.max(yCoord - 3, 0),zCoord+zi)) &&
                             tTileEntity instanceof IGregTechTileEntity &&
                             null != (tMetaTileEntity = ((IGregTechTileEntity)tTileEntity).getMetaTileEntity()) &&
-                            tMetaTileEntity instanceof GT_MetaTileEntity_AirFilter){
+                            (tMetaTileEntity instanceof GT_MetaTileEntity_AirFilterT1 ||
+                                tMetaTileEntity instanceof GT_MetaTileEntity_AirFilterT2||
+                                tMetaTileEntity instanceof GT_MetaTileEntity_AirFilterT3)){
                         boolean active=false;
                         if (((IGregTechTileEntity) tTileEntity).isActive()) {
                             active = true;
@@ -111,36 +144,36 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
                             case 2:
                                 if(xi<2 && xi>-2 && zi<1) {//if invalid position ignore (aka too far away)
                                     try {
-                                        return getTurbineCasing(-xi + 1 - zi * 3, active);
+                                        return getTurbineCasing(tMeta,-xi + 1 - zi * 3, active);
                                     } catch (Exception e) {
-                                        return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
+                                        return getIcon(aSide, tMeta);
                                     }
                                 }
                                 break;
                             case 3:
                                 if(xi<2 && xi>-2 && zi>-1) {
                                     try {
-                                        return getTurbineCasing(-xi+1+(2-zi)*3, active);
+                                        return getTurbineCasing(tMeta,-xi+1+(2-zi)*3, active);
                                     }catch(Exception e){
-                                        return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
+                                        return getIcon(aSide, tMeta);
                                     }
                                 }
                                 break;
                             case 4:
                                 if(zi<2 && zi>-2 && xi<1) {
                                     try {
-                                        return getTurbineCasing(-xi + (1 - zi) * 3, active);
+                                        return getTurbineCasing(tMeta,-xi + (1 - zi) * 3, active);
                                     } catch (Exception e) {
-                                        return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
+                                        return getIcon(aSide, tMeta);
                                     }
                                 }
                                 break;
                             case 5:
                                 if(zi<2 && zi>-2 && xi>-1) {
                                     try {
-                                        return getTurbineCasing(-xi + 2 + (1 - zi) * 3, active);
+                                        return getTurbineCasing(tMeta,-xi + 2 + (1 - zi) * 3, active);
                                     } catch (Exception e) {
-                                        return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
+                                        return getIcon(aSide, tMeta);
                                     }
                                 }
                         }
@@ -148,7 +181,7 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
                 }
             }
         }
-        return Textures.BlockIcons.MACHINE_CASING_SOLID_STEEL.getIcon();
+        return getIcon(aSide, tMeta);
     }
 
     @Override

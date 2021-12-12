@@ -1,7 +1,9 @@
 package com.dreammaster.gthandler;
 
 import com.dreammaster.gthandler.accelerator.GT_MetaTileEntity_WorldAccelerator;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilter;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
 import com.dreammaster.gthandler.nameRemover.NameRemover;
 import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
 import com.dreammaster.gthandler.turboCharger.GT_MetaTileEntity_TurboCharger;
@@ -3436,43 +3438,43 @@ public class GT_Loader_Machines
 		CustomItemList.MixerLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11210, "basicmachine.mixer.tier.06", "Elite Mixer", 6,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11211, "basicmachine.mixer.tier.07", "Elite Mixer II", 7,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11212, "basicmachine.mixer.tier.08", "Ultimate Matter Organizer", 8,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11213, "basicmachine.mixer.tier.09", "Epic Matter Organizer", 9,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11214, "basicmachine.mixer.tier.10", "Epic Matter Organizer II",10,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 128000, 0, 1, "Mixer6.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11215, "basicmachine.mixer.tier.11", "Epic Matter Organizer III",11,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 64000, 0, 1, "Mixer4.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		CustomItemList.MixerUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11216, "basicmachine.mixer.tier.12", "Epic Matter Organizer IV",12,
 				"Will it Blend?", GT_Recipe.GT_Recipe_Map.sMixerRecipes,
-				9, 1, 64000, 0, 1, "Mixer2.png", "",
+				9, 4, 64000, 0, 1, "Mixer4.png", "",
 				false, false, 0, "MIXER", null).getStackForm(1L));
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.MixerLuV.get(1L),
@@ -4138,7 +4140,9 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		// MULTIBLOCKS ID space up to 12039
 		// ===================================================================================================
-		CustomItemList.Machine_Multi_AirFilter.set(new GT_MetaTileEntity_AirFilter(12020, "multimachine.airfilter", "Electric Air Filter").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT1.set(new GT_MetaTileEntity_AirFilterT1(12020, "multimachine.airfilter.01", "Electric Air Filter T1").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT2.set(new GT_MetaTileEntity_AirFilterT2(12021, "multimachine.airfilter.02", "Electric Air Filter T2").getStackForm(1L));
+		CustomItemList.Machine_Multi_AirFilterT3.set(new GT_MetaTileEntity_AirFilterT3(12022, "multimachine.airfilter.03", "Electric Air Filter T3").getStackForm(1L));
 
 
 

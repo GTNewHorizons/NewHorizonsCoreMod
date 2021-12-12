@@ -126,9 +126,6 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameOS, "opensecurity.energyUpgrade", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameOS, "opensecurity.movementUpgrade", 1L, 0), true, false, true);
         //Railcraft
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 0), true, false, true);
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 1), true, false, true);
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 2), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 3), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 4), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 5), true, false, true);
@@ -139,9 +136,6 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 10), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 11), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 12), true, false, true);
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 13), true, false, true);
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 14), true, false, true);
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineBeta, 1L, 15), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineAlpha, 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineAlpha, 1L, 1), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameRC, aTextMachineAlpha, 1L, 2), true, false, true);
