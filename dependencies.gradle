@@ -17,7 +17,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:EnderIO:master-SNAPSHOT:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:GTplusplus:unified-build-script-SNAPSHOT:dev") {  // TODO: switch to master
+    compileOnly("com.github.GTNewHorizons:GTplusplus:master-SNAPSHOT:dev") {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:GalacticGregGT5:master-SNAPSHOT:dev") {
