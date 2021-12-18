@@ -3690,37 +3690,38 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("computronics", "computronics.droneStation", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 26), ItemList.Circuit_Parts_TransistorSMD.get(2L), GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L), GT_Utility.getIntegratedCircuit(1)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("computronics", "computronics.dockingUpgrade", 1L, 0), 250, 480);
                 }
 
-                if (Loader.isModLoaded("harvestcraft")) {
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "catfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "crayfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "jellyfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "mudfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "greenheartfishItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "catfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "anchovyrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "bassrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "carprawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "octopusrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "charrrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "clamrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "crabrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "crayfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "eelrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "frograwItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "grouperrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "herringrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "perchrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "scalloprawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "shrimprawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "snailrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "snapperrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "tilapiarawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "troutrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "tunarawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "turtlerawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                    GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "walleyerawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
-                }
             }
+        }
+
+        if (Loader.isModLoaded("harvestcraft")) {
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "catfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "crayfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "jellyfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "mudfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "greenheartfishItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "catfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "anchovyrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "bassrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "carprawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "octopusrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "charrrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "clamrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "crabrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "crayfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "eelrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "frograwItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "grouperrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "herringrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "perchrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "scalloprawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "shrimprawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "snailrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "snapperrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "tilapiarawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "troutrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "tunarawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "turtlerawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
+            GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "walleyerawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
         }
 
         if (Loader.isModLoaded("irontank")) {
