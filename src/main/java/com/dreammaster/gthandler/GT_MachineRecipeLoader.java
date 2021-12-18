@@ -2,7 +2,6 @@ package com.dreammaster.gthandler;
 
 import cpw.mods.fml.common.Loader;
 import forestry.api.recipes.IFermenterRecipe;
-import gregtech.api.GregTech_API;
 import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -20,7 +19,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static gregtech.api.enums.GT_Values.*;
@@ -3693,7 +3691,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("computronics", "computronics.droneStation", 1L, 0), GT_ModHandler.getModItem("OpenComputers", "item", 2L, 26), ItemList.Circuit_Parts_TransistorSMD.get(2L), GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L), GT_Utility.getIntegratedCircuit(1)}, tMat.getMolten(144L * tMultiplier / 2L), GT_ModHandler.getModItem("computronics", "computronics.dockingUpgrade", 1L, 0), 250, 480);
             }
 
-        
+
         }
 
         if (Loader.isModLoaded("harvestcraft")) {
