@@ -127,6 +127,32 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
 
     public abstract GT_Recipe getRecipe();
 
+    public String getCasingString(){
+        switch (getCasingMeta()){
+            case 0:
+                return "Air Filter Turbine Casing";
+            case 3:
+                return "Advanced Air Filter Turbine Casing";
+            case 5:
+                return "Super Air Filter Turbine Casing";
+            default:
+                return "fill a ticket on github if you read this";
+        }
+    }
+
+    public String getPipeString(){
+        switch (getPipeMeta()){
+            case 1:
+                return "Air Filter Vent Casing";
+            case 4:
+                return "Advanced Air Filter Vent Casing";
+            case 6:
+                return "Super Air Filter Vent Casing";
+            default:
+                return "fill a ticket on github if you read this";
+        }
+    }
+
     @Override
     protected GT_Multiblock_Tooltip_Builder createTooltip() {
         final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
@@ -141,9 +167,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase extends GT_MetaTileEntity_
                 .addSeparator()
                 .beginStructureBlock(3, 4, 3, true)
                 .addController("Front bottom")
-                .addOtherStructurePart(GT_LanguageManager.getTranslation(GT_Container_CasingsNH.sBlockCasingsNH.getUnlocalizedName()+"."+getCasingMeta()+".name"), "Top and bottom")
-                .addOtherStructurePart(GT_LanguageManager.getTranslation(GT_Container_CasingsNH.sBlockCasingsNH.getUnlocalizedName()+"."+getPipeMeta()+".name"), "Corners of the middle 2 layers")
-                .addOtherStructurePart("Muffler Hatch Or "+GT_LanguageManager.getTranslation(GT_Container_CasingsNH.sBlockCasingsNH.getUnlocalizedName()+"."+getPipeMeta()+".name"), "8 in the middle layers")
+                .addOtherStructurePart(getCasingString(), "Top and bottom")
+                .addOtherStructurePart(getPipeString(), "Corners of the middle 2 layers")
+                .addOtherStructurePart("Muffler Hatch Or "+getPipeString(), "8 in the middle layers")
                 .addEnergyHatch("Any bottom layer casing", 1)
                 .addMaintenanceHatch("Any bottom layer casing", 1)
                 .addInputBus("Any bottom layer casing", 1)
