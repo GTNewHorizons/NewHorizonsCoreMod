@@ -2886,7 +2886,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{Materials.Aluminium.getPlates (4), Materials.Glass.getPlates(1), Materials.Glowstone.getDust(1), new ItemStack(Items.dye, 1, 1), new ItemStack(Items.dye, 1, 10), new ItemStack(Items.dye, 1, 4)}, GT_Values.NF, ItemList.Cover_Screen.get(1L),100, 5);
 
         //Wood Plates
-        GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(false, new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64), GT_Utility.getIntegratedCircuit(2)}, new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64)}, null, new FluidStack[]{Materials.Glue.getFluid(144L)}, null, 2400, 32, 0);
+        GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(false, new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64), GT_Utility.getIntegratedCircuit(2)}, new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64)}, null, new FluidStack[]{Materials.Glue.getFluid(144L)}, null, 2400, 30, 0);
 
         //Nukes
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_Utility.getIntegratedCircuit(21), GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Lead, 4L), GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Titanium, 2L), GT_ModHandler.getModItem("IC2", "itemPartAlloy", 2L), GT_ModHandler.getModItem("IC2", "blockMachine", 1L, 12)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "blockReactorChamber", 1L), 100, 480);
