@@ -145,7 +145,7 @@ dependencies {
         setChanging(true)
     }
     compile("mantle:Mantle:1.7.10-0.3.2.jenkins207:deobf")
-    compile("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-1.7.10-SNAPSHOT:dev") {
+    compile("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:master-SNAPSHOT:dev") {
         setChanging(true)
     }
     compile("com.github.GTNewHorizons:ForestryMC:master-SNAPSHOT:dev") {
