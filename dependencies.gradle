@@ -44,7 +44,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:master-SNAPSHOT:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:WitcheryExtras:update-build-script-SNAPSHOT:dev") {  // TODO: switch to master
+    compileOnly("com.github.GTNewHorizons:WitcheryExtras:master-SNAPSHOT:dev") {
         transitive = false
     }
 
