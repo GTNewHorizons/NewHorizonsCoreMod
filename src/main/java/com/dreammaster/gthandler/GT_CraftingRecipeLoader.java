@@ -318,13 +318,17 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 new ScriptBiblioWoodsBoP(),
                 new ScriptBiblioWoodsForestry(),
                 new ScriptHoloInventory(),
-                new ScriptSleepingBags()
+                //new ScriptSleepingBags(),
+                new ScriptSpiceOfLife()
         };
 
         for (IScriptLoader script: scripts){
             if (script.isScriptLoadable()){
                 script.loadRecipes();
                 MainRegistry.Logger.info(script.getScriptName()+" took "+script.getExecutionTime()+" ms.");
+            }
+            else {
+                MainRegistry.Logger.info("missing requirements for the script "+script.getScriptName()+". It won't be loaded");
             }
         }
     }
