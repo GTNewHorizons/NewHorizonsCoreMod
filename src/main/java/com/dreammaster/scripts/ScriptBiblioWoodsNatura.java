@@ -18,7 +18,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
     }
 
     @Override
-    public void loadRecipe() {
+    public void loadRecipes() {
         startTime = System.currentTimeMillis();
         ItemStack[] FClockN= new ItemStack[]{
                 getModItem("BiblioWoodsNatura", "BiblioWoodClock", 1),

@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import com.dreammaster.main.MainRegistry;
 import com.dreammaster.scripts.*;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.Loader;
@@ -12,9 +13,6 @@ import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
@@ -313,7 +311,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "minicoal", 7L, 0), bits, new Object[]{"T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C', OrePrefixes.dust.get(Materials.Coal)});
         }
 
-        Map<String, Long> executionTimes = new HashMap<>();
+
         IScriptLoader[] scripts = new IScriptLoader[]{
                 new ScriptBiblioCraft(),
                 new ScriptBiblioWoodsNatura(),
@@ -323,8 +321,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         for (IScriptLoader script: scripts){
             if (script.isScriptLoadable()){
-                script.loadRecipe();
-                executionTimes.put(script.getScriptName(), script.getExecutionTime());
+                script.loadRecipes();
+                MainRegistry.Logger.info(script.getScriptName()+" took "+script.getExecutionTime()+" ms.");
             }
         }
     }

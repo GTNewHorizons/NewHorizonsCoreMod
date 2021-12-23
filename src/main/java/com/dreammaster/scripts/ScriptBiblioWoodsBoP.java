@@ -16,7 +16,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
     private static final List<String> dependencies = Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft");
 
     @Override
-    public void loadRecipe(){
+    public void loadRecipes(){
         startTime = System.currentTimeMillis();
         ItemStack[] BOBwood= new ItemStack[]{
                 getModItem("BiomesOPlenty", "woodenSingleSlab1", 1),

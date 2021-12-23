@@ -1,11 +1,17 @@
 package com.dreammaster.scripts;
 
 import cpw.mods.fml.common.Loader;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioCraft implements IScriptLoader {
@@ -18,7 +24,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
     }
 
     @Override
-    public void loadRecipe() {
+    public void loadRecipes() {
             startTime = System.currentTimeMillis();
             ItemStack[] TypeWriterB = new ItemStack[16];
             ItemStack[] Pedestals = new ItemStack[16];
@@ -178,7 +184,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     "plateIron", "plateIron", "plateIron"});
 
 
-            addShapedRecipe(getModItem("BiblioCraft", "ArmorStand", 1), new Object[]{
+            addShapedRecipe(getModItem("BiblioCraft", "Armor Stand", 1), new Object[]{
                     "boltIron", "stickIron", "boltIron",
                     "craftingToolHardHammer", "stickIron", "craftingToolSaw",
                     "plateIron", getModItem("minecraft", "stone_pressure_plate", 1), "plateIron"});
@@ -295,8 +301,29 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
                 }
             }
+        loadCuttingRecipes();
+        loadShapelessRecipes();
         endTime = System.currentTimeMillis();
     }
+
+     public void loadCuttingRecipes(){
+        // --- Frame Sheet
+        GT_Values.RA.addCutterRecipe(getMeta02(32470),Materials.Water.getFluid(4),GT_ModHandler.getModItem("BiblioCraft","item.FramingSheet", 4), GT_Values.NI, 50, 4);
+        GT_Values.RA.addCutterRecipe(getMeta02(32470),GT_ModHandler.getDistilledWater(2),GT_ModHandler.getModItem("BiblioCraft","item.FramingSheet", 4), GT_Values.NI, 50, 4);
+        GT_Values.RA.addCutterRecipe(getMeta02(32470),Materials.Lubricant.getFluid(1),GT_ModHandler.getModItem("BiblioCraft","item.FramingSheet", 4), GT_Values.NI, 25, 4);
+        // --- Frame Board
+        GT_Values.RA.addCutterRecipe(getModItem("BiblioCraft","item.FramingSheet",1),Materials.Water.getFluid(4),GT_ModHandler.getModItem("BiblioCraft","item.FramingBoard", 4), GT_Values.NI, 50, 4);
+        GT_Values.RA.addCutterRecipe(getModItem("BiblioCraft","item.FramingSheet",1),GT_ModHandler.getDistilledWater(2),GT_ModHandler.getModItem("BiblioCraft","item.FramingBoard", 4), GT_Values.NI, 50, 4);
+        GT_Values.RA.addCutterRecipe(getModItem("BiblioCraft","item.FramingSheet",1),Materials.Lubricant.getFluid(1),GT_ModHandler.getModItem("BiblioCraft","item.FramingBoard", 4), GT_Values.NI, 25, 4);
+    }
+
+    public void loadShapelessRecipes(){
+        addShapelessCraftingRecipe(getModItem("BiblioCraft","item.BiblioClipboard", 1), new Object[]{
+                "platePaper",
+                getModItem("BiblioCraft","item.BiblioClipboard", 1, 32767)
+        });
+    }
+
     @Override
     public long getExecutionTime(){
         return endTime-startTime;
