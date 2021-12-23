@@ -1,8 +1,5 @@
 package com.dreammaster.scripts;
 
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-
 import java.util.Arrays;
 import java.util.List;
 
