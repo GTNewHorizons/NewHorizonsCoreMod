@@ -317,7 +317,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 new ScriptBiblioWoodsNatura(),
                 new ScriptBiblioWoodsBoP(),
                 new ScriptBiblioWoodsForestry(),
-                new ScriptHoloInventory()
+                new ScriptHoloInventory(),
+                new ScriptSleepingBags()
         };
 
         for (IScriptLoader script: scripts){
