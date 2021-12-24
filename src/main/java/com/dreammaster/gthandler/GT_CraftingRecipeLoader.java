@@ -1,5 +1,7 @@
 package com.dreammaster.gthandler;
 
+import com.dreammaster.main.MainRegistry;
+import com.dreammaster.scripts.*;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.*;
@@ -307,6 +309,27 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "auroraBlock", 8L, 0), bits, new Object[]{"GGG", "GDG", "GGG", 'G', new ItemStack(Blocks.glass, 1), 'D', new ItemStack(Items.dye, 1, GT_Values.W)});        	
         	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "minicharcoal", 7L, 0), bits, new Object[]{"T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C', OrePrefixes.dust.get(Materials.Charcoal)});
         	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "minicoal", 7L, 0), bits, new Object[]{"T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C', OrePrefixes.dust.get(Materials.Coal)});
+        }
+
+
+        IScriptLoader[] scripts = new IScriptLoader[]{
+                new ScriptBiblioCraft(),
+                new ScriptBiblioWoodsNatura(),
+                new ScriptBiblioWoodsBoP(),
+                new ScriptBiblioWoodsForestry(),
+                new ScriptHoloInventory(),
+                new ScriptSleepingBags(),
+                new ScriptSpiceOfLife()
+        };
+
+        for (IScriptLoader script: scripts){
+            if (script.isScriptLoadable()){
+                script.loadRecipes();
+                MainRegistry.Logger.info(script.getScriptName()+" took "+script.getExecutionTime()+" ms.");
+            }
+            else {
+                MainRegistry.Logger.info("missing requirements for the script "+script.getScriptName()+". It won't be loaded");
+            }
         }
     }
 }
