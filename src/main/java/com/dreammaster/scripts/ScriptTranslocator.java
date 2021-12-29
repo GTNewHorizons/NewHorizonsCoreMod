@@ -1,8 +1,5 @@
 package com.dreammaster.scripts;
 
-import gregtech.api.enums.GT_Values;
-import net.minecraft.item.ItemStack;
-
 import java.util.Arrays;
 import java.util.List;
 
