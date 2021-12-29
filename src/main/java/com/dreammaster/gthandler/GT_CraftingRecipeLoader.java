@@ -320,7 +320,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 new ScriptHoloInventory(),
                 new ScriptSleepingBags(),
                 new ScriptSpiceOfLife(),
-                new ScriptEnderZoo()
+                new ScriptEnderZoo(),
+                new ScriptTranslocator()
         };
 
         for (IScriptLoader script: scripts){
