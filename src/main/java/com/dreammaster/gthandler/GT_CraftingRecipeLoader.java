@@ -30,6 +30,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
     private static final long bits = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.BUFFERED;
     private static final long bits2 = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE | GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.BUFFERED | DELETE_ALL_OTHER_RECIPES;
     private static final long bits3 = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.BUFFERED;
+    private static final long bits4 = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.BUFFERED;
     private static final long tBitMask = GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE;
 
     @Override
@@ -251,8 +252,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         	GT_Log.out.println("GT_Mod: Replacing Railcraft recipes with slightly more Oredicted variants");
 
             GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 0), bits, new Object[]{"SPS", "PdP", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S', OrePrefixes.screw.get(Materials.AnyIron)});
-            GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 1), bits, new Object[]{"SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S', OrePrefixes.screw.get(Materials.AnyIron), 'L', new ItemStack(Blocks.glass_pane, 1, 32767)});
-            GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 1), bits, new Object[]{"SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S', OrePrefixes.screw.get(Materials.AnyIron), 'L', GT_ModHandler.getModItem(aTextTConstruct, "GlassPane", 1L, 0)});
+            GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 1), bits4, new Object[]{"SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S', OrePrefixes.screw.get(Materials.AnyIron), 'L', new ItemStack(Blocks.glass_pane, 1, 32767)});
+            GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 2L, 1), bits4, new Object[]{"SPS", "LdL", "SPS", 'P', OrePrefixes.plate.get(Materials.AnyIron), 'S', OrePrefixes.screw.get(Materials.AnyIron), 'L', GT_ModHandler.getModItem(aTextTConstruct, "GlassPane", 1L, 0)});
             GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 2), bits, new Object[]{"SPS", "BdB", "SPS", 'S', OrePrefixes.screw.get(Materials.AnyIron), 'B', new ItemStack(Blocks.iron_bars, 1, 0), 'P', OrePrefixes.pipeLarge.get(Materials.Bronze)});
             GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 3), bits, new Object[]{"PPP", "ShS", "PPP", 'P', OrePrefixes.itemCasing.get(Materials.Iron), 'S', OrePrefixes.screw.get(Materials.AnyIron)});
             GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem(aTextRailcraft, aTextMachineBeta, 1L, 4), bits, new Object[]{"PPP", "ShS", "PPP", 'P', OrePrefixes.itemCasing.get(Materials.Steel), 'S', OrePrefixes.screw.get(Materials.Steel)});
