@@ -129,6 +129,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(OrePrefixes.block, Materials.Tungsten, GT_ModHandler.getModItem("GalaxySpace", "metalsblock", 1L, 8));
         GT_OreDictUnificator.registerOre(OrePrefixes.block, Materials.Copper, GT_ModHandler.getModItem("GalaxySpace", "metalsblock", 1L, 9));
 
+        GT_OreDictUnificator.registerOre("chestSteel", GT_ModHandler.getModItem("IronChest", "BlockIronChest", 1L, 4));
+
         GT_OreDictUnificator.registerOre("craftingToolShears", new ItemStack(Items.shears, 1, 32767));
 
         GT_OreDictUnificator.registerOre("cropBarley", GT_ModHandler.getModItem("Natura", "barleyFood", 1L, 0));
