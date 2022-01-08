@@ -3501,7 +3501,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         CustomItemList.AluminiumIronPlate.get(1)
                     },
-                    tMat.getMolten(576L * tMultiplier / 2L),
+                    tMat.getMolten(72L * tMultiplier / 2L),
                     ItemList.Cover_SolarPanel.get(1L),
                     600,
                     64);
@@ -3516,7 +3516,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.GalliumArsenide, 1L),
                             CustomItemList.ReinforcedAluminiumIronPlate.get(1)
                     },
-                    tMat.getMolten(576L * tMultiplier / 2L),
+                    tMat.getMolten(72L * tMultiplier / 2L),
                     ItemList.Cover_SolarPanel_8V.get(1L),
                     600,
                     64);
