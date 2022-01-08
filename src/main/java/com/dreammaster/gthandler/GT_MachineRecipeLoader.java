@@ -3491,6 +3491,36 @@ public class GT_MachineRecipeLoader implements Runnable {
                     Materials.Titanium.getMolten(1440L),
                     GT_ModHandler.getIC2Item("quantumBoots", 1L, 26), 1500, 7680);
 
+            //solar 1EU
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                        ItemList.Circuit_Silicon_Wafer.get(2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                        GT_ModHandler.getIC2Item("reinforcedGlass", 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        CustomItemList.AluminiumIronPlate.get(1)
+                    },
+                    tMat.getMolten(72L * tMultiplier / 2L),
+                    ItemList.Cover_SolarPanel.get(1L),
+                    600,
+                    64);
+
+            //solar 8EU
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2L),
+                            ItemList.Cover_SolarPanel.get(2L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Tin, 2L),
+                            ItemList.Circuit_Silicon_Wafer.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.GalliumArsenide, 1L),
+                            CustomItemList.ReinforcedAluminiumIronPlate.get(1)
+                    },
+                    tMat.getMolten(72L * tMultiplier / 2L),
+                    ItemList.Cover_SolarPanel_8V.get(1L),
+                    600,
+                    64);
+            
             if (Loader.isModLoaded("OpenComputers")) {
                 make_lua_bios();
 
