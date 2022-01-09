@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import java.util.Arrays;
 import java.util.List;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioWoodsNatura implements IScriptLoader{
@@ -140,6 +141,20 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                 getModItem("BiblioWoodsNatura", "BiblioWoodMapFrame", 1, 11),
                 getModItem("BiblioWoodsNatura", "BiblioWoodMapFrame", 1, 12)};
 
+        ItemStack[] fancySignNatura= new ItemStack[]{
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 1),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 2),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 3),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 4),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 5),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 6),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 7),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 8),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 9),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 10),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 11),
+                getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 12)};
         ItemStack[] LableN= new ItemStack[]{
                 getModItem("BiblioWoodsNatura", "BiblioWoodlabel", 1),
                 getModItem("BiblioWoodsNatura", "BiblioWoodlabel", 1, 1),
@@ -156,6 +171,13 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                 getModItem("BiblioWoodsNatura", "BiblioWoodlabel", 1, 12)};
 
         for(int i=0; i < 13;i++){
+            addShapelessCraftingRecipe(
+                    fancySignNatura[i],
+                    new Object[]{
+                            getModItem("minecraft", "paper", 1),
+                            getModItem("minecraft", "sign", 1),
+                            LableN[i]
+                    });
             addShapedRecipe(FClockN[i], new Object[]{
                     Nwood[i], getModItem("minecraft", "clock", 1), Nwood[i],
                     Nwood[i], "stickWood", Nwood[i],
