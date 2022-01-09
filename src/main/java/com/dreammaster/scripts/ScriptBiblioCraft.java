@@ -87,11 +87,19 @@ public class ScriptBiblioCraft implements IScriptLoader {
                             });
                 }
             }
-        addShapedRecipe(getModItem("BiblioCraft", "BibloStuffs", 1, 3), new Object[]{
-                "stickWood", "stickWood", "stickWood",
-                "slabWood", "slabWood", "slabWood",
-                null, null, null
-        });
+            addShapedRecipe(getModItem("BiblioCraft", "BibloStuffs", 1, 3), new Object[]{
+                    "stickWood", "stickWood", "stickWood",
+                    "slabWood", "slabWood", "slabWood",
+                    null, null, null
+            });
+
+            ItemStack paper = getModItem("minecraft", "paper", 1);
+            ItemStack bookAndQuill = getModItem("minecraft", "writable_book", 1);
+            addShapedRecipe(getModItem("BiblioCraft", "BibloStuffs", 1, 3), new Object[]{
+                    paper, "dyeGreen", paper,
+                    paper, bookAndQuill, paper,
+                    paper, paper, paper
+            });
 
             addShapedRecipe(getModItem("BiblioCraft", "Printing Press", 1), new Object[]{
                     "plateThaumium", "stickBlaze", "plateThaumium",
