@@ -101,6 +101,12 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     paper, paper, paper
             });
 
+            addShapedRecipe(getModItem("BiblioCraft", "item.BigBook", 1), new Object[]{
+                    paper, paper, paper,
+                    paper, bookAndQuill, paper,
+                    paper, paper, paper
+            });
+
             addShapedRecipe(getModItem("BiblioCraft", "Printing Press", 1), new Object[]{
                     "plateThaumium", "stickBlaze", "plateThaumium",
                     "plateAluminium", getMeta01(32601), "plateAluminium",
