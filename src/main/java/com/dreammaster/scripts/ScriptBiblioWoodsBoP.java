@@ -291,7 +291,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                             BOPplanks[i], BOBwood[i], BOPplanks[i],
                     });
 
-            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodPotshelf", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodpotshelf", 1, i),
                     new Object[]{
                             BOBwood[i], BOBwood[i], BOBwood[i],
                             BOPplanks[i], emptyBottle, BOPplanks[i],
