@@ -252,26 +252,26 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                     "stickWood", "stickWood", "stickWood",
                     "stickWood", FrameBOP[i], "stickWood",
                     "stickWood", "stickWood", "stickWood"});
-            addShapedRecipe(getModItem("BiblioCraft", "BiblioWoodtable", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodtable", 1, i),
                     new Object[]{
                             BOBwood[i], BOBwood[i], BOBwood[i],
                             null, BOPplanks[i], null,
                             null, BOPplanks[i], null
                     });
-            addShapedRecipe(getModItem("BiblioCraft", "BiblioWooddesk", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWooddesk", 1, i),
                     new Object[]{
                             torch, null, feather,
                             BOBwood[i], BOBwood[i], BOBwood[i],
                             BOPplanks[i], BOPplanks[i], BOPplanks[i]
                     });
-            addShapedRecipe(getModItem("BiblioCraft", "BiblioWoodFancyWorkbench", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodFancyWorkbench", 1, i),
                     new Object[]{
                             ink, craftingTable, feather,
                             BOBwood[i], bookCaseBOP[i], BOBwood[i],
                             BOBwood[i], BOBwood[i], BOBwood[i]
                     });
 
-            addShapedRecipe(getModItem("BiblioCraft", "BiblioWoodFancyWorkbench", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodFancyWorkbench", 1, i),
                     new Object[]{
                             feather, craftingTable, ink,
                             BOBwood[i], bookCaseBOP[i], BOBwood[i],
@@ -285,7 +285,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                             BOPplanks[i], BOBwood[i], BOPplanks[i],
                     });
 
-            addShapedRecipe(getModItem("BiblioCraft", "BiblioWoodPotshelf", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodPotshelf", 1, i),
                     new Object[]{
                             BOBwood[i], BOBwood[i], BOBwood[i],
                             BOPplanks[i], emptyBottle, BOPplanks[i],
