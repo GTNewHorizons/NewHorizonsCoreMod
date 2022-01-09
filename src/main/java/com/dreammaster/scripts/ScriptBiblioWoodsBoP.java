@@ -292,6 +292,13 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                             BOBwood[i], BOBwood[i], BOBwood[i],
                     });
 
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodshelf", 1, i),
+                    new Object[]{
+                            BOBwood[i], BOBwood[i], BOBwood[i],
+                            null, BOPplanks[i], null,
+                            BOBwood[i], BOBwood[i], BOBwood[i],
+                    });
+
             addShapelessCraftingRecipe(
                     fancySignBOP[i],
                     new Object[]{
