@@ -329,8 +329,37 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
             addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodSeat", 1, i),
                     new Object[]{
                             null, whiteWool, null,
-                            null, BOBwood, null,
+                            null, BOBwood[i], null,
                             stick, woodenPressurePlate, stick
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "seatBack1", 1, i),
+                    new Object[]{
+                            null, whiteWool, null,
+                            null, BOBwood[i], null,
+                            stick, null, stick
+                    });
+
+
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "seatBack2", 1, i),
+                    new Object[]{
+                            stick, whiteWool, stick,
+                            stick, BOBwood[i], stick,
+                            stick, null, stick
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "seatBack2", 1, i),
+                    new Object[]{
+                            null, whiteWool, null,
+                            null, BOBwood[i], null,
+                            null, null, null
+                    });
+
+            addShapelessCraftingRecipe(
+                    getModItem("BiblioWoodsBoP", "seatBack3", 1, i),
+                    new Object[]{
+                            BOBwood[i],
+                            getModItem("BiblioWoodsBoP", "seatBack2", 1, i),
                     });
 
             addShapelessCraftingRecipe(
