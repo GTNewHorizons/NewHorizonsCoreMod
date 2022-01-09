@@ -77,6 +77,14 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     FrameB[i] = getModItem("BiblioCraft", "BiblioMapFrames", 1, i);
                     PaintingB[i] = getModItem("BiblioCraft", "BiblioBorderlessPainting", 1, i);
                     FClockB[i] = getModItem("BiblioCraft", "BiblioClock", 1, i);
+
+                    addShapelessCraftingRecipe(
+                            getModItem("BiblioCraft", "BiblioFancySign", 1, i),
+                            new Object[]{
+                                    getModItem("minecraft", "paper", 1),
+                                    getModItem("minecraft", "sign", 1),
+                                    LableB[i]
+                            });
                 }
             }
 
