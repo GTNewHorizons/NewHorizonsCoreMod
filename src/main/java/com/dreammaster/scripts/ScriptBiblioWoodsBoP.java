@@ -220,6 +220,8 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
         ItemStack feather = getModItem("minecraft", "feather", 1);
         ItemStack ink = getModItem("minecraft", "dye", 1);
         ItemStack craftingTable = getModItem("minecraft", "crafting_table",1);
+        ItemStack emptyBottle = getModItem("minecraft", "glass_bottle", 1);
+
 
         for (int i=0;i<14;i++){
             addShapedRecipe(FClockBOP[i], new Object[]{
@@ -281,6 +283,13 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                             BOPplanks[i], BOBwood[i], BOPplanks[i],
                             BOPplanks[i], BOBwood[i], BOPplanks[i],
                             BOPplanks[i], BOBwood[i], BOPplanks[i],
+                    });
+
+            addShapedRecipe(getModItem("BiblioCraft", "BiblioWoodPotshelf", 1, i),
+                    new Object[]{
+                            BOBwood[i], BOBwood[i], BOBwood[i],
+                            BOPplanks[i], emptyBottle, BOPplanks[i],
+                            BOBwood[i], BOBwood[i], BOBwood[i],
                     });
 
             addShapelessCraftingRecipe(
