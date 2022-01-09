@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import java.util.Arrays;
 import java.util.List;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioWoodsBoP implements IScriptLoader{
@@ -160,7 +161,25 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                 getModItem("BiblioWoodsBoP", "BiblioWoodlabel", 1, 10),
                 getModItem("BiblioWoodsBoP", "BiblioWoodlabel", 1, 11),
                 getModItem("BiblioWoodsBoP", "BiblioWoodlabel", 1, 12),
-                getModItem("BiblioWoodsBoP", "BiblioWoodlabel", 1, 13)};
+                getModItem("BiblioWoodsBoP", "BiblioWoodlabel", 1, 13)
+        };
+
+        ItemStack[] fancySignBOP = new ItemStack[]{
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 1),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 2),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 3),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 4),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 5),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 6),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 7),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 8),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 9),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 10),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 11),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 12),
+                getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 13)
+        };
 
         for (int i=0;i<14;i++){
             addShapedRecipe(FClockBOP[i], new Object[]{
@@ -191,6 +210,14 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                     "stickWood", "stickWood", "stickWood",
                     "stickWood", FrameBOP[i], "stickWood",
                     "stickWood", "stickWood", "stickWood"});
+
+            addShapelessCraftingRecipe(
+                    fancySignBOP[i],
+                    new Object[]{
+                            getModItem("minecraft", "paper", 1),
+                            getModItem("minecraft", "sign", 1),
+                            LableBOP[i]
+                    });
         }
         endTime = System.currentTimeMillis();
     }
