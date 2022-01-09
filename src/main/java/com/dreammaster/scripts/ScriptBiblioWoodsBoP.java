@@ -226,6 +226,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
         ItemStack glass = getModItem("minecraft", "glass", 1);
         ItemStack whiteWool = getModItem("minecraft", "wool", 1);
         ItemStack stick = getModItem("minecraft", "stick", 1);
+        ItemStack woodenPressurePlate = getModItem("minecraft", "wooden_pressure_plate", 1);
 
 
         for (int i=0;i<14;i++){
@@ -323,6 +324,13 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                             stick, stick, stick,
                             stick, BOBwood[i], stick,
                             stick, stick, stick
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodSeat", 1, i),
+                    new Object[]{
+                            null, whiteWool, null,
+                            null, BOBwood, null,
+                            stick, woodenPressurePlate, stick
                     });
 
             addShapelessCraftingRecipe(
