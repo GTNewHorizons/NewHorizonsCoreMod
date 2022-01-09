@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 
@@ -221,6 +222,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
         ItemStack ink = getModItem("minecraft", "dye", 1);
         ItemStack craftingTable = getModItem("minecraft", "crafting_table",1);
         ItemStack emptyBottle = getModItem("minecraft", "glass_bottle", 1);
+        ItemStack ironIngot = getModItem("minecraft", "iron_ingot", 1);
 
 
         for (int i=0;i<14;i++){
@@ -296,6 +298,13 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                     new Object[]{
                             BOBwood[i], BOBwood[i], BOBwood[i],
                             null, BOPplanks[i], null,
+                            BOBwood[i], BOBwood[i], BOBwood[i],
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodrack", 1, i),
+                    new Object[]{
+                            BOBwood[i], BOBwood[i], BOBwood[i],
+                            BOBwood[i], ironIngot, BOBwood[i],
                             BOBwood[i], BOBwood[i], BOBwood[i],
                     });
 
