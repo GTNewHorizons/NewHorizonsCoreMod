@@ -35,6 +35,23 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                 getModItem("BiomesOPlenty", "woodenSingleSlab2", 1, 1),
                 getModItem("BiomesOPlenty", "woodenSingleSlab2", 1, 5)};
 
+        ItemStack[] BOPplanks = new ItemStack[]{
+                getModItem("BiomesOPlenty", "planks", 1, 0),
+                getModItem("BiomesOPlenty", "planks", 1, 1),
+                getModItem("BiomesOPlenty", "planks", 1, 2),
+                getModItem("BiomesOPlenty", "planks", 1, 3),
+                getModItem("BiomesOPlenty", "planks", 1, 12),
+                getModItem("BiomesOPlenty", "planks", 1, 4),
+                getModItem("BiomesOPlenty", "planks", 1, 13),
+                getModItem("BiomesOPlenty", "planks", 1, 5),
+                getModItem("BiomesOPlenty", "planks", 1, 6),
+                getModItem("BiomesOPlenty", "planks", 1, 7),
+                getModItem("BiomesOPlenty", "planks", 1, 11),
+                getModItem("BiomesOPlenty", "planks", 1, 8),
+                getModItem("BiomesOPlenty", "planks", 1, 9),
+                getModItem("BiomesOPlenty", "planks", 1, 14)
+        };
+
         ItemStack[] FClockBOP= new ItemStack[]{
                 getModItem("BiblioWoodsBoP", "BiblioWoodClock", 1),
                 getModItem("BiblioWoodsBoP", "BiblioWoodClock", 1, 1),
@@ -210,6 +227,12 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                     "stickWood", "stickWood", "stickWood",
                     "stickWood", FrameBOP[i], "stickWood",
                     "stickWood", "stickWood", "stickWood"});
+            addShapedRecipe(getModItem("BiblioCraft", "BiblioWoodtable", 1, i),
+                    new Object[]{
+                            BOBwood[i], BOBwood[i], BOBwood[i],
+                            null, BOPplanks[i], null,
+                            null, BOPplanks[i], null
+                    });
 
             addShapelessCraftingRecipe(
                     fancySignBOP[i],
