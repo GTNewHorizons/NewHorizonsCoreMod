@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 
@@ -197,6 +198,8 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                 getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 12),
                 getModItem("BiblioWoodsBoP", "BiblioWoodFancySign", 1, 13)
         };
+        ItemStack torch = getModItem("minecraft", "torch", 1);
+        ItemStack feather = getModItem("minecraft", "feather", 1);
 
         for (int i=0;i<14;i++){
             addShapedRecipe(FClockBOP[i], new Object[]{
@@ -232,6 +235,12 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                             BOBwood[i], BOBwood[i], BOBwood[i],
                             null, BOPplanks[i], null,
                             null, BOPplanks[i], null
+                    });
+            addShapedRecipe(getModItem("BiblioCraft", "BiblioWooddesk", 1, i),
+                    new Object[]{
+                            torch, null, feather,
+                            BOBwood[i], BOBwood[i], BOBwood[i],
+                            BOPplanks[i], BOPplanks[i], BOPplanks[i]
                     });
 
             addShapelessCraftingRecipe(
