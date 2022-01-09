@@ -95,7 +95,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
             ItemStack paper = getModItem("minecraft", "paper", 1);
             ItemStack bookAndQuill = getModItem("minecraft", "writable_book", 1);
-            addShapedRecipe(getModItem("BiblioCraft", "BibloStuffs", 1, 3), new Object[]{
+            addShapedRecipe(getModItem("BiblioCraft", "item.StockroomCatalog", 1), new Object[]{
                     paper, "dyeGreen", paper,
                     paper, bookAndQuill, paper,
                     paper, paper, paper
