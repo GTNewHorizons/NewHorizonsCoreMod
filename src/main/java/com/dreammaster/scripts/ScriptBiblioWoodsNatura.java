@@ -292,11 +292,18 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                             Nplanks[i], Nplanks[i], Nplanks[i]
                     });
 
-            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodtable", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodtable", 1, i),
                     new Object[]{
                             Nwood[i], Nwood[i], Nwood[i],
                             null, Nplanks[i], null,
                             null, Nplanks[i], null
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodFancyWorkbench", 1, i),
+                    new Object[]{
+                            ink, craftingTable, feather,
+                            Nwood[i], getModItem("BiblioWoodsNatura", "BiblioWoodcase", 1, i), Nwood[i],
+                            Nwood[i], Nwood[i], Nwood[i]
                     });
         }
         endTime = System.currentTimeMillis();
