@@ -277,6 +277,13 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                             Nwood[i], ironIngot, Nwood[i],
                             Nwood[i], Nwood[i], Nwood[i],
                     });
+
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodcase0", 1, i),
+                    new Object[]{
+                            Nwood[i], glass, Nwood[i],
+                            Nwood[i], whiteWool, Nwood[i],
+                            Nwood[i], Nwood[i], Nwood[i],
+                    });
         }
         endTime = System.currentTimeMillis();
     }
