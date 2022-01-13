@@ -186,6 +186,22 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                 getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 11),
                 getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 12)};
 
+        ItemStack[] Nplanks = new ItemStack[]{
+                getModItem("Natura", "tree", 1, 4),
+                getModItem("Natura", "tree", 1, 11),
+                getModItem("Natura", "tree", 1, 0),
+                getModItem("Natura", "tree", 1, 12),
+                getModItem("Natura", "tree", 1, 2),
+                getModItem("Natura", "tree", 1, 5),
+                getModItem("Natura", "tree", 1, 6),
+                getModItem("Natura", "tree", 1, 8),
+                getModItem("Natura", "tree", 1, 3),
+                getModItem("Natura", "tree", 1, 7),
+                getModItem("Natura", "tree", 1, 1),
+                getModItem("Natura", "tree", 1, 9),
+                getModItem("Natura", "tree", 1, 10)
+        };
+
         ItemStack torch = getModItem("minecraft", "torch", 1);
         ItemStack feather = getModItem("minecraft", "feather", 1);
         ItemStack ink = getModItem("minecraft", "dye", 1);
@@ -238,6 +254,13 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                     new Object[]{
                             Nwood[i], glass, Nwood[i],
                             Nwood[i], whiteWool, Nwood[i],
+                            Nwood[i], Nwood[i], Nwood[i],
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodpotshelf", 1, i),
+                    new Object[]{
+                            Nwood[i], Nwood[i], Nwood[i],
+                            Nplanks[i], emptyBottle, Nplanks[i],
                             Nwood[i], Nwood[i], Nwood[i],
                     });
         }
