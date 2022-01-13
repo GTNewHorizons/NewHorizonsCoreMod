@@ -155,6 +155,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                 getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 10),
                 getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 11),
                 getModItem("BiblioWoodsNatura", "BiblioWoodFancySign", 1, 12)};
+
         ItemStack[] LableN= new ItemStack[]{
                 getModItem("BiblioWoodsNatura", "BiblioWoodlabel", 1),
                 getModItem("BiblioWoodsNatura", "BiblioWoodlabel", 1, 1),
@@ -169,6 +170,32 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                 getModItem("BiblioWoodsNatura", "BiblioWoodlabel", 1, 10),
                 getModItem("BiblioWoodsNatura", "BiblioWoodlabel", 1, 11),
                 getModItem("BiblioWoodsNatura", "BiblioWoodlabel", 1, 12)};
+
+        ItemStack[] bookcaseNatura= new ItemStack[]{
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 1),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 2),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 3),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 4),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 5),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 6),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 7),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 8),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 9),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 10),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 11),
+                getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 12)};
+
+        ItemStack torch = getModItem("minecraft", "torch", 1);
+        ItemStack feather = getModItem("minecraft", "feather", 1);
+        ItemStack ink = getModItem("minecraft", "dye", 1);
+        ItemStack craftingTable = getModItem("minecraft", "crafting_table",1);
+        ItemStack emptyBottle = getModItem("minecraft", "glass_bottle", 1);
+        ItemStack ironIngot = getModItem("minecraft", "iron_ingot", 1);
+        ItemStack glass = getModItem("minecraft", "glass", 1);
+        ItemStack whiteWool = getModItem("minecraft", "wool", 1);
+        ItemStack stick = getModItem("minecraft", "stick", 1);
+        ItemStack woodenPressurePlate = getModItem("minecraft", "wooden_pressure_plate", 1);
 
         for(int i=0; i < 13;i++){
             addShapelessCraftingRecipe(
@@ -206,6 +233,13 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                     "stickWood", "stickWood", "stickWood",
                     "stickWood", FrameN[i], "stickWood",
                     "stickWood", "stickWood", "stickWood"});
+
+            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodcase", 1, i),
+                    new Object[]{
+                            Nwood[i], glass, Nwood[i],
+                            Nwood[i], whiteWool, Nwood[i],
+                            Nwood[i], Nwood[i], Nwood[i],
+                    });
         }
         endTime = System.currentTimeMillis();
     }
