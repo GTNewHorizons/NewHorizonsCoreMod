@@ -250,35 +250,35 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                     "stickWood", FrameN[i], "stickWood",
                     "stickWood", "stickWood", "stickWood"});
 
-            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodcase", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodcase", 1, i),
                     new Object[]{
                             Nwood[i], glass, Nwood[i],
                             Nwood[i], whiteWool, Nwood[i],
                             Nwood[i], Nwood[i], Nwood[i],
                     });
 
-            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodpotshelf", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodpotshelf", 1, i),
                     new Object[]{
                             Nwood[i], Nwood[i], Nwood[i],
                             Nplanks[i], emptyBottle, Nplanks[i],
                             Nwood[i], Nwood[i], Nwood[i],
                     });
 
-            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodshelf", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodshelf", 1, i),
                     new Object[]{
                             Nwood[i], Nwood[i], Nwood[i],
                             null, Nplanks[i], null,
                             Nwood[i], Nwood[i], Nwood[i],
                     });
 
-            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodrack", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodrack", 1, i),
                     new Object[]{
                             Nwood[i], Nwood[i], Nwood[i],
                             Nwood[i], ironIngot, Nwood[i],
                             Nwood[i], Nwood[i], Nwood[i],
                     });
 
-            addShapedRecipe(getModItem("BiblioWoodsBoP", "BiblioWoodcase0", 1, i),
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodcase0", 1, i),
                     new Object[]{
                             Nwood[i], glass, Nwood[i],
                             Nwood[i], whiteWool, Nwood[i],
