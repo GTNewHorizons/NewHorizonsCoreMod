@@ -305,6 +305,56 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                             Nwood[i], getModItem("BiblioWoodsNatura", "BiblioWoodcase", 1, i), Nwood[i],
                             Nwood[i], Nwood[i], Nwood[i]
                     });
+
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodMapFrame", 1, i),
+                    new Object[]{
+                            stick, stick, stick,
+                            stick, Nwood[i], stick,
+                            stick, stick, stick
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodSeat", 1, i),
+                    new Object[]{
+                            null, whiteWool, null,
+                            null, Nwood[i], null,
+                            stick, woodenPressurePlate, stick
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "seatBack1", 1, i),
+                    new Object[]{
+                            null, whiteWool, null,
+                            null, Nwood[i], null,
+                            stick, null, stick
+                    });
+
+
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "seatBack2", 1, i),
+                    new Object[]{
+                            stick, whiteWool, stick,
+                            stick, Nwood[i], stick,
+                            stick, null, stick
+                    });
+
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "seatBack4", 1, i),
+                    new Object[]{
+                            null, whiteWool, null,
+                            null, Nwood[i], null,
+                            null, null, null
+                    });
+
+            addShapelessCraftingRecipe(
+                    getModItem("BiblioWoodsNatura", "seatBack3", 1, i),
+                    new Object[]{
+                            Nwood[i],
+                            getModItem("BiblioWoodsNatura", "seatBack2", 1, i),
+                    });
+
+            addShapelessCraftingRecipe(
+                    getModItem("BiblioWoodsNatura", "seatBack5", 1, i),
+                    new Object[]{
+                            Nwood[i], Nwood[i],
+                            getModItem("BiblioWoodsNatura", "seatBack2", 1, i),
+                    });
         }
         endTime = System.currentTimeMillis();
     }
