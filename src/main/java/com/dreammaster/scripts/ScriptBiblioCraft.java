@@ -44,6 +44,16 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     getModItem("BiblioCraft", "item.FramingSheet", 1, 0)
             };
 
+        ItemStack[] Bwood = new ItemStack[]{
+                getModItem("minecraft", "wooden_slab", 1, 0),
+                getModItem("minecraft", "wooden_slab", 1, 1),
+                getModItem("minecraft", "wooden_slab", 1, 2),
+                getModItem("minecraft", "wooden_slab", 1, 3),
+                getModItem("minecraft", "wooden_slab", 1, 4),
+                getModItem("minecraft", "wooden_slab", 1, 5),
+                getModItem("BiblioCraft", "item.FramingBoard", 1, 0)
+        };
+
             ItemStack[] color16 = new ItemStack[]{
                 getMeta02(32429), //white
                 getMeta02(32421), //light grey
@@ -62,6 +72,17 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 getMeta02(32423), //pink
                 getMeta02(32417)  //brown
             };
+
+            ItemStack torch = getModItem("minecraft", "torch", 1);
+            ItemStack feather = getModItem("minecraft", "feather", 1);
+            ItemStack ink = getModItem("minecraft", "dye", 1);
+            ItemStack craftingTable = getModItem("minecraft", "crafting_table",1);
+            ItemStack emptyBottle = getModItem("minecraft", "glass_bottle", 1);
+            ItemStack ironIngot = getModItem("minecraft", "iron_ingot", 1);
+            ItemStack glass = getModItem("minecraft", "glass", 1);
+            ItemStack whiteWool = getModItem("minecraft", "wool", 1);
+            ItemStack stick = getModItem("minecraft", "stick", 1);
+            ItemStack woodenPressurePlate = getModItem("minecraft", "wooden_pressure_plate", 1);
 
             for (int i = 0; i < 16; i++) {
                 TypeWriterB[i] = getModItem("BiblioCraft", "BiblioTypewriter", 1, i);
@@ -85,7 +106,29 @@ public class ScriptBiblioCraft implements IScriptLoader {
                                     getModItem("minecraft", "sign", 1),
                                     LableB[i]
                             });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "BiblioWorkbench", 1, i),
+                            new Object[]{
+                                    ink, craftingTable, feather,
+                                    Bwood[i], getModItem("BiblioCraft", "Bibliotheca", 1, i), Bwood[i],
+                                    Bwood[i], Bwood[i], Bwood[i]
+                            });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "BiblioWorkbench", 1, i),
+                            new Object[]{
+                                    feather, craftingTable, ink,
+                                    Bwood[i], getModItem("BiblioCraft", "Bibliotheca", 1, i), Bwood[i],
+                                    Bwood[i], Bwood[i], Bwood[i]
+                            });
+
+
                 }
+
+                addShapedRecipe(getModItem("BiblioCraft", "BiblioSwordPedestal", 1, i), new Object[]{
+                        null, null, null,
+                        "plateIron", "ringIron", "plateIron",
+                        "slabStone", cwool16[i], "slabStone",
+                });
             }
             addShapedRecipe(getModItem("BiblioCraft", "BibloStuffs", 1, 3), new Object[]{
                     "stickWood", "stickWood", "stickWood",
