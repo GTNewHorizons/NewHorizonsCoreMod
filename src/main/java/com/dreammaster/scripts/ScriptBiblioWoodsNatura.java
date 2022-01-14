@@ -309,14 +309,14 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
             addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodFancyWorkbench", 1, i),
                     new Object[]{
                             ink, craftingTable, feather,
-                            Nwood[i], getModItem("BiblioWoodsNatura", "BiblioWoodcase", 1, i), Nwood[i],
+                            Nwood[i], getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, i), Nwood[i],
                             Nwood[i], Nwood[i], Nwood[i]
                     });
 
             addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodFancyWorkbench", 1, i),
                     new Object[]{
                             feather, craftingTable, ink,
-                            Nwood[i], getModItem("BiblioWoodsNatura", "BiblioWoodcase", 1, i), Nwood[i],
+                            Nwood[i], getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, i), Nwood[i],
                             Nwood[i], Nwood[i], Nwood[i]
                     });
 
