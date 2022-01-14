@@ -152,6 +152,34 @@ public class ScriptBiblioCraft implements IScriptLoader {
                                     Bwood[i], Bwood[i], Bwood[i],
                             });
 
+                    addShapedRecipe(getModItem("BiblioCraft", "BiblioRack", 1, i),
+                            new Object[]{
+                                    Bwood[i], Bwood[i], Bwood[i],
+                                    Bwood[i], ironIngot, Bwood[i],
+                                    Bwood[i], Bwood[i], Bwood[i],
+                            });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "BiblioCase", 1, i),
+                            new Object[]{
+                                    Bwood[i], glass, Bwood[i],
+                                    Bwood[i], whiteWool, Bwood[i],
+                                    Bwood[i], Bwood[i], Bwood[i],
+                            });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "BiblioDesk", 1, i),
+                            new Object[]{
+                                    torch, null, feather,
+                                    Bwood[i], Bwood[i], Bwood[i],
+                                    planks[i], planks[i], planks[i]
+                            });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "BiblioTable", 1, i),
+                            new Object[]{
+                                    Bwood[i], Bwood[i], Bwood[i],
+                                    null, planks[i], null,
+                                    null, planks[i], null
+                            });
+
 
                 }
 

@@ -355,6 +355,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                         });
             }
         }
+        //todo: rewrite this to match the other bibliowoods scripts
+
         // the 2.4k lines that i auto generated
         //oredicts
         GT_OreDictUnificator.registerOre("PlumPlanks",getModItem("Forestry", "planks", 1, 21));
