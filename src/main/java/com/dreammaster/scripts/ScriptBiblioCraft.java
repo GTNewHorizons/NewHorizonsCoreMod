@@ -180,6 +180,55 @@ public class ScriptBiblioCraft implements IScriptLoader {
                                     null, planks[i], null
                             });
 
+                    addShapedRecipe(getModItem("BiblioCraft", "BiblioMapFrames", 1, i),
+                            new Object[]{
+                                    stick, stick, stick,
+                                    stick, Bwood[i], stick,
+                                    stick, stick, stick
+                            });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "BiblioSeats", 1, i),
+                            new Object[]{
+                                    null, whiteWool, null,
+                                    null, Bwood[i], null,
+                                    stick, woodenPressurePlate, stick
+                            });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "seatBack", 1, i),
+                            new Object[]{
+                                    null, whiteWool, null,
+                                    null, Bwood[i], null,
+                                    stick, null, stick
+                            });
+
+
+                    addShapedRecipe(getModItem("BiblioCraft", "seatBack2", 1, i),
+                            new Object[]{
+                                    stick, whiteWool, stick,
+                                    stick, Bwood[i], stick,
+                                    stick, null, stick
+                            });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "seatBack4", 1, i),
+                            new Object[]{
+                                    null, whiteWool, null,
+                                    null, Bwood[i], null,
+                                    null, null, null
+                            });
+
+                    addShapelessCraftingRecipe(
+                            getModItem("BiblioCraft", "seatBack3", 1, i),
+                            new Object[]{
+                                    Bwood[i],
+                                    getModItem("BiblioCraft", "seatBack2", 1, i),
+                            });
+
+                    addShapelessCraftingRecipe(
+                            getModItem("BiblioCraft", "seatBack5", 1, i),
+                            new Object[]{
+                                    Bwood[i], Bwood[i],
+                                    getModItem("BiblioCraft", "seatBack2", 1, i),
+                            });
 
                 }
 
