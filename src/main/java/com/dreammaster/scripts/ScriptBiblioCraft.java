@@ -44,6 +44,24 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     getModItem("BiblioCraft", "item.FramingSheet", 1, 0)
             };
 
+            String[] colorsLamp = new String[]{
+                    "dyeLightGray",
+                    "dyeGray",
+                    "dyeBlack",
+                    "dyeRed",
+                    "dyeOrange",
+                    "dyeYellow",
+                    "dyeLime",
+                    "dyeGreen",
+                    "dyeCyan",
+                    "dyeLightBlue",
+                    "dyeBlue",
+                    "dyePurple",
+                    "dyeMagenta",
+                    "dyePink",
+                    "dyeBrown"
+            };
+
         ItemStack[] Bwood = new ItemStack[]{
                 getModItem("minecraft", "wooden_slab", 1, 0),
                 getModItem("minecraft", "wooden_slab", 1, 1),
@@ -434,6 +452,28 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     "craftingToolScrewdriver", getMeta01(17809), "craftingToolSaw",
                     getModItem("minecraft", "paper", 1), getModItem("minecraft", "paper", 1), getModItem("minecraft", "paper", 1)});
 
+            for (int i=1;i<16;i++){
+                addShapelessCraftingRecipe(
+                        getModItem("BiblioCraft", "BiblioLantern", 1, i),
+                        new Object[]{
+                                getModItem("BiblioCraft", "BiblioLantern", 1, 32767), colorsLamp[i]
+                        });
+                addShapelessCraftingRecipe(
+                        getModItem("BiblioCraft", "BiblioIronLantern", 1, i),
+                        new Object[]{
+                                getModItem("BiblioCraft", "BiblioIronLantern", 1, 32767), colorsLamp[i]
+                        });
+                addShapelessCraftingRecipe(
+                        getModItem("BiblioCraft", "BiblioLamp", 1, i),
+                        new Object[]{
+                                getModItem("BiblioCraft", "BiblioLamp", 1, 32767), colorsLamp[i]
+                        });
+                addShapelessCraftingRecipe(
+                        getModItem("BiblioCraft", "BiblioIronLamp", 1, i),
+                        new Object[]{
+                                getModItem("BiblioCraft", "BiblioIronLamp", 1, 32767), colorsLamp[i]
+                        });
+            }
             for (int i =0; i <16; i++){
                 addShapedRecipe(TypeWriterB[i], new Object[]{
                         "plateRubber", getModItem("OpenComputers", "item", 1, 20), "plateRubber",
