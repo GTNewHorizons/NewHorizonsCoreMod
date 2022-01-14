@@ -249,12 +249,6 @@ public class ScriptBiblioCraft implements IScriptLoader {
                             });
 
                 }
-
-                addShapedRecipe(getModItem("BiblioCraft", "BiblioSwordPedestal", 1, i), new Object[]{
-                        null, null, null,
-                        "plateIron", "ringIron", "plateIron",
-                        "slabStone", cwool16[i], "slabStone",
-                });
             }
             addShapedRecipe(getModItem("BiblioCraft", "BiblioStuffs", 1, 3), new Object[]{
                     "stickWood", "stickWood", "stickWood",
