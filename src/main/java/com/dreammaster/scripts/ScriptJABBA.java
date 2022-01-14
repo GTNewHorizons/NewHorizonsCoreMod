@@ -4,22 +4,18 @@ import gregtech.api.enums.GT_Values;
 import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptJABBA implements IScriptLoader{
-    private long startTime;
-    private long endTime;
-    private static final String scriptName = "JABBA";
-    private static final List<String> dependencies = Arrays.asList("JABBA", "BiomesOPlenty", "ExtraTrees", "ExtraUtilities","Forestry","Natura" );
 
     public ScriptJABBA() {
+        scriptName.append("JABBA");
+        dependencies.addAll(Arrays.asList("JABBA", "BiomesOPlenty", "ExtraTrees", "ExtraUtilities","Forestry","Natura"));
 
     }
     @Override
     public void loadRecipes() {
-        startTime = System.currentTimeMillis();
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{
                         getModItem("minecraft", "planks", 8, 32767),
                         getModItem("minecraft", "chest", 1)},
@@ -249,21 +245,5 @@ public class ScriptJABBA implements IScriptLoader{
                 "screwSteel",getModItem("minecraft", "sticky_piston", 1),"screwSteel",
                 "screwSteel",getModItem("JABBA", "barrel", 1),"screwSteel",
                 null,"craftingToolScrewdriver",null});
-        endTime = System.currentTimeMillis();
-    }
-
-    @Override
-    public long getExecutionTime(){
-        return endTime-startTime;
-    }
-
-    @Override
-    public List<String> getDependencies() {
-        return dependencies;
-    }
-
-    @Override
-    public String getScriptName() {
-        return scriptName;
     }
 }

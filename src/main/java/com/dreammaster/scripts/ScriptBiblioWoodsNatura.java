@@ -3,24 +3,19 @@ package com.dreammaster.scripts;
 import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioWoodsNatura implements IScriptLoader{
-    private long startTime;
-    private long endTime;
-    private static final String scriptName = "BiblioWoodsNatura";
-    private static final List<String> dependencies = Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft");
 
     public ScriptBiblioWoodsNatura() {
-
+        scriptName.append("BiblioWoodsNatura");
+        dependencies.addAll(Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft"));
     }
 
     @Override
     public void loadRecipes() {
-        startTime = System.currentTimeMillis();
         ItemStack[] FClockN= new ItemStack[]{
                 getModItem("BiblioWoodsNatura", "BiblioWoodClock", 1),
                 getModItem("BiblioWoodsNatura", "BiblioWoodClock", 1, 1),
@@ -370,21 +365,5 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                             getModItem("BiblioWoodsNatura", "seatBack2", 1, i),
                     });
         }
-        endTime = System.currentTimeMillis();
-    }
-
-    @Override
-    public long getExecutionTime(){
-        return endTime-startTime;
-    }
-
-    @Override
-    public List<String> getDependencies() {
-        return dependencies;
-    }
-
-    @Override
-    public String getScriptName() {
-        return scriptName;
     }
 }

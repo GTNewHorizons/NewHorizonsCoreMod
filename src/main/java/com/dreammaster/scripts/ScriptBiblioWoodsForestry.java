@@ -4,20 +4,19 @@ import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioWoodsForestry implements IScriptLoader {
-    private long startTime;
-    private long endTime;
-    private static final String scriptName = "BiblioWoodsForestry";
-    private static final List<String> dependencies = Arrays.asList("BiblioCraft", "Forestry","BiblioWoodsForestry");
+
+    public ScriptBiblioWoodsForestry(){
+        scriptName.append("BiblioWoodsForestry");
+        dependencies.addAll(Arrays.asList("BiblioCraft", "Forestry","BiblioWoodsForestry"));
+    }
 
     @Override
     public void loadRecipes() {
-        startTime = System.currentTimeMillis();
         ItemStack[] F1wood= new ItemStack[]{
                 getModItem("Forestry", "slabs", 1, 2),
                 getModItem("Forestry", "slabs", 1, 11),
@@ -2258,22 +2257,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 getModItem("BiblioWoodsForestry", "seatBack2", 1, 15), null, null,
                 null, null, null});
 
-
-        endTime = System.currentTimeMillis();
     }
 
-    @Override
-    public long getExecutionTime() {
-        return endTime - startTime;
-    }
-
-    @Override
-    public List<String> getDependencies() {
-        return dependencies;
-    }
-
-    @Override
-    public String getScriptName() {
-        return scriptName;
-    }
 }

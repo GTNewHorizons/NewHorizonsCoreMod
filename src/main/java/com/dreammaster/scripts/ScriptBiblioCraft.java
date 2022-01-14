@@ -6,23 +6,19 @@ import gregtech.api.util.GT_ModHandler;
 import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioCraft implements IScriptLoader {
-    private long startTime;
-    private long endTime;
-    private static final String scriptName = "BiblioCraft";
-    private static final List<String> dependencies = Arrays.asList("BiblioCraft", "harvestcraft", "FloodLights");
-    public ScriptBiblioCraft(){
 
+    public ScriptBiblioCraft(){
+        scriptName.append("BiblioCraft");
+        dependencies.addAll(Arrays.asList("BiblioCraft", "harvestcraft", "FloodLights"));
     }
 
     @Override
     public void loadRecipes() {
-            startTime = System.currentTimeMillis();
             ItemStack[] TypeWriterB = new ItemStack[16];
             ItemStack[] Pedestals = new ItemStack[16];
             ItemStack[] cwool16 = new ItemStack[16];
@@ -533,7 +529,6 @@ public class ScriptBiblioCraft implements IScriptLoader {
             }
         loadCuttingRecipes();
         loadShapelessRecipes();
-        endTime = System.currentTimeMillis();
     }
 
      public void loadCuttingRecipes(){
@@ -554,19 +549,5 @@ public class ScriptBiblioCraft implements IScriptLoader {
         });
     }
 
-    @Override
-    public long getExecutionTime(){
-        return endTime-startTime;
-    }
-
-    @Override
-    public List<String> getDependencies() {
-        return dependencies;
-    }
-
-    @Override
-    public String getScriptName() {
-        return scriptName;
-    }
 }
 
