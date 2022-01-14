@@ -187,19 +187,19 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                 getModItem("BiblioWoodsNatura", "BiblioWoodBookcase", 1, 12)};
 
         ItemStack[] Nplanks = new ItemStack[]{
-                getModItem("Natura", "tree", 1, 4),
-                getModItem("Natura", "tree", 1, 11),
-                getModItem("Natura", "tree", 1, 0),
-                getModItem("Natura", "tree", 1, 12),
-                getModItem("Natura", "tree", 1, 2),
-                getModItem("Natura", "tree", 1, 5),
-                getModItem("Natura", "tree", 1, 6),
-                getModItem("Natura", "tree", 1, 8),
-                getModItem("Natura", "tree", 1, 3),
-                getModItem("Natura", "tree", 1, 7),
-                getModItem("Natura", "tree", 1, 1),
-                getModItem("Natura", "tree", 1, 9),
-                getModItem("Natura", "tree", 1, 10)
+                getModItem("Natura", "planks", 1, 4),
+                getModItem("Natura", "planks", 1, 11),
+                getModItem("Natura", "planks", 1, 0),
+                getModItem("Natura", "planks", 1, 12),
+                getModItem("Natura", "planks", 1, 2),
+                getModItem("Natura", "planks", 1, 5),
+                getModItem("Natura", "planks", 1, 6),
+                getModItem("Natura", "planks", 1, 8),
+                getModItem("Natura", "planks", 1, 3),
+                getModItem("Natura", "planks", 1, 7),
+                getModItem("Natura", "planks", 1, 1),
+                getModItem("Natura", "planks", 1, 9),
+                getModItem("Natura", "planks", 1, 10)
         };
 
         ItemStack torch = getModItem("minecraft", "torch", 1);
