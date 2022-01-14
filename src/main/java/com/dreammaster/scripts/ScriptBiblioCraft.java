@@ -456,22 +456,22 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 addShapelessCraftingRecipe(
                         getModItem("BiblioCraft", "BiblioLantern", 1, i),
                         new Object[]{
-                                getModItem("BiblioCraft", "BiblioLantern", 1, 32767), colorsLamp[i]
+                                getModItem("BiblioCraft", "BiblioLantern", 1, 32767), colorsLamp[i-1]
                         });
                 addShapelessCraftingRecipe(
                         getModItem("BiblioCraft", "BiblioIronLantern", 1, i),
                         new Object[]{
-                                getModItem("BiblioCraft", "BiblioIronLantern", 1, 32767), colorsLamp[i]
+                                getModItem("BiblioCraft", "BiblioIronLantern", 1, 32767), colorsLamp[i-1]
                         });
                 addShapelessCraftingRecipe(
                         getModItem("BiblioCraft", "BiblioLamp", 1, i),
                         new Object[]{
-                                getModItem("BiblioCraft", "BiblioLamp", 1, 32767), colorsLamp[i]
+                                getModItem("BiblioCraft", "BiblioLamp", 1, 32767), colorsLamp[i-1]
                         });
                 addShapelessCraftingRecipe(
                         getModItem("BiblioCraft", "BiblioIronLamp", 1, i),
                         new Object[]{
-                                getModItem("BiblioCraft", "BiblioIronLamp", 1, 32767), colorsLamp[i]
+                                getModItem("BiblioCraft", "BiblioIronLamp", 1, 32767), colorsLamp[i-1]
                         });
             }
             for (int i =0; i <16; i++){
