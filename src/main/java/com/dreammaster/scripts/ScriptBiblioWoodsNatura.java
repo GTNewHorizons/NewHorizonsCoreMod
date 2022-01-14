@@ -296,7 +296,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                     new Object[]{
                             torch, null, feather,
                             Nwood[i], Nwood[i], Nwood[i],
-                            Nplanks[i], Nplanks[i], Nplanks[i]
+                            Nplanks[i], null, Nplanks[i]
                     });
 
             addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodtable", 1, i),

@@ -188,7 +188,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                             new Object[]{
                                     torch, null, feather,
                                     Bwood[i], Bwood[i], Bwood[i],
-                                    planks[i], planks[i], planks[i]
+                                    planks[i], null, planks[i]
                             });
 
                     addShapedRecipe(getModItem("BiblioCraft", "BiblioTable", 1, i),
