@@ -54,6 +54,16 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 getModItem("BiblioCraft", "item.FramingBoard", 1, 0)
         };
 
+        ItemStack[] planks = new ItemStack[]{
+                getModItem("minecraft", "planks", 1, 0),
+                getModItem("minecraft", "planks", 1, 1),
+                getModItem("minecraft", "planks", 1, 2),
+                getModItem("minecraft", "planks", 1, 3),
+                getModItem("minecraft", "planks", 1, 4),
+                getModItem("minecraft", "planks", 1, 5),
+                getModItem("BiblioCraft", "item.FramingSheet", 1, 0)
+        };
+
             ItemStack[] color16 = new ItemStack[]{
                 getMeta02(32429), //white
                 getMeta02(32421), //light grey
@@ -119,6 +129,13 @@ public class ScriptBiblioCraft implements IScriptLoader {
                                     feather, craftingTable, ink,
                                     Bwood[i], getModItem("BiblioCraft", "Bibliotheca", 1, i), Bwood[i],
                                     Bwood[i], Bwood[i], Bwood[i]
+                            });
+
+                    addShapedRecipe(getModItem("BiblioCraft", "Bibliotheca", 1, i),
+                            new Object[]{
+                                    planks[i], Bwood[i], planks[i],
+                                    planks[i], Bwood[i], planks[i],
+                                    planks[i], Bwood[i], planks[i],
                             });
 
 
