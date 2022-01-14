@@ -446,7 +446,28 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     "craftingToolScrewdriver", getMeta01(17809), "craftingToolSaw",
                     getModItem("minecraft", "paper", 1), getModItem("minecraft", "paper", 1), getModItem("minecraft", "paper", 1)});
 
-            for (int i=1;i<16;i++){
+            addShapelessCraftingRecipe(getModItem("BiblioCraft", "item.BiblioRedBook", 1),
+                    new Object[]{
+                            getModItem("minecraft", "redstone_torch", 1),
+                            getModItem("minecraft", "book", 1)
+            });
+
+        addShapedRecipe(getModItem("BiblioCraft", "item.BiblioWayPointCompass", 1), new Object[]{
+                "stickGold", "ringGold", "craftingToolFile",
+                "screwGold", getModItem("minecraft", "compass", 1), "screwGold",
+                "craftingToolScrewdriver", "ringGold", "stickGold"});
+
+        addShapedRecipe(getModItem("BiblioCraft", "item.PaintingCanvas", 1), new Object[]{
+                "stickWood", getModItem("minecraft","string",1), "stickWood",
+                getModItem("minecraft","string",1), getModItem("minecraft", "wool", 1), getModItem("minecraft","string",1),
+                "stickWood", getModItem("minecraft","string",1), "stickWood"});
+
+        addShapedRecipe(getModItem("BiblioCraft", "item.BiblioGlasses", 1, 1), new Object[]{
+                null, getModItem("BiblioCraft", "item.BiblioGlasses", 1), null,
+                null, "dyeGray", null,
+                null, null, null});
+
+        for (int i=1;i<16;i++){
                 addShapelessCraftingRecipe(
                         getModItem("BiblioCraft", "BiblioLantern", 1, i),
                         new Object[]{
