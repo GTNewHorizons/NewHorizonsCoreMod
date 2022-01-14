@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import java.util.Arrays;
 import java.util.List;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioWoodsForestry implements IScriptLoader {
@@ -43,6 +44,34 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 getModItem("Forestry", "slabs", 1, 13),
                 getModItem("Forestry", "slabs", 1, 5),
                 getModItem("Forestry", "slabs", 1, 12)};
+
+        ItemStack[] fancySignF1= new ItemStack[]{
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 1),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 2),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 3),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 4),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 5),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 6),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 7),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 8),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 9),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 10),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 11),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 12),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 13),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 14),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign", 1, 15)};
+        ItemStack[] fancySignF2= new ItemStack[]{
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign2", 1),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign2", 1, 1),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign2", 1, 2),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign2", 1, 3),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign2", 1, 4),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign2", 1, 5),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign2", 1, 6),
+                getModItem("BiblioWoodsForestry", "BiblioWoodFancySign2", 1, 7)};
+
         ItemStack[] FClockF1= new ItemStack[]{
                 getModItem("BiblioWoodsForestry", "BiblioWoodClock", 1),
                 getModItem("BiblioWoodsForestry", "BiblioWoodClock", 1, 1),
@@ -281,6 +310,13 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                     "stickWood", "stickWood", "stickWood",
                     "stickWood", FrameF1[i], "stickWood",
                     "stickWood", "stickWood", "stickWood"});
+            addShapelessCraftingRecipe(
+                    fancySignF1[i],
+                    new Object[]{
+                            getModItem("minecraft", "paper", 1),
+                            getModItem("minecraft", "sign", 1),
+                            LableF1[i]
+                    });
             if (i<8){
                 addShapedRecipe(LableF2[i], new Object[]{
                         "stickWood", "stickWood", "stickWood",
@@ -310,8 +346,17 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                         F2wood[i], F2wood[i], F2wood[i],
                         F2wood[i], getModItem("BiblioCraft", "item.PaintingCanvas", 1), F2wood[i],
                         F2wood[i], F2wood[i], F2wood[i]});
+                addShapelessCraftingRecipe(
+                        fancySignF2[i],
+                        new Object[]{
+                                getModItem("minecraft", "paper", 1),
+                                getModItem("minecraft", "sign", 1),
+                                LableF2[i]
+                        });
             }
         }
+        //todo: rewrite this to match the other bibliowoods scripts
+
         // the 2.4k lines that i auto generated
         //oredicts
         GT_OreDictUnificator.registerOre("PlumPlanks",getModItem("Forestry", "planks", 1, 21));
