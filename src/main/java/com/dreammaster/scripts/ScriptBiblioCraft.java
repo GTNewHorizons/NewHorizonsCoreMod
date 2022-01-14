@@ -212,7 +212,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                                     stick, woodenPressurePlate, stick
                             });
 
-                    addShapedRecipe(getModItem("BiblioCraft", "seatBack", 1, i),
+                    addShapedRecipe(getModItem("BiblioCraft", "item.seatBack", 1, i),
                             new Object[]{
                                     null, whiteWool, null,
                                     null, Bwood[i], null,
@@ -220,14 +220,14 @@ public class ScriptBiblioCraft implements IScriptLoader {
                             });
 
 
-                    addShapedRecipe(getModItem("BiblioCraft", "seatBack2", 1, i),
+                    addShapedRecipe(getModItem("BiblioCraft", "item.seatBack2", 1, i),
                             new Object[]{
                                     stick, whiteWool, stick,
                                     stick, Bwood[i], stick,
                                     stick, null, stick
                             });
 
-                    addShapedRecipe(getModItem("BiblioCraft", "seatBack4", 1, i),
+                    addShapedRecipe(getModItem("BiblioCraft", "item.seatBack4", 1, i),
                             new Object[]{
                                     null, whiteWool, null,
                                     null, Bwood[i], null,
@@ -235,17 +235,17 @@ public class ScriptBiblioCraft implements IScriptLoader {
                             });
 
                     addShapelessCraftingRecipe(
-                            getModItem("BiblioCraft", "seatBack3", 1, i),
+                            getModItem("BiblioCraft", "item.seatBack3", 1, i),
                             new Object[]{
                                     Bwood[i],
-                                    getModItem("BiblioCraft", "seatBack2", 1, i),
+                                    getModItem("BiblioCraft", "item.seatBack2", 1, i),
                             });
 
                     addShapelessCraftingRecipe(
-                            getModItem("BiblioCraft", "seatBack5", 1, i),
+                            getModItem("BiblioCraft", "item.seatBack5", 1, i),
                             new Object[]{
                                     Bwood[i], Bwood[i],
-                                    getModItem("BiblioCraft", "seatBack2", 1, i),
+                                    getModItem("BiblioCraft", "item.seatBack2", 1, i),
                             });
 
                 }
