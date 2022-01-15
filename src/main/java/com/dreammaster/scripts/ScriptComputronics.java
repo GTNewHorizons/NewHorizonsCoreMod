@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.Arrays;
 
@@ -14,7 +15,7 @@ public class ScriptComputronics implements IScriptLoader{
     }
     @Override
     public void loadRecipes() {
-        ExtremeCraftingManager.getInstance().addRecipe(getModItem("computronics", "computronics.ocSpecialParts", 1),
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(getModItem("computronics", "computronics.ocSpecialParts", 1),
                 "aaaaaaaaa",
                 "abbbbbbbc",
                 "abdefedbc",
