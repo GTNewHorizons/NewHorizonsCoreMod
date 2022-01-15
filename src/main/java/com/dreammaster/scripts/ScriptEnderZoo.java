@@ -11,9 +11,17 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptEnderZoo implements IScriptLoader{
 
     public ScriptEnderZoo() {
+
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
         scriptName.append("EnderZoo");
+        dependencies.clear();
         dependencies.addAll(Arrays.asList("EnderZoo"));
     }
+
     @Override
     public void loadRecipes() {
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{

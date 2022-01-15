@@ -10,10 +10,17 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptJABBA implements IScriptLoader{
 
     public ScriptJABBA() {
-        scriptName.append("JABBA");
-        dependencies.addAll(Arrays.asList("JABBA", "BiomesOPlenty", "ExtraTrees", "ExtraUtilities","Forestry","Natura"));
 
     }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
+        scriptName.append("JABBA");
+        dependencies.clear();
+        dependencies.addAll(Arrays.asList("JABBA", "BiomesOPlenty", "ExtraTrees", "ExtraUtilities","Forestry","Natura"));
+    }
+
     @Override
     public void loadRecipes() {
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{

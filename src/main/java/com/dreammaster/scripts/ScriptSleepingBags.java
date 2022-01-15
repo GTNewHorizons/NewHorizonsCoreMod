@@ -8,7 +8,14 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptSleepingBags implements IScriptLoader{
 
     public ScriptSleepingBags() {
+
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
         scriptName.append("SleepingBags");
+        dependencies.clear();
         dependencies.addAll(Arrays.asList("sleepingbag", "adventurebackpack", "OpenBlocks"));
     }
 

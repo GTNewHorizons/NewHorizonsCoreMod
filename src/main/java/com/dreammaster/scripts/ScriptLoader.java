@@ -22,6 +22,7 @@ public class ScriptLoader {
         };
 
         for (IScriptLoader script: scripts){
+            script.initScriptData();
             if (script.isScriptLoadable()){
                 script.loadScript();
                 MainRegistry.Logger.info(script.getScriptName()+" took "+script.getExecutionTime()+" ms.");

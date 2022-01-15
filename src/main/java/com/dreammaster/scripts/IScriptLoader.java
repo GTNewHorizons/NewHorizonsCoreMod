@@ -35,6 +35,11 @@ public interface IScriptLoader {
     }
 
     /**
+     * Method to init the script (deps and name) before using it
+     */
+    public void initScriptData();
+
+    /**
      * Method to override to implement the recipes in the script
      */
     public void loadRecipes();

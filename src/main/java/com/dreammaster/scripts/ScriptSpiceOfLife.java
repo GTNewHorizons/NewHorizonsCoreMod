@@ -11,7 +11,14 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptSpiceOfLife implements IScriptLoader{
 
     public ScriptSpiceOfLife() {
+
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
         scriptName.append("SpiceOfLife");
+        dependencies.clear();
         dependencies.addAll(Arrays.asList("IC2", "SpiceOfLife"));
     }
 

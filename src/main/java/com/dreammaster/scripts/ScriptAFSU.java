@@ -8,7 +8,14 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptAFSU implements IScriptLoader{
 
     public ScriptAFSU(){
+
+    }
+
+    @Override
+    public void initScriptData(){
+        scriptName.setLength(0);
         scriptName.append("AFSU");
+        dependencies.clear();
         dependencies.add("AFSU");
     }
 

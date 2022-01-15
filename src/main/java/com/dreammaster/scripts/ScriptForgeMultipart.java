@@ -7,7 +7,14 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptForgeMultipart implements IScriptLoader{
 
     public ScriptForgeMultipart() {
+
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
         scriptName.append("Forge Multipart");
+        dependencies.clear();
         dependencies.addAll(Arrays.asList("ForgeMicroblock"));
     }
 

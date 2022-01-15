@@ -10,7 +10,14 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptBiblioWoodsNatura implements IScriptLoader{
 
     public ScriptBiblioWoodsNatura() {
+
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
         scriptName.append("BiblioWoodsNatura");
+        dependencies.clear();
         dependencies.addAll(Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft"));
     }
 

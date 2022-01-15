@@ -13,7 +13,13 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptBiblioCraft implements IScriptLoader {
 
     public ScriptBiblioCraft(){
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
         scriptName.append("BiblioCraft");
+        dependencies.clear();
         dependencies.addAll(Arrays.asList("BiblioCraft", "harvestcraft", "FloodLights"));
     }
 

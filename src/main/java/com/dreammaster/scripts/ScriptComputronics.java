@@ -10,9 +10,17 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptComputronics implements IScriptLoader{
 
     public ScriptComputronics(){
+
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
         scriptName.append("Computronics");
+        dependencies.clear();
         dependencies.addAll(Arrays.asList("Avaritia", "computronics"));
     }
+
     @Override
     public void loadRecipes() {
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(getModItem("computronics", "computronics.ocSpecialParts", 1),

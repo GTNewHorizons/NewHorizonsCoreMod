@@ -11,9 +11,17 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 public class ScriptBiblioWoodsBoP implements IScriptLoader{
 
     public ScriptBiblioWoodsBoP(){
+
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
         scriptName.append("BiblioWoodsBoP");
+        dependencies.clear();
         dependencies.addAll(Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft"));
     }
+
     @Override
     public void loadRecipes(){
         ItemStack[] BOBwood= new ItemStack[]{
