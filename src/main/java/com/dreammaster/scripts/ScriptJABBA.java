@@ -111,7 +111,7 @@ public class ScriptJABBA implements IScriptLoader{
                 "stickAnyIron","craftingToolWrench","roundAnyRubber",
                 getModItem("gregtech", "gt.metaitem.01", 1, 32100),"plateSteel",getModItem("gregtech", "gt.metaitem.01", 1, 32100)});
 
-        addShapedRecipe(getModItem("DiamondJABBA", "mover", 1), new Object[]{
+        addShapedRecipe(getModItem("JABBA", "moverDiamond", 1), new Object[]{
                 "stickDiamond","stickDiamond","roundPlastic",
                 "stickDiamond","craftingToolWrench","roundPlastic",
                 getModItem("gregtech", "gt.metaitem.01", 1, 32101),"plateNetherStar",getModItem("gregtech", "gt.metaitem.01", 1, 32101)});
