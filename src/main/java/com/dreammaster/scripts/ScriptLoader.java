@@ -16,7 +16,9 @@ public class ScriptLoader {
                 new ScriptTranslocator(),
                 new ScriptForgeMultipart(),
                 new ScriptBetterQuesting(),
-                new ScriptJABBA()
+                new ScriptJABBA(),
+                new ScriptAFSU(),
+                new ScriptComputronics()
         };
 
         for (IScriptLoader script: scripts){
