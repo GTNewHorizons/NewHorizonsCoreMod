@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
@@ -183,4 +184,5 @@ public interface IScriptLoader {
         }
         return true;
     }
+
 }

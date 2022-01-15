@@ -157,6 +157,9 @@ dependencies {
     compile("com.github.GTNewHorizons:bartworks:master-SNAPSHOT:dev") {
         setChanging(true)
     }
+    compile("com.github.GTNewHorizons:Avaritia:master-SNAPSHOT") {
+        setChanging(true)
+    }
     compile fileTree(dir: "libs", include: "*.jar")
 }
 
