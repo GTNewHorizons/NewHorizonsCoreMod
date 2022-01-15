@@ -3505,8 +3505,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     },
                     tMat.getMolten(72L * tMultiplier / 2L),
                     ItemList.Cover_SolarPanel.get(1L),
-                    600,
-                    64);
+                    200,
+                    120);
 
             //solar 8EU
             GT_Values.RA.addAssemblerRecipe(
@@ -3520,8 +3520,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     },
                     tMat.getMolten(72L * tMultiplier / 2L),
                     ItemList.Cover_SolarPanel_8V.get(1L),
-                    600,
-                    64);
+                    400,
+                    120);
             
             if (Loader.isModLoaded("OpenComputers")) {
                 make_lua_bios();
