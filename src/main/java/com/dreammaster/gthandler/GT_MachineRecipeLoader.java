@@ -2564,7 +2564,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         if (Loader.isModLoaded("Ztones")) {
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.stone_slab, 4), new ItemStack(Blocks.stone, 1), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("Ztones", "stoneTile", 8L, 0), 160, 4);
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.glass, 4), new ItemStack(Items.dye, 1, GT_Values.W), GT_Utility.getIntegratedCircuit(1)}, GT_Values.NF, GT_ModHandler.getModItem("Ztones", "auroraBlock", 8L, 0), 160, 4);
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.sand, 4, GT_Values.W), new ItemStack(Blocks.dirt, 4, GT_Values.W), GT_Utility.getIntegratedCircuit(1)}, Materials.SeedOil.getFluid(5L), GT_ModHandler.getModItem("Ztones", "cleanDirt", 8L, 0), 160, 4);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.sand, 4, GT_Values.W), new ItemStack(Blocks.dirt, 4, GT_Values.W), GT_Utility.getIntegratedCircuit(2)}, Materials.SeedOil.getFluid(5L), GT_ModHandler.getModItem("Ztones", "cleanDirt", 8L, 0), 160, 4);
             GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.stone_pressure_plate, 0), GT_Utility.getIntegratedCircuit(1)}, Materials.Blaze.getFluid(8L), GT_ModHandler.getModItem("Ztones", "booster", 8L, 0), 100, 30);
             GT_Values.RA.addForgeHammerRecipe(new ItemStack(Items.coal, 1, 0), GT_ModHandler.getModItem("Ztones", "minicoal", 9L, 0), 50, 8);
             GT_Values.RA.addForgeHammerRecipe(new ItemStack(Items.coal, 1, 1), GT_ModHandler.getModItem("Ztones", "minicharcoal", 9L, 0), 50, 8);
