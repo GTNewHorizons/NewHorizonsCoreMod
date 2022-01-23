@@ -140,7 +140,14 @@ public enum CustomItemList implements IItemContainer
 	RuneOfPowerFragment, RuneOfAgilityFragment, RuneOfVigorFragment, RuneOfDefenseFragment, RuneOfMagicFragment, RuneOfVoidFragment,
 	NandChipBoard, LogicProcessorItemGoldCore, EngineeringProcessorItemDiamondCore, EngineeringProcessorItemEmeraldCore,
 	EngineeringProcessorItemAdvEmeraldCore,
-	Display;
+	Display,
+	TitaniumIronPlate, ReinforcedTitaniumIronPlate,
+	TungstenIronPlate, ReinforcedTungstenIronPlate,
+	TungstenSteelIronPlate, ReinforcedTungstenSteelIronPlate,
+	ChromeIronPlate, ReinforcedChromeIronPlate,
+	NaquadriaIronPlate, ReinforcedNaquadriaIronPlate,
+	NeutroniumIronPlate, ReinforcedNeutroniumIronPlate,
+	BedrockiumIronPlate, ReinforcedBedrockiumIronPlate;
 
 
 	private ItemStack mStack;

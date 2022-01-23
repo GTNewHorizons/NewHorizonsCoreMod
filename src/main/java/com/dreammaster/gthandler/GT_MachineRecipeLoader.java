@@ -2894,6 +2894,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_Utility.getIntegratedCircuit(22), GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Lead, 2L), GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Titanium, 2L), GT_ModHandler.getModItem("IC2", "blockReactorChamber", 3L), GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Platinum, 1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "blockGenerator", 1L, 5), 400, 480);
 
         registerMixedMetalIngotRecipes();
+        registerReinforcedIronAlloyPlates();
 
         //Heat Exchangers
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_Utility.getIntegratedCircuit(21), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 3L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 3L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "reactorHeatSwitch", 1L, 1), 60, 30);
@@ -5034,5 +5035,137 @@ public class GT_MachineRecipeLoader implements Runnable {
                 30
         );
 
+    }
+
+    private final static void registerReinforcedIronAlloyPlates(){
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_ModHandler.getModItem("IC2", "itemPartCarbonPlate", 4),
+                        CustomItemList.AluminiumIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedAluminiumIronPlate.get(1),
+                100,
+                120
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 4),
+                        CustomItemList.TitaniumIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedTitaniumIronPlate.get(1),
+                100,
+                480
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 4),
+                        CustomItemList.TitaniumIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedTitaniumIronPlate.get(1),
+                100,
+                480
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 4),
+                        CustomItemList.TungstenIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedTungstenIronPlate.get(1),
+                100,
+                1920
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4),
+                        CustomItemList.TungstenSteelIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedTungstenSteelIronPlate.get(1),
+                100,
+                7680
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4),
+                        CustomItemList.ChromeIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedChromeIronPlate.get(1),
+                100,
+                30720
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_ModHandler.getModItem("IC2", "itemPartIridium", 4),
+                        GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1, 6)
+                },
+                GT_Values.NF,
+                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1, 7),
+                100,
+                122880
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 4),
+                        CustomItemList.NaquadriaIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedNaquadriaIronPlate.get(1),
+                100,
+                491520
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 4),
+                        CustomItemList.NeutroniumIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedNeutroniumIronPlate.get(1),
+                100,
+                1966080
+        );
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                        GT_Utility.getIntegratedCircuit(3),
+                        GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 4),
+                        CustomItemList.BedrockiumIronPlate.get(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ReinforcedBedrockiumIronPlate.get(1),
+                100,
+                7864320
+        );
     }
 }

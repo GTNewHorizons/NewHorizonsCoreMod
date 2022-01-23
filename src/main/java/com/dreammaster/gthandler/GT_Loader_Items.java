@@ -3,8 +3,6 @@ package com.dreammaster.gthandler;
 import com.dreammaster.item.ItemList;
 import gregtech.api.enums.SubTag;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
-import gregtech.api.items.GT_MetaGenerated_Item_X32;
-import net.minecraft.item.Item;
 
 public class GT_Loader_Items
 {
@@ -601,6 +599,20 @@ public class GT_Loader_Items
 		CustomItemList.EngineeringProcessorItemEmeraldCore.set(ItemList.EngineeringProcessorItemEmeraldCore.getIS());
 		CustomItemList.EngineeringProcessorItemAdvEmeraldCore.set(ItemList.EngineeringProcessorItemAdvEmeraldCore.getIS());
 		CustomItemList.Display.set(ItemList.Display.getIS());
+		CustomItemList.TitaniumIronPlate.set(ItemList.TitaniumIronPlate.getIS());
+		CustomItemList.ReinforcedTitaniumIronPlate.set(ItemList.ReinforcedTitaniumIronPlate.getIS());
+		CustomItemList.TungstenIronPlate.set(ItemList.TungstenIronPlate.getIS());
+		CustomItemList.ReinforcedTungstenIronPlate.set(ItemList.ReinforcedTungstenIronPlate.getIS());
+		CustomItemList.TungstenSteelIronPlate.set(ItemList.TungstenSteeLIronPlate.getIS());
+		CustomItemList.ReinforcedTungstenSteelIronPlate.set(ItemList.ReinforcedTungstenSteelIronPlate.getIS());
+		CustomItemList.ChromeIronPlate.set(ItemList.ChromeIronPlate.getIS());
+		CustomItemList.ReinforcedChromeIronPlate.set(ItemList.ReinforcedChromeIronPlate.getIS());
+		CustomItemList.NaquadriaIronPlate.set(ItemList.NaquadriaIronPlate.getIS());
+		CustomItemList.ReinforcedNaquadriaIronPlate.set(ItemList.ReinforcedNaquadriaIronPlate.getIS());
+		CustomItemList.NeutroniumIronPlate.set(ItemList.NeutroniumIronPlate.getIS());
+		CustomItemList.ReinforcedNeutroniumIronPlate.set(ItemList.ReinforcedNeutroniumIronPlate.getIS());
+		CustomItemList.BedrockiumIronPlate.set(ItemList.BedrockiumIronPlate.getIS());
+		CustomItemList.ReinforcedBedrockiumIronPlate.set(ItemList.ReinforcedBedrockiumIronPlate.getIS());
 
 	}
 }
