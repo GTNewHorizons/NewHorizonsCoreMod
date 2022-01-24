@@ -5,10 +5,8 @@ dependencies {
     compile("com.github.GTNewHorizons:Yamcl:0.5.82:dev")
     compile("com.github.GTNewHorizons:Baubles:1.0.1.14:dev")
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
+    compile("com.github.GTNewHorizons:StructureLib:1.0.15:dev")
 
-    compileOnly("com.github.GTNewHorizons:StructureLib:1.0.15:dev") {
-        transitive = false
-    }
     compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:master-SNAPSHOT:dev") {
         transitive = false
     }
