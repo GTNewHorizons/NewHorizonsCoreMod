@@ -84,9 +84,7 @@ import static gregtech.api.enums.Dyes.MACHINE_METAL;
         +	"required-after:Baubles@[1.0.1.10,);"
 
 		+   "after:EnderIO;"
-        +   "after:HardcoreEnderExpansion;"
-	    ,
-		certificateFingerprint = "1cca375192a26693475fb48268f350a462208dce")
+        +   "after:HardcoreEnderExpansion;")
 public class MainRegistry
 {
 

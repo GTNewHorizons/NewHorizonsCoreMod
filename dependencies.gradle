@@ -1,9 +1,11 @@
 // Add your dependencies here
 
 dependencies {
-    compile("com.github.GTNewHorizons:GT5-Unofficial:master-SNAPSHOT:dev")
-    compile("com.github.GTNewHorizons:Yamcl:master-SNAPSHOT:dev")
-    compile("com.github.GTNewHorizons:Baubles:master-SNAPSHOT:dev")
+    compile("com.github.GTNewHorizons:GT5-Unofficial:5.09.40.19:dev")
+    compile("com.github.GTNewHorizons:Yamcl:0.5.82:dev")
+    compile("com.github.GTNewHorizons:Baubles:1.0.1.14:dev")
+    compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
+    compile("com.github.GTNewHorizons:StructureLib:1.0.15:dev")
 
     compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:master-SNAPSHOT:dev") {
         transitive = false
@@ -11,37 +13,37 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:twilightforest:master-SNAPSHOT:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:Railcraft:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:Railcraft:9.13.5:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:EnderIO:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:EnderIO:2.3.1.27:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:GTplusplus:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:GTplusplus:1.7.24:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:GalacticGregGT5:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.0.7:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:bartworks:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:bartworks:0.5.34:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:NotEnoughItems:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.1.22-GTNH:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:Mantle:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:Mantle:0.3.4:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:ForestryMC:master-SNAPSHOT:api") {
+    compileOnly("com.github.GTNewHorizons:ForestryMC:4.4.5:api") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:AppleCore:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:AppleCore:3.1.7:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.9.0.10-GTNH:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:master-SNAPSHOT:dev") {
+    compileOnly("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-70-GTNH:dev") {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:master-SNAPSHOT:dev") {
