@@ -19,7 +19,8 @@ public class ScriptLoader {
                 new ScriptJABBA(),
                 new ScriptAFSU(),
                 new ScriptComputronics(),
-                new ScriptAvaritiaAddons()
+                new ScriptAvaritiaAddons(),
+                new ScriptIguanaTweaks()
         };
 
         for (IScriptLoader script: scripts){

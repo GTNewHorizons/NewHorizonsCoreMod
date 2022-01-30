@@ -2,6 +2,8 @@ package com.dreammaster.scripts;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 
+import java.util.Arrays;
+
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -11,7 +13,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader{
         scriptName.setLength(0);
         scriptName.append("Avaritia addons");
         dependencies.clear();
-        dependencies.add("avaritiaddons");
+        dependencies.addAll(Arrays.asList("avaritiaddons", "eternalsingularity", "extracells", "gregtech", "Avaritia"));
     }
 
     @Override
@@ -26,7 +28,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader{
                 getModItem("gregtech", "gt.metaitem.01", 1, 32603),getModItem("Avaritia", "Dire_Crafting", 1),getModItem("gregtech", "gt.metaitem.01", 1, 32603),
                 getModItem("gregtech", "gt.metaitem.01", 1, 32633),"circuitElite",getModItem("gregtech", "gt.metaitem.01", 1, 32633)});
 
-        //clearing NBT of the autocrafter
+        //clearing NBT of th
         addShapelessCraftingRecipe(getModItem("avaritiaddons", "ExtremeAutoCrafter", 1), new Object[]{
                 getModItem("avaritiaddons", "ExtremeAutoCrafter", 1, 32767),
                 "platePaper"});
