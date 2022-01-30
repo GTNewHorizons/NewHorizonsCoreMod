@@ -438,6 +438,52 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addMixerRecipe(CustomItemList.ChargedCertusQuartzDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(4), Materials.Water.getFluid(500L), GT_Values.NF, GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 2L, 8), 20, 16);
             GT_Values.RA.addMixerRecipe(CustomItemList.ChargedCertusQuartzDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(4), GT_ModHandler.getDistilledWater(500L), GT_Values.NF, GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 2L, 8), 20, 16);
 
+            // 1k ME Storage Component
+            GT_Values.RA.addCircuitAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                            CustomItemList.ChargedCertusQuartzDust.get(2),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Basic.get(1),
+                            GT_Utility.getIntegratedCircuit(1)
+                    },
+                    Materials.Lead.getMolten(288),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 35),
+                    200,
+                    30,
+                    false
+            );
+
+            GT_Values.RA.addCircuitAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                            CustomItemList.ChargedCertusQuartzDust.get(2),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Basic.get(1),
+                            GT_Utility.getIntegratedCircuit(1)
+                    },
+                    Materials.Tin.getMolten(144),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 35),
+                    200,
+                    30,
+                    false
+            );
+
+            GT_Values.RA.addCircuitAssemblerRecipe(
+                    new ItemStack[]{
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                            CustomItemList.ChargedCertusQuartzDust.get(2),
+                            CustomItemList.LogicProcessorItemGoldCore.get(1),
+                            ItemList.Circuit_Board_Basic.get(1),
+                            GT_Utility.getIntegratedCircuit(1)
+                    },
+                    Materials.SolderingAlloy.getMolten(72),
+                    GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 35),
+                    200,
+                    30,
+                    false
+            );
+
             // 4k ME Storage Component
             GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[]{
@@ -445,7 +491,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Coated_Basic.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(2)
                     },
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
@@ -460,7 +506,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Coated_Basic.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(2)
                     },
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
@@ -475,7 +521,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Coated_Basic.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(2)
                     },
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 36),
@@ -491,7 +537,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(3)
                     },
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
@@ -506,7 +552,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(3)
                     },
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
@@ -521,7 +567,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(3)
                     },
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 37),
@@ -537,7 +583,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(4)
                     },
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
@@ -552,7 +598,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(4)
                     },
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
@@ -567,7 +613,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(4)
                     },
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 38),
@@ -584,7 +630,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(5)
                     },
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
@@ -599,7 +645,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(5)
                     },
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
@@ -614,7 +660,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(5)
                     },
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 0),
@@ -630,7 +676,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(6)
                     },
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
@@ -645,7 +691,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(6)
                     },
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
@@ -660,7 +706,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(6)
                     },
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 1),
@@ -676,7 +722,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(7)
                     },
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
@@ -691,7 +737,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(7)
                     },
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
@@ -706,7 +752,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(7)
                     },
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 2),
@@ -722,7 +768,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Bio_Ultra.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(8)
                     },
                     Materials.Lead.getMolten(288),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
@@ -737,7 +783,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Bio_Ultra.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(8)
                     },
                     Materials.Tin.getMolten(144),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
@@ -752,7 +798,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Bio_Ultra.get(1),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(8)
                     },
                     Materials.SolderingAlloy.getMolten(72),
                     GT_ModHandler.getModItem("extracells", "storage.component", 1L, 3),
