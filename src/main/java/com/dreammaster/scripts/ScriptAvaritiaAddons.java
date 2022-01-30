@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import com.dreammaster.main.MainRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 
 import java.util.Arrays;
@@ -33,7 +34,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader{
                 getModItem("avaritiaddons", "ExtremeAutoCrafter", 1, 32767),
                 "platePaper"});
 
-        ExtremeCraftingManager.getInstance().addRecipe(getModItem("avaritiaddons", "InfinityChest", 1),
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(getModItem("avaritiaddons", "InfinityChest", 1),
                 "abbbcbbba",
                 "bddefeddb",
                 "bbbbabbbb",
