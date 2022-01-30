@@ -18,7 +18,8 @@ public class ScriptLoader {
                 new ScriptBetterQuesting(),
                 new ScriptJABBA(),
                 new ScriptAFSU(),
-                new ScriptComputronics()
+                new ScriptComputronics(),
+                new ScriptAvaritiaAddons()
         };
 
         for (IScriptLoader script: scripts){
