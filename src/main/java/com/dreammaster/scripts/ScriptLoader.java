@@ -5,22 +5,23 @@ import com.dreammaster.main.MainRegistry;
 public class ScriptLoader {
     static public void run(){
         IScriptLoader[] scripts = new IScriptLoader[]{
+                new ScriptAFSU(),
+                new ScriptArchitectureCraft(),
+                new ScriptAvaritiaAddons(),
+                new ScriptBetterQuesting(),
                 new ScriptBiblioCraft(),
-                new ScriptBiblioWoodsNatura(),
                 new ScriptBiblioWoodsBoP(),
                 new ScriptBiblioWoodsForestry(),
+                new ScriptBiblioWoodsNatura(),
+                new ScriptComputronics(),
+                new ScriptEnderZoo(),
+                new ScriptForgeMultipart(),
                 new ScriptHoloInventory(),
+                new ScriptIguanaTweaks(),
+                new ScriptJABBA(),
                 new ScriptSleepingBags(),
                 new ScriptSpiceOfLife(),
-                new ScriptEnderZoo(),
-                new ScriptTranslocator(),
-                new ScriptForgeMultipart(),
-                new ScriptBetterQuesting(),
-                new ScriptJABBA(),
-                new ScriptAFSU(),
-                new ScriptComputronics(),
-                new ScriptAvaritiaAddons(),
-                new ScriptIguanaTweaks()
+                new ScriptTranslocator()
         };
 
         for (IScriptLoader script: scripts){
