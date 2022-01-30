@@ -16,6 +16,9 @@ public class ScriptIguanaTweaks implements IScriptLoader{
 
     @Override
     public void loadRecipes() {
+        // --- Unfired Clay Bucket
+        // If you change this recipe, be sure to update gregtech.api.enums.OrePrefixes!
+        // bucketClay.mSecondaryMaterial controls what the clay bucket pulverizes into.
         addShapedRecipe(getModItem("IguanaTweaksTConstruct", "clayBucketUnfired", 1), new Object[]{
                 null,null,null,
                 "dustClay",null,"dustClay",
