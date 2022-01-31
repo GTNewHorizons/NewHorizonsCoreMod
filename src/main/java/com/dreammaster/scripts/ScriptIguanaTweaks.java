@@ -1,5 +1,8 @@
 package com.dreammaster.scripts;
 
+import com.dreammaster.item.ItemList;
+import gregtech.api.util.GT_OreDictUnificator;
+
 import java.util.Arrays;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -9,7 +12,7 @@ public class ScriptIguanaTweaks implements IScriptLoader{
     public void initScriptData() {
 
         scriptName.setLength(0);
-        scriptName.append("Iguana Tweajs Tinker Construct");
+        scriptName.append("Iguana Tweaks Tinker Construct");
         dependencies.clear();
         dependencies.addAll(Arrays.asList("IguanaTweaksTConstruct", "Natura"));
     }
@@ -29,20 +32,12 @@ public class ScriptIguanaTweaks implements IScriptLoader{
                 getModItem("Natura", "waterdrop", 1),getModItem("IguanaTweaksTConstruct", "clayBucketFired", 1),getModItem("Natura", "waterdrop", 1),
                 getModItem("Natura", "waterdrop", 1),getModItem("Natura", "waterdrop", 1),getModItem("Natura", "waterdrop", 1)});
 
-        addShapedRecipe(getModItem("IguanaTweaksTConstruct", "sawArdite", 1), new Object[]{
-                "stickWood","stickSteel","stickSteel",
-                "stickWood",getModItem("dreamcraft", "item.SawBladeArdite", 1),"stickSteel",
-                null,null,null});
+        /* oredict so the recipes modified in iguanatweaks will work
+        those are exceptionnally in iguanatweaks because the items in the recipes are registered at PostInit=
+         */
 
-        addShapedRecipe(getModItem("IguanaTweaksTConstruct", "sawCobalt", 1), new Object[]{
-                "stickWood","stickSteel","stickSteel",
-                "stickWood","toolHeadSawCobalt","stickSteel",
-                null,null,null});
-
-        addShapedRecipe(getModItem("IguanaTweaksTConstruct", "sawManyullyn", 1), new Object[]{
-                "stickWood","stickSteel","stickSteel",
-                "stickWood",getModItem("dreamcraft", "item.SawBladeManyullyn", 1),"stickSteel",
-                null,null,null});
+        GT_OreDictUnificator.registerOre("toolHeadSawArdite", ItemList.SawBladeArdite.getIS());
+        GT_OreDictUnificator.registerOre("toolHeadSawManyullyn", ItemList.SawBladeManyullyn.getIS());
 
     }
 }
