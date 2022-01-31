@@ -18,7 +18,8 @@ public class ScriptJABBA implements IScriptLoader{
         scriptName.setLength(0);
         scriptName.append("JABBA");
         dependencies.clear();
-        dependencies.addAll(Arrays.asList("JABBA", "BiomesOPlenty", "ExtraTrees", "ExtraUtilities","Forestry","Natura"));
+        dependencies.addAll(Arrays.asList("JABBA", "BiomesOPlenty", "ExtraTrees", "ExtraUtilities","Forestry", "Natura",
+        "gregtech"));
     }
 
     @Override

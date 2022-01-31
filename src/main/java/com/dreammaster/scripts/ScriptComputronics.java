@@ -18,7 +18,7 @@ public class ScriptComputronics implements IScriptLoader{
         scriptName.setLength(0);
         scriptName.append("Computronics");
         dependencies.clear();
-        dependencies.addAll(Arrays.asList("Avaritia", "computronics"));
+        dependencies.addAll(Arrays.asList("Avaritia", "computronics", "gregtech"));
     }
 
     @Override
