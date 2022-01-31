@@ -28,7 +28,14 @@ import static gregtech.api.enums.GT_Values.V;
 
 public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_TieredMachineBlock
 {
-
+  // simple name is rather expensive to compute and it's not cached
+  // see https://stackoverflow.com/q/17369304
+  private static final ClassValue<String> simpleNameCache = new ClassValue<String>() {
+    @Override
+    protected String computeValue(Class<?> type) {
+      return type.getSimpleName();
+    }
+  };
   private static final HashSet<Class<? extends TileEntity>> _mBlacklistedTiles = new HashSet<>();
 
   public static boolean addTileToBlacklist(Class<? extends TileEntity> clazz) {
@@ -410,7 +417,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
         return true; // Obvious
     }   
     
-    String tSimpleClassName = pTile.getClass().getSimpleName().toLowerCase();
+    String tSimpleClassName = simpleNameCache.get(pTile.getClass());
     String tCanonicalName = pTile.getClass().getCanonicalName().toLowerCase();
     if( tSimpleClassName.contains( "conduit" ) || tSimpleClassName.contains( "wire" ) || tSimpleClassName.contains( "cable" ) ) {
         return true;

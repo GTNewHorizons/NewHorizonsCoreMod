@@ -1,2 +1,0 @@
-call gradlew build
-pause

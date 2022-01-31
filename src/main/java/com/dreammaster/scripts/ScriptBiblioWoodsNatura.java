@@ -253,6 +253,14 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                     "stickWood", "stickWood", "stickWood"});
 
 
+            addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodcase0", 1, i),
+                    new Object[]{
+                            Nwood[i], glass, Nwood[i],
+                            Nwood[i], whiteWool, Nwood[i],
+                            Nwood[i], Nwood[i], Nwood[i],
+                    });
+
+
             addShapedRecipe(bookcaseNatura[i],
                     new Object[]{
                             Nplanks[i], Nwood[i], Nplanks[i],
