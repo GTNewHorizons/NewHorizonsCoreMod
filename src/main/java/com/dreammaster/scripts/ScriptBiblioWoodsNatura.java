@@ -18,7 +18,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
         scriptName.setLength(0);
         scriptName.append("BiblioWoodsNatura");
         dependencies.clear();
-        dependencies.addAll(Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft"));
+        dependencies.addAll(Arrays.asList("Natura", "BiblioWoodsNatura", "BiblioCraft"));
     }
 
     @Override
