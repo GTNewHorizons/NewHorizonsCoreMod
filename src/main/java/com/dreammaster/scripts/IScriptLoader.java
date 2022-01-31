@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
@@ -11,7 +12,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import org.apache.logging.log4j.Level;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,8 +22,25 @@ public interface IScriptLoader {
     //todo: cache the lookups for the itemstacks
     //todo: make an error for the itemstack lookup if it returns null
 
+    long[] timeRecords = new long[2];
+    StringBuilder scriptName = new StringBuilder();
+    List<String> dependencies = new ArrayList<>();
     /**
      * Should be called externally to load the recipes in the ported script
+     */
+    public default void loadScript(){
+        timeRecords[0] = System.currentTimeMillis();
+        loadRecipes();
+        timeRecords[1] = System.currentTimeMillis();
+    }
+
+    /**
+     * Method to init the script (deps and name) before using it
+     */
+    public void initScriptData();
+
+    /**
+     * Method to override to implement the recipes in the script
      */
     public void loadRecipes();
 
@@ -138,20 +155,26 @@ public interface IScriptLoader {
      * function to get the time of execution for the script in milliseconds.
      * @return a long object holding the time of execution.
      */
-    public long getExecutionTime();
+    public default long getExecutionTime(){
+        return timeRecords[1]-timeRecords[0];
+    }
 
     /**
      * Function to get the list of all the dependencies needed to load the script. Avoid manual checks with
      * Loader.isModLoaded.
      * @return a list of string containing the dependencies.
      */
-    public List<String> getDependencies();
+    public default List<String> getDependencies(){
+        return dependencies;
+    }
 
     /**
      * Function to get the name of the script.
      * @return the name of the script.
      */
-    public String getScriptName();
+    public default String getScriptName(){
+        return scriptName.toString();
+    }
 
     /**
      * Function to know if a script is loadable: if at least one of its dependencies is missing then it won't be
@@ -166,4 +189,5 @@ public interface IScriptLoader {
         }
         return true;
     }
+
 }

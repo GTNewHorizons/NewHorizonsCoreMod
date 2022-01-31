@@ -312,30 +312,5 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         	GT_ModHandler.addCraftingRecipe(GT_ModHandler.getModItem("Ztones", "minicoal", 7L, 0), bits, new Object[]{"T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C', OrePrefixes.dust.get(Materials.Coal)});
         }
 
-
-        IScriptLoader[] scripts = new IScriptLoader[]{
-                new ScriptBiblioCraft(),
-                new ScriptBiblioWoodsNatura(),
-                new ScriptBiblioWoodsBoP(),
-                new ScriptBiblioWoodsForestry(),
-                new ScriptHoloInventory(),
-                new ScriptSleepingBags(),
-                new ScriptSpiceOfLife(),
-                new ScriptEnderZoo(),
-                new ScriptTranslocator(),
-                new ScriptForgeMultipart(),
-                new ScriptBetterQuesting(),
-                new ScriptJABBA()
-        };
-
-        for (IScriptLoader script: scripts){
-            if (script.isScriptLoadable()){
-                script.loadRecipes();
-                MainRegistry.Logger.info(script.getScriptName()+" took "+script.getExecutionTime()+" ms.");
-            }
-            else {
-                MainRegistry.Logger.info("missing requirements for the script "+script.getScriptName()+". It won't be loaded");
-            }
-        }
     }
 }

@@ -3,6 +3,7 @@ package com.dreammaster.gthandler;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.modfixes.enderIO.FrankenskullFix;
+import com.dreammaster.scripts.ScriptLoader;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
@@ -192,5 +193,6 @@ public class GT_CustomLoader
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
         OreDictionary.run();
+        ScriptLoader.run();
     }
 }

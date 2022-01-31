@@ -338,6 +338,7 @@ runClient {
         arguments += [ "--username", developmentEnvironmentUserName ]
     }
 
+
     args(arguments)
     jvmArgs(jvmArguments)
 }
@@ -353,6 +354,7 @@ tasks.withType(JavaExec).configureEach {
                 languageVersion = projectJavaVersion
             }
     )
+
 }
 
 processResources
