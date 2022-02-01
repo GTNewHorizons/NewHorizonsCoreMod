@@ -6,7 +6,7 @@ dependencies {
     compile("com.github.GTNewHorizons:Baubles:1.0.1.14:dev")
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
     compile("com.github.GTNewHorizons:StructureLib:1.0.15:dev")
-    compile("com.github.GTNewHorizons:Avaritia:1.2.3:dev")
+    compile("com.github.GTNewHorizons:Avaritia:1.22:dev")
 
     compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:master-SNAPSHOT:dev") {
         transitive = false
@@ -29,7 +29,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:bartworks:0.5.34:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.1.22-GTNH:dev") {
+    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.2.3-GTNH:dev") {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:Mantle:0.3.4:dev") {
@@ -41,7 +41,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:AppleCore:3.1.7:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.9.0.10-GTNH:dev") {
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.9.0.12-GTNH:dev") {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-70-GTNH:dev") {
