@@ -286,7 +286,7 @@ public class BacteriaRegistry {
         addBacterialVatRecipe(
                 new ItemStack[]{AntimonyTrioxide.getDust(16), Osmium.getDust(16)},
                 CultureSet.get("CombinedBac"),
-                new FluidStack[]{Oil.getFluid(1000)},
+                new FluidStack[]{Oil.getFluid(1)},
                 new FluidStack[]{Xenoxene.getFluid(1)},
             3600,BW_Util.getMachineVoltageFromTier(8), Materials.NaquadahEnriched,8,0,false);
 
