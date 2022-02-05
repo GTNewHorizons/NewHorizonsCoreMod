@@ -3831,7 +3831,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(1), null, FluidRegistry.getFluidStack("fluid.fertiliser", 144), null, ItemList.IC2_Fertilizer.get(1L), null, null, null, null, null, null, 40, 16);
 
         //Mainframe Circuits and Neuro CPU
-        GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Crystalmainframe.get(1L), 72000, new Object[]{
+        GT_Values.RA.addAssemblylineRecipe(ItemList.Circuit_Chip_Stemcell.get(1L), 72000, new Object[]{
                 ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                 ItemList.Circuit_Chip_Stemcell.get(16L),
                 ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
