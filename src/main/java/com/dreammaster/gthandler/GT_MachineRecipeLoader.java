@@ -2718,7 +2718,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 1), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tin, 8), GT_Utility.getIntegratedCircuit(2)}, Materials.Plastic.getMolten(144L), ItemList.Circuit_Parts_Transistor.get(6L), 320, 30);
 
         // All SMD Component recipes.
-        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 4), GT_Utility.getIntegratedCircuit(3)}, Materials.Plastic.getMolten(288L), ItemList.Circuit_Parts_ResistorSMD.get(16L), 320, 96);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 4), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1), GT_Utility.getIntegratedCircuit(3)}, Materials.Plastic.getMolten(288L), ItemList.Circuit_Parts_ResistorSMD.get(16L), 320, 96);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4), GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1), GT_Utility.getIntegratedCircuit(4)}, Materials.Plastic.getMolten(144L), ItemList.Circuit_Parts_Diode.get(6L), 600, 30);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 16), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 1), GT_Utility.getIntegratedCircuit(3)}, Materials.Plastic.getMolten(576L), ItemList.Circuit_Parts_DiodeSMD.get(64L), 1200, 120);
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Gallium, 1), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 8), GT_Utility.getIntegratedCircuit(3)}, Materials.Plastic.getMolten(288L), ItemList.Circuit_Parts_TransistorSMD.get(16L), 320, 120);
@@ -2736,10 +2736,10 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         // Resistor
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Naquadria, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Naquadria, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 16L),
                         GT_ModHandler.getModItem("miscutils", "itemBoltPikyonium64B", 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2L),
                         GT_Utility.getIntegratedCircuit(9)},
                 Xenoxene.getFluid(144L),
                 ItemList.Circuit_Parts_ResistorXSMD.get(32L),
@@ -2748,10 +2748,10 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         // Transistor
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.BlackPlutonium, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.BlackPlutonium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 16L),
                         GT_ModHandler.getModItem("miscutils", "itemBoltArceusAlloy2B", 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2L),
                         GT_Utility.getIntegratedCircuit(9)},
                 Xenoxene.getFluid(144L),
                 ItemList.Circuit_Parts_TransistorXSMD.get(32L),
@@ -2760,10 +2760,10 @@ public class GT_MachineRecipeLoader implements Runnable {
         
         // Capacitor
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 16L),
                         GT_ModHandler.getModItem("miscutils", "itemBoltCinobiteA243", 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2L),
                         GT_Utility.getIntegratedCircuit(9)},
                 Xenoxene.getFluid(144L),
                 ItemList.Circuit_Parts_CapacitorXSMD.get(32L),
@@ -2774,8 +2774,8 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tritanium, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_ModHandler.getModItem("miscutils", "itemBoltLafiumCompound", 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 2L),
                         GT_Utility.getIntegratedCircuit(9)},
                 Xenoxene.getFluid(144L),
                 ItemList.Circuit_Parts_DiodeXSMD.get(64L),
