@@ -1,26 +1,29 @@
 package com.dreammaster.scripts;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-
 import java.util.Arrays;
-import java.util.List;
+
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioWoodsBoP implements IScriptLoader{
 
-    private long startTime;
-    private long endTime;
-    private static final String scriptName = "BiblioWoodsBoP";
-    private static final List<String> dependencies = Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft");
+    public ScriptBiblioWoodsBoP(){
+
+    }
+
+    @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
+        scriptName.append("BiblioWoodsBoP");
+        dependencies.clear();
+        dependencies.addAll(Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft"));
+    }
 
     @Override
     public void loadRecipes(){
-        startTime = System.currentTimeMillis();
         ItemStack[] BOBwood= new ItemStack[]{
                 getModItem("BiomesOPlenty", "woodenSingleSlab1", 1),
                 getModItem("BiomesOPlenty", "woodenSingleSlab1", 1, 1),
@@ -377,23 +380,8 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader{
                             LableBOP[i]
                     });
         }
-        endTime = System.currentTimeMillis();
     }
 
-    @Override
-    public long getExecutionTime(){
-        return endTime-startTime;
-    }
-
-    @Override
-    public List<String> getDependencies() {
-        return dependencies;
-    }
-
-    @Override
-    public String getScriptName() {
-        return scriptName;
-    }
 }
 
 
