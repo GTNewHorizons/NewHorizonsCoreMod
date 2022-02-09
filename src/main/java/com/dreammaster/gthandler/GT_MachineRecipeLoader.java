@@ -306,20 +306,21 @@ public class GT_MachineRecipeLoader implements Runnable {
 //        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier5.get(1L), CustomItemList.LeadOriharukonPlate.get(10L),  Materials.Tritanium.getMolten(576L), CustomItemList.HeavyDutyAlloyIngotT6.get(1L), 300, 500000);
 //        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier6.get(1L), CustomItemList.MysteriousCrystalCompressedPlate.get(12L), Materials.Neutronium.getMolten(1152L), CustomItemList.HeavyDutyAlloyIngotT7.get(1L), 300, 2000000);
 //        GT_Values.RA.addAssemblerRecipe(CustomItemList.HeavyDutyPlateTier7.get(1L), CustomItemList.BlackPlutoniumCompressedPlate.get(14L), Materials.Neutronium.getMolten(4608L), CustomItemList.HeavyDutyAlloyIngotT8.get(1L), 1200, 2000000);
-        GT_Values.RA.addAssemblylineRecipe(
-                GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
-                2500,
-                new ItemStack[]{
-                        GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
-                        CustomItemList.IceCompressedPlate.get(3L),
-                        CustomItemList.IceCompressedPlate.get(3L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmiridium, 4)
-                },
-                new FluidStack[]{
-                        Materials.SolderingAlloy.getMolten(36)
-                },
-                CustomItemList.HeavyDutyAlloyIngotT4.get(1L), 300, 30720
-        );
+        if (!Loader.isModLoaded("bartworks"))
+            GT_Values.RA.addAssemblylineRecipe(
+                    GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                    2500,
+                    new ItemStack[]{
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                            CustomItemList.IceCompressedPlate.get(3L),
+                            CustomItemList.IceCompressedPlate.get(3L),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmiridium, 4)
+                    },
+                    new FluidStack[]{
+                            Materials.SolderingAlloy.getMolten(36)
+                    },
+                    CustomItemList.HeavyDutyAlloyIngotT4.get(1L), 300, 30720
+            );
         GT_Values.RA.addAssemblylineRecipe(
                 CustomItemList.HeavyDutyPlateTier4.get(1L),
                 5000,

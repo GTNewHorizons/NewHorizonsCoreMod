@@ -3,24 +3,26 @@ package com.dreammaster.scripts;
 import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptBiblioWoodsNatura implements IScriptLoader{
-    private long startTime;
-    private long endTime;
-    private static final String scriptName = "BiblioWoodsNatura";
-    private static final List<String> dependencies = Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft");
 
     public ScriptBiblioWoodsNatura() {
 
     }
 
     @Override
+    public void initScriptData() {
+        scriptName.setLength(0);
+        scriptName.append("BiblioWoodsNatura");
+        dependencies.clear();
+        dependencies.addAll(Arrays.asList("Natura", "BiblioWoodsNatura", "BiblioCraft"));
+    }
+
+    @Override
     public void loadRecipes() {
-        startTime = System.currentTimeMillis();
         ItemStack[] FClockN= new ItemStack[]{
                 getModItem("BiblioWoodsNatura", "BiblioWoodClock", 1),
                 getModItem("BiblioWoodsNatura", "BiblioWoodClock", 1, 1),
@@ -250,12 +252,14 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                     "stickWood", FrameN[i], "stickWood",
                     "stickWood", "stickWood", "stickWood"});
 
+
             addShapedRecipe(getModItem("BiblioWoodsNatura", "BiblioWoodcase0", 1, i),
                     new Object[]{
                             Nwood[i], glass, Nwood[i],
                             Nwood[i], whiteWool, Nwood[i],
                             Nwood[i], Nwood[i], Nwood[i],
                     });
+
 
             addShapedRecipe(bookcaseNatura[i],
                     new Object[]{
@@ -370,21 +374,5 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader{
                             getModItem("BiblioWoodsNatura", "seatBack2", 1, i),
                     });
         }
-        endTime = System.currentTimeMillis();
-    }
-
-    @Override
-    public long getExecutionTime(){
-        return endTime-startTime;
-    }
-
-    @Override
-    public List<String> getDependencies() {
-        return dependencies;
-    }
-
-    @Override
-    public String getScriptName() {
-        return scriptName;
     }
 }
