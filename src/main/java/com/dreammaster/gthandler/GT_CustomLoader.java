@@ -55,7 +55,7 @@ public class GT_CustomLoader
                 Materials.Bedrockium,
                 null,
                 null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
+                Loader.isModLoaded("bartworks") ? "blockGlassUHV" : "glassReinforced",
                 Materials.Neutronium,
                 Materials.Neutronium),
 
@@ -65,7 +65,7 @@ public class GT_CustomLoader
                 Materials.Draconium,
                 null,
                 null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
+                Loader.isModLoaded("bartworks") ? "blockGlassUEV" : "glassReinforced",
                 Materials.Bedrockium,
                 Materials.Neutronium),
 
