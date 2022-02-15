@@ -3,6 +3,7 @@ package com.dreammaster.gthandler;
 import com.dreammaster.item.ItemList;
 import gregtech.api.enums.SubTag;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class GT_Loader_Items
 {
@@ -277,8 +278,11 @@ public class GT_Loader_Items
 		CustomItemList.AdvancedProcessorBoard.set(ItemList.AdvancedProcessorBoard.getIS());
 		CustomItemList.HighEnergyFlowCircuit.set(ItemList.HighEnergyFlowCircuit.getIS());
 		CustomItemList.NanoCircuit.set(ItemList.NanoCircuit.getIS());
+		OreDictionary.registerOre("UIV", CustomItemList.NanoCircuit.get(1));
 		CustomItemList.PikoCircuit.set(ItemList.PikoCircuit.getIS());
+		OreDictionary.registerOre("UMV", CustomItemList.PikoCircuit.get(1));
 		CustomItemList.QuantumCircuit.set(ItemList.QuantumCircuit.getIS());
+		OreDictionary.registerOre("UXV", CustomItemList.QuantumCircuit.get(1));
 		CustomItemList.CarbonPartBoots.set(ItemList.CarbonPartBoots.getIS());
 		CustomItemList.CarbonPartChestplate.set(ItemList.CarbonPartChestplate.getIS());
 		CustomItemList.CarbonPartHelmet.set(ItemList.CarbonPartHelmet.getIS());
