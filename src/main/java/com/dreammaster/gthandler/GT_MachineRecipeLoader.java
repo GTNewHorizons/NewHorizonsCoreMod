@@ -1458,16 +1458,14 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addCompressorRecipe(new ItemStack(Items.paper, 64, 0), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 0), 300, 2);
 
             //Centrifuge
-            //GT_Values.RA.addCentrifugeRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 1L), GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000,10000}, 1200, 5);//auto recipe
-
             GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(50), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
             GT_Values.RA.addCentrifugeRecipe(new ItemStack(Items.slime_ball, 1, 0), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(50), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
             GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 2), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(200), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 8L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
             GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 1), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(200), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 8L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
             GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "slime.gel", 1L, 0), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(200), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 8L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000}, 300, 5);
+            GT_Values.RA.addCentrifugeRecipe(GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 1L, 0), GT_Values.NI, GT_Values.NF, Materials.Glue.getFluid(25),  new ItemStack(Blocks.dirt, 1, 32767), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L), GT_ModHandler.getModItem("TConstruct", "strageFood", 1L, 0), GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000, 10000, 1000}, 300, 5);
 
             //Cutting Saw
-
             GT_Values.RA.addCutterRecipe(new ItemStack(Blocks.crafting_table, 1), GT_ModHandler.getModItem("TConstruct", "CraftingStation", 1L) , GT_Values.NI, 4800, 30);
             GT_Values.RA.addCutterRecipe(GT_ModHandler.getModItem("TConstruct", "CraftingStation", 1L), GT_ModHandler.getModItem("TConstruct", "CraftingSlab", 1L) , GT_Values.NI, 4800, 30);
 
