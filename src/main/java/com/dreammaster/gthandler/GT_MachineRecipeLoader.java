@@ -2610,15 +2610,15 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack(Items.dye, 1, 13), new ItemStack(Items.dye, 1, 14), new ItemStack(Items.dye, 1, 15)};
 
             for (int j = 0; j < 21; j++)
-                for (int i = 1; i < 24; i++)
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("Ztones", "stoneTile", 4L, 0), item[j], GT_Utility.getIntegratedCircuit(i)}, GT_Values.NF, GT_ModHandler.getModItem("Ztones", "tile." + blockName[j] + "Block", 8L, i), 200, 16);
+                for (int i = 0; i < 16; i++)
+                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("Ztones", "stoneTile", 4L, 0), item[j], GT_Utility.getIntegratedCircuit(i+1)}, GT_Values.NF, GT_ModHandler.getModItem("Ztones", "tile." + blockName[j] + "Block", 8L, i), 200, 16);
 
             for (int j = 0; j < 12; j++)
-                for (int i = 1; i < 24; i++)
-                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("Ztones", "auroraBlock", 4L, 0), zitem[j], GT_Utility.getIntegratedCircuit(i)}, GT_Values.NF, GT_ModHandler.getModItem("Ztones", "tile." + zblockName[j] + "Block", 8L, i), 200, 16);
+                for (int i = 0; i < 16; i++)
+                    GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("Ztones", "auroraBlock", 4L, 0), zitem[j], GT_Utility.getIntegratedCircuit(i+1)}, GT_Values.NF, GT_ModHandler.getModItem("Ztones", "tile." + zblockName[j] + "Block", 8L, i), 200, 16);
 
-            for (int i = 1; i < 24; i++)
-                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("Ztones", "auroraBlock", 4L, 0), new ItemStack(Blocks.glass, 1, 0), GT_Utility.getIntegratedCircuit(i)}, GT_Values.NF, GT_ModHandler.getModItem("Ztones", "tile.glaxx", 8L, i), 200, 16);
+            for (int i = 0; i < 16; i++)
+                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("Ztones", "auroraBlock", 4L, 0), new ItemStack(Blocks.glass, 1, 0), GT_Utility.getIntegratedCircuit(i+1)}, GT_Values.NF, GT_ModHandler.getModItem("Ztones", "tile.glaxx", 8L, i), 200, 16);
         }
 
         GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("IC2", "itemFuelPlantBall", 2L, 0), new ItemStack[]{CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L)}, new int[]{10000, 10000, 5000, 2500}, 200, 30);
