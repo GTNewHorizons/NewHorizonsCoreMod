@@ -117,7 +117,7 @@ public class BioItemLoader {
                 1200,BW_Util.getMachineVoltageFromTier(8),100,8,0,false
         );
         for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
-            RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(i),NI,new FluidStack(BIOFLUIDS[3],1000),NF,OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64),NI,NI,NI,NI,NI,null,40,BW_Util.getMachineVoltageFromTier(8));
+            RA.addCentrifugeRecipe(GT_Utility.getIntegratedCircuit(i+1),NI,new FluidStack(BIOFLUIDS[3],1000),NF,OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64),NI,NI,NI,NI,NI,null,40,BW_Util.getMachineVoltageFromTier(8));
         }
         addBacterialVatRecipe(
                 new ItemStack[]{Materials.MeatRaw.getDust(4), Materials.Salt.getDust(4), Materials.Calcium.getDust(4), BIOTEMSSTACKS[2].copy().splitStack(4),
