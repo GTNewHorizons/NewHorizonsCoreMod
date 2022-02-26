@@ -567,6 +567,22 @@ public enum ItemList
     MedalWarp(new ModSimpleBaseItem("MedalWarp", ModTabList.ModGenericTab)),
     AluminoSilicateWool(new ModSimpleBaseItem("AluminoSilicateWool", ModTabList.ModGenericTab)),
     EdibleSalt(new ModSimpleBaseItem("EdibleSalt", ModTabList.ModGenericTab)),
+    CircuitULV(new ModSimpleBaseItem("CircuitULV", ModTabList.ModCircuitsTab)),
+    CircuitLV(new ModSimpleBaseItem("CircuitLV", ModTabList.ModCircuitsTab)),
+    CircuitMV(new ModSimpleBaseItem("CircuitMV", ModTabList.ModCircuitsTab)),
+    CircuitHV(new ModSimpleBaseItem("CircuitHV", ModTabList.ModCircuitsTab)),
+    CircuitEV(new ModSimpleBaseItem("CircuitEV", ModTabList.ModCircuitsTab)),
+    CircuitIV(new ModSimpleBaseItem("CircuitIV", ModTabList.ModCircuitsTab)),
+    CircuitLuV(new ModSimpleBaseItem("CircuitLuV", ModTabList.ModCircuitsTab)),
+    CircuitZPM(new ModSimpleBaseItem("CircuitZPM", ModTabList.ModCircuitsTab)),
+    CircuitUV(new ModSimpleBaseItem("CircuitUV", ModTabList.ModCircuitsTab)),
+    CircuitUHV(new ModSimpleBaseItem("CircuitUHV", ModTabList.ModCircuitsTab)),
+    CircuitUEV(new ModSimpleBaseItem("CircuitUEV", ModTabList.ModCircuitsTab)),
+    CircuitUIV(new ModSimpleBaseItem("CircuitUIV", ModTabList.ModCircuitsTab)),
+    CircuitUMV(new ModSimpleBaseItem("CircuitUMV", ModTabList.ModCircuitsTab)),
+    CircuitUXV(new ModSimpleBaseItem("CircuitUXV", ModTabList.ModCircuitsTab)),
+    //CircuitOpV(new ModSimpleBaseItem("CircuitOpV", ModTabList.ModCircuitsTab)),
+    CircuitMAX(new ModSimpleBaseItem("CircuitMAX", ModTabList.ModCircuitsTab)),
 
     // Do not delete this
     EndOfList(null);
