@@ -379,10 +379,14 @@ public class GT_MachineRecipeLoader implements Runnable {
         );
 
         GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("GalaxySpace", "item.CompressedPlates", 1L, 7), GT_ModHandler.getModItem("GalaxySpace", "item.CompressedPlates", 1L, 3), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), CustomItemList.LeadOriharukonPlate.get(2L), 300, 500000);
+        if (Loader.isModLoaded("ExtraUtilities")) {
+            GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), 1, 122880);
+            GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, 2), 1, 122880);
+            if (Loader.isModLoaded("IronChest")) {
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IronChest", "BlockIronChest", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4L), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getFluid(144L), GT_ModHandler.getModItem("ExtraUtilities", "filing", 1L, 0), 300, 120);
 
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), 1, 122880);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, 2), 1, 122880);
-
+            }
+        }
         //UEV-UMV casings+hulls
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(CustomItemList.BedrockiumPlate.get(8L)), GT_Utility.getIntegratedCircuit(8), CustomItemList.Casing_UEV.get(1L), 50, 16);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 8L), GT_Utility.getIntegratedCircuit(8), CustomItemList.Casing_UIV.get(1L), 50, 16);
@@ -2665,6 +2669,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         if (Loader.isModLoaded("Natura"))
             GT_Values.RA.addWiremillRecipe(GT_ModHandler.getModItem("Natura", "barleyFood", 2L, 3), new ItemStack(Items.string, 1, 0), 200, 8);
+            GT_ModHandler.addCompressionRecipe(GT_ModHandler.getModItem("Natura", "barleyFood", 8, 0), ItemList.IC2_Plantball.get(1));
 
         GT_Values.RA.addWiremillRecipe(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherStar, 1L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.NetherStar, 1L), 100, 4);
 
