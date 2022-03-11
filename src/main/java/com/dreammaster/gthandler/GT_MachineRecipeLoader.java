@@ -383,7 +383,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "bedrockiumIngot", 1L, 0), 1, 122880);
             GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 9L), GT_Utility.getIntegratedCircuit(1), Materials.UUMatter.getMolten(1000L), GT_ModHandler.getModItem("ExtraUtilities", "unstableingot", 1L, 2), 1, 122880);
             if (Loader.isModLoaded("IronChest")) {
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IronChest", "BlockIronChest", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4L), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getFluid(144L), GT_ModHandler.getModItem("ExtraUtilities", "filing", 1L, 0), 300, 120);
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("IronChest", "BlockIronChest", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4L), GT_Utility.getIntegratedCircuit(1)}, Materials.Plastic.getMolten(144L), GT_ModHandler.getModItem("ExtraUtilities", "filing", 1L, 0), 300, 120);
 
             }
         }
