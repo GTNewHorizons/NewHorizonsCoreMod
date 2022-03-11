@@ -1132,8 +1132,6 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addBlastRecipe(Materials.GreenSapphire.getDust(1),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1), 600, 120, 1200);
         GT_Values.RA.addBlastRecipe(Materials.Ruby.getDust(1),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L), GT_Values.NF, GT_Values.NF, Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1), 600, 120, 1200);
 
-        GT_Values.RA.addBrewingRecipe(GT_ModHandler.getModItem("IC2", "itemBiochaff", 1L, 0), FluidRegistry.getFluid("water"), FluidRegistry.getFluid("ic2biomass"), false);
-
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("Genetics", "misc", 6L, 4), FluidRegistry.getFluidStack("water", 750), FluidRegistry.getFluidStack("binnie.growthmedium", 750), 600, 480, false);
         GT_Values.RA.addBrewingRecipeCustom(GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0), FluidRegistry.getFluidStack("binnie.growthmedium", 750), FluidRegistry.getFluidStack("binnie.bacteria", 750), 1200, 480, false);
         GT_Values.RA.addBrewingRecipeCustom(new ItemStack(Items.blaze_powder, 1, 0), FluidRegistry.getFluidStack("binnie.bacteria", 100), FluidRegistry.getFluidStack("binnie.bacteriavector", 100), 5, 60, false);
