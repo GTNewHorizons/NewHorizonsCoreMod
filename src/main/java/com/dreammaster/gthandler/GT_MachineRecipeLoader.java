@@ -1,17 +1,13 @@
 package com.dreammaster.gthandler;
 
-import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import cpw.mods.fml.common.Loader;
 import forestry.api.recipes.IFermenterRecipe;
 import gregtech.api.enums.*;
-import gregtech.api.interfaces.IMaterialHandler;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
-import gtPlusPlus.core.item.ModItems;
-import gtPlusPlus.core.material.MaterialGenerator;
 import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -21,11 +17,11 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
-import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
 
 import java.lang.reflect.Field;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
+import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
 import static gregtech.api.enums.GT_Values.*;
 
 public class GT_MachineRecipeLoader implements Runnable {
