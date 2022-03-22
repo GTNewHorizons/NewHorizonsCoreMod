@@ -148,6 +148,8 @@ public class OreDictHandler {
 		for (ItemStack itemStack : new ItemStack[]{
 				new ItemStack(Blocks.fence),
 				GT_ModHandler.getModItem("ExtraTrees", "fence", 1, WILDCARD_VALUE),
+				GT_ModHandler.getModItem("Forestry", "fences", 1, WILDCARD_VALUE),
+				GT_ModHandler.getModItem("Forestry", "fencesFireproof", 1, WILDCARD_VALUE),
 				GT_ModHandler.getModItem("Natura", "Natura.fence", 1, WILDCARD_VALUE)
 		}) {
 			if (itemStack != null) OreDictionary.registerOre("fenceWood", itemStack);
