@@ -1453,7 +1453,12 @@ public class GT_MachineRecipeLoader implements Runnable {
 
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 14), GT_Values.NI, FluidRegistry.getFluidStack("aluminumbrass.molten", 144), 10000, 24, 48);
             GT_Values.RA.addFluidSolidifierRecipe(GT_Utility.getIntegratedCircuit(1), FluidRegistry.getFluidStack("aluminumbrass.molten", 144), GT_ModHandler.getModItem("TConstruct", "blankPattern", 1L, 1), 32, 48);
-
+            
+            GT_Values.RA.addFluidSolidifierRecipe( new ItemStack(Blocks.gravel, 1, 0), Materials.Tin.getMolten(16L),GT_ModHandler.getModItem("TConstruct", "SpeedBlock", 1, 0), 100, 30);
+            if (Loader.isModLoaded("ExtraUtilities")) {
+                GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1, 12), Materials.Tin.getMolten(144L), GT_ModHandler.getModItem("TConstruct", "SpeedBlock", 9, 0), 100, 120);
+                GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1, 12), Materials.Electrum.getMolten(48L),GT_ModHandler.getModItem("TConstruct", "SpeedBlock", 9, 0),  100, 120);
+            }
             //Making molds
             GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormAnvil", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Anvil.get(1L), 200, 120);
             GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("dreamcraft", "item.MoldFormArrowHead", 1, 0), Materials.Steel.getMolten(576L), ItemList.Shape_Mold_Arrow.get(1L), 200, 120);
