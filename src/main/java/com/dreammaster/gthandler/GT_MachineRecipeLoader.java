@@ -1384,7 +1384,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addCompressorRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2), GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2), 300, 2);
             GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L), GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12), 100, 2);
             GT_Values.RA.addBlastRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, Materials.Aluminium.getIngots(1), GT_Values.NI, 1600, 120, 1600);
-            GT_Values.RA.addBlastRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12), GT_Utility.getIntegratedCircuit(11), Materials.Oxygen.getGas(1000), GT_Values.NF, Materials.Aluminium.getIngots(1), GT_Values.NI, 1200, 120, 1300);
+            GT_Values.RA.addBlastRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12), GT_Utility.getIntegratedCircuit(11), Materials.Nitrogen.getGas(1000), GT_Values.NF, Materials.Aluminium.getIngots(1), GT_Values.NI, 1200, 120, 1300);
 
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 4), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1), new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "materials", 9L, 38)}, new int[]{10000}, 300, 2);
