@@ -469,6 +469,16 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{ItemList.Hull_LV.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L), GT_ModHandler.getModItem("IronChest", "BlockIronChest", 1L, 0)}, GT_Values.NF, GT_ModHandler.getModItem("IC2", "blockPersonal", 1L, 0), 200, 30);
 
+        //pollen collection kit
+        if (Loader.isModLoaded("gendustry")) {
+            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{
+                            GT_ModHandler.getModItem("gendustry", "Labware", 1),
+                            GT_ModHandler.getModItem("minecraft", "string", 1),
+                            GT_ModHandler.getModItem("minecraft", "paper",1)},
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem("gendustry", "PollenKit", 1), 200, 7680);
+        }
+
         if (Loader.isModLoaded("appliedenergistics2")) {
             GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 24), CustomItemList.EssentiaCircuit.get(1L), CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L), 100, 1920);
             //AE2 Illuminated Panel Assembler Recipe
@@ -851,7 +861,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     true
             );
         }
-
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.EnergeticAlloy.getMolten(576L), CustomItemList.RawLapotronCrystal.get(1L), 10000, 2400, 480);
         GT_Values.RA.addAutoclaveRecipe(CustomItemList.LapotronDust.get(30L), Materials.VibrantAlloy.getMolten(288L), CustomItemList.RawLapotronCrystal.get(1L), 10000, 1200, 480);
 
