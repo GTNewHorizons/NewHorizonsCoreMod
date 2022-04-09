@@ -2040,7 +2040,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.SiftingMachineLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11020, "basicmachine.sifter.tier.06", "Elite Sifting Machine", 6, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 32000, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
 				new Object[] { "WFW", "PMP", "CFC",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
 						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
@@ -2050,7 +2050,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.SiftingMachineZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11021, "basicmachine.sifter.tier.07", "Elite Sifting Machine II", 7, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 64000, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
 				new Object[] { "WFW", "PMP", "CFC",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
 						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
@@ -2060,7 +2060,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.SiftingMachineUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11022, "basicmachine.sifter.tier.08", "Ultimate Pulsation Filter", 8, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 128000, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
 				new Object[] { "WFW", "PMP", "CFC",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
 						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
@@ -2070,7 +2070,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.SiftingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11023, "basicmachine.sifter.tier.09", "Epic Pulsation Filter", 9, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 128000, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
 				new Object[] { "WFW", "PMP", "CFC",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
 						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
@@ -2080,7 +2080,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.SiftingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11024, "basicmachine.sifter.tier.10", "Epic Pulsation Filter II",10, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 128000, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",
 				new Object[] { "WFW", "PMP", "CFC",
 						'M', CustomItemList.Hull_UEV,
 						'P', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON,
@@ -2090,11 +2090,11 @@ public class GT_Loader_Machines
 
 		CustomItemList.SiftingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11025, "basicmachine.sifter.tier.11", "Epic Pulsation Filter III",11, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 128000, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",null).getStackForm(1L));
 
 		CustomItemList.SiftingMachineUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				11026, "basicmachine.sifter.tier.12", "Epic Pulsation Filter IV",12, "Stay calm and keep sifting",
-				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 0, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",null).getStackForm(1L));
+				GT_Recipe.GT_Recipe_Map.sSifterRecipes, 1, 9, 128000, 2, 5, "Sifter.png", "", false, false, 0, "SIFTER",null).getStackForm(1L));
 
 		//SiftingMachineLuV
 		//SiftingMachineZPM
