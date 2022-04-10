@@ -138,7 +138,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         //Filter Machine Casing for cleanroom
         GT_ModHandler.addCraftingRecipe(ItemList.Casing_Vent.get(1L), bits, new Object[]{"PPP", "SSS", "MFV", 'P', CustomItemList.SteelBars.get(1, o), 'F', OrePrefixes.frameGt.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_MV, 'V', OrePrefixes.rotor.get(Materials.Aluminium),'S',ItemList.Component_Filter});
         
-        GT_ModHandler.addCraftingRecipe(ItemList.Casing_Firebricks.get(1L), bits, new Object[] {"BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C', OrePrefixes.dust.get(Materials.Gypsum), 'W',  GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1L)});
+        GT_ModHandler.addCraftingRecipe(ItemList.Casing_Firebricks.get(1L), tBitMask, new Object[] {"BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C', OrePrefixes.dust.get(Materials.Gypsum), 'W',  GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1L)});
         
         //Air filter multi blocks
         GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_AirFilter_Vent_T1.get(1L), bits, new Object[]{"ThT", "TFT", "TwT", 'T', CustomItemList.SteelBars, 'F', OrePrefixes.frameGt.get(Materials.Steel)});
