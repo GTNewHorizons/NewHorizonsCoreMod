@@ -50,7 +50,9 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.1.4:dev") {
         transitive = false
     }
-
+    compileOnly("com.azanor:Thaumcraft:1.7.10-4.2.3.5:deobf") {
+        transitive = false
+    }
     compileOnly("curse.maven:witchery-69673:2234410") {
         transitive = false
     }

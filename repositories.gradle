@@ -22,6 +22,10 @@ repositories {
         }
     }
     maven {
+        name "MMD Maven"
+        url "https://maven.mcmoddev.com/"
+    }
+    maven {
         url "https://cursemaven.com"
     }
     maven {
