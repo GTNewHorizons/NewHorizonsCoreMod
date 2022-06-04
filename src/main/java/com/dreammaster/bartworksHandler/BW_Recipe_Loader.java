@@ -5,6 +5,7 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.*;
@@ -25,7 +26,7 @@ public class BW_Recipe_Loader implements Runnable {
                         Ruridit.get(bolt, 4)
                 },
                 new FluidStack[]{
-                        Materials.SolderingAlloy.getMolten(36)
+                        FluidRegistry.getFluidStack("molten.indalloy140", 36)
                 },
                 CustomItemList.HeavyDutyAlloyIngotT4.get(1L), 300, 30720
         );
