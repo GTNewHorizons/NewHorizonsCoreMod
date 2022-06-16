@@ -3997,9 +3997,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                 ItemList.Circuit_Chip_Stemcell.get(16L),
                 ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                 GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polybenzimidazole, 8L),
-                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.ElectrumFlux, 4L),
+                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.NaquadahEnriched, 4L),
                 new Object[]{OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L},
-                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.HSSS, 32L),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.TungstenSteel, 32L),
         }, new FluidStack[]{
                 Materials.GrowthMediumSterilized.getFluid(250L),
                 Materials.UUMatter.getFluid(250L),
@@ -4011,9 +4011,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                 ItemList.Circuit_Chip_Biocell.get(16L),
                 ItemList.Circuit_Parts_Reinforced_Glass_Tube.get(16L),
                 GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polybenzimidazole, 16),
-                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Tungsten, 16L),
+                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.ElectrumFlux, 16L),
                 new Object[]{OrePrefixes.foil.get(Materials.AnySyntheticRubber), 64L},
-                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.TungstenSteel, 32L),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.HSSS, 32L),
         }, new FluidStack[]{
                 Materials.BioMediumSterilized.getFluid(500L),
                 Materials.UUMatter.getFluid(500L),
