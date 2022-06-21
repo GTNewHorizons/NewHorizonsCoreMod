@@ -1349,6 +1349,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         //Cooling Hot Khantal MV
         GT_Values.RA.addChemicalBathRecipe(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Kanthal, 1L), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Kanthal, 1L), GT_Values.NI, GT_Values.NI, null, 1200, 120);
 
+
         //Mysterious crystal upgrading
         GT_Values.RA.addLaserEngraverRecipe(CustomItemList.MysteriousCrystalPlate.get(9), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), CustomItemList.MysteriousCrystal.get(1L), 1200, 480, true);
         GT_Values.RA.addLaserEngraverRecipe(CustomItemList.MysteriousCrystalPlate.get(9), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)), CustomItemList.MysteriousCrystal.get(1L), 1200, 480, true);
@@ -2080,6 +2081,40 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_strad, 1, 0), new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_ward, 1, 0), new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_wait, 1, 0), new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
+
+            // Plasma forge infinity Smelting.
+            GT_Values.RA.addPlasmaForgeRecipe(
+                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
+                    new FluidStack[]{Materials.ExcitedDTCC.getFluid(720_028L)},
+
+                    new ItemStack[]{GT_Values.NI},
+                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(720_028L/8), Materials.Infinity.getMolten(64L*144L)},
+                    10_000, 25_165_824, 10_900);
+
+            GT_Values.RA.addPlasmaForgeRecipe(
+                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5)},
+                    new FluidStack[]{Materials.ExcitedDTPC.getFluid(333_364L)},
+
+                    new ItemStack[]{GT_Values.NI},
+                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(333_364L/4), Materials.Infinity.getMolten(128L*144L)},
+                    5_000, 25_165_824, 11_800);
+
+            GT_Values.RA.addPlasmaForgeRecipe(
+                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 4L, 5)},
+                    new FluidStack[]{Materials.ExcitedDTRC.getFluid(148_217L)},
+
+                    new ItemStack[]{GT_Values.NI},
+                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(148_217L/2), Materials.Infinity.getMolten(256L*144L)},
+                    2_500, 25_165_824, 12_700);
+
+            GT_Values.RA.addPlasmaForgeRecipe(
+                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 8L, 5)},
+                    new FluidStack[]{Materials.ExcitedDTEC.getFluid(62_815L)},
+
+                    new ItemStack[]{GT_Values.NI},
+                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(62_815L), Materials.Infinity.getMolten(512L*144L)},
+                    1_250, 25_165_824, 13_600);
+
         }
 
         if (Loader.isModLoaded("AdvancedSolarPanel")) {
