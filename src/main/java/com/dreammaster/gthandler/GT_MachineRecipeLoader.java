@@ -1261,7 +1261,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.MercuryStoneDust.get(36L), GT_Values.NI, GT_Values.NF, Materials.Helium_3.getGas(1800L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vanadium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tungstate, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Jade, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 4L), new int[]{5000, 3000, 1000, 750, 500, 250}, 4320, 1920);
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.MercuryCoreDust.get(36L), GT_Values.NI, GT_Values.NF, Materials.Helium.getGas(9000L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tungstate, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Jade, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 4L), new int[]{5000, 3000, 1000, 750, 500, 250}, 4320, 1920);
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.EnceladusIceDust.get(36L), GT_Values.NI, GT_Values.NF, Materials.Oxygen.getGas(5400L), CustomItemList.MysteriousCrystalDust.get(9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L), new int[]{5000, 3000, 1000, 750, 400, 200}, 9720, 1920);
-        GT_Values.RA.addCentrifugeRecipe(CustomItemList.EnceladusStoneDust.get(36L), GT_Values.NI, GT_Values.NF, Materials.Nitrogen.getGas(5400L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Opal, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L), new int[]{5000, 3000, 1000, 750, 400, 100}, 9720, 1920);
+        GT_Values.RA.addCentrifugeRecipe(CustomItemList.EnceladusStoneDust.get(36L), GT_Values.NI, GT_Values.NF, Materials.Nitrogen.getGas(5400L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L), new int[]{5000, 3000, 1000, 1000, 400, 100}, 9720, 1920);
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.TitanStoneDust.get(36L), GT_Values.NI, GT_Values.NF, Materials.Methane.getGas(3600L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L), new int[]{5000, 2500, 1000, 900, 500, 200}, 9720, 1920);
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.OberonStoneDust.get(36L), GT_Values.NI, GT_Values.NF, Materials.Argon.getGas(1800L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Uranium235, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Plutonium241, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Trinium, 4L), new int[]{4000, 2000, 800, 300, 150, 150}, 9720, 1920);
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.MirandaStoneDust.get(36L), GT_Values.NI, GT_Values.NF, Materials.Argon.getGas(1800L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tetrahedrite, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Desh, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 4L), new int[]{4000, 2000, 1000, 750, 500, 350}, 9720, 1920);
@@ -1359,6 +1359,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addChemicalBathRecipe(new ItemStack(Blocks.sticky_piston, 1, 0), Materials.Chlorine.getGas(10L), new ItemStack(Blocks.piston, 1, 0), GT_Values.NI, GT_Values.NI, null, 30, 30);
         //Cooling Hot Khantal MV
         GT_Values.RA.addChemicalBathRecipe(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Kanthal, 1L), new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000), new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Kanthal, 1L), GT_Values.NI, GT_Values.NI, null, 1200, 120);
+
 
         //Mysterious crystal upgrading
         GT_Values.RA.addLaserEngraverRecipe(CustomItemList.MysteriousCrystalPlate.get(9), GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)), CustomItemList.MysteriousCrystal.get(1L), 1200, 480, true);
@@ -2091,6 +2092,40 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_strad, 1, 0), new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_ward, 1, 0), new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
             GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_wait, 1, 0), new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
+
+            // Plasma forge infinity Smelting.
+            GT_Values.RA.addPlasmaForgeRecipe(
+                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
+                    new FluidStack[]{Materials.ExcitedDTCC.getFluid(720_028L)},
+
+                    new ItemStack[]{GT_Values.NI},
+                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(720_028L/8), Materials.Infinity.getMolten(64L*144L)},
+                    10_000, 25_165_824, 10_900);
+
+            GT_Values.RA.addPlasmaForgeRecipe(
+                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5)},
+                    new FluidStack[]{Materials.ExcitedDTPC.getFluid(333_364L)},
+
+                    new ItemStack[]{GT_Values.NI},
+                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(333_364L/4), Materials.Infinity.getMolten(128L*144L)},
+                    5_000, 25_165_824, 11_800);
+
+            GT_Values.RA.addPlasmaForgeRecipe(
+                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 4L, 5)},
+                    new FluidStack[]{Materials.ExcitedDTRC.getFluid(148_217L)},
+
+                    new ItemStack[]{GT_Values.NI},
+                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(148_217L/2), Materials.Infinity.getMolten(256L*144L)},
+                    2_500, 25_165_824, 12_700);
+
+            GT_Values.RA.addPlasmaForgeRecipe(
+                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 8L, 5)},
+                    new FluidStack[]{Materials.ExcitedDTEC.getFluid(62_815L)},
+
+                    new ItemStack[]{GT_Values.NI},
+                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(62_815L), Materials.Infinity.getMolten(512L*144L)},
+                    1_250, 25_165_824, 13_600);
+
         }
 
         if (Loader.isModLoaded("AdvancedSolarPanel")) {
@@ -2448,14 +2483,128 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkSteel, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Endstone, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EndSteel, 3L), 100, 8);
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Platinum, 1L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderiumBase, 4L), 400, 8);
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderiumBase, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 4L), 200, 8);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cadmium, 5L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), Materials.Oxygen.getGas(6000), GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pentacadmiummagnesiumhexaoxid, 12L), 1200, 120);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Barium, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 10L), GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), Materials.Oxygen.getGas(20000), GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titaniumonabariumdecacoppereikosaoxid, 40L), 2400, 120);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Platinum, 3L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Uraniumtriplatinid, 4L), 400, 480);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vanadium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 3L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vanadiumtriindinid, 4L), 400, 480);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Barium, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 7L), GT_Utility.getIntegratedCircuit(3), Materials.Oxygen.getGas(14000), GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid, 30L), 2400, 1920);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 2L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Palladium, 6L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1L), GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 13L), 1200, 1920);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadria, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmiridium, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Samarium, 1L), GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Longasssuperconductornameforuvwire, 9L), 1800, 7680);
-        GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 6L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CosmicNeutronium, 7L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tritanium, 5L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Americium, 6L), GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Longasssuperconductornameforuhvwire, 24L), 3600, 30720);
+
+        // Superconductor dust recipes in mixer.
+
+        // MV Superconductor dust recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cadmium, 5L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L),
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Utility.getIntegratedCircuit(2),
+                Materials.Oxygen.getGas(6000),
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pentacadmiummagnesiumhexaoxid, 12L),
+                10*20, 120
+        );
+
+        // HV Superconductor dust recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Barium, 9L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 10L),
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Utility.getIntegratedCircuit(2),
+                Materials.Oxygen.getGas(20000),
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titaniumonabariumdecacoppereikosaoxid, 40L),
+                10*20, 480
+        );
+
+        // EV Superconductor dust recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Platinum, 3L),
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Utility.getIntegratedCircuit(2),
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Uraniumtriplatinid, 4L),
+                10*20, 1920);
+
+        // IV Superconductor dust recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vanadium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 3L),
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Utility.getIntegratedCircuit(2),
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vanadiumtriindinid, 4L),
+                10*20, 7680);
+
+        // LuV Superconductor dust recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 4L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 2L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Barium, 2L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 7L),
+                GT_Utility.getIntegratedCircuit(3),
+                Materials.Oxygen.getGas(14000),
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid, 30L),
+                10*20, 30720);
+
+        // ZPM Superconductor dust recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 4L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 2L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Palladium, 6L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1L),
+                GT_Values.NI,
+                GT_Utility.getIntegratedCircuit(2),
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 13L),
+                10*20, 122880);
+
+        // UV Superconductor dust recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadria, 4L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmiridium, 3L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Europium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Samarium, 1L),
+                GT_Utility.getIntegratedCircuit(2),
+                GT_Values.NI,
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Longasssuperconductornameforuvwire, 9L),
+                10*20, 491520);
+
+        // UHV Superconductor Recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 6L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CosmicNeutronium, 7L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tritanium, 5L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Americium, 6L),
+                GT_Utility.getIntegratedCircuit(2),
+                GT_Values.NI,
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Longasssuperconductornameforuhvwire, 24L),
+                10*20, 1966080);
+
+        // UEV Superconductor dust recipe.
+        GT_Values.RA.addMixerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DraconiumAwakened, 5L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Infinity, 5L),
+                GT_ModHandler.getModItem("miscutils", "itemDustCelestialTungsten", 1L),
+                GT_ModHandler.getModItem("miscutils", "itemDustAdvancedNitinol", 1L),
+                GT_Utility.getIntegratedCircuit(2),
+                GT_Values.NI,
+                Materials.Iron.getPlasma(144L),
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUEVBase, 12L),
+                10*20, 7864320);
+
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ardite, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 2L), 400, 8);
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 3L), ItemList.IC2_Resin.get(1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, CustomItemList.MicaBasedPulp.get(4L), 400, 8);
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, CustomItemList.MicaBasedPulp.get(4L), 400, 8);
@@ -2641,7 +2790,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("GalaxySpace", "mercuryblocks", 1L, 1), new ItemStack[]{CustomItemList.MercuryStoneDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1)}, new int[]{10000, 750, 500, 300}, 400, 256);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("GalaxySpace", "mercuryblocks", 1L, 2), new ItemStack[]{CustomItemList.MercuryCoreDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tungsten, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 1)}, new int[]{10000, 750, 500, 300}, 400, 256);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("GalaxySpace", "enceladusblocks", 1L, 0), new ItemStack[]{CustomItemList.EnceladusIceDust.get(1L), CustomItemList.MysteriousCrystalDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1)}, new int[]{10000, 1500, 500, 250}, 400, 480);
-            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("GalaxySpace", "enceladusblocks", 1L, 1), new ItemStack[]{CustomItemList.EnceladusStoneDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1)}, new int[]{10000, 750, 500, 250}, 400, 480);
+            GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("GalaxySpace", "enceladusblocks", 1L, 1), new ItemStack[]{CustomItemList.EnceladusStoneDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1)}, new int[]{10000, 750, 500, 250}, 400, 480);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("GalaxySpace", "enceladusblocks", 1L, 3), new ItemStack[]{CustomItemList.EnceladusIceDust.get(1L), CustomItemList.MysteriousCrystalDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1)}, new int[]{10000, 1500, 500, 250}, 400, 480);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("GalaxySpace", "titanblocks", 1L, 0), new ItemStack[]{CustomItemList.TitanStoneDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1)}, new int[]{10000, 1125, 750, 500}, 400, 480);
             GT_Values.RA.addPulveriserRecipe(GT_ModHandler.getModItem("GalaxySpace", "titanblocks", 1L, 1), new ItemStack[]{CustomItemList.TitanStoneDust.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1)}, new int[]{10000, 1125, 750, 500}, 400, 480);
