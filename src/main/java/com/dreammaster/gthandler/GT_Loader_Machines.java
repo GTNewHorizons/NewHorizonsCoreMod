@@ -3966,7 +3966,7 @@ public class GT_Loader_Machines
 							'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy),
 							'C', OrePrefixes.cableGt16.get(Materials.NaquadahAlloy),
 							'S', OrePrefixes.spring.get(Materials.Neutronium),
-							'X', OrePrefixes.wireGt08.get(Materials.SuperconductorUHV),
+							'X', OrePrefixes.wireGt08.get(Materials.Bedrockium),
 							'O', OrePrefixes.cell.get(Materials.Lubricant),
 							'P', ItemList.Electric_Pump_LV,
 							'T', GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 885)});
@@ -4098,7 +4098,7 @@ public class GT_Loader_Machines
 							'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy),
 							'C', OrePrefixes.cableGt16.get(Materials.NaquadahAlloy),
 							'S', OrePrefixes.spring.get(Materials.Neutronium),
-							'X', OrePrefixes.wireGt08.get(Materials.SuperconductorUHV),
+							'X', OrePrefixes.wireGt08.get(Materials.Bedrockium),
 							'O', OrePrefixes.cell.get(Materials.Lubricant),
 							'P', ItemList.Electric_Pump_LV,
 							'T', ItemList.Transformer_MAX_UV});
