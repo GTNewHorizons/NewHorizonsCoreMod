@@ -60,6 +60,4 @@ dependencies {
         transitive = false
     }
 
-    runtime("com.github.GTNewHorizons:bartworks:0.5.43:dev")
-    runtime("com.github.GTNewHorizons:GTplusplus:1.7.32:dev")
 }
