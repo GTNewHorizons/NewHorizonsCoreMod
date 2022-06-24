@@ -92,6 +92,8 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   private static Textures.BlockIcons.CustomIcon _mGTIco_TE_Idle;
   private static Textures.BlockIcons.CustomIcon _mGTIco_TE_Active;
   private static int[] mAccelerateStatic = { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 512, 512, 512, 512, 512, 512 };
+  private static final int AMPERAGE_NORMAL = 3;
+  private static final int AMPERAGE_TE = 6;
 
   @Override
   public void registerIcons( IIconRegister aBlockIconRegister )
@@ -124,7 +126,14 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   @Override
   public String[] getDescription()
   {
-    return new String[] { String.format( "Accelerating things (Max Radius: %d | Max Speed Bonus: x%d)", mTier, mAccelerateStatic[mTier] ), "Use a screwdriver to change mode, sneak to change Radius", "Use a wrench to change speed", "To accelerate TileEntities, this machine has to be adjacent to it", "This machine accepts up to 8 Amps", "Accelerating TileEntities doubles Energy-Demand" };
+    return new String[] {
+      String.format( "Accelerating things (Max Radius: %d | Max Speed Bonus: x%d)", mTier, mAccelerateStatic[mTier] ),
+      "Use a screwdriver to change mode, sneak to change Radius",
+      "Use a wrench to change speed",
+      "To accelerate TileEntities, this machine has to be adjacent to it",
+      String.format("Normal mode consumes up to %s amperage, depending on radius", AMPERAGE_NORMAL),
+      String.format("TE mode consumes %s amperage", AMPERAGE_TE)
+    };
   }
 
   @Override
@@ -200,11 +209,11 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
   {
     // TE mode does not need to consider range setting
     if (pIsAcceleratingTEs)
-      return V[pSpeedTier] * 6;
+      return V[pSpeedTier] * AMPERAGE_TE;
 
     // Include range setting into power calculation
     float multiplier = 100.0F / (float)mTier * (float)pRangeTier / 100.0F;
-    long demand = V[pSpeedTier] * 3;
+    long demand = V[pSpeedTier] * AMPERAGE_NORMAL;
 
     float tDemand = demand * multiplier;
 

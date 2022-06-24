@@ -1393,7 +1393,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.PrecisionLaserEngraverLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10930, "basicmachine.laserengraver.tier.06", "Elite Precision Laser Engraver", 6, "Don't look directly at the Laser",
-				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
+				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 48000, 0, 1, "LaserEngraver.png",
 				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",
 				new Object[] { "PEP", "CMC", "WCW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -1404,7 +1404,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.PrecisionLaserEngraverZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10931, "basicmachine.laserengraver.tier.07", "Elite Precision Laser Engraver II", 7, "Don't look directly at the Laser",
-				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
+				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 56000, 0, 1, "LaserEngraver.png",
 				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",
 				new Object[] { "PEP", "CMC", "WCW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -1415,7 +1415,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.PrecisionLaserEngraverUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10932, "basicmachine.laserengraver.tier.08", "Ultimate Exact Photon Cannon", 8, "With the Power of 1.21 GW",
-				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
+				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 64000, 0, 1, "LaserEngraver.png",
 				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",
 				new Object[] { "PEP", "CMC", "WCW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -1426,7 +1426,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.PrecisionLaserEngraverUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10933, "basicmachine.laserengraver.tier.09", "Epic Exact Photon Cannon", 9, "With the Power of 2.42 GW",
-				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
+				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 72000, 0, 1, "LaserEngraver.png",
 				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",
                 new Object[] { "PEP", "CMC", "WCW",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -1437,7 +1437,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.PrecisionLaserEngraverUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10934, "basicmachine.laserengraver.tier.10", "Epic Exact Photon Cannon II",10, "With the Power of 4.84 GW",
-				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
+				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 80000, 0, 1, "LaserEngraver.png",
 				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",
 				new Object[] { "PEP", "CMC", "WCW",
 						'M', CustomItemList.Hull_UEV,
@@ -1448,12 +1448,12 @@ public class GT_Loader_Machines
 
 		CustomItemList.PrecisionLaserEngraverUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10935, "basicmachine.laserengraver.tier.11", "Epic Exact Photon Cannon III",11, "With the Power of 9.68 GW",
-				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
+				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 88000, 0, 1, "LaserEngraver.png",
 				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",null).getStackForm(1L));
 
 		CustomItemList.PrecisionLaserEngraverUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10936, "basicmachine.laserengraver.tier.12", "Epic Exact Photon Cannon IV",12, "With the Power of 19.36 GW",
-				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 0, 0, 1, "LaserEngraver.png",
+				GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes, 2, 1, 96000, 0, 1, "LaserEngraver.png",
 				GregTech_API.sSoundList.get(212), false, false, 0, "LASER_ENGRAVER",null).getStackForm(1L));
 
 		//PrecisionLaserEngraverLuV
