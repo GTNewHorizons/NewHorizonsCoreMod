@@ -561,7 +561,7 @@ public class GT_Loader_Machines
 		// ===================================================================================================
 		CustomItemList.CuttingMachineLuV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10820, "basicmachine.cutter.tier.06", "Elite Cutting Machine", 6, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 128000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 4, 128000, 0, 1, "Cutter4.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -574,7 +574,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineZPM.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10821, "basicmachine.cutter.tier.07", "Elite Cutting Machine II", 7, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 160000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 4, 160000, 0, 1, "Cutter4.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -587,7 +587,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineUV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10822, "basicmachine.cutter.tier.08", "Ultimate Object Divider", 8, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 192000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 4, 192000, 0, 1, "Cutter4.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -600,7 +600,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineUHV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10823, "basicmachine.cutter.tier.09", "Epic Object Divider", 9, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 224000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 4, 224000, 0, 1, "Cutter4.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL,
@@ -613,7 +613,7 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineUEV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10824, "basicmachine.cutter.tier.10", "Epic Object Divider II",10, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 256000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 4, 256000, 0, 1, "Cutter4.png",
 				"", false, false, 0, "CUTTER",
 				new Object[] { "WCG", "VMB", "CWE",
 						'M', CustomItemList.Hull_UEV,
@@ -626,12 +626,12 @@ public class GT_Loader_Machines
 
 		CustomItemList.CuttingMachineUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10825, "basicmachine.cutter.tier.11", "Epic Object Divider III",11, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 288000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 4, 288000, 0, 1, "Cutter4.png",
 				"", false, false, 0, "CUTTER",null).getStackForm(1L));
 
 		CustomItemList.CuttingMachineUMV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
 				10826, "basicmachine.cutter.tier.12", "Epic Object Divider IV",12, "Slice'N Dice",
-				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 2, 320000, 0, 1, "Cutter2.png",
+				GT_Recipe.GT_Recipe_Map.sCutterRecipes, 2, 4, 320000, 0, 1, "Cutter4.png",
 				"", false, false, 0, "CUTTER",null).getStackForm(1L));
 
 		//CuttingMachineLuV
