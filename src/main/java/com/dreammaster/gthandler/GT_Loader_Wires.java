@@ -37,6 +37,8 @@ public class GT_Loader_Wires
         makeWires(Materials.Trinium, 11450, bEC ? 4L : 16L, bEC ? 8L : 32L, 6L, GT_Values.V[7], true, false);
         makeWires(Materials.ElectrumFlux, 1900, 1L, 2L, 3L, GT_Values.V[8], true, false);
         makeWires(Materials.Bedrockium, 11310, bEC ? 1L : 16L, bEC ? 32L : 64L, 2L, GT_Values.V[9], true, false);
+        makeWires(Materials.Osmiridium, 11610, bEC ? 1L : 2L, bEC ? 2L : 4L, 8L, GT_Values.V[6], true, false);
+        makeWires(Materials.HSSE, 11590, bEC ? 2L : 4L, bEC ? 4L : 8L, 6L, GT_Values.V[6], true, false);
         makeWires(Materials.HSSS, 11470, bEC ? 4L : 16L, bEC ? 8L : 32L, 6L, GT_Values.V[9], true, false);
         makeWires(Materials.Draconium, 11330, bEC ? 4L : 16L, bEC ? 32L : 64L, 8L, GT_Values.V[10], true, false);
         makeWires(Materials.NetherStar, 11350, bEC ? 4L : 16L, bEC ? 16L : 32L, 4L, GT_Values.V[11], true, false);
