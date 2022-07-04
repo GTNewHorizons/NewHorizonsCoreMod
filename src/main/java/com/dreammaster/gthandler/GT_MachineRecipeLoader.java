@@ -2070,6 +2070,140 @@ public class GT_MachineRecipeLoader implements Runnable {
             int hypogen_heat = infinity_heat+900;
             int eternal_heat = hypogen_heat+900;
 
+            // ----------------------------------- Plasma Forge ------------------------------------------------------------------------------------------
+
+            // See https://docs.google.com/spreadsheets/d/1_n2HSFyzfNzkJHYBPFu3HTZvkh69GBi5LXw2c9FyG9o/edit?usp=sharing for details on plasma forge maths.
+            {
+                // Neutronium Smelting.
+
+                long base_quantity = 512L;
+                long tier_up_multiplier = 2L;
+
+                int base_time = 5000;
+
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 2491L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTCC.getFluid(fuel_quantity_1), Materials.Iron.getMolten(tier_1_quantity)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1/8), Materials.Neutronium.getMolten(tier_1_quantity)},
+                        base_time, 25_165_824, awakened_heat);
+
+                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_2 = 2491L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTPC.getFluid(fuel_quantity_2), Materials.Iron.getMolten(tier_2_quantity)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2/4), Materials.Neutronium.getMolten(tier_2_quantity)},
+                        base_time/2, 50_331_648, infinity_heat);
+
+                long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_3 = 2491L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(fuel_quantity_3), Materials.Iron.getMolten(tier_3_quantity)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3/2), Materials.Neutronium.getMolten(tier_3_quantity)},
+                        base_time/4, 100_663_296, hypogen_heat);
+
+                long tier_4_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_4 = 2491L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTEC.getFluid(fuel_quantity_4), Materials.Iron.getMolten(tier_4_quantity)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4), Materials.Neutronium.getMolten(tier_4_quantity)},
+                        base_time/8, 201_326_592, eternal_heat);
+            }
+
+            {
+                // Cosmic Neutronium Smelting.
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTCC.getFluid(30_883), Materials.Copper.getMolten(512L * 144L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(30_883L / 8), Materials.CosmicNeutronium.getMolten(512L * 144L)},
+                        4200, 7_115_337, awakened_heat);
+
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTPC.getFluid(12_085), Materials.Copper.getMolten(1024L * 144L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(12_085L / 4), Materials.CosmicNeutronium.getMolten(1024L * 144L)},
+                        2100, 14_230_674, infinity_heat);
+
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(5_215), Materials.Copper.getMolten(2048L * 144L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(5_215L / 2), Materials.CosmicNeutronium.getMolten(2048L * 144L)},
+                        1050, 28_461_349, hypogen_heat);
+
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTEC.getFluid(2_200), Materials.Copper.getMolten(4096L * 144L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(2_200), Materials.CosmicNeutronium.getMolten(4096L * 144L)},
+                        525, 56_922_697, eternal_heat);
+            }
+
+            {
+                // Bedrockium.
+
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTCC.getFluid(102_987), Materials.Steel.getMolten(2048L * 144L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(102_987L / 8), Materials.Bedrockium.getMolten(2048L * 144L)},
+                        3360, 29_659_721, awakened_heat);
+
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTPC.getFluid(40299), Materials.Steel.getMolten(4096L * 144L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(40299L / 4), Materials.Bedrockium.getMolten(4096L * 144L)},
+                        1680, 59_319_442, infinity_heat);
+
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(17_391L), Materials.Steel.getMolten(8192L * 144L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(17_391L / 2), Materials.Bedrockium.getMolten(8192L * 144L)},
+                        840, 118_638_885, hypogen_heat);
+
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.ExcitedDTEC.getFluid(7337L), Materials.Steel.getMolten(16384L * 144L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(7337L), Materials.Bedrockium.getMolten(16384L * 144L)},
+                        420, 237_277_769, eternal_heat);
+            }
+
+            {
+                // Misc
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(10000L), Materials.Infinity.getMolten(9216L)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.SpaceTime.getMolten(72L)},
+                        10_000, 2_000_000_000, hypogen_heat);
+            }
+
             if (Loader.isModLoaded("Avaritia")) {
                 // Plasma forge infinity Smelting.
 
