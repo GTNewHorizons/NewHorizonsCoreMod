@@ -38,7 +38,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
     	//UEV, UIV, UMV casings
         GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UEV.get(1L), tBitMask, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium)});
         GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UIV.get(1L), tBitMask, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium)});
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UMV.get(1L), tBitMask, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Draconium)});
+        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UMV.get(1L), tBitMask, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SpaceTime)});
 
         //Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];

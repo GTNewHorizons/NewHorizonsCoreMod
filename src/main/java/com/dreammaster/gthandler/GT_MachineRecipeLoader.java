@@ -440,7 +440,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         //UEV-UMV casings+hulls
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(CustomItemList.BedrockiumPlate.get(8L)), GT_Utility.getIntegratedCircuit(8), CustomItemList.Casing_UEV.get(1L), 50, 16);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 8L), GT_Utility.getIntegratedCircuit(8), CustomItemList.Casing_UIV.get(1L), 50, 16);
-        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 8L), GT_Utility.getIntegratedCircuit(8), CustomItemList.Casing_UMV.get(1L), 50, 16);
+        GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 8L), GT_Utility.getIntegratedCircuit(8), CustomItemList.Casing_UMV.get(1L), 50, 16);
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 2L), CustomItemList.Casing_UEV.get(1L), Materials.Polybenzimidazole.getMolten(576L), CustomItemList.Hull_UEV.get(1L), 50, 16);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.NetherStar, 2L), CustomItemList.Casing_UIV.get(1L), Materials.Polybenzimidazole.getMolten(576L), CustomItemList.Hull_UIV.get(1L), 50, 16);
