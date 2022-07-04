@@ -77,7 +77,7 @@ public class GT_Loader_Machines
 				new Object[]{"PHP", "WMW",
 						'M', CustomItemList.Casing_UMV,
 						'W', OrePrefixes.wireGt12.get(Materials.Quantium),
-						'H', OrePrefixes.plate.get(Materials.Draconium),
+						'H', OrePrefixes.plate.get(Materials.SpaceTime),
 						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
 
 		CustomItemList.Hull_UXV.set(new GT_MetaTileEntity_BasicHull(
