@@ -2063,189 +2063,212 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addPulveriserRecipe(new ItemStack(Items.record_wait, 1, 0), new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 9L, 7)}, new int[]{10000}, 300, 2);
         }
 
-        if (Loader.isModLoaded("Avaritia")) {
-            // Plasma forge infinity Smelting.
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
-                    new FluidStack[]{Materials.ExcitedDTRC.getFluid(47_303L)},
-
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(47_303L / 2), Materials.Infinity.getMolten(64L * 144L)},
-                    10_000, 204_800_000, 12_700);
-
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5)},
-                    new FluidStack[]{Materials.ExcitedDTEC.getFluid(21_468L)},
-
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(21_468L / 2), Materials.Infinity.getMolten(128L * 144L)},
-                    5_000, 409_600_000, 13_600);
-        }
-
-        // UV Superconductor.
-
         {
-            long base_quantity = 2043L;
-            long tier_up_multiplier = 2L;
+            // Coils
+            int awakened_heat = 11800;
+            int infinity_heat = awakened_heat+900;
+            int hypogen_heat = infinity_heat+900;
+            int eternal_heat = hypogen_heat+900;
 
-            int base_time = 5040;
+            if (Loader.isModLoaded("Avaritia")) {
+                // Plasma forge infinity Smelting.
 
-            long tier_1_quantity = 144L * base_quantity;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.Samarium.getMolten(tier_1_quantity / 9),
-                            Materials.Europium.getMolten(tier_1_quantity / 9),
-                            Materials.Osmiridium.getMolten(3L * tier_1_quantity / 9),
-                            Materials.Naquadria.getMolten(4L * tier_1_quantity / 9),
-                            Materials.DimensionallyTranscendentCrudeCatalyst.getFluid(847L)},
+                int base_time = 10_000;
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(847L / 8), Materials.Longasssuperconductornameforuvwire.getMolten(tier_1_quantity)},
-                    base_time, 14_345_265, 10_900);
+                long fuel_quantity_1 = 114_062L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(114_062L)},
 
-            long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.Samarium.getMolten(tier_2_quantity / 9),
-                            Materials.Europium.getMolten(tier_2_quantity / 9),
-                            Materials.Osmiridium.getMolten(3L * tier_2_quantity / 9),
-                            Materials.Naquadria.getMolten(4L * tier_2_quantity / 9),
-                            Materials.DimensionallyTranscendentProsaicCatalyst.getFluid(545L)},
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2), Materials.Infinity.getMolten(64L * 144L)},
+                        base_time, 204_800_000, hypogen_heat);
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(545 / 4), Materials.Longasssuperconductornameforuvwire.getMolten(tier_2_quantity)},
-                    base_time / 2, 28_690_530, 11_800);
+                long fuel_quantity_2 = 51_534L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5)},
+                        new FluidStack[]{Materials.ExcitedDTEC.getFluid(fuel_quantity_2)},
 
-            long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.Samarium.getMolten(tier_3_quantity / 9),
-                            Materials.Europium.getMolten(tier_3_quantity / 9),
-                            Materials.Osmiridium.getMolten(3L * tier_3_quantity / 9),
-                            Materials.Naquadria.getMolten(4L * tier_3_quantity / 9),
-                            Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(278L)},
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2), Materials.Infinity.getMolten(128L * 144L)},
+                        base_time/2, 409_600_000, eternal_heat);
+            }
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(278L / 2), Materials.Longasssuperconductornameforuvwire.getMolten(tier_3_quantity)},
-                    base_time / 4, 57_381_060, 12_700);
+            // UV Superconductor.
 
-            long tier_4_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.Samarium.getMolten(tier_4_quantity / 9),
-                            Materials.Europium.getMolten(tier_4_quantity / 9),
-                            Materials.Osmiridium.getMolten(3L * tier_4_quantity / 9),
-                            Materials.Naquadria.getMolten(4L * tier_4_quantity / 9),
-                            Materials.DimensionallyTranscendentExoticCatalyst.getFluid(126L)},
+            {
+                long base_quantity = 2043L;
+                long tier_up_multiplier = 2L;
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(126L), Materials.Longasssuperconductornameforuvwire.getMolten(tier_4_quantity)},
-                    base_time / 8, 114_762_120, 13_600);
-        }
+                int base_time = 5040;
 
-        // UHV Superconductor.
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 2491L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.Samarium.getMolten(tier_1_quantity / 9),
+                                Materials.Europium.getMolten(tier_1_quantity / 9),
+                                Materials.Osmiridium.getMolten(3L * tier_1_quantity / 9),
+                                Materials.Naquadria.getMolten(4L * tier_1_quantity / 9),
+                                Materials.DimensionallyTranscendentCrudeCatalyst.getFluid(fuel_quantity_1)},
 
-        {
-            long base_quantity = 1008L;
-            long tier_up_multiplier = 2L;
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8), Materials.Longasssuperconductornameforuvwire.getMolten(tier_1_quantity)},
+                        base_time, 14_345_265, awakened_heat);
 
-            int base_time = 3150;
+                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_2 = 1354L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.Samarium.getMolten(tier_2_quantity / 9),
+                                Materials.Europium.getMolten(tier_2_quantity / 9),
+                                Materials.Osmiridium.getMolten(3L * tier_2_quantity / 9),
+                                Materials.Naquadria.getMolten(4L * tier_2_quantity / 9),
+                                Materials.DimensionallyTranscendentProsaicCatalyst.getFluid(fuel_quantity_2)},
 
-            long tier_1_quantity = 144L * base_quantity;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.Draconium.getMolten(6L * tier_1_quantity / 24),
-                            Materials.Americium.getMolten(6L * tier_1_quantity / 24),
-                            Materials.CosmicNeutronium.getMolten(7L * tier_1_quantity / 24),
-                            Materials.Tritanium.getMolten(5L * tier_1_quantity / 24),
-                            Materials.DimensionallyTranscendentProsaicCatalyst.getFluid(17866L)},
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4), Materials.Longasssuperconductornameforuvwire.getMolten(tier_2_quantity)},
+                        base_time / 2, 28_690_530, infinity_heat);
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.DimensionallyTranscendentResidue.getFluid(17866L / 4),
-                            Materials.Longasssuperconductornameforuhvwire.getMolten(tier_1_quantity)},
-                    base_time, 62_717_952, 11_800);
+                long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_3 = 671L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.Samarium.getMolten(tier_3_quantity / 9),
+                                Materials.Europium.getMolten(tier_3_quantity / 9),
+                                Materials.Osmiridium.getMolten(3L * tier_3_quantity / 9),
+                                Materials.Naquadria.getMolten(4L * tier_3_quantity / 9),
+                                Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(fuel_quantity_3)},
 
-            long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.Draconium.getMolten(6L * tier_2_quantity / 24),
-                            Materials.Americium.getMolten(6L * tier_2_quantity / 24),
-                            Materials.CosmicNeutronium.getMolten(7L * tier_2_quantity / 24),
-                            Materials.Tritanium.getMolten(5L * tier_2_quantity / 24),
-                            Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(8214L)},
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2), Materials.Longasssuperconductornameforuvwire.getMolten(tier_3_quantity)},
+                        base_time / 4, 57_381_060, hypogen_heat);
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.DimensionallyTranscendentResidue.getFluid(8214L / 2),
-                            Materials.Longasssuperconductornameforuhvwire.getMolten(tier_2_quantity)},
-                    base_time / 2, 125_435_904, 12_700);
+                long tier_4_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_4 = 303L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.Samarium.getMolten(tier_4_quantity / 9),
+                                Materials.Europium.getMolten(tier_4_quantity / 9),
+                                Materials.Osmiridium.getMolten(3L * tier_4_quantity / 9),
+                                Materials.Naquadria.getMolten(4L * tier_4_quantity / 9),
+                                Materials.DimensionallyTranscendentExoticCatalyst.getFluid(fuel_quantity_4)},
 
-            long tier_3_quantity = 144L * base_quantity * tier_up_multiplier;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.Draconium.getMolten(6L * tier_3_quantity / 24),
-                            Materials.Americium.getMolten(6L * tier_3_quantity / 24),
-                            Materials.CosmicNeutronium.getMolten(7L * tier_3_quantity / 24),
-                            Materials.Tritanium.getMolten(5L * tier_3_quantity / 24),
-                            Materials.DimensionallyTranscendentExoticCatalyst.getFluid(3605L)},
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4), Materials.Longasssuperconductornameforuvwire.getMolten(tier_4_quantity)},
+                        base_time / 8, 114_762_120, eternal_heat);
+            }
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.DimensionallyTranscendentResidue.getFluid(3605L),
-                            Materials.Longasssuperconductornameforuhvwire.getMolten(tier_3_quantity)},
-                    base_time / 4, 250_871_808, 13_600);
-        }
+            // UHV Superconductor.
 
-        // UEV Superconductors.
+            {
+                long base_quantity = 1008L;
+                long tier_up_multiplier = 2L;
 
-        if (Loader.isModLoaded("miscutils")) {
+                int base_time = 3150;
 
-            long base_quantity = 504L;
-            long tier_up_multiplier = 2L;
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 44_384L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.Draconium.getMolten(6L * tier_1_quantity / 24),
+                                Materials.Americium.getMolten(6L * tier_1_quantity / 24),
+                                Materials.CosmicNeutronium.getMolten(7L * tier_1_quantity / 24),
+                                Materials.Tritanium.getMolten(5L * tier_1_quantity / 24),
+                                Materials.DimensionallyTranscendentProsaicCatalyst.getFluid(fuel_quantity_1)},
 
-            int base_time = 8847;
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 4),
+                                Materials.Longasssuperconductornameforuhvwire.getMolten(tier_1_quantity)},
+                        base_time, 62_717_952, infinity_heat);
 
-            long tier_1_quantity = 144L * base_quantity * tier_up_multiplier;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_1_quantity / 12),
-                            new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_1_quantity / 12),
-                            Materials.DraconiumAwakened.getMolten(5L * tier_1_quantity / 12),
-                            Materials.Infinity.getMolten(5L * tier_1_quantity / 12),
-                            Materials.Iron.getPlasma(tier_1_quantity / 12),
-                            Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(17_452L)},
+                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_2 = 19_806L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.Draconium.getMolten(6L * tier_2_quantity / 24),
+                                Materials.Americium.getMolten(6L * tier_2_quantity / 24),
+                                Materials.CosmicNeutronium.getMolten(7L * tier_2_quantity / 24),
+                                Materials.Tritanium.getMolten(5L * tier_2_quantity / 24),
+                                Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(fuel_quantity_2)},
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.DimensionallyTranscendentResidue.getFluid(17_452L / 2),
-                            Materials.SuperconductorUEVBase.getMolten(tier_1_quantity)},
-                    base_time / 2, 170_807_306, 12_700);
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 2),
+                                Materials.Longasssuperconductornameforuhvwire.getMolten(tier_2_quantity)},
+                        base_time / 2, 125_435_904, hypogen_heat);
 
-            long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-            GT_Values.RA.addPlasmaForgeRecipe(
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_2_quantity / 12),
-                            new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_2_quantity / 12),
-                            Materials.DraconiumAwakened.getMolten(5L * tier_2_quantity / 12),
-                            Materials.Infinity.getMolten(5L * tier_2_quantity / 12),
-                            Materials.Iron.getPlasma(tier_2_quantity / 12),
-                            Materials.DimensionallyTranscendentExoticCatalyst.getFluid(7920L)},
+                long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_3 = 8_654L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.Draconium.getMolten(6L * tier_3_quantity / 24),
+                                Materials.Americium.getMolten(6L * tier_3_quantity / 24),
+                                Materials.CosmicNeutronium.getMolten(7L * tier_3_quantity / 24),
+                                Materials.Tritanium.getMolten(5L * tier_3_quantity / 24),
+                                Materials.DimensionallyTranscendentExoticCatalyst.getFluid(fuel_quantity_3)},
 
-                    new ItemStack[]{GT_Values.NI},
-                    new FluidStack[]{
-                            Materials.DimensionallyTranscendentResidue.getFluid(7920L),
-                            Materials.SuperconductorUEVBase.getMolten(tier_2_quantity)},
-                    base_time / 4, 341_614_611, 13_600);
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3),
+                                Materials.Longasssuperconductornameforuhvwire.getMolten(tier_3_quantity)},
+                        base_time / 4, 250_871_808, eternal_heat);
+            }
+
+            // UEV Superconductors.
+
+            if (Loader.isModLoaded("miscutils")) {
+
+                long base_quantity = 504L;
+                long tier_up_multiplier = 2L;
+
+                int base_time = 8847;
+
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 41_423;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_1_quantity / 12),
+                                new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_1_quantity / 12),
+                                Materials.DraconiumAwakened.getMolten(5L * tier_1_quantity / 12),
+                                Materials.Infinity.getMolten(5L * tier_1_quantity / 12),
+                                Materials.Iron.getPlasma(tier_1_quantity / 12),
+                                Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(fuel_quantity_1)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2),
+                                Materials.SuperconductorUEVBase.getMolten(tier_1_quantity)},
+                        base_time / 2, 168_138_442, hypogen_heat);
+
+                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_2 = 18_715;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_2_quantity / 12),
+                                new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_2_quantity / 12),
+                                Materials.DraconiumAwakened.getMolten(5L * tier_2_quantity / 12),
+                                Materials.Infinity.getMolten(5L * tier_2_quantity / 12),
+                                Materials.Iron.getPlasma(tier_2_quantity / 12),
+                                Materials.DimensionallyTranscendentExoticCatalyst.getFluid(fuel_quantity_2)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2),
+                                Materials.SuperconductorUEVBase.getMolten(tier_2_quantity)},
+                        base_time / 4, 336_276_883, eternal_heat);
+
+            }
 
         }
 
