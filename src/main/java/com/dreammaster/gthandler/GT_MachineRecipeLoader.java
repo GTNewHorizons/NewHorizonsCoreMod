@@ -2082,7 +2082,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 int base_time = 5000;
 
                 long tier_1_quantity = 144L * base_quantity;
-                long fuel_quantity_1 = 2491L;
+                long fuel_quantity_1 = 65017L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.ExcitedDTCC.getFluid(fuel_quantity_1), Materials.Iron.getMolten(tier_1_quantity)},
@@ -2092,7 +2092,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         base_time, 25_165_824, awakened_heat);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-                long fuel_quantity_2 = 2491L;
+                long fuel_quantity_2 = 25442L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.ExcitedDTPC.getFluid(fuel_quantity_2), Materials.Iron.getMolten(tier_2_quantity)},
@@ -2102,7 +2102,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         base_time/2, 50_331_648, infinity_heat);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-                long fuel_quantity_3 = 2491L;
+                long fuel_quantity_3 = 10979L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.ExcitedDTRC.getFluid(fuel_quantity_3), Materials.Iron.getMolten(tier_3_quantity)},
@@ -2112,7 +2112,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         base_time/4, 100_663_296, hypogen_heat);
 
                 long tier_4_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
-                long fuel_quantity_4 = 2491L;
+                long fuel_quantity_4 = 4632L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.ExcitedDTEC.getFluid(fuel_quantity_4), Materials.Iron.getMolten(tier_4_quantity)},
