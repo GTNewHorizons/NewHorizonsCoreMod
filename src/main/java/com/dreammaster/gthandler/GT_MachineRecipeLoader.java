@@ -2272,7 +2272,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.Europium.getMolten(tier_1_quantity / 9),
                                 Materials.Osmiridium.getMolten(3L * tier_1_quantity / 9),
                                 Materials.Naquadria.getMolten(4L * tier_1_quantity / 9),
-                                Materials.DimensionallyTranscendentCrudeCatalyst.getFluid(fuel_quantity_1)},
+                                Materials.ExcitedDTCC.getFluid(fuel_quantity_1)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8), Materials.Longasssuperconductornameforuvwire.getMolten(tier_1_quantity)},
@@ -2287,7 +2287,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.Europium.getMolten(tier_2_quantity / 9),
                                 Materials.Osmiridium.getMolten(3L * tier_2_quantity / 9),
                                 Materials.Naquadria.getMolten(4L * tier_2_quantity / 9),
-                                Materials.DimensionallyTranscendentProsaicCatalyst.getFluid(fuel_quantity_2)},
+                                Materials.ExcitedDTPC.getFluid(fuel_quantity_2)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4), Materials.Longasssuperconductornameforuvwire.getMolten(tier_2_quantity)},
@@ -2302,7 +2302,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.Europium.getMolten(tier_3_quantity / 9),
                                 Materials.Osmiridium.getMolten(3L * tier_3_quantity / 9),
                                 Materials.Naquadria.getMolten(4L * tier_3_quantity / 9),
-                                Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(fuel_quantity_3)},
+                                Materials.ExcitedDTRC.getFluid(fuel_quantity_3)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2), Materials.Longasssuperconductornameforuvwire.getMolten(tier_3_quantity)},
@@ -2317,7 +2317,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.Europium.getMolten(tier_4_quantity / 9),
                                 Materials.Osmiridium.getMolten(3L * tier_4_quantity / 9),
                                 Materials.Naquadria.getMolten(4L * tier_4_quantity / 9),
-                                Materials.DimensionallyTranscendentExoticCatalyst.getFluid(fuel_quantity_4)},
+                                Materials.ExcitedDTEC.getFluid(fuel_quantity_4)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4), Materials.Longasssuperconductornameforuvwire.getMolten(tier_4_quantity)},
@@ -2341,7 +2341,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.Americium.getMolten(6L * tier_1_quantity / 24),
                                 Materials.CosmicNeutronium.getMolten(7L * tier_1_quantity / 24),
                                 Materials.Tritanium.getMolten(5L * tier_1_quantity / 24),
-                                Materials.DimensionallyTranscendentProsaicCatalyst.getFluid(fuel_quantity_1)},
+                                Materials.ExcitedDTPC.getFluid(fuel_quantity_1)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
@@ -2358,7 +2358,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.Americium.getMolten(6L * tier_2_quantity / 24),
                                 Materials.CosmicNeutronium.getMolten(7L * tier_2_quantity / 24),
                                 Materials.Tritanium.getMolten(5L * tier_2_quantity / 24),
-                                Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(fuel_quantity_2)},
+                                Materials.ExcitedDTRC.getFluid(fuel_quantity_2)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
@@ -2375,7 +2375,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.Americium.getMolten(6L * tier_3_quantity / 24),
                                 Materials.CosmicNeutronium.getMolten(7L * tier_3_quantity / 24),
                                 Materials.Tritanium.getMolten(5L * tier_3_quantity / 24),
-                                Materials.DimensionallyTranscendentExoticCatalyst.getFluid(fuel_quantity_3)},
+                                Materials.ExcitedDTEC.getFluid(fuel_quantity_3)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
@@ -2403,7 +2403,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.DraconiumAwakened.getMolten(5L * tier_1_quantity / 12),
                                 Materials.Infinity.getMolten(5L * tier_1_quantity / 12),
                                 Materials.Iron.getPlasma(tier_1_quantity / 12),
-                                Materials.DimensionallyTranscendentResplendentCatalyst.getFluid(fuel_quantity_1)},
+                                Materials.ExcitedDTRC.getFluid(fuel_quantity_1)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
@@ -2421,7 +2421,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.DraconiumAwakened.getMolten(5L * tier_2_quantity / 12),
                                 Materials.Infinity.getMolten(5L * tier_2_quantity / 12),
                                 Materials.Iron.getPlasma(tier_2_quantity / 12),
-                                Materials.DimensionallyTranscendentExoticCatalyst.getFluid(fuel_quantity_2)},
+                                Materials.ExcitedDTEC.getFluid(fuel_quantity_2)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
