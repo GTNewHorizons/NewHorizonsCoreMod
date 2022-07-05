@@ -2065,7 +2065,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         {
             // Coils
-            int awakened_heat = 11800;
+            int awakened_heat = 10800;
             int infinity_heat = awakened_heat+900;
             int hypogen_heat = infinity_heat+900;
             int eternal_heat = hypogen_heat+900;
