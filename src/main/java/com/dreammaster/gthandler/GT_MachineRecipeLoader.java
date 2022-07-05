@@ -2229,14 +2229,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.SpaceTime.getMolten(72L)},
                         10_000, 2_000_000_000, hypogen_heat);
-
-                GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[]{GT_Values.NI},
-                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(10000L), Materials.Infinity.getMolten(9216L)},
-
-                        new ItemStack[]{GT_Values.NI},
-                        new FluidStack[]{Materials.SpaceTime.getMolten(288L)},
-                        20*100, 2_000_000_000, hypogen_heat);
             }
 
             if (Loader.isModLoaded("Avaritia")) {
