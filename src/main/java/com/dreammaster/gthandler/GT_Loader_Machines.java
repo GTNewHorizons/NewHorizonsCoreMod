@@ -76,9 +76,9 @@ public class GT_Loader_Machines
 				bitsd,
 				new Object[]{"PHP", "WMW",
 						'M', CustomItemList.Casing_UMV,
-						'W', OrePrefixes.wireGt12.get(Materials.Quantium),
-						'H', OrePrefixes.plate.get(Materials.Draconium),
-						'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)});
+						'W', OrePrefixes.wireGt01.get(Materials.Infinity),
+						'H', OrePrefixes.plate.get(Materials.SpaceTime),
+						'P', OrePrefixes.plate.get(MaterialsKevlar.Kevlar)});
 
 		CustomItemList.Hull_UXV.set(new GT_MetaTileEntity_BasicHull(
 				11233, "hull.tier.13", "UXV Machine Hull",13,
