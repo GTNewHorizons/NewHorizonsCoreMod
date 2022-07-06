@@ -1059,12 +1059,12 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dustPure, Materials.Zeolite, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 6L),  GT_Utility.getIntegratedCircuit(5),  GT_Values.NI, GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 36L), 200, 48);
 
         //2Al(OH)3 = Al2O3 + 3H2O
-        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 14L), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L), GT_Values.NI, 100, 480, 1300);
+        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 14L), GT_Utility.getIntegratedCircuit(1), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L), GT_Values.NI, 200, 480, 1300);
         //2NaAlO2 + CO2 = Al2O3 + Na2CO3
-        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 8L), GT_Values.NI, Materials.CarbonDioxide.getGas(1000L), GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumCarbonate, 6L), 50, 480, 1200);
+        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 8L), GT_Values.NI, Materials.CarbonDioxide.getGas(1000L), GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumCarbonate, 6L), 100, 480, 1200);
 
         //2Al2O3 + 3C = 4Al + 3CO2
-        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),  GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 3L), GT_Values.NF, Materials.CarbonDioxide.getGas(3000L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 4L), GT_Values.NI, 900, 120, 2054);
+        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),  GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 3L), GT_Values.NF, Materials.CarbonDioxide.getGas(3000L), GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 4L), GT_Values.NI, 1200, 120, 2054);
         //6Al2O3 =Na3AlF6= 12Al
         GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 30L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 15L), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 12L), GT_Values.NI, 2400, 120, 963);
 
