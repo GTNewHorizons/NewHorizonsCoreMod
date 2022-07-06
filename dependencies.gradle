@@ -59,4 +59,5 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:BuildCraft:7.1.26:dev") {
         transitive = false
     }
+
 }
