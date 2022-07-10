@@ -2736,7 +2736,6 @@ public class GT_MachineRecipeLoader implements Runnable {
         }
         GT_Values.RA.addImplosionRecipe(CustomItemList.IceCompressedPlate.get(2L), 2, CustomItemList.IceDualCompressedPlates.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L));
         GT_Values.RA.addImplosionRecipe(CustomItemList.QuantinumCompressedPlate.get(2L), 2, CustomItemList.QuantinumDualCompressedPlates.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L));
-        GT_Values.RA.addImplosionRecipe(CustomItemList.MysteriousCrystalPlate.get(3L), 1, CustomItemList.MysteriousCrystalCompressedPlate.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L));
         GT_Values.RA.addImplosionRecipe(GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Ledox, 1L), 1, CustomItemList.LedoxCompressedPlate.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L));
         GT_Values.RA.addImplosionRecipe(GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Mytryl, 1L), 1, CustomItemList.MytrylCompressedPlate.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L));
         GT_Values.RA.addImplosionRecipe(GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Quantium, 1L), 1, CustomItemList.QuantinumCompressedPlate.get(1L), GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L));
