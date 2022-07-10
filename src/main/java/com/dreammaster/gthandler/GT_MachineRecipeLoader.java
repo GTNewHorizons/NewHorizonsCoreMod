@@ -8,6 +8,8 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
+import gtPlusPlus.core.material.ALLOY;
+import gtPlusPlus.core.material.ELEMENT;
 import ic2.core.Ic2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -61,7 +63,6 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L), CustomItemList.AluminoSilicateWool.get(2L), 1200, 30);
 
         makeCoilRecipes();
-        makePlasmaForgeRecipes_DTPF();
 
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 64L), CustomItemList.MicaInsulatorFoil.get(48L), Materials.Trinium.getMolten(1440L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
         GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 32L), CustomItemList.MicaInsulatorFoil.get(32L), Materials.Trinium.getMolten(576L), ItemList.Casing_Coil_Superconductor.get(1L), 1000, 9001);
@@ -1563,15 +1564,16 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
-                                new FluidStack(FluidRegistry.getFluid("molten.hypogen"), 144),
+                                new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 144),
                                 Materials.Neutronium.getMolten(5760L),
-                                new FluidStack(FluidRegistry.getFluid("molten.quantum"), 5760),
+                                new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
                                 Materials.Infinity.getMolten(1440L),
-                                Materials.ExcitedDTPC.getFluid(1000)},
+                                Materials.ExcitedDTPC.getFluid(1000)
+                        },
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
-                                new FluidStack(FluidRegistry.getFluid("molten.hypogen"), 3024),
+                                new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1584),
                                 Materials.DimensionallyTranscendentResidue.getFluid(1000L/4)
                         },
                         2000, 800_000_000, infinity_heat);
@@ -1581,58 +1583,60 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
                                 Materials.Neutronium.getMolten(5760L),
-                                new FluidStack(FluidRegistry.getFluid("molten.quantum"), 5760),
+                                new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
                                 Materials.Infinity.getMolten(1440L),
                                 Materials.ExcitedDTRC.getFluid(1000)
                         },
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
-                                new FluidStack(FluidRegistry.getFluid("molten.hypogen"), 5760),
+                                new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 2880),
                                 Materials.DimensionallyTranscendentResidue.getFluid(1000L/2)
                         },
                         2000, 1_200_000_000, hypogen_heat);
 
                 // Hypogen v3
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[]{GT_Values.NI},
+                        new ItemStack[] {GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32100)},
                         new FluidStack[]{
                                 Materials.Neutronium.getMolten(5760L),
-                                new FluidStack(FluidRegistry.getFluid("molten.quantum"), 5760),
+                                new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
                                 Materials.Infinity.getMolten(1440L),
                                 Materials.ExcitedDTEC.getFluid(1000)
                         },
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
-                                new FluidStack(FluidRegistry.getFluid("molten.hypogen"), 1152),
+                                new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 5760),
                                 Materials.DimensionallyTranscendentResidue.getFluid(1000L)
                         },
                         2000, 1_600_000_000, eternal_heat);
 
+                // Spacetime v2
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32100)},
+                        new FluidStack[] {
+                                Materials.DimensionallyTranscendentResidue.getFluid(5000L),
+                                Materials.Infinity.getMolten(1152L),
+                                new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1152)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.SpaceTime.getMolten(576L)},
+
+                        10_000, 2_000_000_000, eternal_heat);
+
                 // SpaceTime v1
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[]{GT_Values.NI},
-                        new FluidStack[]{
-                                Materials.DimensionallyTranscendentResidue.getFluid(10000L),
-                                Materials.Infinity.getMolten(9216L)
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                                Materials.Infinity.getMolten(9216L),
+                                Materials.DimensionallyTranscendentResidue.getFluid(10000L)
                         },
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.SpaceTime.getMolten(72L)},
                         5_000, 1_000_000_000, hypogen_heat);
 
-                // SpaceTime v2
-                GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[]{GT_Values.NI},
-                        new FluidStack[]{
-                                Materials.DimensionallyTranscendentResidue.getFluid(5000L),
-                                new FluidStack(FluidRegistry.getFluid("molten.hypogen"), 1152),
-                                Materials.Infinity.getMolten(1152L)},
-
-                        new ItemStack[]{GT_Values.NI},
-                        new FluidStack[]{Materials.SpaceTime.getMolten(576L)},
-                        10_000, 2_000_000_000, eternal_heat);
             }
 
             if (Loader.isModLoaded("Avaritia")) {
@@ -1856,6 +1860,8 @@ public class GT_MachineRecipeLoader implements Runnable {
     }
 
     public void run2() {
+        makePlasmaForgeRecipes_DTPF();
+
         if (Loader.isModLoaded("TConstruct")) {
             GT_Values.RA.addAlloySmelterRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L), GT_ModHandler.getModItem("TConstruct", "materials", 4L, 14), 100, 120);
 
