@@ -57,6 +57,7 @@ import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
 import gregtech.GT_Mod;
 import gregtech.api.GregTech_API;
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_LanguageManager;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
@@ -360,6 +361,7 @@ public class MainRegistry
     {
         GameRegistry.registerBlock(_mBlockBabyChest, ItemBlockBabyChest.class, "BabyChest");
         GameRegistry.addShapelessRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
+        GT_Values.RA.addCompressorRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0), 300, 2);
         GameRegistry.registerTileEntity(TileEntityBabyChest.class, "teBabyChest");
 
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
