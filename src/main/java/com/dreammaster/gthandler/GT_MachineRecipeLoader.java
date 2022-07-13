@@ -1528,7 +1528,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8), Materials.Bedrockium.getMolten(tier_1_quantity)},
                         base_time, 29_659_721, awakened_heat);
 
-                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long tier_2_quantity = tier_1_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 40299L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
@@ -1538,7 +1538,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4), Materials.Bedrockium.getMolten(tier_2_quantity)},
                         base_time/2, 59_319_442, infinity_heat);
 
-                long tier_3_quantity = 144L * base_quantity * tier_up_multiplier;
+                long tier_3_quantity = tier_2_quantity * tier_up_multiplier;
                 long fuel_quantity_3 = 17391L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
@@ -1548,7 +1548,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2), Materials.Bedrockium.getMolten(tier_3_quantity)},
                         base_time/4, 118_638_885, hypogen_heat);
 
-                long tier_4_quantity = 144L * base_quantity * tier_up_multiplier;
+                long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
                 long fuel_quantity_4 = 7337L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
