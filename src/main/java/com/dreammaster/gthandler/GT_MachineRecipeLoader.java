@@ -1632,8 +1632,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[] {GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32100)},
                         new FluidStack[] {
                                 Materials.DimensionallyTranscendentResidue.getFluid(5000L),
-                                Materials.Infinity.getMolten(1152L),
-                                new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 576)},
+                                Materials.Infinity.getMolten(1152L)
+                        },
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.SpaceTime.getMolten(576L)},
@@ -1651,7 +1651,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long fuel_quantity_1 = 57_031L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
-                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(114_062L)},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(fuel_quantity_1)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2), Materials.Infinity.getMolten(64L * 144L)},
