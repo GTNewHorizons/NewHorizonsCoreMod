@@ -21,6 +21,7 @@ public class CoreModConfig extends ConfigManager
   static public String ModPackVersion;
   
   public boolean ModHazardousItems_Enabled;
+  public boolean ModDebugVersionDisplay_Enabled;
   public boolean ModCustomToolTips_Enabled;
   public boolean ModItemInHandInfo_Enabled;
   public boolean ModCustomFuels_Enabled;
@@ -59,6 +60,7 @@ public class CoreModConfig extends ConfigManager
   {
     ModLoginMessage_Enabled = true;
     ModPackVersion = "2.1.2.4";
+    ModDebugVersionDisplay_Enabled = true;
     ModHazardousItems_Enabled = false;
     ModCustomToolTips_Enabled = false;
     ModItemInHandInfo_Enabled = false;
@@ -89,6 +91,7 @@ public class CoreModConfig extends ConfigManager
 	OreDictItems_Enabled = _mainConfig.getBoolean( "OreDictItems", "Modules", OreDictItems_Enabled, "Set to false to prevent the OreDict register for SpaceStones and SpaceDusts");
     ModLoginMessage_Enabled = _mainConfig.getBoolean( "LoginMessage", "Modules", ModLoginMessage_Enabled, "Set to true to show login message with modpack version" );
     ModPackVersion = _mainConfig.getString( "ModPackVersion", "Modules", ModPackVersion, "Version of the Modpack" );
+    ModDebugVersionDisplay_Enabled = _mainConfig.getBoolean("DebugVersionDisplay", "Modules", ModDebugVersionDisplay_Enabled, "Set to true to display modpack version on debug GUI (F3)");
     ModHazardousItems_Enabled = _mainConfig.getBoolean( "HazardousItems", "Modules", ModHazardousItems_Enabled, "Set to true to enable HazardousItems module. This needs a separate config file which is created once you start with this setting enabled" );
     ModCustomToolTips_Enabled = _mainConfig.getBoolean( "CustomToolTips", "Modules", ModCustomToolTips_Enabled, "Set to true to enable CustomToolTips module. This needs a separate config file which is created once you start with this setting enabled" );
     ModItemInHandInfo_Enabled = _mainConfig.getBoolean( "ItemInHandInfo", "Modules", ModItemInHandInfo_Enabled, "Set to true to enable ItemInHandInfo module. If enabled, type /iih to display the item's name-info" );
