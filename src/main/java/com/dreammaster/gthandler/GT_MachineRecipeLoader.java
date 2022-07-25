@@ -3544,6 +3544,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addForgeHammerRecipe(ItemList.GalliumArsenideCrystal.get(1L), ItemList.GalliumArsenideCrystalSmallPart.get(4L), 50, 4);
         GT_Values.RA.addPulveriserRecipe(ItemList.GalliumArsenideCrystal.get(1L), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 1)}, new int[]{10000},100, 4);
         GT_Values.RA.addPulveriserRecipe(ItemList.GalliumArsenideCrystalSmallPart.get(1L), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1)}, new int[]{10000},25, 4);
+        GT_Values.RA.addFluidExtractionRecipe(ItemList.GalliumArsenideCrystal.get(1L), GT_Values.NI, Materials.GalliumArsenide.getMolten(144L), 10000, 24, 37);
 
         GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 12), GT_Values.NI, Materials.UUMatter.getFluid(250L), ItemList.Tool_DataOrb.get(1L), 10000, 12000, 960, true);
         GT_Values.RA.addAutoclaveSpaceRecipe(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 12), GT_Values.NI, Materials.UUMatter.getFluid(250L), ItemList.Tool_DataOrb.get(1L), 10000, 12000, 960, true);
