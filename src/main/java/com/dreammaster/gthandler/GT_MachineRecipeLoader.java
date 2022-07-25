@@ -1578,7 +1578,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1584),
                                 Materials.DimensionallyTranscendentResidue.getFluid(1000L/4)
                         },
-                        2000, 800_000_000, infinity_heat);
+                        1500, 800_000_000, infinity_heat);
 
                 // Hypogen v2
                 GT_Values.RA.addPlasmaForgeRecipe(
@@ -1595,7 +1595,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 2880),
                                 Materials.DimensionallyTranscendentResidue.getFluid(1000L/2)
                         },
-                        2000, 1_200_000_000, hypogen_heat);
+                        1500, 1_200_000_000, hypogen_heat);
 
                 // Hypogen v3
                 GT_Values.RA.addPlasmaForgeRecipe(
@@ -1612,57 +1612,59 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 5760),
                                 Materials.DimensionallyTranscendentResidue.getFluid(1000L)
                         },
-                        2000, 1_600_000_000, eternal_heat);
+                        1500, 1_600_000_000, eternal_heat);
+
+                // SpaceTime v1
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                                Materials.DimensionallyTranscendentResidue.getFluid(10000L),
+                                Materials.Infinity.getMolten(2304L),
+                                new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1152)
+                        },
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.SpaceTime.getMolten(144L)},
+                        100*20, 1_000_000_000, hypogen_heat);
 
                 // Spacetime v2
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32100)},
                         new FluidStack[] {
                                 Materials.DimensionallyTranscendentResidue.getFluid(5000L),
-                                Materials.Infinity.getMolten(1152L),
-                                new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1152)},
+                                Materials.Infinity.getMolten(1152L)
+                        },
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.SpaceTime.getMolten(576L)},
 
-                        10_000, 2_000_000_000, eternal_heat);
+                        80*20, 2_000_000_000, eternal_heat);
 
-                // SpaceTime v1
-                GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Values.NI},
-                        new FluidStack[] {
-                                Materials.Infinity.getMolten(9216L),
-                                Materials.DimensionallyTranscendentResidue.getFluid(10000L)
-                        },
-
-                        new ItemStack[]{GT_Values.NI},
-                        new FluidStack[]{Materials.SpaceTime.getMolten(72L)},
-                        5_000, 1_000_000_000, hypogen_heat);
 
             }
 
             if (Loader.isModLoaded("Avaritia")) {
                 // Plasma forge infinity Smelting.
 
-                int base_time = 10_000;
+                int base_time = 5_000;
 
-                long fuel_quantity_1 = 114_062L;
+                long fuel_quantity_1 = 57_031L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
-                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(114_062L)},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(fuel_quantity_1)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2), Materials.Infinity.getMolten(64L * 144L)},
-                        base_time, 204_800_000, hypogen_heat);
+                        base_time, 102_400_000, hypogen_heat);
 
-                long fuel_quantity_2 = 51_534L;
+                long fuel_quantity_2 = 25_767L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5)},
                         new FluidStack[]{Materials.ExcitedDTEC.getFluid(fuel_quantity_2)},
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2), Materials.Infinity.getMolten(128L * 144L)},
-                        base_time/2, 409_600_000, eternal_heat);
+                        base_time/2, 204_800_000, eternal_heat);
             }
 
             // UV Superconductor.
