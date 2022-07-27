@@ -1078,7 +1078,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addMultiblockChemicalRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 49L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 63L), GT_Utility.getIntegratedCircuit(24)}, new FluidStack[]{Materials.HydrofluoricAcid.getFluid(42000L)}, new FluidStack[]{Materials.Water.getFluid(42000L)}, new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 64L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 6L)}, 600, 480);
 
         //NaAlO2 + 2H2O = Al(OH)3 + NaOH
-        GT_Values.RA.addChemicalRecipe(Materials.SodiumAluminate.getDust(4), GT_Values.NI, Materials.Water.getFluid(2000L), GT_Values.NF, Materials.Aluminiumhydroxide.getDust(7), Materials.SodiumHydroxide.getDust(3), 50, 120);
+        GT_Values.RA.addChemicalRecipe(Materials.SodiumAluminate.getDust(4), GT_Utility.getIntegratedCircuit(1), Materials.Water.getFluid(2000L), GT_Values.NF, Materials.Aluminiumhydroxide.getDust(7), Materials.SodiumHydroxide.getDust(3), 50, 120);
 
         //Al + H2O + NaOH = NaAlO2 + 3H
         GT_Values.RA.addChemicalRecipeForBasicMachineOnly(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L), Materials.Water.getFluid(1000L), Materials.Hydrogen.getGas(3000L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 4L), GT_Values.NI, 150, 120);
