@@ -1643,7 +1643,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 // SpaceTime v1
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Values.NI},
+                        new ItemStack[] {ItemList.EnergisedTesseract.get(1)},
                         new FluidStack[] {
                                 Materials.DimensionallyTranscendentResidue.getFluid(10000L),
                                 Materials.Infinity.getMolten(2304L),
@@ -1652,11 +1652,11 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.SpaceTime.getMolten(144L)},
-                        100*20, 1_000_000_000, hypogen_heat);
+                        40*20, 1_000_000_000, hypogen_heat);
 
                 // Spacetime v2
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32100)},
+                        new ItemStack[] {ItemList.EnergisedTesseract.get(1),  GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32100)},
                         new FluidStack[] {
                                 Materials.DimensionallyTranscendentResidue.getFluid(5000L),
                                 Materials.Infinity.getMolten(1152L)
@@ -1665,8 +1665,25 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.SpaceTime.getMolten(576L)},
 
-                        80*20, 2_000_000_000, eternal_heat);
+                        20*20, 2_000_000_000, eternal_heat);
 
+                // Raw Tesseract recipe
+                // 16 Vertices, 24 faces and 32 edges.
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 8L),
+                                GT_ModHandler.getModItem("miscutils", "itemRodOctiron", 8L),
+                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 8L, 10106),
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
+                                GT_ModHandler.getModItem("miscutils", "itemPlateAbyssalAlloy", 24L),
+                                GT_ModHandler.getModItem("miscutils", "itemScrewBotmium", 16L),
+                                GT_ModHandler.getModItem("GoodGenerator", "huiCircuit", 1L, 3),
+                        },
+                        new FluidStack[]{Materials.ExcitedDTPC.getFluid(1000)},
+
+                        new ItemStack[]{ItemList.Tesseract.get(1)},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000/4)},
+                        40*20, 32_000_000, hypogen_heat);
 
             }
 
