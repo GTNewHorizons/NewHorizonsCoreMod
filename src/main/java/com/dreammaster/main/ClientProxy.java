@@ -37,6 +37,7 @@ public class ClientProxy extends CommonProxy
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBabyChest.class, render);
 
         MinecraftForge.EVENT_BUS.register(CONFIG_HANDLER);
+        MinecraftForge.EVENT_BUS.register(new DebugHandler());
     }
 
     @Override
