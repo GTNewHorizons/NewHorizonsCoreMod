@@ -1668,13 +1668,13 @@ public class GT_MachineRecipeLoader implements Runnable {
                         20*20, 2_000_000_000, eternal_heat);
 
                 // Raw Tesseract recipe
-                // 16 Vertices, 24 faces and 16 sides.
+                // 16 Vertices, 24 faces and 32 edges.
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{
-                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 4L),
-                                GT_ModHandler.getModItem("miscutils", "itemRodOctiron", 4L),
-                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 4L, 10106),
-                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 4L),
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 8L),
+                                GT_ModHandler.getModItem("miscutils", "itemRodOctiron", 8L),
+                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 8L, 10106),
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
                                 GT_ModHandler.getModItem("miscutils", "itemPlateAbyssalAlloy", 24L),
                                 GT_ModHandler.getModItem("miscutils", "itemScrewBotmium", 16L),
                                 GT_ModHandler.getModItem("GoodGenerator", "huiCircuit", 1L, 3),
