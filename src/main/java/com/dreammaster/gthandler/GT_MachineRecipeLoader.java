@@ -1652,7 +1652,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.SpaceTime.getMolten(144L)},
-                        100*20, 1_000_000_000, hypogen_heat);
+                        40*20, 1_000_000_000, hypogen_heat);
 
                 // Spacetime v2
                 GT_Values.RA.addPlasmaForgeRecipe(
@@ -1665,22 +1665,25 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{Materials.SpaceTime.getMolten(576L)},
 
-                        80*20, 2_000_000_000, eternal_heat);
+                        20*20, 2_000_000_000, eternal_heat);
 
                 // Raw Tesseract recipe
+                // 16 Vertices, 24 faces and 16 sides.
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{
-                                GT_OreDictUnificator.get(OrePrefixes.rod, Materials.CosmicNeutronium, 4L),
-                                GT_ModHandler.getModItem("miscutils", "itemRodAbyssal", 4L),
-                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 64L, 10106),
-                                GT_OreDictUnificator.get(OrePrefixes.rod, Materials.Sunnarium, 4L),
-                                GT_ModHandler.getModItem("miscutils", "itemScrewBotmium", 16L)
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 4L),
+                                GT_ModHandler.getModItem("miscutils", "itemRodOctiron", 4L),
+                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 4L, 10106),
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 4L),
+                                GT_ModHandler.getModItem("miscutils", "itemPlateAbyssalAlloy", 24L),
+                                GT_ModHandler.getModItem("miscutils", "itemScrewBotmium", 16L),
+                                GT_ModHandler.getModItem("GoodGenerator", "huiCircuit", 1L, 3),
                         },
                         new FluidStack[]{Materials.ExcitedDTPC.getFluid(1000)},
 
-                        new ItemStack[]{GT_Values.NI},
+                        new ItemStack[]{ItemList.Tesseract.get(1)},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000/4)},
-                        50*20, 32_000_000, hypogen_heat);
+                        40*20, 32_000_000, hypogen_heat);
 
             }
 
