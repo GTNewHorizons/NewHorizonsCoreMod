@@ -1643,7 +1643,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 // SpaceTime v1
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Values.NI},
+                        new ItemStack[] {ItemList.EnergisedTesseract.get(1)},
                         new FluidStack[] {
                                 Materials.DimensionallyTranscendentResidue.getFluid(10000L),
                                 Materials.Infinity.getMolten(2304L),
@@ -1656,7 +1656,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 // Spacetime v2
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32100)},
+                        new ItemStack[] {ItemList.EnergisedTesseract.get(1),  GT_ModHandler.getModItem("miscutils", "MU-metaitem.01", 0L, 32100)},
                         new FluidStack[] {
                                 Materials.DimensionallyTranscendentResidue.getFluid(5000L),
                                 Materials.Infinity.getMolten(1152L)
