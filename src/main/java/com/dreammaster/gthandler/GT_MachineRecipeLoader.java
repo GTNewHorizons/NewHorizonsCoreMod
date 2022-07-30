@@ -1667,6 +1667,20 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                         80*20, 2_000_000_000, eternal_heat);
 
+                // Raw Tesseract recipe
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{
+                                GT_OreDictUnificator.get(OrePrefixes.rod, Materials.CosmicNeutronium, 4L),
+                                GT_ModHandler.getModItem("miscutils", "itemRodAbyssal", 4L),
+                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 64L, 10106),
+                                GT_OreDictUnificator.get(OrePrefixes.rod, Materials.Sunnarium, 4L),
+                                GT_ModHandler.getModItem("miscutils", "itemScrewBotmium", 16L)
+                        },
+                        new FluidStack[]{Materials.ExcitedDTPC.getFluid(1000)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000/4)},
+                        50*20, 32_000_000, hypogen_heat);
 
             }
 
