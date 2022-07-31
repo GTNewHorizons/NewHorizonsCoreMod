@@ -3287,7 +3287,7 @@ public class GT_Loader_Machines
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorLuV.get(1L),
 				bitsd,
-				new Object[]{"GCG", "PME", "WCW",
+				new Object[]{"GEG", "WPW", "CMC",
 						'M', ItemList.Hull_LuV,
 						'E', ItemList.Electric_Piston_LuV,
 						'P', ItemList.Electric_Pump_LuV,
@@ -3297,7 +3297,7 @@ public class GT_Loader_Machines
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorZPM.get(1L),
 				bitsd,
-				new Object[]{"GCG", "PME", "WCW",
+				new Object[]{"GEG", "WPW", "CMC",
 						'M', ItemList.Hull_ZPM,
 						'E', ItemList.Electric_Piston_ZPM,
 						'P', ItemList.Electric_Pump_ZPM,
@@ -3307,7 +3307,7 @@ public class GT_Loader_Machines
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorUV.get(1L),
 				bitsd,
-				new Object[]{"GCG", "PME", "WCW",
+				new Object[]{"GEG", "WPW", "CMC",
 						'M', ItemList.Hull_UV,
 						'E', ItemList.Electric_Piston_UV,
 						'P', ItemList.Electric_Pump_UV,
@@ -3317,7 +3317,7 @@ public class GT_Loader_Machines
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorUHV.get(1L),
 				bitsd,
-				new Object[]{"GCG", "PME", "WCW",
+				new Object[]{"GEG", "WPW", "CMC",
 						'M', ItemList.Hull_MAX,
 						'E', ItemList.Electric_Piston_UHV,
 						'P', ItemList.Electric_Pump_UHV,
@@ -3327,7 +3327,7 @@ public class GT_Loader_Machines
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.FluidExtractorUEV.get(1L),
 				bitsd,
-				new Object[]{"GCG", "PME", "WCW",
+				new Object[]{"GEG", "WPW", "CMC",
 						'M', CustomItemList.Hull_UEV,
 						'E', ItemList.Electric_Piston_UEV,
 						'P', ItemList.Electric_Pump_UEV,
