@@ -2976,21 +2976,21 @@ public class GT_Loader_Machines
 				bitsd,
 				new Object[]{"PRP", "WMW", "CHC",
 						'H', ItemList.Hull_MAX,
-						'R', OrePrefixes.rotor.get(Materials.Osmium),
+						'R', OrePrefixes.rotor.get(Materials.Osmiridium),
 						'P', OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride),
 						'M', ItemList.Electric_Motor_UHV,
 						'C', OrePrefixes.circuit.get(Materials.Infinite),
-						'W', OrePrefixes.cableGt04.get(Materials.ElectrumFlux)});
+						'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable()});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.ChemicalReactorUEV.get(1L),
 				bitsd,
 				new Object[]{"PRP", "WMW", "CHC",
 						'H', CustomItemList.Hull_UEV,
-						'R', OrePrefixes.rotor.get(Materials.Osmium),
+						'R', OrePrefixes.rotor.get(Materials.InfinityCatalyst),
 						'P', OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride),
 						'M', ItemList.Electric_Motor_UEV,
 						'C', OrePrefixes.circuit.get(Materials.Bio),
-						'W', OrePrefixes.cableGt08.get(Materials.ElectrumFlux)});
+						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable()});
 
 
 		// ===================================================================================================
@@ -4306,25 +4306,25 @@ public class GT_Loader_Machines
 				bitsd,
 				new Object[]{"CMV", " X ",
 						'M', CustomItemList.Hull_UEV,
-						'V', ItemList.Conveyor_Module_UV,
+						'V', ItemList.Conveyor_Module_UEV,
 						'C', OreDictNames.craftingChest,
-						'X', OrePrefixes.circuit.get(Materials.Advanced)});
+						'X', OrePrefixes.circuit.get(Materials.Bio)});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Automation_ChestBuffer_UIV.get(1L),
 				bitsd,
 				new Object[]{"CMV", " X ",
 						'M', CustomItemList.Hull_UIV,
-						'V', ItemList.Conveyor_Module_UV,
+						'V', ItemList.Conveyor_Module_UIV,
 						'C', OreDictNames.craftingChest,
-						'X', OrePrefixes.circuit.get(Materials.Master)});
+						'X', OrePrefixes.circuit.get(Materials.Nano)});
 
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Automation_ChestBuffer_UMV.get(1L),
 				bitsd,
 				new Object[]{"CMV", " X ",
 						'M', CustomItemList.Hull_UMV,
-						'V', ItemList.Conveyor_Module_UV,
+						'V', ItemList.Conveyor_Module_UMV,
 						'C', OreDictNames.craftingChest,
-						'X', OrePrefixes.circuit.get(Materials.Ultimate)});
+						'X', OrePrefixes.circuit.get(Materials.Piko)});
 
 		// ===================================================================================================
 		// Automated Chest Buffer
@@ -4436,7 +4436,7 @@ public class GT_Loader_Machines
 						'E', ItemList.Emitter_UEV,
 						'H', CustomItemList.Hull_UEV,
 						'K', ItemList.Conveyor_Module_UEV,
-						'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+						'C', OrePrefixes.circuit.get(Materials.Nano),
 						'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
 
 		CustomItemList.CircuitAssemblerUIV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
@@ -4484,22 +4484,6 @@ public class GT_Loader_Machines
 //						'K', ItemList.Conveyor_Module_UXV,
 //						'C', GT_CustomLoader.AdvancedGTMaterials.UXV.getCircuit(),
 //						'W', GT_CustomLoader.AdvancedGTMaterials.UXV.getCable()
-//						}
-						).getStackForm(1L)
-		);
-				CustomItemList.CircuitAssemblerOpV.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-						12095, "basicmachine.circuitassembler.tier.14", "Ultimate Circuit Assembling Machine VI", 14, "Avengers, Assemble!",
-						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
-						"", false, false, 0, "CIRCUITASSEMBLER",
-				null
-//						new Object[] {
-//						"RCE", "KHK", "WCW",
-//						'R', ItemList.Robot_Arm_OpV,
-//						'E', ItemList.Emitter_OpV,
-//						'H', CustomItemList.Hull_OpV,
-//						'K', ItemList.Conveyor_Module_OpV,
-//						'C', GT_CustomLoader.AdvancedGTMaterials.OpV.getCircuit(),
-//						'W', GT_CustomLoader.AdvancedGTMaterials.OpV.getCable()
 //						}
 						).getStackForm(1L)
 		);
