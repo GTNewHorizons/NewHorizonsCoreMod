@@ -4504,20 +4504,20 @@ public class GT_Loader_Machines
 				CustomItemList.Hull_UXV.get(1),
 				CustomItemList.Hull_MAXV.get(1),
 		};
+
 		for (int i = 0; i < hulls.length; i++) {
 			flInputs[i]= new ItemStack[]{hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(1)};
 			flInputs2[i]= new ItemStack[]{hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(2)};
 		}
 
-		// 10-15 since MAX crashes, change to 16 so when the NEI handler is fixed and MAX is obtainable.
 		for (int aTier = 10; aTier < 15; aTier++) {
 			GT_Values.RA.addAssemblerRecipe(flInputs[aTier-10], GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2,(aTier-9)))), inHatches[aTier-10], 480, (int) (30 * Math.pow(4, (aTier - 1))), false);
 			GT_Values.RA.addAssemblerRecipe(flInputs2[aTier-10], GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2,(aTier-9)))), outHatches[aTier-10], 480, (int) (30 * Math.pow(4, (aTier - 1))), false);
 		}
+
 		// ===================================================================================================
 		// Electric Oven - nah - daaaah
 		// ===================================================================================================
-
 
 	   /*
  		* TODO: WE USE RANGE 10750-12500
