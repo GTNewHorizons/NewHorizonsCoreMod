@@ -4236,6 +4236,7 @@ public class GT_Loader_Machines
 
 
 
+
 		//TODO add Conveyor Modules for more Tiers
 		// ===================================================================================================
 		// Automated Chest Buffer
@@ -4509,7 +4510,7 @@ public class GT_Loader_Machines
 		}
 
 		// 10-15 since MAX crashes, change to 16 so when the NEI handler is fixed and MAX is obtainable.
-		for (int aTier = 10; aTier < 14; aTier++) {
+		for (int aTier = 10; aTier < 15; aTier++) {
 			GT_Values.RA.addAssemblerRecipe(flInputs[aTier-10], GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2,(aTier-9)))), inHatches[aTier-10], 480, (int) (30 * Math.pow(4, (aTier - 1))), false);
 			GT_Values.RA.addAssemblerRecipe(flInputs2[aTier-10], GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2,(aTier-9)))), outHatches[aTier-10], 480, (int) (30 * Math.pow(4, (aTier - 1))), false);
 		}
