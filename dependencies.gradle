@@ -7,7 +7,7 @@ dependencies {
     compile("com.github.GTNewHorizons:StructureLib:1.0.15:dev")
     compile("com.github.GTNewHorizons:Avaritia:1.23:dev")
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
-    compile("com.github.GTNewHorizons:GTplusplus:1.7.49:dev")
+    compile("com.github.GTNewHorizons:GTplusplus:1.7.62-pre:dev")
 
     compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:1.9.1-GTNH:dev") {
         transitive = false
