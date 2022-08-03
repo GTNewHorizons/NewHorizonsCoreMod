@@ -84,12 +84,8 @@ public class GT_Loader_Machines
 				11233, "hull.tier.13", "UXV Machine Hull",13,
 				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
 
-		CustomItemList.Hull_OPV.set(new GT_MetaTileEntity_BasicHull(
-				11234, "hull.tier.14", "OPV Machine Hull",14,
-				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
 		CustomItemList.Hull_MAXV.set(new GT_MetaTileEntity_BasicHull(
-				11235, "hull.tier.15", "MAX Machine Hull",15,
+				11234, "hull.tier.14", "MAX Machine Hull",14,
 				GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
 
 		//TODO:recipes
@@ -3542,14 +3538,6 @@ public class GT_Loader_Machines
 				11223, "transformer.tier.12", "Mega Ultimate Transformer",12,
 				"UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
 
-		CustomItemList.Transformer_OPV_UXV.set(new GT_MetaTileEntity_Transformer(
-				11224, "transformer.tier.13", "Extended Mega Ultimate Transformer",13,
-				"OPV -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
-
-		CustomItemList.Transformer_MAXV_OPV.set(new GT_MetaTileEntity_Transformer(
-				11225, "transformer.tier.14", "Overpowered Transformer",14,
-				"MAX -> OPV (Use Soft Mallet to invert)").getStackForm(1L));
-
 		GT_ModHandler.addCraftingRecipe(CustomItemList.Transformer_UEV_UHV.get(1L),
 				bitsd,
 				new Object[] {"KBB", "CM ", "KBB",
@@ -3605,9 +3593,6 @@ public class GT_Loader_Machines
 		CustomItemList.Battery_Buffer_4by4_UXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11243, "batterybuffer.16.tier.13", "Extended Mega Ultimate Battery Buffer",13,"", 16).getStackForm(1L));
 
-		CustomItemList.Battery_Buffer_4by4_OPV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
-				11244, "batterybuffer.16.tier.14", "Overpowered Battery Buffer",14,"", 16).getStackForm(1L));
-
 		CustomItemList.Battery_Buffer_4by4_MAXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11245, "batterybuffer.16.tier.15", "Maximum Battery Buffer",15,"", 16).getStackForm(1L));
 
@@ -3639,9 +3624,6 @@ public class GT_Loader_Machines
 
 		CustomItemList.Battery_Buffer_3by3_UXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11253, "batterybuffer.09.tier.13", "Extended Mega Ultimate Battery Buffer",13,"", 9).getStackForm(1L));
-
-		CustomItemList.Battery_Buffer_3by3_OPV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
-				11254, "batterybuffer.09.tier.14", "Overpowered Battery Buffer",14,"", 9).getStackForm(1L));
 
 		CustomItemList.Battery_Buffer_3by3_MAXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11255, "batterybuffer.09.tier.15", "Maximum Battery Buffer",15,"", 9).getStackForm(1L));
@@ -3675,9 +3657,6 @@ public class GT_Loader_Machines
 		CustomItemList.Battery_Buffer_2by2_UXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11263, "batterybuffer.04.tier.13", "Extended Mega Ultimate Battery Buffer",13,"", 4).getStackForm(1L));
 
-		CustomItemList.Battery_Buffer_2by2_OPV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
-				11264, "batterybuffer.04.tier.14", "Overpowered Battery Buffer",14,"", 4).getStackForm(1L));
-
 		CustomItemList.Battery_Buffer_2by2_MAXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11265, "batterybuffer.04.tier.15", "Maximum Battery Buffer",15,"", 4).getStackForm(1L));
 
@@ -3710,9 +3689,6 @@ public class GT_Loader_Machines
 		CustomItemList.Battery_Buffer_1by1_UXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11273, "batterybuffer.01.tier.13", "Extended Mega Ultimate Battery Buffer",13,"", 1).getStackForm(1L));
 
-		CustomItemList.Battery_Buffer_1by1_OPV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
-				11274, "batterybuffer.01.tier.14", "Overpowered Battery Buffer",14,"", 1).getStackForm(1L));
-
 		CustomItemList.Battery_Buffer_1by1_MAXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
 				11275, "batterybuffer.01.tier.15", "Maximum Battery Buffer",15,"", 1).getStackForm(1L));
 
@@ -3729,15 +3705,6 @@ public class GT_Loader_Machines
 
 		CustomItemList.Battery_Charger_4by4_UMV.set(new GT_MetaTileEntity_Charger(
 				11282, "batterycharger.16.tier.12", "Mega Ultimate Battery Charger",12,"", 4).getStackForm(1L));
-
-		//CustomItemList.Battery_Charger_4by4_UXV.set(new GT_MetaTileEntity_Charger(
-		//		11283, "batterycharger.16.tier.13", "Extended Mega Ultimate Battery Charger",13,"", 4).getStackForm(1L));
-
-		//CustomItemList.Battery_Charger_4by4_OPV.set(new GT_MetaTileEntity_Charger(
-		//		11284, "batterycharger.16.tier.14", "Overpowered Battery Charger",14,"", 4).getStackForm(1L));
-
-		//CustomItemList.Battery_Charger_4by4_MAXV.set(new GT_MetaTileEntity_Charger(
-		//		11285, "batterycharger.16.tier.15", "Maximum Battery Charger",15,"", 4).getStackForm(1L));
 
 		//TODO:Recipes
 
@@ -3756,9 +3723,6 @@ public class GT_Loader_Machines
 
 		CustomItemList.Hatch_Dynamo_UXV.set(new GT_MetaTileEntity_Hatch_Dynamo(
 				11293, "hatch.dynamo.tier.13", "UXV Dynamo Hatch",13).getStackForm(1L));
-
-		CustomItemList.Hatch_Dynamo_OPV.set(new GT_MetaTileEntity_Hatch_Dynamo(
-				11294, "hatch.dynamo.tier.14", "OPV Dynamo Hatch",14).getStackForm(1L));
 
 		// ===================================================================================================
 		// Energy Hatches
@@ -3828,14 +3792,6 @@ public class GT_Loader_Machines
 				12012, "wettransformer.tier.12", "Mega Ultimate Power Transformer",12,
 				"UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
 
-		CustomItemList.WetTransformer_OPV_UXV.set(new GT_MetaTileEntity_WetTransformer(
-				12013, "wettransformer.tier.13", "Extended Mega Ultimate Power Transformer",13,
-				"OPV -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
-
-		CustomItemList.WetTransformer_MAXV_OPV.set(new GT_MetaTileEntity_WetTransformer(
-				12014, "wettransformer.tier.14", "Overpowered Power Transformer",14,
-				"MAX -> OPV (Use Soft Mallet to invert)").getStackForm(1L));
-
 		if(Loader.isModLoaded("miscutils")) {
 			CustomItemList.Transformer_HA_UEV_UHV.set(new GregtechMetaTransformerHiAmp(
 					11989, "transformer.ha.tier.09", "Highly Ultimate Hi-Amp Transformer", 9,
@@ -3849,12 +3805,6 @@ public class GT_Loader_Machines
 			CustomItemList.Transformer_HA_UXV_UMV.set(new GregtechMetaTransformerHiAmp(
 					11912, "transformer.ha.tier.12", "Mega Ultimate Hi-Amp Transformer",12,
 					"UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
-			CustomItemList.Transformer_HA_OPV_UXV.set(new GregtechMetaTransformerHiAmp(
-					11913, "transformer.ha.tier.13", "Extended Mega Ultimate Hi-Amp Transformer",13,
-					"OPV -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
-			CustomItemList.Transformer_HA_MAXV_OPV.set(new GregtechMetaTransformerHiAmp(
-					11914, "transformer.ha.tier.14", "Overpowered Hi-Amp Transformer",14,
-					"MAX -> OPV (Use Soft Mallet to invert)").getStackForm(1L));
 
 			GT_ModHandler.addCraftingRecipe(CustomItemList.Transformer_HA_UEV_UHV.get(1L), bitsd,
 					new Object[] { "KBB", "CM ", "KBB", Character.valueOf('M'), CustomItemList.Transformer_UEV_UHV, Character.valueOf('C'),
@@ -4281,9 +4231,6 @@ public class GT_Loader_Machines
 		//CustomItemList.Battery_TurboCharger_4by4_UXV.set(new GT_MetaTileEntity_TurboCharger(
 		//		12053, "batteryturbocharger.16.tier.13", "Extended Mega Ultimate Turbo Charger",13,"64A in /16A out", 4).getStackForm(1L));
 
-		//CustomItemList.Battery_TurboCharger_4by4_OPV.set(new GT_MetaTileEntity_TurboCharger(
-		//		12054, "batteryturbocharger.16.tier.14", "Overpowered Turbo Charger",14,"64A in /16A out", 4).getStackForm(1L));
-
 		//CustomItemList.Battery_TurboCharger_4by4_MAXV.set(new GT_MetaTileEntity_TurboCharger(
 		//		12055, "batteryturbocharger.16.tier.15", "Maximum Turbo Charger",15,"64A in /16A out", 4).getStackForm(1L));
 
@@ -4512,7 +4459,6 @@ public class GT_Loader_Machines
 		CustomItemList.Hatch_Input_UIV.set(new GT_MetaTileEntity_Hatch_Input(12098, "hatch.input.tier.11", "Input Hatch (UIV)",11).getStackForm(1L));
 		CustomItemList.Hatch_Input_UMV.set(new GT_MetaTileEntity_Hatch_Input(12099, "hatch.input.tier.12", "Input Hatch (UMV)",12).getStackForm(1L));
 		CustomItemList.Hatch_Input_UXV.set(new GT_MetaTileEntity_Hatch_Input(12100, "hatch.input.tier.13", "Input Hatch (UXV)",13).getStackForm(1L));
-		CustomItemList.Hatch_Input_OPV.set(new GT_MetaTileEntity_Hatch_Input(12101, "hatch.input.tier.14", "Input Hatch (OpV)",14).getStackForm(1L));
 		CustomItemList.Hatch_Input_MAX.set(new GT_MetaTileEntity_Hatch_Input(12102, "hatch.input.tier.15", "Input Hatch (MAX)",15).getStackForm(1L));
 
 
@@ -4524,7 +4470,6 @@ public class GT_Loader_Machines
 		CustomItemList.Hatch_Output_UIV.set(new GT_MetaTileEntity_Hatch_Output(12104, "hatch.output.tier.11", "Output Hatch (UIV)",11).getStackForm(1L));
 		CustomItemList.Hatch_Output_UMV.set(new GT_MetaTileEntity_Hatch_Output(12105, "hatch.output.tier.12", "Output Hatch (UMV)",12).getStackForm(1L));
 		CustomItemList.Hatch_Output_UXV.set(new GT_MetaTileEntity_Hatch_Output(12106, "hatch.output.tier.13", "Output Hatch (UXV)",13).getStackForm(1L));
-		CustomItemList.Hatch_Output_OPV.set(new GT_MetaTileEntity_Hatch_Output(12107, "hatch.output.tier.14", "Output Hatch (OpV)",14).getStackForm(1L));
 		CustomItemList.Hatch_Output_MAX.set(new GT_MetaTileEntity_Hatch_Output(12108, "hatch.output.tier.15", "Output Hatch (MAX)",15).getStackForm(1L));
 
 		ItemStack[] inHatches = {
@@ -4532,7 +4477,6 @@ public class GT_Loader_Machines
 						CustomItemList.Hatch_Input_UIV.get(1),
 						CustomItemList.Hatch_Input_UMV.get(1),
 						CustomItemList.Hatch_Input_UXV.get(1),
-						CustomItemList.Hatch_Input_OPV.get(1),
 						CustomItemList.Hatch_Input_MAX.get(1)
 		};
 		ItemStack[] outHatches = {
@@ -4540,7 +4484,6 @@ public class GT_Loader_Machines
 						CustomItemList.Hatch_Output_UIV.get(1),
 						CustomItemList.Hatch_Output_UMV.get(1),
 						CustomItemList.Hatch_Output_UXV.get(1),
-						CustomItemList.Hatch_Output_OPV.get(1),
 						CustomItemList.Hatch_Output_MAX.get(1)
 		};
 		ItemStack[][] flInputs = new ItemStack[6][3];
@@ -4558,7 +4501,6 @@ public class GT_Loader_Machines
 				CustomItemList.Hull_UIV.get(1),
 				CustomItemList.Hull_UMV.get(1),
 				CustomItemList.Hull_UXV.get(1),
-				CustomItemList.Hull_OPV.get(1),
 				CustomItemList.Hull_MAXV.get(1),
 		};
 		for (int i = 0; i < 6; i++) {

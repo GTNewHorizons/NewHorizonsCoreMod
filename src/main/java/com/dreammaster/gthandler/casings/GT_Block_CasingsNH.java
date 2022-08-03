@@ -46,8 +46,7 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".11.name", "UIV Machine Casing");//adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".12.name", "UMV Machine Casing");//adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".13.name", "UXV Machine Casing");//adding
-        GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".14.name", "OPV Machine Casing");//adding
-        GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".15.name", "MAX Machine Casing");//adding
+        GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".14.name", "MAX Machine Casing");//adding
 
         CustomItemList.Casing_AirFilter_Turbine_T1.set(new ItemStack(this, 1, 0));//adding
         CustomItemList.Casing_AirFilter_Vent_T1.set(new ItemStack(this, 1, 1));//adding
@@ -61,8 +60,7 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
         CustomItemList.Casing_UIV.set(new ItemStack(this,1,11));
         CustomItemList.Casing_UMV.set(new ItemStack(this,1,12));
         CustomItemList.Casing_UXV.set(new ItemStack(this,1,13));
-        CustomItemList.Casing_OPV.set(new ItemStack(this,1,14));
-        CustomItemList.Casing_MAXV.set(new ItemStack(this,1,15));
+        CustomItemList.Casing_MAXV.set(new ItemStack(this,1,14));
     }
 
     @Override
