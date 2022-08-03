@@ -3594,7 +3594,7 @@ public class GT_Loader_Machines
 				11243, "batterybuffer.16.tier.13", "Extended Mega Ultimate Battery Buffer",13,"", 16).getStackForm(1L));
 
 		CustomItemList.Battery_Buffer_4by4_MAXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
-				11245, "batterybuffer.16.tier.15", "Maximum Battery Buffer",15,"", 16).getStackForm(1L));
+				11245, "batterybuffer.16.tier.15", "Maximum Battery Buffer",14,"", 16).getStackForm(1L));
 
 		//TODO:Recipes
 
@@ -3626,7 +3626,7 @@ public class GT_Loader_Machines
 				11253, "batterybuffer.09.tier.13", "Extended Mega Ultimate Battery Buffer",13,"", 9).getStackForm(1L));
 
 		CustomItemList.Battery_Buffer_3by3_MAXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
-				11255, "batterybuffer.09.tier.15", "Maximum Battery Buffer",15,"", 9).getStackForm(1L));
+				11255, "batterybuffer.09.tier.15", "Maximum Battery Buffer",14,"", 9).getStackForm(1L));
 
 		//TODO:Recipes
 
@@ -3658,7 +3658,7 @@ public class GT_Loader_Machines
 				11263, "batterybuffer.04.tier.13", "Extended Mega Ultimate Battery Buffer",13,"", 4).getStackForm(1L));
 
 		CustomItemList.Battery_Buffer_2by2_MAXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
-				11265, "batterybuffer.04.tier.15", "Maximum Battery Buffer",15,"", 4).getStackForm(1L));
+				11265, "batterybuffer.04.tier.15", "Maximum Battery Buffer",14,"", 4).getStackForm(1L));
 
 		//TODO:Recipes
 
@@ -3690,7 +3690,7 @@ public class GT_Loader_Machines
 				11273, "batterybuffer.01.tier.13", "Extended Mega Ultimate Battery Buffer",13,"", 1).getStackForm(1L));
 
 		CustomItemList.Battery_Buffer_1by1_MAXV.set(new GT_MetaTileEntity_BasicBatteryBuffer(
-				11275, "batterybuffer.01.tier.15", "Maximum Battery Buffer",15,"", 1).getStackForm(1L));
+				11275, "batterybuffer.01.tier.15", "Maximum Battery Buffer",14,"", 1).getStackForm(1L));
 
 		//TODO:Recipes
 
@@ -4232,7 +4232,7 @@ public class GT_Loader_Machines
 		//		12053, "batteryturbocharger.16.tier.13", "Extended Mega Ultimate Turbo Charger",13,"64A in /16A out", 4).getStackForm(1L));
 
 		//CustomItemList.Battery_TurboCharger_4by4_MAXV.set(new GT_MetaTileEntity_TurboCharger(
-		//		12055, "batteryturbocharger.16.tier.15", "Maximum Turbo Charger",15,"64A in /16A out", 4).getStackForm(1L));
+		//		12055, "batteryturbocharger.16.tier.15", "Maximum Turbo Charger",14,"64A in /16A out", 4).getStackForm(1L));
 
 
 
@@ -4435,7 +4435,7 @@ public class GT_Loader_Machines
 						).getStackForm(1L)
 		);
 				CustomItemList.CircuitAssemblerMAX.set(new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-						12096, "basicmachine.circuitassembler.tier.15", "MAX Circuit Assembling Machine", 15, "Avengers, Assemble!",
+						12096, "basicmachine.circuitassembler.tier.15", "MAX Circuit Assembling Machine", 14, "Avengers, Assemble!",
 						GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes, 6, 1, 16000, 0, 1, "CircuitAssembler.png",
 						"", false, false, 0, "CIRCUITASSEMBLER",
 				null
@@ -4459,7 +4459,7 @@ public class GT_Loader_Machines
 		CustomItemList.Hatch_Input_UIV.set(new GT_MetaTileEntity_Hatch_Input(12098, "hatch.input.tier.11", "Input Hatch (UIV)",11).getStackForm(1L));
 		CustomItemList.Hatch_Input_UMV.set(new GT_MetaTileEntity_Hatch_Input(12099, "hatch.input.tier.12", "Input Hatch (UMV)",12).getStackForm(1L));
 		CustomItemList.Hatch_Input_UXV.set(new GT_MetaTileEntity_Hatch_Input(12100, "hatch.input.tier.13", "Input Hatch (UXV)",13).getStackForm(1L));
-		CustomItemList.Hatch_Input_MAX.set(new GT_MetaTileEntity_Hatch_Input(12102, "hatch.input.tier.15", "Input Hatch (MAX)",15).getStackForm(1L));
+		CustomItemList.Hatch_Input_MAX.set(new GT_MetaTileEntity_Hatch_Input(12102, "hatch.input.tier.15", "Input Hatch (MAX)",14).getStackForm(1L));
 
 
 		// ===================================================================================================
@@ -4470,7 +4470,7 @@ public class GT_Loader_Machines
 		CustomItemList.Hatch_Output_UIV.set(new GT_MetaTileEntity_Hatch_Output(12104, "hatch.output.tier.11", "Output Hatch (UIV)",11).getStackForm(1L));
 		CustomItemList.Hatch_Output_UMV.set(new GT_MetaTileEntity_Hatch_Output(12105, "hatch.output.tier.12", "Output Hatch (UMV)",12).getStackForm(1L));
 		CustomItemList.Hatch_Output_UXV.set(new GT_MetaTileEntity_Hatch_Output(12106, "hatch.output.tier.13", "Output Hatch (UXV)",13).getStackForm(1L));
-		CustomItemList.Hatch_Output_MAX.set(new GT_MetaTileEntity_Hatch_Output(12108, "hatch.output.tier.15", "Output Hatch (MAX)",15).getStackForm(1L));
+		CustomItemList.Hatch_Output_MAX.set(new GT_MetaTileEntity_Hatch_Output(12108, "hatch.output.tier.15", "Output Hatch (MAX)",14).getStackForm(1L));
 
 		ItemStack[] inHatches = {
 						CustomItemList.Hatch_Input_UEV.get(1),
@@ -4486,8 +4486,8 @@ public class GT_Loader_Machines
 						CustomItemList.Hatch_Output_UXV.get(1),
 						CustomItemList.Hatch_Output_MAX.get(1)
 		};
-		ItemStack[][] flInputs = new ItemStack[6][3];
-		ItemStack[][] flInputs2 = new ItemStack[6][3];
+		ItemStack[][] flInputs = new ItemStack[5][3];
+		ItemStack[][] flInputs2 = new ItemStack[5][3];
 		ItemStack[] tanks = {
 				GT_ModHandler.getModItem("gregtech","gt.blockmachines",1,132),
 				GT_ModHandler.getModItem("gregtech","gt.blockmachines",1,133),
@@ -4503,11 +4503,10 @@ public class GT_Loader_Machines
 				CustomItemList.Hull_UXV.get(1),
 				CustomItemList.Hull_MAXV.get(1),
 		};
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 5; i++) {
 			flInputs[i]= new ItemStack[]{hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(1)};
 			flInputs2[i]= new ItemStack[]{hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(2)};
 		}
-		//10-15 since MAX crashes., change to 16 somwhen the NEI handler is fixed and MAX is optainable
 		for (int aTier = 10; aTier < 15; aTier++) {
 			GT_Values.RA.addAssemblerRecipe(flInputs[aTier-10], GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2,(aTier-9)))), inHatches[aTier-10], 480, (int) (30 * Math.pow(4, (aTier - 1))), false);
 			GT_Values.RA.addAssemblerRecipe(flInputs2[aTier-10], GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2,(aTier-9)))), outHatches[aTier-10], 480, (int) (30 * Math.pow(4, (aTier - 1))), false);
