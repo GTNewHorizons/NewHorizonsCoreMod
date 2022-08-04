@@ -581,7 +581,6 @@ public enum ItemList
     CircuitUIV(new ModSimpleBaseItem("CircuitUIV", ModTabList.ModCircuitsTab)),
     CircuitUMV(new ModSimpleBaseItem("CircuitUMV", ModTabList.ModCircuitsTab)),
     CircuitUXV(new ModSimpleBaseItem("CircuitUXV", ModTabList.ModCircuitsTab)),
-    //CircuitOpV(new ModSimpleBaseItem("CircuitOpV", ModTabList.ModCircuitsTab)),
     CircuitMAX(new ModSimpleBaseItem("CircuitMAX", ModTabList.ModCircuitsTab)),
 
     // Do not delete this
