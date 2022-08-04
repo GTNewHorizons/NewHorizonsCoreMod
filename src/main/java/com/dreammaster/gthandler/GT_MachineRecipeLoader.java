@@ -1681,9 +1681,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                         },
                         new FluidStack[]{Materials.ExcitedDTPC.getFluid(1000)},
 
-                        new ItemStack[]{ItemList.Tesseract.get(1)},
+                        new ItemStack[]{ItemList.Tesseract.get(4)},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000/4)},
-                        40*20, 32_000_000, hypogen_heat);
+                        40*20, 32_000_000, eternal_heat);
 
             }
 
