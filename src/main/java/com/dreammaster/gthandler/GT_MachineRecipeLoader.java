@@ -1690,13 +1690,29 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
                                 GT_ModHandler.getModItem("miscutils", "itemPlateAbyssalAlloy", 24L),
                                 GT_ModHandler.getModItem("miscutils", "itemScrewBotmium", 16L),
-                                GT_ModHandler.getModItem("GoodGenerator", "huiCircuit", 1L, 3),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 1L),
                         },
-                        new FluidStack[]{Materials.ExcitedDTPC.getFluid(1000)},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(1000)},
 
                         new ItemStack[]{ItemList.Tesseract.get(4)},
-                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000/4)},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000/2)},
                         40*20, 32_000_000, hypogen_heat);
+
+                // Raw Tesseract v2
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
+                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 12L, 10106),
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 8L),
+                                GT_ModHandler.getModItem("miscutils", "itemPlateBotmium", 24L),
+                                GT_ModHandler.getModItem("miscutils", "itemScrewArcanite", 16L),
+                                GT_ModHandler.getModItem("supersolarpanel", "enderquantumcomponent", 1L),
+                        },
+                        new FluidStack[]{Materials.ExcitedDTEC.getFluid(1000)},
+
+                        new ItemStack[]{ItemList.Tesseract.get(8)},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000)},
+                        40*20, 128_000_000, eternal_heat);
 
             }
 
