@@ -26,6 +26,7 @@ import java.util.List;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
+import static gregtech.api.GregTech_API.mGTPlusPlus;
 import static gregtech.api.enums.GT_Values.*;
 
 public class GT_MachineRecipeLoader implements Runnable {
@@ -1640,6 +1641,18 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 Materials.DimensionallyTranscendentResidue.getFluid(1000L)
                         },
                         1500, 1_600_000_000, eternal_heat);
+
+                // Energised tesseract
+                if (mGTPlusPlus) {
+                    GT_Values.RA.addLaserEngraverRecipe(
+                            new ItemStack[]{ItemList.Tesseract.get(1), GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("miscutils", "MU-metaitem.01:>", 1, 32105))},
+                            new FluidStack[]{GT_Values.NF},
+
+                            new ItemStack[]{ItemList.EnergisedTesseract.get(1)},
+                            new FluidStack[]{Materials.ExcitedDTEC.getFluid(100L)},
+                            30 * 20, 32_000_000, true
+                    );
+                }
 
                 // SpaceTime v1
                 GT_Values.RA.addPlasmaForgeRecipe(
