@@ -26,6 +26,7 @@ import java.util.List;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
+import static gregtech.api.GregTech_API.mGTPlusPlus;
 import static gregtech.api.enums.GT_Values.*;
 
 public class GT_MachineRecipeLoader implements Runnable {
@@ -1641,6 +1642,18 @@ public class GT_MachineRecipeLoader implements Runnable {
                         },
                         1500, 1_600_000_000, eternal_heat);
 
+                // Energised tesseract
+                if (mGTPlusPlus) {
+                    GT_Values.RA.addLaserEngraverRecipe(
+                            new ItemStack[]{ItemList.Tesseract.get(1), GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("miscutils", "MU-metaitem.01:>", 1, 32105))},
+                            new FluidStack[]{GT_Values.NF},
+
+                            new ItemStack[]{ItemList.EnergisedTesseract.get(1)},
+                            new FluidStack[]{Materials.ExcitedDTEC.getFluid(100L)},
+                            30 * 20, 32_000_000, true
+                    );
+                }
+
                 // SpaceTime v1
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {ItemList.EnergisedTesseract.get(1)},
@@ -1677,13 +1690,29 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
                                 GT_ModHandler.getModItem("miscutils", "itemPlateAbyssalAlloy", 24L),
                                 GT_ModHandler.getModItem("miscutils", "itemScrewBotmium", 16L),
-                                GT_ModHandler.getModItem("GoodGenerator", "huiCircuit", 1L, 3),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 1L),
                         },
-                        new FluidStack[]{Materials.ExcitedDTPC.getFluid(1000)},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(1000)},
 
-                        new ItemStack[]{ItemList.Tesseract.get(1)},
-                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000/4)},
+                        new ItemStack[]{ItemList.Tesseract.get(4)},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000/2)},
                         40*20, 32_000_000, hypogen_heat);
+
+                // Raw Tesseract v2
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
+                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 12L, 10106),
+                                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 8L),
+                                GT_ModHandler.getModItem("miscutils", "itemPlateBotmium", 24L),
+                                GT_ModHandler.getModItem("miscutils", "itemScrewArcanite", 16L),
+                                GT_ModHandler.getModItem("supersolarpanel", "enderquantumcomponent", 1L),
+                        },
+                        new FluidStack[]{Materials.ExcitedDTEC.getFluid(1000)},
+
+                        new ItemStack[]{ItemList.Tesseract.get(8)},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000)},
+                        40*20, 128_000_000, eternal_heat);
 
             }
 
