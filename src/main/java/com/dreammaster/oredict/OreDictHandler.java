@@ -160,7 +160,9 @@ public class OreDictHandler {
         OreDictionary.registerOre("foodSalt", ItemList.EdibleSalt.getIS());
 
         // Olivine = Peridot
-        OreDictionary.getOres("blockOlivine").forEach(stack -> OreDictionary.registerOre("blockPeridot", stack));
+        for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {
+            OreDictionary.registerOre("blockPeridot", stack);
+        }
     }
 
     public static void register_all() {
