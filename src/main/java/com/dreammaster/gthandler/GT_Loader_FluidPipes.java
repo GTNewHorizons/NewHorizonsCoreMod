@@ -106,7 +106,7 @@ public class GT_Loader_FluidPipes
 		generateFluidPipes(Materials.WroughtIron, Materials.WroughtIron.mName, 5260, 180, 2250, true);
 		generateFluidMultiPipes(Materials.WroughtIron, Materials.WroughtIron.mName, 5265, 180, 2250, true);
 
-		generateFluidPipes(GT_CoreModSupport.RadoxPolymer, GT_CoreModSupport.RadoxPolymer.mName, 5750, 5000, 1500, true);
+		generateFluidPipes(GT_CoreModSupport.RadoxPolymer, GT_CoreModSupport.RadoxPolymer.mName, 5760, 5000, 1500, true);
 		// 5277 - 5588 Free, as of GT 5.09.32.xx
 	    // 5589+ Item Pipes Tin
 	}
