@@ -282,7 +282,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.AdsorptionFilterDirty.get(1L), GT_Utility.getIntegratedCircuit(2), GT_Values.NF, new FluidStack(FluidRegistry.getFluid("pollution"), 250), CustomItemList.AdsorptionFilterCasing.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 8L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 8L), GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{9000, 10000, 10000}, 1200, 480);
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.AdsorptionFilterDirty.get(1L), GT_Utility.getIntegratedCircuit(3), GT_Values.NF, new FluidStack(FluidRegistry.getFluid("pollution"), 500), CustomItemList.AdsorptionFilterCasing.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 12L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 12L), GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000, 10000, 10000}, 1200, 1920);
         GT_Values.RA.addCentrifugeRecipe(CustomItemList.AdsorptionFilterDirty.get(1L), GT_Utility.getIntegratedCircuit(4), GT_Values.NF, new FluidStack(FluidRegistry.getFluid("pollution"), 1000), CustomItemList.AdsorptionFilterCasing.get(1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 16L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 16L), GT_Values.NI, GT_Values.NI, GT_Values.NI, new int[]{10000, 10000, 10000}, 1200, 7680);
-        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIVBase, 30L), GT_OreDictUnificator.get(OrePrefixes.pipeTiny, GT_CoreModSupport.RadoxPolymer, 20L), ItemList.Electric_Pump_UIV.get(1L), GT_Utility.getIntegratedCircuit(9)}, Materials.Helium.getGas(34000L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 30L), 3200, 31457280);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIVBase, 30L), GT_OreDictUnificator.get(OrePrefixes.pipeTiny, GT_CoreModSupport.RadoxPolymer, 20L), ItemList.Electric_Pump_UIV.get(1L), GT_Utility.getIntegratedCircuit(9)}, Materials.Helium.getGas(34000), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 30L), 3200, 31457280);
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Platinum, 6L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 4L), CustomItemList.NanoBoard.get(1L), 400, 1920);
         //GT_Values.RA.addAssemblerRecipe(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 8L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 8L), CustomItemList.QuantumBoard.get(1L), 200, 7680);
 
@@ -3110,6 +3110,22 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUIVBase, 25L),
                 10*20, 31457280);
+
+        // UMV Superconductor dust recipe.
+        if(Loader.isModLoaded("bartworks")) {
+            GT_Values.RA.addMixerRecipe(
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SpaceTime, 6L),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, getBartWorksMaterialByIGNName("Orundum"), 3L),
+                    GT_ModHandler.getModItem("miscutils", "itemDustHypogen", 11L),
+                    GT_ModHandler.getModItem("miscutils", "itemDustTitansteel", 5L),
+                    GT_ModHandler.getModItem("miscutils", "itemDustDragonblood", 2L),
+                    GT_Utility.getIntegratedCircuit(2),
+                    Materials.Oxygen.getPlasma(144L),
+                    GT_Values.NF,
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUMVBase, 27L),
+                    10*20, 125829120);
+
+        }
 
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ardite, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 2L), 400, 8);
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 3L), ItemList.IC2_Resin.get(1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, CustomItemList.MicaBasedPulp.get(4L), 400, 8);
