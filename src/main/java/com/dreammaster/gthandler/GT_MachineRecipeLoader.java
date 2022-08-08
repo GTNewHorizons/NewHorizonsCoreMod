@@ -3102,12 +3102,12 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust,GT_CoreModSupport.RadoxPolymer, 4L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.TranscendentMetal, 10L),
                 GT_ModHandler.getModItem("miscutils", "itemDustRhugnor", 6L),
-                GT_ModHandler.getModItem("miscutils", "itemDustChromaticGlass", 6L),
+                GT_ModHandler.getModItem("miscutils", "itemDustChromaticGlass", 5L),
                 GT_Utility.getIntegratedCircuit(2),
                 GT_Values.NI,
                 Materials.Bismuth.getPlasma(144L),
                 GT_Values.NF,
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUIVBase, 26L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUIVBase, 25L),
                 10*20, 31457280);
 
         GT_Values.RA.addMixerRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ardite, 1L), GT_Values.NI, GT_Values.NI, GT_Values.NI, GT_Utility.getIntegratedCircuit(2), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manyullyn, 2L), 400, 8);
