@@ -71,18 +71,22 @@ public class ScriptAvaritiaAddons implements IScriptLoader{
             Block egg = GameRegistry.findBlock("witchery", "infinityegg");
 
             ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(new ItemStack(egg, 1, 0),
-                    "   NNN   ",
-                    "  NNNNN  ",
-                    "  NNNNN  ",
-                    " NNNINNN ",
-                    "NNNIIINNN",
-                    "NNIIEIINN",
-                    "NNNIIINNN",
-                    " NNNINNN ",
-                    "  NNNNN  ",
-                    'N', "ingotCosmicNeutronium",
-                    'E', new ItemStack(Blocks.dragon_egg),
-                    'I', "ingotInfinity");
+                    " NNNNNNN ",
+                    "NCIIAIICN",
+                    "NIIIDIIIN",
+                    "NIIDHDIIN",
+                    "NAIHEHIAN",
+                    "NIIDHDIIN",
+                    "NIIIDIIIN",
+                    "NCIIAIICN",
+                    " NNNNNNN ",
+                    'D', getModItem("witchery", "ingredient", 1, 23),
+                    'N', "plateCosmicNeutronium",
+                    'H', new ItemStack(Blocks.dragon_egg),
+                    'E', getModItem("witchery", "stew", 1),
+                    'C', getModItem("witchery", "chalkinfernal", 1),
+                    'A', getModItem("witchery", "chalkotherwhere", 1),
+                    'I', "plateInfinity");
         }
     }
 }
