@@ -1881,10 +1881,10 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long base_quantity = 504L;
                 long tier_up_multiplier = 2L;
 
-                int base_time = 8847;
+                int base_time = 7431;
 
                 long tier_1_quantity = 144L * base_quantity;
-                long fuel_quantity_1 = 41_423;
+                long fuel_quantity_1 = 40_477;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
@@ -1899,10 +1899,10 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new FluidStack[]{
                                 Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2),
                                 Materials.SuperconductorUEVBase.getMolten(tier_1_quantity)},
-                        base_time / 2, 168_138_442, hypogen_heat);
+                        base_time / 2, 195_457_244, hypogen_heat);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-                long fuel_quantity_2 = 18_715;
+                long fuel_quantity_2 = 18_274;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
@@ -1917,10 +1917,84 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new FluidStack[]{
                                 Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2),
                                 Materials.SuperconductorUEVBase.getMolten(tier_2_quantity)},
-                        base_time / 4, 336_276_883, eternal_heat);
+                        base_time / 4, 390_914_488, eternal_heat);
 
             }
 
+            // UIV Superconductors.
+
+            if (Loader.isModLoaded("miscutils")) {
+
+                long base_quantity = 250L;
+                long tier_up_multiplier = 2L;
+
+                int base_time = 7431;
+
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 77_448;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                GT_CoreModSupport.RadoxPolymer.getMolten(4L * tier_1_quantity / 25),
+                                Materials.TranscendentMetal.getMolten(10L * tier_1_quantity / 25),
+                                new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_1_quantity * 6 / 25),
+                                new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_1_quantity * 5 / 25),
+                                Materials.Bismuth.getPlasma(tier_1_quantity / 25),
+                                Materials.ExcitedDTRC.getFluid(fuel_quantity_1)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2),
+                                Materials.SuperconductorUIVBase.getMolten(tier_1_quantity)},
+                        base_time / 2, 374_265_584, hypogen_heat);
+
+                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_2 = 34_992;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                GT_CoreModSupport.RadoxPolymer.getMolten(4L * tier_2_quantity / 25),
+                                Materials.TranscendentMetal.getMolten(10L * tier_2_quantity / 25),
+                                new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_2_quantity * 6 / 25),
+                                new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_2_quantity * 5 / 25),
+                                Materials.Bismuth.getPlasma(tier_2_quantity / 25),
+                                Materials.ExcitedDTEC.getFluid(fuel_quantity_2)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2),
+                                Materials.SuperconductorUIVBase.getMolten(tier_2_quantity)},
+                        base_time / 4, 748_531_167, eternal_heat);
+
+            }
+
+            // UMV Superconductors.
+
+            if (Loader.isModLoaded("GoodGenerator")) {
+
+                long base_quantity = 243L;
+
+                int base_time = 3715;
+
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 65_536;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.SpaceTime.getMolten(6L * tier_1_quantity / 27),
+                                new FluidStack(FluidRegistry.getFluid("molten.orundum"), (int) tier_1_quantity * 3 / 27),
+                                new FluidStack(FluidRegistry.getFluid("molten.hypogen"), (int) tier_1_quantity * 11 / 27),
+                                new FluidStack(FluidRegistry.getFluid("molten.titansteel"), (int) tier_1_quantity * 5 / 27),
+                                new FluidStack(FluidRegistry.getFluid("molten.dragonblood"), (int) tier_1_quantity * 2 / 27),
+                                Materials.Oxygen.getPlasma(tier_1_quantity / 27),
+                                Materials.ExcitedDTEC.getFluid(fuel_quantity_1)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1),
+                                Materials.SuperconductorUMVBase.getMolten(tier_1_quantity)},
+                        base_time, 1_455_144_621, eternal_heat);
+            }
         }
     }
 
