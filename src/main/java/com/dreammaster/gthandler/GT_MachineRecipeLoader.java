@@ -1954,6 +1954,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[]{GT_Values.NI},
                         new FluidStack[]{
                                 GT_CoreModSupport.RadoxPolymer.getMolten(4L * tier_2_quantity / 25),
+                                Materials.TranscendentMetal.getMolten(10L * tier_2_quantity / 25),
                                 new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_2_quantity * 6 / 25),
                                 new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_2_quantity * 5 / 25),
                                 Materials.Bismuth.getPlasma(tier_2_quantity / 25),
