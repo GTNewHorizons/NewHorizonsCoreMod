@@ -1968,6 +1968,33 @@ public class GT_MachineRecipeLoader implements Runnable {
 
             }
 
+            // UMV Superconductors.
+
+            if (Loader.isModLoaded("GoodGenerator")) {
+
+                long base_quantity = 252L;
+
+                int base_time = 3715;
+
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 67_930;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.SpaceTime.getMolten(6L * tier_1_quantity / 27),
+                                new FluidStack(FluidRegistry.getFluid("molten.orundum"), (int) tier_1_quantity * 3 / 27),
+                                new FluidStack(FluidRegistry.getFluid("molten.hypogen"), (int) tier_1_quantity * 11 / 27),
+                                new FluidStack(FluidRegistry.getFluid("molten.titansteel"), (int) tier_1_quantity * 5 / 27),
+                                new FluidStack(FluidRegistry.getFluid("molten.dragonblood"), (int) tier_1_quantity * 2 / 27),
+                                Materials.Oxygen.getPlasma(tier_1_quantity / 27),
+                                Materials.ExcitedDTEC.getFluid(fuel_quantity_1)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1),
+                                Materials.SuperconductorUMVBase.getMolten(tier_1_quantity)},
+                        base_time, 1_509_038_866, eternal_heat);
+            }
         }
     }
 
