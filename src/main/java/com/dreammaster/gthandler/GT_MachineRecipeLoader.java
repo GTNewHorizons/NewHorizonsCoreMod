@@ -1921,6 +1921,52 @@ public class GT_MachineRecipeLoader implements Runnable {
 
             }
 
+            // UIV Superconductors.
+
+            if (Loader.isModLoaded("miscutils")) {
+
+                long base_quantity = 252L;
+                long tier_up_multiplier = 2L;
+
+                int base_time = 7431;
+
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 78_067;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                GT_CoreModSupport.RadoxPolymer.getMolten(4L * tier_1_quantity / 25),
+                                Materials.TranscendentMetal.getMolten(10L * tier_1_quantity / 25),
+                                new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_1_quantity * 6 / 25),
+                                new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_1_quantity * 5 / 25),
+                                Materials.Bismuth.getPlasma(tier_1_quantity / 25),
+                                Materials.ExcitedDTRC.getFluid(fuel_quantity_1)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2),
+                                Materials.SuperconductorUIVBase.getMolten(tier_1_quantity)},
+                        base_time / 2, 377_259_708, hypogen_heat);
+
+                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_2 = 35_272;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                GT_CoreModSupport.RadoxPolymer.getMolten(4L * tier_2_quantity / 25),
+                                new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_2_quantity * 6 / 25),
+                                new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_2_quantity * 5 / 25),
+                                Materials.Bismuth.getPlasma(tier_2_quantity / 25),
+                                Materials.ExcitedDTEC.getFluid(fuel_quantity_2)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2),
+                                Materials.SuperconductorUIVBase.getMolten(tier_2_quantity)},
+                        base_time / 4, 754_519_417, eternal_heat);
+
+            }
+
         }
     }
 
