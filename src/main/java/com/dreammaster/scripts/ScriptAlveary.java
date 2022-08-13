@@ -27,7 +27,7 @@ public class ScriptAlveary implements IScriptLoader{
 
     @Override
     public void loadRecipes() {
-        addShapedRecipe(getModItem("gregtech", "gt.blockmachines", 1, 9399), new Object[]{
+        addShapedRecipe(ItemList.Machine_IndustrialApiary.get(1), new Object[]{
                 Alveary_1, Chipset_1, Alveary_1,
                 ItemList.Robot_Arm_HV.get(1), ItemList.FR_Casing_Sturdy.get(1),  ItemList.Robot_Arm_HV.get(1),
                 Alveary_3, Alveary_7, Alveary_3});
