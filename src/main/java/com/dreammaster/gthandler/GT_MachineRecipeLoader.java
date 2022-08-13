@@ -4650,7 +4650,9 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         }
 
+
 		// High Tier Soldering
+		Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null ? FluidRegistry.getFluid("molten.indalloy140") : FluidRegistry.getFluid("molten.solderingalloy");
 		
 		//Crystallized Circuits
         GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass_Elite.get(1L), ItemList.Circuit_Chip_CrystalCPU.get(1L), ItemList.Circuit_Chip_NanoCPU.get(2L), ItemList.Circuit_Parts_CapacitorASMD.get(6), ItemList.Circuit_Parts_TransistorASMD.get(6), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 8)}, new FluidStack(solderIndalloy, 72), ItemList.Circuit_Crystalprocessor.get(1L), 100, 9600, true);
@@ -4802,8 +4804,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 Materials.UUMatter.getFluid(500L),
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000)
         }, ItemList.Circuit_Chip_BioCPU.get(1L), 600, 600000);
-
-        Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null ? FluidRegistry.getFluid("molten.indalloy140") : FluidRegistry.getFluid("molten.solderingalloy");
 
         GT_Values.RA.addAssemblylineRecipe(ItemList.Energy_LapotronicOrb.get(1L), 288000, new Object[]{
                 ItemList.Circuit_Board_Multifiberglass.get(1L),
