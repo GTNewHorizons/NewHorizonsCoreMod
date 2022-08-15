@@ -1,20 +1,16 @@
 package com.dreammaster.scripts;
 import com.dreammaster.gthandler.CustomItemList;
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
-import scala.actors.threadpool.Arrays;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -22,27 +18,6 @@ import com.glodblock.github.common.Config;
 import com.glodblock.github.common.item.ItemBasicFluidStorageCell;
 import com.glodblock.github.common.storage.CellType;
 import com.glodblock.github.util.ModAndClassUtil;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
-
-import com.glodblock.github.common.Config;
-import com.glodblock.github.common.item.ItemBasicFluidStorageCell;
-import com.glodblock.github.common.storage.CellType;
-import com.glodblock.github.util.ModAndClassUtil;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
-
-import static com.glodblock.github.loader.ItemAndBlockHolder.*;
 
 import static com.glodblock.github.loader.ItemAndBlockHolder.*;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -66,7 +41,6 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2_INTERFACE = GameRegistry.findItemStack("appliedenergistics2", "tile.BlockInterface", 1);
         final ItemStack AE2_PROCESS_ENG = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 24);
         final ItemStack AE2_STORAGE_BUS = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiPart"), 1, 220);
-        final ItemStack AE2_CONDENSER = GameRegistry.findItemStack("appliedenergistics2", "tile.BlockCondenser", 1);
         final ItemStack AE2_GLASS_CABLE = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiPart"), 1, 16);
         final ItemStack AE2_PROCESS_CAL = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 23);
         final ItemStack AE2_WORK_BENCH = GameRegistry.findItemStack("appliedenergistics2", "tile.BlockCellWorkbench", 1);
@@ -76,10 +50,8 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2_QUARTZ_GLASS = GameRegistry.findItemStack("appliedenergistics2", "tile.BlockQuartzGlass", 1);
         final ItemStack AE2_LAMP_GLASS = GameRegistry.findItemStack("appliedenergistics2", "tile.BlockQuartzLamp", 1);
         final ItemStack AE2_CELL_HOUSING = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 39);
-        final ItemStack AE2_CELL_1K = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 35);
         final ItemStack AE2_CORE_ANN = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 44);
         final ItemStack AE2_CORE_FOM = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 43);
-        final ItemStack PISTON = new ItemStack(Blocks.piston, 1);
         final ItemStack AE2_BLANK_PATTERN = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 52);
         final ItemStack BUCKET = new ItemStack(Items.bucket, 1);
         final ItemStack IRON_BAR = new ItemStack(Blocks.iron_bars, 1);
@@ -89,7 +61,6 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack CERTUS_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
         final ItemStack LAPIS_SCREW = GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
         final ItemStack FLUID_CORE_1 = getModItem("dreamcraft", "item.EngineeringProcessorFluidDiamondCore", 1);
-        final ItemStack FLUID_CORE_2 = getModItem("dreamcraft", "item.EngineeringProcessorFluidEmeraldCore", 1);
         //registering cell
         if (Config.fluidCells) {
             OreDictionary.registerOre("anyCertusCrystal", AE2_PURE_CERTUS);
@@ -105,8 +76,16 @@ public class ScriptAE2FC implements IScriptLoader {
                 GameRegistry.addRecipe(new ShapelessOreRecipe(cell, AE2_CELL_HOUSING, cell.getComponent()));
             }
         }
+        //recursive components for those who want to do this weird stuff
+        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell1kPart.stack(1), "DCD", "CEC", "DCD", 'D', "dyeBlue", 'C', "anyCertusCrystal", 'E', AE2_PROCESS_ENG));
+        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell4kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell1kPart.stack(1), 'P', AE2_PROCESS_CAL, 'G', AE2_QUARTZ_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell16kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell4kPart.stack(1), 'P', AE2_PROCESS_LOG, 'G', AE2_QUARTZ_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell64kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell16kPart.stack(1), 'P', AE2_PROCESS_ENG, 'G', AE2_QUARTZ_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell256kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell64kPart.stack(1), 'P', AE2_PROCESS_CAL, 'G', AE2_LAMP_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell1024kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell256kPart.stack(1), 'P', AE2_PROCESS_LOG, 'G', AE2_LAMP_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell4096kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell1024kPart.stack(1), 'P', AE2_PROCESS_ENG, 'G', AE2_LAMP_GLASS));
 
-        //Big Long But: Components.
+        //Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
         GT_Values.RA.addCircuitAssemblerRecipe(
                 new ItemStack[]{
