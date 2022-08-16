@@ -63,20 +63,19 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack LAPIS_SCREW = GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
         final ItemStack FLUID_CORE_1 = getModItem("dreamcraft", "item.EngineeringProcessorFluidDiamondCore", 1);
         //registering cell
-        if (Config.fluidCells) {
-            OreDictionary.registerOre("anyCertusCrystal", AE2_PURE_CERTUS);
-            for (ItemStack it : OreDictionary.getOres("crystalCertusQuartz"))
-                OreDictionary.registerOre("anyCertusCrystal", it);
+        OreDictionary.registerOre("anyCertusCrystal", AE2_PURE_CERTUS);
+        for (ItemStack it : OreDictionary.getOres("crystalCertusQuartz"))
+            OreDictionary.registerOre("anyCertusCrystal", it);
 
-            ItemBasicFluidStorageCell[] cells = new ItemBasicFluidStorageCell[]{
-                    CELL1K, CELL4K, CELL16K, CELL64K, CELL256K, CELL1024K, CELL4096K
-            };
+        ItemBasicFluidStorageCell[] cells = new ItemBasicFluidStorageCell[]{
+                CELL1K, CELL4K, CELL16K, CELL64K, CELL256K, CELL1024K, CELL4096K
+        };
 
-            for (ItemBasicFluidStorageCell cell : cells) {
-                GameRegistry.addRecipe(new ShapedOreRecipe(cell, "GDG", "DCD", "III", 'D', "dustRedstone", 'G', AE2_QUARTZ_GLASS, 'C', cell.getComponent(), 'I', "ingotIron"));
-                GameRegistry.addRecipe(new ShapelessOreRecipe(cell, AE2_CELL_HOUSING, cell.getComponent()));
-            }
+        for (ItemBasicFluidStorageCell cell : cells) {
+            GameRegistry.addRecipe(new ShapedOreRecipe(cell, "GDG", "DCD", "III", 'D', "dustRedstone", 'G', AE2_QUARTZ_GLASS, 'C', cell.getComponent(), 'I', "ingotIron"));
+            GameRegistry.addRecipe(new ShapelessOreRecipe(cell, AE2_CELL_HOUSING, cell.getComponent()));
         }
+
         //recursive components for those who want to do this weird stuff
         GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell1kPart.stack(1), "DCD", "CEC", "DCD", 'D', "dyeBlue", 'C', "anyCertusCrystal", 'E', AE2_PROCESS_ENG));
         GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell4kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell1kPart.stack(1), 'P', AE2_PROCESS_CAL, 'G', AE2_QUARTZ_GLASS));
@@ -449,7 +448,6 @@ public class ScriptAE2FC implements IScriptLoader {
                 ItemList.Conveyor_Module_LuV.get(1), AE2_CORE_ANN, ItemList.Conveyor_Module_LuV.get(1),
                 ItemList.Electric_Motor_LuV.get(1), ItemList.Robot_Arm_LuV.get(1), ItemList.Electric_Motor_LuV.get(1)});
 
-        if (Config.fluidIOBus) {
             //Fluid Export Bus
             addShapedRecipe(FLUID_EXPORT_BUS.stack(), new Object[]{
                     IRON_PLATE, LAPIS_PLATE, IRON_PLATE,
@@ -460,7 +458,7 @@ public class ScriptAE2FC implements IScriptLoader {
                     IRON_PLATE, LAPIS_PLATE, IRON_PLATE,
                     LAPIS_SCREW, AE2_CORE_ANN, LAPIS_SCREW,
                     CERTUS_PLATE, ItemList.Electric_Piston_LV.get(1), CERTUS_PLATE});
-        }
+        
         //OC Component
         if (Loader.isModLoaded("OpenComputers")) {
             ItemStack CHIP_T1 = getModItem("OpenComputers", "item", 1, 24);
