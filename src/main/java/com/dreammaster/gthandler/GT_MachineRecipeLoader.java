@@ -3,11 +3,13 @@ package com.dreammaster.gthandler;
 import cpw.mods.fml.common.Loader;
 import forestry.api.recipes.IFermenterRecipe;
 import gregtech.api.enums.*;
+import gregtech.api.objects.GT_ItemStack;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Disassembler;
 import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.core.material.ELEMENT;
 import ic2.core.Ic2Items;
@@ -1425,7 +1427,38 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Manyullyn, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Manyullyn, 1L), 300, 2);
         GT_Values.RA.addCompressorRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L), GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L), 300, 2);
+        disassemblerBlacklist();
         this.run2();
+    }
+
+    private void disassemblerBlacklist() {
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Automation_ChestBuffer_UEV.get(1L)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Automation_ChestBuffer_UIV.get(1L)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Automation_ChestBuffer_UMV.get(1L)));
+
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerMAX.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerUEV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerUIV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerUMV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerUXV.get(1)));
+
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UEV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UIV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UMV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UXV.get(1)));
+
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UEV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UIV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UMV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UXV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_MAXV.get(1)));
+
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_UEV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_UIV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_UMV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_UXV.get(1)));
+        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_MAXV.get(1)));
+
     }
 
     private void makePlasmaForgeRecipes_DTPF() {
@@ -1713,6 +1746,15 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[]{ItemList.Tesseract.get(8)},
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000)},
                         40*20, 128_000_000, eternal_heat);
+
+
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
+                        new FluidStack[]{Materials.ExcitedDTCC.getFluid(4000)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000 / 8), Materials.Infinity.getMolten(144)},
+                        20, 32_000_000, awakened_heat);
 
             }
 
