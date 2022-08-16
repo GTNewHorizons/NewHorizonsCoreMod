@@ -12,8 +12,8 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import com.glodblock.github.common.storage.CellType;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -47,6 +47,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2_CORE_ANN = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 44);
         final ItemStack AE2_CORE_FOM = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 43);
         final ItemStack AE2_BLANK_PATTERN = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 52);
+        final ItemStack AE2_PURE_CERTUS = new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 10);
         final ItemStack BUCKET = new ItemStack(Items.bucket, 1);
         final ItemStack IRON_BAR = new ItemStack(Blocks.iron_bars, 1);
         final ItemStack IRON_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L);
@@ -93,15 +94,18 @@ public class ScriptAE2FC implements IScriptLoader {
             GameRegistry.addRecipe(new ShapedOreRecipe(cells[i], "GDG", "DCD", "III", 'D', "dustRedstone", 'G', AE2_QUARTZ_GLASS, 'C', components[i], 'I', "ingotIron"));
         }
 
+        OreDictionary.registerOre("anyCertusCrystal", AE2_PURE_CERTUS);
+        for (ItemStack it : OreDictionary.getOres("crystalCertusQuartz"))
+            OreDictionary.registerOre("anyCertusCrystal", it);
 
         //recursive components for those who want to do this weird stuff
-        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell1kPart.stack(1), "DCD", "CEC", "DCD", 'D', "dyeBlue", 'C', "anyCertusCrystal", 'E', AE2_PROCESS_ENG));
-        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell4kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell1kPart.stack(1), 'P', AE2_PROCESS_CAL, 'G', AE2_QUARTZ_GLASS));
-        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell16kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell4kPart.stack(1), 'P', AE2_PROCESS_LOG, 'G', AE2_QUARTZ_GLASS));
-        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell64kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell16kPart.stack(1), 'P', AE2_PROCESS_ENG, 'G', AE2_QUARTZ_GLASS));
-        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell256kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell64kPart.stack(1), 'P', AE2_PROCESS_CAL, 'G', AE2_LAMP_GLASS));
-        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell1024kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell256kPart.stack(1), 'P', AE2_PROCESS_LOG, 'G', AE2_LAMP_GLASS));
-        GameRegistry.addRecipe(new ShapedOreRecipe(CellType.Cell4096kPart.stack(1), "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', CellType.Cell1024kPart.stack(1), 'P', AE2_PROCESS_ENG, 'G', AE2_LAMP_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_1, "DCD", "CEC", "DCD", 'D', "dyeBlue", 'C', "anyCertusCrystal", 'E', AE2_PROCESS_ENG));
+        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_4, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_1, 'P', AE2_PROCESS_CAL, 'G', AE2_QUARTZ_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_16, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_4, 'P', AE2_PROCESS_LOG, 'G', AE2_QUARTZ_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_64, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_16, 'P', AE2_PROCESS_ENG, 'G', AE2_QUARTZ_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_256, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_64, 'P', AE2_PROCESS_CAL, 'G', AE2_LAMP_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_1024, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_256, 'P', AE2_PROCESS_LOG, 'G', AE2_LAMP_GLASS));
+        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_4096, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_1024, 'P', AE2_PROCESS_ENG, 'G', AE2_LAMP_GLASS));
 
         //Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
@@ -114,7 +118,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Lead.getMolten(288),
-                CellType.Cell1kPart.stack(1),
+                COMPONENT_1,
                 200,
                 30,
                 false
@@ -129,7 +133,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Tin.getMolten(144),
-                CellType.Cell1kPart.stack(1),
+                COMPONENT_1,
                 200,
                 30,
                 false
@@ -144,7 +148,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.SolderingAlloy.getMolten(72),
-                CellType.Cell1kPart.stack(1),
+                COMPONENT_1,
                 200,
                 30,
                 false
@@ -160,7 +164,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Lead.getMolten(288),
-                CellType.Cell4kPart.stack(1),
+                COMPONENT_4,
                 200,
                 30,
                 true
@@ -175,7 +179,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Tin.getMolten(144),
-                CellType.Cell4kPart.stack(1),
+                COMPONENT_4,
                 200,
                 30,
                 true
@@ -190,7 +194,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.SolderingAlloy.getMolten(72),
-                CellType.Cell4kPart.stack(1),
+                COMPONENT_4,
                 200,
                 30,
                 true
@@ -206,7 +210,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Lead.getMolten(288),
-                CellType.Cell16kPart.stack(1),
+                COMPONENT_16,
                 200,
                 120,
                 true
@@ -221,7 +225,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Tin.getMolten(144),
-                CellType.Cell16kPart.stack(1),
+                COMPONENT_16,
                 200,
                 120,
                 true
@@ -236,7 +240,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.SolderingAlloy.getMolten(72),
-                CellType.Cell16kPart.stack(1),
+                COMPONENT_16,
                 200,
                 120,
                 true
@@ -252,7 +256,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Lead.getMolten(288),
-                CellType.Cell64kPart.stack(1),
+                COMPONENT_64,
                 200,
                 480,
                 true
@@ -267,7 +271,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Tin.getMolten(144),
-                CellType.Cell64kPart.stack(1),
+                COMPONENT_64,
                 200,
                 480,
                 true
@@ -282,7 +286,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.SolderingAlloy.getMolten(72),
-                CellType.Cell64kPart.stack(1),
+                COMPONENT_64,
                 200,
                 480,
                 true
@@ -297,7 +301,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Lead.getMolten(288),
-                CellType.Cell256kPart.stack(1),
+                COMPONENT_256,
                 200,
                 1920,
                 true
@@ -312,7 +316,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Tin.getMolten(144),
-                CellType.Cell256kPart.stack(1),
+                COMPONENT_256,
                 200,
                 1920,
                 true
@@ -327,7 +331,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.SolderingAlloy.getMolten(72),
-                CellType.Cell256kPart.stack(1),
+                COMPONENT_256,
                 200,
                 1920,
                 true
@@ -343,7 +347,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Lead.getMolten(288),
-                CellType.Cell1024kPart.stack(1),
+                COMPONENT_1024,
                 200,
                 7680,
                 true
@@ -358,7 +362,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Tin.getMolten(144),
-                CellType.Cell1024kPart.stack(1),
+                COMPONENT_1024,
                 200,
                 7680,
                 true
@@ -373,7 +377,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.SolderingAlloy.getMolten(72),
-                CellType.Cell1024kPart.stack(1),
+                COMPONENT_1024,
                 200,
                 7680,
                 true
@@ -389,7 +393,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Lead.getMolten(288),
-                CellType.Cell4096kPart.stack(1),
+                COMPONENT_4096,
                 200,
                 30720,
                 true
@@ -404,7 +408,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.Tin.getMolten(144),
-                CellType.Cell4096kPart.stack(1),
+                COMPONENT_4096,
                 200,
                 30720,
                 true
@@ -419,7 +423,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.SolderingAlloy.getMolten(72),
-                CellType.Cell4096kPart.stack(1),
+                COMPONENT_4096,
                 200,
                 30720,
                 true
