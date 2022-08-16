@@ -183,23 +183,23 @@ public class BacteriaRegistry {
         );
 
         GT_Values.RA.addDistillationTowerRecipe(
-                RawRadox.getFluid(1000),
+                RawRadox.getFluid(5000),
                 new FluidStack[]{
-                        OilHeavy.getFluid(200),
-                        Oil.getFluid(100),
-                        Creosote.getFluid(250),
-                        Water.getFluid(280),
-                        FluidList.FermentedBacterialSludge.getFluidStack(10),
-                        FermentedBiomass.getFluid(10),
-                        RadoxSuperHeavy.getFluid(10),
-                        RadoxHeavy.getFluid(10),
-                        DelutedXenoxene.getFluid(10),
-                        RadoxLight.getGas(10),
-                        RadoxSuperLight.getGas(10),
+                        OilHeavy.getFluid(600),
+                        Oil.getFluid(300),
+                        Creosote.getFluid(1000),
+                        Water.getFluid(1400),
+                        FluidList.FermentedBacterialSludge.getFluidStack(50),
+                        FermentedBiomass.getFluid(50),
+                        RadoxSuperHeavy.getFluid(100),
+                        RadoxHeavy.getFluid(150),
+                        DelutedXenoxene.getFluid(50),
+                        RadoxLight.getGas(300),
+                        RadoxSuperLight.getGas(500),
                 },
-                Ash.getDust(1),
-                600,
-                BW_Util.getMachineVoltageFromTier(8)
+                Ash.getDust(5),
+                800,
+                BW_Util.getMachineVoltageFromTier(9)
         );
 
         GT_Values.RA.addCrackingRecipe(
@@ -258,7 +258,7 @@ public class BacteriaRegistry {
                         new GT_FluidStack(RadoxPolymer.mGas, 4320)
                 },
                 (ItemStack[])null,
-                800, BW_Util.getMachineVoltageFromTier(1)
+                600, BW_Util.getMachineVoltageFromTier(8)
         );
 
         GT_Values.RA.addVacuumFreezerRecipe(
@@ -286,9 +286,9 @@ public class BacteriaRegistry {
         addBacterialVatRecipe(
                 new ItemStack[]{AntimonyTrioxide.getDust(16), Osmium.getDust(16)},
                 CultureSet.get("CombinedBac"),
-                new FluidStack[]{Oil.getFluid(1)},
-                new FluidStack[]{Xenoxene.getFluid(1)},
-            3600,BW_Util.getMachineVoltageFromTier(8), Materials.NaquadahEnriched,8,0,false);
+                new FluidStack[]{Oil.getFluid(20)},
+                new FluidStack[]{Xenoxene.getFluid(20)},
+                6000,BW_Util.getMachineVoltageFromTier(10), Materials.NaquadahEnriched,8,0,false);
 
     addBioLabRecipeIncubation(
                 new ItemStack(Items.egg, 1, 0),

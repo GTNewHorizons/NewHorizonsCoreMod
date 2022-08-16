@@ -105,6 +105,8 @@ public class GT_Loader_FluidPipes
 		GT_OreDictUnificator.registerOre(OrePrefixes.pipeHuge.get(Materials.WroughtIron), new GT_MetaPipeEntity_Fluid(5264, "GT_Pipe_WroughtIron_Huge", "Huge Wrought Iron Fluid Pipe", 0.875F, Materials.WroughtIron, 720, 2250, true).getStackForm(1L));*/
 		generateFluidPipes(Materials.WroughtIron, Materials.WroughtIron.mName, 5260, 180, 2250, true);
 		generateFluidMultiPipes(Materials.WroughtIron, Materials.WroughtIron.mName, 5265, 180, 2250, true);
+
+		generateFluidPipes(GT_CoreModSupport.RadoxPolymer, GT_CoreModSupport.RadoxPolymer.mName, 5760, 5000, 1500, true);
 		// 5277 - 5588 Free, as of GT 5.09.32.xx
 	    // 5589+ Item Pipes Tin
 	}
