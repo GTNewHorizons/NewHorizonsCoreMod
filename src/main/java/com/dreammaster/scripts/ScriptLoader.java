@@ -6,6 +6,7 @@ public class ScriptLoader {
     static public void run(){
         IScriptLoader[] scripts = new IScriptLoader[]{
                 new ScriptAFSU(),
+                new ScriptAlveary(),
                 new ScriptArchitectureCraft(),
                 new ScriptAvaritiaAddons(),
                 new ScriptBetterQuesting(),
