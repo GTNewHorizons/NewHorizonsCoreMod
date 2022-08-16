@@ -1747,17 +1747,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000)},
                         40*20, 128_000_000, eternal_heat);
 
-
-                GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
-                        new FluidStack[]{Materials.ExcitedDTCC.getFluid(4000)},
-
-                        new ItemStack[]{GT_Values.NI},
-                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(1000 / 8), Materials.Infinity.getMolten(144)},
-                        20, 32_000_000, awakened_heat);
-
-            }
-
             if (Loader.isModLoaded("Avaritia")) {
                 // Plasma forge infinity Smelting.
 
