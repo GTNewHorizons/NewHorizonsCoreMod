@@ -482,10 +482,8 @@ public class ScriptAE2FC implements IScriptLoader {
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
         
         //OC Component
-        if (Loader.isModLoaded("OpenComputers")) {
-            ItemStack CHIP_T1 = getModItem("OpenComputers", "item", 1, 24);
-            GameRegistry.addRecipe(new ShapedOreRecipe(AE2FC_OCEDITOR, "IMI", "CBC", "IPI", 'I', IRON_BAR, 'M', CHIP_T1, 'C', "oc:cable", 'B', BUCKET, 'P', AE2_BLANK_PATTERN));
-        }
+        ItemStack CHIP_T1 = getModItem("OpenComputers", "item", 1, 24);
+        GameRegistry.addRecipe(new ShapedOreRecipe(AE2FC_OCEDITOR, "IMI", "CBC", "IPI", 'I', IRON_BAR, 'M', CHIP_T1, 'C', "oc:cable", 'B', BUCKET, 'P', AE2_BLANK_PATTERN));
 
     }
 
