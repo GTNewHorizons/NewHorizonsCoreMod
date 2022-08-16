@@ -8,21 +8,8 @@ dependencies {
     compile("com.github.GTNewHorizons:Avaritia:1.23:dev")
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
     compile("com.github.GTNewHorizons:GTplusplus:1.7.62-pre:dev")
-    compile("com.github.GTNewHorizons:AE2FluidCraft-Rework:1.0.6-gtnh:dev")
 
     compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:1.9.1-GTNH:dev") {
-        transitive = false
-    }
-    compileOnly("com.github.GTNewHorizons:AE2FluidCraft-Rework:1.0.6-gtnh:dev") {
-        transitive = false
-    }
-    compileOnly("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-94-GTNH:dev") {
-        transitive = false
-    }
-    compileOnly('com.github.GTNewHorizons:OpenComputers:1.7.5.23-GTNH:dev') {
-        transitive = false
-    }
-    compile('com.github.GTNewHorizons:ExtraCells2:2.5.9:dev') {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.3.8.13:dev") {
