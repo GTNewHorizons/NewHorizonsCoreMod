@@ -466,7 +466,6 @@ public class ScriptAE2FC implements IScriptLoader {
                 LAPIS_PLATE, AE2FC_TERMINAL, LAPIS_PLATE,
                 ItemList.Conveyor_Module_LuV.get(1), AE2_CORE_ANN, ItemList.Conveyor_Module_LuV.get(1),
                 ItemList.Electric_Motor_LuV.get(1), ItemList.Robot_Arm_LuV.get(1), ItemList.Electric_Motor_LuV.get(1)});
-
         //Fluid Export Bus
         addShapedRecipe(AE2FC_EXPORTBUS, new Object[]{
                 IRON_PLATE, LAPIS_PLATE, IRON_PLATE,
@@ -480,7 +479,6 @@ public class ScriptAE2FC implements IScriptLoader {
         //Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
-        
         //OC Component
         ItemStack CHIP_T1 = getModItem("OpenComputers", "item", 1, 24);
         GameRegistry.addRecipe(new ShapedOreRecipe(AE2FC_OCEDITOR, "IMI", "CBC", "IPI", 'I', IRON_BAR, 'M', CHIP_T1, 'C', "oc:cable", 'B', BUCKET, 'P', AE2_BLANK_PATTERN));
