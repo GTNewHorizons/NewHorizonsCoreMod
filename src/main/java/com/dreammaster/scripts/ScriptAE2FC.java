@@ -28,7 +28,7 @@ public class ScriptAE2FC implements IScriptLoader {
         scriptName.setLength(0);
         scriptName.append("AE2FC");
         dependencies.clear();
-        dependencies.addAll(java.util.Arrays.asList("ae2fc", "appliedenergistics2", "extracells"));
+        dependencies.addAll(java.util.Arrays.asList("ae2fc", "appliedenergistics2", "extracells", "OpenComputers"));
     }
 
     @Override
@@ -71,6 +71,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack COMPONENT_1024 = getModItem("ae2fc", "fluid_part", 1, 5);
         final ItemStack COMPONENT_4096 = getModItem("ae2fc", "fluid_part", 1, 6);
         final ItemStack AE2FC_INTERFACE = getModItem("ae2fc", "fluid_interface", 1, 0);
+        final ItemStack AE2FC_INTERFACE_SMALL = getModItem("ae2fc", "part_fluid_interface", 1, 0);
         final ItemStack AE2FC_DISCRETIZER = getModItem("ae2fc", "fluid_discretizer", 1, 0);
         final ItemStack AE2FC_ENCODER = getModItem("ae2fc", "fluid_pattern_encoder", 1, 0);
         final ItemStack AE2FC_DECODER = getModItem("ae2fc", "fluid_packet_decoder", 1, 0);
@@ -94,12 +95,8 @@ public class ScriptAE2FC implements IScriptLoader {
             GameRegistry.addRecipe(new ShapedOreRecipe(cells[i], "GDG", "DCD", "III", 'D', "dustRedstone", 'G', AE2_QUARTZ_GLASS, 'C', components[i], 'I', "ingotIron"));
         }
 
-        OreDictionary.registerOre("anyCertusCrystal", AE2_PURE_CERTUS);
-        for (ItemStack it : OreDictionary.getOres("crystalCertusQuartz"))
-            OreDictionary.registerOre("anyCertusCrystal", it);
-
         //recursive components for those who want to do this weird stuff
-        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_1, "DCD", "CEC", "DCD", 'D', "dyeBlue", 'C', "anyCertusCrystal", 'E', AE2_PROCESS_ENG));
+        GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_1, "DCD", "CEC", "DCD", 'D', "dyeBlue", 'C', CustomItemList.ChargedCertusQuartzDust.get(1), 'E', AE2_PROCESS_ENG));
         GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_4, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_1, 'P', AE2_PROCESS_CAL, 'G', AE2_QUARTZ_GLASS));
         GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_16, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_4, 'P', AE2_PROCESS_LOG, 'G', AE2_QUARTZ_GLASS));
         GameRegistry.addRecipe(new ShapedOreRecipe(COMPONENT_64, "DPD", "CGC", "DCD", 'D', "dyeBlue", 'C', COMPONENT_16, 'P', AE2_PROCESS_ENG, 'G', AE2_QUARTZ_GLASS));
@@ -480,6 +477,9 @@ public class ScriptAE2FC implements IScriptLoader {
                 IRON_PLATE, LAPIS_PLATE, IRON_PLATE,
                 LAPIS_SCREW, AE2_CORE_ANN, LAPIS_SCREW,
                 CERTUS_PLATE, ItemList.Electric_Piston_LV.get(1), CERTUS_PLATE});
+        //Interface from Small to Block and opposite
+        GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
+        GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
         
         //OC Component
         if (Loader.isModLoaded("OpenComputers")) {
