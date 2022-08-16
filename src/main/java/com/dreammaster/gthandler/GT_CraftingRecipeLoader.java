@@ -36,9 +36,9 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
     @Override
     public void run() {
     	//UEV, UIV, UMV casings
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UEV.get(1L), tBitMask, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium)});
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UIV.get(1L), tBitMask, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium)});
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UMV.get(1L), tBitMask, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SpaceTime)});
+        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UEV.get(1L), GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium)});
+        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UIV.get(1L), GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium)});
+        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_UMV.get(1L), GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SpaceTime)});
 
         //Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
