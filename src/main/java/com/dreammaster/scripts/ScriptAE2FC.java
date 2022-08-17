@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 import com.dreammaster.gthandler.CustomItemList;
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -12,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -33,7 +31,6 @@ public class ScriptAE2FC implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        final ItemStack GLASS_PANE = new ItemStack(Blocks.glass_pane, 1);
         final ItemStack AE2_INTERFACE = getModItem("appliedenergistics2", "tile.BlockInterface", 1);
         final ItemStack AE2_PROCESS_ENG = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 24);
         final ItemStack AE2_STORAGE_BUS = getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 220);
@@ -55,7 +52,6 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack LAPIS_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L);
         final ItemStack NIOBIUM_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1L);
         final ItemStack NETHER_QUARTZ_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
-        final ItemStack CERTUS_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L);
         final ItemStack LAPIS_SCREW = GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
         final ItemStack FLUID_CORE_1 = getModItem("dreamcraft", "item.EngineeringProcessorFluidDiamondCore", 1);
         final ItemStack CELL_1 = getModItem("ae2fc", "fluid_storage1", 1, 0);
@@ -84,8 +80,6 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_EXPORTBUS = getModItem("ae2fc", "part_fluid_export", 1, 0);
         final ItemStack AE2FC_IMPORTBUS = getModItem("ae2fc", "part_fluid_import", 1, 0);
         final ItemStack AE2FC_OCEDITOR = getModItem("ae2fc", "oc_pattern_editor", 1, 0);
-        final ItemStack EC2_ADVANCED_HOUSING = getModItem("extracells", "storage.casing", 1, 0);
-        final ItemStack EC2_FLUID_HOUSING = getModItem("extracells", "storage.casing", 1, 1);
 
         ItemStack[] cells = new ItemStack[]{
                 CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096
@@ -487,34 +481,6 @@ public class ScriptAE2FC implements IScriptLoader {
         ItemStack CHIP_T1 = getModItem("OpenComputers", "item", 1, 24);
         GameRegistry.addRecipe(new ShapedOreRecipe(AE2FC_OCEDITOR, "IMI", "CBC", "IPI", 'I', IRON_BAR, 'M', CHIP_T1, 'C', "oc:cable", 'B', BUCKET, 'P', AE2_BLANK_PATTERN));
 
-        // EC2 Housings
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[]{
-                        GLASS_PANE,
-                        CERTUS_PLATE,
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 3L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
-                        GT_Utility.getIntegratedCircuit(3)
-                },
-                GT_Values.NF,
-                EC2_ADVANCED_HOUSING,
-                100,
-                16
-        );
-
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[]{
-                        GLASS_PANE,
-                        CERTUS_PLATE,
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
-                        GT_Utility.getIntegratedCircuit(3)
-                },
-                GT_Values.NF,
-                EC2_FLUID_HOUSING,
-                100,
-                16
-        );
     }
 
 }
