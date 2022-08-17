@@ -5,7 +5,7 @@ import com.dreammaster.main.MainRegistry;
 public class ScriptLoader {
     static public void run(){
         IScriptLoader[] scripts = new IScriptLoader[]{
-                new ScriptAE2FC(),
+                new ScriptAE2Addons(),
                 new ScriptAFSU(),
                 new ScriptAlveary(),
                 new ScriptArchitectureCraft(),
