@@ -504,16 +504,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_ModHandler.getModItem("gendustry", "PollenKit", 1), 200, 7680);
         }
 
-        if (Loader.isModLoaded("extracells")) {
-            if (Loader.isModLoaded("TConstruct")) {
-                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "GlassPane", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 3L), GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("extracells", "storage.casing", 1L), 100, 16);
-                GT_Values.RA.addAssemblerRecipe(new ItemStack[]{GT_ModHandler.getModItem("TConstruct", "GlassPane", 1L, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3L), GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("extracells", "storage.casing", 1L, 1), 100, 16);
-            }
-
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.glass_pane, 1, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 3L), GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("extracells", "storage.casing", 1L), 100, 16);
-            GT_Values.RA.addAssemblerRecipe(new ItemStack[]{new ItemStack(Blocks.glass_pane, 1, 0), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L), GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3L), GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L)}, GT_Values.NF, GT_ModHandler.getModItem("extracells", "storage.casing", 1L, 1), 100, 16);
-        }
-
         if (Loader.isModLoaded("appliedenergistics2")) {
             GT_Values.RA.addAssemblerRecipe(GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1L, 24), CustomItemList.EssentiaCircuit.get(1L), CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L), 100, 1920);
             //AE2 Illuminated Panel Assembler Recipe
@@ -2114,7 +2104,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("TConstruct", "materials", 1L, 14), GT_Values.NI, FluidRegistry.getFluidStack("aluminumbrass.molten", 144), 10000, 24, 48);
             GT_Values.RA.addFluidSolidifierRecipe(GT_Utility.getIntegratedCircuit(1), FluidRegistry.getFluidStack("aluminumbrass.molten", 144), GT_ModHandler.getModItem("TConstruct", "blankPattern", 1L, 1), 32, 48);
-
+            
             GT_Values.RA.addFluidSolidifierRecipe( new ItemStack(Blocks.gravel, 1, 0), Materials.Tin.getMolten(16L),GT_ModHandler.getModItem("TConstruct", "SpeedBlock", 1, 0), 100, 30);
             if (Loader.isModLoaded("ExtraUtilities")) {
                 GT_Values.RA.addFluidSolidifierRecipe(GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1, 12), Materials.Tin.getMolten(144L), GT_ModHandler.getModItem("TConstruct", "SpeedBlock", 9, 0), 100, 120);
@@ -3668,7 +3658,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 ItemList.Circuit_Parts_TransistorXSMD.get(32L),
                 160,
                 120000);
-
+        
         // Capacitor
         GT_Values.RA.addAssemblerRecipe(new ItemStack[]{
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 4L),
@@ -4472,7 +4462,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     ItemList.Cover_SolarPanel_8V.get(1L),
                     400,
                     120);
-
+            
             if (Loader.isModLoaded("OpenComputers")) {
                 make_lua_bios();
 
@@ -4689,7 +4679,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
 		// Recipes with High Tier Soldering
 		Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null ? FluidRegistry.getFluid("molten.indalloy140") : FluidRegistry.getFluid("molten.solderingalloy");
-
+		
 		//Crystal Circuits
         GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass_Elite.get(1L), ItemList.Circuit_Chip_CrystalCPU.get(1L), ItemList.Circuit_Chip_NanoCPU.get(2L), ItemList.Circuit_Parts_CapacitorASMD.get(6), ItemList.Circuit_Parts_TransistorASMD.get(6), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 8)}, new FluidStack(solderIndalloy, 72), ItemList.Circuit_Crystalprocessor.get(1L), 100, 9600, true);
         GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass_Elite.get(1L), ItemList.Circuit_Crystalprocessor.get(2L), ItemList.Circuit_Parts_Coil.get(24), ItemList.Circuit_Parts_CapacitorASMD.get(8L), ItemList.Circuit_Chip_Ram.get(24), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16)}, new FluidStack(solderIndalloy, 144), ItemList.Circuit_Crystalcomputer.get(1L), 200, 9600, true);
@@ -4712,12 +4702,12 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         //Energy Flow Circuit
         GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass_Elite.get(1L), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 2), ItemList.Circuit_Chip_UHPIC.get(4L), ItemList.Circuit_Chip_QuantumCPU.get(2L), ItemList.Circuit_Chip_NanoCPU.get(2L), GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 64)}, new FluidStack(solderIndalloy, 288), CustomItemList.HighEnergyFlowCircuit.get(1L), 2400, 7680, true);
-
+        
 		//SoC for nano, quantum, crystal
         GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Epoxy_Advanced.get(1L), ItemList.Circuit_Chip_SoC2.get(1L), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 8), GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 8)}, new FluidStack(solderIndalloy, 72), ItemList.Circuit_Nanoprocessor.get(1L), 50, 9600, true);
         GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Fiberglass_Advanced.get(1L), ItemList.Circuit_Chip_SoC2.get(1L), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 16), GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.NiobiumTitanium, 8)}, new FluidStack(solderIndalloy, 72), ItemList.Circuit_Quantumprocessor.get(1L), 50, 38400, true);
         GT_Values.RA.addCircuitAssemblerRecipe(new ItemStack[]{ItemList.Circuit_Board_Multifiberglass_Elite.get(1L), ItemList.Circuit_Chip_CrystalSoC.get(1L), GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 8), GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.YttriumBariumCuprate, 8)}, new FluidStack(solderIndalloy, 72), ItemList.Circuit_Crystalprocessor.get(1L), 50, 153600, true);
-
+		
 
         if (Loader.isModLoaded("harvestcraft")) {
             GT_Values.RA.addFluidExtractionRecipe(GT_ModHandler.getModItem("harvestcraft", "catfishrawItem", 1, 0), GT_Values.NI, Materials.FishOil.getFluid(50L), 10000, 16, 4);
