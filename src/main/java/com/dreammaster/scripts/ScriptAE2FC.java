@@ -17,9 +17,9 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-public class ScriptAE2Addons implements IScriptLoader {
+public class ScriptAE2FC implements IScriptLoader {
 
-    public ScriptAE2Addons(){
+    public ScriptAE2FC(){
 
     }
 
