@@ -493,7 +493,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         GLASS_PANE,
                         CERTUS_PLATE,
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 3L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L)
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
+                        GT_Utility.getIntegratedCircuit(3)
                 },
                 GT_Values.NF,
                 EC2_ADVANCED_HOUSING,
@@ -506,7 +507,8 @@ public class ScriptAE2FC implements IScriptLoader {
                         GLASS_PANE,
                         CERTUS_PLATE,
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2)
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
+                        GT_Utility.getIntegratedCircuit(3)
                 },
                 GT_Values.NF,
                 EC2_FLUID_HOUSING,
