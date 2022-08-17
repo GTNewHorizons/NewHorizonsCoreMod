@@ -94,6 +94,8 @@ public class ScriptAE2Addons implements IScriptLoader {
                 COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64, COMPONENT_256, COMPONENT_1024, COMPONENT_4096
         };
 
+        // AE2FC Recipes
+
         for (int i = 0; i < cells.length; i++) {
             GameRegistry.addShapelessRecipe(cells[i], new Object[]{AE2_CELL_HOUSING, components[i]});
             GameRegistry.addRecipe(new ShapedOreRecipe(cells[i], "GDG", "DCD", "III", 'D', "dustRedstone", 'G', AE2_QUARTZ_GLASS, 'C', components[i], 'I', "ingotIron"));
@@ -486,6 +488,8 @@ public class ScriptAE2Addons implements IScriptLoader {
         //OC Component
         ItemStack CHIP_T1 = getModItem("OpenComputers", "item", 1, 24);
         GameRegistry.addRecipe(new ShapedOreRecipe(AE2FC_OCEDITOR, "IMI", "CBC", "IPI", 'I', IRON_BAR, 'M', CHIP_T1, 'C', "oc:cable", 'B', BUCKET, 'P', AE2_BLANK_PATTERN));
+
+        // EC2 Recipes
 
         // EC2 Housings
         GT_Values.RA.addAssemblerRecipe(
