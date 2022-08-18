@@ -1626,7 +1626,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         base_time/8, 237_277_769, eternal_heat);
             }
 
-            {
+            if (mGTPlusPlus) {
                 // Hypogen v1
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_Values.NI},
@@ -1680,16 +1680,14 @@ public class GT_MachineRecipeLoader implements Runnable {
                         1500, 1_600_000_000, eternal_heat);
 
                 // Energised tesseract
-                if (mGTPlusPlus) {
-                    GT_Values.RA.addLaserEngraverRecipe(
-                            new ItemStack[]{ItemList.Tesseract.get(1), GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("miscutils", "MU-metaitem.01:>", 1, 32105))},
-                            new FluidStack[]{GT_Values.NF},
+                GT_Values.RA.addLaserEngraverRecipe(
+                        new ItemStack[]{ItemList.Tesseract.get(1), GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("miscutils", "MU-metaitem.01:>", 1, 32105))},
+                        new FluidStack[]{GT_Values.NF},
 
-                            new ItemStack[]{ItemList.EnergisedTesseract.get(1)},
-                            new FluidStack[]{Materials.ExcitedDTEC.getFluid(100L)},
-                            30 * 20, 32_000_000, true
-                    );
-                }
+                        new ItemStack[]{ItemList.EnergisedTesseract.get(1)},
+                        new FluidStack[]{Materials.ExcitedDTEC.getFluid(100L)},
+                        30 * 20, 32_000_000, true
+                );
 
                 // SpaceTime v1
                 GT_Values.RA.addPlasmaForgeRecipe(
