@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 import com.dreammaster.gthandler.CustomItemList;
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -12,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -53,7 +51,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack IRON_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L);
         final ItemStack LAPIS_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L);
         final ItemStack NIOBIUM_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1L);
-        final ItemStack CERTUS_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
+        final ItemStack NETHER_QUARTZ_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
         final ItemStack LAPIS_SCREW = GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
         final ItemStack FLUID_CORE_1 = getModItem("dreamcraft", "item.EngineeringProcessorFluidDiamondCore", 1);
         final ItemStack CELL_1 = getModItem("ae2fc", "fluid_storage1", 1, 0);
@@ -470,12 +468,12 @@ public class ScriptAE2FC implements IScriptLoader {
         addShapedRecipe(AE2FC_EXPORTBUS, new Object[]{
                 IRON_PLATE, LAPIS_PLATE, IRON_PLATE,
                 LAPIS_SCREW, AE2_CORE_FOM, LAPIS_SCREW,
-                CERTUS_PLATE, ItemList.Electric_Piston_LV.get(1), CERTUS_PLATE});
+                NETHER_QUARTZ_PLATE, ItemList.Electric_Piston_LV.get(1), NETHER_QUARTZ_PLATE});
         //Fluid Import Bus
         addShapedRecipe(AE2FC_IMPORTBUS, new Object[]{
                 IRON_PLATE, LAPIS_PLATE, IRON_PLATE,
                 LAPIS_SCREW, AE2_CORE_ANN, LAPIS_SCREW,
-                CERTUS_PLATE, ItemList.Electric_Piston_LV.get(1), CERTUS_PLATE});
+                NETHER_QUARTZ_PLATE, ItemList.Electric_Piston_LV.get(1), NETHER_QUARTZ_PLATE});
         //Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);

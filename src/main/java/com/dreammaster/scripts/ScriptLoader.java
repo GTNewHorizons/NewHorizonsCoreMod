@@ -16,6 +16,7 @@ public class ScriptLoader {
                 new ScriptBiblioWoodsForestry(),
                 new ScriptBiblioWoodsNatura(),
                 new ScriptComputronics(),
+                new ScriptEC2(),
                 new ScriptEnderZoo(),
                 new ScriptForgeMultipart(),
                 new ScriptHoloInventory(),
