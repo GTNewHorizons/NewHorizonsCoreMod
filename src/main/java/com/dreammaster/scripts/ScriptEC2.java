@@ -9,6 +9,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 
 public class ScriptEC2 implements IScriptLoader {
 
@@ -17,7 +18,7 @@ public class ScriptEC2 implements IScriptLoader {
         scriptName.setLength(0);
         scriptName.append("EC2");
         dependencies.clear();
-        dependencies.add("extracells");
+        dependencies.addAll(java.util.Arrays.asList("extracells", "Avaritia", "eternalsingularity"));
     }
 
     @Override
@@ -57,5 +58,39 @@ public class ScriptEC2 implements IScriptLoader {
                 100,
                 16
         );
+        //ME Digital Singularity
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(getModItem("extracells", "storage.physical.advanced.singularity", 1),
+        "----a----",
+        "---aba---",
+        "--ecdce--",
+        "-acdddca-",
+        "abddfddba",
+        "-acdddca-",
+        "--ecdce--",
+        "---aba---",
+        "----a----",
+        'a', "blockCosmicNeutronium",
+        'b', getModItem("Avaritia", "Resource", 1, 5),
+        'c', getModItem("gregtech", "gt.blockmachines", 1, 129),
+        'd', getModItem("extracells", "storage.component", 1, 3),
+        'e', "blockInfinity",
+        'f', getModItem("eternalsingularity", "eternal_singularity", 1));
+
+        //ME Quantum Storage
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(getModItem("extracells", "storage.physical.advanced.quantum", 1),
+                "---------",
+                "----a----",
+                "---bdb---",
+                "--bcdcb--",
+                "-addedda-",
+                "--bcdcb--",
+                "---bdb---",
+                "----a----",
+                "---------",
+                'a', "blockCosmicNeutronium",
+                'b', "plateDenseNeutronium",
+                'c', "circuitInfinite",
+                'd', getModItem("extracells", "storage.component", 1, 3),
+                'e', getModItem("extracells", "storage.casing", 1));
     }
 }
