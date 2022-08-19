@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 public class GT_Recipe_Remover implements Runnable {
+    private static final String modNameAE = "appliedenergistics2";
 	private static final String modNameBG2 = "battlegear2";
 	private static final String modNameFor = "Forestry";
 	private static final String modNameIC2 = "IC2";
@@ -19,6 +20,9 @@ public class GT_Recipe_Remover implements Runnable {
 	public void run() {
 		//Vanilla
         GT_ModHandler.removeRecipeByOutputDelayed(new ItemStack(Blocks.iron_bars, 1, 32767), true, false, true);
+        //AE
+        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameAE, "tile.BlockCraftingUnit", 1, 2), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(modNameAE, "tile.BlockCraftingUnit", 1, 3), true, false, true);
 		//ASP
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem("AdvancedSolarPanel", "BlockAdvSolarPanel", 1L, 1), true, false, true);
