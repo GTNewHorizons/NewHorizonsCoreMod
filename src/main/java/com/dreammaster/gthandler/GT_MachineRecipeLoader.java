@@ -4,6 +4,7 @@ import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.Loader;
 import forestry.api.recipes.IFermenterRecipe;
+import gregtech.GT_Mod;
 import gregtech.api.enums.*;
 import gregtech.api.objects.GT_ItemStack;
 import gregtech.api.util.GT_ModHandler;
@@ -1147,7 +1148,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 1L), GT_Utility.getIntegratedCircuit(11), Materials.Oxygen.getGas(1000L), GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.GalliumArsenide, 1L), GT_Values.NI, 600, 120, 1200);
 
         GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gallium, 1L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Arsenic, 1L), GT_Values.NF, GT_Values.NF, ItemList.GalliumArsenideCrystal.get( 1L), GT_Values.NI, 1200, 120, 1511);
-        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 1L), GT_Utility.getIntegratedCircuit(2), Materials.Oxygen.getGas(1000L), GT_Values.NF, ItemList.GalliumArsenideCrystal.get( 1L), GT_Values.NI, 900, 120, 1511);
+        GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 2L), GT_Utility.getIntegratedCircuit(2), Materials.Oxygen.getGas(1000L), GT_Values.NF, ItemList.GalliumArsenideCrystal.get( 1L), GT_Values.NI, 900, 120, 1511);
 
         GT_Values.RA.addBlastRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 9L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 9L), GT_Values.NF, GT_Values.NF, GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 4L), GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rutile, 4L), 3200, 480, 1700);
 
@@ -3764,8 +3765,13 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addAutoclaveRecipe(ItemList.Circuit_Parts_RawCrystalParts.get(1L), FluidRegistry.getFluidStack("mutagen", 250), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 8000, 12000, 480);
         GT_Values.RA.addAutoclaveRecipe(ItemList.Circuit_Parts_RawCrystalParts.get(1L), Materials.Europium.getMolten(16), ItemList.Circuit_Parts_RawCrystalChip.get(1L), 10000, 12000, 480);
 
+
+        GT_Values.RA.addAutoclaveRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 2), Materials.Water.getFluid(200L), ItemList.GalliumArsenideCrystal.get(1L), 100 * 80, 400, 480);
+        GT_Values.RA.addAutoclaveRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 2), Materials.Void.getMolten(36L), ItemList.GalliumArsenideCrystal.get(1L), 100 * 100, 400, 480);
+        GT_Values.RA.addAutoclaveRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 2), GT_ModHandler.getDistilledWater(100L), ItemList.GalliumArsenideCrystal.get(1L), 100 * 90, 400, 480);
+
         GT_Values.RA.addForgeHammerRecipe(ItemList.GalliumArsenideCrystal.get(1L), ItemList.GalliumArsenideCrystalSmallPart.get(4L), 50, 4);
-        GT_Values.RA.addPulveriserRecipe(ItemList.GalliumArsenideCrystal.get(1L), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 1)}, new int[]{10000},100, 4);
+        GT_Values.RA.addPulveriserRecipe(ItemList.GalliumArsenideCrystal.get(1L), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 2)}, new int[]{10000},100, 4);
         GT_Values.RA.addPulveriserRecipe(ItemList.GalliumArsenideCrystalSmallPart.get(1L), new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1)}, new int[]{10000},25, 4);
         GT_Values.RA.addFluidExtractionRecipe(ItemList.GalliumArsenideCrystal.get(1L), GT_Values.NI, Materials.GalliumArsenide.getMolten(144L), 10000, 24, 37);
 
