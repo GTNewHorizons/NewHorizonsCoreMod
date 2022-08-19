@@ -1756,6 +1756,16 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 int base_time = 5_000;
 
+                long fuel_quantity_special = 57_031L / 64;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
+                        new FluidStack[]{Materials.ExcitedDTRC.getFluid(fuel_quantity_special)},
+
+                        new ItemStack[]{GT_Values.NI},
+                        new FluidStack[]{Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_special / 2), Materials.Infinity.getMolten(144L)},
+                        base_time / 128, 102_400_000 / 64, awakened_heat);
+
+
                 long fuel_quantity_1 = 57_031L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[]{GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
