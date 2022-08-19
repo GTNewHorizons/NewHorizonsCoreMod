@@ -8,6 +8,7 @@ public class ScriptLoader {
                 new ScriptAE2FC(),
                 new ScriptAFSU(),
                 new ScriptAlveary(),
+                new ScriptAppliedEnergistics2(),
                 new ScriptArchitectureCraft(),
                 new ScriptAvaritiaAddons(),
                 new ScriptBetterQuesting(),
