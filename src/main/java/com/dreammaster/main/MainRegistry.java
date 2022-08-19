@@ -436,8 +436,6 @@ public class MainRegistry
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8", "Rocket Plate Tier 8!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
 
-        CoreMod_ProcessingArrayRecipeLoader.registerMaps();
-
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
