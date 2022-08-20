@@ -23,7 +23,7 @@ public class LoginHandler {
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_GREEN + "whole bunch of other stuff, so check out the changelog."));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "Please report bugs here:" ));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/" ));
-        event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "Visit our discord at https://discord.gg/EXshrPV" ));
+        event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "Visit our discord at https://discord.gg/gtnh" ));
         event.player.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "=====================================================" ));
     }
 }
