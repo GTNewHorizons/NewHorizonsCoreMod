@@ -92,5 +92,13 @@ public class ScriptEC2 implements IScriptLoader {
                 'c', "circuitInfinite",
                 'd', getModItem("extracells", "storage.component", 1, 3),
                 'e', getModItem("extracells", "storage.casing", 1));
+
+        //ME Void Storage
+        addShapedRecipe(getModItem("extracells", "storage.physical.void", 1),
+        new Object[]{
+                "craftingToolHardHammer", "plateCertusQuartz", "screwCertusQuartz",
+                "plateTungsten", "gemEnderEye", "plateTungsten",
+                "screwCertusQuartz", "plateTungsten", "craftingToolScrewdriver"
+        });
     }
 }
