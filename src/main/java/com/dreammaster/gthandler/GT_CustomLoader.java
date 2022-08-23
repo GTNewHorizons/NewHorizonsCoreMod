@@ -15,42 +15,44 @@ import net.minecraft.item.ItemStack;
  * How to add new Stuff:
  * Ask Namikon
  */
-public class GT_CustomLoader
-{
-    public enum AdvancedGTMaterials
-    {
-        LuV(OrePrefixes.circuit.get(Materials.Master),
-        		OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
-        		Materials.VanadiumGallium,
-        		OrePrefixes.wireGt02.get(Materials.HSSG),
-        		OrePrefixes.gemExquisite.get(Materials.Diamond),
-        		gregtech.api.enums.ItemList.Gravistar,
-        		Loader.isModLoaded("bartworks") ? "blockGlassLuV" : "glassReinforced",
-        		Materials.Chrome,
-        		Materials.Enderium),
-        
-        ZPM(OrePrefixes.circuit.get(Materials.Ultimate),
-        		OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
-        		Materials.Naquadah,
-        		OrePrefixes.wireGt02.get(Materials.Naquadah),
-        		OrePrefixes.gemExquisite.get(Materials.GarnetYellow),
-        		ItemList.MysteriousCrystal.getIS(),
-                Loader.isModLoaded("bartworks") ? "blockGlassZPM" : "glassReinforced",
-        		Materials.Iridium,
-        		Materials.Naquadah),
-        
-        UV(OrePrefixes.circuit.get(Materials.Superconductor),
-        		OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate), 
-        		Materials.ElectrumFlux, 
-        		OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
-        		OrePrefixes.gemExquisite.get(Materials.GarnetRed),
-        		new ItemStack(Blocks.dragon_egg, 1),
-                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
-        		Materials.Osmium,
-        		Materials.Neutronium),
+public class GT_CustomLoader {
+    public enum AdvancedGTMaterials {
+        LuV(
+                OrePrefixes.circuit.get(Materials.Master),
+                OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
+                Materials.VanadiumGallium,
+                OrePrefixes.wireGt02.get(Materials.HSSG),
+                OrePrefixes.gemExquisite.get(Materials.Diamond),
+                gregtech.api.enums.ItemList.Gravistar,
+                Loader.isModLoaded("bartworks") ? "blockGlassLuV" : "glassReinforced",
+                Materials.Chrome,
+                Materials.Enderium),
 
-        UHV(OrePrefixes.circuit.get(Materials.Infinite),
-        		OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
+        ZPM(
+                OrePrefixes.circuit.get(Materials.Ultimate),
+                OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
+                Materials.Naquadah,
+                OrePrefixes.wireGt02.get(Materials.Naquadah),
+                OrePrefixes.gemExquisite.get(Materials.GarnetYellow),
+                ItemList.MysteriousCrystal.getIS(),
+                Loader.isModLoaded("bartworks") ? "blockGlassZPM" : "glassReinforced",
+                Materials.Iridium,
+                Materials.Naquadah),
+
+        UV(
+                OrePrefixes.circuit.get(Materials.Superconductor),
+                OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),
+                Materials.ElectrumFlux,
+                OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
+                OrePrefixes.gemExquisite.get(Materials.GarnetRed),
+                new ItemStack(Blocks.dragon_egg, 1),
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
+                Materials.Osmium,
+                Materials.Neutronium),
+
+        UHV(
+                OrePrefixes.circuit.get(Materials.Infinite),
+                OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
                 Materials.Bedrockium,
                 Materials.Bedrockium,
                 null,
@@ -59,7 +61,8 @@ public class GT_CustomLoader
                 Materials.Neutronium,
                 Materials.Neutronium),
 
-        UEV(OrePrefixes.circuit.get(Materials.Bio),
+        UEV(
+                OrePrefixes.circuit.get(Materials.Bio),
                 OrePrefixes.wireGt04.get(Materials.Bedrockium),
                 Materials.Draconium,
                 Materials.Draconium,
@@ -69,7 +72,8 @@ public class GT_CustomLoader
                 Materials.Bedrockium,
                 Materials.Neutronium),
 
-        UIV(OrePrefixes.circuit.get(Materials.Piko),
+        UIV(
+                OrePrefixes.circuit.get(Materials.Piko),
                 null,
                 null,
                 null,
@@ -78,7 +82,6 @@ public class GT_CustomLoader
                 Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
                 null,
                 null);
-
 
         private Object _mCircuit;
         private Object _mHeatingCoil;
@@ -91,9 +94,17 @@ public class GT_CustomLoader
         private Object _mReinfGlass;
         private Object _mPipe;
         private Object _mPipeL;
-        
-        AdvancedGTMaterials(Object pCircuit, Object pHeatingCoil, Materials pCable, Object pCoilWire, Object pGem, Object pPowerGem, Object glass, Materials pPlateMaterial, Materials pPipe)
-        {
+
+        AdvancedGTMaterials(
+                Object pCircuit,
+                Object pHeatingCoil,
+                Materials pCable,
+                Object pCoilWire,
+                Object pGem,
+                Object pPowerGem,
+                Object glass,
+                Materials pPlateMaterial,
+                Materials pPipe) {
             _mCircuit = pCircuit;
             _mHeatingCoil = pHeatingCoil;
             _mCoilWire = pCoilWire;
@@ -106,62 +117,53 @@ public class GT_CustomLoader
             _mPipe = OrePrefixes.pipeMedium.get(pPipe);
             _mPipeL = OrePrefixes.pipeLarge.get(pPipe);
         }
-        
-        public Object getPipe()
-        {
-        	return _mPipe;
+
+        public Object getPipe() {
+            return _mPipe;
         }
-        
+
         // A test
-        public Object getGlass()
-        {
-        	return _mReinfGlass;
+        public Object getGlass() {
+            return _mReinfGlass;
         }
-        
-        public Object getPlate()
-        {
-        	return _mPlate;
+
+        public Object getPlate() {
+            return _mPlate;
         }
-        
-        public Object getPowerGem()
-        {
-        	return _mPowerGem;
+
+        public Object getPowerGem() {
+            return _mPowerGem;
         }
-        
-        public Object getGem()
-        {
-        	return _mGem;
+
+        public Object getGem() {
+            return _mGem;
         }
-        
-        public Object getCircuit()
-        {
+
+        public Object getCircuit() {
             return _mCircuit;
         }
-        
-        public Object getHCoil()
-        {
+
+        public Object getHCoil() {
             return _mHeatingCoil;
         }
-        public Object getCable()
-        {
+
+        public Object getCable() {
             return _mMachineCable;
         }
-        public Object getCable4()
-        {
+
+        public Object getCable4() {
             return _mMachineCable4;
-        }        
-        
-        public Object getWire()
-        {
+        }
+
+        public Object getWire() {
             return _mCoilWire;
         }
 
-		public Object getPipeL()
-		{
-			return _mPipeL;
-		}
+        public Object getPipeL() {
+            return _mPipeL;
+        }
     }
-    
+
     /*
      * Changed to static final for performance and clear design reasons.
      * Since these Classes arent modified anymore, final is a good choice here.
@@ -178,18 +180,16 @@ public class GT_CustomLoader
     private static final GT_Loader_OreDictionary OreDictionary = new GT_Loader_OreDictionary();
     private static final GT_Recipe_Remover Remover = new GT_Recipe_Remover();
 
-    public void run()
-    {
-    	GameRegistry.registerItem(QuantumBread.Instance(), "itemQuantumToast");
-    	if (Loader.isModLoaded("EnderIO"))
-            FrankenskullFix.fixEnderIO();
-    	MaterialLoader.run();
-    	FluidPipeLoader.run();
-    	WireLoader.run();
-    	ItemLoader.run();
-    	MachineLoader.run();
-    	BatteryLoader.run();
-    	Remover.run();
+    public void run() {
+        GameRegistry.registerItem(QuantumBread.Instance(), "itemQuantumToast");
+        if (Loader.isModLoaded("EnderIO")) FrankenskullFix.fixEnderIO();
+        MaterialLoader.run();
+        FluidPipeLoader.run();
+        WireLoader.run();
+        ItemLoader.run();
+        MachineLoader.run();
+        BatteryLoader.run();
+        Remover.run();
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
         OreDictionary.run();

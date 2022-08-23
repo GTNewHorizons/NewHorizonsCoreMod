@@ -1,5 +1,7 @@
 package com.dreammaster.main;
 
+import static gregtech.api.enums.Dyes.MACHINE_METAL;
+
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
@@ -13,8 +15,8 @@ import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.galacticgreg.SpaceDimRegisterer;
 import com.dreammaster.gthandler.*;
-import com.dreammaster.item.ItemList;
 import com.dreammaster.item.CustomPatterns;
+import com.dreammaster.item.ItemList;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
 import com.dreammaster.modbabychest.BlockBabyChest;
@@ -61,33 +63,25 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_LanguageManager;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
+import java.io.File;
+import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 
-import java.io.File;
-import java.util.Random;
-
-import static gregtech.api.enums.Dyes.MACHINE_METAL;
-
 @Mod(
         modid = Refstrings.MODID,
         name = Refstrings.NAME,
         version = Refstrings.VERSION,
-        dependencies =
-
-            "required-before:gregtech;"
-
-        +	"required-after:Forge@[10.13.2.1291,);"
-        +	"required-after:YAMCore@[0.5.76,);" 
-        +	"required-after:Baubles@[1.0.1.10,);"
-
-		+   "after:EnderIO;"
-        +   "after:HardcoreEnderExpansion;")
-public class MainRegistry
-{
+        dependencies = "required-before:gregtech;"
+                + "required-after:Forge@[10.13.2.1291,);"
+                + "required-after:YAMCore@[0.5.76,);"
+                + "required-after:Baubles@[1.0.1.10,);"
+                + "after:EnderIO;"
+                + "after:HardcoreEnderExpansion;")
+public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
     public static CommonProxy proxy;
@@ -112,30 +106,29 @@ public class MainRegistry
     private static SpaceDimRegisterer SpaceDimReg;
     private static BacteriaRegistry BacteriaRegistry;
 
-    public static void AddLoginError(String pMessage)
-    {
+    public static void AddLoginError(String pMessage) {
         if (Module_AdminErrorLogs != null) {
             Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
         }
     }
 
     @Mod.EventHandler
-    public void PreLoad(FMLPreInitializationEvent PreEvent)
-    {
+    public void PreLoad(FMLPreInitializationEvent PreEvent) {
         Logger.setDebugOutput(true);
 
         Rnd = new Random(System.currentTimeMillis());
 
         // ------------------------------------------------------------
         // Init coremod config file. Create it if it's not there
-        CoreConfig = new CoreModConfig(PreEvent.getModConfigurationDirectory(), Refstrings.COLLECTIONID, Refstrings.MODID);
+        CoreConfig =
+                new CoreModConfig(PreEvent.getModConfigurationDirectory(), Refstrings.COLLECTIONID, Refstrings.MODID);
         if (!CoreConfig.LoadConfig()) {
-            Logger.error(String.format("%s could not load its config file. Things are going to be weird!", Refstrings.MODID));
+            Logger.error(String.format(
+                    "%s could not load its config file. Things are going to be weird!", Refstrings.MODID));
         }
         // ------------------------------------------------------------
 
-        if (CoreConfig.ModAdminErrorLogs_Enabled)
-        {
+        if (CoreConfig.ModAdminErrorLogs_Enabled) {
             Logger.debug("Module_AdminErrorLogs is enabled");
             Module_AdminErrorLogs = new IngameErrorLog();
         }
@@ -145,19 +138,17 @@ public class MainRegistry
         File tFile = new File(new File(PreEvent.getModConfigurationDirectory(), "GregTech"), "GregTech.cfg");
         Configuration tMainConfig = new Configuration(tFile);
         tMainConfig.load();
-        
-        GregTech_API.sUseMachineMetal = tMainConfig.get("machines", "use_machine_metal_tint", true).getBoolean(true);
-        if (GregTech_API.sUseMachineMetal)
-            {
-                // use default in GregTech Dyes enum.
-            }
-        else
-            {
-                // Override MACHINE_METAL dye color with white
-                MACHINE_METAL.mRGBa[0]= 255;
-                MACHINE_METAL.mRGBa[1]= 255;
-                MACHINE_METAL.mRGBa[2]= 255;
-            }
+
+        GregTech_API.sUseMachineMetal =
+                tMainConfig.get("machines", "use_machine_metal_tint", true).getBoolean(true);
+        if (GregTech_API.sUseMachineMetal) {
+            // use default in GregTech Dyes enum.
+        } else {
+            // Override MACHINE_METAL dye color with white
+            MACHINE_METAL.mRGBa[0] = 255;
+            MACHINE_METAL.mRGBa[1] = 255;
+            MACHINE_METAL.mRGBa[2] = 255;
+        }
 
         proxy.addTexturePage();
         // ------------------------------------------------------------
@@ -180,15 +171,15 @@ public class MainRegistry
         ModTabList.InitModTabs(TabManager, ItemManager);
         // ------------------------------------------------------------
 
-        //Materials init
+        // Materials init
         if (!GT_Mod.gregtechproxy.mEnableAllMaterials) {
             new GT_CoreModSupport();
         }
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
-        if (!ItemList.AddToItemManager(ItemManager) | !(!Loader.isModLoaded("TConstruct") || CustomPatterns.RegisterPatterns(TabManager)))
-        {
+        if (!ItemList.AddToItemManager(ItemManager)
+                | !(!Loader.isModLoaded("TConstruct") || CustomPatterns.RegisterPatterns(TabManager))) {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
         }
@@ -196,8 +187,7 @@ public class MainRegistry
 
         // ------------------------------------------------------------
         Logger.info("PRELOAD Create Blocks");
-        if (!BlockList.AddToItemManager(BlockManager))
-        {
+        if (!BlockList.AddToItemManager(BlockManager)) {
             Logger.warn("Some blocks failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Blocks] Some blocks failed to register. Check the logfile for details");
         }
@@ -207,29 +197,25 @@ public class MainRegistry
         // Init Modules
         Logger.debug("PRELOAD Init Modules");
 
-        if (CoreConfig.ModHazardousItems_Enabled)
-        {
+        if (CoreConfig.ModHazardousItems_Enabled) {
             Logger.debug("Module_HazardousItems is enabled");
             Module_HazardousItems = new HazardousItemsHandler();
             // Module_HazardousItems.LoadConfig();
         }
 
-        if (CoreConfig.ModCustomToolTips_Enabled)
-        {
+        if (CoreConfig.ModCustomToolTips_Enabled) {
             Logger.debug("Module_HazardousItems is enabled");
             Module_CustomToolTips = new CustomToolTipsHandler();
             // Module_CustomToolTips.LoadConfig();
         }
 
-        if (CoreConfig.ModCustomFuels_Enabled)
-        {
+        if (CoreConfig.ModCustomFuels_Enabled) {
             Logger.debug("Module_CustomFuels is enabled");
             Module_CustomFuels = new CustomFuelsHandler();
             // Module_CustomFuels.LoadConfig();
         }
 
-        if (CoreConfig.ModCustomDrops_Enabled)
-        {
+        if (CoreConfig.ModCustomDrops_Enabled) {
             Logger.debug("Module_CustomDrops is enabled");
             Module_CustomDrops = new CustomDropsHandler(PreEvent.getModConfigurationDirectory());
         }
@@ -239,8 +225,7 @@ public class MainRegistry
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Fluids");
         FluidManager = new ModFluidManager(Refstrings.MODID);
-        if (!FluidList.AddToItemManager(FluidManager))
-        {
+        if (!FluidList.AddToItemManager(FluidManager)) {
             Logger.warn("Some fluids failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Fluids] Some fluids failed to register. Check the logfile for details");
         }
@@ -258,50 +243,44 @@ public class MainRegistry
 
         // register all non-enum items
         Logger.debug("LOAD Register non enum Items");
-        if (!RegisterNonEnumItems())
-        {
+        if (!RegisterNonEnumItems()) {
             Logger.error("Some extended items could not be registered to the game registry");
             AddLoginError("[CoreMod-Items] Some extended items could not be registered to the game registry");
         }
-        if (PreEvent.getSide() == Side.CLIENT)
-        {
+        if (PreEvent.getSide() == Side.CLIENT) {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
-	    
-	    if (Loader.isModLoaded("bartworks"))
-	    {
+
+        if (Loader.isModLoaded("bartworks")) {
             BacteriaRegistry = new BacteriaRegistry();
-	    }
+        }
 
         Logger.debug("LOAD abandoned GT++ Aspects");
-        if (Loader.isModLoaded("Thaumcraft"))
-        {
+        if (Loader.isModLoaded("Thaumcraft")) {
             new GregTechPlusPlusAbandonedAspectsFix();
         }
 
-        if (Loader.isModLoaded("witchery"))
-        	new WitcheryPlugin();
+        if (Loader.isModLoaded("witchery")) new WitcheryPlugin();
 
-        if (CoreModConfig.ModLoginMessage_Enabled)
-        {
+        if (CoreModConfig.ModLoginMessage_Enabled) {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
         }
-        Logger.warn( "==================================================" );
-        Logger.warn( "Welcome to Gregtech:New Horizons " + CoreModConfig.ModPackVersion );
-        Logger.warn( "Please bring comments to " + "https://discord.gg/EXshrPV" );
-        Logger.warn( "==================================================" );
+        Logger.warn("==================================================");
+        Logger.warn("Welcome to Gregtech:New Horizons " + CoreModConfig.ModPackVersion);
+        Logger.warn("Please bring comments to " + "https://discord.gg/EXshrPV");
+        Logger.warn("==================================================");
 
         MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
     }
 
-    private static boolean RegisterNonEnumItems()
-    {
+    private static boolean RegisterNonEnumItems() {
         boolean tResult = true;
         NHItems.OVEN_GLOVE.place(new OvenGlove("OvenGlove", ModTabList.ModGenericTab));
         if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.OVEN_GLOVE.get())) {
             tResult = false;
         }
-        NHItems.WITHER_PROTECTION_RING.place(new WitherProtectionRing("WitherProtectionRing", ModTabList.ModThaumcraftTab));
+        NHItems.WITHER_PROTECTION_RING.place(
+                new WitherProtectionRing("WitherProtectionRing", ModTabList.ModThaumcraftTab));
         if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.WITHER_PROTECTION_RING.get())) {
             tResult = false;
         }
@@ -310,18 +289,16 @@ public class MainRegistry
     }
 
     @Mod.EventHandler
-    public void load(FMLInitializationEvent event)
-    {
+    public void load(FMLInitializationEvent event) {
         // register events in modules
         RegisterModuleEvents();
 
         if (CoreConfig.ModBabyChest_Enabled) {
             InitAdditionalBlocks();
         }
-        
+
         // Register additional OreDictionary Names
-        if(CoreConfig.OreDictItems_Enabled)
-        OreDictHandler.register_all();
+        if (CoreConfig.OreDictItems_Enabled) OreDictHandler.register_all();
 
         GregTech_API.sAfterGTPostload.add(() -> {
             Logger.debug("Add Runnable to GT to create pyrolyse oven logWood recipes");
@@ -329,8 +306,7 @@ public class MainRegistry
         });
 
         // Register Dimensions in GalacticGregGT5
-        if (Loader.isModLoaded("galacticgreg"))
-        {
+        if (Loader.isModLoaded("galacticgreg")) {
             if (Loader.isModLoaded("bartworks")) {
                 GregTech_API.sAfterGTPostload.add(() -> {
                     Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
@@ -339,26 +315,21 @@ public class MainRegistry
             }
 
             SpaceDimReg = new SpaceDimRegisterer();
-            if (!SpaceDimReg.Init())
-            {
-                Logger.error("Unable to register SpaceDimensions; You are probably using the wrong Version of GalacticGreg");
+            if (!SpaceDimReg.Init()) {
+                Logger.error(
+                        "Unable to register SpaceDimensions; You are probably using the wrong Version of GalacticGreg");
                 AddLoginError("[SpaceDim] Unable to register SpaceDimensions. Wrong Version of GGreg found!");
-            }
-            else
-            {
+            } else {
                 Logger.debug("Registering SpaceDimensions");
                 SpaceDimReg.Register();
             }
-
         }
-        if (Loader.isModLoaded("TwilightForest"))
-        TF_Loot_Chests.init();
+        if (Loader.isModLoaded("TwilightForest")) TF_Loot_Chests.init();
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
 
-    private void InitAdditionalBlocks()
-    {
+    private void InitAdditionalBlocks() {
         GameRegistry.registerBlock(_mBlockBabyChest, ItemBlockBabyChest.class, "BabyChest");
         GameRegistry.addShapelessRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
         GT_Values.RA.addCompressorRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0), 300, 2);
@@ -370,8 +341,7 @@ public class MainRegistry
         GT_Loader_CasingNH.load();
     }
 
-    private void RegisterModuleEvents()
-    {
+    private void RegisterModuleEvents() {
         if (CoreConfig.ModAdminErrorLogs_Enabled) {
             FMLCommonHandler.instance().bus().register(Module_AdminErrorLogs);
         }
@@ -380,8 +350,7 @@ public class MainRegistry
             FMLCommonHandler.instance().bus().register(Module_HazardousItems);
         }
 
-        if (CoreConfig.ModCustomToolTips_Enabled)
-        {
+        if (CoreConfig.ModCustomToolTips_Enabled) {
             MinecraftForge.EVENT_BUS.register(Module_CustomToolTips);
             FMLCommonHandler.instance().bus().register(Module_CustomToolTips);
         }
@@ -394,9 +363,9 @@ public class MainRegistry
             MinecraftForge.EVENT_BUS.register(Module_CustomDrops);
         }
 
-        if(Loader.isModLoaded("Railcraft")){
-            MinecraftForge.EVENT_BUS.register(NH_GeodePopulator.instance());//instead of RC
-            MinecraftForge.EVENT_BUS.register(NH_QuarryPopulator.instance());//instead of RC
+        if (Loader.isModLoaded("Railcraft")) {
+            MinecraftForge.EVENT_BUS.register(NH_GeodePopulator.instance()); // instead of RC
+            MinecraftForge.EVENT_BUS.register(NH_QuarryPopulator.instance()); // instead of RC
         }
     }
 
@@ -424,17 +393,22 @@ public class MainRegistry
         GTCustomLoader.run();
 
         registerModFixes();
-        
+
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
+        GT_LanguageManager.addStringLocalization(
+                "achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5.desc", "On your way to the T5 Dims!");
+        GT_LanguageManager.addStringLocalization(
+                "achievement.item.HeavyDutyAlloyIngotT5.desc", "On your way to the T5 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6", "Rocket Plate Tier 6!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6.desc", "On your way to the T6 Dims!");
+        GT_LanguageManager.addStringLocalization(
+                "achievement.item.HeavyDutyAlloyIngotT6.desc", "On your way to the T6 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7", "Rocket Plate Tier 7!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc", "On your way to the T7 Dims!");
+        GT_LanguageManager.addStringLocalization(
+                "achievement.item.HeavyDutyAlloyIngotT7.desc", "On your way to the T7 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8", "Rocket Plate Tier 8!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
+        GT_LanguageManager.addStringLocalization(
+                "achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
 
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself
@@ -445,10 +419,14 @@ public class MainRegistry
             BacteriaRegistry.runAllPostinit();
 
             Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
+                    Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
+                    Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
+                    Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
+            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
+                    Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
         }
     }
 
@@ -468,7 +446,6 @@ public class MainRegistry
         if (CoreConfig.HoverModeFixEnabled) {
             ModFixesMaster.registerModFix(new HoverModeFix());
         }
-
     }
 
     /**
@@ -477,8 +454,7 @@ public class MainRegistry
      * @param pEvent
      */
     @Mod.EventHandler
-    public void serverLoad(FMLServerStartingEvent pEvent)
-    {
+    public void serverLoad(FMLServerStartingEvent pEvent) {
         if (CoreConfig.ModHazardousItems_Enabled) {
             pEvent.registerServerCommand(new HazardousItemsCommand());
         }

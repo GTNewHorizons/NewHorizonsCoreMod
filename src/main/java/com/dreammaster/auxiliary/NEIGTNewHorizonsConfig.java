@@ -1,19 +1,16 @@
 package com.dreammaster.auxiliary;
 
+import codechicken.nei.api.API;
+import codechicken.nei.api.IConfigureNEI;
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
-
-import codechicken.nei.api.API;
-import codechicken.nei.api.IConfigureNEI;
 import gregtech.api.util.GT_ModHandler;
 import net.minecraft.item.ItemStack;
 
-public class NEIGTNewHorizonsConfig implements IConfigureNEI
-{
+public class NEIGTNewHorizonsConfig implements IConfigureNEI {
     @Override
-    public void loadConfig()
-    {
+    public void loadConfig() {
         API.hideItem(new ItemStack(QuantumBread.Instance()));
         API.hideItem(GT_ModHandler.getModItem("Aroma1997Core", "wrenched", 1));
         API.hideItem(GT_ModHandler.getModItem("BiblioCraft", "BiblioClipboard", 1));
@@ -45,11 +42,11 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI
         API.hideItem(GT_ModHandler.getModItem("ThaumicTinkerer", "gaseousShadow", 1));
         API.hideItem(GT_ModHandler.getModItem("ThaumicTinkerer", "infusedGrainBlock", 1));
         API.hideItem(GT_ModHandler.getModItem("ThaumicTinkerer", "nitorGas", 1));
-        for(int i = 5; i <= 15; i++) {
-        	API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFBossSpawner", 1, i));
+        for (int i = 5; i <= 15; i++) {
+            API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFBossSpawner", 1, i));
         }
-        for(int i = 8; i <= 15; i++) {
-        	API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFTowerTranslucent", 1, i));
+        for (int i = 8; i <= 15; i++) {
+            API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFTowerTranslucent", 1, i));
         }
         API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFTrophy", 1));
         API.hideItem(GT_ModHandler.getModItem("WarpTheory", "blockVanish", 1));
@@ -69,15 +66,12 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI
     }
 
     @Override
-    public String getName()
-    {
+    public String getName() {
         return "GTNewHorizons-NEIConfig";
     }
 
     @Override
-    public String getVersion()
-    {
+    public String getVersion() {
         return Refstrings.VERSION;
     }
-
 }

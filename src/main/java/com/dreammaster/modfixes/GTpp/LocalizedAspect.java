@@ -18,7 +18,7 @@ public class LocalizedAspect extends Aspect {
     public LocalizedAspect(String tag, int color, Aspect[] components) {
         super(tag, color, components);
     }
-    
+
     /**
      * A subclass of {@link Aspect} which allows localization of the aspect's name.
      * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
@@ -27,7 +27,7 @@ public class LocalizedAspect extends Aspect {
     public LocalizedAspect(String tag, int color, Aspect[] components, int blend) {
         super(tag, color, components, blend);
     }
-    
+
     /**
      * A subclass of {@link Aspect} which allows localization of the aspect's name.
      * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
@@ -36,7 +36,7 @@ public class LocalizedAspect extends Aspect {
     public LocalizedAspect(String tag, int color, String chatcolor, int blend) {
         super(tag, color, chatcolor, blend);
     }
-    
+
     /**
      * A subclass of {@link Aspect} which allows localization of the aspect's name.
      * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
@@ -45,7 +45,7 @@ public class LocalizedAspect extends Aspect {
     public LocalizedAspect(String tag, int color, Aspect[] components, ResourceLocation image, int blend) {
         super(tag, color, components, image, blend);
     }
-    
+
     /**
      * Localized version of {@link Aspect#getName()}
      * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
@@ -55,5 +55,4 @@ public class LocalizedAspect extends Aspect {
     public String getName() {
         return StatCollector.translateToLocal("tc.aspect." + this.getTag() + ".name");
     }
-
 }

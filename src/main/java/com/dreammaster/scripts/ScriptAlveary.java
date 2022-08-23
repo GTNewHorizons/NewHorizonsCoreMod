@@ -1,19 +1,16 @@
 package com.dreammaster.scripts;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import net.minecraft.item.ItemStack;
-import scala.actors.threadpool.Arrays;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-public class ScriptAlveary implements IScriptLoader{
+import gregtech.api.enums.ItemList;
+import net.minecraft.item.ItemStack;
 
-    public ScriptAlveary(){
+public class ScriptAlveary implements IScriptLoader {
 
-    }
+    public ScriptAlveary() {}
 
     @Override
-    public void initScriptData(){
+    public void initScriptData() {
         scriptName.setLength(0);
         scriptName.append("Alveary");
         dependencies.clear();
@@ -27,9 +24,16 @@ public class ScriptAlveary implements IScriptLoader{
 
     @Override
     public void loadRecipes() {
-        addShapedRecipe(ItemList.Machine_IndustrialApiary.get(1), new Object[]{
-                Alveary_1, Chipset_1, Alveary_1,
-                ItemList.Robot_Arm_HV.get(1), ItemList.FR_Casing_Sturdy.get(1),  ItemList.Robot_Arm_HV.get(1),
-                Alveary_3, Alveary_7, Alveary_3});
+        addShapedRecipe(ItemList.Machine_IndustrialApiary.get(1), new Object[] {
+            Alveary_1,
+            Chipset_1,
+            Alveary_1,
+            ItemList.Robot_Arm_HV.get(1),
+            ItemList.FR_Casing_Sturdy.get(1),
+            ItemList.Robot_Arm_HV.get(1),
+            Alveary_3,
+            Alveary_7,
+            Alveary_3
+        });
     }
 }
