@@ -2158,7 +2158,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_Utility.getIntegratedCircuit(2)
                 },
                 Materials.SolderingAlloy.getMolten(1440),
-                ItemList.OilDrill3.get(1L),
+                ItemList.OilDrill4.get(1L),
                 400,
                 7860);
 
