@@ -6,27 +6,22 @@ import net.minecraft.item.ItemStack;
 import tconstruct.library.crafting.PatternBuilder;
 import tconstruct.library.util.IPattern;
 
-public class Pattern extends CraftingItem implements IPattern
-{
-    public Pattern(String[] names, String[] tex, CreativeTabs tab)
-    {
+public class Pattern extends CraftingItem implements IPattern {
+    public Pattern(String[] names, String[] tex, CreativeTabs tab) {
         super(names, tex, "", "dreamcraft", tab);
     }
 
-    public Pattern(String[] names, String[] tex, String folder, String modTexturePrefix, CreativeTabs tab)
-    {
+    public Pattern(String[] names, String[] tex, String folder, String modTexturePrefix, CreativeTabs tab) {
         super(names, tex, folder, modTexturePrefix, tab);
     }
 
     @Override
-    public int getPatternCost(ItemStack pattern)
-    {
+    public int getPatternCost(ItemStack pattern) {
         return 0;
     }
 
     @Override
-    public ItemStack getPatternOutput(ItemStack pattern, ItemStack input, PatternBuilder.MaterialSet set)
-    {
+    public ItemStack getPatternOutput(ItemStack pattern, ItemStack input, PatternBuilder.MaterialSet set) {
         return null;
     }
 }

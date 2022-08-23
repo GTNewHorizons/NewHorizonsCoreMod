@@ -9,8 +9,8 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public class FrankenskullFix {
 
-    public static void fixEnderIO(){
-        //Example of how to add a recipe:
+    public static void fixEnderIO() {
+        // Example of how to add a recipe:
 
         NBTTagCompound root = new NBTTagCompound();
         root.setString(SoulBinderRecipeManager.KEY_RECIPE_UID, "sentientEnderMK2");
@@ -27,8 +27,6 @@ public class FrankenskullFix {
         root.setTag(SoulBinderRecipeManager.KEY_OUTPUT_STACK, stackRoot);
 
         SoulBinderRecipeManager.getInstance().addRecipeFromNBT(root);
-        FMLInterModComms.sendMessage("EnderIO",  "recipe:soulbinder", root);
-
+        FMLInterModComms.sendMessage("EnderIO", "recipe:soulbinder", root);
     }
-
 }

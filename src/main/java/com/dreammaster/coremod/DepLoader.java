@@ -4,10 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import cpw.mods.fml.relauncher.IFMLCallHook;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -21,9 +17,11 @@ import java.nio.channels.ReadableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import javax.swing.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DepLoader implements IFMLCallHook {
     private File mcLocation;
@@ -85,8 +83,7 @@ public class DepLoader implements IFMLCallHook {
                         if (!dep.isDisabled() && !dep.isFound()) {
                             download(dep);
                         }
-                        if (DreamCoreMod.downloadOnlyOnce)
-                            dep.setDisabled(true);
+                        if (DreamCoreMod.downloadOnlyOnce) dep.setDisabled(true);
                     }
                 }
             } catch (Exception ex) {
@@ -138,7 +135,7 @@ public class DepLoader implements IFMLCallHook {
                 LOGGER.info("{} dependencies to download.", count);
                 downloaded = true;
                 dialog.setJobCount(count);
-                SwingUtilities.invokeLater(() ->dialog.setVisible(true));
+                SwingUtilities.invokeLater(() -> dialog.setVisible(true));
 
                 final Downloader downloader = new Downloader(deps);
 
@@ -168,7 +165,11 @@ public class DepLoader implements IFMLCallHook {
             if (dialog != null) {
                 dialog.dispose();
             }
-            JOptionPane.showMessageDialog(null, "Download of additional files failed. Please refer to log for more info.", DownloadProgressDialog.WINDOW_TITLE, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Download of additional files failed. Please refer to log for more info.",
+                    DownloadProgressDialog.WINDOW_TITLE,
+                    JOptionPane.ERROR_MESSAGE);
             throw new RuntimeException("Download of additional files failed. Please refer to log for more info.", e);
         } finally {
             if (DreamCoreMod.downloadOnlyOnce) {
@@ -181,7 +182,11 @@ public class DepLoader implements IFMLCallHook {
         dialog.dispose();
         if (downloaded) {
             // prompt for reload
-            JOptionPane.showMessageDialog(null, "Download complete! Please close this dialog now and launch the game from your launcher again to enjoy the pack.", DownloadProgressDialog.WINDOW_TITLE, JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Download complete! Please close this dialog now and launch the game from your launcher again to enjoy the pack.",
+                    DownloadProgressDialog.WINDOW_TITLE,
+                    JOptionPane.INFORMATION_MESSAGE);
             throw new RuntimeException("Restart the game please.");
         }
         return null;
@@ -200,7 +205,11 @@ public class DepLoader implements IFMLCallHook {
                     try {
                         Files.delete(location.toPath());
                     } catch (IOException e) {
-                        JOptionPane.showMessageDialog(null, String.format("Path %s is expected to be a mod jar, but it is a directory! Please check what's inside manually and move it. This pack cannot continue without that directory removed!", location.toString()));
+                        JOptionPane.showMessageDialog(
+                                null,
+                                String.format(
+                                        "Path %s is expected to be a mod jar, but it is a directory! Please check what's inside manually and move it. This pack cannot continue without that directory removed!",
+                                        location.toString()));
                         throw new RuntimeException(e);
                     }
                 } else {
@@ -215,8 +224,12 @@ public class DepLoader implements IFMLCallHook {
     private void download(Dependency dep) throws IOException {
         final Path downloadTemp = new File(mcLocation, ".__gtnh_download_temp__").toPath();
         LOGGER.info("Downloading {} to {}", dep.getUrl(), dep.getPath());
-        try (FileChannel fc = FileChannel.open(downloadTemp, StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-             ReadableByteChannel net = Channels.newChannel(new URL(dep.getUrl()).openStream())) {
+        try (FileChannel fc = FileChannel.open(
+                        downloadTemp,
+                        StandardOpenOption.WRITE,
+                        StandardOpenOption.CREATE,
+                        StandardOpenOption.TRUNCATE_EXISTING);
+                ReadableByteChannel net = Channels.newChannel(new URL(dep.getUrl()).openStream())) {
             fc.transferFrom(net, 0, Long.MAX_VALUE);
         }
         final Path target = new File(mcLocation, dep.getPath()).toPath();

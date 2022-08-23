@@ -10,41 +10,64 @@ import net.minecraft.block.material.Material;
  * @author Namikon
  *
  */
-public class SandClayProperties implements IExtendedBlockProperties
-{
-	@Override
-	public Material getMaterial() { return Material.sand;}
+public class SandClayProperties implements IExtendedBlockProperties {
+    @Override
+    public Material getMaterial() {
+        return Material.sand;
+    }
 
-	@Override
-	public boolean getUnbreakable() { return false;	}
+    @Override
+    public boolean getUnbreakable() {
+        return false;
+    }
 
-	@Override
-	public int getHarvestLevel() { return 0; }
+    @Override
+    public int getHarvestLevel() {
+        return 0;
+    }
 
-	@Override
-	public int getOpacity() { return 15; }
+    @Override
+    public int getOpacity() {
+        return 15;
+    }
 
-	@Override
-	public float getHardness() { return 0.5F; }
+    @Override
+    public float getHardness() {
+        return 0.5F;
+    }
 
-	@Override
-	public float getLightLevel() { return 0; }
+    @Override
+    public float getLightLevel() {
+        return 0;
+    }
 
-	@Override
-	public float getResistance() { return 0.5F; }
+    @Override
+    public float getResistance() {
+        return 0.5F;
+    }
 
-	@Override
-	public String getBlockName() { return "SandClayMix"; }
+    @Override
+    public String getBlockName() {
+        return "SandClayMix";
+    }
 
-	@Override
-	public String getTextureName() { return ""; }
+    @Override
+    public String getTextureName() {
+        return "";
+    }
 
-	@Override
-	public String getHarvestToolClass() { return "shovel"; }
+    @Override
+    public String getHarvestToolClass() {
+        return "shovel";
+    }
 
-	@Override
-	public Block.SoundType getStepSound() { return Block.soundTypeGravel; }
-	
-	@Override
-    public boolean getIsOpaqueCube() { return true; }
+    @Override
+    public Block.SoundType getStepSound() {
+        return Block.soundTypeGravel;
+    }
+
+    @Override
+    public boolean getIsOpaqueCube() {
+        return true;
+    }
 }

@@ -10,41 +10,64 @@ import net.minecraft.block.material.Material;
  * @author Namikon
  *
  */
-public class TitaniumPlatedReinforcedStoneProperties implements IExtendedBlockProperties
-{
+public class TitaniumPlatedReinforcedStoneProperties implements IExtendedBlockProperties {
     @Override
-    public Material getMaterial() { return Material.iron;}
+    public Material getMaterial() {
+        return Material.iron;
+    }
 
     @Override
-    public boolean getUnbreakable() { return false;	}
+    public boolean getUnbreakable() {
+        return false;
+    }
 
     @Override
-    public int getHarvestLevel() { return 4; }
+    public int getHarvestLevel() {
+        return 4;
+    }
 
     @Override
-    public int getOpacity() { return 100; }
+    public int getOpacity() {
+        return 100;
+    }
 
     @Override
-    public float getHardness() { return 200.0F; }
+    public float getHardness() {
+        return 200.0F;
+    }
 
     @Override
-    public float getLightLevel() { return 0; }
+    public float getLightLevel() {
+        return 0;
+    }
 
     @Override
-    public float getResistance() { return 450.0F; }
+    public float getResistance() {
+        return 450.0F;
+    }
 
     @Override
-    public String getBlockName() { return "TitaniumPlatedReinforcedStone"; }
+    public String getBlockName() {
+        return "TitaniumPlatedReinforcedStone";
+    }
 
     @Override
-    public String getTextureName() { return ""; }
+    public String getTextureName() {
+        return "";
+    }
 
     @Override
-    public String getHarvestToolClass() { return "pickaxe"; }
+    public String getHarvestToolClass() {
+        return "pickaxe";
+    }
 
     @Override
-    public Block.SoundType getStepSound() { return Block.soundTypeMetal; }
-    
+    public Block.SoundType getStepSound() {
+        return Block.soundTypeMetal;
+    }
+
     @Override
-    public boolean getIsOpaqueCube() { return true; }
+    public boolean getIsOpaqueCube() {
+        return true;
+    }
 }

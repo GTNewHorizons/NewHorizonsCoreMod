@@ -1,19 +1,17 @@
 package com.dreammaster.witchery;
 
-import com.dreammaster.coremod.DreamCoreMod;
 import com.emoniph.witchery.brewing.AltarPower;
 import com.emoniph.witchery.brewing.BrewItemKey;
 import com.emoniph.witchery.brewing.WitcheryBrewRegistry;
 import com.emoniph.witchery.brewing.action.BrewAction;
 import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
-import net.minecraft.item.ItemStack;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Hashtable;
+import net.minecraft.item.ItemStack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 class WitcheryBrewRegistryAccessor {
     static final Logger log = LogManager.getLogger("WitcheryCompat");
@@ -74,7 +72,7 @@ class WitcheryBrewRegistryAccessor {
         WitcheryBrewRegistry.INSTANCE.getRecipes().remove(action);
     }
 
-    static  BrewActionRitualRecipe.Recipe[] getRecipes(BrewActionRitualRecipe ritualRecipe) {
+    static BrewActionRitualRecipe.Recipe[] getRecipes(BrewActionRitualRecipe ritualRecipe) {
         try {
             return (BrewActionRitualRecipe.Recipe[]) fieldRecipes.get(ritualRecipe);
         } catch (IllegalAccessException e) {
@@ -85,8 +83,7 @@ class WitcheryBrewRegistryAccessor {
     static boolean isCauldronRecipeMatch(BrewActionRitualRecipe.Recipe recipe, ItemStack lastItem, ItemStack[] items) {
         final ItemStack[] ingredients = recipe.ingredients;
         final int length = ingredients.length;
-        if (length != items.length + 1)
-            return false;
+        if (length != items.length + 1) return false;
         boolean[] found = new boolean[length];
         for (ItemStack item : items) {
             boolean foundThisRound = false;
@@ -102,8 +99,7 @@ class WitcheryBrewRegistryAccessor {
                 found[i] = true;
                 foundThisRound = true;
             }
-            if (!foundThisRound)
-                return false;
+            if (!foundThisRound) return false;
         }
         // length check done already, no need to repeat
         return true;

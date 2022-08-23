@@ -1,51 +1,42 @@
 package com.dreammaster.modcustomdrops;
 
-import net.minecraft.entity.EntityLivingBase;
-
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.*;
+import net.minecraft.entity.EntityLivingBase;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "CustomDrops")
-public class CustomDrops
-{
+public class CustomDrops {
     @XmlElement(name = "CustomDrop")
     protected List<CustomDrop> mCustomDrops;
 
-    public List<CustomDrop> getCustomDrops()
-    {
+    public List<CustomDrop> getCustomDrops() {
         Init();
         return mCustomDrops;
     }
 
-    public CustomDrop FindDropEntry(EntityLivingBase pEntity)
-    {
-        try
-        {
+    public CustomDrop FindDropEntry(EntityLivingBase pEntity) {
+        try {
             Init();
             if (pEntity == null) {
                 return null;
             }
 
             String tEntityClassName = pEntity.getClass().getName();
-            for (CustomDrop drop : mCustomDrops)
-            {
+            for (CustomDrop drop : mCustomDrops) {
                 if (drop.mEntityClassName.equalsIgnoreCase(tEntityClassName)) {
                     return drop;
                 }
             }
 
             return null;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return null;
         }
     }
 
-    private void Init()
-    {
+    private void Init() {
         if (mCustomDrops == null) {
             mCustomDrops = new ArrayList<>();
         }
@@ -53,36 +44,31 @@ public class CustomDrops
 
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType
-    public static class CustomDrop
-    {
+    public static class CustomDrop {
         @XmlAttribute(name = "EntityClassName")
         protected String mEntityClassName;
 
         @XmlElement(name = "Drop")
         protected List<Drop> mDrops;
 
-        public List<Drop> getDrops()
-        {
+        public List<Drop> getDrops() {
             Init();
             return mDrops;
         }
 
-        private void Init()
-        {
+        private void Init() {
             if (mDrops == null) {
                 mDrops = new ArrayList<>();
             }
         }
 
-        public String getEntityName()
-        {
+        public String getEntityName() {
             return mEntityClassName;
         }
 
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType
-        public static class Drop
-        {
+        public static class Drop {
             @XmlAttribute(name = "Identifier")
             protected String mDropID;
 
@@ -104,33 +90,27 @@ public class CustomDrops
             @XmlAttribute(name = "RandomAmount")
             protected boolean mIsRandomAmount;
 
-            public String getIdentifier()
-            {
+            public String getIdentifier() {
                 return mDropID;
             }
 
-            public String getItemName()
-            {
+            public String getItemName() {
                 return mItemName;
             }
 
-            public int getAmount()
-            {
+            public int getAmount() {
                 return mAmount;
             }
 
-            public int getChance()
-            {
+            public int getChance() {
                 return mChance;
             }
 
-            public int getLimitedDropCount()
-            {
+            public int getLimitedDropCount() {
                 return mLimitedDropCount;
             }
 
-            public boolean getIsRandomAmount()
-            {
+            public boolean getIsRandomAmount() {
                 return mIsRandomAmount;
             }
         }
