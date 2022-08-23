@@ -12,8 +12,7 @@ import net.minecraftforge.common.util.Constants;
  * code. We make our constructor take an ItemStack argument so we can get and / or set the NBT Tag Compound. This is how we can save our
  * inventory within an "Item" - by using its enclosing ItemStack.
  */
-public class InventoryItem implements IInventory
-{
+public class InventoryItem implements IInventory {
     private String name = "Inventory Item";
 
     /** Provides NBT Tag Compound to reference */
@@ -29,13 +28,11 @@ public class InventoryItem implements IInventory
      * @param itemstack
      *            - the ItemStack to which this inventory belongs
      */
-    public InventoryItem(ItemStack stack)
-    {
+    public InventoryItem(ItemStack stack) {
         invItem = stack;
 
         // Create a new NBT Tag Compound if one doesn't already exist, or you will crash
-        if (!stack.hasTagCompound())
-        {
+        if (!stack.hasTagCompound()) {
             stack.setTagCompound(new NBTTagCompound());
         }
         // note that it's okay to use stack instead of invItem right there
@@ -47,31 +44,24 @@ public class InventoryItem implements IInventory
     }
 
     @Override
-    public int getSizeInventory()
-    {
+    public int getSizeInventory() {
         return inventory.length;
     }
 
     @Override
-    public ItemStack getStackInSlot(int slot)
-    {
+    public ItemStack getStackInSlot(int slot) {
         return inventory[slot];
     }
 
     @Override
-    public ItemStack decrStackSize(int slot, int amount)
-    {
+    public ItemStack decrStackSize(int slot, int amount) {
         ItemStack stack = getStackInSlot(slot);
-        if (stack != null)
-        {
-            if (stack.stackSize > amount)
-            {
+        if (stack != null) {
+            if (stack.stackSize > amount) {
                 stack = stack.splitStack(amount);
                 // Don't forget this line or your inventory will not be saved!
                 markDirty();
-            }
-            else
-            {
+            } else {
                 // this method also calls onInventoryChanged, so we don't need to call it again
                 setInventorySlotContents(slot, null);
             }
@@ -80,20 +70,17 @@ public class InventoryItem implements IInventory
     }
 
     @Override
-    public ItemStack getStackInSlotOnClosing(int slot)
-    {
+    public ItemStack getStackInSlotOnClosing(int slot) {
         ItemStack stack = getStackInSlot(slot);
         setInventorySlotContents(slot, null);
         return stack;
     }
 
     @Override
-    public void setInventorySlotContents(int pSlot, ItemStack pItemStack)
-    {
+    public void setInventorySlotContents(int pSlot, ItemStack pItemStack) {
         inventory[pSlot] = pItemStack;
 
-        if (pItemStack != null && pItemStack.stackSize > getInventoryStackLimit())
-        {
+        if (pItemStack != null && pItemStack.stackSize > getInventoryStackLimit()) {
             pItemStack.stackSize = getInventoryStackLimit();
         }
 
@@ -103,21 +90,18 @@ public class InventoryItem implements IInventory
 
     // 1.7.2+ renamed to getInventoryName
     @Override
-    public String getInventoryName()
-    {
+    public String getInventoryName() {
         return name;
     }
 
     // 1.7.2+ renamed to hasCustomInventoryName
     @Override
-    public boolean hasCustomInventoryName()
-    {
+    public boolean hasCustomInventoryName() {
         return !name.isEmpty();
     }
 
     @Override
-    public int getInventoryStackLimit()
-    {
+    public int getInventoryStackLimit() {
         return 1;
     }
 
@@ -128,12 +112,9 @@ public class InventoryItem implements IInventory
      */
     // 1.7.2+ renamed to markDirty
     @Override
-    public void markDirty()
-    {
-        for (int i = 0; i < getSizeInventory(); ++i)
-        {
-            if (getStackInSlot(i) != null && getStackInSlot(i).stackSize == 0)
-            {
+    public void markDirty() {
+        for (int i = 0; i < getSizeInventory(); ++i) {
+            if (getStackInSlot(i) != null && getStackInSlot(i).stackSize == 0) {
                 inventory[i] = null;
             }
         }
@@ -143,28 +124,24 @@ public class InventoryItem implements IInventory
     }
 
     @Override
-    public boolean isUseableByPlayer(EntityPlayer entityplayer)
-    {
+    public boolean isUseableByPlayer(EntityPlayer entityplayer) {
         return true;
     }
 
     // 1.7.2+ renamed to openInventory(EntityPlayer player)
     @Override
-    public void openInventory()
-    {}
+    public void openInventory() {}
 
     // 1.7.2+ renamed to closeInventory(EntityPlayer player)
     @Override
-    public void closeInventory()
-    {}
+    public void closeInventory() {}
 
     /**
      * This method doesn't seem to do what it claims to do, as items can still be left-clicked and placed in the inventory even when this
      * returns false
      */
     @Override
-    public boolean isItemValidForSlot(int slot, ItemStack itemstack)
-    {
+    public boolean isItemValidForSlot(int slot, ItemStack itemstack) {
         // Don't want to be able to store the inventory item within itself
         // Bad things will happen, like losing your inventory
         // Actually, this needs a custom Slot to work
@@ -174,20 +151,17 @@ public class InventoryItem implements IInventory
     /**
      * A custom method to read our inventory from an ItemStack's NBT compound
      */
-    public void readFromNBT(NBTTagCompound compound)
-    {
+    public void readFromNBT(NBTTagCompound compound) {
         // Gets the custom taglist we wrote to this compound, if any
         NBTTagList items = compound.getTagList("ItemInventory", Constants.NBT.TAG_COMPOUND);
 
-        for (int i = 0; i < items.tagCount(); ++i)
-        {
+        for (int i = 0; i < items.tagCount(); ++i) {
             // 1.7.2+ change to items.getCompoundTagAt(i)
             NBTTagCompound item = items.getCompoundTagAt(i);
             int slot = item.getInteger("Slot");
 
             // Just double-checking that the saved slot index is within our inventory array bounds
-            if (slot >= 0 && slot < getSizeInventory())
-            {
+            if (slot >= 0 && slot < getSizeInventory()) {
                 inventory[slot] = ItemStack.loadItemStackFromNBT(item);
                 // FMLLog.info("Item loaded %s", inventory[slot].getUnlocalizedName());
             }
@@ -197,16 +171,13 @@ public class InventoryItem implements IInventory
     /**
      * A custom method to write our inventory to an ItemStack's NBT compound
      */
-    public void writeToNBT(NBTTagCompound tagcompound)
-    {
+    public void writeToNBT(NBTTagCompound tagcompound) {
         // Create a new NBT Tag List to store itemstacks as NBT Tags
         NBTTagList items = new NBTTagList();
 
-        for (int i = 0; i < getSizeInventory(); ++i)
-        {
+        for (int i = 0; i < getSizeInventory(); ++i) {
             // Only write stacks that contain items
-            if (getStackInSlot(i) != null)
-            {
+            if (getStackInSlot(i) != null) {
                 // Make a new NBT Tag Compound to write the itemstack and slot index to
                 NBTTagCompound item = new NBTTagCompound();
                 item.setInteger("Slot", i);

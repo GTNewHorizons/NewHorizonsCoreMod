@@ -10,41 +10,64 @@ import net.minecraft.block.material.Material;
  * @author Namikon
  *
  */
-public class NaquadahPlatedReinforcedStoneProperties implements IExtendedBlockProperties
-{
+public class NaquadahPlatedReinforcedStoneProperties implements IExtendedBlockProperties {
     @Override
-    public Material getMaterial() { return Material.iron;}
+    public Material getMaterial() {
+        return Material.iron;
+    }
 
     @Override
-    public boolean getUnbreakable() { return false;	}
+    public boolean getUnbreakable() {
+        return false;
+    }
 
     @Override
-    public int getHarvestLevel() { return 5; }
+    public int getHarvestLevel() {
+        return 5;
+    }
 
     @Override
-    public int getOpacity() { return 100; }
+    public int getOpacity() {
+        return 100;
+    }
 
     @Override
-    public float getHardness() { return 500F; }
+    public float getHardness() {
+        return 500F;
+    }
 
     @Override
-    public float getLightLevel() { return 0; }
+    public float getLightLevel() {
+        return 0;
+    }
 
     @Override
-    public float getResistance() { return 700.0F; }
+    public float getResistance() {
+        return 700.0F;
+    }
 
     @Override
-    public String getBlockName() { return "NaquadahPlatedReinforcedStone"; }
+    public String getBlockName() {
+        return "NaquadahPlatedReinforcedStone";
+    }
 
     @Override
-    public String getTextureName() { return ""; }
+    public String getTextureName() {
+        return "";
+    }
 
     @Override
-    public String getHarvestToolClass() { return "pickaxe"; }
+    public String getHarvestToolClass() {
+        return "pickaxe";
+    }
 
     @Override
-    public Block.SoundType getStepSound() { return Block.soundTypeMetal;}
-    
+    public Block.SoundType getStepSound() {
+        return Block.soundTypeMetal;
+    }
+
     @Override
-    public boolean getIsOpaqueCube() { return true; }
+    public boolean getIsOpaqueCube() {
+        return true;
+    }
 }

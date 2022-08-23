@@ -11,6 +11,7 @@ class DownloadProgressDialog extends JDialog {
      *
      */
     private static final long serialVersionUID = 6041491111144915139L;
+
     public static final String WINDOW_TITLE = "GregTech: New Horizon";
     private Thread netThread;
     private JProgressBar progressBar;
@@ -46,7 +47,8 @@ class DownloadProgressDialog extends JDialog {
             buttonPane.setLayout(new FlowLayout(FlowLayout.CENTER));
             {
                 JButton cancelButton = new JButton("Cancel");
-                cancelButton.addActionListener(e -> DownloadProgressDialog.this.dispatchEvent(new WindowEvent(DownloadProgressDialog.this, WindowEvent.WINDOW_CLOSING)));
+                cancelButton.addActionListener(e -> DownloadProgressDialog.this.dispatchEvent(
+                        new WindowEvent(DownloadProgressDialog.this, WindowEvent.WINDOW_CLOSING)));
                 buttonPane.add(cancelButton);
             }
         }

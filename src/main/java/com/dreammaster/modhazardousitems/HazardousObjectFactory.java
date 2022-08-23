@@ -1,9 +1,8 @@
 package com.dreammaster.modhazardousitems;
 
-public class HazardousObjectFactory
-{
-    public HazardousItems.HazardousFluid createHazardousFluid(String pFluidName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory)
-    {
+public class HazardousObjectFactory {
+    public HazardousItems.HazardousFluid createHazardousFluid(
+            String pFluidName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory) {
         HazardousItems.HazardousFluid hi = new HazardousItems.HazardousFluid();
         hi.setFluidName(pFluidName);
         hi.setExactMatch(pExactMatch);
@@ -12,8 +11,8 @@ public class HazardousObjectFactory
         return hi;
     }
 
-    public HazardousItems.HazardousItem createHazardousItemsHazardousItem(String pItemName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory)
-    {
+    public HazardousItems.HazardousItem createHazardousItemsHazardousItem(
+            String pItemName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory) {
         HazardousItems.HazardousItem hi = new HazardousItems.HazardousItem();
         hi.setItemName(pItemName);
         hi.setExactMatch(pExactMatch);
@@ -22,8 +21,7 @@ public class HazardousObjectFactory
         return hi;
     }
 
-    public HazardousItems.ItmDamageEffect createDamageEffect(Float pAmount, String pSource)
-    {
+    public HazardousItems.ItmDamageEffect createDamageEffect(Float pAmount, String pSource) {
         HazardousItems.ItmDamageEffect dEf = new HazardousItems.ItmDamageEffect();
 
         dEf.setAmount(pAmount);
@@ -32,8 +30,7 @@ public class HazardousObjectFactory
         return dEf;
     }
 
-    public HazardousItems.ItmPotionEffect createPotionEffect(int pDuration, int pPotionID, int pLevel)
-    {
+    public HazardousItems.ItmPotionEffect createPotionEffect(int pDuration, int pPotionID, int pLevel) {
         HazardousItems.ItmPotionEffect pEf = new HazardousItems.ItmPotionEffect();
 
         pEf.setDuration(pDuration);

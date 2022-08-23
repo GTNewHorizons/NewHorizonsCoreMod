@@ -5,7 +5,7 @@ import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.util.GT_Recipe;
 
-public class GT_MetaTileEntity_AirFilterT2 extends GT_MetaTileEntity_AirFilterBase{
+public class GT_MetaTileEntity_AirFilterT2 extends GT_MetaTileEntity_AirFilterBase {
 
     public GT_MetaTileEntity_AirFilterT2(int aID, String aName, String aNameRegional) {
         super(aID, aName, aNameRegional);
@@ -23,7 +23,7 @@ public class GT_MetaTileEntity_AirFilterT2 extends GT_MetaTileEntity_AirFilterBa
     }
 
     @Override
-    public GT_Recipe getRecipe(){
+    public GT_Recipe getRecipe() {
         return tRecipeT2;
     }
 
@@ -33,17 +33,17 @@ public class GT_MetaTileEntity_AirFilterT2 extends GT_MetaTileEntity_AirFilterBa
     }
 
     @Override
-    public int getCasingIndex(){
+    public int getCasingIndex() {
         return 59;
     }
 
     @Override
-    public int getPipeMeta(){
+    public int getPipeMeta() {
         return 4;
     }
 
     @Override
-    public int getCasingMeta(){
+    public int getCasingMeta() {
         return 3;
     }
 }

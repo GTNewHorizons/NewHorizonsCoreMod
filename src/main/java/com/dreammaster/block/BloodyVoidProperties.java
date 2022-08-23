@@ -10,41 +10,64 @@ import net.minecraft.block.material.Material;
  * @author Namikon
  *
  */
-public class BloodyVoidProperties implements IExtendedBlockProperties
-{
+public class BloodyVoidProperties implements IExtendedBlockProperties {
     @Override
-    public Material getMaterial() { return Material.rock;}
+    public Material getMaterial() {
+        return Material.rock;
+    }
 
     @Override
-    public boolean getUnbreakable() { return false;	}
+    public boolean getUnbreakable() {
+        return false;
+    }
 
     @Override
-    public int getHarvestLevel() { return 3; }
+    public int getHarvestLevel() {
+        return 3;
+    }
 
     @Override
-    public int getOpacity() { return 100; }
+    public int getOpacity() {
+        return 100;
+    }
 
     @Override
-    public float getHardness() { return 60.0F; }
+    public float getHardness() {
+        return 60.0F;
+    }
 
     @Override
-    public float getLightLevel() { return 0; }
+    public float getLightLevel() {
+        return 0;
+    }
 
     @Override
-    public float getResistance() { return 40.0F; }
+    public float getResistance() {
+        return 40.0F;
+    }
 
     @Override
-    public String getBlockName() { return "BloodyVoid"; }
+    public String getBlockName() {
+        return "BloodyVoid";
+    }
 
     @Override
-    public String getTextureName() { return ""; }
+    public String getTextureName() {
+        return "";
+    }
 
     @Override
-    public String getHarvestToolClass() { return "pickaxe"; }
+    public String getHarvestToolClass() {
+        return "pickaxe";
+    }
 
     @Override
-    public Block.SoundType getStepSound() { return Block.soundTypeStone; }
-    
+    public Block.SoundType getStepSound() {
+        return Block.soundTypeStone;
+    }
+
     @Override
-    public boolean getIsOpaqueCube() { return true; }
+    public boolean getIsOpaqueCube() {
+        return true;
+    }
 }

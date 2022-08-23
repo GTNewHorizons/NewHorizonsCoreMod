@@ -7,8 +7,7 @@ import eu.usrv.yamcore.items.ModItemManager;
 import eu.usrv.yamcore.items.ModSimpleBaseItem;
 import net.minecraft.item.ItemStack;
 
-public enum ItemList
-{
+public enum ItemList {
     MicaBasedPulp(new ModSimpleBaseItem("MicaBasedPulp", ModTabList.ModGenericTab)),
     MicaBasedSheet(new ModSimpleBaseItem("MicaBasedSheet", ModTabList.ModGenericTab)),
     MicaInsulatorSheet(new ModSimpleBaseItem("MicaInsulatorSheet", ModTabList.ModGenericTab)),
@@ -49,8 +48,8 @@ public enum ItemList
     BioChunk(new ModSimpleBaseItem("BioChunk", ModTabList.ModGenericTab)),
     Blaster(new ModSimpleBaseItem("Blaster", ModTabList.ModThaumcraftTab)),
     BloodVial(new ModSimpleBaseItem("BloodVial", ModTabList.ModThaumcraftTab)),
-    //BowFletchingCast(new ModSimpleBaseItem("BowFletchingCast", ModTabList.ModMoldsTab)), //moved to CustomPatterns
-    //BowStringCast(new ModSimpleBaseItem("BowStringCast", ModTabList.ModMoldsTab)), //moved to CustomPatterns
+    // BowFletchingCast(new ModSimpleBaseItem("BowFletchingCast", ModTabList.ModMoldsTab)), //moved to CustomPatterns
+    // BowStringCast(new ModSimpleBaseItem("BowStringCast", ModTabList.ModMoldsTab)), //moved to CustomPatterns
     CompressedBioBall(new ModSimpleBaseItem("CompressedBioBall", ModTabList.ModGenericTab)),
     BlackPlutoniumCompressedPlate(new ModSimpleBaseItem("BlackPlutoniumCompressedPlate", ModTabList.ModSpaceTab)),
     BlackPlutoniumDust(new ModSimpleBaseItem("BlackPlutoniumDust", ModTabList.ModSpaceTab)),
@@ -195,13 +194,20 @@ public enum ItemList
     EnderiumBars(new ModSimpleBaseItem("EnderiumBars", ModTabList.ModBarsAndCasingsTab)),
     EnergeticAlloyBars(new ModSimpleBaseItem("EnergeticAlloyBars", ModTabList.ModBarsAndCasingsTab)),
     EnderEgg(new ModSimpleBaseItem("EnderEgg", ModTabList.ModGenericTab)),
-    EngineeringProcessorEssentiaPulsatingCore(new ModSimpleBaseItem("EngineeringProcessorEssentiaPulsatingCore", ModTabList.ModCircuitsTab)),
-    EngineeringProcessorFluidDiamondCore(new ModSimpleBaseItem("EngineeringProcessorFluidDiamondCore", ModTabList.ModCircuitsTab)),
-    EngineeringProcessorFluidEmeraldCore(new ModSimpleBaseItem("EngineeringProcessorFluidEmeraldCore", ModTabList.ModCircuitsTab)),
-    EngineeringProcessorItemAdvEmeraldCore(new ModSimpleBaseItem("EngineeringProcessorItemAdvEmeraldCore", ModTabList.ModCircuitsTab)),
-    EngineeringProcessorItemEmeraldCore(new ModSimpleBaseItem("EngineeringProcessorItemEmeraldCore", ModTabList.ModCircuitsTab)),
-    EngineeringProcessorItemDiamondCore(new ModSimpleBaseItem("EngineeringProcessorItemDiamondCore", ModTabList.ModCircuitsTab)),
-    EngineeringProcessorSpatialPulsatingCore(new ModSimpleBaseItem("EngineeringProcessorSpatialPulsatingCore", ModTabList.ModCircuitsTab)),
+    EngineeringProcessorEssentiaPulsatingCore(
+            new ModSimpleBaseItem("EngineeringProcessorEssentiaPulsatingCore", ModTabList.ModCircuitsTab)),
+    EngineeringProcessorFluidDiamondCore(
+            new ModSimpleBaseItem("EngineeringProcessorFluidDiamondCore", ModTabList.ModCircuitsTab)),
+    EngineeringProcessorFluidEmeraldCore(
+            new ModSimpleBaseItem("EngineeringProcessorFluidEmeraldCore", ModTabList.ModCircuitsTab)),
+    EngineeringProcessorItemAdvEmeraldCore(
+            new ModSimpleBaseItem("EngineeringProcessorItemAdvEmeraldCore", ModTabList.ModCircuitsTab)),
+    EngineeringProcessorItemEmeraldCore(
+            new ModSimpleBaseItem("EngineeringProcessorItemEmeraldCore", ModTabList.ModCircuitsTab)),
+    EngineeringProcessorItemDiamondCore(
+            new ModSimpleBaseItem("EngineeringProcessorItemDiamondCore", ModTabList.ModCircuitsTab)),
+    EngineeringProcessorSpatialPulsatingCore(
+            new ModSimpleBaseItem("EngineeringProcessorSpatialPulsatingCore", ModTabList.ModCircuitsTab)),
     EngineCore(new ModSimpleBaseItem("EngineCore", ModTabList.ModGenericTab)),
     EngravedEnergyChip(new ModSimpleBaseItem("EngravedEnergyChip", ModTabList.ModCircuitsTab)),
     EngravedDiamondCrystalChip(new ModSimpleBaseItem("EngravedDiamondCrystalChip", ModTabList.ModCircuitsTab)),
@@ -209,7 +215,8 @@ public enum ItemList
     EngravedManyullynCrystalChip(new ModSimpleBaseItem("EngravedManyullynCrystalChip", ModTabList.ModCircuitsTab)),
     EngravedQuantumChip(new ModSimpleBaseItem("EngravedQuantumChip", ModTabList.ModCircuitsTab)),
     EnrichedNaquadriaSunnariumAlloy(new ModSimpleBaseItem("EnrichedNaquadriaSunnariumAlloy", ModTabList.ModSolarTab)),
-    EnrichedNaquadriaNeutroniumSunnariumAlloy(new ModSimpleBaseItem("EnrichedNaquadriaNeutroniumSunnariumAlloy", ModTabList.ModSolarTab)),
+    EnrichedNaquadriaNeutroniumSunnariumAlloy(
+            new ModSimpleBaseItem("EnrichedNaquadriaNeutroniumSunnariumAlloy", ModTabList.ModSolarTab)),
     EnrichedXSunnariumAlloy(new ModSimpleBaseItem("EnrichedXSunnariumAlloy", ModTabList.ModSolarTab)),
     EnvironmentalCircuit(new ModSimpleBaseItem("EnvironmentalCircuit", ModTabList.ModCircuitsTab)),
     EssentiaCircuit(new ModSimpleBaseItem("EssentiaCircuit", ModTabList.ModCircuitsTab)),
@@ -254,14 +261,19 @@ public enum ItemList
     IridiumItemCasing(new ModSimpleBaseItem("IridiumItemCasing", ModTabList.ModBarsAndCasingsTab)),
     IridiumBars(new ModSimpleBaseItem("IridiumBars", ModTabList.ModBarsAndCasingsTab)),
     IridiumAlloyItemCasing(new ModSimpleBaseItem("IridiumAlloyItemCasing", ModTabList.ModBarsAndCasingsTab)),
-    IrradiantReinforcedAluminiumPlate(new ModSimpleBaseItem("IrradiantReinforcedAluminiumPlate", ModTabList.ModSolarTab)),
-    IrradiantReinforcedBedrockiumPlate(new ModSimpleBaseItem("IrradiantReinforcedBedrockiumPlate", ModTabList.ModSolarTab)),
+    IrradiantReinforcedAluminiumPlate(
+            new ModSimpleBaseItem("IrradiantReinforcedAluminiumPlate", ModTabList.ModSolarTab)),
+    IrradiantReinforcedBedrockiumPlate(
+            new ModSimpleBaseItem("IrradiantReinforcedBedrockiumPlate", ModTabList.ModSolarTab)),
     IrradiantReinforcedChromePlate(new ModSimpleBaseItem("IrradiantReinforcedChromePlate", ModTabList.ModSolarTab)),
-    IrradiantReinforcedNaquadriaPlate(new ModSimpleBaseItem("IrradiantReinforcedNaquadriaPlate", ModTabList.ModSolarTab)),
-    IrradiantReinforcedNeutroniumPlate(new ModSimpleBaseItem("IrradiantReinforcedNeutroniumPlate", ModTabList.ModSolarTab)),
+    IrradiantReinforcedNaquadriaPlate(
+            new ModSimpleBaseItem("IrradiantReinforcedNaquadriaPlate", ModTabList.ModSolarTab)),
+    IrradiantReinforcedNeutroniumPlate(
+            new ModSimpleBaseItem("IrradiantReinforcedNeutroniumPlate", ModTabList.ModSolarTab)),
     IrradiantReinforcedTitaniumPlate(new ModSimpleBaseItem("IrradiantReinforcedTitaniumPlate", ModTabList.ModSolarTab)),
     IrradiantReinforcedTungstenPlate(new ModSimpleBaseItem("IrradiantReinforcedTungstenPlate", ModTabList.ModSolarTab)),
-    IrradiantReinforcedTungstenSteelPlate(new ModSimpleBaseItem("IrradiantReinforcedTungstenSteelPlate", ModTabList.ModSolarTab)),
+    IrradiantReinforcedTungstenSteelPlate(
+            new ModSimpleBaseItem("IrradiantReinforcedTungstenSteelPlate", ModTabList.ModSolarTab)),
     IronWandCap(new ModSimpleBaseItem("IronWandCap", ModTabList.ModThaumcraftTab)),
     IronDualCompressedPlates(new ModSimpleBaseItem("IronDualCompressedPlates", ModTabList.ModSpaceTab)),
     HaumeaStoneDust(new ModSimpleBaseItem("HaumeaStoneDust", ModTabList.ModSpaceTab)),
@@ -357,7 +369,8 @@ public enum ItemList
     MysteriousCrystalPlate(new ModSimpleBaseItem("MysteriousCrystalPlate", ModTabList.ModSpaceTab)),
     MysteriousCrystalDensePlate(new ModSimpleBaseItem("MysteriousCrystalDensePlate", ModTabList.ModSpaceTab)),
     MysteriousCrystalCompressedPlate(new ModSimpleBaseItem("MysteriousCrystalCompressedPlate", ModTabList.ModSpaceTab)),
-    MysteriousCrystalDualCompressedPlates(new ModSimpleBaseItem("MysteriousCrystalDualCompressedPlates", ModTabList.ModSpaceTab)),
+    MysteriousCrystalDualCompressedPlates(
+            new ModSimpleBaseItem("MysteriousCrystalDualCompressedPlates", ModTabList.ModSpaceTab)),
     MytrylCrystal(new ModSimpleBaseItem("MytrylCrystal", ModTabList.ModSpaceTab)),
     MytrylDust(new ModSimpleBaseItem("MytrylDust", ModTabList.ModSpaceTab)),
     MytrylIngot(new ModSimpleBaseItem("MytrylIngot", ModTabList.ModSpaceTab)),
@@ -414,9 +427,9 @@ public enum ItemList
     QuantumProcessorBoard(new ModSimpleBaseItem("QuantumProcessorBoard", ModTabList.ModCircuitsTab)),
     RawBioFiber(new ModSimpleBaseItem("RawBioFiber", ModTabList.ModGenericTab)),
     RawLapotronCrystal(new ModSimpleBaseItem("RawLapotronCrystal", ModTabList.ModCircuitsTab)),
-    RawPicoWafer(new ModSimpleBaseItem("RawPicoWafer",ModTabList.ModCircuitsTab)),
-    PicoWafer(new ModSimpleBaseItem("PicoWafer",ModTabList.ModCircuitsTab)),
-    //AdvancedPicoWafer(new ModSimpleBaseItem("AdvancedPicoWafer",ModTabList.ModCircuitsTab)),
+    RawPicoWafer(new ModSimpleBaseItem("RawPicoWafer", ModTabList.ModCircuitsTab)),
+    PicoWafer(new ModSimpleBaseItem("PicoWafer", ModTabList.ModCircuitsTab)),
+    // AdvancedPicoWafer(new ModSimpleBaseItem("AdvancedPicoWafer",ModTabList.ModCircuitsTab)),
     RawMytryl(new ModSimpleBaseItem("RawMytryl", ModTabList.ModSpaceTab)),
     RawNeutronium(new ModSimpleBaseItem("RawNeutronium", ModTabList.ModSpaceTab)),
     RawOrbTier1(new ModSimpleBaseItem("RawOrbTier1", ModTabList.ModThaumcraftTab)),
@@ -495,7 +508,7 @@ public enum ItemList
     ShapeTurbineBlade(new ModSimpleBaseItem("ShapeTurbineBlade", ModTabList.ModShapesTab)),
     ShapeWire(new ModSimpleBaseItem("ShapeWire", ModTabList.ModShapesTab)),
     SilverThread(new ModSimpleBaseItem("SilverThread", ModTabList.ModThaumcraftTab)),
-	SilveredFleece(new ModSimpleBaseItem("SilveredFleece", ModTabList.ModThaumcraftTab)),
+    SilveredFleece(new ModSimpleBaseItem("SilveredFleece", ModTabList.ModThaumcraftTab)),
     SimpleCircuitBoard(new ModSimpleBaseItem("SimpleCircuitBoard", ModTabList.ModCircuitsTab)),
     SnowQueenBlood(new ModSimpleBaseItem("SnowQueenBlood", ModTabList.ModThaumcraftTab)),
     SnowQueenBloodDrop(new ModSimpleBaseItem("SnowQueenBloodDrop", ModTabList.ModThaumcraftTab)),
@@ -508,8 +521,8 @@ public enum ItemList
     StargateFramePart(new ModSimpleBaseItem("StargateFramePart", ModTabList.ModSpaceTab)),
     StargateChevron(new ModSimpleBaseItem("StargateChevron", ModTabList.ModSpaceTab)),
     StargateShieldingFoil(new ModSimpleBaseItem("StargateShieldingFoil", ModTabList.ModSpaceTab)),
-    StargateCrystalDust(new ModSimpleBaseItem("StargateCrystalDust",ModTabList.ModSpaceTab)),
-    TCetiESeaweedExtract(new ModSimpleBaseItem("TCetiESeaweedExtract",ModTabList.ModSpaceTab)),
+    StargateCrystalDust(new ModSimpleBaseItem("StargateCrystalDust", ModTabList.ModSpaceTab)),
+    TCetiESeaweedExtract(new ModSimpleBaseItem("TCetiESeaweedExtract", ModTabList.ModSpaceTab)),
     TCetiEStoneDust(new ModSimpleBaseItem("TCetiEStoneDust", ModTabList.ModSpaceTab)),
     TeleposerFrame(new ModSimpleBaseItem("TeleposerFrame", ModTabList.ModThaumcraftTab)),
     TheBigEgg(new ModSimpleBaseItem("TheBigEgg", ModTabList.ModGenericTab)),
@@ -540,7 +553,7 @@ public enum ItemList
     VegaBStoneDust(new ModSimpleBaseItem("VegaBStoneDust", ModTabList.ModSpaceTab)),
     VenusStoneDust(new ModSimpleBaseItem("VenusStoneDust", ModTabList.ModSpaceTab)),
     VibrantAlloyBars(new ModSimpleBaseItem("VibrantAlloyBars", ModTabList.ModBarsAndCasingsTab)),
-	VinteumThread(new ModSimpleBaseItem("VinteumThread", ModTabList.ModThaumcraftTab)),
+    VinteumThread(new ModSimpleBaseItem("VinteumThread", ModTabList.ModThaumcraftTab)),
     VoidEssence(new ModSimpleBaseItem("VoidEssence", ModTabList.ModThaumcraftTab)),
     VoidFoil(new ModSimpleBaseItem("VoidFoil", ModTabList.ModThaumcraftTab)),
     VoidPlate(new ModSimpleBaseItem("VoidPlate", ModTabList.ModThaumcraftTab)),
@@ -589,19 +602,16 @@ public enum ItemList
     // ################################################################################
     public ModSimpleBaseItem Item;
 
-    ItemList(ModSimpleBaseItem pItem)
-    {
+    ItemList(ModSimpleBaseItem pItem) {
         Item = pItem;
         if (Item != null) {
             Item.setModIDName(Refstrings.MODID);
         }
     }
 
-    public static boolean AddToItemManager(ModItemManager pItemManager)
-    {
+    public static boolean AddToItemManager(ModItemManager pItemManager) {
         boolean tResult = true;
-        for (ItemList il : ItemList.values())
-        {
+        for (ItemList il : ItemList.values()) {
             if (il.Item != null) {
                 if (!pItemManager.AddItemToManagedRegistry(il.Item)) {
                     MainRegistry.Logger.error(String.format("Item [%s] failed to register", il.toString()));
@@ -613,14 +623,11 @@ public enum ItemList
         return tResult;
     }
 
-    public ItemStack getIS()
-    {
+    public ItemStack getIS() {
         return new ItemStack(Item.getConstructedItem(), 1);
     }
-    
-    public ItemStack getIS(int amount)
-    {
+
+    public ItemStack getIS(int amount) {
         return new ItemStack(Item.getConstructedItem(), amount);
     }
-
 }

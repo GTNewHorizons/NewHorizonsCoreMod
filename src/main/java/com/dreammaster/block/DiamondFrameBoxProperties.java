@@ -10,41 +10,64 @@ import net.minecraft.block.material.Material;
  * @author Namikon
  *
  */
-public class DiamondFrameBoxProperties implements IExtendedBlockProperties
-{
+public class DiamondFrameBoxProperties implements IExtendedBlockProperties {
     @Override
-    public Material getMaterial() { return Material.iron;}
+    public Material getMaterial() {
+        return Material.iron;
+    }
 
     @Override
-    public boolean getUnbreakable() { return false;	}
+    public boolean getUnbreakable() {
+        return false;
+    }
 
     @Override
-    public int getHarvestLevel() { return 3; }
+    public int getHarvestLevel() {
+        return 3;
+    }
 
     @Override
-    public int getOpacity() { return 1; }
+    public int getOpacity() {
+        return 1;
+    }
 
     @Override
-    public float getHardness() { return 25.0F; }
+    public float getHardness() {
+        return 25.0F;
+    }
 
     @Override
-    public float getLightLevel() { return 0; }
+    public float getLightLevel() {
+        return 0;
+    }
 
     @Override
-    public float getResistance() { return 50.0F; }
+    public float getResistance() {
+        return 50.0F;
+    }
 
     @Override
-    public String getBlockName() { return "DiamondFrameBox"; }
+    public String getBlockName() {
+        return "DiamondFrameBox";
+    }
 
     @Override
-    public String getTextureName() { return ""; }
+    public String getTextureName() {
+        return "";
+    }
 
     @Override
-    public String getHarvestToolClass() { return "pickaxe"; }
+    public String getHarvestToolClass() {
+        return "pickaxe";
+    }
 
     @Override
-    public Block.SoundType getStepSound() { return Block.soundTypeMetal; }
-    
+    public Block.SoundType getStepSound() {
+        return Block.soundTypeMetal;
+    }
+
     @Override
-    public boolean getIsOpaqueCube() { return false; }
+    public boolean getIsOpaqueCube() {
+        return false;
+    }
 }

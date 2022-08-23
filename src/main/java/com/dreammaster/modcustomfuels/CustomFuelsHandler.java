@@ -4,36 +4,30 @@ import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.common.IFuelHandler;
 import eu.usrv.yamcore.auxiliary.LogHelper;
-import net.minecraft.item.ItemStack;
-
+import java.io.File;
+import java.io.FileOutputStream;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.File;
-import java.io.FileOutputStream;
+import net.minecraft.item.ItemStack;
 
-public class CustomFuelsHandler implements IFuelHandler
-{
+public class CustomFuelsHandler implements IFuelHandler {
     private LogHelper _mLogger = MainRegistry.Logger;
     private String _mConfigFileName;
     private CustomFuelsFactory _mCfF = new CustomFuelsFactory();
     private CustomFuels _mCustomFuels;
 
-    public CustomFuelsHandler()
-    {
+    public CustomFuelsHandler() {
         _mConfigFileName = String.format("config/%s/CustomFuels.xml", Refstrings.COLLECTIONID);
     }
 
-    public void InitSampleConfig()
-    {
+    public void InitSampleConfig() {
         _mCustomFuels = new CustomFuels();
         _mCustomFuels.getFuelItems().add(_mCfF.createCustomFuelItem("minecraft:diamond", 102400));
     }
 
-    public boolean SaveCustomFuels()
-    {
-        try
-        {
+    public boolean SaveCustomFuels() {
+        try {
             JAXBContext tJaxbCtx = JAXBContext.newInstance(CustomFuels.class);
             Marshaller jaxMarsh = tJaxbCtx.createMarshaller();
             jaxMarsh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -41,21 +35,17 @@ public class CustomFuelsHandler implements IFuelHandler
 
             _mLogger.debug("Config file written");
             return true;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             _mLogger.error("Unable to create new CustomFuels.xml. What did you do??");
             e.printStackTrace();
             return false;
         }
     }
 
-    public void LoadConfig()
-    {
+    public void LoadConfig() {
         _mLogger.debug("CustomFuels entering state: LOAD CONFIG");
         File tConfigFile = new File(_mConfigFileName);
-        if (!tConfigFile.exists())
-        {
+        if (!tConfigFile.exists()) {
             _mLogger.debug("CustomFuels Config file not found, assuming first-start. Creating default one");
             InitSampleConfig();
             SaveCustomFuels();
@@ -64,21 +54,19 @@ public class CustomFuelsHandler implements IFuelHandler
         // Fix for broken XML file; If it can't be loaded on reboot, keep it
         // there to be fixed, but load
         // default setting instead, so an Op/Admin can do reload ingame
-        if (!ReloadCustomFuels())
-        {
-            _mLogger.warn("Configuration File seems to be damaged, loading does-nothing-evil default config. You should fix your file and reload it");
+        if (!ReloadCustomFuels()) {
+            _mLogger.warn(
+                    "Configuration File seems to be damaged, loading does-nothing-evil default config. You should fix your file and reload it");
             MainRegistry.AddLoginError("[CustomFuels] Config file not loaded due errors");
             InitSampleConfig();
         }
     }
 
-    public boolean ReloadCustomFuels()
-    {
+    public boolean ReloadCustomFuels() {
         boolean tResult = false;
 
         _mLogger.debug("CustomFuelsHandler will now try to load it's configuration");
-        try
-        {
+        try {
             JAXBContext tJaxbCtx = JAXBContext.newInstance(CustomFuels.class);
             File tConfigFile = new File(_mConfigFileName);
             Unmarshaller jaxUnmarsh = tJaxbCtx.createUnmarshaller();
@@ -88,9 +76,7 @@ public class CustomFuelsHandler implements IFuelHandler
             _mCustomFuels = tNewItemCollection;
             tResult = true;
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -98,10 +84,8 @@ public class CustomFuelsHandler implements IFuelHandler
     }
 
     @Override
-    public int getBurnTime(ItemStack pIS)
-    {
-        try
-        {
+    public int getBurnTime(ItemStack pIS) {
+        try {
             int tReturnValue = 0;
 
             CustomFuels.FuelItem tFI = _mCustomFuels.FindFuelValue(pIS);
@@ -110,9 +94,7 @@ public class CustomFuelsHandler implements IFuelHandler
             } else {
                 return 0;
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             _mLogger.error("Something went wrong");
             e.printStackTrace();
             return 0;
