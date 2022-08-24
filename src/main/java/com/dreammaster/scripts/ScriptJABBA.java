@@ -95,7 +95,7 @@ public class ScriptJABBA implements IScriptLoader {
                     getModItem("gregtech", "gt.integrated_circuit", 0, 2)
                 },
                 GT_Values.NF,
-                getModItem("JABBA", "upgradeCore", 1),
+                getModItem("JABBA", "upgradeCore", 3),
                 1200,
                 16);
         GT_Values.RA.addAssemblerRecipe(
@@ -103,7 +103,7 @@ public class ScriptJABBA implements IScriptLoader {
                     getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32640),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
-                }, // LV Piston
+                },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 4),
                 1200,
@@ -114,7 +114,7 @@ public class ScriptJABBA implements IScriptLoader {
                     getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32641),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
-                }, // MV Piston
+                },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 5),
                 1200,
@@ -125,7 +125,7 @@ public class ScriptJABBA implements IScriptLoader {
                     getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32642),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
-                }, // HV Piston
+                },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 6),
                 1200,
@@ -136,7 +136,7 @@ public class ScriptJABBA implements IScriptLoader {
                     getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32643),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
-                }, // EV Piston
+                },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 8),
                 1200,
@@ -147,7 +147,7 @@ public class ScriptJABBA implements IScriptLoader {
                     getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32644),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
-                }, // IV Piston
+                },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 9),
                 1200,
