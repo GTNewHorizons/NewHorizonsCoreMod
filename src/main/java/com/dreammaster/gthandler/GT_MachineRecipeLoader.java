@@ -16816,7 +16816,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[] {
                             GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                             GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedplate", 1L, 88),
-                            GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick>", 1L, 88),
+                            GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 1L, 88),
                             GT_Utility.getIntegratedCircuit(1)
                         },
                         GT_Values.NF,

@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import java.util.Arrays;
 import net.minecraft.item.ItemStack;
@@ -292,11 +293,21 @@ public class ScriptJABBA implements IScriptLoader {
             "stickTungstenSteel", "plateTungstenSteel", "stickTungstenSteel"
         });
 
-        addShapedRecipe(getModItem("JABBA", "upgradeStructural", 1, 9), new Object[] {
-            "stickChrome", "plateChrome", "stickChrome",
-            "plateChrome", getModItem("JABBA", "barrel", 1), "plateChrome",
-            "stickChrome", "plateChrome", "stickChrome"
-        });
+        if (Loader.isModLoaded("bartworks")) {
+            addShapedRecipe(getModItem("JABBA", "upgradeStructural", 1, 9), new Object[] {
+                "stickRhodium-PlatedPalladium", "plateRhodium-PlatedPalladium", "stickRhodium-PlatedPalladium",
+                "plateRhodium-PlatedPalladium", getModItem("JABBA", "barrel", 1), "plateRhodium-PlatedPalladium",
+                "stickRhodium-PlatedPalladium", "plateRhodium-PlatedPalladium", "stickRhodium-PlatedPalladium"
+            });
+            
+        } else {
+
+            addShapedRecipe(getModItem("JABBA", "upgradeStructural", 1, 9), new Object[] {
+                "stickChrome", "plateChrome", "stickChrome",
+                "plateChrome", getModItem("JABBA", "barrel", 1), "plateChrome",
+                "stickChrome", "plateChrome", "stickChrome"
+            });
+        }
 
         addShapedRecipe(getModItem("JABBA", "upgradeStructural", 1, 10), new Object[] {
             "stickIridium", "plateIridium", "stickIridium",
