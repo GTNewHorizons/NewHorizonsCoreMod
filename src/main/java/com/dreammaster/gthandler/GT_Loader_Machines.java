@@ -89,7 +89,7 @@ public class GT_Loader_Machines {
             'W',
             OrePrefixes.wireGt12.get(Materials.Quantium),
             'H',
-            OrePrefixes.plate.get(Materials.Draconium),
+            OrePrefixes.plate.get(Materials.SpaceTime),
             'P',
             OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)
         });
