@@ -88,10 +88,19 @@ public class ScriptJABBA implements IScriptLoader {
                 getModItem("JABBA", "upgradeCore", 1),
                 1200,
                 16);
-
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     getModItem("JABBA", "barrel", 1),
+                    getModItem("gregtech", "gt.metaitem.01", 1, 32640),
+                    getModItem("gregtech", "gt.integrated_circuit", 0, 2)
+                },
+                GT_Values.NF,
+                getModItem("JABBA", "upgradeCore", 1),
+                1200,
+                16);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32640),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
                 }, // LV Piston
@@ -102,7 +111,7 @@ public class ScriptJABBA implements IScriptLoader {
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    getModItem("JABBA", "barrel", 1),
+                    getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32641),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
                 }, // MV Piston
@@ -113,7 +122,7 @@ public class ScriptJABBA implements IScriptLoader {
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    getModItem("JABBA", "barrel", 1),
+                    getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32642),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
                 }, // HV Piston
@@ -124,7 +133,7 @@ public class ScriptJABBA implements IScriptLoader {
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    getModItem("JABBA", "barrel", 1),
+                    getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32643),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
                 }, // EV Piston
@@ -135,7 +144,7 @@ public class ScriptJABBA implements IScriptLoader {
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    getModItem("JABBA", "barrel", 1),
+                    getModItem("JABBA", "upgradeCore", 1),
                     getModItem("gregtech", "gt.metaitem.01", 1, 32644),
                     getModItem("gregtech", "gt.integrated_circuit", 0, 1)
                 }, // IV Piston
@@ -299,7 +308,7 @@ public class ScriptJABBA implements IScriptLoader {
                 "plateRhodium-PlatedPalladium", getModItem("JABBA", "barrel", 1), "plateRhodium-PlatedPalladium",
                 "stickRhodium-PlatedPalladium", "plateRhodium-PlatedPalladium", "stickRhodium-PlatedPalladium"
             });
-            
+
         } else {
 
             addShapedRecipe(getModItem("JABBA", "upgradeStructural", 1, 9), new Object[] {
