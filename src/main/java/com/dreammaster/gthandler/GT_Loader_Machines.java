@@ -81,18 +81,21 @@ public class GT_Loader_Machines {
                         11232, "hull.tier.12", "UMV Machine Hull", 12, GT_Loader_MetaTileEntities.imagination)
                 .getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Hull_UMV.get(1L), bitsd, new Object[] {
-            "PHP",
-            "WMW",
-            'M',
-            CustomItemList.Casing_UMV,
-            'W',
-            OrePrefixes.wireGt12.get(Materials.Quantium),
-            'H',
-            OrePrefixes.plate.get(Materials.SpaceTime),
-            'P',
-            OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)
-        });
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Hull_UMV.get(1L),
+                GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] {
+                    "PHP",
+                    "WMW",
+                    'M',
+                    CustomItemList.Casing_UMV,
+                    'W',
+                    OrePrefixes.wireGt12.get(Materials.Quantium),
+                    'H',
+                    OrePrefixes.plate.get(Materials.SpaceTime),
+                    'P',
+                    OrePrefixes.plateDouble.get(Materials.Polybenzimidazole)
+                });
 
         CustomItemList.Hull_UXV.set(new GT_MetaTileEntity_BasicHull(
                         11233, "hull.tier.13", "UXV Machine Hull", 13, GT_Loader_MetaTileEntities.imagination)
