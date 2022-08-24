@@ -650,7 +650,6 @@ item.CircuitUEV.name=Any UEV Circuit
 item.CircuitUIV.name=Any UIV Circuit
 item.CircuitUMV.name=Any UMV Circuit
 item.CircuitUXV.name=Any UXV Circuit
-item.CircuitOpV.name=Any OpV Circuit
 item.CircuitMAX.name=Any MAX Circuit
 
 tc.aspect.custom1=Equality, Balance, Uniformity
