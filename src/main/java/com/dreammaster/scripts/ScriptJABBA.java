@@ -4,6 +4,11 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import java.util.Arrays;
 import net.minecraft.item.ItemStack;
 
@@ -72,7 +77,7 @@ public class ScriptJABBA implements IScriptLoader {
                 new ItemStack[] {
                     getModItem("JABBA", "barrel", 1),
                     getModItem("minecraft", "piston", 1),
-                    getModItem("gregtech", "gt.integrated_circuit", 0, 1)
+                    GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1),
@@ -82,7 +87,7 @@ public class ScriptJABBA implements IScriptLoader {
                 new ItemStack[] {
                     getModItem("JABBA", "barrel", 1),
                     getModItem("minecraft", "sticky_piston", 1),
-                    getModItem("gregtech", "gt.integrated_circuit", 0, 1)
+                    GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1),
@@ -91,8 +96,8 @@ public class ScriptJABBA implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     getModItem("JABBA", "barrel", 1),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32640),
-                    getModItem("gregtech", "gt.integrated_circuit", 0, 2)
+                    ItemList.Electric_Piston_LV.get(1L),
+                    GT_Utility.getIntegratedCircuit(2)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 3),
@@ -101,8 +106,9 @@ public class ScriptJABBA implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     getModItem("JABBA", "upgradeCore", 1),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32640),
-                    getModItem("gregtech", "gt.integrated_circuit", 0, 1)
+                    ItemList.Electric_Piston_LV.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                    GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 4),
@@ -112,8 +118,9 @@ public class ScriptJABBA implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     getModItem("JABBA", "upgradeCore", 1),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32641),
-                    getModItem("gregtech", "gt.integrated_circuit", 0, 1)
+                    ItemList.Electric_Piston_MV.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2L),
+                    GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 5),
@@ -123,8 +130,9 @@ public class ScriptJABBA implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     getModItem("JABBA", "upgradeCore", 1),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32642),
-                    getModItem("gregtech", "gt.integrated_circuit", 0, 1)
+                    ItemList.Electric_Piston_HV.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4L),
+                    GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 6),
@@ -134,8 +142,9 @@ public class ScriptJABBA implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     getModItem("JABBA", "upgradeCore", 1),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32643),
-                    getModItem("gregtech", "gt.integrated_circuit", 0, 1)
+                    ItemList.Electric_Piston_EV.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 8L),
+                    GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 8),
@@ -145,8 +154,9 @@ public class ScriptJABBA implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     getModItem("JABBA", "upgradeCore", 1),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32644),
-                    getModItem("gregtech", "gt.integrated_circuit", 0, 1)
+                    ItemList.Electric_Piston_IV.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16L),
+                    GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 9),
