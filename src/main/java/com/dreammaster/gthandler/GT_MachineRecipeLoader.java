@@ -1014,6 +1014,30 @@ public class GT_MachineRecipeLoader implements Runnable {
                 100,
                 1920);
         GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlower.get(10L),
+                GT_Utility.getIntegratedCircuit(10),
+                CustomItemList.CoinFlowerI.get(1L),
+                100,
+                30);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerI.get(10L),
+                GT_Utility.getIntegratedCircuit(10),
+                CustomItemList.CoinFlowerII.get(1L),
+                100,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerII.get(10L),
+                GT_Utility.getIntegratedCircuit(10),
+                CustomItemList.CoinFlowerIII.get(1L),
+                100,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerIII.get(10L),
+                GT_Utility.getIntegratedCircuit(10),
+                CustomItemList.CoinFlowerIV.get(1L),
+                100,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
                 CustomItemList.CoinAdventureI.get(1L),
                 GT_Utility.getIntegratedCircuit(1),
                 CustomItemList.CoinAdventure.get(10L),
@@ -1323,6 +1347,30 @@ public class GT_MachineRecipeLoader implements Runnable {
                 CustomItemList.CoinWitchIV.get(1L),
                 GT_Utility.getIntegratedCircuit(1),
                 CustomItemList.CoinWitchIII.get(10L),
+                100,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerI.get(1L),
+                GT_Utility.getIntegratedCircuit(1),
+                CustomItemList.CoinFlower.get(10L),
+                100,
+                30);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerII.get(1L),
+                GT_Utility.getIntegratedCircuit(1),
+                CustomItemList.CoinFlowerI.get(10L),
+                100,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerIII.get(1L),
+                GT_Utility.getIntegratedCircuit(1),
+                CustomItemList.CoinFlowerII.get(10L),
+                100,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerIV.get(1L),
+                GT_Utility.getIntegratedCircuit(1),
+                CustomItemList.CoinFlowerIII.get(10L),
                 100,
                 1920);
 
