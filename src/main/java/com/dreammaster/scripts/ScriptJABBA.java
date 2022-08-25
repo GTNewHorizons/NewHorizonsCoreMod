@@ -155,13 +155,50 @@ public class ScriptJABBA implements IScriptLoader {
                 new ItemStack[] {
                     getModItem("JABBA", "upgradeCore", 1),
                     ItemList.Electric_Piston_IV.get(1L),
-                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16L),
+                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16L),
                     GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 9),
                 3600,
                 7680);
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        getModItem("JABBA", "upgradeCore", 1),
+                        ItemList.Electric_Piston_IV.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 32L),
+                        GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                getModItem("JABBA", "upgradeCore", 1, 11),
+                4200,
+                30720);
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        getModItem("JABBA", "upgradeCore", 1),
+                        ItemList.Electric_Piston_IV.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 64L),
+                        GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                getModItem("JABBA", "upgradeCore", 1, 12),
+                4800,
+                122880);
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        getModItem("JABBA", "upgradeCore", 1),
+                        ItemList.Electric_Piston_IV.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinity, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinity, 64L),
+                        GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                getModItem("JABBA", "upgradeCore", 1, 13),
+                5400,
+                500000);
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
@@ -203,6 +240,31 @@ public class ScriptJABBA implements IScriptLoader {
                 getModItem("JABBA", "upgradeCore", 1, 9),
                 150,
                 480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        getModItem("JABBA", "upgradeCore", 3, 9), getModItem("gregtech", "gt.integrated_circuit", 0, 3)
+                },
+                GT_Values.NF,
+                getModItem("JABBA", "upgradeCore", 1, 11),
+                100,
+                960);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        getModItem("JABBA", "upgradeCore", 3, 11), getModItem("gregtech", "gt.integrated_circuit", 0, 3)
+                },
+                GT_Values.NF,
+                getModItem("JABBA", "upgradeCore", 1, 12),
+                50,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        getModItem("JABBA", "upgradeCore", 3, 12), getModItem("gregtech", "gt.integrated_circuit", 0, 3)
+                },
+                GT_Values.NF,
+                getModItem("JABBA", "upgradeCore", 1, 13),
+                25,
+                4096);
+
 
         addShapedRecipe(getModItem("JABBA", "barrel", 1), new Object[] {
             "logWood", "slabWood", "logWood",
