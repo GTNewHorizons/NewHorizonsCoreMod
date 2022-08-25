@@ -422,6 +422,11 @@ public class GT_Loader_Items {
         CustomItemList.CoinWitchII.set(ItemList.CoinWitchII.getIS());
         CustomItemList.CoinWitchIII.set(ItemList.CoinWitchIII.getIS());
         CustomItemList.CoinWitchIV.set(ItemList.CoinWitchIV.getIS());
+        CustomItemList.CoinFlower.set(ItemList.CoinFlower.getIS());
+        CustomItemList.CoinFlowerI.set(ItemList.CoinFlowerI.getIS());
+        CustomItemList.CoinFlowerII.set(ItemList.CoinFlowerII.getIS());
+        CustomItemList.CoinFlowerIII.set(ItemList.CoinFlowerIII.getIS());
+        CustomItemList.CoinFlowerIV.set(ItemList.CoinFlowerIV.getIS());
         CustomItemList.WetTofu.set(ItemList.WetTofu.getIS());
         CustomItemList.NetherStarFragment.set(ItemList.NetherStarFragment.getIS());
         CustomItemList.WeakOrb.set(ItemList.WeakOrb.getIS());

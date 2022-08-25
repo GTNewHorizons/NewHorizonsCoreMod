@@ -1325,6 +1325,30 @@ public class GT_MachineRecipeLoader implements Runnable {
                 CustomItemList.CoinWitchIII.get(10L),
                 100,
                 1920);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerI.get(1L),
+                GT_Utility.getIntegratedCircuit(1),
+                CustomItemList.CoinFlower.get(10L),
+                100,
+                30);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerII.get(1L),
+                GT_Utility.getIntegratedCircuit(1),
+                CustomItemList.CoinFlowerI.get(10L),
+                100,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerIII.get(1L),
+                GT_Utility.getIntegratedCircuit(1),
+                CustomItemList.CoinFlowerII.get(10L),
+                100,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                CustomItemList.CoinFlowerIV.get(1L),
+                GT_Utility.getIntegratedCircuit(1),
+                CustomItemList.CoinFlowerIII.get(10L),
+                100,
+                1920);
 
         // Air Filter stuff
         GT_Values.RA.addAssemblerRecipe(
