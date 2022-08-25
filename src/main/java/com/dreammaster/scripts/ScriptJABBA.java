@@ -124,7 +124,7 @@ public class ScriptJABBA implements IScriptLoader {
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 5),
-                1200,
+                1800,
                 120);
 
         GT_Values.RA.addAssemblerRecipe(
@@ -136,7 +136,7 @@ public class ScriptJABBA implements IScriptLoader {
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 6),
-                1200,
+                2400,
                 480);
 
         GT_Values.RA.addAssemblerRecipe(
@@ -148,7 +148,7 @@ public class ScriptJABBA implements IScriptLoader {
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 8),
-                1200,
+                3000,
                 1920);
 
         GT_Values.RA.addAssemblerRecipe(
@@ -160,7 +160,7 @@ public class ScriptJABBA implements IScriptLoader {
                 },
                 GT_Values.NF,
                 getModItem("JABBA", "upgradeCore", 1, 9),
-                1200,
+                3600,
                 7680);
 
         GT_Values.RA.addAssemblerRecipe(
