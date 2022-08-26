@@ -1,7 +1,7 @@
 package com.dreammaster.loginhandler;
 
 import static com.dreammaster.config.CoreModConfig.ModPackVersion;
-import static com.mojang.realmsclient.gui.ChatFormatting.DARK_GREEN;
+import static net.minecraft.util.EnumChatFormatting.DARK_GREEN;
 import static net.minecraft.util.EnumChatFormatting.BLUE;
 import static net.minecraft.util.EnumChatFormatting.BOLD;
 import static net.minecraft.util.EnumChatFormatting.GOLD;
