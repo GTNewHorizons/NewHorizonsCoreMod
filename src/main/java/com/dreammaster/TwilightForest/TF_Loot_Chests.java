@@ -51,7 +51,7 @@ public class TF_Loot_Chests {
         TFTreasure.hill2.rare.add(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 16L), 12);
         TFTreasure.hill2.rare.add(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 2L), 12);
         TFTreasure.hill2.ultrarare.add(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Gallium, 1L), 6);
-        TFTreasure.hill3.ultrarare.add(GT_ModHandler.getModItem("DraconicEvolution", "dezilsMarshmallow", 1, 0), 2);
+        TFTreasure.hill2.ultrarare.add(GT_ModHandler.getModItem("DraconicEvolution", "dezilsMarshmallow", 1, 0), 1);
         // Hill3 = huge
         TFTreasure.hill3.common.add(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Thaumium, 6L), 12);
         TFTreasure.hill3.common.add(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Manganese, 6L), 12);
@@ -98,7 +98,6 @@ public class TF_Loot_Chests {
         TFTreasure.basement.rare.add(new ItemStack(Items.potionitem, 1, 8257), 6); // potion regen ii
         TFTreasure.basement.rare.add(new ItemStack(Items.potionitem, 1, 8229), 6); // potion health ii
         TFTreasure.basement.rare.add(new ItemStack(Items.potionitem, 1, 8258), 6); // potion extended swiftness ii
-        TFTreasure.basement.rare.add(GT_ModHandler.getModItem("DraconicEvolution", "dezilsMarshmallow", 4, 0), 2);
         TFTreasure.basement.rare.add(new ItemStack(Items.potionitem, 1, 8259), 6); // potion fire resistance iI
 
         // Litch Tower Library
@@ -145,7 +144,7 @@ public class TF_Loot_Chests {
                 GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 4, 14), 6); // Salis Mundus
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8233), 12); // potion strength ii
         TFTreasure.tower_library.uncommon.add(
-                GT_ModHandler.getModItem("DraconicEvolution", "dezilsMarshmallow", 1, 0), 12);
+                GT_ModHandler.getModItem("DraconicEvolution", "dezilsMarshmallow", 1, 0), 1);
         TFTreasure.tower_library.rare.add(new ItemStack(Items.potionitem, 1, 8257), 6); // potion regen ii
         TFTreasure.tower_library.rare.add(new ItemStack(Items.potionitem, 1, 8229), 6); // potion health ii
         TFTreasure.tower_library.rare.add(new ItemStack(Items.potionitem, 1, 8258), 6); // potion extended swiftness ii
@@ -153,7 +152,7 @@ public class TF_Loot_Chests {
         TFTreasure.tower_library.rare.add(new ItemStack(Items.potionitem, 1, 8259), 6); // potion fire resistance iI
 
         // Litch Tower Boss Room
-        TFTreasure.tower_room.common.add(GT_ModHandler.getModItem("DraconicEvolution", "dezilsMarshmallow", 1, 0), 12);
+        TFTreasure.tower_room.common.add(GT_ModHandler.getModItem("DraconicEvolution", "dezilsMarshmallow", 1, 0), 3);
         TFTreasure.tower_room.common.add(GT_ModHandler.getModItem("Thaumcraft", "ItemLootBag", 1, 0), 12);
         // TFTreasure.tower_room.common.add(CustomItemList.LichBone.get(2),50);
         // TFTreasure.tower_room.common.add(CustomItemList.LichBoneChip.get(8),75);
