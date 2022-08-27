@@ -132,8 +132,7 @@ public class TF_Loot_Chests {
         TFTreasure.tower_library.common.add(
                 GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 4, 14), 6); // Salis Mundus
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8198), 6); // potion night vision i
-        TFTreasure.tower_library.uncommon.add(
-                GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 2, 1), 8); // Nitor
+        TFTreasure.tower_library.uncommon.add(GT_ModHandler.getModItem("Thaumcraft", "ItemResource", 2, 1), 8); // Nitor
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8193), 6); // potion regen i
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8197), 6); // potion health i
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8194), 6); // potion swiftness i
@@ -157,8 +156,7 @@ public class TF_Loot_Chests {
         // TFTreasure.tower_room.common.add(CustomItemList.LichBone.get(2),50);
         // TFTreasure.tower_room.common.add(CustomItemList.LichBoneChip.get(8),75);
         TFTreasure.tower_room.uncommon.add(GT_ModHandler.getModItem("Thaumcraft", "ItemLootBag", 1, 1), 12);
-        TFTreasure.tower_room.uncommon.add(
-                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.NetherStar, 1L), 2);
+        TFTreasure.tower_room.uncommon.add(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.NetherStar, 1L), 2);
         TFTreasure.tower_room.rare.add(GT_ModHandler.getModItem("Thaumcraft", "ItemLootBag", 1, 2), 6);
     }
 }
