@@ -571,7 +571,6 @@ public enum ItemList {
     WeakOrb(new ModSimpleBaseItem("WeakOrb", ModTabList.ModThaumcraftTab)),
     WetTofu(new ModSimpleBaseItem("WetTofu", ModTabList.ModGenericTab)),
     WirelessTransmitter(new ModSimpleBaseItem("WirelessTransmitter", ModTabList.ModGenericTab)),
-    WoodenBrickForm(new ModSimpleBaseItem(new WoodenBrickFormProperties(), ModTabList.ModGenericTab)),
     WoodenCasing(new ModSimpleBaseItem("WoodenCasing", ModTabList.ModGenericTab)),
     MedalDerp(new ModSimpleBaseItem("MedalDerp", ModTabList.ModGenericTab)),
     MedalGTExplosion(new ModSimpleBaseItem("MedalGTExplosion", ModTabList.ModGenericTab)),

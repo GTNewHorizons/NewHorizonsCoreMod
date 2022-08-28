@@ -572,7 +572,6 @@ public class GT_Loader_Items {
         CustomItemList.AlumiteDust.set(ItemList.AlumiteDust.getIS());
         CustomItemList.TwilightCrystal.set(ItemList.TwilightCrystal.getIS());
         CustomItemList.UnfiredClayBrick.set(ItemList.UnfiredClayBrick.getIS());
-        CustomItemList.WoodenBrickForm.set(ItemList.WoodenBrickForm.getIS());
         CustomItemList.UnfiredSearedBrick.set(ItemList.UnfiredSearedBrick.getIS());
         CustomItemList.UnfiredCokeOvenBrick.set(ItemList.UnfiredCokeOvenBrick.getIS());
         CustomItemList.UnfiredSlimeSoulBrick.set(ItemList.UnfiredSlimeSoulBrick.getIS());

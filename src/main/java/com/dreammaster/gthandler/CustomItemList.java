@@ -763,7 +763,6 @@ public enum CustomItemList implements IItemContainer {
     nameRemover,
     TwilightCrystal,
     UnfiredClayBrick,
-    WoodenBrickForm,
     UnfiredSearedBrick,
     UnfiredCokeOvenBrick,
     UnfiredSlimeSoulBrick,

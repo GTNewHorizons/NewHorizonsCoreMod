@@ -17,6 +17,7 @@ import com.dreammaster.galacticgreg.SpaceDimRegisterer;
 import com.dreammaster.gthandler.*;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.ItemList;
+import com.dreammaster.item.WoodenBrickForm;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
 import com.dreammaster.modbabychest.BlockBabyChest;
@@ -282,6 +283,10 @@ public class MainRegistry {
         NHItems.WITHER_PROTECTION_RING.place(
                 new WitherProtectionRing("WitherProtectionRing", ModTabList.ModThaumcraftTab));
         if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.WITHER_PROTECTION_RING.get())) {
+            tResult = false;
+        }
+        NHItems.WOODEN_BRICK_FORM.place(new WoodenBrickForm("WoodenBrickForm", ModTabList.ModGenericTab));
+        if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.WOODEN_BRICK_FORM.get())) {
             tResult = false;
         }
 
