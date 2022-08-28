@@ -3,6 +3,7 @@ package com.dreammaster.item;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.NHItems;
 import eu.usrv.yamcore.iface.IExtendedModItem;
+import java.util.List;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,8 +14,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.List;
 
 public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBrickForm> {
     public static final Logger LOGGER = LogManager.getLogger();
