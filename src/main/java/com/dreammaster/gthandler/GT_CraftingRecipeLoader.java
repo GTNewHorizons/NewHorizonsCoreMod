@@ -3,7 +3,7 @@ package com.dreammaster.gthandler;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 
-import com.dreammaster.scripts.*;
+import com.dreammaster.main.NHItems;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.*;
@@ -1264,13 +1264,26 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.UnfiredClayBrick.get(8L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
-                    "CCC", "CFC", "CCC", 'C', new ItemStack(Items.clay_ball, 1, 0), 'F', CustomItemList.WoodenBrickForm
+                    "CCC",
+                    "CFC",
+                    "CCC",
+                    'C',
+                    new ItemStack(Items.clay_ball, 1, 0),
+                    'F',
+                    new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, 0)
                 });
         GT_ModHandler.addShapelessCraftingRecipe(
-                CustomItemList.UnfiredClayBrick.get(1L),
-                GT_ModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] {new ItemStack(Items.clay_ball, 1, 0), CustomItemList.WoodenBrickForm});
+                CustomItemList.UnfiredClayBrick.get(1L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
+                    new ItemStack(Items.clay_ball, 1, 0), new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, 0)
+                });
         if (Loader.isModLoaded(aTextTConstruct)) {
+            GT_ModHandler.addShapelessCraftingRecipe(
+                    new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, 0),
+                    GT_ModHandler.RecipeBits.NOT_REMOVABLE,
+                    new Object[] {
+                        ToolDictNames.craftingToolKnife,
+                        GT_ModHandler.getModItem(aTextTConstruct, "blankPattern", 1L, 0)
+                    });
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.UnfiredSearedBrick.get(8L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
                         "GGG",
@@ -1279,11 +1292,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                         'G',
                         GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1),
                         'F',
-                        CustomItemList.WoodenBrickForm
+                        new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, 0)
                     });
             GT_ModHandler.addShapelessCraftingRecipe(
                     CustomItemList.UnfiredSearedBrick.get(1L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
-                        GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1), CustomItemList.WoodenBrickForm
+                        GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1),
+                        new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, 0)
                     });
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.UnfiredSlimeSoulBrick.get(8L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
@@ -1293,11 +1307,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                         'S',
                         GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6),
                         'F',
-                        CustomItemList.WoodenBrickForm
+                        new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, 0)
                     });
             GT_ModHandler.addShapelessCraftingRecipe(
                     CustomItemList.UnfiredSlimeSoulBrick.get(1L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
-                        GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6), CustomItemList.WoodenBrickForm
+                        GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 6),
+                        new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, 0)
                     });
         }
         GT_ModHandler.addCraftingRecipe(
@@ -1310,14 +1325,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     'S',
                     GT_OreDictUnificator.get("sand", 1L),
                     'F',
-                    CustomItemList.WoodenBrickForm
-                });
-        GT_ModHandler.addShapelessCraftingRecipe(
-                CustomItemList.UnfiredCokeOvenBrick.get(1L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] {
-                    new ItemStack(Items.clay_ball, 1, 0),
-                    new ItemStack(Blocks.sand, 1, 0),
-                    OrePrefixes.block.get(Materials.Sand),
-                    CustomItemList.WoodenBrickForm
+                    new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, 0)
                 });
 
         GT_ModHandler.addCraftingRecipe(
