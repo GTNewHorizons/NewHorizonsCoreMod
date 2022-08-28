@@ -7314,11 +7314,91 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long tier_up_multiplier = 2L;
 
                 int base_time = 4200;
+                int base_time_bee = 2100;
 
                 long tier_1_quantity = 144L * base_quantity;
+                // Bee Recipes
+                long fuel_quantity_bee_1 = 15442L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
+                        },
+                        new FluidStack[] {
+                            Materials.ExcitedDTCC.getFluid(fuel_quantity_bee_1),
+                            Materials.Copper.getMolten(tier_1_quantity)
+                        },
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_bee_1 / 8),
+                            Materials.CosmicNeutronium.getMolten(tier_1_quantity)
+                        },
+                        base_time_bee,
+                        7_115_337,
+                        awakened_heat);
+
+                long tier_2_bee_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_bee_2 = 6043L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
+                        },
+                        new FluidStack[] {
+                            Materials.ExcitedDTPC.getFluid(fuel_quantity_bee_2),
+                            Materials.Copper.getMolten(tier_2_bee_quantity)
+                        },
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_bee_2 / 4),
+                            Materials.CosmicNeutronium.getMolten(tier_2_bee_quantity)
+                        },
+                        base_time_bee / 2,
+                        14_230_674,
+                        infinity_heat);
+
+                long tier_3_bee_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_bee_3 = 2608L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
+                        },
+                        new FluidStack[] {
+                            Materials.ExcitedDTRC.getFluid(fuel_quantity_bee_3),
+                            Materials.Copper.getMolten(tier_3_bee_quantity)
+                        },
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_bee_3 / 2),
+                            Materials.CosmicNeutronium.getMolten(tier_3_bee_quantity)
+                        },
+                        base_time_bee / 4,
+                        28_461_349,
+                        hypogen_heat);
+
+                long tier_4_bee_quantity =
+                        144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_bee_4 = 1100L;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
+                        },
+                        new FluidStack[] {
+                            Materials.ExcitedDTEC.getFluid(fuel_quantity_bee_4),
+                            Materials.Copper.getMolten(tier_4_bee_quantity)
+                        },
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_bee_4),
+                            Materials.CosmicNeutronium.getMolten(tier_4_bee_quantity)
+                        },
+                        base_time_bee / 8,
+                        56_922_697,
+                        eternal_heat);
+
+                // normal ones
+
                 long fuel_quantity_1 = 30883L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Values.NI},
+                        new ItemStack[] {GT_Utility.getIntegratedCircuit(0)},
                         new FluidStack[] {
                             Materials.ExcitedDTCC.getFluid(fuel_quantity_1), Materials.Copper.getMolten(tier_1_quantity)
                         },
@@ -7334,7 +7414,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 12085L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Values.NI},
+                        new ItemStack[] {GT_Utility.getIntegratedCircuit(0)},
                         new FluidStack[] {
                             Materials.ExcitedDTPC.getFluid(fuel_quantity_2), Materials.Copper.getMolten(tier_2_quantity)
                         },
@@ -7350,7 +7430,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_3 = 5215L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Values.NI},
+                        new ItemStack[] {GT_Utility.getIntegratedCircuit(0)},
                         new FluidStack[] {
                             Materials.ExcitedDTRC.getFluid(fuel_quantity_3), Materials.Copper.getMolten(tier_3_quantity)
                         },
@@ -7367,7 +7447,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_4 = 2200L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Values.NI},
+                        new ItemStack[] {GT_Utility.getIntegratedCircuit(0)},
                         new FluidStack[] {
                             Materials.ExcitedDTEC.getFluid(fuel_quantity_4), Materials.Copper.getMolten(tier_4_quantity)
                         },
@@ -7596,9 +7676,65 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 int base_time = 5_000;
 
+                // Bee comb catalyst recipes for infinity
+                long fuel_quantity_3 = 12_884;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5),
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
+                            GT_Utility.getIntegratedCircuit(3)
+                        },
+                        new FluidStack[] {Materials.ExcitedDTEC.getFluid(fuel_quantity_3)},
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3),
+                            Materials.Infinity.getMolten(128L * 144L)
+                        },
+                        base_time / 4,
+                        204_800_000,
+                        eternal_heat);
+
+                long fuel_quantity_4 = 28_516;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5),
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
+                            GT_Utility.getIntegratedCircuit(2)
+                        },
+                        new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_4)},
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4 / 2),
+                            Materials.Infinity.getMolten(64L * 144L)
+                        },
+                        base_time / 2,
+                        102_400_000,
+                        hypogen_heat);
+
+                long fuel_quantity_special_bee = 57_031L / 128;
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5),
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
+                            GT_Utility.getIntegratedCircuit(3)
+                        },
+                        new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_special_bee)},
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_special_bee / 2),
+                            Materials.Infinity.getMolten(144L)
+                        },
+                        base_time / 256,
+                        102_400_000 / 64,
+                        awakened_heat);
+
+                // normal recipes
+
                 long fuel_quantity_special = 57_031L / 64;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5), GT_Utility.getIntegratedCircuit(0)
+                        },
                         new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_special)},
                         new ItemStack[] {GT_Values.NI},
                         new FluidStack[] {
@@ -7611,7 +7747,9 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 long fuel_quantity_1 = 57_031L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5)},
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5), GT_Utility.getIntegratedCircuit(1)
+                        },
                         new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_1)},
                         new ItemStack[] {GT_Values.NI},
                         new FluidStack[] {
@@ -7624,7 +7762,9 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 long fuel_quantity_2 = 25_767L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5)},
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5), GT_Utility.getIntegratedCircuit(0)
+                        },
                         new FluidStack[] {Materials.ExcitedDTEC.getFluid(fuel_quantity_2)},
                         new ItemStack[] {GT_Values.NI},
                         new FluidStack[] {
