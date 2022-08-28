@@ -44,7 +44,7 @@ public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBric
 
         super.setTextureName(String.format("%s:item%s", Refstrings.MODID, _mItemName));
         super.setUnlocalizedName(_mItemName);
-        super.setMaxDamage(0);
+        super.setMaxDamage(maxDurability);
         super.setHasSubtypes(true);
     }
 
@@ -81,16 +81,6 @@ public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBric
         return true;
     }
 
-    @Override
-    public double getDurabilityForDisplay(ItemStack stack) {
-        return 0.0d;
-    }
-
-    @Override
-    public boolean showDurabilityBar(ItemStack stack) {
-        return false;
-    }
-
     // ------------------ NBT Start
     @Override
     public void onCreated(ItemStack pItemStack, World pWorld, EntityPlayer pEntityPlayer) {
@@ -103,16 +93,12 @@ public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBric
     }
 
     @Override
-    public void addInformation(ItemStack pItemStack, EntityPlayer pWorld, List list, boolean par4) {
-        list.add(String.format("Durability: %d/%d", getNBTDurability(pItemStack), maxDurability));
-    }
-
-    @Override
     public ItemStack getContainerItem(ItemStack stack) {
-        ItemStack ret = stack.copy();
+        ItemStack ret = stack.copy().splitStack(1);
         int tCurrentDura = getNBTDurability(ret);
         if (tCurrentDura > 0) {
             ret.stackTagCompound.setInteger(NBTTAG_DURABILITY, --tCurrentDura);
+            ret.setItemDamage(maxDurability - getNBTDurability(ret));
             return ret;
         } else return null;
     }
