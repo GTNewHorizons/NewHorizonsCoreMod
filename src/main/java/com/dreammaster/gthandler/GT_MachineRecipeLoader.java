@@ -158,7 +158,56 @@ public class GT_MachineRecipeLoader implements Runnable {
                 CustomItemList.SixtyKCell.get(1L),
                 400,
                 120);
-
+        // NAK and Helium Cooling Cells
+        GT_Values.RA.addFluidCannerRecipe(
+                CustomItemList.TenKCell.get(1L),
+                ItemList.Reactor_Coolant_NaK_1.get(1L),
+                new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 1000),
+                GT_Values.NF);
+        GT_Values.RA.addFluidCannerRecipe(
+                CustomItemList.ThirtyKCell.get(1L),
+                ItemList.Reactor_Coolant_NaK_1.get(1L),
+                new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 3000),
+                GT_Values.NF);
+        GT_Values.RA.addFluidCannerRecipe(
+                CustomItemList.SixtyKCell.get(1L),
+                ItemList.Reactor_Coolant_NaK_3.get(1L),
+                new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 6000),
+                GT_Values.NF);
+        if ((Loader.isModLoaded("GalaxySpace")) && (Loader.isModLoaded("bartworks"))) {
+            GT_Values.RA.addFluidCannerRecipe(
+                    CustomItemList.TenKCell.get(1L),
+                    ItemList.Reactor_Coolant_He_1.get(1L),
+                    new FluidStack(FluidRegistry.getFluid("liquid helium"), 1000),
+                    GT_Values.NF);
+            GT_Values.RA.addFluidCannerRecipe(
+                    CustomItemList.TenKCell.get(1L),
+                    ItemList.Reactor_Coolant_He_3.get(1L),
+                    new FluidStack(FluidRegistry.getFluid("liquid helium"), 3000),
+                    GT_Values.NF);
+            GT_Values.RA.addFluidCannerRecipe(
+                    CustomItemList.TenKCell.get(1L),
+                    ItemList.Reactor_Coolant_He_6.get(1L),
+                    new FluidStack(FluidRegistry.getFluid("liquid helium"), 6000),
+                    GT_Values.NF);
+        } else {
+            GT_Values.RA.addFluidCannerRecipe(
+                    CustomItemList.TenKCell.get(1L),
+                    ItemList.Reactor_Coolant_He_1.get(1L),
+                    Materials.Helium.getGas(1000L),
+                    GT_Values.NF);
+            GT_Values.RA.addFluidCannerRecipe(
+                    CustomItemList.TenKCell.get(1L),
+                    ItemList.Reactor_Coolant_He_3.get(1L),
+                    Materials.Helium.getGas(3000L),
+                    GT_Values.NF);
+            GT_Values.RA.addFluidCannerRecipe(
+                    CustomItemList.TenKCell.get(1L),
+                    ItemList.Reactor_Coolant_He_6.get(1L),
+                    Materials.Helium.getGas(6000L),
+                    GT_Values.NF);
+        }
+        // Space Cooling Cells
         GT_Values.RA.addFluidCannerRecipe(
                 CustomItemList.Empty180SpCell.get(1L),
                 ItemList.Reactor_Coolant_Sp_1.get(1L),
