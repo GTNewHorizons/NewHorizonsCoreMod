@@ -6,18 +6,14 @@ import eu.usrv.yamcore.iface.IExtendedModItem;
 import java.util.List;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IIcon;
-import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBrickForm> {
     public static final Logger LOGGER = LogManager.getLogger();
-    private static final String NBTTAG_DURABILITY = "Durability";
 
     private final String _mCreativeTab;
     private final String _mItemName;
@@ -81,32 +77,12 @@ public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBric
         return true;
     }
 
-    // ------------------ NBT Start
-    @Override
-    public void onCreated(ItemStack pItemStack, World pWorld, EntityPlayer pEntityPlayer) {
-        createOrInitNBTTag(pItemStack);
-    }
-
-    private int getNBTDurability(ItemStack pItemStack) {
-        createOrInitNBTTag(pItemStack);
-        return pItemStack.stackTagCompound.getInteger(NBTTAG_DURABILITY);
-    }
-
     @Override
     public ItemStack getContainerItem(ItemStack stack) {
         ItemStack ret = stack.copy().splitStack(1);
-        int tCurrentDura = getNBTDurability(ret);
-        if (tCurrentDura > 0) {
-            ret.stackTagCompound.setInteger(NBTTAG_DURABILITY, --tCurrentDura);
-            ret.setItemDamage(maxDurability - getNBTDurability(ret));
+        if (ret.getItemDamage() < getMaxDamage()) {
+            ret.setItemDamage(ret.getItemDamage() + 1);
             return ret;
         } else return null;
-    }
-
-    private void createOrInitNBTTag(ItemStack pItemStack) {
-        if (pItemStack.stackTagCompound == null) {
-            pItemStack.setTagCompound(new NBTTagCompound());
-            pItemStack.stackTagCompound.setInteger(NBTTAG_DURABILITY, maxDurability);
-        }
     }
 }
