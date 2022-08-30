@@ -99,7 +99,16 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L),
                 200,
                 480);
-        GT_Values.RA.addFluidCannerRecipe(
+
+        GT_Values.RA.addDistilleryRecipe(
+                Materials.RockSalt.getDust(1),
+                Materials.Sodium.getFluid(1000),
+                new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 1000),
+                400,
+                30,
+                false);
+
+         GT_Values.RA.addFluidCannerRecipe(
                 CustomItemList.Empty180SpCell.get(1L),
                 ItemList.Reactor_Coolant_Sp_1.get(1L),
                 Materials.SuperCoolant.getFluid(1000L),
