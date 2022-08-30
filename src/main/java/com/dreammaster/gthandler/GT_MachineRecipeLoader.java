@@ -140,7 +140,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 60);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    CustomItemList.ThirtyKCell.get(3L),
+                    CustomItemList.ThirtyKCell.get(2L),
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 8L),
                     GT_Utility.getIntegratedCircuit(1)
                 },
@@ -166,12 +166,12 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.NF);
         GT_Values.RA.addFluidCannerRecipe(
                 CustomItemList.ThirtyKCell.get(1L),
-                ItemList.Reactor_Coolant_NaK_1.get(1L),
+                ItemList.Reactor_Coolant_NaK_3.get(1L),
                 new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 3000),
                 GT_Values.NF);
         GT_Values.RA.addFluidCannerRecipe(
                 CustomItemList.SixtyKCell.get(1L),
-                ItemList.Reactor_Coolant_NaK_3.get(1L),
+                ItemList.Reactor_Coolant_NaK_6.get(1L),
                 new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 6000),
                 GT_Values.NF);
         if ((Loader.isModLoaded("GalaxySpace")) && (Loader.isModLoaded("bartworks"))) {
@@ -181,12 +181,12 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new FluidStack(FluidRegistry.getFluid("liquid helium"), 1000),
                     GT_Values.NF);
             GT_Values.RA.addFluidCannerRecipe(
-                    CustomItemList.TenKCell.get(1L),
+                    CustomItemList.ThirtyKCell.get(1L),
                     ItemList.Reactor_Coolant_He_3.get(1L),
                     new FluidStack(FluidRegistry.getFluid("liquid helium"), 3000),
                     GT_Values.NF);
             GT_Values.RA.addFluidCannerRecipe(
-                    CustomItemList.TenKCell.get(1L),
+                    CustomItemList.SixtyKCell.get(1L),
                     ItemList.Reactor_Coolant_He_6.get(1L),
                     new FluidStack(FluidRegistry.getFluid("liquid helium"), 6000),
                     GT_Values.NF);
