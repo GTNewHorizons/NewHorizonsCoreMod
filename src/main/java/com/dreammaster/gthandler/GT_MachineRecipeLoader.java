@@ -16614,9 +16614,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                 30);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 4),
-                        ItemList.Circuit_Silicon_Wafer.get(1L),
-                        GT_Utility.getIntegratedCircuit(4)
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 4),
+                    ItemList.Circuit_Silicon_Wafer.get(1L),
+                    GT_Utility.getIntegratedCircuit(4)
                 },
                 Materials.Plastic.getMolten(144L),
                 ItemList.Circuit_Parts_Diode.get(8L),
