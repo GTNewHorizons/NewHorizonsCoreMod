@@ -834,7 +834,8 @@ public enum CustomItemList implements IItemContainer {
     NeutroniumIronPlate,
     ReinforcedNeutroniumIronPlate,
     BedrockiumIronPlate,
-    ReinforcedBedrockiumIronPlate;
+    ReinforcedBedrockiumIronPlate,
+    BioBall;
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;
