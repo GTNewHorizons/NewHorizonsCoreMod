@@ -107,8 +107,59 @@ public class GT_MachineRecipeLoader implements Runnable {
                 400,
                 30,
                 false);
+        // 10,30 and 60K NAK Cells
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("IC2", "itemCellEmpty", 1L, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 4L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                CustomItemList.TenKCell.get(1L),
+                200,
+                30);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    CustomItemList.TenKCell.get(3L),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 6L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ThirtyKCell.get(1L),
+                300,
+                60);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("IC2", "itemCellEmpty", 3L, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 6L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                CustomItemList.ThirtyKCell.get(1L),
+                300,
+                60);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    CustomItemList.ThirtyKCell.get(3L),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 8L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                CustomItemList.SixtyKCell.get(1L),
+                400,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("IC2", "itemCellEmpty", 6L, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 8L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                CustomItemList.SixtyKCell.get(1L),
+                400,
+                120);
 
-         GT_Values.RA.addFluidCannerRecipe(
+        GT_Values.RA.addFluidCannerRecipe(
                 CustomItemList.Empty180SpCell.get(1L),
                 ItemList.Reactor_Coolant_Sp_1.get(1L),
                 Materials.SuperCoolant.getFluid(1000L),
