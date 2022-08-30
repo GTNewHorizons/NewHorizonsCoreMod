@@ -99,7 +99,10 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L),
                 200,
                 480);
-
+        // Fluid Sodium
+        GT_Values.RA.addFluidHeaterRecipe(
+                Materials.Sodium.getDust(1), GT_Values.NF, Materials.Sodium.getFluid(1000), 200, 120);
+        // Sodium Potassium
         GT_Values.RA.addDistilleryRecipe(
                 Materials.RockSalt.getDust(1),
                 Materials.Sodium.getFluid(1000),
