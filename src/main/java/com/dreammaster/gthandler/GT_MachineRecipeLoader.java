@@ -25039,7 +25039,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     GT_Utility.getIntegratedCircuit(3),
                     GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 4),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SiliconSG, 4),
                     CustomItemList.TitaniumIronPlate.get(1)
                 },
                 GT_Values.NF,
