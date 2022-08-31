@@ -650,5 +650,7 @@ public class GT_Loader_Items {
         CustomItemList.ReinforcedNeutroniumIronPlate.set(ItemList.ReinforcedNeutroniumIronPlate.getIS());
         CustomItemList.BedrockiumIronPlate.set(ItemList.BedrockiumIronPlate.getIS());
         CustomItemList.ReinforcedBedrockiumIronPlate.set(ItemList.ReinforcedBedrockiumIronPlate.getIS());
+        CustomItemList.BioBall.set(ItemList.BioBall.getIS());
+        CustomItemList.PotassiumHydroxideDust.set(ItemList.PotassiumHydroxideDust.getIS());
     }
 }

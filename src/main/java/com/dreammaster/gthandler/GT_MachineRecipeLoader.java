@@ -106,6 +106,24 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L),
                 16,
                 4);
+        // Potassium Hydroxide
+        GT_Values.RA.addChemicalRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L),
+                GT_Utility.getIntegratedCircuit(1),
+                Materials.Water.getFluid(3000),
+                Materials.Hydrogen.getGas(1000),
+                GT_ModHandler.getModItem(MOD_ID_DC, "item.PotassiumHydroxideDust", 3L, 0),
+                1200,
+                30);
+        // Rock Salt
+        GT_Values.RA.addChemicalRecipe(
+                GT_ModHandler.getModItem(MOD_ID_DC, "item.PotassiumHydroxideDust", 1L, 0),
+                GT_Utility.getIntegratedCircuit(2),
+                Materials.HydrochloricAcid.getFluid(1000),
+                Materials.Water.getFluid(1000),
+                Materials.RockSalt.getDust(1),
+                100,
+                30);
         // Sodium Potassium
         GT_Values.RA.addDistilleryRecipe(
                 Materials.RockSalt.getDust(1),
