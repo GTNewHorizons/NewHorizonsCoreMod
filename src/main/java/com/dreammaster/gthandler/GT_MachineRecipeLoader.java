@@ -99,6 +99,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L),
                 200,
                 480);
+         // Space Cooling Cells
         GT_Values.RA.addFluidCannerRecipe(
                 CustomItemList.Empty180SpCell.get(1L),
                 ItemList.Reactor_Coolant_Sp_1.get(1L),
@@ -24918,19 +24919,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     GT_Utility.getIntegratedCircuit(3),
                     GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 4),
-                    CustomItemList.TitaniumIronPlate.get(1)
-                },
-                GT_Values.NF,
-                CustomItemList.ReinforcedTitaniumIronPlate.get(1),
-                100,
-                480);
-
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] {
-                    GT_Utility.getIntegratedCircuit(3),
-                    GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 4),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SiliconSG, 4),
                     CustomItemList.TitaniumIronPlate.get(1)
                 },
                 GT_Values.NF,
