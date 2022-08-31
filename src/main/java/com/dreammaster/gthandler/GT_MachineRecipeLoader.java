@@ -12470,9 +12470,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     100,
                     16);
 
-        GT_Values.RA.addForgeHammerRecipe(
-                new ItemStack(Items.nether_star, 1, 0), CustomItemList.NetherStarFragment.get(2L), 16, 30);
-
         if (Loader.isModLoaded("Thaumcraft"))
             GT_Values.RA.addForgeHammerRecipe(
                     GT_ModHandler.getModItem("Thaumcraft", "ItemEldritchObject", 1L, 3),
@@ -13348,8 +13345,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 2,
                 false);
 
-        GT_Values.RA.addImplosionRecipe(
-                CustomItemList.NetherStarFragment.get(2L), 1, new ItemStack(Items.nether_star, 1, 0), GT_Values.NI);
         if (Loader.isModLoaded("GalaxySpace")) {
             GT_Values.RA.addImplosionRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.compressed, Materials.Aluminium, 2L),
@@ -16008,6 +16003,19 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new int[] {10000, 10000, 5000, 2500},
                 200,
                 30);
+
+        GT_Values.RA.addMixerRecipe(
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("IC2", "itemFuelPlantBall", 16L, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 2L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                new FluidStack[] {GT_Values.NF},
+                new ItemStack[] {CustomItemList.BioBall.get(1L)},
+                new FluidStack[] {GT_Values.NF},
+                200,
+                16);
+
         GT_Values.RA.addPulveriserRecipe(
                 new ItemStack(Items.flint, 2, 0),
                 new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L)},
@@ -16744,6 +16752,16 @@ public class GT_MachineRecipeLoader implements Runnable {
                 },
                 Materials.Plastic.getMolten(144L),
                 ItemList.Circuit_Parts_Diode.get(4L),
+                600,
+                30);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 4),
+                    ItemList.Circuit_Silicon_Wafer.get(1L),
+                    GT_Utility.getIntegratedCircuit(4)
+                },
+                Materials.Plastic.getMolten(144L),
+                ItemList.Circuit_Parts_Diode.get(8L),
                 600,
                 30);
 
@@ -23427,6 +23445,24 @@ public class GT_MachineRecipeLoader implements Runnable {
                     10000,
                     16,
                     4);
+
+            GT_Values.RA.addMixerRecipe(
+                    new ItemStack[] {GT_ModHandler.getModItem("harvestcraft", "soybeanItem", 1, 0)},
+                    new FluidStack[] {Materials.Water.getFluid(100L)},
+                    new ItemStack[] {CustomItemList.WetTofu.get(1L)},
+                    new FluidStack[] {GT_Values.NF},
+                    600,
+                    2);
+
+            GT_Values.RA.addMixerRecipe(
+                    new ItemStack[] {GT_ModHandler.getModItem("harvestcraft", "soybeanItem", 1, 0)},
+                    new FluidStack[] {
+                        GT_ModHandler.getDistilledWater(50L),
+                    },
+                    new ItemStack[] {CustomItemList.WetTofu.get(1L)},
+                    new FluidStack[] {GT_Values.NF},
+                    400,
+                    2);
         }
 
         if (Loader.isModLoaded("irontank")) {
