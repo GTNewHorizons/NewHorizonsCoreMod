@@ -99,14 +99,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L),
                 200,
                 480);
-
-        GT_Values.RA.addDistilleryRecipe(
-                Materials.RockSalt.getDust(1),
-                Materials.Sodium.getFluid(1000),
-                new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 1000),
-                400,
-                30,
-                false);
         // 10,30 and 60K NAK Cells
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
