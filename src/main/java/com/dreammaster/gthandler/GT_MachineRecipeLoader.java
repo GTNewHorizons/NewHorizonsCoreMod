@@ -15869,6 +15869,19 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new int[] {10000, 10000, 5000, 2500},
                 200,
                 30);
+
+        GT_Values.RA.addMixerRecipe(
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("IC2", "itemFuelPlantBall", 16L, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 2L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                new FluidStack[] {GT_Values.NF},
+                new ItemStack[] {CustomItemList.BioBall.get(1L)},
+                new FluidStack[] {GT_Values.NF},
+                200,
+                16);
+
         GT_Values.RA.addPulveriserRecipe(
                 new ItemStack(Items.flint, 2, 0),
                 new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L)},
