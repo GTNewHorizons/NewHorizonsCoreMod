@@ -99,12 +99,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L),
                 200,
                 480);
-        GT_Values.RA.addFluidSolidifierRecipe(
-                ItemList.Shape_Mold_Ball.get(0L),
-                Materials.Sodium.getFluid(1000),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L),
-                16,
-                4);
          // Space Cooling Cells
         GT_Values.RA.addFluidCannerRecipe(
                 CustomItemList.Empty180SpCell.get(1L),
