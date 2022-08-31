@@ -99,7 +99,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L),
                 200,
                 480);
-         // Space Cooling Cells
+        // Space Cooling Cells
         GT_Values.RA.addFluidCannerRecipe(
                 CustomItemList.Empty180SpCell.get(1L),
                 ItemList.Reactor_Coolant_Sp_1.get(1L),
