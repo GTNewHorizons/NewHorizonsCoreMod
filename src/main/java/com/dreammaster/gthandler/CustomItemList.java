@@ -793,9 +793,6 @@ public enum CustomItemList implements IItemContainer {
     RawNeutronium,
     NeutronReflectorSmallParts,
     NeutronReflectorParts,
-    TenKCell,
-    ThirtyKCell,
-    SixtyKCell,
     Empty180SpCell,
     Empty360SpCell,
     Empty540SpCell,
@@ -837,9 +834,7 @@ public enum CustomItemList implements IItemContainer {
     NeutroniumIronPlate,
     ReinforcedNeutroniumIronPlate,
     BedrockiumIronPlate,
-    ReinforcedBedrockiumIronPlate,
-    BioBall,
-    PotassiumHydroxideDust;
+    ReinforcedBedrockiumIronPlate;
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;
