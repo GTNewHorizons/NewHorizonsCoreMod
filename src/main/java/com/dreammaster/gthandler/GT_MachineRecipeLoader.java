@@ -100,17 +100,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 200,
                 480);
 
-        // Fluid Sodium
-        GT_Values.RA.addFluidHeaterRecipe(
-                Materials.Sodium.getDust(1), GT_ModHandler.getSteam(1000), Materials.Sodium.getFluid(1000), 200, 120);
-
-        GT_Values.RA.addFluidSolidifierRecipe(
-                ItemList.Shape_Mold_Ball.get(0L),
-                Materials.Sodium.getFluid(1000),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L),
-                16,
-                4);
-        // Sodium Potassium
         GT_Values.RA.addDistilleryRecipe(
                 Materials.RockSalt.getDust(1),
                 Materials.Sodium.getFluid(1000),
