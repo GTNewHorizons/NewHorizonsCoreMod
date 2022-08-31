@@ -12336,9 +12336,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     100,
                     16);
 
-        GT_Values.RA.addForgeHammerRecipe(
-                new ItemStack(Items.nether_star, 1, 0), CustomItemList.NetherStarFragment.get(2L), 16, 30);
-
         if (Loader.isModLoaded("Thaumcraft"))
             GT_Values.RA.addForgeHammerRecipe(
                     GT_ModHandler.getModItem("Thaumcraft", "ItemEldritchObject", 1L, 3),
@@ -13214,8 +13211,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 2,
                 false);
 
-        GT_Values.RA.addImplosionRecipe(
-                CustomItemList.NetherStarFragment.get(2L), 1, new ItemStack(Items.nether_star, 1, 0), GT_Values.NI);
         if (Loader.isModLoaded("GalaxySpace")) {
             GT_Values.RA.addImplosionRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.compressed, Materials.Aluminium, 2L),
