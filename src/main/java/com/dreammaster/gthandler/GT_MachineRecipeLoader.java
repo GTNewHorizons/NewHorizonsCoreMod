@@ -23303,6 +23303,24 @@ public class GT_MachineRecipeLoader implements Runnable {
                     10000,
                     16,
                     4);
+
+            GT_Values.RA.addMixerRecipe(
+                    new ItemStack[] {GT_ModHandler.getModItem("harvestcraft", "soybeanItem", 1, 0)},
+                    new FluidStack[] {Materials.Water.getFluid(100L)},
+                    new ItemStack[] {CustomItemList.WetTofu.get(1L)},
+                    new FluidStack[] {GT_Values.NF},
+                    600,
+                    2);
+
+            GT_Values.RA.addMixerRecipe(
+                    new ItemStack[] {GT_ModHandler.getModItem("harvestcraft", "soybeanItem", 1, 0)},
+                    new FluidStack[] {
+                        GT_ModHandler.getDistilledWater(50L),
+                    },
+                    new ItemStack[] {CustomItemList.WetTofu.get(1L)},
+                    new FluidStack[] {GT_Values.NF},
+                    400,
+                    2);
         }
 
         if (Loader.isModLoaded("irontank")) {
