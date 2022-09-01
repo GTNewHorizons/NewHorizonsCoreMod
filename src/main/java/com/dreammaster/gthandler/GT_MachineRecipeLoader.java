@@ -99,7 +99,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L),
                 200,
                 480);
-
+//Sodium Dust
         GT_Values.RA.addFluidSolidifierRecipe(
                 ItemList.Shape_Mold_Ball.get(0L),
                 Materials.Sodium.getFluid(1000),
@@ -25052,19 +25052,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     GT_Utility.getIntegratedCircuit(3),
                     GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 4),
-                    CustomItemList.TitaniumIronPlate.get(1)
-                },
-                GT_Values.NF,
-                CustomItemList.ReinforcedTitaniumIronPlate.get(1),
-                100,
-                480);
-
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] {
-                    GT_Utility.getIntegratedCircuit(3),
-                    GT_ModHandler.getModItem("IC2", "itemPartAlloy", 4),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicon, 4),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SiliconSG, 4),
                     CustomItemList.TitaniumIronPlate.get(1)
                 },
                 GT_Values.NF,
