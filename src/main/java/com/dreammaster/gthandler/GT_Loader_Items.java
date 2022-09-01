@@ -614,6 +614,9 @@ public class GT_Loader_Items {
         CustomItemList.Empty360SpCell.set(ItemList.Empty360SpCell.getIS());
         CustomItemList.Empty540SpCell.set(ItemList.Empty540SpCell.getIS());
         CustomItemList.Empty1080SpCell.set(ItemList.Empty1080SpCell.getIS());
+        CustomItemList.TenKCell.set(ItemList.TenKCell.getIS());
+        CustomItemList.ThirtyKCell.set(ItemList.ThirtyKCell.getIS());
+        CustomItemList.SixtyKCell.set(ItemList.SixtyKCell.getIS());
         CustomItemList.ArtificialLeather.set(ItemList.ArtificialLeather.getIS());
         CustomItemList.EctoplasmaChip.set(ItemList.EctoplasmaChip.getIS());
         CustomItemList.EctoplasmaFragment.set(ItemList.EctoplasmaFragment.getIS());
@@ -648,5 +651,6 @@ public class GT_Loader_Items {
         CustomItemList.BedrockiumIronPlate.set(ItemList.BedrockiumIronPlate.getIS());
         CustomItemList.ReinforcedBedrockiumIronPlate.set(ItemList.ReinforcedBedrockiumIronPlate.getIS());
         CustomItemList.BioBall.set(ItemList.BioBall.getIS());
+        CustomItemList.PotassiumHydroxideDust.set(ItemList.PotassiumHydroxideDust.getIS());
     }
 }
