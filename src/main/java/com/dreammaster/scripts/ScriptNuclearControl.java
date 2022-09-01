@@ -1,17 +1,16 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.getModItem;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import net.minecraft.item.ItemStack;
 
-import static gregtech.api.util.GT_ModHandler.getModItem;
-
 public class ScriptNuclearControl implements IScriptLoader {
 
-    public ScriptNuclearControl(){
-    }
+    public ScriptNuclearControl() {}
 
     @Override
     public void initScriptData() {
@@ -30,14 +29,13 @@ public class ScriptNuclearControl implements IScriptLoader {
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                        NC2_REMOTE_SENSOR_KIT,
-                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2)
+                    NC2_REMOTE_SENSOR_KIT,
+                    GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
+                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2)
                 },
                 GT_Values.NF,
                 NC2_PANEL_MEMORY_CARD,
                 200,
-                16
-        );
+                16);
     }
 }
