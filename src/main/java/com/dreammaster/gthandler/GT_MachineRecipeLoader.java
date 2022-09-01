@@ -99,7 +99,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 2L),
                 200,
                 480);
-//Sodium Dust
+        // Sodium Dust
         GT_Values.RA.addFluidSolidifierRecipe(
                 ItemList.Shape_Mold_Ball.get(0L),
                 Materials.Sodium.getFluid(1000),
