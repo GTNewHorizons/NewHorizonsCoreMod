@@ -23,6 +23,7 @@ public class ScriptLoader {
             new ScriptHoloInventory(),
             new ScriptIguanaTweaks(),
             new ScriptJABBA(),
+            new ScriptNuclearControl(),
             new ScriptSleepingBags(),
             new ScriptSpiceOfLife(),
             new ScriptTranslocator()

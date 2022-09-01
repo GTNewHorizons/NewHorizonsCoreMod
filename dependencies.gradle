@@ -68,5 +68,8 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:GTplusplus:1.7.76:dev") {
         transitive = false
     }
+    compileOnly("com.github.GTNewHorizons:Nuclear-Control:2.4.15:dev") {
+        transitive = false
+    }
 
 }
