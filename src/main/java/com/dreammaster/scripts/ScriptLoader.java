@@ -26,7 +26,8 @@ public class ScriptLoader {
             new ScriptNuclearControl(),
             new ScriptSleepingBags(),
             new ScriptSpiceOfLife(),
-            new ScriptTranslocator()
+            new ScriptTranslocator(),
+            new ScriptOpenBlocks()
         };
 
         for (IScriptLoader script : scripts) {
