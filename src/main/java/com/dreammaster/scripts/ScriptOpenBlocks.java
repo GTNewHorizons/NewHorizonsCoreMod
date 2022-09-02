@@ -27,12 +27,12 @@ public class ScriptOpenBlocks implements IScriptLoader {
         ItemStack devNull = getModItem("OpenBlocks", "devnull", 1);
         ItemStack voidDropFilter = getModItem("RandomThings", "dropFilter", 1, 1);
         ItemStack trashCan = getModItem("ExtraUtilities", "trashcan", 1);
-        ItemStack circuit1 = GT_Utility.getIntegratedCircuit(1);
+        ItemStack circuit2 = GT_Utility.getIntegratedCircuit(2);
 
         FluidStack ender250 = FluidRegistry.getFluidStack("ender", 250);
 
         addShapelessCraftingRecipe(devNull, new Object[] {voidDropFilter});
 
-        GT_Values.RA.addAssemblerRecipe(new ItemStack[] {trashCan, circuit1}, ender250, devNull, 300, 30);
+        GT_Values.RA.addAssemblerRecipe(new ItemStack[] {trashCan, circuit2}, ender250, devNull, 300, 30);
     }
 }
