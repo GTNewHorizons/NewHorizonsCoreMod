@@ -2821,30 +2821,42 @@ public class GT_MachineRecipeLoader implements Runnable {
                 4);
 
         GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartHelmetNightVision", 1, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
-                Materials.Redstone.getMolten(144L),
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartHelmetNightVision", 1, 0),
+                    GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                Materials.RedstoneAlloy.getMolten(288L),
                 GT_ModHandler.getModItem("IC2", "itemArmorNanoHelmet", 1),
                 600,
                 480);
         GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartChestplate", 1, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
-                Materials.Redstone.getMolten(144L),
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartChestplate", 1, 0),
+                    GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                Materials.RedstoneAlloy.getMolten(1440L),
                 GT_ModHandler.getModItem("IC2", "itemArmorNanoChestplate", 1),
                 600,
                 480);
         GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartLeggings", 1, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
-                Materials.Redstone.getMolten(144L),
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartLeggings", 1, 0),
+                    GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                Materials.RedstoneAlloy.getMolten(576L),
                 GT_ModHandler.getModItem("IC2", "itemArmorNanoLegs", 1),
                 600,
                 480);
         GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartBoots", 1, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
-                Materials.Redstone.getMolten(144L),
+                new ItemStack[] {
+                    GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartBoots", 1, 0),
+                    GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                Materials.RedstoneAlloy.getMolten(288L),
                 GT_ModHandler.getModItem("IC2", "itemArmorNanoBoots", 1),
                 600,
                 480);
