@@ -328,6 +328,7 @@ public class GT_Loader_Items {
         CustomItemList.EngravedDiamondCrystalChip.set(ItemList.EngravedDiamondCrystalChip.getIS());
         CustomItemList.EngravedEnergyChip.set(ItemList.EngravedEnergyChip.getIS());
         CustomItemList.NanoBoard.set(ItemList.NanoBoard.getIS());
+        CustomItemList.NanoCrystal.set(ItemList.NanoCrystal.getIS());
         CustomItemList.NanoProcessorBoard.set(ItemList.NanoProcessorBoard.getIS());
         CustomItemList.QuantumBoard.set(ItemList.QuantumBoard.getIS());
         CustomItemList.QuantumProcessorBoard.set(ItemList.QuantumProcessorBoard.getIS());
@@ -341,6 +342,10 @@ public class GT_Loader_Items {
         CustomItemList.MalformedSlush.set(ItemList.MalformedSlush.getIS());
         CustomItemList.GlowingMarshmallow.set(ItemList.GlowingMarshmallow.getIS());
         CustomItemList.Marshmallow.set(ItemList.Marshmallow.getIS());
+        CustomItemList.MoldFormHelmet.set(ItemList.MoldFormHelmet.getIS());
+        CustomItemList.MoldFormChestplate.set(ItemList.MoldFormChestplate.getIS());
+        CustomItemList.MoldFormLeggings.set(ItemList.MoldFormLeggings.getIS());
+        CustomItemList.MoldFormBoots.set(ItemList.MoldFormBoots.getIS());
         CustomItemList.IchoriumCap.set(ItemList.IchoriumCap.getIS());
         CustomItemList.CoinDarkWizard.set(ItemList.CoinDarkWizard.getIS());
         CustomItemList.CoinDarkWizardI.set(ItemList.CoinDarkWizardI.getIS());
