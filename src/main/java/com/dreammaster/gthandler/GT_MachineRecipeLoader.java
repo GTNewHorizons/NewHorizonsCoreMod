@@ -498,25 +498,25 @@ public class GT_MachineRecipeLoader implements Runnable {
                 1024);
         GT_Values.RA.addFormingPressRecipe(
                 GT_ModHandler.getIC2Item("carbonPlate", 4L),
-                CustomItemList.MoldFormBoots.get(0L),
+                CustomItemList.MoldBoots.get(0L),
                 CustomItemList.CarbonPartBoots.get(1L),
                 400,
                 120);
         GT_Values.RA.addFormingPressRecipe(
                 GT_ModHandler.getIC2Item("carbonPlate", 8L),
-                CustomItemList.MoldFormChestplate.get(0L),
+                CustomItemList.MoldChestplate.get(0L),
                 CustomItemList.CarbonPartChestplate.get(1L),
                 400,
                 120);
         GT_Values.RA.addFormingPressRecipe(
                 GT_ModHandler.getIC2Item("carbonPlate", 5L),
-                CustomItemList.MoldFormHelmet.get(0L),
+                CustomItemList.MoldHelmet.get(0L),
                 CustomItemList.CarbonPartHelmet.get(1L),
                 400,
                 120);
         GT_Values.RA.addFormingPressRecipe(
                 GT_ModHandler.getIC2Item("carbonPlate", 7L),
-                CustomItemList.MoldFormLeggings.get(0L),
+                CustomItemList.MoldLeggings.get(0L),
                 CustomItemList.CarbonPartLeggings.get(1L),
                 400,
                 120);
