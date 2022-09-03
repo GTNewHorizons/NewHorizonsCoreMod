@@ -2824,6 +2824,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartHelmetNightVision", 1, 0),
                     GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.EnergeticAlloy, 64L),
                     GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.RedstoneAlloy.getMolten(288L),
@@ -2834,6 +2835,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartChestplate", 1, 0),
                     GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.EnergeticAlloy, 64L),
                     GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.RedstoneAlloy.getMolten(1440L),
@@ -2844,6 +2846,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartLeggings", 1, 0),
                     GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.EnergeticAlloy, 64L),
                     GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.RedstoneAlloy.getMolten(576L),
@@ -2854,6 +2857,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     GT_ModHandler.getModItem("dreamcraft", "item.CarbonPartBoots", 1, 0),
                     GT_ModHandler.getModItem("dreamcraft", "item.NanoCrystal", 1, 0),
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.EnergeticAlloy, 64L),
                     GT_Utility.getIntegratedCircuit(1)
                 },
                 Materials.RedstoneAlloy.getMolten(288L),
