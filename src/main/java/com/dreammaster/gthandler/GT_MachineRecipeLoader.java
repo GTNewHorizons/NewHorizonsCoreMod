@@ -17239,7 +17239,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 160,
                 96);
         GT_Values.RA.addWiremillRecipe(
-                Materials.BorosilicateGlass.getIngots(1), ItemList.Circuit_Parts_GlassFiber.get(4L), 200, 120);
+                Materials.BorosilicateGlass.getIngots(1), ItemList.Circuit_Parts_GlassFiber.get(8L), 200, 120);
 
         GT_Values.RA.addLaserEngraverRecipe(
                 ItemList.Circuit_Silicon_Wafer2.get(1L),
