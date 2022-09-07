@@ -7822,7 +7822,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 int base_time = 5_000;
 
                 // Bee comb catalyst recipes for infinity
-                long fuel_quantity_3 = 12_884;
+                long fuel_quantity_3 = (long) (25_767 * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5),
@@ -7839,7 +7839,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         204_800_000,
                         eternal_heat);
 
-                long fuel_quantity_4 = 28_516;
+                long fuel_quantity_4 = (long) (57_031 * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5),
@@ -7856,7 +7856,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         102_400_000,
                         hypogen_heat);
 
-                long fuel_quantity_special_bee = 57_031L / 128;
+                long fuel_quantity_special_bee = (long) ((57_031L / 64) * 0.75);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5),
