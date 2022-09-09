@@ -1,5 +1,7 @@
 package com.dreammaster.auxiliary;
 
+import static gregtech.api.enums.GT_Values.MOD_ID_DC;
+
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
 import com.dreammaster.item.food.QuantumBread;
@@ -11,6 +13,7 @@ import net.minecraft.item.ItemStack;
 public class NEIGTNewHorizonsConfig implements IConfigureNEI {
     @Override
     public void loadConfig() {
+        hideFakeCircuits();
         API.hideItem(new ItemStack(QuantumBread.Instance()));
         API.hideItem(GT_ModHandler.getModItem("Aroma1997Core", "wrenched", 1));
         API.hideItem(GT_ModHandler.getModItem("BiblioCraft", "BiblioClipboard", 1));
@@ -63,6 +66,24 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         API.hideItem(GT_ModHandler.getModItem("sleepingbag", "sleepingBagBlock", 1));
         // Hide metaID 0, as this is the generic item for trash bags
         MainRegistry.Logger.info("Added NEI Config");
+    }
+
+    private void hideFakeCircuits() {
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitULV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitLV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitMV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitHV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitEV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitIV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitLuV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitZPM", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUHV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUEV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUIV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUMV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUXV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitMAX", 1));
     }
 
     @Override
