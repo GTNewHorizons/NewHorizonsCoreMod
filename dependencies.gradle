@@ -26,7 +26,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.0.8:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:bartworks:0.5.75:dev") {
+    compileOnly("com.github.GTNewHorizons:bartworks:0.5.82:dev") {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.2.28-GTNH:dev") {
