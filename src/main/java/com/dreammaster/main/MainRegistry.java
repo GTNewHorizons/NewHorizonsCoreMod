@@ -3,6 +3,7 @@ package com.dreammaster.main;
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
+import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
 import com.dreammaster.bartworksHandler.VoidMinerLoader;
@@ -43,10 +44,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -432,6 +430,13 @@ public class MainRegistry {
                     Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
             GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
                     Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
+        }
+    }
+
+    @Mod.EventHandler
+    public void CompleteLoad(FMLLoadCompleteEvent event) {
+        if (Loader.isModLoaded("bartworks")) {
+            BW_RadHatchMaterial.runRadHatchAdder();
         }
     }
 
