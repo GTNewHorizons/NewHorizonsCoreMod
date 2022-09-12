@@ -7,6 +7,11 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.Config;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import java.util.Arrays;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -28,6 +33,16 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
             "chestDiamond", getModItem("gregtech", "gt.metaitem.01", 1, 32642), "chestDiamond",
             "plateDenseObsidian", "plateDenseObsidian", "plateDenseObsidian"
         });
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    getModItem("IronChest", "BlockIronChest", 2, 2),
+                    ItemList.Electric_Piston_HV.get(1),
+                    GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4)
+                },
+                GT_Values.NF,
+                getModItem("avaritiaddons", "CompressedChest", 1),
+                600,
+                480);
 
         addShapedRecipe(getModItem("avaritiaddons", "ExtremeAutoCrafter", 1), new Object[] {
             "plateRedAlloy",
