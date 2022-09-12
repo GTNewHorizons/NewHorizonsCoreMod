@@ -17,7 +17,7 @@ public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBric
 
     private final String _mCreativeTab;
     private final String _mItemName;
-    private static final int maxDurability = 100;
+    private static final int maxDurability = 300;
 
     @Override
     public WoodenBrickForm getConstructedItem() {
