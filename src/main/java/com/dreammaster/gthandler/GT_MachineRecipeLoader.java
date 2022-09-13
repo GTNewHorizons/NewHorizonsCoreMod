@@ -7463,7 +7463,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 long tier_1_quantity = 144L * base_quantity;
                 // Bee Recipes
-                long fuel_quantity_bee_1 = 15442L;
+                long fuel_quantity_bee_1 = (long) (30883L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
@@ -7482,7 +7482,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         awakened_heat);
 
                 long tier_2_bee_quantity = 144L * base_quantity * tier_up_multiplier;
-                long fuel_quantity_bee_2 = 6043L;
+                long fuel_quantity_bee_2 = (long) (12085L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
@@ -7501,7 +7501,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         infinity_heat);
 
                 long tier_3_bee_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-                long fuel_quantity_bee_3 = 2608L;
+                long fuel_quantity_bee_3 = (long) (5215L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
@@ -7521,7 +7521,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 long tier_4_bee_quantity =
                         144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
-                long fuel_quantity_bee_4 = 1100L;
+                long fuel_quantity_bee_4 = (long) (2200L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
