@@ -7,11 +7,6 @@ dependencies {
     compile("com.github.GTNewHorizons:StructureLib:1.1.4:dev")
     compile("com.github.GTNewHorizons:Avaritia:1.29:dev")
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
-    compile('com.github.GTNewHorizons:inventory-tweaks:1.5.14:api')
-    compile('com.github.GTNewHorizons:BuildCraft:7.1.27:api')
-    compile('net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev')
-
-    compile('curse.maven:cofh-lib-220333:2388748')
 
     compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:1.9.3-GTNH:dev") {
         transitive = false
