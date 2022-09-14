@@ -8500,21 +8500,20 @@ public class GT_MachineRecipeLoader implements Runnable {
 
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem("TConstruct", "materials", 1L, 4),
-                    new ItemStack[] {GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)},
+                    new ItemStack[] {Materials.Ardite.getDust(1)},
                     new int[] {10000},
                     300,
                     2);
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1),
-                    new ItemStack[] {GT_ModHandler.getModItem("TConstruct", "materials", 9L, 38)},
+                    new ItemStack[] {Materials.Ardite.getDust(9)},
                     new int[] {10000},
                     300,
                     2);
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 1),
                     new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Cobalt, 2L),
-                        GT_ModHandler.getModItem("TConstruct", "materials", 1L, 39)
+                        GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Cobalt, 2L), Materials.Cobalt.getDust(1)
                     },
                     new int[] {10000, 1000},
                     400,
@@ -8522,8 +8521,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 2),
                     new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L),
-                        GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)
+                        GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L), Materials.Ardite.getDust(1)
                     },
                     new int[] {10000, 1000},
                     400,
