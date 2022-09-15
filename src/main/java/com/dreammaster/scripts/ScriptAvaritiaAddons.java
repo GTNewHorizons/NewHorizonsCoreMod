@@ -13,6 +13,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import java.util.Arrays;
+
+import gregtech.api.util.GT_Utility;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -30,8 +32,13 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(getModItem("avaritiaddons", "CompressedChest", 1), new Object[] {
             "plateDenseObsidian", "plateDenseObsidian", "plateDenseObsidian",
-            "chestDiamond", getModItem("gregtech", "gt.metaitem.01", 1, 32642), "chestDiamond",
+            "chestDiamond", ItemList.Electric_Piston_HV.get(1), "chestDiamond",
             "plateDenseObsidian", "plateDenseObsidian", "plateDenseObsidian"
+        });
+        addShapedRecipe(getModItem("avaritiaddons", "CompressedChest", 1), new Object[] {
+                "screwObsidian", ItemList.Electric_Piston_HV.get(1), "screwObsidian",
+                "plateDenseObsidian", "chestObsidian", "plateDenseObsidian",
+                "craftingToolWrench", "plateDenseObsidian", "craftingToolScrewdriver"
         });
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
