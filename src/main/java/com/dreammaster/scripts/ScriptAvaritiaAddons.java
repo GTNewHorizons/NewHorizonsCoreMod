@@ -44,6 +44,17 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 getModItem("avaritiaddons", "CompressedChest", 1),
                 600,
                 480);
+                GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    getModItem("IronChest", "BlockIronChest", 1, 6),
+                    ItemList.Electric_Piston_HV.get(1),
+                    GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
+                    GT_Utility.getIntegratedCircuit(1),
+                },
+                GT_Values.NF,
+                getModItem("avaritiaddons", "CompressedChest", 1),
+                600,
+                480);
 
         addShapedRecipe(getModItem("avaritiaddons", "ExtremeAutoCrafter", 1), new Object[] {
             "plateRedAlloy",
