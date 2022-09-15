@@ -35,9 +35,9 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
             "plateDenseObsidian", "plateDenseObsidian", "plateDenseObsidian"
         });
         addShapedRecipe(getModItem("avaritiaddons", "CompressedChest", 1), new Object[] {
-            "screwObsidian", ItemList.Electric_Piston_HV.get(1), "screwObsidian",
+            "stickObsidian", ItemList.Electric_Piston_HV.get(1), "stickObsidian",
             "plateDenseObsidian", "chestObsidian", "plateDenseObsidian",
-            "craftingToolWrench", "plateDenseObsidian", "craftingToolScrewdriver"
+            "craftingToolWrench", "chestDiamond", "craftingToolScrewdriver"
         });
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
@@ -53,8 +53,9 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     getModItem("IronChest", "BlockIronChest", 1, 6),
+                    getModItem("IronChest", "BlockIronChest", 1, 2),
                     ItemList.Electric_Piston_HV.get(1),
-                    GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
+                    GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 2),
                     GT_Utility.getIntegratedCircuit(1),
                 },
                 GT_Values.NF,
