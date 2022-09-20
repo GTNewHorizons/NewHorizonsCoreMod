@@ -23,6 +23,7 @@ public interface IScriptLoader {
     long[] timeRecords = new long[2];
     StringBuilder scriptName = new StringBuilder();
     List<String> dependencies = new ArrayList<>();
+    int wildcard = 32767;
     /**
      * Should be called externally to load the recipes in the ported script
      */
