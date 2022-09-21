@@ -2796,7 +2796,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.NF,
                 ItemList.Casing_Vent.get(1L),
                 600,
-                480);
+                120);
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
