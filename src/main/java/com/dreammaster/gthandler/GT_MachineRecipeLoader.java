@@ -2783,6 +2783,21 @@ public class GT_MachineRecipeLoader implements Runnable {
                 200,
                 30);
 
+        // Filter Machine Casing for cleanroom
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1L),
+                    ItemList.Electric_Motor_MV.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Aluminium, 1L),
+                    ItemList.Component_Filter.get(2L),
+                    CustomItemList.SteelBars.get(2L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                ItemList.Casing_Vent.get(1L),
+                600,
+                120);
+
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Carbon, 1L),
