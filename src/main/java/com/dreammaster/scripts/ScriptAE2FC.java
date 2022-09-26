@@ -115,71 +115,17 @@ public class ScriptAE2FC implements IScriptLoader {
                 'E',
                 AE2_PROCESS_ENG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_4,
-                "DCD",
-                "CPC",
-                "DCD",
-                'D',
-                "circuitBasic",
-                'C',
-                COMPONENT_1,
-                'P',
-                AE2_PROCESS_CAL));
+                COMPONENT_4, "DCD", "CPC", "DCD", 'D', "circuitBasic", 'C', COMPONENT_1, 'P', AE2_PROCESS_CAL));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_16,
-                "DCD",
-                "CPC",
-                "DCD",
-                'D',
-                "circuitGood",
-                'C',
-                COMPONENT_4,
-                'P',
-                AE2_PROCESS_LOG));
+                COMPONENT_16, "DCD", "CPC", "DCD", 'D', "circuitGood", 'C', COMPONENT_4, 'P', AE2_PROCESS_LOG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_64,
-                "DCD",
-                "CPC",
-                "DCD",
-                'D',
-                "circuitAdvanced",
-                'C',
-                COMPONENT_16,
-                'P',
-                AE2_PROCESS_ENG));
+                COMPONENT_64, "DCD", "CPC", "DCD", 'D', "circuitAdvanced", 'C', COMPONENT_16, 'P', AE2_PROCESS_ENG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_256,
-                "DCD",
-                "CPC",
-                "DCD",
-                'D',
-                "circuitData",
-                'C',
-                COMPONENT_64,
-                'P',
-                AE2_PROCESS_CAL));
+                COMPONENT_256, "DCD", "CPC", "DCD", 'D', "circuitData", 'C', COMPONENT_64, 'P', AE2_PROCESS_CAL));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_1024,
-                "DCD",
-                "CPC",
-                "DCD",
-                'D',
-                "circuitElite",
-                'C',
-                COMPONENT_256,
-                'P',
-                AE2_PROCESS_LOG));
+                COMPONENT_1024, "DCD", "CPC", "DCD", 'D', "circuitElite", 'C', COMPONENT_256, 'P', AE2_PROCESS_LOG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_4096,
-                "DCD",
-                "CPC",
-                "DCD",
-                'D',
-                "circuitMaster",
-                'C',
-                COMPONENT_1024,
-                'P',
-                AE2_PROCESS_ENG));
+                COMPONENT_4096, "DCD", "CPC", "DCD", 'D', "circuitMaster", 'C', COMPONENT_1024, 'P', AE2_PROCESS_ENG));
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
