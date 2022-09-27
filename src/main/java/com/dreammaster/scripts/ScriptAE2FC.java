@@ -109,89 +109,23 @@ public class ScriptAE2FC implements IScriptLoader {
                 "CEC",
                 "DCD",
                 'D',
-                "dyeBlue",
+                "circuitPrimitive",
                 'C',
                 CustomItemList.ChargedCertusQuartzDust.get(1),
                 'E',
                 AE2_PROCESS_ENG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_4,
-                "DPD",
-                "CGC",
-                "DCD",
-                'D',
-                "dyeBlue",
-                'C',
-                COMPONENT_1,
-                'P',
-                AE2_PROCESS_CAL,
-                'G',
-                AE2_QUARTZ_GLASS));
+                COMPONENT_4, "DCD", "CPC", "DCD", 'D', "circuitBasic", 'C', COMPONENT_1, 'P', AE2_PROCESS_CAL));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_16,
-                "DPD",
-                "CGC",
-                "DCD",
-                'D',
-                "dyeBlue",
-                'C',
-                COMPONENT_4,
-                'P',
-                AE2_PROCESS_LOG,
-                'G',
-                AE2_QUARTZ_GLASS));
+                COMPONENT_16, "DCD", "CPC", "DCD", 'D', "circuitGood", 'C', COMPONENT_4, 'P', AE2_PROCESS_LOG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_64,
-                "DPD",
-                "CGC",
-                "DCD",
-                'D',
-                "dyeBlue",
-                'C',
-                COMPONENT_16,
-                'P',
-                AE2_PROCESS_ENG,
-                'G',
-                AE2_QUARTZ_GLASS));
+                COMPONENT_64, "DCD", "CPC", "DCD", 'D', "circuitAdvanced", 'C', COMPONENT_16, 'P', AE2_PROCESS_ENG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_256,
-                "DPD",
-                "CGC",
-                "DCD",
-                'D',
-                "dyeBlue",
-                'C',
-                COMPONENT_64,
-                'P',
-                AE2_PROCESS_CAL,
-                'G',
-                AE2_LAMP_GLASS));
+                COMPONENT_256, "DCD", "CPC", "DCD", 'D', "circuitData", 'C', COMPONENT_64, 'P', AE2_PROCESS_CAL));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_1024,
-                "DPD",
-                "CGC",
-                "DCD",
-                'D',
-                "dyeBlue",
-                'C',
-                COMPONENT_256,
-                'P',
-                AE2_PROCESS_LOG,
-                'G',
-                AE2_LAMP_GLASS));
+                COMPONENT_1024, "DCD", "CPC", "DCD", 'D', "circuitElite", 'C', COMPONENT_256, 'P', AE2_PROCESS_LOG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
-                COMPONENT_4096,
-                "DPD",
-                "CGC",
-                "DCD",
-                'D',
-                "dyeBlue",
-                'C',
-                COMPONENT_1024,
-                'P',
-                AE2_PROCESS_ENG,
-                'G',
-                AE2_LAMP_GLASS));
+                COMPONENT_4096, "DCD", "CPC", "DCD", 'D', "circuitMaster", 'C', COMPONENT_1024, 'P', AE2_PROCESS_ENG));
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
