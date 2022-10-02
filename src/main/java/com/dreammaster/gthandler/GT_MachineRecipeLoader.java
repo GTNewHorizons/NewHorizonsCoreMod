@@ -7373,7 +7373,8 @@ public class GT_MachineRecipeLoader implements Runnable {
             int hypogen_heat = infinity_heat + 900;
             int eternal_heat = hypogen_heat + 900;
 
-            // ----------------------------------- Plasma Forge
+            // ------------------------------------------------------------------------------------------
+            // ------------------------------------- Plasma Forge ---------------------------------------
             // ------------------------------------------------------------------------------------------
 
             // See https://docs.google.com/spreadsheets/d/1_n2HSFyzfNzkJHYBPFu3HTZvkh69GBi5LXw2c9FyG9o/edit?usp=sharing
@@ -7821,57 +7822,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 int base_time = 5_000;
 
-                // Bee comb catalyst recipes for infinity
-                long fuel_quantity_3 = 12_884;
-                GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {
-                            GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5),
-                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
-                            GT_Utility.getIntegratedCircuit(3)
-                        },
-                        new FluidStack[] {Materials.ExcitedDTEC.getFluid(fuel_quantity_3)},
-                        new ItemStack[] {GT_Values.NI},
-                        new FluidStack[] {
-                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3),
-                            Materials.Infinity.getMolten(128L * 144L)
-                        },
-                        base_time / 4,
-                        204_800_000,
-                        eternal_heat);
-
-                long fuel_quantity_4 = 28_516;
-                GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {
-                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5),
-                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
-                            GT_Utility.getIntegratedCircuit(2)
-                        },
-                        new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_4)},
-                        new ItemStack[] {GT_Values.NI},
-                        new FluidStack[] {
-                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4 / 2),
-                            Materials.Infinity.getMolten(64L * 144L)
-                        },
-                        base_time / 2,
-                        102_400_000,
-                        hypogen_heat);
-
                 long fuel_quantity_special_bee = 57_031L / 128;
-                GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {
-                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5),
-                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
-                            GT_Utility.getIntegratedCircuit(3)
-                        },
-                        new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_special_bee)},
-                        new ItemStack[] {GT_Values.NI},
-                        new FluidStack[] {
-                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_special_bee / 2),
-                            Materials.Infinity.getMolten(144L)
-                        },
-                        base_time / 256,
-                        102_400_000 / 64,
-                        awakened_heat);
 
                 // normal recipes
 
@@ -16031,7 +15982,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack(Items.flint, 2, 0),
                 new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L)},
                 null,
-                800,
+                200,
                 2);
         GT_Values.RA.addPulveriserRecipe(
                 CustomItemList.CokeOvenBrick.get(1L),
