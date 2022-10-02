@@ -2783,6 +2783,21 @@ public class GT_MachineRecipeLoader implements Runnable {
                 200,
                 30);
 
+        // Filter Machine Casing for cleanroom
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1L),
+                    ItemList.Electric_Motor_MV.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Aluminium, 1L),
+                    ItemList.Component_Filter.get(2L),
+                    CustomItemList.SteelBars.get(2L),
+                    GT_Utility.getIntegratedCircuit(1)
+                },
+                GT_Values.NF,
+                ItemList.Casing_Vent.get(1L),
+                600,
+                120);
+
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Carbon, 1L),
@@ -7464,7 +7479,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 long tier_1_quantity = 144L * base_quantity;
                 // Bee Recipes
-                long fuel_quantity_bee_1 = 15442L;
+                long fuel_quantity_bee_1 = (long) (30883L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
@@ -7483,7 +7498,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         awakened_heat);
 
                 long tier_2_bee_quantity = 144L * base_quantity * tier_up_multiplier;
-                long fuel_quantity_bee_2 = 6043L;
+                long fuel_quantity_bee_2 = (long) (12085L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
@@ -7502,7 +7517,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         infinity_heat);
 
                 long tier_3_bee_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-                long fuel_quantity_bee_3 = 2608L;
+                long fuel_quantity_bee_3 = (long) (5215L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
@@ -7522,7 +7537,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 long tier_4_bee_quantity =
                         144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
-                long fuel_quantity_bee_4 = 1100L;
+                long fuel_quantity_bee_4 = (long) (2200L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
                             GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 117), GT_Utility.getIntegratedCircuit(1)
@@ -7822,7 +7837,57 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 int base_time = 5_000;
 
-                long fuel_quantity_special_bee = 57_031L / 128;
+                // Bee comb catalyst recipes for infinity
+                long fuel_quantity_3 = (long) (25_767 * 0.85);
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5),
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
+                            GT_Utility.getIntegratedCircuit(3)
+                        },
+                        new FluidStack[] {Materials.ExcitedDTEC.getFluid(fuel_quantity_3)},
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3),
+                            Materials.Infinity.getMolten(128L * 144L)
+                        },
+                        base_time / 4,
+                        204_800_000,
+                        eternal_heat);
+
+                long fuel_quantity_4 = (long) (57_031 * 0.85);
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5),
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
+                            GT_Utility.getIntegratedCircuit(2)
+                        },
+                        new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_4)},
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4 / 2),
+                            Materials.Infinity.getMolten(64L * 144L)
+                        },
+                        base_time / 2,
+                        102_400_000,
+                        hypogen_heat);
+
+                long fuel_quantity_special_bee = (long) ((57_031L / 64) * 0.75);
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] {
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5),
+                            GT_ModHandler.getModItem("gregtech", "gt.comb", 1L, 119),
+                            GT_Utility.getIntegratedCircuit(3)
+                        },
+                        new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_special_bee)},
+                        new ItemStack[] {GT_Values.NI},
+                        new FluidStack[] {
+                            Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_special_bee / 2),
+                            Materials.Infinity.getMolten(144L)
+                        },
+                        base_time / 256,
+                        102_400_000 / 64,
+                        awakened_heat);
 
                 // normal recipes
 
@@ -8451,21 +8516,20 @@ public class GT_MachineRecipeLoader implements Runnable {
 
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem("TConstruct", "materials", 1L, 4),
-                    new ItemStack[] {GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)},
+                    new ItemStack[] {Materials.Ardite.getDust(1)},
                     new int[] {10000},
                     300,
                     2);
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 1),
-                    new ItemStack[] {GT_ModHandler.getModItem("TConstruct", "materials", 9L, 38)},
+                    new ItemStack[] {Materials.Ardite.getDust(9)},
                     new int[] {10000},
                     300,
                     2);
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 1),
                     new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Cobalt, 2L),
-                        GT_ModHandler.getModItem("TConstruct", "materials", 1L, 39)
+                        GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Cobalt, 2L), Materials.Cobalt.getDust(1)
                     },
                     new int[] {10000, 1000},
                     400,
@@ -8473,8 +8537,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem("TConstruct", "SearedBrick", 1L, 2),
                     new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L),
-                        GT_ModHandler.getModItem("TConstruct", "materials", 1L, 38)
+                        GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L), Materials.Ardite.getDust(1)
                     },
                     new int[] {10000, 1000},
                     400,

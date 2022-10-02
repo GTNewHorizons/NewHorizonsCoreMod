@@ -1,7 +1,8 @@
 package com.dreammaster.bartworksHandler;
 
-import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.*;
-import static gregtech.api.enums.OrePrefixes.*;
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Ruridit;
+import static gregtech.api.enums.OrePrefixes.bolt;
+import static gregtech.api.enums.OrePrefixes.dustTiny;
 
 import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GT_Values;
