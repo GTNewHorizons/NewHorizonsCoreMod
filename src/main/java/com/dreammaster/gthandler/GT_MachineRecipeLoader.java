@@ -259,97 +259,97 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
                 CustomItemList.MicaInsulatorSheet.get(4L),
                 400,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 CustomItemList.MicaBasedSheet.get(4L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
                 CustomItemList.MicaInsulatorSheet.get(4L),
                 400,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 CustomItemList.MicaBasedSheet.get(4L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
                 CustomItemList.MicaInsulatorSheet.get(4L),
                 400,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 CustomItemList.MicaBasedSheet.get(4L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L),
                 CustomItemList.MicaInsulatorSheet.get(4L),
                 400,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
         GT_Values.RA.addAlloySmelterRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L),
                 CustomItemList.AluminoSilicateWool.get(2L),
                 1200,
-                30);
+                15);
 
         makeCoilRecipes();
 
@@ -7388,7 +7388,8 @@ public class GT_MachineRecipeLoader implements Runnable {
             int hypogen_heat = infinity_heat + 900;
             int eternal_heat = hypogen_heat + 900;
 
-            // ----------------------------------- Plasma Forge
+            // ------------------------------------------------------------------------------------------
+            // ------------------------------------- Plasma Forge ---------------------------------------
             // ------------------------------------------------------------------------------------------
 
             // See https://docs.google.com/spreadsheets/d/1_n2HSFyzfNzkJHYBPFu3HTZvkh69GBi5LXw2c9FyG9o/edit?usp=sharing
@@ -16044,7 +16045,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack(Items.flint, 2, 0),
                 new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L)},
                 null,
-                800,
+                200,
                 2);
         GT_Values.RA.addPulveriserRecipe(
                 CustomItemList.CokeOvenBrick.get(1L),
@@ -16699,7 +16700,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1),
                 ItemList.Shape_Mold_Ball.get(0),
                 ItemList.Circuit_Parts_Glass_Tube.get(1L),
-                240,
+                120,
                 16);
         GT_Values.RA.addAlloySmelterRecipe(
                 new ItemStack(Blocks.obsidian, 1, 0),
