@@ -15984,7 +15984,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             new ItemStack[] {
                                 GT_ModHandler.getModItem("Ztones", "stoneTile", 4L, 0),
                                 item[j],
-                                GT_Utility.getIntegratedCircuit(i + 1)
+                                GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i)
                             },
                             GT_Values.NF,
                             GT_ModHandler.getModItem("Ztones", "tile." + blockName[j] + "Block", 8L, i),
@@ -15997,7 +15997,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             new ItemStack[] {
                                 GT_ModHandler.getModItem("Ztones", "auroraBlock", 4L, 0),
                                 zitem[j],
-                                GT_Utility.getIntegratedCircuit(i + 1)
+                                GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i)
                             },
                             GT_Values.NF,
                             GT_ModHandler.getModItem("Ztones", "tile." + zblockName[j] + "Block", 8L, i),
@@ -16009,7 +16009,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new ItemStack[] {
                             GT_ModHandler.getModItem("Ztones", "auroraBlock", 4L, 0),
                             new ItemStack(Blocks.glass, 1, 0),
-                            GT_Utility.getIntegratedCircuit(i + 1)
+                            GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i)
                         },
                         GT_Values.NF,
                         GT_ModHandler.getModItem("Ztones", "tile.glaxx", 8L, i),
