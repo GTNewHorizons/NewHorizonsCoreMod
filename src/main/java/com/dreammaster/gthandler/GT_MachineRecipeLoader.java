@@ -16975,9 +16975,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                 120);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.ConductiveIron, 8),
-                        GT_Utility.getIntegratedCircuit(3)
+                    GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.ConductiveIron, 8),
+                    GT_Utility.getIntegratedCircuit(3)
                 },
                 Materials.Plastic.getMolten(36L),
                 ItemList.Circuit_Parts_InductorSMD.get(24L),
@@ -16985,9 +16985,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                 120);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 8),
-                        GT_Utility.getIntegratedCircuit(3)
+                    GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 8),
+                    GT_Utility.getIntegratedCircuit(3)
                 },
                 Materials.Plastic.getMolten(36L),
                 ItemList.Circuit_Parts_InductorSMD.get(48L),
@@ -16995,9 +16995,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                 120);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iridium, 8),
-                        GT_Utility.getIntegratedCircuit(3)
+                    GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iridium, 8),
+                    GT_Utility.getIntegratedCircuit(3)
                 },
                 Materials.Plastic.getMolten(36L),
                 ItemList.Circuit_Parts_InductorSMD.get(64L),
@@ -17120,10 +17120,10 @@ public class GT_MachineRecipeLoader implements Runnable {
         // Inductor
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                        //hikarium foil
-                        GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 4L, 10105),
-                        //artherium-sn foil
-                        GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 1L, 10102),
+                    // hikarium foil
+                    GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 4L, 10105),
+                    // artherium-sn foil
+                    GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 1L, 10102),
                     GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                     GT_Utility.getIntegratedCircuit(6)
                 },
