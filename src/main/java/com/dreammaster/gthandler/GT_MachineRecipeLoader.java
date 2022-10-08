@@ -16976,7 +16976,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.ElectricalSteel, 8),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.ConductiveIron, 8),
                         GT_Utility.getIntegratedCircuit(3)
                 },
                 Materials.Plastic.getMolten(36L),
