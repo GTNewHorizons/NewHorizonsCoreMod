@@ -20910,7 +20910,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         ItemList.Circuit_Processor.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(4L),
+                        ItemList.Circuit_Parts_InductorASMD.get(1L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(2L),
                         ItemList.Circuit_Chip_Ram.get(4L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 8)
@@ -20966,7 +20966,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2),
-                        ItemList.Circuit_Parts_Coil.get(12L),
+                        ItemList.Circuit_Parts_InductorASMD.get(3L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(4L),
                         ItemList.Circuit_Chip_Ram.get(16L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 16)
@@ -21010,7 +21010,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         ItemList.Circuit_Nanoprocessor.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(8L),
+                        ItemList.Circuit_Parts_InductorSMD.get(8L),
                         ItemList.Circuit_Parts_CapacitorSMD.get(8L),
                         ItemList.Circuit_Chip_Ram.get(8L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16)
@@ -21024,7 +21024,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         ItemList.Circuit_Nanoprocessor.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(8L),
+                        ItemList.Circuit_Parts_InductorASMD.get(2L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(2L),
                         ItemList.Circuit_Chip_Ram.get(8L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16)
@@ -21080,7 +21080,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
                         ItemList.Circuit_Elitenanocomputer.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(16L),
+                        ItemList.Circuit_Parts_InductorSMD.get(16L),
                         ItemList.Circuit_Parts_CapacitorSMD.get(32L),
                         ItemList.Circuit_Chip_Ram.get(16L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 32)
@@ -21094,7 +21094,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
                         ItemList.Circuit_Elitenanocomputer.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(16L),
+                        ItemList.Circuit_Parts_InductorASMD.get(4L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(8L),
                         ItemList.Circuit_Chip_Ram.get(16L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 32)
@@ -21138,7 +21138,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
                         ItemList.Circuit_Quantumprocessor.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(12L),
+                        ItemList.Circuit_Parts_InductorSMD.get(12L),
                         ItemList.Circuit_Parts_CapacitorSMD.get(16L),
                         ItemList.Circuit_Chip_Ram.get(4L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 24)
@@ -21152,7 +21152,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
                         ItemList.Circuit_Quantumprocessor.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(12L),
+                        ItemList.Circuit_Parts_InductorASMD.get(3L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(4L),
                         ItemList.Circuit_Chip_Ram.get(4L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 24)
@@ -21194,7 +21194,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
                         ItemList.Circuit_Masterquantumcomputer.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(24),
+                        ItemList.Circuit_Parts_InductorSMD.get(24),
                         ItemList.Circuit_Parts_CapacitorSMD.get(48L),
                         ItemList.Circuit_Chip_Ram.get(24),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 48)
@@ -21208,7 +21208,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
                         ItemList.Circuit_Masterquantumcomputer.get(2L),
-                        ItemList.Circuit_Parts_Coil.get(24),
+                        ItemList.Circuit_Parts_InductorASMD.get(6L),
                         ItemList.Circuit_Parts_CapacitorASMD.get(12L),
                         ItemList.Circuit_Chip_Ram.get(24),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 48)
@@ -23041,7 +23041,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     ItemList.Circuit_Board_Multifiberglass_Elite.get(1L),
                     ItemList.Circuit_Crystalprocessor.get(2L),
-                    ItemList.Circuit_Parts_Coil.get(24),
+                    ItemList.Circuit_Parts_InductorASMD.get(6L),
                     ItemList.Circuit_Parts_CapacitorASMD.get(8L),
                     ItemList.Circuit_Chip_Ram.get(24),
                     GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16)
@@ -23069,7 +23069,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
                     ItemList.Circuit_Ultimatecrystalcomputer.get(2L),
-                    ItemList.Circuit_Parts_Coil.get(32L),
+                    ItemList.Circuit_Parts_InductorASMD.get(8L),
                     ItemList.Circuit_Parts_CapacitorASMD.get(16L),
                     ItemList.Circuit_Chip_Ram.get(32L),
                     GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 16)
@@ -23113,7 +23113,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                     ItemList.Circuit_Neuroprocessor.get(2L),
-                    ItemList.Circuit_Parts_Coil.get(32L),
+                    ItemList.Circuit_Parts_InductorASMD.get(8L),
                     ItemList.Circuit_Parts_CapacitorASMD.get(12L),
                     ItemList.Circuit_Chip_Ram.get(24L),
                     GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 16)
@@ -23127,7 +23127,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                     ItemList.Circuit_Neuroprocessor.get(2L),
-                    ItemList.Circuit_Parts_Coil.get(32L),
+                    ItemList.Circuit_Parts_InductorXSMD.get(2L),
                     ItemList.Circuit_Parts_CapacitorXSMD.get(3L),
                     ItemList.Circuit_Chip_Ram.get(24L),
                     GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 16)
@@ -23199,7 +23199,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     ItemList.Circuit_Board_Bio_Ultra.get(1L),
                     ItemList.Circuit_Bioprocessor.get(2L),
-                    ItemList.Circuit_Parts_Coil.get(48L),
+                    ItemList.Circuit_Parts_InductorASMD.get(12L),
                     ItemList.Circuit_Parts_CapacitorASMD.get(16L),
                     ItemList.Circuit_Chip_Ram.get(32L),
                     GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 24)
@@ -23213,7 +23213,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {
                     ItemList.Circuit_Board_Bio_Ultra.get(1L),
                     ItemList.Circuit_Bioprocessor.get(2L),
-                    ItemList.Circuit_Parts_Coil.get(48L),
+                    ItemList.Circuit_Parts_InductorXSMD.get(3L),
                     ItemList.Circuit_Parts_CapacitorXSMD.get(4L),
                     ItemList.Circuit_Chip_Ram.get(32L),
                     GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 24)
