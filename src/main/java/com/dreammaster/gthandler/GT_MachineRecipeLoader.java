@@ -16973,21 +16973,30 @@ public class GT_MachineRecipeLoader implements Runnable {
                 ItemList.Circuit_Parts_CapacitorSMD.get(48L),
                 320,
                 120);
-
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.ElectricalSteel, 8),
                         GT_Utility.getIntegratedCircuit(3)
                 },
                 Materials.Plastic.getMolten(36L),
-                ItemList.Circuit_Parts_InductorSMD.get(32L),
+                ItemList.Circuit_Parts_InductorSMD.get(24L),
                 320,
                 120);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iridium, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tantalum, 8),
+                        GT_Utility.getIntegratedCircuit(3)
+                },
+                Materials.Plastic.getMolten(36L),
+                ItemList.Circuit_Parts_InductorSMD.get(48L),
+                320,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iridium, 8),
                         GT_Utility.getIntegratedCircuit(3)
                 },
                 Materials.Plastic.getMolten(36L),
