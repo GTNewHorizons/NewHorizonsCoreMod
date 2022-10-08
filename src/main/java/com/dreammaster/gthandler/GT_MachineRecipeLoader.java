@@ -17120,8 +17120,10 @@ public class GT_MachineRecipeLoader implements Runnable {
         // Inductor
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    GT_ModHandler.getModItem("miscutils", "itemFoilTitansteel", 4L),
-                    GT_ModHandler.getModItem("miscutils", "itemFoilBotmium", 1L),
+                        //hikarium foil
+                        GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 4L, 10105),
+                        //artherium-sn foil
+                        GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 1L, 10102),
                     GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                     GT_Utility.getIntegratedCircuit(6)
                 },
