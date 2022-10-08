@@ -17125,7 +17125,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     // artherium-sn foil
                     GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedfoil", 1L, 10102),
                     GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
-                    GT_Utility.getIntegratedCircuit(6)
+                    GT_Utility.getIntegratedCircuit(9)
                 },
                 Xenoxene.getFluid(144L),
                 ItemList.Circuit_Parts_InductorXSMD.get(32L),
