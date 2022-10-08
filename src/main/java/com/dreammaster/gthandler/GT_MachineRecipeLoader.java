@@ -16973,6 +16973,27 @@ public class GT_MachineRecipeLoader implements Runnable {
                 ItemList.Circuit_Parts_CapacitorSMD.get(48L),
                 320,
                 120);
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 2),
+                        GT_Utility.getIntegratedCircuit(3)
+                },
+                Materials.Plastic.getMolten(36L),
+                ItemList.Circuit_Parts_InductorSMD.get(32L),
+                320,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iridium, 2),
+                        GT_Utility.getIntegratedCircuit(3)
+                },
+                Materials.Plastic.getMolten(36L),
+                ItemList.Circuit_Parts_InductorSMD.get(64L),
+                320,
+                120);
         // ASMD
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
@@ -17017,6 +17038,18 @@ public class GT_MachineRecipeLoader implements Runnable {
                 Materials.Polybenzimidazole.getMolten(576L),
                 ItemList.Circuit_Parts_CapacitorASMD.get(64L),
                 300,
+                1920);
+
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Samarium, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.HSSE, 32),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.TungstenSteel, 4),
+                        GT_Utility.getIntegratedCircuit(6)
+                },
+                Materials.Polybenzimidazole.getMolten(576L),
+                ItemList.Circuit_Parts_InductorASMD.get(64L),
+                160,
                 1920);
         // xSMD
 
@@ -17073,6 +17106,18 @@ public class GT_MachineRecipeLoader implements Runnable {
                 },
                 Xenoxene.getFluid(144L),
                 ItemList.Circuit_Parts_DiodeXSMD.get(64L),
+                160,
+                120000);
+        //Inductor
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        GT_ModHandler.getModItem("miscutils", "itemFoilTitansteel", 4L),
+                        GT_ModHandler.getModItem("miscutils", "itemFoilBotmium", 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
+                        GT_Utility.getIntegratedCircuit(6)
+                },
+                Xenoxene.getFluid(144L),
+                ItemList.Circuit_Parts_InductorXSMD.get(32L),
                 160,
                 120000);
 
