@@ -85,8 +85,8 @@ public class GT_CustomLoader {
         UMV(
                 OrePrefixes.circuit.get(Materials.Piko),
                 OrePrefixes.wireGt16.get(Materials.Bedrockium),
-                Materials.Infinity,
-                Materials.Infinity,
+                Materials.Quantium,
+                Materials.Quantium,
                 null,
                 null,
                 Loader.isModLoaded("bartworks") ? "blockGlassUMV" : "glassReinforced",
