@@ -7,7 +7,7 @@ public class ScriptLoader {
         IScriptLoader[] scripts = new IScriptLoader[] {
             new ScriptAE2FC(),
             new ScriptAFSU(),
-            new ScriptAlveary(),
+            new ScriptIndustrialApiary(),
             new ScriptAppliedEnergistics2(),
             new ScriptArchitectureCraft(),
             new ScriptAvaritiaAddons(),
