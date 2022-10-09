@@ -73,15 +73,25 @@ public class GT_CustomLoader {
                 Materials.Neutronium),
 
         UIV(
+                OrePrefixes.circuit.get(Materials.Nano),
+                OrePrefixes.wireGt08.get(Materials.Bedrockium),
+                Materials.NetherStar,
+                Materials.NetherStar,
+                null,
+                null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUIV" : "glassReinforced",
+                Materials.CosmicNeutronium,
+                Materials.CosmicNeutronium),
+        UMV(
                 OrePrefixes.circuit.get(Materials.Piko),
+                OrePrefixes.wireGt16.get(Materials.Bedrockium),
+                Materials.Quantium,
+                Materials.Quantium,
                 null,
                 null,
-                null,
-                null,
-                null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
-                null,
-                null);
+                Loader.isModLoaded("bartworks") ? "blockGlassUMV" : "glassReinforced",
+                Materials.TranscendentMetal,
+                Materials.Infinity);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;
