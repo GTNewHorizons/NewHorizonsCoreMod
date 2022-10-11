@@ -2,6 +2,7 @@ package com.dreammaster.modcustomdrops;
 
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
@@ -24,6 +25,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import thaumcraft.common.lib.FakeThaumcraftPlayer;
 
 public class CustomDropsHandler {
     private LogHelper _mLogger = MainRegistry.Logger;
@@ -176,6 +178,11 @@ public class CustomDropsHandler {
             // fakeplayers
             {
                 return;
+            }
+            if (Loader.isModLoaded("Thaumcraft")) {
+                if (tEP instanceof FakeThaumcraftPlayer) {
+                    return;
+                }
             }
 
             CustomDrops.CustomDrop tCustomDrop = _mCustomDrops.FindDropEntry(tEntity);
