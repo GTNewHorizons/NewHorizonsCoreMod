@@ -7559,7 +7559,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
                 long fuel_quantity_1 = 30883L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Utility.getIntegratedCircuit(0)},
+                        new ItemStack[] {GT_Utility.getIntegratedCircuit(4)},
                         new FluidStack[] {
                             Materials.ExcitedDTCC.getFluid(fuel_quantity_1), Materials.Copper.getMolten(tier_1_quantity)
                         },
@@ -7575,7 +7575,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 12085L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Utility.getIntegratedCircuit(0)},
+                        new ItemStack[] {GT_Utility.getIntegratedCircuit(4)},
                         new FluidStack[] {
                             Materials.ExcitedDTPC.getFluid(fuel_quantity_2), Materials.Copper.getMolten(tier_2_quantity)
                         },
@@ -7591,7 +7591,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_3 = 5215L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Utility.getIntegratedCircuit(0)},
+                        new ItemStack[] {GT_Utility.getIntegratedCircuit(4)},
                         new FluidStack[] {
                             Materials.ExcitedDTRC.getFluid(fuel_quantity_3), Materials.Copper.getMolten(tier_3_quantity)
                         },
@@ -7608,7 +7608,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         144L * base_quantity * tier_up_multiplier * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_4 = 2200L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] {GT_Utility.getIntegratedCircuit(0)},
+                        new ItemStack[] {GT_Utility.getIntegratedCircuit(4)},
                         new FluidStack[] {
                             Materials.ExcitedDTEC.getFluid(fuel_quantity_4), Materials.Copper.getMolten(tier_4_quantity)
                         },
@@ -7894,7 +7894,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long fuel_quantity_special = 57_031L / 64;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
-                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5), GT_Utility.getIntegratedCircuit(0)
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 5), GT_Utility.getIntegratedCircuit(4)
                         },
                         new FluidStack[] {Materials.ExcitedDTRC.getFluid(fuel_quantity_special)},
                         new ItemStack[] {GT_Values.NI},
@@ -7924,7 +7924,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 long fuel_quantity_2 = 25_767L;
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] {
-                            GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5), GT_Utility.getIntegratedCircuit(0)
+                            GT_ModHandler.getModItem("Avaritia", "Resource", 2L, 5), GT_Utility.getIntegratedCircuit(4)
                         },
                         new FluidStack[] {Materials.ExcitedDTEC.getFluid(fuel_quantity_2)},
                         new ItemStack[] {GT_Values.NI},
