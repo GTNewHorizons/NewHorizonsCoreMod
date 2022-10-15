@@ -5833,17 +5833,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 500000,
                 9000);
 
-        GT_Values.RA.addBlastRecipe(
-                Materials.Zincite.getDust(2),
-                Materials.Carbon.getDust(1),
-                GT_Values.NF,
-                Materials.CarbonDioxide.getGas(1000L),
-                Materials.Zinc.getIngots(3),
-                Materials.Ash.getDustTiny(2),
-                240,
-                120,
-                1200);
-
         // GT_Values.RA.addBlastRecipe(Materials.Silicon.getDust(1), GT_Utility.getIntegratedCircuit(11),
         // Materials.Oxygen.getGas(2000), GT_Values.NF, Materials.Silicon.getIngots(1),  GT_Values.NI, 1600, 120, 1600);
 
