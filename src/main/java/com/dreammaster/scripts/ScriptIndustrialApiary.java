@@ -69,7 +69,6 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemData TitaniumRotor = (ItemData) OrePrefixes.rotor.get(Materials.Titanium);
         final Block Snow = Blocks.snow;
         final Item FermentedSpiderEye = Items.fermented_spider_eye;
-        final ItemStack PoisonExtractJar = getModItem("BiomesOPlenty", "jarFilled", 1, 1);
         final String RubberPlate = "plateAnyRubber";
         final String BeesWax = "itemBeeswax";
         final ItemStack GeneticsProcessor = getModItem("gendustry", "GeneticsProcessor", 1);
@@ -309,9 +308,9 @@ public class ScriptIndustrialApiary implements IScriptLoader {
             SmallPalladiumGear,
             FermentedSpiderEye,
             SmallPalladiumGear,
-            PoisonExtractJar,
+            Cactus,
             UpgradeFrame,
-            PoisonExtractJar,
+            Cactus,
             SmallOsmiumGear,
             FermentedSpiderEye,
             SmallOsmiumGear
