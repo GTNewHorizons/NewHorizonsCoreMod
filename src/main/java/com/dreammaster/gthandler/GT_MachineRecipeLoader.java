@@ -381,6 +381,27 @@ public class GT_MachineRecipeLoader implements Runnable {
                 ItemList.Casing_Coil_Superconductor.get(1L),
                 1000,
                 9001);
+        GT_Values.RA.addAssemblerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUEV, 4L),
+                CustomItemList.MicaInsulatorFoil.get(4L),
+                Materials.Trinium.getMolten(72L),
+                ItemList.Casing_Coil_Superconductor.get(1L),
+                1000,
+                9001);
+        GT_Values.RA.addAssemblerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUIV, 2L),
+                CustomItemList.MicaInsulatorFoil.get(2L),
+                Materials.Trinium.getMolten(36L),
+                ItemList.Casing_Coil_Superconductor.get(1L),
+                1000,
+                9001);
+        GT_Values.RA.addAssemblerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUMV, 1L),
+                CustomItemList.MicaInsulatorFoil.get(1L),
+                Materials.Trinium.getMolten(18L),
+                ItemList.Casing_Coil_Superconductor.get(1L),
+                1000,
+                9001);
 
         GT_Values.RA.addAssemblerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 3L),
@@ -2952,6 +2973,17 @@ public class GT_MachineRecipeLoader implements Runnable {
                     },
                     GT_Values.NF,
                     ItemList.Hatch_Output_Bus_ME.get(1),
+                    300,
+                    480);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] {
+                        ItemList.Hatch_Output_HV.get(1L),
+                        GT_ModHandler.getModItem("ae2fc", "part_fluid_interface", 1L),
+                        GT_ModHandler.getModItem("appliedenergistics2", "item.ItemMultiMaterial", 4L, 30),
+                        GT_Utility.getIntegratedCircuit(1)
+                    },
+                    GT_Values.NF,
+                    ItemList.Hatch_Output_ME.get(1),
                     300,
                     480);
             GT_Values.RA.addAssemblerRecipe(

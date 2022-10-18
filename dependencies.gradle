@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    compile("com.github.GTNewHorizons:GT5-Unofficial:5.09.41.78:dev")
+    compile("com.github.GTNewHorizons:GT5-Unofficial:5.09.41.88:dev")
     compile("com.github.GTNewHorizons:Yamcl:0.5.84:dev")
     compile("com.github.GTNewHorizons:Baubles:1.0.1.14:dev")
     compile("com.github.GTNewHorizons:StructureLib:1.2.0-beta.2:dev")
@@ -66,6 +66,9 @@ dependencies {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:Nuclear-Control:2.4.16:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:ProjectRed:4.7.7-GTNH:dev") {
         transitive = false
     }
 
