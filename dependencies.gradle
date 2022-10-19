@@ -53,7 +53,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.1.12:dev") {
         transitive = false
     }
-    compileOnly("com.azanor:Thaumcraft:1.7.10-4.2.3.5:deobf") {
+    compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") {
         transitive = false
     }
     compileOnly("curse.maven:witchery-69673:2234410") {
