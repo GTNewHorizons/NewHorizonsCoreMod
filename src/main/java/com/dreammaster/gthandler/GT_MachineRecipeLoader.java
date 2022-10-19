@@ -22144,15 +22144,15 @@ public class GT_MachineRecipeLoader implements Runnable {
                         200,
                         120);
 
-                //tps card
+                // tps card
                 GT_Values.RA.addCircuitAssemblerRecipe(
                         new ItemStack[] {
-                                new ItemStack(Items.clock, 1),
-                                GT_ModHandler.getModItem("OpenComputers", "item", 1L, 66),
-                                ItemList.Emitter_HV.get(1L),
-                                ItemList.Sensor_HV.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2),
-                                GT_Utility.getIntegratedCircuit(1)
+                            new ItemStack(Items.clock, 1),
+                            GT_ModHandler.getModItem("OpenComputers", "item", 1L, 66),
+                            ItemList.Emitter_HV.get(1L),
+                            ItemList.Sensor_HV.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2),
+                            GT_Utility.getIntegratedCircuit(1)
                         },
                         tMat.getMolten(144L * tMultiplier / 2L),
                         GT_ModHandler.getModItem("OpenComputers", "item", 1L, 117),
