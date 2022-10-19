@@ -22143,6 +22143,22 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("OpenComputers", "item", 1L, 11),
                         200,
                         120);
+
+                //tps card
+                GT_Values.RA.addCircuitAssemblerRecipe(
+                        new ItemStack[] {
+                                new ItemStack(Items.clock, 1),
+                                GT_ModHandler.getModItem("OpenComputers", "item", 1L, 66),
+                                ItemList.Emitter_HV.get(1L),
+                                ItemList.Sensor_HV.get(1L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2),
+                                GT_Utility.getIntegratedCircuit(1)
+                        },
+                        tMat.getMolten(144L * tMultiplier / 2L),
+                        GT_ModHandler.getModItem("OpenComputers", "item", 1L, 117),
+                        200,
+                        120);
+
                 // wlan card1
                 GT_Values.RA.addCircuitAssemblerRecipe(
                         new ItemStack[] {
