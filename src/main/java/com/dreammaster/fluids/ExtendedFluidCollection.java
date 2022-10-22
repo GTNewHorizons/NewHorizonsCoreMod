@@ -9,25 +9,22 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.Fluid;
 
-public final class ExtendedFluidCollection
-{
-    static final boolean bop_loaded= Loader.isModLoaded("BiomesOPlenty");
+public final class ExtendedFluidCollection {
+    static final boolean bop_loaded = Loader.isModLoaded("BiomesOPlenty");
 
     private static ModSimpleBaseFluid _mAmmonia;
 
     private ExtendedFluidCollection() {}
 
-    public static ModSimpleBaseFluid getAmmonia()
-    {
+    public static ModSimpleBaseFluid getAmmonia() {
         if (_mAmmonia == null) {
             populateAmmonia();
         }
-        
+
         return _mAmmonia;
     }
 
-    private static void populateAmmonia()
-    {
+    private static void populateAmmonia() {
         Fluid tAmmoniaFluid = ModFluidManager.GetNewFluid("Ammonia");
         tAmmoniaFluid.setGaseous(true);
         tAmmoniaFluid.setViscosity(-500);
@@ -35,31 +32,30 @@ public final class ExtendedFluidCollection
         tAmmoniaFluid.setLuminosity(8);
         tAmmoniaFluid.setTemperature(300);
         tAmmoniaFluid.setRarity(EnumRarity.epic); // The rarity of the fluid. Used primarily in tool tips.
-        
+
         _mAmmonia = new ModSimpleBaseFluid(tAmmoniaFluid, Material.water);
 
-        
         // Add potion effects to the fluid if player steps into a pool
         // Syntax is: new PotionEffect(<potionID>, <duration in ticks>, <level>)
         // Level 0: Potion Level I
         // Level 1: Potion Level II
         // ...
         // For the duration: Set it low to vanish the effect as soon as the player leaves the pool
-        // If you set the duration to 200, the potion timer will start to tick for 10 seconds after 
+        // If you set the duration to 200, the potion timer will start to tick for 10 seconds after
         // the player has left the pool.
-        //_mAmmonia.addPotionEffect(new PotionEffect(Potion.blindness.id, 2, 0));
-        
+        // _mAmmonia.addPotionEffect(new PotionEffect(Potion.blindness.id, 2, 0));
+
         // Same for stacking potion effects, except that you want to set the duration to the amount which will be
         // ADDED about each 0,5 seconds. So this poison-effect will increase as long as the player has contact with the
         // fluid block
-        _mAmmonia.addStackingPotionEffect(new PotionEffect(bop_loaded?24:Potion.poison.id, 20, 0));
-        
+        _mAmmonia.addStackingPotionEffect(new PotionEffect(bop_loaded ? 24 : Potion.poison.id, 20, 0));
+
         _mAmmonia.setRegisterBucket(false); // don't register a bucket
     }
 
     private static ModSimpleBaseFluid _mNitricAcid;
-    public static ModSimpleBaseFluid getNitricAcid()
-    {
+
+    public static ModSimpleBaseFluid getNitricAcid() {
         if (_mNitricAcid == null) {
             populateNitricAcid();
         }
@@ -67,8 +63,7 @@ public final class ExtendedFluidCollection
         return _mNitricAcid;
     }
 
-    private static void populateNitricAcid()
-    {
+    private static void populateNitricAcid() {
         Fluid tNitricAcidFluid = ModFluidManager.GetNewFluid("NitricAcid");
         tNitricAcidFluid.setGaseous(false);
         tNitricAcidFluid.setViscosity(1000);
@@ -78,7 +73,6 @@ public final class ExtendedFluidCollection
         tNitricAcidFluid.setRarity(EnumRarity.epic); // The rarity of the fluid. Used primarily in tool tips.
 
         _mNitricAcid = new ModSimpleBaseFluid(tNitricAcidFluid, Material.water);
-
 
         // Add potion effects to the fluid if player steps into a pool
         // Syntax is: new PotionEffect(<potionID>, <duration in ticks>, <level>)
@@ -99,8 +93,8 @@ public final class ExtendedFluidCollection
     }
 
     private static ModSimpleBaseFluid _mFermentedBacterialSludge;
-    public static ModSimpleBaseFluid getFermentedBacterialSludge()
-    {
+
+    public static ModSimpleBaseFluid getFermentedBacterialSludge() {
         if (_mFermentedBacterialSludge == null) {
             populateFermentedBacterialSludge();
         }
@@ -108,8 +102,7 @@ public final class ExtendedFluidCollection
         return _mFermentedBacterialSludge;
     }
 
-    private static void populateFermentedBacterialSludge()
-    {
+    private static void populateFermentedBacterialSludge() {
         Fluid tFermentedBacterialSludge = ModFluidManager.GetNewFluid("FermentedBacterialSludge");
         tFermentedBacterialSludge.setGaseous(false);
         tFermentedBacterialSludge.setViscosity(1000);
@@ -120,7 +113,6 @@ public final class ExtendedFluidCollection
 
         _mFermentedBacterialSludge = new ModSimpleBaseFluid(tFermentedBacterialSludge, Material.water);
 
-
         // Add potion effects to the fluid if player steps into a pool
         // Syntax is: new PotionEffect(<potionID>, <duration in ticks>, <level>)
         // Level 0: Potion Level I
@@ -133,16 +125,17 @@ public final class ExtendedFluidCollection
         // Same for stacking potion effects, except that you want to set the duration to the amount which will be
         // ADDED about each 0,5 seconds. So this poison-effect will increase as long as the player has contact with the
         // fluid block
-        _mFermentedBacterialSludge.addStackingPotionEffect(new PotionEffect(bop_loaded?24:Potion.poison.id, 20, 0));
+        _mFermentedBacterialSludge.addStackingPotionEffect(new PotionEffect(bop_loaded ? 24 : Potion.poison.id, 20, 0));
 
-        _mFermentedBacterialSludge.addStackingPotionEffect(new PotionEffect(bop_loaded?25:Potion.moveSlowdown.id, 20, 0));
+        _mFermentedBacterialSludge.addStackingPotionEffect(
+                new PotionEffect(bop_loaded ? 25 : Potion.moveSlowdown.id, 20, 0));
 
         _mFermentedBacterialSludge.setRegisterBucket(true); // don't register a bucket
     }
 
     private static ModSimpleBaseFluid _mEnrichedBacterialSludge;
-    public static ModSimpleBaseFluid getEnrichedBacterialSludge()
-    {
+
+    public static ModSimpleBaseFluid getEnrichedBacterialSludge() {
         if (_mEnrichedBacterialSludge == null) {
             populateEnrichedBacterialSludge();
         }
@@ -150,8 +143,7 @@ public final class ExtendedFluidCollection
         return _mEnrichedBacterialSludge;
     }
 
-    private static void populateEnrichedBacterialSludge()
-    {
+    private static void populateEnrichedBacterialSludge() {
         Fluid tEnrichedBacterialSludge = ModFluidManager.GetNewFluid("EnrichedBacterialSludge");
         tEnrichedBacterialSludge.setGaseous(false);
         tEnrichedBacterialSludge.setViscosity(1000);
@@ -162,7 +154,6 @@ public final class ExtendedFluidCollection
 
         _mEnrichedBacterialSludge = new ModSimpleBaseFluid(tEnrichedBacterialSludge, Material.water);
 
-
         // Add potion effects to the fluid if player steps into a pool
         // Syntax is: new PotionEffect(<potionID>, <duration in ticks>, <level>)
         // Level 0: Potion Level I
@@ -175,16 +166,17 @@ public final class ExtendedFluidCollection
         // Same for stacking potion effects, except that you want to set the duration to the amount which will be
         // ADDED about each 0,5 seconds. So this poison-effect will increase as long as the player has contact with the
         // fluid block
-        _mEnrichedBacterialSludge.addStackingPotionEffect(new PotionEffect(bop_loaded?24:Potion.poison.id, 40, 0));
+        _mEnrichedBacterialSludge.addStackingPotionEffect(new PotionEffect(bop_loaded ? 24 : Potion.poison.id, 40, 0));
 
-        _mEnrichedBacterialSludge.addStackingPotionEffect(new PotionEffect(bop_loaded?25:Potion.moveSlowdown.id, 40, 0));
+        _mEnrichedBacterialSludge.addStackingPotionEffect(
+                new PotionEffect(bop_loaded ? 25 : Potion.moveSlowdown.id, 40, 0));
 
         _mEnrichedBacterialSludge.setRegisterBucket(true); // don't register a bucket
     }
 
     private static ModSimpleBaseFluid _mCompressedOxygen;
-    public static ModSimpleBaseFluid getCompressedOxygen()
-    {
+
+    public static ModSimpleBaseFluid getCompressedOxygen() {
         if (_mCompressedOxygen == null) {
             populateCompressedOxygen();
         }
@@ -192,8 +184,7 @@ public final class ExtendedFluidCollection
         return _mCompressedOxygen;
     }
 
-    private static void populateCompressedOxygen()
-    {
+    private static void populateCompressedOxygen() {
         Fluid tCompressedOxygenFluid = ModFluidManager.GetNewFluid("CompressedOxygen");
         tCompressedOxygenFluid.setGaseous(true);
         tCompressedOxygenFluid.setViscosity(1);
@@ -203,7 +194,6 @@ public final class ExtendedFluidCollection
         tCompressedOxygenFluid.setRarity(EnumRarity.epic); // The rarity of the fluid. Used primarily in tool tips.
 
         _mCompressedOxygen = new ModSimpleBaseFluid(tCompressedOxygenFluid, Material.water);
-
 
         // Add potion effects to the fluid if player steps into a pool
         // Syntax is: new PotionEffect(<potionID>, <duration in ticks>, <level>)
@@ -224,8 +214,8 @@ public final class ExtendedFluidCollection
     }
 
     private static ModSimpleBaseFluid _mCompressedNitrogen;
-    public static ModSimpleBaseFluid getCompressedNitrogen()
-    {
+
+    public static ModSimpleBaseFluid getCompressedNitrogen() {
         if (_mCompressedNitrogen == null) {
             populateCompressedNitrogen();
         }
@@ -233,8 +223,7 @@ public final class ExtendedFluidCollection
         return _mCompressedNitrogen;
     }
 
-    private static void populateCompressedNitrogen()
-    {
+    private static void populateCompressedNitrogen() {
         Fluid tCompressedNitrogenFluid = ModFluidManager.GetNewFluid("CompressedNitrogen");
         tCompressedNitrogenFluid.setGaseous(true);
         tCompressedNitrogenFluid.setViscosity(1);
@@ -244,7 +233,6 @@ public final class ExtendedFluidCollection
         tCompressedNitrogenFluid.setRarity(EnumRarity.epic); // The rarity of the fluid. Used primarily in tool tips.
 
         _mCompressedNitrogen = new ModSimpleBaseFluid(tCompressedNitrogenFluid, Material.water);
-
 
         // Add potion effects to the fluid if player steps into a pool
         // Syntax is: new PotionEffect(<potionID>, <duration in ticks>, <level>)
@@ -263,17 +251,18 @@ public final class ExtendedFluidCollection
 
         _mCompressedNitrogen.setRegisterBucket(false); // don't register a bucket
     }
+
     private static ModSimpleBaseFluid _mPollution;
-    public static ModSimpleBaseFluid getPollution()
-    {
+
+    public static ModSimpleBaseFluid getPollution() {
         if (_mPollution == null) {
             populatePollution();
         }
 
         return _mPollution;
     }
-    private static void populatePollution()
-    {
+
+    private static void populatePollution() {
         Fluid tPollution = ModFluidManager.GetNewFluid("Pollution");
         tPollution.setGaseous(false);
         tPollution.setViscosity(1);
@@ -283,7 +272,6 @@ public final class ExtendedFluidCollection
         tPollution.setRarity(EnumRarity.epic); // The rarity of the fluid. Used primarily in tool tips.
 
         _mPollution = new ModSimpleBaseFluid(tPollution, Material.water);
-
 
         // Add potion effects to the fluid if player steps into a pool
         // Syntax is: new PotionEffect(<potionID>, <duration in ticks>, <level>)
@@ -303,8 +291,4 @@ public final class ExtendedFluidCollection
 
         _mPollution.setRegisterBucket(true); // don't register a bucket
     }
-
-
-
-
 }

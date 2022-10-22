@@ -1,30 +1,25 @@
 package com.dreammaster.modcustomfuels;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.ItemStack;
-
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.*;
+import net.minecraft.item.ItemStack;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "CustomFuels")
-public class CustomFuels
-{
+public class CustomFuels {
     @XmlElement(name = "FuelItem")
     protected List<FuelItem> mFuelItems;
 
-    public List<FuelItem> getFuelItems()
-    {
+    public List<FuelItem> getFuelItems() {
         Init();
 
         return mFuelItems;
     }
 
-    public FuelItem FindFuelValue(ItemStack pItem)
-    {
-        try
-        {
+    public FuelItem FindFuelValue(ItemStack pItem) {
+        try {
             Init();
             if (pItem == null) {
                 return null;
@@ -36,23 +31,19 @@ public class CustomFuels
                 tCompareName = String.format("%s:%d", tCompareName, pItem.getItemDamage());
             }
 
-            for (FuelItem ifi : mFuelItems)
-            {
+            for (FuelItem ifi : mFuelItems) {
                 if (ifi.mItemName.equalsIgnoreCase(tCompareName)) {
                     return ifi;
                 }
             }
 
             return null;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return null;
         }
     }
 
-    private void Init()
-    {
+    private void Init() {
         if (mFuelItems == null) {
             mFuelItems = new ArrayList<>();
         }
@@ -60,21 +51,18 @@ public class CustomFuels
 
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType
-    public static class FuelItem
-    {
+    public static class FuelItem {
         @XmlAttribute(name = "ItemName")
         protected String mItemName;
 
         @XmlAttribute(name = "BurnTime")
         protected int mBurnTime;
 
-        public String getName()
-        {
+        public String getName() {
             return mItemName;
         }
 
-        public int getBurnTime()
-        {
+        public int getBurnTime() {
             return mBurnTime;
         }
     }

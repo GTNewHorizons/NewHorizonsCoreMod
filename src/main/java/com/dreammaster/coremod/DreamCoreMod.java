@@ -1,13 +1,12 @@
 package com.dreammaster.coremod;
 
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
-import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.io.*;
 import java.util.Map;
 import java.util.Properties;
+import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.Name("DreamCoreMod")
@@ -22,7 +21,7 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
 
     @Override
     public String[] getASMTransformerClass() {
-        return new String[]{"com.dreammaster.coremod.DreamTransformer"};
+        return new String[] {"com.dreammaster.coremod.DreamTransformer"};
     }
 
     @Override
@@ -62,8 +61,7 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
         if ("true".equalsIgnoreCase(coremodConfig.getProperty("debug"))) {
             debugOutputDir = new File(mcLocation, ".asm_debug");
             try {
-                if (debugOutputDir.exists())
-                    FileUtils.deleteDirectory(debugOutputDir);
+                if (debugOutputDir.exists()) FileUtils.deleteDirectory(debugOutputDir);
             } catch (IOException e) {
                 logger.warn("Can't remove old debug stuff. Debug will be effective turned off!", e);
                 debugOutputDir = null;

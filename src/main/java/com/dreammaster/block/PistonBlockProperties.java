@@ -10,41 +10,64 @@ import net.minecraft.block.material.Material;
  * @author Namikon
  *
  */
-public class PistonBlockProperties implements IExtendedBlockProperties
-{
+public class PistonBlockProperties implements IExtendedBlockProperties {
     @Override
-    public Material getMaterial() { return Material.rock;}
+    public Material getMaterial() {
+        return Material.rock;
+    }
 
     @Override
-    public boolean getUnbreakable() { return false;	}
+    public boolean getUnbreakable() {
+        return false;
+    }
 
     @Override
-    public int getHarvestLevel() { return 1; }
+    public int getHarvestLevel() {
+        return 1;
+    }
 
     @Override
-    public int getOpacity() { return 100; }
+    public int getOpacity() {
+        return 100;
+    }
 
     @Override
-    public float getHardness() { return 0.5F; }
+    public float getHardness() {
+        return 0.5F;
+    }
 
     @Override
-    public float getLightLevel() { return 0; }
+    public float getLightLevel() {
+        return 0;
+    }
 
     @Override
-    public float getResistance() { return 3.0F; }
+    public float getResistance() {
+        return 3.0F;
+    }
 
     @Override
-    public String getBlockName() { return "PistonBlock"; }
+    public String getBlockName() {
+        return "PistonBlock";
+    }
 
     @Override
-    public String getTextureName() { return ""; }
+    public String getTextureName() {
+        return "";
+    }
 
     @Override
-    public String getHarvestToolClass() { return "pickaxe"; }
+    public String getHarvestToolClass() {
+        return "pickaxe";
+    }
 
     @Override
-    public Block.SoundType getStepSound() { return Block.soundTypeStone; }
-    
+    public Block.SoundType getStepSound() {
+        return Block.soundTypeStone;
+    }
+
     @Override
-    public boolean getIsOpaqueCube() { return true; }
+    public boolean getIsOpaqueCube() {
+        return true;
+    }
 }

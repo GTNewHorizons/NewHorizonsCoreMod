@@ -487,7 +487,6 @@ item.CoinWitchII.name=Coin "Spirit 100"
 item.CoinWitchIII.name=Coin "Spirit 1000"
 item.CoinWitchIV.name=Coin "Spirit 10K"
 item.IchoriumCap.name=Ichorium Cap
-item.IchoriumCap.name=Ichorium Cap
 item.WetTofu.name=Wet Tofu
 item.NetherStarFragment.name=Nether Star Fragment
 item.WeakOrb.name=Weak Orb
@@ -650,7 +649,6 @@ item.CircuitUEV.name=Any UEV Circuit
 item.CircuitUIV.name=Any UIV Circuit
 item.CircuitUMV.name=Any UMV Circuit
 item.CircuitUXV.name=Any UXV Circuit
-item.CircuitOpV.name=Any OpV Circuit
 item.CircuitMAX.name=Any MAX Circuit
 
 tc.aspect.custom1=Equality, Balance, Uniformity

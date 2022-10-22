@@ -1,9 +1,9 @@
 package com.dreammaster.oredict;
 
 public enum OreDictTypes {
-	dust,
-	rock,
-	Space,
+    dust,
+    rock,
+    Space,
     Moon,
     Asteroids,
     Mars,

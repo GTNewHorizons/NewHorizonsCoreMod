@@ -1,63 +1,74 @@
 // Add your dependencies here
 
 dependencies {
-    compile("com.github.GTNewHorizons:GT5-Unofficial:5.09.40.87:dev")
-    compile("com.github.GTNewHorizons:Yamcl:0.5.82:dev")
+    compile("com.github.GTNewHorizons:GT5-Unofficial:5.09.41.88:dev")
+    compile("com.github.GTNewHorizons:Yamcl:0.5.84:dev")
     compile("com.github.GTNewHorizons:Baubles:1.0.1.14:dev")
-    compile("com.github.GTNewHorizons:StructureLib:1.0.15:dev")
-    compile("com.github.GTNewHorizons:Avaritia:1.23:dev")
+    compile("com.github.GTNewHorizons:StructureLib:1.2.0-beta.2:dev")
+    compile("com.github.GTNewHorizons:Avaritia:1.30:dev")
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
-    compile("com.github.GTNewHorizons:GTplusplus:1.7.62-pre:dev")
 
-    compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:1.9.1-GTNH:dev") {
+    compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:1.9.3-GTNH:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:twilightforest:2.3.8.13:dev") {
+    compileOnly("com.github.GTNewHorizons:twilightforest:2.3.8.17:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:Railcraft:9.13.6:dev") {
+    compileOnly("com.github.GTNewHorizons:Railcraft:9.13.12:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:EnderIO:2.3.1.29:dev") {
+    compileOnly("com.github.GTNewHorizons:EnderIO:2.3.1.47:dev") {
         transitive = false
     }
-//    compileOnly("com.github.GTNewHorizons:GTplusplus:1.7.49:dev") {
-//        transitive = false
-//    }
-    compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.0.7:dev") {
+    compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.0.8:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:bartworks:0.5.36:dev") {
+    compileOnly("com.github.GTNewHorizons:bartworks:0.5.93:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.2.6-GTNH:dev") {
+    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.3.7-GTNH:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:Mantle:0.3.4:dev") {
+    compileOnly("com.github.GTNewHorizons:Mantle:0.3.5:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:ForestryMC:4.4.5:api") {
+    compileOnly("com.github.GTNewHorizons:ForestryMC:4.5.0:api") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:AppleCore:3.1.9:dev") {
+    compileOnly("com.github.GTNewHorizons:Binnie:2.0.43:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.9.0.13-GTNH:dev") {
+    compileOnly("com.github.GTNewHorizons:gendustry:1.6.5.4-GTNH:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-75-GTNH:dev") {
+    compileOnly("com.github.GTNewHorizons:AppleCore:3.2.2:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.1.4:dev") {
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.9.7-GTNH:dev") {
         transitive = false
     }
-    compileOnly("com.azanor:Thaumcraft:1.7.10-4.2.3.5:deobf") {
+    compileOnly("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-112-GTNH:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.1.12:dev") {
+        transitive = false
+    }
+    compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") {
         transitive = false
     }
     compileOnly("curse.maven:witchery-69673:2234410") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:BuildCraft:7.1.26:dev") {
+    compileOnly("com.github.GTNewHorizons:BuildCraft:7.1.27:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:GTplusplus:1.7.117:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:Nuclear-Control:2.4.16:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:ProjectRed:4.7.7-GTNH:dev") {
         transitive = false
     }
 

@@ -1,232 +1,201 @@
 package com.dreammaster.gthandler.IDSU;
 
+import static gregtech.api.enums.GT_Values.V;
+
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.objects.GT_RenderedTexture;
+import java.util.HashMap;
+import java.util.Map;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static gregtech.api.enums.GT_Values.V;
-
-public class GT_MetaTileEntity_IDSU extends MetaTileEntity
-{
+public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
     public static final Map<Integer, Long> mIDSUList = new HashMap<>();
     public int mFrequency = 0;
     public static int mTier = 8;
     private static Textures.BlockIcons.CustomIcon _mIDSU;
     private static Textures.BlockIcons.CustomIcon _mIDSU_Out;
 
-    public GT_MetaTileEntity_IDSU(int aID, String aBasicName, String aRegionalName, int aInvSlotCount)
-    {
+    public GT_MetaTileEntity_IDSU(int aID, String aBasicName, String aRegionalName, int aInvSlotCount) {
         super(aID, aBasicName, aRegionalName, aInvSlotCount);
     }
 
     @Override
-    public void registerIcons(IIconRegister aBlockIconRegister)
-    {
+    public void registerIcons(IIconRegister aBlockIconRegister) {
         super.registerIcons(aBlockIconRegister);
         _mIDSU = new Textures.BlockIcons.CustomIcon("IDSU");
         _mIDSU_Out = new Textures.BlockIcons.CustomIcon("IDSU_Out");
     }
-    
+
     @Override
-    public byte getTileEntityBaseType()
-    {
+    public byte getTileEntityBaseType() {
         return 0;
     }
 
     @Override
-    public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity)
-    {
+    public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
         return null;
     }
 
     @Override
-    public void saveNBTData(NBTTagCompound aNBT)
-    {}
+    public void saveNBTData(NBTTagCompound aNBT) {}
 
     @Override
-    public void loadNBTData(NBTTagCompound aNBT)
-    {}
+    public void loadNBTData(NBTTagCompound aNBT) {}
 
     @Override
-    public boolean allowPullStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, byte aSide, ItemStack aStack)
-    {
+    public boolean allowPullStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, byte aSide, ItemStack aStack) {
         return false;
     }
 
     @Override
-    public boolean allowPutStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, byte aSide, ItemStack aStack)
-    {
+    public boolean allowPutStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, byte aSide, ItemStack aStack) {
         return false;
     }
 
     @Override
-    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, byte aSide, byte aFacing, byte aColorIndex, boolean aActive, boolean aRedstone)
-    {
-        return new ITexture[]{aSide == aFacing ? new GT_RenderedTexture(_mIDSU_Out) : new GT_RenderedTexture(_mIDSU)};
+    public ITexture[] getTexture(
+            IGregTechTileEntity aBaseMetaTileEntity,
+            byte aSide,
+            byte aFacing,
+            byte aColorIndex,
+            boolean aActive,
+            boolean aRedstone) {
+        return new ITexture[] {aSide == aFacing ? new GT_RenderedTexture(_mIDSU_Out) : new GT_RenderedTexture(_mIDSU)};
     }
-    
+
     @Override
-    public boolean isTransformingLowEnergy()
-    {
+    public boolean isTransformingLowEnergy() {
         return false;
     }
-    
+
     @Override
-    public boolean isFacingValid(byte aFacing)
-    {
+    public boolean isFacingValid(byte aFacing) {
         return true;
     }
-    
+
     @Override
-    public boolean isAccessAllowed(EntityPlayer aPlayer)
-    {
-      return true;
-    }
-    
-    @Override
-    public boolean isEnetOutput()
-    {
+    public boolean isAccessAllowed(EntityPlayer aPlayer) {
         return true;
     }
-    
+
     @Override
-    public boolean isEnetInput()
-    {
+    public boolean isEnetOutput() {
         return true;
     }
-    
+
     @Override
-    public boolean isOutputFacing(byte aSide)
-    {
+    public boolean isEnetInput() {
+        return true;
+    }
+
+    @Override
+    public boolean isOutputFacing(byte aSide) {
         return aSide == getBaseMetaTileEntity().getFrontFacing();
     }
-    
+
     @Override
-    public boolean isInputFacing(byte aSide)
-    {
+    public boolean isInputFacing(byte aSide) {
         return !isOutputFacing(aSide);
     }
-    
+
     @Override
-    public boolean isTeleporterCompatible()
-    {
+    public boolean isTeleporterCompatible() {
         return true;
     }
-    
+
     @Override
-    public long maxEUInput()
-    {
+    public long maxEUInput() {
         return V[(int) getInputTier()];
     }
-    
+
     @Override
-    public long maxEUOutput()
-    {
+    public long maxEUOutput() {
         return V[(int) getOutputTier()];
     }
-    
+
     @Override
-    public long maxEUStore()
-    {
-        return Long.MAX_VALUE-1;
+    public long maxEUStore() {
+        return Long.MAX_VALUE - 1;
     }
-    
+
     @Override
-    public long getInputTier()
-    {
-        return 8;
-    }
-    
-    @Override
-    public long getOutputTier()
-    {
+    public long getInputTier() {
         return 8;
     }
 
-    
     @Override
-    public boolean isValidSlot(int aIndex)
-    {
+    public long getOutputTier() {
+        return 8;
+    }
+
+    @Override
+    public boolean isValidSlot(int aIndex) {
         return aIndex < 2;
     }
-    
+
     @Override
-    public int getSizeInventory()
-    {
+    public int getSizeInventory() {
         return 3;
     }
-    
+
     @Override
-    public void onFirstTick(IGregTechTileEntity aBaseMetaTileEntity)
-    {
+    public void onFirstTick(IGregTechTileEntity aBaseMetaTileEntity) {
         mFrequency = getBaseMetaTileEntity().getOwnerName().hashCode();
     }
-    
+
     @Override
-    public int rechargerSlotStartIndex()
-    {
+    public int rechargerSlotStartIndex() {
         return 0;
     }
-    
+
     @Override
-    public int rechargerSlotCount()
-    {
+    public int rechargerSlotCount() {
         return 1;
     }
-    
+
     @Override
-    public int dechargerSlotStartIndex()
-    {
+    public int dechargerSlotStartIndex() {
         return 1;
     }
-    
+
     @Override
-    public int dechargerSlotCount()
-    {
+    public int dechargerSlotCount() {
         return 1;
     }
-    
+
     @Override
-    public void setEUVar(long aEnergy)
-    {
+    public void setEUVar(long aEnergy) {
         mIDSUList.put(mFrequency, aEnergy);
     }
-    
+
     @Override
-    public long getEUVar()
-    {
+    public long getEUVar() {
         Long tEU = mIDSUList.get(mFrequency);
         if (tEU == null) {
             tEU = 0L;
         }
-        
+
         return tEU;
     }
-    
+
     @Override
-    public String[] getDescription()
-    {
-      return new String[] {"Interdimensional Storage Unit Mark II"};
+    public String[] getDescription() {
+        return new String[] {"Interdimensional Storage Unit Mark II"};
     }
-    
-    public boolean allowPullStack(int aIndex, byte aSide, ItemStack aStack)
-    {
-      return aIndex < 2;
+
+    public boolean allowPullStack(int aIndex, byte aSide, ItemStack aStack) {
+        return aIndex < 2;
     }
-    
-    public boolean allowPutStack(int aIndex, byte aSide, ItemStack aStack)
-    {
-      return aIndex < 2;
+
+    public boolean allowPutStack(int aIndex, byte aSide, ItemStack aStack) {
+        return aIndex < 2;
     }
 }
 
@@ -235,19 +204,19 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity
   {
     super(aID, aName, aNameRegional);
   }
-  
+
   public GT_MetaTileEntity_IDSU() {}
-  
+
   public boolean isBatteryUpgradable()
   {
     return false;
   }
-  
+
   public void onRightclick(EntityPlayer aPlayer)
   {
     getBaseMetaTileEntity().openGUI(aPlayer, 151);
   }
-  
+
   public MetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity)
   {
     return new GT_MetaTileEntity_IDSU();
@@ -280,7 +249,7 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity
       }
     }
   }
-  
+
   public void onServerStop()
   {
     if ((GT_Mod.mUniverse != null) && (!GT_Mod.mUniverse.field_72995_K)) {
@@ -309,9 +278,9 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity
     }
     GregTech_API.sIDSUList.clear();
   }
-  
+
 
 
 }
- 
+
 */

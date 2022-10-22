@@ -10,16 +10,13 @@ import net.minecraftforge.common.util.ForgeDirection;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-public class RenderBabyChest extends TileEntitySpecialRenderer
-{
+public class RenderBabyChest extends TileEntitySpecialRenderer {
 
     private final ModelChest _mModelChest = new ModelChest();
 
     @Override
-    public void renderTileEntityAt(TileEntity pTileEntity, double pX, double pY, double pZ, float pTick)
-    {
-        if (pTileEntity instanceof TileEntityBabyChest)
-        {
+    public void renderTileEntityAt(TileEntity pTileEntity, double pX, double pY, double pZ, float pTick) {
+        if (pTileEntity instanceof TileEntityBabyChest) {
             TileEntityBabyChest tTileEntityBabyChest = (TileEntityBabyChest) pTileEntity;
             ForgeDirection tDirection = null;
 
@@ -28,10 +25,10 @@ public class RenderBabyChest extends TileEntitySpecialRenderer
             }
 
             World tWorld = tTileEntityBabyChest.getWorldObj();
-            Block tBlock = tWorld.getBlock(tTileEntityBabyChest.xCoord, tTileEntityBabyChest.yCoord, tTileEntityBabyChest.zCoord);
+            Block tBlock = tWorld.getBlock(
+                    tTileEntityBabyChest.xCoord, tTileEntityBabyChest.yCoord, tTileEntityBabyChest.zCoord);
 
-            if (tBlock instanceof BlockBabyChest)
-            {
+            if (tBlock instanceof BlockBabyChest) {
                 BlockBabyChest blockBabyChest = (BlockBabyChest) tBlock;
                 bindTexture(new ResourceLocation("minecraft:textures/entity/chest/normal.png"));
             }
@@ -59,7 +56,8 @@ public class RenderBabyChest extends TileEntitySpecialRenderer
 
             GL11.glRotatef(tAngle, 0.0F, 1.0F, 0.0F);
             GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
-            float adjustedLidAngle = tTileEntityBabyChest._mPrevLidAngle + (tTileEntityBabyChest._mLidAngle - tTileEntityBabyChest._mPrevLidAngle) * pTick;
+            float adjustedLidAngle = tTileEntityBabyChest._mPrevLidAngle
+                    + (tTileEntityBabyChest._mLidAngle - tTileEntityBabyChest._mPrevLidAngle) * pTick;
             adjustedLidAngle = 1.0F - adjustedLidAngle;
             adjustedLidAngle = 1.0F - adjustedLidAngle * adjustedLidAngle * adjustedLidAngle;
             _mModelChest.chestLid.rotateAngleX = -(adjustedLidAngle * (float) Math.PI / 2.0F);

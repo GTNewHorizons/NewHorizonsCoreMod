@@ -1,14 +1,12 @@
 package com.dreammaster.scripts;
 
-import java.util.Arrays;
-
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-public class ScriptTranslocator implements IScriptLoader{
+import java.util.Arrays;
 
-    public ScriptTranslocator() {
+public class ScriptTranslocator implements IScriptLoader {
 
-    }
+    public ScriptTranslocator() {}
 
     @Override
     public void initScriptData() {
@@ -20,13 +18,15 @@ public class ScriptTranslocator implements IScriptLoader{
 
     @Override
     public void loadRecipes() {
-        addShapedRecipe(getModItem("Translocator", "translocator", 2), new Object[]{
-                "itemCasingAluminium","plateRedAlloy","itemCasingAluminium",
-                "pipeMediumBrass","gemEnderPearl","pipeMediumBrass",
-                "itemCasingAluminium","plateRedAlloy","itemCasingAluminium"});
-        addShapedRecipe(getModItem("Translocator", "translocator", 2, 1), new Object[]{
-                "itemCasingAluminium","plateRedAlloy","itemCasingAluminium",
-                "pipeMediumSteel","gemEnderPearl","pipeMediumSteel",
-                "itemCasingAluminium","plateRedAlloy","itemCasingAluminium"});
+        addShapedRecipe(getModItem("Translocator", "translocator", 2), new Object[] {
+            "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium",
+            "pipeMediumBrass", "gemEnderPearl", "pipeMediumBrass",
+            "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium"
+        });
+        addShapedRecipe(getModItem("Translocator", "translocator", 2, 1), new Object[] {
+            "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium",
+            "pipeMediumSteel", "gemEnderPearl", "pipeMediumSteel",
+            "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium"
+        });
     }
 }

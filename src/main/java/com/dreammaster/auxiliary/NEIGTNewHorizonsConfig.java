@@ -1,19 +1,19 @@
 package com.dreammaster.auxiliary;
 
-import com.dreammaster.item.food.QuantumBread;
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
+import static gregtech.api.enums.GT_Values.MOD_ID_DC;
 
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
+import com.dreammaster.item.food.QuantumBread;
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.MainRegistry;
 import gregtech.api.util.GT_ModHandler;
 import net.minecraft.item.ItemStack;
 
-public class NEIGTNewHorizonsConfig implements IConfigureNEI
-{
+public class NEIGTNewHorizonsConfig implements IConfigureNEI {
     @Override
-    public void loadConfig()
-    {
+    public void loadConfig() {
+        hideFakeCircuits();
         API.hideItem(new ItemStack(QuantumBread.Instance()));
         API.hideItem(GT_ModHandler.getModItem("Aroma1997Core", "wrenched", 1));
         API.hideItem(GT_ModHandler.getModItem("BiblioCraft", "BiblioClipboard", 1));
@@ -45,11 +45,11 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI
         API.hideItem(GT_ModHandler.getModItem("ThaumicTinkerer", "gaseousShadow", 1));
         API.hideItem(GT_ModHandler.getModItem("ThaumicTinkerer", "infusedGrainBlock", 1));
         API.hideItem(GT_ModHandler.getModItem("ThaumicTinkerer", "nitorGas", 1));
-        for(int i = 5; i <= 15; i++) {
-        	API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFBossSpawner", 1, i));
+        for (int i = 5; i <= 15; i++) {
+            API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFBossSpawner", 1, i));
         }
-        for(int i = 8; i <= 15; i++) {
-        	API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFTowerTranslucent", 1, i));
+        for (int i = 8; i <= 15; i++) {
+            API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFTowerTranslucent", 1, i));
         }
         API.hideItem(GT_ModHandler.getModItem("TwilightForest", "tile.TFTrophy", 1));
         API.hideItem(GT_ModHandler.getModItem("WarpTheory", "blockVanish", 1));
@@ -68,16 +68,31 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI
         MainRegistry.Logger.info("Added NEI Config");
     }
 
+    private void hideFakeCircuits() {
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitULV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitLV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitMV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitHV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitEV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitIV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitLuV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitZPM", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUHV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUEV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUIV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUMV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitUXV", 1));
+        API.hideItem(GT_ModHandler.getModItem(MOD_ID_DC, "item.CircuitMAX", 1));
+    }
+
     @Override
-    public String getName()
-    {
+    public String getName() {
         return "GTNewHorizons-NEIConfig";
     }
 
     @Override
-    public String getVersion()
-    {
+    public String getVersion() {
         return Refstrings.VERSION;
     }
-
 }

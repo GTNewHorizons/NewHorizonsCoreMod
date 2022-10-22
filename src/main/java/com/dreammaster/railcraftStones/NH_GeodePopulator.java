@@ -1,6 +1,7 @@
 package com.dreammaster.railcraftStones;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import java.util.Random;
 import mods.railcraft.common.blocks.aesthetics.cube.BlockCube;
 import mods.railcraft.common.blocks.aesthetics.cube.EnumCube;
 import mods.railcraft.common.worldgen.WorldGenGeode;
@@ -11,10 +12,10 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
-import java.util.Random;
-
 public final class NH_GeodePopulator {
-    public static final PopulateChunkEvent.Populate.EventType EVENT_TYPE = (PopulateChunkEvent.Populate.EventType) EnumHelper.addEnum(PopulateChunkEvent.Populate.EventType.class, "RAILCRAFT_GEODE", new Class[0], new Object[0]);
+    public static final PopulateChunkEvent.Populate.EventType EVENT_TYPE =
+            (PopulateChunkEvent.Populate.EventType) EnumHelper.addEnum(
+                    PopulateChunkEvent.Populate.EventType.class, "RAILCRAFT_GEODE", new Class[0], new Object[0]);
     private static NH_GeodePopulator instance;
     private final WorldGenerator geode;
 
@@ -23,7 +24,7 @@ public final class NH_GeodePopulator {
     }
 
     public static NH_GeodePopulator instance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new NH_GeodePopulator();
         }
 
@@ -32,7 +33,14 @@ public final class NH_GeodePopulator {
 
     @SubscribeEvent
     public void generate(PopulateChunkEvent.Pre event) {
-        if(TerrainGen.populate(event.chunkProvider, event.world, event.rand, event.chunkX, event.chunkZ, event.hasVillageGenerated, EVENT_TYPE)) {
+        if (TerrainGen.populate(
+                event.chunkProvider,
+                event.world,
+                event.rand,
+                event.chunkX,
+                event.chunkZ,
+                event.hasVillageGenerated,
+                EVENT_TYPE)) {
             generateGeode(event.world, event.rand, event.chunkX, event.chunkZ);
         }
     }
@@ -40,14 +48,14 @@ public final class NH_GeodePopulator {
     public void generateGeode(World world, Random rand, int chunkX, int chunkZ) {
         int x = chunkX * 16 + 8;
         int z = chunkZ * 16 + 8;
-        if(canGen(world, rand, x, z)) {
+        if (canGen(world, rand, x, z)) {
             int y = 16 + rand.nextInt(16);
             geode.generate(world, rand, x, y, z);
         }
-
     }
 
     private boolean canGen(World world, Random rand, int x, int z) {
-        return BiomeDictionary.isBiomeOfType(world.getBiomeGenForCoords(x, z), BiomeDictionary.Type.MOUNTAIN) && rand.nextDouble() <= 0.3D;
+        return BiomeDictionary.isBiomeOfType(world.getBiomeGenForCoords(x, z), BiomeDictionary.Type.MOUNTAIN)
+                && rand.nextDouble() <= 0.3D;
     }
 }

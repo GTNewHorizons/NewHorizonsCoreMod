@@ -23,7 +23,7 @@ public class GT_MetaTileEntity_AirFilterT1 extends GT_MetaTileEntity_AirFilterBa
     }
 
     @Override
-    public GT_Recipe getRecipe(){
+    public GT_Recipe getRecipe() {
         return tRecipeT1;
     }
 
@@ -33,17 +33,17 @@ public class GT_MetaTileEntity_AirFilterT1 extends GT_MetaTileEntity_AirFilterBa
     }
 
     @Override
-    public int getCasingIndex(){
+    public int getCasingIndex() {
         return 57;
     }
 
     @Override
-    public int getPipeMeta(){
+    public int getPipeMeta() {
         return 1;
     }
 
     @Override
-    public int getCasingMeta(){
+    public int getCasingMeta() {
         return 0;
     }
 }

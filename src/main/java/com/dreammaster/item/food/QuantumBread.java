@@ -4,6 +4,7 @@ import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
+import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -14,14 +15,10 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 
-import java.util.List;
-
-public final class QuantumBread extends ItemFood
-{
+public final class QuantumBread extends ItemFood {
     private static final String QUANTUM_BREAD_NAME = "QuantumBread";
 
-    private QuantumBread()
-    {
+    private QuantumBread() {
         super(1, 0.0F, true);
         super.setTextureName(String.format("%s:item%s", Refstrings.MODID, QUANTUM_BREAD_NAME));
         setUnlocalizedName(QUANTUM_BREAD_NAME);
@@ -30,8 +27,7 @@ public final class QuantumBread extends ItemFood
 
     private static QuantumBread _mInstance;
 
-    public static QuantumBread Instance()
-    {
+    public static QuantumBread Instance() {
         if (_mInstance == null) {
             _mInstance = new QuantumBread();
         }
@@ -43,32 +39,26 @@ public final class QuantumBread extends ItemFood
     private static int curRand = -1;
 
     @Override
-    public String getUnlocalizedName(ItemStack stack)
-    {
-        if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
-        {
+    public String getUnlocalizedName(ItemStack stack) {
+        if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT) {
             long curTime = System.currentTimeMillis();
-            if (curTime - prevTime > 250L || curRand == -1)
-            {
+            if (curTime - prevTime > 250L || curRand == -1) {
                 curRand = MainRegistry.Rnd.nextInt(2);
             }
             prevTime = curTime;
             return String.format("%s_%d", getUnlocalizedName(), curRand);
-        }
-        else {
+        } else {
             return super.getUnlocalizedName(stack);
         }
     }
 
     @Override
-    public boolean hasEffect(ItemStack par1ItemStack, int pass)
-    {
+    public boolean hasEffect(ItemStack par1ItemStack, int pass) {
         return true;
     }
 
     @Override
-    protected void onFoodEaten(ItemStack pStack, World pWorld, EntityPlayer pPlayer)
-    {
+    protected void onFoodEaten(ItemStack pStack, World pWorld, EntityPlayer pPlayer) {
         pPlayer.getFoodStats().addStats(10, 1.0F);
         pPlayer.addPotionEffect(new PotionEffect(Potion.regeneration.id, 20 * 60, 2));
         pPlayer.addPotionEffect(new PotionEffect(Potion.jump.id, 20 * 60, 2));
@@ -77,8 +67,7 @@ public final class QuantumBread extends ItemFood
     }
 
     @Override
-    public void addInformation(ItemStack pStack, EntityPlayer pPlayer, List pList, boolean pBool)
-    {
+    public void addInformation(ItemStack pStack, EntityPlayer pPlayer, List pList, boolean pBool) {
         super.addInformation(pStack, pPlayer, pList, pBool);
 
         if (curRand == 1) {
@@ -87,8 +76,5 @@ public final class QuantumBread extends ItemFood
     }
 
     @Override
-    public void getSubItems(Item p_150895_1_, CreativeTabs p_150895_2_, List p_150895_3_)
-    {
-
-    }
+    public void getSubItems(Item p_150895_1_, CreativeTabs p_150895_2_, List p_150895_3_) {}
 }

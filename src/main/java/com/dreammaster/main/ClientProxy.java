@@ -1,5 +1,7 @@
 package com.dreammaster.main;
 
+import static com.dreammaster.main.ConfigHandler.CONFIG_HANDLER;
+
 import com.dreammaster.modbabychest.BlockBabyChest;
 import com.dreammaster.modbabychest.RenderBabyChest;
 import com.dreammaster.modbabychest.RenderItemBabyChest;
@@ -16,24 +18,21 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 
-import static com.dreammaster.main.ConfigHandler.CONFIG_HANDLER;
-
-public class ClientProxy extends CommonProxy
-{
+public class ClientProxy extends CommonProxy {
     @Override
-    public void addTexturePage(){
-        if(Textures.BlockIcons.casingTexturePages[8]==null) {
+    public void addTexturePage() {
+        if (Textures.BlockIcons.casingTexturePages[8] == null) {
             Textures.BlockIcons.casingTexturePages[8] = new ITexture[128];
         }
     }
 
     @Override
-    public void registerRenderInfo()
-    {
+    public void registerRenderInfo() {
         BlockBabyChest.pRenderID = RenderingRegistry.getNextAvailableRenderId();
         TileEntitySpecialRenderer render = new RenderBabyChest();
 
-        MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(MainRegistry._mBlockBabyChest), new RenderItemBabyChest());
+        MinecraftForgeClient.registerItemRenderer(
+                Item.getItemFromBlock(MainRegistry._mBlockBabyChest), new RenderItemBabyChest());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBabyChest.class, render);
 
         MinecraftForge.EVENT_BUS.register(CONFIG_HANDLER);
@@ -41,14 +40,12 @@ public class ClientProxy extends CommonProxy
     }
 
     @Override
-    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
-    {
+    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         return null;
     }
 
     @Override
-    public World getClientWorld()
-    {
+    public World getClientWorld() {
         return FMLClientHandler.instance().getClient().theWorld;
     }
 }
