@@ -8307,7 +8307,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 480);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.TungstenSteel, 8L),
+                    GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.TPV, 8L),
                     CustomItemList.MicaInsulatorFoil.get(20L),
                     GT_Utility.getIntegratedCircuit(3)
                 },
@@ -8321,7 +8321,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     CustomItemList.MicaInsulatorFoil.get(24L),
                     GT_Utility.getIntegratedCircuit(3)
                 },
-                Materials.TungstenSteel.getMolten(144L),
+                Materials.TPV.getMolten(144L),
                 ItemList.Casing_Coil_HSSG.get(1L),
                 600,
                 7680);
