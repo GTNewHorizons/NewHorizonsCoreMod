@@ -7852,7 +7852,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         new FluidStack[] {Materials.DimensionallyTranscendentResidue.getFluid(1000 / 2)},
                         40 * 20,
                         32_000_000,
-                        hypogen_heat);
+                        infinity_heat);
 
                 // Raw Tesseract v2
                 GT_Values.RA.addPlasmaForgeRecipe(
