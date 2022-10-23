@@ -5330,7 +5330,26 @@ public class GT_MachineRecipeLoader implements Runnable {
                 2400,
                 480,
                 2400);
-
+        GT_Values.RA.addBlastRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.TPV, 1L),
+                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.TPV, 1L),
+                GT_Values.NI,
+                3000,
+                1920,
+                3000);
+        GT_Values.RA.addBlastRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.TPV, 1L),
+                GT_Utility.getIntegratedCircuit(11),
+                Materials.Nitrogen.getGas(1000L),
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.TPV, 1L),
+                GT_Values.NI,
+                2500,
+                1920,
+                3000);
         GT_Values.RA.addBlastRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.TungstenSteel, 1L),
                 GT_Utility.getIntegratedCircuit(1),
@@ -8307,7 +8326,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 480);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.TungstenSteel, 8L),
+                    GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.TPV, 8L),
                     CustomItemList.MicaInsulatorFoil.get(20L),
                     GT_Utility.getIntegratedCircuit(3)
                 },
@@ -8321,7 +8340,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     CustomItemList.MicaInsulatorFoil.get(24L),
                     GT_Utility.getIntegratedCircuit(3)
                 },
-                Materials.TungstenSteel.getMolten(144L),
+                Materials.TPV.getMolten(144L),
                 ItemList.Casing_Coil_HSSG.get(1L),
                 600,
                 7680);
@@ -14763,6 +14782,11 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.TungstenSteel, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.TungstenSteel, 1L),
                 357,
+                1920);
+        GT_Values.RA.addVacuumFreezerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.TPV, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.TPV, 1L),
+                333,
                 1920);
         GT_Values.RA.addVacuumFreezerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.VibrantAlloy, 1L),
