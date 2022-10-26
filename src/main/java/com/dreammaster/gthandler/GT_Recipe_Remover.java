@@ -101,23 +101,23 @@ public class GT_Recipe_Remover implements Runnable {
                 GT_ModHandler.getModItem("DraconicEvolution", "chaosFragment", 1L, 0), true, false, true);
         //Ender IO
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 0), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 1), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 1), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 2), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 2), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 3), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 3), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 4), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 4), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 5), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 5), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 7), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 7), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 8), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 8), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 9), true, false, true);
+                GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 9), true, false, true);
         // Forestry
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(modNameFor, "stamps", 1L, 0), true, false, true);
