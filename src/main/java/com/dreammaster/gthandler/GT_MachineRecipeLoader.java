@@ -19064,7 +19064,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     30);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 4),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
                             GT_Utility.getIntegratedCircuit(1)
                     },
