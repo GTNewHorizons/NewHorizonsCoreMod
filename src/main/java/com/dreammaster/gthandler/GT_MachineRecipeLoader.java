@@ -19084,16 +19084,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     30);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                        GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 2L, 0),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 4),
-                        GT_Utility.getIntegratedCircuit(1)
-                    },
-                    Materials.EnergeticAlloy.getMolten(576),
-                    GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 1),
-                    150,
-                    120);
-            GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Tantalum, 4),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 4),
@@ -19101,7 +19091,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     },
                     Materials.EnergeticAlloy.getMolten(576),
                     GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 1),
-                    150,
+                    200,
                     120);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
