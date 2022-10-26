@@ -99,7 +99,7 @@ public class GT_Recipe_Remover implements Runnable {
                 GT_ModHandler.getModItem("DraconicEvolution", "chaosFragment", 1L, 1), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem("DraconicEvolution", "chaosFragment", 1L, 0), true, false, true);
-        //Ender IO
+        // Ender IO
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(modNameEIO, "itemBasicCapacitor", 1L, 0), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
