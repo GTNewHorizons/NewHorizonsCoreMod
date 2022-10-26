@@ -5317,7 +5317,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tantalum, 1L),
                 GT_Values.NI,
-                2400,
+                3000,
                 480,
                 3000);
         GT_Values.RA.addBlastRecipe(
@@ -5327,7 +5327,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tantalum, 1L),
                 GT_Values.NI,
-                1800,
+                2400,
                 480,
                 2400);
         GT_Values.RA.addBlastRecipe(
@@ -7208,7 +7208,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                1200,
+                1800,
                 120);
         // Cooling Hot Silicon MV
         GT_Values.RA.addChemicalBathRecipe(
