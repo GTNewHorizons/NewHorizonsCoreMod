@@ -19164,7 +19164,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.VanadiumGallium, 4),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
-                        ItemList.Gravistar.get(1L),
+                        ItemList.QuantumStar.get(1L),
                         GT_ModHandler.getModItem("EnderIO", "itemMaterial", 1L, 13),
                         GT_Utility.getIntegratedCircuit(1)
                     },
