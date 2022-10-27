@@ -3,6 +3,11 @@ package com.dreammaster.scripts;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
 
 public class ScriptAFSU implements IScriptLoader {
@@ -27,26 +32,9 @@ public class ScriptAFSU implements IScriptLoader {
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                    getModItem("gregtech", "gt.metaitem.03", 1, 32086),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32597)
-                },
-                GT_Values.NF,
-                getModItem("AFSU", "ALC", 1),
-                2400,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] {
-                    getModItem("gregtech", "gt.metaitem.03", 1, 32084),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32597)
-                },
-                GT_Values.NF,
-                getModItem("AFSU", "ALC", 1),
-                2400,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] {
-                    getModItem("gregtech", "gt.metaitem.03", 1, 32089),
-                    getModItem("gregtech", "gt.metaitem.01", 1, 32597)
+                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),
+                    ItemList.Energy_LapotronicOrb.get(1L),
+                    GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
                 getModItem("AFSU", "ALC", 1),
