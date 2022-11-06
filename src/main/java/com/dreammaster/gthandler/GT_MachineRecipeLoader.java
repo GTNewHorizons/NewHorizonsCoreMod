@@ -4546,16 +4546,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 200,
                 48);
         GT_Values.RA.addMixerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L),
-                GT_Utility.getIntegratedCircuit(5),
-                GT_Values.NI,
-                GT_Values.NF,
-                GT_Values.NF,
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 4L),
-                100,
-                48);
-        GT_Values.RA.addMixerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dustImpure, Materials.Aluminium, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L),
                 GT_Utility.getIntegratedCircuit(5),
@@ -5009,16 +4999,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 50,
                 120);
 
-        // Al + H2O + NaOH = NaAlO2 + 3H
-        GT_Values.RA.addChemicalRecipeForBasicMachineOnly(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L),
-                Materials.Water.getFluid(1000L),
-                Materials.Hydrogen.getGas(3000L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 4L),
-                GT_Values.NI,
-                150,
-                120);
         GT_Values.RA.addMultiblockChemicalRecipe(
                 new ItemStack[] {
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 16L),
@@ -5027,18 +5007,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 },
                 new FluidStack[] {Materials.Water.getFluid(16000L)},
                 new FluidStack[] {Materials.Hydrogen.getGas(48000L)},
-                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
-                400,
-                480);
-        // 2Al + Na2CO3 + 3H2O = 2NaAlO2 + CO2 + 6H
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] {
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 16L),
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumCarbonate, 48L),
-                    GT_Utility.getIntegratedCircuit(24)
-                },
-                new FluidStack[] {Materials.Water.getFluid(24000L)},
-                new FluidStack[] {Materials.Hydrogen.getGas(48000L), Materials.CarbonDioxide.getGas(8000L)},
                 new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
                 400,
                 480);
@@ -5055,17 +5023,17 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addMultiblockChemicalRecipe(
                 new ItemStack[] {
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 16L),
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumCarbonate, 8L),
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 8L),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumCarbonate, 16L),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 16L),
                     GT_Utility.getIntegratedCircuit(24)
                 },
-                new FluidStack[] {Materials.Water.getFluid(1000L)},
+                new FluidStack[] {Materials.Water.getFluid(2000L)},
                 new FluidStack[] {
-                    Materials.Hydrogen.getGas(100L),
-                    Materials.CarbonDioxide.getGas(1750L),
-                    Materials.RedMud.getFluid(500L)
+                    Materials.Hydrogen.getGas(1000L),
+                    Materials.CarbonDioxide.getGas(2000L),
+                    Materials.RedMud.getFluid(1000L)
                 },
-                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 32L)},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
                 400,
                 480);
         GT_Values.RA.addMultiblockChemicalRecipe(
@@ -5079,12 +5047,132 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
                 400,
                 480);
-
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 11L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tanzanite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glauconite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lepidolite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GlauconiteSand, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vermiculite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
+                        GT_Utility.getIntegratedCircuit(24)
+                },
+                new FluidStack[] {Materials.Water.getFluid(4000L)},
+                new FluidStack[] {},
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
+                400,
+                480);
         GT_Values.RA.addCentrifugeRecipe(
                 GT_Utility.getIntegratedCircuit(1),
                 GT_Values.NI,
-                Materials.RedMud.getFluid(10000L),
-                Materials.Water.getFluid(5000L),
+                Materials.RedMud.getFluid(1000L),
+                Materials.Water.getFluid(500L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 5L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 3L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 2L),
@@ -5092,7 +5180,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumOxide, 1L),
                 new int[] {10000, 10000, 9000, 7500, 5000, 2500},
-                1200,
+                600,
                 120);
 
         // NEEDED TO MOVE FROM GREG, CODE WAS TOO LONG
