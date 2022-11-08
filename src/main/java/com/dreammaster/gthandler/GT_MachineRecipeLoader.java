@@ -5030,7 +5030,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new FluidStack[] {Materials.Water.getFluid(2000L)},
                 new FluidStack[] {
                     Materials.Hydrogen.getGas(1000L),
-                    Materials.CarbonDioxide.getGas(2000L),
+                    Materials.CarbonDioxide.getGas(4000L),
                     Materials.RedMud.getFluid(1000L)
                 },
                 new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L)},
