@@ -8,6 +8,8 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_ModHandler.RecipeBits;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.init.Blocks;
@@ -86,20 +88,38 @@ public class ScriptAE2FC implements IScriptLoader {
         };
 
         for (int i = 0; i < cells.length; i++) {
-            GameRegistry.addShapelessRecipe(cells[i], new Object[] {AE2_CELL_HOUSING, components[i]});
-            GameRegistry.addRecipe(new ShapedOreRecipe(
-                    cells[i],
-                    "GDG",
-                    "DCD",
-                    "III",
-                    'D',
-                    "dustRedstone",
-                    'G',
-                    AE2_QUARTZ_GLASS,
-                    'C',
-                    components[i],
-                    'I',
-                    "ingotIron"));
+            GT_ModHandler.addCraftingRecipe(
+                    cells[i], RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES, new Object[] {
+                        "hCW",
+                        "SKS",
+                        "WAd",
+                        'C',
+                        "plateCertusQuartz",
+                        'W',
+                        "screwCertusQuartz",
+                        'S',
+                        "plateStainlessSteel",
+                        'K',
+                        components[i],
+                        'A',
+                        "plateAluminium"
+                    });
+            GT_ModHandler.addCraftingRecipe(cells[i], RecipeBits.BUFFERED, new Object[] {
+                "dCW",
+                "SKS",
+                "WAh",
+                'C',
+                "plateCertusQuartz",
+                'W',
+                "screwCertusQuartz",
+                'S',
+                "plateStainlessSteel",
+                'K',
+                components[i],
+                'A',
+                "plateAluminium"
+            });
+            GT_ModHandler.addShapelessCraftingRecipe(cells[i], new Object[] {AE2_CELL_HOUSING, components[i]});
         }
 
         // recursive components for those who want to do this weird stuff
