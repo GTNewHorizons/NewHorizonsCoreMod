@@ -17,7 +17,6 @@ import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import gregtech.api.enums.Textures;
-import gregtech.api.gui.GT_GUIContainer_MultiMachine;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.items.GT_MetaGenerated_Tool;
@@ -31,7 +30,6 @@ import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import java.util.ArrayList;
 import java.util.Arrays;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
@@ -247,12 +245,6 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     public abstract float getBonusByTier();
 
     public abstract int getCasingIndex();
-
-    @Override
-    public Object getClientGUI(int aID, InventoryPlayer aPlayerInventory, IGregTechTileEntity aBaseMetaTileEntity) {
-        return new GT_GUIContainer_MultiMachine(
-                aPlayerInventory, aBaseMetaTileEntity, getLocalName(), "ElectricAirFilter.png");
-    }
 
     @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
