@@ -2,6 +2,12 @@ package com.dreammaster.gthandler.nameRemover;
 
 import static net.minecraft.util.EnumChatFormatting.*;
 
+import com.dreammaster.gthandler.gui.CoreMod_UITextures;
+import com.gtnewhorizons.modularui.api.math.Pos2d;
+import com.gtnewhorizons.modularui.api.math.Size;
+import com.gtnewhorizons.modularui.api.screen.ModularWindow;
+import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
+import com.gtnewhorizons.modularui.common.widget.ProgressBar;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
@@ -140,5 +146,21 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
     @Override
     public long maxAmperesOut() {
         return 0;
+    }
+
+    @Override
+    public boolean useModularUI() {
+        return true;
+    }
+
+    @Override
+    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
+        super.addUIWidgets(builder, buildContext);
+        builder.widget(createProgressBar(
+                CoreMod_UITextures.PROGRESSBAR_NAME_REMOVER,
+                20,
+                ProgressBar.Direction.RIGHT,
+                new Pos2d(78, 24),
+                new Size(20, 18)));
     }
 }
