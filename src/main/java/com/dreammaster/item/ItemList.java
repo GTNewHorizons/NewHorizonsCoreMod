@@ -594,6 +594,8 @@ public enum ItemList {
     CircuitUMV(new ModSimpleBaseItem("CircuitUMV", ModTabList.ModCircuitsTab)),
     CircuitUXV(new ModSimpleBaseItem("CircuitUXV", ModTabList.ModCircuitsTab)),
     CircuitMAX(new ModSimpleBaseItem("CircuitMAX", ModTabList.ModCircuitsTab)),
+    RadoxPolymerLens(new ModSimpleBaseItem("RadoxPolymerLens", ModTabList.ModSpaceTab)),
+    ChromaticLens(new ModSimpleBaseItem("ChromaticLens", ModTabList.ModSpaceTab)),
 
     // Do not delete this
     EndOfList(null);

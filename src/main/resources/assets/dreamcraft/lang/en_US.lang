@@ -650,6 +650,8 @@ item.CircuitUIV.name=Any UIV Circuit
 item.CircuitUMV.name=Any UMV Circuit
 item.CircuitUXV.name=Any UXV Circuit
 item.CircuitMAX.name=Any MAX Circuit
+item.RadoxPolymerLens=Radox Polymer Lens
+item.ChromaticLens=Chromatic Lens
 
 tc.aspect.custom1=Equality, Balance, Uniformity
 tc.aspect.custom2=Insanity, Madness, Craziness
