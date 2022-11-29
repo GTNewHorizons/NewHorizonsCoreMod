@@ -7374,17 +7374,17 @@ public class GT_MachineRecipeLoader implements Runnable {
                 600,
                 500000);
         GT_Values.RA.addLatheRecipe(
-                ELEMENT.STANDALONE.CHRONOMATIC_GLASS.getPlate(1),
+                GT_ModHandler.getModItem("miscutils", "itemPlateChromaticGlass", 1),
                 CustomItemList.ChromaticLens.get(1),
                 NI,
                 1200,
-                122880 * 4);
+                122880 * 16);
         GT_Values.RA.addLatheRecipe(
                 GT_CoreModSupport.RadoxPolymer.getPlates(1),
                 CustomItemList.RadoxPolymerLens.get(1),
                 NI,
                 1800,
-                122880 * 16);
+                122880 * 64);
 
         GT_Values.RA.addLaserEngraverRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
