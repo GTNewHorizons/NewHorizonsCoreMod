@@ -6109,7 +6109,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                                 false);
                         GT_Values.RA.addBrewingRecipeCustom(
                                 resource,
-								Materials.Honey.getFluid(amountIn),
+                                Materials.Honey.getFluid(amountIn),
                                 FluidRegistry.getFluidStack("biomass", amountOut),
                                 8 * amountOut,
                                 3,
