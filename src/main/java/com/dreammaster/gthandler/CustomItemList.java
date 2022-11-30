@@ -844,7 +844,9 @@ public enum CustomItemList implements IItemContainer {
     BedrockiumIronPlate,
     ReinforcedBedrockiumIronPlate,
     BioBall,
-    PotassiumHydroxideDust;
+    PotassiumHydroxideDust,
+    ChromaticLens,
+    RadoxPolymerLens;
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;

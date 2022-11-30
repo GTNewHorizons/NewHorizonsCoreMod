@@ -328,6 +328,8 @@ public class MainRegistry {
             }
         }
         if (Loader.isModLoaded("TwilightForest")) TF_Loot_Chests.init();
+
+        CoreMod_PCBFactory_MaterialLoader.init();
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
