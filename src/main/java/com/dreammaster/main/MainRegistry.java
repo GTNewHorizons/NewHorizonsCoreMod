@@ -3,10 +3,7 @@ package com.dreammaster.main;
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
-import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
-import com.dreammaster.bartworksHandler.BacteriaRegistry;
-import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
-import com.dreammaster.bartworksHandler.VoidMinerLoader;
+import com.dreammaster.bartworksHandler.*;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
@@ -330,6 +327,8 @@ public class MainRegistry {
         if (Loader.isModLoaded("TwilightForest")) TF_Loot_Chests.init();
 
         CoreMod_PCBFactory_MaterialLoader.init();
+
+        if (Loader.isModLoaded("bartworks")) BWGlassAdder.registerGlasses();
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
