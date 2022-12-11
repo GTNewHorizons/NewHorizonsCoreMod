@@ -6135,10 +6135,9 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Impregnated Frame
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            GT_ModHandler.getModItem("Railcraft", "slab", 3L, 38),
-                            GT_ModHandler.getModItem("harvestcraft", "wovencottonItem", 1L),
-                            GT_ModHandler.getModItem("Forestry", "oakStick", 5L, 0)
-
+                        GT_ModHandler.getModItem("Railcraft", "slab", 3L, 38),
+                        GT_ModHandler.getModItem("harvestcraft", "wovencottonItem", 1L),
+                        GT_ModHandler.getModItem("Forestry", "oakStick", 5L, 0)
                     },
                     Materials.SeedOil.getFluid(100L),
                     GT_ModHandler.getModItem("Forestry", "frameImpregnated", 1L, 0),
@@ -6163,11 +6162,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Scented Paneling
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 2L),
-                            GT_ModHandler.getModItem("Forestry", "royalJelly", 1L, 0),
-                            GT_ModHandler.getModItem("Forestry", "oakStick", 3L, 0),
-                            GT_ModHandler.getModItem("Forestry", "beeswax", 2L, 0),
-                            GT_ModHandler.getModItem("Forestry", "pollen", 1L, GT_Values.W)
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 2L),
+                        GT_ModHandler.getModItem("Forestry", "royalJelly", 1L, 0),
+                        GT_ModHandler.getModItem("Forestry", "oakStick", 3L, 0),
+                        GT_ModHandler.getModItem("Forestry", "beeswax", 2L, 0),
+                        GT_ModHandler.getModItem("Forestry", "pollen", 1L, GT_Values.W)
                     },
                     Materials.Honey.getFluid(1000L),
                     GT_ModHandler.getModItem("Forestry", "craftingMaterial", 1L, 6),
@@ -6177,11 +6176,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Swarmer
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 5),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 2L),
-                            GT_ModHandler.getModItem("Forestry", "royalJelly", 2L, 0),
-                            GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 5),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 2L),
+                        GT_ModHandler.getModItem("Forestry", "royalJelly", 2L, 0),
+                        GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0)
                     },
                     Materials.Honey.getFluid(2500L),
                     GT_ModHandler.getModItem("Forestry", "alveary", 1L, 2),
@@ -6191,11 +6190,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Alveary Fan
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 11),
-                            CustomItemList.SteelBars.get(3L),
-                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Bronze, 1L),
-                            ItemList.Electric_Motor_MV.get(1L)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 11),
+                        CustomItemList.SteelBars.get(3L),
+                        GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Bronze, 1L),
+                        ItemList.Electric_Motor_MV.get(1L)
                     },
                     Materials.Honey.getFluid(2500L),
                     GT_ModHandler.getModItem("Forestry", "alveary", 1L, 3),
@@ -6205,11 +6204,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Alveary Heater
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 7),
-                            CustomItemList.SteelBars.get(1L),
-                            GT_ModHandler.getModItem("IC2", "itemRecipePart", 3L),
-                            ItemList.Electric_Motor_MV.get(1L)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 7),
+                        CustomItemList.SteelBars.get(1L),
+                        GT_ModHandler.getModItem("IC2", "itemRecipePart", 3L),
+                        ItemList.Electric_Motor_MV.get(1L)
                     },
                     Materials.Honey.getFluid(2500L),
                     GT_ModHandler.getModItem("Forestry", "alveary", 1L, 4),
@@ -6219,12 +6218,12 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Alveary Hygroregulator
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 6),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
-                            GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 2L, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 6),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                        GT_ModHandler.getModItem("BuildCraft|Factory", "tankBlock", 2L, 0),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L)
                     },
                     Materials.Honey.getFluid(2500L),
                     GT_ModHandler.getModItem("Forestry", "alveary", 1L, 5),
@@ -6234,11 +6233,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Alveary Stabiliser
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 4),
-                            com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(2),
-                            ItemList.Component_Filter.get(2L),
-                            GT_ModHandler.getModItem("Forestry", "royalJelly", 1L, 0)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 4),
+                        com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(2),
+                        ItemList.Component_Filter.get(2L),
+                        GT_ModHandler.getModItem("Forestry", "royalJelly", 1L, 0)
                     },
                     Materials.Honey.getFluid(2500L),
                     GT_ModHandler.getModItem("Forestry", "alveary", 1L, 6),
@@ -6248,10 +6247,10 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Alveary Sieve
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 3),
-                            GT_ModHandler.getModItem("Forestry", "craftingMaterial", 4L, 3),
-                            GT_ModHandler.getModItem("Forestry", "pollenFertile", 1L)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 3),
+                        GT_ModHandler.getModItem("Forestry", "craftingMaterial", 4L, 3),
+                        GT_ModHandler.getModItem("Forestry", "pollenFertile", 1L)
                     },
                     Materials.Honey.getFluid(2500L),
                     GT_ModHandler.getModItem("Forestry", "alveary", 1L, 7),
@@ -6265,11 +6264,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Mutator
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 12),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 2L),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 2L),
-                            GT_ModHandler.getModItem("ExtraBees", "hiveFrame.soul", 1L, 0)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 12),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 2L),
+                        GT_ModHandler.getModItem("ExtraBees", "hiveFrame.soul", 1L, 0)
                     },
                     Materials.Honey.getFluid(3750L),
                     GT_ModHandler.getModItem("ExtraBees", "alveary", 1L, 0),
@@ -6279,13 +6278,13 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Frame Housing
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 10),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L),
-                            GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0),
-                            GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0),
-                            GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0),
-                            GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 10),
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L),
+                        GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0),
+                        GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0),
+                        GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0),
+                        GT_ModHandler.getModItem("Forestry", "frameProven", 1L, 0)
                     },
                     Materials.Honey.getFluid(3750L),
                     GT_ModHandler.getModItem("ExtraBees", "alveary", 1L, 1),
@@ -6295,10 +6294,10 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Rain Shield
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 8),
-                            GT_ModHandler.getModItem("IC2","blockRubber", 4L),
-                            new ItemStack(Blocks.brick_block, 1, 0),
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 8),
+                        GT_ModHandler.getModItem("IC2", "blockRubber", 4L),
+                        new ItemStack(Blocks.brick_block, 1, 0),
                     },
                     Materials.Honey.getFluid(3750L),
                     GT_ModHandler.getModItem("ExtraBees", "alveary", 1L, 2),
@@ -6308,10 +6307,10 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Alveary Lighting
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 2),
-                            new ItemStack(Blocks.stained_glass, 4,  GT_Values.W),
-                            new ItemStack(Blocks.redstone_lamp, 1, 0)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 2),
+                        new ItemStack(Blocks.stained_glass, 4, GT_Values.W),
+                        new ItemStack(Blocks.redstone_lamp, 1, 0)
                     },
                     Materials.Honey.getFluid(3750L),
                     GT_ModHandler.getModItem("ExtraBees", "alveary", 1L, 3),
@@ -6321,11 +6320,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Electrical Stimulator
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 2L),
-                            GT_ModHandler.getModItem("Forestry", "chipsets", 2L, 2),
-                            ItemList.Electric_Motor_HV.get(1L)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 2L),
+                        GT_ModHandler.getModItem("Forestry", "chipsets", 2L, 2),
+                        ItemList.Electric_Motor_HV.get(1L)
                     },
                     Materials.Honey.getFluid(3750L),
                     GT_ModHandler.getModItem("ExtraBees", "alveary", 1L, 4),
@@ -6335,11 +6334,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Hatchery
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 3),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 2L),
-                            ItemList.Conveyor_Module_MV.get(2L),
-                            GT_ModHandler.getModItem("Forestry", "apiculture", 1L, 0)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 3),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 2L),
+                        ItemList.Conveyor_Module_MV.get(2L),
+                        GT_ModHandler.getModItem("Forestry", "apiculture", 1L, 0)
                     },
                     Materials.Honey.getFluid(3750L),
                     GT_ModHandler.getModItem("ExtraBees", "alveary", 1L, 5),
@@ -6349,11 +6348,11 @@ public class GT_MachineRecipeLoader implements Runnable {
             // Alveary Transmission
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
-                            alveary,
-                            GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 3L),
-                            ItemList.Hull_HV.get(1L)
+                        alveary,
+                        GT_ModHandler.getModItem("Forestry", "thermionicTubes", 4L, 0),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 3L),
+                        ItemList.Hull_HV.get(1L)
                     },
                     Materials.Honey.getFluid(3750L),
                     GT_ModHandler.getModItem("ExtraBees", "alveary", 1L, 6),
