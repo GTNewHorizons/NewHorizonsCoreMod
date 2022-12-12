@@ -17536,7 +17536,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(6)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 2),
