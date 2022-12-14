@@ -17514,7 +17514,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 0),
@@ -17525,7 +17525,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Copper, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 1),
@@ -17536,7 +17536,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 2),
@@ -17547,7 +17547,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Bronze, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 3),
@@ -17558,7 +17558,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 4),
@@ -17569,7 +17569,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 5),
@@ -17580,7 +17580,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 6),
@@ -17591,7 +17591,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 7),
@@ -17602,7 +17602,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 8),
@@ -17614,7 +17614,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                             GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedplate", 2L, 88),
                             GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstick", 2L, 88),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(13)
                         },
                         GT_Values.NF,
                         GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 9),
@@ -17626,7 +17626,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2),
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Chrome, 2),
-                            GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.getIntegratedCircuit(13)
                         },
                         GT_Values.NF,
                         GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 9),
@@ -17638,7 +17638,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iridium, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 10),
@@ -17649,7 +17649,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmium, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Osmium, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 11),
@@ -17660,7 +17660,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Neutronium, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 12),
@@ -17671,7 +17671,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         GT_ModHandler.getModItem("JABBA", "barrel", 1L, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 2),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.BlackPlutonium, 2),
-                        GT_Utility.getIntegratedCircuit(1)
+                        GT_Utility.getIntegratedCircuit(13)
                     },
                     GT_Values.NF,
                     GT_ModHandler.getModItem("JABBA", "upgradeStructural", 1L, 13),
