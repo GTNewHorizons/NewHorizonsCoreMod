@@ -19018,7 +19018,57 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_ModHandler.getModItem("IC2", "reactorCondensatorLap", 1L, 1),
                 900,
                 480);
-
+		// Easier chest upgrades
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Copper, 1L),
+                    GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                    GT_Utility.getIntegratedCircuit(2),
+                },
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Iron, 1L),
+                300,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Copper, 1L),
+                    GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                    GT_Utility.getIntegratedCircuit(2),
+                },
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Steel, 1L),
+                400,
+                30);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Iron, 1L),
+                    GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                    GT_Utility.getIntegratedCircuit(2),
+                },
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Gold, 1L),
+                500,
+                64);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Steel, 1L),
+                    GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                    GT_Utility.getIntegratedCircuit(2),
+                },
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Gold, 1L),
+                500,
+                64);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Gold, 1L),
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L),
+                    GT_Utility.getIntegratedCircuit(2),
+                },
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Diamond, 1L),
+                600,
+                120);
         // Reactor Plating
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
