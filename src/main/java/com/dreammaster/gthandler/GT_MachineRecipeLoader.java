@@ -7549,7 +7549,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                600,
+                800,
                 120);
 
         // Mysterious crystal upgrading
