@@ -19018,7 +19018,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_ModHandler.getModItem("IC2", "reactorCondensatorLap", 1L, 1),
                 900,
                 480);
-		// Easier chest upgrades
+        // Easier chest upgrades
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Copper, 1L),
