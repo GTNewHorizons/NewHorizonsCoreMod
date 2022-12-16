@@ -7511,45 +7511,45 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addChemicalBathRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Kanthal, 1L),
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000),
-                new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250),
+                new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 750),
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Kanthal, 1L),
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                1200,
+                400,
                 120);
         // Cooling Hot Tantalum MV
         GT_Values.RA.addChemicalBathRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tantalum, 1L),
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000),
-                new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250),
+                new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 750),
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Tantalum, 1L),
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                1800,
+                400,
                 120);
         // Cooling Hot Silicon MV
         GT_Values.RA.addChemicalBathRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Silicon, 1L),
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000),
-                new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250),
+                new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 750),
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Silicon, 1L),
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                600,
+                400,
                 120);
         // Cooling Hot SiliconSG MV
         GT_Values.RA.addChemicalBathRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.SiliconSG, 1L),
                 new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000),
-                new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250),
+                new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 750),
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.SiliconSG, 1L),
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                800,
+                400,
                 120);
 
         // Mysterious crystal upgrading
