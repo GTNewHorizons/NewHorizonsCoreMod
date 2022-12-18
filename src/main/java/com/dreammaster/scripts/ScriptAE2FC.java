@@ -45,6 +45,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2_CORE_ANN = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 44);
         final ItemStack AE2_CORE_FOM = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 43);
         final ItemStack AE2_BLANK_PATTERN = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 52);
+        final ItemStack AE2_CARD_CRAFTING = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 53);
         final ItemStack AE2_PURE_CERTUS =
                 new ItemStack(GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 10);
         final ItemStack BUCKET = new ItemStack(Items.bucket, 1);
@@ -81,6 +82,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_EXPORTBUS = getModItem("ae2fc", "part_fluid_export", 1, 0);
         final ItemStack AE2FC_IMPORTBUS = getModItem("ae2fc", "part_fluid_import", 1, 0);
         final ItemStack AE2FC_OCEDITOR = getModItem("ae2fc", "oc_pattern_editor", 1, 0);
+        final ItemStack AE2FC_MAINTAIN = getModItem("ae2fc", "level_maintainer", 1, 0);
 
         ItemStack[] cells = new ItemStack[] {CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096};
         ItemStack[] components = new ItemStack[] {
@@ -447,7 +449,12 @@ public class ScriptAE2FC implements IScriptLoader {
                 200,
                 30720,
                 true);
-
+        // level maintainer
+        addShapedRecipe(AE2FC_MAINTAIN, new Object[] {
+            NIOBIUM_PLATE, AE2_CARD_CRAFTING, NIOBIUM_PLATE,
+            AE2_CORE_ANN, AE2_INTERFACE, FLUID_CORE_1,
+            NIOBIUM_PLATE, AE2_CARD_CRAFTING, NIOBIUM_PLATE
+        });
         // interface
         addShapedRecipe(AE2FC_INTERFACE, new Object[] {
             IRON_PLATE, LAPIS_PLATE, IRON_PLATE,
