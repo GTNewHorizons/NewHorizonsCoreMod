@@ -12,6 +12,7 @@ import gregtech.api.objects.GT_ItemStack;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
+import gregtech.api.util.GT_RecipeRegistrator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Disassembler;
@@ -16463,11 +16464,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_ModHandler.addCompressionRecipe(
                 GT_ModHandler.getModItem("Natura", "barleyFood", 8, 0), ItemList.IC2_Plantball.get(1));
 
-        GT_Values.RA.addWiremillRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherStar, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.NetherStar, 1L),
-                100,
-                4);
+        GT_RecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
 
         // Circuits and Boards
         GT_Values.RA.addAssemblerRecipe(
