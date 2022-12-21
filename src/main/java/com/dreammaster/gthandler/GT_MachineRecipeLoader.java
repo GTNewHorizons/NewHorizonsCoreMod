@@ -19530,7 +19530,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.TungstenSteel, 4),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
-                        new ItemStack(Items.nether_star, 1, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EndSteel, 1),
                         GT_Utility.getIntegratedCircuit(1)
                     },
