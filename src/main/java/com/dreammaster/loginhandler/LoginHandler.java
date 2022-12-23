@@ -1,12 +1,7 @@
 package com.dreammaster.loginhandler;
 
 import static com.dreammaster.config.CoreModConfig.ModPackVersion;
-import static net.minecraft.util.EnumChatFormatting.BLUE;
-import static net.minecraft.util.EnumChatFormatting.BOLD;
-import static net.minecraft.util.EnumChatFormatting.DARK_GREEN;
-import static net.minecraft.util.EnumChatFormatting.GOLD;
-import static net.minecraft.util.EnumChatFormatting.GREEN;
-import static net.minecraft.util.EnumChatFormatting.STRIKETHROUGH;
+import static net.minecraft.util.EnumChatFormatting.*;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
@@ -17,6 +12,8 @@ public class LoginHandler {
     private static final String[] LOGIN_TEXT = {
         GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------",
         BOLD + "Welcome to Gregtech: New Horizons " + GREEN + ModPackVersion,
+        RED + "We are aware that in this version, pattern substitution can behave weirdly.,",
+        RED + "Please don't report it, thanks.",
         BLUE + "The Quest Book has a shortcut key, check your keybindings",
         BLUE + "to remove conflicts.",
         DARK_GREEN + "GTNH WIKI link https://gtnh.miraheze.org/wiki/",
