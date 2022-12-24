@@ -16407,7 +16407,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 30);
 
         GT_Values.RA.addPulveriserRecipe(
-                GT_ModHandler.getModItem("IC2", "miningPipe", 2L),
+                GT_ModHandler.getModItem("IC2", "blockMiningPipe", 2L),
                 new ItemStack[] {
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L),
                 },
@@ -16415,7 +16415,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 100,
                 16);
         RA.addArcFurnaceRecipe(
-                GT_ModHandler.getModItem("IC2", "miningPipe", 2L),
+                GT_ModHandler.getModItem("IC2", "blockMiningPipe", 2L),
                 new ItemStack[] {
                     GT_OreDictUnificator.getIngot(Materials.Steel, 1L),
                 },
