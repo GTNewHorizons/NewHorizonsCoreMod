@@ -12,7 +12,8 @@ public class LoginHandler {
     private static final String[] LOGIN_TEXT = {
         GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------",
         BOLD + "Welcome to Gregtech: New Horizons " + GREEN + ModPackVersion,
-        RED + "We are aware that in this version, pattern substitution can behave weirdly.,",
+        RED + "We are aware that in this version, ",
+        RED + "pattern substitution can behave weirdly.",
         RED + "Please don't report it, thanks.",
         BLUE + "The Quest Book has a shortcut key, check your keybindings",
         BLUE + "to remove conflicts.",
