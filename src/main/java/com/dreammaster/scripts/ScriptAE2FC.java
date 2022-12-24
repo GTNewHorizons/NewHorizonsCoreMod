@@ -83,6 +83,10 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_IMPORTBUS = getModItem("ae2fc", "part_fluid_import", 1, 0);
         final ItemStack AE2FC_OCEDITOR = getModItem("ae2fc", "oc_pattern_editor", 1, 0);
         final ItemStack AE2FC_MAINTAIN = getModItem("ae2fc", "level_maintainer", 1, 0);
+        final ItemStack AE2FC_FLUID_TERMINAL = getModItem("ae2fc", "part_fluid_terminal", 1, 0);
+        final ItemStack AE2FC_FLUID_BUFFER = getModItem("ae2fc", "fluid_buffer", 1, 0);
+
+        final ItemStack EC_FLUID_TERMINAL = getModItem("extracells", "part.base", 1, 3);
 
         ItemStack[] cells = new ItemStack[] {CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096};
         ItemStack[] components = new ItemStack[] {
@@ -497,13 +501,22 @@ public class ScriptAE2FC implements IScriptLoader {
             AE2_PROCESS_CAL,
             NIOBIUM_PLATE
         });
+        // fluid_buffer
+        addShapedRecipe(AE2FC_FLUID_BUFFER, new Object[] {
+            IRON_PLATE, LAPIS_PLATE, IRON_PLATE,
+            FLUID_CORE_1, AE2FC_BUFFER, FLUID_CORE_1,
+            IRON_PLATE, LAPIS_PLATE, IRON_PLATE
+        });
         // Fluid Terminal
+        GameRegistry.addShapelessRecipe(AE2FC_FLUID_TERMINAL, EC_FLUID_TERMINAL);
+        GameRegistry.addShapelessRecipe(EC_FLUID_TERMINAL, AE2FC_FLUID_TERMINAL);
+        // Fluid Pattern Terminal
         addShapedRecipe(AE2FC_TERMINAL, new Object[] {
             NIOBIUM_PLATE, FLUID_CORE_1, NIOBIUM_PLATE,
             BUCKET, AE2_PATTERN_TERM, BUCKET,
             NIOBIUM_PLATE, AE2_PROCESS_CAL, NIOBIUM_PLATE
         });
-        // Fluid Processing Terminal
+        // Fluid Processing Pattern Terminal
         addShapedRecipe(AE2FC_TERMINAL_PRO, new Object[] {
             LAPIS_PLATE,
             AE2FC_TERMINAL,
