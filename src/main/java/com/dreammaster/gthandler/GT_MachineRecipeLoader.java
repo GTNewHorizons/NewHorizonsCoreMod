@@ -16415,11 +16415,11 @@ public class GT_MachineRecipeLoader implements Runnable {
                 100,
                 16);
         RA.addArcFurnaceRecipe(
-                GT_ModHandler.getModItem("IC2", "blockMiningPipe", 2L),
+                GT_ModHandler.getModItem("IC2", "blockMiningPipe", 1L),
                 new ItemStack[] {
-                    GT_OreDictUnificator.getIngot(Materials.Steel, 1L),
+                    GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L),
                 },
-                new int[] {10000},
+                null,
                 50,
                 90);
 
