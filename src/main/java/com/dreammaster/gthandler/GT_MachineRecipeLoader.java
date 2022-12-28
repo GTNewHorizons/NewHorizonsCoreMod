@@ -92,9 +92,9 @@ public class GT_MachineRecipeLoader implements Runnable {
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 1L),
-                        GT_ModHandler.getIC2Item("carbonMesh", 1L),
-                        GT_Utility.getIntegratedCircuit(4)
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 1L),
+                    GT_ModHandler.getIC2Item("carbonMesh", 1L),
+                    GT_Utility.getIntegratedCircuit(4)
                 },
                 Materials.AdvancedGlue.getFluid(200),
                 ItemList.Duct_Tape.get(2L),
