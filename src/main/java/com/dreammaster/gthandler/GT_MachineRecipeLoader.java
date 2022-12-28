@@ -90,6 +90,17 @@ public class GT_MachineRecipeLoader implements Runnable {
                 200,
                 1024);
 
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 1L),
+                    GT_ModHandler.getIC2Item("carbonMesh", 1L),
+                    GT_Utility.getIntegratedCircuit(4)
+                },
+                Materials.AdvancedGlue.getFluid(200),
+                ItemList.Duct_Tape.get(2L),
+                120,
+                30);
+
         GT_Values.RA.addMixerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 1L),
