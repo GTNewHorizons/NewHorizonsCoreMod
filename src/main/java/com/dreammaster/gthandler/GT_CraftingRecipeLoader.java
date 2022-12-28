@@ -2728,5 +2728,717 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 OrePrefixes.dust.get(Materials.Coal)
             });
         }
+
+        if (Loader.isModLoaded("TConstruct")) {
+            ItemStack aBlankCast = GT_ModHandler.getModItem("TConstruct", "blankPattern", 1, 1);
+
+            // Add Casting Forms for Molds
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormPlate.getIS(), new Object[] {
+                " HF",
+                " C ",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormCasing.getIS(), new Object[] {
+                " H ",
+                " CF",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormGear.getIS(), new Object[] {
+                " H ",
+                " C ",
+                "  F",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormBottle.getIS(), new Object[] {
+                " H ",
+                " C ",
+                " F ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormIngot.getIS(), new Object[] {
+                " H ",
+                " C ",
+                "F  ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormBall.getIS(), new Object[] {
+                " H ",
+                "FC ",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormBlock.getIS(), new Object[] {
+                "FH ",
+                " C ",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormNuggets.getIS(), new Object[] {
+                "  H",
+                " CF",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormBuns.getIS(), new Object[] {
+                "  H",
+                " C ",
+                "  F",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormBread.getIS(), new Object[] {
+                "  H",
+                " C ",
+                " F ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormBaguette.getIS(), new Object[] {
+                "  H",
+                " C ",
+                "F  ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormCylinder.getIS(), new Object[] {
+                "  H",
+                "FC ",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormAnvil.getIS(), new Object[] {
+                "F H",
+                " C ",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormName.getIS(), new Object[] {
+                " FH",
+                " C ",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormArrowHead.getIS(), new Object[] {
+                "   ",
+                " CH",
+                "  F",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormSmallGear.getIS(), new Object[] {
+                "   ",
+                " CH",
+                " F ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormStick.getIS(), new Object[] {
+                "   ",
+                " CH",
+                "F  ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormBolt.getIS(), new Object[] {
+                "   ",
+                "FCH",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormRound.getIS(), new Object[] {
+                "F  ",
+                " CH",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormScrew.getIS(), new Object[] {
+                " F ",
+                " CH",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormRing.getIS(), new Object[] {
+                "  F",
+                " CH",
+                "   ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormStickLong.getIS(), new Object[] {
+                "   ",
+                " C ",
+                " FH",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormRotor.getIS(), new Object[] {
+                "   ",
+                " C ",
+                "F H",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormTurbineBlade.getIS(), new Object[] {
+                "   ",
+                "FC ",
+                "  H",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormBoots.getIS(), new Object[] {
+                "F  ",
+                " C ",
+                "  H",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormChestplate.getIS(), new Object[] {
+                " F ",
+                " C ",
+                "  H",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormHelmet.getIS(), new Object[] {
+                "  F",
+                " C ",
+                "  H",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormLeggings.getIS(), new Object[] {
+                "   ",
+                " CF",
+                "  H",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MarshmallowFormMold.getIS(), new Object[] {
+                "   ",
+                " C ",
+                "FH ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormPipeTiny.getIS(), new Object[] {
+                "   ",
+                "FC ",
+                " H ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormPipeSmall.getIS(), new Object[] {
+                "F  ",
+                " C ",
+                " H ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormPipeMedium.getIS(), new Object[] {
+                " F ",
+                " C ",
+                " H ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormPipeLarge.getIS(), new Object[] {
+                "  F",
+                " C ",
+                " H ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormPipeHuge.getIS(), new Object[] {
+                "   ",
+                " CF",
+                " H ",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.MoldFormDrillHead.getIS(), new Object[] {
+                "   ",
+                " C ",
+                " HF",
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+
+            // Add Casting Forms for Shapes
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapePlate.getIS(), new Object[] {
+                " WF",
+                " C ",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeRod.getIS(), new Object[] {
+                " W ",
+                " CF",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeBolt.getIS(), new Object[] {
+                " W ",
+                " C ",
+                "  F",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeCell.getIS(), new Object[] {
+                " W ",
+                " C ",
+                " F ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeRing.getIS(), new Object[] {
+                " W ",
+                " C ",
+                "F  ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeIngot.getIS(), new Object[] {
+                " W ",
+                "FC ",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeWire.getIS(), new Object[] {
+                "FW ",
+                " C ",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeCasing.getIS(), new Object[] {
+                "  W",
+                " CF",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeTinyPipe.getIS(), new Object[] {
+                "  W",
+                " C ",
+                "  F",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeSmallPipe.getIS(), new Object[] {
+                "  W",
+                " C ",
+                " F ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeNormalPipe.getIS(), new Object[] {
+                "  W",
+                " C ",
+                "F  ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeLargePipe.getIS(), new Object[] {
+                "  W",
+                "FC ",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeHugePipe.getIS(), new Object[] {
+                "F W",
+                " C ",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeBlock.getIS(), new Object[] {
+                " FW",
+                " C ",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeSwordBlade.getIS(), new Object[] {
+                "   ",
+                " CW",
+                "  F",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapePickaxeHead.getIS(), new Object[] {
+                "   ",
+                " CW",
+                " F ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeShovelHead.getIS(), new Object[] {
+                "   ",
+                " CW",
+                "F  ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeAxeHead.getIS(), new Object[] {
+                "   ",
+                "FCW",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeHoeHead.getIS(), new Object[] {
+                "F  ",
+                " CW",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeHammerHead.getIS(), new Object[] {
+                " F ",
+                " CW",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeFileHead.getIS(), new Object[] {
+                "  F",
+                " CW",
+                "   ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeSawBlade.getIS(), new Object[] {
+                "   ",
+                " C ",
+                " FW",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeGear.getIS(), new Object[] {
+                "   ",
+                " C ",
+                "F W",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeBottle.getIS(), new Object[] {
+                "   ",
+                "FC ",
+                "  W",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeBoat.getIS(), new Object[] {
+                "F  ",
+                " C ",
+                "  W",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeRotor.getIS(), new Object[] {
+                " F  ",
+                " C ",
+                "  W",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeTurbineBlade.getIS(), new Object[] {
+                "  F",
+                " C ",
+                "  W",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeSmallGear.getIS(), new Object[] {
+                "   ",
+                " CF",
+                "  W",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+            GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeDrillHead.getIS(), new Object[] {
+                "   ",
+                " C ",
+                "FW ",
+                'W',
+                ToolDictNames.craftingToolWireCutter,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                aBlankCast
+            });
+        }
     }
 }

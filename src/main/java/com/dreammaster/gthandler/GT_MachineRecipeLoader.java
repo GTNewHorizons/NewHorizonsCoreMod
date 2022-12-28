@@ -9320,6 +9320,12 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_ModHandler.getModItem("dreamcraft", "item.MoldHelmet", 1, 0),
                     200,
                     120);
+            GT_Values.RA.addFluidSolidifierRecipe(
+                    GT_ModHandler.getModItem("dreamcraft", "item.MoldFormDrillHead", 1, 0),
+                    Materials.Steel.getMolten(576L),
+                    ItemList.Shape_Mold_ToolHeadDrill.get(1),
+                    200,
+                    120);
 
             // Making shapes
             GT_Values.RA.addFluidSolidifierRecipe(
@@ -9494,6 +9500,12 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_ModHandler.getModItem("dreamcraft", "item.ShapeBottle", 1, 0),
                     Materials.Steel.getMolten(576L),
                     ItemList.Shape_Extruder_Bottle.get(1L),
+                    200,
+                    120);
+            GT_Values.RA.addFluidSolidifierRecipe(
+                    GT_ModHandler.getModItem("dreamcraft", "item.ShapeDrillHead", 1, 0),
+                    Materials.Steel.getMolten(576L),
+                    ItemList.Shape_Extruder_ToolHeadDrill.get(1),
                     200,
                     120);
 
