@@ -4515,6 +4515,26 @@ public class GT_MachineRecipeLoader implements Runnable {
                 1400,
                 120,
                 1400);
+        GT_Values.RA.addBlastRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconSG, 1L),
+                GT_Utility.getIntegratedCircuit(11),
+                Materials.Helium.getGas(1000L),
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.SiliconSG, 1L),
+                GT_Values.NI,
+                1600,
+                120,
+                2273);
+        GT_Values.RA.addBlastRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconSG, 1L),
+                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.SiliconSG, 1L),
+                GT_Values.NI,
+                2200,
+                120,
+                2273);
 
         GT_Values.RA.addMixerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 16L),
