@@ -90,6 +90,17 @@ public class GT_MachineRecipeLoader implements Runnable {
                 200,
                 1024);
 
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 1L),
+                    GT_ModHandler.getIC2Item("carbonMesh", 1L),
+                    GT_Utility.getIntegratedCircuit(4)
+                },
+                Materials.AdvancedGlue.getFluid(200),
+                ItemList.Duct_Tape.get(2L),
+                120,
+                30);
+
         GT_Values.RA.addMixerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CallistoIce, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 1L),
@@ -4515,6 +4526,26 @@ public class GT_MachineRecipeLoader implements Runnable {
                 1400,
                 120,
                 1400);
+        GT_Values.RA.addBlastRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconSG, 1L),
+                GT_Utility.getIntegratedCircuit(11),
+                Materials.Helium.getGas(1000L),
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.SiliconSG, 1L),
+                GT_Values.NI,
+                1600,
+                120,
+                2273);
+        GT_Values.RA.addBlastRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconSG, 1L),
+                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.SiliconSG, 1L),
+                GT_Values.NI,
+                2200,
+                120,
+                2273);
 
         GT_Values.RA.addMixerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 16L),
@@ -16418,6 +16449,23 @@ public class GT_MachineRecipeLoader implements Runnable {
                 200,
                 30);
 
+        GT_Values.RA.addPulveriserRecipe(
+                GT_ModHandler.getModItem("IC2", "blockMiningPipe", 2L),
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L),
+                },
+                new int[] {10000},
+                100,
+                16);
+        RA.addArcFurnaceRecipe(
+                GT_ModHandler.getModItem("IC2", "blockMiningPipe", 1L),
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L),
+                },
+                null,
+                50,
+                90);
+
         GT_Values.RA.addMixerRecipe(
                 new ItemStack[] {
                     GT_ModHandler.getModItem("IC2", "itemFuelPlantBall", 16L, 0),
@@ -17366,6 +17414,16 @@ public class GT_MachineRecipeLoader implements Runnable {
                 },
                 Materials.Plastic.getMolten(36L),
                 ItemList.Circuit_Parts_InductorSMD.get(24L),
+                320,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                    GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neodymium, 1),
+                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 8),
+                    GT_Utility.getIntegratedCircuit(3)
+                },
+                Materials.Plastic.getMolten(36L),
+                ItemList.Circuit_Parts_InductorSMD.get(32L),
                 320,
                 120);
         GT_Values.RA.addAssemblerRecipe(
