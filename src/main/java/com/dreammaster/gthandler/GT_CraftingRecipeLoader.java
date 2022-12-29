@@ -3396,7 +3396,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 aBlankCast
             });
             GT_ModHandler.addCraftingRecipe(com.dreammaster.item.ItemList.ShapeRotor.getIS(), new Object[] {
-                " F  ",
+                " F ",
                 " C ",
                 "  W",
                 'W',
