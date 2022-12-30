@@ -12778,7 +12778,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {GT_Utility.getIntegratedCircuit(2)},
                 new FluidStack[] {
                     Materials.SulfuricAcid.getFluid(3000L),
-                    Materials.NitrogenDioxide.getGas(30000L),
+                    Materials.NitrogenDioxide.getGas(3000L),
                     Materials.Methane.getGas(3000L),
                     Materials.Mercury.getFluid(200L)
                 },
