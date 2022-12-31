@@ -24,6 +24,7 @@ import com.dreammaster.modbabychest.TileEntityBabyChest;
 import com.dreammaster.modctt.CustomToolTipsHandler;
 import com.dreammaster.modcustomdrops.CustomDropsHandler;
 import com.dreammaster.modcustomfuels.CustomFuelsHandler;
+import com.dreammaster.modess.EESHandler;
 import com.dreammaster.modfixes.GTpp.GregTechPlusPlusAbandonedAspectsFix;
 import com.dreammaster.modfixes.ModFixesMaster;
 import com.dreammaster.modfixes.avaritia.SkullFireSwordDropFix;
@@ -94,6 +95,7 @@ public class MainRegistry {
     public static CustomFuelsHandler Module_CustomFuels;
     public static CustomDropsHandler Module_CustomDrops;
     public static IngameErrorLog Module_AdminErrorLogs;
+    public static EESHandler Module_EESHandler;
     public static GT_CustomLoader GTCustomLoader;
     public static CoreModConfig CoreConfig;
     public static CoreModDispatcher NW;
@@ -214,6 +216,11 @@ public class MainRegistry {
         if (CoreConfig.ModCustomDrops_Enabled) {
             Logger.debug("Module_CustomDrops is enabled");
             Module_CustomDrops = new CustomDropsHandler(PreEvent.getModConfigurationDirectory());
+        }
+
+        if (false) {
+            Logger.debug("ESS is enabled");
+            Module_EESHandler = new EESHandler();
         }
 
         // ------------------------------------------------------------
