@@ -306,7 +306,7 @@ public class BacteriaRegistry {
                 CultureSet.get("CombinedBac"),
                 new FluidStack[] {Oil.getFluid(20)},
                 new FluidStack[] {Xenoxene.getFluid(20)},
-                6000,
+                3600,
                 BW_Util.getMachineVoltageFromTier(10),
                 Materials.NaquadahEnriched,
                 8,
