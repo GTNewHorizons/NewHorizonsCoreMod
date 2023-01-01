@@ -268,7 +268,7 @@ public class BacteriaRegistry {
         GT_Values.RA.addMultiblockChemicalRecipe(
                 new ItemStack[] {GT_Utility.getIntegratedCircuit(2)},
                 new FluidStack[] {RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L)},
-                new FluidStack[] {GT_CoreModSupport.RadoxPolymer.getMolten(4320L)},
+                new FluidStack[] {GT_CoreModSupport.RadoxPolymer.getMolten(720L)},
                 (ItemStack[]) null,
                 600,
                 BW_Util.getMachineVoltageFromTier(8));
