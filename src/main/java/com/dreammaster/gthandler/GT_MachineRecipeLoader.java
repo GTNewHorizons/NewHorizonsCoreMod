@@ -19620,6 +19620,40 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 5),
                     200,
                     30720);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] {
+                        GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedbolt", 4L, 10024),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
+                        ItemList.Gravistar.get(1L),
+                        GT_ModHandler.getModItem("EnderIO", "itemFrankenSkull", 1L, 5),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 2),
+                        GT_Utility.getIntegratedCircuit(1)
+                    },
+                    Materials.Neutronium.getMolten(1440),
+                    GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 6),
+                    200,
+                    122880);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] {
+                        GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 5),
+                        ItemList.Gravistar.get(1L),
+                        GT_ModHandler.getModItem("EnderIO", "itemFrankenSkull", 1L, 5),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 2)
+                    },
+                    Materials.Neutronium.getMolten(1152),
+                    GT_ModHandler.getModItem("EnderIO", "itemBasicCapacitor", 1L, 6),
+                    200,
+                    122880);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] {
+                        GT_ModHandler.getModItem("minecraft", "skull", 1L, 0),
+                        GT_ModHandler.getModItem("minecraft", "rotten_flesh", 2L, 0),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SiliconSG, 1)
+                    },
+                    Materials.Soularium.getMolten(288),
+                    GT_ModHandler.getModItem("EnderIO", "itemFrankenSkull", 1L, 5),
+                    100,
+                    122880);
         }
 
         GT_Values.RA.addLaserEngraverRecipe(
