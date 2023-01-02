@@ -25,10 +25,11 @@ public class ScriptLoader {
             new ScriptIguanaTweaks(),
             new ScriptJABBA(),
             new ScriptNuclearControl(),
+            new ScriptOpenBlocks(),
             new ScriptSleepingBags(),
             new ScriptSpiceOfLife(),
             new ScriptTranslocator(),
-            new ScriptOpenBlocks()
+            new ScriptTwilightForest(),
         };
 
         for (IScriptLoader script : scripts) {
