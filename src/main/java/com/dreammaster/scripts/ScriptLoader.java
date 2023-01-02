@@ -30,6 +30,7 @@ public class ScriptLoader {
             new ScriptSpiceOfLife(),
             new ScriptTranslocator(),
             new ScriptTwilightForest(),
+            new ScriptThaumicEnergistics(),
         };
 
         for (IScriptLoader script : scripts) {
