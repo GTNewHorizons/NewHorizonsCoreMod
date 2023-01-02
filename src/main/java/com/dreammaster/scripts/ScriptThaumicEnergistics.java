@@ -52,12 +52,12 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 CEC,
                 0,
                 new AspectList()
-                        .add(Aspect.AIR, 1)
-                        .add(Aspect.FIRE, 1)
-                        .add(Aspect.ORDER, 1)
-                        .add(Aspect.ENTROPY, 1)
-                        .add(Aspect.EARTH, 1)
-                        .add(Aspect.WATER, 1),
+                        .add(Aspect.AIR, 2000)
+                        .add(Aspect.FIRE, 2000)
+                        .add(Aspect.ORDER, 2000)
+                        .add(Aspect.ENTROPY, 2000)
+                        .add(Aspect.EARTH, 2000)
+                        .add(Aspect.WATER, 2000),
                 SingularityDrive,
                 CECInfusionItems);
     }
