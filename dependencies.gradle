@@ -7,6 +7,10 @@ dependencies {
     compile("com.github.GTNewHorizons:StructureLib:1.2.0-beta.2:dev")
     compile("com.github.GTNewHorizons:Avaritia:1.30:dev")
     compile("net.industrial-craft:industrialcraft-2:2.2.828-experimental:dev")
+    compile("com.github.GTNewHorizons:ExtraCells2:2.5.29:dev")
+    compile("com.github.GTNewHorizons:ThaumicEnergistics:1.3.24-GTNH:dev")
+    compile("com.github.GTNewHorizons:Gadomancy:1.0.8.6:dev")
+    compile("com.github.GTNewHorizons:Tainted-Magic:8.1.1.1-GTNH:dev")
 
     compileOnly("com.github.GTNewHorizons:Hardcore-Ender-Expansion:1.9.3-GTNH:dev") {
         transitive = false

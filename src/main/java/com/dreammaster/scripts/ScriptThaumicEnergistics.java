@@ -6,6 +6,9 @@ import net.minecraft.item.ItemStack;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.research.ResearchCategories;
+import thaumcraft.api.research.ResearchItem;
+import thaumcraft.api.research.ResearchPage;
 
 public class ScriptThaumicEnergistics implements IScriptLoader {
 
@@ -22,6 +25,23 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        ResearchItem research = new ResearchItem(
+                "ABCD",
+                "GOLEMANCY",
+                new AspectList()
+                        .add(Aspect.MAGIC, 1)
+                        .add(Aspect.HEAL, 1)
+                        .add(Aspect.PLANT, 1)
+                        .add(Aspect.EXCHANGE, 1),
+                -11,
+                11,
+                2,
+                getModItem("thaumicenergistics", "storage.essentia", 1, 4));
+        research.setPages(new ResearchPage("blah.translated"));
+
+        research.setParents("INFUSION");
+        ThaumcraftApi.addWarpToResearch("ABCD", 20);
+        ResearchCategories.addResearch(research);
 
         // Creates ItemStack for CEC craft input
         ItemStack[] CECInfusionItems = {
@@ -48,7 +68,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         ItemStack CEC = getModItem("thaumicenergistics", "storage.essentia", 1, 4);
 
         ThaumcraftApi.addInfusionCraftingRecipe(
-                "INFUSION",
+                "ABCD",
                 CEC,
                 0,
                 new AspectList()
