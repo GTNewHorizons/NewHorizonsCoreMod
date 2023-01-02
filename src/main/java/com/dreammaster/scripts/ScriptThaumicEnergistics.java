@@ -23,7 +23,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        //Creates ItemStack for CEC craft input
+        // Creates ItemStack for CEC craft input
         ItemStack[] CECInfusionItems = {
             getModItem("dreamcraft", "item.PikoCircuit", 1),
             getModItem("TaintedMagic", "ItemFocusDarkMatter", 1),
@@ -43,7 +43,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
             getModItem("gadomancy", "BlockEssentiaCompressor", 1)
         };
 
-        //ItemStacks for in/out
+        // ItemStacks for in/out
         ItemStack SingularityDrive = getModItem("extracells", "storage.physical.advanced.singularity", 1);
         ItemStack CEC = getModItem("thaumicenergistics", "storage.essentia", 1, 4);
 
@@ -52,12 +52,12 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 CEC,
                 0,
                 new AspectList()
-                        .add(Aspect.AIR, 1)
-                        .add(Aspect.FIRE, 1)
-                        .add(Aspect.ORDER, 1)
-                        .add(Aspect.ENTROPY, 1)
-                        .add(Aspect.EARTH, 1)
-                        .add(Aspect.WATER, 1),
+                        .add(Aspect.AIR, 2000)
+                        .add(Aspect.FIRE, 2000)
+                        .add(Aspect.ORDER, 2000)
+                        .add(Aspect.ENTROPY, 2000)
+                        .add(Aspect.EARTH, 2000)
+                        .add(Aspect.WATER, 2000),
                 SingularityDrive,
                 CECInfusionItems);
     }
