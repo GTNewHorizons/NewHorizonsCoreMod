@@ -1931,7 +1931,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIVBase, 30L),
-                        GT_OreDictUnificator.get(OrePrefixes.pipeTiny, GT_CoreModSupport.RadoxPolymer, 20L),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.TranscendentMetal, 20L),
                         ItemList.Electric_Pump_UIV.get(1L),
                         GT_Utility.getIntegratedCircuit(9)
                     },
