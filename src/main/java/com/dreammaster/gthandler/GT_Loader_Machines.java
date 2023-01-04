@@ -11245,7 +11245,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Hatch_Energy_UXV.set(
                 new GT_MetaTileEntity_Hatch_Energy(11303, "hatch.energy.tier.13", "UXV Energy Hatch", 13)
-                .getStackForm(1L));
+                        .getStackForm(1L));
 
         // ===================================================================================================
         // Wet Transformers
