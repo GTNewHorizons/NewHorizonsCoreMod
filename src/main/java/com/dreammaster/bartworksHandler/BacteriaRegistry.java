@@ -7,12 +7,12 @@ import static gregtech.api.enums.Materials.*;
 
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.util.*;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.objects.GT_FluidStack;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
@@ -268,7 +268,7 @@ public class BacteriaRegistry {
         GT_Values.RA.addMultiblockChemicalRecipe(
                 new ItemStack[] {GT_Utility.getIntegratedCircuit(2)},
                 new FluidStack[] {RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L)},
-                new FluidStack[] {new GT_FluidStack(RadoxPolymer.mGas, 4320)},
+                new FluidStack[] {GT_CoreModSupport.RadoxPolymer.getMolten(720L)},
                 (ItemStack[]) null,
                 600,
                 BW_Util.getMachineVoltageFromTier(8));
@@ -306,7 +306,7 @@ public class BacteriaRegistry {
                 CultureSet.get("CombinedBac"),
                 new FluidStack[] {Oil.getFluid(20)},
                 new FluidStack[] {Xenoxene.getFluid(20)},
-                6000,
+                3600,
                 BW_Util.getMachineVoltageFromTier(10),
                 Materials.NaquadahEnriched,
                 8,

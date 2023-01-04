@@ -28,6 +28,7 @@ public enum CustomItemList implements IItemContainer {
     Hatch_Energy_UEV,
     Hatch_Energy_UIV,
     Hatch_Energy_UMV,
+    Hatch_Energy_UXV,
     Hatch_Input_UEV,
     Hatch_Input_UIV,
     Hatch_Input_UMV,
