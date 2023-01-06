@@ -106,16 +106,16 @@ public class GT_Loader_Machines {
                 CustomItemList.Hull_UXV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] {
-                        "PHP",
-                        "WMW",
-                        'M',
-                        CustomItemList.Casing_UXV,
-                        'W',
-                        OrePrefixes.wireGt16.get(Materials.Quantium),
-                        'H',
-                        OrePrefixes.plate.get(Materials.SuperconductorUMVBase),
-                        'P',
-                        OrePrefixes.plateDense.get(Materials.Polybenzimidazole)
+                    "PHP",
+                    "WMW",
+                    'M',
+                    CustomItemList.Casing_UXV,
+                    'W',
+                    OrePrefixes.wireGt16.get(Materials.Quantium),
+                    'H',
+                    OrePrefixes.plate.get(Materials.SuperconductorUMVBase),
+                    'P',
+                    OrePrefixes.plateDense.get(Materials.Polybenzimidazole)
                 });
 
         CustomItemList.Hull_MAXV.set(new GT_MetaTileEntity_BasicHull(
