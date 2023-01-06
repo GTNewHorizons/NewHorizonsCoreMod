@@ -2653,6 +2653,13 @@ public class GT_MachineRecipeLoader implements Runnable {
                 CustomItemList.Hull_UMV.get(1L),
                 50,
                 16);
+        GT_Values.RA.addAssemblerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.Quantium, 2L),
+                CustomItemList.Casing_UXV.get(1L),
+                Materials.Polybenzimidazole.getMolten(576L),
+                CustomItemList.Hull_UXV.get(1L),
+                50,
+                16);
 
         // Hermetic casings
         GT_Values.RA.addAssemblerRecipe(
