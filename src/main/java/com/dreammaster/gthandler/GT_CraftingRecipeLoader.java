@@ -58,6 +58,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 CustomItemList.Casing_UMV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] {"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SpaceTime)});
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Casing_UXV.get(1L),
+                GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] {"PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SuperconductorUMVBase)});
 
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];

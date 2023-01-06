@@ -2625,6 +2625,12 @@ public class GT_MachineRecipeLoader implements Runnable {
                 CustomItemList.Casing_UMV.get(1L),
                 50,
                 16);
+        GT_Values.RA.addAssemblerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SuperconductorUMVBase, 8L),
+                GT_Utility.getIntegratedCircuit(8),
+                CustomItemList.Casing_UXV.get(1L),
+                50,
+                16);
 
         GT_Values.RA.addAssemblerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 2L),
