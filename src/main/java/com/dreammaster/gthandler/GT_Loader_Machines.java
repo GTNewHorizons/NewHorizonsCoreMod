@@ -11407,9 +11407,9 @@ public class GT_Loader_Machines {
                 Character.valueOf('M'),
                 CustomItemList.Transformer_UEV_UHV,
                 Character.valueOf('C'),
-                OrePrefixes.wireGt16.get(Materials.Draconium),
+                OrePrefixes.wireGt04.get(Materials.Draconium),
                 Character.valueOf('B'),
-                OrePrefixes.wireGt16.get(Materials.SuperconductorUHV),
+                OrePrefixes.wireGt04.get(Materials.Bedrockium),
                 Character.valueOf('K'),
                 ItemList.Casing_Coil_Superconductor
             });
@@ -11422,7 +11422,7 @@ public class GT_Loader_Machines {
                 Character.valueOf('C'),
                 OrePrefixes.wireGt04.get(Materials.NetherStar),
                 Character.valueOf('B'),
-                OrePrefixes.wireGt16.get(Materials.Draconium),
+                OrePrefixes.wireGt04.get(Materials.Draconium),
                 Character.valueOf('K'),
                 ItemList.Casing_Fusion_Coil
             });
@@ -11433,7 +11433,7 @@ public class GT_Loader_Machines {
                 Character.valueOf('M'),
                 CustomItemList.Transformer_UMV_UIV,
                 Character.valueOf('C'),
-                OrePrefixes.wireGt01.get(Materials.Quantium),
+                OrePrefixes.wireGt04.get(Materials.Quantium),
                 Character.valueOf('B'),
                 OrePrefixes.wireGt04.get(Materials.NetherStar),
                 Character.valueOf('K'),
@@ -11447,7 +11447,7 @@ public class GT_Loader_Machines {
                 Character.valueOf('M'),
                 CustomItemList.Transformer_UXV_UMV,
                 Character.valueOf('C'),
-                OrePrefixes.wireGt01.get(Materials.BlackPlutonium),
+                OrePrefixes.wireGt03.get(Materials.BlackPlutonium),
                 Character.valueOf('B'),
                 OrePrefixes.wireGt04.get(Materials.Quantium),
                 Character.valueOf('K'),
@@ -11901,7 +11901,7 @@ public class GT_Loader_Machines {
                 'A',
                 OrePrefixes.springSmall.get(Materials.Neutronium),
                 'C',
-                OrePrefixes.wireGt16.get(Materials.SuperconductorUHV),
+                OrePrefixes.wireGt16.get(Materials.Bedrockium),
                 'S',
                 OrePrefixes.spring.get(Materials.Draconium),
                 'X',
