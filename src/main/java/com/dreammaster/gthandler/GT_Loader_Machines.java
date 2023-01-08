@@ -11447,7 +11447,7 @@ public class GT_Loader_Machines {
                 Character.valueOf('M'),
                 CustomItemList.Transformer_UXV_UMV,
                 Character.valueOf('C'),
-                OrePrefixes.wireGt03.get(Materials.BlackPlutonium),
+                OrePrefixes.wireGt04.get(Materials.BlackPlutonium),
                 Character.valueOf('B'),
                 OrePrefixes.wireGt04.get(Materials.Quantium),
                 Character.valueOf('K'),
