@@ -102,6 +102,22 @@ public class GT_Loader_Machines {
                         11233, "hull.tier.13", "UXV Machine Hull", 13, GT_Loader_MetaTileEntities.imagination)
                 .getStackForm(1L));
 
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Hull_UXV.get(1L),
+                GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] {
+                    "PHP",
+                    "WMW",
+                    'M',
+                    CustomItemList.Casing_UXV,
+                    'W',
+                    OrePrefixes.wireGt16.get(Materials.Quantium),
+                    'H',
+                    OrePrefixes.plate.get(Materials.SuperconductorUMVBase),
+                    'P',
+                    OrePrefixes.plateDense.get(Materials.Polybenzimidazole)
+                });
+
         CustomItemList.Hull_MAXV.set(new GT_MetaTileEntity_BasicHull(
                         11234, "hull.tier.14", "MAX Machine Hull", 14, GT_Loader_MetaTileEntities.imagination)
                 .getStackForm(1L));
@@ -11391,9 +11407,9 @@ public class GT_Loader_Machines {
                 Character.valueOf('M'),
                 CustomItemList.Transformer_UEV_UHV,
                 Character.valueOf('C'),
-                OrePrefixes.wireGt16.get(Materials.Draconium),
+                OrePrefixes.wireGt04.get(Materials.Draconium),
                 Character.valueOf('B'),
-                OrePrefixes.wireGt16.get(Materials.SuperconductorUHV),
+                OrePrefixes.wireGt04.get(Materials.Bedrockium),
                 Character.valueOf('K'),
                 ItemList.Casing_Coil_Superconductor
             });
@@ -11406,7 +11422,7 @@ public class GT_Loader_Machines {
                 Character.valueOf('C'),
                 OrePrefixes.wireGt04.get(Materials.NetherStar),
                 Character.valueOf('B'),
-                OrePrefixes.wireGt16.get(Materials.Draconium),
+                OrePrefixes.wireGt04.get(Materials.Draconium),
                 Character.valueOf('K'),
                 ItemList.Casing_Fusion_Coil
             });
@@ -11417,7 +11433,7 @@ public class GT_Loader_Machines {
                 Character.valueOf('M'),
                 CustomItemList.Transformer_UMV_UIV,
                 Character.valueOf('C'),
-                OrePrefixes.wireGt01.get(Materials.Quantium),
+                OrePrefixes.wireGt04.get(Materials.Quantium),
                 Character.valueOf('B'),
                 OrePrefixes.wireGt04.get(Materials.NetherStar),
                 Character.valueOf('K'),
@@ -11431,7 +11447,7 @@ public class GT_Loader_Machines {
                 Character.valueOf('M'),
                 CustomItemList.Transformer_UXV_UMV,
                 Character.valueOf('C'),
-                OrePrefixes.wireGt01.get(Materials.BlackPlutonium),
+                OrePrefixes.wireGt04.get(Materials.BlackPlutonium),
                 Character.valueOf('B'),
                 OrePrefixes.wireGt04.get(Materials.Quantium),
                 Character.valueOf('K'),
@@ -11885,7 +11901,7 @@ public class GT_Loader_Machines {
                 'A',
                 OrePrefixes.springSmall.get(Materials.Neutronium),
                 'C',
-                OrePrefixes.wireGt16.get(Materials.SuperconductorUHV),
+                OrePrefixes.wireGt16.get(Materials.Bedrockium),
                 'S',
                 OrePrefixes.spring.get(Materials.Draconium),
                 'X',
