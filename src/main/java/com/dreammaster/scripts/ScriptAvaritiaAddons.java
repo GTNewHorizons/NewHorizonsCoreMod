@@ -55,7 +55,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     getModItem("IronChest", "BlockIronChest", 1, 6),
                     getModItem("IronChest", "BlockIronChest", 1, 2),
                     ItemList.Electric_Piston_HV.get(1),
-                    GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 2),
+                    GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
                     GT_Utility.getIntegratedCircuit(3),
                 },
                 GT_Values.NF,
