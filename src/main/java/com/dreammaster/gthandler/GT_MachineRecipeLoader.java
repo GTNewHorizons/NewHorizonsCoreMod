@@ -8168,6 +8168,83 @@ public class GT_MachineRecipeLoader implements Runnable {
                         1_600_000_000,
                         eternal_heat);
 
+                {
+                    // Chromatic Glass
+
+                    long base_quantity = 256L;
+                    long tier_up_multiplier = 2L;
+
+                    int base_time = 3000;
+
+                    long tier_1_quantity = 144L * base_quantity;
+                    long fuel_quantity_1 = 176014L;
+                    GT_Values.RA.addPlasmaForgeRecipe(
+                            new ItemStack[] {GT_Values.NI},
+                            new FluidStack[] {
+                                Materials.ExcitedDTCC.getFluid(fuel_quantity_1),
+                                Materials.Glass.getMolten(tier_1_quantity)
+                            },
+                            new ItemStack[] {GT_Values.NI},
+                            new FluidStack[] {
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8),
+                                new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_1_quantity)
+                            },
+                            base_time,
+                            50_331_648,
+                            awakened_heat);
+
+                    long tier_2_quantity = tier_1_quantity * tier_up_multiplier;
+                    long fuel_quantity_2 = 68658L;
+                    GT_Values.RA.addPlasmaForgeRecipe(
+                            new ItemStack[] {GT_Values.NI},
+                            new FluidStack[] {
+                                Materials.ExcitedDTPC.getFluid(fuel_quantity_2),
+                                Materials.Glass.getMolten(tier_2_quantity)
+                            },
+                            new ItemStack[] {GT_Values.NI},
+                            new FluidStack[] {
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4),
+                                new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_2_quantity)
+                            },
+                            base_time / 2,
+                            100_663_296,
+                            infinity_heat);
+
+                    long tier_3_quantity = tier_2_quantity * tier_up_multiplier;
+                    long fuel_quantity_3 = 29579L;
+                    GT_Values.RA.addPlasmaForgeRecipe(
+                            new ItemStack[] {GT_Values.NI},
+                            new FluidStack[] {
+                                Materials.ExcitedDTRC.getFluid(fuel_quantity_3),
+                                Materials.Glass.getMolten(tier_3_quantity)
+                            },
+                            new ItemStack[] {GT_Values.NI},
+                            new FluidStack[] {
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2),
+                                new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_3_quantity)
+                            },
+                            base_time / 4,
+                            201_326_592,
+                            hypogen_heat);
+
+                    long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
+                    long fuel_quantity_4 = 12468L;
+                    GT_Values.RA.addPlasmaForgeRecipe(
+                            new ItemStack[] {GT_Values.NI},
+                            new FluidStack[] {
+                                Materials.ExcitedDTEC.getFluid(fuel_quantity_4),
+                                Materials.Glass.getMolten(tier_4_quantity)
+                            },
+                            new ItemStack[] {GT_Values.NI},
+                            new FluidStack[] {
+                                Materials.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4),
+                                new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_4_quantity)
+                            },
+                            base_time / 8,
+                            402_653_184,
+                            eternal_heat);
+                }
+
                 // Energised tesseract
                 GT_Values.RA.addLaserEngraverRecipe(
                         new ItemStack[] {
