@@ -78,7 +78,8 @@ import gregtech.common.items.GT_MetaGenerated_Item_01;
                 + "required-after:YAMCore@[0.5.76,);"
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"
-                + "after:HardcoreEnderExpansion;")
+                + "after:HardcoreEnderExpansion;"
+                + "after:ProjRed|Expansion")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)

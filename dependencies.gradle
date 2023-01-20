@@ -71,5 +71,4 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:ProjectRed:4.7.9-GTNH:dev") {
         transitive = false
     }
-
 }
