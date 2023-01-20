@@ -8177,7 +8177,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     int base_time = 3000;
 
                     long tier_1_quantity = 144L * base_quantity;
-                    long fuel_quantity_1 = 176014L;
+                    long fuel_quantity_1 = 156040L;
                     GT_Values.RA.addPlasmaForgeRecipe(
                             new ItemStack[] {GT_Values.NI},
                             new FluidStack[] {
@@ -8194,7 +8194,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             awakened_heat);
 
                     long tier_2_quantity = tier_1_quantity * tier_up_multiplier;
-                    long fuel_quantity_2 = 68658L;
+                    long fuel_quantity_2 = 61060L;
                     GT_Values.RA.addPlasmaForgeRecipe(
                             new ItemStack[] {GT_Values.NI},
                             new FluidStack[] {
@@ -8211,7 +8211,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             infinity_heat);
 
                     long tier_3_quantity = tier_2_quantity * tier_up_multiplier;
-                    long fuel_quantity_3 = 29579L;
+                    long fuel_quantity_3 = 26350L;
                     GT_Values.RA.addPlasmaForgeRecipe(
                             new ItemStack[] {GT_Values.NI},
                             new FluidStack[] {
@@ -8228,7 +8228,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             hypogen_heat);
 
                     long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
-                    long fuel_quantity_4 = 12468L;
+                    long fuel_quantity_4 = 11117L;
                     GT_Values.RA.addPlasmaForgeRecipe(
                             new ItemStack[] {GT_Values.NI},
                             new FluidStack[] {
