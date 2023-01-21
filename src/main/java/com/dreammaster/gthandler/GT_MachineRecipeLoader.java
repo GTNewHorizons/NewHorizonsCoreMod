@@ -26457,6 +26457,26 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_ModHandler.getModItem("gtneioreplugin", "blockDimensionDisplay_DD", 1L, 0),
                     300,
                     125829120);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 1L),
+                        CustomItemList.Hull_UEV.get(1L),
+                        GT_Utility.getIntegratedCircuit(4)
+                    },
+                    Materials.Polybenzimidazole.getMolten(2304L),
+                    ItemList.Hatch_Input_Multi_2x2_UEV.get(1L),
+                    600,
+                    24);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] {
+                        GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.TranscendentMetal, 1L),
+                        CustomItemList.Hull_UEV.get(1L),
+                        GT_Utility.getIntegratedCircuit(4)
+                    },
+                    Materials.Polybenzimidazole.getMolten(2304L),
+                    ItemList.Hatch_Input_Multi_2x2_UIV.get(1L),
+                    600,
+                    24);
         }
     }
 }
