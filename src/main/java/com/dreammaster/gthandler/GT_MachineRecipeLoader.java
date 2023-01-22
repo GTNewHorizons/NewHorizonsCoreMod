@@ -19048,6 +19048,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         registerMixedMetalIngotRecipes();
         registerReinforcedIronAlloyPlates();
         registerNEIPlanetRecipes();
+        registerOpticalComponentRecipes();
 
         // Heat Exchangers
         GT_Values.RA.addAssemblerRecipe(
@@ -26478,5 +26479,22 @@ public class GT_MachineRecipeLoader implements Runnable {
                     600,
                     24);
         }
+    }
+
+    private static final void registerOpticalComponentRecipes() {
+        // Optical Boule
+        GT_Values.RA.addLaserEngraverRecipe(
+                new ItemStack[] {
+                    ItemList.Circuit_Silicon_Ingot5.get(1L),
+                    GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 36)),
+                    GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 23)),
+                    GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
+                },
+                new FluidStack[] {Materials.UUMatter.getFluid(16000L)},
+                new ItemStack[] {ItemList.Circuit_Silicon_Ingot6.get(1L)},
+                new FluidStack[] {GT_Values.NF},
+                30 * 20,
+                7_864_320,
+                true);
     }
 }
