@@ -26475,5 +26475,41 @@ public class GT_MachineRecipeLoader implements Runnable {
                 30 * 20,
                 7_864_320,
                 true);
+
+        // Photonically Prepared Wafer
+        int wafer_duration_ticks = 50 * 20;
+        int wafer_eu_per_tick = 7_864_320;
+        FluidStack[] purified_water = {
+                Materials.Grade1PurifiedWater.getFluid(1000L),
+                Materials.Grade2PurifiedWater.getFluid(1000L),
+                Materials.Grade3PurifiedWater.getFluid(1000L),
+                Materials.Grade4PurifiedWater.getFluid(1000L),
+                Materials.Grade5PurifiedWater.getFluid(1000L),
+                Materials.Grade6PurifiedWater.getFluid(1000L),
+                Materials.Grade7PurifiedWater.getFluid(1000L),
+                Materials.Grade8PurifiedWater.getFluid(1000L)
+        };
+        for (int i = 0; i < purified_water.length; i++) {
+            GT_Values.RA.addCutterRecipe(
+                    ItemList.Circuit_Silicon_Ingot6.get(1L),
+                    purified_water[i],
+                    ItemList.Circuit_Silicon_Wafer6.get((i + 1) * 2L),
+                    GT_Values.NI,
+                    wafer_duration_ticks *= 0.95,
+                    wafer_eu_per_tick);
+        }
+        // Photonically Enhanced Wafer
+        GT_Values.RA.addLaserEngraverRecipe(
+                new ItemStack[] {
+                        ItemList.Circuit_Silicon_Wafer6.get(1L),
+                        Materials.Glowstone.getNanite(1),
+                        GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 1L, 0))
+                },
+                new FluidStack[] {Materials.Tin.getPlasma(100L)},
+                new ItemStack[] {ItemList.Circuit_Silicon_Wafer7.get(1L)},
+                new FluidStack[] {Materials.Tin.getMolten(100L)},
+                10 * 20,
+                7_864_320,
+                true);
     }
 }
