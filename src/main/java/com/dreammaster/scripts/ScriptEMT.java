@@ -23,6 +23,7 @@ public class ScriptEMT implements IScriptLoader {
 
         // --- Electro Magic Tools
         {
+            TCHelper.orphanResearch("Electric Magic Tools");
             TCHelper.removeResearch("Electric Magic Tools");
             ResearchItem research = new ResearchItem(
                             "ElectricMagicTools",
@@ -102,6 +103,5 @@ public class ScriptEMT implements IScriptLoader {
                     .setAutoUnlock();
             ResearchCategories.addResearch(research);
         }
-
     }
 }
