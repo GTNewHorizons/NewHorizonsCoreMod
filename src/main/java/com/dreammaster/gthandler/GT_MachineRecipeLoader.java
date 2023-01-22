@@ -24033,12 +24033,12 @@ public class GT_MachineRecipeLoader implements Runnable {
         // Optical Circuits
         GT_Values.RA.addCircuitAssemblerRecipe(
                 new ItemStack[] {
-                        ItemList.Optically_Perfected_CPU.get(1L),
-                        ItemList.Optically_Compatible_Memory.get(2L),
-                        ItemList.Circuit_Parts_CapacitorXSMD.get(16L),
-                        ItemList.Circuit_Parts_DiodeXSMD.get(16L),
-                        ItemList.Circuit_Parts_GlassFiber.get(12L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.EnrichedHolmium, 16)
+                    ItemList.Optically_Perfected_CPU.get(1L),
+                    ItemList.Optically_Compatible_Memory.get(2L),
+                    ItemList.Circuit_Parts_CapacitorXSMD.get(16L),
+                    ItemList.Circuit_Parts_DiodeXSMD.get(16L),
+                    ItemList.Circuit_Parts_GlassFiber.get(12L),
+                    GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.EnrichedHolmium, 16)
                 },
                 new FluidStack(solderUEV, 288),
                 ItemList.Circuit_OpticalProcessor.get(1L),
@@ -26500,18 +26500,19 @@ public class GT_MachineRecipeLoader implements Runnable {
                     24);
         }
     }
+
     private static final void registerOpticalComponentRecipes() {
         // Optical Boule
         GT_Values.RA.addLaserEngraverRecipe(
-                new ItemStack[]{
-                        ItemList.Circuit_Silicon_Ingot5.get(1L),
-                        GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 36)),
-                        GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 23)),
-                        GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
+                new ItemStack[] {
+                    ItemList.Circuit_Silicon_Ingot5.get(1L),
+                    GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 36)),
+                    GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 23)),
+                    GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
                 },
-                new FluidStack[]{Materials.UUMatter.getFluid(16000L)},
-                new ItemStack[]{ItemList.Circuit_Silicon_Ingot6.get(1L)},
-                new FluidStack[]{GT_Values.NF},
+                new FluidStack[] {Materials.UUMatter.getFluid(16000L)},
+                new ItemStack[] {ItemList.Circuit_Silicon_Ingot6.get(1L)},
+                new FluidStack[] {GT_Values.NF},
                 30 * 20,
                 7_864_320,
                 true);
@@ -26520,14 +26521,14 @@ public class GT_MachineRecipeLoader implements Runnable {
         int wafer_duration_ticks = 50 * 20;
         int wafer_eu_per_tick = 7_864_320;
         FluidStack[] purified_water = {
-                Materials.Grade1PurifiedWater.getFluid(1000L),
-                Materials.Grade2PurifiedWater.getFluid(1000L),
-                Materials.Grade3PurifiedWater.getFluid(1000L),
-                Materials.Grade4PurifiedWater.getFluid(1000L),
-                Materials.Grade5PurifiedWater.getFluid(1000L),
-                Materials.Grade6PurifiedWater.getFluid(1000L),
-                Materials.Grade7PurifiedWater.getFluid(1000L),
-                Materials.Grade8PurifiedWater.getFluid(1000L)
+            Materials.Grade1PurifiedWater.getFluid(1000L),
+            Materials.Grade2PurifiedWater.getFluid(1000L),
+            Materials.Grade3PurifiedWater.getFluid(1000L),
+            Materials.Grade4PurifiedWater.getFluid(1000L),
+            Materials.Grade5PurifiedWater.getFluid(1000L),
+            Materials.Grade6PurifiedWater.getFluid(1000L),
+            Materials.Grade7PurifiedWater.getFluid(1000L),
+            Materials.Grade8PurifiedWater.getFluid(1000L)
         };
         for (int i = 0; i < purified_water.length; i++) {
             GT_Values.RA.addCutterRecipe(
@@ -26541,9 +26542,9 @@ public class GT_MachineRecipeLoader implements Runnable {
         // Photonically Enhanced Wafer
         GT_Values.RA.addLaserEngraverRecipe(
                 new ItemStack[] {
-                        ItemList.Circuit_Silicon_Wafer6.get(1L),
-                        Materials.Glowstone.getNanite(1),
-                        GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 1L, 0))
+                    ItemList.Circuit_Silicon_Wafer6.get(1L),
+                    Materials.Glowstone.getNanite(1),
+                    GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 1L, 0))
                 },
                 new FluidStack[] {Materials.Tin.getPlasma(100L)},
                 new ItemStack[] {ItemList.Circuit_Silicon_Wafer7.get(1L)},
