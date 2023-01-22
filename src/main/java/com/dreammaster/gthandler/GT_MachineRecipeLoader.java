@@ -23824,6 +23824,10 @@ public class GT_MachineRecipeLoader implements Runnable {
                 ? FluidRegistry.getFluid("molten.indalloy140")
                 : FluidRegistry.getFluid("molten.solderingalloy");
 
+        Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
+                ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
+                : FluidRegistry.getFluid("molten.solderingalloy");
+
         // Crystal Circuits
         GT_Values.RA.addCircuitAssemblerRecipe(
                 new ItemStack[] {
@@ -24023,6 +24027,22 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new FluidStack(solderIndalloy, 144),
                 ItemList.Circuit_Biowarecomputer.get(1L),
                 50,
+                614400,
+                true);
+
+        // Optical Circuits
+        GT_Values.RA.addCircuitAssemblerRecipe(
+                new ItemStack[] {
+                    ItemList.Optically_Perfected_CPU.get(1L),
+                    ItemList.Optically_Compatible_Memory.get(2L),
+                    ItemList.Circuit_Parts_CapacitorXSMD.get(16L),
+                    ItemList.Circuit_Parts_DiodeXSMD.get(16L),
+                    ItemList.Circuit_Parts_GlassFiber.get(12L),
+                    GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.EnrichedHolmium, 16)
+                },
+                new FluidStack(solderUEV, 288),
+                ItemList.Circuit_OpticalProcessor.get(1L),
+                80 * 20,
                 614400,
                 true);
 
