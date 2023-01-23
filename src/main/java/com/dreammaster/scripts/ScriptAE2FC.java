@@ -158,14 +158,12 @@ public class ScriptAE2FC implements IScriptLoader {
         // Fluid Storage Bus
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
-                        AE2_STORAGE_BUS,
-                        GT_OreDictUnificator.get(OrePrefixes.panel, Materials.Lapis, 3),
+                    AE2_STORAGE_BUS, GT_OreDictUnificator.get(OrePrefixes.panel, Materials.Lapis, 3),
                 },
                 null,
                 AE2FC_FLUID_STORAGE_BUS,
                 300,
-                120
-        );
+                120);
         GameRegistry.addShapelessRecipe(AE2FC_FLUID_STORAGE_BUS, EC_FLUID_STORAGE_BUS);
         GameRegistry.addShapelessRecipe(EC_FLUID_STORAGE_BUS, AE2FC_FLUID_STORAGE_BUS);
 
