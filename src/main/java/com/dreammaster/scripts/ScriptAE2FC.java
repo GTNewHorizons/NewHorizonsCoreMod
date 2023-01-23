@@ -85,8 +85,10 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_MAINTAIN = getModItem("ae2fc", "level_maintainer", 1, 0);
         final ItemStack AE2FC_FLUID_TERMINAL = getModItem("ae2fc", "part_fluid_terminal", 1, 0);
         final ItemStack AE2FC_FLUID_BUFFER = getModItem("ae2fc", "fluid_buffer", 1, 0);
+        final ItemStack AE2FC_FLUID_STORAGE_BUS = getModItem("ae2fc", "part_fluid_storage_bus", 1, 0);
 
         final ItemStack EC_FLUID_TERMINAL = getModItem("extracells", "part.base", 1, 3);
+        final ItemStack EC_FLUID_STORAGE_BUS = getModItem("extracells", "part.base", 1, 2);
 
         ItemStack[] cells = new ItemStack[] {CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096};
         ItemStack[] components = new ItemStack[] {
@@ -152,6 +154,20 @@ public class ScriptAE2FC implements IScriptLoader {
                 COMPONENT_1024, "DCD", "CPC", "DCD", 'D', "circuitElite", 'C', COMPONENT_256, 'P', AE2_PROCESS_LOG));
         GameRegistry.addRecipe(new ShapedOreRecipe(
                 COMPONENT_4096, "DCD", "CPC", "DCD", 'D', "circuitMaster", 'C', COMPONENT_1024, 'P', AE2_PROCESS_ENG));
+
+        // Fluid Storage Bus
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] {
+                        AE2_STORAGE_BUS,
+                        GT_OreDictUnificator.get(OrePrefixes.panel, Materials.Lapis, 3),
+                },
+                null,
+                AE2FC_FLUID_STORAGE_BUS,
+                300,
+                120
+        );
+        GameRegistry.addShapelessRecipe(AE2FC_FLUID_STORAGE_BUS, EC_FLUID_STORAGE_BUS);
+        GameRegistry.addShapelessRecipe(EC_FLUID_STORAGE_BUS, AE2FC_FLUID_STORAGE_BUS);
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
