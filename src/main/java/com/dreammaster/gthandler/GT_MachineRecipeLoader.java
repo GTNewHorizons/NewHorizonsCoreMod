@@ -24042,7 +24042,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 },
                 new FluidStack(solderUEV, 288),
                 ItemList.Circuit_OpticalProcessor.get(1L),
-                80 * 20,
+                20 * 20,
                 614400,
                 true);
 
