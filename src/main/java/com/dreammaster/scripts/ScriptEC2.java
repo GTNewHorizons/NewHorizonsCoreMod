@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.getModItem;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
@@ -7,16 +9,13 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import javax.annotation.Nonnull;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-
-import javax.annotation.Nonnull;
-
-import static gregtech.api.util.GT_ModHandler.getModItem;
 
 public class ScriptEC2 implements IScriptLoader {
 
