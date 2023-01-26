@@ -26558,5 +26558,20 @@ public class GT_MachineRecipeLoader implements Runnable {
                 10 * 20,
                 7_864_320,
                 true);
+
+        // Optical CPU Containment Housing
+        GT_Values.RA.addFormingPressRecipe(
+                new ItemStack[] {
+                        ItemList.Circuit_Board_Optical.get(1L),
+                        GT_ModHandler.getModItem("miscutils", "itemFoilBotmium", 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Bedrockium, 8L)
+                },
+                new ItemStack[] {ItemList.Optical_Cpu_Containment_Housing.get(1L)},
+                10 * 10,
+                7_864_320);
+
     }
 }
