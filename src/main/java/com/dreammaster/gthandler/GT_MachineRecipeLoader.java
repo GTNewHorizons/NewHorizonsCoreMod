@@ -26541,5 +26541,22 @@ public class GT_MachineRecipeLoader implements Runnable {
                 10 * 20,
                 7_864_320,
                 true);
+
+        Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
+                ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
+                : FluidRegistry.getFluid("molten.solderingalloy");
+
+        // Optically Perfected CPU
+        GT_Values.RA.addCircuitAssemblerRecipe(
+                new ItemStack[] {
+                        ItemList.Circuit_Chip_Optical.get(1L),
+                        ItemList.Optical_Cpu_Containment_Housing.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 16L)
+                },
+                new FluidStack(solderUEV, 288),
+                ItemList.Optically_Perfected_CPU.get(1L),
+                10 * 20,
+                7_864_320,
+                true);
     }
 }
