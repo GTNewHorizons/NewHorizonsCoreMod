@@ -26485,9 +26485,14 @@ public class GT_MachineRecipeLoader implements Runnable {
         // Optical Boule
         GT_Values.RA.addLaserEngraverRecipe(
                 new ItemStack[] {
-                    ItemList.Circuit_Silicon_Ingot5.get(1L),
-                    GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 36)),
-                    GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 23)),
+                    ItemList.Circuit_Silicon_Ingot5.get(1L), //Americium Boule
+                    GT_Utility.copyAmount(
+                            0L,
+                            GT_ModHandler.getModItem(
+                                    "bartworks", "gt.bwMetaGeneratedlens", 1L, 36)), // Magneto resonatic lens
+                    GT_Utility.copyAmount(
+                            0L,
+                            GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 23)), // Fayalite lens
                     GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
                 },
                 new FluidStack[] {Materials.UUMatter.getFluid(16000L)},
@@ -26512,7 +26517,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         };
         for (int i = 0; i < purified_water.length; i++) {
             GT_Values.RA.addCutterRecipe(
-                    ItemList.Circuit_Silicon_Ingot6.get(1L),
+                    ItemList.Circuit_Silicon_Ingot6.get(1L), // Optical Boule
                     purified_water[i],
                     ItemList.Circuit_Silicon_Wafer6.get((i + 1) * 2L),
                     GT_Values.NI,
@@ -26522,13 +26527,17 @@ public class GT_MachineRecipeLoader implements Runnable {
         // Photonically Enhanced Wafer
         GT_Values.RA.addLaserEngraverRecipe(
                 new ItemStack[] {
-                    ItemList.Circuit_Silicon_Wafer6.get(1L),
+                    ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
                     Materials.Glowstone.getNanite(1),
-                    GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 1L, 0))
+                    GT_Utility.copyAmount(
+                            0L,
+                            GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 1L, 0)) // Solar Light Splitter
                 },
-                new FluidStack[] {Materials.Tin.getPlasma(100L)},
+                new FluidStack[] {
+                    Materials.Tin.getPlasma(1000L), new FluidStack(FluidRegistry.getFluid("oganesson"), 4000)
+                },
                 new ItemStack[] {ItemList.Circuit_Silicon_Wafer7.get(1L)},
-                new FluidStack[] {Materials.Tin.getMolten(100L)},
+                new FluidStack[] {Materials.Tin.getMolten(1000L)},
                 10 * 20,
                 7_864_320,
                 true);
