@@ -26538,9 +26538,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             0L,
                             GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 1L, 0)) // Solar Light Splitter
                 },
-                new FluidStack[] {
-                    Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000)
-                },
+                new FluidStack[] {Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000)},
                 new ItemStack[] {ItemList.Circuit_Silicon_Wafer7.get(1L)},
                 new FluidStack[] {Materials.Tin.getMolten(1000L)},
                 10 * 20,
