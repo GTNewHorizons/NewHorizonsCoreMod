@@ -26524,6 +26524,11 @@ public class GT_MachineRecipeLoader implements Runnable {
                     wafer_duration_ticks *= 0.95,
                     wafer_eu_per_tick);
         }
+
+        Fluid oganesson = FluidRegistry.getFluid("oganesson") != null
+                ? FluidRegistry.getFluid("oganesson")
+                : FluidRegistry.getFluid("radon");
+
         // Photonically Enhanced Wafer
         GT_Values.RA.addLaserEngraverRecipe(
                 new ItemStack[] {
@@ -26534,7 +26539,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                             GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 1L, 0)) // Solar Light Splitter
                 },
                 new FluidStack[] {
-                    Materials.Tin.getPlasma(1000L), new FluidStack(FluidRegistry.getFluid("oganesson"), 4000)
+                    Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000)
                 },
                 new ItemStack[] {ItemList.Circuit_Silicon_Wafer7.get(1L)},
                 new FluidStack[] {Materials.Tin.getMolten(1000L)},
