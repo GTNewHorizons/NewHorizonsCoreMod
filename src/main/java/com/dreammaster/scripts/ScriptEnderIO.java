@@ -21,7 +21,7 @@ public class ScriptEnderIO implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack creativeStaffOfTravelling = getModItem("EnderIO", "itemInfiniteTravelStaff", 1);
+        ItemStack teleportStaff = getModItem("EnderIO", "itemTeleportStaff", 1);
         ItemStack denseEnergyCell = getModItem("appliedenergistics2", "tile.BlockDenseEnergyCell", 1);
         ItemStack energyCell = getModItem("appliedenergistics2", "tile.BlockEnergyCell", 1);
         ItemStack staffOfTravelling = getModItem("EnderIO", "itemTravelStaff", 1, wildcard);
@@ -30,7 +30,7 @@ public class ScriptEnderIO implements IScriptLoader {
 
         ExtremeCraftingManager.getInstance()
                 .addExtremeShapedOreRecipe(
-                        creativeStaffOfTravelling,
+                        teleportStaff,
                         "      aaa",
                         "     abca",
                         "    abcba",
