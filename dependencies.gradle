@@ -17,7 +17,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Railcraft:9.13.12:dev") {
         transitive = false
     }
-    compileOnly("com.github.GTNewHorizons:EnderIO:2.3.1.47:dev") {
+    compileOnly("com.github.GTNewHorizons:EnderIO:2.3.1.51:dev") {
         transitive = false
     }
     compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.0.8:dev") {
