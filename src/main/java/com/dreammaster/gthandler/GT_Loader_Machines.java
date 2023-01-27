@@ -6455,7 +6455,7 @@ public class GT_Loader_Machines {
             'R',
             ItemList.Sensor_UEV,
             'C',
-            OrePrefixes.circuit.get(Materials.Nano),
+            OrePrefixes.circuit.get(Materials.Optical),
             'W',
             OrePrefixes.cableGt01.get(Materials.Draconium)
         });
@@ -9397,7 +9397,7 @@ public class GT_Loader_Machines {
             'M',
             ItemList.Electric_Motor_UIV,
             'C',
-            OrePrefixes.circuit.get(Materials.Nano),
+            OrePrefixes.circuit.get(Materials.Optical),
             'W',
             GT_CustomLoader.AdvancedGTMaterials.UIV.getCable()
         });
@@ -9524,7 +9524,7 @@ public class GT_Loader_Machines {
             'H',
             CustomItemList.Hull_UIV,
             'C',
-            OrePrefixes.circuit.get(Materials.Nano),
+            OrePrefixes.circuit.get(Materials.Optical),
             'W',
             OrePrefixes.cableGt01.get(Materials.ElectrumFlux)
         });
@@ -9784,7 +9784,7 @@ public class GT_Loader_Machines {
             'B',
             CustomItemList.Hull_UIV,
             'C',
-            OrePrefixes.circuit.get(Materials.Nano),
+            OrePrefixes.circuit.get(Materials.Optical),
             'G',
             GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass()
         });
@@ -10860,7 +10860,7 @@ public class GT_Loader_Machines {
             'B',
             CustomItemList.Hull_UIV,
             'C',
-            OrePrefixes.circuit.get(Materials.Nano),
+            OrePrefixes.circuit.get(Materials.Optical),
             'G',
             GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass()
         });
@@ -12299,7 +12299,7 @@ public class GT_Loader_Machines {
             'C',
             OreDictNames.craftingChest,
             'X',
-            OrePrefixes.circuit.get(Materials.Nano)
+            OrePrefixes.circuit.get(Materials.Optical)
         });
 
         GT_ModHandler.addCraftingRecipe(CustomItemList.Automation_ChestBuffer_UMV.get(1L), bitsd, new Object[] {
@@ -12560,7 +12560,7 @@ public class GT_Loader_Machines {
                             'K',
                             ItemList.Conveyor_Module_UEV,
                             'C',
-                            OrePrefixes.circuit.get(Materials.Nano),
+                            OrePrefixes.circuit.get(Materials.Optical),
                             'W',
                             GT_CustomLoader.AdvancedGTMaterials.UEV.getCable()
                         })
