@@ -2,14 +2,20 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import javax.annotation.Nonnull;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 
 public class ScriptEC2 implements IScriptLoader {
 
@@ -112,5 +118,69 @@ public class ScriptEC2 implements IScriptLoader {
             "plateTungsten", "gemEnderEye", "plateTungsten",
             "screwCertusQuartz", "plateTungsten", "craftingToolScrewdriver"
         });
+
+        // Item cell covert recipe
+        GameRegistry.addRecipe(new NBTRecipe(
+                getModItem("extracells", "storage.physical", 1, 0),
+                getModItem("appliedenergistics2", "item.ItemAdvancedStorageCell.256k", 1)));
+        GameRegistry.addRecipe(new NBTRecipe(
+                getModItem("extracells", "storage.physical", 1, 1),
+                getModItem("appliedenergistics2", "item.ItemAdvancedStorageCell.1024k", 1)));
+        GameRegistry.addRecipe(new NBTRecipe(
+                getModItem("extracells", "storage.physical", 1, 2),
+                getModItem("appliedenergistics2", "item.ItemAdvancedStorageCell.4096k", 1)));
+        GameRegistry.addRecipe(new NBTRecipe(
+                getModItem("extracells", "storage.physical", 1, 3),
+                getModItem("appliedenergistics2", "item.ItemAdvancedStorageCell.16384k", 1)));
+    }
+
+    public static class NBTRecipe implements IRecipe {
+
+        private final ItemStack input;
+        private final ItemStack output;
+        private NBTTagCompound outputNBT;
+
+        public NBTRecipe(@Nonnull ItemStack in, @Nonnull ItemStack out) {
+            this.input = in;
+            this.output = out;
+        }
+
+        @Override
+        public boolean matches(InventoryCrafting inv, World p_77569_2_) {
+            ItemStack stack = null;
+            for (int i = 0; i < inv.getSizeInventory(); i++) {
+                ItemStack in = inv.getStackInSlot(i);
+                if (stack == null && in != null) {
+                    stack = in;
+                } else if (stack != null && in != null) {
+                    return false;
+                }
+            }
+            if (stack == null) {
+                return false;
+            }
+            if (this.input.isItemEqual(stack)) {
+                this.outputNBT = stack.getTagCompound();
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        public ItemStack getCraftingResult(InventoryCrafting p_77572_1_) {
+            ItemStack copy = this.output.copy();
+            copy.setTagCompound(this.outputNBT);
+            return copy;
+        }
+
+        @Override
+        public int getRecipeSize() {
+            return 1;
+        }
+
+        @Override
+        public ItemStack getRecipeOutput() {
+            return this.output;
+        }
     }
 }
