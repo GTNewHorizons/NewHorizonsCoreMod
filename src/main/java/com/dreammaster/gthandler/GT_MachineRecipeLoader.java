@@ -9217,6 +9217,12 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_ModHandler.getModItem("TConstruct", "SpeedBlock", 1, 0),
                     100,
                     30);
+            GT_Values.RA.addFluidSolidifierRecipe(
+                    GT_ModHandler.getModItem("TConstruct", "largePlate", 1, 6),
+                    Materials.AluminiumBrass.getMolten(144L),
+                    GT_ModHandler.getModItem("TConstruct", "materials", 1, 43),
+                    200,
+                    120);
             if (Loader.isModLoaded("ExtraUtilities")) {
                 GT_Values.RA.addFluidSolidifierRecipe(
                         GT_ModHandler.getModItem("ExtraUtilities", "cobblestone_compressed", 1, 12),
