@@ -26494,8 +26494,8 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addLaserEngraverRecipe(
                     new ItemStack[] {
                         ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
-                        (WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0)), // Magneto resonatic lens
-                        (WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0)), // Fayalite lens
+                        WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
+                        WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
                         GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
                     },
                     new FluidStack[] {Materials.UUMatter.getFluid(16000L)},
@@ -26610,7 +26610,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         500 * 10,
                         138880);
                 GT_Values.RA.addLaserEngraverRecipe(
-                        new ItemStack[] {(WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0))}, // Hedenbergite Lens
+                        new ItemStack[] {WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0)}, // Hedenbergite Lens
                         new FluidStack[] {Materials.Grade3PurifiedWater.getFluid(1000L)},
                         new ItemStack[] {NI},
                         new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000L)},
@@ -26618,9 +26618,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         261760,
                         true);
                 GT_Values.RA.addMultiblockChemicalRecipe(
-                        new ItemStack[] {
-                            GT_Utility.copyAmount(0, Materials.Zeolite.getDust(5)), GT_Utility.getIntegratedCircuit(1)
-                        },
+                        new ItemStack[] {Materials.Zeolite.getDust(0), GT_Utility.getIntegratedCircuit(1)},
                         new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000)},
                         new FluidStack[] {
                             Materials.Grade5PurifiedWater.getFluid(1000),
