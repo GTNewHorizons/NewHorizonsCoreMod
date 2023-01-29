@@ -26508,8 +26508,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                 7_864_320,
                 true);
 
-        // Photonically Prepared Wafer
+        // Photonically Prepared Wafer + Raw Optical Chip
         int wafer_duration_ticks = 50 * 20;
+        int chip_duration_ticks = 10 * 20;
         int wafer_eu_per_tick = 7_864_320;
         FluidStack[] purified_water = {
             Materials.Grade1PurifiedWater.getFluid(1000L),
@@ -26528,6 +26529,13 @@ public class GT_MachineRecipeLoader implements Runnable {
                     ItemList.Circuit_Silicon_Wafer6.get((i + 1) * 2L),
                     GT_Values.NI,
                     wafer_duration_ticks *= 0.95,
+                    wafer_eu_per_tick);
+            GT_Values.RA.addForgeHammerRecipe(
+                    new ItemStack[] {ItemList.Circuit_Silicon_Wafer7.get(1L)},
+                    new FluidStack[] {purified_water[i]},
+                    new ItemStack[] {ItemList.Circuit_Chip_Optical.get((i + 1))},
+                    null,
+                    chip_duration_ticks,
                     wafer_eu_per_tick);
         }
 
