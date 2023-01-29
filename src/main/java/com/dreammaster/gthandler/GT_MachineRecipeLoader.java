@@ -26559,7 +26559,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new FluidStack(solderUEV, 288),
                 ItemList.Optically_Perfected_CPU.get(1L),
                 10 * 20,
-                7_864_320,
+                1_966_080,
                 true);
 
         // Optical CPU Containment Housing
