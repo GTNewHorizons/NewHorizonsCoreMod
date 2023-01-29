@@ -6192,19 +6192,24 @@ public class GT_MachineRecipeLoader implements Runnable {
                     64);
 
             // Apiary
-            GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] {
-                        GT_ModHandler.getModItem("Forestry", "frameImpregnated", 1L, 0),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.slab, Materials.Wood, 2L),
-                        GT_ModHandler.getModItem("Forestry", "beeCombs", 1L, GT_Values.W),
-                        GT_ModHandler.getModItem("Forestry", "apiculture", 2L, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.fence, Materials.Wood, 2L)
-                    },
-                    Materials.SeedOil.getFluid(1000L),
-                    GT_ModHandler.getModItem("Forestry", "apiculture", 1L, 0),
-                    1200,
-                    64);
+            List<ItemStack> fence = OreDictionary.getOres("fenceWood");
+            for (ItemStack stack : fence) {
+                if (Loader.isModLoaded("Forestry")) {
+                    GT_Values.RA.addAssemblerRecipe(
+                            new ItemStack[] {
+                                GT_ModHandler.getModItem("Forestry", "frameImpregnated", 1L, 0),
+                                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 2L),
+                                GT_OreDictUnificator.get(OrePrefixes.slab, Materials.Wood, 2L),
+                                GT_ModHandler.getModItem("Forestry", "beeCombs", 1L, GT_Values.W),
+                                GT_ModHandler.getModItem("Forestry", "apiculture", 2L, 2),
+                                stack.splitStack(2)
+                            },
+                            Materials.SeedOil.getFluid(1000L),
+                            GT_ModHandler.getModItem("Forestry", "apiculture", 1L, 0),
+                            1200,
+                            64);
+                }
+            }
 
             // Scented Paneling
             GT_Values.RA.addAssemblerRecipe(
@@ -26489,8 +26494,8 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addLaserEngraverRecipe(
                     new ItemStack[] {
                         ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
-                        (WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0)), // Magneto resonatic lens
-                        (WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0)), // Fayalite lens
+                        WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
+                        WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
                         GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
                     },
                     new FluidStack[] {Materials.UUMatter.getFluid(16000L)},
@@ -26576,72 +26581,77 @@ public class GT_MachineRecipeLoader implements Runnable {
                     7_864_320);
 
             // Water Line
-            if (Loader.isModLoaded("bartworks")) {
-
-                GT_Values.RA.addSifterRecipe(
-                        new ItemStack[] {NI},
-                        new FluidStack[] {Materials.Water.getFluid(1000L)},
-                        new ItemStack[] {Materials.Calcite.getDust(1), Materials.SodiumHydroxide.getDust(1),Materials.Stone.getDust(1),Materials.Clay.getDust(1),Materials.PolyvinylChloride.getNuggets(1)},
-                        new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
-                        500 * 10,
-                        32720,
-                        true);
-                GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes.addRecipe(
-                        true,
-                        new ItemStack[] {NI},
-                        null,
-                        null,
-                        new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
-                        new FluidStack[] {Materials.Grade2PurifiedWater.getFluid(500L)},
-                        5000,
-                        65440,
-                        0);
-                GT_Values.RA.addDistillationTowerRecipe(
-                        Materials.Grade2PurifiedWater.getFluid(1000L),
-                        new FluidStack[] {
-                            Materials.Grade3PurifiedWater.getFluid(1000L),
-                        },
-                        null,
-                        500 * 10,
-                        138880);
-                GT_Values.RA.addLaserEngraverRecipe(
-                        new ItemStack[] {(WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0))}, // Hedenbergite Lens
-                        new FluidStack[] {Materials.Grade3PurifiedWater.getFluid(1000L)},
-                        new ItemStack[] {NI},
-                        new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000L)},
-                        500 * 10,
-                        261760,
-                        true);
-                GT_Values.RA.addMultiblockChemicalRecipe(
-                        new ItemStack[] {
-                            GT_Utility.copyAmount(0, Materials.Zeolite.getDust(1)), GT_Utility.getIntegratedCircuit(1)
-                        },
-                        new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000)},
-                        new FluidStack[] {
-                            Materials.Grade5PurifiedWater.getFluid(500),
-                        },
-                        null,
-                        500 * 10,
-                        523520);
-                GT_Values.RA.addLaserEngraverRecipe(
-                        new ItemStack[] {WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0)}, // Bart Lens
-                        new FluidStack[] {Materials.Grade5PurifiedWater.getFluid(1000L)},
-                        new ItemStack[] {NI},
-                        new FluidStack[] {Materials.Grade6PurifiedWater.getFluid(1000L)},
-                        500 * 10,
-                        1047040,
-                        true);
-                GT_Values.RA.addDistillationTowerRecipe(
-                        Materials.Grade6PurifiedWater.getFluid(1000L),
-                        new FluidStack[] {
-                            Materials.Grade7PurifiedWater.getFluid(1000L),
-                        },
-                        null,
-                        500 * 10,
-                        2094080);
-            }
+            GT_Values.RA.addSifterRecipe(
+                    new ItemStack[] {NI},
+                    new FluidStack[] {Materials.Water.getFluid(1000L)},
+                    new ItemStack[] {NI},
+                    new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
+                    500 * 10,
+                    30_720,
+                    true);
+            GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes.addRecipe(
+                    true,
+                    new ItemStack[] {NI},
+                    null,
+                    null,
+                    new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
+                    new FluidStack[] {Materials.Grade2PurifiedWater.getFluid(1000L)},
+                    5000,
+                    61_440,
+                    0);
+            GT_Values.RA.addDistillationTowerRecipe(
+                    Materials.Grade2PurifiedWater.getFluid(1000L),
+                    new FluidStack[] {
+                        Materials.Grade3PurifiedWater.getFluid(1000L),
+                    },
+                    null,
+                    500 * 10,
+                    122_880);
+            GT_Values.RA.addLaserEngraverRecipe(
+                    new ItemStack[] {WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0)}, // Hedenbergite Lens
+                    new FluidStack[] {Materials.Grade3PurifiedWater.getFluid(1000L)},
+                    new ItemStack[] {NI},
+                    new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000L)},
+                    500 * 10,
+                    245_760,
+                    true);
+            GT_Values.RA.addMultiblockChemicalRecipe(
+                    new ItemStack[] {Materials.Zeolite.getDust(0), GT_Utility.getIntegratedCircuit(1)},
+                    new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000)},
+                    new FluidStack[] {
+                        Materials.Grade5PurifiedWater.getFluid(1000),
+                    },
+                    null,
+                    500 * 10,
+                    491_520);
+            GT_Values.RA.addLaserEngraverRecipe(
+                    new ItemStack[] {WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0)}, // Bart Lens
+                    new FluidStack[] {Materials.Grade5PurifiedWater.getFluid(1000L)},
+                    new ItemStack[] {NI},
+                    new FluidStack[] {Materials.Grade6PurifiedWater.getFluid(1000L)},
+                    500 * 10,
+                    983_040,
+                    true);
+            GT_Values.RA.addDistillationTowerRecipe(
+                    Materials.Grade6PurifiedWater.getFluid(1000L),
+                    new FluidStack[] {
+                        Materials.Grade7PurifiedWater.getFluid(1000L),
+                    },
+                    null,
+                    500 * 10,
+                    1_966_080);
+            GT_Values.RA.addChemicalBathRecipe(
+                    GT_Utility.copyAmount(0L, Materials.Silver.getNanite(1)),
+                    Materials.Grade7PurifiedWater.getFluid(1000L),
+                    Materials.Grade8PurifiedWater.getFluid(1000L),
+                    GT_ModHandler.getModItem("miscutils", "particleBase", 1L, 24), // Unknown particle
+                    GT_Values.NI,
+                    GT_Values.NI,
+                    new int[] {100},
+                    250 * 20,
+                    3_932_160);
         }
-
+        // Irradiant Glass Pane
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 4L, 2),
@@ -26654,6 +26664,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 100,
                 480);
 
+        // Solar Light Splitter
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     GT_ModHandler.getModItem("supersolarpanel", "bluecomponent", 3L, 0),
@@ -26665,5 +26676,19 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 1L, 0),
                 100,
                 480);
+
+        // Compressed Glowstone
+        GT_Values.RA.addCompressorRecipe(
+                new ItemStack(Blocks.glowstone, 9),
+                GT_ModHandler.getModItem("miscutils", "blockCompressedObsidian", 1L, 6),
+                300,
+                2);
+
+        // Double Compressed Glowstone
+        GT_Values.RA.addCompressorRecipe(
+                GT_ModHandler.getModItem("miscutils", "blockCompressedObsidian", 9L, 6),
+                GT_ModHandler.getModItem("miscutils", "blockCompressedObsidian", 1L, 7),
+                300,
+                2);
     }
 }
