@@ -26560,8 +26560,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                 },
                 new FluidStack(solderUEV, 288),
                 ItemList.Optically_Perfected_CPU.get(1L),
-                20 * 20,
-                1_966_080,
+                10 * 20,
+                7_864_320,
                 true);
 
         // Optical CPU Containment Housing
@@ -26577,7 +26577,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {ItemList.Optical_Cpu_Containment_Housing.get(1L)},
                 10 * 10,
                 7_864_320);
-        
         // Water Line
         GT_Values.RA.addSifterRecipe(
                 new ItemStack[] {NI},
@@ -26646,20 +26645,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         ;
     }
 
-    private static final void registerOpticalComponentRecipes() {
-        // Optical Boule
-        GT_Values.RA.addLaserEngraverRecipe(
-                new ItemStack[]{
-                        ItemList.Circuit_Silicon_Ingot5.get(1L),
-                        GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 36)),
-                        GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 23)),
-                        GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
-                },
-                new FluidStack[]{Materials.UUMatter.getFluid(16000L)},
-                new ItemStack[]{ItemList.Circuit_Silicon_Ingot6.get(1L)},
-                new FluidStack[]{GT_Values.NF},
-                30 * 20,
-                7_864_320,
-                true);
+    {
+        ;
     }
 }
