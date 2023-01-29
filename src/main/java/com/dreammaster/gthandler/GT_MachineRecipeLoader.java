@@ -26496,7 +26496,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
                         WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
                         WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
-                        GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
+                        CustomItemList.MysteriousCrystalLens.get(0)
                     },
                     new FluidStack[] {Materials.UUMatter.getFluid(16000L)},
                     new ItemStack[] {ItemList.Circuit_Silicon_Ingot6.get(1L)},
@@ -26537,10 +26537,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {
                         ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
                         Materials.Glowstone.getNanite(1),
-                        GT_Utility.copyAmount(
-                                0L,
-                                GT_ModHandler.getModItem(
-                                        "supersolarpanel", "solarsplitter", 1L, 0)) // Solar Light Splitter
+                        GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 0L, 0) // Solar Light Splitter
                     },
                     new FluidStack[] {Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000)},
                     new ItemStack[] {ItemList.Circuit_Silicon_Wafer7.get(1L)},
