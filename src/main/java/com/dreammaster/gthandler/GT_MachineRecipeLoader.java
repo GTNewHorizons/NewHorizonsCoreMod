@@ -26618,9 +26618,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         261760,
                         true);
                 GT_Values.RA.addMultiblockChemicalRecipe(
-                        new ItemStack[] {
-                            Materials.Zeolite.getDust(0), GT_Utility.getIntegratedCircuit(1)
-                        },
+                        new ItemStack[] {Materials.Zeolite.getDust(0), GT_Utility.getIntegratedCircuit(1)},
                         new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000)},
                         new FluidStack[] {
                             Materials.Grade5PurifiedWater.getFluid(1000),
