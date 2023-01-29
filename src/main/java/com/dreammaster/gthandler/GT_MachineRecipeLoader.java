@@ -26446,6 +26446,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     7864320);
             // Technically T9
             // Deep Dark
+
+            // Quadruple Hatches UEV&UIV
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
                         GT_ModHandler.getModItem("Botania", "tinyPlanetBlock", 1L, 0),
@@ -26575,5 +26577,89 @@ public class GT_MachineRecipeLoader implements Runnable {
                 new ItemStack[] {ItemList.Optical_Cpu_Containment_Housing.get(1L)},
                 10 * 10,
                 7_864_320);
+        
+        // Water Line
+        GT_Values.RA.addSifterRecipe(
+                new ItemStack[] {NI},
+                new FluidStack[] {Materials.Water.getFluid(1000L)},
+                new ItemStack[] {NI},
+                new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
+                500 * 10,
+                32720,
+                true);
+        GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes.addRecipe(
+                true,
+                new ItemStack[] {NI},
+                null,
+                null,
+                new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
+                new FluidStack[] {Materials.Grade2PurifiedWater.getFluid(1000L)},
+                5000,
+                65440,
+                0);
+        GT_Values.RA.addDistillationTowerRecipe(
+                Materials.Grade2PurifiedWater.getFluid(1000L),
+                new FluidStack[] {
+                    Materials.Grade3PurifiedWater.getFluid(1000L),
+                },
+                null,
+                500 * 10,
+                138880);
+        GT_Values.RA.addLaserEngraverRecipe(
+                new ItemStack[] {GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 0L, 25)
+                }, // Hedenbergite Lens
+                new FluidStack[] {Materials.Grade3PurifiedWater.getFluid(1000L)},
+                new ItemStack[] {NI},
+                new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000L)},
+                500 * 10,
+                261760,
+                true);
+        GT_Values.RA.addMultiblockChemicalRecipe(
+                new ItemStack[] {
+                    GT_Utility.copyAmount(0, Materials.Zeolite.getDust(5)), GT_Utility.getIntegratedCircuit(1)
+                },
+                new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000)},
+                new FluidStack[] {
+                    Materials.Grade5PurifiedWater.getFluid(1000),
+                },
+                null,
+                500 * 10,
+                523520);
+        GT_Values.RA.addLaserEngraverRecipe(
+                new ItemStack[] {GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 0L, 43)
+                }, // Hedenbergite Lens
+                new FluidStack[] {Materials.Grade5PurifiedWater.getFluid(1000L)},
+                new ItemStack[] {NI},
+                new FluidStack[] {Materials.Grade6PurifiedWater.getFluid(1000L)},
+                500 * 10,
+                1047040,
+                true);
+        GT_Values.RA.addDistillationTowerRecipe(
+                Materials.Grade6PurifiedWater.getFluid(1000L),
+                new FluidStack[] {
+                    Materials.Grade7PurifiedWater.getFluid(1000L),
+                },
+                null,
+                500 * 10,
+                2094080);
+
+        ;
+    }
+
+    private static final void registerOpticalComponentRecipes() {
+        // Optical Boule
+        GT_Values.RA.addLaserEngraverRecipe(
+                new ItemStack[]{
+                        ItemList.Circuit_Silicon_Ingot5.get(1L),
+                        GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 36)),
+                        GT_Utility.copyAmount(0L, GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedlens", 1L, 23)),
+                        GT_Utility.copyAmount(0L, CustomItemList.MysteriousCrystalLens.get(1))
+                },
+                new FluidStack[]{Materials.UUMatter.getFluid(16000L)},
+                new ItemStack[]{ItemList.Circuit_Silicon_Ingot6.get(1L)},
+                new FluidStack[]{GT_Values.NF},
+                30 * 20,
+                7_864_320,
+                true);
     }
 }
