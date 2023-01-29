@@ -6191,19 +6191,24 @@ public class GT_MachineRecipeLoader implements Runnable {
                     64);
 
             // Apiary
-            GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] {
-                        GT_ModHandler.getModItem("Forestry", "frameImpregnated", 1L, 0),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.slab, Materials.Wood, 2L),
-                        GT_ModHandler.getModItem("Forestry", "beeCombs", 1L, GT_Values.W),
-                        GT_ModHandler.getModItem("Forestry", "apiculture", 2L, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.fence, Materials.Wood, 2L)
-                    },
-                    Materials.SeedOil.getFluid(1000L),
-                    GT_ModHandler.getModItem("Forestry", "apiculture", 1L, 0),
-                    1200,
-                    64);
+            List<ItemStack> fence = OreDictionary.getOres("fenceWood");
+            for (ItemStack stack : fence) {
+                if (Loader.isModLoaded("Forestry")) {
+                    GT_Values.RA.addAssemblerRecipe(
+                            new ItemStack[] {
+                                GT_ModHandler.getModItem("Forestry", "frameImpregnated", 1L, 0),
+                                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 2L),
+                                GT_OreDictUnificator.get(OrePrefixes.slab, Materials.Wood, 2L),
+                                GT_ModHandler.getModItem("Forestry", "beeCombs", 1L, GT_Values.W),
+                                GT_ModHandler.getModItem("Forestry", "apiculture", 2L, 2),
+                                stack.splitStack(2)
+                            },
+                            Materials.SeedOil.getFluid(1000L),
+                            GT_ModHandler.getModItem("Forestry", "apiculture", 1L, 0),
+                            1200,
+                            64);
+                }
+            }
 
             // Scented Paneling
             GT_Values.RA.addAssemblerRecipe(
