@@ -26581,7 +26581,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_Values.RA.addSifterRecipe(
                         new ItemStack[] {NI},
                         new FluidStack[] {Materials.Water.getFluid(1000L)},
-                        new ItemStack[] {NI},
+                        new ItemStack[] {Materials.Calcite.getDust(1), Materials.SodiumHydroxide.getDust(1),Materials.Stone.getDust(1),Materials.Clay.getDust(1),Materials.PolyvinylChloride.getNuggets(1)},
                         new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
                         500 * 10,
                         32720,
@@ -26592,7 +26592,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                         null,
                         null,
                         new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
-                        new FluidStack[] {Materials.Grade2PurifiedWater.getFluid(1000L)},
+                        new FluidStack[] {Materials.Grade2PurifiedWater.getFluid(500L)},
                         5000,
                         65440,
                         0);
@@ -26614,11 +26614,11 @@ public class GT_MachineRecipeLoader implements Runnable {
                         true);
                 GT_Values.RA.addMultiblockChemicalRecipe(
                         new ItemStack[] {
-                            GT_Utility.copyAmount(0, Materials.Zeolite.getDust(5)), GT_Utility.getIntegratedCircuit(1)
+                            GT_Utility.copyAmount(0, Materials.Zeolite.getDust(1)), GT_Utility.getIntegratedCircuit(1)
                         },
                         new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000)},
                         new FluidStack[] {
-                            Materials.Grade5PurifiedWater.getFluid(1000),
+                            Materials.Grade5PurifiedWater.getFluid(500),
                         },
                         null,
                         500 * 10,
