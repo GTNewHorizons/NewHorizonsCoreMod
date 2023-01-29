@@ -73,7 +73,7 @@ public class GT_CustomLoader {
                 Materials.Neutronium),
 
         UIV(
-                OrePrefixes.circuit.get(Materials.Nano),
+                OrePrefixes.circuit.get(Materials.Optical),
                 OrePrefixes.wireGt08.get(Materials.Bedrockium),
                 Materials.NetherStar,
                 Materials.NetherStar,
