@@ -26558,7 +26558,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 },
                 new FluidStack(solderUEV, 288),
                 ItemList.Optically_Perfected_CPU.get(1L),
-                10 * 20,
+                20 * 20,
                 1_966_080,
                 true);
 
