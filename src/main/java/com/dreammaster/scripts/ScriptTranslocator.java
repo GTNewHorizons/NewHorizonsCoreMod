@@ -18,15 +18,15 @@ public class ScriptTranslocator implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapedRecipe(getModItem("Translocator", "translocator", 2), new Object[] {
-            "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium",
-            "pipeMediumBrass", "gemEnderPearl", "pipeMediumBrass",
-            "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium"
-        });
-        addShapedRecipe(getModItem("Translocator", "translocator", 2, 1), new Object[] {
-            "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium",
-            "pipeMediumSteel", "gemEnderPearl", "pipeMediumSteel",
-            "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium"
-        });
+        addShapedRecipe(
+                getModItem("Translocator", "translocator", 2),
+                new Object[] { "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium", "pipeMediumBrass",
+                        "gemEnderPearl", "pipeMediumBrass", "itemCasingAluminium", "plateRedAlloy",
+                        "itemCasingAluminium" });
+        addShapedRecipe(
+                getModItem("Translocator", "translocator", 2, 1),
+                new Object[] { "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium", "pipeMediumSteel",
+                        "gemEnderPearl", "pipeMediumSteel", "itemCasingAluminium", "plateRedAlloy",
+                        "itemCasingAluminium" });
     }
 }

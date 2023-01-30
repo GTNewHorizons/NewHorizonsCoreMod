@@ -1,14 +1,18 @@
 package com.dreammaster.modcustomfuels;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.*;
+
 import net.minecraft.item.ItemStack;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "CustomFuels")
 public class CustomFuels {
+
     @XmlElement(name = "FuelItem")
     protected List<FuelItem> mFuelItems;
 
@@ -52,6 +56,7 @@ public class CustomFuels {
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType
     public static class FuelItem {
+
         @XmlAttribute(name = "ItemName")
         protected String mItemName;
 

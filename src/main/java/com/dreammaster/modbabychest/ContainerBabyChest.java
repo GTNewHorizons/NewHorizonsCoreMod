@@ -33,11 +33,12 @@ public class ContainerBabyChest extends Container {
         int tLeftCol = (pSizeX - 162) / 2 + 1;
         for (int playerInvRow = 0; playerInvRow < 3; playerInvRow++) {
             for (int playerInvCol = 0; playerInvCol < 9; playerInvCol++) {
-                addSlotToContainer(new Slot(
-                        pInventoryPlayer,
-                        playerInvCol + playerInvRow * 9 + 9,
-                        tLeftCol + playerInvCol * 18,
-                        pSizeY - (4 - playerInvRow) * 18 - 10));
+                addSlotToContainer(
+                        new Slot(
+                                pInventoryPlayer,
+                                playerInvCol + playerInvRow * 9 + 9,
+                                tLeftCol + playerInvCol * 18,
+                                pSizeY - (4 - playerInvRow) * 18 - 10));
             }
         }
 
@@ -59,7 +60,10 @@ public class ContainerBabyChest extends Container {
             // merges the item into player inventory since its in the tileEntity
             if (pSlot < _mTileEntity.getSizeInventory()) {
                 if (!mergeItemStack(
-                        tStackInSlot, _mTileEntity.getSizeInventory(), 36 + _mTileEntity.getSizeInventory(), true)) {
+                        tStackInSlot,
+                        _mTileEntity.getSizeInventory(),
+                        36 + _mTileEntity.getSizeInventory(),
+                        true)) {
                     return null;
                 }
             }

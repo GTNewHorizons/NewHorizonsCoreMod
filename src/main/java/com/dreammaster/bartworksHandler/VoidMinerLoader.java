@@ -4,21 +4,25 @@ import static com.dreammaster.bartworksHandler.BartWorksMaterials.addVoidMinerDr
 import static com.dreammaster.main.MainRegistry.CoreConfig;
 import static gregtech.api.enums.Materials.values;
 
-import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
-import com.google.common.collect.Maps;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.interfaces.ISubTagContainer;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
+import com.google.common.collect.Maps;
+
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.interfaces.ISubTagContainer;
+
 public class VoidMinerLoader {
+
     protected static final Logger log = LogManager.getLogger(VoidMinerLoader.class);
 
     private VoidMinerLoader() {}
@@ -42,16 +46,16 @@ public class VoidMinerLoader {
 
     public static void initDeepDark() {
         // Map of material name to Materials.
-        Map<String, Materials> materials = Arrays.stream(values())
-                .filter(VoidMinerLoader::hasOres)
-                .collect(Collectors.toMap(
-                        Materials::toString, Function.identity(), VoidMinerLoader::keyConflict, HashMap::new));
+        Map<String, Materials> materials = Arrays.stream(values()).filter(VoidMinerLoader::hasOres).collect(
+                Collectors.toMap(Materials::toString, Function.identity(), VoidMinerLoader::keyConflict, HashMap::new));
 
         // Map of werkstoff name to Werkstoff.
-        Map<String, Werkstoff> werkstoff = Werkstoff.werkstoffHashSet.stream()
-                .filter(VoidMinerLoader::hasOres)
-                .collect(Collectors.toMap(
-                        Werkstoff::getDefaultName, Function.identity(), VoidMinerLoader::keyConflict, HashMap::new));
+        Map<String, Werkstoff> werkstoff = Werkstoff.werkstoffHashSet.stream().filter(VoidMinerLoader::hasOres).collect(
+                Collectors.toMap(
+                        Werkstoff::getDefaultName,
+                        Function.identity(),
+                        VoidMinerLoader::keyConflict,
+                        HashMap::new));
 
         if (CoreConfig.DebugPrintAllOres) {
             log.info("==========");
@@ -91,9 +95,8 @@ public class VoidMinerLoader {
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: Begin added materials list");
             log.info("==========");
-            addedMaterials.keySet().stream()
-                    .sorted()
-                    .forEach(name -> log.info(
+            addedMaterials.keySet().stream().sorted().forEach(
+                    name -> log.info(
                             "  {} (weight: {} / metadata: {})",
                             name,
                             materialWeights.get(name),
@@ -107,9 +110,8 @@ public class VoidMinerLoader {
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: Begin added werkstoff list");
             log.info("==========");
-            addedWerkstoff.keySet().stream()
-                    .sorted()
-                    .forEach(name -> log.info(
+            addedWerkstoff.keySet().stream().sorted().forEach(
+                    name -> log.info(
                             "  {} (weight: {} / metadata: {})",
                             name,
                             werkstoffWeights.get(name),
@@ -119,9 +121,7 @@ public class VoidMinerLoader {
             log.info("==========");
 
             double totalWeight = Stream.concat(materialWeights.values().stream(), werkstoffWeights.values().stream())
-                    .filter(f -> f > 0f)
-                    .mapToDouble(f -> f)
-                    .sum();
+                    .filter(f -> f > 0f).mapToDouble(f -> f).sum();
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: Total weight: {}", totalWeight);
             log.info("==========");
@@ -132,8 +132,7 @@ public class VoidMinerLoader {
     }
 
     /**
-     * Parses the weight config line and enters it into the weights map, overwriting any prior entry
-     * with the same name.
+     * Parses the weight config line and enters it into the weights map, overwriting any prior entry with the same name.
      */
     private static void parseWeight(String line, Map<String, Float> weights) {
         String[] pieces = line.split(":");
@@ -160,8 +159,8 @@ public class VoidMinerLoader {
     }
 
     /**
-     * Helper method that gets called when we run into a key conflict when trying to put
-     * {@link Materials} or {@link Werkstoff} into a map.
+     * Helper method that gets called when we run into a key conflict when trying to put {@link Materials} or
+     * {@link Werkstoff} into a map.
      */
     private static <T> T keyConflict(T a, T b) {
         throw new IllegalStateException(String.format("Got a name conflict: [%s], [%s]", a, b));

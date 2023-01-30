@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
@@ -25,8 +26,8 @@ public class RenderBabyChest extends TileEntitySpecialRenderer {
             }
 
             World tWorld = tTileEntityBabyChest.getWorldObj();
-            Block tBlock = tWorld.getBlock(
-                    tTileEntityBabyChest.xCoord, tTileEntityBabyChest.yCoord, tTileEntityBabyChest.zCoord);
+            Block tBlock = tWorld
+                    .getBlock(tTileEntityBabyChest.xCoord, tTileEntityBabyChest.yCoord, tTileEntityBabyChest.zCoord);
 
             if (tBlock instanceof BlockBabyChest) {
                 BlockBabyChest blockBabyChest = (BlockBabyChest) tBlock;

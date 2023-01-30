@@ -1,9 +1,5 @@
 package com.dreammaster.coremod;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import cpw.mods.fml.relauncher.IFMLCallHook;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -19,16 +15,25 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.Map;
+
 import javax.swing.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import cpw.mods.fml.relauncher.IFMLCallHook;
+
 public class DepLoader implements IFMLCallHook {
+
     private File mcLocation;
     private static final Logger LOGGER = LogManager.getLogger(DepLoader.class);
     private DownloadProgressDialog dialog = null;
 
     public static class Dependency {
+
         private String url;
         private String path;
         private boolean disabled;
@@ -68,6 +73,7 @@ public class DepLoader implements IFMLCallHook {
     }
 
     private class Downloader implements Runnable {
+
         List<Dependency> deps;
         Exception e = null;
 
@@ -123,6 +129,7 @@ public class DepLoader implements IFMLCallHook {
             dialog = new DownloadProgressDialog();
             Thread mainThread = Thread.currentThread();
             dialog.addWindowListener(new WindowAdapter() {
+
                 @Override
                 public void windowClosing(WindowEvent e) {
                     mainThread.interrupt();
@@ -225,10 +232,10 @@ public class DepLoader implements IFMLCallHook {
         final Path downloadTemp = new File(mcLocation, ".__gtnh_download_temp__").toPath();
         LOGGER.info("Downloading {} to {}", dep.getUrl(), dep.getPath());
         try (FileChannel fc = FileChannel.open(
-                        downloadTemp,
-                        StandardOpenOption.WRITE,
-                        StandardOpenOption.CREATE,
-                        StandardOpenOption.TRUNCATE_EXISTING);
+                downloadTemp,
+                StandardOpenOption.WRITE,
+                StandardOpenOption.CREATE,
+                StandardOpenOption.TRUNCATE_EXISTING);
                 ReadableByteChannel net = Channels.newChannel(new URL(dep.getUrl()).openStream())) {
             fc.transferFrom(net, 0, Long.MAX_VALUE);
         }

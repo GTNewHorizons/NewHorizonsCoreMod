@@ -1,15 +1,9 @@
 package com.dreammaster.modfixes.oilgen;
 
-import com.dreammaster.main.MainRegistry;
-import com.dreammaster.modfixes.ModFixBase;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import eu.usrv.yamcore.YAMCore;
-import eu.usrv.yamcore.auxiliary.IntHelper;
-import eu.usrv.yamcore.auxiliary.LogHelper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockGravel;
@@ -27,7 +21,17 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.IFluidBlock;
 
+import com.dreammaster.main.MainRegistry;
+import com.dreammaster.modfixes.ModFixBase;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+import eu.usrv.yamcore.YAMCore;
+import eu.usrv.yamcore.auxiliary.IntHelper;
+import eu.usrv.yamcore.auxiliary.LogHelper;
+
 public class OilGeneratorFix extends ModFixBase {
+
     private enum EDEPOSIT_SIZE {
         SMALL,
         MEDIUM,
@@ -35,6 +39,7 @@ public class OilGeneratorFix extends ModFixBase {
     }
 
     public static class OilConfig {
+
         public boolean OilFixEnabled = false;
         public int OilDepostMinDistance = 2;
         public double OilSphereChance = 30.0D;
@@ -122,16 +127,18 @@ public class OilGeneratorFix extends ModFixBase {
                     50.0F,
                     "Boost factor of oil spheres in certain Biomes that are listed in -OilBoostBiomes-");
 
-            OilDimensionWhitelist = parseStringListToIntList(pConfigObject.getStringList(
-                    "OilDimensionWhitelist",
-                    "ModFixes.OilGen",
-                    new String[] {"0"},
-                    "List DimensionIDs (Numbers only; One per line!) here where the OilGenerator should do its work"));
-            OilBiomeIDBlackList = parseStringListToIntList(pConfigObject.getStringList(
-                    "OilBiomeIDBlackList",
-                    "ModFixes.OilGen",
-                    new String[] {},
-                    "List BiomeIDs (Numbers only; One per line!) where no oil should be generated"));
+            OilDimensionWhitelist = parseStringListToIntList(
+                    pConfigObject.getStringList(
+                            "OilDimensionWhitelist",
+                            "ModFixes.OilGen",
+                            new String[] { "0" },
+                            "List DimensionIDs (Numbers only; One per line!) here where the OilGenerator should do its work"));
+            OilBiomeIDBlackList = parseStringListToIntList(
+                    pConfigObject.getStringList(
+                            "OilBiomeIDBlackList",
+                            "ModFixes.OilGen",
+                            new String[] {},
+                            "List BiomeIDs (Numbers only; One per line!) where no oil should be generated"));
             OilBoostBiomes = parseStringListToIntList(
                     pConfigObject.getStringList(
                             "OilBoostBiomes",
@@ -220,7 +227,11 @@ public class OilGeneratorFix extends ModFixBase {
             int worldZ = event.chunkZ << 4;
 
             generateOil(
-                    event.world, event.rand, worldX + event.rand.nextInt(16), worldZ + event.rand.nextInt(16), false);
+                    event.world,
+                    event.rand,
+                    worldX + event.rand.nextInt(16),
+                    worldZ + event.rand.nextInt(16),
+                    false);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -260,16 +271,8 @@ public class OilGeneratorFix extends ModFixBase {
         }
     }
 
-    public void buildOilStructure(
-            World pWorld,
-            Random pRand,
-            int pSphereX,
-            int pSphereY,
-            int pSphereZ,
-            int pRadius,
-            int pGroundLevel,
-            Block pTargetBlock,
-            boolean pCheckValidLocation) {
+    public void buildOilStructure(World pWorld, Random pRand, int pSphereX, int pSphereY, int pSphereZ, int pRadius,
+            int pGroundLevel, Block pTargetBlock, boolean pCheckValidLocation) {
         // Make sure to not exceed the max-build height of minecraft
 
         EDEPOSIT_SIZE eSize;
@@ -311,8 +314,10 @@ public class OilGeneratorFix extends ModFixBase {
                                         if (!checkBlock(pWorld, bx + pSphereX, by + pSphereY, bz + pSphereZ + 1)
                                                 || !pCheckValidLocation) {
                                             if (!checkBlockAbove(
-                                                            pWorld, bx + pSphereX, by + pSphereY + 1, bz + pSphereZ)
-                                                    || !pCheckValidLocation) {
+                                                    pWorld,
+                                                    bx + pSphereX,
+                                                    by + pSphereY + 1,
+                                                    bz + pSphereZ) || !pCheckValidLocation) {
                                                 pWorld.setBlock(
                                                         bx + pSphereX,
                                                         by + pSphereY,
@@ -441,8 +446,10 @@ public class OilGeneratorFix extends ModFixBase {
         // Limited to Whitelisted Dimensions
         if (!MainRegistry.CoreConfig.OilFixConfig.OilDimensionWhitelist.contains(pWorld.provider.dimensionId)) {
             if (YAMCore.isDebug()) {
-                _mLog.info(String.format(
-                        "Not generating OilDeposit; Dimension is not Whitelisted %d", pWorld.provider.dimensionId));
+                _mLog.info(
+                        String.format(
+                                "Not generating OilDeposit; Dimension is not Whitelisted %d",
+                                pWorld.provider.dimensionId));
             }
             return false;
         }

@@ -2,12 +2,15 @@ package com.dreammaster.modcustomdrops;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.*;
+
 import net.minecraft.entity.EntityLivingBase;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "CustomDrops")
 public class CustomDrops {
+
     @XmlElement(name = "CustomDrop")
     protected List<CustomDrop> mCustomDrops;
 
@@ -45,6 +48,7 @@ public class CustomDrops {
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType
     public static class CustomDrop {
+
         @XmlAttribute(name = "EntityClassName")
         protected String mEntityClassName;
 
@@ -69,6 +73,7 @@ public class CustomDrops {
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType
         public static class Drop {
+
             @XmlAttribute(name = "Identifier")
             protected String mDropID;
 

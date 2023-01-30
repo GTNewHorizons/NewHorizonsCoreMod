@@ -1,15 +1,17 @@
 package com.dreammaster.main;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.crash.CrashReport;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.common.MinecraftForge;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
 /**
  * Created by danie_000 on 19.11.2016.
  */
 public class ConfigHandler {
+
     public static final ConfigHandler CONFIG_HANDLER = new ConfigHandler();
 
     @SubscribeEvent
@@ -31,7 +33,7 @@ public class ConfigHandler {
             Minecraft.getMinecraft().crashed(new CrashReport("", e));
             return;
         } catch (Exception E) {
-            /*E.printStackTrace();*/
+            /* E.printStackTrace(); */
         }
 
         try {
@@ -39,47 +41,47 @@ public class ConfigHandler {
             Minecraft.getMinecraft().crashed(new CrashReport("", e));
             return;
         } catch (Exception E) {
-            /*E.printStackTrace();*/
+            /* E.printStackTrace(); */
         }
 
         // try {
-        //    Class mc = Class.forName("net.minecraft.client.main.ClientBrandRetriever");
-        //    CodeSource codeSource = mc.getProtectionDomain().getCodeSource();
-        //    Manifest m = new JarFile(new File(codeSource.getLocation().toURI().getPath())).getManifest();
-        //    if(m == null) throw e;
+        // Class mc = Class.forName("net.minecraft.client.main.ClientBrandRetriever");
+        // CodeSource codeSource = mc.getProtectionDomain().getCodeSource();
+        // Manifest m = new JarFile(new File(codeSource.getLocation().toURI().getPath())).getManifest();
+        // if(m == null) throw e;
         // }catch (Exception E){
-        //    E.printStackTrace();
-        //    if(E instanceof IOException)throw e;
+        // E.printStackTrace();
+        // if(E instanceof IOException)throw e;
         // }
 
         // try {
-        //    Class mc = Class.forName("net.minecraft.client.Minecraft");
-        //    CodeSource codeSource = mc.getProtectionDomain().getCodeSource();
-        //    Manifest m = new JarFile(new File(codeSource.getLocation().toURI().getPath())).getManifest();
-        //    if(m == null) throw e;
+        // Class mc = Class.forName("net.minecraft.client.Minecraft");
+        // CodeSource codeSource = mc.getProtectionDomain().getCodeSource();
+        // Manifest m = new JarFile(new File(codeSource.getLocation().toURI().getPath())).getManifest();
+        // if(m == null) throw e;
         // }catch (Exception E){
-        //    E.printStackTrace();
-        //    if(E instanceof IOException)throw e;
+        // E.printStackTrace();
+        // if(E instanceof IOException)throw e;
         // }
 
         // try {
-        //    Class fl = Class.forName("cpw.mods.fml.client.FMLClientHandler");
-        //    CodeSource codeSource = fl.getProtectionDomain().getCodeSource();
-        //    Manifest m = new JarFile(new File(codeSource.getLocation().toURI().getPath())).getManifest();
-        //    if (m == null) throw e;
+        // Class fl = Class.forName("cpw.mods.fml.client.FMLClientHandler");
+        // CodeSource codeSource = fl.getProtectionDomain().getCodeSource();
+        // Manifest m = new JarFile(new File(codeSource.getLocation().toURI().getPath())).getManifest();
+        // if (m == null) throw e;
         // }catch (Exception E){
-        //    E.printStackTrace();
-        //    if(E instanceof IOException)throw e;
+        // E.printStackTrace();
+        // if(E instanceof IOException)throw e;
         // }
 
         // try {
-        //    Class fc = Class.forName("net.minecraftforge.client.MinecraftForgeClient");
-        //    CodeSource codeSource = fc.getProtectionDomain().getCodeSource();
-        //    Manifest m = new JarFile(new File(codeSource.getLocation().toURI().getPath())).getManifest();
-        //    if (m == null) throw e;
+        // Class fc = Class.forName("net.minecraftforge.client.MinecraftForgeClient");
+        // CodeSource codeSource = fc.getProtectionDomain().getCodeSource();
+        // Manifest m = new JarFile(new File(codeSource.getLocation().toURI().getPath())).getManifest();
+        // if (m == null) throw e;
         // }catch (Exception E){
-        //    E.printStackTrace();
-        //    if(E instanceof IOException)throw e;
+        // E.printStackTrace();
+        // if(E instanceof IOException)throw e;
         // }
 
         MinecraftForge.EVENT_BUS.unregister(CONFIG_HANDLER);

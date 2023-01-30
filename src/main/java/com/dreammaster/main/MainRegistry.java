@@ -2,6 +2,15 @@ package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 
+import java.io.File;
+import java.util.Random;
+
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
+
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.bartworksHandler.*;
 import com.dreammaster.baubles.OvenGlove;
@@ -37,6 +46,7 @@ import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
 import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
+
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -59,20 +69,12 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_LanguageManager;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
-import java.io.File;
-import java.util.Random;
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
 
 @Mod(
         modid = Refstrings.MODID,
         name = Refstrings.NAME,
         version = Refstrings.VERSION,
-        dependencies = "required-before:gregtech;"
-                + "required-after:Forge@[10.13.2.1291,);"
+        dependencies = "required-before:gregtech;" + "required-after:Forge@[10.13.2.1291,);"
                 + "required-after:YAMCore@[0.5.76,);"
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"
@@ -116,11 +118,15 @@ public class MainRegistry {
 
         // ------------------------------------------------------------
         // Init coremod config file. Create it if it's not there
-        CoreConfig =
-                new CoreModConfig(PreEvent.getModConfigurationDirectory(), Refstrings.COLLECTIONID, Refstrings.MODID);
+        CoreConfig = new CoreModConfig(
+                PreEvent.getModConfigurationDirectory(),
+                Refstrings.COLLECTIONID,
+                Refstrings.MODID);
         if (!CoreConfig.LoadConfig()) {
-            Logger.error(String.format(
-                    "%s could not load its config file. Things are going to be weird!", Refstrings.MODID));
+            Logger.error(
+                    String.format(
+                            "%s could not load its config file. Things are going to be weird!",
+                            Refstrings.MODID));
         }
         // ------------------------------------------------------------
 
@@ -135,8 +141,7 @@ public class MainRegistry {
         Configuration tMainConfig = new Configuration(tFile);
         tMainConfig.load();
 
-        GregTech_API.sUseMachineMetal =
-                tMainConfig.get("machines", "use_machine_metal_tint", true).getBoolean(true);
+        GregTech_API.sUseMachineMetal = tMainConfig.get("machines", "use_machine_metal_tint", true).getBoolean(true);
         if (GregTech_API.sUseMachineMetal) {
             // use default in GregTech Dyes enum.
         } else {
@@ -275,8 +280,8 @@ public class MainRegistry {
         if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.OVEN_GLOVE.get())) {
             tResult = false;
         }
-        NHItems.WITHER_PROTECTION_RING.place(
-                new WitherProtectionRing("WitherProtectionRing", ModTabList.ModThaumcraftTab));
+        NHItems.WITHER_PROTECTION_RING
+                .place(new WitherProtectionRing("WitherProtectionRing", ModTabList.ModThaumcraftTab));
         if (!ItemManager.RegisterNonEnumItem(TabManager, NHItems.WITHER_PROTECTION_RING.get())) {
             tResult = false;
         }
@@ -399,20 +404,20 @@ public class MainRegistry {
         registerModFixes();
 
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
-        GT_LanguageManager.addStringLocalization(
-                "achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
+        GT_LanguageManager
+                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");
-        GT_LanguageManager.addStringLocalization(
-                "achievement.item.HeavyDutyAlloyIngotT5.desc", "On your way to the T5 Dims!");
+        GT_LanguageManager
+                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5.desc", "On your way to the T5 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6", "Rocket Plate Tier 6!");
-        GT_LanguageManager.addStringLocalization(
-                "achievement.item.HeavyDutyAlloyIngotT6.desc", "On your way to the T6 Dims!");
+        GT_LanguageManager
+                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6.desc", "On your way to the T6 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7", "Rocket Plate Tier 7!");
-        GT_LanguageManager.addStringLocalization(
-                "achievement.item.HeavyDutyAlloyIngotT7.desc", "On your way to the T7 Dims!");
+        GT_LanguageManager
+                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc", "On your way to the T7 Dims!");
         GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8", "Rocket Plate Tier 8!");
-        GT_LanguageManager.addStringLocalization(
-                "achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
+        GT_LanguageManager
+                .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
 
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself
@@ -424,13 +429,16 @@ public class MainRegistry {
 
             Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
             GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
+                    Materials.Platinum,
+                    WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
             GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+                    Materials.Osmium,
+                    WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+            GT_MetaGenerated_Item_01
+                    .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
             GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
+                    Materials.Palladium,
+                    WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
         }
     }
 

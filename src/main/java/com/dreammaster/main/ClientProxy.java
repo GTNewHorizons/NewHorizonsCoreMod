@@ -2,15 +2,6 @@ package com.dreammaster.main;
 
 import static com.dreammaster.main.ConfigHandler.CONFIG_HANDLER;
 
-import com.dreammaster.modbabychest.BlockBabyChest;
-import com.dreammaster.modbabychest.RenderBabyChest;
-import com.dreammaster.modbabychest.RenderItemBabyChest;
-import com.dreammaster.modbabychest.TileEntityBabyChest;
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.client.registry.ClientRegistry;
-import cpw.mods.fml.client.registry.RenderingRegistry;
-import gregtech.api.enums.Textures;
-import gregtech.api.interfaces.ITexture;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -18,7 +9,19 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 
+import com.dreammaster.modbabychest.BlockBabyChest;
+import com.dreammaster.modbabychest.RenderBabyChest;
+import com.dreammaster.modbabychest.RenderItemBabyChest;
+import com.dreammaster.modbabychest.TileEntityBabyChest;
+
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import gregtech.api.enums.Textures;
+import gregtech.api.interfaces.ITexture;
+
 public class ClientProxy extends CommonProxy {
+
     @Override
     public void addTexturePage() {
         if (Textures.BlockIcons.casingTexturePages[8] == null) {
@@ -31,8 +34,8 @@ public class ClientProxy extends CommonProxy {
         BlockBabyChest.pRenderID = RenderingRegistry.getNextAvailableRenderId();
         TileEntitySpecialRenderer render = new RenderBabyChest();
 
-        MinecraftForgeClient.registerItemRenderer(
-                Item.getItemFromBlock(MainRegistry._mBlockBabyChest), new RenderItemBabyChest());
+        MinecraftForgeClient
+                .registerItemRenderer(Item.getItemFromBlock(MainRegistry._mBlockBabyChest), new RenderItemBabyChest());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBabyChest.class, render);
 
         MinecraftForge.EVENT_BUS.register(CONFIG_HANDLER);

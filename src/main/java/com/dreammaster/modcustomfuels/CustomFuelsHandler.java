@@ -1,17 +1,22 @@
 package com.dreammaster.modcustomfuels;
 
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
-import cpw.mods.fml.common.IFuelHandler;
-import eu.usrv.yamcore.auxiliary.LogHelper;
 import java.io.File;
 import java.io.FileOutputStream;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.MainRegistry;
+
+import cpw.mods.fml.common.IFuelHandler;
+import eu.usrv.yamcore.auxiliary.LogHelper;
+
 public class CustomFuelsHandler implements IFuelHandler {
+
     private LogHelper _mLogger = MainRegistry.Logger;
     private String _mConfigFileName;
     private CustomFuelsFactory _mCfF = new CustomFuelsFactory();

@@ -1,15 +1,19 @@
 package com.dreammaster.network.msg;
 
+import java.util.*;
+
+import net.minecraft.entity.player.EntityPlayer;
+
 import com.dreammaster.main.MainRegistry;
+
 import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import eu.usrv.yamcore.network.client.AbstractClientMessageHandler;
 import io.netty.buffer.ByteBuf;
-import java.util.*;
-import net.minecraft.entity.player.EntityPlayer;
 
 public class CTTClientSyncMessage implements IMessage {
+
     protected String _mPayload;
     protected int _mFrame;
     protected int _mNumFrames;
@@ -63,6 +67,7 @@ public class CTTClientSyncMessage implements IMessage {
     }
 
     public static class CTTClientSyncMessageHandler extends AbstractClientMessageHandler<CTTClientSyncMessage> {
+
         private static long _mLastReceived = 0;
         private static HashMap<Integer, CTTClientSyncMessage> _mReceivedFrames;
 

@@ -1,17 +1,20 @@
 package com.dreammaster.coremod;
 
-import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 import java.io.*;
 import java.util.Map;
 import java.util.Properties;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.Name("DreamCoreMod")
 @IFMLLoadingPlugin.TransformerExclusions("com.dreammaster.coremod")
 public class DreamCoreMod implements IFMLLoadingPlugin {
+
     static Properties coremodConfig = new Properties();
     static Logger logger = LogManager.getLogger("DreamCoreMod");
     static boolean deobf;
@@ -21,7 +24,7 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
 
     @Override
     public String[] getASMTransformerClass() {
-        return new String[] {"com.dreammaster.coremod.DreamTransformer"};
+        return new String[] { "com.dreammaster.coremod.DreamTransformer" };
     }
 
     @Override
