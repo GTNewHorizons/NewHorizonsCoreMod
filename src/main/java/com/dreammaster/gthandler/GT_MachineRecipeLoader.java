@@ -26581,8 +26581,15 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addSifterRecipe(
                     new ItemStack[] {NI},
                     new FluidStack[] {Materials.Water.getFluid(1000L)},
-                    new ItemStack[] {NI},
+                    new ItemStack[] {
+                        Materials.Stone.getDust(1),
+                        Materials.Clay.getDust(1),
+                        Materials.Calcite.getDust(1),
+                        Materials.Salt.getDust(1),
+                        Materials.PolyvinylChloride.getNuggets(1)
+                    },
                     new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(900L)},
+                    new int[] {5000, 2000, 1000, 1000, 100},
                     500 * 10,
                     30_720,
                     true);
