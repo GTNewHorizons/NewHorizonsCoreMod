@@ -66,6 +66,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
 
+        // Nano circuit to Optical Mainframe conversion
+        GT_ModHandler.addShapelessCraftingRecipe(
+                ItemList.Circuit_OpticalMainframe.get(1L), new Object[] {CustomItemList.NanoCircuit.get(1)});
+
         GT_ModHandler.addCraftingRecipe(ItemList.Generator_Naquadah_Mark_I.get(1L), bits, new Object[] {
             "UCU",
             "FMF",
