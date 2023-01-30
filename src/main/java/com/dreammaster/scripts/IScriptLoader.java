@@ -148,6 +148,7 @@ public interface IScriptLoader {
 
     /**
      * Helper function to get the GT_MetaGenerated_Item_01 item based on its meta.
+     * 
      * @param meta the meta id of the item to look at.
      * @return an itemstack with a stacksize of 1 corresponding to the item looked for.
      */

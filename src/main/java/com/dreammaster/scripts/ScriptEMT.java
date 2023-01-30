@@ -2,9 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-import com.dreammaster.thaumcraft.TCHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -13,7 +13,10 @@ import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
+import com.dreammaster.thaumcraft.TCHelper;
+
 public class ScriptEMT implements IScriptLoader {
+
     @Override
     public void initScriptData() {}
 
@@ -26,16 +29,15 @@ public class ScriptEMT implements IScriptLoader {
             TCHelper.orphanResearch("Electric Magic Tools");
             TCHelper.removeResearch("Electric Magic Tools");
             ResearchItem research = new ResearchItem(
-                            "ElectricMagicTools",
-                            "EMT",
-                            new AspectList().add(Aspect.getAspect("terra"), 0),
-                            0,
-                            0,
-                            0,
-                            getModItem("dreamcraft", "item.EMT", 1, missing))
-                    .setPages(new ResearchPage("tc.research_page.ElectricMagicTools"))
-                    .setAutoUnlock()
-                    .setSpecial();
+                    "ElectricMagicTools",
+                    "EMT",
+                    new AspectList().add(Aspect.getAspect("terra"), 0),
+                    0,
+                    0,
+                    0,
+                    getModItem("dreamcraft", "item.EMT", 1, missing))
+                            .setPages(new ResearchPage("tc.research_page.ElectricMagicTools")).setAutoUnlock()
+                            .setSpecial();
             ResearchCategories.addResearch(research);
         }
 
@@ -45,13 +47,9 @@ public class ScriptEMT implements IScriptLoader {
             ShapedArcaneRecipe recipe = ThaumcraftApi.addArcaneCraftingRecipe(
                     "DiamondChainsaw",
                     getModItem("EMT", "DiamondChainsaw", 1, 27, missing),
-                    new AspectList()
-                            .add(Aspect.getAspect("aer"), 35)
-                            .add(Aspect.getAspect("terra"), 35)
-                            .add(Aspect.getAspect("ignis"), 35)
-                            .add(Aspect.getAspect("aqua"), 35)
-                            .add(Aspect.getAspect("ordo"), 35)
-                            .add(Aspect.getAspect("perditio"), 35),
+                    new AspectList().add(Aspect.getAspect("aer"), 35).add(Aspect.getAspect("terra"), 35)
+                            .add(Aspect.getAspect("ignis"), 35).add(Aspect.getAspect("aqua"), 35)
+                            .add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("perditio"), 35),
                     "ABA",
                     "CDC",
                     "EFG",
@@ -70,20 +68,16 @@ public class ScriptEMT implements IScriptLoader {
                     'G',
                     "craftingToolWrench");
             ResearchItem research = new ResearchItem(
-                            "DiamondChainsaw",
-                            "EMT",
-                            new AspectList()
-                                    .add(Aspect.getAspect("lucrum"), 12)
-                                    .add(Aspect.getAspect("ignis"), 9)
-                                    .add(Aspect.getAspect("metallum"), 6)
-                                    .add(Aspect.getAspect("terra"), 3),
-                            0,
-                            -2,
-                            2,
-                            getModItem("EMT", "DiamondChainsaw", 1, 27, missing))
-                    .setPages(new ResearchPage("tc.research_page.DiamondChainsaw"), new ResearchPage(recipe))
-                    .setParents("ElectricMagicTools")
-                    .setRound();
+                    "DiamondChainsaw",
+                    "EMT",
+                    new AspectList().add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("ignis"), 9)
+                            .add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("terra"), 3),
+                    0,
+                    -2,
+                    2,
+                    getModItem("EMT", "DiamondChainsaw", 1, 27, missing))
+                            .setPages(new ResearchPage("tc.research_page.DiamondChainsaw"), new ResearchPage(recipe))
+                            .setParents("ElectricMagicTools").setRound();
             ResearchCategories.addResearch(research);
         }
 
@@ -91,16 +85,14 @@ public class ScriptEMT implements IScriptLoader {
         {
             TCHelper.removeResearch("Thaumium Plate");
             ResearchItem research = new ResearchItem(
-                            "ThaumiumPlate",
-                            "EMT",
-                            new AspectList(),
-                            6,
-                            -6,
-                            0,
-                            getModItem("EMT", "EMTItems", 1, 5, missing))
-                    .setPages(new ResearchPage("tc.research_page.ThaumiumPlate"))
-                    .setRound()
-                    .setAutoUnlock();
+                    "ThaumiumPlate",
+                    "EMT",
+                    new AspectList(),
+                    6,
+                    -6,
+                    0,
+                    getModItem("EMT", "EMTItems", 1, 5, missing))
+                            .setPages(new ResearchPage("tc.research_page.ThaumiumPlate")).setRound().setAutoUnlock();
             ResearchCategories.addResearch(research);
         }
     }
