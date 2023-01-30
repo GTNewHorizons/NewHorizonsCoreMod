@@ -26614,7 +26614,8 @@ public class GT_MachineRecipeLoader implements Runnable {
                     true);
             GT_Values.RA.addMultiblockChemicalRecipe(
                     new ItemStack[] {
-                        GT_Utility.copyAmount(0, Materials.Zeolite.getDust(5)), GT_Utility.getIntegratedCircuit(1)
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 0, false),
+                        GT_Utility.getIntegratedCircuit(1)
                     },
                     new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000)},
                     new FluidStack[] {
@@ -26640,7 +26641,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     500 * 10,
                     1_966_080);
             GT_Values.RA.addChemicalBathRecipe(
-                    GT_Utility.copyAmount(0L, Materials.Silver.getNanite(1)),
+                    GT_OreDictUnificator.get(OrePrefixes.nanite, Materials.Silver, 0, false),
                     Materials.Grade7PurifiedWater.getFluid(1000L),
                     Materials.Grade8PurifiedWater.getFluid(900L),
                     GT_ModHandler.getModItem("miscutils", "particleBase", 1L, 24), // Unknown particle
