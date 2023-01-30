@@ -2,10 +2,12 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Arrays;
+
+import net.minecraft.item.ItemStack;
+
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
-import java.util.Arrays;
-import net.minecraft.item.ItemStack;
 
 public class ScriptEnderIO implements IScriptLoader {
 
@@ -28,29 +30,28 @@ public class ScriptEnderIO implements IScriptLoader {
         ItemStack endestPearl = getModItem("Avaritia", "Endest_Pearl", 1);
         ItemStack fieldGeneratorZPM = ItemList.Field_Generator_ZPM.get(1);
 
-        ExtremeCraftingManager.getInstance()
-                .addExtremeShapedOreRecipe(
-                        teleportStaff,
-                        "      aaa",
-                        "     abca",
-                        "    abcba",
-                        "   abcba ",
-                        "   daba  ",
-                        "  deda   ",
-                        " dfd     ",
-                        "dfd      ",
-                        " d       ",
-                        'a',
-                        "plateDenseObsidian",
-                        'b',
-                        denseEnergyCell,
-                        'c',
-                        energyCell,
-                        'd',
-                        staffOfTravelling,
-                        'e',
-                        endestPearl,
-                        'f',
-                        fieldGeneratorZPM);
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                teleportStaff,
+                "      aaa",
+                "     abca",
+                "    abcba",
+                "   abcba ",
+                "   daba  ",
+                "  deda   ",
+                " dfd     ",
+                "dfd      ",
+                " d       ",
+                'a',
+                "plateDenseObsidian",
+                'b',
+                denseEnergyCell,
+                'c',
+                energyCell,
+                'd',
+                staffOfTravelling,
+                'e',
+                endestPearl,
+                'f',
+                fieldGeneratorZPM);
     }
 }

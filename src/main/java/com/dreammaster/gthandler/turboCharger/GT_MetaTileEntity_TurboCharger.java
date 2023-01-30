@@ -2,6 +2,8 @@ package com.dreammaster.gthandler.turboCharger;
 
 import static gregtech.api.enums.GT_Values.V;
 
+import net.minecraft.item.ItemStack;
+
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
@@ -11,20 +13,19 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Charger;
-import net.minecraft.item.ItemStack;
 
 /**
  * Created by danie_000 on 15.10.2016.
  */
 public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
 
-    public GT_MetaTileEntity_TurboCharger(
-            int aID, String aName, String aNameRegional, int aTier, String aDescription, int aSlotCount) {
+    public GT_MetaTileEntity_TurboCharger(int aID, String aName, String aNameRegional, int aTier, String aDescription,
+            int aSlotCount) {
         super(aID, aName, aNameRegional, aTier, aDescription, aSlotCount);
     }
 
-    public GT_MetaTileEntity_TurboCharger(
-            String aName, int aTier, String aDescription, ITexture[][][] aTextures, int aSlotCount) {
+    public GT_MetaTileEntity_TurboCharger(String aName, int aTier, String aDescription, ITexture[][][] aTextures,
+            int aSlotCount) {
         super(aName, aTier, aDescription, aTextures, aSlotCount);
     }
 
@@ -37,10 +38,9 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
     public ITexture[][][] getTextureSet(ITexture[] aTextures) {
         ITexture[][][] rTextures = new ITexture[2][17][];
         for (byte b = -1; b < 16; b++) {
-            rTextures[0][b + 1] = new ITexture[] {Textures.BlockIcons.MACHINE_CASINGS[mTier][b + 1]};
-            rTextures[1][b + 1] = new ITexture[] {
-                Textures.BlockIcons.MACHINE_CASINGS[mTier][b + 1], Textures.BlockIcons.OVERLAYS_ENERGY_OUT_POWER[mTier]
-            };
+            rTextures[0][b + 1] = new ITexture[] { Textures.BlockIcons.MACHINE_CASINGS[mTier][b + 1] };
+            rTextures[1][b + 1] = new ITexture[] { Textures.BlockIcons.MACHINE_CASINGS[mTier][b + 1],
+                    Textures.BlockIcons.OVERLAYS_ENERGY_OUT_POWER[mTier] };
         }
         return rTextures;
     }
@@ -97,19 +97,18 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
                     if (mMetaTileEntity.dechargerSlotCount() > 0
                             && mBaseMetaTileEntity.getStoredEU() < mBaseMetaTileEntity.getEUCapacity()) {
                         for (int i = mMetaTileEntity.dechargerSlotStartIndex(),
-                                        k = mMetaTileEntity.dechargerSlotCount() + i;
-                                i < k;
-                                i++) {
+                                k = mMetaTileEntity.dechargerSlotCount() + i; i < k; i++) {
                             if (mMetaTileEntity.mInventory[i] != null
                                     && mBaseMetaTileEntity.getStoredEU() < mBaseMetaTileEntity.getEUCapacity()) {
                                 // CODE
                                 mBaseMetaTileEntity.increaseStoredEnergyUnits(
                                         GT_ModHandler.dischargeElectricItem(
                                                 mMetaTileEntity.mInventory[i],
-                                                GT_Utility.safeInt(Math.min(
-                                                        V[mTier] * 120,
-                                                        mBaseMetaTileEntity.getEUCapacity()
-                                                                - mBaseMetaTileEntity.getStoredEU())),
+                                                GT_Utility.safeInt(
+                                                        Math.min(
+                                                                V[mTier] * 120,
+                                                                mBaseMetaTileEntity.getEUCapacity()
+                                                                        - mBaseMetaTileEntity.getStoredEU())),
                                                 (int) Math.min(Integer.MAX_VALUE, mMetaTileEntity.getInputTier()),
                                                 true,
                                                 false,
@@ -123,9 +122,7 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
                     }
                     if (mMetaTileEntity.rechargerSlotCount() > 0 && mBaseMetaTileEntity.getStoredEU() > 0) {
                         for (int i = mMetaTileEntity.rechargerSlotStartIndex(),
-                                        k = mMetaTileEntity.rechargerSlotCount() + i;
-                                i < k;
-                                i++) {
+                                k = mMetaTileEntity.rechargerSlotCount() + i; i < k; i++) {
                             if (mBaseMetaTileEntity.getStoredEU() > 0 && mMetaTileEntity.mInventory[i] != null) {
                                 // CODE
                                 mBaseMetaTileEntity.decreaseStoredEU(

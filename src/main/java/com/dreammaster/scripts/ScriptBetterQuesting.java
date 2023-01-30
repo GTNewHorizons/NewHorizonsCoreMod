@@ -16,10 +16,9 @@ public class ScriptBetterQuesting implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapedRecipe(getModItem("betterquesting", "submit_station", 1), new Object[] {
-            "plateWood", "plateSteel", "plateWood",
-            "plateSteel", "gearSteel", "plateSteel",
-            "plateWood", getModItem("minecraft", "chest", 1), "plateWood"
-        });
+        addShapedRecipe(
+                getModItem("betterquesting", "submit_station", 1),
+                new Object[] { "plateWood", "plateSteel", "plateWood", "plateSteel", "gearSteel", "plateSteel",
+                        "plateWood", getModItem("minecraft", "chest", 1), "plateWood" });
     }
 }

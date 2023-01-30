@@ -1,14 +1,17 @@
 package com.dreammaster.block;
 
-import com.dreammaster.creativetab.ModTabList;
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
-import eu.usrv.yamcore.blocks.ModBlockManager;
-import eu.usrv.yamcore.blocks.ModSimpleBaseBlock;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.creativetab.ModTabList;
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.MainRegistry;
+
+import eu.usrv.yamcore.blocks.ModBlockManager;
+import eu.usrv.yamcore.blocks.ModSimpleBaseBlock;
+
 public enum BlockList {
+
     SandClayMix(new ModSimpleBaseBlock(new SandClayProperties(), ModTabList.ModBlocksTab)),
     CallistoColdIce(new ModSimpleBaseBlock(new CallistoColdIceProperties(), ModTabList.ModBlocksTab)),
     Ledox(new ModSimpleBaseBlock(new LedoxProperties(), ModTabList.ModBlocksTab)),

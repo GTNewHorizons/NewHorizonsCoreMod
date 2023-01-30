@@ -6,7 +6,9 @@ import static org.objectweb.asm.Opcodes.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+
 import net.minecraft.launchwrapper.IClassTransformer;
+
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
@@ -14,6 +16,7 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.util.TraceClassVisitor;
 
 public class DreamTransformer implements IClassTransformer {
+
     @Override
     public byte[] transform(String name, String transformedName, byte[] basicClass) {
         if (patchItemFocusWarding && name.equals("thaumcraft.common.items.wands.foci.ItemFocusWarding")) {
@@ -36,7 +39,9 @@ public class DreamTransformer implements IClassTransformer {
     }
 
     private static class ItemFocusWardingVisitor extends ClassVisitor {
+
         private static class ConstructorVisitor extends MethodVisitor {
+
             public ConstructorVisitor(int api, MethodVisitor mv) {
                 super(api, mv);
             }
@@ -44,15 +49,9 @@ public class DreamTransformer implements IClassTransformer {
             @Override
             public void visitInsn(int opcode) {
                 /*
-                Before:
-                public ItemFocusWarding() {
-                	this.func_77637_a(Thaumcraft.tabTC);
-                }
-                After
-                public ItemFocusWarding() {
-                	this.func_77637_a(Thaumcraft.tabTC).setContainerItem(this);
-                }
-                */
+                 * Before: public ItemFocusWarding() { this.func_77637_a(Thaumcraft.tabTC); } After public
+                 * ItemFocusWarding() { this.func_77637_a(Thaumcraft.tabTC).setContainerItem(this); }
+                 */
                 if (opcode == POP) {
                     logger.debug("Adding setContainerItem() call");
                     mv.visitVarInsn(ALOAD, 0);
@@ -85,13 +84,8 @@ public class DreamTransformer implements IClassTransformer {
         @Override
         public void visitEnd() {
             /*
-            Before:
-            // nothing
-            After
-            @Override
-            public ItemStack getContainerItem(ItemStack stack) {
-            	return stack.copy();
-            }
+             * Before: // nothing After
+             * @Override public ItemStack getContainerItem(ItemStack stack) { return stack.copy(); }
              */
             logger.debug("Adding getContainerItem()");
             MethodVisitor mv = cv.visitMethod(

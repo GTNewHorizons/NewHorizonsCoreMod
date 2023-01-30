@@ -8,6 +8,16 @@ import static gregtech.api.util.GT_StructureUtility.ofHatchAdderOptional;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
+
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.casings.GT_Container_CasingsNH;
 import com.dreammaster.item.ItemList;
@@ -15,6 +25,7 @@ import com.dreammaster.main.MainRegistry;
 import com.gtnewhorizon.structurelib.alignment.IAlignmentLimits;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
+
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
@@ -27,17 +38,10 @@ import gregtech.api.util.GT_Multiblock_Tooltip_Builder;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
-import java.util.ArrayList;
-import java.util.Arrays;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public abstract class GT_MetaTileEntity_AirFilterBase
         extends GT_MetaTileEntity_EnhancedMultiBlockBase<GT_MetaTileEntity_AirFilterBase> {
+
     protected int baseEff = 0;
     protected int multiTier = 0;
     protected int chunkIndex = 0;
@@ -49,20 +53,20 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     protected int filterUsageRemaining = 0;
     protected int tickCounter = 0; // because we can't trust the world tick, it may be in a dim with eternal day, etc
     protected static final String STRUCTURE_PIECE_MAIN = "main";
-    protected static final ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>> STRUCTURE_DEFINITION =
-            new ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>>() {
-                @Override
-                protected IStructureDefinition<GT_MetaTileEntity_AirFilterBase> computeValue(Class<?> type) {
-                    return StructureDefinition.<GT_MetaTileEntity_AirFilterBase>builder()
-                            .addShape(STRUCTURE_PIECE_MAIN, transpose(new String[][] {
-                                {"xxx", "xxx", "xxx"},
-                                {"vmv", "m-m", "vmv"},
-                                {"vmv", "m-m", "vmv"},
-                                {"c~c", "ccc", "ccc"},
-                            }))
-                            .addElement(
-                                    'c',
-                                    lazy(x -> ofChain(
+    protected static final ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>> STRUCTURE_DEFINITION = new ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>>() {
+
+        @Override
+        protected IStructureDefinition<GT_MetaTileEntity_AirFilterBase> computeValue(Class<?> type) {
+            return StructureDefinition.<GT_MetaTileEntity_AirFilterBase>builder()
+                    .addShape(
+                            STRUCTURE_PIECE_MAIN,
+                            transpose(
+                                    new String[][] { { "xxx", "xxx", "xxx" }, { "vmv", "m-m", "vmv" },
+                                            { "vmv", "m-m", "vmv" }, { "c~c", "ccc", "ccc" }, }))
+                    .addElement(
+                            'c',
+                            lazy(
+                                    x -> ofChain(
                                             ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta()),
                                             ofHatchAdder(
                                                     GT_MetaTileEntity_AirFilterBase::addMaintenanceToMachineList,
@@ -80,21 +84,20 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                                                     GT_MetaTileEntity_AirFilterBase::addEnergyInputToMachineList,
                                                     x.getCasingIndex(),
                                                     1))))
-                            .addElement(
-                                    'x', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta())))
-                            .addElement(
-                                    'v', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getPipeMeta())))
-                            .addElement(
-                                    'm',
-                                    lazy(x -> ofHatchAdderOptional(
+                    .addElement('x', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta())))
+                    .addElement('v', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getPipeMeta())))
+                    .addElement(
+                            'm',
+                            lazy(
+                                    x -> ofHatchAdderOptional(
                                             GT_MetaTileEntity_AirFilterBase::addMufflerToMachineList,
                                             x.getCasingIndex(),
                                             2,
                                             GT_Container_CasingsNH.sBlockCasingsNH,
                                             x.getCasingMeta())))
-                            .build();
-                }
-            };
+                    .build();
+        }
+    };
 
     @Override
     public final IStructureDefinition<GT_MetaTileEntity_AirFilterBase> getStructureDefinition() {
@@ -108,14 +111,13 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     @Override
     public boolean checkMachine(IGregTechTileEntity aBaseMetaTileEntity, ItemStack aStack) {
-        return checkPiece(STRUCTURE_PIECE_MAIN, 1, 3, 0)
-                && !mMufflerHatches.isEmpty()
+        return checkPiece(STRUCTURE_PIECE_MAIN, 1, 3, 0) && !mMufflerHatches.isEmpty()
                 && mMaintenanceHatches.size() == 1;
     }
 
     static final GT_Recipe tRecipeT1 = new GT_Recipe(
-            new ItemStack[] {CustomItemList.AdsorptionFilter.get(1L, new Object())},
-            new ItemStack[] {CustomItemList.AdsorptionFilterDirty.get(1L, new Object())},
+            new ItemStack[] { CustomItemList.AdsorptionFilter.get(1L, new Object()) },
+            new ItemStack[] { CustomItemList.AdsorptionFilterDirty.get(1L, new Object()) },
             null,
             null,
             null,
@@ -124,8 +126,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             30,
             0);
     static final GT_Recipe tRecipeT2 = new GT_Recipe(
-            new ItemStack[] {CustomItemList.AdsorptionFilter.get(1L, new Object())},
-            new ItemStack[] {CustomItemList.AdsorptionFilterDirty.get(1L, new Object())},
+            new ItemStack[] { CustomItemList.AdsorptionFilter.get(1L, new Object()) },
+            new ItemStack[] { CustomItemList.AdsorptionFilterDirty.get(1L, new Object()) },
             null,
             null,
             null,
@@ -134,8 +136,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             480,
             0);
     static final GT_Recipe tRecipeT3 = new GT_Recipe(
-            new ItemStack[] {CustomItemList.AdsorptionFilter.get(1L, new Object())},
-            new ItemStack[] {CustomItemList.AdsorptionFilterDirty.get(1L, new Object())},
+            new ItemStack[] { CustomItemList.AdsorptionFilter.get(1L, new Object()) },
+            new ItemStack[] { CustomItemList.AdsorptionFilterDirty.get(1L, new Object()) },
             null,
             null,
             null,
@@ -196,50 +198,39 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     @Override
     protected GT_Multiblock_Tooltip_Builder createTooltip() {
         final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
-        tt.addMachineType("Air Filter")
-                .addInfo("Controller block for the Electric Air Filter T" + multiTier)
+        tt.addMachineType("Air Filter").addInfo("Controller block for the Electric Air Filter T" + multiTier)
                 .addInfo("Needs a Turbine in the controller")
-                .addInfo("Add " + ItemList.AdsorptionFilter.getIS().getDisplayName()
-                        + " in input bus to double efficiency (30 uses per item)")
+                .addInfo(
+                        "Add " + ItemList.AdsorptionFilter.getIS().getDisplayName()
+                                + " in input bus to double efficiency (30 uses per item)")
                 .addInfo("Machine tier = Maximum effective Muffler tier")
                 .addInfo("Can process " + (2 * multiTier + 1) + "x" + (2 * multiTier + 1) + " chunks")
-                .addInfo("Each muffler reduce pollution by " + MainRegistry.CoreConfig.globalMultiplicator
-                        + " * bonusMultiTier * turbineEff * multiEff * Floor(" + MainRegistry.CoreConfig.scalingFactor
-                        + "^effectiveTier) every second")
-                .addInfo("The value of bonusMultiTier for this controller is: " + getBonusByTier())
-                .addSeparator()
-                .beginStructureBlock(3, 4, 3, true)
-                .addController("Front bottom")
+                .addInfo(
+                        "Each muffler reduce pollution by " + MainRegistry.CoreConfig.globalMultiplicator
+                                + " * bonusMultiTier * turbineEff * multiEff * Floor("
+                                + MainRegistry.CoreConfig.scalingFactor
+                                + "^effectiveTier) every second")
+                .addInfo("The value of bonusMultiTier for this controller is: " + getBonusByTier()).addSeparator()
+                .beginStructureBlock(3, 4, 3, true).addController("Front bottom")
                 .addOtherStructurePart(getCasingString(), "Top and bottom")
                 .addOtherStructurePart(getPipeString(), "Corners of the middle 2 layers")
                 .addOtherStructurePart("Muffler Hatch Or " + getPipeString(), "8 in the middle layers")
-                .addEnergyHatch("Any bottom layer casing", 1)
-                .addMaintenanceHatch("Any bottom layer casing", 1)
-                .addInputBus("Any bottom layer casing", 1)
-                .addOutputBus("Any bottom layer casing", 1)
-                .addMufflerHatch("Middle Center", 2)
-                .toolTipFinisher("GTNH Coremod");
+                .addEnergyHatch("Any bottom layer casing", 1).addMaintenanceHatch("Any bottom layer casing", 1)
+                .addInputBus("Any bottom layer casing", 1).addOutputBus("Any bottom layer casing", 1)
+                .addMufflerHatch("Middle Center", 2).toolTipFinisher("GTNH Coremod");
         return tt;
     }
 
     @Override
-    public ITexture[] getTexture(
-            IGregTechTileEntity aBaseMetaTileEntity,
-            byte aSide,
-            byte aFacing,
-            byte aColorIndex,
-            boolean aActive,
-            boolean aRedstone) {
+    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, byte aSide, byte aFacing, byte aColorIndex,
+            boolean aActive, boolean aRedstone) {
         if (aSide == aFacing) {
-            return new ITexture[] {
-                Textures.BlockIcons.getCasingTextureForId(getCasingIndex()),
-                new GT_RenderedTexture(
-                        aActive
-                                ? Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE
-                                : Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE)
-            };
+            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()),
+                    new GT_RenderedTexture(
+                            aActive ? Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE
+                                    : Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE) };
         }
-        return new ITexture[] {Textures.BlockIcons.getCasingTextureForId(getCasingIndex())};
+        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()) };
     }
 
     public abstract float getBonusByTier();
@@ -248,12 +239,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
-        return aStack != null
-                && aStack.getItem() instanceof GT_MetaGenerated_Tool_01
-                && ((GT_MetaGenerated_Tool) aStack.getItem())
-                                .getToolStats(aStack)
-                                .getSpeedMultiplier()
-                        > 0
+        return aStack != null && aStack.getItem() instanceof GT_MetaGenerated_Tool_01
+                && ((GT_MetaGenerated_Tool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier() > 0
                 && GT_MetaGenerated_Tool.getPrimaryMaterial(aStack).mToolSpeed > 0
                 && aStack.getItemDamage() > 169
                 && aStack.getItemDamage() < 180;
@@ -284,8 +271,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             pollutionPerSecond = (int) (pollutionPerSecond * MainRegistry.CoreConfig.boostPerAbsorptionFilter);
         }
         // apply the rest of the coefs
-        pollutionPerSecond = (int) (pollutionPerSecond
-                * turbineEff
+        pollutionPerSecond = (int) (pollutionPerSecond * turbineEff
                 * multiEff
                 * getBonusByTier()
                 * MainRegistry.CoreConfig.globalMultiplicator);
@@ -355,7 +341,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
             // when the filter finished its last usage, we give it back in dirty form.
             if (filterUsageRemaining == 0) {
-                mOutputItems = new ItemStack[] {getRecipe().getOutput(0)};
+                mOutputItems = new ItemStack[] { getRecipe().getOutput(0) };
                 isFilterLoaded = false;
             } else {
                 mOutputItems = null; // no return until the filter has been totally consumed
@@ -386,8 +372,10 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     }
 
     public void cleanPollution() {
-        int pollutionCleaningRatePerSecond =
-                getPollutionCleaningRatePerSecond(baseEff / 10000f, mEfficiency / 10000f, isFilterLoaded);
+        int pollutionCleaningRatePerSecond = getPollutionCleaningRatePerSecond(
+                baseEff / 10000f,
+                mEfficiency / 10000f,
+                isFilterLoaded);
         if (pollutionCleaningRatePerSecond > 0) {
             if (mode == 0) { // processing chunk normally
                 chunkList[chunkIndex].removePollution(pollutionCleaningRatePerSecond);
@@ -456,11 +444,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             int Zpos = aBaseMetaTileEntity.getZCoord()
                     + ForgeDirection.getOrientation(aBaseMetaTileEntity.getBackFacing()).offsetZ;
             try {
-                aBaseMetaTileEntity
-                        .getWorld()
+                aBaseMetaTileEntity.getWorld()
                         .markBlockRangeForRenderUpdate(Xpos - 1, Ypos, Zpos - 1, Xpos + 1, Ypos, Zpos + 1);
-            } catch (Exception ignored) {
-            }
+            } catch (Exception ignored) {}
         }
         super.onPostTick(aBaseMetaTileEntity, aTick);
     }
@@ -511,37 +497,52 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             }
             chunkIndex = 0;
             populateChunkList();
-            PlayerChatHelper.SendInfo(
-                    aPlayer, "Electric air filter is now working in a " + size + "x" + size + " area");
+            PlayerChatHelper
+                    .SendInfo(aPlayer, "Electric air filter is now working in a " + size + "x" + size + " area");
         }
     }
 
     @Override
     public String[] getInfoData() {
-        return new String[] {
-            "Progress:",
-            EnumChatFormatting.GREEN + Integer.toString(mProgresstime / 20) + EnumChatFormatting.RESET + " s / "
-                    + EnumChatFormatting.YELLOW + mMaxProgresstime / 20 + EnumChatFormatting.RESET + " s",
-            "Stored Energy:",
-            EnumChatFormatting.GREEN + Long.toString(getBaseMetaTileEntity().getStoredEU()) + EnumChatFormatting.RESET
-                    + " EU / " + EnumChatFormatting.YELLOW
-                    + getBaseMetaTileEntity().getEUCapacity() + EnumChatFormatting.RESET + " EU",
-            "Probably uses: " +
-                    // negative EU triggers special EU consumption behavior. however it does not produce power.
-                    EnumChatFormatting.RED
-                    + Math.abs(mEUt) + EnumChatFormatting.RESET + " EU/t",
-            "Max Energy Income: " + EnumChatFormatting.YELLOW
-                    + getMaxInputVoltage() + EnumChatFormatting.RESET + " EU/t(*2A) Tier: " + EnumChatFormatting.YELLOW
-                    + VN[GT_Utility.getTier(getMaxInputVoltage())] + EnumChatFormatting.RESET,
-            "Problems: " + EnumChatFormatting.RED
-                    + (getIdealStatus() - getRepairStatus()) + EnumChatFormatting.RESET + " Efficiency: "
-                    + EnumChatFormatting.YELLOW
-                    + mEfficiency / 100.0F + EnumChatFormatting.RESET + " %",
-            "Pollution reduction: " + EnumChatFormatting.GREEN
-                    + getPollutionCleaningRatePerTick(baseEff / 10000f, mEfficiency / 10000f, isFilterLoaded)
-                    + EnumChatFormatting.RESET + " gibbl/t",
-            "Has a filter in it: " + isFilterLoaded,
-            "remaining cycles for the filter (if present): " + filterUsageRemaining
-        };
+        return new String[] { "Progress:",
+                EnumChatFormatting.GREEN + Integer.toString(mProgresstime / 20)
+                        + EnumChatFormatting.RESET
+                        + " s / "
+                        + EnumChatFormatting.YELLOW
+                        + mMaxProgresstime / 20
+                        + EnumChatFormatting.RESET
+                        + " s",
+                "Stored Energy:",
+                EnumChatFormatting.GREEN + Long.toString(getBaseMetaTileEntity().getStoredEU())
+                        + EnumChatFormatting.RESET
+                        + " EU / "
+                        + EnumChatFormatting.YELLOW
+                        + getBaseMetaTileEntity().getEUCapacity()
+                        + EnumChatFormatting.RESET
+                        + " EU",
+                "Probably uses: " +
+                // negative EU triggers special EU consumption behavior. however it does not produce power.
+                        EnumChatFormatting.RED + Math.abs(mEUt) + EnumChatFormatting.RESET + " EU/t",
+                "Max Energy Income: " + EnumChatFormatting.YELLOW
+                        + getMaxInputVoltage()
+                        + EnumChatFormatting.RESET
+                        + " EU/t(*2A) Tier: "
+                        + EnumChatFormatting.YELLOW
+                        + VN[GT_Utility.getTier(getMaxInputVoltage())]
+                        + EnumChatFormatting.RESET,
+                "Problems: " + EnumChatFormatting.RED
+                        + (getIdealStatus() - getRepairStatus())
+                        + EnumChatFormatting.RESET
+                        + " Efficiency: "
+                        + EnumChatFormatting.YELLOW
+                        + mEfficiency / 100.0F
+                        + EnumChatFormatting.RESET
+                        + " %",
+                "Pollution reduction: " + EnumChatFormatting.GREEN
+                        + getPollutionCleaningRatePerTick(baseEff / 10000f, mEfficiency / 10000f, isFilterLoaded)
+                        + EnumChatFormatting.RESET
+                        + " gibbl/t",
+                "Has a filter in it: " + isFilterLoaded,
+                "remaining cycles for the filter (if present): " + filterUsageRemaining };
     }
 }

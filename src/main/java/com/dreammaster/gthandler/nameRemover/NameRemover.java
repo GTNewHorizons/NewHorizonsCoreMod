@@ -2,12 +2,19 @@ package com.dreammaster.gthandler.nameRemover;
 
 import static net.minecraft.util.EnumChatFormatting.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+
 import com.dreammaster.gthandler.gui.CoreMod_UITextures;
 import com.gtnewhorizons.modularui.api.math.Pos2d;
 import com.gtnewhorizons.modularui.api.math.Size;
 import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.gtnewhorizons.modularui.common.widget.ProgressBar;
+
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
@@ -15,15 +22,12 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine;
 import gregtech.api.objects.GT_RenderedTexture;
 import gregtech.common.items.GT_IntegratedCircuit_Item;
-import java.util.ArrayList;
-import java.util.List;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 
 /**
  * Created by Tec on 28.03.2017.
  */
 public class NameRemover extends GT_MetaTileEntity_BasicMachine {
+
     public NameRemover(int aID, String aName, String aNameRegional, int aTier) {
         super(
                 aID,
@@ -46,8 +50,8 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
                 new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER));
     }
 
-    public NameRemover(
-            String aName, int aTier, String aDescription, ITexture[][][] aTextures, String aGUIName, String aNEIName) {
+    public NameRemover(String aName, int aTier, String aDescription, ITexture[][][] aTextures, String aGUIName,
+            String aNEIName) {
         super(aName, aTier, 1, aDescription, aTextures, 2, 1, aGUIName, aNEIName);
     }
 
@@ -156,11 +160,12 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
     @Override
     public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
         super.addUIWidgets(builder, buildContext);
-        builder.widget(createProgressBar(
-                CoreMod_UITextures.PROGRESSBAR_NAME_REMOVER,
-                20,
-                ProgressBar.Direction.RIGHT,
-                new Pos2d(78, 24),
-                new Size(20, 18)));
+        builder.widget(
+                createProgressBar(
+                        CoreMod_UITextures.PROGRESSBAR_NAME_REMOVER,
+                        20,
+                        ProgressBar.Direction.RIGHT,
+                        new Pos2d(78, 24),
+                        new Size(20, 18)));
     }
 }

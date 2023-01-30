@@ -1,16 +1,19 @@
 package com.dreammaster.block;
 
-import eu.usrv.yamcore.iface.IExtendedBlockProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
+import eu.usrv.yamcore.iface.IExtendedBlockProperties;
+
 /**
- * This is the helper class to define extended properties for your block. If you decide to use it,
- * you *MUST* define every value or it will not register properly or may even crash.
+ * This is the helper class to define extended properties for your block. If you decide to use it, you *MUST* define
+ * every value or it will not register properly or may even crash.
+ * 
  * @author Namikon
  *
  */
 public class BronzePlatedReinforcedStoneProperties implements IExtendedBlockProperties {
+
     @Override
     public Material getMaterial() {
         return Material.iron;

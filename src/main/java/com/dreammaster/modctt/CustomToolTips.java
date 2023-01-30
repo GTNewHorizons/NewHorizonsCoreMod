@@ -1,10 +1,13 @@
 package com.dreammaster.modctt;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.*;
+
 import net.minecraft.item.ItemStack;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "CustomToolTips")
@@ -55,6 +58,7 @@ public class CustomToolTips {
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType
     public static class ItemToolTip {
+
         @XmlAttribute(name = "ItemName")
         protected String mUnlocalizedName;
 

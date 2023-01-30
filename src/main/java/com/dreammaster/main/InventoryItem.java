@@ -8,11 +8,12 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants;
 
 /*
- * Create your new class and implement IInventory - it will automatically create all the methods you need, but you need to fill them in with
- * code. We make our constructor take an ItemStack argument so we can get and / or set the NBT Tag Compound. This is how we can save our
- * inventory within an "Item" - by using its enclosing ItemStack.
+ * Create your new class and implement IInventory - it will automatically create all the methods you need, but you need
+ * to fill them in with code. We make our constructor take an ItemStack argument so we can get and / or set the NBT Tag
+ * Compound. This is how we can save our inventory within an "Item" - by using its enclosing ItemStack.
  */
 public class InventoryItem implements IInventory {
+
     private String name = "Inventory Item";
 
     /** Provides NBT Tag Compound to reference */
@@ -25,8 +26,7 @@ public class InventoryItem implements IInventory {
     private ItemStack[] inventory = new ItemStack[INV_SIZE];
 
     /**
-     * @param itemstack
-     *            - the ItemStack to which this inventory belongs
+     * @param itemstack - the ItemStack to which this inventory belongs
      */
     public InventoryItem(ItemStack stack) {
         invItem = stack;
@@ -106,9 +106,9 @@ public class InventoryItem implements IInventory {
     }
 
     /**
-     * This is the method that will handle saving the inventory contents, as it is called (or should be called!) anytime the inventory
-     * changes. Perfect. Much better than using onUpdate in an Item, as this will also let you change things in your inventory without ever
-     * opening a Gui, if you want.
+     * This is the method that will handle saving the inventory contents, as it is called (or should be called!) anytime
+     * the inventory changes. Perfect. Much better than using onUpdate in an Item, as this will also let you change
+     * things in your inventory without ever opening a Gui, if you want.
      */
     // 1.7.2+ renamed to markDirty
     @Override
@@ -137,8 +137,8 @@ public class InventoryItem implements IInventory {
     public void closeInventory() {}
 
     /**
-     * This method doesn't seem to do what it claims to do, as items can still be left-clicked and placed in the inventory even when this
-     * returns false
+     * This method doesn't seem to do what it claims to do, as items can still be left-clicked and placed in the
+     * inventory even when this returns false
      */
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack itemstack) {

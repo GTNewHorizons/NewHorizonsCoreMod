@@ -1,11 +1,12 @@
 package com.dreammaster.modfixes.enderIO;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+
 import cpw.mods.fml.common.event.FMLInterModComms;
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.machine.soul.SoulBinderRecipeManager;
 import crazypants.enderio.material.FrankenSkull;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 
 public class FrankenskullFix {
 

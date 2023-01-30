@@ -1,8 +1,9 @@
 package com.dreammaster.modhazardousitems;
 
 public class HazardousObjectFactory {
-    public HazardousItems.HazardousFluid createHazardousFluid(
-            String pFluidName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory) {
+
+    public HazardousItems.HazardousFluid createHazardousFluid(String pFluidName, boolean pExactMatch,
+            boolean pOnContact, boolean pOnInventory) {
         HazardousItems.HazardousFluid hi = new HazardousItems.HazardousFluid();
         hi.setFluidName(pFluidName);
         hi.setExactMatch(pExactMatch);
@@ -11,8 +12,8 @@ public class HazardousObjectFactory {
         return hi;
     }
 
-    public HazardousItems.HazardousItem createHazardousItemsHazardousItem(
-            String pItemName, boolean pExactMatch, boolean pOnContact, boolean pOnInventory) {
+    public HazardousItems.HazardousItem createHazardousItemsHazardousItem(String pItemName, boolean pExactMatch,
+            boolean pOnContact, boolean pOnInventory) {
         HazardousItems.HazardousItem hi = new HazardousItems.HazardousItem();
         hi.setItemName(pItemName);
         hi.setExactMatch(pExactMatch);

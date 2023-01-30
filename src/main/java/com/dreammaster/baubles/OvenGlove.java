@@ -1,21 +1,7 @@
 package com.dreammaster.baubles;
 
-import baubles.api.BaubleType;
-import baubles.api.IBauble;
-import baubles.common.container.InventoryBaubles;
-import baubles.common.lib.PlayerHandler;
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
-import com.dreammaster.main.NHItems;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.relauncher.Side;
-import eu.usrv.yamcore.auxiliary.Hacks;
-import eu.usrv.yamcore.client.Notification;
-import eu.usrv.yamcore.client.NotificationTickHandler;
-import eu.usrv.yamcore.iface.IExtendedModItem;
-import gregtech.api.damagesources.GT_DamageSources.DamageSourceHotItem;
 import java.util.List;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,10 +14,30 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import baubles.api.BaubleType;
+import baubles.api.IBauble;
+import baubles.common.container.InventoryBaubles;
+import baubles.common.lib.PlayerHandler;
+
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.MainRegistry;
+import com.dreammaster.main.NHItems;
+
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import eu.usrv.yamcore.auxiliary.Hacks;
+import eu.usrv.yamcore.client.Notification;
+import eu.usrv.yamcore.client.NotificationTickHandler;
+import eu.usrv.yamcore.iface.IExtendedModItem;
+import gregtech.api.damagesources.GT_DamageSources.DamageSourceHotItem;
+
 public final class OvenGlove extends Item implements IBauble, IExtendedModItem<OvenGlove> {
+
     public static final Logger LOGGER = LogManager.getLogger();
     private static final String NBTTAG_DURABILITY = "Durability";
 
@@ -129,15 +135,14 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
             ItemStack ring1 = baubles.stackList[1];
             ItemStack ring2 = baubles.stackList[2];
 
-            if (ring1 == null
-                    || ring2 == null
+            if (ring1 == null || ring2 == null
                     || !(ring1.getItem() instanceof OvenGlove)
                     || !(ring2.getItem() instanceof OvenGlove)) {
                 return;
             }
 
-            if (ring1.getItemDamage() != 0
-                    || ring2.getItemDamage() != 1) { // When the left one is on 'right' hand or vice versa
+            if (ring1.getItemDamage() != 0 || ring2.getItemDamage() != 1) { // When the left one is on 'right' hand or
+                                                                            // vice versa
                 Notification noti = new Notification(ring1, "Wrong place", "The gloves feel weird...");
                 NotificationTickHandler.guiNotification.queueNotification(noti);
             }
@@ -147,8 +152,7 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
     }
 
     private boolean shouldNotify(EntityLivingBase entity) {
-        return entity instanceof EntityPlayer
-                && entity.worldObj.isRemote
+        return entity instanceof EntityPlayer && entity.worldObj.isRemote
                 && entity == Hacks.safeCast(Minecraft.getMinecraft().thePlayer);
     }
 
@@ -198,6 +202,7 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
     }
 
     public static class EventHandler {
+
         @SubscribeEvent
         public void onDamage(LivingAttackEvent event) {
             Entity entity = event.entity;
@@ -218,20 +223,19 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
             ItemStack ring1 = baubles.stackList[1];
             ItemStack ring2 = baubles.stackList[2];
 
-            if (ring1 == null
-                    || ring2 == null
+            if (ring1 == null || ring2 == null
                     || !(ring1.getItem() instanceof OvenGlove)
                     || !(ring2.getItem() instanceof OvenGlove)) {
                 return;
             }
 
-            if (ring1.getItemDamage() != 0
-                    || ring2.getItemDamage() != 1) { // When the left one is on 'right' hand or vice versa
+            if (ring1.getItemDamage() != 0 || ring2.getItemDamage() != 1) { // When the left one is on 'right' hand or
+                                                                            // vice versa
                 return;
             }
 
-            if (ring1.stackTagCompound == null
-                    || ring2.stackTagCompound == null) // Cheated gloves don't have NBT tags sometimes
+            if (ring1.stackTagCompound == null || ring2.stackTagCompound == null) // Cheated gloves don't have NBT tags
+                                                                                  // sometimes
             {
                 return;
             }
@@ -243,8 +247,8 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
 
             event.setCanceled(true);
 
-            int randomDamage =
-                    MainRegistry.Rnd.nextInt(10); // Randomly damage gloves while giving the protection effect
+            int randomDamage = MainRegistry.Rnd.nextInt(10); // Randomly damage gloves while giving the protection
+                                                             // effect
 
             if (randomDamage == 1) {
                 OvenGlove.damageItem(ring1);

@@ -1,13 +1,16 @@
 package com.dreammaster.modbabychest;
 
-import cpw.mods.fml.client.FMLClientHandler;
 import net.minecraft.client.model.ModelChest;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer;
+
 import org.lwjgl.opengl.GL11;
 
+import cpw.mods.fml.client.FMLClientHandler;
+
 public class RenderItemBabyChest implements IItemRenderer {
+
     private final ModelChest _mModelChest;
 
     public RenderItemBabyChest() {
@@ -20,8 +23,8 @@ public class RenderItemBabyChest implements IItemRenderer {
     }
 
     @Override
-    public boolean shouldUseRenderHelper(
-            ItemRenderType pItemRenderType, ItemStack pItemStack, ItemRendererHelper pItemRendererHelper) {
+    public boolean shouldUseRenderHelper(ItemRenderType pItemRenderType, ItemStack pItemStack,
+            ItemRendererHelper pItemRendererHelper) {
         return true;
     }
 
@@ -35,9 +38,7 @@ public class RenderItemBabyChest implements IItemRenderer {
         // Bind texture, scale
         tScale = 0.5F;
 
-        FMLClientHandler.instance()
-                .getClient()
-                .renderEngine
+        FMLClientHandler.instance().getClient().renderEngine
                 .bindTexture(new ResourceLocation("minecraft:textures/entity/chest/normal.png"));
 
         // Translate and render

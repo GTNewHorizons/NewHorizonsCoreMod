@@ -1,15 +1,9 @@
 package com.dreammaster.command;
 
-import com.dreammaster.main.MainRegistry;
-import com.dreammaster.modfixes.IModFix;
-import com.dreammaster.modfixes.ModFixesMaster;
-import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
-import cpw.mods.fml.common.registry.GameRegistry;
-import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
-import eu.usrv.yamcore.auxiliary.PlayerHelper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -19,9 +13,19 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
+import com.dreammaster.main.MainRegistry;
+import com.dreammaster.modfixes.IModFix;
+import com.dreammaster.modfixes.ModFixesMaster;
+import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
+import eu.usrv.yamcore.auxiliary.PlayerHelper;
+
 // Use this command for your own needs. Add stuff you want to test/debug. This
 // command is only available while running in debug mode
 public class AllPurposeDebugCommand implements ICommand {
+
     private List aliases;
 
     public AllPurposeDebugCommand() {
@@ -68,8 +72,8 @@ public class AllPurposeDebugCommand implements ICommand {
 
                 PlayerChatHelper.SendInfo(pCmdSender, "POS: x/z %d / %d", x, z);
                 PlayerChatHelper.SendInfo(pCmdSender, "DimID: %d", tWorldObj.provider.dimensionId);
-                PlayerChatHelper.SendInfo(
-                        pCmdSender, "BiomeID / Name: %d / %s", tBiomeInfo.biomeID, tBiomeInfo.biomeName);
+                PlayerChatHelper
+                        .SendInfo(pCmdSender, "BiomeID / Name: %d / %s", tBiomeInfo.biomeID, tBiomeInfo.biomeName);
             } else if ("reloadconfig".equalsIgnoreCase(pArgs[0])) {
                 MainRegistry.CoreConfig.LoadConfig();
                 PlayerChatHelper.SendInfo(pCmdSender, "Config reloaded");
@@ -82,8 +86,8 @@ public class AllPurposeDebugCommand implements ICommand {
                             (int) ((EntityPlayer) pCmdSender).posY,
                             (int) ((EntityPlayer) pCmdSender).posZ);
 
-                    Vec3 calculatedPos = PlayerHelper.addDistanceByPlayerDirection(
-                            (EntityPlayer) pCmdSender, Integer.parseInt(pArgs[1]));
+                    Vec3 calculatedPos = PlayerHelper
+                            .addDistanceByPlayerDirection((EntityPlayer) pCmdSender, Integer.parseInt(pArgs[1]));
 
                     PlayerChatHelper.SendInfo(
                             pCmdSender,
@@ -91,13 +95,11 @@ public class AllPurposeDebugCommand implements ICommand {
                             (int) calculatedPos.xCoord,
                             (int) calculatedPos.yCoord,
                             (int) calculatedPos.zCoord);
-                    pCmdSender
-                            .getEntityWorld()
-                            .setBlock(
-                                    (int) calculatedPos.xCoord,
-                                    (int) calculatedPos.yCoord,
-                                    (int) calculatedPos.zCoord,
-                                    Blocks.bedrock);
+                    pCmdSender.getEntityWorld().setBlock(
+                            (int) calculatedPos.xCoord,
+                            (int) calculatedPos.yCoord,
+                            (int) calculatedPos.zCoord,
+                            Blocks.bedrock);
                 } else {
                     moarArgs(pCmdSender);
                 }
@@ -118,8 +120,8 @@ public class AllPurposeDebugCommand implements ICommand {
                             (double) Integer.parseInt(pArgs[2]),
                             ((EntityPlayer) pCmdSender).posZ);
                     // Offset Structure-gen by 50 Blocks from players current location
-                    Vec3 tOilStructPos = PlayerHelper.addDistanceByVecAndYaw(
-                            tSourcePos, ((EntityPlayer) pCmdSender).rotationYaw, 50);
+                    Vec3 tOilStructPos = PlayerHelper
+                            .addDistanceByVecAndYaw(tSourcePos, ((EntityPlayer) pCmdSender).rotationYaw, 50);
 
                     int tStructRadius = Integer.parseInt(pArgs[3]);
                     int tStructGroundLevel = Integer.parseInt(pArgs[4]);

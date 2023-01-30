@@ -2,6 +2,7 @@ package com.dreammaster.coremod;
 
 import java.awt.*;
 import java.awt.event.WindowEvent;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
@@ -47,8 +48,9 @@ class DownloadProgressDialog extends JDialog {
             buttonPane.setLayout(new FlowLayout(FlowLayout.CENTER));
             {
                 JButton cancelButton = new JButton("Cancel");
-                cancelButton.addActionListener(e -> DownloadProgressDialog.this.dispatchEvent(
-                        new WindowEvent(DownloadProgressDialog.this, WindowEvent.WINDOW_CLOSING)));
+                cancelButton.addActionListener(
+                        e -> DownloadProgressDialog.this.dispatchEvent(
+                                new WindowEvent(DownloadProgressDialog.this, WindowEvent.WINDOW_CLOSING)));
                 buttonPane.add(cancelButton);
             }
         }

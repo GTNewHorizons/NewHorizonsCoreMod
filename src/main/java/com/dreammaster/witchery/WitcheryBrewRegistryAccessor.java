@@ -1,19 +1,23 @@
 package com.dreammaster.witchery;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Hashtable;
+
+import net.minecraft.item.ItemStack;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.emoniph.witchery.brewing.AltarPower;
 import com.emoniph.witchery.brewing.BrewItemKey;
 import com.emoniph.witchery.brewing.WitcheryBrewRegistry;
 import com.emoniph.witchery.brewing.action.BrewAction;
 import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Hashtable;
-import net.minecraft.item.ItemStack;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 class WitcheryBrewRegistryAccessor {
+
     static final Logger log = LogManager.getLogger("WitcheryCompat");
     static final Method methodRegister;
     static final Field fieldRecipes;

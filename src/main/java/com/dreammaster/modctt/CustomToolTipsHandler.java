@@ -1,24 +1,29 @@
 package com.dreammaster.modctt;
 
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
-import com.dreammaster.network.msg.CTTClientSyncMessage;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent;
-import eu.usrv.yamcore.auxiliary.LogHelper;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.List;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.MainRegistry;
+import com.dreammaster.network.msg.CTTClientSyncMessage;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
+import eu.usrv.yamcore.auxiliary.LogHelper;
+
 public class CustomToolTipsHandler {
+
     private LogHelper _mLogger = MainRegistry.Logger;
     private String _mConfigFileName;
     private CustomToolTipsObjectFactory _mCttFactory = new CustomToolTipsObjectFactory();
@@ -45,12 +50,10 @@ public class CustomToolTipsHandler {
 
     public void InitSampleConfig() {
         _mCustomToolTips = new CustomToolTips();
-        _mCustomToolTips
-                .getToolTips()
+        _mCustomToolTips.getToolTips()
                 .add(_mCttFactory.createCustomItemToolTip("minecraft:stone", "Wow, such stone, much rock"));
         _mCustomToolTips.getToolTips().add(_mCttFactory.createCustomItemToolTip("minecraft:coal", "This is coal..."));
-        _mCustomToolTips
-                .getToolTips()
+        _mCustomToolTips.getToolTips()
                 .add(_mCttFactory.createCustomItemToolTip("minecraft:coal:1", "...and this charcoal!"));
     }
 
@@ -121,14 +124,12 @@ public class CustomToolTipsHandler {
     }
 
     /**
-     * Initiate reload. Will reload the config from disk and replace
-     * the internal list. If the file contains errors, nothing will be replaced, and
-     * an errormessage will be sent to the command issuer.
+     * Initiate reload. Will reload the config from disk and replace the internal list. If the file contains errors,
+     * nothing will be replaced, and an errormessage will be sent to the command issuer.
      * <p>
-     * This method will just load the config the first time it is called, as this will happen
-     * in the servers load/postinit phase. After that, every call is caused by someone who tried to
-     * do an ingame reload. If that is successful, the updated config is broadcasted to every
-     * connected client
+     * This method will just load the config the first time it is called, as this will happen in the servers
+     * load/postinit phase. After that, every call is caused by someone who tried to do an ingame reload. If that is
+     * successful, the updated config is broadcasted to every connected client
      *
      * @return
      */
@@ -170,8 +171,7 @@ public class CustomToolTipsHandler {
     }
 
     /**
-     * Reload tooltip configuration from disk. Will overwrite current List
-     * without restart, if the config file is valid
+     * Reload tooltip configuration from disk. Will overwrite current List without restart, if the config file is valid
      *
      * @return
      */
