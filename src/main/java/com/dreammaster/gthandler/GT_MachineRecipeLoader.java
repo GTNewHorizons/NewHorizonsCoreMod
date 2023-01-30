@@ -26582,24 +26582,24 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {NI},
                     new FluidStack[] {Materials.Water.getFluid(1000L)},
                     new ItemStack[] {NI},
-                    new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
+                    new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(900L)},
                     500 * 10,
                     30_720,
                     true);
             GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes.addRecipe(
-                    true,
-                    new ItemStack[] {NI},
+                    false,
+                    new ItemStack[] {GT_Utility.getIntegratedCircuit(1)},
                     null,
                     null,
                     new FluidStack[] {Materials.Grade1PurifiedWater.getFluid(1000L)},
-                    new FluidStack[] {Materials.Grade2PurifiedWater.getFluid(1000L)},
+                    new FluidStack[] {Materials.Grade2PurifiedWater.getFluid(900L)},
                     5000,
                     61_440,
                     0);
             GT_Values.RA.addDistillationTowerRecipe(
                     Materials.Grade2PurifiedWater.getFluid(1000L),
                     new FluidStack[] {
-                        Materials.Grade3PurifiedWater.getFluid(1000L),
+                        Materials.Grade3PurifiedWater.getFluid(900L),
                     },
                     null,
                     500 * 10,
@@ -26608,17 +26608,17 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0)}, // Hedenbergite Lens
                     new FluidStack[] {Materials.Grade3PurifiedWater.getFluid(1000L)},
                     new ItemStack[] {NI},
-                    new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000L)},
+                    new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(900L)},
                     500 * 10,
                     245_760,
                     true);
             GT_Values.RA.addMultiblockChemicalRecipe(
                     new ItemStack[] {
-                        GT_Utility.copyAmount(0, Materials.Zeolite.getDust(5), GT_Utility.getIntegratedCircuit(1))
+                        GT_Utility.copyAmount(0, Materials.Zeolite.getDust(5)), GT_Utility.getIntegratedCircuit(1)
                     },
                     new FluidStack[] {Materials.Grade4PurifiedWater.getFluid(1000)},
                     new FluidStack[] {
-                        Materials.Grade5PurifiedWater.getFluid(1000),
+                        Materials.Grade5PurifiedWater.getFluid(900),
                     },
                     null,
                     500 * 10,
@@ -26627,14 +26627,14 @@ public class GT_MachineRecipeLoader implements Runnable {
                     new ItemStack[] {WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0)}, // Bart Lens
                     new FluidStack[] {Materials.Grade5PurifiedWater.getFluid(1000L)},
                     new ItemStack[] {NI},
-                    new FluidStack[] {Materials.Grade6PurifiedWater.getFluid(1000L)},
+                    new FluidStack[] {Materials.Grade6PurifiedWater.getFluid(900L)},
                     500 * 10,
                     983_040,
                     true);
             GT_Values.RA.addDistillationTowerRecipe(
                     Materials.Grade6PurifiedWater.getFluid(1000L),
                     new FluidStack[] {
-                        Materials.Grade7PurifiedWater.getFluid(1000L),
+                        Materials.Grade7PurifiedWater.getFluid(900L),
                     },
                     null,
                     500 * 10,
@@ -26642,7 +26642,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             GT_Values.RA.addChemicalBathRecipe(
                     GT_Utility.copyAmount(0L, Materials.Silver.getNanite(1)),
                     Materials.Grade7PurifiedWater.getFluid(1000L),
-                    Materials.Grade8PurifiedWater.getFluid(1000L),
+                    Materials.Grade8PurifiedWater.getFluid(900L),
                     GT_ModHandler.getModItem("miscutils", "particleBase", 1L, 24), // Unknown particle
                     GT_Values.NI,
                     GT_Values.NI,
