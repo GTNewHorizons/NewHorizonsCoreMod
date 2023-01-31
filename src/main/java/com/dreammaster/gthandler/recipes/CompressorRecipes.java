@@ -115,6 +115,10 @@ public class CompressorRecipes implements Runnable{
                 300,
                 2);
 
+        GT_ModHandler.addCompressionRecipe(
+                GT_ModHandler.getModItem("Natura", "barleyFood", 8, 0),
+                ItemList.IC2_Plantball.get(1));
+
         if (Loader.isModLoaded("Thaumcraft")) {
             // Arcane Slabs -> Arcane Stone
             GT_Values.RA.addCompressorRecipe(

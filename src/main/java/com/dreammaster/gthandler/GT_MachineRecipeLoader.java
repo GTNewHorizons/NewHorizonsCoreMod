@@ -212,9 +212,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 50,
                 90);
 
-        GT_ModHandler.addCompressionRecipe(
-                GT_ModHandler.getModItem("Natura", "barleyFood", 8, 0),
-                ItemList.IC2_Plantball.get(1));
 
         GT_RecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
 
