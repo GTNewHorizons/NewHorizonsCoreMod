@@ -11,7 +11,7 @@ public class RecipeRemoval implements Runnable {
     @Override
     public void run() {
         disassemblerBlacklist();
-        
+
         if (Loader.isModLoaded("IC2")) {
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumHelmet", 1, GT_Values.W));
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumBodyarmor", 1, GT_Values.W));
