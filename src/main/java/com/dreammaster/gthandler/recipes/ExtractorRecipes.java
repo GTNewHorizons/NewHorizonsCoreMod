@@ -27,6 +27,10 @@ public class ExtractorRecipes implements Runnable {
         }
 
         if (Loader.isModLoaded("TConstruct")) {
+            GT_ModHandler.addExtractionRecipe(
+                    GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2),
+                    GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
+
             GT_Values.RA.addExtractorRecipe(
                     GT_ModHandler.getModItem("TConstruct", "slime.sapling", 1L, 0),
                     GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0),
