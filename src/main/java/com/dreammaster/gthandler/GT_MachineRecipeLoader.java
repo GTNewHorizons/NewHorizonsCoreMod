@@ -2,8 +2,6 @@ package com.dreammaster.gthandler;
 
 import static gregtech.api.enums.GT_Values.*;
 
-import java.lang.reflect.Field;
-
 import com.dreammaster.gthandler.recipes.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -14,10 +12,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
-
 import cpw.mods.fml.common.Loader;
-import forestry.api.recipes.IFermenterRecipe;
 import gregtech.api.enums.*;
 import gregtech.api.objects.GT_ItemStack;
 import gregtech.api.util.GT_ModHandler;
@@ -46,7 +41,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new ChemicalReactorRecipes().run();
         new CircuitAssemblerRecipes().run();
         new CompressorRecipes().run();
-        new DistilleryRecipes().run();
+        new DistillationRecipes().run();
         new DTPFRecipes().run();
         new ElectrolyzerRecipes().run();
         new FluidCannerRecipes().run();
@@ -3400,25 +3395,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     120);
 
         }
-
-        GT_Values.RA.addDistillationTowerRecipe(
-                new FluidStack(FluidRegistry.getFluid("pollution"), 1000),
-                new ItemStack[] { GT_Utility.getIntegratedCircuit(1) },
-                new FluidStack[] { Materials.SulfuricAcid.getFluid(150L), Materials.NitrogenDioxide.getGas(150L),
-                        Materials.Methane.getGas(150L), Materials.Mercury.getFluid(10L) },
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
-                600,
-                480);
-        GT_Values.RA.addDistillationTowerRecipe(
-                new FluidStack(FluidRegistry.getFluid("pollution"), 10000),
-                new ItemStack[] { GT_Utility.getIntegratedCircuit(2) },
-                new FluidStack[] { Materials.SulfuricAcid.getFluid(3000L), Materials.NitrogenDioxide.getGas(3000L),
-                        Materials.Methane.getGas(3000L), Materials.Mercury.getFluid(200L) },
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 10L),
-                600,
-                1920);
-
-
 
         GT_Values.RA.addFormingPressRecipe(
                 CustomItemList.MalformedSlush.get(2L),
@@ -8648,19 +8624,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     5000,
                     61_440,
                     0);
-            GT_Values.RA.addDistillationTowerRecipe(
-                    Materials.Grade2PurifiedWater.getFluid(1000L),
-                    new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(900L), },
-                    null,
-                    500 * 10,
-                    122_880);
 
-            GT_Values.RA.addDistillationTowerRecipe(
-                    Materials.Grade6PurifiedWater.getFluid(1000L),
-                    new FluidStack[] { Materials.Grade7PurifiedWater.getFluid(900L), },
-                    null,
-                    500 * 10,
-                    1_966_080);
 
         }
 
