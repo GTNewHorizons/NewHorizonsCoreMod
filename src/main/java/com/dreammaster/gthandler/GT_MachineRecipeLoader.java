@@ -44,6 +44,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new ElectrolyzerRecipes().run();
         new ExtractorRecipes().run();
         new ExtruderRecipes().run();
+        new FermenterRecipes().run();
         new FluidCannerRecipes().run();
         new FluidExtractorRecipes().run();
         new FluidSolidifierRecipes().run();
@@ -199,24 +200,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2),
                 GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
 
-        GT_Values.RA.addFermentingRecipe(
-                FluidRegistry.getFluidStack("concrete", 1000),
-                Materials.Concrete.getMolten(1000L),
-                20,
-                16,
-                false);
-        GT_Values.RA.addFermentingRecipe(
-                Materials.Concrete.getMolten(1000L),
-                Materials.ConstructionFoam.getFluid(1000),
-                20,
-                16,
-                false);
-        GT_Values.RA.addFermentingRecipe(
-                Materials.ConstructionFoam.getFluid(1000),
-                FluidRegistry.getFluidStack("concrete", 1000),
-                20,
-                16,
-                false);
 
 
         GT_Values.RA.addVacuumFreezerRecipe(
