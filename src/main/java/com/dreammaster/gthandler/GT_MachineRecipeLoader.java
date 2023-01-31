@@ -8,6 +8,7 @@ import static gregtech.api.enums.GT_Values.*;
 import java.lang.reflect.Field;
 import java.util.List;
 
+import com.dreammaster.gthandler.recipes.recipesBendingMachine;
 import com.dreammaster.gthandler.recipes.recipesDTPF;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -41,11 +42,8 @@ public class GT_MachineRecipeLoader implements Runnable {
 
     @Override
     public void run() {
-        GT_Values.RA.addBenderRecipe(
-                CustomItemList.MicaInsulatorSheet.get(1L),
-                CustomItemList.MicaInsulatorFoil.get(4L),
-                100,
-                30);
+        new recipesBendingMachine().run();
+
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0),
@@ -11536,11 +11534,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 400,
                 28);
 
-        GT_Values.RA.addBenderRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Steel, 1L),
-                ItemList.Shape_Empty.get(1L),
-                200,
-                120);
+
 
         GT_Values.RA.addFormingPressRecipe(
                 ItemList.Shape_Empty.get(1L),
