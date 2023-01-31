@@ -1,6 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.GregTech_API.mGTPlusPlus;
+
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
 import com.dreammaster.gthandler.GT_CoreModSupport;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -11,13 +18,9 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.core.material.ELEMENT;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.GregTech_API.mGTPlusPlus;
+public class DTPFRecipes implements Runnable {
 
-public class DTPFRecipes implements Runnable{
     @Override
     public void run() {
         // Dimensionally transcendent plasma forge recipes.

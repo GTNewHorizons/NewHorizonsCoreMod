@@ -1,13 +1,15 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.util.GT_ModHandler;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 
-public class ForgeHammerRecipes implements Runnable{
+public class ForgeHammerRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addForgeHammerRecipe(
@@ -15,7 +17,6 @@ public class ForgeHammerRecipes implements Runnable{
                 ItemList.Circuit_Parts_RawCrystalParts.get(9),
                 100,
                 480);
-
 
         GT_Values.RA.addForgeHammerRecipe(
                 ItemList.GalliumArsenideCrystal.get(1L),

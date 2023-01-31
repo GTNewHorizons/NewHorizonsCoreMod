@@ -1,16 +1,18 @@
 package com.dreammaster.gthandler.recipes;
 
-import cpw.mods.fml.common.Loader;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.util.GT_ModHandler;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-public class FluidExtractorRecipes implements Runnable{
+import cpw.mods.fml.common.Loader;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.util.GT_ModHandler;
+
+public class FluidExtractorRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addFluidExtractionRecipe(
@@ -21,7 +23,7 @@ public class FluidExtractorRecipes implements Runnable{
                 24,
                 37);
 
-        if(Loader.isModLoaded("harvestcraft")) {
+        if (Loader.isModLoaded("harvestcraft")) {
             GT_Values.RA.addFluidExtractionRecipe(
                     GT_ModHandler.getModItem("harvestcraft", "catfishrawItem", 1, 0),
                     GT_Values.NI,
@@ -220,7 +222,7 @@ public class FluidExtractorRecipes implements Runnable{
                     4);
         }
 
-        if (Loader.isModLoaded("OpenBlocks") && Loader.isModLoaded("TConstruct")){
+        if (Loader.isModLoaded("OpenBlocks") && Loader.isModLoaded("TConstruct")) {
             GT_Values.RA.addFluidExtractionRecipe(
                     GT_ModHandler.getModItem("TConstruct", "oreBerries", 1L, 5),
                     GT_Values.NI,
@@ -238,7 +240,6 @@ public class FluidExtractorRecipes implements Runnable{
                     10000,
                     24,
                     48);
-
 
             GT_Values.RA.addFluidExtractionRecipe(
                     new ItemStack(Items.ender_pearl, 1, 0),

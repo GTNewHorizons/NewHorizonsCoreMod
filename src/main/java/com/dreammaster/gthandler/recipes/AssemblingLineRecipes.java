@@ -1,6 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -8,12 +14,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
-public class AssemblingLineRecipes implements Runnable{
+public class AssemblingLineRecipes implements Runnable {
+
     @Override
     public void run() {
         Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
@@ -21,17 +24,17 @@ public class AssemblingLineRecipes implements Runnable{
                 : FluidRegistry.getFluid("molten.solderingalloy");
 
         // why keep stuff like that? :concern:
-        if (!Loader.isModLoaded("bartworks")){
+        if (!Loader.isModLoaded("bartworks")) {
             GT_Values.RA.addAssemblylineRecipe(
-                GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
-                2500,
-                new ItemStack[]{GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
-                        CustomItemList.IceCompressedPlate.get(3L), CustomItemList.IceCompressedPlate.get(3L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmiridium, 4)},
-                new FluidStack[]{new FluidStack(solderIndalloy, 36)},
-                CustomItemList.HeavyDutyAlloyIngotT4.get(1L),
-                300,
-                30720);
+                    GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                    2500,
+                    new ItemStack[] { GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                            CustomItemList.IceCompressedPlate.get(3L), CustomItemList.IceCompressedPlate.get(3L),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmiridium, 4) },
+                    new FluidStack[] { new FluidStack(solderIndalloy, 36) },
+                    CustomItemList.HeavyDutyAlloyIngotT4.get(1L),
+                    300,
+                    30720);
         }
 
         GT_Values.RA.addAssemblylineRecipe(

@@ -1,6 +1,10 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -8,10 +12,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 
-public class FormingPressRecipes implements Runnable{
+public class FormingPressRecipes implements Runnable {
+
     @Override
     public void run() {
 
@@ -34,7 +37,6 @@ public class FormingPressRecipes implements Runnable{
                 CustomItemList.MicaBasedSheet.get(4L),
                 400,
                 28);
-
 
         GT_Values.RA.addFormingPressRecipe(
                 ItemList.Shape_Empty.get(1L),
@@ -429,8 +431,7 @@ public class FormingPressRecipes implements Runnable{
                 100,
                 30);
 
-
-        if (Loader.isModLoaded("BloodArsenal")){
+        if (Loader.isModLoaded("BloodArsenal")) {
             GT_Values.RA.addFormingPressRecipe(
                     GT_ModHandler.getModItem("BloodArsenal", "glass_shard", 2L, 0),
                     ItemList.Shape_Mold_Block.get(0L),
@@ -439,7 +440,7 @@ public class FormingPressRecipes implements Runnable{
                     30);
         }
 
-        if (Loader.isModLoaded("BuildCraft|Silicon")){
+        if (Loader.isModLoaded("BuildCraft|Silicon")) {
             GT_Values.RA.addFormingPressRecipe(
                     ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
                     GT_ModHandler.getModItem("BuildCraft|Silicon", "redstoneChipset", 1L, 4),
@@ -447,7 +448,7 @@ public class FormingPressRecipes implements Runnable{
                     300,
                     480);
         }
-        if (Loader.isModLoaded("ProjRed|Core")){
+        if (Loader.isModLoaded("ProjRed|Core")) {
             GT_Values.RA.addFormingPressRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
                     CustomItemList.EtchedLowVoltageWiring.get(1L),
@@ -456,14 +457,14 @@ public class FormingPressRecipes implements Runnable{
                     16);
         }
 
-        if (Loader.isModLoaded("Thaumcraft")){
+        if (Loader.isModLoaded("Thaumcraft")) {
             GT_Values.RA.addForgeHammerRecipe(
                     GT_ModHandler.getModItem("Thaumcraft", "ItemEldritchObject", 1L, 3),
                     CustomItemList.PrimordialPearlFragment.get(3L),
                     16,
                     7680);
         }
-        if (Loader.isModLoaded("bartworks")){
+        if (Loader.isModLoaded("bartworks")) {
             // Optical CPU Containment Housing
             GT_Values.RA.addFormingPressRecipe(
                     new ItemStack[] { ItemList.Circuit_Board_Optical.get(1L),

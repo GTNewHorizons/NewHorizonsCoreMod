@@ -1,6 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -8,13 +15,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
-public class ChemicalBathRecipes implements Runnable{
+public class ChemicalBathRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addChemicalBathRecipe(
@@ -139,7 +142,7 @@ public class ChemicalBathRecipes implements Runnable{
                 500,
                 30);
 
-        if (Loader.isModLoaded("bartworks")){
+        if (Loader.isModLoaded("bartworks")) {
             GT_Values.RA.addChemicalBathRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.nanite, Materials.Silver, 0, false),
                     Materials.Grade7PurifiedWater.getFluid(1000L),
@@ -152,7 +155,7 @@ public class ChemicalBathRecipes implements Runnable{
                     3_932_160);
         }
 
-        if (Loader.isModLoaded("EnderIO")){
+        if (Loader.isModLoaded("EnderIO")) {
             GT_Values.RA.addChemicalBathRecipe(
                     GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
                     new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72),
@@ -180,7 +183,7 @@ public class ChemicalBathRecipes implements Runnable{
                     CustomItemList.ArtificialLeather.get(2L),
                     GT_Values.NI,
                     GT_Values.NI,
-                    new int[]{10000},
+                    new int[] { 10000 },
                     300,
                     120);
         }

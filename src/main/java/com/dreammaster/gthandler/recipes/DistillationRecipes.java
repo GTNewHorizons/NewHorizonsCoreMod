@@ -1,23 +1,25 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
-public class DistillationRecipes implements Runnable{
+public class DistillationRecipes implements Runnable {
+
     @Override
     public void run() {
         distilleryRecipes();
         distillationTowerRecipes();
     }
 
-    public static void distillationTowerRecipes(){
+    public static void distillationTowerRecipes() {
         GT_Values.RA.addDistillationTowerRecipe(
                 new FluidStack(FluidRegistry.getFluid("pollution"), 1000),
                 new ItemStack[] { GT_Utility.getIntegratedCircuit(1) },
@@ -35,24 +37,24 @@ public class DistillationRecipes implements Runnable{
                 600,
                 1920);
 
-        if(Loader.isModLoaded("bartworks")) {
+        if (Loader.isModLoaded("bartworks")) {
             GT_Values.RA.addDistillationTowerRecipe(
                     Materials.Grade2PurifiedWater.getFluid(1000L),
-                    new FluidStack[]{Materials.Grade3PurifiedWater.getFluid(900L),},
+                    new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(900L), },
                     null,
                     500 * 10,
                     122_880);
 
             GT_Values.RA.addDistillationTowerRecipe(
                     Materials.Grade6PurifiedWater.getFluid(1000L),
-                    new FluidStack[]{Materials.Grade7PurifiedWater.getFluid(900L),},
+                    new FluidStack[] { Materials.Grade7PurifiedWater.getFluid(900L), },
                     null,
                     500 * 10,
                     1_966_080);
         }
     }
 
-    public static void distilleryRecipes(){
+    public static void distilleryRecipes() {
         // Sodium Potassium
         GT_Values.RA.addDistilleryRecipe(
                 Materials.RockSalt.getDust(1),

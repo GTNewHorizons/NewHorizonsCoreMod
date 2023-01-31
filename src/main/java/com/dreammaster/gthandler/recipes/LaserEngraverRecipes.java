@@ -1,7 +1,16 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.GT_Values.NI;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
 import com.dreammaster.gthandler.CustomItemList;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -10,15 +19,9 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.enums.GT_Values.NI;
+public class LaserEngraverRecipes implements Runnable {
 
-public class LaserEngraverRecipes implements Runnable{
     @Override
     public void run() {
         // Mysterious crystal upgrading
@@ -155,13 +158,13 @@ public class LaserEngraverRecipes implements Runnable{
         if (Loader.isModLoaded("bartworks")) {
             // Optical Boule
             GT_Values.RA.addLaserEngraverRecipe(
-                    new ItemStack[]{ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
+                    new ItemStack[] { ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
                             WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
                             WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
-                            CustomItemList.MysteriousCrystalLens.get(0)},
-                    new FluidStack[]{Materials.UUMatter.getFluid(16000L)},
-                    new ItemStack[]{ItemList.Circuit_Silicon_Ingot6.get(1L)},
-                    new FluidStack[]{GT_Values.NF},
+                            CustomItemList.MysteriousCrystalLens.get(0) },
+                    new FluidStack[] { Materials.UUMatter.getFluid(16000L) },
+                    new ItemStack[] { ItemList.Circuit_Silicon_Ingot6.get(1L) },
+                    new FluidStack[] { GT_Values.NF },
                     30 * 20,
                     7_864_320,
                     true);

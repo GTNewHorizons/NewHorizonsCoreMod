@@ -1,6 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -8,11 +13,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 
-public class CuttingMachineRecipes implements Runnable{
+public class CuttingMachineRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addCutterRecipe(
@@ -156,7 +159,6 @@ public class CuttingMachineRecipes implements Runnable{
                 1920,
                 true);
 
-
         GT_Values.RA.addCutterRecipe(
                 GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 1L, 0),
                 CustomItemList.ReinforcedGlassPLate.get(2L),
@@ -164,80 +166,75 @@ public class CuttingMachineRecipes implements Runnable{
                 1200,
                 30);
 
-        GT_Values.RA.addCutterRecipe(
-                CustomItemList.NandChipBoard.get(1),
-                ItemList.NandChip.get(8),
-                null,
-                100,
-                480,
-                true);
+        GT_Values.RA
+                .addCutterRecipe(CustomItemList.NandChipBoard.get(1), ItemList.NandChip.get(8), null, 100, 480, true);
 
         if (Loader.isModLoaded("Ztones") && Loader.isModLoaded("ProjRed|Core")) {
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 16),
-                        Materials.Water.getFluid(100L),
-                        GT_ModHandler.getModItem("Ztones", "lampf", 4L, 0),
-                        GT_Values.NI,
-                        200,
-                        4);
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 16),
-                        GT_ModHandler.getDistilledWater(75L),
-                        GT_ModHandler.getModItem("Ztones", "lampf", 4L, 0),
-                        GT_Values.NI,
-                        200,
-                        4);
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 16),
-                        Materials.Lubricant.getFluid(25L),
-                        GT_ModHandler.getModItem("Ztones", "lampf", 4L, 0),
-                        GT_Values.NI,
-                        100,
-                        4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 16),
+                    Materials.Water.getFluid(100L),
+                    GT_ModHandler.getModItem("Ztones", "lampf", 4L, 0),
+                    GT_Values.NI,
+                    200,
+                    4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 16),
+                    GT_ModHandler.getDistilledWater(75L),
+                    GT_ModHandler.getModItem("Ztones", "lampf", 4L, 0),
+                    GT_Values.NI,
+                    200,
+                    4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 16),
+                    Materials.Lubricant.getFluid(25L),
+                    GT_ModHandler.getModItem("Ztones", "lampf", 4L, 0),
+                    GT_Values.NI,
+                    100,
+                    4);
 
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 24),
-                        Materials.Water.getFluid(100L),
-                        GT_ModHandler.getModItem("Ztones", "lampt", 4L, 0),
-                        GT_Values.NI,
-                        200,
-                        4);
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 24),
-                        GT_ModHandler.getDistilledWater(75L),
-                        GT_ModHandler.getModItem("Ztones", "lampt", 4L, 0),
-                        GT_Values.NI,
-                        200,
-                        4);
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 24),
-                        Materials.Lubricant.getFluid(25L),
-                        GT_ModHandler.getModItem("Ztones", "lampt", 4L, 0),
-                        GT_Values.NI,
-                        100,
-                        4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 24),
+                    Materials.Water.getFluid(100L),
+                    GT_ModHandler.getModItem("Ztones", "lampt", 4L, 0),
+                    GT_Values.NI,
+                    200,
+                    4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 24),
+                    GT_ModHandler.getDistilledWater(75L),
+                    GT_ModHandler.getModItem("Ztones", "lampt", 4L, 0),
+                    GT_Values.NI,
+                    200,
+                    4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 24),
+                    Materials.Lubricant.getFluid(25L),
+                    GT_ModHandler.getModItem("Ztones", "lampt", 4L, 0),
+                    GT_Values.NI,
+                    100,
+                    4);
 
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 23),
-                        Materials.Water.getFluid(100L),
-                        GT_ModHandler.getModItem("Ztones", "lampb", 4L, 0),
-                        GT_Values.NI,
-                        200,
-                        4);
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 23),
-                        GT_ModHandler.getDistilledWater(75L),
-                        GT_ModHandler.getModItem("Ztones", "lampb", 4L, 0),
-                        GT_Values.NI,
-                        200,
-                        4);
-                GT_Values.RA.addCutterRecipe(
-                        GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 23),
-                        Materials.Lubricant.getFluid(25L),
-                        GT_ModHandler.getModItem("Ztones", "lampb", 4L, 0),
-                        GT_Values.NI,
-                        100,
-                        4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 23),
+                    Materials.Water.getFluid(100L),
+                    GT_ModHandler.getModItem("Ztones", "lampb", 4L, 0),
+                    GT_Values.NI,
+                    200,
+                    4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 23),
+                    GT_ModHandler.getDistilledWater(75L),
+                    GT_ModHandler.getModItem("Ztones", "lampb", 4L, 0),
+                    GT_Values.NI,
+                    200,
+                    4);
+            GT_Values.RA.addCutterRecipe(
+                    GT_ModHandler.getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1L, 23),
+                    Materials.Lubricant.getFluid(25L),
+                    GT_ModHandler.getModItem("Ztones", "lampb", 4L, 0),
+                    GT_Values.NI,
+                    100,
+                    4);
 
         }
 
@@ -304,11 +301,11 @@ public class CuttingMachineRecipes implements Runnable{
             // Photonically Prepared Wafer
             int wafer_duration_ticks = 50 * 20;
             int wafer_eu_per_tick = 7_864_320;
-            FluidStack[] purified_water = {Materials.Grade1PurifiedWater.getFluid(1000L),
+            FluidStack[] purified_water = { Materials.Grade1PurifiedWater.getFluid(1000L),
                     Materials.Grade2PurifiedWater.getFluid(1000L), Materials.Grade3PurifiedWater.getFluid(1000L),
                     Materials.Grade4PurifiedWater.getFluid(1000L), Materials.Grade5PurifiedWater.getFluid(1000L),
                     Materials.Grade6PurifiedWater.getFluid(1000L), Materials.Grade7PurifiedWater.getFluid(1000L),
-                    Materials.Grade8PurifiedWater.getFluid(1000L)};
+                    Materials.Grade8PurifiedWater.getFluid(1000L) };
             for (int i = 0; i < purified_water.length; i++) {
                 GT_Values.RA.addCutterRecipe(
                         ItemList.Circuit_Silicon_Ingot6.get(1L), // Optical Boule

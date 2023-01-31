@@ -1,6 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -9,11 +14,9 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
 
-public class AutoclaveRecipes implements Runnable{
+public class AutoclaveRecipes implements Runnable {
+
     @Override
     public void run() {
         spaceRecipes();
@@ -139,7 +142,7 @@ public class AutoclaveRecipes implements Runnable{
         }
     }
 
-    public static void spaceRecipes(){
+    public static void spaceRecipes() {
         GT_Values.RA.addAutoclaveSpaceRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1),
                 GT_Values.NI,
@@ -178,7 +181,7 @@ public class AutoclaveRecipes implements Runnable{
                 960,
                 true);
 
-        if (Loader.isModLoaded("SGCraft")){
+        if (Loader.isModLoaded("SGCraft")) {
             GT_Values.RA.addAutoclaveSpaceRecipe(
                     com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64),
                     GT_Values.NI,

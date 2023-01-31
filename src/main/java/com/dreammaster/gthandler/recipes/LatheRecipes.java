@@ -1,20 +1,23 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.GT_Values.NI;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 
-import static gregtech.api.enums.GT_Values.NI;
+public class LatheRecipes implements Runnable {
 
-public class LatheRecipes implements Runnable{
     @Override
     public void run() {
         GT_Values.RA.addLatheRecipe(

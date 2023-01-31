@@ -8,7 +8,8 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
-public class ElectrolyzerRecipes implements Runnable{
+public class ElectrolyzerRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addElectrolyzerRecipe(
@@ -67,9 +68,6 @@ public class ElectrolyzerRecipes implements Runnable{
                 null,
                 600,
                 480);
-
-
-
 
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 13L),

@@ -1,6 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -9,13 +12,13 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import net.minecraft.item.ItemStack;
 
-public class CircuitAssemblerRecipes implements Runnable{
+public class CircuitAssemblerRecipes implements Runnable {
+
     @Override
     public void run() {
 
-        if (Loader.isModLoaded("appliedenergistics2")){
+        if (Loader.isModLoaded("appliedenergistics2")) {
             // 1k ME Storage Component
             GT_Values.RA.addCircuitAssemblerRecipe(
                     new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),

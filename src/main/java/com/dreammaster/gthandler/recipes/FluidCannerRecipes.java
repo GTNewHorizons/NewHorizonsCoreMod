@@ -1,14 +1,17 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
-public class FluidCannerRecipes implements Runnable{
+public class FluidCannerRecipes implements Runnable {
+
     @Override
     public void run() {
         // NAK and Helium Cooling Cells

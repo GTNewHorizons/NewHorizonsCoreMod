@@ -1,6 +1,15 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.GT_Values.MOD_ID_DC;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -10,15 +19,9 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import ic2.core.Ic2Items;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.enums.GT_Values.MOD_ID_DC;
+public class ChemicalReactorRecipes implements Runnable {
 
-public class ChemicalReactorRecipes implements Runnable{
     @Override
     public void run() {
         singleBlockOnly();
@@ -144,7 +147,6 @@ public class ChemicalReactorRecipes implements Runnable{
                 ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                 1200,
                 30);
-
 
         GT_Values.RA.addChemicalRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EpoxidFiberReinforced, 1),
@@ -363,7 +365,7 @@ public class ChemicalReactorRecipes implements Runnable{
                     true);
         }
 
-        if (Loader.isModLoaded("DraconicEvolution")){
+        if (Loader.isModLoaded("DraconicEvolution")) {
             GT_Values.RA.addChemicalRecipe(
                     CustomItemList.DraconiumEgg.get(1L),
                     GT_ModHandler.getModItem("DraconicEvolution", "dragonHeart", 0L, 0),
@@ -376,20 +378,20 @@ public class ChemicalReactorRecipes implements Runnable{
                     true);
         }
 
-        if (Loader.isModLoaded("Genetics")){
+        if (Loader.isModLoaded("Genetics")) {
             GT_Values.RA.addChemicalRecipe(
-                new ItemStack(Items.spawn_egg, 1, GT_Values.W),
-                GT_ModHandler.getModItem("Genetics", "misc", 64L, 4),
-                FluidRegistry.getFluidStack("binnie.bacteria", 1000),
-                GT_Values.NF,
-                CustomItemList.TheBigEgg.get(1L),
-                GT_Values.NI,
-                72000,
-                120,
-                true);
+                    new ItemStack(Items.spawn_egg, 1, GT_Values.W),
+                    GT_ModHandler.getModItem("Genetics", "misc", 64L, 4),
+                    FluidRegistry.getFluidStack("binnie.bacteria", 1000),
+                    GT_Values.NF,
+                    CustomItemList.TheBigEgg.get(1L),
+                    GT_Values.NI,
+                    72000,
+                    120,
+                    true);
         }
 
-        if (Loader.isModLoaded("gendustry")){
+        if (Loader.isModLoaded("gendustry")) {
             GT_Values.RA.addChemicalRecipe(
                     CustomItemList.TheBigEgg.get(1L),
                     GT_ModHandler.getModItem("IC2", "itemUran238", 64L, 0),
@@ -454,11 +456,9 @@ public class ChemicalReactorRecipes implements Runnable{
                     480);
         }
 
-
-
     }
 
-    public static void singleBlockOnly(){
+    public static void singleBlockOnly() {
         // 6HF + Al(OH)3 + 3NaOH = Na3AlF6 + 6H2O
         GT_Values.RA.addChemicalRecipeForBasicMachineOnly(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 9L),
@@ -482,7 +482,7 @@ public class ChemicalReactorRecipes implements Runnable{
 
     }
 
-    public static void multiBlockOnly(){
+    public static void multiBlockOnly() {
         GT_Values.RA.addMultiblockChemicalRecipe(
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 49L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 63L),
@@ -636,7 +636,7 @@ public class ChemicalReactorRecipes implements Runnable{
                 400,
                 480);
 
-        if (Loader.isModLoaded("bartworks")){
+        if (Loader.isModLoaded("bartworks")) {
             GT_Values.RA.addMultiblockChemicalRecipe(
                     new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 0, false),
                             GT_Utility.getIntegratedCircuit(1) },

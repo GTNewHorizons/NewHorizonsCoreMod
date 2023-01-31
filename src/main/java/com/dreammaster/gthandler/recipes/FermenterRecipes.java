@@ -1,10 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.Materials;
 import net.minecraftforge.fluids.FluidRegistry;
 
-public class FermenterRecipes implements Runnable{
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+
+public class FermenterRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addFermentingRecipe(

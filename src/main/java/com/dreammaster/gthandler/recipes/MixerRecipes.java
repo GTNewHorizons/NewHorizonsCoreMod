@@ -1,7 +1,16 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -10,15 +19,9 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
-import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
+public class MixerRecipes implements Runnable {
 
-public class MixerRecipes implements Runnable{
     @Override
     public void run() {
         GT_Values.RA.addMixerRecipe(
@@ -412,7 +415,6 @@ public class MixerRecipes implements Runnable{
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 36L),
                 200,
                 48);
-
 
         GT_Values.RA.addMixerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
@@ -1313,7 +1315,7 @@ public class MixerRecipes implements Runnable{
                     125829120);
         }
 
-        if (Loader.isModLoaded("EnderIO")){
+        if (Loader.isModLoaded("EnderIO")) {
             GT_Values.RA.addMixerRecipe(
                     GT_ModHandler.getModItem("EnderIO", "itemMaterial", 1L, 14),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
@@ -1328,7 +1330,7 @@ public class MixerRecipes implements Runnable{
                     8);
         }
 
-        if (Loader.isModLoaded("ExtraTrees")){
+        if (Loader.isModLoaded("ExtraTrees")) {
             GT_Values.RA.addMixerRecipe(
                     GT_ModHandler.getModItem("ExtraTrees", "misc", 4L, 2),
                     GT_Values.NI,

@@ -1,18 +1,20 @@
 package com.dreammaster.gthandler.recipes;
 
+import java.lang.reflect.Field;
+
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+
 import cpw.mods.fml.common.Loader;
 import forestry.api.recipes.IFermenterRecipe;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_Recipe;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
 
-import java.lang.reflect.Field;
+public class BrewingMachineRecipes implements Runnable {
 
-public class BrewingMachineRecipes implements Runnable{
     @Override
     public void run() {
         GT_Values.RA.addBrewingRecipeCustom(

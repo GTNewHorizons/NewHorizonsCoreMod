@@ -1,5 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -7,11 +11,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 
-public class CompressorRecipes implements Runnable{
+public class CompressorRecipes implements Runnable {
+
     @Override
     public void run() {
         // Compressed Glowstone

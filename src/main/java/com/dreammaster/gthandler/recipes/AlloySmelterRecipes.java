@@ -1,6 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
+
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -9,12 +15,9 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
-public class AlloySmelterRecipes implements Runnable{
+public class AlloySmelterRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addAlloySmelterRecipe(
@@ -203,7 +206,6 @@ public class AlloySmelterRecipes implements Runnable{
                     500,
                     90);
 
-
             GT_Values.RA.addAlloySmelterRecipe(
                     GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
                     Materials.Glowstone.getDust(4),
@@ -237,6 +239,5 @@ public class AlloySmelterRecipes implements Runnable{
         }
 
     }
-
 
 }

@@ -1,12 +1,14 @@
 package com.dreammaster.gthandler.recipes;
 
 import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 
-public class CannerRecipes implements Runnable{
+public class CannerRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addCannerRecipe(

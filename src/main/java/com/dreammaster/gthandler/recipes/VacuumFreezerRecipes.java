@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import com.dreammaster.gthandler.CustomItemList;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
@@ -8,7 +9,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
-public class VacuumFreezerRecipes implements Runnable{
+public class VacuumFreezerRecipes implements Runnable {
+
     @Override
     public void run() {
         GT_Values.RA.addVacuumFreezerRecipe(

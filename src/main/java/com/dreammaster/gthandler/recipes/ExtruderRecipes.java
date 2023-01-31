@@ -1,5 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -7,10 +10,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 
-public class ExtruderRecipes implements Runnable{
+public class ExtruderRecipes implements Runnable {
+
     @Override
     public void run() {
         registerTinkerParts();
@@ -114,7 +116,7 @@ public class ExtruderRecipes implements Runnable{
         }
     }
 
-    public static void registerTinkerParts(){
+    public static void registerTinkerParts() {
         if (Loader.isModLoaded("TConstruct")) {
             // Tool Rods
             GT_Values.RA.addExtruderRecipe(
@@ -3091,8 +3093,7 @@ public class ExtruderRecipes implements Runnable{
                     122880);
         }
 
-        if (Loader.isModLoaded("TGregworks") && Loader.isModLoaded("Avaritia") &&
-                Loader.isModLoaded("TConstruct")) {
+        if (Loader.isModLoaded("TGregworks") && Loader.isModLoaded("Avaritia") && Loader.isModLoaded("TConstruct")) {
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem("Avaritia", "Resource", 1L, 4),
                     GT_ModHandler.getModItem("TGregworks", "tgregworks.shardcast", 0L, 0),
