@@ -17,7 +17,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GregTech_API.mGTPlusPlus;
 
-public class recipesDTPF implements Runnable{
+public class DTPFRecipes implements Runnable{
     @Override
     public void run() {
         // Dimensionally transcendent plasma forge recipes.

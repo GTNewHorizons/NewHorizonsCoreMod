@@ -338,7 +338,7 @@ public class ChemicalReactorRecipes implements Runnable{
                 400,
                 30,
                 false);
-        
+
         GT_Values.RA.addChemicalRecipe(
                 new ItemStack(Items.ghast_tear, 9, 0),
                 GT_Utility.getIntegratedCircuit(9),

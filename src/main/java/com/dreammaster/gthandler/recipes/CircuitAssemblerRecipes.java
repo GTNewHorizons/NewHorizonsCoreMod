@@ -11,7 +11,7 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
 
-public class RecipesCircuitAssembler implements Runnable{
+public class CircuitAssemblerRecipes implements Runnable{
     @Override
     public void run() {
 

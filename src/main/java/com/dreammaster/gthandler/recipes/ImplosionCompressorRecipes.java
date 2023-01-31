@@ -8,7 +8,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
-public class RecipesImplosionCompressor implements Runnable{
+public class ImplosionCompressorRecipes implements Runnable{
     @Override
     public void run() {
         if (Loader.isModLoaded("GalaxySpace")) {

@@ -18,7 +18,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 
-public class RecipesMixer implements Runnable{
+public class MixerRecipes implements Runnable{
     @Override
     public void run() {
         GT_Values.RA.addMixerRecipe(

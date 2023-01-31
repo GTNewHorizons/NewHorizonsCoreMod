@@ -6,7 +6,7 @@ import gregtech.api.util.GT_Utility;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-public class RecipesDistillery implements Runnable{
+public class DistilleryRecipes implements Runnable{
     @Override
     public void run() {
         // Sodium Potassium

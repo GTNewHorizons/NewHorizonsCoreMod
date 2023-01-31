@@ -1,19 +1,14 @@
 package com.dreammaster.gthandler;
 
-import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
-import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
-import static gregtech.api.GregTech_API.mGTPlusPlus;
 import static gregtech.api.enums.GT_Values.*;
 
 import java.lang.reflect.Field;
-import java.util.List;
 
 import com.dreammaster.gthandler.recipes.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -30,25 +25,20 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_RecipeRegistrator;
 import gregtech.api.util.GT_Utility;
-import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Disassembler;
-import gtPlusPlus.core.material.ALLOY;
-import gtPlusPlus.core.material.ELEMENT;
-import gtPlusPlus.core.recipe.common.CI;
-import ic2.core.Ic2Items;
 
 public class GT_MachineRecipeLoader implements Runnable {
 
     @Override
     public void run() {
-        new recipesBendingMachine().run();
-        new RecipesDistillery().run();
-        new recipesDTPF().run();
-        new recipesFluidSolidifier().run();
-        new RecipesImplosionCompressor().run();
-        new RecipesMixer().run();
-        new RecipesCircuitAssembler().run();
-        new recipesAssembler().run();
+        new BendingMachineRecipes().run();
+        new DistilleryRecipes().run();
+        new DTPFRecipes().run();
+        new FluidSolidifierRecipes().run();
+        new ImplosionCompressorRecipes().run();
+        new MixerRecipes().run();
+        new CircuitAssemblerRecipes().run();
+        new AssemblerRecipes().run();
         new ChemicalBathRecipes().run();
 
 

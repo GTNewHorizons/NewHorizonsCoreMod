@@ -27,7 +27,7 @@ import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
 import static gregtech.api.enums.GT_Values.MOD_ID_BC_CORE;
 import static gregtech.api.enums.GT_Values.MOD_ID_FR;
 
-public class recipesAssembler implements Runnable{
+public class AssemblerRecipes implements Runnable{
     @Override
     public void run() {
         makeCoilRecipes();

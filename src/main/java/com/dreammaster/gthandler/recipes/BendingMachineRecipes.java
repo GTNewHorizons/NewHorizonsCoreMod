@@ -4,7 +4,7 @@ import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.*;
 import gregtech.api.util.GT_OreDictUnificator;
 
-public class recipesBendingMachine implements Runnable{
+public class BendingMachineRecipes implements Runnable{
 
     @Override
     public void run() {
