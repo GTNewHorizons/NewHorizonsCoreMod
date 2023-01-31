@@ -202,24 +202,12 @@ public class GT_MachineRecipeLoader implements Runnable {
                 GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
 
 
-
-
-
         RA.addArcFurnaceRecipe(
                 GT_ModHandler.getModItem("IC2", "blockMiningPipe", 1L),
                 new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L),},
                 null,
                 50,
                 90);
-
-
-        GT_RecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
-
-
-
-
-
-
 
         // Wood Plates
         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(
@@ -235,15 +223,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 0);
 
         registerOpticalComponentRecipes();
-
-
-
-
-
-
-
-
-
 
 //--------------------------------------------------------
     // Rocket Circuits

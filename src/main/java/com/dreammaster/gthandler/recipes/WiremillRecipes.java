@@ -8,6 +8,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_RecipeRegistrator;
 import gregtech.api.util.GT_Utility;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -32,6 +33,9 @@ public class WiremillRecipes implements Runnable{
                 ItemList.Circuit_Parts_GlassFiber.get(8L),
                 200,
                 120);
+
+        GT_RecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
+
 
         if (Loader.isModLoaded("Natura")){
             GT_Values.RA.addWiremillRecipe(
