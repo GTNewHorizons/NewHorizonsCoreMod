@@ -4141,24 +4141,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 30);
 
 
-        GT_Values.RA.addAutoclaveSpaceRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1),
-                GT_Values.NI,
-                Materials.Europium.getMolten(16),
-                ItemList.Circuit_Parts_RawCrystalChip.get(1L),
-                1000,
-                12000,
-                320,
-                true);
-        GT_Values.RA.addAutoclaveSpaceRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 1),
-                GT_Values.NI,
-                Materials.Europium.getMolten(16),
-                ItemList.Circuit_Parts_RawCrystalChip.get(1L),
-                1000,
-                12000,
-                320,
-                true);
+
 
         GT_Values.RA.addForgeHammerRecipe(
                 ItemList.Circuit_Parts_RawCrystalChip.get(1L),
@@ -4181,24 +4164,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 24,
                 37);
 
-        GT_Values.RA.addAutoclaveSpaceRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 12),
-                GT_Values.NI,
-                Materials.UUMatter.getFluid(250L),
-                ItemList.Tool_DataOrb.get(1L),
-                10000,
-                12000,
-                960,
-                true);
-        GT_Values.RA.addAutoclaveSpaceRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 12),
-                GT_Values.NI,
-                Materials.UUMatter.getFluid(250L),
-                ItemList.Tool_DataOrb.get(1L),
-                10000,
-                12000,
-                960,
-                true);
+        
 
         // Wood Plates
         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(
@@ -4239,15 +4205,7 @@ public class GT_MachineRecipeLoader implements Runnable {
             }
         }
 
-        if (Loader.isModLoaded("SGCraft")) GT_Values.RA.addAutoclaveSpaceRecipe(
-                com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64),
-                GT_Values.NI,
-                Materials.Silver.getPlasma(8000L),
-                GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L),
-                10000,
-                3600,
-                131000,
-                true);
+
 
 //--------------------------------------------------------
     // Rocket Circuits

@@ -16,6 +16,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 public class AutoclaveRecipes implements Runnable{
     @Override
     public void run() {
+        spaceRecipes();
+
         GT_Values.RA.addAutoclaveRecipe(
                 CustomItemList.LapotronDust.get(30L),
                 Materials.EnergeticAlloy.getMolten(576L),
@@ -135,5 +137,58 @@ public class AutoclaveRecipes implements Runnable{
                     12000,
                     480);
         }
+    }
+
+    public static void spaceRecipes(){
+        GT_Values.RA.addAutoclaveSpaceRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1),
+                GT_Values.NI,
+                Materials.Europium.getMolten(16),
+                ItemList.Circuit_Parts_RawCrystalChip.get(1L),
+                1000,
+                12000,
+                320,
+                true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 1),
+                GT_Values.NI,
+                Materials.Europium.getMolten(16),
+                ItemList.Circuit_Parts_RawCrystalChip.get(1L),
+                1000,
+                12000,
+                320,
+                true);
+
+        GT_Values.RA.addAutoclaveSpaceRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 12),
+                GT_Values.NI,
+                Materials.UUMatter.getFluid(250L),
+                ItemList.Tool_DataOrb.get(1L),
+                10000,
+                12000,
+                960,
+                true);
+        GT_Values.RA.addAutoclaveSpaceRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 12),
+                GT_Values.NI,
+                Materials.UUMatter.getFluid(250L),
+                ItemList.Tool_DataOrb.get(1L),
+                10000,
+                12000,
+                960,
+                true);
+
+        if (Loader.isModLoaded("SGCraft")){
+            GT_Values.RA.addAutoclaveSpaceRecipe(
+                    com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64),
+                    GT_Values.NI,
+                    Materials.Silver.getPlasma(8000L),
+                    GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L),
+                    10000,
+                    3600,
+                    131000,
+                    true);
+        }
+
     }
 }
