@@ -54,6 +54,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new LatheRecipes().run();
         new MaceratorRecipes().run();
         new MixerRecipes().run();
+        new SifterRecipes().run();
         new WiremillRecipes().run();
 
         if (Loader.isModLoaded("extracells")) {
@@ -3841,15 +3842,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         registerOpticalComponentRecipes();
 
 
-        GT_Values.RA.addSifterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.crushedPurified, Materials.Cinnabar, 1L),
-                new ItemStack[]{Materials.Mercury.getGems(1), Materials.Mercury.getGems(1),
-                        Materials.Mercury.getGems(1), Materials.Mercury.getGems(1), Materials.Mercury.getGems(1),
-                        Materials.Mercury.getGems(1), Materials.Mercury.getGems(1), Materials.Mercury.getGems(1),
-                        Materials.Cinnabar.getDust(1)},
-                new int[]{100, 300, 500, 1000, 1000, 1500, 2300, 2500, 3500},
-                7200,
-                30);
+
 
 
 
@@ -6693,18 +6686,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     1_966_080,
                     true);
 
-            // Water Line
-            GT_Values.RA.addSifterRecipe(
-                    new ItemStack[] { NI },
-                    new FluidStack[] { Materials.Water.getFluid(1000L) },
-                    new ItemStack[] { Materials.Stone.getDust(1), Materials.Clay.getDust(1),
-                            Materials.Calcite.getDust(1), Materials.Salt.getDust(1),
-                            Materials.PolyvinylChloride.getNuggets(1) },
-                    new FluidStack[] { Materials.Grade1PurifiedWater.getFluid(900L) },
-                    new int[] { 5000, 2000, 1000, 1000, 100 },
-                    500 * 10,
-                    30_720,
-                    true);
+
             GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes.addRecipe(
                     false,
                     new ItemStack[] { GT_Utility.getIntegratedCircuit(1) },
@@ -6715,11 +6697,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     5000,
                     61_440,
                     0);
-
-
         }
-
-
-
     }
 }
