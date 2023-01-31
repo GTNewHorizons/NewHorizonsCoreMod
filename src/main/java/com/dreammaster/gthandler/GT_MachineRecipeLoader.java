@@ -190,45 +190,9 @@ public class GT_MachineRecipeLoader implements Runnable {
                     true);
         }
 
-
-
-
-
-        disassemblerBlacklist();
         this.run2();
     }
 
-    private void disassemblerBlacklist() {
-        GT_MetaTileEntity_Disassembler.getBlackList()
-                .add(new GT_ItemStack(CustomItemList.Automation_ChestBuffer_UEV.get(1L)));
-        GT_MetaTileEntity_Disassembler.getBlackList()
-                .add(new GT_ItemStack(CustomItemList.Automation_ChestBuffer_UIV.get(1L)));
-        GT_MetaTileEntity_Disassembler.getBlackList()
-                .add(new GT_ItemStack(CustomItemList.Automation_ChestBuffer_UMV.get(1L)));
-
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerMAX.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerUEV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerUIV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerUMV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.CircuitAssemblerUXV.get(1)));
-
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UEV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UIV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UMV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UXV.get(1)));
-
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UEV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UIV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UMV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_UXV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Hull_MAXV.get(1)));
-
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_UEV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_UIV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_UMV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_UXV.get(1)));
-        GT_MetaTileEntity_Disassembler.getBlackList().add(new GT_ItemStack(CustomItemList.Casing_MAXV.get(1)));
-    }
 
 
     public void run2() {
