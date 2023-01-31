@@ -50,7 +50,9 @@ public class GT_MachineRecipeLoader implements Runnable {
         new ImplosionCompressorRecipes().run();
         new LaserEngraverRecipes().run();
         new LatheRecipes().run();
+        new MaceratorRecipes().run();
         new MixerRecipes().run();
+        new WiremillRecipes().run();
 
         if (Loader.isModLoaded("extracells")) {
             // 256k ME Storage Component
@@ -3951,25 +3953,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 50,
                 90);
 
-
-
-
-        GT_Values.RA.addWiremillRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.MeteoricIron, 1L),
-                CustomItemList.MeteoricIronString.get(4L),
-                600,
-                480);
-        GT_Values.RA.addWiremillRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Tungsten, 1L),
-                CustomItemList.TungstenString.get(4L),
-                1200,
-                1024);
-
-        if (Loader.isModLoaded("Natura")) GT_Values.RA.addWiremillRecipe(
-                GT_ModHandler.getModItem("Natura", "barleyFood", 2L, 3),
-                new ItemStack(Items.string, 1, 0),
-                200,
-                8);
         GT_ModHandler.addCompressionRecipe(
                 GT_ModHandler.getModItem("Natura", "barleyFood", 8, 0),
                 ItemList.IC2_Plantball.get(1));
@@ -3982,14 +3965,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                 ItemList.Circuit_Parts_GlassFiber.get(8L),
                 160,
                 96);
-
-        GT_Values.RA.addWiremillRecipe(
-                GT_Utility.getIntegratedCircuit(3),
-                Materials.BorosilicateGlass.getIngots(1),
-                ItemList.Circuit_Parts_GlassFiber.get(8L),
-                200,
-                120);
-
 
         GT_Values.RA.addCutterRecipe(
                 ItemList.Circuit_Wafer_ILC.get(1L),
@@ -4164,7 +4139,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 24,
                 37);
 
-        
+
 
         // Wood Plates
         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(
