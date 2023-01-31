@@ -2,6 +2,7 @@ package com.dreammaster.gthandler;
 
 import static gregtech.api.enums.GT_Values.*;
 
+import javafx.scene.shape.Arc;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -26,6 +27,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new RecipeRemoval().run();
 
         new AlloySmelterRecipes().run();
+        new ArcFurnaceRecipes().run();
         new AssemblerRecipes().run();
         new AssemblingLineRecipes().run();
         new AutoclaveRecipes().run();
@@ -197,16 +199,11 @@ public class GT_MachineRecipeLoader implements Runnable {
                     true);
         }
 
-        if (Loader.isModLoaded("TConstruct")) GT_ModHandler.addExtractionRecipe(
-                GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2),
-                GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
-
-        RA.addArcFurnaceRecipe(
-                GT_ModHandler.getModItem("IC2", "blockMiningPipe", 1L),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L), },
-                null,
-                50,
-                90);
+        if (Loader.isModLoaded("TConstruct")){
+            GT_ModHandler.addExtractionRecipe(
+                    GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2),
+                    GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
+        }
 
         // Wood Plates
         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(
