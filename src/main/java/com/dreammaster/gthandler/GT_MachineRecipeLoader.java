@@ -34,6 +34,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new AlloySmelterRecipes().run();
         new AssemblerRecipes().run();
         new BendingMachineRecipes().run();
+        new CannerRecipes().run();
         new ChemicalBathRecipes().run();
         new ChemicalReactorRecipes().run();
         new CircuitAssemblerRecipes().run();
@@ -47,13 +48,7 @@ public class GT_MachineRecipeLoader implements Runnable {
 
 
         
-        GT_Values.RA.addCannerRecipe(
-                CustomItemList.AdsorptionFilterCasing.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 32L),
-                CustomItemList.AdsorptionFilter.get(1L),
-                GT_Values.NI,
-                100,
-                120);
+
         GT_Values.RA.addCentrifugeRecipe(
                 CustomItemList.AdsorptionFilterDirty.get(1L),
                 GT_Utility.getIntegratedCircuit(1),
