@@ -22,7 +22,7 @@ public class ForgeHammerRecipes implements Runnable{
                 ItemList.GalliumArsenideCrystalSmallPart.get(4L),
                 50,
                 4);
-        
+
         if (Loader.isModLoaded("TConstruct")) {
             GT_Values.RA.addForgeHammerRecipe(
                     GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2),
