@@ -5,6 +5,7 @@ import static gregtech.api.enums.GT_Values.*;
 import java.lang.reflect.Field;
 
 import com.dreammaster.gthandler.recipes.*;
+import crazypants.enderio.machine.recipe.Recipe;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -31,6 +32,8 @@ public class GT_MachineRecipeLoader implements Runnable {
 
     @Override
     public void run() {
+        new RecipeRemoval().run();
+
         new AlloySmelterRecipes().run();
         new AssemblerRecipes().run();
         new AssemblingLineRecipes().run();
@@ -9678,7 +9681,6 @@ public class GT_MachineRecipeLoader implements Runnable {
             }
 
             // Quantum Armor
-            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumHelmet", 1, GT_Values.W));
 
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { CustomItemList.QuantumPartHelmet.get(1L), CustomItemList.QuantumCrystal.get(1L),
@@ -9693,7 +9695,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     1500,
                     7680);
 
-            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumBodyarmor", 1, GT_Values.W));
 
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { CustomItemList.QuantumPartChestplate.get(1L),
@@ -9709,7 +9710,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     1500,
                     7680);
 
-            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumLeggings", 1, GT_Values.W));
 
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { CustomItemList.QuantumPartLeggings.get(1L), CustomItemList.QuantumCrystal.get(1L),
@@ -9724,7 +9724,6 @@ public class GT_MachineRecipeLoader implements Runnable {
                     1500,
                     7680);
 
-            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumBoots", 1, GT_Values.W));
 
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { CustomItemList.QuantumPartBoots.get(1L), CustomItemList.QuantumCrystal.get(1L),
