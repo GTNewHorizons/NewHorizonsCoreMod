@@ -8,6 +8,7 @@ import static gregtech.api.enums.GT_Values.*;
 import java.lang.reflect.Field;
 import java.util.List;
 
+import com.dreammaster.gthandler.recipes.RecipesDistillery;
 import com.dreammaster.gthandler.recipes.recipesBendingMachine;
 import com.dreammaster.gthandler.recipes.recipesDTPF;
 import com.dreammaster.gthandler.recipes.recipesFluidSolidifier;
@@ -45,6 +46,7 @@ public class GT_MachineRecipeLoader implements Runnable {
     public void run() {
         new recipesBendingMachine().run();
         new recipesFluidSolidifier().run();
+        new RecipesDistillery().run();
 
 
         GT_Values.RA.addAssemblerRecipe(
@@ -126,14 +128,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                 Materials.RockSalt.getDust(1),
                 100,
                 30);
-        // Sodium Potassium
-        GT_Values.RA.addDistilleryRecipe(
-                Materials.RockSalt.getDust(1),
-                Materials.Sodium.getFluid(1000),
-                new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 1000),
-                400,
-                30,
-                false);
+
         // 10,30 and 60K NAK Cells
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_ModHandler.getModItem("IC2", "itemCellEmpty", 1L, 0),
@@ -5720,13 +5715,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     }
                 }
 
-                GT_Values.RA.addDistilleryRecipe(
-                        GT_Utility.getIntegratedCircuit(1),
-                        Materials.Biomass.getFluid(40L),
-                        Materials.Ethanol.getFluid(20L),
-                        16,
-                        24,
-                        false);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -11834,21 +11823,6 @@ public class GT_MachineRecipeLoader implements Runnable {
         if (Loader.isModLoaded("TConstruct")) GT_ModHandler.addExtractionRecipe(
                 GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2),
                 GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2));
-
-        GT_Values.RA.addDistilleryRecipe(
-                GT_Utility.getIntegratedCircuit(1),
-                Materials.Milk.getFluid(1000L),
-                FluidRegistry.getFluidStack("fluidmilk", 1000),
-                100,
-                2,
-                false);
-        GT_Values.RA.addDistilleryRecipe(
-                GT_Utility.getIntegratedCircuit(1),
-                FluidRegistry.getFluidStack("fluidmilk", 1000),
-                Materials.Milk.getFluid(1000L),
-                100,
-                2,
-                false);
 
         if (Loader.isModLoaded("GalaxySpace")) {
             GT_Values.RA.addImplosionRecipe(
