@@ -51,6 +51,7 @@ public class CircuitAssemblerRecipes implements Runnable {
 
     @Override
     public void run() {
+		this.solderingMaterials();
         // Recipes with High Tier Soldering
         Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
                 ? FluidRegistry.getFluid("molten.indalloy140")
