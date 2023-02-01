@@ -43,6 +43,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new SifterRecipes().run();
         new VacuumFreezerRecipes().run();
         new WiremillRecipes().run();
+        new CrackingRecipes().run();
     }
 
 }
