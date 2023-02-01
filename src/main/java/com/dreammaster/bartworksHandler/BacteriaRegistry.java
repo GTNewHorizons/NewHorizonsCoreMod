@@ -247,6 +247,14 @@ public class BacteriaRegistry {
                 600,
                 BW_Util.getMachineVoltageFromTier(8));
 
+        GT_Values.RA.addCrackingRecipe(
+                24,
+                RadoxLight.getGas(100),
+                Silver.getPlasma(1),
+                RadoxCracked.getGas(100),
+                500,
+                BW_Util.getMachineVoltageFromTier(8));
+
         // Ti & O Plasma Recipes
         GT_Values.RA.addFusionReactorRecipe(
                 Aluminium.getMolten(144),
