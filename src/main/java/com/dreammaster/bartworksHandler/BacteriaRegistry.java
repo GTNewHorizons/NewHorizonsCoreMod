@@ -263,7 +263,6 @@ public class BacteriaRegistry {
                 500,
                 BW_Util.getMachineVoltageFromTier(8));
 
-
         // Ti & O Plasma Recipes
         GT_Values.RA.addFusionReactorRecipe(
                 Aluminium.getMolten(144),
