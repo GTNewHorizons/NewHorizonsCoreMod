@@ -167,7 +167,7 @@ public class BacteriaRegistry {
         // XenoxRecycleRecipe
         GT_Values.RA.addDistillationTowerRecipe(
                 DelutedXenoxene.getFluid(1000),
-                new FluidStack[] { Xenoxene.getFluid(250), RadoxLight.getGas(750) },
+                new FluidStack[] { Xenoxene.getFluid(250), RadoxLight.getGas(300) },
                 Ash.getDust(1),
                 600,
                 BW_Util.getMachineVoltageFromTier(8));
@@ -242,7 +242,7 @@ public class BacteriaRegistry {
 
         GT_Values.RA.addDistillationTowerRecipe(
                 RadoxCracked.getGas(1000),
-                new FluidStack[] { RadoxGas.getGas(100), RadoxLight.getGas(900), },
+                new FluidStack[] { RadoxGas.getGas(100), RadoxLight.getGas(200), },
                 Ash.getDust(1),
                 600,
                 BW_Util.getMachineVoltageFromTier(8));
@@ -251,9 +251,18 @@ public class BacteriaRegistry {
                 24,
                 RadoxLight.getGas(100),
                 Silver.getPlasma(1),
-                RadoxCracked.getGas(100),
+                RadoxSuperLight.getGas(50),
                 500,
                 BW_Util.getMachineVoltageFromTier(8));
+
+        GT_Values.RA.addCrackingRecipe(
+                24,
+                RadoxHeavy.getGas(100),
+                Silver.getPlasma(1),
+                RadoxLight.getGas(20),
+                500,
+                BW_Util.getMachineVoltageFromTier(8));
+
 
         // Ti & O Plasma Recipes
         GT_Values.RA.addFusionReactorRecipe(
