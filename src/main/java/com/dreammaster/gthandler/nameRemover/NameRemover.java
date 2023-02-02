@@ -66,7 +66,8 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
 
         ItemStack output = getInputAt(0).copy();
         NBTTagCompound nbt = output.getTagCompound();
-        boolean removeName = false, removeDisassembly = false, removeColor = false, removeRepair = false;
+        boolean removeName = false, removeDye = false, removeDisassembly = false, removeColor = false,
+                removeRepair = false, removeSpray = false;
 
         if (nbt != null) {
             ItemStack circuit = getInputAt(1);
@@ -87,16 +88,22 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
                 case 4:
                     removeRepair = true;
                     break;
+                case 5:
+                    removeDye = true;
+                    break;
+                case 6:
+                    removeSpray = true;
+                    break;
                 default:
                     removeName = true;
                     removeDisassembly = true;
                     removeColor = true;
                     removeRepair = true;
+                    removeDye = true;
+                    removeSpray = true;
             }
-
             if (removeName && nbt.hasKey("display")) {
                 nbt.getCompoundTag("display").removeTag("Name");
-                nbt.getCompoundTag("display").removeTag("color");
                 if (nbt.getCompoundTag("display").hasNoTags()) {
                     nbt.removeTag("display");
                 }
@@ -109,6 +116,15 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
             }
             if (removeRepair && nbt.hasKey("RepairCost")) {
                 nbt.removeTag("RepairCost");
+            }
+            if (removeDye && nbt.hasKey("display")) {
+                nbt.getCompoundTag("display").removeTag("color");
+                if (nbt.getCompoundTag("display").hasNoTags()) {
+                    nbt.removeTag("display");
+                }
+            }
+            if (removeSpray && nbt.hasKey("mColor")) {
+                nbt.removeTag("mColor");
             }
             if (nbt.hasNoTags()) {
                 output.setTagCompound(null);
@@ -138,6 +154,8 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
         description.add(BOLD + "Circuit 2:" + RESET + "  Remove GT Disassembler tags");
         description.add(BOLD + "Circuit 3:" + RESET + "  Remove Railcraft stacking tag");
         description.add(BOLD + "Circuit 4:" + RESET + "  Remove Anvil repair tag");
+        description.add(BOLD + "Circuit 5:" + RESET + "  Remove Dye from Leather armor");
+        description.add(BOLD + "Circuit 6:" + RESET + "  Remove Spray color from GT items");
         description.add(" ");
         description.add(BOLD + "No Circuit:" + RESET + " Remove all of the above");
 
