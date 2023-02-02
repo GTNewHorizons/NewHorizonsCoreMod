@@ -147,7 +147,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     30);
             GT_Values.RA.addFluidSolidifierRecipe(
                     GT_ModHandler.getModItem("TConstruct", "largePlate", 1, 6),
-                    Materials.DamascusSteel.getMolten(288L),
+                    Materials.Steel.getMolten(288L),
                     GT_ModHandler.getModItem("TConstruct", "materials", 1, 43),
                     400,
                     120);
