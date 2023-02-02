@@ -46,8 +46,7 @@ public class ScriptEC2 implements IScriptLoader {
         final ItemStack AE2FC_TANK = getModItem("ae2fc", "certus_quartz_tank", 1, 0);
         final ItemStack EC2_TANK = getModItem(EC2, "certustank", 1, 0);
 
-        final ItemStack[] ae_components = new ItemStack[] {
-                getModItem(AE2, "item.ItemMultiMaterial", 1, 57), // 256k
+        final ItemStack[] ae_components = new ItemStack[] { getModItem(AE2, "item.ItemMultiMaterial", 1, 57), // 256k
                 getModItem(AE2, "item.ItemMultiMaterial", 1, 58), // 1024k
                 getModItem(AE2, "item.ItemMultiMaterial", 1, 59), // 4096k
                 getModItem(AE2, "item.ItemMultiMaterial", 1, 60), // 16384k
@@ -55,16 +54,13 @@ public class ScriptEC2 implements IScriptLoader {
                 getModItem(AE2, "tile.BlockAdvancedCraftingStorage", 1, 1), // 1024k
                 getModItem(AE2, "tile.BlockAdvancedCraftingStorage", 1, 2), // 4096k
                 getModItem(AE2, "tile.BlockAdvancedCraftingStorage", 1, 3), // 16384k
-                getModItem(AE2, "item.ItemVoidStorageCell", 1, 0),
-                getModItem("ae2fc", "walrus", 1, 0),
-                getModItem("ae2fc", "part_fluid_export", 1, 0),
-                getModItem("ae2fc", "part_fluid_import", 1, 0),
+                getModItem(AE2, "item.ItemVoidStorageCell", 1, 0), getModItem("ae2fc", "walrus", 1, 0),
+                getModItem("ae2fc", "part_fluid_export", 1, 0), getModItem("ae2fc", "part_fluid_import", 1, 0),
                 getModItem("ae2fc", "part_fluid_level_emitter", 1, 0),
                 getModItem("ae2fc", "part_fluid_storage_monitor", 1, 0),
                 getModItem("ae2fc", "part_fluid_conversion_monitor", 1, 0),
                 getModItem("ae2fc", "wireless_fluid_terminal", 1, 0) };
-        final ItemStack[] ec_components = new ItemStack[] {
-                getModItem(EC2, "storage.component", 1, 0), // 256k
+        final ItemStack[] ec_components = new ItemStack[] { getModItem(EC2, "storage.component", 1, 0), // 256k
                 getModItem(EC2, "storage.component", 1, 1), // 1024k
                 getModItem(EC2, "storage.component", 1, 2), // 4096k
                 getModItem(EC2, "storage.component", 1, 3), // 16384k
@@ -72,15 +68,11 @@ public class ScriptEC2 implements IScriptLoader {
                 getModItem(EC2, "craftingstorage", 1, 1), // 1024k
                 getModItem(EC2, "craftingstorage", 1, 2), // 4096k
                 getModItem(EC2, "craftingstorage", 1, 3), // 16384k
-                getModItem(EC2, "storage.physical.void", 1, 0),
-                getModItem(EC2, "walrus", 1, 0),
-                getModItem(EC2, "part.base", 1, 0),
-                getModItem(EC2, "part.base", 1, 1),
-                getModItem(EC2, "part.base", 1, 4),
-                getModItem(EC2, "part.base", 1, 10),
+                getModItem(EC2, "storage.physical.void", 1, 0), getModItem(EC2, "walrus", 1, 0),
+                getModItem(EC2, "part.base", 1, 0), getModItem(EC2, "part.base", 1, 1),
+                getModItem(EC2, "part.base", 1, 4), getModItem(EC2, "part.base", 1, 10),
                 getModItem(EC2, "part.base", 1, 11),
-                getModItem(EC2, "terminal.fluid.wireless", 1, OreDictionary.WILDCARD_VALUE)
-        };
+                getModItem(EC2, "terminal.fluid.wireless", 1, OreDictionary.WILDCARD_VALUE) };
 
         // Covert recipes
         GameRegistry.addShapelessRecipe(AE2FC_FLUID_STORAGE_BUS, EC_FLUID_STORAGE_BUS);
