@@ -1324,7 +1324,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 9L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 9L),
                 GT_Values.NF,
-                GT_Values.NF,
+                Materials.CarbonMonoxide.getGas(9000L),
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 4L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rutile, 4L),
                 3200,
