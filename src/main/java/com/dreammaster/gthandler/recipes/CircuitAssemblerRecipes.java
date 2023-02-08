@@ -118,7 +118,19 @@ public class CircuitAssemblerRecipes implements Runnable {
                 ItemList.Circuit_Neuroprocessor.get(1L),
                 200,
                 38400,
-                true);
+                true); 
+        // Wetware SoC recipe
+        GT_Values.RA.addCircuitAssemblerRecipe(
+                new ItemStack[] { ItemList.Circuit_Board_Wetware_Extreme.get(1), Circuit_Parts_Crystal_Chip_Wetware.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 8), 
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.CosmicNeutronium, 8)  },
+                new
+
+                FluidStack(solderIndalloy, 144),
+                ItemList.Circuit_Neuroprocessor.get(1L),
+                3 * 20,
+                614400,
+                true); 
         GT_Values.RA.addCircuitAssemblerRecipe(
                 new ItemStack[] { ItemList.Circuit_Chip_NeuroCPU.get(1L), ItemList.Circuit_Chip_CrystalCPU.get(1L),
                         ItemList.Circuit_Chip_NanoCPU.get(1L), ItemList.Circuit_Parts_CapacitorXSMD.get(2L),
