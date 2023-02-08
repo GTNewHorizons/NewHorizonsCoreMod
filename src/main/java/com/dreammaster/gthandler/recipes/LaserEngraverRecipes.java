@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.GT_Values.NF;
 import static gregtech.api.enums.GT_Values.NI;
 
 import net.minecraft.item.ItemStack;
@@ -164,7 +165,7 @@ public class LaserEngraverRecipes implements Runnable {
                             CustomItemList.MysteriousCrystalLens.get(0) },
                     new FluidStack[] { Materials.UUMatter.getFluid(16000L) },
                     new ItemStack[] { ItemList.Circuit_Silicon_Ingot6.get(1L) },
-                    new FluidStack[] { GT_Values.NF },
+                    new FluidStack[] { NF },
                     30 * 20,
                     7_864_320,
                     true);
