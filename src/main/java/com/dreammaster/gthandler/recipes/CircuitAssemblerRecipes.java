@@ -122,7 +122,7 @@ public class CircuitAssemblerRecipes implements Runnable {
         // Wetware SoC recipe
         GT_Values.RA.addCircuitAssemblerRecipe(
                 new ItemStack[] { ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                        Circuit_Parts_Crystal_Chip_Wetware.get(1L),
+                        ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.YttriumBariumCuprate, 8),
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.CosmicNeutronium, 8) },
                 new
