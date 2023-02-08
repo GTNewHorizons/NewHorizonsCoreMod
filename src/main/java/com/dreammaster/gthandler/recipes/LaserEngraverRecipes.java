@@ -202,16 +202,17 @@ public class LaserEngraverRecipes implements Runnable {
                     500 * 10,
                     983_040,
                     true);
-        
-            GT_Values.RA.addLaserEngraverRecipe(
-                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L).copy().splitStack(0), 
-                                     ItemList.Circuit_Chip_CrystalSoC2.get(1L)},
-                    new FluidStack[] { Materials.BioMediumSterilized.getFluid(50L) },
-                    new ItemStack[] { ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1)},
-                    new FluidStack[] { NF },
-                    60 * 20,
-                    160000,
-                    true);
+
+            GT_Values.RA
+                    .addLaserEngraverRecipe(
+                            new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L).copy()
+                                    .splitStack(0), ItemList.Circuit_Chip_CrystalSoC2.get(1L) },
+                            new FluidStack[] { Materials.BioMediumSterilized.getFluid(50L) },
+                            new ItemStack[] { ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1) },
+                            new FluidStack[] { NF },
+                            60 * 20,
+                            160000,
+                            true);
         }
 
         // GC/GS Wafer
