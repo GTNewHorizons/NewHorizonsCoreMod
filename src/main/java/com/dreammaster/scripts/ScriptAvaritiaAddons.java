@@ -100,7 +100,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 'g',
                 getModItem("gregtech", "gt.blockmachines", 1, 129),
                 'h',
-                getModItem("extracells", "storage.component", 1, 3));
+                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 60));
 
         // Infinity Egg (Witchery)
         if (Loader.isModLoaded("witchery") && Config.witch) {
