@@ -627,7 +627,8 @@ public class ScriptAE2FC implements IScriptLoader {
         // Wireless Fluid Pattern Terminal
         GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2FC_TERMINAL, null, AE2FC_PATTERN_WIRELESS, 600, 120);
         // Wireless Interface Terminal
-        GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM, null, AE2FC_INTERFACE_WIRELESS, 600, 120);
+        GT_Values.RA
+                .addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM, null, AE2FC_INTERFACE_WIRELESS, 600, 120);
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
