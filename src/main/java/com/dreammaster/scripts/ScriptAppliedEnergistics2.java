@@ -132,7 +132,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1) });
         GT_ModHandler.addCraftingRecipe(
                 components[3],
-                new Object[] { "CPC", "PXP", "CPC", 'C', "circuitMaster", 'P', components[1], 'X',
+                new Object[] { "CPC", "PXP", "CPC", 'C', "circuitSuperconductor", 'P', components[2], 'X',
                         CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1) });
         FluidStack[] solders = new FluidStack[] { Materials.Lead.getMolten(288), Materials.Tin.getMolten(144),
                 Materials.SolderingAlloy.getMolten(72), };
