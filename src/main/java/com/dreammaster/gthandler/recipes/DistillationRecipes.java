@@ -40,14 +40,18 @@ public class DistillationRecipes implements Runnable {
         if (Loader.isModLoaded("bartworks")) {
             GT_Values.RA.addDistillationTowerRecipe(
                     Materials.Grade2PurifiedWater.getFluid(1000L),
-                    new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(900L), },
-                    null,
+                    new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(900L),
+                            Materials.Grade2PurifiedWater.getFluid(50L), Materials.Grade1PurifiedWater.getFluid(100L),
+                            Materials.Oil.getFluid(50L), Materials.Ammonia.getFluid(100L) },
+                    Materials.Calcite.getDust(1),
                     500 * 10,
                     122_880);
 
             GT_Values.RA.addDistillationTowerRecipe(
                     Materials.Grade6PurifiedWater.getFluid(1000L),
-                    new FluidStack[] { Materials.Grade7PurifiedWater.getFluid(900L), },
+                    new FluidStack[] { Materials.Grade7PurifiedWater.getFluid(900L),
+                            Materials.Grade6PurifiedWater.getFluid(50L), Materials.Grade5PurifiedWater.getFluid(100L),
+                            Materials.Ethanol.getFluid(50L) },
                     null,
                     500 * 10,
                     1_966_080);
