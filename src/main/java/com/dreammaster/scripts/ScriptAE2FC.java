@@ -42,6 +42,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2_WORK_BENCH = getModItem("appliedenergistics2", "tile.BlockCellWorkbench", 1);
         final ItemStack AE2_PATTERN_TERM = getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 340);
         final ItemStack AE2_TERM = getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 380);
+        final ItemStack AE2_INTERFACE_TERM = getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 480);
         final ItemStack AE2_PROCESS_LOG = getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 22);
         final ItemStack AE2_QUARTZ_GLASS = getModItem("appliedenergistics2", "tile.BlockQuartzGlass", 1);
         final ItemStack AE2_LAMP_GLASS = getModItem("appliedenergistics2", "tile.BlockQuartzLamp", 1);
@@ -114,6 +115,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_CON = getModItem("ae2fc", "part_fluid_conversion_monitor", 1, 0);
         final ItemStack AE2FC_FLUID_WIRELESS = getModItem("ae2fc", "wireless_fluid_terminal", 1, 0);
         final ItemStack AE2FC_PATTERN_WIRELESS = getModItem("ae2fc", "wireless_fluid_pattern_terminal", 1, 0);
+        final ItemStack AE2FC_INTERFACE_WIRELESS = getModItem("ae2fc", "wireless_interface_terminal", 1, 0);
 
         ItemStack[] cells = new ItemStack[] { CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096,
                 CELL_16384 };
@@ -624,6 +626,8 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2FC_FLUID_TERMINAL, null, AE2FC_FLUID_WIRELESS, 600, 120);
         // Wireless Fluid Pattern Terminal
         GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2FC_TERMINAL, null, AE2FC_PATTERN_WIRELESS, 600, 120);
+        // Wireless Interface Terminal
+        GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM, null, AE2FC_INTERFACE_WIRELESS, 600, 120);
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
