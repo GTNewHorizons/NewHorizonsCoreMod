@@ -1,18 +1,22 @@
 package com.dreammaster.item;
 
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.NHItems;
-import eu.usrv.yamcore.iface.IExtendedModItem;
 import java.util.List;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.NHItems;
+import eu.usrv.yamcore.iface.IExtendedModItem;
+
 public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBrickForm> {
+
     public static final Logger LOGGER = LogManager.getLogger();
 
     private final String _mCreativeTab;

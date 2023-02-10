@@ -1,28 +1,30 @@
 package com.dreammaster.modhazardousitems;
 
+import java.util.Map;
+import java.util.function.Function;
+
+import javax.annotation.Nullable;
+
+import net.minecraft.util.DamageSource;
+
 import com.dreammaster.modhazardousitems.cause.HazardCause;
 import com.dreammaster.modhazardousitems.cause.HazardCause.Type;
 import com.dreammaster.modhazardousitems.cause.InventoryItemHazardCause;
 import com.google.common.collect.ImmutableMap;
+
 import eu.usrv.yamcore.gameregistry.DamageTypeHelper;
 import gregtech.api.damagesources.GT_DamageSources;
-import java.util.Map;
-import java.util.function.Function;
-import javax.annotation.Nullable;
-import net.minecraft.util.DamageSource;
 
 public class HazardDamageSources {
-    public static final Map<String, Function<HazardCause, DamageSource>> EXTRA_SOURCE_FACTORIES =
-            ImmutableMap.<String, Function<HazardCause, DamageSource>>builder()
-                    .put("gregtech:hot", cause -> {
-                        if (cause.getType() == Type.INVENTORY) {
-                            return new GT_DamageSources.DamageSourceHotItem(
-                                    ((InventoryItemHazardCause) cause).getStack());
-                        } else {
-                            return GT_DamageSources.getHeatDamage();
-                        }
-                    })
-                    .build();
+
+    public static final Map<String, Function<HazardCause, DamageSource>> EXTRA_SOURCE_FACTORIES = ImmutableMap
+            .<String, Function<HazardCause, DamageSource>>builder().put("gregtech:hot", cause -> {
+                if (cause.getType() == Type.INVENTORY) {
+                    return new GT_DamageSources.DamageSourceHotItem(((InventoryItemHazardCause) cause).getStack());
+                } else {
+                    return GT_DamageSources.getHeatDamage();
+                }
+            }).build();
 
     public static boolean isValid(String damageSourceId) {
         return getDamageSourceFactory(damageSourceId) != null;

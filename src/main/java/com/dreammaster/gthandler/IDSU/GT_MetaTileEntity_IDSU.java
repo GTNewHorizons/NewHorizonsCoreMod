@@ -2,20 +2,23 @@ package com.dreammaster.gthandler.IDSU;
 
 import static gregtech.api.enums.GT_Values.V;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.objects.GT_RenderedTexture;
-import java.util.HashMap;
-import java.util.Map;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 
 public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
+
     public static final Map<Integer, Long> mIDSUList = new HashMap<>();
     public int mFrequency = 0;
     public static int mTier = 8;
@@ -60,14 +63,10 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
     }
 
     @Override
-    public ITexture[] getTexture(
-            IGregTechTileEntity aBaseMetaTileEntity,
-            byte aSide,
-            byte aFacing,
-            byte aColorIndex,
-            boolean aActive,
-            boolean aRedstone) {
-        return new ITexture[] {aSide == aFacing ? new GT_RenderedTexture(_mIDSU_Out) : new GT_RenderedTexture(_mIDSU)};
+    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, byte aSide, byte aFacing, byte aColorIndex,
+            boolean aActive, boolean aRedstone) {
+        return new ITexture[] {
+                aSide == aFacing ? new GT_RenderedTexture(_mIDSU_Out) : new GT_RenderedTexture(_mIDSU) };
     }
 
     @Override
@@ -187,7 +186,7 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
 
     @Override
     public String[] getDescription() {
-        return new String[] {"Interdimensional Storage Unit Mark II"};
+        return new String[] { "Interdimensional Storage Unit Mark II" };
     }
 
     public boolean allowPullStack(int aIndex, byte aSide, ItemStack aStack) {
@@ -200,87 +199,22 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
 }
 
 /*
-  public GT_MetaTileEntity_IDSU(int aID, String aName, String aNameRegional)
-  {
-    super(aID, aName, aNameRegional);
-  }
-
-  public GT_MetaTileEntity_IDSU() {}
-
-  public boolean isBatteryUpgradable()
-  {
-    return false;
-  }
-
-  public void onRightclick(EntityPlayer aPlayer)
-  {
-    getBaseMetaTileEntity().openGUI(aPlayer, 151);
-  }
-
-  public MetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity)
-  {
-    return new GT_MetaTileEntity_IDSU();
-  }
-  public void onFirstServerTick()
-  {
-    GregTech_API.sIDSUList.clear();
-    if ((GT_Mod.mUniverse != null) && (!GT_Mod.mUniverse.field_72995_K))
-    {
-      GregTech_API.sIDSUList.clear();
-      try
-      {
-        File tDirectory = GT_Mod.getSaveDirectory();
-        if (tDirectory != null)
-        {
-          NBTTagCompound tNBT = CompressedStreamTools.func_74796_a(new FileInputStream(new File(tDirectory, "GT_IDSU_Energyvalues.dat")));
-          NBTTagList tList = tNBT.func_74761_m("Energy");
-          for (int i = 0; i < tList.func_74745_c(); i++)
-          {
-            NBTTagCompound tTag = (NBTTagCompound)tList.func_74743_b(i);
-            GregTech_API.sIDSUList.put(Integer.valueOf(tTag.func_74762_e("Hash")), Integer.valueOf(tTag.func_74762_e("EU")));
-          }
-        }
-      }
-      catch (Throwable e)
-      {
-        if (!(e instanceof FileNotFoundException)) {
-          e.printStackTrace();
-        }
-      }
-    }
-  }
-
-  public void onServerStop()
-  {
-    if ((GT_Mod.mUniverse != null) && (!GT_Mod.mUniverse.field_72995_K)) {
-      try
-      {
-        File tDirectory = GT_Mod.getSaveDirectory();
-        if (tDirectory != null)
-        {
-          NBTTagCompound tNBT = new NBTTagCompound();
-          NBTTagList tList = new NBTTagList();
-          for (Map.Entry<Integer, Integer> tEntry : GregTech_API.sIDSUList.entrySet())
-          {
-            NBTTagCompound tTag = new NBTTagCompound();
-            tTag.func_74768_a("Hash", ((Integer)tEntry.getKey()).intValue());
-            tTag.func_74768_a("EU", ((Integer)tEntry.getValue()).intValue());
-            tList.func_74742_a(tTag);
-          }
-          tNBT.func_74782_a("Energy", tList);
-          CompressedStreamTools.func_74799_a(tNBT, new FileOutputStream(new File(tDirectory, "GT_IDSU_Energyvalues.dat")));
-        }
-      }
-      catch (Throwable e)
-      {
-        e.printStackTrace();
-      }
-    }
-    GregTech_API.sIDSUList.clear();
-  }
-
-
-
-}
-
-*/
+ * public GT_MetaTileEntity_IDSU(int aID, String aName, String aNameRegional) { super(aID, aName, aNameRegional); }
+ * public GT_MetaTileEntity_IDSU() {} public boolean isBatteryUpgradable() { return false; } public void
+ * onRightclick(EntityPlayer aPlayer) { getBaseMetaTileEntity().openGUI(aPlayer, 151); } public MetaTileEntity
+ * newMetaEntity(IGregTechTileEntity aTileEntity) { return new GT_MetaTileEntity_IDSU(); } public void
+ * onFirstServerTick() { GregTech_API.sIDSUList.clear(); if ((GT_Mod.mUniverse != null) &&
+ * (!GT_Mod.mUniverse.field_72995_K)) { GregTech_API.sIDSUList.clear(); try { File tDirectory =
+ * GT_Mod.getSaveDirectory(); if (tDirectory != null) { NBTTagCompound tNBT = CompressedStreamTools.func_74796_a(new
+ * FileInputStream(new File(tDirectory, "GT_IDSU_Energyvalues.dat"))); NBTTagList tList = tNBT.func_74761_m("Energy");
+ * for (int i = 0; i < tList.func_74745_c(); i++) { NBTTagCompound tTag = (NBTTagCompound)tList.func_74743_b(i);
+ * GregTech_API.sIDSUList.put(Integer.valueOf(tTag.func_74762_e("Hash")), Integer.valueOf(tTag.func_74762_e("EU"))); } }
+ * } catch (Throwable e) { if (!(e instanceof FileNotFoundException)) { e.printStackTrace(); } } } } public void
+ * onServerStop() { if ((GT_Mod.mUniverse != null) && (!GT_Mod.mUniverse.field_72995_K)) { try { File tDirectory =
+ * GT_Mod.getSaveDirectory(); if (tDirectory != null) { NBTTagCompound tNBT = new NBTTagCompound(); NBTTagList tList =
+ * new NBTTagList(); for (Map.Entry<Integer, Integer> tEntry : GregTech_API.sIDSUList.entrySet()) { NBTTagCompound tTag
+ * = new NBTTagCompound(); tTag.func_74768_a("Hash", ((Integer)tEntry.getKey()).intValue()); tTag.func_74768_a("EU",
+ * ((Integer)tEntry.getValue()).intValue()); tList.func_74742_a(tTag); } tNBT.func_74782_a("Energy", tList);
+ * CompressedStreamTools.func_74799_a(tNBT, new FileOutputStream(new File(tDirectory, "GT_IDSU_Energyvalues.dat"))); } }
+ * catch (Throwable e) { e.printStackTrace(); } } GregTech_API.sIDSUList.clear(); } }
+ */

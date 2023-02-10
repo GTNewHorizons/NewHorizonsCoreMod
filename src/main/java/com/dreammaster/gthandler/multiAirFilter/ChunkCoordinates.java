@@ -1,9 +1,11 @@
 package com.dreammaster.gthandler.multiAirFilter;
 
-import gregtech.common.GT_Pollution;
 import net.minecraft.world.World;
 
+import gregtech.common.GT_Pollution;
+
 public class ChunkCoordinates {
+
     private int chunkX, chunkZ;
     private World world;
 

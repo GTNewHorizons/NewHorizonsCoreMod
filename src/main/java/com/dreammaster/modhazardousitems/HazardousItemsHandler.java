@@ -1,10 +1,28 @@
 package com.dreammaster.modhazardousitems;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.lang.reflect.Field;
+import java.util.Random;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
+import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
+import net.minecraft.util.MathHelper;
+import net.minecraftforge.fluids.IFluidContainerItem;
+
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.modhazardousitems.HazardousItems.HazardousItem;
 import com.dreammaster.modhazardousitems.cause.HazardCause;
 import com.google.common.collect.EvictingQueue;
+
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
@@ -14,29 +32,15 @@ import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.gameregistry.PotionHelper;
 import gregtech.api.util.GT_Utility;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.lang.reflect.Field;
-import java.util.Random;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.potion.Potion;
-import net.minecraft.util.MathHelper;
-import net.minecraftforge.fluids.IFluidContainerItem;
 
 /**
- * Eventhandler to apply configured Damage Values to player, if they have
- * certain items in their inventory
+ * Eventhandler to apply configured Damage Values to player, if they have certain items in their inventory
  *
  * @author Namikon
  *
  */
 public class HazardousItemsHandler {
+
     private final Random _mRnd = new Random();
     private final LogHelper _mLogger = MainRegistry.Logger;
     private HazardousItems _mHazardItemsCollection;
@@ -135,8 +139,8 @@ public class HazardousItemsHandler {
         // Define a testitem to hold these effects
         HazardousItem tHazItem = _mHazFactory.createHazardousItemsHazardousItem("tfarcenim:stone", true, true, true);
 
-        HazardousItems.HazardousFluid tHazFluid =
-                _mHazFactory.createHazardousFluid("tfarcenim:water", true, true, true);
+        HazardousItems.HazardousFluid tHazFluid = _mHazFactory
+                .createHazardousFluid("tfarcenim:water", true, true, true);
 
         // Add both effects to our defined testItem
         tHazItem.getDamageEffects().add(tFireEffect);
@@ -196,8 +200,7 @@ public class HazardousItemsHandler {
     }
 
     /**
-     * Reload item configuration from disk. Will overwrite current List without
-     * restart, if the config file is valid
+     * Reload item configuration from disk. Will overwrite current List without restart, if the config file is valid
      *
      * @return
      */
@@ -237,9 +240,11 @@ public class HazardousItemsHandler {
         for (HazardousItem hi : pItemCollection.getHazardousItems()) {
             for (HazardousItems.ItmDamageEffect ide : hi.getDamageEffects()) {
                 if (!HazardDamageSources.isValid(ide.getDamageSource())) {
-                    _mLogger.warn(String.format(
-                            "HazardousItem [%s] has invalid DamageSource entry: [%s]",
-                            hi.getItemName(), ide.getDamageSource()));
+                    _mLogger.warn(
+                            String.format(
+                                    "HazardousItem [%s] has invalid DamageSource entry: [%s]",
+                                    hi.getItemName(),
+                                    ide.getDamageSource()));
                     tResult = false;
                 }
             }
@@ -247,9 +252,11 @@ public class HazardousItemsHandler {
         for (HazardousItems.HazardousFluid hf : pItemCollection.getHazardousFluids()) {
             for (HazardousItems.ItmDamageEffect ide : hf.getDamageEffects()) {
                 if (!HazardDamageSources.isValid(ide.getDamageSource())) {
-                    _mLogger.warn(String.format(
-                            "HazardousFluid [%s] has invalid DamageSource entry: [%s]",
-                            hf.getFluidName(), ide.getDamageSource()));
+                    _mLogger.warn(
+                            String.format(
+                                    "HazardousFluid [%s] has invalid DamageSource entry: [%s]",
+                                    hf.getFluidName(),
+                                    ide.getDamageSource()));
                     tResult = false;
                 }
             }
@@ -269,9 +276,11 @@ public class HazardousItemsHandler {
         for (HazardousItem hi : pItemCollection.getHazardousItems()) {
             for (HazardousItems.ItmPotionEffect ipe : hi.getPotionEffects()) {
                 if (!PotionHelper.IsValidPotionID(ipe.getId())) {
-                    _mLogger.warn(String.format(
-                            "HazardousItem [%s] has invalid PotionID: [%s] (There is no such potion)",
-                            hi.getItemName(), ipe.getId()));
+                    _mLogger.warn(
+                            String.format(
+                                    "HazardousItem [%s] has invalid PotionID: [%s] (There is no such potion)",
+                                    hi.getItemName(),
+                                    ipe.getId()));
                     tResult = false;
                 }
             }
@@ -280,9 +289,11 @@ public class HazardousItemsHandler {
         for (HazardousItems.HazardousFluid hf : pItemCollection.getHazardousFluids()) {
             for (HazardousItems.ItmPotionEffect ipe : hf.getPotionEffects()) {
                 if (!PotionHelper.IsValidPotionID(ipe.getId())) {
-                    _mLogger.warn(String.format(
-                            "HazardousFluid [%s] has invalid PotionID: [%s] (There is no such potion)",
-                            hf.getFluidName(), ipe.getId()));
+                    _mLogger.warn(
+                            String.format(
+                                    "HazardousFluid [%s] has invalid PotionID: [%s] (There is no such potion)",
+                                    hf.getFluidName(),
+                                    ipe.getId()));
                     tResult = false;
                 }
             }
@@ -312,8 +323,8 @@ public class HazardousItemsHandler {
 
             // Skip air block and null results
             if (tUidContact != null && !tUidContact.toString().equals("minecraft:air")) {
-                HazardousItems.HazardousFluid hazard =
-                        _mHazardItemsCollection.FindHazardousFluidExact(tUidContact.toString());
+                HazardousItems.HazardousFluid hazard = _mHazardItemsCollection
+                        .FindHazardousFluidExact(tUidContact.toString());
                 if (hazard != null && hazard.getCheckContact()) {
                     doEffects(HazardCause.stepOn(), hazard, pPlayer);
                 }
@@ -353,37 +364,37 @@ public class HazardousItemsHandler {
                 // Tinkers' construct smeltery tank
                 else if ("tconstruct.smeltery.itemblocks.LavaTankItemBlock"
                         .equals(stack.getItem().getClass().getName())) {
-                    // _mLogger.info("Found lavatank");
-                    NBTTagCompound tNBT = stack.getTagCompound();
-                    if (tNBT != null && tNBT.hasKey("Fluid")) {
-                        // _mLogger.info("...Has NBT 'Fluid'...");
-                        NBTTagCompound tFluidCompound = tNBT.getCompoundTag("Fluid");
-                        if (tFluidCompound != null && tFluidCompound.hasKey("FluidName")) {
-                            // _mLogger.info("...Has NBT 'FluidName'...");
-                            String tFluidName = tFluidCompound.getString("FluidName");
-                            if (tFluidName != null && !tFluidName.isEmpty()) {
-                                // _mLogger.info("...Finding Hazardous Fluids...");
-                                HazardousItems.HazardousFluid hazardFluid =
-                                        _mHazardItemsCollection.FindHazardousFluidExact(tFluidName);
-                                if (hazardFluid != null && hazardFluid.getCheckInventory()) {
-                                    // _mLogger.info("...Found Hazardous Fluids");
-                                    doEffects(HazardCause.inventoryItem(stack), hazardFluid, pPlayer);
+                            // _mLogger.info("Found lavatank");
+                            NBTTagCompound tNBT = stack.getTagCompound();
+                            if (tNBT != null && tNBT.hasKey("Fluid")) {
+                                // _mLogger.info("...Has NBT 'Fluid'...");
+                                NBTTagCompound tFluidCompound = tNBT.getCompoundTag("Fluid");
+                                if (tFluidCompound != null && tFluidCompound.hasKey("FluidName")) {
+                                    // _mLogger.info("...Has NBT 'FluidName'...");
+                                    String tFluidName = tFluidCompound.getString("FluidName");
+                                    if (tFluidName != null && !tFluidName.isEmpty()) {
+                                        // _mLogger.info("...Finding Hazardous Fluids...");
+                                        HazardousItems.HazardousFluid hazardFluid = _mHazardItemsCollection
+                                                .FindHazardousFluidExact(tFluidName);
+                                        if (hazardFluid != null && hazardFluid.getCheckInventory()) {
+                                            // _mLogger.info("...Found Hazardous Fluids");
+                                            doEffects(HazardCause.inventoryItem(stack), hazardFluid, pPlayer);
+                                        }
+                                        // else
+                                        // _mLogger.info("...Not found Hazardous Fluids");
+                                    }
                                 }
                                 // else
-                                // _mLogger.info("...Not found Hazardous Fluids");
+                                // _mLogger.info("...Has no NBT 'FluidName'");
+                            }
+                            // else
+                            // _mLogger.info("...Has no NBT 'Fluid'");
+                        } else {
+                            HazardousItem hazardItem = _mHazardItemsCollection.FindHazardousItem(stack);
+                            if (hazardItem != null && hazardItem.getCheckInventory()) {
+                                doEffects(HazardCause.inventoryItem(stack), hazardItem, pPlayer);
                             }
                         }
-                        // else
-                        // _mLogger.info("...Has no NBT 'FluidName'");
-                    }
-                    // else
-                    // _mLogger.info("...Has no NBT 'Fluid'");
-                } else {
-                    HazardousItem hazardItem = _mHazardItemsCollection.FindHazardousItem(stack);
-                    if (hazardItem != null && hazardItem.getCheckInventory()) {
-                        doEffects(HazardCause.inventoryItem(stack), hazardItem, pPlayer);
-                    }
-                }
             } catch (Exception e) {
                 _mLogger.debug(String.format("Something weird happend with item %s", tCurrIS));
                 // Silently catching exception and continue

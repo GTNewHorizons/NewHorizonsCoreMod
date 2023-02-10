@@ -1,9 +1,8 @@
 package com.dreammaster.command;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import java.util.ArrayList;
 import java.util.List;
+
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,7 +10,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidContainerItem;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
+
 public class ItemInHandInfoCommand implements ICommand {
+
     private List aliases;
 
     public ItemInHandInfoCommand() {
@@ -64,12 +67,10 @@ public class ItemInHandInfoCommand implements ICommand {
             PlayerChatHelper.SendPlain(pCmdSender, String.format("Unloc.Name:  [%s]", inHand.getUnlocalizedName()));
             PlayerChatHelper.SendPlain(pCmdSender, String.format("ItemName:  [%s]", UID.toString()));
             PlayerChatHelper.SendPlain(pCmdSender, String.format("ItemMeta:  [%s]", inHand.getItemDamage()));
-            PlayerChatHelper.SendPlain(
-                    pCmdSender, String.format("FluidContainer:  [%s]", getFluidContainerContents(inHand)));
-            PlayerChatHelper.SendPlain(
-                    pCmdSender,
-                    String.format(
-                            "ClassName:  [%s]", inHand.getItem().getClass().toString()));
+            PlayerChatHelper
+                    .SendPlain(pCmdSender, String.format("FluidContainer:  [%s]", getFluidContainerContents(inHand)));
+            PlayerChatHelper
+                    .SendPlain(pCmdSender, String.format("ClassName:  [%s]", inHand.getItem().getClass().toString()));
             PlayerChatHelper.SendPlain(pCmdSender, String.format("ItemNBT:  [%s]", inHand.stackTagCompound));
 
         } catch (Exception e) {

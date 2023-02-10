@@ -19,24 +19,19 @@ public class ScriptSleepingBags implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapedRecipe(getModItem("sleepingbag", "sleepingBag", 1), new Object[] {
-            getModItem("minecraft", "carpet", 1, 32767),
-            getModItem("minecraft", "carpet", 1, 32767),
-            getModItem("minecraft", "carpet", 1, 32767),
-            "blockWool",
-            "blockWool",
-            "blockWool",
-            getModItem("Backpack", "tannedLeather", 1),
-            getModItem("Backpack", "tannedLeather", 1),
-            getModItem("Backpack", "tannedLeather", 1)
-        });
+        addShapedRecipe(
+                getModItem("sleepingbag", "sleepingBag", 1),
+                new Object[] { getModItem("minecraft", "carpet", 1, 32767), getModItem("minecraft", "carpet", 1, 32767),
+                        getModItem("minecraft", "carpet", 1, 32767), "blockWool", "blockWool", "blockWool",
+                        getModItem("Backpack", "tannedLeather", 1), getModItem("Backpack", "tannedLeather", 1),
+                        getModItem("Backpack", "tannedLeather", 1) });
 
         addShapelessCraftingRecipe(
                 getModItem("sleepingbag", "sleepingBag", 1),
-                new Object[] {getModItem("adventurebackpack", "backpackComponent", 1, 1)});
+                new Object[] { getModItem("adventurebackpack", "backpackComponent", 1, 1) });
 
         addShapelessCraftingRecipe(
                 getModItem("adventurebackpack", "backpackComponent", 1, 1),
-                new Object[] {getModItem("OpenBlocks", "sleepingBag", 1)});
+                new Object[] { getModItem("OpenBlocks", "sleepingBag", 1) });
     }
 }

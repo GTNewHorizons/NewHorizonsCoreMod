@@ -1,15 +1,17 @@
 package com.dreammaster.fluids;
 
-import cpw.mods.fml.common.Loader;
-import eu.usrv.yamcore.fluids.ModFluidManager;
-import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.Fluid;
 
+import cpw.mods.fml.common.Loader;
+import eu.usrv.yamcore.fluids.ModFluidManager;
+import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
+
 public final class ExtendedFluidCollection {
+
     static final boolean bop_loaded = Loader.isModLoaded("BiomesOPlenty");
 
     private static ModSimpleBaseFluid _mAmmonia;
@@ -127,8 +129,8 @@ public final class ExtendedFluidCollection {
         // fluid block
         _mFermentedBacterialSludge.addStackingPotionEffect(new PotionEffect(bop_loaded ? 24 : Potion.poison.id, 20, 0));
 
-        _mFermentedBacterialSludge.addStackingPotionEffect(
-                new PotionEffect(bop_loaded ? 25 : Potion.moveSlowdown.id, 20, 0));
+        _mFermentedBacterialSludge
+                .addStackingPotionEffect(new PotionEffect(bop_loaded ? 25 : Potion.moveSlowdown.id, 20, 0));
 
         _mFermentedBacterialSludge.setRegisterBucket(true); // don't register a bucket
     }
@@ -168,8 +170,8 @@ public final class ExtendedFluidCollection {
         // fluid block
         _mEnrichedBacterialSludge.addStackingPotionEffect(new PotionEffect(bop_loaded ? 24 : Potion.poison.id, 40, 0));
 
-        _mEnrichedBacterialSludge.addStackingPotionEffect(
-                new PotionEffect(bop_loaded ? 25 : Potion.moveSlowdown.id, 40, 0));
+        _mEnrichedBacterialSludge
+                .addStackingPotionEffect(new PotionEffect(bop_loaded ? 25 : Potion.moveSlowdown.id, 40, 0));
 
         _mEnrichedBacterialSludge.setRegisterBucket(true); // don't register a bucket
     }

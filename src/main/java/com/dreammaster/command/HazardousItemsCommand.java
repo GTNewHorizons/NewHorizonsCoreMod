@@ -1,9 +1,8 @@
 package com.dreammaster.command;
 
-import com.dreammaster.main.MainRegistry;
-import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import java.util.ArrayList;
 import java.util.List;
+
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,7 +10,11 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.potion.Potion;
 import net.minecraft.server.MinecraftServer;
 
+import com.dreammaster.main.MainRegistry;
+import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
+
 public class HazardousItemsCommand implements ICommand {
+
     private List aliases;
 
     public HazardousItemsCommand() {
@@ -71,10 +74,10 @@ public class HazardousItemsCommand implements ICommand {
         } else if ("listdamagesources".equalsIgnoreCase(pArgs[0])) {
             if (!InGame(pCmdSender)) {
                 PlayerChatHelper.SendPlain(pCmdSender, "[HAZIT] Valid DamageTypes are:");
-                PlayerChatHelper.SendPlain(
-                        pCmdSender, "[HAZIT] inFire, onFire, lava, inWall, drown, starve, cactus, fall");
-                PlayerChatHelper.SendPlain(
-                        pCmdSender, "[HAZIT] outOfWorld, generic, magic, wither, anvil, fallingBlock");
+                PlayerChatHelper
+                        .SendPlain(pCmdSender, "[HAZIT] inFire, onFire, lava, inWall, drown, starve, cactus, fall");
+                PlayerChatHelper
+                        .SendPlain(pCmdSender, "[HAZIT] outOfWorld, generic, magic, wither, anvil, fallingBlock");
             } else {
                 PlayerChatHelper.SendInfo(pCmdSender, "Valid DamageTypes are:");
                 PlayerChatHelper.SendInfo(pCmdSender, "inFire, onFire, lava, inWall, drown, starve, cactus, fall");
@@ -106,8 +109,8 @@ public class HazardousItemsCommand implements ICommand {
                 boolean tFlag = MainRegistry.Module_HazardousItems.ReloadHazardousItems();
                 if (!tFlag) {
                     if (!InGame(pCmdSender)) {
-                        PlayerChatHelper.SendPlain(
-                                pCmdSender, "[HAZIT] Reload failed. Check your log for syntax errors");
+                        PlayerChatHelper
+                                .SendPlain(pCmdSender, "[HAZIT] Reload failed. Check your log for syntax errors");
                     } else {
                         PlayerChatHelper.SendWarn(pCmdSender, "Reload failed. Check your log for syntax errors");
                     }
@@ -122,64 +125,22 @@ public class HazardousItemsCommand implements ICommand {
         }
         // Commands for ingame only >>
         else {
-            /* String tCmd = pArgs[0];
-            if (tCmd.equalsIgnoreCase("addpotion") || tCmd.equalsIgnoreCase("adddamage") || tCmd.equalsIgnoreCase("removeitem"))
-            {
-                if (!InGame(pCmdSender))
-                    PlayerChatHelper.SendPlain(pCmdSender, "You have to execute this command ingame");
-                else
-                {
-                    EntityPlayer tEp = (EntityPlayer) pCmdSender;
-                    ItemStack inHand = null;
-                    if (tEp != null)
-                         inHand = tEp.getCurrentEquippedItem();
-
-                    if (tCmd.equalsIgnoreCase("addpotion"))
-                    {
-                        if (inHand == null)
-                        {
-                            PlayerChatHelper.SendError(pCmdSender, "You hold no item in your hand");
-                            return;
-                        }
-
-                        if (pArgs.length != 4)
-                        {
-                            PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /hazarditems help for help");
-                            return;
-                        } else
-                        {
-                            ProcessAddPotionEffectCommand(tEp, inHand, pArgs);
-                        }
-                    } else if (tCmd.equalsIgnoreCase("adddamage"))
-                    {
-
-                        if (inHand == null)
-                        {
-                            PlayerChatHelper.SendError(pCmdSender, "You hold no item in your hand");
-                            return;
-                        }
-
-                        if (pArgs.length != 3)
-                        {
-                            PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /hazarditems help for help");
-                        } else
-                        {
-                            ProcessAddDamageEffectCommand(tEp, inHand, pArgs);
-                        }
-                    } else if (tCmd.equalsIgnoreCase("removeitem"))
-                    {
-
-                        if (inHand == null)
-                        {
-                            PlayerChatHelper.SendError(pCmdSender, "You hold no item in your hand");
-                            return;
-                        }
-
-                        ProcessRemoveItemCommand(tEp, inHand, pArgs);
-                    }
-                }
-            }
-             else*/
+            /*
+             * String tCmd = pArgs[0]; if (tCmd.equalsIgnoreCase("addpotion") || tCmd.equalsIgnoreCase("adddamage") ||
+             * tCmd.equalsIgnoreCase("removeitem")) { if (!InGame(pCmdSender)) PlayerChatHelper.SendPlain(pCmdSender,
+             * "You have to execute this command ingame"); else { EntityPlayer tEp = (EntityPlayer) pCmdSender;
+             * ItemStack inHand = null; if (tEp != null) inHand = tEp.getCurrentEquippedItem(); if
+             * (tCmd.equalsIgnoreCase("addpotion")) { if (inHand == null) { PlayerChatHelper.SendError(pCmdSender,
+             * "You hold no item in your hand"); return; } if (pArgs.length != 4) {
+             * PlayerChatHelper.SendError(pCmdSender, "Syntax error. Type /hazarditems help for help"); return; } else {
+             * ProcessAddPotionEffectCommand(tEp, inHand, pArgs); } } else if (tCmd.equalsIgnoreCase("adddamage")) { if
+             * (inHand == null) { PlayerChatHelper.SendError(pCmdSender, "You hold no item in your hand"); return; } if
+             * (pArgs.length != 3) { PlayerChatHelper.SendError(pCmdSender,
+             * "Syntax error. Type /hazarditems help for help"); } else { ProcessAddDamageEffectCommand(tEp, inHand,
+             * pArgs); } } else if (tCmd.equalsIgnoreCase("removeitem")) { if (inHand == null) {
+             * PlayerChatHelper.SendError(pCmdSender, "You hold no item in your hand"); return; }
+             * ProcessRemoveItemCommand(tEp, inHand, pArgs); } } } else
+             */
             SendHelpToPlayer(pCmdSender);
         }
     }
@@ -190,6 +151,7 @@ public class HazardousItemsCommand implements ICommand {
 
     /**
      * Send a list of all valid potions to the command sender
+     * 
      * @param pCmdSender
      */
     private void SendPotionsToPlayer(ICommandSender pCmdSender) {
@@ -229,81 +191,43 @@ public class HazardousItemsCommand implements ICommand {
 
     private void SendHelpToPlayer(ICommandSender pCmdSender) {
         if (!InGame(pCmdSender)) {
-            PlayerChatHelper.SendPlain(
-                    pCmdSender, "[HAZIT] Valid options are: reload|save|listdamagesources|listpotions");
+            PlayerChatHelper
+                    .SendPlain(pCmdSender, "[HAZIT] Valid options are: reload|save|listdamagesources|listpotions");
         } else {
-            /*            PlayerChatHelper.SendInfo(pCmdSender, "  /hazarditems addpotion <potionID> <tickDuration> <level>");
-            PlayerChatHelper.SendInfo(pCmdSender, "  /hazarditems adddamage <damageSource> <damageAmount>");
-            PlayerChatHelper.SendInfo(pCmdSender, "  /hazarditems removeitem [all]");
-            PlayerChatHelper.SendInfo(pCmdSender, "* tickDuration is [seconds*20]");
-            PlayerChatHelper.SendInfo(pCmdSender, "* damageAmount is a float, where 1.0 equals 1 heart");*/
+            /*
+             * PlayerChatHelper.SendInfo(pCmdSender, "  /hazarditems addpotion <potionID> <tickDuration> <level>");
+             * PlayerChatHelper.SendInfo(pCmdSender, "  /hazarditems adddamage <damageSource> <damageAmount>");
+             * PlayerChatHelper.SendInfo(pCmdSender, "  /hazarditems removeitem [all]");
+             * PlayerChatHelper.SendInfo(pCmdSender, "* tickDuration is [seconds*20]");
+             * PlayerChatHelper.SendInfo(pCmdSender, "* damageAmount is a float, where 1.0 equals 1 heart");
+             */
             PlayerChatHelper.SendInfo(pCmdSender, "/hazarditems reload|save|listdamagesources|listpotions");
         }
     }
+
     /*
-        private void ProcessRemoveItemCommand(EntityPlayer pPlayer, ItemStack pInHand, String[] pArgs)
-        {
-            boolean bFlag = false;
-            if (pArgs.length == 2)
-            {
-                String pSecondArg = pArgs[1];
-                if (pSecondArg.equalsIgnoreCase("all")) bFlag = true;
-            }
-
-            if (!MainRegistry.Module_HazardousItems.RemoveItemFromList(pInHand,bFlag))
-            {
-                PlayerChatHelper.SendWarn(pPlayer, "Nothing removed. Either there was no such item,");
-                PlayerChatHelper.SendWarn(pPlayer, "or an error occurred");
-            } else
-                PlayerChatHelper.SendInfo(pPlayer, "Item(s) removed. Don't forget to save");
-        }
-
-        private void ProcessAddDamageEffectCommand(EntityPlayer pPlayer, ItemStack pInHand, String[] pArgs)
-        {
-            try
-            {
-                String tDmgSource = pArgs[1];
-                float tDmgAmount = Float.parseFloat(pArgs[2]);
-
-                if (!DamageTypeHelper.IsValidDamageSource(tDmgSource))
-                    PlayerChatHelper.SendError(pPlayer, "This damagesource is invalid");
-                else
-                {
-                    if (MainRegistry.Module_HazardousItems.AddDamageEffectToItem(pInHand, tDmgSource, tDmgAmount))
-                        PlayerChatHelper.SendInfo(pPlayer, "Effect added to item. Don't forget to save");
-                    else
-                        PlayerChatHelper.SendError(pPlayer, "Unable to add item. Please check your logfile");
-                }
-            } catch (Exception e)
-            {
-                PlayerChatHelper.SendError(pPlayer,
-                        "Error in your command. Check your syntax");
-            }
-        }
-
-        private void ProcessAddPotionEffectCommand(EntityPlayer pPlayer, ItemStack pInHand, String[] pArgs)
-        {
-            try
-            {
-                int tPotionID = Integer.parseInt(pArgs[1]);
-                int tTickDuration = Integer.parseInt(pArgs[2]);
-                int tLevel = Integer.parseInt(pArgs[3]);
-
-                if (!PotionHelper.IsValidPotionID(tPotionID)) PlayerChatHelper
-                        .SendError(pPlayer, "This potion ID is invalid");
-                else
-                {
-                    if (MainRegistry.Module_HazardousItems.AddPotionEffectToItem(pInHand, tPotionID, tTickDuration, tLevel))
-                        PlayerChatHelper.SendInfo(pPlayer, "Effect added to item. Don't forget to save");
-                    else
-                        PlayerChatHelper.SendError(pPlayer, "Unable to add item. Please check your logfile");
-                }
-            } catch (Exception e)
-            {
-                PlayerChatHelper.SendError(pPlayer, "Error in your command. Check your syntax");
-            }
-        }
-    */
+     * private void ProcessRemoveItemCommand(EntityPlayer pPlayer, ItemStack pInHand, String[] pArgs) { boolean bFlag =
+     * false; if (pArgs.length == 2) { String pSecondArg = pArgs[1]; if (pSecondArg.equalsIgnoreCase("all")) bFlag =
+     * true; } if (!MainRegistry.Module_HazardousItems.RemoveItemFromList(pInHand,bFlag)) {
+     * PlayerChatHelper.SendWarn(pPlayer, "Nothing removed. Either there was no such item,");
+     * PlayerChatHelper.SendWarn(pPlayer, "or an error occurred"); } else PlayerChatHelper.SendInfo(pPlayer,
+     * "Item(s) removed. Don't forget to save"); } private void ProcessAddDamageEffectCommand(EntityPlayer pPlayer,
+     * ItemStack pInHand, String[] pArgs) { try { String tDmgSource = pArgs[1]; float tDmgAmount =
+     * Float.parseFloat(pArgs[2]); if (!DamageTypeHelper.IsValidDamageSource(tDmgSource))
+     * PlayerChatHelper.SendError(pPlayer, "This damagesource is invalid"); else { if
+     * (MainRegistry.Module_HazardousItems.AddDamageEffectToItem(pInHand, tDmgSource, tDmgAmount))
+     * PlayerChatHelper.SendInfo(pPlayer, "Effect added to item. Don't forget to save"); else
+     * PlayerChatHelper.SendError(pPlayer, "Unable to add item. Please check your logfile"); } } catch (Exception e) {
+     * PlayerChatHelper.SendError(pPlayer, "Error in your command. Check your syntax"); } } private void
+     * ProcessAddPotionEffectCommand(EntityPlayer pPlayer, ItemStack pInHand, String[] pArgs) { try { int tPotionID =
+     * Integer.parseInt(pArgs[1]); int tTickDuration = Integer.parseInt(pArgs[2]); int tLevel =
+     * Integer.parseInt(pArgs[3]); if (!PotionHelper.IsValidPotionID(tPotionID)) PlayerChatHelper .SendError(pPlayer,
+     * "This potion ID is invalid"); else { if (MainRegistry.Module_HazardousItems.AddPotionEffectToItem(pInHand,
+     * tPotionID, tTickDuration, tLevel)) PlayerChatHelper.SendInfo(pPlayer,
+     * "Effect added to item. Don't forget to save"); else PlayerChatHelper.SendError(pPlayer,
+     * "Unable to add item. Please check your logfile"); } } catch (Exception e) { PlayerChatHelper.SendError(pPlayer,
+     * "Error in your command. Check your syntax"); } }
+     */
     /*
      * Make sure only an op/admin can execute this command
      */
@@ -311,8 +235,8 @@ public class HazardousItemsCommand implements ICommand {
     public boolean canCommandSenderUseCommand(ICommandSender pCommandSender) {
         if (pCommandSender instanceof EntityPlayerMP) {
             EntityPlayerMP tEP = (EntityPlayerMP) pCommandSender;
-            boolean tPlayerOpped =
-                    MinecraftServer.getServer().getConfigurationManager().func_152596_g(tEP.getGameProfile());
+            boolean tPlayerOpped = MinecraftServer.getServer().getConfigurationManager()
+                    .func_152596_g(tEP.getGameProfile());
             // boolean tIncreative = tEP.capabilities.isCreativeMode;
             return tPlayerOpped; // && tIncreative;
         } else {

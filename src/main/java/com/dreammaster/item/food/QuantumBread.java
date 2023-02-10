@@ -1,10 +1,7 @@
 package com.dreammaster.item.food;
 
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.relauncher.Side;
 import java.util.List;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -15,7 +12,14 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.MainRegistry;
+
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.relauncher.Side;
+
 public final class QuantumBread extends ItemFood {
+
     private static final String QUANTUM_BREAD_NAME = "QuantumBread";
 
     private QuantumBread() {

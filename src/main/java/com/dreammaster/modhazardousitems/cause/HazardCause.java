@@ -3,6 +3,7 @@ package com.dreammaster.modhazardousitems.cause;
 import net.minecraft.item.ItemStack;
 
 public class HazardCause {
+
     private final Type type;
 
     protected HazardCause(Type type) {

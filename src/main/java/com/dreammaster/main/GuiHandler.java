@@ -1,14 +1,16 @@
 package com.dreammaster.main;
 
-import com.dreammaster.modbabychest.ContainerBabyChest;
-import com.dreammaster.modbabychest.GuiBabyChest;
-import com.dreammaster.modbabychest.TileEntityBabyChest;
-import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+import com.dreammaster.modbabychest.ContainerBabyChest;
+import com.dreammaster.modbabychest.GuiBabyChest;
+import com.dreammaster.modbabychest.TileEntityBabyChest;
+import cpw.mods.fml.common.network.IGuiHandler;
+
 public class GuiHandler implements IGuiHandler {
+
     public static int GUI_BABYCHEST = 1;
 
     @Override

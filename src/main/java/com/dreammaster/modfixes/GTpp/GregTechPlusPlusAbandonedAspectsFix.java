@@ -1,22 +1,44 @@
 package com.dreammaster.modfixes.GTpp;
 
-import com.dreammaster.lib.Refstrings;
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
+
 import net.minecraft.util.ResourceLocation;
+
+import com.dreammaster.lib.Refstrings;
 
 public class GregTechPlusPlusAbandonedAspectsFix {
 
     /**
-     * Custom aspects for GTNH.
-     * <blockquote><table>
-     * <tr><th>Array Index<th>Aspect    <th>Components
-     * <tr><td>0          <td>Aequalitas<td>Cognito + Ordo
-     * <tr><td>1          <td>Vesania   <td>Cognito + Vitium
-     * <tr><td>2          <td>Primordium<td>Vacous  + Motus
-     * <tr><td>3          <td>Astrum    <td>Lux + Primordium
-     * <tr><td>4          <td>Gloria    <td>Humanus + Iter
-     * </table></blockquote>
+     * Custom aspects for GTNH. <blockquote>
+     * <table>
+     * <tr>
+     * <th>Array Index
+     * <th>Aspect
+     * <th>Components
+     * <tr>
+     * <td>0
+     * <td>Aequalitas
+     * <td>Cognito + Ordo
+     * <tr>
+     * <td>1
+     * <td>Vesania
+     * <td>Cognito + Vitium
+     * <tr>
+     * <td>2
+     * <td>Primordium
+     * <td>Vacous + Motus
+     * <tr>
+     * <td>3
+     * <td>Astrum
+     * <td>Lux + Primordium
+     * <tr>
+     * <td>4
+     * <td>Gloria
+     * <td>Humanus + Iter
+     * </table>
+     * </blockquote>
+     * 
      * @author glowredman
      * @author bartimaeusnek
      */

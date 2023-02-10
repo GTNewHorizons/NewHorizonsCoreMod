@@ -1,12 +1,15 @@
 package com.dreammaster.item;
 
 import mantle.items.abstracts.CraftingItem;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+
 import tconstruct.library.crafting.PatternBuilder;
 import tconstruct.library.util.IPattern;
 
 public class Pattern extends CraftingItem implements IPattern {
+
     public Pattern(String[] names, String[] tex, CreativeTabs tab) {
         super(names, tex, "", "dreamcraft", tab);
     }

@@ -1,10 +1,5 @@
 package com.dreammaster.modfixes.avaritia;
 
-import com.dreammaster.main.MainRegistry;
-import com.dreammaster.modfixes.ModFixBase;
-import cpw.mods.fml.common.eventhandler.EventPriority;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,15 +7,21 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
+import com.dreammaster.main.MainRegistry;
+import com.dreammaster.modfixes.ModFixBase;
+
+import cpw.mods.fml.common.eventhandler.EventPriority;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import eu.usrv.yamcore.auxiliary.ItemDescriptor;
+
 /**
- * Problem: The original Avarita-Source of this sword will only check for Minecraft.Skeleton.
- * SpecialMobs replaces all of those (For wither skeletons even EnderIO does...) with their
- * own ones.
+ * Problem: The original Avarita-Source of this sword will only check for Minecraft.Skeleton. SpecialMobs replaces all
+ * of those (For wither skeletons even EnderIO does...) with their own ones.
  *
- * Solution: A configurable list of entity-class-names that are valid for this special behavior
- * of the sword.
+ * Solution: A configurable list of entity-class-names that are valid for this special behavior of the sword.
  */
 public class SkullFireSwordDropFix extends ModFixBase {
+
     private ItemDescriptor mSkullFireSword;
 
     public SkullFireSwordDropFix() {
@@ -50,8 +51,7 @@ public class SkullFireSwordDropFix extends ModFixBase {
     }
 
     /**
-     * Check if the SkullFireSword could be found in the GameRegistry
-     * and return false if not to disable this modfix
+     * Check if the SkullFireSword could be found in the GameRegistry and return false if not to disable this modfix
      */
     @Override
     public boolean init() {
@@ -93,13 +93,9 @@ public class SkullFireSwordDropFix extends ModFixBase {
     }
 
     /*
-     * private void addDrop( LivingDropsEvent event, ItemStack drop )
-     * {
-     * EntityItem entityitem = new EntityItem( event.entityLiving.worldObj, event.entityLiving.posX,
-     * event.entityLiving.posY, event.entityLiving.posZ, drop );
-     * entityitem.delayBeforeCanPickup = 10;
-     * event.drops.add( entityitem );
-     * }
+     * private void addDrop( LivingDropsEvent event, ItemStack drop ) { EntityItem entityitem = new EntityItem(
+     * event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, drop );
+     * entityitem.delayBeforeCanPickup = 10; event.drops.add( entityitem ); }
      */
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
@@ -110,8 +106,7 @@ public class SkullFireSwordDropFix extends ModFixBase {
             }
 
             // MainRegistry.Logger.info( "SkullFireSwordDropFix::onLivingDrops" );
-            if (event.recentlyHit
-                    && isValidSkeletonEntity(event.entityLiving)
+            if (event.recentlyHit && isValidSkeletonEntity(event.entityLiving)
                     && event.source.getEntity() instanceof EntityPlayer) {
                 EntityPlayer player = (EntityPlayer) event.source.getEntity();
                 if (player.getHeldItem() != null && player.getHeldItem().getItem() == mSkullFireSword.getItem()) {

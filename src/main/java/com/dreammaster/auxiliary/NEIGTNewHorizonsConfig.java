@@ -2,15 +2,18 @@ package com.dreammaster.auxiliary;
 
 import static gregtech.api.enums.GT_Values.MOD_ID_DC;
 
+import net.minecraft.item.ItemStack;
+
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
+
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import gregtech.api.util.GT_ModHandler;
-import net.minecraft.item.ItemStack;
 
 public class NEIGTNewHorizonsConfig implements IConfigureNEI {
+
     @Override
     public void loadConfig() {
         hideFakeCircuits();

@@ -2,17 +2,21 @@ package com.dreammaster.modfixes.GTpp;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
+
 import thaumcraft.api.aspects.Aspect;
 
 /**
  * A subclass of {@link Aspect} which allows localization of the aspect's name.
+ * 
  * @author glowredman
  */
 public class LocalizedAspect extends Aspect {
 
     /**
      * A subclass of {@link Aspect} which allows localization of the aspect's name.
-     * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * <p>
+     * Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * 
      * @author glowredman
      */
     public LocalizedAspect(String tag, int color, Aspect[] components) {
@@ -21,7 +25,9 @@ public class LocalizedAspect extends Aspect {
 
     /**
      * A subclass of {@link Aspect} which allows localization of the aspect's name.
-     * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * <p>
+     * Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * 
      * @author glowredman
      */
     public LocalizedAspect(String tag, int color, Aspect[] components, int blend) {
@@ -30,7 +36,9 @@ public class LocalizedAspect extends Aspect {
 
     /**
      * A subclass of {@link Aspect} which allows localization of the aspect's name.
-     * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * <p>
+     * Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * 
      * @author glowredman
      */
     public LocalizedAspect(String tag, int color, String chatcolor, int blend) {
@@ -39,7 +47,9 @@ public class LocalizedAspect extends Aspect {
 
     /**
      * A subclass of {@link Aspect} which allows localization of the aspect's name.
-     * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * <p>
+     * Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * 
      * @author glowredman
      */
     public LocalizedAspect(String tag, int color, Aspect[] components, ResourceLocation image, int blend) {
@@ -48,7 +58,9 @@ public class LocalizedAspect extends Aspect {
 
     /**
      * Localized version of {@link Aspect#getName()}
-     * <p>Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * <p>
+     * Unlocalized name: <code>tc.aspect.{tag}.name</code>
+     * 
      * @author glowredman
      */
     @Override

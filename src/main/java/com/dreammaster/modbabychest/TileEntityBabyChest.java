@@ -1,6 +1,5 @@
 package com.dreammaster.modbabychest;
 
-import com.dreammaster.lib.Refstrings;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
@@ -13,6 +12,8 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
+
+import com.dreammaster.lib.Refstrings;
 
 public class TileEntityBabyChest extends TileEntity implements IInventory, ISidedInventory {
 
@@ -28,7 +29,7 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
     public TileEntityBabyChest() {
         _mInventory = new ItemStack[1];
         _mOrientation = ForgeDirection.SOUTH;
-        _mSides = new int[] {0};
+        _mSides = new int[] { 0 };
     }
 
     @Override
@@ -205,7 +206,12 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
 
         if (++_mLastSyncTicks % 20 * 4 == 0) {
             worldObj.addBlockEvent(
-                    xCoord, yCoord, zCoord, worldObj.getBlock(xCoord, yCoord, zCoord), 1, _mNumPlayersUsing);
+                    xCoord,
+                    yCoord,
+                    zCoord,
+                    worldObj.getBlock(xCoord, yCoord, zCoord),
+                    1,
+                    _mNumPlayersUsing);
         }
 
         _mPrevLidAngle = _mLidAngle;
@@ -235,7 +241,12 @@ public class TileEntityBabyChest extends TileEntity implements IInventory, ISide
                 tAdjustedXCoord = xCoord + 0.5D;
                 tAdjustedZCoord = zCoord + 0.5D;
                 worldObj.playSoundEffect(
-                        tAdjustedXCoord, yCoord + 0.5D, tAdjustedZCoord, "random.chestclosed", 0.5F, 2.0F);
+                        tAdjustedXCoord,
+                        yCoord + 0.5D,
+                        tAdjustedZCoord,
+                        "random.chestclosed",
+                        0.5F,
+                        2.0F);
             }
 
             if (_mLidAngle < 0.0F) {

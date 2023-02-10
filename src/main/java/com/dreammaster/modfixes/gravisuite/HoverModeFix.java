@@ -1,10 +1,12 @@
 package com.dreammaster.modfixes.gravisuite;
 
-import com.dreammaster.modfixes.ModFixBase;
-import cpw.mods.fml.common.Loader;
 import java.lang.reflect.Field;
 
+import com.dreammaster.modfixes.ModFixBase;
+import cpw.mods.fml.common.Loader;
+
 public class HoverModeFix extends ModFixBase {
+
     public HoverModeFix() {
         super("HoverModeFix");
     }
@@ -27,8 +29,8 @@ public class HoverModeFix extends ModFixBase {
     @Override
     public boolean init() {
         try {
-            Field hoverModeFallSpeed =
-                    Class.forName("gravisuite.armor.ItemAdvancedJetPack").getDeclaredField("hoverModeFallSpeed");
+            Field hoverModeFallSpeed = Class.forName("gravisuite.armor.ItemAdvancedJetPack")
+                    .getDeclaredField("hoverModeFallSpeed");
             hoverModeFallSpeed.setAccessible(true);
             hoverModeFallSpeed.setInt(null, 0);
             return true;

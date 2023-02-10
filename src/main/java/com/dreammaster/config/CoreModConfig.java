@@ -1,10 +1,12 @@
 package com.dreammaster.config;
 
-import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
-import eu.usrv.yamcore.config.ConfigManager;
 import java.io.File;
 
+import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
+import eu.usrv.yamcore.config.ConfigManager;
+
 public class CoreModConfig extends ConfigManager {
+
     public CoreModConfig(File pConfigBaseDirectory, String pModCollectionDirectory, String pModID) {
         super(pConfigBaseDirectory, pModCollectionDirectory, pModID);
     }
@@ -51,7 +53,7 @@ public class CoreModConfig extends ConfigManager {
     @Override
     protected void PreInit() {
         ModLoginMessage_Enabled = true;
-        ModPackVersion = "2.2.8";
+        ModPackVersion = "2.2.9";
         ModDebugVersionDisplay_Enabled = true;
         ModHazardousItems_Enabled = false;
         ModCustomToolTips_Enabled = false;
@@ -66,13 +68,11 @@ public class CoreModConfig extends ConfigManager {
         MinetweakerFurnaceFixEnabled = true;
         HoverModeFixEnabled = true;
 
-        BlacklistedTileEntiyClassNames =
-                new String[] {"com.rwtema.extrautils.tileentity.enderquarry.TileEntityEnderQuarry"};
-        SkullFireSwordEntityTargets = new String[] {
-            "net.minecraft.entity.monster.EntitySkeleton",
-            "galaxyspace.SolarSystem.planets.venus.entities.EntityEvolvedFireSkeleton",
-            "micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton"
-        };
+        BlacklistedTileEntiyClassNames = new String[] {
+                "com.rwtema.extrautils.tileentity.enderquarry.TileEntityEnderQuarry" };
+        SkullFireSwordEntityTargets = new String[] { "net.minecraft.entity.monster.EntitySkeleton",
+                "galaxyspace.SolarSystem.planets.venus.entities.EntityEvolvedFireSkeleton",
+                "micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton" };
 
         DebugPrintAllOres = false;
         DebugPrintAddedOres = false;

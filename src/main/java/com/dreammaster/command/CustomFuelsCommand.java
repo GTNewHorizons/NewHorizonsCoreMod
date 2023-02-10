@@ -1,16 +1,19 @@
 package com.dreammaster.command;
 
-import com.dreammaster.main.MainRegistry;
-import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import java.util.ArrayList;
 import java.util.List;
+
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 
+import com.dreammaster.main.MainRegistry;
+import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
+
 public class CustomFuelsCommand implements ICommand {
+
     private List aliases;
 
     public CustomFuelsCommand() {
@@ -87,8 +90,8 @@ public class CustomFuelsCommand implements ICommand {
     public boolean canCommandSenderUseCommand(ICommandSender pCommandSender) {
         if (pCommandSender instanceof EntityPlayerMP) {
             EntityPlayerMP tEP = (EntityPlayerMP) pCommandSender;
-            boolean tPlayerOpped =
-                    MinecraftServer.getServer().getConfigurationManager().func_152596_g(tEP.getGameProfile());
+            boolean tPlayerOpped = MinecraftServer.getServer().getConfigurationManager()
+                    .func_152596_g(tEP.getGameProfile());
             // boolean tIncreative = tEP.capabilities.isCreativeMode;
             return tPlayerOpped; // && tIncreative;
         } else {

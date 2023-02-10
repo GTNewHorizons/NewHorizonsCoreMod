@@ -1,18 +1,22 @@
 package com.dreammaster.modhazardousitems;
 
-import com.dreammaster.modhazardousitems.cause.HazardCause;
-import eu.usrv.yamcore.auxiliary.FluidHelper;
-import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+
 import javax.xml.bind.annotation.*;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
+
+import com.dreammaster.modhazardousitems.cause.HazardCause;
+
+import eu.usrv.yamcore.auxiliary.FluidHelper;
+import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "HazardousItemList")
@@ -96,9 +100,7 @@ public class HazardousItems {
                         String p1 = hi.itemName.toLowerCase();
                         // String p2 =
                         // pInHand.getUnlocalizedName().toLowerCase();
-                        String p2 = ItemDescriptor.fromItem(pInHand.getItem())
-                                .toString()
-                                .toLowerCase();
+                        String p2 = ItemDescriptor.fromItem(pInHand.getItem()).toString().toLowerCase();
 
                         if (p2.contains(p1)) {
                             continue;
@@ -159,9 +161,8 @@ public class HazardousItems {
     }
 
     /**
-     * Searches for HazardousItem by text compare, where pSearchString is
-     * anywhere inside the items name name. Ex: lava would match bucketLava,
-     * tankLava, itemLavaGloves,...
+     * Searches for HazardousItem by text compare, where pSearchString is anywhere inside the items name name. Ex: lava
+     * would match bucketLava, tankLava, itemLavaGloves,...
      *
      * @param pSearchString
      * @return
@@ -180,9 +181,8 @@ public class HazardousItems {
     }
 
     /**
-     * Searches for HazardousFluids by text compare, where pSearchString is
-     * anywhere inside the items name name. Ex: lava would match bucketLava,
-     * tankLava, itemLavaGloves,...
+     * Searches for HazardousFluids by text compare, where pSearchString is anywhere inside the items name name. Ex:
+     * lava would match bucketLava, tankLava, itemLavaGloves,...
      *
      * @param pSearchString
      * @return
@@ -435,8 +435,8 @@ public class HazardousItems {
 
         @Override
         protected void apply(HazardCause cause, EntityPlayer player) {
-            Function<HazardCause, DamageSource> sourceFactory =
-                    HazardDamageSources.getDamageSourceFactoryOrFail(getDamageSource());
+            Function<HazardCause, DamageSource> sourceFactory = HazardDamageSources
+                    .getDamageSourceFactoryOrFail(getDamageSource());
             player.attackEntityFrom(sourceFactory.apply(cause), getAmount());
         }
     }

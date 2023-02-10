@@ -1,97 +1,59 @@
 package com.dreammaster.gthandler;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.modfixes.enderIO.FrankenskullFix;
 import com.dreammaster.scripts.ScriptLoader;
+
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 
 /**
- * How to add new Stuff:
- * Ask Namikon
+ * How to add new Stuff: Ask Namikon
  */
 public class GT_CustomLoader {
+
     public enum AdvancedGTMaterials {
-        LuV(
-                OrePrefixes.circuit.get(Materials.Master),
-                OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
-                Materials.VanadiumGallium,
-                OrePrefixes.wireGt02.get(Materials.HSSG),
-                OrePrefixes.gemExquisite.get(Materials.Diamond),
-                gregtech.api.enums.ItemList.Gravistar,
-                Loader.isModLoaded("bartworks") ? "blockGlassLuV" : "glassReinforced",
-                Materials.Chrome,
+
+        LuV(OrePrefixes.circuit.get(Materials.Master), OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
+                Materials.VanadiumGallium, OrePrefixes.wireGt02.get(Materials.HSSG),
+                OrePrefixes.gemExquisite.get(Materials.Diamond), gregtech.api.enums.ItemList.Gravistar,
+                Loader.isModLoaded("bartworks") ? "blockGlassLuV" : "glassReinforced", Materials.Chrome,
                 Materials.Enderium),
 
-        ZPM(
-                OrePrefixes.circuit.get(Materials.Ultimate),
-                OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
-                Materials.Naquadah,
-                OrePrefixes.wireGt02.get(Materials.Naquadah),
-                OrePrefixes.gemExquisite.get(Materials.GarnetYellow),
-                ItemList.MysteriousCrystal.getIS(),
-                Loader.isModLoaded("bartworks") ? "blockGlassZPM" : "glassReinforced",
-                Materials.Iridium,
+        ZPM(OrePrefixes.circuit.get(Materials.Ultimate), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
+                Materials.Naquadah, OrePrefixes.wireGt02.get(Materials.Naquadah),
+                OrePrefixes.gemExquisite.get(Materials.GarnetYellow), ItemList.MysteriousCrystal.getIS(),
+                Loader.isModLoaded("bartworks") ? "blockGlassZPM" : "glassReinforced", Materials.Iridium,
                 Materials.Naquadah),
 
-        UV(
-                OrePrefixes.circuit.get(Materials.Superconductor),
-                OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),
-                Materials.ElectrumFlux,
-                OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
-                OrePrefixes.gemExquisite.get(Materials.GarnetRed),
-                new ItemStack(Blocks.dragon_egg, 1),
-                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced",
-                Materials.Osmium,
+        UV(OrePrefixes.circuit.get(Materials.Superconductor), OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),
+                Materials.ElectrumFlux, OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
+                OrePrefixes.gemExquisite.get(Materials.GarnetRed), new ItemStack(Blocks.dragon_egg, 1),
+                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced", Materials.Osmium,
                 Materials.Neutronium),
 
-        UHV(
-                OrePrefixes.circuit.get(Materials.Infinite),
-                OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
-                Materials.Bedrockium,
-                Materials.Bedrockium,
-                null,
-                null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUHV" : "glassReinforced",
-                Materials.Neutronium,
+        UHV(OrePrefixes.circuit.get(Materials.Infinite), OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
+                Materials.Bedrockium, Materials.Bedrockium, null, null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUHV" : "glassReinforced", Materials.Neutronium,
                 Materials.Neutronium),
 
-        UEV(
-                OrePrefixes.circuit.get(Materials.Bio),
-                OrePrefixes.wireGt04.get(Materials.Bedrockium),
-                Materials.Draconium,
-                Materials.Draconium,
-                null,
-                null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUEV" : "glassReinforced",
-                Materials.Bedrockium,
-                Materials.Neutronium),
+        UEV(OrePrefixes.circuit.get(Materials.Bio), OrePrefixes.wireGt04.get(Materials.Bedrockium), Materials.Draconium,
+                Materials.Draconium, null, null, Loader.isModLoaded("bartworks") ? "blockGlassUEV" : "glassReinforced",
+                Materials.Bedrockium, Materials.Neutronium),
 
-        UIV(
-                OrePrefixes.circuit.get(Materials.Nano),
-                OrePrefixes.wireGt08.get(Materials.Bedrockium),
-                Materials.NetherStar,
-                Materials.NetherStar,
-                null,
-                null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUIV" : "glassReinforced",
-                Materials.CosmicNeutronium,
+        UIV(OrePrefixes.circuit.get(Materials.Optical), OrePrefixes.wireGt08.get(Materials.Bedrockium),
+                Materials.NetherStar, Materials.NetherStar, null, null,
+                Loader.isModLoaded("bartworks") ? "blockGlassUIV" : "glassReinforced", Materials.CosmicNeutronium,
                 Materials.CosmicNeutronium),
-        UMV(
-                OrePrefixes.circuit.get(Materials.Piko),
-                OrePrefixes.wireGt16.get(Materials.Bedrockium),
-                Materials.Quantium,
-                Materials.Quantium,
-                null,
-                null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUMV" : "glassReinforced",
-                Materials.TranscendentMetal,
-                Materials.Infinity);
+        UMV(OrePrefixes.circuit.get(Materials.Piko), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
+                Materials.Quantium, null, null, Loader.isModLoaded("bartworks") ? "blockGlassUMV" : "glassReinforced",
+                Materials.TranscendentMetal, Materials.Infinity);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;
@@ -105,16 +67,8 @@ public class GT_CustomLoader {
         private Object _mPipe;
         private Object _mPipeL;
 
-        AdvancedGTMaterials(
-                Object pCircuit,
-                Object pHeatingCoil,
-                Materials pCable,
-                Object pCoilWire,
-                Object pGem,
-                Object pPowerGem,
-                Object glass,
-                Materials pPlateMaterial,
-                Materials pPipe) {
+        AdvancedGTMaterials(Object pCircuit, Object pHeatingCoil, Materials pCable, Object pCoilWire, Object pGem,
+                Object pPowerGem, Object glass, Materials pPlateMaterial, Materials pPipe) {
             _mCircuit = pCircuit;
             _mHeatingCoil = pHeatingCoil;
             _mCoilWire = pCoilWire;
@@ -175,9 +129,9 @@ public class GT_CustomLoader {
     }
 
     /*
-     * Changed to static final for performance and clear design reasons.
-     * Since these Classes arent modified anymore, final is a good choice here.
-     * Final variables will help the compiler optimize the code statically, which may result in faster code.
+     * Changed to static final for performance and clear design reasons. Since these Classes arent modified anymore,
+     * final is a good choice here. Final variables will help the compiler optimize the code statically, which may
+     * result in faster code.
      */
     private static final GT_Loader_Items ItemLoader = new GT_Loader_Items();
     private static final GT_Loader_Machines MachineLoader = new GT_Loader_Machines();

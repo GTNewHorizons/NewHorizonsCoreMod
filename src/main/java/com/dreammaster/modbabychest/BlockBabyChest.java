@@ -1,10 +1,7 @@
 package com.dreammaster.modbabychest;
 
-import com.dreammaster.main.GuiHandler;
-import com.dreammaster.main.MainRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
@@ -24,7 +21,14 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import com.dreammaster.main.GuiHandler;
+import com.dreammaster.main.MainRegistry;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class BlockBabyChest extends BlockContainer implements ITileEntityProvider {
+
     public static int pRenderID = 0;
 
     public BlockBabyChest() {
@@ -68,16 +72,8 @@ public class BlockBabyChest extends BlockContainer implements ITileEntityProvide
     }
 
     @Override
-    public boolean onBlockActivated(
-            World pWorld,
-            int pX,
-            int pY,
-            int pZ,
-            EntityPlayer pPlayer,
-            int pSide,
-            float pSubX,
-            float pSubY,
-            float pSubZ) {
+    public boolean onBlockActivated(World pWorld, int pX, int pY, int pZ, EntityPlayer pPlayer, int pSide, float pSubX,
+            float pSubY, float pSubZ) {
         if (pWorld.isRemote) {
             return true;
         } else {
@@ -120,8 +116,7 @@ public class BlockBabyChest extends BlockContainer implements ITileEntityProvide
                         new ItemStack(tItem.getItem(), tItem.stackSize, tItem.getItemDamage()));
 
                 if (tItem.hasTagCompound()) {
-                    tEntityItem.getEntityItem().setTagCompound((NBTTagCompound)
-                            tItem.getTagCompound().copy());
+                    tEntityItem.getEntityItem().setTagCompound((NBTTagCompound) tItem.getTagCompound().copy());
                 }
 
                 float tFactor = 0.05F;
@@ -153,8 +148,8 @@ public class BlockBabyChest extends BlockContainer implements ITileEntityProvide
     }
 
     @Override
-    public void onBlockPlacedBy(
-            World pWorld, int pX, int pY, int pZ, EntityLivingBase pEntityLiving, ItemStack pItemStack) {
+    public void onBlockPlacedBy(World pWorld, int pX, int pY, int pZ, EntityLivingBase pEntityLiving,
+            ItemStack pItemStack) {
         if (pWorld.getTileEntity(pX, pY, pZ) instanceof TileEntityBabyChest) {
             int tDirection = 0;
             int tFacing = MathHelper.floor_double(pEntityLiving.rotationYaw * 4.0F / 360.0F + 0.5D) & 3;

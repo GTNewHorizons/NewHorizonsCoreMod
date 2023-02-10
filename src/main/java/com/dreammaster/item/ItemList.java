@@ -1,13 +1,16 @@
 package com.dreammaster.item;
 
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
+
 import eu.usrv.yamcore.items.ModItemManager;
 import eu.usrv.yamcore.items.ModSimpleBaseItem;
-import net.minecraft.item.ItemStack;
 
 public enum ItemList {
+
     MicaBasedPulp(new ModSimpleBaseItem("MicaBasedPulp", ModTabList.ModGenericTab)),
     MicaBasedSheet(new ModSimpleBaseItem("MicaBasedSheet", ModTabList.ModGenericTab)),
     MicaInsulatorSheet(new ModSimpleBaseItem("MicaInsulatorSheet", ModTabList.ModGenericTab)),
@@ -356,6 +359,7 @@ public enum ItemList {
     MoldFormPipeMedium(new ModSimpleBaseItem("MoldFormPipeMedium", ModTabList.ModMoldsTab)),
     MoldFormPipeLarge(new ModSimpleBaseItem("MoldFormPipeLarge", ModTabList.ModMoldsTab)),
     MoldFormPipeHuge(new ModSimpleBaseItem("MoldFormPipeHuge", ModTabList.ModMoldsTab)),
+    MoldFormDrillHead(new ModSimpleBaseItem("MoldFormDrillHead", ModTabList.ModMoldsTab)),
     MoonStoneDust(new ModSimpleBaseItem("MoonStoneDust", ModTabList.ModGenericTab)),
     MushroomPowder(new ModSimpleBaseItem("MushroomPowder", ModTabList.ModGenericTab)),
     MutatedEgg(new ModSimpleBaseItem("MutatedEgg", ModTabList.ModGenericTab)),
@@ -507,6 +511,7 @@ public enum ItemList {
     ShapeTinyPipe(new ModSimpleBaseItem("ShapeTinyPipe", ModTabList.ModShapesTab)),
     ShapeTurbineBlade(new ModSimpleBaseItem("ShapeTurbineBlade", ModTabList.ModShapesTab)),
     ShapeWire(new ModSimpleBaseItem("ShapeWire", ModTabList.ModShapesTab)),
+    ShapeDrillHead(new ModSimpleBaseItem("ShapeDrillHead", ModTabList.ModShapesTab)),
     SilverThread(new ModSimpleBaseItem("SilverThread", ModTabList.ModThaumcraftTab)),
     SilveredFleece(new ModSimpleBaseItem("SilveredFleece", ModTabList.ModThaumcraftTab)),
     SimpleCircuitBoard(new ModSimpleBaseItem("SimpleCircuitBoard", ModTabList.ModCircuitsTab)),

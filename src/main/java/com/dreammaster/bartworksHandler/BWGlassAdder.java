@@ -1,10 +1,12 @@
 package com.dreammaster.bartworksHandler;
 
 import com.github.bartimaeusnek.bartworks.API.BorosilicateGlass;
+
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BWGlassAdder {
+
     private static final byte EV = 4;
     private static final byte IV = 5;
 

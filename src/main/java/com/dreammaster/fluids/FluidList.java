@@ -1,17 +1,19 @@
 package com.dreammaster.fluids;
 
-import com.dreammaster.creativetab.ModTabList;
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.MainRegistry;
-import eu.usrv.yamcore.fluids.ModFluidManager;
-import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.creativetab.ModTabList;
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.MainRegistry;
+
+import eu.usrv.yamcore.fluids.ModFluidManager;
+import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
+
 public enum FluidList {
-    SodiumPotassium(
-            new ModSimpleBaseFluid(ModFluidManager.GetNewFluid("SodiumPotassium"), Material.water),
+
+    SodiumPotassium(new ModSimpleBaseFluid(ModFluidManager.GetNewFluid("SodiumPotassium"), Material.water),
             ModTabList.ModFluidsTab),
     Concrete(new ModSimpleBaseFluid(ModFluidManager.GetNewFluid("Concrete"), Material.water), ModTabList.ModFluidsTab),
     EnrichedBacterialSludge(ExtendedFluidCollection.getEnrichedBacterialSludge(), ModTabList.ModFluidsTab),

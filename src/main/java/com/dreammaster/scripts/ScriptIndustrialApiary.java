@@ -2,17 +2,19 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-import com.dreammaster.gthandler.CustomItemList;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.objects.ItemData;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import com.dreammaster.gthandler.CustomItemList;
+
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.objects.ItemData;
 
 public class ScriptIndustrialApiary implements IScriptLoader {
 
@@ -23,17 +25,18 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         scriptName.setLength(0);
         scriptName.append("IndustrialApiary");
         dependencies.clear();
-        dependencies.addAll(java.util.Arrays.asList(
-                "Forestry",
-                "gregtech",
-                "gendustry",
-                "ExtraBees",
-                "ExtraUtilities",
-                "Botany",
-                "BiomesOPlenty",
-                "Genetics",
-                "ProjRed|Illumination",
-                "TConstruct"));
+        dependencies.addAll(
+                java.util.Arrays.asList(
+                        "Forestry",
+                        "gregtech",
+                        "gendustry",
+                        "ExtraBees",
+                        "ExtraUtilities",
+                        "Botany",
+                        "BiomesOPlenty",
+                        "Genetics",
+                        "ProjRed|Illumination",
+                        "TConstruct"));
     }
 
     @Override
@@ -82,342 +85,168 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemStack WovenSilk = getModItem("Forestry", "craftingMaterial", 1, 3);
 
         // Industrial Apiary
-        addShapedRecipe(ItemList.Machine_IndustrialApiary.get(1), new Object[] {
-            FrameHousing,
-            EnhancedCircuitBoard,
-            FrameHousing,
-            ItemList.Robot_Arm_HV.get(1),
-            ItemList.FR_Casing_Sturdy.get(1),
-            ItemList.Robot_Arm_HV.get(1),
-            AlvearyLighting,
-            AlvearySieve,
-            AlvearyLighting
-        });
+        addShapedRecipe(
+                ItemList.Machine_IndustrialApiary.get(1),
+                new Object[] { FrameHousing, EnhancedCircuitBoard, FrameHousing, ItemList.Robot_Arm_HV.get(1),
+                        ItemList.FR_Casing_Sturdy.get(1), ItemList.Robot_Arm_HV.get(1), AlvearyLighting, AlvearySieve,
+                        AlvearyLighting });
 
         // Upgrade Frame
         GT_Values.RA.addAssemblerRecipe(ItemList.Circuit_Board_Plastic.get(1), IntegratedCPU, UpgradeFrame, 200, 24);
 
-        final ItemList[] AccelerationUpgrades = new ItemList[] {
-            ItemList.IndustrialApiary_Upgrade_Acceleration_1,
-            ItemList.IndustrialApiary_Upgrade_Acceleration_2,
-            ItemList.IndustrialApiary_Upgrade_Acceleration_3,
-            ItemList.IndustrialApiary_Upgrade_Acceleration_4,
-            ItemList.IndustrialApiary_Upgrade_Acceleration_5,
-            ItemList.IndustrialApiary_Upgrade_Acceleration_6,
-            ItemList.IndustrialApiary_Upgrade_Acceleration_7,
-            ItemList.IndustrialApiary_Upgrade_Acceleration_8
-        };
+        final ItemList[] AccelerationUpgrades = new ItemList[] { ItemList.IndustrialApiary_Upgrade_Acceleration_1,
+                ItemList.IndustrialApiary_Upgrade_Acceleration_2, ItemList.IndustrialApiary_Upgrade_Acceleration_3,
+                ItemList.IndustrialApiary_Upgrade_Acceleration_4, ItemList.IndustrialApiary_Upgrade_Acceleration_5,
+                ItemList.IndustrialApiary_Upgrade_Acceleration_6, ItemList.IndustrialApiary_Upgrade_Acceleration_7,
+                ItemList.IndustrialApiary_Upgrade_Acceleration_8 };
 
-        final ItemStack[] Accelerators = new ItemStack[] {
-            CustomItemList.AcceleratorLV.get(1),
-            CustomItemList.AcceleratorMV.get(1),
-            CustomItemList.AcceleratorHV.get(1),
-            CustomItemList.AcceleratorEV.get(1),
-            CustomItemList.AcceleratorIV.get(1),
-            CustomItemList.AcceleratorLuV.get(1),
-            CustomItemList.AcceleratorZPM.get(1),
-            CustomItemList.AcceleratorUV.get(1)
-        };
+        final ItemStack[] Accelerators = new ItemStack[] { CustomItemList.AcceleratorLV.get(1),
+                CustomItemList.AcceleratorMV.get(1), CustomItemList.AcceleratorHV.get(1),
+                CustomItemList.AcceleratorEV.get(1), CustomItemList.AcceleratorIV.get(1),
+                CustomItemList.AcceleratorLuV.get(1), CustomItemList.AcceleratorZPM.get(1),
+                CustomItemList.AcceleratorUV.get(1) };
 
         // Acceleration Upgrade 1-8
         for (int i = 0; i < AccelerationUpgrades.length; i++) {
-            addShapedRecipe(AccelerationUpgrades[i].get(6), new Object[] {
-                SmallPalladiumGear,
-                UpgradeFrame,
-                SmallPalladiumGear,
-                UpgradeFrame,
-                Accelerators[i],
-                UpgradeFrame,
-                SmallOsmiumGear,
-                UpgradeFrame,
-                SmallOsmiumGear
-            });
+            addShapedRecipe(
+                    AccelerationUpgrades[i].get(6),
+                    new Object[] { SmallPalladiumGear, UpgradeFrame, SmallPalladiumGear, UpgradeFrame, Accelerators[i],
+                            UpgradeFrame, SmallOsmiumGear, UpgradeFrame, SmallOsmiumGear });
         }
 
         // Upgraded Acceleration Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_Acceleration_8_Upgraded.get(1), new Object[] {
-            IndustrialApiaryUpgrade_PRODUCTION,
-            IndustrialApiaryUpgrade_PRODUCTION,
-            IndustrialApiaryUpgrade_PRODUCTION,
-            IndustrialApiaryUpgrade_PRODUCTION,
-            AccelerationUpgrades[7].get(1),
-            IndustrialApiaryUpgrade_PRODUCTION,
-            IndustrialApiaryUpgrade_PRODUCTION,
-            IndustrialApiaryUpgrade_PRODUCTION,
-            IndustrialApiaryUpgrade_PRODUCTION
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_Acceleration_8_Upgraded.get(1),
+                new Object[] { IndustrialApiaryUpgrade_PRODUCTION, IndustrialApiaryUpgrade_PRODUCTION,
+                        IndustrialApiaryUpgrade_PRODUCTION, IndustrialApiaryUpgrade_PRODUCTION,
+                        AccelerationUpgrades[7].get(1), IndustrialApiaryUpgrade_PRODUCTION,
+                        IndustrialApiaryUpgrade_PRODUCTION, IndustrialApiaryUpgrade_PRODUCTION,
+                        IndustrialApiaryUpgrade_PRODUCTION });
 
         // Production Upgrade
-        addShapedRecipe(IndustrialApiaryUpgrade_PRODUCTION, new Object[] {
-            SmallPalladiumGear,
-            Sugar,
-            SmallPalladiumGear,
-            RoyalJelly,
-            UpgradeFrame,
-            RoyalJelly,
-            SmallOsmiumGear,
-            Sugar,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                IndustrialApiaryUpgrade_PRODUCTION,
+                new Object[] { SmallPalladiumGear, Sugar, SmallPalladiumGear, RoyalJelly, UpgradeFrame, RoyalJelly,
+                        SmallOsmiumGear, Sugar, SmallOsmiumGear });
 
         // Plain Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_PLAINS.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            Grass,
-            UpgradeFrame,
-            Grass,
-            SmallOsmiumGear,
-            EnvironmentalProcessor,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_PLAINS.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, Grass, UpgradeFrame, Grass,
+                        SmallOsmiumGear, EnvironmentalProcessor, SmallOsmiumGear });
 
         // Light Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_LIGHT.get(1), new Object[] {
-            SmallPalladiumGear,
-            GlowstoneGlass,
-            SmallPalladiumGear,
-            GlowstoneGlass,
-            UpgradeFrame,
-            GlowstoneGlass,
-            SmallOsmiumGear,
-            GlowstoneGlass,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_LIGHT.get(1),
+                new Object[] { SmallPalladiumGear, GlowstoneGlass, SmallPalladiumGear, GlowstoneGlass, UpgradeFrame,
+                        GlowstoneGlass, SmallOsmiumGear, GlowstoneGlass, SmallOsmiumGear });
 
         // Flowering Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_FLOWERING.get(1), new Object[] {
-            SmallPalladiumGear,
-            Blocks.red_flower,
-            SmallPalladiumGear,
-            BotanyPollen,
-            UpgradeFrame,
-            BotanyPollen,
-            SmallOsmiumGear,
-            Blocks.yellow_flower,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_FLOWERING.get(1),
+                new Object[] { SmallPalladiumGear, Blocks.red_flower, SmallPalladiumGear, BotanyPollen, UpgradeFrame,
+                        BotanyPollen, SmallOsmiumGear, Blocks.yellow_flower, SmallOsmiumGear });
 
         // Winter Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_WINTER.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            HardenedIce,
-            UpgradeFrame,
-            HardenedIce,
-            SmallOsmiumGear,
-            EnvironmentalProcessor,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_WINTER.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, HardenedIce, UpgradeFrame,
+                        HardenedIce, SmallOsmiumGear, EnvironmentalProcessor, SmallOsmiumGear });
 
         // Dryer Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_DRYER.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            Sand,
-            UpgradeFrame,
-            Sand,
-            SmallOsmiumGear,
-            LavaBucket,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_DRYER.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, Sand, UpgradeFrame, Sand,
+                        SmallOsmiumGear, LavaBucket, SmallOsmiumGear });
 
         // Automation Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_AUTOMATION.get(1), new Object[] {
-            LVPiston,
-            IntegratedCPU,
-            LVPiston,
-            IntegratedCPU,
-            UpgradeFrame,
-            IntegratedCPU,
-            LVRobotArm,
-            IntegratedCPU,
-            LVRobotArm
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_AUTOMATION.get(1),
+                new Object[] { LVPiston, IntegratedCPU, LVPiston, IntegratedCPU, UpgradeFrame, IntegratedCPU,
+                        LVRobotArm, IntegratedCPU, LVRobotArm });
 
         // Humidifier Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_HUMIDIFIER.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            Cactus,
-            UpgradeFrame,
-            Cactus,
-            SmallOsmiumGear,
-            WaterBucket,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_HUMIDIFIER.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, Cactus, UpgradeFrame,
+                        Cactus, SmallOsmiumGear, WaterBucket, SmallOsmiumGear });
 
         // HELL Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_HELL.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            Items.blaze_rod,
-            UpgradeFrame,
-            Items.ghast_tear,
-            SmallOsmiumGear,
-            EnvironmentalProcessor,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_HELL.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, Items.blaze_rod,
+                        UpgradeFrame, Items.ghast_tear, SmallOsmiumGear, EnvironmentalProcessor, SmallOsmiumGear });
 
         // Pollen Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_POLLEN.get(1), new Object[] {
-            SmallPalladiumGear,
-            SteelBars,
-            SmallPalladiumGear,
-            TitaniumRotor,
-            UpgradeFrame,
-            TitaniumRotor,
-            SmallOsmiumGear,
-            SteelBars,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_POLLEN.get(1),
+                new Object[] { SmallPalladiumGear, SteelBars, SmallPalladiumGear, TitaniumRotor, UpgradeFrame,
+                        TitaniumRotor, SmallOsmiumGear, SteelBars, SmallOsmiumGear });
 
         // Desert Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_DESERT.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            Sand,
-            UpgradeFrame,
-            Sand,
-            SmallOsmiumGear,
-            EnvironmentalProcessor,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_DESERT.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, Sand, UpgradeFrame, Sand,
+                        SmallOsmiumGear, EnvironmentalProcessor, SmallOsmiumGear });
 
         // Cooler Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_COOLER.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            Snow,
-            UpgradeFrame,
-            Snow,
-            SmallOsmiumGear,
-            HardenedIce,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_COOLER.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, Snow, UpgradeFrame, Snow,
+                        SmallOsmiumGear, HardenedIce, SmallOsmiumGear });
 
         // Lifespan Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_LIFESPAN.get(1), new Object[] {
-            SmallPalladiumGear,
-            FermentedSpiderEye,
-            SmallPalladiumGear,
-            Cactus,
-            UpgradeFrame,
-            Cactus,
-            SmallOsmiumGear,
-            FermentedSpiderEye,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_LIFESPAN.get(1),
+                new Object[] { SmallPalladiumGear, FermentedSpiderEye, SmallPalladiumGear, Cactus, UpgradeFrame, Cactus,
+                        SmallOsmiumGear, FermentedSpiderEye, SmallOsmiumGear });
 
         // Seal Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_SEAL.get(1), new Object[] {
-            SmallPalladiumGear,
-            RubberPlate,
-            SmallPalladiumGear,
-            BeesWax,
-            UpgradeFrame,
-            BeesWax,
-            SmallOsmiumGear,
-            RubberPlate,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_SEAL.get(1),
+                new Object[] { SmallPalladiumGear, RubberPlate, SmallPalladiumGear, BeesWax, UpgradeFrame, BeesWax,
+                        SmallOsmiumGear, RubberPlate, SmallOsmiumGear });
 
         // Genetic Stabilizer Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_STABILIZER.get(1), new Object[] {
-            SmallPalladiumGear,
-            GeneticsProcessor,
-            SmallPalladiumGear,
-            RedAlloyPlate,
-            UpgradeFrame,
-            RedAlloyPlate,
-            SmallOsmiumGear,
-            GeneticsProcessor,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_STABILIZER.get(1),
+                new Object[] { SmallPalladiumGear, GeneticsProcessor, SmallPalladiumGear, RedAlloyPlate, UpgradeFrame,
+                        RedAlloyPlate, SmallOsmiumGear, GeneticsProcessor, SmallOsmiumGear });
 
         // Jungle Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_JUNGLE.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            Vines,
-            UpgradeFrame,
-            Vines,
-            SmallOsmiumGear,
-            EnvironmentalProcessor,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_JUNGLE.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, Vines, UpgradeFrame, Vines,
+                        SmallOsmiumGear, EnvironmentalProcessor, SmallOsmiumGear });
 
         // Territory Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_TERRITORY.get(1), new Object[] {
-            SmallPalladiumGear,
-            IronPlate,
-            SmallPalladiumGear,
-            EnderPearlPlate,
-            UpgradeFrame,
-            EnderPearlPlate,
-            SmallOsmiumGear,
-            IronPlate,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_TERRITORY.get(1),
+                new Object[] { SmallPalladiumGear, IronPlate, SmallPalladiumGear, EnderPearlPlate, UpgradeFrame,
+                        EnderPearlPlate, SmallOsmiumGear, IronPlate, SmallOsmiumGear });
 
         // Ocean Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_OCEAN.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            WaterBucket,
-            UpgradeFrame,
-            WaterBucket,
-            SmallOsmiumGear,
-            EnvironmentalProcessor,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_OCEAN.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, WaterBucket, UpgradeFrame,
+                        WaterBucket, SmallOsmiumGear, EnvironmentalProcessor, SmallOsmiumGear });
 
         // Open Sky Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_SKY.get(1), new Object[] {
-            SmallPalladiumGear,
-            InvertedBlueLamp,
-            SmallPalladiumGear,
-            ClearGlassPane,
-            UpgradeFrame,
-            ClearGlassPane,
-            SmallOsmiumGear,
-            ClearGlassPane,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_SKY.get(1),
+                new Object[] { SmallPalladiumGear, InvertedBlueLamp, SmallPalladiumGear, ClearGlassPane, UpgradeFrame,
+                        ClearGlassPane, SmallOsmiumGear, ClearGlassPane, SmallOsmiumGear });
 
         // Heater Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_HEATER.get(1), new Object[] {
-            SmallPalladiumGear,
-            ClimateControlModule,
-            SmallPalladiumGear,
-            Netherrack,
-            UpgradeFrame,
-            Netherrack,
-            SmallOsmiumGear,
-            LavaBucket,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_HEATER.get(1),
+                new Object[] { SmallPalladiumGear, ClimateControlModule, SmallPalladiumGear, Netherrack, UpgradeFrame,
+                        Netherrack, SmallOsmiumGear, LavaBucket, SmallOsmiumGear });
 
         // Sieve Upgrade
-        addShapedRecipe(ItemList.IndustrialApiary_Upgrade_SIEVE.get(1), new Object[] {
-            SmallPalladiumGear,
-            WovenSilk,
-            SmallPalladiumGear,
-            SteelBars,
-            UpgradeFrame,
-            SteelBars,
-            SmallOsmiumGear,
-            WovenSilk,
-            SmallOsmiumGear
-        });
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_SIEVE.get(1),
+                new Object[] { SmallPalladiumGear, WovenSilk, SmallPalladiumGear, SteelBars, UpgradeFrame, SteelBars,
+                        SmallOsmiumGear, WovenSilk, SmallOsmiumGear });
     }
 }

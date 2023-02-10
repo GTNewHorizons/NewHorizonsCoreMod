@@ -2,15 +2,17 @@ package com.dreammaster.gthandler;
 
 import static gregtech.api.enums.GT_Values.W;
 
-import gregtech.api.interfaces.IItemContainer;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.interfaces.IItemContainer;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
+
 public enum CustomItemList implements IItemContainer {
+
     Casing_Pyrolyse,
     Machine_Multi_AirFilterT1,
     Machine_Multi_AirFilterT2,
@@ -28,6 +30,7 @@ public enum CustomItemList implements IItemContainer {
     Hatch_Energy_UEV,
     Hatch_Energy_UIV,
     Hatch_Energy_UMV,
+    Hatch_Energy_UXV,
     Hatch_Input_UEV,
     Hatch_Input_UIV,
     Hatch_Input_UMV,

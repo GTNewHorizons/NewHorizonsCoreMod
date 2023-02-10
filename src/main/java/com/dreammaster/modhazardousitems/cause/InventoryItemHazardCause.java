@@ -3,6 +3,7 @@ package com.dreammaster.modhazardousitems.cause;
 import net.minecraft.item.ItemStack;
 
 public class InventoryItemHazardCause extends HazardCause {
+
     private final ItemStack stack;
 
     InventoryItemHazardCause(ItemStack stack) {

@@ -1,10 +1,11 @@
 package com.dreammaster.railcraftStones;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import java.util.Random;
+
 import mods.railcraft.common.blocks.aesthetics.cube.BlockCube;
 import mods.railcraft.common.blocks.aesthetics.cube.EnumCube;
 import mods.railcraft.common.worldgen.WorldGenGeode;
+
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.BiomeDictionary;
@@ -12,10 +13,12 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
 public final class NH_GeodePopulator {
-    public static final PopulateChunkEvent.Populate.EventType EVENT_TYPE =
-            (PopulateChunkEvent.Populate.EventType) EnumHelper.addEnum(
-                    PopulateChunkEvent.Populate.EventType.class, "RAILCRAFT_GEODE", new Class[0], new Object[0]);
+
+    public static final PopulateChunkEvent.Populate.EventType EVENT_TYPE = (PopulateChunkEvent.Populate.EventType) EnumHelper
+            .addEnum(PopulateChunkEvent.Populate.EventType.class, "RAILCRAFT_GEODE", new Class[0], new Object[0]);
     private static NH_GeodePopulator instance;
     private final WorldGenerator geode;
 

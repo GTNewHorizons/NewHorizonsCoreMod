@@ -10,6 +10,7 @@ import gregtech.common.items.GT_MetaGenerated_Item_01;
  *
  */
 public class GT_Loader_Batteries {
+
     public void run() {
         GT = GT_MetaGenerated_Item_01.INSTANCE;
         registerBatteries();
@@ -25,75 +26,97 @@ public class GT_Loader_Batteries {
 
         // Empty battery hulls
         CustomItemList.BatteryHull_EV.set(
-                GT.addItem(503, "Small Sunnarium Battery (Empty)", "An empty EV Battery Container", new Object[] {
-                    new ItemData(Materials.BlueSteel, OrePrefixes.plate.mMaterialAmount * 2L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 8L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 8L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 8L)
-                }));
+                GT.addItem(
+                        503,
+                        "Small Sunnarium Battery (Empty)",
+                        "An empty EV Battery Container",
+                        new Object[] { new ItemData(Materials.BlueSteel, OrePrefixes.plate.mMaterialAmount * 2L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 8L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 8L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 8L) }));
         CustomItemList.BatteryHull_IV.set(
-                GT.addItem(504, "Medium Sunnarium Battery (Empty)", "An empty IV Battery Container", new Object[] {
-                    new ItemData(Materials.RoseGold, OrePrefixes.plate.mMaterialAmount * 6L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 16L)
-                }));
+                GT.addItem(
+                        504,
+                        "Medium Sunnarium Battery (Empty)",
+                        "An empty IV Battery Container",
+                        new Object[] { new ItemData(Materials.RoseGold, OrePrefixes.plate.mMaterialAmount * 6L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 16L) }));
         CustomItemList.BatteryHull_LuV.set(
-                GT.addItem(505, "Large Sunnarium Battery (Empty)", "An empty LuV Battery Container", new Object[] {
-                    new ItemData(Materials.RedSteel, OrePrefixes.plate.mMaterialAmount * 18L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 32L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 32L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 32L)
-                }));
+                GT.addItem(
+                        505,
+                        "Large Sunnarium Battery (Empty)",
+                        "An empty LuV Battery Container",
+                        new Object[] { new ItemData(Materials.RedSteel, OrePrefixes.plate.mMaterialAmount * 18L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 32L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 32L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 32L) }));
         CustomItemList.BatteryHull_ZPM.set(
-                GT.addItem(506, "Medium Naquadria Battery (Empty)", "An empty ZPM Energy Storage", new Object[] {
-                    new ItemData(Materials.Europium, OrePrefixes.plate.mMaterialAmount * 6L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 64L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 64L)
-                }));
+                GT.addItem(
+                        506,
+                        "Medium Naquadria Battery (Empty)",
+                        "An empty ZPM Energy Storage",
+                        new Object[] { new ItemData(Materials.Europium, OrePrefixes.plate.mMaterialAmount * 6L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 64L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 64L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 64L) }));
         CustomItemList.BatteryHull_UV.set(
-                GT.addItem(507, "Large Naquadria Battery (Empty)", "An empty UV Energy Storage", new Object[] {
-                    new ItemData(Materials.Americium, OrePrefixes.plate.mMaterialAmount * 18L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 128L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 128L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 128L)
-                }));
+                GT.addItem(
+                        507,
+                        "Large Naquadria Battery (Empty)",
+                        "An empty UV Energy Storage",
+                        new Object[] { new ItemData(Materials.Americium, OrePrefixes.plate.mMaterialAmount * 18L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 128L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 128L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 128L) }));
         CustomItemList.BatteryHull_UHV.set(
-                GT.addItem(561, "Small Neutronium Battery (Empty)", "An empty UHV Energy Storage", new Object[] {
-                    new ItemData(Materials.Naquadah, OrePrefixes.plate.mMaterialAmount * 24L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 256L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 256L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 256L)
-                }));
+                GT.addItem(
+                        561,
+                        "Small Neutronium Battery (Empty)",
+                        "An empty UHV Energy Storage",
+                        new Object[] { new ItemData(Materials.Naquadah, OrePrefixes.plate.mMaterialAmount * 24L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 256L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 256L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 256L) }));
         CustomItemList.BatteryHull_UEV.set(
-                GT.addItem(562, "Medium Neutronium Battery (Empty)", "An empty UEV Energy Storage", new Object[] {
-                    new ItemData(Materials.NaquadahEnriched, OrePrefixes.plate.mMaterialAmount * 36L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 512L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 512L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 512L)
-                }));
+                GT.addItem(
+                        562,
+                        "Medium Neutronium Battery (Empty)",
+                        "An empty UEV Energy Storage",
+                        new Object[] {
+                                new ItemData(Materials.NaquadahEnriched, OrePrefixes.plate.mMaterialAmount * 36L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 512L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 512L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 512L) }));
         CustomItemList.BatteryHull_UIV.set(
-                GT.addItem(563, "Large Neutronium Battery (Empty)", "An empty UIV Energy Storage", new Object[] {
-                    new ItemData(Materials.NaquadahAlloy, OrePrefixes.plate.mMaterialAmount * 48L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 1024L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 1024L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 1024L)
-                }));
+                GT.addItem(
+                        563,
+                        "Large Neutronium Battery (Empty)",
+                        "An empty UIV Energy Storage",
+                        new Object[] { new ItemData(Materials.NaquadahAlloy, OrePrefixes.plate.mMaterialAmount * 48L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 1024L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 1024L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 1024L) }));
         CustomItemList.BatteryHull_UMV.set(
-                GT.addItem(564, "Medium Plasma Battery (Empty)", "An empty UMV Energy Storage", new Object[] {
-                    new ItemData(Materials.Neutronium, OrePrefixes.plate.mMaterialAmount * 56L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 2048L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 2048L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 2048L)
-                }));
+                GT.addItem(
+                        564,
+                        "Medium Plasma Battery (Empty)",
+                        "An empty UMV Energy Storage",
+                        new Object[] { new ItemData(Materials.Neutronium, OrePrefixes.plate.mMaterialAmount * 56L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 2048L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 2048L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 2048L) }));
         CustomItemList.BatteryHull_UxV.set(
-                GT.addItem(565, "Large Plasma Battery (Empty)", "An empty UXV Energy Storage", new Object[] {
-                    new ItemData(Materials.DraconiumAwakened, OrePrefixes.plate.mMaterialAmount * 64L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 4096L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 4096L),
-                    new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 4096L)
-                }));
+                GT.addItem(
+                        565,
+                        "Large Plasma Battery (Empty)",
+                        "An empty UXV Energy Storage",
+                        new Object[] {
+                                new ItemData(Materials.DraconiumAwakened, OrePrefixes.plate.mMaterialAmount * 64L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 4096L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 4096L),
+                                new TC_Aspects.TC_AspectStack(TC_Aspects.VACUOS, 4096L) }));
 
         // Recipes
         GT_Values.RA.addAssemblerRecipe(
@@ -172,137 +195,154 @@ public class GT_Loader_Batteries {
 
         // Actually filled hulls.
         // I added a gap of 5 to each filled hull, so 4 additional batteries are possible for each voltage tierELECTRUM
-        CustomItemList.BatteryHull_EV_Full.set(GT.addItem(
-                tLastID = 540,
-                "Small Sunnarium Battery",
-                "Reusable",
-                "batteryEV",
-                "EV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_EV_Full.set(
+                GT.addItem(
+                        tLastID = 540,
+                        "Small Sunnarium Battery",
+                        "Reusable",
+                        "batteryEV",
+                        "EV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 6400000L, GT_Values.V[4], 4L, -3L, true);
 
-        CustomItemList.BatteryHull_IV_Full.set(GT.addItem(
-                tLastID = 545,
-                "Medium Sunnarium Battery",
-                "Reusable",
-                "batteryIV",
-                "IV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_IV_Full.set(
+                GT.addItem(
+                        tLastID = 545,
+                        "Medium Sunnarium Battery",
+                        "Reusable",
+                        "batteryIV",
+                        "IV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 25600000L, GT_Values.V[5], 5L, -3L, true);
 
-        CustomItemList.BatteryHull_LuV_Full.set(GT.addItem(
-                tLastID = 550,
-                "Large Sunnarium Battery",
-                "Reusable",
-                "batteryLuV",
-                "LuV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_LuV_Full.set(
+                GT.addItem(
+                        tLastID = 550,
+                        "Large Sunnarium Battery",
+                        "Reusable",
+                        "batteryLuV",
+                        "LuV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 102400000L, GT_Values.V[6], 6L, -3L, true);
 
-        CustomItemList.BatteryHull_ZPM_Full.set(GT.addItem(
-                tLastID = 555,
-                "Medium Naquadria Battery",
-                "Reusable",
-                "batteryZPM",
-                "ZPM",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_ZPM_Full.set(
+                GT.addItem(
+                        tLastID = 555,
+                        "Medium Naquadria Battery",
+                        "Reusable",
+                        "batteryZPM",
+                        "ZPM",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 409600000L, GT_Values.V[7], 7L, -3L, true);
 
-        CustomItemList.BatteryHull_UV_Full.set(GT.addItem(
-                tLastID = 560,
-                "Large Naquadria Battery",
-                "Reusable",
-                "batteryUV",
-                "UV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_UV_Full.set(
+                GT.addItem(
+                        tLastID = 560,
+                        "Large Naquadria Battery",
+                        "Reusable",
+                        "batteryUV",
+                        "UV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 1638400000L, GT_Values.V[8], 8L, -3L, true);
 
-        CustomItemList.BatteryHull_UHV_Full.set(GT.addItem(
-                tLastID = 570,
-                "Small Neutronium Battery",
-                "Reusable",
-                "batteryUHV",
-                "UHV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_UHV_Full.set(
+                GT.addItem(
+                        tLastID = 570,
+                        "Small Neutronium Battery",
+                        "Reusable",
+                        "batteryUHV",
+                        "UHV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 6553600000L, GT_Values.V[9], 9L, -3L, true);
 
-        CustomItemList.BatteryHull_UEV_Full.set(GT.addItem(
-                tLastID = 575,
-                "Medium Neutronium Battery",
-                "Reusable",
-                "batteryUEV",
-                "UEV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_UEV_Full.set(
+                GT.addItem(
+                        tLastID = 575,
+                        "Medium Neutronium Battery",
+                        "Reusable",
+                        "batteryUEV",
+                        "UEV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 26214400000L, GT_Values.V[10], 10L, -3L, true);
 
-        CustomItemList.BatteryHull_UIV_Full.set(GT.addItem(
-                tLastID = 580,
-                "Large Neutronium Battery",
-                "Reusable",
-                "batteryUIV",
-                "UIV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_UIV_Full.set(
+                GT.addItem(
+                        tLastID = 580,
+                        "Large Neutronium Battery",
+                        "Reusable",
+                        "batteryUIV",
+                        "UIV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 104857600000L, GT_Values.V[11], 11L, -3L, true);
 
-        CustomItemList.BatteryHull_UMV_Full.set(GT.addItem(
-                tLastID = 585,
-                "Medium Infinity Battery",
-                "Reusable",
-                "batteryUMV",
-                "UMV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_UMV_Full.set(
+                GT.addItem(
+                        tLastID = 585,
+                        "Medium Infinity Battery",
+                        "Reusable",
+                        "batteryUMV",
+                        "UMV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 419430400000L, GT_Values.V[12], 12L, -3L, true);
 
-        CustomItemList.BatteryHull_UxV_Full.set(GT.addItem(
-                tLastID = 590,
-                "Large Infinity Battery",
-                "Reusable",
-                "batteryUXV",
-                "UXV",
-                new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
-                new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
+        CustomItemList.BatteryHull_UxV_Full.set(
+                GT.addItem(
+                        tLastID = 590,
+                        "Large Infinity Battery",
+                        "Reusable",
+                        "batteryUXV",
+                        "UXV",
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
+                        new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 1677721600000L, GT_Values.V[13], 13L, -3L, true);
 
         // Just to be complete, extractor recipes for the filled hulls
+        GT_ModHandler
+                .addExtractionRecipe(CustomItemList.BatteryHull_EV_Full.get(1L), CustomItemList.BatteryHull_EV.get(1L));
+        GT_ModHandler
+                .addExtractionRecipe(CustomItemList.BatteryHull_IV_Full.get(1L), CustomItemList.BatteryHull_IV.get(1L));
         GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_EV_Full.get(1L), CustomItemList.BatteryHull_EV.get(1L));
+                CustomItemList.BatteryHull_LuV_Full.get(1L),
+                CustomItemList.BatteryHull_LuV.get(1L));
         GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_IV_Full.get(1L), CustomItemList.BatteryHull_IV.get(1L));
+                CustomItemList.BatteryHull_ZPM_Full.get(1L),
+                CustomItemList.BatteryHull_ZPM.get(1L));
+        GT_ModHandler
+                .addExtractionRecipe(CustomItemList.BatteryHull_UV_Full.get(1L), CustomItemList.BatteryHull_UV.get(1L));
         GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_LuV_Full.get(1L), CustomItemList.BatteryHull_LuV.get(1L));
+                CustomItemList.BatteryHull_UHV_Full.get(1L),
+                CustomItemList.BatteryHull_UHV.get(1L));
         GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_ZPM_Full.get(1L), CustomItemList.BatteryHull_ZPM.get(1L));
+                CustomItemList.BatteryHull_UEV_Full.get(1L),
+                CustomItemList.BatteryHull_UEV.get(1L));
         GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UV_Full.get(1L), CustomItemList.BatteryHull_UV.get(1L));
+                CustomItemList.BatteryHull_UIV_Full.get(1L),
+                CustomItemList.BatteryHull_UIV.get(1L));
         GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UHV_Full.get(1L), CustomItemList.BatteryHull_UHV.get(1L));
+                CustomItemList.BatteryHull_UMV_Full.get(1L),
+                CustomItemList.BatteryHull_UMV.get(1L));
         GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UEV_Full.get(1L), CustomItemList.BatteryHull_UEV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UIV_Full.get(1L), CustomItemList.BatteryHull_UIV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UMV_Full.get(1L), CustomItemList.BatteryHull_UMV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UxV_Full.get(1L), CustomItemList.BatteryHull_UxV.get(1L));
+                CustomItemList.BatteryHull_UxV_Full.get(1L),
+                CustomItemList.BatteryHull_UxV.get(1L));
 
         // Recipes to actually fill the empty hulls with content
         // IV 2048
