@@ -42,7 +42,7 @@ public class DistillationRecipes implements Runnable {
                     Materials.Grade2PurifiedWater.getFluid(1000L),
                     new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(900L),
                             Materials.Grade2PurifiedWater.getFluid(50L), Materials.Grade1PurifiedWater.getFluid(100L),
-                            Materials.Oil.getFluid(50L), Materials.Ammonia.getFluid(100L) },
+                            Materials.Oil.getFluid(50L), Materials.Ammonia.getGas(100L) },
                     Materials.Calcite.getDust(1),
                     500 * 10,
                     122_880);
