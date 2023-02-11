@@ -627,8 +627,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         // ===================================================================================================
 
         if (Loader.isModLoaded("bartworks")) {
-            Materials[] cables = { // Cable material used in the acid gen, diode and energy distributor
-                                   // below
+            Materials[] cables = { // Cable material used in the acid gen, diode and energy distributor below
                     Materials.Bedrockium, // UHV
                     Materials.Draconium, // UEV
                     Materials.NetherStar, // UIV
