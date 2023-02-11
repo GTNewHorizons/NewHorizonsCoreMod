@@ -6784,7 +6784,7 @@ public class AssemblerRecipes implements Runnable {
                 100,
                 7);
 
-        // TODO: Rework other stuff (that depends on certain Heat Levels, mostly LuV+  stuff) so this can be wrapped into
+        // TODO: Rework other stuff (that depends on certain Heat Levels, mostly LuV+ stuff) so this can be wrapped into
         // a oneliner.
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Cupronickel, 8L),
