@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.GT_Values.NF;
 import static gregtech.api.enums.GT_Values.NI;
 
 import net.minecraft.item.ItemStack;
@@ -164,7 +165,7 @@ public class LaserEngraverRecipes implements Runnable {
                             CustomItemList.MysteriousCrystalLens.get(0) },
                     new FluidStack[] { Materials.UUMatter.getFluid(16000L) },
                     new ItemStack[] { ItemList.Circuit_Silicon_Ingot6.get(1L) },
-                    new FluidStack[] { GT_Values.NF },
+                    new FluidStack[] { NF },
                     30 * 20,
                     7_864_320,
                     true);
@@ -189,7 +190,8 @@ public class LaserEngraverRecipes implements Runnable {
                     new ItemStack[] { WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0) }, // Hedenbergite Lens
                     new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(1000L) },
                     new ItemStack[] { NI },
-                    new FluidStack[] { Materials.Grade4PurifiedWater.getFluid(900L) },
+                    new FluidStack[] { Materials.Grade4PurifiedWater.getFluid(900L),
+                            FluidRegistry.getFluidStack("bacterialsludge", 50) },
                     500 * 10,
                     245_760,
                     true);
@@ -198,10 +200,21 @@ public class LaserEngraverRecipes implements Runnable {
                     new ItemStack[] { WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0) }, // Bart Lens
                     new FluidStack[] { Materials.Grade5PurifiedWater.getFluid(1000L) },
                     new ItemStack[] { NI },
-                    new FluidStack[] { Materials.Grade6PurifiedWater.getFluid(900L) },
+                    new FluidStack[] { Materials.Grade6PurifiedWater.getFluid(900L), Materials.Water.getGas(8000L) },
                     500 * 10,
                     983_040,
                     true);
+
+            GT_Values.RA
+                    .addLaserEngraverRecipe(
+                            new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L).copy()
+                                    .splitStack(0), ItemList.Circuit_Chip_CrystalSoC2.get(1L) },
+                            new FluidStack[] { Materials.BioMediumSterilized.getFluid(50L) },
+                            new ItemStack[] { ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1) },
+                            new FluidStack[] { NF },
+                            60 * 20,
+                            160000,
+                            true);
         }
 
         // GC/GS Wafer
