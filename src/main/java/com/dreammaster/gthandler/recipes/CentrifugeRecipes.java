@@ -99,12 +99,12 @@ public class CentrifugeRecipes implements Runnable {
                 GT_Values.NF,
                 GT_Values.NF,
                 GT_ModHandler.getModItem("Forestry", "beeswax", 1L, 0),
-                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Iridium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L),
                 GT_Values.NI,
                 GT_Values.NI,
                 GT_Values.NI,
                 GT_Values.NI,
-                new int[] { 10000, 100 },
+                new int[] { 10000, 11 },
                 300,
                 7680);
 
@@ -706,11 +706,11 @@ public class CentrifugeRecipes implements Runnable {
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L),
                 new ItemStack(Blocks.sand, 1, 0),
-                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
                 GT_Values.NI,
                 GT_Values.NI,
                 GT_Values.NI,
-                new int[] { 9000, 5000, 2500 },
+                new int[] { 9000, 5000, 277 },
                 100,
                 30);
 
