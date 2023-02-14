@@ -23,7 +23,6 @@ public interface IScriptLoader {
     // todo: cache the lookups for the itemstacks
     // todo: make an error for the itemstack lookup if it returns null
 
-    long[] timeRecords = new long[2];
     int wildcard = 32767;
 
     /**
@@ -40,15 +39,6 @@ public interface IScriptLoader {
      * @return a list of string containing the dependencies.
      */
     List<String> getDependencies();
-
-    /**
-     * Should be called externally to load the recipes in the ported script
-     */
-    default void loadScript() {
-        timeRecords[0] = System.currentTimeMillis();
-        loadRecipes();
-        timeRecords[1] = System.currentTimeMillis();
-    }
 
     /**
      * Method to override to implement the recipes in the script
@@ -162,15 +152,6 @@ public interface IScriptLoader {
      */
     default ItemStack getMeta01(int meta) {
         return new ItemStack(GT_MetaGenerated_Item_01.INSTANCE, 1, meta);
-    }
-
-    /**
-     * function to get the time of execution for the script in milliseconds.
-     * 
-     * @return a long object holding the time of execution.
-     */
-    default long getExecutionTime() {
-        return timeRecords[1] - timeRecords[0];
     }
 
     /**
