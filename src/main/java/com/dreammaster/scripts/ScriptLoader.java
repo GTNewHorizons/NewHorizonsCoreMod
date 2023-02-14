@@ -12,7 +12,7 @@ public class ScriptLoader {
                 new ScriptComputronics(), new ScriptEC2(), new ScriptEnderIO(), new ScriptEnderZoo(),
                 new ScriptForgeMultipart(), new ScriptHoloInventory(), new ScriptIguanaTweaks(), new ScriptJABBA(),
                 new ScriptNuclearControl(), new ScriptOpenBlocks(), new ScriptSleepingBags(), new ScriptSpiceOfLife(),
-                new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics(), };
+                new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics() };
 
         for (IScriptLoader script : scripts) {
             script.initScriptData();
