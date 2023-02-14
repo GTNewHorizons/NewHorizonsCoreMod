@@ -31,7 +31,7 @@ public interface IScriptLoader {
     /**
      * Should be called externally to load the recipes in the ported script
      */
-    public default void loadScript() {
+    default void loadScript() {
         timeRecords[0] = System.currentTimeMillis();
         loadRecipes();
         timeRecords[1] = System.currentTimeMillis();
@@ -40,12 +40,12 @@ public interface IScriptLoader {
     /**
      * Method to init the script (deps and name) before using it
      */
-    public void initScriptData();
+    void initScriptData();
 
     /**
      * Method to override to implement the recipes in the script
      */
-    public void loadRecipes();
+    void loadRecipes();
 
     /**
      * Code strongly inspired from what did alkalus in GT++.
@@ -57,7 +57,7 @@ public interface IScriptLoader {
      */
     default boolean addShapedRecipe(ItemStack aOutputStack, Object[] inputs) {
         Object[] slots = new Object[9];
-        String fullString = "";
+        StringBuilder fullString = new StringBuilder();
         String slotMappings = "abcdefghi";
         try {
             for (int i = 0; i < 9; i++) {
@@ -66,18 +66,18 @@ public interface IScriptLoader {
                     final ItemStack itemStack = ((ItemStack) o).copy();
                     itemStack.stackSize = 1;
                     slots[i] = itemStack.copy();
-                    fullString += slotMappings.charAt(i);
+                    fullString.append(slotMappings.charAt(i));
                 } else if (o instanceof Item) {
                     final ItemStack itemStack = new ItemStack((Item) o, 1);
                     slots[i] = itemStack.copy();
-                    fullString += slotMappings.charAt(i);
+                    fullString.append(slotMappings.charAt(i));
                 } else if (o instanceof Block) {
                     final ItemStack itemStack = new ItemStack((Block) o, 1);
                     slots[i] = itemStack.copy();
-                    fullString += slotMappings.charAt(i);
+                    fullString.append(slotMappings.charAt(i));
                 } else if (o instanceof String) {
                     slots[i] = o;
-                    fullString += slotMappings.charAt(i);
+                    fullString.append(slotMappings.charAt(i));
                 } else if (o instanceof ItemData) {
                     ItemData data = (ItemData) o;
                     ItemStack itemStack = GT_OreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
@@ -85,12 +85,12 @@ public interface IScriptLoader {
                         throw new NullPointerException("bad item passed in the recipe");
                     } else {
                         slots[i] = itemStack;
-                        fullString += slotMappings.charAt(i);
+                        fullString.append(slotMappings.charAt(i));
                     }
 
                 } else if (o == null) {
                     slots[i] = null;
-                    fullString += " ";
+                    fullString.append(" ");
                 } else {
                     slots[i] = null;
                     throw new NullPointerException("bad recipe generated");
@@ -130,10 +130,10 @@ public interface IScriptLoader {
      * @param v The object array to process.
      * @return An object array with null elements removed
      */
-    public static Object[] removeNulls(final Object[] v) {
-        List<Object> list = new ArrayList<Object>(Arrays.asList(v));
-        list.removeAll(Collections.singleton((Object) null));
-        return list.toArray(new Object[list.size()]);
+    static Object[] removeNulls(final Object[] v) {
+        List<Object> list = new ArrayList<>(Arrays.asList(v));
+        list.removeAll(Collections.singleton(null));
+        return list.toArray(new Object[0]);
     }
 
     /**
@@ -161,7 +161,7 @@ public interface IScriptLoader {
      * 
      * @return a long object holding the time of execution.
      */
-    public default long getExecutionTime() {
+    default long getExecutionTime() {
         return timeRecords[1] - timeRecords[0];
     }
 
@@ -171,7 +171,7 @@ public interface IScriptLoader {
      * 
      * @return a list of string containing the dependencies.
      */
-    public default List<String> getDependencies() {
+    default List<String> getDependencies() {
         return dependencies;
     }
 
@@ -180,7 +180,7 @@ public interface IScriptLoader {
      * 
      * @return the name of the script.
      */
-    public default String getScriptName() {
+    default String getScriptName() {
         return scriptName.toString();
     }
 
@@ -190,7 +190,7 @@ public interface IScriptLoader {
      * 
      * @return a boolean representing if the script is loadable.
      */
-    public default boolean isScriptLoadable() {
+    default boolean isScriptLoadable() {
         for (String dep : getDependencies()) {
             if (!Loader.isModLoaded(dep)) {
                 return false;
