@@ -4,19 +4,20 @@ import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
 public class ScriptBiblioWoodsBoP implements IScriptLoader {
 
-    public ScriptBiblioWoodsBoP() {}
+    @Override
+    public String getScriptName() {
+        return "BiblioWoodsBoP";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("BiblioWoodsBoP");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft"));
+    public List<String> getDependencies() {
+        return Arrays.asList("BiomesOPlenty", "BiblioWoodsBoP", "BiblioCraft");
     }
 
     @Override

@@ -2,18 +2,19 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class ScriptHoloInventory implements IScriptLoader {
 
-    public ScriptHoloInventory() {}
+    @Override
+    public String getScriptName() {
+        return "HoloInventory";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("HoloInventory");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("holoinventory"));
+    public List<String> getDependencies() {
+        return Collections.singletonList("holoinventory");
     }
 
     @Override

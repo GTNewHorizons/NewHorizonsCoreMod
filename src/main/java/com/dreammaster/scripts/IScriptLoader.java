@@ -24,9 +24,22 @@ public interface IScriptLoader {
     // todo: make an error for the itemstack lookup if it returns null
 
     long[] timeRecords = new long[2];
-    StringBuilder scriptName = new StringBuilder();
-    List<String> dependencies = new ArrayList<>();
     int wildcard = 32767;
+
+    /**
+     * Function to get the name of the script.
+     *
+     * @return the name of the script.
+     */
+    String getScriptName();
+
+    /**
+     * Function to get the list of all the dependencies needed to load the script. Avoid manual checks with
+     * Loader.isModLoaded.
+     *
+     * @return a list of string containing the dependencies.
+     */
+    List<String> getDependencies();
 
     /**
      * Should be called externally to load the recipes in the ported script
@@ -36,11 +49,6 @@ public interface IScriptLoader {
         loadRecipes();
         timeRecords[1] = System.currentTimeMillis();
     }
-
-    /**
-     * Method to init the script (deps and name) before using it
-     */
-    void initScriptData();
 
     /**
      * Method to override to implement the recipes in the script
@@ -163,25 +171,6 @@ public interface IScriptLoader {
      */
     default long getExecutionTime() {
         return timeRecords[1] - timeRecords[0];
-    }
-
-    /**
-     * Function to get the list of all the dependencies needed to load the script. Avoid manual checks with
-     * Loader.isModLoaded.
-     * 
-     * @return a list of string containing the dependencies.
-     */
-    default List<String> getDependencies() {
-        return dependencies;
-    }
-
-    /**
-     * Function to get the name of the script.
-     * 
-     * @return the name of the script.
-     */
-    default String getScriptName() {
-        return scriptName.toString();
     }
 
     /**

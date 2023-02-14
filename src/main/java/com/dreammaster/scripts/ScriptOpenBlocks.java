@@ -4,6 +4,7 @@ import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -14,14 +15,14 @@ import gregtech.api.util.GT_Utility;
 
 public class ScriptOpenBlocks implements IScriptLoader {
 
-    public ScriptOpenBlocks() {}
+    @Override
+    public String getScriptName() {
+        return "OpenBlocks";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("OpenBlocks");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("OpenBlocks", "RandomThings", "ExtraUtilities", "gregtech"));
+    public List<String> getDependencies() {
+        return Arrays.asList("OpenBlocks", "RandomThings", "ExtraUtilities", "gregtech");
     }
 
     @Override
