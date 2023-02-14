@@ -929,7 +929,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         GT_ModHandler.addCraftingRecipe(
                 GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1, 0),
-                bits,
+                bits4,
                 new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
                         OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
                         OrePrefixes.dust.get(Materials.QuartzSand), 'W', new ItemStack(Items.water_bucket, 1, 0), 'B',
@@ -942,7 +942,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         if (Loader.isModLoaded("IguanaTweaksTConstruct")) {
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1, 0),
-                    bits,
+                    bits4,
                     new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
                             OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
                             OrePrefixes.dust.get(Materials.QuartzSand), 'W',
