@@ -21,8 +21,8 @@ public class ScriptLoader {
                 final long timeToLoad = System.currentTimeMillis() - timeStart;
                 MainRegistry.Logger.info("Loaded " + script.getScriptName() + " script in " + timeToLoad + " ms.");
             } else {
-                MainRegistry.Logger
-                        .info("Missing dependencies to load " + script.getScriptName() + " script. It won't be loaded.");
+                MainRegistry.Logger.info(
+                        "Missing dependencies to load " + script.getScriptName() + " script. It won't be loaded.");
             }
         }
     }
