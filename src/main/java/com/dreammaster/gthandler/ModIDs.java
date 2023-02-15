@@ -8,14 +8,16 @@ public enum ModIDs {
     TinkerConstruct("TConstruct");
 
     public final String modID;
-    private final Boolean modLoaded;
+    private Boolean modLoaded;
 
     ModIDs(String modID) {
         this.modID = modID;
-        this.modLoaded = Loader.isModLoaded(modID);
     }
 
     public boolean isModLoaded() {
+        if (this.modLoaded == null) {
+            this.modLoaded = Loader.isModLoaded(modID);
+        }
         return this.modLoaded;
     }
 }
