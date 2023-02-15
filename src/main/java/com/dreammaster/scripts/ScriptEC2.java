@@ -2,6 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Arrays;
+import java.util.List;
+
 import javax.annotation.Nonnull;
 
 import net.minecraft.inventory.InventoryCrafting;
@@ -19,11 +22,13 @@ import gregtech.api.util.GT_OreDictUnificator;
 public class ScriptEC2 implements IScriptLoader {
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("EC2");
-        dependencies.clear();
-        dependencies.addAll(java.util.Arrays.asList("extracells", "ae2fc", "appliedenergistics2"));
+    public String getScriptName() {
+        return "EC2";
+    }
+
+    @Override
+    public List<String> getDependencies() {
+        return Arrays.asList("extracells", "ae2fc", "appliedenergistics2");
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
@@ -16,22 +17,15 @@ import gregtech.api.util.GT_Utility;
 
 public class ScriptJABBA implements IScriptLoader {
 
-    public ScriptJABBA() {}
+    @Override
+    public String getScriptName() {
+        return "JABBA";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("JABBA");
-        dependencies.clear();
-        dependencies.addAll(
-                Arrays.asList(
-                        "JABBA",
-                        "BiomesOPlenty",
-                        "ExtraTrees",
-                        "ExtraUtilities",
-                        "Forestry",
-                        "Natura",
-                        "gregtech"));
+    public List<String> getDependencies() {
+        return Arrays
+                .asList("JABBA", "BiomesOPlenty", "ExtraTrees", "ExtraUtilities", "Forestry", "Natura", "gregtech");
     }
 
     @Override

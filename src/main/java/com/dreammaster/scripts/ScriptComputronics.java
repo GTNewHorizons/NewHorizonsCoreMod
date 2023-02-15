@@ -3,19 +3,20 @@ package com.dreammaster.scripts;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 
 public class ScriptComputronics implements IScriptLoader {
 
-    public ScriptComputronics() {}
+    @Override
+    public String getScriptName() {
+        return "Computronics";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("Computronics");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("Avaritia", "computronics", "gregtech"));
+    public List<String> getDependencies() {
+        return Arrays.asList("Avaritia", "computronics", "gregtech");
     }
 
     @Override

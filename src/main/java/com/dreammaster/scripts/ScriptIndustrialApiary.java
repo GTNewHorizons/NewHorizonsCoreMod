@@ -2,6 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -18,25 +21,24 @@ import gregtech.api.objects.ItemData;
 
 public class ScriptIndustrialApiary implements IScriptLoader {
 
-    public ScriptIndustrialApiary() {}
+    @Override
+    public String getScriptName() {
+        return "IndustrialApiary";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("IndustrialApiary");
-        dependencies.clear();
-        dependencies.addAll(
-                java.util.Arrays.asList(
-                        "Forestry",
-                        "gregtech",
-                        "gendustry",
-                        "ExtraBees",
-                        "ExtraUtilities",
-                        "Botany",
-                        "BiomesOPlenty",
-                        "Genetics",
-                        "ProjRed|Illumination",
-                        "TConstruct"));
+    public List<String> getDependencies() {
+        return Arrays.asList(
+                "Forestry",
+                "gregtech",
+                "gendustry",
+                "ExtraBees",
+                "ExtraUtilities",
+                "Botany",
+                "BiomesOPlenty",
+                "Genetics",
+                "ProjRed|Illumination",
+                "TConstruct");
     }
 
     @Override

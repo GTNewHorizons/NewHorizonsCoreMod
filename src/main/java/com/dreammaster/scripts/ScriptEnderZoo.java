@@ -2,7 +2,8 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
@@ -10,14 +11,14 @@ import gregtech.api.enums.GT_Values;
 
 public class ScriptEnderZoo implements IScriptLoader {
 
-    public ScriptEnderZoo() {}
+    @Override
+    public String getScriptName() {
+        return "EnderZoo";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("EnderZoo");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("EnderZoo"));
+    public List<String> getDependencies() {
+        return Collections.singletonList("EnderZoo");
     }
 
     @Override

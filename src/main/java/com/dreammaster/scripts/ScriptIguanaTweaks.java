@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import com.dreammaster.item.ItemList;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -10,12 +11,13 @@ import gregtech.api.util.GT_OreDictUnificator;
 public class ScriptIguanaTweaks implements IScriptLoader {
 
     @Override
-    public void initScriptData() {
+    public String getScriptName() {
+        return "Iguana Tweaks Tinker Construct";
+    }
 
-        scriptName.setLength(0);
-        scriptName.append("Iguana Tweaks Tinker Construct");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("IguanaTweaksTConstruct", "Natura"));
+    @Override
+    public List<String> getDependencies() {
+        return Arrays.asList("IguanaTweaksTConstruct", "Natura");
     }
 
     @Override

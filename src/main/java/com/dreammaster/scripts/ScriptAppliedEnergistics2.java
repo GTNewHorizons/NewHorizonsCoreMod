@@ -2,6 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -18,15 +21,14 @@ import gregtech.api.util.GT_Utility;
 
 public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
-    public ScriptAppliedEnergistics2() {}
+    @Override
+    public String getScriptName() {
+        return "AppliedEnergistics2";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("AppliedEnergistics2");
-        dependencies.clear();
-        dependencies
-                .addAll(java.util.Arrays.asList("appliedenergistics2", "TConstruct", "Avaritia", "eternalsingularity"));
+    public List<String> getDependencies() {
+        return Arrays.asList("appliedenergistics2", "TConstruct", "Avaritia", "eternalsingularity");
     }
 
     @Override
