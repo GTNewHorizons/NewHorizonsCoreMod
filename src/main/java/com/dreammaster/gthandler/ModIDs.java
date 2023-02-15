@@ -5,7 +5,8 @@ import cpw.mods.fml.common.Loader;
 public enum ModIDs {
 
     EnderIO("EnderIO"),
-    TinkerConstruct("TConstruct");
+    TinkerConstruct("TConstruct"),
+    IndustrialCraft2("IC2");
 
     public final String modID;
     private Boolean modLoaded;

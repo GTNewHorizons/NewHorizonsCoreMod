@@ -57,7 +57,8 @@ public class AlloySmelterRecipes implements Runnable {
         ItemStack x2_QuartziteDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L);
         ItemStack x1_GlassDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1);
         ItemStack x1_GlassTube = ItemList.Circuit_Parts_Glass_Tube.get(1L);
-        ItemStack x2_IridiumReinforcedPlate = GT_ModHandler.getModItem("IC2", "itemPartIridium", 2L);
+        ItemStack x2_IridiumReinforcedPlate = GT_ModHandler
+                .getModItem(ModIDs.IndustrialCraft2.modID, "itemPartIridium", 2L);
         ItemStack x3_IridiumAlloyItemCasing = com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS()
                 .splitStack(3);
         ItemStack x1_Clay = new ItemStack(Items.clay_ball);
