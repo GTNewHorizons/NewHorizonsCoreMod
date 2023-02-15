@@ -9,17 +9,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.gthandler.ModIDs;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class AlloySmelterRecipes implements Runnable {
-
-    final String modIDEnderIO = "EnderIO";
-    final String modIDTinkerConstruct = "TConstruct";
 
     @Override
     public void run() {
@@ -30,13 +27,13 @@ public class AlloySmelterRecipes implements Runnable {
     }
 
     public void registerTinkerConstructRecipes() {
-        if (!Loader.isModLoaded(modIDTinkerConstruct)) {
+        if (ModIDs.TinkerConstruct.isModLoaded()) {
             return;
         }
 
         ItemStack x3_AluminiumDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L);
         ItemStack x1_CopperDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L);
-        ItemStack x4_AluminiumBrassIngot = GT_ModHandler.getModItem(modIDTinkerConstruct, "materials", 4L, 14);
+        ItemStack x4_AluminiumBrassIngot = GT_ModHandler.getModItem(ModIDs.TinkerConstruct.modID, "materials", 4L, 14);
 
         GT_Values.RA.addAlloySmelterRecipe(
                 x3_AluminiumDust,
@@ -207,7 +204,7 @@ public class AlloySmelterRecipes implements Runnable {
     }
 
     public void registerEnderIORecipes() {
-        if (!Loader.isModLoaded(modIDEnderIO)) {
+        if (ModIDs.EnderIO.isModLoaded()) {
             return;
         }
 
@@ -215,13 +212,14 @@ public class AlloySmelterRecipes implements Runnable {
         ItemStack x2_CertusQuartzDust = Materials.CertusQuartz.getDust(2);
         ItemStack x1_GlassDust = Materials.Glass.getDust(1);
         ItemStack x3_GlassDust = Materials.Glass.getDust(3);
-        ItemStack x1_FusedQuartzBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L);
+        ItemStack x1_FusedQuartzBlock = GT_ModHandler.getModItem(ModIDs.EnderIO.modID, "blockFusedQuartz", 1L);
         ItemStack x1_NetherQuartzDust = Materials.NetherQuartz.getDust(1);
         ItemStack x2_NetherQuartzDust = Materials.NetherQuartz.getDust(2);
-        ItemStack x1_QuiteClearGlassBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 1);
-        ItemStack x2_QuiteClearGlassBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 2L, 1);
-        ItemStack x1_EnlightenedClearGlassBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 3);
-        ItemStack x1_DarkClearGlass = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 5);
+        ItemStack x1_QuiteClearGlassBlock = GT_ModHandler.getModItem(ModIDs.EnderIO.modID, "blockFusedQuartz", 1L, 1);
+        ItemStack x2_QuiteClearGlassBlock = GT_ModHandler.getModItem(ModIDs.EnderIO.modID, "blockFusedQuartz", 2L, 1);
+        ItemStack x1_EnlightenedClearGlassBlock = GT_ModHandler
+                .getModItem(ModIDs.EnderIO.modID, "blockFusedQuartz", 1L, 3);
+        ItemStack x1_DarkClearGlass = GT_ModHandler.getModItem(ModIDs.EnderIO.modID, "blockFusedQuartz", 1L, 5);
         ItemStack x2_QuartziteDust = Materials.Quartzite.getDust(2);
         ItemStack x4_QuartziteDust = Materials.Quartzite.getDust(4);
         ItemStack x1_BorosilicateDust = Materials.BorosilicateGlass.getDust(1);
