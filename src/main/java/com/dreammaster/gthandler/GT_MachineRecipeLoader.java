@@ -4,6 +4,9 @@ import com.dreammaster.gthandler.recipes.*;
 
 public class GT_MachineRecipeLoader implements Runnable {
 
+    public static final int SECONDS = 20;
+    public static final int TICKS = 1;
+
     @Override
     public void run() {
         new RecipeRemoval().run();

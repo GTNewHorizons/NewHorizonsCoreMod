@@ -1,5 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.gthandler.GT_MachineRecipeLoader.SECONDS;
+import static com.dreammaster.gthandler.GT_MachineRecipeLoader.TICKS;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -8,236 +11,343 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.gthandler.CustomItemList;
 
 import cpw.mods.fml.common.Loader;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class AlloySmelterRecipes implements Runnable {
 
+    final String modIDEnderIO = "EnderIO";
+    final String modIDTinkerConstruct = "TConstruct";
+
     @Override
     public void run() {
-        GT_Values.RA.addAlloySmelterRecipe(
-                CustomItemList.MicaBasedSheet.get(4L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
-                CustomItemList.MicaInsulatorSheet.get(4L),
-                400,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                CustomItemList.MicaBasedSheet.get(4L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
-                CustomItemList.MicaInsulatorSheet.get(4L),
-                400,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                CustomItemList.MicaBasedSheet.get(4L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
-                CustomItemList.MicaInsulatorSheet.get(4L),
-                400,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                CustomItemList.MicaBasedSheet.get(4L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L),
-                CustomItemList.MicaInsulatorSheet.get(4L),
-                400,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L),
-                CustomItemList.AluminoSilicateWool.get(2L),
-                1200,
-                15);
-
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1),
-                ItemList.Shape_Mold_Ball.get(0),
-                ItemList.Circuit_Parts_Glass_Tube.get(1L),
-                120,
-                16);
-        GT_Values.RA.addAlloySmelterRecipe(
-                new ItemStack(Blocks.obsidian, 1, 0),
-                ItemList.Shape_Mold_Ingot.get(0L),
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2L),
-                130,
-                3);
-
-        GT_Values.RA.addAlloySmelterRecipe(
-                GT_ModHandler.getModItem("IC2", "itemPartIridium", 2L),
-                ItemList.Shape_Mold_Casing.get(0),
-                com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS().splitStack(3),
-                1200,
-                256);
-
-        // recipes for everything that uses sand
-        for (int i = 0; i < OreDictionary.getOres("sand").size(); ++i) {
-
-            GT_Values.RA.addAlloySmelterRecipe(
-                    OreDictionary.getOres("sand").get(i),
-                    new ItemStack(Items.clay_ball),
-                    com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2),
-                    200,
-                    8);
-        }
-
-        if (Loader.isModLoaded("EnderIO")) {
-            // EnderIO Fused Quartz and Glass
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.CertusQuartz.getDust(2),
-                    Materials.Glass.getDust(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
-                    500,
-                    30);
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.NetherQuartz.getDust(2),
-                    Materials.Glass.getDust(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
-                    500,
-                    30);
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.CertusQuartz.getDust(2),
-                    Materials.Quartzite.getDust(2),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
-                    500,
-                    30);
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.NetherQuartz.getDust(2),
-                    Materials.Quartzite.getDust(2),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
-                    500,
-                    30);
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.CertusQuartz.getDust(1),
-                    Materials.BorosilicateGlass.getDust(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
-                    500,
-                    90);
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.NetherQuartz.getDust(1),
-                    Materials.BorosilicateGlass.getDust(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
-                    500,
-                    90);
-
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.Glass.getDust(3),
-                    GT_Utility.getIntegratedCircuit(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
-                    500,
-                    30);
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.Quartzite.getDust(4),
-                    GT_Utility.getIntegratedCircuit(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
-                    500,
-                    30);
-            GT_Values.RA.addAlloySmelterRecipe(
-                    Materials.BorosilicateGlass.getDust(1),
-                    GT_Utility.getIntegratedCircuit(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 2L, 1),
-                    500,
-                    90);
-
-            GT_Values.RA.addAlloySmelterRecipe(
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
-                    Materials.Glowstone.getDust(4),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 3),
-                    500,
-                    30);
-            GT_Values.RA.addAlloySmelterRecipe(
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
-                    new ItemStack(Blocks.glowstone),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 3),
-                    500,
-                    30);
-
-            for (int i = 0; i < OreDictionary.getOres("dyeBlack").size(); i++) {
-                GT_Values.RA.addAlloySmelterRecipe(
-                        GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
-                        OreDictionary.getOres("dyeBlack").get(i).splitStack(4),
-                        GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 5),
-                        500,
-                        30);
-            }
-        }
-
-        if (Loader.isModLoaded("TConstruct")) {
-            GT_Values.RA.addAlloySmelterRecipe(
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L),
-                    GT_ModHandler.getModItem("TConstruct", "materials", 4L, 14),
-                    100,
-                    120);
-        }
+        registerCoreModRecipes();
+        registerEnderIORecipes();
+        registerTinkerConstructRecipes();
 
     }
 
+    public void registerTinkerConstructRecipes() {
+        if (!Loader.isModLoaded(modIDTinkerConstruct)) {
+            return;
+        }
+
+        ItemStack x3_AluminiumDusts = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L);
+
+        ItemStack x1_CopperDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L);
+
+        ItemStack x4_AluminiumBrassIngots = GT_ModHandler.getModItem(modIDTinkerConstruct, "materials", 4L, 14);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x3_AluminiumDusts,
+                x1_CopperDust,
+                x4_AluminiumBrassIngots,
+                5 * SECONDS,
+                (int) TierEU.RECIPE_MV);
+
+    }
+
+    public void registerCoreModRecipes() {
+        ItemStack x4_MicaBasedSheets = CustomItemList.MicaBasedSheet.get(4L);
+
+        ItemStack x1_SiliconDioxideDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L);
+
+        ItemStack x4_MicaInsulatorSheets = CustomItemList.MicaInsulatorSheet.get(4L);
+
+        ItemStack x1_RubyDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L);
+
+        ItemStack x1_SapphireDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L);
+
+        ItemStack x1_GreenSapphire = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L);
+
+        ItemStack x1_NetherQuartzDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L);
+
+        ItemStack x1_CertusQuartzDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L);
+
+        ItemStack x2_AluminoSilicateWools = CustomItemList.AluminoSilicateWool.get(2L);
+
+        ItemStack x2_QuartziteDusts = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L);
+
+        ItemStack x1_GlassDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1);
+
+        ItemStack x1_GlassTube = ItemList.Circuit_Parts_Glass_Tube.get(1L);
+
+        ItemStack x2_IridiumReinforcedPlates = GT_ModHandler.getModItem("IC2", "itemPartIridium", 2L);
+
+        ItemStack x3_IridiumAlloyItemCasings = com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS()
+                .splitStack(3);
+
+        ItemStack x1_Clay = new ItemStack(Items.clay_ball);
+
+        ItemStack x2_CokeOvenBricks = com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2);
+
+        ItemStack x1_ObsidianBlock = new ItemStack(Blocks.obsidian, 1, 0);
+
+        ItemStack x1_ObsidianIngot = GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2L);
+
+        ItemStack shapeMoldIngot = ItemList.Shape_Mold_Ingot.get(0L);
+        ItemStack shapeMoldBall = ItemList.Shape_Mold_Ball.get(0);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x4_MicaBasedSheets,
+                x1_SiliconDioxideDust,
+                x4_MicaInsulatorSheets,
+                20 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_RubyDust,
+                x1_SiliconDioxideDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_SapphireDust,
+                x1_SiliconDioxideDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_GreenSapphire,
+                x1_SiliconDioxideDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x4_MicaBasedSheets,
+                x1_NetherQuartzDust,
+                x4_MicaInsulatorSheets,
+                20 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_RubyDust,
+                x1_NetherQuartzDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_SapphireDust,
+                x1_NetherQuartzDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_GreenSapphire,
+                x1_NetherQuartzDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x4_MicaBasedSheets,
+                x1_CertusQuartzDust,
+                x4_MicaInsulatorSheets,
+                20 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_RubyDust,
+                x1_CertusQuartzDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_SapphireDust,
+                x1_CertusQuartzDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_GreenSapphire,
+                x1_CertusQuartzDust,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x4_MicaBasedSheets,
+                x2_QuartziteDusts,
+                x4_MicaInsulatorSheets,
+                20 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_RubyDust,
+                x2_QuartziteDusts,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_SapphireDust,
+                x2_QuartziteDusts,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_GreenSapphire,
+                x2_QuartziteDusts,
+                x2_AluminoSilicateWools,
+                60 * SECONDS,
+                (int) (TierEU.RECIPE_LV / 2));
+
+        GT_Values.RA
+                .addAlloySmelterRecipe(x1_GlassDust, shapeMoldBall, x1_GlassTube, 6 * SECONDS, (int) (TierEU.LV / 2));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x2_IridiumReinforcedPlates,
+                shapeMoldBall,
+                x3_IridiumAlloyItemCasings,
+                60 * SECONDS,
+                (int) (TierEU.HV / 2));
+
+        // in game this recipe (1 obsidian block -> 9 ingots) does not exist but there is a block giving 9 ingots.
+        // Maybe it's overriden somewhere?
+        GT_Values.RA
+                .addAlloySmelterRecipe(x1_ObsidianBlock, shapeMoldIngot, x1_ObsidianIngot, 6 * SECONDS + 10 * TICKS, 3);
+
+        // recipes for everything that uses sand
+        for (int i = 0; i < OreDictionary.getOres("sand").size(); ++i) {
+            ItemStack x1_SandOredict = OreDictionary.getOres("sand").get(i);
+
+            GT_Values.RA
+                    .addAlloySmelterRecipe(x1_SandOredict, x1_Clay, x2_CokeOvenBricks, 10 * SECONDS, (int) TierEU.ULV);
+        }
+    }
+
+    public void registerEnderIORecipes() {
+        if (!Loader.isModLoaded(modIDEnderIO)) {
+            return;
+        }
+
+        ItemStack x1_CertusQuartzDust = Materials.CertusQuartz.getDust(1);
+        ItemStack x2_CertusQuartzDusts = Materials.CertusQuartz.getDust(2);
+
+        ItemStack x1_GlassDust = Materials.Glass.getDust(1);
+        ItemStack x3_GlassDusts = Materials.Glass.getDust(3);
+
+        ItemStack x1_FusedQuartzBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L);
+
+        ItemStack x1_NetherQuartzDust = Materials.NetherQuartz.getDust(1);
+        ItemStack x2_NetherQuartzDusts = Materials.NetherQuartz.getDust(2);
+
+        ItemStack x1_QuiteClearGlassBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 1);
+        ItemStack x2_QuiteClearGlassBlocks = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 2L, 1);
+
+        ItemStack x1_EnlightenedClearGlassBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 3);
+
+        ItemStack x1_DarkClearGlass = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 5);
+
+        ItemStack x2_QuartziteDusts = Materials.Quartzite.getDust(2);
+        ItemStack x4_QuartziteDusts = Materials.Quartzite.getDust(4);
+
+        ItemStack x1_BorosilicateDust = Materials.BorosilicateGlass.getDust(1);
+
+        ItemStack circuit_config_1 = GT_Utility.getIntegratedCircuit(1);
+
+        ItemStack x4_GlowstoneDusts = Materials.Glowstone.getDust(4);
+
+        ItemStack x1_GlowstoneBlock = new ItemStack(Blocks.glowstone);
+
+        // EnderIO Fused Quartz and Glass
+        GT_Values.RA.addAlloySmelterRecipe(
+                x2_CertusQuartzDusts,
+                x1_GlassDust,
+                x1_FusedQuartzBlock,
+                25 * SECONDS,
+                (int) TierEU.RECIPE_LV);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x2_NetherQuartzDusts,
+                x1_GlassDust,
+                x1_FusedQuartzBlock,
+                25 * SECONDS,
+                (int) TierEU.RECIPE_LV);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x2_CertusQuartzDusts,
+                x2_QuartziteDusts,
+                x1_FusedQuartzBlock,
+                25 * SECONDS,
+                (int) TierEU.RECIPE_LV);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x2_NetherQuartzDusts,
+                x2_QuartziteDusts,
+                x1_FusedQuartzBlock,
+                25 * SECONDS,
+                (int) TierEU.RECIPE_LV);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_CertusQuartzDust,
+                x1_BorosilicateDust,
+                x1_FusedQuartzBlock,
+                25 * SECONDS,
+                (int) (0.75 * TierEU.RECIPE_MV));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_NetherQuartzDust,
+                x1_BorosilicateDust,
+                x1_FusedQuartzBlock,
+                25 * SECONDS,
+                (int) (0.75 * TierEU.RECIPE_MV));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x3_GlassDusts,
+                circuit_config_1,
+                x1_QuiteClearGlassBlock,
+                25 * SECONDS,
+                (int) TierEU.RECIPE_LV);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x4_QuartziteDusts,
+                circuit_config_1,
+                x1_QuiteClearGlassBlock,
+                25 * SECONDS,
+                (int) TierEU.RECIPE_LV);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_BorosilicateDust,
+                circuit_config_1,
+                x2_QuiteClearGlassBlocks,
+                25 * SECONDS,
+                (int) (0.75 * TierEU.RECIPE_MV));
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_QuiteClearGlassBlock,
+                x4_GlowstoneDusts,
+                x1_EnlightenedClearGlassBlock,
+                25 * SECONDS,
+                (int) TierEU.RECIPE_LV);
+
+        GT_Values.RA.addAlloySmelterRecipe(
+                x1_QuiteClearGlassBlock,
+                x1_GlowstoneBlock,
+                x1_EnlightenedClearGlassBlock,
+                25 * SECONDS,
+                (int) TierEU.RECIPE_LV);
+
+        for (int i = 0; i < OreDictionary.getOres("dyeBlack").size(); i++) {
+            ItemStack x4_dyeBlackOredict = OreDictionary.getOres("dyeBlack").get(i).splitStack(4);
+
+            GT_Values.RA.addAlloySmelterRecipe(
+                    x1_QuiteClearGlassBlock,
+                    x4_dyeBlackOredict,
+                    x1_DarkClearGlass,
+                    25 * SECONDS,
+                    (int) TierEU.RECIPE_LV);
+        }
+
+    }
 }
