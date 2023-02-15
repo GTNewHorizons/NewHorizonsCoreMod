@@ -35,9 +35,7 @@ public class AlloySmelterRecipes implements Runnable {
         }
 
         ItemStack x3_AluminiumDusts = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L);
-
         ItemStack x1_CopperDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L);
-
         ItemStack x4_AluminiumBrassIngots = GT_ModHandler.getModItem(modIDTinkerConstruct, "materials", 4L, 14);
 
         GT_Values.RA.addAlloySmelterRecipe(
@@ -51,42 +49,24 @@ public class AlloySmelterRecipes implements Runnable {
 
     public void registerCoreModRecipes() {
         ItemStack x4_MicaBasedSheets = CustomItemList.MicaBasedSheet.get(4L);
-
         ItemStack x1_SiliconDioxideDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L);
-
         ItemStack x4_MicaInsulatorSheets = CustomItemList.MicaInsulatorSheet.get(4L);
-
         ItemStack x1_RubyDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 1L);
-
         ItemStack x1_SapphireDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sapphire, 1L);
-
         ItemStack x1_GreenSapphire = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L);
-
         ItemStack x1_NetherQuartzDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GreenSapphire, 1L);
-
         ItemStack x1_CertusQuartzDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L);
-
         ItemStack x2_AluminoSilicateWools = CustomItemList.AluminoSilicateWool.get(2L);
-
         ItemStack x2_QuartziteDusts = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 2L);
-
         ItemStack x1_GlassDust = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1);
-
         ItemStack x1_GlassTube = ItemList.Circuit_Parts_Glass_Tube.get(1L);
-
         ItemStack x2_IridiumReinforcedPlates = GT_ModHandler.getModItem("IC2", "itemPartIridium", 2L);
-
         ItemStack x3_IridiumAlloyItemCasings = com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS()
                 .splitStack(3);
-
         ItemStack x1_Clay = new ItemStack(Items.clay_ball);
-
         ItemStack x2_CokeOvenBricks = com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2);
-
         ItemStack x1_ObsidianBlock = new ItemStack(Blocks.obsidian, 1, 0);
-
         ItemStack x1_ObsidianIngot = GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2L);
-
         ItemStack shapeMoldIngot = ItemList.Shape_Mold_Ingot.get(0L);
         ItemStack shapeMoldBall = ItemList.Shape_Mold_Ball.get(0);
 
@@ -233,31 +213,20 @@ public class AlloySmelterRecipes implements Runnable {
 
         ItemStack x1_CertusQuartzDust = Materials.CertusQuartz.getDust(1);
         ItemStack x2_CertusQuartzDusts = Materials.CertusQuartz.getDust(2);
-
         ItemStack x1_GlassDust = Materials.Glass.getDust(1);
         ItemStack x3_GlassDusts = Materials.Glass.getDust(3);
-
         ItemStack x1_FusedQuartzBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L);
-
         ItemStack x1_NetherQuartzDust = Materials.NetherQuartz.getDust(1);
         ItemStack x2_NetherQuartzDusts = Materials.NetherQuartz.getDust(2);
-
         ItemStack x1_QuiteClearGlassBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 1);
         ItemStack x2_QuiteClearGlassBlocks = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 2L, 1);
-
         ItemStack x1_EnlightenedClearGlassBlock = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 3);
-
         ItemStack x1_DarkClearGlass = GT_ModHandler.getModItem(modIDEnderIO, "blockFusedQuartz", 1L, 5);
-
         ItemStack x2_QuartziteDusts = Materials.Quartzite.getDust(2);
         ItemStack x4_QuartziteDusts = Materials.Quartzite.getDust(4);
-
         ItemStack x1_BorosilicateDust = Materials.BorosilicateGlass.getDust(1);
-
         ItemStack circuit_config_1 = GT_Utility.getIntegratedCircuit(1);
-
         ItemStack x4_GlowstoneDusts = Materials.Glowstone.getDust(4);
-
         ItemStack x1_GlowstoneBlock = new ItemStack(Blocks.glowstone);
 
         // EnderIO Fused Quartz and Glass
