@@ -2,21 +2,22 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 public class ScriptTwilightForest implements IScriptLoader {
 
-    public ScriptTwilightForest() {}
+    @Override
+    public String getScriptName() {
+        return "TwilightForest";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("TwilightForest");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("TwilightForest"));
+    public List<String> getDependencies() {
+        return Collections.singletonList("TwilightForest");
     }
 
     @Override

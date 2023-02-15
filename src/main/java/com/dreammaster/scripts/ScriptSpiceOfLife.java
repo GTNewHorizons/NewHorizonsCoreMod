@@ -4,20 +4,21 @@ import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class ScriptSpiceOfLife implements IScriptLoader {
 
-    public ScriptSpiceOfLife() {}
+    @Override
+    public String getScriptName() {
+        return "SpiceOfLife";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("SpiceOfLife");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("IC2", "SpiceOfLife"));
+    public List<String> getDependencies() {
+        return Arrays.asList("IC2", "SpiceOfLife");
     }
 
     @Override

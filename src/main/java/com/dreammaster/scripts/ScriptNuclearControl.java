@@ -2,6 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Collections;
+import java.util.List;
+
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GT_Values;
@@ -11,14 +14,14 @@ import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptNuclearControl implements IScriptLoader {
 
-    public ScriptNuclearControl() {}
+    @Override
+    public String getScriptName() {
+        return "NuclearControl";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("NuclearControl");
-        dependencies.clear();
-        dependencies.addAll(java.util.Arrays.asList("IC2NuclearControl"));
+    public List<String> getDependencies() {
+        return Collections.singletonList("IC2NuclearControl");
     }
 
     @Override

@@ -2,18 +2,19 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class ScriptForgeMultipart implements IScriptLoader {
 
-    public ScriptForgeMultipart() {}
+    @Override
+    public String getScriptName() {
+        return "Forge Multipart";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("Forge Multipart");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("ForgeMicroblock"));
+    public List<String> getDependencies() {
+        return Collections.singletonList("ForgeMicroblock");
     }
 
     @Override
