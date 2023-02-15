@@ -1,4 +1,4 @@
-package com.dreammaster.coremod;
+package com.dreammaster.coremod.transformers;
 
 import static com.dreammaster.coremod.DreamCoreMod.*;
 import static org.objectweb.asm.Opcodes.*;
@@ -15,6 +15,7 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.util.TraceClassVisitor;
 
+@SuppressWarnings("unused")
 public class DreamTransformer implements IClassTransformer {
 
     @Override

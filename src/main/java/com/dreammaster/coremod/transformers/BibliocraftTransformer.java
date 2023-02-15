@@ -1,7 +1,8 @@
-package com.dreammaster.coremod;
+package com.dreammaster.coremod.transformers;
 
 import static org.objectweb.asm.Opcodes.ASM5;
 
+import com.dreammaster.coremod.DreamCoreMod;
 import net.minecraft.launchwrapper.IClassTransformer;
 
 import org.objectweb.asm.ClassReader;
