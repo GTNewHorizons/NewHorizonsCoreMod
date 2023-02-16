@@ -5251,6 +5251,216 @@ public class AssemblerRecipes implements Runnable {
                     CustomItemList.LeadOriharukonPlate.get(2L),
                     300,
                     500000);
+
+            // rocket parts
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalaxySpace", "item.CompressedDualBronze", 1L, 0),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedDualAluminium", 1L, 0),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedCoal", 1L, 0),
+                            GT_Utility.getIntegratedCircuit(1) },
+                    Materials.StainlessSteel.getMolten(72L),
+
+                    CustomItemList.RawSDHCAlloy.get(1L),
+                    20,
+                    (int) TierEU.RECIPE_LV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalaxySpace", "item.CompressedDualBronze", 1L, 0),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedDualAluminium", 1L, 0),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.ModuleSmallCanister", 1L, 0),
+                            GT_Utility.getIntegratedCircuit(2) },
+                    Materials.StainlessSteel.getMolten(72L),
+
+                    GT_ModHandler.getModItem("GalaxySpace", "item.ModuleSmallFuelCanister", 1L, 0),
+                    20,
+                    (int) TierEU.RECIPE_LV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalaxySpace", "item.ModuleSmallFuelCanister", 1L, 0),
+                            CustomItemList.TitaniumDualCompressedPlates.get(1),
+                            CustomItemList.DeshDualCompressedPlates.get(1), GT_Utility.getIntegratedCircuit(2) },
+                    Materials.Titanium.getMolten(72L),
+                    CustomItemList.MediumFuelCanister.get(1),
+                    20,
+                    (int) TierEU.RECIPE_MV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.MediumFuelCanister.get(1),
+                            CustomItemList.QuantinumDualCompressedPlates.get(1),
+                            CustomItemList.IceDualCompressedPlates.get(1), GT_Utility.getIntegratedCircuit(2) },
+                    Materials.Chrome.getMolten(72L),
+                    CustomItemList.LargeFuelCanister.get(1L),
+                    20,
+                    (int) TierEU.RECIPE_HV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.LargeFuelCanister.get(1),
+                            CustomItemList.MytrylDualCompressedPlates.get(1),
+                            CustomItemList.MysteriousCrystalDualCompressedPlates.get(1),
+                            GT_Utility.getIntegratedCircuit(2) },
+                    Materials.Iridium.getMolten(72L),
+                    CustomItemList.ExtraLargeFuelCanister.get(1L),
+                    20,
+                    (int) TierEU.RECIPE_EV);
+
+            // Engine
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 2L, 0),
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 4L, 0),
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.oilCanisterPartial", 1L, 1001),
+                            ItemList.Casing_Firebox_Steel.get(1L), ItemList.Cover_ActivityDetector.get(1L),
+                            GT_Utility.getIntegratedCircuit(3) },
+                    GT_Values.NF,
+
+                    GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 1L, 0),
+                    100,
+                    (int) TierEU.RECIPE_LV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 2L, 1),
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 2L, 0),
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 5L, 0),
+                            GT_Utility.getIntegratedCircuit(3) },
+                    GT_Values.NF,
+
+                    GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 1),
+                    100,
+                    (int) TierEU.RECIPE_MV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.Tier2Booster.get(2),
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 2L, 1),
+                            CustomItemList.HeavyDutyPlateTier5.get(5), GT_Utility.getIntegratedCircuit(3) },
+                    GT_Values.NF,
+
+                    CustomItemList.HeavyDutyRocketEngineTier3.get(1L),
+                    100,
+                    (int) TierEU.RECIPE_HV);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.Tier3Booster.get(2),
+                            CustomItemList.HeavyDutyRocketEngineTier3.get(2L),
+                            CustomItemList.HeavyDutyPlateTier7.get(5), GT_Utility.getIntegratedCircuit(3) },
+                    GT_Values.NF,
+
+                    CustomItemList.HeavyDutyRocketEngineTier4.get(1L),
+                    100,
+                    (int) TierEU.RECIPE_EV);
+
+            // nose cones
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler
+                            .getModItem("ProjRed|Illumination", "projectred.illumination.cagelamp2.inv", 1L, 14),
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 4L, 0),
+                            GT_Utility.getIntegratedCircuit(4) },
+                    Materials.StainlessSteel.getFluid(36L),
+                    GT_ModHandler.getModItem("GalacticraftCore", "item.noseCone", 1L, 0),
+                    50,
+                    (int) TierEU.RECIPE_LV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalacticraftCore", "item.noseCone", 1L, 0),
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 4L, 0),
+                            GT_Utility.getIntegratedCircuit(4) },
+                    Materials.Titanium.getFluid(36L),
+                    GT_ModHandler.getModItem("GalacticraftMars", "item.heavyNoseCone", 1L, 0),
+                    50,
+                    (int) TierEU.RECIPE_MV);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalacticraftMars", "item.heavyNoseCone", 1L, 0),
+                            CustomItemList.HeavyDutyPlateTier5.get(4), GT_Utility.getIntegratedCircuit(4) },
+                    Materials.TungstenSteel.getFluid(36L),
+                    CustomItemList.HeavyDutyNoseConeTier3.get(1L),
+                    50,
+                    (int) TierEU.RECIPE_HV);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.HeavyDutyNoseConeTier3.get(1L),
+                            CustomItemList.HeavyDutyPlateTier7.get(4), GT_Utility.getIntegratedCircuit(4) },
+                    Materials.NaquadahAlloy.getFluid(36L),
+                    CustomItemList.HeavyDutyNoseConeTier4.get(1L),
+                    50,
+                    (int) TierEU.RECIPE_EV);
+
+            // rocket fins
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalacticraftCore", "item.basicItem", 2L, 9),
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 4L, 0),
+                            GT_Utility.getIntegratedCircuit(5) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem("GalacticraftCore", "item.rocketFins", 1L, 0),
+                    50,
+                    (int) TierEU.RECIPE_LV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalacticraftMars", "item.null", 2L, 3),
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 4L, 0),
+                            GT_Utility.getIntegratedCircuit(5) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 2),
+                    50,
+                    (int) TierEU.RECIPE_MV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.HeavyDutyPlateTier4.get(2),
+                            CustomItemList.HeavyDutyPlateTier5.get(4),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 1L, 0),
+                            GT_Utility.getIntegratedCircuit(5) },
+                    GT_Values.NF,
+                    CustomItemList.HeavyDutyRocketFinsTier3.get(1L),
+                    50,
+                    (int) TierEU.RECIPE_HV);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.HeavyDutyPlateTier6.get(2),
+                            CustomItemList.HeavyDutyPlateTier7.get(4),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 1L, 0),
+                            GT_Utility.getIntegratedCircuit(5) },
+                    GT_Values.NF,
+                    CustomItemList.HeavyDutyRocketFinsTier4.get(1L),
+                    50,
+                    (int) TierEU.RECIPE_EV);
+
+            // // booster
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_ModHandler.getModItem("GalacticraftCore", "item.meteoricIronIngot", 3L, 1),
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 4L, 0),
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.airVent", 1L, 0),
+                            GT_Utility.getIntegratedCircuit(6) },
+                    Materials.Fuel.getFluid(1000L),
+                    GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 1L, 1),
+                    50,
+                    (int) TierEU.RECIPE_LV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.LedoxCompressedPlate.get(3),
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 4L, 0),
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 1L, 1),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 1L, 0),
+                            GT_Utility.getIntegratedCircuit(6) },
+                    GT_Values.NF,
+                    CustomItemList.Tier2Booster.get(1L),
+                    50,
+                    (int) TierEU.RECIPE_MV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.MytrylCompressedPlate.get(3),
+                            CustomItemList.HeavyDutyPlateTier5.get(4), CustomItemList.Tier2Booster.get(1L),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 1L, 0),
+                            GT_Utility.getIntegratedCircuit(6) },
+                    GT_Values.NF,
+                    CustomItemList.Tier3Booster.get(1L),
+                    50,
+                    (int) TierEU.RECIPE_HV);
+
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.BlackPlutoniumCompressedPlate.get(3),
+                            CustomItemList.HeavyDutyPlateTier7.get(4), CustomItemList.Tier3Booster.get(1L),
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 1L, 0),
+                            GT_Utility.getIntegratedCircuit(6) },
+                    GT_Values.NF,
+                    CustomItemList.Tier4Booster.get(1L),
+                    50,
+                    (int) TierEU.RECIPE_EV);
+
         }
 
         if (Loader.isModLoaded("irontank")) {

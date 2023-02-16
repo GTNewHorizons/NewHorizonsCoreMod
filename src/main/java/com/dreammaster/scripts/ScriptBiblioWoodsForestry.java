@@ -4,6 +4,7 @@ import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
@@ -11,14 +12,14 @@ import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
-    public ScriptBiblioWoodsForestry() {}
+    @Override
+    public String getScriptName() {
+        return "BiblioWoodsForestry";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("BiblioWoodsForestry");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("BiblioCraft", "Forestry", "BiblioWoodsForestry"));
+    public List<String> getDependencies() {
+        return Arrays.asList("BiblioCraft", "Forestry", "BiblioWoodsForestry");
     }
 
     @Override

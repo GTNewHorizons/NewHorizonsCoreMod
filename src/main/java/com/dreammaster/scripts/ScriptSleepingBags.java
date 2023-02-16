@@ -4,17 +4,18 @@ import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ScriptSleepingBags implements IScriptLoader {
 
-    public ScriptSleepingBags() {}
+    @Override
+    public String getScriptName() {
+        return "SleepingBags";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("SleepingBags");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("sleepingbag", "adventurebackpack", "OpenBlocks"));
+    public List<String> getDependencies() {
+        return Arrays.asList("sleepingbag", "adventurebackpack", "OpenBlocks");
     }
 
     @Override

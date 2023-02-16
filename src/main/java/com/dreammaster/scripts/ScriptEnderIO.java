@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
@@ -11,14 +12,14 @@ import gregtech.api.enums.ItemList;
 
 public class ScriptEnderIO implements IScriptLoader {
 
-    public ScriptEnderIO() {}
+    @Override
+    public String getScriptName() {
+        return "EnderIO";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("EnderIO");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("EnderIO", "appliedenergistics2", "Avaritia"));
+    public List<String> getDependencies() {
+        return Arrays.asList("EnderIO", "appliedenergistics2", "Avaritia");
     }
 
     @Override

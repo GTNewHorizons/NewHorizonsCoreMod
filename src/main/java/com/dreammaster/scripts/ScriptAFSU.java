@@ -2,6 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Collections;
+import java.util.List;
+
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GT_Values;
@@ -13,14 +16,14 @@ import gregtech.api.util.GT_Utility;
 
 public class ScriptAFSU implements IScriptLoader {
 
-    public ScriptAFSU() {}
+    @Override
+    public String getScriptName() {
+        return "AFSU";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("AFSU");
-        dependencies.clear();
-        dependencies.add("AFSU");
+    public List<String> getDependencies() {
+        return Collections.singletonList("AFSU");
     }
 
     @Override
