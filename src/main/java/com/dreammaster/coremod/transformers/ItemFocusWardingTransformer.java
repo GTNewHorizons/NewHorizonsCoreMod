@@ -8,7 +8,6 @@ import org.objectweb.asm.tree.*;
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.coremod.IDreamTransformer;
 
-// TODO shouldn't this thing be move to the thamcraft4tweaks mod ?
 public class ItemFocusWardingTransformer implements IDreamTransformer {
 
     @Override
@@ -23,9 +22,13 @@ public class ItemFocusWardingTransformer implements IDreamTransformer {
             for (final MethodNode methodNode : classNode.methods) {
                 if (isConstructorMethod(methodNode)) {
                     /*
-                     * Before: public ItemFocusWarding() { this.func_77637_a(Thaumcraft.tabTC); } After: public
-                     * ItemFocusWarding() { this.func_77637_a(Thaumcraft.tabTC).setContainerItem(this); }
-                     */
+                     * // spotless:off
+                     * Before:
+                     * public ItemFocusWarding() { this.func_77637_a(Thaumcraft.tabTC); }
+                     *
+                     * After:
+                     * public ItemFocusWarding() { this.func_77637_a(Thaumcraft.tabTC).setContainerItem(this); }
+                     */ // spotless:on
                     for (final AbstractInsnNode insnNode : methodNode.instructions.toArray()) {
                         if (checkInsnNode(insnNode, POP)) {
                             final InsnList list = new InsnList();
@@ -42,10 +45,6 @@ public class ItemFocusWardingTransformer implements IDreamTransformer {
                     }
                 }
             }
-            // TODO This thing is broken :
-            // - it doesn't use obfuscation mapping for the method name
-            // - the descriptor doesn't match the method it's supposed to override
-            // - the method body needs to be changed to match the descriptor of the method it's supposed to override
             MethodVisitor mv = classNode.visitMethod(
                     ACC_PUBLIC,
                     "getContainerItem",
