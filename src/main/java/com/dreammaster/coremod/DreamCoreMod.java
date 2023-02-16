@@ -26,7 +26,7 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
     @Override
     public String[] getASMTransformerClass() {
         return new String[] { "com.dreammaster.coremod.transformers.DreamTransformer",
-                "com.dreammaster.coremod.transformers.BibliocraftTransformer" };
+                DreamClassTransformer.class.getName() };
     }
 
     @Override
