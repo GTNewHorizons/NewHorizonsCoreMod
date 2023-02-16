@@ -1,10 +1,7 @@
 package com.dreammaster.coremod;
 
 import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.InsnList;
-import org.objectweb.asm.tree.InsnNode;
-import org.objectweb.asm.tree.MethodNode;
+import org.objectweb.asm.tree.*;
 
 public interface IDreamTransformer {
 
@@ -19,6 +16,14 @@ public interface IDreamTransformer {
     ClassNode transform(ClassNode classNode);
 
     // =================================================
+
+    default boolean isConstructorMethod(MethodNode methodNode) {
+        return methodNode.name.startsWith("<init>");
+    }
+
+    default boolean checkInsnNode(AbstractInsnNode insnNode, int opcode) {
+        return insnNode instanceof InsnNode && insnNode.getOpcode() == opcode;
+    }
 
     /**
      * Method to empty the methodNode and replace its body with just a RETURN Opcode

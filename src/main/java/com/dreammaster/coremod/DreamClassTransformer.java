@@ -10,6 +10,7 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.ClassNode;
 
 import com.dreammaster.coremod.transformers.BibliocraftTransformer;
+import com.dreammaster.coremod.transformers.ItemFocusWardingTransformer;
 
 public class DreamClassTransformer implements IClassTransformer {
 
@@ -20,6 +21,7 @@ public class DreamClassTransformer implements IClassTransformer {
     public DreamClassTransformer() {
         // register your transformers here
         registerTransformer(new BibliocraftTransformer());
+        registerTransformer(new ItemFocusWardingTransformer());
     }
 
     private void registerTransformer(IDreamTransformer transformer) {
