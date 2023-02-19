@@ -9,7 +9,7 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.ClassNode;
 
-import com.dreammaster.coremod.transformers.BibliocraftTransformer;
+import com.dreammaster.coremod.transformers.recipenukers.BibliocraftTransformer;
 import com.dreammaster.coremod.transformers.ItemFocusWardingTransformer;
 
 public class DreamClassTransformer implements IClassTransformer {

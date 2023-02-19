@@ -1,4 +1,4 @@
-package com.dreammaster.coremod.transformers;
+package com.dreammaster.coremod.transformers.recipenukers;
 
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
