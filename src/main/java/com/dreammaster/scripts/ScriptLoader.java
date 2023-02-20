@@ -12,16 +12,17 @@ public class ScriptLoader {
                 new ScriptComputronics(), new ScriptEC2(), new ScriptEnderIO(), new ScriptEnderZoo(),
                 new ScriptForgeMultipart(), new ScriptHoloInventory(), new ScriptIguanaTweaks(), new ScriptJABBA(),
                 new ScriptNuclearControl(), new ScriptOpenBlocks(), new ScriptSleepingBags(), new ScriptSpiceOfLife(),
-                new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics(), };
+                new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics() };
 
         for (IScriptLoader script : scripts) {
-            script.initScriptData();
             if (script.isScriptLoadable()) {
-                script.loadScript();
-                MainRegistry.Logger.info(script.getScriptName() + " took " + script.getExecutionTime() + " ms.");
+                final long timeStart = System.currentTimeMillis();
+                script.loadRecipes();
+                final long timeToLoad = System.currentTimeMillis() - timeStart;
+                MainRegistry.Logger.info("Loaded " + script.getScriptName() + " script in " + timeToLoad + " ms.");
             } else {
-                MainRegistry.Logger
-                        .info("missing requirements for the script " + script.getScriptName() + ". It won't be loaded");
+                MainRegistry.Logger.info(
+                        "Missing dependencies to load " + script.getScriptName() + " script. It won't be loaded.");
             }
         }
     }

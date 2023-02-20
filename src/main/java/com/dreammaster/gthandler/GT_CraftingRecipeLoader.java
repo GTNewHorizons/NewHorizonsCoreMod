@@ -929,7 +929,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         GT_ModHandler.addCraftingRecipe(
                 GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1, 0),
-                bits,
+                bits4,
                 new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
                         OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
                         OrePrefixes.dust.get(Materials.QuartzSand), 'W', new ItemStack(Items.water_bucket, 1, 0), 'B',
@@ -942,7 +942,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         if (Loader.isModLoaded("IguanaTweaksTConstruct")) {
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem("dreamcraft", "dreamcraft_Concrete_bucket", 1, 0),
-                    bits,
+                    bits4,
                     new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
                             OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
                             OrePrefixes.dust.get(Materials.QuartzSand), 'W',
@@ -990,6 +990,17 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         // Rocket parts
         if ((Loader.isModLoaded("GalacticraftCore")) && (Loader.isModLoaded("GalacticraftMars"))
                 && (Loader.isModLoaded("GalaxySpace"))) {
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.RawSDHCAlloy.get(1L),
+                    bits,
+                    new Object[] { "SRS", "TCD", "SHS", 'S', OrePrefixes.screw.get(Materials.StainlessSteel), 'R',
+                            ToolDictNames.craftingToolScrewdriver, 'T',
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedDualBronze", 1L, 0), 'D',
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedDualAluminium", 1L, 0), 'C',
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedCoal", 1L, 0), 'H',
+                            ToolDictNames.craftingToolHardHammer });
+            // fuel canisters
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem("GalaxySpace", "item.ModuleSmallCanister", 1L, 0),
                     bits,
@@ -1029,6 +1040,24 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             CustomItemList.MytrylDualCompressedPlates.get(1), 'D',
                             CustomItemList.MysteriousCrystalDualCompressedPlates.get(1), 'C',
                             CustomItemList.LargeFuelCanister.get(1), 'H', ToolDictNames.craftingToolHardHammer });
+            // engines
+
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 1L, 0),
+                    bits,
+                    new Object[] { "SCS", "HFH", "HAH", 'S',
+                            GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 1L, 0), 'C',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.oilCanisterPartial", 1L, 1001), 'H',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 1L, 0), 'F',
+                            ItemList.Casing_Firebox_Steel, 'A', ItemList.Cover_ActivityDetector });
+
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 1),
+                    bits,
+                    new Object[] { "BPB", "PPP", "EPE", 'B',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 1L, 1), 'P',
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0), 'E',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 1L, 0) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.HeavyDutyRocketEngineTier3.get(1L),
@@ -1042,6 +1071,25 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     new Object[] { "BPB", "PPP", "EPE", 'B', CustomItemList.Tier3Booster.get(1), 'P',
                             CustomItemList.HeavyDutyPlateTier7.get(1), 'E',
                             CustomItemList.HeavyDutyRocketEngineTier3.get(1) });
+            // nose cones
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem("GalacticraftCore", "item.noseCone", 1L, 0),
+                    bits,
+                    new Object[] { "SNH", "CPC", "PPP", 'N', GT_ModHandler
+                            .getModItem("ProjRed|Illumination", "projectred.illumination.cagelamp2.inv", 1L, 14), 'P',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 1L, 0), 'C',
+                            OrePrefixes.screw.get(Materials.StainlessSteel), 'S', ToolDictNames.craftingToolScrewdriver,
+                            'H', ToolDictNames.craftingToolHardHammer });
+
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem("GalacticraftMars", "item.heavyNoseCone", 1L, 0),
+                    bits,
+                    new Object[] { "SNH", "CPC", "PPP", 'N',
+
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.noseCone", 1L, 0), 'P',
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0), 'C',
+                            OrePrefixes.screw.get(Materials.Titanium), 'S', ToolDictNames.craftingToolScrewdriver, 'H',
+                            ToolDictNames.craftingToolHardHammer });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.HeavyDutyNoseConeTier3.get(1L),
@@ -1058,7 +1106,25 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             CustomItemList.HeavyDutyPlateTier7.get(1), 'C',
                             OrePrefixes.screw.get(Materials.NaquadahAlloy), 'S', ToolDictNames.craftingToolScrewdriver,
                             'H', ToolDictNames.craftingToolHardHammer });
+            // rocket fins
 
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem("GalacticraftCore", "item.rocketFins", 1L, 0),
+                    bits,
+                    new Object[] { "HPF", "QPQ", "QSQ", 'P',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.basicItem", 1L, 9), 'Q',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 1L, 0), 'S',
+                            ToolDictNames.craftingToolSaw, 'F', ToolDictNames.craftingToolFile, 'H',
+                            ToolDictNames.craftingToolHardHammer });
+
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 2),
+                    bits,
+                    new Object[] { "HPF", "QPQ", "QSQ", 'P',
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.null", 1L, 3), 'Q',
+                            GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0), 'S',
+                            ToolDictNames.craftingToolSaw, 'F', ToolDictNames.craftingToolFile, 'H',
+                            ToolDictNames.craftingToolHardHammer });
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.HeavyDutyRocketFinsTier3.get(1L),
                     bits,
@@ -1073,6 +1139,16 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             CustomItemList.HeavyDutyPlateTier7.get(1), 'S',
                             GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 1L, 0), 'F',
                             ToolDictNames.craftingToolFile, 'H', ToolDictNames.craftingToolHardHammer });
+            // booster
+
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem("GalacticraftCore", "item.engine", 1L, 1),
+                    bits,
+                    new Object[] { "LLL", "PBP", "PVP", 'L',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.meteoricIronIngot", 1L, 1), 'P',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 1L, 0), 'B',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.fuelCanisterPartial", 1L, 1), 'V',
+                            GT_ModHandler.getModItem("GalacticraftCore", "item.airVent", 1L, 0) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.Tier2Booster.get(1L),
@@ -1093,6 +1169,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     new Object[] { "LLL", "PBP", "PVP", 'L', CustomItemList.BlackPlutoniumCompressedPlate.get(1), 'P',
                             CustomItemList.HeavyDutyPlateTier7.get(1), 'B', CustomItemList.Tier3Booster.get(1), 'V',
                             GT_ModHandler.getModItem("GalaxySpace", "item.CompressedSDHD120", 1L, 0) });
+
         }
 
         if (Loader.isModLoaded(aTextGraviSuite)) {

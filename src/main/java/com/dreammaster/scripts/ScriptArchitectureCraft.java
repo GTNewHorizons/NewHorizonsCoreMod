@@ -4,15 +4,18 @@ import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ScriptArchitectureCraft implements IScriptLoader {
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("Architecture Craft");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("ArchitectureCraft", "gregtech"));
+    public String getScriptName() {
+        return "Architecture Craft";
+    }
+
+    @Override
+    public List<String> getDependencies() {
+        return Arrays.asList("ArchitectureCraft", "gregtech");
     }
 
     @Override

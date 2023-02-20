@@ -2,6 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -11,15 +14,14 @@ import gregtech.api.enums.ItemList;
 
 public class ScriptThaumicEnergistics implements IScriptLoader {
 
-    public ScriptThaumicEnergistics() {}
+    @Override
+    public String getScriptName() {
+        return "ThaumicEnergistics";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("ThaumicEnergistics");
-        dependencies.clear();
-        dependencies.addAll(
-                java.util.Arrays.asList("dreamcraft", "TaintedMagic", "gadomancy", "Thaumcraft", "thaumicenergistics"));
+    public List<String> getDependencies() {
+        return Arrays.asList("dreamcraft", "TaintedMagic", "gadomancy", "Thaumcraft", "thaumicenergistics");
     }
 
     @Override

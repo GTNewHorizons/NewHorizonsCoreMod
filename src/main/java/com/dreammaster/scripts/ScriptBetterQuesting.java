@@ -2,16 +2,19 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Collections;
+import java.util.List;
+
 public class ScriptBetterQuesting implements IScriptLoader {
 
-    public ScriptBetterQuesting() {}
+    @Override
+    public String getScriptName() {
+        return "BetterQuesting";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("BetterQuesting");
-        dependencies.clear();
-        dependencies.add("betterquesting");
+    public List<String> getDependencies() {
+        return Collections.singletonList("betterquesting");
     }
 
     @Override

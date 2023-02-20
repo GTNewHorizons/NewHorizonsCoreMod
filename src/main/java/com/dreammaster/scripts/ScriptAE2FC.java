@@ -2,6 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -22,14 +25,14 @@ import gregtech.api.util.GT_Utility;
 
 public class ScriptAE2FC implements IScriptLoader {
 
-    public ScriptAE2FC() {}
+    @Override
+    public String getScriptName() {
+        return "AE2FC";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("AE2FC");
-        dependencies.clear();
-        dependencies.addAll(java.util.Arrays.asList("ae2fc", "appliedenergistics2", "OpenComputers"));
+    public List<String> getDependencies() {
+        return Arrays.asList("ae2fc", "appliedenergistics2", "OpenComputers");
     }
 
     @Override
@@ -627,7 +630,8 @@ public class ScriptAE2FC implements IScriptLoader {
         // Wireless Fluid Pattern Terminal
         GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2FC_TERMINAL, null, AE2FC_PATTERN_WIRELESS, 600, 120);
         // Wireless Interface Terminal
-        GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM, null, AE2FC_INTERFACE_WIRELESS, 600, 120);
+        GT_Values.RA
+                .addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM, null, AE2FC_INTERFACE_WIRELESS, 600, 120);
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);

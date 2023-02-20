@@ -190,7 +190,8 @@ public class LaserEngraverRecipes implements Runnable {
                     new ItemStack[] { WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0) }, // Hedenbergite Lens
                     new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(1000L) },
                     new ItemStack[] { NI },
-                    new FluidStack[] { Materials.Grade4PurifiedWater.getFluid(900L) },
+                    new FluidStack[] { Materials.Grade4PurifiedWater.getFluid(900L),
+                            FluidRegistry.getFluidStack("bacterialsludge", 50) },
                     500 * 10,
                     245_760,
                     true);
@@ -199,7 +200,7 @@ public class LaserEngraverRecipes implements Runnable {
                     new ItemStack[] { WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0) }, // Bart Lens
                     new FluidStack[] { Materials.Grade5PurifiedWater.getFluid(1000L) },
                     new ItemStack[] { NI },
-                    new FluidStack[] { Materials.Grade6PurifiedWater.getFluid(900L) },
+                    new FluidStack[] { Materials.Grade6PurifiedWater.getFluid(900L), Materials.Water.getGas(8000L) },
                     500 * 10,
                     983_040,
                     true);
