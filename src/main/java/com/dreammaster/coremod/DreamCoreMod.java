@@ -15,17 +15,17 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 @IFMLLoadingPlugin.TransformerExclusions("com.dreammaster.coremod")
 public class DreamCoreMod implements IFMLLoadingPlugin {
 
-    static Properties coremodConfig = new Properties();
-    static Logger logger = LogManager.getLogger("DreamCoreMod");
-    static boolean deobf;
     static boolean downloadOnlyOnce;
-    static boolean patchItemFocusWarding;
-    static File debugOutputDir;
+    static Properties coremodConfig = new Properties();
+
+    public static Logger logger = LogManager.getLogger("DreamCoreMod");
+    public static boolean deobf;
+    public static boolean patchItemFocusWarding;
+    public static File debugOutputDir;
 
     @Override
     public String[] getASMTransformerClass() {
-        return new String[] { "com.dreammaster.coremod.DreamTransformer",
-                "com.dreammaster.coremod.BibliocraftTransformer" };
+        return new String[] { DreamClassTransformer.class.getName() };
     }
 
     @Override
