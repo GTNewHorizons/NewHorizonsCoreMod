@@ -3182,7 +3182,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 4L, 0), Materials.Glowstone.getPlates(1),
                         GT_Utility.getIntegratedCircuit(1) },
                 GT_Values.NF,
-                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 5),
+                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 4L, 5),
                 100,
                 480);
 
