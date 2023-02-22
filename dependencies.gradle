@@ -23,6 +23,12 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.0.8:dev") {
         transitive = false
     }
+    compileOnly("com.github.GTNewHorizons:Galaxy-Space-GTNH:1.1.49-GTNH-pre:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:TecTech:5.0.104:dev") {
+        transitive = false
+    }
     compileOnly("com.github.GTNewHorizons:bartworks:0.5.150:dev") {
         transitive = false
     }
