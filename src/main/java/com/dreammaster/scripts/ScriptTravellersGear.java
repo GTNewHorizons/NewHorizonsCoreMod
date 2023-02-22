@@ -8,7 +8,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -30,6 +29,8 @@ public class ScriptTravellersGear implements IScriptLoader {
     public void loadRecipes() {
         final Item simpleGear = GameRegistry.findItem("TravellersGear", "simpleGear");
         final Block armorStand = GameRegistry.findBlock("TravellersGear", "armorstand");
+        final Item hardenedLeatherItem = GameRegistry.findItem("harvestcraft", "hardenedleatherItem");
+        final Item biblioArmorStandItem = GameRegistry.findItem("BiblioCraft", "Armor Stand");
         int[] dyeColours = { 0xffffff, 0xD87F33, 0xB24CD8, 0x6699D8, 0xE5E533, 0x7FCC19, 0xF27FA5, 0x4C4C4C, 0x999999,
                 0x4C7F99, 0x7F3FB2, 0x334CB2, 0x664C33, 0x667F33, 0x993333, 0x191919 };
         for (int d = 0; d < dyeColours.length; d++) {
@@ -58,9 +59,9 @@ public class ScriptTravellersGear implements IScriptLoader {
                         "ill",
                         " i ",
                         'i',
-                        (!OreDictionary.getOres("screwIron").isEmpty() ? "screwIron" : "ingotIron"),
+                        "screwIron",
                         'l',
-                        new ItemStack(GameRegistry.findItem("harvestcraft", "hardenedleatherItem"))));
+                        new ItemStack(hardenedLeatherItem)));
         GameRegistry.addRecipe(
                 new ShapedOreRecipe(
                         new ItemStack(simpleGear, 1, 5),
@@ -68,9 +69,9 @@ public class ScriptTravellersGear implements IScriptLoader {
                         "lil",
                         " l ",
                         'i',
-                        (!OreDictionary.getOres("screwIron").isEmpty() ? "screwIron" : "ingotIron"),
+                        "screwIron",
                         'l',
-                        new ItemStack(GameRegistry.findItem("harvestcraft", "hardenedleatherItem"))));
+                        new ItemStack(hardenedLeatherItem)));
         GameRegistry.addRecipe(
                 new ShapedOreRecipe(
                         new ItemStack(simpleGear, 1, 6),
@@ -83,14 +84,8 @@ public class ScriptTravellersGear implements IScriptLoader {
                         Items.paper,
                         'l',
                         "gemEmerald"));
-        GameRegistry.addRecipe(
-                new ShapelessOreRecipe(
-                        new ItemStack(armorStand),
-                        new ItemStack(GameRegistry.findItem("BiblioCraft", "Armor Stand"))));
-        GameRegistry.addRecipe(
-                new ShapelessOreRecipe(
-                        new ItemStack(GameRegistry.findItem("BiblioCraft", "Armor Stand")),
-                        new ItemStack(armorStand)));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(armorStand), new ItemStack(biblioArmorStandItem)));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(biblioArmorStandItem), new ItemStack(armorStand)));
     }
 
     private ItemStack getColouredItem(ItemStack item, int col) {
