@@ -7284,7 +7284,7 @@ public class AssemblerRecipes implements Runnable {
                             new ItemStack[] {
                                     GT_OreDictUnificator
                                             .get(OrePrefixes.pipeQuadruple, Materials.TranscendentMetal, 1L),
-                                    CustomItemList.Hull_UEV.get(1L), GT_Utility.getIntegratedCircuit(4) },
+                                    CustomItemList.Hull_UIV.get(1L), GT_Utility.getIntegratedCircuit(4) },
                             Materials.Polybenzimidazole.getMolten(2304L),
                             ItemList.Hatch_Input_Multi_2x2_UIV.get(1L),
                             600,
