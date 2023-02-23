@@ -1761,7 +1761,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             ToolDictNames.craftingToolFile, 'C', aBlankCast });
             GT_ModHandler.addCraftingRecipe(
                     com.dreammaster.item.ItemList.ShapeDrillHead.getIS(),
-                    new Object[] { "   ", " C ", "FW ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
+                    new Object[] { " F ", " C ", " W ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
                             ToolDictNames.craftingToolFile, 'C', aBlankCast });
         }
     }
