@@ -1,5 +1,8 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.client.GT_TooltipHandler.Tier.*;
+import static gregtech.client.GT_TooltipHandler.registerTieredTooltip;
+
 import gregtech.api.enums.*;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_ModHandler;
@@ -201,11 +204,11 @@ public class GT_Loader_Batteries {
                         "Small Sunnarium Battery",
                         "Reusable",
                         "batteryEV",
-                        "EV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 6400000L, GT_Values.V[4], 4L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_EV_Full.get(1), EV);
 
         CustomItemList.BatteryHull_IV_Full.set(
                 GT.addItem(
@@ -213,11 +216,11 @@ public class GT_Loader_Batteries {
                         "Medium Sunnarium Battery",
                         "Reusable",
                         "batteryIV",
-                        "IV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 25600000L, GT_Values.V[5], 5L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_IV_Full.get(1), IV);
 
         CustomItemList.BatteryHull_LuV_Full.set(
                 GT.addItem(
@@ -225,11 +228,11 @@ public class GT_Loader_Batteries {
                         "Large Sunnarium Battery",
                         "Reusable",
                         "batteryLuV",
-                        "LuV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 102400000L, GT_Values.V[6], 6L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_LuV_Full.get(1), LuV);
 
         CustomItemList.BatteryHull_ZPM_Full.set(
                 GT.addItem(
@@ -237,11 +240,11 @@ public class GT_Loader_Batteries {
                         "Medium Naquadria Battery",
                         "Reusable",
                         "batteryZPM",
-                        "ZPM",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 409600000L, GT_Values.V[7], 7L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_ZPM_Full.get(1), ZPM);
 
         CustomItemList.BatteryHull_UV_Full.set(
                 GT.addItem(
@@ -249,11 +252,11 @@ public class GT_Loader_Batteries {
                         "Large Naquadria Battery",
                         "Reusable",
                         "batteryUV",
-                        "UV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 1638400000L, GT_Values.V[8], 8L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_UV_Full.get(1), UV);
 
         CustomItemList.BatteryHull_UHV_Full.set(
                 GT.addItem(
@@ -261,11 +264,11 @@ public class GT_Loader_Batteries {
                         "Small Neutronium Battery",
                         "Reusable",
                         "batteryUHV",
-                        "UHV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 6553600000L, GT_Values.V[9], 9L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_UHV_Full.get(1), UHV);
 
         CustomItemList.BatteryHull_UEV_Full.set(
                 GT.addItem(
@@ -273,11 +276,11 @@ public class GT_Loader_Batteries {
                         "Medium Neutronium Battery",
                         "Reusable",
                         "batteryUEV",
-                        "UEV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 26214400000L, GT_Values.V[10], 10L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_UEV_Full.get(1), UEV);
 
         CustomItemList.BatteryHull_UIV_Full.set(
                 GT.addItem(
@@ -285,11 +288,11 @@ public class GT_Loader_Batteries {
                         "Large Neutronium Battery",
                         "Reusable",
                         "batteryUIV",
-                        "UIV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 104857600000L, GT_Values.V[11], 11L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_UIV_Full.get(1), UIV);
 
         CustomItemList.BatteryHull_UMV_Full.set(
                 GT.addItem(
@@ -297,11 +300,11 @@ public class GT_Loader_Batteries {
                         "Medium Infinity Battery",
                         "Reusable",
                         "batteryUMV",
-                        "UMV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 419430400000L, GT_Values.V[12], 12L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_UMV_Full.get(1), UMV);
 
         CustomItemList.BatteryHull_UxV_Full.set(
                 GT.addItem(
@@ -309,11 +312,11 @@ public class GT_Loader_Batteries {
                         "Large Infinity Battery",
                         "Reusable",
                         "batteryUXV",
-                        "UXV",
                         new TC_Aspects.TC_AspectStack(TC_Aspects.ELECTRUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 16L),
                         new TC_Aspects.TC_AspectStack(TC_Aspects.POTENTIA, 32L)));
         GT.setElectricStats(32000 + tLastID, 1677721600000L, GT_Values.V[13], 13L, -3L, true);
+        registerTieredTooltip(CustomItemList.BatteryHull_UxV_Full.get(1), UXV);
 
         // Just to be complete, extractor recipes for the filled hulls
         GT_ModHandler
