@@ -3476,7 +3476,7 @@ public class AssemblerRecipes implements Runnable {
                 3150,
                 30720,
                 true);
-                GT_Values.RA.addAssemblerRecipe(
+        GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 36L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 64L),
@@ -3491,7 +3491,7 @@ public class AssemblerRecipes implements Runnable {
                 3750,
                 30720,
                 true);
-        
+
         // Wood Plates
         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(
                 false,
