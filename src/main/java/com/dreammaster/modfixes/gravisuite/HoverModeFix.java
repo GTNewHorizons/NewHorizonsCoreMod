@@ -29,7 +29,7 @@ public class HoverModeFix extends ModFixBase {
     @Override
     public boolean init() {
         try {
-            Field hoverModeFallSpeed = Class.forName("gravisuite.armor.ItemAdvancedJetPack")
+            Field hoverModeFallSpeed = Class.forName("gravisuite.ItemAdvancedJetPack")
                     .getDeclaredField("hoverModeFallSpeed");
             hoverModeFallSpeed.setAccessible(true);
             hoverModeFallSpeed.setInt(null, 0);
