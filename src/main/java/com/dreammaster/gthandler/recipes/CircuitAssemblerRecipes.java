@@ -295,24 +295,6 @@ public class CircuitAssemblerRecipes implements Runnable {
                 153600,
                 true);
 
-        if (Loader.isModLoaded("bartworks")) {
-
-            Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
-                    ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
-                    : FluidRegistry.getFluid("molten.solderingalloy");
-
-            // Optically Perfected CPU
-            GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[] { ItemList.Circuit_Chip_Optical.get(1L),
-                            ItemList.Optical_Cpu_Containment_Housing.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 16L) },
-                    new FluidStack(solderUEV, 288),
-                    ItemList.Optically_Perfected_CPU.get(1L),
-                    20 * 20,
-                    1_966_080,
-                    true);
-        }
-
         if (Loader.isModLoaded("appliedenergistics2")) {
             // 1k ME Storage Component
             GT_Values.RA.addCircuitAssemblerRecipe(

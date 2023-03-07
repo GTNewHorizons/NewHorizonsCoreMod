@@ -3182,7 +3182,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_ModHandler.getModItem("IC2", "blockAlloyGlass", 4L, 0), Materials.Glowstone.getPlates(1),
                         GT_Utility.getIntegratedCircuit(1) },
                 GT_Values.NF,
-                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 5),
+                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 4L, 5),
                 100,
                 480);
 
@@ -3461,6 +3461,35 @@ public class AssemblerRecipes implements Runnable {
                 ItemList.Neutron_Reflector.get(1L),
                 900,
                 7680,
+                true);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenCarbide, 36L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 32L),
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 48L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 32L),
+                        GT_Utility.getIntegratedCircuit(2) },
+                GT_Values.NF,
+                ItemList.Neutron_Reflector.get(1L),
+                3150,
+                30720,
+                true);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 36L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 32L),
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 48L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 64L),
+                        GT_Utility.getIntegratedCircuit(2) },
+                GT_Values.NF,
+                ItemList.Neutron_Reflector.get(1L),
+                3750,
+                30720,
                 true);
 
         // Wood Plates
@@ -7284,7 +7313,7 @@ public class AssemblerRecipes implements Runnable {
                             new ItemStack[] {
                                     GT_OreDictUnificator
                                             .get(OrePrefixes.pipeQuadruple, Materials.TranscendentMetal, 1L),
-                                    CustomItemList.Hull_UEV.get(1L), GT_Utility.getIntegratedCircuit(4) },
+                                    CustomItemList.Hull_UIV.get(1L), GT_Utility.getIntegratedCircuit(4) },
                             Materials.Polybenzimidazole.getMolten(2304L),
                             ItemList.Hatch_Input_Multi_2x2_UIV.get(1L),
                             600,
