@@ -16,7 +16,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import com.dreammaster.gthandler.CustomItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -284,52 +283,17 @@ public class ScriptAE2FC implements IScriptLoader {
         }
 
         // ME Quantum Storage
-        /*ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                AE2FC_QUANTUM_CELL,
-                "---------",
-                "----a----",
-                "---bdb---",
-                "--bcdcb--",
-                "-addedda-",
-                "--bcdcb--",
-                "---bdb---",
-                "----a----",
-                "---------",
-                'a',
-                "blockCosmicNeutronium",
-                'b',
-                "plateDenseNeutronium",
-                'c',
-                "circuitInfinite",
-                'd',
-                COMPONENT_16384,
-                'e',
-                AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING);
-
-        // ME Digital Singularity
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                AE2FC_SINGULARITY_CELL,
-                "----a----",
-                "---aba---",
-                "--ecdce--",
-                "-acdddca-",
-                "abddfddba",
-                "-acdddca-",
-                "--ecdce--",
-                "---aba---",
-                "----a----",
-                'a',
-                "blockCosmicNeutronium",
-                'b',
-                getModItem("Avaritia", "Resource", 1, 5),
-                'c',
-                getModItem("gregtech", "gt.blockmachines", 1, 124),
-                'd',
-                COMPONENT_16384,
-                'e',
-                "blockInfinity",
-                'f',
-                getModItem("eternalsingularity", "eternal_singularity", 1));*/
+        /*
+         * ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe( AE2FC_QUANTUM_CELL, "---------", "----a----",
+         * "---bdb---", "--bcdcb--", "-addedda-", "--bcdcb--", "---bdb---", "----a----", "---------", 'a',
+         * "blockCosmicNeutronium", 'b', "plateDenseNeutronium", 'c', "circuitInfinite", 'd', COMPONENT_16384, 'e',
+         * AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING); // ME Digital Singularity
+         * ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe( AE2FC_SINGULARITY_CELL, "----a----",
+         * "---aba---", "--ecdce--", "-acdddca-", "abddfddba", "-acdddca-", "--ecdce--", "---aba---", "----a----", 'a',
+         * "blockCosmicNeutronium", 'b', getModItem("Avaritia", "Resource", 1, 5), 'c', getModItem("gregtech",
+         * "gt.blockmachines", 1, 124), 'd', COMPONENT_16384, 'e', "blockInfinity", 'f',
+         * getModItem("eternalsingularity", "eternal_singularity", 1));
+         */
 
         // recursive components for those who want to do this weird stuff
         GameRegistry.addRecipe(
