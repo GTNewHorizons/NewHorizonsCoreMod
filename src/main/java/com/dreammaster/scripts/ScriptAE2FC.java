@@ -284,7 +284,7 @@ public class ScriptAE2FC implements IScriptLoader {
         }
 
         // ME Quantum Storage
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+        /*ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 AE2FC_QUANTUM_CELL,
                 "---------",
                 "----a----",
@@ -329,7 +329,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'e',
                 "blockInfinity",
                 'f',
-                getModItem("eternalsingularity", "eternal_singularity", 1));
+                getModItem("eternalsingularity", "eternal_singularity", 1));*/
 
         // recursive components for those who want to do this weird stuff
         GameRegistry.addRecipe(
