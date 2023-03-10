@@ -1445,7 +1445,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 GT_Values.NI,
                 3000,
                 1920,
-                3000);
+                4000);
         GT_Values.RA.addBlastRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.TungstenSteel, 1L),
                 GT_Utility.getIntegratedCircuit(11),
@@ -1455,7 +1455,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 GT_Values.NI,
                 2500,
                 1920,
-                3000);
+                4000);
 
         GT_Values.RA.addBlastRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.TungstenCarbide, 1L),
