@@ -6,9 +6,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.github.technus.tectech.thing.CustomItemList;
+import com.gtnewhorizons.gtnhintergalactic.recipe.IG_RecipeAdder;
 
 import cpw.mods.fml.common.Loader;
-import galaxyspace.core.recipe.GS_RecipeAdder;
 import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -24,7 +24,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     : FluidRegistry.getFluid("molten.solderingalloy");
 
             // Optically Perfected CPU
-            GS_RecipeAdder.addSpaceAssemblerRecipe(
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { ItemList.Circuit_Chip_Optical.get(1L),
                             ItemList.Optical_Cpu_Containment_Housing.get(1L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.InfinityCatalyst, 4L),
@@ -44,7 +44,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     null);
 
             // Optically Compatible Memory
-            GS_RecipeAdder.addSpaceAssemblerRecipe(
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { GT_ModHandler.getModItem("OpenComputers", "item", 1L, 39), // Memory tier 3.5
                             ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 4L),
@@ -59,7 +59,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     null,
                     null);
 
-            GS_RecipeAdder.addSpaceAssemblerRecipe(
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { GT_ModHandler.getModItem("OpenComputers", "item", 4L, 39), // Memory tier 3.5
                             ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(16L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 4L),
@@ -74,7 +74,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     null,
                     null);
 
-            GS_RecipeAdder.addSpaceAssemblerRecipe(
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { GT_ModHandler.getModItem("OpenComputers", "item", 16L, 39), // Memory tier 3.5
                             ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(64L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 4L),
