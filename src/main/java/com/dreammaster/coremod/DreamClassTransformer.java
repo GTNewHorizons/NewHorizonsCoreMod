@@ -11,6 +11,7 @@ import org.objectweb.asm.tree.ClassNode;
 
 import com.dreammaster.coremod.transformers.ItemFocusWardingTransformer;
 import com.dreammaster.coremod.transformers.recipenukers.BibliocraftTransformer;
+import com.dreammaster.coremod.transformers.recipenukers.TravellersGearTransformer;
 
 public class DreamClassTransformer implements IClassTransformer {
 
@@ -21,6 +22,7 @@ public class DreamClassTransformer implements IClassTransformer {
     public DreamClassTransformer() {
         // register your transformers here
         registerTransformer(new BibliocraftTransformer());
+        registerTransformer(new TravellersGearTransformer());
         registerTransformer(new ItemFocusWardingTransformer());
     }
 

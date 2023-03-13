@@ -3,7 +3,9 @@ package com.dreammaster.scripts;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -85,6 +87,14 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack CELL_1024 = getModItem("ae2fc", "fluid_storage1024", 1, 0);
         final ItemStack CELL_4096 = getModItem("ae2fc", "fluid_storage4096", 1, 0);
         final ItemStack CELL_16384 = getModItem("ae2fc", "fluid_storage16384", 1, 0);
+        final ItemStack CELL_1M = getModItem("ae2fc", "multi_fluid_storage1", 1, 0);
+        final ItemStack CELL_4M = getModItem("ae2fc", "multi_fluid_storage4", 1, 0);
+        final ItemStack CELL_16M = getModItem("ae2fc", "multi_fluid_storage16", 1, 0);
+        final ItemStack CELL_64M = getModItem("ae2fc", "multi_fluid_storage64", 1, 0);
+        final ItemStack CELL_256M = getModItem("ae2fc", "multi_fluid_storage256", 1, 0);
+        final ItemStack CELL_1024M = getModItem("ae2fc", "multi_fluid_storage1024", 1, 0);
+        final ItemStack CELL_4096M = getModItem("ae2fc", "multi_fluid_storage4096", 1, 0);
+        final ItemStack CELL_16384M = getModItem("ae2fc", "multi_fluid_storage16384", 1, 0);
         final ItemStack COMPONENT_1 = getModItem("ae2fc", "fluid_part", 1, 0);
         final ItemStack COMPONENT_4 = getModItem("ae2fc", "fluid_part", 1, 1);
         final ItemStack COMPONENT_16 = getModItem("ae2fc", "fluid_part", 1, 2);
@@ -119,25 +129,171 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_FLUID_WIRELESS = getModItem("ae2fc", "wireless_fluid_terminal", 1, 0);
         final ItemStack AE2FC_PATTERN_WIRELESS = getModItem("ae2fc", "wireless_fluid_pattern_terminal", 1, 0);
         final ItemStack AE2FC_INTERFACE_WIRELESS = getModItem("ae2fc", "wireless_interface_terminal", 1, 0);
-
-        ItemStack[] cells = new ItemStack[] { CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096,
+        final ItemStack AE2FC_QUANTUM_CELL = getModItem("ae2fc", "fluid_storage.quantum", 1, 0);
+        final ItemStack AE2FC_SINGULARITY_CELL = getModItem("ae2fc", "fluid_storage.singularity", 1, 0);
+        final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem("ae2fc", "fluid_storage_housing", 1, 0);
+        final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem("ae2fc", "fluid_storage_housing", 1, 1);
+        final ItemStack AE2FC_MULTI_FLUID_STORAGE_HOUSING = getModItem("ae2fc", "fluid_storage_housing", 1, 2);
+        final ItemStack AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING = getModItem("ae2fc", "fluid_storage_housing", 1, 3);
+        ItemStack[] mCells = new ItemStack[] { CELL_1M, CELL_4M, CELL_16M, CELL_64M, CELL_256M, CELL_1024M, CELL_4096M,
+                CELL_16384M };
+        ItemStack[] sCells = new ItemStack[] { CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096,
                 CELL_16384 };
         ItemStack[] components = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64, COMPONENT_256,
                 COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
 
-        for (int i = 0; i < cells.length; i++) {
+        // AE2FC_FLUID_STORAGE_HOUSING
+        GT_ModHandler.addCraftingRecipe(
+                AE2FC_FLUID_STORAGE_HOUSING,
+                RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
+                new Object[] { "hCW", "S-S", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                        "plateStainlessSteel", 'A', "plateAluminium" });
+        GT_ModHandler.addCraftingRecipe(
+                AE2FC_FLUID_STORAGE_HOUSING,
+                RecipeBits.BUFFERED,
+                new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                        "plateStainlessSteel", 'A', "plateAluminium" });
+        for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
+
+            {
+                put(CELL_1, COMPONENT_1);
+                put(CELL_4, COMPONENT_4);
+                put(CELL_16, COMPONENT_16);
+                put(CELL_64, COMPONENT_64);
+            }
+        }.entrySet()) {
             GT_ModHandler.addCraftingRecipe(
-                    cells[i],
+                    entry.getKey(),
                     RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
                     new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateStainlessSteel", 'K', components[i], 'A', "plateAluminium" });
+                            "plateStainlessSteel", 'A', "plateAluminium", 'K', entry.getValue() });
             GT_ModHandler.addCraftingRecipe(
-                    cells[i],
+                    entry.getKey(),
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateStainlessSteel", 'K', components[i], 'A', "plateAluminium" });
-            GT_ModHandler.addShapelessCraftingRecipe(cells[i], new Object[] { AE2_CELL_HOUSING, components[i] });
+                            "plateStainlessSteel", 'A', "plateAluminium", 'K', entry.getValue() });
+            GT_ModHandler.addShapelessCraftingRecipe(
+                    entry.getKey(),
+                    new Object[] { AE2FC_FLUID_STORAGE_HOUSING, entry.getValue() });
         }
+
+        // AE2FC_MULTI_FLUID_STORAGE_HOUSING
+        GT_ModHandler.addCraftingRecipe(
+                AE2FC_MULTI_FLUID_STORAGE_HOUSING,
+                RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
+                new Object[] { "hCW", "S-S", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                        "plateTungstenSteel", 'A', "plateStainlessSteel" });
+        GT_ModHandler.addCraftingRecipe(
+                AE2FC_MULTI_FLUID_STORAGE_HOUSING,
+                RecipeBits.BUFFERED,
+                new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                        "plateTungstenSteel", 'A', "plateStainlessSteel" });
+        for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
+
+            {
+                put(CELL_1M, COMPONENT_1);
+                put(CELL_4M, COMPONENT_4);
+                put(CELL_16M, COMPONENT_16);
+                put(CELL_64M, COMPONENT_64);
+            }
+        }.entrySet()) {
+            GT_ModHandler.addCraftingRecipe(
+                    entry.getKey(),
+                    RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
+                    new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                            "plateTungstenSteel", 'A', "plateStainlessSteel", 'K', entry.getValue() });
+            GT_ModHandler.addCraftingRecipe(
+                    entry.getKey(),
+                    RecipeBits.BUFFERED,
+                    new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                            "plateTungstenSteel", 'A', "plateStainlessSteel", 'K', entry.getValue() });
+            GT_ModHandler.addShapelessCraftingRecipe(
+                    entry.getKey(),
+                    new Object[] { AE2FC_MULTI_FLUID_STORAGE_HOUSING, entry.getValue() });
+        }
+
+        // AE2FC_ADVANCED_FLUID_STORAGE_HOUSING
+        GT_ModHandler.addCraftingRecipe(
+                AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
+                RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
+                new Object[] { "hCW", "S-S", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                        "plateInfinity", 'A', "plateNeutronium" });
+        GT_ModHandler.addCraftingRecipe(
+                AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
+                RecipeBits.BUFFERED,
+                new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                        "plateInfinity", 'A', "plateNeutronium" });
+        for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
+
+            {
+                put(CELL_256, COMPONENT_256);
+                put(CELL_1024, COMPONENT_1024);
+                put(CELL_4096, COMPONENT_4096);
+                put(CELL_16384, COMPONENT_16384);
+            }
+        }.entrySet()) {
+            GT_ModHandler.addCraftingRecipe(
+                    entry.getKey(),
+                    RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
+                    new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                            "plateInfinity", 'A', "plateNeutronium", 'K', entry.getValue() });
+            GT_ModHandler.addCraftingRecipe(
+                    entry.getKey(),
+                    RecipeBits.BUFFERED,
+                    new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                            "plateInfinity", 'A', "plateNeutronium", 'K', entry.getValue() });
+            GT_ModHandler.addShapelessCraftingRecipe(
+                    entry.getKey(),
+                    new Object[] { AE2FC_ADVANCED_FLUID_STORAGE_HOUSING, entry.getValue() });
+        }
+
+        // AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING
+        GT_ModHandler.addCraftingRecipe(
+                AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING,
+                RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
+                new Object[] { "hCW", "S-S", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                        "plateNeutronium", 'A', "plateTungstenSteel" });
+        GT_ModHandler.addCraftingRecipe(
+                AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING,
+                RecipeBits.BUFFERED,
+                new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                        "plateNeutronium", 'A', "plateTungstenSteel" });
+        for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
+
+            {
+                put(CELL_256M, COMPONENT_256);
+                put(CELL_1024M, COMPONENT_1024);
+                put(CELL_4096M, COMPONENT_4096);
+                put(CELL_16384M, COMPONENT_16384);
+            }
+        }.entrySet()) {
+            GT_ModHandler.addCraftingRecipe(
+                    entry.getKey(),
+                    RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
+                    new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                            "plateNeutronium", 'A', "plateTungstenSteel", 'K', entry.getValue() });
+            GT_ModHandler.addCraftingRecipe(
+                    entry.getKey(),
+                    RecipeBits.BUFFERED,
+                    new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
+                            "plateNeutronium", 'A', "plateTungstenSteel", 'K', entry.getValue() });
+            GT_ModHandler.addShapelessCraftingRecipe(
+                    entry.getKey(),
+                    new Object[] { AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING, entry.getValue() });
+        }
+
+        // ME Quantum Storage
+        /*
+         * ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe( AE2FC_QUANTUM_CELL, "---------", "----a----",
+         * "---bdb---", "--bcdcb--", "-addedda-", "--bcdcb--", "---bdb---", "----a----", "---------", 'a',
+         * "blockCosmicNeutronium", 'b', "plateDenseNeutronium", 'c', "circuitInfinite", 'd', COMPONENT_16384, 'e',
+         * AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING); // ME Digital Singularity
+         * ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe( AE2FC_SINGULARITY_CELL, "----a----",
+         * "---aba---", "--ecdce--", "-acdddca-", "abddfddba", "-acdddca-", "--ecdce--", "---aba---", "----a----", 'a',
+         * "blockCosmicNeutronium", 'b', getModItem("Avaritia", "Resource", 1, 5), 'c', getModItem("gregtech",
+         * "gt.blockmachines", 1, 124), 'd', COMPONENT_16384, 'e', "blockInfinity", 'f',
+         * getModItem("eternalsingularity", "eternal_singularity", 1));
+         */
 
         // recursive components for those who want to do this weird stuff
         GameRegistry.addRecipe(

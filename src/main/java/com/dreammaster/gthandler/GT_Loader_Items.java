@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler;
 
-import net.minecraftforge.oredict.OreDictionary;
+import static gregtech.client.GT_TooltipHandler.Tier.*;
+import static gregtech.client.GT_TooltipHandler.registerTieredTooltip;
 
 import com.dreammaster.item.ItemList;
 
@@ -302,11 +303,11 @@ public class GT_Loader_Items {
         CustomItemList.AdvancedProcessorBoard.set(ItemList.AdvancedProcessorBoard.getIS());
         CustomItemList.HighEnergyFlowCircuit.set(ItemList.HighEnergyFlowCircuit.getIS());
         CustomItemList.NanoCircuit.set(ItemList.NanoCircuit.getIS());
-        OreDictionary.registerOre("UIV", CustomItemList.NanoCircuit.get(1));
+        registerTieredTooltip(CustomItemList.NanoCircuit.get(1), UIV);
         CustomItemList.PikoCircuit.set(ItemList.PikoCircuit.getIS());
-        OreDictionary.registerOre("UMV", CustomItemList.PikoCircuit.get(1));
+        registerTieredTooltip(CustomItemList.PikoCircuit.get(1), UMV);
         CustomItemList.QuantumCircuit.set(ItemList.QuantumCircuit.getIS());
-        OreDictionary.registerOre("UXV", CustomItemList.QuantumCircuit.get(1));
+        registerTieredTooltip(CustomItemList.QuantumCircuit.get(1), UXV);
         CustomItemList.CarbonPartBoots.set(ItemList.CarbonPartBoots.getIS());
         CustomItemList.CarbonPartChestplate.set(ItemList.CarbonPartChestplate.getIS());
         CustomItemList.CarbonPartHelmet.set(ItemList.CarbonPartHelmet.getIS());

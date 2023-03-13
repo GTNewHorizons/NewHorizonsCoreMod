@@ -4,10 +4,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import cpw.mods.fml.common.Loader;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
@@ -67,6 +64,37 @@ public class ExtruderRecipes implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.WroughtIron, 1L),
                 96,
                 120);
+
+        GT_Values.RA.addExtruderRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
+                ItemList.Shape_Extruder_Pipe_Tiny.get(0L),
+                GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.NetherStar, 2L),
+                4,
+                (int) TierEU.RECIPE_MV);
+        GT_Values.RA.addExtruderRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
+                ItemList.Shape_Extruder_Pipe_Small.get(0L),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.NetherStar, 1L),
+                8,
+                (int) TierEU.RECIPE_MV);
+        GT_Values.RA.addExtruderRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 3L),
+                ItemList.Shape_Extruder_Pipe_Medium.get(0L),
+                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.NetherStar, 1L),
+                24,
+                (int) TierEU.RECIPE_MV);
+        GT_Values.RA.addExtruderRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 6L),
+                ItemList.Shape_Extruder_Pipe_Large.get(0L),
+                GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.NetherStar, 1L),
+                48,
+                (int) TierEU.RECIPE_MV);
+        GT_Values.RA.addExtruderRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 12L),
+                ItemList.Shape_Extruder_Pipe_Huge.get(0L),
+                GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.NetherStar, 1L),
+                96,
+                (int) TierEU.RECIPE_MV);
 
         GT_Values.RA.addExtruderRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 2L),
