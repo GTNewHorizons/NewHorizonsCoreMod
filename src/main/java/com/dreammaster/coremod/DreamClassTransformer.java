@@ -38,7 +38,8 @@ public class DreamClassTransformer implements IClassTransformer {
 
     @Override
     public byte[] transform(String name, String transformedName, byte[] basicClass) {
-        if (basicClass == null) return null;
+        if (basicClass == null || transformedName == null || transformedName.startsWith("com.dreammaster.coremod."))
+            return basicClass;
         final IDreamTransformer transformer = transformerMap.get(transformedName);
         if (transformer == null) return basicClass;
         final ClassReader classReader = new ClassReader(basicClass);

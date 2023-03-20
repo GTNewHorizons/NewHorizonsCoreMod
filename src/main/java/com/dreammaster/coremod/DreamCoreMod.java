@@ -12,7 +12,6 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.Name("DreamCoreMod")
-@IFMLLoadingPlugin.TransformerExclusions("com.dreammaster.coremod")
 public class DreamCoreMod implements IFMLLoadingPlugin {
 
     static boolean downloadOnlyOnce;
