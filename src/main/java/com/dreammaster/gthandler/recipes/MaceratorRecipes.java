@@ -19,6 +19,13 @@ public class MaceratorRecipes implements Runnable {
     @Override
     public void run() {
         GT_Values.RA.addPulveriserRecipe(
+                new ItemStack(Items.glass_bottle, 1, 0),
+                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)},
+                new int[] { 10000 },
+                80,
+                8);
+
+        GT_Values.RA.addPulveriserRecipe(
                 GT_ModHandler.getModItem("IC2", "itemFuelPlantBall", 2L, 0),
                 new ItemStack[] { CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L),
                         CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L) },
