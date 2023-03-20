@@ -20,7 +20,7 @@ public class MaceratorRecipes implements Runnable {
     public void run() {
         GT_Values.RA.addPulveriserRecipe(
                 new ItemStack(Items.glass_bottle, 1, 0),
-                new ItemStack[] {GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)},
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L) },
                 new int[] { 10000 },
                 80,
                 8);

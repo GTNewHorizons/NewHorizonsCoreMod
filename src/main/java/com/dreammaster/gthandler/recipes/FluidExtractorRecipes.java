@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -22,8 +21,7 @@ public class FluidExtractorRecipes implements Runnable {
                 Materials.Glass.getMolten(144L),
                 10000,
                 24,
-                54
-        );
+                54);
 
         GT_Values.RA.addFluidExtractionRecipe(
                 ItemList.GalliumArsenideCrystal.get(1L),
