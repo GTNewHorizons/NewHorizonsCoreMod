@@ -498,7 +498,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     new Object[] { FluixBackboneSmartCableColor[i] });
         }
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 556),
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 76),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), circuit1 },
                 Materials.VibrantAlloy.getMolten(144L),
                 getModItem(AE2, "item.ItemMultiPart", 4, 576),
