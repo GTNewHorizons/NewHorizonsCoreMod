@@ -489,7 +489,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 Materials.EnergeticAlloy.getMolten(144L),
                 getModItem(AE2, "item.ItemMultiPart", 4, 76),
                 150,
-                1920);
+                480);
         // --- ME Smart Backbone Cable Fluix
         for (int i = 0; i < 16; i++) {
             FluixBackboneSmartCableColor[i] = getModItem(AE2, "item.ItemMultiPart", 1, 560 + i);
