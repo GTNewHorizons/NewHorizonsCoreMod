@@ -476,6 +476,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AE2, "item.ItemMultiPart", 4, 56),
                 100,
                 120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1), circuit1 },
+                Materials.ConductiveIron.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 56),
+                100,
+                120);
         // --- ME Smart Dense Cable Fluix
         for (int i = 0; i < 16; i++) {
             FluixDenseSmartCableColor[i] = getModItem(AE2, "item.ItemMultiPart", 1, 60 + i);
