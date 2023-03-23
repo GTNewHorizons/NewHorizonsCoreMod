@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -14,6 +13,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptEnderIO implements IScriptLoader {
 
@@ -63,7 +63,7 @@ public class ScriptEnderIO implements IScriptLoader {
         // ME Conduit
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem("appliedenergistics2", "item.ItemMultiPart", 4, 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L), circuit2},
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L), circuit2 },
                 Materials.ConductiveIron.getMolten(144L),
                 getModItem("EnderIO", "itemMEConduit", 4),
                 200,
@@ -71,7 +71,7 @@ public class ScriptEnderIO implements IScriptLoader {
         // ME Dense Conduit
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L), circuit2},
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L), circuit2 },
                 Materials.EnergeticAlloy.getMolten(144L),
                 getModItem("EnderIO", "itemMEConduit", 4, 1),
                 200,
