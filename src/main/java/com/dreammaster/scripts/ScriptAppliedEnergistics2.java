@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Dyes.*;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -11,10 +12,7 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
@@ -222,6 +220,109 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 40,
                 120);
         // --- Fluix Covered Cable
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 20),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeWhite });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 21),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X',
+                        dyeOrange });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 22),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X',
+                        dyeMagenta });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 23),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X',
+                        dyeLightBlue });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 24),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X',
+                        dyeYellow });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 25),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeLime });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 26),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyePink });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 27),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeGray });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 28),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X',
+                        dyeLightGray });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 29),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeCyan });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 30),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X',
+                        dyePurple });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 31),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeBlue });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 32),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeBrown });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 33),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeGreen });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 34),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeRed });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 35),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 36), 'X', dyeBlack });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 20) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 21) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 22) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 23) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 24) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 25) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 26) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 27) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 28) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 29) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 30) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 31) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 32) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 33) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 34) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 36),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 35) });
+
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { AE2_ME_Glass_Cable, GT_Utility.getIntegratedCircuit(24) },
                 Materials.Rubber.getMolten(144L),
@@ -297,6 +398,109 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 500,
                 120);
         // --- Fluix Dense Covered Cable
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 520),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeWhite });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 521),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X',
+                        dyeOrange });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 522),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X',
+                        dyeMagenta });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 523),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X',
+                        dyeLightBlue });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 524),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X',
+                        dyeYellow });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 525),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeLime });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 526),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyePink });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 527),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeGray });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 528),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X',
+                        dyeLightGray });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 529),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeCyan });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 530),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X',
+                        dyePurple });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 531),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeBlue });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 532),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeBrown });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 533),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeGreen });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 534),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeRed });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 535),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 536), 'X', dyeBlack });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 520) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 521) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 522) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 523) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 524) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 525) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 526) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 527) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 528) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 529) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 530) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 531) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 532) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 533) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 534) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 536),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 535) });
+
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 36), GT_Utility.getIntegratedCircuit(24) },
                 Materials.StyreneButadieneRubber.getMolten(216L),
@@ -366,6 +570,109 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 700,
                 480);
         // --- Fluix Backbone Covered Cable
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 540),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeWhite });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 541),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X',
+                        dyeOrange });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 542),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X',
+                        dyeMagenta });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 543),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X',
+                        dyeLightBlue });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 544),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X',
+                        dyeYellow });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 545),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeLime });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 546),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyePink });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 547),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeGray });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 548),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X',
+                        dyeLightGray });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 549),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeCyan });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 550),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X',
+                        dyePurple });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 551),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeBlue });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 552),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeBrown });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 553),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeGreen });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 554),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeRed });
+        GT_ModHandler.addCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 555),
+                new Object[] { "CCC", "CXC", "CCC", 'C', getModItem(AE2, "item.ItemMultiPart", 1, 556), 'X', dyeBlack });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 540) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 541) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 542) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 543) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 544) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 545) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 546) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 547) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 548) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 549) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 550) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 551) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 552) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 553) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 554) });
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(AE2, "item.ItemMultiPart", 1L, 556),
+                new Object[] { getModItem(AE2, "item.ItemMultiPart", 1, 555) });
+
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 536), GT_Utility.getIntegratedCircuit(24) },
                 Materials.StyreneButadieneRubber.getMolten(432L),
