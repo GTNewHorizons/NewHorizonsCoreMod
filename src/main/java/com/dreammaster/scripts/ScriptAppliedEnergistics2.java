@@ -45,6 +45,11 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         final ItemStack AE2_HOUSING = getModItem(AE2, "item.ItemMultiMaterial", 1, 39);
         final ItemStack AE2_BLOCK_CONTAINER = getModItem(AE2, "item.ItemExtremeStorageCell.Container", 1, 0);
         final ItemStack AE2_ME_CHEST = getModItem(AE2, "tile.BlockChest", 1, 0);
+        final ItemStack AE2_ME_Glass_Cable = getModItem(AE2, "item.ItemMultiPart", 1, 16);
+        final ItemStack AE2_ME_Covered_Cable = getModItem(AE2, "item.ItemMultiPart", 1, 36);
+        final ItemStack AE2_ME_Dense_Covered_Cable = getModItem(AE2, "item.ItemMultiPart", 1, 536);
+        final ItemStack AE2_ME_Backbone_Covered_Cable = getModItem(AE2, "item.ItemMultiPart", 1, 556);
+        ItemStack circuit1 = GT_Utility.getIntegratedCircuit(1);
 
         GT_ModHandler.addShapelessCraftingRecipe(
                 SuperSpeedCard,
@@ -216,6 +221,243 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 AE2_BLOCK_CONTAINER,
                 40,
                 120);
+        // --- Fluix Covered Cable
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { AE2_ME_Glass_Cable, GT_Utility.getIntegratedCircuit(24) },
+                Materials.Rubber.getMolten(144L),
+                AE2_ME_Covered_Cable,
+                150,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { AE2_ME_Glass_Cable, GT_Utility.getIntegratedCircuit(24) },
+                Materials.StyreneButadieneRubber.getMolten(108L),
+                AE2_ME_Covered_Cable,
+                150,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { AE2_ME_Glass_Cable, GT_Utility.getIntegratedCircuit(24) },
+                Materials.Silicone.getMolten(72L),
+                AE2_ME_Covered_Cable,
+                150,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { AE2_ME_Glass_Cable,
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1) },
+                Materials.StyreneButadieneRubber.getMolten(36L),
+                AE2_ME_Covered_Cable,
+                150,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { AE2_ME_Glass_Cable,
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1) },
+                Materials.Silicone.getMolten(36L),
+                AE2_ME_Covered_Cable,
+                150,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { AE2_ME_Glass_Cable,
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1) },
+                Materials.StyreneButadieneRubber.getMolten(36L),
+                AE2_ME_Covered_Cable,
+                150,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { AE2_ME_Glass_Cable,
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1) },
+                Materials.Silicone.getMolten(36L),
+                AE2_ME_Covered_Cable,
+                150,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1) },
+                Materials.StyreneButadieneRubber.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                500,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1) },
+                Materials.Silicone.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                500,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1) },
+                Materials.StyreneButadieneRubber.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                500,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1) },
+                Materials.Silicone.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                500,
+                120);
+        // --- Fluix Dense Covered Cable
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 36), GT_Utility.getIntegratedCircuit(24) },
+                Materials.StyreneButadieneRubber.getMolten(216L),
+                AE2_ME_Dense_Covered_Cable,
+                200,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 36), GT_Utility.getIntegratedCircuit(24) },
+                Materials.Silicone.getMolten(144L),
+                AE2_ME_Dense_Covered_Cable,
+                200,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1) },
+                Materials.StyreneButadieneRubber.getMolten(72L),
+                AE2_ME_Dense_Covered_Cable,
+                200,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1) },
+                Materials.Silicone.getMolten(72L),
+                AE2_ME_Dense_Covered_Cable,
+                200,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1) },
+                Materials.StyreneButadieneRubber.getMolten(72L),
+                AE2_ME_Dense_Covered_Cable,
+                200,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1) },
+                Materials.Silicone.getMolten(72L),
+                AE2_ME_Dense_Covered_Cable,
+                200,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1) },
+                Materials.StyreneButadieneRubber.getMolten(288L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                700,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1) },
+                Materials.Silicone.getMolten(288L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                700,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1) },
+                Materials.StyreneButadieneRubber.getMolten(288L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                700,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 36),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1) },
+                Materials.Silicone.getMolten(288L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                700,
+                480);
+        // --- Fluix Backbone Covered Cable
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 536), GT_Utility.getIntegratedCircuit(24) },
+                Materials.StyreneButadieneRubber.getMolten(432L),
+                AE2_ME_Backbone_Covered_Cable,
+                250,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 536), GT_Utility.getIntegratedCircuit(24) },
+                Materials.Silicone.getMolten(288L),
+                AE2_ME_Dense_Covered_Cable,
+                250,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1) },
+                Materials.StyreneButadieneRubber.getMolten(144L),
+                AE2_ME_Dense_Covered_Cable,
+                250,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1) },
+                Materials.Silicone.getMolten(144L),
+                AE2_ME_Dense_Covered_Cable,
+                250,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1) },
+                Materials.StyreneButadieneRubber.getMolten(144L),
+                AE2_ME_Dense_Covered_Cable,
+                250,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1) },
+                Materials.Silicone.getMolten(144L),
+                AE2_ME_Dense_Covered_Cable,
+                250,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1) },
+                Materials.StyreneButadieneRubber.getMolten(576L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 556),
+                900,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1) },
+                Materials.Silicone.getMolten(576L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 556),
+                900,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1) },
+                Materials.StyreneButadieneRubber.getMolten(576L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 556),
+                900,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1) },
+                Materials.Silicone.getMolten(576L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 556),
+                900,
+                1920);
+        // ME Smart Cable Fluix
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1), circuit1 },
+                Materials.ConductiveIron.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 56),
+                100,
+                120);
+        // --- ME Dense Cable Fluix
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 56),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), circuit1 },
+                Materials.EnergeticAlloy.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 556),
+                150,
+                1920);
+        // --- ME Ultra Dense Cable Fluix
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 556),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), circuit1 },
+                Materials.VibrantAlloy.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 576),
+                200,
+                1920);
 
         // ME Quantum Storage
         GT_ModHandler.removeRecipeByOutput(getModItem(AE2, "item.ItemExtremeStorageCell.Quantum", 1));
