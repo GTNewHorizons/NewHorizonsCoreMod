@@ -5,6 +5,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -34,6 +35,7 @@ public class ScriptEnderIO implements IScriptLoader {
         ItemStack staffOfTravelling = getModItem("EnderIO", "itemTravelStaff", 1, wildcard);
         ItemStack endestPearl = getModItem("Avaritia", "Endest_Pearl", 1);
         ItemStack fieldGeneratorZPM = ItemList.Field_Generator_ZPM.get(1);
+        ItemStack circuit2 = GT_Utility.getIntegratedCircuit(2);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 teleportStaff,
@@ -61,7 +63,7 @@ public class ScriptEnderIO implements IScriptLoader {
         // ME Conduit
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem("appliedenergistics2", "item.ItemMultiPart", 4, 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L) },
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L), circuit2},
                 Materials.ConductiveIron.getMolten(144L),
                 getModItem("EnderIO", "itemMEConduit", 4),
                 200,
@@ -69,7 +71,7 @@ public class ScriptEnderIO implements IScriptLoader {
         // ME Dense Conduit
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L) },
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L), circuit2},
                 Materials.EnergeticAlloy.getMolten(144L),
                 getModItem("EnderIO", "itemMEConduit", 4, 1),
                 200,
@@ -77,7 +79,7 @@ public class ScriptEnderIO implements IScriptLoader {
         // ME Ultra Dense Conduit
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 16, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1L) },
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1L), circuit2 },
                 Materials.VibrantAlloy.getMolten(144L),
                 getModItem("EnderIO", "itemMEConduit", 4, 2),
                 200,
