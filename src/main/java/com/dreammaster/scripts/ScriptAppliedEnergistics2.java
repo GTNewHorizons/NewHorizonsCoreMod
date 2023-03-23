@@ -490,6 +490,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AE2, "item.ItemMultiPart", 4, 76),
                 150,
                 480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 536),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1), circuit1 },
+                Materials.EnergeticAlloy.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 76),
+                150,
+                480);
         // --- ME Smart Backbone Cable Fluix
         for (int i = 0; i < 16; i++) {
             FluixBackboneSmartCableColor[i] = getModItem(AE2, "item.ItemMultiPart", 1, 560 + i);
@@ -499,6 +506,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         }
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 16, 76),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), circuit1 },
+                Materials.VibrantAlloy.getMolten(144L),
+                getModItem(AE2, "item.ItemMultiPart", 4, 576),
+                200,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(AE2, "item.ItemMultiPart", 4, 556),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1), circuit1 },
                 Materials.VibrantAlloy.getMolten(144L),
                 getModItem(AE2, "item.ItemMultiPart", 4, 576),
