@@ -8,7 +8,11 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptEnderIO implements IScriptLoader {
 
@@ -30,6 +34,7 @@ public class ScriptEnderIO implements IScriptLoader {
         ItemStack staffOfTravelling = getModItem("EnderIO", "itemTravelStaff", 1, wildcard);
         ItemStack endestPearl = getModItem("Avaritia", "Endest_Pearl", 1);
         ItemStack fieldGeneratorZPM = ItemList.Field_Generator_ZPM.get(1);
+        ItemStack MEGlassCable = getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 16);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 teleportStaff,
@@ -54,5 +59,28 @@ public class ScriptEnderIO implements IScriptLoader {
                 endestPearl,
                 'f',
                 fieldGeneratorZPM);
+        // ME Conduit
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { MEGlassCable, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SiliconSG, 1L) },
+                Materials.Plastic.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 1),
+                100,
+                256);
+        // ME Dense Conduit
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L) },
+                Materials.Plastic.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 1, 1),
+                100,
+                480);
+        // ME Ultra Dense Conduit
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 4, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L) },
+                Materials.Plastic.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 1, 2),
+                100,
+                960);
     }
 }
