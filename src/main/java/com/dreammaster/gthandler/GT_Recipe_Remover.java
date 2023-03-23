@@ -43,19 +43,23 @@ public class GT_Recipe_Remover implements Runnable {
                 GT_ModHandler.getModItem(modNameAE, "item.ItemMultiPart", 1, 536),
                 true,
                 false,
-                true);        GT_ModHandler.removeRecipeByOutputDelayed(
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(modNameAE, "item.ItemMultiPart", 1, 556),
                 true,
                 false,
-                true);        GT_ModHandler.removeRecipeByOutputDelayed(
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(modNameAE, "item.ItemMultiPart", 1, 56),
                 true,
                 false,
-                true);        GT_ModHandler.removeRecipeByOutputDelayed(
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(modNameAE, "item.ItemMultiPart", 1, 76),
                 true,
                 false,
-                true);        GT_ModHandler.removeRecipeByOutputDelayed(
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(modNameAE, "item.ItemMultiPart", 1, 576),
                 true,
                 false,
