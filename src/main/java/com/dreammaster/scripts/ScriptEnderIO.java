@@ -78,7 +78,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 4, 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L) },
-                Materials.Plastic.getMolten(144L),
+                Materials.Silicone.getMolten(144L),
                 getModItem("EnderIO", "itemMEConduit", 1, 2),
                 100,
                 960);
