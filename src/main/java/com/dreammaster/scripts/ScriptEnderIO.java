@@ -8,7 +8,11 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptEnderIO implements IScriptLoader {
 
@@ -54,5 +58,29 @@ public class ScriptEnderIO implements IScriptLoader {
                 endestPearl,
                 'f',
                 fieldGeneratorZPM);
+        // ME Conduit
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem("appliedenergistics2", "item.ItemMultiPart", 4, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L) },
+                Materials.ConductiveIron.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 4),
+                200,
+                256);
+        // ME Dense Conduit
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L) },
+                Materials.EnergeticAlloy.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 4, 1),
+                200,
+                480);
+        // ME Ultra Dense Conduit
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 16, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1L) },
+                Materials.VibrantAlloy.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 4, 2),
+                200,
+                960);
     }
 }
