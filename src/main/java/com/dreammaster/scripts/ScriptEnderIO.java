@@ -34,7 +34,6 @@ public class ScriptEnderIO implements IScriptLoader {
         ItemStack staffOfTravelling = getModItem("EnderIO", "itemTravelStaff", 1, wildcard);
         ItemStack endestPearl = getModItem("Avaritia", "Endest_Pearl", 1);
         ItemStack fieldGeneratorZPM = ItemList.Field_Generator_ZPM.get(1);
-        ItemStack MEGlassCable = getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 16);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 teleportStaff,
@@ -61,26 +60,26 @@ public class ScriptEnderIO implements IScriptLoader {
                 fieldGeneratorZPM);
         // ME Conduit
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { MEGlassCable, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SiliconSG, 1L) },
-                Materials.Plastic.getMolten(144L),
-                getModItem("EnderIO", "itemMEConduit", 1),
-                100,
+                new ItemStack[] { getModItem("appliedenergistics2", "item.ItemMultiPart", 16, 16), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L) },
+                Materials.ConductiveIron.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 4),
+                200,
                 256);
         // ME Dense Conduit
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 4),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L) },
-                Materials.Plastic.getMolten(144L),
-                getModItem("EnderIO", "itemMEConduit", 1, 1),
-                100,
+                new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L) },
+                Materials.EnergeticAlloy.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 4, 1),
+                200,
                 480);
         // ME Ultra Dense Conduit
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 4, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L) },
-                Materials.Silicone.getMolten(144L),
-                getModItem("EnderIO", "itemMEConduit", 1, 2),
-                100,
+                new ItemStack[] { getModItem("EnderIO", "itemMEConduit", 16, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1L) },
+                Materials.VibrantAlloy.getMolten(144L),
+                getModItem("EnderIO", "itemMEConduit", 4, 2),
+                200,
                 960);
     }
 }
