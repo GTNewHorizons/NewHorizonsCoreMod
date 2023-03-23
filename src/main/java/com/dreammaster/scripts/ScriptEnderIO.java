@@ -60,7 +60,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 fieldGeneratorZPM);
         // ME Conduit
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("appliedenergistics2", "item.ItemMultiPart", 16, 16), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L) },
+                new ItemStack[] { getModItem("appliedenergistics2", "item.ItemMultiPart", 16, 4), GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L) },
                 Materials.ConductiveIron.getMolten(144L),
                 getModItem("EnderIO", "itemMEConduit", 4),
                 200,
