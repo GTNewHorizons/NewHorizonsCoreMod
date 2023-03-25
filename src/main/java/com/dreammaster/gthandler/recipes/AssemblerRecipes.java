@@ -16,6 +16,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 
 import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.*;
@@ -3491,6 +3492,17 @@ public class AssemblerRecipes implements Runnable {
                 3750,
                 30720,
                 true);
+
+        if (Loader.isModLoaded("bartworks")) {
+            // Humongous input hatch
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { CustomItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1) },
+                    Materials.Space.getMolten(5_760L),
+                    ItemRegistry.humongousInputHatch.copy(),
+                    50 * 20,
+                    (int) TierEU.RECIPE_UMV,
+                    false);
+        }
 
         // Wood Plates
         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(
