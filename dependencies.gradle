@@ -15,7 +15,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.0.8:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.0.3:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:TecTech:5.1.0:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:bartworks:0.6.3:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:bartworks:0.6.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.3.40-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.3.6:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.6.0:api") { transitive = false }
