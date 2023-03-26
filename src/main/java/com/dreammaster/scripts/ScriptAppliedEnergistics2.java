@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Dyes.*;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
