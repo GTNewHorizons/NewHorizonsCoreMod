@@ -170,20 +170,20 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         // Humidifier Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_HUMIDIFIER.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Cactus, UpgradeFrame,
-                        Cactus, SmallStainlessGear, WaterBucket, SmallStainlessGear });
+                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Cactus, UpgradeFrame, Cactus,
+                        SmallStainlessGear, WaterBucket, SmallStainlessGear });
 
         // HELL Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_HELL.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Items.blaze_rod,
-                        UpgradeFrame, Items.ghast_tear, SmallStainlessGear, EnvironmentalProcessor, SmallStainlessGear });
+                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Items.blaze_rod, UpgradeFrame,
+                        Items.ghast_tear, SmallStainlessGear, EnvironmentalProcessor, SmallStainlessGear });
 
         // Pollen Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_POLLEN.get(1),
-                new Object[] { SmallSteelGear, SteelBars, SmallSteelGear, TitaniumRotor, UpgradeFrame,
-                        TitaniumRotor, SmallStainlessGear, SteelBars, SmallStainlessGear });
+                new Object[] { SmallSteelGear, SteelBars, SmallSteelGear, TitaniumRotor, UpgradeFrame, TitaniumRotor,
+                        SmallStainlessGear, SteelBars, SmallStainlessGear });
 
         // Desert Upgrade
         addShapedRecipe(
