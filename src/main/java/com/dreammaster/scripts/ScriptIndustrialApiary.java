@@ -61,6 +61,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemStack EnvironmentalProcessor = getModItem("gendustry", "EnvProcessor", 1);
         final Block Grass = Blocks.grass;
         final ItemStack GlowstoneGlass = getModItem("ExtraUtilities", "decorativeBlock2", 1, 7);
+        final ItemStack ReinforcedDarkGlass = getModItem("ExtraUtilities", "decorativeBlock2", 1, 11);
         final ItemStack BotanyPollen = getModItem("Botany", "pollen", 1, wildcard);
         final ItemStack HardenedIce = getModItem("BiomesOPlenty", "hardIce", 1);
         final ItemStack Sand = new ItemStack(Blocks.sand, 1, wildcard);
@@ -142,6 +143,12 @@ public class ScriptIndustrialApiary implements IScriptLoader {
                 ItemList.IndustrialApiary_Upgrade_LIGHT.get(1),
                 new Object[] { SmallSteelGear, GlowstoneGlass, SmallSteelGear, GlowstoneGlass, UpgradeFrame,
                         GlowstoneGlass, SmallStainlessGear, GlowstoneGlass, SmallStainlessGear });
+
+        // Unlight Upgrade
+        addShapedRecipe(
+                ItemList.IndustrialApiary_Upgrade_UNLIGHT.get(1),
+                new Object[] { SmallSteelGear, ReinforcedDarkGlass, SmallSteelGear, ReinforcedDarkGlass, UpgradeFrame,
+                        ReinforcedDarkGlass, SmallStainlessGear, ReinforcedDarkGlass, SmallStainlessGear });
 
         // Flowering Upgrade
         addShapedRecipe(
