@@ -2,6 +2,8 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.List;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -18,7 +20,14 @@ import com.dreammaster.thaumcraft.TCHelper;
 public class ScriptEMT implements IScriptLoader {
 
     @Override
-    public void initScriptData() {}
+    public String getScriptName() {
+        return "EMT";
+    }
+
+    @Override
+    public List<String> getDependencies() {
+        return null;
+    }
 
     @Override
     public void loadRecipes() {

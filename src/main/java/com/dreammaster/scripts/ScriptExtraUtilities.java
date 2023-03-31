@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -20,11 +21,13 @@ import thaumcraft.api.research.ResearchPage;
 public class ScriptExtraUtilities implements IScriptLoader {
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("ExtraUtilities");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("ExtraUtilities", "Thaumcraft", "ProjRed|Illumination"));
+    public String getScriptName() {
+        return "ExtraUtilities";
+    }
+
+    @Override
+    public List<String> getDependencies() {
+        return Arrays.asList("ExtraUtilities", "Thaumcraft", "ProjRed|Illumination");
     }
 
     @Override
