@@ -4,6 +4,7 @@ import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
@@ -13,14 +14,14 @@ import gregtech.api.util.GT_ModHandler;
 
 public class ScriptBiblioCraft implements IScriptLoader {
 
-    public ScriptBiblioCraft() {}
+    @Override
+    public String getScriptName() {
+        return "BiblioCraft";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("BiblioCraft");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("BiblioCraft", "harvestcraft", "FloodLights"));
+    public List<String> getDependencies() {
+        return Arrays.asList("BiblioCraft", "harvestcraft", "FloodLights");
     }
 
     @Override

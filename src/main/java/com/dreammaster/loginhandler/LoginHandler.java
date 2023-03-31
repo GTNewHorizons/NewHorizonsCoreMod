@@ -15,10 +15,14 @@ public class LoginHandler {
     private static final String[] LOGIN_TEXT = {
             GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------",
             BOLD + "Welcome to Gregtech: New Horizons " + GREEN + ModPackVersion,
-            RED + "We are aware that in this version, ", RED + "pattern substitution can behave weirdly.",
-            RED + "Please don't report it, thanks.", BLUE + "The Quest Book has a shortcut key, check your keybindings",
-            BLUE + "to remove conflicts.", DARK_GREEN + "GTNH WIKI link https://gtnh.miraheze.org/wiki/",
-            GREEN + "Please report bugs here:", GOLD + "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/",
+            RED + "WARNING: ExtraCells 2 is now officially deprecated",
+            RED + "and will be removed in a future version.",
+            RED + "All parts can be converted to their AE2FC equivalent", RED + "by putting them into a crafting grid.",
+            RED + "Better Questing Mod use now UUID for quest ID", RED + "and split up giant quest JSON file.",
+            RED + "This change is not revers-able.", RED + "Make a backup before save your Quest Book file",
+            BLUE + "The Quest Book has a shortcut key, check your keybindings", BLUE + "to remove conflicts.",
+            DARK_GREEN + "GTNH WIKI link https://gtnh.miraheze.org/wiki/", GREEN + "Please report bugs here:",
+            GOLD + "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/",
             BLUE + "Visit our discord at https://discord.gg/gtnh",
             GOLD.toString() + STRIKETHROUGH + "-----------------------------------------------------" };
 

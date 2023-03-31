@@ -2,116 +2,93 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Arrays;
+import java.util.List;
+
 import javax.annotation.Nonnull;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
 
 public class ScriptEC2 implements IScriptLoader {
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("EC2");
-        dependencies.clear();
-        dependencies.addAll(java.util.Arrays.asList("extracells", "Avaritia", "eternalsingularity"));
+    public String getScriptName() {
+        return "EC2";
+    }
+
+    @Override
+    public List<String> getDependencies() {
+        return Arrays.asList("extracells", "ae2fc", "appliedenergistics2");
     }
 
     @Override
     public void loadRecipes() {
-        final ItemStack GLASS_PANE = new ItemStack(Blocks.glass_pane, 1);
-
+        final String AE2 = "appliedenergistics2";
+        final String EC2 = "extracells";
         final ItemStack CERTUS_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L);
-
         final ItemStack EC2_ADVANCED_HOUSING = getModItem("extracells", "storage.casing", 1, 0);
-        final ItemStack EC2_FLUID_HOUSING = getModItem("extracells", "storage.casing", 1, 1);
+        final ItemStack EC_FLUID_STORAGE_BUS = getModItem("extracells", "part.base", 1, 2);
+        final ItemStack AE2FC_FLUID_STORAGE_BUS = getModItem("ae2fc", "part_fluid_storage_bus", 1, 0);
+        final ItemStack AE2_ADVANCED_HOUSING = getModItem(AE2, "item.ItemMultiMaterial", 1, 61);
+        final ItemStack AE2FC_FLUID_TERMINAL = getModItem("ae2fc", "part_fluid_terminal", 1, 0);
+        final ItemStack EC_FLUID_TERMINAL = getModItem("extracells", "part.base", 1, 3);
+        final ItemStack AE2FC_INTERFACE = getModItem("ae2fc", "fluid_interface", 1, 0);
+        final ItemStack EC2_INTERFACE = getModItem(EC2, "ecbaseblock", 1, 0);
+        final ItemStack AE2FC_AUTO_FILLER = getModItem("ae2fc", "fluid_auto_filler", 1, 0);
+        final ItemStack EC2_AUTO_FILLER = getModItem(EC2, "ecbaseblock", 1, 1);
+        final ItemStack AE2FC_PORTABLE_CELL = getModItem("ae2fc", "portable_fluid_cell", 1, 0);
+        final ItemStack EC2_PORTABLE_CELL = getModItem(EC2, "storage.fluid.portable", 1, 0);
+        final ItemStack AE2FC_TANK = getModItem("ae2fc", "certus_quartz_tank", 1, 0);
+        final ItemStack EC2_TANK = getModItem(EC2, "certustank", 1, 0);
 
-        // EC2 Housings
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GLASS_PANE, CERTUS_PLATE,
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 3L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
-                        GT_Utility.getIntegratedCircuit(3) },
-                GT_Values.NF,
-                EC2_ADVANCED_HOUSING,
-                100,
-                16);
+        final ItemStack[] ae_components = new ItemStack[] { getModItem(AE2, "item.ItemMultiMaterial", 1, 57), // 256k
+                getModItem(AE2, "item.ItemMultiMaterial", 1, 58), // 1024k
+                getModItem(AE2, "item.ItemMultiMaterial", 1, 59), // 4096k
+                getModItem(AE2, "item.ItemMultiMaterial", 1, 60), // 16384k
+                getModItem(AE2, "tile.BlockAdvancedCraftingStorage", 1, 0), // 256k
+                getModItem(AE2, "tile.BlockAdvancedCraftingStorage", 1, 1), // 1024k
+                getModItem(AE2, "tile.BlockAdvancedCraftingStorage", 1, 2), // 4096k
+                getModItem(AE2, "tile.BlockAdvancedCraftingStorage", 1, 3), // 16384k
+                getModItem(AE2, "item.ItemVoidStorageCell", 1, 0), getModItem("ae2fc", "walrus", 1, 0),
+                getModItem("ae2fc", "part_fluid_export", 1, 0), getModItem("ae2fc", "part_fluid_import", 1, 0),
+                getModItem("ae2fc", "part_fluid_level_emitter", 1, 0),
+                getModItem("ae2fc", "part_fluid_storage_monitor", 1, 0),
+                getModItem("ae2fc", "part_fluid_conversion_monitor", 1, 0),
+                getModItem("ae2fc", "wireless_fluid_terminal", 1, 0) };
+        final ItemStack[] ec_components = new ItemStack[] { getModItem(EC2, "storage.component", 1, 0), // 256k
+                getModItem(EC2, "storage.component", 1, 1), // 1024k
+                getModItem(EC2, "storage.component", 1, 2), // 4096k
+                getModItem(EC2, "storage.component", 1, 3), // 16384k
+                getModItem(EC2, "craftingstorage", 1, 0), // 256k
+                getModItem(EC2, "craftingstorage", 1, 1), // 1024k
+                getModItem(EC2, "craftingstorage", 1, 2), // 4096k
+                getModItem(EC2, "craftingstorage", 1, 3), // 16384k
+                getModItem(EC2, "storage.physical.void", 1, 0), getModItem(EC2, "walrus", 1, 0),
+                getModItem(EC2, "part.base", 1, 0), getModItem(EC2, "part.base", 1, 1),
+                getModItem(EC2, "part.base", 1, 4), getModItem(EC2, "part.base", 1, 10),
+                getModItem(EC2, "part.base", 1, 11),
+                getModItem(EC2, "terminal.fluid.wireless", 1, OreDictionary.WILDCARD_VALUE) };
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GLASS_PANE, CERTUS_PLATE,
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
-                        GT_Utility.getIntegratedCircuit(3) },
-                GT_Values.NF,
-                EC2_FLUID_HOUSING,
-                100,
-                16);
-        // ME Digital Singularity
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("extracells", "storage.physical.advanced.singularity", 1),
-                "----a----",
-                "---aba---",
-                "--ecdce--",
-                "-acdddca-",
-                "abddfddba",
-                "-acdddca-",
-                "--ecdce--",
-                "---aba---",
-                "----a----",
-                'a',
-                "blockCosmicNeutronium",
-                'b',
-                getModItem("Avaritia", "Resource", 1, 5),
-                'c',
-                getModItem("gregtech", "gt.blockmachines", 1, 129),
-                'd',
-                getModItem("extracells", "storage.component", 1, 3),
-                'e',
-                "blockInfinity",
-                'f',
-                getModItem("eternalsingularity", "eternal_singularity", 1));
-
-        // ME Quantum Storage
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("extracells", "storage.physical.advanced.quantum", 1),
-                "---------",
-                "----a----",
-                "---bdb---",
-                "--bcdcb--",
-                "-addedda-",
-                "--bcdcb--",
-                "---bdb---",
-                "----a----",
-                "---------",
-                'a',
-                "blockCosmicNeutronium",
-                'b',
-                "plateDenseNeutronium",
-                'c',
-                "circuitInfinite",
-                'd',
-                getModItem("extracells", "storage.component", 1, 3),
-                'e',
-                getModItem("extracells", "storage.casing", 1));
-
-        // ME Void Storage
-        addShapedRecipe(
-                getModItem("extracells", "storage.physical.void", 1),
-                new Object[] { "craftingToolHardHammer", "plateCertusQuartz", "screwCertusQuartz", "plateTungsten",
-                        "gemEnderEye", "plateTungsten", "screwCertusQuartz", "plateTungsten",
-                        "craftingToolScrewdriver" });
+        // Covert recipes
+        GameRegistry.addShapelessRecipe(AE2FC_FLUID_STORAGE_BUS, EC_FLUID_STORAGE_BUS);
+        GameRegistry.addShapelessRecipe(AE2_ADVANCED_HOUSING, EC2_ADVANCED_HOUSING);
+        GameRegistry.addShapelessRecipe(AE2FC_FLUID_TERMINAL, EC_FLUID_TERMINAL);
+        GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, EC2_INTERFACE, CERTUS_PLATE);
+        GameRegistry.addShapelessRecipe(AE2FC_AUTO_FILLER, EC2_AUTO_FILLER);
+        GameRegistry.addShapelessRecipe(AE2FC_PORTABLE_CELL, EC2_PORTABLE_CELL);
+        for (int i = 0; i < ae_components.length; i++) {
+            GameRegistry.addShapelessRecipe(ae_components[i], ec_components[i]);
+        }
 
         // Item cell covert recipe
         GameRegistry.addRecipe(
@@ -130,6 +107,19 @@ public class ScriptEC2 implements IScriptLoader {
                 new NBTRecipe(
                         getModItem("extracells", "storage.physical", 1, 3),
                         getModItem("appliedenergistics2", "item.ItemAdvancedStorageCell.16384k", 1)));
+        GameRegistry.addRecipe(
+                new NBTRecipe(
+                        getModItem("extracells", "storage.physical", 1, 4),
+                        getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Container", 1)));
+        GameRegistry.addRecipe(
+                new NBTRecipe(
+                        getModItem("extracells", "storage.physical.advanced.quantum", 1, 0),
+                        getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Quantum", 1)));
+        GameRegistry.addRecipe(
+                new NBTRecipe(
+                        getModItem("extracells", "storage.physical.advanced.singularity", 1, 0),
+                        getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Singularity", 1)));
+        GameRegistry.addRecipe(new NBTRecipe(EC2_TANK, AE2FC_TANK));
     }
 
     public static class NBTRecipe implements IRecipe {

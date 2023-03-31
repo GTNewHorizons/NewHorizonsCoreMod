@@ -4,6 +4,7 @@ import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -23,11 +24,13 @@ import gregtech.api.util.GT_Utility;
 public class ScriptAvaritiaAddons implements IScriptLoader {
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("Avaritia addons");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("avaritiaddons", "eternalsingularity", "extracells", "gregtech", "Avaritia"));
+    public String getScriptName() {
+        return "Avaritia addons";
+    }
+
+    @Override
+    public List<String> getDependencies() {
+        return Arrays.asList("avaritiaddons", "eternalsingularity", "extracells", "gregtech", "Avaritia");
     }
 
     @Override
@@ -100,7 +103,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 'g',
                 getModItem("gregtech", "gt.blockmachines", 1, 129),
                 'h',
-                getModItem("extracells", "storage.component", 1, 3));
+                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 60));
 
         // Infinity Egg (Witchery)
         if (Loader.isModLoaded("witchery") && Config.witch) {

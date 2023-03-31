@@ -120,7 +120,13 @@ public class DepLoader implements IFMLCallHook {
             LOGGER.info("No dependencies found.");
             return null;
         }
-        LOGGER.info("Found {} dependencies.", deps.size());
+        final long disabledDepCount = deps.stream().filter(Dependency::isDisabled).count();
+        final long foundDepCount = deps.stream().filter(Dependency::isFound).count();
+        LOGGER.info(
+                "Found {} dependencies. {} are disabled, {} are found.",
+                deps.size(),
+                disabledDepCount,
+                foundDepCount);
 
         // check deps
         boolean downloaded = false;

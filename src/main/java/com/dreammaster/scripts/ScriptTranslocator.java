@@ -2,18 +2,19 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class ScriptTranslocator implements IScriptLoader {
 
-    public ScriptTranslocator() {}
+    @Override
+    public String getScriptName() {
+        return "Translocators";
+    }
 
     @Override
-    public void initScriptData() {
-        scriptName.setLength(0);
-        scriptName.append("Translocators");
-        dependencies.clear();
-        dependencies.addAll(Arrays.asList("Translocator"));
+    public List<String> getDependencies() {
+        return Collections.singletonList("Translocator");
     }
 
     @Override
