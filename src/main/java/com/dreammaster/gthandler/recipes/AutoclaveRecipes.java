@@ -1,5 +1,10 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.MissingModIDs.EnderZoo;
+import static com.dreammaster.MissingModIDs.SGCraft;
+import static gregtech.api.enums.ModIDs.GalacticraftMars;
+import static gregtech.api.enums.ModIDs.Gendustry;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -13,11 +18,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-
-import static com.dreammaster.MissingModIDs.EnderZoo;
-import static com.dreammaster.MissingModIDs.SGCraft;
-import static gregtech.api.enums.ModIDs.GalacticraftMars;
-import static gregtech.api.enums.ModIDs.Gendustry;
 
 public class AutoclaveRecipes implements Runnable {
 

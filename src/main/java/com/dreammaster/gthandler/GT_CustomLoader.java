@@ -1,5 +1,8 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.ModIDs.EnderIO;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -8,13 +11,9 @@ import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.modfixes.enderIO.FrankenskullFix;
 import com.dreammaster.scripts.ScriptLoader;
 
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.EnderIO;
 
 /**
  * How to add new Stuff: Ask Namikon
@@ -26,20 +25,17 @@ public class GT_CustomLoader {
         LuV(OrePrefixes.circuit.get(Materials.Master), OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
                 Materials.VanadiumGallium, OrePrefixes.wireGt02.get(Materials.HSSG),
                 OrePrefixes.gemExquisite.get(Materials.Diamond), gregtech.api.enums.ItemList.Gravistar,
-                BartWorks.isModLoaded() ? "blockGlassLuV" : "glassReinforced", Materials.Chrome,
-                Materials.Enderium),
+                BartWorks.isModLoaded() ? "blockGlassLuV" : "glassReinforced", Materials.Chrome, Materials.Enderium),
 
         ZPM(OrePrefixes.circuit.get(Materials.Ultimate), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
                 Materials.Naquadah, OrePrefixes.wireGt02.get(Materials.Naquadah),
                 OrePrefixes.gemExquisite.get(Materials.GarnetYellow), ItemList.MysteriousCrystal.getIS(),
-                BartWorks.isModLoaded() ? "blockGlassZPM" : "glassReinforced", Materials.Iridium,
-                Materials.Naquadah),
+                BartWorks.isModLoaded() ? "blockGlassZPM" : "glassReinforced", Materials.Iridium, Materials.Naquadah),
 
         UV(OrePrefixes.circuit.get(Materials.Superconductor), OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),
                 Materials.ElectrumFlux, OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
                 OrePrefixes.gemExquisite.get(Materials.GarnetRed), new ItemStack(Blocks.dragon_egg, 1),
-                BartWorks.isModLoaded() ? "blockGlassUV" : "glassReinforced", Materials.Osmium,
-                Materials.Neutronium),
+                BartWorks.isModLoaded() ? "blockGlassUV" : "glassReinforced", Materials.Osmium, Materials.Neutronium),
 
         UHV(OrePrefixes.circuit.get(Materials.Infinite), OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
                 Materials.Bedrockium, Materials.Bedrockium, null, null,
@@ -149,7 +145,7 @@ public class GT_CustomLoader {
 
     public void run() {
         GameRegistry.registerItem(QuantumBread.Instance(), "itemQuantumToast");
-        if (EnderIO.isModLoaded()){
+        if (EnderIO.isModLoaded()) {
             FrankenskullFix.fixEnderIO();
         }
         MaterialLoader.run();

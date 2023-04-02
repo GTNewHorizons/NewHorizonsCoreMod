@@ -45,8 +45,7 @@ public enum MissingModIDs {
     TravellersGear("TravellersGear"),
     ThaumicEnergistics("thaumicenergistics"),
     Witchery("witchery"),
-    ZTones("Ztones")
-    ;
+    ZTones("Ztones");
 
     public final String modID;
     private Boolean modLoaded;
@@ -62,5 +61,3 @@ public enum MissingModIDs {
         return this.modLoaded;
     }
 }
-
-

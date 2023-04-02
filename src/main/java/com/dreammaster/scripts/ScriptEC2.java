@@ -10,7 +10,6 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import gregtech.api.enums.ModIDs;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -20,6 +19,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.ModIDs;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 
@@ -32,7 +32,7 @@ public class ScriptEC2 implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(ExtraCells2.modID, AE2FluidCraft.modID, AppliedEnergistics2.modID );
+        return Arrays.asList(ExtraCells2.modID, AE2FluidCraft.modID, AppliedEnergistics2.modID);
     }
 
     @Override
@@ -53,7 +53,8 @@ public class ScriptEC2 implements IScriptLoader {
         final ItemStack AE2FC_TANK = getModItem(AE2FluidCraft.modID, "certus_quartz_tank", 1, 0);
         final ItemStack EC2_TANK = getModItem(ModIDs.ExtraCells2.modID, "certustank", 1, 0);
 
-        final ItemStack[] ae_components = new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 57), // 256k
+        final ItemStack[] ae_components = new ItemStack[] {
+                getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 57), // 256k
                 getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 58), // 1024k
                 getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 59), // 4096k
                 getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 60), // 16384k
@@ -61,13 +62,16 @@ public class ScriptEC2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.modID, "tile.BlockAdvancedCraftingStorage", 1, 1), // 1024k
                 getModItem(AppliedEnergistics2.modID, "tile.BlockAdvancedCraftingStorage", 1, 2), // 4096k
                 getModItem(AppliedEnergistics2.modID, "tile.BlockAdvancedCraftingStorage", 1, 3), // 16384k
-                getModItem(AppliedEnergistics2.modID, "item.ItemVoidStorageCell", 1, 0), getModItem(AE2FluidCraft.modID, "walrus", 1, 0),
-                getModItem(AE2FluidCraft.modID, "part_fluid_export", 1, 0), getModItem(AE2FluidCraft.modID, "part_fluid_import", 1, 0),
+                getModItem(AppliedEnergistics2.modID, "item.ItemVoidStorageCell", 1, 0),
+                getModItem(AE2FluidCraft.modID, "walrus", 1, 0),
+                getModItem(AE2FluidCraft.modID, "part_fluid_export", 1, 0),
+                getModItem(AE2FluidCraft.modID, "part_fluid_import", 1, 0),
                 getModItem(AE2FluidCraft.modID, "part_fluid_level_emitter", 1, 0),
                 getModItem(AE2FluidCraft.modID, "part_fluid_storage_monitor", 1, 0),
                 getModItem(AE2FluidCraft.modID, "part_fluid_conversion_monitor", 1, 0),
                 getModItem(AE2FluidCraft.modID, "wireless_fluid_terminal", 1, 0) };
-        final ItemStack[] ec_components = new ItemStack[] { getModItem(ModIDs.ExtraCells2.modID, "storage.component", 1, 0), // 256k
+        final ItemStack[] ec_components = new ItemStack[] {
+                getModItem(ModIDs.ExtraCells2.modID, "storage.component", 1, 0), // 256k
                 getModItem(ModIDs.ExtraCells2.modID, "storage.component", 1, 1), // 1024k
                 getModItem(ModIDs.ExtraCells2.modID, "storage.component", 1, 2), // 4096k
                 getModItem(ModIDs.ExtraCells2.modID, "storage.component", 1, 3), // 16384k
@@ -75,9 +79,12 @@ public class ScriptEC2 implements IScriptLoader {
                 getModItem(ModIDs.ExtraCells2.modID, "craftingstorage", 1, 1), // 1024k
                 getModItem(ModIDs.ExtraCells2.modID, "craftingstorage", 1, 2), // 4096k
                 getModItem(ModIDs.ExtraCells2.modID, "craftingstorage", 1, 3), // 16384k
-                getModItem(ModIDs.ExtraCells2.modID, "storage.physical.void", 1, 0), getModItem(ModIDs.ExtraCells2.modID, "walrus", 1, 0),
-                getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 0), getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 1),
-                getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 4), getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 10),
+                getModItem(ModIDs.ExtraCells2.modID, "storage.physical.void", 1, 0),
+                getModItem(ModIDs.ExtraCells2.modID, "walrus", 1, 0),
+                getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 0),
+                getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 1),
+                getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 4),
+                getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 10),
                 getModItem(ModIDs.ExtraCells2.modID, "part.base", 1, 11),
                 getModItem(ModIDs.ExtraCells2.modID, "terminal.fluid.wireless", 1, OreDictionary.WILDCARD_VALUE) };
 

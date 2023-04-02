@@ -1,5 +1,7 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.enums.ModIDs.GTPlusPlus;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -12,7 +14,6 @@ import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
 import com.dreammaster.gthandler.turboCharger.GT_MetaTileEntity_TurboCharger;
 import com.dreammaster.item.food.QuantumBread;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.*;
 import gregtech.api.metatileentity.implementations.*;
@@ -24,8 +25,6 @@ import gregtech.common.tileentities.generators.GT_MetaTileEntity_PlasmaGenerator
 import gregtech.common.tileentities.machines.basic.*;
 import gregtech.loaders.preload.GT_Loader_MetaTileEntities;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GregtechMetaTransformerHiAmp;
-
-import static gregtech.api.enums.ModIDs.GTPlusPlus;
 
 public class GT_Loader_Machines {
 

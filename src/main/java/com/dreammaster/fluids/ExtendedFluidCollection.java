@@ -1,16 +1,15 @@
 package com.dreammaster.fluids;
 
+import static gregtech.api.enums.ModIDs.BiomesOPlanty;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.Fluid;
 
-import cpw.mods.fml.common.Loader;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
-
-import static gregtech.api.enums.ModIDs.BiomesOPlanty;
 
 public final class ExtendedFluidCollection {
 

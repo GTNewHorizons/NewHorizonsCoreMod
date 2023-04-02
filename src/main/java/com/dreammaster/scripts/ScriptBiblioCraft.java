@@ -27,7 +27,12 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(BiblioCraft.modID, PamsHarvestCraft.modID, FloodLights.modID, IndustrialCraft2.modID, OpenComputers.modID);
+        return Arrays.asList(
+                BiblioCraft.modID,
+                PamsHarvestCraft.modID,
+                FloodLights.modID,
+                IndustrialCraft2.modID,
+                OpenComputers.modID);
     }
 
     @Override
@@ -46,7 +51,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
         ItemStack[] Swood = new ItemStack[] { getModItem(Minecraft.modID, "wooden_slab", 1, 0),
                 getModItem(Minecraft.modID, "wooden_slab", 1, 1), getModItem(Minecraft.modID, "wooden_slab", 1, 2),
                 getModItem(Minecraft.modID, "wooden_slab", 1, 3), getModItem(Minecraft.modID, "wooden_slab", 1, 4),
-                getModItem(Minecraft.modID, "wooden_slab", 1, 5), getModItem(BiblioCraft.modID, "item.FramingSheet", 1, 0) };
+                getModItem(Minecraft.modID, "wooden_slab", 1, 5),
+                getModItem(BiblioCraft.modID, "item.FramingSheet", 1, 0) };
 
         String[] colorsLamp = new String[] { "dyeLightGray", "dyeGray", "dyeBlack", "dyeRed", "dyeOrange", "dyeYellow",
                 "dyeLime", "dyeGreen", "dyeCyan", "dyeLightBlue", "dyeBlue", "dyePurple", "dyeMagenta", "dyePink",
@@ -55,7 +61,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
         ItemStack[] Bwood = new ItemStack[] { getModItem(Minecraft.modID, "wooden_slab", 1, 0),
                 getModItem(Minecraft.modID, "wooden_slab", 1, 1), getModItem(Minecraft.modID, "wooden_slab", 1, 2),
                 getModItem(Minecraft.modID, "wooden_slab", 1, 3), getModItem(Minecraft.modID, "wooden_slab", 1, 4),
-                getModItem(Minecraft.modID, "wooden_slab", 1, 5), getModItem(BiblioCraft.modID, "item.FramingBoard", 1, 0) };
+                getModItem(Minecraft.modID, "wooden_slab", 1, 5),
+                getModItem(BiblioCraft.modID, "item.FramingBoard", 1, 0) };
 
         ItemStack[] planks = new ItemStack[] { getModItem(Minecraft.modID, "planks", 1, 0),
                 getModItem(Minecraft.modID, "planks", 1, 1), getModItem(Minecraft.modID, "planks", 1, 2),
@@ -230,10 +237,10 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "BiblioPaneler", 1),
-                new Object[] { "plateIron", "craftingToolSaw", "plateIron", getModItem(Minecraft.modID, "wooden_slab", 1),
-                        getMeta02(32470), getModItem(Minecraft.modID, "wooden_slab", 1),
-                        getModItem(Minecraft.modID, "planks", 1), getModItem(Minecraft.modID, "planks", 1),
-                        getModItem(Minecraft.modID, "planks", 1) });
+                new Object[] { "plateIron", "craftingToolSaw", "plateIron",
+                        getModItem(Minecraft.modID, "wooden_slab", 1), getMeta02(32470),
+                        getModItem(Minecraft.modID, "wooden_slab", 1), getModItem(Minecraft.modID, "planks", 1),
+                        getModItem(Minecraft.modID, "planks", 1), getModItem(Minecraft.modID, "planks", 1) });
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "BiblioPaneler", 1, 1),
@@ -293,24 +300,24 @@ public class ScriptBiblioCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "BiblioLantern", 1),
                 new Object[] { "plateGold", "dustGlowstone", "plateGold", "paneGlassColorless",
-                        getModItem(PamsHarvestCraft.modID, "pamcandleDeco1", 1), "paneGlassColorless", "plateGold", "plateGold",
-                        "plateGold" });
+                        getModItem(PamsHarvestCraft.modID, "pamcandleDeco1", 1), "paneGlassColorless", "plateGold",
+                        "plateGold", "plateGold" });
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "BiblioIronLantern", 1),
                 new Object[] { "plateIron", "dustGlowstone", "plateIron", "paneGlassColorless",
-                        getModItem(PamsHarvestCraft.modID, "pamcandleDeco1", 1), "paneGlassColorless", "plateIron", "plateIron",
-                        "plateIron" });
+                        getModItem(PamsHarvestCraft.modID, "pamcandleDeco1", 1), "paneGlassColorless", "plateIron",
+                        "plateIron", "plateIron" });
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "BiblioLamp", 1),
-                new Object[] { "plateGold", getModItem(FloodLights.modID, "electricIncandescentLightBulb", 1), "plateGold",
-                        null, "stickGold", null, "plateGold", "plateGold", "plateGold" });
+                new Object[] { "plateGold", getModItem(FloodLights.modID, "electricIncandescentLightBulb", 1),
+                        "plateGold", null, "stickGold", null, "plateGold", "plateGold", "plateGold" });
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "BiblioIronLamp", 1),
-                new Object[] { "plateIron", getModItem(FloodLights.modID, "electricIncandescentLightBulb", 1), "plateIron",
-                        null, "stickGold", null, "plateIron", "plateIron", "plateIron" });
+                new Object[] { "plateIron", getModItem(FloodLights.modID, "electricIncandescentLightBulb", 1),
+                        "plateIron", null, "stickGold", null, "plateIron", "plateIron", "plateIron" });
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "Armor Stand", 1),
@@ -340,8 +347,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "item.FramingBoard", 2),
-                new Object[] { getModItem(BiblioCraft.modID, "item.FramingSheet", 1), "craftingToolSaw", null, null, null,
-                        null, null, null, null });
+                new Object[] { getModItem(BiblioCraft.modID, "item.FramingSheet", 1), "craftingToolSaw", null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "item.BiblioMapTool", 1),
@@ -381,19 +388,20 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "item.tapeMeasure", 1),
-                new Object[] { getModItem(BiblioCraft.modID, "item.tape", 1), getModItem(BiblioCraft.modID, "item.tape", 1),
-                        getModItem(BiblioCraft.modID, "item.tape", 1), "stickIron", "stickIron", "stickIron", null, null,
-                        null });
+                new Object[] { getModItem(BiblioCraft.modID, "item.tape", 1),
+                        getModItem(BiblioCraft.modID, "item.tape", 1), getModItem(BiblioCraft.modID, "item.tape", 1),
+                        "stickIron", "stickIron", "stickIron", null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "item.BiblioClipboard", 1),
                 new Object[] { "screwIron", "springSmallIron", "screwIron", "craftingToolScrewdriver", getMeta01(17809),
-                        "craftingToolSaw", getModItem(Minecraft.modID, "paper", 1), getModItem(Minecraft.modID, "paper", 1),
-                        getModItem(Minecraft.modID, "paper", 1) });
+                        "craftingToolSaw", getModItem(Minecraft.modID, "paper", 1),
+                        getModItem(Minecraft.modID, "paper", 1), getModItem(Minecraft.modID, "paper", 1) });
 
         addShapelessCraftingRecipe(
                 getModItem(BiblioCraft.modID, "item.BiblioRedBook", 1),
-                new Object[] { getModItem(Minecraft.modID, "redstone_torch", 1), getModItem(Minecraft.modID, "book", 1) });
+                new Object[] { getModItem(Minecraft.modID, "redstone_torch", 1),
+                        getModItem(Minecraft.modID, "book", 1) });
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "item.BiblioWayPointCompass", 1),
@@ -410,8 +418,8 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioCraft.modID, "item.BiblioGlasses", 1, 1),
-                new Object[] { null, getModItem(BiblioCraft.modID, "item.BiblioGlasses", 1), null, null, "dyeGray", null,
-                        null, null, null });
+                new Object[] { null, getModItem(BiblioCraft.modID, "item.BiblioGlasses", 1), null, null, "dyeGray",
+                        null, null, null, null });
 
         for (int i = 1; i < 16; i++) {
             addShapelessCraftingRecipe(
@@ -430,13 +438,13 @@ public class ScriptBiblioCraft implements IScriptLoader {
         for (int i = 0; i < 16; i++) {
             addShapedRecipe(
                     TypeWriterB[i],
-                    new Object[] { "plateRubber", getModItem(OpenComputers.modID, "item", 1, 20), "plateRubber", "ringIron",
-                            color16[i], "ringIron", "plateIron", "blockIron", "plateIron" });
+                    new Object[] { "plateRubber", getModItem(OpenComputers.modID, "item", 1, 20), "plateRubber",
+                            "ringIron", color16[i], "ringIron", "plateIron", "blockIron", "plateIron" });
             if (i < 7) {
                 addShapedRecipe(
                         FClockB[i],
-                        new Object[] { Swood[i], getModItem(Minecraft.modID, "clock", 1), Swood[i], Swood[i], "stickWood",
-                                Swood[i], Swood[i], "plateGold", Swood[i] });
+                        new Object[] { Swood[i], getModItem(Minecraft.modID, "clock", 1), Swood[i], Swood[i],
+                                "stickWood", Swood[i], Swood[i], "plateGold", Swood[i] });
                 addShapedRecipe(
                         PaintingB[i],
                         new Object[] { Swood[i], Swood[i], Swood[i], Swood[i],

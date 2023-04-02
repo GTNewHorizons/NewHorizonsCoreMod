@@ -1,18 +1,18 @@
 package com.dreammaster.gthandler.recipes;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
-import gregtech.api.enums.*;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
-
 import static com.dreammaster.MissingModIDs.BloodArsenal;
 import static gregtech.api.enums.ModIDs.Avaritia;
 import static gregtech.api.enums.ModIDs.ExtraUtilities;
 import static gregtech.api.enums.ModIDs.GTPlusPlus;
 import static gregtech.api.enums.ModIDs.TinkerConstruct;
 import static gregtech.api.enums.ModIDs.TinkersGregworks;
+
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
+import gregtech.api.enums.*;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ExtruderRecipes implements Runnable {
 

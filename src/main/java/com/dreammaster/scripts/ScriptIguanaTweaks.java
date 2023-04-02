@@ -19,7 +19,7 @@ public class ScriptIguanaTweaks implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(IguanaTweaksTinkerConstruct.modID, Natura.modID );
+        return Arrays.asList(IguanaTweaksTinkerConstruct.modID, Natura.modID);
     }
 
     @Override

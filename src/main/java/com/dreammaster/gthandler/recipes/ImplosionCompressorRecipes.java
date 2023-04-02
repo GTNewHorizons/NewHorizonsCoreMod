@@ -1,14 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import com.dreammaster.gthandler.CustomItemList;
-
-import cpw.mods.fml.common.Loader;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
-
 import static com.dreammaster.MissingModIDs.DraconicEvolution;
 import static com.dreammaster.MissingModIDs.StevesCarts2;
 import static gregtech.api.enums.ModIDs.Avaritia;
@@ -18,6 +9,14 @@ import static gregtech.api.enums.ModIDs.GalacticraftCore;
 import static gregtech.api.enums.ModIDs.GalacticraftMars;
 import static gregtech.api.enums.ModIDs.GalaxySpace;
 import static gregtech.api.enums.ModIDs.Translocator;
+
+import com.dreammaster.gthandler.CustomItemList;
+
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ImplosionCompressorRecipes implements Runnable {
 
@@ -180,7 +179,7 @@ public class ImplosionCompressorRecipes implements Runnable {
                     CustomItemList.MeteoricIronDualCompressedPlates.get(1L),
                     GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L));
         }
-        if (!BartWorks.isModLoaded()){
+        if (!BartWorks.isModLoaded()) {
             GT_Values.RA.addImplosionRecipe(
                     CustomItemList.HeavyDutyAlloyIngotT4.get(1L),
                     32,
@@ -304,7 +303,7 @@ public class ImplosionCompressorRecipes implements Runnable {
                     GT_Values.NI);
         }
 
-        if (StevesCarts2.isModLoaded()){
+        if (StevesCarts2.isModLoaded()) {
             GT_Values.RA.addImplosionRecipe(
                     GT_ModHandler.getModItem(StevesCarts2.modID, "ModuleComponents", 1L, 18),
                     1,
@@ -312,14 +311,13 @@ public class ImplosionCompressorRecipes implements Runnable {
                     GT_Values.NI);
         }
 
-        if (Translocator.isModLoaded()){
+        if (Translocator.isModLoaded()) {
             GT_Values.RA.addImplosionRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Diamond, 1L),
                     2,
                     GT_ModHandler.getModItem(Translocator.modID, "diamondNugget", 2L, 0),
                     GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.DarkAsh, 1L));
         }
-
 
         if (DraconicEvolution.isModLoaded()) {
             GT_Values.RA.addImplosionRecipe(

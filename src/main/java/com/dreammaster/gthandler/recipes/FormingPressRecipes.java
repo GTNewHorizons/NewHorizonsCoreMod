@@ -1,5 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.MissingModIDs.BloodArsenal;
+import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.ModIDs.BuildCraftSilicon;
+import static gregtech.api.enums.ModIDs.GTPlusPlus;
+import static gregtech.api.enums.ModIDs.NewHorizonsCoreMod;
+import static gregtech.api.enums.ModIDs.ProjectRedCore;
+import static gregtech.api.enums.ModIDs.Thaumcraft;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -11,14 +19,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-
-import static com.dreammaster.MissingModIDs.BloodArsenal;
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.BuildCraftSilicon;
-import static gregtech.api.enums.ModIDs.GTPlusPlus;
-import static gregtech.api.enums.ModIDs.NewHorizonsCoreMod;
-import static gregtech.api.enums.ModIDs.ProjectRedCore;
-import static gregtech.api.enums.ModIDs.Thaumcraft;
 
 public class FormingPressRecipes implements Runnable {
 

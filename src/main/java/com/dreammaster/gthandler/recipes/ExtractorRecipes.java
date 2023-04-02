@@ -1,5 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.MissingModIDs.SGCraft;
+import static gregtech.api.enums.ModIDs.BiomesOPlanty;
+import static gregtech.api.enums.ModIDs.GalaxySpace;
+import static gregtech.api.enums.ModIDs.Natura;
+import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
+import static gregtech.api.enums.ModIDs.TinkerConstruct;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -9,13 +16,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-
-import static com.dreammaster.MissingModIDs.SGCraft;
-import static gregtech.api.enums.ModIDs.BiomesOPlanty;
-import static gregtech.api.enums.ModIDs.GalaxySpace;
-import static gregtech.api.enums.ModIDs.Natura;
-import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
 
 public class ExtractorRecipes implements Runnable {
 

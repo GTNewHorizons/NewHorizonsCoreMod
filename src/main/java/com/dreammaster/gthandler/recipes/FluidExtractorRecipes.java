@@ -1,5 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
+import static gregtech.api.enums.ModIDs.TinkerConstruct;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -10,9 +13,6 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
-
-import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
 
 public class FluidExtractorRecipes implements Runnable {
 

@@ -90,8 +90,12 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final Block Vines = Blocks.vine;
         final String IronPlate = "plateIron";
         final String EnderPearlPlate = "plateEnderPearl";
-        final ItemStack InvertedBlueLamp = getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1, 27);
-        final ItemStack ClearGlassPane = getModItem(TinkerConstruct.modID,"GlassPane", 1);
+        final ItemStack InvertedBlueLamp = getModItem(
+                ProjectRedIllumination.modID,
+                "projectred.illumination.lamp",
+                1,
+                27);
+        final ItemStack ClearGlassPane = getModItem(TinkerConstruct.modID, "GlassPane", 1);
         final Block Netherrack = Blocks.netherrack;
         final ItemStack WovenSilk = getModItem(Forestry.modID, "craftingMaterial", 1, 3);
 

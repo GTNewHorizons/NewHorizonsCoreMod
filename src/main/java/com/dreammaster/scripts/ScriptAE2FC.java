@@ -82,7 +82,10 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack NIOBIUM_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1L);
         final ItemStack NETHER_QUARTZ_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L);
         final ItemStack LAPIS_SCREW = GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 1L);
-        final ItemStack FLUID_CORE_1 = getModItem(NewHorizonsCoreMod.modID, "item.EngineeringProcessorFluidDiamondCore", 1);
+        final ItemStack FLUID_CORE_1 = getModItem(
+                NewHorizonsCoreMod.modID,
+                "item.EngineeringProcessorFluidDiamondCore",
+                1);
         final ItemStack FISH = getModItem(Minecraft.modID, "fish", 1, 0);
         final ItemStack CELL_1 = getModItem(AE2FluidCraft.modID, "fluid_storage1", 1, 0);
         final ItemStack CELL_4 = getModItem(AE2FluidCraft.modID, "fluid_storage4", 1, 0);
@@ -132,14 +135,30 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_MON = getModItem(AE2FluidCraft.modID, "part_fluid_storage_monitor", 1, 0);
         final ItemStack AE2FC_CON = getModItem(AE2FluidCraft.modID, "part_fluid_conversion_monitor", 1, 0);
         final ItemStack AE2FC_FLUID_WIRELESS = getModItem(AE2FluidCraft.modID, "wireless_fluid_terminal", 1, 0);
-        final ItemStack AE2FC_PATTERN_WIRELESS = getModItem(AE2FluidCraft.modID, "wireless_fluid_pattern_terminal", 1, 0);
+        final ItemStack AE2FC_PATTERN_WIRELESS = getModItem(
+                AE2FluidCraft.modID,
+                "wireless_fluid_pattern_terminal",
+                1,
+                0);
         final ItemStack AE2FC_INTERFACE_WIRELESS = getModItem(AE2FluidCraft.modID, "wireless_interface_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.modID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.modID, "fluid_storage.singularity", 1, 0);
         final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.modID, "fluid_storage_housing", 1, 0);
-        final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.modID, "fluid_storage_housing", 1, 1);
-        final ItemStack AE2FC_MULTI_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.modID, "fluid_storage_housing", 1, 2);
-        final ItemStack AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.modID, "fluid_storage_housing", 1, 3);
+        final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem(
+                AE2FluidCraft.modID,
+                "fluid_storage_housing",
+                1,
+                1);
+        final ItemStack AE2FC_MULTI_FLUID_STORAGE_HOUSING = getModItem(
+                AE2FluidCraft.modID,
+                "fluid_storage_housing",
+                1,
+                2);
+        final ItemStack AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING = getModItem(
+                AE2FluidCraft.modID,
+                "fluid_storage_housing",
+                1,
+                3);
         ItemStack[] mCells = new ItemStack[] { CELL_1M, CELL_4M, CELL_16M, CELL_64M, CELL_256M, CELL_1024M, CELL_4096M,
                 CELL_16384M };
         ItemStack[] sCells = new ItemStack[] { CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096,

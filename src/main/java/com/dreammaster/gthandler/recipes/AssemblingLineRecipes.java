@@ -1,5 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.ModIDs.GalacticraftMars;
+import static gregtech.api.enums.ModIDs.GraviSuite;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -7,17 +11,12 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.GalacticraftMars;
-import static gregtech.api.enums.ModIDs.GraviSuite;
 
 public class AssemblingLineRecipes implements Runnable {
 
@@ -32,7 +31,8 @@ public class AssemblingLineRecipes implements Runnable {
             GT_Values.RA.addAssemblylineRecipe(
                     GT_ModHandler.getModItem(GalacticraftMars.modID, "item.itemBasicAsteroids", 1L, 0),
                     2500,
-                    new ItemStack[] { GT_ModHandler.getModItem(GalacticraftMars.modID, "item.itemBasicAsteroids", 1L, 0),
+                    new ItemStack[] {
+                            GT_ModHandler.getModItem(GalacticraftMars.modID, "item.itemBasicAsteroids", 1L, 0),
                             CustomItemList.IceCompressedPlate.get(3L), CustomItemList.IceCompressedPlate.get(3L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmiridium, 4) },
                     new FluidStack[] { new FluidStack(solderIndalloy, 36) },

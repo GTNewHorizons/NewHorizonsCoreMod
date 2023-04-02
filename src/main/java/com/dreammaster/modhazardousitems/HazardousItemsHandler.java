@@ -1,5 +1,7 @@
 package com.dreammaster.modhazardousitems;
 
+import static com.dreammaster.MissingModIDs.MineAndBladeBattleGear2;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;
@@ -31,8 +33,6 @@ import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.gameregistry.PotionHelper;
 import gregtech.api.util.GT_Utility;
-
-import static com.dreammaster.MissingModIDs.MineAndBladeBattleGear2;
 
 /**
  * Eventhandler to apply configured Damage Values to player, if they have certain items in their inventory

@@ -1,5 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.ModIDs.BartWorks;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -9,8 +11,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-
-import static gregtech.api.enums.ModIDs.BartWorks;
 
 public class DistillationRecipes implements Runnable {
 

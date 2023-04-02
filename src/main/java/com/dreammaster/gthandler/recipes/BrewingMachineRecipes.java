@@ -1,5 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.MissingModIDs.PamsHarvestTheNether;
+
 import java.lang.reflect.Field;
 
 import net.minecraft.init.Items;
@@ -12,8 +14,6 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_Recipe;
-
-import static com.dreammaster.MissingModIDs.PamsHarvestTheNether;
 
 public class BrewingMachineRecipes implements Runnable {
 

@@ -35,7 +35,6 @@ import ic2.core.Ic2Items;
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader implements Runnable {
 
-
     private static final String aTextMachineBeta = "machine.beta";
     private static final String aTextMachineAlpha = "machine.alpha";
     private static final String aTextIron1 = "X X";
@@ -875,15 +874,16 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(
                 GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemArmorBatpack", 1, GT_Values.W),
                 bits,
-                new Object[] { "RCR", "RAR", "RTR", 'R', GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemBatREDischarged", 1, 0),
-                        'C', OrePrefixes.circuit.get(Materials.Basic), 'A',
-                        OrePrefixes.itemCasing.get(Materials.Aluminium), 'T',
-                        OrePrefixes.wireGt02.get(Materials.Tin) });
+                new Object[] { "RCR", "RAR", "RTR", 'R',
+                        GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemBatREDischarged", 1, 0), 'C',
+                        OrePrefixes.circuit.get(Materials.Basic), 'A', OrePrefixes.itemCasing.get(Materials.Aluminium),
+                        'T', OrePrefixes.wireGt02.get(Materials.Tin) });
         GT_ModHandler.addCraftingRecipe(
                 GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemArmorAdvBatpack", 1, GT_Values.W),
                 bits,
-                new Object[] { "RCR", "RAR", "RTR", 'R', GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemAdvBat", 1, GT_Values.W),
-                        'C', OrePrefixes.circuit.get(Materials.Good), 'A',
+                new Object[] { "RCR", "RAR", "RTR", 'R',
+                        GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemAdvBat", 1, GT_Values.W), 'C',
+                        OrePrefixes.circuit.get(Materials.Good), 'A',
                         GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemArmorBatpack", 1, GT_Values.W), 'T',
                         OrePrefixes.wireGt04.get(Materials.AnnealedCopper) });
         GT_ModHandler.addCraftingRecipe(
@@ -1001,8 +1001,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         }
 
         // Rocket parts
-        if ((GalacticraftCore.isModLoaded()) && (GalacticraftMars.isModLoaded())
-                && (GalaxySpace.isModLoaded())) {
+        if ((GalacticraftCore.isModLoaded()) && (GalacticraftMars.isModLoaded()) && (GalaxySpace.isModLoaded())) {
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.RawSDHCAlloy.get(1L),
@@ -1194,18 +1193,18 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemArmorBatpack", 1, GT_Values.W), 'W',
                             OrePrefixes.wireGt04.get(Materials.AnnealedCopper), 'E',
                             GT_ModHandler.getModItem(ModIDs.GraviSuite.modID, "itemSimpleItem", 1, 6) });
-            if ((BuildCraftFactory.isModLoaded()) && (AdventureBackpack.isModLoaded()))
-                GT_ModHandler.addCraftingRecipe(
-                        GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemArmorJetpack", 1, GT_Values.W),
-                        bits,
-                        new Object[] { "SXS", "TCT", "EZE", 'S', OrePrefixes.itemCasing.get(Materials.StainlessSteel),
-                                'X', OrePrefixes.circuit.get(Materials.Advanced), 'T',
-                                GT_ModHandler.getModItem(BuildCraftFactory.modID, "tankBlock", 1, 0), 'C',
-                                GT_ModHandler.getModItem(IndustrialCraft2.modID, "reactorCoolantSix", 1, 1), 'Z',
-                                GT_ModHandler.getModItem(AdventureBackpack.modID, "backpackComponent", 1, 5), 'E',
-                                GT_ModHandler.getModItem(ModIDs.GraviSuite.modID, "itemSimpleItem", 1, 6) });
+            if ((BuildCraftFactory.isModLoaded()) && (AdventureBackpack.isModLoaded())) GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemArmorJetpack", 1, GT_Values.W),
+                    bits,
+                    new Object[] { "SXS", "TCT", "EZE", 'S', OrePrefixes.itemCasing.get(Materials.StainlessSteel), 'X',
+                            OrePrefixes.circuit.get(Materials.Advanced), 'T',
+                            GT_ModHandler.getModItem(BuildCraftFactory.modID, "tankBlock", 1, 0), 'C',
+                            GT_ModHandler.getModItem(IndustrialCraft2.modID, "reactorCoolantSix", 1, 1), 'Z',
+                            GT_ModHandler.getModItem(AdventureBackpack.modID, "backpackComponent", 1, 5), 'E',
+                            GT_ModHandler.getModItem(ModIDs.GraviSuite.modID, "itemSimpleItem", 1, 6) });
 
-            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(ModIDs.GraviSuite.modID, "itemSimpleItem", 1, 3));
+            GT_ModHandler
+                    .removeRecipeByOutput(GT_ModHandler.getModItem(ModIDs.GraviSuite.modID, "itemSimpleItem", 1, 3));
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(ModIDs.GraviSuite.modID, "itemSimpleItem", 1, 3),
                     new Object[] { "OCO", "XWX", "OCO", 'C', OrePrefixes.wireGt12.get(Materials.SuperconductorLuV), 'X',

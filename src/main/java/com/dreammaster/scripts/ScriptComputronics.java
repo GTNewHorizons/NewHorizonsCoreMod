@@ -21,7 +21,7 @@ public class ScriptComputronics implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Avaritia.modID, Computronics.modID, GregTech.modID, OpenComputers.modID, Thaumcraft.modID );
+        return Arrays.asList(Avaritia.modID, Computronics.modID, GregTech.modID, OpenComputers.modID, Thaumcraft.modID);
     }
 
     @Override

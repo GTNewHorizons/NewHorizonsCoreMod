@@ -54,7 +54,6 @@ import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
@@ -337,13 +336,13 @@ public class MainRegistry {
                 SpaceDimReg.Register();
             }
         }
-        if (TwilightForest.isModLoaded()){
+        if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
         }
 
         CoreMod_PCBFactory_MaterialLoader.init();
 
-        if (BartWorks.isModLoaded()){
+        if (BartWorks.isModLoaded()) {
             BWGlassAdder.registerGlasses();
         }
     }

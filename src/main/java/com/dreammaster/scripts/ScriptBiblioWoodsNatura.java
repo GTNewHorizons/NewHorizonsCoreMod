@@ -21,7 +21,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Natura.modID, BiblioWoodsNaturaEdition.modID, BiblioCraft.modID );
+        return Arrays.asList(Natura.modID, BiblioWoodsNaturaEdition.modID, BiblioCraft.modID);
     }
 
     @Override
@@ -132,7 +132,8 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodMapFrame", 1, 11),
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodMapFrame", 1, 12) };
 
-        ItemStack[] fancySignNatura = new ItemStack[] { getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodFancySign", 1),
+        ItemStack[] fancySignNatura = new ItemStack[] {
+                getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodFancySign", 1),
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodFancySign", 1, 1),
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodFancySign", 1, 2),
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodFancySign", 1, 3),
@@ -160,7 +161,8 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodlabel", 1, 11),
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodlabel", 1, 12) };
 
-        ItemStack[] bookcaseNatura = new ItemStack[] { getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1),
+        ItemStack[] bookcaseNatura = new ItemStack[] {
+                getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1),
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1, 1),
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1, 2),
                 getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1, 3),
@@ -269,14 +271,14 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
             addShapedRecipe(
                     getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodFancyWorkbench", 1, i),
                     new Object[] { ink, craftingTable, feather, Nwood[i],
-                            getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1, i), Nwood[i], Nwood[i], Nwood[i],
-                            Nwood[i] });
+                            getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1, i), Nwood[i], Nwood[i],
+                            Nwood[i], Nwood[i] });
 
             addShapedRecipe(
                     getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodFancyWorkbench", 1, i),
                     new Object[] { feather, craftingTable, ink, Nwood[i],
-                            getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1, i), Nwood[i], Nwood[i], Nwood[i],
-                            Nwood[i] });
+                            getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodBookcase", 1, i), Nwood[i], Nwood[i],
+                            Nwood[i], Nwood[i] });
 
             addShapedRecipe(
                     getModItem(BiblioWoodsNaturaEdition.modID, "BiblioWoodMapFrame", 1, i),
@@ -304,7 +306,8 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
 
             addShapelessCraftingRecipe(
                     getModItem(BiblioWoodsNaturaEdition.modID, "seatBack5", 1, i),
-                    new Object[] { Nwood[i], Nwood[i], getModItem(BiblioWoodsNaturaEdition.modID, "seatBack2", 1, i), });
+                    new Object[] { Nwood[i], Nwood[i],
+                            getModItem(BiblioWoodsNaturaEdition.modID, "seatBack2", 1, i), });
         }
     }
 }

@@ -26,14 +26,16 @@ public class ScriptEnderZoo implements IScriptLoader {
     @Override
     public void loadRecipes() {
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Minecraft.modID, "tnt", 1), getModItem(EnderZoo.modID, "confusingDust", 4) },
+                new ItemStack[] { getModItem(Minecraft.modID, "tnt", 1),
+                        getModItem(EnderZoo.modID, "confusingDust", 4) },
                 GT_Values.NF,
                 getModItem(EnderZoo.modID, "blockConfusingCharge", 1),
                 400,
                 16);
 
         boolean b = GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[]{getModItem(Minecraft.modID, "tnt", 1), getModItem(EnderZoo.modID, "enderFragment", 4)},
+                new ItemStack[] { getModItem(Minecraft.modID, "tnt", 1),
+                        getModItem(EnderZoo.modID, "enderFragment", 4) },
                 GT_Values.NF,
                 getModItem(EnderZoo.modID, "blockEnderCharge", 1),
                 400,

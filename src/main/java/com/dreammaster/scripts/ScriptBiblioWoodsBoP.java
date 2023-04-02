@@ -21,7 +21,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(BiomesOPlanty.modID, BiblioWoodsBoPEdition.modID, BiblioCraft.modID );
+        return Arrays.asList(BiomesOPlanty.modID, BiblioWoodsBoPEdition.modID, BiblioCraft.modID);
     }
 
     @Override
@@ -214,8 +214,8 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
         for (int i = 0; i < 14; i++) {
             addShapedRecipe(
                     FClockBOP[i],
-                    new Object[] { BOBwood[i], getModItem(Minecraft.modID, "clock", 1), BOBwood[i], BOBwood[i], "stickWood",
-                            BOBwood[i], BOBwood[i], "plateGold", BOBwood[i] });
+                    new Object[] { BOBwood[i], getModItem(Minecraft.modID, "clock", 1), BOBwood[i], BOBwood[i],
+                            "stickWood", BOBwood[i], BOBwood[i], "plateGold", BOBwood[i] });
             addShapedRecipe(
                     PaintingBOP[i],
                     new Object[] { BOBwood[i], BOBwood[i], BOBwood[i], BOBwood[i],
@@ -310,7 +310,8 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
 
             addShapelessCraftingRecipe(
                     getModItem(BiblioWoodsBoPEdition.modID, "seatBack5", 1, i),
-                    new Object[] { BOBwood[i], BOBwood[i], getModItem(BiblioWoodsBoPEdition.modID, "seatBack2", 1, i), });
+                    new Object[] { BOBwood[i], BOBwood[i],
+                            getModItem(BiblioWoodsBoPEdition.modID, "seatBack2", 1, i), });
 
             addShapelessCraftingRecipe(
                     fancySignBOP[i],

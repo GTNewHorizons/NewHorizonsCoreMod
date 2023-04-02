@@ -5,7 +5,6 @@ import static gregtech.api.enums.ModIDs.AppliedEnergistics2;
 import static gregtech.api.enums.ModIDs.Avaritia;
 import static gregtech.api.enums.ModIDs.AvaritiaAddons;
 import static gregtech.api.enums.ModIDs.EternalSingularity;
-import static gregtech.api.enums.ModIDs.ExtraCells2;
 import static gregtech.api.enums.ModIDs.GregTech;
 import static gregtech.api.enums.ModIDs.IronChests;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
@@ -18,7 +17,6 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.Config;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -38,7 +36,14 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(AppliedEnergistics2.modID, AvaritiaAddons.modID, EternalSingularity.modID, GregTech.modID, Avaritia.modID, IronChests.modID, Witchery.modID );
+        return Arrays.asList(
+                AppliedEnergistics2.modID,
+                AvaritiaAddons.modID,
+                EternalSingularity.modID,
+                GregTech.modID,
+                Avaritia.modID,
+                IronChests.modID,
+                Witchery.modID);
     }
 
     @Override
@@ -54,7 +59,8 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         "plateDenseObsidian", "chestObsidian", "plateDenseObsidian", "craftingToolWrench",
                         "chestDiamond", "craftingToolScrewdriver" });
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(IronChests.modID, "BlockIronChest", 2, 2), ItemList.Electric_Piston_HV.get(1),
+                new ItemStack[] { getModItem(IronChests.modID, "BlockIronChest", 2, 2),
+                        ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4),
                         GT_Utility.getIntegratedCircuit(1), },
                 GT_Values.NF,
@@ -74,7 +80,8 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AvaritiaAddons.modID, "ExtremeAutoCrafter", 1),
                 new Object[] { "plateRedAlloy", getModItem(GregTech.modID, "gt.metaitem.01", 1, 32744), "plateRedAlloy",
-                        getModItem(GregTech.modID, "gt.metaitem.01", 1, 32603), getModItem(Avaritia.modID, "Dire_Crafting", 1),
+                        getModItem(GregTech.modID, "gt.metaitem.01", 1, 32603),
+                        getModItem(Avaritia.modID, "Dire_Crafting", 1),
                         getModItem(GregTech.modID, "gt.metaitem.01", 1, 32603),
                         getModItem(GregTech.modID, "gt.metaitem.01", 1, 32633), "circuitElite",
                         getModItem(GregTech.modID, "gt.metaitem.01", 1, 32633) });

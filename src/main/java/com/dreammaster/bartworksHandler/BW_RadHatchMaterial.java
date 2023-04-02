@@ -1,11 +1,13 @@
 package com.dreammaster.bartworksHandler;
+
+import static gregtech.api.enums.ModIDs.GTPlusPlus;
+
 import net.minecraft.item.ItemStack;
 
 import com.github.bartimaeusnek.bartworks.util.BWRecipes;
+
 import gtPlusPlus.core.material.Material;
 import gtPlusPlus.core.util.minecraft.ItemUtils;
-
-import static gregtech.api.enums.ModIDs.GTPlusPlus;
 
 public class BW_RadHatchMaterial {
 

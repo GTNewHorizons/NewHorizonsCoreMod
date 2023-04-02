@@ -27,7 +27,8 @@ public class ScriptSleepingBags implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(SleepingBags.modID, "sleepingBag", 1),
-                new Object[] { getModItem(Minecraft.modID, "carpet", 1, 32767), getModItem(Minecraft.modID, "carpet", 1, 32767),
+                new Object[] { getModItem(Minecraft.modID, "carpet", 1, 32767),
+                        getModItem(Minecraft.modID, "carpet", 1, 32767),
                         getModItem(Minecraft.modID, "carpet", 1, 32767), "blockWool", "blockWool", "blockWool",
                         getModItem(Backpack.modID, "tannedLeather", 1), getModItem(Backpack.modID, "tannedLeather", 1),
                         getModItem(Backpack.modID, "tannedLeather", 1) });
@@ -38,6 +39,6 @@ public class ScriptSleepingBags implements IScriptLoader {
 
         addShapelessCraftingRecipe(
                 getModItem(AdventureBackpack.modID, "backpackComponent", 1, 1),
-                new Object[] { getModItem(OpenBlocks.modID,"sleepingBag", 1) });
+                new Object[] { getModItem(OpenBlocks.modID, "sleepingBag", 1) });
     }
 }

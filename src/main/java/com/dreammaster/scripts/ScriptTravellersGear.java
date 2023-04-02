@@ -1,9 +1,12 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.MissingModIDs.BiblioCraft;
+import static com.dreammaster.MissingModIDs.TravellersGear;
+import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
+
 import java.util.Arrays;
 import java.util.List;
 
-import baubles.common.Baubles;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -13,10 +16,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-
-import static com.dreammaster.MissingModIDs.BiblioCraft;
-import static com.dreammaster.MissingModIDs.TravellersGear;
-import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
 
 public class ScriptTravellersGear implements IScriptLoader {
 

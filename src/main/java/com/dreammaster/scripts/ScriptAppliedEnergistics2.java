@@ -31,7 +31,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(AppliedEnergistics2.modID, TinkerConstruct.modID, Avaritia.modID, EternalSingularity.modID );
+        return Arrays
+                .asList(AppliedEnergistics2.modID, TinkerConstruct.modID, Avaritia.modID, EternalSingularity.modID);
     }
 
     @Override
@@ -44,12 +45,24 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         final ItemStack CERTUS_PLATE = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L);
         final ItemStack AE2_ADVANCED_HOUSING = getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 61);
         final ItemStack AE2_HOUSING = getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 39);
-        final ItemStack AE2_BLOCK_CONTAINER = getModItem(AppliedEnergistics2.modID, "item.ItemExtremeStorageCell.Container", 1, 0);
+        final ItemStack AE2_BLOCK_CONTAINER = getModItem(
+                AppliedEnergistics2.modID,
+                "item.ItemExtremeStorageCell.Container",
+                1,
+                0);
         final ItemStack AE2_ME_CHEST = getModItem(AppliedEnergistics2.modID, "tile.BlockChest", 1, 0);
         final ItemStack AE2_ME_Glass_Cable = getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 1, 16);
         final ItemStack AE2_ME_Covered_Cable = getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 1, 36);
-        final ItemStack AE2_ME_Dense_Covered_Cable = getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 1, 536);
-        final ItemStack AE2_ME_Backbone_Covered_Cable = getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 1, 556);
+        final ItemStack AE2_ME_Dense_Covered_Cable = getModItem(
+                AppliedEnergistics2.modID,
+                "item.ItemMultiPart",
+                1,
+                536);
+        final ItemStack AE2_ME_Backbone_Covered_Cable = getModItem(
+                AppliedEnergistics2.modID,
+                "item.ItemMultiPart",
+                1,
+                556);
         ItemStack circuit1 = GT_Utility.getIntegratedCircuit(1);
         ItemStack[] FluixCoveredCableColor = new ItemStack[16];
         ItemStack[] FluixDenseCoveredCableColor = new ItemStack[16];
@@ -103,12 +116,14 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 1L), 'G', GLASS_PANE });
 
         // Advanced Storage Cells
-        final ItemStack[] components = new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 57), // 256k
+        final ItemStack[] components = new ItemStack[] {
+                getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 57), // 256k
                 getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 58), // 1024k
                 getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 59), // 4096k
                 getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 60), // 16384k
         };
-        final ItemStack[] cells = new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemAdvancedStorageCell.256k", 1), // 256k
+        final ItemStack[] cells = new ItemStack[] {
+                getModItem(AppliedEnergistics2.modID, "item.ItemAdvancedStorageCell.256k", 1), // 256k
                 getModItem(AppliedEnergistics2.modID, "item.ItemAdvancedStorageCell.1024k", 1), // 1024k
                 getModItem(AppliedEnergistics2.modID, "item.ItemAdvancedStorageCell.4096k", 1), // 4096k
                 getModItem(AppliedEnergistics2.modID, "item.ItemAdvancedStorageCell.16384k", 1), // 16384k
@@ -197,7 +212,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         }
 
         // Advanced Crafting Storage
-        ItemStack[] storage = new ItemStack[] { getModItem(AppliedEnergistics2.modID, "tile.BlockAdvancedCraftingStorage", 1, 0), // 256k
+        ItemStack[] storage = new ItemStack[] {
+                getModItem(AppliedEnergistics2.modID, "tile.BlockAdvancedCraftingStorage", 1, 0), // 256k
                 getModItem(AppliedEnergistics2.modID, "tile.BlockAdvancedCraftingStorage", 1, 1), // 1024k
                 getModItem(AppliedEnergistics2.modID, "tile.BlockAdvancedCraftingStorage", 1, 2), // 4096k
                 getModItem(AppliedEnergistics2.modID, "tile.BlockAdvancedCraftingStorage", 1, 3), // 16384k
@@ -205,7 +221,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         for (int i = 0; i < storage.length; i++) {
             GT_ModHandler.removeRecipeByOutput(storage[i]);
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { components[i], getModItem(AppliedEnergistics2.modID, "tile.BlockCraftingUnit", 1) },
+                    new ItemStack[] { components[i],
+                            getModItem(AppliedEnergistics2.modID, "tile.BlockCraftingUnit", 1) },
                     null,
                     storage[i],
                     400,
@@ -216,7 +233,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_ModHandler.removeRecipeByOutput(AE2_BLOCK_CONTAINER);
         GT_ModHandler.addCraftingRecipe(
                 AE2_BLOCK_CONTAINER,
-                new Object[] { " K ", "SMS", "dHw", 'K', getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 35), 'S',
+                new Object[] { " K ", "SMS", "dHw", 'K',
+                        getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 35), 'S',
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Titanium, 1), 'M', AE2_ME_CHEST, 'H',
                         AE2_HOUSING });
         GT_Values.RA.addAssemblerRecipe(
@@ -319,13 +337,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         }
 
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 4, 36), GT_Utility.getIntegratedCircuit(24) },
+                new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 4, 36),
+                        GT_Utility.getIntegratedCircuit(24) },
                 Materials.StyreneButadieneRubber.getMolten(216L),
                 AE2_ME_Dense_Covered_Cable,
                 200,
                 480);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 4, 36), GT_Utility.getIntegratedCircuit(24) },
+                new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 4, 36),
+                        GT_Utility.getIntegratedCircuit(24) },
                 Materials.Silicone.getMolten(144L),
                 AE2_ME_Dense_Covered_Cable,
                 200,
@@ -396,13 +416,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         }
 
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 4, 536), GT_Utility.getIntegratedCircuit(24) },
+                new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 4, 536),
+                        GT_Utility.getIntegratedCircuit(24) },
                 Materials.StyreneButadieneRubber.getMolten(432L),
                 AE2_ME_Backbone_Covered_Cable,
                 250,
                 1920);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 4, 536), GT_Utility.getIntegratedCircuit(24) },
+                new ItemStack[] { getModItem(AppliedEnergistics2.modID, "item.ItemMultiPart", 4, 536),
+                        GT_Utility.getIntegratedCircuit(24) },
                 Materials.Silicone.getMolten(288L),
                 AE2_ME_Dense_Covered_Cable,
                 250,
@@ -529,7 +551,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 1920);
 
         // ME Quantum Storage
-        GT_ModHandler.removeRecipeByOutput(getModItem(AppliedEnergistics2.modID, "item.ItemExtremeStorageCell.Quantum", 1));
+        GT_ModHandler
+                .removeRecipeByOutput(getModItem(AppliedEnergistics2.modID, "item.ItemExtremeStorageCell.Quantum", 1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.modID, "item.ItemExtremeStorageCell.Quantum", 1),
                 "---------",
@@ -553,7 +576,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 AE2_ADVANCED_HOUSING);
 
         // ME Digital Singularity
-        GT_ModHandler.removeRecipeByOutput(getModItem(AppliedEnergistics2.modID, "item.ItemExtremeStorageCell.Singularity", 1));
+        GT_ModHandler.removeRecipeByOutput(
+                getModItem(AppliedEnergistics2.modID, "item.ItemExtremeStorageCell.Singularity", 1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.modID, "item.ItemExtremeStorageCell.Singularity", 1),
                 "----a----",
