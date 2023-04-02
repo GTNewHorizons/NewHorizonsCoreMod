@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.GregTech_API.mGTPlusPlus;
+import static gregtech.api.enums.ModIDs.GTPlusPlus;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -687,7 +688,7 @@ public class DTPFRecipes implements Runnable {
 
             // UEV Superconductors.
 
-            if (Loader.isModLoaded("miscutils")) {
+            if (GTPlusPlus.isModLoaded()) {
 
                 long base_quantity = 504L;
                 long tier_up_multiplier = 2L;
@@ -741,7 +742,7 @@ public class DTPFRecipes implements Runnable {
 
             // UIV Superconductors.
 
-            if (Loader.isModLoaded("miscutils")) {
+            if (GTPlusPlus.isModLoaded()) {
 
                 long base_quantity = 250L;
                 long tier_up_multiplier = 2L;

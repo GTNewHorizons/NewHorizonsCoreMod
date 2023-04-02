@@ -13,6 +13,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 
+import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.ModIDs.EnderIO;
+
 /**
  * How to add new Stuff: Ask Namikon
  */
@@ -23,36 +26,36 @@ public class GT_CustomLoader {
         LuV(OrePrefixes.circuit.get(Materials.Master), OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
                 Materials.VanadiumGallium, OrePrefixes.wireGt02.get(Materials.HSSG),
                 OrePrefixes.gemExquisite.get(Materials.Diamond), gregtech.api.enums.ItemList.Gravistar,
-                Loader.isModLoaded("bartworks") ? "blockGlassLuV" : "glassReinforced", Materials.Chrome,
+                BartWorks.isModLoaded() ? "blockGlassLuV" : "glassReinforced", Materials.Chrome,
                 Materials.Enderium),
 
         ZPM(OrePrefixes.circuit.get(Materials.Ultimate), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
                 Materials.Naquadah, OrePrefixes.wireGt02.get(Materials.Naquadah),
                 OrePrefixes.gemExquisite.get(Materials.GarnetYellow), ItemList.MysteriousCrystal.getIS(),
-                Loader.isModLoaded("bartworks") ? "blockGlassZPM" : "glassReinforced", Materials.Iridium,
+                BartWorks.isModLoaded() ? "blockGlassZPM" : "glassReinforced", Materials.Iridium,
                 Materials.Naquadah),
 
         UV(OrePrefixes.circuit.get(Materials.Superconductor), OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),
                 Materials.ElectrumFlux, OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
                 OrePrefixes.gemExquisite.get(Materials.GarnetRed), new ItemStack(Blocks.dragon_egg, 1),
-                Loader.isModLoaded("bartworks") ? "blockGlassUV" : "glassReinforced", Materials.Osmium,
+                BartWorks.isModLoaded() ? "blockGlassUV" : "glassReinforced", Materials.Osmium,
                 Materials.Neutronium),
 
         UHV(OrePrefixes.circuit.get(Materials.Infinite), OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
                 Materials.Bedrockium, Materials.Bedrockium, null, null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUHV" : "glassReinforced", Materials.Neutronium,
+                BartWorks.isModLoaded() ? "blockGlassUHV" : "glassReinforced", Materials.Neutronium,
                 Materials.Neutronium),
 
         UEV(OrePrefixes.circuit.get(Materials.Bio), OrePrefixes.wireGt04.get(Materials.Bedrockium), Materials.Draconium,
-                Materials.Draconium, null, null, Loader.isModLoaded("bartworks") ? "blockGlassUEV" : "glassReinforced",
+                Materials.Draconium, null, null, BartWorks.isModLoaded() ? "blockGlassUEV" : "glassReinforced",
                 Materials.Bedrockium, Materials.Neutronium),
 
         UIV(OrePrefixes.circuit.get(Materials.Optical), OrePrefixes.wireGt08.get(Materials.Bedrockium),
                 Materials.NetherStar, Materials.NetherStar, null, null,
-                Loader.isModLoaded("bartworks") ? "blockGlassUIV" : "glassReinforced", Materials.CosmicNeutronium,
+                BartWorks.isModLoaded() ? "blockGlassUIV" : "glassReinforced", Materials.CosmicNeutronium,
                 Materials.CosmicNeutronium),
         UMV(OrePrefixes.circuit.get(Materials.Piko), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
-                Materials.Quantium, null, null, Loader.isModLoaded("bartworks") ? "blockGlassUMV" : "glassReinforced",
+                Materials.Quantium, null, null, BartWorks.isModLoaded() ? "blockGlassUMV" : "glassReinforced",
                 Materials.TranscendentMetal, Materials.Infinity);
 
         private Object _mCircuit;
@@ -146,7 +149,9 @@ public class GT_CustomLoader {
 
     public void run() {
         GameRegistry.registerItem(QuantumBread.Instance(), "itemQuantumToast");
-        if (Loader.isModLoaded("EnderIO")) FrankenskullFix.fixEnderIO();
+        if (EnderIO.isModLoaded()){
+            FrankenskullFix.fixEnderIO();
+        }
         MaterialLoader.run();
         FluidPipeLoader.run();
         WireLoader.run();

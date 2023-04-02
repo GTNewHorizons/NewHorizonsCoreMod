@@ -23,7 +23,6 @@ import com.dreammaster.modhazardousitems.HazardousItems.HazardousItem;
 import com.dreammaster.modhazardousitems.cause.HazardCause;
 import com.google.common.collect.EvictingQueue;
 
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -32,6 +31,8 @@ import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.gameregistry.PotionHelper;
 import gregtech.api.util.GT_Utility;
+
+import static com.dreammaster.MissingModIDs.MineAndBladeBattleGear2;
 
 /**
  * Eventhandler to apply configured Damage Values to player, if they have certain items in their inventory
@@ -399,7 +400,7 @@ public class HazardousItemsHandler {
             checkInventoryArray(pPlayer.inventory.mainInventory, pPlayer);
 
             // M&B addition ------
-            if (Loader.isModLoaded("battlegear2")) {
+            if (MineAndBladeBattleGear2.isModLoaded()) {
                 Class<?> c = pPlayer.inventory.getClass();
                 Field extraInv = null;
                 try {

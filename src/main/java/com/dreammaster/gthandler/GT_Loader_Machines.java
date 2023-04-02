@@ -25,6 +25,8 @@ import gregtech.common.tileentities.machines.basic.*;
 import gregtech.loaders.preload.GT_Loader_MetaTileEntities;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GregtechMetaTransformerHiAmp;
 
+import static gregtech.api.enums.ModIDs.GTPlusPlus;
+
 public class GT_Loader_Machines {
 
     public void run() {
@@ -496,7 +498,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), }).getStackForm(1L));
 
-
         // ===================================================================================================
         // AssemblingMachineLuV
         // ===================================================================================================
@@ -673,7 +674,6 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.ROBOT_ARM, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
-
 
         // ===================================================================================================
 
@@ -862,7 +862,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getPlate(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), }).getStackForm(1L));
 
-
         // ===================================================================================================
 
         // ===================================================================================================
@@ -1042,7 +1041,6 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
-
 
         // ===================================================================================================
 
@@ -1410,7 +1408,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B',
                                 OreDictNames.craftingDiamondBlade }).getStackForm(1L));
-
 
         // ===================================================================================================
 
@@ -2332,7 +2329,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
-
 
         // ===================================================================================================
 
@@ -8291,7 +8287,7 @@ public class GT_Loader_Machines {
                         12,
                         "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
 
-        if (Loader.isModLoaded("miscutils")) {
+        if (GTPlusPlus.isModLoaded()) {
             CustomItemList.Transformer_HA_UEV_UHV.set(
                     new GregtechMetaTransformerHiAmp(
                             11989,
@@ -9034,8 +9030,7 @@ public class GT_Loader_Machines {
                         false,
                         0,
                         "CIRCUITASSEMBLER",
-                        null
-                ).getStackForm(1L));
+                        null).getStackForm(1L));
         CustomItemList.CircuitAssemblerMAX.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         12096,
@@ -9055,8 +9050,7 @@ public class GT_Loader_Machines {
                         false,
                         0,
                         "CIRCUITASSEMBLER",
-                        null
-                ).getStackForm(1L));
+                        null).getStackForm(1L));
 
         // ===================================================================================================
         // Input Hatches

@@ -2,7 +2,6 @@ package com.dreammaster.gthandler.turboCharger;
 
 import static gregtech.api.enums.GT_Values.V;
 
-import gregtech.api.enums.Materials;
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.Textures;

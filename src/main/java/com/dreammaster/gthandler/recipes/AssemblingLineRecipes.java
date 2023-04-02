@@ -15,6 +15,10 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
+import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.ModIDs.GalacticraftMars;
+import static gregtech.api.enums.ModIDs.GraviSuite;
+
 public class AssemblingLineRecipes implements Runnable {
 
     @Override
@@ -24,11 +28,11 @@ public class AssemblingLineRecipes implements Runnable {
                 : FluidRegistry.getFluid("molten.solderingalloy");
 
         // why keep stuff like that? :concern:
-        if (!Loader.isModLoaded("bartworks")) {
+        if (!BartWorks.isModLoaded()) {
             GT_Values.RA.addAssemblylineRecipe(
-                    GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                    GT_ModHandler.getModItem(GalacticraftMars.modID, "item.itemBasicAsteroids", 1L, 0),
                     2500,
-                    new ItemStack[] { GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                    new ItemStack[] { GT_ModHandler.getModItem(GalacticraftMars.modID, "item.itemBasicAsteroids", 1L, 0),
                             CustomItemList.IceCompressedPlate.get(3L), CustomItemList.IceCompressedPlate.get(3L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmiridium, 4) },
                     new FluidStack[] { new FluidStack(solderIndalloy, 36) },
@@ -128,23 +132,23 @@ public class AssemblingLineRecipes implements Runnable {
                 1000,
                 80000);
 
-        if (Loader.isModLoaded("GraviSuite")) {
+        if (GraviSuite.isModLoaded()) {
             GT_Values.RA.addAssemblylineRecipe(
                     GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, GT_Values.W),
                     144000,
                     new Object[] { GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, 1),
                             ItemList.Transformer_ZPM_LuV.get(1L),
-                            GT_ModHandler.getModItem("GraviSuite", "ultimateLappack", 1, 1),
-                            GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 6, 1),
-                            GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 2, 2),
-                            GT_ModHandler.getModItem("GraviSuite", "itemSimpleItem", 2, 3),
+                            GT_ModHandler.getModItem(GraviSuite.modID, "ultimateLappack", 1, 1),
+                            GT_ModHandler.getModItem(GraviSuite.modID, "itemSimpleItem", 6, 1),
+                            GT_ModHandler.getModItem(GraviSuite.modID, "itemSimpleItem", 2, 2),
+                            GT_ModHandler.getModItem(GraviSuite.modID, "itemSimpleItem", 2, 3),
                             new Object[] { OrePrefixes.circuit.get(Materials.Ultimate), 2L },
                             GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Duranium, 2),
                             ItemList.Energy_LapotronicOrb2.get(1L), ItemList.Field_Generator_IV.get(2L),
                             ItemList.Electric_Motor_ZPM.get(2L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Duranium, 4) },
                     new FluidStack[] { new FluidStack(solderIndalloy, 2304), Materials.Tritanium.getMolten(1440L) },
-                    GT_ModHandler.getModItem("GraviSuite", "graviChestPlate", 1, 26),
+                    GT_ModHandler.getModItem(GraviSuite.modID, "graviChestPlate", 1, 26),
                     1500,
                     16388);
 
@@ -163,7 +167,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Americium, 64L) },
                     new FluidStack[] { Materials.Longasssuperconductornameforuvwire.getMolten(2880L),
                             Materials.Americium.getPlasma(2880L), Materials.Enderium.getMolten(5760L) },
-                    GT_ModHandler.getModItem("GraviSuite", "relocator", 1, 26),
+                    GT_ModHandler.getModItem(GraviSuite.modID, "relocator", 1, 26),
                     60000,
                     500000);
         }

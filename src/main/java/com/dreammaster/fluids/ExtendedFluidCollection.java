@@ -10,9 +10,11 @@ import cpw.mods.fml.common.Loader;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
 
+import static gregtech.api.enums.ModIDs.BiomesOPlanty;
+
 public final class ExtendedFluidCollection {
 
-    static final boolean bop_loaded = Loader.isModLoaded("BiomesOPlenty");
+    static final boolean bop_loaded = BiomesOPlanty.isModLoaded();
 
     private static ModSimpleBaseFluid _mAmmonia;
 

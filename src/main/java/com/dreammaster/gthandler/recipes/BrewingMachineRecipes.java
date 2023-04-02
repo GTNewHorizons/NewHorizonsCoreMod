@@ -13,6 +13,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_Recipe;
 
+import static com.dreammaster.MissingModIDs.PamsHarvestTheNether;
+
 public class BrewingMachineRecipes implements Runnable {
 
     @Override
@@ -47,7 +49,7 @@ public class BrewingMachineRecipes implements Runnable {
                 false);
 
         GT_Values.RA.addBrewingRecipeCustom(
-                GT_ModHandler.getModItem("harvestthenether", "ignisfruitItem", 45L, 0),
+                GT_ModHandler.getModItem(PamsHarvestTheNether.modID, "ignisfruitItem", 45L, 0),
                 FluidRegistry.getFluidStack("potion.awkward", 750),
                 FluidRegistry.getFluidStack("potion.fireresistance", 750),
                 120,

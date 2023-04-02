@@ -23,15 +23,13 @@ public class ConfigHandler {
             Class.forName("net.minecraftxray.loader.XRayForgeTweaker");
             Minecraft.getMinecraft().crashed(new CrashReport("", e));
             return;
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
 
         try {
             Class.forName("de.Kradxn.Xray.mod_Xray");
             Minecraft.getMinecraft().crashed(new CrashReport("", e));
             return;
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
 
         MinecraftForge.EVENT_BUS.unregister(CONFIG_HANDLER);
     }

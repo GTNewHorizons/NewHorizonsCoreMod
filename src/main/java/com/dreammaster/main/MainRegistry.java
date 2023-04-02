@@ -1,6 +1,13 @@
 package com.dreammaster.main;
 
+import static com.dreammaster.MissingModIDs.GalactiGreg;
+import static com.dreammaster.MissingModIDs.Witchery;
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
+import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.ModIDs.Railcraft;
+import static gregtech.api.enums.ModIDs.Thaumcraft;
+import static gregtech.api.enums.ModIDs.TinkerConstruct;
+import static gregtech.api.enums.ModIDs.TwilightForest;
 
 import java.io.File;
 import java.util.Random;
@@ -179,7 +186,7 @@ public class MainRegistry {
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
         if (!ItemList.AddToItemManager(ItemManager)
-                | !(!Loader.isModLoaded("TConstruct") || CustomPatterns.RegisterPatterns(TabManager))) {
+                | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))) {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
         }
@@ -251,16 +258,18 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
 
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
             BacteriaRegistry = new BacteriaRegistry();
         }
 
         Logger.debug("LOAD abandoned GT++ Aspects");
-        if (Loader.isModLoaded("Thaumcraft")) {
+        if (Thaumcraft.isModLoaded()) {
             new GregTechPlusPlusAbandonedAspectsFix();
         }
 
-        if (Loader.isModLoaded("witchery")) new WitcheryPlugin();
+        if (Witchery.isModLoaded()) {
+            new WitcheryPlugin();
+        }
 
         if (CoreModConfig.ModLoginMessage_Enabled) {
             FMLCommonHandler.instance().bus().register(new LoginHandler());
@@ -310,8 +319,8 @@ public class MainRegistry {
         });
 
         // Register Dimensions in GalacticGregGT5
-        if (Loader.isModLoaded("galacticgreg")) {
-            if (Loader.isModLoaded("bartworks")) {
+        if (GalactiGreg.isModLoaded()) {
+            if (BartWorks.isModLoaded()) {
                 GregTech_API.sAfterGTPostload.add(() -> {
                     Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
                     VoidMinerLoader.initDeepDark();
@@ -328,11 +337,15 @@ public class MainRegistry {
                 SpaceDimReg.Register();
             }
         }
-        if (Loader.isModLoaded("TwilightForest")) TF_Loot_Chests.init();
+        if (TwilightForest.isModLoaded()){
+            TF_Loot_Chests.init();
+        }
 
         CoreMod_PCBFactory_MaterialLoader.init();
 
-        if (Loader.isModLoaded("bartworks")) BWGlassAdder.registerGlasses();
+        if (BartWorks.isModLoaded()){
+            BWGlassAdder.registerGlasses();
+        }
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -371,7 +384,7 @@ public class MainRegistry {
             MinecraftForge.EVENT_BUS.register(Module_CustomDrops);
         }
 
-        if (Loader.isModLoaded("Railcraft")) {
+        if (Railcraft.isModLoaded()) {
             MinecraftForge.EVENT_BUS.register(NH_GeodePopulator.instance()); // instead of RC
             MinecraftForge.EVENT_BUS.register(NH_QuarryPopulator.instance()); // instead of RC
         }
@@ -422,7 +435,7 @@ public class MainRegistry {
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
             Logger.debug("Add Bacteria Stuff to BartWorks");
             BacteriaRegistry.runAllPostinit();
 
@@ -443,7 +456,7 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void CompleteLoad(FMLLoadCompleteEvent event) {
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
             BW_RadHatchMaterial.runRadHatchAdder();
         }
     }

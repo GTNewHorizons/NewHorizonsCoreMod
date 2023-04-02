@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.GT_Values.NI;
+import static gregtech.api.enums.ModIDs.GTPlusPlus;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -21,7 +22,7 @@ public class LatheRecipes implements Runnable {
     @Override
     public void run() {
         GT_Values.RA.addLatheRecipe(
-                GT_ModHandler.getModItem("miscutils", "itemPlateChromaticGlass", 1),
+                GT_ModHandler.getModItem(GTPlusPlus.modID, "itemPlateChromaticGlass", 1),
                 CustomItemList.ChromaticLens.get(1),
                 NI,
                 1200,

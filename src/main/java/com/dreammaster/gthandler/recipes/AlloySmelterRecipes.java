@@ -16,6 +16,9 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
+import static gregtech.api.enums.ModIDs.EnderIO;
+import static gregtech.api.enums.ModIDs.TinkerConstruct;
+
 public class AlloySmelterRecipes implements Runnable {
 
     @Override
@@ -148,92 +151,92 @@ public class AlloySmelterRecipes implements Runnable {
                     8);
         }
 
-        if (Loader.isModLoaded("EnderIO")) {
+        if (EnderIO.isModLoaded()) {
             // EnderIO Fused Quartz and Glass
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.CertusQuartz.getDust(2),
                     Materials.Glass.getDust(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
                     500,
                     30);
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.NetherQuartz.getDust(2),
                     Materials.Glass.getDust(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
                     500,
                     30);
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.CertusQuartz.getDust(2),
                     Materials.Quartzite.getDust(2),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
                     500,
                     30);
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.NetherQuartz.getDust(2),
                     Materials.Quartzite.getDust(2),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
                     500,
                     30);
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.CertusQuartz.getDust(1),
                     Materials.BorosilicateGlass.getDust(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
                     500,
                     90);
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.NetherQuartz.getDust(1),
                     Materials.BorosilicateGlass.getDust(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
                     500,
                     90);
 
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.Glass.getDust(3),
                     GT_Utility.getIntegratedCircuit(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L, 1),
                     500,
                     30);
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.Quartzite.getDust(4),
                     GT_Utility.getIntegratedCircuit(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L, 1),
                     500,
                     30);
             GT_Values.RA.addAlloySmelterRecipe(
                     Materials.BorosilicateGlass.getDust(1),
                     GT_Utility.getIntegratedCircuit(1),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 2L, 1),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 2L, 1),
                     500,
                     90);
 
             GT_Values.RA.addAlloySmelterRecipe(
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L, 1),
                     Materials.Glowstone.getDust(4),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 3),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L, 3),
                     500,
                     30);
             GT_Values.RA.addAlloySmelterRecipe(
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L, 1),
                     new ItemStack(Blocks.glowstone),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 3),
+                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L, 3),
                     500,
                     30);
 
             for (int i = 0; i < OreDictionary.getOres("dyeBlack").size(); i++) {
                 GT_Values.RA.addAlloySmelterRecipe(
-                        GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
+                        GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L, 1),
                         OreDictionary.getOres("dyeBlack").get(i).splitStack(4),
-                        GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 5),
+                        GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L, 5),
                         500,
                         30);
             }
         }
 
-        if (Loader.isModLoaded("TConstruct")) {
+        if (TinkerConstruct.isModLoaded()) {
             GT_Values.RA.addAlloySmelterRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L),
-                    GT_ModHandler.getModItem("TConstruct", "materials", 4L, 14),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 4L, 14),
                     100,
                     120);
         }

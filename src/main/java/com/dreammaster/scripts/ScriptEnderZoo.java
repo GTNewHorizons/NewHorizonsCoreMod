@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.MissingModIDs.EnderZoo;
+import static gregtech.api.enums.ModIDs.Minecraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Collections;
@@ -18,30 +20,30 @@ public class ScriptEnderZoo implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Collections.singletonList("EnderZoo");
+        return Collections.singletonList(EnderZoo.modID);
     }
 
     @Override
     public void loadRecipes() {
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("minecraft", "tnt", 1), getModItem("EnderZoo", "confusingDust", 4) },
+                new ItemStack[] { getModItem(Minecraft.modID, "tnt", 1), getModItem(EnderZoo.modID, "confusingDust", 4) },
                 GT_Values.NF,
-                getModItem("EnderZoo", "blockConfusingCharge", 1),
+                getModItem(EnderZoo.modID, "blockConfusingCharge", 1),
+                400,
+                16);
+
+        boolean b = GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{getModItem(Minecraft.modID, "tnt", 1), getModItem(EnderZoo.modID, "enderFragment", 4)},
+                GT_Values.NF,
+                getModItem(EnderZoo.modID, "blockEnderCharge", 1),
                 400,
                 16);
 
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("minecraft", "tnt", 1), getModItem("EnderZoo", "enderFragment", 4) },
+                new ItemStack[] { getModItem(EnderZoo.modID, "blockConfusingCharge", 1),
+                        getModItem(EnderZoo.modID, "blockEnderCharge", 1) },
                 GT_Values.NF,
-                getModItem("EnderZoo", "blockEnderCharge", 1),
-                400,
-                16);
-
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("EnderZoo", "blockConfusingCharge", 1),
-                        getModItem("EnderZoo", "blockEnderCharge", 1) },
-                GT_Values.NF,
-                getModItem("EnderZoo", "blockConcussionCharge", 2),
+                getModItem(EnderZoo.modID, "blockConcussionCharge", 2),
                 400,
                 30);
     }

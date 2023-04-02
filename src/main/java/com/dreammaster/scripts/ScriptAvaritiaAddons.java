@@ -1,5 +1,13 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.MissingModIDs.Witchery;
+import static gregtech.api.enums.ModIDs.AppliedEnergistics2;
+import static gregtech.api.enums.ModIDs.Avaritia;
+import static gregtech.api.enums.ModIDs.AvaritiaAddons;
+import static gregtech.api.enums.ModIDs.EternalSingularity;
+import static gregtech.api.enums.ModIDs.ExtraCells2;
+import static gregtech.api.enums.ModIDs.GregTech;
+import static gregtech.api.enums.ModIDs.IronChests;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -30,55 +38,55 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList("avaritiaddons", "eternalsingularity", "extracells", "gregtech", "Avaritia");
+        return Arrays.asList(AppliedEnergistics2.modID, AvaritiaAddons.modID, EternalSingularity.modID, GregTech.modID, Avaritia.modID, IronChests.modID, Witchery.modID );
     }
 
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem("avaritiaddons", "CompressedChest", 1),
+                getModItem(AvaritiaAddons.modID, "CompressedChest", 1),
                 new Object[] { "plateDenseObsidian", "plateDenseObsidian", "plateDenseObsidian", "chestDiamond",
                         ItemList.Electric_Piston_HV.get(1), "chestDiamond", "plateDenseObsidian", "plateDenseObsidian",
                         "plateDenseObsidian" });
         addShapedRecipe(
-                getModItem("avaritiaddons", "CompressedChest", 1),
+                getModItem(AvaritiaAddons.modID, "CompressedChest", 1),
                 new Object[] { "stickObsidian", ItemList.Electric_Piston_HV.get(1), "stickObsidian",
                         "plateDenseObsidian", "chestObsidian", "plateDenseObsidian", "craftingToolWrench",
                         "chestDiamond", "craftingToolScrewdriver" });
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("IronChest", "BlockIronChest", 2, 2), ItemList.Electric_Piston_HV.get(1),
+                new ItemStack[] { getModItem(IronChests.modID, "BlockIronChest", 2, 2), ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4),
                         GT_Utility.getIntegratedCircuit(1), },
                 GT_Values.NF,
-                getModItem("avaritiaddons", "CompressedChest", 1),
+                getModItem(AvaritiaAddons.modID, "CompressedChest", 1),
                 600,
                 480);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("IronChest", "BlockIronChest", 1, 6),
-                        getModItem("IronChest", "BlockIronChest", 1, 2), ItemList.Electric_Piston_HV.get(1),
+                new ItemStack[] { getModItem(IronChests.modID, "BlockIronChest", 1, 6),
+                        getModItem(IronChests.modID, "BlockIronChest", 1, 2), ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
                         GT_Utility.getIntegratedCircuit(3), },
                 GT_Values.NF,
-                getModItem("avaritiaddons", "CompressedChest", 1),
+                getModItem(AvaritiaAddons.modID, "CompressedChest", 1),
                 600,
                 480);
 
         addShapedRecipe(
-                getModItem("avaritiaddons", "ExtremeAutoCrafter", 1),
-                new Object[] { "plateRedAlloy", getModItem("gregtech", "gt.metaitem.01", 1, 32744), "plateRedAlloy",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32603), getModItem("Avaritia", "Dire_Crafting", 1),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32603),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32633), "circuitElite",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32633) });
+                getModItem(AvaritiaAddons.modID, "ExtremeAutoCrafter", 1),
+                new Object[] { "plateRedAlloy", getModItem(GregTech.modID, "gt.metaitem.01", 1, 32744), "plateRedAlloy",
+                        getModItem(GregTech.modID, "gt.metaitem.01", 1, 32603), getModItem(Avaritia.modID, "Dire_Crafting", 1),
+                        getModItem(GregTech.modID, "gt.metaitem.01", 1, 32603),
+                        getModItem(GregTech.modID, "gt.metaitem.01", 1, 32633), "circuitElite",
+                        getModItem(GregTech.modID, "gt.metaitem.01", 1, 32633) });
 
         // clearing NBT of th
         addShapelessCraftingRecipe(
-                getModItem("avaritiaddons", "ExtremeAutoCrafter", 1),
-                new Object[] { getModItem("avaritiaddons", "ExtremeAutoCrafter", 1, 32767), "platePaper" });
+                getModItem(AvaritiaAddons.modID, "ExtremeAutoCrafter", 1),
+                new Object[] { getModItem(AvaritiaAddons.modID, "ExtremeAutoCrafter", 1, 32767), "platePaper" });
 
         // Infinity Chest
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("avaritiaddons", "InfinityChest", 1),
+                getModItem(AvaritiaAddons.modID, "InfinityChest", 1),
                 "abbbcbbba",
                 "bddefeddb",
                 "bbbbabbbb",
@@ -91,24 +99,24 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 'a',
                 "blockCosmicNeutronium",
                 'b',
-                getModItem("Avaritia", "Resource", 1),
+                getModItem(Avaritia.modID, "Resource", 1),
                 'c',
                 "blockInfinity",
                 'd',
                 "ingotInfinity",
                 'e',
-                getModItem("Avaritia", "Resource", 1, 5),
+                getModItem(Avaritia.modID, "Resource", 1, 5),
                 'f',
-                getModItem("eternalsingularity", "eternal_singularity", 1),
+                getModItem(EternalSingularity.modID, "eternal_singularity", 1),
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 129),
+                getModItem(GregTech.modID, "gt.blockmachines", 1, 129),
                 'h',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 60));
+                getModItem(AppliedEnergistics2.modID, "item.ItemMultiMaterial", 1, 60));
 
         // Infinity Egg (Witchery)
-        if (Loader.isModLoaded("witchery") && Config.witch) {
+        if (Config.witch) {
 
-            Block egg = GameRegistry.findBlock("witchery", "infinityegg");
+            Block egg = GameRegistry.findBlock(Witchery.modID, "infinityegg");
 
             ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                     new ItemStack(egg, 1, 0),
@@ -122,17 +130,17 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     "NCIIAIICN",
                     " NNNNNNN ",
                     'D',
-                    getModItem("witchery", "ingredient", 1, 23),
+                    getModItem(Witchery.modID, "ingredient", 1, 23),
                     'N',
                     "plateCosmicNeutronium",
                     'H',
                     new ItemStack(Blocks.dragon_egg),
                     'E',
-                    getModItem("witchery", "stew", 1),
+                    getModItem(Witchery.modID, "stew", 1),
                     'C',
-                    getModItem("witchery", "chalkinfernal", 1),
+                    getModItem(Witchery.modID, "chalkinfernal", 1),
                     'A',
-                    getModItem("witchery", "chalkotherwhere", 1),
+                    getModItem(Witchery.modID, "chalkotherwhere", 1),
                     'I',
                     "plateInfinity");
         }
