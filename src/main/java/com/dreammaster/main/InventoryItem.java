@@ -163,7 +163,6 @@ public class InventoryItem implements IInventory {
             // Just double-checking that the saved slot index is within our inventory array bounds
             if (slot >= 0 && slot < getSizeInventory()) {
                 inventory[slot] = ItemStack.loadItemStackFromNBT(item);
-                // FMLLog.info("Item loaded %s", inventory[slot].getUnlocalizedName());
             }
         }
     }
@@ -191,6 +190,5 @@ public class InventoryItem implements IInventory {
         }
         // Add the TagList to the ItemStack's Tag Compound with the name "ItemInventory"
         tagcompound.setTag("ItemInventory", items);
-        // FMLLog.info("SavedTag: %s", items.toString());
     }
 }

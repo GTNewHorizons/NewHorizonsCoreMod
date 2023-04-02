@@ -92,8 +92,7 @@ public class CustomFuelsCommand implements ICommand {
             EntityPlayerMP tEP = (EntityPlayerMP) pCommandSender;
             boolean tPlayerOpped = MinecraftServer.getServer().getConfigurationManager()
                     .func_152596_g(tEP.getGameProfile());
-            // boolean tIncreative = tEP.capabilities.isCreativeMode;
-            return tPlayerOpped; // && tIncreative;
+            return tPlayerOpped;
         } else {
             return pCommandSender instanceof MinecraftServer;
         }

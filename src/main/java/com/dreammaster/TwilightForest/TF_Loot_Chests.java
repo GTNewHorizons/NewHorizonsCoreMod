@@ -13,7 +13,6 @@ import gregtech.api.util.GT_OreDictUnificator;
 public class TF_Loot_Chests {
 
     public static void init() {
-        // System.out.println("I'm in your loot, adding new things to TF");
 
         // Hill1 = small
         TFTreasure.hill1.common.add(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Thaumium, 2L), 6);

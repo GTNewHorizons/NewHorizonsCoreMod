@@ -364,31 +364,20 @@ public class HazardousItemsHandler {
                 // Tinkers' construct smeltery tank
                 else if ("tconstruct.smeltery.itemblocks.LavaTankItemBlock"
                         .equals(stack.getItem().getClass().getName())) {
-                            // _mLogger.info("Found lavatank");
                             NBTTagCompound tNBT = stack.getTagCompound();
                             if (tNBT != null && tNBT.hasKey("Fluid")) {
-                                // _mLogger.info("...Has NBT 'Fluid'...");
                                 NBTTagCompound tFluidCompound = tNBT.getCompoundTag("Fluid");
                                 if (tFluidCompound != null && tFluidCompound.hasKey("FluidName")) {
-                                    // _mLogger.info("...Has NBT 'FluidName'...");
                                     String tFluidName = tFluidCompound.getString("FluidName");
                                     if (tFluidName != null && !tFluidName.isEmpty()) {
-                                        // _mLogger.info("...Finding Hazardous Fluids...");
                                         HazardousItems.HazardousFluid hazardFluid = _mHazardItemsCollection
                                                 .FindHazardousFluidExact(tFluidName);
                                         if (hazardFluid != null && hazardFluid.getCheckInventory()) {
-                                            // _mLogger.info("...Found Hazardous Fluids");
                                             doEffects(HazardCause.inventoryItem(stack), hazardFluid, pPlayer);
                                         }
-                                        // else
-                                        // _mLogger.info("...Not found Hazardous Fluids");
                                     }
                                 }
-                                // else
-                                // _mLogger.info("...Has no NBT 'FluidName'");
                             }
-                            // else
-                            // _mLogger.info("...Has no NBT 'Fluid'");
                         } else {
                             HazardousItem hazardItem = _mHazardItemsCollection.FindHazardousItem(stack);
                             if (hazardItem != null && hazardItem.getCheckInventory()) {
@@ -397,8 +386,6 @@ public class HazardousItemsHandler {
                         }
             } catch (Exception e) {
                 _mLogger.debug(String.format("Something weird happend with item %s", tCurrIS));
-                // Silently catching exception and continue
-                continue;
             }
         }
     }

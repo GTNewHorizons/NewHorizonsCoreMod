@@ -86,7 +86,6 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
         } else {
             return super.getUnlocalizedName(stack);
         }
-        // return this.getUnlocalizedName() + "_" + stack.getItemDamage();
     }
 
     public IIcon[] icons = new IIcon[2];

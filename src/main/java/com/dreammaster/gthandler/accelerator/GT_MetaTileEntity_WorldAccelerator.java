@@ -310,9 +310,6 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
             }
 
             long tEnergyDemand = getEnergyDemand(getSpeedTierOverride(), getRadiusTierOverride(), mMode == 1);
-            // public static final long[] V = new long[]{8, 32, 128, 512, 2048, 8192, 32768, 131072, 524288,
-            // Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE,
-            // Integer.MAX_VALUE, Integer.MAX_VALUE};
 
             // Do we have enough energy to run? Or are we not allowed to run?
             if (pBaseMetaTileEntity.getStoredEU() < tEnergyDemand || !pBaseMetaTileEntity.isAllowedToWork()) {

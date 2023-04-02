@@ -98,14 +98,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 OrePrefixes.plateDense,
                 Materials.MysteriousCrystal,
                 ItemList.MysteriousCrystalDensePlate.getIS());
-        // GT_OreDictUnificator.registerOre(OrePrefixes.lens, Materials.MysteriousCrystal,
-        // ItemList.MysteriousCrystalLens.getIS());
-        // GT_OreDictUnificator.registerOre(OrePrefixes.gemFlawless, Materials.MysteriousCrystal,
-        // ItemList.MysteriousCrystalGemFlawless.getIS());
-        // GT_OreDictUnificator.registerOre(OrePrefixes.gemExquisite, Materials.MysteriousCrystal,
-        // ItemList.MysteriousCrystalGemExquisite.getIS());
-        // GT_OreDictUnificator.registerOre(OrePrefixes.gem, Materials.MysteriousCrystal,
-        // ItemList.MysteriousCrystal.getIS());
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.plate,
                 Materials.Bedrockium,
@@ -327,12 +319,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 OrePrefixes.block,
                 Materials.Reinforced,
                 GT_ModHandler.getModItem("StevesCarts", "BlockMetalStorage", 1L, 0));
-        // GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.Reinforced,
-        // GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 22));
-        // GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.Galgadorian,
-        // GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 47));
-        // GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.EnhancedGalgadorian,
-        // GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 49));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.Galgadorian,

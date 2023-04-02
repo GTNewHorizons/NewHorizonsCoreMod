@@ -50,10 +50,10 @@ public enum CustomItemList implements IItemContainer {
     Battery_TurboCharger_4by4_LuV,
     Battery_TurboCharger_4by4_ZPM,
     Battery_TurboCharger_4by4_UV,
-    Battery_TurboCharger_4by4_UHV, // Battery_TurboCharger_4by4_UEV,Battery_TurboCharger_4by4_UIV,Battery_TurboCharger_4by4_UMV,Battery_TurboCharger_4by4_UXV,Battery_TurboCharger_4by4_MAXV,
+    Battery_TurboCharger_4by4_UHV,
     Battery_Charger_4by4_UEV,
     Battery_Charger_4by4_UIV,
-    Battery_Charger_4by4_UMV, // Battery_Charger_4by4_UXV, Battery_Charger_4by4_MAXV,
+    Battery_Charger_4by4_UMV,
     Battery_Buffer_1by1_UEV,
     Battery_Buffer_1by1_UIV,
     Battery_Buffer_1by1_UMV,
@@ -454,7 +454,7 @@ public enum CustomItemList implements IItemContainer {
     WiremillUIV,
     WiremillUMV,
     PumpLuV,
-    PumpZPM, // PumpUV, PumpUHV, PumpUEV, PumpUIV, PumpUMV,
+    PumpZPM,
     AcceleratorLV,
     AcceleratorMV,
     AcceleratorHV,
@@ -853,8 +853,6 @@ public enum CustomItemList implements IItemContainer {
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;
-
-    // public static Fluid sOilExtraHeavy, sOilHeavy, sOilMedium, sOilLight, sNaturalGas;
 
     @Override
     public IItemContainer set(Item aItem) {

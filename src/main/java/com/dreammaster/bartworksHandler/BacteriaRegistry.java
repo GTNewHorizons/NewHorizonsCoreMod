@@ -37,7 +37,6 @@ public class BacteriaRegistry {
         runBWRecipes();
         runGTRecipes();
         new BW_Recipe_Loader().run();
-        // GalacticGreg.ADDITIONALVEINREGISTER.add(new BW_New_Ores_Loader());
         CultureSet.clear(); // deletes map, not used anymore
     }
 
