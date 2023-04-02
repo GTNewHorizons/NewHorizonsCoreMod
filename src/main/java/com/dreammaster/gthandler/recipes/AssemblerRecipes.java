@@ -5394,7 +5394,7 @@ public class AssemblerRecipes implements Runnable {
                             .getModItem("ProjRed|Illumination", "projectred.illumination.cagelamp2.inv", 1L, 14),
                             GT_ModHandler.getModItem("GalacticraftCore", "item.heavyPlating", 4L, 0),
                             GT_Utility.getIntegratedCircuit(4) },
-                    Materials.StainlessSteel.getFluid(36L),
+                    Materials.StainlessSteel.getMolten(36L),
                     GT_ModHandler.getModItem("GalacticraftCore", "item.noseCone", 1L, 0),
                     50,
                     (int) TierEU.RECIPE_LV);
@@ -5403,21 +5403,21 @@ public class AssemblerRecipes implements Runnable {
                     new ItemStack[] { GT_ModHandler.getModItem("GalacticraftCore", "item.noseCone", 1L, 0),
                             GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 4L, 0),
                             GT_Utility.getIntegratedCircuit(4) },
-                    Materials.Titanium.getFluid(36L),
+                    Materials.Titanium.getMolten(36L),
                     GT_ModHandler.getModItem("GalacticraftMars", "item.heavyNoseCone", 1L, 0),
                     50,
                     (int) TierEU.RECIPE_MV);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { GT_ModHandler.getModItem("GalacticraftMars", "item.heavyNoseCone", 1L, 0),
                             CustomItemList.HeavyDutyPlateTier5.get(4), GT_Utility.getIntegratedCircuit(4) },
-                    Materials.TungstenSteel.getFluid(36L),
+                    Materials.TungstenSteel.getMolten(36L),
                     CustomItemList.HeavyDutyNoseConeTier3.get(1L),
                     50,
                     (int) TierEU.RECIPE_HV);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { CustomItemList.HeavyDutyNoseConeTier3.get(1L),
                             CustomItemList.HeavyDutyPlateTier7.get(4), GT_Utility.getIntegratedCircuit(4) },
-                    Materials.NaquadahAlloy.getFluid(36L),
+                    Materials.NaquadahAlloy.getMolten(36L),
                     CustomItemList.HeavyDutyNoseConeTier4.get(1L),
                     50,
                     (int) TierEU.RECIPE_EV);
