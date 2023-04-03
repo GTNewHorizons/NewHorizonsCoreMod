@@ -1,7 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.MissingModIDs.SuperSolarPanels;
 import static gregtech.api.enums.GT_Values.NF;
 import static gregtech.api.enums.GT_Values.NI;
+import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.ModIDs.GalacticraftCore;
+import static gregtech.api.enums.ModIDs.OpenComputers;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -12,7 +16,6 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.gthandler.CustomItemList;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -156,7 +159,7 @@ public class LaserEngraverRecipes implements Runnable {
                 (int) (GT_Values.V[8] - (GT_Values.V[8] / 10)),
                 true);
 
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
             // Optical Boule
             GT_Values.RA.addLaserEngraverRecipe(
                     new ItemStack[] { ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
@@ -173,18 +176,20 @@ public class LaserEngraverRecipes implements Runnable {
             Fluid oganesson = FluidRegistry.getFluid("oganesson") != null ? FluidRegistry.getFluid("oganesson")
                     : FluidRegistry.getFluid("radon");
 
-            // Photonically Enhanced Wafer
-            GT_Values.RA.addLaserEngraverRecipe(
-                    new ItemStack[] { ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
-                            Materials.Glowstone.getNanite(1),
-                            GT_ModHandler.getModItem("supersolarpanel", "solarsplitter", 0L, 0) // Solar Light Splitter
-                    },
-                    new FluidStack[] { Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000) },
-                    new ItemStack[] { ItemList.Circuit_Silicon_Wafer7.get(1L) },
-                    new FluidStack[] { Materials.Tin.getMolten(1000L) },
-                    10 * 20,
-                    7_864_320,
-                    true);
+            if (SuperSolarPanels.isModLoaded()) {
+                // Photonically Enhanced Wafer
+                GT_Values.RA.addLaserEngraverRecipe(
+                        new ItemStack[]{ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
+                                Materials.Glowstone.getNanite(1),
+                                GT_ModHandler.getModItem(SuperSolarPanels.modID, "solarsplitter", 0L, 0) // Solar Light Splitter
+                        },
+                        new FluidStack[]{Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000)},
+                        new ItemStack[]{ItemList.Circuit_Silicon_Wafer7.get(1L)},
+                        new FluidStack[]{Materials.Tin.getMolten(1000L)},
+                        10 * 20,
+                        7_864_320,
+                        true);
+            }
 
             GT_Values.RA.addLaserEngraverRecipe(
                     new ItemStack[] { WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0) }, // Hedenbergite Lens
@@ -218,22 +223,22 @@ public class LaserEngraverRecipes implements Runnable {
         }
 
         // GC/GS Wafer
-        if (Loader.isModLoaded("GalacticraftCore")) {
+        if (GalacticraftCore.isModLoaded()) {
             GT_Values.RA.addLaserEngraverRecipe(
                     ItemList.Circuit_Silicon_Wafer.get(1L),
                     CustomItemList.ReinforcedGlassLense.get(0),
-                    GT_ModHandler.getModItem("GalacticraftCore", "item.basicItem", 1L, 13),
+                    GT_ModHandler.getModItem(GalacticraftCore.modID, "item.basicItem", 1L, 13),
                     200,
                     256);
             GT_Values.RA.addLaserEngraverRecipe(
                     ItemList.Circuit_Silicon_Wafer2.get(1L),
                     CustomItemList.ReinforcedGlassLense.get(0),
-                    GT_ModHandler.getModItem("GalacticraftCore", "item.basicItem", 1L, 14),
+                    GT_ModHandler.getModItem(GalacticraftCore.modID, "item.basicItem", 1L, 14),
                     200,
                     480);
         }
 
-        if (Loader.isModLoaded("OpenComputers")) {
+        if (OpenComputers.isModLoaded()) {
             // floppys w NBT
             makeFloppy("OpenOS (Operating System)", "openos", 2, 1);
             makeFloppy("Plan9k (Operating System)", "plan9k", 1, 2);
@@ -252,7 +257,7 @@ public class LaserEngraverRecipes implements Runnable {
     }
 
     private static final boolean makeFloppy(String displayname, String name, int color, int circuit) {
-        ItemStack floppy = GT_ModHandler.getModItem("OpenComputers", "item", 1L, 4);
+        ItemStack floppy = GT_ModHandler.getModItem(OpenComputers.modID, "item", 1L, 4);
         NBTTagCompound tag = new NBTTagCompound(), subtag = new NBTTagCompound();
         subtag.setString("Name", displayname);
         tag.setTag("display", subtag);
@@ -263,7 +268,7 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setString("oc:lootFactory", "OpenComputers:" + name);
         floppy.setTagCompound(tag);
         return GT_Values.RA.addLaserEngraverRecipe(
-                GT_ModHandler.getModItem("OpenComputers", "item", 1L, 4),
+                GT_ModHandler.getModItem(OpenComputers.modID, "item", 1L, 4),
                 GT_Utility.getIntegratedCircuit(circuit),
                 floppy,
                 200,
@@ -271,7 +276,7 @@ public class LaserEngraverRecipes implements Runnable {
     }
 
     private static final boolean makeLuaBios() {
-        ItemStack lua = GT_ModHandler.getModItem("OpenComputers", "eeprom", 1L, 0);
+        ItemStack lua = GT_ModHandler.getModItem(OpenComputers.modID, "eeprom", 1L, 0);
         NBTTagCompound tag = new NBTTagCompound(), subtag = new NBTTagCompound();
         subtag.setString("oc:label", "EEPROM (Lua Bios)");
         subtag.setBoolean("oc:readonly", false);
@@ -352,7 +357,7 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setTag("oc:data", subtag);
         lua.setTagCompound(tag);
         return GT_Values.RA.addLaserEngraverRecipe(
-                GT_ModHandler.getModItem("OpenComputers", "eeprom", 1L, 0),
+                GT_ModHandler.getModItem(OpenComputers.modID, "eeprom", 1L, 0),
                 GT_Utility.getIntegratedCircuit(1),
                 lua,
                 200,

@@ -2,9 +2,12 @@ package com.dreammaster.gthandler;
 
 import static com.dreammaster.MissingModIDs.AdventureBackpack;
 import static com.dreammaster.MissingModIDs.OpenPrinters;
+import static com.dreammaster.MissingModIDs.ProjectRedIllumination;
 import static com.dreammaster.MissingModIDs.ZTones;
 import static gregtech.api.enums.ModIDs.BartWorks;
 import static gregtech.api.enums.ModIDs.BuildCraftFactory;
+import static gregtech.api.enums.ModIDs.Computronics;
+import static gregtech.api.enums.ModIDs.ExtraUtilities;
 import static gregtech.api.enums.ModIDs.Forestry;
 import static gregtech.api.enums.ModIDs.GalacticraftCore;
 import static gregtech.api.enums.ModIDs.GalacticraftMars;
@@ -959,13 +962,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
                             OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
                             OrePrefixes.dust.get(Materials.QuartzSand), 'W',
-                            GT_ModHandler.getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0), 'B',
+                            GT_ModHandler.getModItem(IguanaTweaksTinkerConstruct.modID, "clayBucketWater", 1, 0), 'B',
                             new ItemStack(Items.bucket, 1, 0) });
             GT_ModHandler.addCraftingRecipe(
                     new ItemStack(Items.clay_ball, 3, 0),
                     GT_Proxy.tBits,
                     new Object[] { "CCC", "CBC", "CCC", 'C', OrePrefixes.dustSmall.get(Materials.Clay), 'B',
-                            GT_ModHandler.getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0) });
+                            GT_ModHandler.getModItem(IguanaTweaksTinkerConstruct.modID, "clayBucketWater", 1, 0) });
         }
 
         if (Forestry.isModLoaded()) {
@@ -1088,7 +1091,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     GT_ModHandler.getModItem(GalacticraftCore.modID, "item.noseCone", 1L, 0),
                     bits,
                     new Object[] { "SNH", "CPC", "PPP", 'N', GT_ModHandler
-                            .getModItem("ProjRed|Illumination", "projectred.illumination.cagelamp2.inv", 1L, 14), 'P',
+                            .getModItem(ProjectRedIllumination.modID, "projectred.illumination.cagelamp2.inv", 1L, 14), 'P',
                             GT_ModHandler.getModItem(GalacticraftCore.modID, "item.heavyPlating", 1L, 0), 'C',
                             OrePrefixes.screw.get(Materials.StainlessSteel), 'S', ToolDictNames.craftingToolScrewdriver,
                             'H', ToolDictNames.craftingToolHardHammer });
@@ -1292,7 +1295,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     bits4,
                     new Object[] { "SPS", "PRP", "SPS", 'S', OrePrefixes.screw.get(Materials.Steel), 'P',
                             OrePrefixes.plate.get(Materials.Obsidian), 'R',
-                            GT_ModHandler.getModItem("ExtraUtilities", "trashcan", 1L, 0) });
+                            GT_ModHandler.getModItem(ExtraUtilities.modID, "trashcan", 1L, 0) });
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(Railcraft.modID, aTextMachineBeta, 2L, 13),
                     bits4,
@@ -1452,7 +1455,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     GT_ModHandler.getModItem(Railcraft.modID, "cart.loco.electric", 1L, 0),
                     bits,
                     new Object[] { "LFB", "MCM", "WTW", 'L',
-                            GT_ModHandler.getModItem("computronics", "computronics.colorfulLamp", 1L, 0), 'F',
+                            GT_ModHandler.getModItem(Computronics.modID, "computronics.colorfulLamp", 1L, 0), 'F',
                             GT_ModHandler.getModItem(Railcraft.modID, "machine.epsilon", 1L, 0), 'B',
                             ItemList.Casing_SolidSteel, 'M', ItemList.Electric_Motor_MV, 'C',
                             GT_ModHandler.getIC2Item("coil", 1L), 'W', ItemList.Component_Minecart_Wheels_Steel, 'T',

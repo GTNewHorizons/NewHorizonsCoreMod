@@ -5,6 +5,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
+import static gregtech.api.enums.ModIDs.NewHorizonsCoreMod;
+
 public class GT_Loader_Materials {
 
     public void run() {
@@ -13,7 +15,7 @@ public class GT_Loader_Materials {
 
     private void registerMaterialRecipes() {
         GT_ModHandler.addShapelessCraftingRecipe(
-                GT_ModHandler.getModItem("dreamcraft", "item.AlumiteDust", 8L),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.modID, "item.AlumiteDust", 8L),
                 GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
                         OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),

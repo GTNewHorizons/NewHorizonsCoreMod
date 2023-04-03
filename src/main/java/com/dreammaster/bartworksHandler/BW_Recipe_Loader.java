@@ -1,6 +1,7 @@
 package com.dreammaster.bartworksHandler;
 
 import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Ruridit;
+import static gregtech.api.enums.ModIDs.GalacticraftMars;
 import static gregtech.api.enums.OrePrefixes.bolt;
 import static gregtech.api.enums.OrePrefixes.dustTiny;
 
@@ -23,9 +24,9 @@ public class BW_Recipe_Loader implements Runnable {
                 CustomItemList.HeavyDutyPlateTier4.get(1L),
                 Ruridit.get(dustTiny, 4));
         GT_Values.RA.addAssemblylineRecipe(
-                GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                GT_ModHandler.getModItem(GalacticraftMars.modID, "item.itemBasicAsteroids", 1L, 0),
                 2500,
-                new ItemStack[] { GT_ModHandler.getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1L, 0),
+                new ItemStack[] { GT_ModHandler.getModItem(GalacticraftMars.modID, "item.itemBasicAsteroids", 1L, 0),
                         CustomItemList.IceCompressedPlate.get(3L), CustomItemList.IceCompressedPlate.get(3L),
                         Ruridit.get(bolt, 4) },
                 new FluidStack[] { FluidRegistry.getFluidStack("molten.indalloy140", 36) },

@@ -32,6 +32,8 @@ import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import eu.usrv.yamcore.persisteddata.PersistedDataBase;
 
+import static gregtech.api.enums.ModIDs.Thaumcraft;
+
 public class CustomDropsHandler {
 
     private LogHelper _mLogger = MainRegistry.Logger;
@@ -189,7 +191,7 @@ public class CustomDropsHandler {
             {
                 return;
             }
-            if (Loader.isModLoaded("Thaumcraft")) {
+            if (Thaumcraft.isModLoaded()) {
                 if (tEP instanceof FakeThaumcraftPlayer) {
                     return;
                 }

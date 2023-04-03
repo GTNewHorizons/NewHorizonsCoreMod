@@ -8,22 +8,25 @@ import gregtech.api.objects.GT_ItemStack;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Disassembler;
 
+import static gregtech.api.enums.ModIDs.GraviSuite;
+import static gregtech.api.enums.ModIDs.IndustrialCraft2;
+
 public class RecipeRemoval implements Runnable {
 
     @Override
     public void run() {
         disassemblerBlacklist();
 
-        if (Loader.isModLoaded("IC2")) {
+        if (IndustrialCraft2.isModLoaded()) {
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumHelmet", 1, GT_Values.W));
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumBodyarmor", 1, GT_Values.W));
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumLeggings", 1, GT_Values.W));
             GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getIC2Item("quantumBoots", 1, GT_Values.W));
         }
-        if (Loader.isModLoaded("GraviSuite")) {
+        if (GraviSuite.isModLoaded()) {
             GT_ModHandler
-                    .removeRecipeByOutput(GT_ModHandler.getModItem("GraviSuite", "graviChestPlate", 1, GT_Values.W));
-            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem("GraviSuite", "relocator", 1, GT_Values.W));
+                    .removeRecipeByOutput(GT_ModHandler.getModItem(GraviSuite.modID, "graviChestPlate", 1, GT_Values.W));
+            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(GraviSuite.modID, "relocator", 1, GT_Values.W));
         }
     }
 

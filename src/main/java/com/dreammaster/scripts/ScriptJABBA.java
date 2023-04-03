@@ -4,11 +4,13 @@ import static com.dreammaster.MissingModIDs.ExtraTrees;
 import static com.dreammaster.MissingModIDs.JABBA;
 import static gregtech.api.enums.ModIDs.BartWorks;
 import static gregtech.api.enums.ModIDs.BiomesOPlanty;
+import static gregtech.api.enums.ModIDs.EnderStorage;
 import static gregtech.api.enums.ModIDs.ExtraUtilities;
 import static gregtech.api.enums.ModIDs.Forestry;
 import static gregtech.api.enums.ModIDs.GregTech;
 import static gregtech.api.enums.ModIDs.Minecraft;
 import static gregtech.api.enums.ModIDs.Natura;
+import static gregtech.api.enums.ModIDs.Railcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -52,7 +54,7 @@ public class ScriptJABBA implements IScriptLoader {
                 200,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem("BiomesOPlenty", "planks", 8, 32767),
+                new ItemStack[] { getModItem(BiomesOPlanty.modID, "planks", 8, 32767),
                         getModItem(Minecraft.modID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.modID, "barrel", 1),
@@ -369,14 +371,14 @@ public class ScriptJABBA implements IScriptLoader {
         addShapedRecipe(
                 getModItem(JABBA.modID, "upgradeCore", 2, 1),
                 new Object[] { "plateEnderEye", getModItem(Minecraft.modID, "piston", 1), "plateEnderEye",
-                        getModItem(Minecraft.modID, "piston", 1), getModItem("EnderStorage", "enderChest", 1),
+                        getModItem(Minecraft.modID, "piston", 1), getModItem(EnderStorage.modID, "enderChest", 1),
                         getModItem(Minecraft.modID, "piston", 1), "plateEnderEye",
                         getModItem(Minecraft.modID, "piston", 1), "plateEnderEye" });
 
         addShapedRecipe(
                 getModItem(JABBA.modID, "upgradeCore", 2, 1),
                 new Object[] { "plateEnderEye", getModItem(Minecraft.modID, "sticky_piston", 1), "plateEnderEye",
-                        getModItem(Minecraft.modID, "piston", 1), getModItem("EnderStorage", "enderChest", 1),
+                        getModItem(Minecraft.modID, "piston", 1), getModItem(EnderStorage.modID, "enderChest", 1),
                         getModItem(Minecraft.modID, "piston", 1), "plateEnderEye",
                         getModItem(Minecraft.modID, "sticky_piston", 1), "plateEnderEye" });
 
@@ -411,14 +413,14 @@ public class ScriptJABBA implements IScriptLoader {
         addShapedRecipe(
                 getModItem(JABBA.modID, "upgradeCore", 1, 7),
                 new Object[] { "plateIron", getModItem(Minecraft.modID, "piston", 1), "plateIron",
-                        getModItem(Minecraft.modID, "piston", 1), getModItem("Railcraft", "machine.beta", 1, 11),
+                        getModItem(Minecraft.modID, "piston", 1), getModItem(Railcraft.modID, "machine.beta", 1, 11),
                         getModItem(Minecraft.modID, "piston", 1), "plateIron", getModItem(Minecraft.modID, "piston", 1),
                         "plateIron" });
 
         addShapedRecipe(
                 getModItem(JABBA.modID, "upgradeCore", 1, 7),
                 new Object[] { "plateIron", getModItem(Minecraft.modID, "sticky_piston", 1), "plateIron",
-                        getModItem(Minecraft.modID, "piston", 1), getModItem("Railcraft", "machine.beta", 1, 11),
+                        getModItem(Minecraft.modID, "piston", 1), getModItem(Railcraft.modID, "machine.beta", 1, 11),
                         getModItem(Minecraft.modID, "piston", 1), "plateIron",
                         getModItem(Minecraft.modID, "sticky_piston", 1), "plateIron" });
 

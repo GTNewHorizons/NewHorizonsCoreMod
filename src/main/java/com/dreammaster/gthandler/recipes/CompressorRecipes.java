@@ -4,7 +4,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -12,49 +11,69 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
+import static com.dreammaster.MissingModIDs.ExtraTrees;
+import static com.dreammaster.MissingModIDs.StevesCarts2;
+import static gregtech.api.enums.ModIDs.AdvancedSolarPanel;
+import static gregtech.api.enums.ModIDs.GTPlusPlus;
+import static gregtech.api.enums.ModIDs.IndustrialCraft2;
+import static gregtech.api.enums.ModIDs.Natura;
+import static gregtech.api.enums.ModIDs.OpenComputers;
+import static gregtech.api.enums.ModIDs.Thaumcraft;
+import static gregtech.api.enums.ModIDs.TinkerConstruct;
+
 public class CompressorRecipes implements Runnable {
 
     @Override
     public void run() {
-        // Compressed Glowstone
-        GT_Values.RA.addCompressorRecipe(
-                new ItemStack(Blocks.glowstone, 9),
-                GT_ModHandler.getModItem("miscutils", "blockCompressedObsidian", 1L, 6),
-                300,
-                2);
+        if (GTPlusPlus.isModLoaded()) {
+            // Compressed Glowstone
+            GT_Values.RA.addCompressorRecipe(
+                    new ItemStack(Blocks.glowstone, 9),
+                    GT_ModHandler.getModItem(GTPlusPlus.modID, "blockCompressedObsidian", 1L, 6),
+                    300,
+                    2);
 
-        // Double Compressed Glowstone
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem("miscutils", "blockCompressedObsidian", 9L, 6),
-                GT_ModHandler.getModItem("miscutils", "blockCompressedObsidian", 1L, 7),
-                300,
-                2);
+            // Double Compressed Glowstone
+            GT_Values.RA.addCompressorRecipe(
+                    GT_ModHandler.getModItem(GTPlusPlus.modID, "blockCompressedObsidian", 9L, 6),
+                    GT_ModHandler.getModItem(GTPlusPlus.modID, "blockCompressedObsidian", 1L, 7),
+                    300,
+                    2);
+        }
 
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem("IC2", "itemWeed", 16L),
-                ItemList.IC2_Plantball.get(1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem("ExtraTrees", "food", 64L, 24),
-                ItemList.IC2_Plantball.get(1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L),
-                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 0),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sunnarium, 1L),
-                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 9),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 9L, 9),
-                GT_ModHandler.getModItem("AdvancedSolarPanel", "asp_crafting_items", 1L, 0),
-                300,
-                2);
+        if (IndustrialCraft2.isModLoaded()) {
+            GT_Values.RA.addCompressorRecipe(
+                    GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemWeed", 16L),
+                    ItemList.IC2_Plantball.get(1L),
+                    300,
+                    2);
+        }
+
+        if (ExtraTrees.isModLoaded()) {
+            GT_Values.RA.addCompressorRecipe(
+                    GT_ModHandler.getModItem(ExtraTrees.modID, "food", 64L, 24),
+                    ItemList.IC2_Plantball.get(1L),
+                    300,
+                    2);
+        }
+
+        if (AdvancedSolarPanel.isModLoaded()) {
+            GT_Values.RA.addCompressorRecipe(
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L),
+                    GT_ModHandler.getModItem(AdvancedSolarPanel.modID, "asp_crafting_items", 1L, 0),
+                    300,
+                    2);
+            GT_Values.RA.addCompressorRecipe(
+                    GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sunnarium, 1L),
+                    GT_ModHandler.getModItem(AdvancedSolarPanel.modID, "asp_crafting_items", 1L, 9),
+                    300,
+                    2);
+            GT_Values.RA.addCompressorRecipe(
+                    GT_ModHandler.getModItem(AdvancedSolarPanel.modID, "asp_crafting_items", 9L, 9),
+                    GT_ModHandler.getModItem(AdvancedSolarPanel.modID, "asp_crafting_items", 1L, 0),
+                    300,
+                    2);
+        }
         GT_Values.RA.addCompressorRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.WroughtIron, 9L),
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L),
@@ -85,11 +104,13 @@ public class CompressorRecipes implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Sodalite, 1L),
                 300,
                 2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnhancedGalgadorian, 9L),
-                GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 48),
-                300,
-                2);
+        if (StevesCarts2.isModLoaded()) {
+            GT_Values.RA.addCompressorRecipe(
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnhancedGalgadorian, 9L),
+                    GT_ModHandler.getModItem(StevesCarts2.modID, "ModuleComponents", 1L, 48),
+                    300,
+                    2);
+        }
 
         GT_Values.RA.addCompressorRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L),
@@ -117,60 +138,62 @@ public class CompressorRecipes implements Runnable {
                 300,
                 2);
 
-        GT_ModHandler.addCompressionRecipe(
-                GT_ModHandler.getModItem("Natura", "barleyFood", 8, 0),
-                ItemList.IC2_Plantball.get(1));
+        if (Natura.isModLoaded()) {
+            GT_ModHandler.addCompressionRecipe(
+                    GT_ModHandler.getModItem(Natura.modID, "barleyFood", 8, 0),
+                    ItemList.IC2_Plantball.get(1));
+        }
 
-        if (Loader.isModLoaded("Thaumcraft")) {
+        if (Thaumcraft.isModLoaded()) {
             // Arcane Slabs -> Arcane Stone
             GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem("Thaumcraft", "blockCosmeticSlabStone", 4L),
-                    GT_ModHandler.getModItem("Thaumcraft", "blockCosmeticSolid", 1L, 6),
+                    GT_ModHandler.getModItem(Thaumcraft.modID, "blockCosmeticSlabStone", 4L),
+                    GT_ModHandler.getModItem(Thaumcraft.modID, "blockCosmeticSolid", 1L, 6),
                     160,
                     4);
         }
 
-        if (Loader.isModLoaded("OpenComputers")) {
+        if (OpenComputers.isModLoaded()) {
             // Block of Chamelium
             GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem("OpenComputers", "item", 9L, 96),
-                    GT_ModHandler.getModItem("OpenComputers", "chameliumBlock", 1L, 0),
+                    GT_ModHandler.getModItem(OpenComputers.modID, "item", 9L, 96),
+                    GT_ModHandler.getModItem(OpenComputers.modID, "chameliumBlock", 1L, 0),
                     300,
                     2);
         }
 
-        if (Loader.isModLoaded("TConstruct")) {
+        if (TinkerConstruct.isModLoaded()) {
             GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "materials", 9L, 14),
-                    GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 7),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 9L, 14),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "MetalBlock", 1L, 7),
                     300,
                     2);
             GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "materials", 4L, 2),
-                    GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 4L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "Smeltery", 1L, 2),
                     300,
                     2);
             GT_Values.RA.addCompressorRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
-                    GT_ModHandler.getModItem("TConstruct", "materials", 1L, 12),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 1L, 12),
                     100,
                     2);
 
             // Slime crystals
             GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 4L, 0),
-                    GT_ModHandler.getModItem("TConstruct", "materials", 1L, 1),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "CraftedSoil", 4L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 1L, 1),
                     300,
                     2);
             GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "CraftedSoil", 4L, 2),
-                    GT_ModHandler.getModItem("TConstruct", "materials", 1L, 17),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "CraftedSoil", 4L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 1L, 17),
                     300,
                     2);
 
             GT_Values.RA.addCompressorRecipe(
                     new ItemStack(Items.paper, 64, 0),
-                    GT_ModHandler.getModItem("TConstruct", "materials", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 1L, 0),
                     300,
                     2);
         }

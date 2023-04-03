@@ -1,11 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.MissingModIDs.OpenPrinters;
 import static com.dreammaster.MissingModIDs.PamsHarvestTheNether;
 import static gregtech.api.enums.ModIDs.AdvancedSolarPanel;
 import static gregtech.api.enums.ModIDs.Avaritia;
 import static gregtech.api.enums.ModIDs.GalacticraftCore;
 import static gregtech.api.enums.ModIDs.GalacticraftMars;
 import static gregtech.api.enums.ModIDs.GalaxySpace;
+import static gregtech.api.enums.ModIDs.IndustrialCraft2;
 import static gregtech.api.enums.ModIDs.ThaumicBases;
 import static gregtech.api.enums.ModIDs.TinkerConstruct;
 
@@ -15,7 +17,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -34,20 +35,22 @@ public class MaceratorRecipes implements Runnable {
                 80,
                 8);
 
-        GT_Values.RA.addPulveriserRecipe(
-                GT_ModHandler.getModItem("IC2", "itemFuelPlantBall", 2L, 0),
-                new ItemStack[] { CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L),
-                        CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L) },
-                new int[] { 10000, 10000, 5000, 2500 },
-                200,
-                30);
+        if (IndustrialCraft2.isModLoaded()) {
+            GT_Values.RA.addPulveriserRecipe(
+                    GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemFuelPlantBall", 2L, 0),
+                    new ItemStack[]{CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L),
+                            CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L)},
+                    new int[]{10000, 10000, 5000, 2500},
+                    200,
+                    30);
 
-        GT_Values.RA.addPulveriserRecipe(
-                GT_ModHandler.getModItem("IC2", "blockMiningPipe", 2L),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L), },
-                new int[] { 10000 },
-                100,
-                16);
+            GT_Values.RA.addPulveriserRecipe(
+                    GT_ModHandler.getModItem(IndustrialCraft2.modID, "blockMiningPipe", 2L),
+                    new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L),},
+                    new int[]{10000},
+                    100,
+                    16);
+        }
 
         GT_Values.RA.addPulveriserRecipe(
                 new ItemStack(Items.flint, 2, 0),
@@ -99,12 +102,12 @@ public class MaceratorRecipes implements Runnable {
 
         }
 
-        if (Loader.isModLoaded("openprinter")) {
+        if (OpenPrinters.isModLoaded()) {
 
             // Open Printers
             // Paper shreds
             GT_Values.RA.addPulveriserRecipe(
-                    GT_ModHandler.getModItem("openprinter", "openprinter.paperShreds", 1L, 0),
+                    GT_ModHandler.getModItem(OpenPrinters.modID, "openprinter.paperShreds", 1L, 0),
                     new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Paper, 1L) },
                     new int[] { 10000 },
                     20,
@@ -436,7 +439,7 @@ public class MaceratorRecipes implements Runnable {
                     64);
         }
 
-        if (Loader.isModLoaded(GalacticraftMars.modID)) {
+        if (GalacticraftMars.isModLoaded()) {
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem(GalacticraftMars.modID, "tile.asteroidsBlock", 1L, 0),
                     new ItemStack[] { CustomItemList.AsteroidsStoneDust.get(1L),

@@ -1,9 +1,12 @@
 package com.dreammaster.bartworksHandler;
 
+import static com.dreammaster.MissingModIDs.Genetics;
 import static com.dreammaster.gthandler.GT_CoreModSupport.*;
 import static com.github.bartimaeusnek.bartworks.API.BioObjectAdder.*;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.*;
 import static gregtech.api.enums.Materials.*;
+import static gregtech.api.enums.ModIDs.GalaxySpace;
+import static gregtech.api.enums.ModIDs.IndustrialCraft2;
 
 import java.awt.*;
 import java.util.LinkedHashMap;
@@ -213,7 +216,7 @@ public class BacteriaRegistry {
     private void runGTRecipes() {
 
         GT_Values.RA.addPyrolyseRecipe(
-                GT_ModHandler.getModItem("GalaxySpace", "barnardaClog", 64L),
+                GT_ModHandler.getModItem(GalaxySpace.modID, "barnardaClog", 64L),
                 Xenoxene.getFluid(1000),
                 24,
                 Ash.getDust(8),
@@ -289,7 +292,7 @@ public class BacteriaRegistry {
 
     private void runBWRecipes() {
         addBioLabRecipeIncubation(
-                GT_ModHandler.getModItem("GalaxySpace", "barnardaClog", 1L),
+                GT_ModHandler.getModItem(GalaxySpace.modID, "barnardaClog", 1L),
                 CultureSet.get("BarnadaCBac"),
                 new int[] { 250 },
                 FluidRegistry.getFluidStack("unknowwater", 8000),
@@ -330,7 +333,7 @@ public class BacteriaRegistry {
 
         addBacterialVatRecipe(
                 new ItemStack[] { ItemList.Circuit_Chip_Stemcell.get(64L),
-                        GT_ModHandler.getModItem("GalaxySpace", "item.UnknowCrystal", 16L),
+                        GT_ModHandler.getModItem(GalaxySpace.modID, "item.UnknowCrystal", 16L),
                         CustomItemList.TCetiESeaweedExtract.get(4L), Tritanium.getDust(4) },
                 CultureSet.get("StemCellBac"),
                 new FluidStack[] { GrowthMediumRaw.getFluid(8) },
@@ -344,7 +347,7 @@ public class BacteriaRegistry {
 
         addBacterialVatRecipe(
                 new ItemStack[] { ItemList.Circuit_Chip_Stemcell.get(16L),
-                        GT_ModHandler.getModItem("GalaxySpace", "item.UnknowCrystal", 16L),
+                        GT_ModHandler.getModItem(GalaxySpace.modID, "item.UnknowCrystal", 16L),
                         CustomItemList.TCetiESeaweedExtract.get(8L), InfinityCatalyst.getDustTiny(4) },
                 CultureSet.get("BioCellBac"),
                 new FluidStack[] { GrowthMediumRaw.getFluid(5) },
@@ -388,7 +391,7 @@ public class BacteriaRegistry {
                 CLEANROOM);
 
         addBacterialVatRecipe(
-                new ItemStack[] { GT_ModHandler.getModItem("Genetics", "misc", 2L, 4) },
+                new ItemStack[] { GT_ModHandler.getModItem(Genetics.modID, "misc", 2L, 4) },
                 CultureSet.get("BinniGrowthMedium"),
                 new FluidStack[] { GT_ModHandler.getDistilledWater(4L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("binnie.growthmedium", 2) },
@@ -424,7 +427,7 @@ public class BacteriaRegistry {
                 false);
 
         addBioLabRecipeIncubation(
-                GT_ModHandler.getModItem("Genetics", "misc", 1L, 4),
+                GT_ModHandler.getModItem(Genetics.modID, "misc", 1L, 4),
                 CultureSet.get("BinniGrowthMedium"),
                 new int[] { 5000 },
                 Water.getFluid(4000),
@@ -433,7 +436,7 @@ public class BacteriaRegistry {
                 0);
 
         addBioLabRecipeIncubation(
-                GT_ModHandler.getModItem("Genetics", "misc", 1L, 4),
+                GT_ModHandler.getModItem(Genetics.modID, "misc", 1L, 4),
                 CultureSet.get("BinniGrowthMedium"),
                 new int[] { 7500 },
                 GT_ModHandler.getDistilledWater(2000L),
@@ -442,7 +445,7 @@ public class BacteriaRegistry {
                 0);
 
         addBioLabRecipeIncubation(
-                GT_ModHandler.getModItem("Genetics", "misc", 1L, 4),
+                GT_ModHandler.getModItem(Genetics.modID, "misc", 1L, 4),
                 CultureSet.get("BinniGrowthMedium"),
                 new int[] { 9000 },
                 FluidRegistry.getFluidStack("binnie.growthmedium", 1000),
@@ -460,7 +463,7 @@ public class BacteriaRegistry {
                 0);
 
         addBacterialVatRecipe(
-                new ItemStack[] { GT_ModHandler.getModItem("IC2", "itemBiochaff", 4L, 0) },
+                new ItemStack[] { GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemBiochaff", 4L, 0) },
                 CultureSet.get("BinniBacteria"),
                 new FluidStack[] { GT_ModHandler.getDistilledWater(4L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("binnie.bacteria", 2) },
@@ -496,7 +499,7 @@ public class BacteriaRegistry {
                 false);
 
         addBioLabRecipeIncubation(
-                GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0),
+                GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemBiochaff", 16L, 0),
                 CultureSet.get("BinniBacteria"),
                 new int[] { 6000 },
                 FluidRegistry.getFluidStack("binnie.bacteria", 1000),

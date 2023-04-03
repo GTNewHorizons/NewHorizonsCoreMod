@@ -2,13 +2,13 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.MissingModIDs.DraconicEvolution;
 import static com.dreammaster.MissingModIDs.Genetics;
-import static gregtech.api.enums.GT_Values.MOD_ID_DC;
 import static gregtech.api.enums.ModIDs.BartWorks;
 import static gregtech.api.enums.ModIDs.Gendustry;
 import static gregtech.api.enums.ModIDs.HardcoreEnderExpansion;
 import static gregtech.api.enums.ModIDs.IndustrialCraft2;
 import static gregtech.api.enums.ModIDs.IndustrialCraft2Classic;
 import static gregtech.api.enums.ModIDs.Natura;
+import static gregtech.api.enums.ModIDs.NewHorizonsCoreMod;
 import static gregtech.api.enums.ModIDs.TinkerConstruct;
 
 import net.minecraft.init.Blocks;
@@ -41,12 +41,12 @@ public class ChemicalReactorRecipes implements Runnable {
                 GT_Utility.getIntegratedCircuit(1),
                 Materials.Water.getFluid(3000),
                 Materials.Hydrogen.getGas(1000),
-                GT_ModHandler.getModItem(MOD_ID_DC, "item.PotassiumHydroxideDust", 3L, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.modID, "item.PotassiumHydroxideDust", 3L, 0),
                 1200,
                 30);
         // Rock Salt
         GT_Values.RA.addChemicalRecipe(
-                GT_ModHandler.getModItem(MOD_ID_DC, "item.PotassiumHydroxideDust", 1L, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.modID, "item.PotassiumHydroxideDust", 1L, 0),
                 GT_Utility.getIntegratedCircuit(2),
                 Materials.HydrochloricAcid.getFluid(1000),
                 Materials.Water.getFluid(1000),

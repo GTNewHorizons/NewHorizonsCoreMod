@@ -15,6 +15,8 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_RecipeRegistrator;
 import gregtech.api.util.GT_Utility;
 
+import static gregtech.api.enums.ModIDs.Natura;
+
 public class WiremillRecipes implements Runnable {
 
     @Override
@@ -39,9 +41,9 @@ public class WiremillRecipes implements Runnable {
 
         GT_RecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
 
-        if (Loader.isModLoaded("Natura")) {
+        if (Natura.isModLoaded()) {
             GT_Values.RA.addWiremillRecipe(
-                    GT_ModHandler.getModItem("Natura", "barleyFood", 2L, 3),
+                    GT_ModHandler.getModItem(Natura.modID, "barleyFood", 2L, 3),
                     new ItemStack(Items.string, 1, 0),
                     200,
                     8);

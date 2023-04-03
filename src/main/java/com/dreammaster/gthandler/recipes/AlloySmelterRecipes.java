@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.ModIDs.EnderIO;
+import static gregtech.api.enums.ModIDs.IndustrialCraft2;
 import static gregtech.api.enums.ModIDs.TinkerConstruct;
 
 import net.minecraft.init.Blocks;
@@ -133,7 +134,7 @@ public class AlloySmelterRecipes implements Runnable {
                 3);
 
         GT_Values.RA.addAlloySmelterRecipe(
-                GT_ModHandler.getModItem("IC2", "itemPartIridium", 2L),
+                GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemPartIridium", 2L),
                 ItemList.Shape_Mold_Casing.get(0),
                 com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS().splitStack(3),
                 1200,

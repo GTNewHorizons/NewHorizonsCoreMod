@@ -4,11 +4,13 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
+
+import static com.dreammaster.MissingModIDs.ZTones;
+import static gregtech.api.enums.ModIDs.TinkerConstruct;
 
 public class ForgeHammerRecipes implements Runnable {
 
@@ -26,24 +28,24 @@ public class ForgeHammerRecipes implements Runnable {
                 50,
                 4);
 
-        if (Loader.isModLoaded("TConstruct")) {
+        if (TinkerConstruct.isModLoaded()) {
             GT_Values.RA.addForgeHammerRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "Smeltery", 1L, 2),
-                    GT_ModHandler.getModItem("TConstruct", "materials", 3L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "Smeltery", 1L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 3L, 2),
                     20,
                     16);
         }
 
-        if (Loader.isModLoaded("Ztones")) {
+        if (ZTones.isModLoaded()) {
 
             GT_Values.RA.addForgeHammerRecipe(
                     new ItemStack(Items.coal, 1, 0),
-                    GT_ModHandler.getModItem("Ztones", "minicoal", 9L, 0),
+                    GT_ModHandler.getModItem(ZTones.modID, "minicoal", 9L, 0),
                     50,
                     8);
             GT_Values.RA.addForgeHammerRecipe(
                     new ItemStack(Items.coal, 1, 1),
-                    GT_ModHandler.getModItem("Ztones", "minicharcoal", 9L, 0),
+                    GT_ModHandler.getModItem(ZTones.modID, "minicharcoal", 9L, 0),
                     50,
                     8);
         }

@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.MissingModIDs.OpenBlocks;
 import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
 import static gregtech.api.enums.ModIDs.TinkerConstruct;
 
@@ -8,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -233,7 +233,7 @@ public class FluidExtractorRecipes implements Runnable {
                     4);
         }
 
-        if (Loader.isModLoaded("OpenBlocks") && TinkerConstruct.isModLoaded()) {
+        if (OpenBlocks.isModLoaded() && TinkerConstruct.isModLoaded()) {
             GT_Values.RA.addFluidExtractionRecipe(
                     GT_ModHandler.getModItem(TinkerConstruct.modID, "oreBerries", 1L, 5),
                     GT_Values.NI,
