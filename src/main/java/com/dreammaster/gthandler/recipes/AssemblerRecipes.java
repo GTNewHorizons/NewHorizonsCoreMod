@@ -5455,14 +5455,14 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { GT_ModHandler.getModItem(GalacticraftMars.ID, "item.heavyNoseCone", 1L, 0),
                             CustomItemList.HeavyDutyPlateTier5.get(4), GT_Utility.getIntegratedCircuit(4) },
-                    Materials.TungstenSteel.getFluid(36L),
+                    Materials.TungstenSteel.getMolten(36L),
                     CustomItemList.HeavyDutyNoseConeTier3.get(1L),
                     50,
                     (int) TierEU.RECIPE_HV);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { CustomItemList.HeavyDutyNoseConeTier3.get(1L),
                             CustomItemList.HeavyDutyPlateTier7.get(4), GT_Utility.getIntegratedCircuit(4) },
-                    Materials.NaquadahAlloy.getFluid(36L),
+                    Materials.NaquadahAlloy.getMolten(36L),
                     CustomItemList.HeavyDutyNoseConeTier4.get(1L),
                     50,
                     (int) TierEU.RECIPE_EV);
