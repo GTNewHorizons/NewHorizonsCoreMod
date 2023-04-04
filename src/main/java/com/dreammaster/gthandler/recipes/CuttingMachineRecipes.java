@@ -6,7 +6,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -14,12 +13,12 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
-import static com.dreammaster.MissingModIDs.ProjectRedCore;
-import static com.dreammaster.MissingModIDs.ProjectRedIllumination;
-import static com.dreammaster.MissingModIDs.ZTones;
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.IndustrialCraft2;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
+import static gregtech.api.enums.Mods.ProjectRedCore;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
+import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 
 public class CuttingMachineRecipes implements Runnable {
 
@@ -168,7 +167,7 @@ public class CuttingMachineRecipes implements Runnable {
 
         if (IndustrialCraft2.isModLoaded()) {
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(IndustrialCraft2.modID, "blockAlloyGlass", 1L, 0),
+                    GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0),
                     CustomItemList.ReinforcedGlassPLate.get(2L),
                     GT_Values.NI,
                     1200,
@@ -180,67 +179,67 @@ public class CuttingMachineRecipes implements Runnable {
 
         if (ZTones.isModLoaded() && ProjectRedCore.isModLoaded()) {
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 16),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16),
                     Materials.Water.getFluid(100L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampf", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0),
                     GT_Values.NI,
                     200,
                     4);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 16),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16),
                     GT_ModHandler.getDistilledWater(75L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampf", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0),
                     GT_Values.NI,
                     200,
                     4);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 16),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16),
                     Materials.Lubricant.getFluid(25L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampf", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0),
                     GT_Values.NI,
                     100,
                     4);
 
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 24),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24),
                     Materials.Water.getFluid(100L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampt", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0),
                     GT_Values.NI,
                     200,
                     4);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 24),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24),
                     GT_ModHandler.getDistilledWater(75L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampt", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0),
                     GT_Values.NI,
                     200,
                     4);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 24),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24),
                     Materials.Lubricant.getFluid(25L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampt", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0),
                     GT_Values.NI,
                     100,
                     4);
 
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 23),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23),
                     Materials.Water.getFluid(100L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampb", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0),
                     GT_Values.NI,
                     200,
                     4);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 23),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23),
                     GT_ModHandler.getDistilledWater(75L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampb", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0),
                     GT_Values.NI,
                     200,
                     4);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.modID, "projectred.illumination.lamp", 1L, 23),
+                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23),
                     Materials.Lubricant.getFluid(25L),
-                    GT_ModHandler.getModItem(ZTones.modID, "lampb", 4L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0),
                     GT_Values.NI,
                     100,
                     4);
@@ -251,54 +250,54 @@ public class CuttingMachineRecipes implements Runnable {
             // Cutting Saw
             GT_Values.RA.addCutterRecipe(
                     new ItemStack(Blocks.crafting_table, 1),
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "CraftingStation", 1L),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L),
                     GT_Values.NI,
                     4800,
                     30);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "CraftingStation", 1L),
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "CraftingSlab", 1L),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1L),
                     GT_Values.NI,
                     4800,
                     30);
 
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "MetalBlock", 1L, 1),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1),
                     Materials.Water.getFluid(1000),
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L),
                     GT_Values.NI,
                     4800,
                     30);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "MetalBlock", 1L, 1),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1),
                     GT_ModHandler.getDistilledWater(750L),
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L),
                     GT_Values.NI,
                     4800,
                     30);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "MetalBlock", 1L, 1),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1),
                     Materials.Lubricant.getFluid(250),
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L),
                     GT_Values.NI,
                     2400,
                     30);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "MetalBlock", 1L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2),
                     Materials.Water.getFluid(1000),
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L),
                     GT_Values.NI,
                     9600,
                     30);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "MetalBlock", 1L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2),
                     GT_ModHandler.getDistilledWater(750L),
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L),
                     GT_Values.NI,
                     9600,
                     30);
             GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "MetalBlock", 1L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2),
                     Materials.Lubricant.getFluid(250),
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L),
                     GT_Values.NI,

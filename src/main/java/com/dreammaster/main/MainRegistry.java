@@ -1,13 +1,13 @@
 package com.dreammaster.main;
 
-import static com.dreammaster.MissingModIDs.GalactiGreg;
-import static com.dreammaster.MissingModIDs.Witchery;
+import static gregtech.api.enums.Mods.GalactiGreg;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.Railcraft;
-import static gregtech.api.enums.ModIDs.Thaumcraft;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
-import static gregtech.api.enums.ModIDs.TwilightForest;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TwilightForest;
 
 import java.io.File;
 import java.util.Random;

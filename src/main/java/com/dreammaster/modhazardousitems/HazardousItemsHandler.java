@@ -1,6 +1,6 @@
 package com.dreammaster.modhazardousitems;
 
-import static com.dreammaster.MissingModIDs.MineAndBladeBattleGear2;
+import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
 
 import java.io.File;
 import java.io.FileOutputStream;

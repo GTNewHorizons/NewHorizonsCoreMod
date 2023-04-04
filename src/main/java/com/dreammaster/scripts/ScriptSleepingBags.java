@@ -1,10 +1,10 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.MissingModIDs.AdventureBackpack;
-import static com.dreammaster.MissingModIDs.Backpack;
-import static com.dreammaster.MissingModIDs.OpenBlocks;
-import static com.dreammaster.MissingModIDs.SleepingBags;
-import static gregtech.api.enums.ModIDs.Minecraft;
+import static gregtech.api.enums.Mods.AdventureBackpack;
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.OpenBlocks;
+import static gregtech.api.enums.Mods.SleepingBags;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -20,25 +20,25 @@ public class ScriptSleepingBags implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(SleepingBags.modID, AdventureBackpack.modID, OpenBlocks.modID);
+        return Arrays.asList(SleepingBags.ID, AdventureBackpack.ID, OpenBlocks.ID);
     }
 
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem(SleepingBags.modID, "sleepingBag", 1),
-                new Object[] { getModItem(Minecraft.modID, "carpet", 1, 32767),
-                        getModItem(Minecraft.modID, "carpet", 1, 32767),
-                        getModItem(Minecraft.modID, "carpet", 1, 32767), "blockWool", "blockWool", "blockWool",
-                        getModItem(Backpack.modID, "tannedLeather", 1), getModItem(Backpack.modID, "tannedLeather", 1),
-                        getModItem(Backpack.modID, "tannedLeather", 1) });
+                getModItem(SleepingBags.ID, "sleepingBag", 1),
+                new Object[] { getModItem(Minecraft.ID, "carpet", 1, 32767),
+                        getModItem(Minecraft.ID, "carpet", 1, 32767),
+                        getModItem(Minecraft.ID, "carpet", 1, 32767), "blockWool", "blockWool", "blockWool",
+                        getModItem(Backpack.ID, "tannedLeather", 1), getModItem(Backpack.ID, "tannedLeather", 1),
+                        getModItem(Backpack.ID, "tannedLeather", 1) });
 
         addShapelessCraftingRecipe(
-                getModItem(SleepingBags.modID, "sleepingBag", 1),
-                new Object[] { getModItem(AdventureBackpack.modID, "backpackComponent", 1, 1) });
+                getModItem(SleepingBags.ID, "sleepingBag", 1),
+                new Object[] { getModItem(AdventureBackpack.ID, "backpackComponent", 1, 1) });
 
         addShapelessCraftingRecipe(
-                getModItem(AdventureBackpack.modID, "backpackComponent", 1, 1),
-                new Object[] { getModItem(OpenBlocks.modID, "sleepingBag", 1) });
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 1),
+                new Object[] { getModItem(OpenBlocks.ID, "sleepingBag", 1) });
     }
 }

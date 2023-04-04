@@ -9,8 +9,8 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
 
-import static com.dreammaster.MissingModIDs.ZTones;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
+import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 
 public class ForgeHammerRecipes implements Runnable {
 
@@ -30,8 +30,8 @@ public class ForgeHammerRecipes implements Runnable {
 
         if (TinkerConstruct.isModLoaded()) {
             GT_Values.RA.addForgeHammerRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "Smeltery", 1L, 2),
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 3L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 3L, 2),
                     20,
                     16);
         }
@@ -40,12 +40,12 @@ public class ForgeHammerRecipes implements Runnable {
 
             GT_Values.RA.addForgeHammerRecipe(
                     new ItemStack(Items.coal, 1, 0),
-                    GT_ModHandler.getModItem(ZTones.modID, "minicoal", 9L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "minicoal", 9L, 0),
                     50,
                     8);
             GT_Values.RA.addForgeHammerRecipe(
                     new ItemStack(Items.coal, 1, 1),
-                    GT_ModHandler.getModItem(ZTones.modID, "minicharcoal", 9L, 0),
+                    GT_ModHandler.getModItem(ZTones.ID, "minicharcoal", 9L, 0),
                     50,
                     8);
         }

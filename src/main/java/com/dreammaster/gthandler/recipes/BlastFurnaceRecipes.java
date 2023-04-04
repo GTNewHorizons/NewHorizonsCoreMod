@@ -1,7 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.ModIDs.EnderIO;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -2040,7 +2040,7 @@ public class BlastFurnaceRecipes implements Runnable {
         if (TinkerConstruct.isModLoaded()) {
 
             GT_Values.RA.addBlastRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 1L, 12),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 12),
                     GT_Utility.getIntegratedCircuit(1),
                     GT_Values.NF,
                     GT_Values.NF,
@@ -2050,7 +2050,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     120,
                     1600);
             GT_Values.RA.addBlastRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "materials", 1L, 12),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 12),
                     GT_Utility.getIntegratedCircuit(11),
                     Materials.Nitrogen.getGas(1000),
                     GT_Values.NF,
@@ -2065,7 +2065,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     GT_Utility.getIntegratedCircuit(1),
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "GlassBlock", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0),
                     GT_Values.NI,
                     100,
                     120,
@@ -2075,7 +2075,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     GT_Utility.getIntegratedCircuit(1),
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "GlassPane", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 1L, 0),
                     GT_Values.NI,
                     100,
                     120,
@@ -2109,7 +2109,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     Materials.Glass.getDust(1),
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
                     GT_Values.NI,
                     100,
                     120,
@@ -2119,7 +2119,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     Materials.Glass.getDust(1),
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
                     GT_Values.NI,
                     100,
                     120,
@@ -2129,7 +2129,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     Materials.Quartzite.getDust(2),
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
                     GT_Values.NI,
                     100,
                     120,
@@ -2139,7 +2139,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     Materials.Quartzite.getDust(2),
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
                     GT_Values.NI,
                     100,
                     120,
@@ -2149,7 +2149,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     Materials.BorosilicateGlass.getDust(1),
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
                     GT_Values.NI,
                     200,
                     120,
@@ -2159,7 +2159,7 @@ public class BlastFurnaceRecipes implements Runnable {
                     Materials.BorosilicateGlass.getDust(1),
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(EnderIO.modID, "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
                     GT_Values.NI,
                     200,
                     120,

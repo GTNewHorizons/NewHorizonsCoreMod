@@ -1,15 +1,15 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.dreammaster.MissingModIDs.DraconicEvolution;
-import static com.dreammaster.MissingModIDs.Genetics;
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.Gendustry;
-import static gregtech.api.enums.ModIDs.HardcoreEnderExpansion;
-import static gregtech.api.enums.ModIDs.IndustrialCraft2;
-import static gregtech.api.enums.ModIDs.IndustrialCraft2Classic;
-import static gregtech.api.enums.ModIDs.Natura;
-import static gregtech.api.enums.ModIDs.NewHorizonsCoreMod;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
+import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.IndustrialCraft2Classic;
+import static gregtech.api.enums.Mods.Natura;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -41,12 +41,12 @@ public class ChemicalReactorRecipes implements Runnable {
                 GT_Utility.getIntegratedCircuit(1),
                 Materials.Water.getFluid(3000),
                 Materials.Hydrogen.getGas(1000),
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.modID, "item.PotassiumHydroxideDust", 3L, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 3L, 0),
                 1200,
                 30);
         // Rock Salt
         GT_Values.RA.addChemicalRecipe(
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.modID, "item.PotassiumHydroxideDust", 1L, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 1L, 0),
                 GT_Utility.getIntegratedCircuit(2),
                 Materials.HydrochloricAcid.getFluid(1000),
                 Materials.Water.getFluid(1000),
@@ -376,7 +376,7 @@ public class ChemicalReactorRecipes implements Runnable {
         if (DraconicEvolution.isModLoaded()) {
             GT_Values.RA.addChemicalRecipe(
                     CustomItemList.DraconiumEgg.get(1L),
-                    GT_ModHandler.getModItem(DraconicEvolution.modID, "dragonHeart", 0L, 0),
+                    GT_ModHandler.getModItem(DraconicEvolution.ID, "dragonHeart", 0L, 0),
                     FluidRegistry.getFluidStack("molten.enderium", 1000),
                     GT_Values.NF,
                     new ItemStack(Blocks.dragon_egg, 1, 0),
@@ -389,7 +389,7 @@ public class ChemicalReactorRecipes implements Runnable {
         if (Genetics.isModLoaded()) {
             GT_Values.RA.addChemicalRecipe(
                     new ItemStack(Items.spawn_egg, 1, GT_Values.W),
-                    GT_ModHandler.getModItem(Genetics.modID, "misc", 64L, 4),
+                    GT_ModHandler.getModItem(Genetics.ID, "misc", 64L, 4),
                     FluidRegistry.getFluidStack("binnie.bacteria", 1000),
                     GT_Values.NF,
                     CustomItemList.TheBigEgg.get(1L),
@@ -402,7 +402,7 @@ public class ChemicalReactorRecipes implements Runnable {
         if (Gendustry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
             GT_Values.RA.addChemicalRecipe(
                     CustomItemList.TheBigEgg.get(1L),
-                    GT_ModHandler.getModItem(IndustrialCraft2Classic.modID, "itemUran238", 64L, 0),
+                    GT_ModHandler.getModItem(IndustrialCraft2Classic.ID, "itemUran238", 64L, 0),
                     FluidRegistry.getFluidStack("mutagen", 1000),
                     GT_Values.NF,
                     CustomItemList.MutatedEgg.get(1L),
@@ -414,7 +414,7 @@ public class ChemicalReactorRecipes implements Runnable {
 
         if (Natura.isModLoaded()) {
             GT_Values.RA.addChemicalRecipe(
-                    GT_ModHandler.getModItem(Natura.modID, "florasapling", 2L, 6),
+                    GT_ModHandler.getModItem(Natura.ID, "florasapling", 2L, 6),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L),
                     Materials.Water.getFluid(1000L),
                     GT_Values.NF,
@@ -423,7 +423,7 @@ public class ChemicalReactorRecipes implements Runnable {
                     200,
                     120);
             GT_Values.RA.addChemicalRecipe(
-                    GT_ModHandler.getModItem(Natura.modID, "Dark Leaves", 8L, 0),
+                    GT_ModHandler.getModItem(Natura.ID, "Dark Leaves", 8L, 0),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L),
                     Materials.Water.getFluid(1000L),
                     GT_Values.NF,
@@ -432,7 +432,7 @@ public class ChemicalReactorRecipes implements Runnable {
                     200,
                     120);
             GT_Values.RA.addChemicalRecipe(
-                    GT_ModHandler.getModItem(Natura.modID, "Dark Tree", 2L, 0),
+                    GT_ModHandler.getModItem(Natura.ID, "Dark Tree", 2L, 0),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L),
                     Materials.Water.getFluid(1000L),
                     GT_Values.NF,
@@ -441,7 +441,7 @@ public class ChemicalReactorRecipes implements Runnable {
                     200,
                     120);
             GT_Values.RA.addChemicalRecipe(
-                    GT_ModHandler.getModItem(Natura.modID, "Natura.netherfood", 1L, 0),
+                    GT_ModHandler.getModItem(Natura.ID, "Natura.netherfood", 1L, 0),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L),
                     Materials.Water.getFluid(1000L),
                     GT_Values.NF,
@@ -458,7 +458,7 @@ public class ChemicalReactorRecipes implements Runnable {
                     new ItemStack(Items.golden_apple, 1, 1),
                     Materials.Blaze.getMolten(144),
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "diamondApple", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "diamondApple", 1L, 0),
                     GT_Values.NI,
                     3600,
                     480);

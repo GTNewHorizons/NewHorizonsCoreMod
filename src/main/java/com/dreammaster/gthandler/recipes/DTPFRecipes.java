@@ -1,12 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.dreammaster.MissingModIDs.SuperSolarPanels;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.GregTech_API.mGTPlusPlus;
-import static gregtech.api.enums.ModIDs.Avaritia;
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.GTPlusPlus;
-import static gregtech.api.enums.ModIDs.GoodGenerator;
-import static gregtech.api.enums.ModIDs.GregTech;
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.GregTech;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -120,7 +120,7 @@ public class DTPFRecipes implements Runnable {
                 // Bee Recipes
                 long fuel_quantity_bee_1 = (long) (30883L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(GregTech.modID, "gt.comb", 1L, 117),
+                        new ItemStack[] { GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
                                 GT_Utility.getIntegratedCircuit(1) },
                         new FluidStack[] { Materials.ExcitedDTCC.getFluid(fuel_quantity_bee_1),
                                 Materials.Copper.getMolten(tier_1_quantity) },
@@ -134,7 +134,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_2_bee_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_bee_2 = (long) (12085L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(GregTech.modID, "gt.comb", 1L, 117),
+                        new ItemStack[] { GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
                                 GT_Utility.getIntegratedCircuit(1) },
                         new FluidStack[] { Materials.ExcitedDTPC.getFluid(fuel_quantity_bee_2),
                                 Materials.Copper.getMolten(tier_2_bee_quantity) },
@@ -148,7 +148,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_3_bee_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_bee_3 = (long) (5215L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(GregTech.modID, "gt.comb", 1L, 117),
+                        new ItemStack[] { GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
                                 GT_Utility.getIntegratedCircuit(1) },
                         new FluidStack[] { Materials.ExcitedDTRC.getFluid(fuel_quantity_bee_3),
                                 Materials.Copper.getMolten(tier_3_bee_quantity) },
@@ -165,7 +165,7 @@ public class DTPFRecipes implements Runnable {
                         * tier_up_multiplier;
                 long fuel_quantity_bee_4 = (long) (2200L * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(GregTech.modID, "gt.comb", 1L, 117),
+                        new ItemStack[] { GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
                                 GT_Utility.getIntegratedCircuit(1) },
                         new FluidStack[] { Materials.ExcitedDTEC.getFluid(fuel_quantity_bee_4),
                                 Materials.Copper.getMolten(tier_4_bee_quantity) },
@@ -323,7 +323,7 @@ public class DTPFRecipes implements Runnable {
 
                 // Hypogen v3
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(GTPlusPlus.modID, "MU-metaitem.01", 0L, 32100) },
+                        new ItemStack[] { GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32100) },
                         new FluidStack[] { Materials.Neutronium.getMolten(5760L),
                                 new FluidStack(ALLOY.QUANTUM.getFluid(), 5760), Materials.Infinity.getMolten(1440L),
                                 Materials.ExcitedDTEC.getFluid(1000) },
@@ -406,7 +406,7 @@ public class DTPFRecipes implements Runnable {
                 // Energised tesseract
                 GT_Values.RA.addLaserEngraverRecipe(
                         new ItemStack[] { ItemList.Tesseract.get(1), GT_Utility
-                                .copyAmount(0L, GT_ModHandler.getModItem(GTPlusPlus.modID, "MU-metaitem.01:>", 1, 32105)) },
+                                .copyAmount(0L, GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01:>", 1, 32105)) },
                         new FluidStack[] { GT_Values.NF },
                         new ItemStack[] { ItemList.EnergisedTesseract.get(1) },
                         new FluidStack[] { Materials.ExcitedDTEC.getFluid(100L) },
@@ -429,7 +429,7 @@ public class DTPFRecipes implements Runnable {
                 // Spacetime v2
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] { ItemList.EnergisedTesseract.get(1),
-                                GT_ModHandler.getModItem(GTPlusPlus.modID, "MU-metaitem.01", 0L, 32100) },
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32100) },
                         new FluidStack[] { Materials.DimensionallyTranscendentResidue.getFluid(5000L),
                                 Materials.Infinity.getMolten(1152L) },
                         new ItemStack[] { GT_Values.NI },
@@ -442,11 +442,11 @@ public class DTPFRecipes implements Runnable {
                 // 16 Vertices, 24 faces and 32 edges.
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 8L),
-                                GT_ModHandler.getModItem(GTPlusPlus.modID, "itemRodOctiron", 8L),
-                                GT_ModHandler.getModItem(BartWorks.modID, "gt.bwMetaGeneratedstick", 8L, 10106),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodOctiron", 8L),
+                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstick", 8L, 10106),
                                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
-                                GT_ModHandler.getModItem(GTPlusPlus.modID, "itemPlateAbyssalAlloy", 24L),
-                                GT_ModHandler.getModItem(GTPlusPlus.modID, "itemScrewBotmium", 16L),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateAbyssalAlloy", 24L),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemScrewBotmium", 16L),
                                 GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 1L), },
                         new FluidStack[] { Materials.ExcitedDTRC.getFluid(1000) },
                         new ItemStack[] { ItemList.Tesseract.get(4) },
@@ -458,11 +458,11 @@ public class DTPFRecipes implements Runnable {
                 // Raw Tesseract v2
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
-                                GT_ModHandler.getModItem(BartWorks.modID, "gt.bwMetaGeneratedstick", 12L, 10106),
+                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstick", 12L, 10106),
                                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TranscendentMetal, 8L),
-                                GT_ModHandler.getModItem(GTPlusPlus.modID, "itemPlateBotmium", 24L),
-                                GT_ModHandler.getModItem(GTPlusPlus.modID, "itemScrewArcanite", 16L),
-                                GT_ModHandler.getModItem(SuperSolarPanels.modID, "enderquantumcomponent", 1L), },
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateBotmium", 24L),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemScrewArcanite", 16L),
+                                GT_ModHandler.getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1L), },
                         new FluidStack[] { Materials.ExcitedDTEC.getFluid(1000) },
                         new ItemStack[] { ItemList.Tesseract.get(8) },
                         new FluidStack[] { Materials.DimensionallyTranscendentResidue.getFluid(1000) },
@@ -479,8 +479,8 @@ public class DTPFRecipes implements Runnable {
                 // Bee comb catalyst recipes for infinity
                 long fuel_quantity_3 = (long) (25_767 * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.modID, "Resource", 2L, 5),
-                                GT_ModHandler.getModItem(GregTech.modID, "gt.comb", 1L, 119),
+                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
+                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
                                 GT_Utility.getIntegratedCircuit(3) },
                         new FluidStack[] { Materials.ExcitedDTEC.getFluid(fuel_quantity_3) },
                         new ItemStack[] { GT_Values.NI },
@@ -492,8 +492,8 @@ public class DTPFRecipes implements Runnable {
 
                 long fuel_quantity_4 = (long) (57_031 * 0.85);
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.modID, "Resource", 1L, 5),
-                                GT_ModHandler.getModItem(GregTech.modID, "gt.comb", 1L, 119),
+                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
+                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
                                 GT_Utility.getIntegratedCircuit(2) },
                         new FluidStack[] { Materials.ExcitedDTRC.getFluid(fuel_quantity_4) },
                         new ItemStack[] { GT_Values.NI },
@@ -506,8 +506,8 @@ public class DTPFRecipes implements Runnable {
                 long fuel_quantity_special_bee = (long) ((57_031L / 64) * 0.75);
                 GT_Values.RA
                         .addPlasmaForgeRecipe(
-                                new ItemStack[] { GT_ModHandler.getModItem(Avaritia.modID, "Resource", 1L, 5),
-                                        GT_ModHandler.getModItem(GregTech.modID, "gt.comb", 1L, 119),
+                                new ItemStack[] { GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
+                                        GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
                                         GT_Utility.getIntegratedCircuit(3) },
                                 new FluidStack[] { Materials.ExcitedDTRC.getFluid(fuel_quantity_special_bee) },
                                 new ItemStack[] { GT_Values.NI },
@@ -521,7 +521,7 @@ public class DTPFRecipes implements Runnable {
 
                 long fuel_quantity_special = 57_031L / 64;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.modID, "Resource", 1L, 5),
+                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
                                 GT_Utility.getIntegratedCircuit(4) },
                         new FluidStack[] { Materials.ExcitedDTRC.getFluid(fuel_quantity_special) },
                         new ItemStack[] { GT_Values.NI },
@@ -534,7 +534,7 @@ public class DTPFRecipes implements Runnable {
 
                 long fuel_quantity_1 = 57_031L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.modID, "Resource", 1L, 5),
+                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
                                 GT_Utility.getIntegratedCircuit(1) },
                         new FluidStack[] { Materials.ExcitedDTRC.getFluid(fuel_quantity_1) },
                         new ItemStack[] { GT_Values.NI },
@@ -546,7 +546,7 @@ public class DTPFRecipes implements Runnable {
 
                 long fuel_quantity_2 = 25_767L;
                 GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.modID, "Resource", 2L, 5),
+                        new ItemStack[] { GT_ModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
                                 GT_Utility.getIntegratedCircuit(4) },
                         new FluidStack[] { Materials.ExcitedDTEC.getFluid(fuel_quantity_2) },
                         new ItemStack[] { GT_Values.NI },

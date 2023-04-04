@@ -1,6 +1,6 @@
 package com.dreammaster.fluids;
 
-import static gregtech.api.enums.ModIDs.BiomesOPlanty;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.item.EnumRarity;
@@ -13,7 +13,7 @@ import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
 
 public final class ExtendedFluidCollection {
 
-    static final boolean bop_loaded = BiomesOPlanty.isModLoaded();
+    static final boolean bop_loaded = BiomesOPlenty.isModLoaded();
 
     private static ModSimpleBaseFluid _mAmmonia;
 

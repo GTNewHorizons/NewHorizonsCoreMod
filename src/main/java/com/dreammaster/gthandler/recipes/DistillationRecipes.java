@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.Mods.BartWorks;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;

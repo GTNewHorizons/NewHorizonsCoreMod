@@ -9,7 +9,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
-import static gregtech.api.enums.ModIDs.Avaritia;
+import static gregtech.api.enums.Mods.Avaritia;
 
 public class VacuumFreezerRecipes implements Runnable {
 
@@ -193,7 +193,7 @@ public class VacuumFreezerRecipes implements Runnable {
                 7860);
         if (Avaritia.isModLoaded()) GT_Values.RA.addVacuumFreezerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Infinity, 1L),
-                GT_ModHandler.getModItem(Avaritia.modID, "Resource", 1L, 6),
+                GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 6),
                 294,
                 2000000);
         GT_Values.RA.addVacuumFreezerRecipe(

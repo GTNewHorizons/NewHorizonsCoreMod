@@ -8,8 +8,8 @@ import gregtech.api.objects.GT_ItemStack;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Disassembler;
 
-import static gregtech.api.enums.ModIDs.GraviSuite;
-import static gregtech.api.enums.ModIDs.IndustrialCraft2;
+import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 
 public class RecipeRemoval implements Runnable {
 
@@ -25,8 +25,8 @@ public class RecipeRemoval implements Runnable {
         }
         if (GraviSuite.isModLoaded()) {
             GT_ModHandler
-                    .removeRecipeByOutput(GT_ModHandler.getModItem(GraviSuite.modID, "graviChestPlate", 1, GT_Values.W));
-            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(GraviSuite.modID, "relocator", 1, GT_Values.W));
+                    .removeRecipeByOutput(GT_ModHandler.getModItem(GraviSuite.ID, "graviChestPlate", 1, GT_Values.W));
+            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(GraviSuite.ID, "relocator", 1, GT_Values.W));
         }
     }
 

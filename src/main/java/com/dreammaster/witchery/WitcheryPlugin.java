@@ -1,11 +1,11 @@
 package com.dreammaster.witchery;
 
-import static com.dreammaster.MissingModIDs.BloodArsenal;
-import static com.dreammaster.MissingModIDs.StevesCarts2;
+import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.StevesCarts2;
 import static com.dreammaster.witchery.WitcheryBrewRegistryAccessor.*;
-import static gregtech.api.enums.ModIDs.GregTech;
-import static gregtech.api.enums.ModIDs.HardcoreEnderExpansion;
-import static gregtech.api.enums.ModIDs.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -192,7 +192,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack[] { new ItemStack(Witchery.Blocks.WISPY_COTTON, 4),
                         Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1) });
         SpinningWheel.addRecipe(
-                GT_ModHandler.getModItem(BloodArsenal.modID, "blood_burned_string", 1L),
+                GT_ModHandler.getModItem(BloodArsenal.ID, "blood_burned_string", 1L),
                 Witchery.Items.GENERIC.itemTormentedTwine.createStack(1),
                 new ItemStack[] { Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4),
                         Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1) });
@@ -215,8 +215,8 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 true,
                 Witchery.Items.GENERIC.itemRedstoneSoup.createStack(),
                 Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(),
-                GT_ModHandler.getModItem(StevesCarts2.modID, "ModuleComponents", 1L, 45),
-                GT_ModHandler.getModItem(HardcoreEnderExpansion.modID, "end_powder", 1L),
+                GT_ModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45),
+                GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                 Witchery.Items.GENERIC.itemDropOfLuck.createStack(),
                 Witchery.Items.GENERIC.itemBatWool.createStack());
 
@@ -229,7 +229,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack(Witchery.Items.CHALK_GOLDEN),
                 new ItemStack(Witchery.Items.CHALK_RITUAL),
                 Witchery.Items.GENERIC.itemMandrakeRoot.createStack(),
-                GT_ModHandler.getModItem(GregTech.modID, "gt.metaitem.01", 1L, 2086),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086),
                 Witchery.Items.GENERIC.itemDiamondVapour.createStack());
         addBrewRecipe(
                 2000,
@@ -243,10 +243,10 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     4000,
                     new ItemStack(Witchery.Items.CHALK_OTHERWHERE),
                     new ItemStack(Witchery.Items.CHALK_RITUAL),
-                    GT_ModHandler.getModItem(GregTech.modID, "gt.metaitem.01", 1L, 2533),
-                    GT_ModHandler.getModItem(HardcoreEnderExpansion.modID, "end_powder", 1L),
+                    GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2533),
+                    GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
-                    GT_ModHandler.getModItem(NewHorizonsCoreMod.modID, "item.ManyullynCrystal", 1L, 0));
+                    GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1L, 0));
         }
         // rites
         // TODO write doc

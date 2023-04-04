@@ -9,8 +9,8 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.GalaxySpace;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GalaxySpace;
 
 public class FluidCannerRecipes implements Runnable {
 

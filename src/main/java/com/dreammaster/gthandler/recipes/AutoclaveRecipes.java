@@ -1,9 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.dreammaster.MissingModIDs.EnderZoo;
-import static com.dreammaster.MissingModIDs.SGCraft;
-import static gregtech.api.enums.ModIDs.GalacticraftMars;
-import static gregtech.api.enums.ModIDs.Gendustry;
+import static gregtech.api.enums.Mods.EnderZoo;
+import static gregtech.api.enums.Mods.SGCraft;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.Gendustry;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -41,7 +41,7 @@ public class AutoclaveRecipes implements Runnable {
                 480);
 
         GT_Values.RA.addAutoclaveRecipe(
-                GT_ModHandler.getModItem(EnderZoo.modID, "enderFragment", 4L, 0),
+                GT_ModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0),
                 GT_Utility.getIntegratedCircuit(1),
                 Materials.Water.getFluid(100),
                 new ItemStack(Items.ender_pearl, 1, 0),
@@ -50,7 +50,7 @@ public class AutoclaveRecipes implements Runnable {
                 30,
                 false);
         GT_Values.RA.addAutoclaveRecipe(
-                GT_ModHandler.getModItem(EnderZoo.modID, "enderFragment", 4L, 0),
+                GT_ModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0),
                 GT_Utility.getIntegratedCircuit(2),
                 GT_ModHandler.getDistilledWater(50L),
                 new ItemStack(Items.ender_pearl, 1, 0),
@@ -59,7 +59,7 @@ public class AutoclaveRecipes implements Runnable {
                 30,
                 false);
         GT_Values.RA.addAutoclaveRecipe(
-                GT_ModHandler.getModItem(EnderZoo.modID, "enderFragment", 4L, 0),
+                GT_ModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0),
                 GT_Utility.getIntegratedCircuit(3),
                 Materials.Void.getMolten(18),
                 new ItemStack(Items.ender_pearl, 1, 0),
@@ -190,7 +190,7 @@ public class AutoclaveRecipes implements Runnable {
                     com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64),
                     GT_Values.NI,
                     Materials.Silver.getPlasma(8000L),
-                    GT_ModHandler.getModItem(SGCraft.modID, "sgCoreCrystal", 1L),
+                    GT_ModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L),
                     10000,
                     3600,
                     131000,

@@ -156,11 +156,11 @@ public class SpaceDimRegisterer {
      */
     private ModContainer Setup_GalaxySpace() {
         // First, we create a mod-container that will be populated with dimensions later.
-        // The Name must match your modID, as it is checked if this mod is loaded, in order
+        // The Name must match your ID, as it is checked if this mod is loaded, in order
         // to enable/disable the parsing/registering of dimensions
         ModContainer modCGalaxySpace = new ModContainer("GalaxySpace");
 
-        // Now lets first define a block here for our dimension. You can add the modID, but you don't have to.
+        // Now lets first define a block here for our dimension. You can add the ID, but you don't have to.
         // It will automatically add the mods name that is defined in the modcontainer.
         final ModDBMDef DBMPhobos = new ModDBMDef("phobosblocks", 2);
         final ModDBMDef DBMDeimos = new ModDBMDef("deimosblocks", 1);

@@ -4,7 +4,7 @@ import static com.dreammaster.bartworksHandler.BacteriaRegistry.CultureSet;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.CLEANROOM;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.addBacterialVatRecipe;
 import static gregtech.api.enums.GT_Values.*;
-import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -124,7 +124,7 @@ public class BioItemLoader {
                 BW_Util.getMachineVoltageFromTier(8));
         addBacterialVatRecipe(
                 new ItemStack[] { ItemList.IC2_Energium_Dust.get(8), Materials.Mytryl.getDust(1),
-                        GT_ModHandler.getModItem(PamsHarvestCraft.modID, "seaweedItem", 64) },
+                        GT_ModHandler.getModItem(PamsHarvestCraft.ID, "seaweedItem", 64) },
                 CultureSet.get("TcetiEBac"),
                 new FluidStack[] { new FluidStack(BIOFLUIDS[2], 50) },
                 new FluidStack[] { new FluidStack(BIOFLUIDS[3], 50) },

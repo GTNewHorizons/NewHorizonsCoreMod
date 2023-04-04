@@ -1,6 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.ModIDs.IC2NuclearControl;
+import static gregtech.api.enums.Mods.IC2NuclearControl;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Collections;
@@ -22,13 +22,13 @@ public class ScriptNuclearControl implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Collections.singletonList(IC2NuclearControl.modID);
+        return Collections.singletonList(IC2NuclearControl.ID);
     }
 
     @Override
     public void loadRecipes() {
-        final ItemStack NC2_REMOTE_SENSOR_KIT = getModItem(IC2NuclearControl.modID, "ItemRemoteSensorKit", 1, 0);
-        final ItemStack NC2_PANEL_MEMORY_CARD = getModItem(IC2NuclearControl.modID, "ItemPanelMemoryCard", 1, 0);
+        final ItemStack NC2_REMOTE_SENSOR_KIT = getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0);
+        final ItemStack NC2_PANEL_MEMORY_CARD = getModItem(IC2NuclearControl.ID, "ItemPanelMemoryCard", 1, 0);
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { NC2_REMOTE_SENSOR_KIT,

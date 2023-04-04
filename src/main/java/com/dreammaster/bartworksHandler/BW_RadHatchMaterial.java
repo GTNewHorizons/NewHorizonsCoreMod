@@ -1,6 +1,6 @@
 package com.dreammaster.bartworksHandler;
 
-import static gregtech.api.enums.ModIDs.GTPlusPlus;
+import static gregtech.api.enums.Mods.GTPlusPlus;
 
 import net.minecraft.item.ItemStack;
 

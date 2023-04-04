@@ -1,7 +1,7 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.ModIDs.BartWorks;
-import static gregtech.api.enums.ModIDs.EnderIO;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.EnderIO;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;

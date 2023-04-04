@@ -7,7 +7,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 
-import static gregtech.api.enums.ModIDs.BartWorks;
+import static gregtech.api.enums.Mods.BartWorks;
 
 public class FluidHeaterRecipes implements Runnable {
 

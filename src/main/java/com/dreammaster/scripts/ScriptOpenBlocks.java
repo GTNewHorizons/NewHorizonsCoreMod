@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.MissingModIDs.OpenBlocks;
-import static com.dreammaster.MissingModIDs.RandomThings;
-import static gregtech.api.enums.ModIDs.ExtraUtilities;
+import static gregtech.api.enums.Mods.OpenBlocks;
+import static gregtech.api.enums.Mods.RandomThings;
+import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -25,14 +25,14 @@ public class ScriptOpenBlocks implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(OpenBlocks.modID, RandomThings.modID, ExtraUtilities.modID, "gregtech");
+        return Arrays.asList(OpenBlocks.ID, RandomThings.ID, ExtraUtilities.ID, "gregtech");
     }
 
     @Override
     public void loadRecipes() {
-        ItemStack devNull = getModItem(OpenBlocks.modID, "devnull", 1);
-        ItemStack voidDropFilter = getModItem(RandomThings.modID, "dropFilter", 1, 1);
-        ItemStack trashCan = getModItem(ExtraUtilities.modID, "trashcan", 1);
+        ItemStack devNull = getModItem(OpenBlocks.ID, "devnull", 1);
+        ItemStack voidDropFilter = getModItem(RandomThings.ID, "dropFilter", 1, 1);
+        ItemStack trashCan = getModItem(ExtraUtilities.ID, "trashcan", 1);
         ItemStack circuit2 = GT_Utility.getIntegratedCircuit(2);
 
         FluidStack ender250 = FluidRegistry.getFluidStack("ender", 250);

@@ -1,7 +1,7 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.MissingModIDs.BetterQuesting;
-import static gregtech.api.enums.ModIDs.Minecraft;
+import static gregtech.api.enums.Mods.BetterQuesting;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Collections;
@@ -16,14 +16,14 @@ public class ScriptBetterQuesting implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Collections.singletonList(BetterQuesting.modID);
+        return Collections.singletonList(BetterQuesting.ID);
     }
 
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem(BetterQuesting.modID, "submit_station", 1),
+                getModItem(BetterQuesting.ID, "submit_station", 1),
                 new Object[] { "plateWood", "plateSteel", "plateWood", "plateSteel", "gearSteel", "plateSteel",
-                        "plateWood", getModItem(Minecraft.modID, "chest", 1), "plateWood" });
+                        "plateWood", getModItem(Minecraft.ID, "chest", 1), "plateWood" });
     }
 }

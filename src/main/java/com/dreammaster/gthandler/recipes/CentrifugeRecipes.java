@@ -16,15 +16,15 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
-import static gregtech.api.enums.ModIDs.Avaritia;
-import static gregtech.api.enums.ModIDs.BiomesOPlanty;
-import static gregtech.api.enums.ModIDs.Forestry;
-import static gregtech.api.enums.ModIDs.GalaxySpace;
-import static gregtech.api.enums.ModIDs.Gendustry;
-import static gregtech.api.enums.ModIDs.IndustrialCraft2;
-import static gregtech.api.enums.ModIDs.PamsHarvestCraft;
-import static gregtech.api.enums.ModIDs.Thaumcraft;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 
 public class CentrifugeRecipes implements Runnable {
 
@@ -103,11 +103,11 @@ public class CentrifugeRecipes implements Runnable {
                 120);
 
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(Forestry.modID, "beeCombs", 1L, 9),
+                GT_ModHandler.getModItem(Forestry.ID, "beeCombs", 1L, 9),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
-                GT_ModHandler.getModItem(Forestry.modID, "beeswax", 1L, 0),
+                GT_ModHandler.getModItem(Forestry.ID, "beeswax", 1L, 0),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L),
                 GT_Values.NI,
                 GT_Values.NI,
@@ -491,7 +491,7 @@ public class CentrifugeRecipes implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 9L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Draconium, 9L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 4L),
-                GT_ModHandler.getModItem(Avaritia.modID, "Resource", 36L, 2),
+                GT_ModHandler.getModItem(Avaritia.ID, "Resource", 36L, 2),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 4L),
                 new int[] { 5000, 3000, 1000, 1000, 100, 50 },
                 7776,
@@ -505,7 +505,7 @@ public class CentrifugeRecipes implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahEnriched, 9L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 9L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BlackPlutonium, 4L),
-                GT_ModHandler.getModItem(Avaritia.modID, "Resource", 36L, 2),
+                GT_ModHandler.getModItem(Avaritia.ID, "Resource", 36L, 2),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 4L),
                 new int[] { 5000, 2000, 500, 2500, 150, 80 },
                 7776,
@@ -597,7 +597,7 @@ public class CentrifugeRecipes implements Runnable {
                 120);
 
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "newBopGrass", 1L, 0),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "newBopGrass", 1L, 0),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -611,7 +611,7 @@ public class CentrifugeRecipes implements Runnable {
                 100,
                 30);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "newBopDirt", 1L, 0),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 0),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -625,7 +625,7 @@ public class CentrifugeRecipes implements Runnable {
                 100,
                 30);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "newBopDirt", 1L, 1),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 1),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -639,7 +639,7 @@ public class CentrifugeRecipes implements Runnable {
                 100,
                 30);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "newBopDirt", 1L, 2),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 2),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -653,7 +653,7 @@ public class CentrifugeRecipes implements Runnable {
                 100,
                 30);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "newBopDirt", 1L, 3),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 3),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -667,7 +667,7 @@ public class CentrifugeRecipes implements Runnable {
                 100,
                 30);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "newBopGrass", 1L, 2),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "newBopGrass", 1L, 2),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -681,7 +681,7 @@ public class CentrifugeRecipes implements Runnable {
                 100,
                 30);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "newBopDirt", 1L, 4),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 4),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -695,7 +695,7 @@ public class CentrifugeRecipes implements Runnable {
                 100,
                 30);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "newBopDirt", 1L, 5),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "newBopDirt", 1L, 5),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -709,7 +709,7 @@ public class CentrifugeRecipes implements Runnable {
                 100,
                 30);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(BiomesOPlanty.modID, "driedDirt", 1L, 0),
+                GT_ModHandler.getModItem(BiomesOPlenty.ID, "driedDirt", 1L, 0),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -724,21 +724,21 @@ public class CentrifugeRecipes implements Runnable {
                 30);
 
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(Thaumcraft.modID, "blockEldritch", 1L, 4),
+                GT_ModHandler.getModItem(Thaumcraft.ID, "blockEldritch", 1L, 4),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
                 new ItemStack(Items.glowstone_dust, 1, 0),
-                GT_ModHandler.getModItem(Thaumcraft.modID, "ItemResource", 1L, 14),
-                GT_ModHandler.getModItem(Thaumcraft.modID, "ItemResource", 1L, 14),
-                GT_ModHandler.getModItem(Thaumcraft.modID, "ItemResource", 1L, 14),
+                GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
+                GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
+                GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1L, 14),
                 GT_Values.NI,
                 GT_Values.NI,
                 new int[] { 10000, 3300, 1000, 200 },
                 300,
                 480);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(GalaxySpace.modID, "item.GlowstoneDusts", 1L, 0),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 0),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -752,7 +752,7 @@ public class CentrifugeRecipes implements Runnable {
                 300,
                 120);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(GalaxySpace.modID, "item.GlowstoneDusts", 1L, 4),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 4),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -766,7 +766,7 @@ public class CentrifugeRecipes implements Runnable {
                 300,
                 120);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(GalaxySpace.modID, "item.GlowstoneDusts", 1L, 1),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 1),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -780,7 +780,7 @@ public class CentrifugeRecipes implements Runnable {
                 300,
                 120);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(GalaxySpace.modID, "item.GlowstoneDusts", 1L, 2),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 2),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -794,7 +794,7 @@ public class CentrifugeRecipes implements Runnable {
                 300,
                 120);
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(GalaxySpace.modID, "item.GlowstoneDusts", 1L, 3),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1L, 3),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -843,9 +843,9 @@ public class CentrifugeRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
-                GT_ModHandler.getModItem(Avaritia.modID, "Resource", 1L, 2),
-                GT_ModHandler.getModItem(Avaritia.modID, "Resource", 1L, 2),
-                GT_ModHandler.getModItem(Avaritia.modID, "Resource", 1L, 2),
+                GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 2),
+                GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 2),
+                GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 2),
                 GT_Values.NI,
                 GT_Values.NI,
                 GT_Values.NI,
@@ -858,7 +858,7 @@ public class CentrifugeRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
-                GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemBiochaff", 1L, 0),
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 1L, 0),
                 GT_Values.NI,
                 GT_Values.NI,
                 GT_Values.NI,
@@ -899,7 +899,7 @@ public class CentrifugeRecipes implements Runnable {
                 8);
 
         GT_Values.RA.addCentrifugeRecipe(
-                GT_ModHandler.getModItem(IndustrialCraft2.modID, "itemCellHydrant", 1L, GT_Values.W),
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, GT_Values.W),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
@@ -960,11 +960,11 @@ public class CentrifugeRecipes implements Runnable {
 
         if (PamsHarvestCraft.isModLoaded()) {
             GT_Values.RA.addCentrifugeRecipe(
-                    GT_ModHandler.getModItem(PamsHarvestCraft.modID, "coconutItem", 1L, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "coconutItem", 1L, 0),
                     GT_Values.NI,
                     GT_Values.NF,
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(PamsHarvestCraft.modID, "coconutmilkItem", 9L, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "coconutmilkItem", 9L, 0),
                     GT_Values.NI,
                     GT_Values.NI,
                     GT_Values.NI,
@@ -978,7 +978,7 @@ public class CentrifugeRecipes implements Runnable {
         if (TinkerConstruct.isModLoaded()) {
             // Centrifuge
             GT_Values.RA.addCentrifugeRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "strangeFood", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0),
                     GT_Values.NI,
                     GT_Values.NF,
                     Materials.Glue.getFluid(50),
@@ -1006,7 +1006,7 @@ public class CentrifugeRecipes implements Runnable {
                     300,
                     5);
             GT_Values.RA.addCentrifugeRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "slime.gel", 1L, 2),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 2),
                     GT_Values.NI,
                     GT_Values.NF,
                     Materials.Glue.getFluid(200),
@@ -1020,7 +1020,7 @@ public class CentrifugeRecipes implements Runnable {
                     300,
                     5);
             GT_Values.RA.addCentrifugeRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "slime.gel", 1L, 1),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 1),
                     GT_Values.NI,
                     GT_Values.NF,
                     Materials.Glue.getFluid(200),
@@ -1034,7 +1034,7 @@ public class CentrifugeRecipes implements Runnable {
                     300,
                     5);
             GT_Values.RA.addCentrifugeRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "slime.gel", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 0),
                     GT_Values.NI,
                     GT_Values.NF,
                     Materials.Glue.getFluid(200),
@@ -1048,13 +1048,13 @@ public class CentrifugeRecipes implements Runnable {
                     300,
                     5);
             GT_Values.RA.addCentrifugeRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "CraftedSoil", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 1L, 0),
                     GT_Values.NI,
                     GT_Values.NF,
                     Materials.Glue.getFluid(25),
                     new ItemStack(Blocks.dirt, 1, 32767),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L),
-                    GT_ModHandler.getModItem(TinkerConstruct.modID, "strangeFood", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0),
                     GT_Values.NI,
                     GT_Values.NI,
                     GT_Values.NI,

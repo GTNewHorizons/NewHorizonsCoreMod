@@ -1,8 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.GT_Values.NI;
-import static gregtech.api.enums.ModIDs.Forestry;
-import static gregtech.api.enums.ModIDs.GTPlusPlus;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GTPlusPlus;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -23,7 +23,7 @@ public class LatheRecipes implements Runnable {
     @Override
     public void run() {
         GT_Values.RA.addLatheRecipe(
-                GT_ModHandler.getModItem(GTPlusPlus.modID, "itemPlateChromaticGlass", 1),
+                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateChromaticGlass", 1),
                 CustomItemList.ChromaticLens.get(1),
                 NI,
                 1200,
@@ -81,145 +81,145 @@ public class LatheRecipes implements Runnable {
 
         if (Forestry.isModLoaded()) {
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs1", 1L, 0),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1L, 0),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs1", 1L, 1),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1L, 1),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs1", 1L, 2),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1L, 2),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs1", 1L, 3),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1L, 3),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs1", 1L, 4),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1L, 4),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs1", 1L, 5),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1L, 5),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs1", 1L, 6),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1L, 6),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs1", 1L, 7),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1L, 7),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs2", 1L, 0),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1L, 0),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs2", 1L, 1),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1L, 1),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs2", 1L, 2),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1L, 2),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs2", 1L, 3),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1L, 3),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs2", 1L, 4),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1L, 4),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs2", 1L, 5),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1L, 5),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs2", 1L, 6),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1L, 6),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs2", 1L, 7),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1L, 7),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs3", 1L, 0),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1L, 0),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs3", 1L, 1),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1L, 1),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs3", 1L, 2),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1L, 2),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs3", 1L, 3),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1L, 3),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs3", 1L, 4),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1L, 4),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs3", 1L, 5),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1L, 5),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs3", 1L, 6),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1L, 6),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,
                     8);
             GT_Values.RA.addLatheRecipe(
-                    GT_ModHandler.getModItem(Forestry.modID, "slabs3", 1L, 7),
+                    GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1L, 7),
                     new ItemStack(Items.bowl, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1),
                     50,

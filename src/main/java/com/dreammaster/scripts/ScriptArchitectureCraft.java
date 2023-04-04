@@ -1,9 +1,9 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.MissingModIDs.ArchitectureCraft;
-import static gregtech.api.enums.ModIDs.GregTech;
-import static gregtech.api.enums.ModIDs.Minecraft;
-import static gregtech.api.enums.ModIDs.TinkerConstruct;
+import static gregtech.api.enums.Mods.ArchitectureCraft;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -19,40 +19,40 @@ public class ScriptArchitectureCraft implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(ArchitectureCraft.modID, GregTech.modID);
+        return Arrays.asList(ArchitectureCraft.ID, GregTech.ID);
     }
 
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem(ArchitectureCraft.modID, "sawbench", 1),
-                new Object[] { "screwSteel", getModItem(Minecraft.modID, "heavy_weighted_pressure_plate", 1),
-                        "screwSteel", getModItem(TinkerConstruct.modID, "trap.barricade.oak", 1),
-                        getModItem(ArchitectureCraft.modID, "sawblade", 1),
-                        getModItem(TinkerConstruct.modID, "trap.barricade.oak", 1), "craftingToolScrewdriver",
-                        getModItem(ArchitectureCraft.modID, "largePulley", 1), "craftingToolHardHammer" });
+                getModItem(ArchitectureCraft.ID, "sawbench", 1),
+                new Object[] { "screwSteel", getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1),
+                        "screwSteel", getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1),
+                        getModItem(ArchitectureCraft.ID, "sawblade", 1),
+                        getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1), "craftingToolScrewdriver",
+                        getModItem(ArchitectureCraft.ID, "largePulley", 1), "craftingToolHardHammer" });
 
         addShapedRecipe(
-                getModItem(ArchitectureCraft.modID, "largePulley", 1),
+                getModItem(ArchitectureCraft.ID, "largePulley", 1),
                 new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "gearGtSmallAnyIron", "gearWood",
                         "gearGtSmallAnyIron", "screwSteel", "craftingToolHardHammer", "screwSteel" });
 
         addShapedRecipe(
-                getModItem(ArchitectureCraft.modID, "hammer", 1),
+                getModItem(ArchitectureCraft.ID, "hammer", 1),
                 new Object[] { "plateSteel", "plateSteel", "ingotIron", "craftingToolFile", "stickWood", "ingotIron",
                         null, "stickWood", "craftingToolHardHammer" });
 
         addShapedRecipe(
-                getModItem(ArchitectureCraft.modID, "chisel", 1),
+                getModItem(ArchitectureCraft.ID, "chisel", 1),
                 new Object[] { "craftingToolHardHammer", "plateIron", "plateSteel", "screwIron", "stickIron",
                         "plateIron", "stickWood", "screwIron", "craftingToolScrewdriver" });
 
         addShapelessCraftingRecipe(
-                getModItem(ArchitectureCraft.modID, "sawblade", 1),
+                getModItem(ArchitectureCraft.ID, "sawblade", 1),
                 new Object[] { "toolHeadBuzzSawAnyIron" });
 
         addShapelessCraftingRecipe(
-                getModItem(GregTech.modID, "gt.metaitem.02", 1, 15032),
-                new Object[] { getModItem(ArchitectureCraft.modID, "sawblade", 1) });
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 15032),
+                new Object[] { getModItem(ArchitectureCraft.ID, "sawblade", 1) });
     }
 }
