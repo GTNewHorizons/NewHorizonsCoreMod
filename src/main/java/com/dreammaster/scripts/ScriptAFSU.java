@@ -4,11 +4,11 @@ import static gregtech.api.enums.Mods.AFSU;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
-import scala.actors.threadpool.Arrays;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
