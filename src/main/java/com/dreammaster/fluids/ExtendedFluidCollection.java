@@ -1,18 +1,19 @@
 package com.dreammaster.fluids;
 
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.Fluid;
 
-import cpw.mods.fml.common.Loader;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.fluids.ModSimpleBaseFluid;
 
 public final class ExtendedFluidCollection {
 
-    static final boolean bop_loaded = Loader.isModLoaded("BiomesOPlenty");
+    static final boolean bop_loaded = BiomesOPlenty.isModLoaded();
 
     private static ModSimpleBaseFluid _mAmmonia;
 

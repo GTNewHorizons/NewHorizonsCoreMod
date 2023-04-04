@@ -1,5 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.TwilightForest;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -14,7 +16,7 @@ public class ElectrolyzerRecipes implements Runnable {
     public void run() {
         GT_Values.RA.addElectrolyzerRecipe(
                 ItemList.Cell_Empty.get(1),
-                GT_ModHandler.getModItem("TwilightForest", "tile.TFAuroraBrick", 1L, 0),
+                GT_ModHandler.getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 1L, 0),
                 GT_Values.NF,
                 Materials.Helium_3.getFluid(100),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
@@ -28,7 +30,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 480);
         GT_Values.RA.addElectrolyzerRecipe(
                 ItemList.Cell_Empty.get(1),
-                GT_ModHandler.getModItem("TwilightForest", "tile.AuroraPillar", 1L, 0),
+                GT_ModHandler.getModItem(TwilightForest.ID, "tile.AuroraPillar", 1L, 0),
                 GT_Values.NF,
                 Materials.Helium_3.getFluid(200),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
@@ -42,7 +44,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 480);
         GT_Values.RA.addElectrolyzerRecipe(
                 ItemList.Cell_Empty.get(1),
-                GT_ModHandler.getModItem("TwilightForest", "tile.AuroraSlab", 2L, 0),
+                GT_ModHandler.getModItem(TwilightForest.ID, "tile.AuroraSlab", 2L, 0),
                 GT_Values.NF,
                 Materials.Helium_3.getFluid(50),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
@@ -56,7 +58,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 480);
         GT_Values.RA.addElectrolyzerRecipe(
                 ItemList.Cell_Empty.get(1),
-                GT_ModHandler.getModItem("TwilightForest", "tile.AuroraDoubleSlab", 1L, 0),
+                GT_ModHandler.getModItem(TwilightForest.ID, "tile.AuroraDoubleSlab", 1L, 0),
                 GT_Values.NF,
                 Materials.Helium_3.getFluid(100),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),

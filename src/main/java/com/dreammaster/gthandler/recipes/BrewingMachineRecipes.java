@@ -1,12 +1,16 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.PamsHarvestTheNether;
+
 import java.lang.reflect.Field;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import cpw.mods.fml.common.Loader;
 import forestry.api.recipes.IFermenterRecipe;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
@@ -18,14 +22,14 @@ public class BrewingMachineRecipes implements Runnable {
     @Override
     public void run() {
         GT_Values.RA.addBrewingRecipeCustom(
-                GT_ModHandler.getModItem("Genetics", "misc", 6L, 4),
+                GT_ModHandler.getModItem(Genetics.ID, "misc", 6L, 4),
                 FluidRegistry.getFluidStack("water", 750),
                 FluidRegistry.getFluidStack("binnie.growthmedium", 750),
                 600,
                 480,
                 false);
         GT_Values.RA.addBrewingRecipeCustom(
-                GT_ModHandler.getModItem("IC2", "itemBiochaff", 16L, 0),
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 16L, 0),
                 FluidRegistry.getFluidStack("binnie.growthmedium", 750),
                 FluidRegistry.getFluidStack("binnie.bacteria", 750),
                 1200,
@@ -47,7 +51,7 @@ public class BrewingMachineRecipes implements Runnable {
                 false);
 
         GT_Values.RA.addBrewingRecipeCustom(
-                GT_ModHandler.getModItem("harvestthenether", "ignisfruitItem", 45L, 0),
+                GT_ModHandler.getModItem(PamsHarvestTheNether.ID, "ignisfruitItem", 45L, 0),
                 FluidRegistry.getFluidStack("potion.awkward", 750),
                 FluidRegistry.getFluidStack("potion.fireresistance", 750),
                 120,
@@ -55,7 +59,7 @@ public class BrewingMachineRecipes implements Runnable {
                 false);
 
         // Add fermenter recipes from forestry into gregtech
-        if (Loader.isModLoaded("Forestry")) {
+        if (Forestry.isModLoaded()) {
             try {
                 Class forestryFermenterRecipeManager = Class.forName("forestry.factory.recipes.FermenterRecipeManager");
                 Field fieldFermenterRecipes = forestryFermenterRecipeManager.getDeclaredField("recipes");

@@ -1,5 +1,8 @@
 package com.dreammaster.bartworksHandler;
 
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+
 import com.github.bartimaeusnek.bartworks.API.BorosilicateGlass;
 
 import cpw.mods.fml.common.Loader;
@@ -13,9 +16,9 @@ public class BWGlassAdder {
     private BWGlassAdder() {}
 
     public static void registerGlasses() {
-        doRegister("IC2", "blockAlloyGlass", 0, EV);
-        doRegister("Botania", "manaGlass", 0, EV);
-        doRegister("Botania", "elfGlass", 0, IV);
+        doRegister(IndustrialCraft2.ID, "blockAlloyGlass", 0, EV);
+        doRegister(Botania.ID, "manaGlass", 0, EV);
+        doRegister(Botania.ID, "elfGlass", 0, IV);
     }
 
     private static void doRegister(String modid, String blockName, int meta, byte tier) {

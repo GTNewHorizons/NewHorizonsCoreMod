@@ -93,7 +93,6 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
                 BaseMetaTileEntity mBaseMetaTileEntity = (BaseMetaTileEntity) getBaseMetaTileEntity();
                 if (mBaseMetaTileEntity.getMetaTileEntity() instanceof MetaTileEntity) {
                     MetaTileEntity mMetaTileEntity = (MetaTileEntity) mBaseMetaTileEntity.getMetaTileEntity();
-                    // for (int t = 0; t < 6; t++) {
                     if (mMetaTileEntity.dechargerSlotCount() > 0
                             && mBaseMetaTileEntity.getStoredEU() < mBaseMetaTileEntity.getEUCapacity()) {
                         for (int i = mMetaTileEntity.dechargerSlotStartIndex(),
@@ -139,7 +138,6 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
                                 }
                             }
                         }
-                        // }
                     }
                 }
             }

@@ -1,5 +1,7 @@
 package com.dreammaster.modcustomdrops;
 
+import static gregtech.api.enums.Mods.Thaumcraft;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -25,7 +27,6 @@ import thaumcraft.common.lib.FakeThaumcraftPlayer;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
@@ -43,8 +44,6 @@ public class CustomDropsHandler {
 
     public CustomDropsHandler(File pConfigBaseDir) {
         _mConfigFileName = String.format("config/%s/CustomDrops.xml", Refstrings.COLLECTIONID);
-        // _mPersistedDB = new PersistedDataBase(pConfigBaseDir,
-        // "CustomDrops.ser", Refstrings.COLLECTIONID);
         _mDeathDebugPlayers = new ArrayList<>();
     }
 
@@ -191,7 +190,7 @@ public class CustomDropsHandler {
             {
                 return;
             }
-            if (Loader.isModLoaded("Thaumcraft")) {
+            if (Thaumcraft.isModLoaded()) {
                 if (tEP instanceof FakeThaumcraftPlayer) {
                     return;
                 }
@@ -209,17 +208,6 @@ public class CustomDropsHandler {
         }
     }
 
-    /*
-     * @SubscribeEvent public void LivingDeathEvent(net.minecraftforge.event.entity.living.LivingDeathEvent pEvent) {
-     * try { EntityLivingBase tEntity = pEvent.entityLiving; UUID tUUID = null; EntityPlayer tEP = null; if
-     * (pEvent.source.getEntity() != null) { if (pEvent.source.getEntity() instanceof EntityPlayer) { tEP =
-     * (EntityPlayer)pEvent.source.getEntity(); tUUID = tEP.getUniqueID(); if (_mDeathDebugPlayers.contains(tUUID))
-     * PlayerChatHelper.SendInfo(tEP, String.format("Killed entity: [%s]", tEntity.getClass().getName())); } } if (tEP
-     * == null) // Not doing anything, only players are valid return; if (tEP instanceof
-     * net.minecraftforge.common.util.FakePlayer) // Nope, no fakeplayers return; CustomDrop tCustomDrop =
-     * _mCustomDrops.FindDropEntry(tEntity); if (tCustomDrop == null) return; // no custom drop defined for this mob,
-     * skipping HandleCustomDrops(tCustomDrop, tEntity, tEP); } catch (Exception e) { e.printStackTrace(); } }
-     */
     private void HandleCustomDrops(CustomDrops.CustomDrop tCustomDrop, EntityLivingBase tEntity, EntityPlayer tEP,
             ArrayList<EntityItem> pDropList) {
         try {

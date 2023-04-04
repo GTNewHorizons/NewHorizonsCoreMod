@@ -1,11 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.GT_Values.NI;
+import static gregtech.api.enums.Mods.BartWorks;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -25,7 +25,7 @@ public class SifterRecipes implements Runnable {
                 7200,
                 30);
 
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
             // Water Line
             GT_Values.RA.addSifterRecipe(
                     new ItemStack[] { NI },

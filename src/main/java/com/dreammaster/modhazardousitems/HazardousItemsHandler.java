@@ -1,5 +1,7 @@
 package com.dreammaster.modhazardousitems;
 
+import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;
@@ -23,7 +25,6 @@ import com.dreammaster.modhazardousitems.HazardousItems.HazardousItem;
 import com.dreammaster.modhazardousitems.cause.HazardCause;
 import com.google.common.collect.EvictingQueue;
 
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -364,31 +365,20 @@ public class HazardousItemsHandler {
                 // Tinkers' construct smeltery tank
                 else if ("tconstruct.smeltery.itemblocks.LavaTankItemBlock"
                         .equals(stack.getItem().getClass().getName())) {
-                            // _mLogger.info("Found lavatank");
                             NBTTagCompound tNBT = stack.getTagCompound();
                             if (tNBT != null && tNBT.hasKey("Fluid")) {
-                                // _mLogger.info("...Has NBT 'Fluid'...");
                                 NBTTagCompound tFluidCompound = tNBT.getCompoundTag("Fluid");
                                 if (tFluidCompound != null && tFluidCompound.hasKey("FluidName")) {
-                                    // _mLogger.info("...Has NBT 'FluidName'...");
                                     String tFluidName = tFluidCompound.getString("FluidName");
                                     if (tFluidName != null && !tFluidName.isEmpty()) {
-                                        // _mLogger.info("...Finding Hazardous Fluids...");
                                         HazardousItems.HazardousFluid hazardFluid = _mHazardItemsCollection
                                                 .FindHazardousFluidExact(tFluidName);
                                         if (hazardFluid != null && hazardFluid.getCheckInventory()) {
-                                            // _mLogger.info("...Found Hazardous Fluids");
                                             doEffects(HazardCause.inventoryItem(stack), hazardFluid, pPlayer);
                                         }
-                                        // else
-                                        // _mLogger.info("...Not found Hazardous Fluids");
                                     }
                                 }
-                                // else
-                                // _mLogger.info("...Has no NBT 'FluidName'");
                             }
-                            // else
-                            // _mLogger.info("...Has no NBT 'Fluid'");
                         } else {
                             HazardousItem hazardItem = _mHazardItemsCollection.FindHazardousItem(stack);
                             if (hazardItem != null && hazardItem.getCheckInventory()) {
@@ -397,8 +387,6 @@ public class HazardousItemsHandler {
                         }
             } catch (Exception e) {
                 _mLogger.debug(String.format("Something weird happend with item %s", tCurrIS));
-                // Silently catching exception and continue
-                continue;
             }
         }
     }
@@ -412,7 +400,7 @@ public class HazardousItemsHandler {
             checkInventoryArray(pPlayer.inventory.mainInventory, pPlayer);
 
             // M&B addition ------
-            if (Loader.isModLoaded("battlegear2")) {
+            if (MineAndBladeBattleGear2.isModLoaded()) {
                 Class<?> c = pPlayer.inventory.getClass();
                 Field extraInv = null;
                 try {

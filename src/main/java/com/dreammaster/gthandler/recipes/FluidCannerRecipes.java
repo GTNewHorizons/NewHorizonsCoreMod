@@ -1,11 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GalaxySpace;
+
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -53,7 +55,7 @@ public class FluidCannerRecipes implements Runnable {
                 Materials.SuperCoolant.getFluid(6000L),
                 GT_Values.NF);
 
-        if ((Loader.isModLoaded("GalaxySpace")) && (Loader.isModLoaded("bartworks"))) {
+        if (GalaxySpace.isModLoaded() && BartWorks.isModLoaded()) {
             GT_Values.RA.addFluidCannerRecipe(
                     CustomItemList.TenKCell.get(1L),
                     ItemList.Reactor_Coolant_He_1.get(1L),

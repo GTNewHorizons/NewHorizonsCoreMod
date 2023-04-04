@@ -1,11 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Natura;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -39,9 +40,9 @@ public class WiremillRecipes implements Runnable {
 
         GT_RecipeRegistrator.registerWiremillRecipes(Materials.NetherStar, 200, 4);
 
-        if (Loader.isModLoaded("Natura")) {
+        if (Natura.isModLoaded()) {
             GT_Values.RA.addWiremillRecipe(
-                    GT_ModHandler.getModItem("Natura", "barleyFood", 2L, 3),
+                    GT_ModHandler.getModItem(Natura.ID, "barleyFood", 2L, 3),
                     new ItemStack(Items.string, 1, 0),
                     200,
                     8);

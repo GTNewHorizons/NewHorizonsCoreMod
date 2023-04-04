@@ -1,5 +1,9 @@
 package com.dreammaster.galacticgreg;
 
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.GalaxySpace;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -108,7 +112,7 @@ public class SpaceDimRegisterer {
      * Mod GalactiCraft
      */
     private ModContainer Setup_GalactiCraftCore() {
-        ModContainer modGCraftCore = new ModContainer("GalacticraftCore");
+        ModContainer modGCraftCore = new ModContainer(GalacticraftCore.ID);
         ModDBMDef DBMMoon = new ModDBMDef("tile.moonBlock", 4);
 
         ModDimensionDef tMoonDim = new ModDimensionDef(
@@ -127,7 +131,7 @@ public class SpaceDimRegisterer {
      * @return
      */
     private ModContainer Setup_GalactiCraftPlanets() {
-        ModContainer modGCraftPlanets = new ModContainer("GalacticraftMars");
+        ModContainer modGCraftPlanets = new ModContainer(GalacticraftMars.ID);
         ModDBMDef DBMMars = new ModDBMDef("tile.mars", 9);
         ModDimensionDef dimMars = new ModDimensionDef(
                 "Mars",
@@ -156,11 +160,11 @@ public class SpaceDimRegisterer {
      */
     private ModContainer Setup_GalaxySpace() {
         // First, we create a mod-container that will be populated with dimensions later.
-        // The Name must match your modID, as it is checked if this mod is loaded, in order
+        // The Name must match your ID, as it is checked if this mod is loaded, in order
         // to enable/disable the parsing/registering of dimensions
-        ModContainer modCGalaxySpace = new ModContainer("GalaxySpace");
+        ModContainer modCGalaxySpace = new ModContainer(GalaxySpace.ID);
 
-        // Now lets first define a block here for our dimension. You can add the modID, but you don't have to.
+        // Now lets first define a block here for our dimension. You can add the ID, but you don't have to.
         // It will automatically add the mods name that is defined in the modcontainer.
         final ModDBMDef DBMPhobos = new ModDBMDef("phobosblocks", 2);
         final ModDBMDef DBMDeimos = new ModDBMDef("deimosblocks", 1);

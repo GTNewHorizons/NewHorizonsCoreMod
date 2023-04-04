@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.accelerator;
 
 import static gregtech.api.enums.GT_Values.V;
+import static gregtech.api.enums.Mods.GregTech;
 
 import java.util.*;
 
@@ -310,9 +311,6 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
             }
 
             long tEnergyDemand = getEnergyDemand(getSpeedTierOverride(), getRadiusTierOverride(), mMode == 1);
-            // public static final long[] V = new long[]{8, 32, 128, 512, 2048, 8192, 32768, 131072, 524288,
-            // Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE,
-            // Integer.MAX_VALUE, Integer.MAX_VALUE};
 
             // Do we have enough energy to run? Or are we not allowed to run?
             if (pBaseMetaTileEntity.getStoredEU() < tEnergyDemand || !pBaseMetaTileEntity.isAllowedToWork()) {
@@ -389,8 +387,8 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
                 || tSimpleClassName.contains("cable")) {
             return true;
         }
-        if (tCanonicalName.contains("appeng") || tCanonicalName.contains("gregtech")) // Don't accelerate ANY gregtech
-                                                                                      // machines
+        if (tCanonicalName.contains("appeng") || tCanonicalName.contains(GregTech.ID)) // Don't accelerate ANY gregtech
+                                                                                       // machines
         {
             return true;
         }

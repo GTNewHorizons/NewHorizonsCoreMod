@@ -1,5 +1,14 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Botany;
+import static gregtech.api.enums.Mods.ExtraBees;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -29,25 +38,24 @@ public class ScriptIndustrialApiary implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                "Forestry",
-                "gregtech",
-                "gendustry",
-                "ExtraBees",
-                "ExtraUtilities",
-                "Botany",
-                "BiomesOPlenty",
-                "Genetics",
-                "ProjRed|Illumination",
-                "TConstruct");
+                Forestry.ID,
+                Gendustry.ID,
+                ExtraBees.ID,
+                ExtraUtilities.ID,
+                Botany.ID,
+                BiomesOPlenty.ID,
+                Genetics.ID,
+                ProjectRedIllumination.ID,
+                TinkerConstruct.ID);
     }
 
     @Override
     public void loadRecipes() {
 
-        final ItemStack FrameHousing = getModItem("ExtraBees", "alveary", 1, 1);
-        final ItemStack AlvearyLighting = getModItem("ExtraBees", "alveary", 1, 3);
-        final ItemStack AlvearySieve = getModItem("Forestry", "alveary", 1, 7);
-        final ItemStack EnhancedCircuitBoard = getModItem("Forestry", "chipsets", 1, 1);
+        final ItemStack FrameHousing = getModItem(ExtraBees.ID, "alveary", 1, 1);
+        final ItemStack AlvearyLighting = getModItem(ExtraBees.ID, "alveary", 1, 3);
+        final ItemStack AlvearySieve = getModItem(Forestry.ID, "alveary", 1, 7);
+        final ItemStack EnhancedCircuitBoard = getModItem(Forestry.ID, "chipsets", 1, 1);
 
         final ItemData SmallSteelGear = (ItemData) OrePrefixes.gearGtSmall.get(Materials.Steel);
         final ItemData SmallStainlessGear = (ItemData) OrePrefixes.gearGtSmall.get(Materials.StainlessSteel);
@@ -56,18 +64,18 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final ItemStack IndustrialApiaryUpgrade_PRODUCTION = ItemList.IndustrialApiary_Upgrade_PRODUCTION.get(1);
 
         final Item Sugar = Items.sugar;
-        final ItemStack RoyalJelly = getModItem("Forestry", "royalJelly", 1);
-        final ItemStack ClimateControlModule = getModItem("gendustry", "ClimateModule", 1);
-        final ItemStack EnvironmentalProcessor = getModItem("gendustry", "EnvProcessor", 1);
+        final ItemStack RoyalJelly = getModItem(Forestry.ID, "royalJelly", 1);
+        final ItemStack ClimateControlModule = getModItem(Gendustry.ID, "ClimateModule", 1);
+        final ItemStack EnvironmentalProcessor = getModItem(Gendustry.ID, "EnvProcessor", 1);
         final Block Grass = Blocks.grass;
-        final ItemStack GlowstoneGlass = getModItem("ExtraUtilities", "decorativeBlock2", 1, 7);
-        final ItemStack ReinforcedDarkGlass = getModItem("ExtraUtilities", "decorativeBlock2", 1, 11);
-        final ItemStack BotanyPollen = getModItem("Botany", "pollen", 1, wildcard);
-        final ItemStack HardenedIce = getModItem("BiomesOPlenty", "hardIce", 1);
+        final ItemStack GlowstoneGlass = getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7);
+        final ItemStack ReinforcedDarkGlass = getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11);
+        final ItemStack BotanyPollen = getModItem(Botany.ID, "pollen", 1, wildcard);
+        final ItemStack HardenedIce = getModItem(BiomesOPlenty.ID, "hardIce", 1);
         final ItemStack Sand = new ItemStack(Blocks.sand, 1, wildcard);
         final Item LavaBucket = Items.lava_bucket;
         final ItemStack LVPiston = ItemList.Electric_Piston_LV.get(1);
-        final ItemStack IntegratedCPU = getModItem("Genetics", "misc", 1, 10);
+        final ItemStack IntegratedCPU = getModItem(Genetics.ID, "misc", 1, 10);
         final ItemStack LVRobotArm = ItemList.Robot_Arm_LV.get(1);
         final Block Cactus = Blocks.cactus;
         final Item WaterBucket = Items.water_bucket;
@@ -77,15 +85,15 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final Item FermentedSpiderEye = Items.fermented_spider_eye;
         final String RubberPlate = "plateAnyRubber";
         final String BeesWax = "itemBeeswax";
-        final ItemStack GeneticsProcessor = getModItem("gendustry", "GeneticsProcessor", 1);
+        final ItemStack GeneticsProcessor = getModItem(Gendustry.ID, "GeneticsProcessor", 1);
         final String RedAlloyPlate = "plateRedAlloy";
         final Block Vines = Blocks.vine;
         final String IronPlate = "plateIron";
         final String EnderPearlPlate = "plateEnderPearl";
-        final ItemStack InvertedBlueLamp = getModItem("ProjRed|Illumination", "projectred.illumination.lamp", 1, 27);
-        final ItemStack ClearGlassPane = getModItem("TConstruct", "GlassPane", 1);
+        final ItemStack InvertedBlueLamp = getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 27);
+        final ItemStack ClearGlassPane = getModItem(TinkerConstruct.ID, "GlassPane", 1);
         final Block Netherrack = Blocks.netherrack;
-        final ItemStack WovenSilk = getModItem("Forestry", "craftingMaterial", 1, 3);
+        final ItemStack WovenSilk = getModItem(Forestry.ID, "craftingMaterial", 1, 3);
 
         // Industrial Apiary
         addShapedRecipe(

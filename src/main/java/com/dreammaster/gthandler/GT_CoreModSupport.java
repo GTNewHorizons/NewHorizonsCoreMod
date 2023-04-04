@@ -10,46 +10,6 @@ import gregtech.api.objects.MaterialStack;
 
 public class GT_CoreModSupport implements IMaterialHandler {
 
-    // public MaterialBuilder addDustItems() {
-    // this.types |= 1;
-    // return this;
-    // }
-    //
-    // public MaterialBuilder addMetalItems() {
-    // this.types |= 2;
-    // return this;
-    // }
-    //
-    // public MaterialBuilder addGemItems() {
-    // this.types |= 4;
-    // return this;
-    // }
-    //
-    // public MaterialBuilder addOreItems() {
-    // this.types |= 8;
-    // return this;
-    // }
-    //
-    // public MaterialBuilder addCell() {
-    // this.types |= 16;
-    // return this;
-    // }
-    //
-    // public MaterialBuilder addPlasma() {
-    // this.types |= 32;
-    // return this;
-    // }
-    //
-    // public MaterialBuilder addToolHeadItems() {
-    // this.types |= 64;
-    // return this;
-    // }
-    //
-    // public MaterialBuilder addGearItems() {
-    // this.types |= 128;
-    // return this;
-    // }
-
     public static Materials RawRadox = new MaterialBuilder(-1, TextureSet.SET_DULL, "Raw Radox").setRGB(80, 30, 80)
             .addFluid().constructMaterial();
     public static Materials RadoxSuperLight = new MaterialBuilder(-1, TextureSet.SET_DULL, "Super Light Radox")
