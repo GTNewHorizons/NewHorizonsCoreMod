@@ -135,7 +135,7 @@ public class CircuitAssemblerRecipes implements Runnable {
 
                 FluidStack(solderIndalloy, 144),
                 ItemList.Circuit_Neuroprocessor.get(1L),
-                3 * 20,
+                5 * 10,
                 614400,
                 true);
         GT_Values.RA.addCircuitAssemblerRecipe(
