@@ -13,10 +13,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
@@ -164,7 +161,13 @@ public class CuttingMachineRecipes implements Runnable {
                 900,
                 1920,
                 true);
-
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_Bioware.get(1L),
+                Materials.UUMatter.getFluid(8_000L),
+                ItemList.Circuit_Parts_Chip_Bioware.get(16L),
+                ItemList.Circuit_Chip_Biocell.get(16L),
+                15 * 20,
+                (int) TierEU.RECIPE_UEV);
         if (IndustrialCraft2.isModLoaded()) {
             GT_Values.RA.addCutterRecipe(
                     GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0),
