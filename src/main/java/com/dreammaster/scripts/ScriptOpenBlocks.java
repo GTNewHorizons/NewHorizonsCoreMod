@@ -25,7 +25,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(OpenBlocks.ID, RandomThings.ID, ExtraUtilities.ID, "gregtech");
+        return Arrays.asList(OpenBlocks.ID, RandomThings.ID, ExtraUtilities.ID);
     }
 
     @Override

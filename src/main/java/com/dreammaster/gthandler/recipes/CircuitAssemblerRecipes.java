@@ -15,6 +15,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -1428,7 +1429,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                                 GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
                                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                                 GT_ModHandler.getModItem(
-                                        "ProjRed|Illumination",
+                                        ProjectRedIllumination.ID,
                                         "projectred.illumination.lightbutton",
                                         1L,
                                         14),

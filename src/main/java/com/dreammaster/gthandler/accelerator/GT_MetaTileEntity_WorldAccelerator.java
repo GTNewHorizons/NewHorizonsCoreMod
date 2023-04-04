@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.accelerator;
 
 import static gregtech.api.enums.GT_Values.V;
+import static gregtech.api.enums.Mods.GregTech;
 
 import java.util.*;
 
@@ -386,7 +387,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
                 || tSimpleClassName.contains("cable")) {
             return true;
         }
-        if (tCanonicalName.contains("appeng") || tCanonicalName.contains("gregtech")) // Don't accelerate ANY gregtech
+        if (tCanonicalName.contains("appeng") || tCanonicalName.contains(GregTech.ID)) // Don't accelerate ANY gregtech
                                                                                       // machines
         {
             return true;

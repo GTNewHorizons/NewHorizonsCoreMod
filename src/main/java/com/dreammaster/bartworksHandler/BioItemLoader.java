@@ -4,6 +4,7 @@ import static com.dreammaster.bartworksHandler.BacteriaRegistry.CultureSet;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.CLEANROOM;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.addBacterialVatRecipe;
 import static gregtech.api.enums.GT_Values.*;
+import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 
 import net.minecraft.init.Items;
@@ -33,7 +34,7 @@ public class BioItemLoader {
     static {
         BIOTEMS = new SimpleSubItemClass(new String[] { "itemCollagen", "itemGelatin", "itemAgar" })
                 .setCreativeTab(MainMod.BIO_TAB);
-        GameRegistry.registerItem(BIOTEMS, "GTNHBioItems", "bartworks");
+        GameRegistry.registerItem(BIOTEMS, "GTNHBioItems", BartWorks.ID);
         BIOTEMSSTACKS = new ItemStack[] { new ItemStack(BIOTEMS, 1, 0), new ItemStack(BIOTEMS, 1, 1),
                 new ItemStack(BIOTEMS, 1, 2), };
         BIOFLUIDS = new GT_Fluid[] {

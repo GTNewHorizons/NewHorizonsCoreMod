@@ -15,6 +15,10 @@ import bloodasp.galacticgreg.api.ModDBMDef;
 import bloodasp.galacticgreg.api.ModDimensionDef;
 import bloodasp.galacticgreg.api.SpecialBlockComb;
 
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.GalaxySpace;
+
 /**
  * In this class, you'll find everything you need in order to tell GGreg what to do and where. Everything is done in
  * here. If you're trying to use anything else, you're probably doing something wrong (Or I forgot to add it. In that
@@ -108,7 +112,7 @@ public class SpaceDimRegisterer {
      * Mod GalactiCraft
      */
     private ModContainer Setup_GalactiCraftCore() {
-        ModContainer modGCraftCore = new ModContainer("GalacticraftCore");
+        ModContainer modGCraftCore = new ModContainer(GalacticraftCore.ID);
         ModDBMDef DBMMoon = new ModDBMDef("tile.moonBlock", 4);
 
         ModDimensionDef tMoonDim = new ModDimensionDef(
@@ -127,7 +131,7 @@ public class SpaceDimRegisterer {
      * @return
      */
     private ModContainer Setup_GalactiCraftPlanets() {
-        ModContainer modGCraftPlanets = new ModContainer("GalacticraftMars");
+        ModContainer modGCraftPlanets = new ModContainer(GalacticraftMars.ID);
         ModDBMDef DBMMars = new ModDBMDef("tile.mars", 9);
         ModDimensionDef dimMars = new ModDimensionDef(
                 "Mars",
@@ -158,7 +162,7 @@ public class SpaceDimRegisterer {
         // First, we create a mod-container that will be populated with dimensions later.
         // The Name must match your ID, as it is checked if this mod is loaded, in order
         // to enable/disable the parsing/registering of dimensions
-        ModContainer modCGalaxySpace = new ModContainer("GalaxySpace");
+        ModContainer modCGalaxySpace = new ModContainer(GalaxySpace.ID);
 
         // Now lets first define a block here for our dimension. You can add the ID, but you don't have to.
         // It will automatically add the mods name that is defined in the modcontainer.

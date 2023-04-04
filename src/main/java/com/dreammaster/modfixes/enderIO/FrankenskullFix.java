@@ -1,5 +1,6 @@
 package com.dreammaster.modfixes.enderIO;
 
+import gregtech.api.enums.Mods;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -28,6 +29,6 @@ public class FrankenskullFix {
         root.setTag(SoulBinderRecipeManager.KEY_OUTPUT_STACK, stackRoot);
 
         SoulBinderRecipeManager.getInstance().addRecipeFromNBT(root);
-        FMLInterModComms.sendMessage("EnderIO", "recipe:soulbinder", root);
+        FMLInterModComms.sendMessage(Mods.EnderIO.ID, "recipe:soulbinder", root);
     }
 }
