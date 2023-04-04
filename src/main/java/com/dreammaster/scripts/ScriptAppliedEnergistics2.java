@@ -31,8 +31,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays
-                .asList(AppliedEnergistics2.ID, TinkerConstruct.ID, Avaritia.ID, EternalSingularity.ID);
+        return Arrays.asList(AppliedEnergistics2.ID, TinkerConstruct.ID, Avaritia.ID, EternalSingularity.ID);
     }
 
     @Override
@@ -53,11 +52,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         final ItemStack AE2_ME_CHEST = getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0);
         final ItemStack AE2_ME_Glass_Cable = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16);
         final ItemStack AE2_ME_Covered_Cable = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 36);
-        final ItemStack AE2_ME_Dense_Covered_Cable = getModItem(
-                AppliedEnergistics2.ID,
-                "item.ItemMultiPart",
-                1,
-                536);
+        final ItemStack AE2_ME_Dense_Covered_Cable = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 536);
         final ItemStack AE2_ME_Backbone_Covered_Cable = getModItem(
                 AppliedEnergistics2.ID,
                 "item.ItemMultiPart",
@@ -221,8 +216,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         for (int i = 0; i < storage.length; i++) {
             GT_ModHandler.removeRecipeByOutput(storage[i]);
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { components[i],
-                            getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1) },
+                    new ItemStack[] { components[i], getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1) },
                     null,
                     storage[i],
                     400,
@@ -576,8 +570,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 AE2_ADVANCED_HOUSING);
 
         // ME Digital Singularity
-        GT_ModHandler.removeRecipeByOutput(
-                getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1));
+        GT_ModHandler
+                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
                 "----a----",

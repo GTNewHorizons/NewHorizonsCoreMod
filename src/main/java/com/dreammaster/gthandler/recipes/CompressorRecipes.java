@@ -1,5 +1,15 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.ExtraTrees;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Natura;
+import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.StevesCarts2;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -10,16 +20,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-
-import static gregtech.api.enums.Mods.ExtraTrees;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.AdvancedSolarPanel;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.OpenComputers;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
 
 public class CompressorRecipes implements Runnable {
 

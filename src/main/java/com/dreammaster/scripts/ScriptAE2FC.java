@@ -135,11 +135,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_MON = getModItem(AE2FluidCraft.ID, "part_fluid_storage_monitor", 1, 0);
         final ItemStack AE2FC_CON = getModItem(AE2FluidCraft.ID, "part_fluid_conversion_monitor", 1, 0);
         final ItemStack AE2FC_FLUID_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_fluid_terminal", 1, 0);
-        final ItemStack AE2FC_PATTERN_WIRELESS = getModItem(
-                AE2FluidCraft.ID,
-                "wireless_fluid_pattern_terminal",
-                1,
-                0);
+        final ItemStack AE2FC_PATTERN_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_fluid_pattern_terminal", 1, 0);
         final ItemStack AE2FC_INTERFACE_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_interface_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
@@ -149,11 +145,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 "fluid_storage_housing",
                 1,
                 1);
-        final ItemStack AE2FC_MULTI_FLUID_STORAGE_HOUSING = getModItem(
-                AE2FluidCraft.ID,
-                "fluid_storage_housing",
-                1,
-                2);
+        final ItemStack AE2FC_MULTI_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 2);
         final ItemStack AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING = getModItem(
                 AE2FluidCraft.ID,
                 "fluid_storage_housing",

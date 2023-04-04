@@ -1,5 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.ZTones;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -8,9 +11,6 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_ModHandler;
-
-import static gregtech.api.enums.Mods.ZTones;
-import static gregtech.api.enums.Mods.TinkerConstruct;
 
 public class ForgeHammerRecipes implements Runnable {
 

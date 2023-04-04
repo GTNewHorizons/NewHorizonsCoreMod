@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.SpiceOfLife;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.SpiceOfLife;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 

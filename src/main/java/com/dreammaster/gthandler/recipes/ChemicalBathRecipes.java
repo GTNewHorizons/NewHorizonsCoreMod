@@ -1,5 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -14,14 +22,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-
-import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
 
 public class ChemicalBathRecipes implements Runnable {
 
@@ -146,7 +146,7 @@ public class ChemicalBathRecipes implements Runnable {
                     GT_ModHandler.getModItem(Forestry.ID, "mulch", 8L, 0),
                     GT_ModHandler.getModItem(Forestry.ID, "mulch", 4L, 0),
                     GT_ModHandler.getModItem(Forestry.ID, "mulch", 4L, 0),
-                    new int[]{10000, 3300, 2000},
+                    new int[] { 10000, 3300, 2000 },
                     500,
                     30);
         }

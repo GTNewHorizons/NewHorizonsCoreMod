@@ -1,13 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Translocator;
 
 import com.dreammaster.gthandler.CustomItemList;

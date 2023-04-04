@@ -1,12 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.GregTech_API.mGTPlusPlus;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -404,15 +404,19 @@ public class DTPFRecipes implements Runnable {
                 }
 
                 // Energised tesseract
-                GT_Values.RA.addLaserEngraverRecipe(
-                        new ItemStack[] { ItemList.Tesseract.get(1), GT_Utility
-                                .copyAmount(0L, GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01:>", 1, 32105)) },
-                        new FluidStack[] { GT_Values.NF },
-                        new ItemStack[] { ItemList.EnergisedTesseract.get(1) },
-                        new FluidStack[] { Materials.ExcitedDTEC.getFluid(100L) },
-                        30 * 20,
-                        32_000_000,
-                        true);
+                GT_Values.RA
+                        .addLaserEngraverRecipe(
+                                new ItemStack[] { ItemList.Tesseract.get(1),
+                                        GT_Utility.copyAmount(
+                                                0L,
+                                                GT_ModHandler
+                                                        .getModItem(GTPlusPlus.ID, "MU-metaitem.01:>", 1, 32105)) },
+                                new FluidStack[] { GT_Values.NF },
+                                new ItemStack[] { ItemList.EnergisedTesseract.get(1) },
+                                new FluidStack[] { Materials.ExcitedDTEC.getFluid(100L) },
+                                30 * 20,
+                                32_000_000,
+                                true);
 
                 // SpaceTime v1
                 GT_Values.RA.addPlasmaForgeRecipe(

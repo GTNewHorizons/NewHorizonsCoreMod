@@ -25,7 +25,7 @@ public class ScriptAFSU implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(new String[] { AFSU.ID});
+        return Arrays.asList(new String[] { AFSU.ID });
     }
 
     @Override
@@ -34,8 +34,7 @@ public class ScriptAFSU implements IScriptLoader {
                 getModItem(AFSU.ID, "AFSU", 1),
                 new Object[] { "cableGt01Platinum", "itemCasingTungstenSteel", "cableGt01Platinum",
                         "itemCasingTungstenSteel", getModItem(GregTech.ID, "gt.blockmachines", 1, 15),
-                        "itemCasingTungstenSteel", "circuitMaster", getModItem(AFSU.ID, "ALC", 1),
-                        "circuitMaster" });
+                        "itemCasingTungstenSteel", "circuitMaster", getModItem(AFSU.ID, "ALC", 1), "circuitMaster" });
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),

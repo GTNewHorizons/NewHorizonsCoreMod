@@ -1,13 +1,13 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.ExtraTrees;
-import static gregtech.api.enums.Mods.JABBA;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderStorage;
+import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.JABBA;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -47,8 +47,7 @@ public class ScriptJABBA implements IScriptLoader {
     @Override
     public void loadRecipes() {
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Minecraft.ID, "planks", 8, 32767),
-                        getModItem(Minecraft.ID, "chest", 1) },
+                new ItemStack[] { getModItem(Minecraft.ID, "planks", 8, 32767), getModItem(Minecraft.ID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "barrel", 1),
                 200,
@@ -61,8 +60,7 @@ public class ScriptJABBA implements IScriptLoader {
                 200,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(ExtraTrees.ID, "planks", 8, 32767),
-                        getModItem(Minecraft.ID, "chest", 1) },
+                new ItemStack[] { getModItem(ExtraTrees.ID, "planks", 8, 32767), getModItem(Minecraft.ID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "barrel", 1),
                 200,
@@ -75,8 +73,7 @@ public class ScriptJABBA implements IScriptLoader {
                 200,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Forestry.ID, "planks", 8, 32767),
-                        getModItem(Minecraft.ID, "chest", 1) },
+                new ItemStack[] { getModItem(Forestry.ID, "planks", 8, 32767), getModItem(Minecraft.ID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "barrel", 1),
                 200,
@@ -89,8 +86,7 @@ public class ScriptJABBA implements IScriptLoader {
                 200,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Natura.ID, "planks", 8, 32767),
-                        getModItem(Minecraft.ID, "chest", 1) },
+                new ItemStack[] { getModItem(Natura.ID, "planks", 8, 32767), getModItem(Minecraft.ID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "barrel", 1),
                 200,
@@ -372,8 +368,8 @@ public class ScriptJABBA implements IScriptLoader {
                 getModItem(JABBA.ID, "upgradeCore", 2, 1),
                 new Object[] { "plateEnderEye", getModItem(Minecraft.ID, "piston", 1), "plateEnderEye",
                         getModItem(Minecraft.ID, "piston", 1), getModItem(EnderStorage.ID, "enderChest", 1),
-                        getModItem(Minecraft.ID, "piston", 1), "plateEnderEye",
-                        getModItem(Minecraft.ID, "piston", 1), "plateEnderEye" });
+                        getModItem(Minecraft.ID, "piston", 1), "plateEnderEye", getModItem(Minecraft.ID, "piston", 1),
+                        "plateEnderEye" });
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 2, 1),
@@ -386,8 +382,8 @@ public class ScriptJABBA implements IScriptLoader {
                 getModItem(JABBA.ID, "upgradeCore", 1, 2),
                 new Object[] { "plateRedAlloy", getModItem(Minecraft.ID, "piston", 1), "plateRedAlloy",
                         getModItem(Minecraft.ID, "piston", 1), getModItem(Minecraft.ID, "redstone_block", 1),
-                        getModItem(Minecraft.ID, "piston", 1), "plateRedAlloy",
-                        getModItem(Minecraft.ID, "piston", 1), "plateRedAlloy" });
+                        getModItem(Minecraft.ID, "piston", 1), "plateRedAlloy", getModItem(Minecraft.ID, "piston", 1),
+                        "plateRedAlloy" });
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1, 2),
@@ -431,8 +427,7 @@ public class ScriptJABBA implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1),
-                new Object[] { "screwSteel", getModItem(Minecraft.ID, "sticky_piston", 1), "screwSteel",
-                        "screwSteel", getModItem(JABBA.ID, "barrel", 1), "screwSteel", null,
-                        "craftingToolScrewdriver", null });
+                new Object[] { "screwSteel", getModItem(Minecraft.ID, "sticky_piston", 1), "screwSteel", "screwSteel",
+                        getModItem(JABBA.ID, "barrel", 1), "screwSteel", null, "craftingToolScrewdriver", null });
     }
 }

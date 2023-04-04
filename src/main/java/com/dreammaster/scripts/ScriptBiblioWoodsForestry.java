@@ -43,8 +43,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 getModItem(Forestry.ID, "slabs", 1, 13), getModItem(Forestry.ID, "slabs", 1, 5),
                 getModItem(Forestry.ID, "slabs", 1, 12) };
 
-        ItemStack[] fancySignF1 = new ItemStack[] {
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancySign", 1),
+        ItemStack[] fancySignF1 = new ItemStack[] { getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancySign", 1),
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancySign", 1, 1),
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancySign", 1, 2),
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancySign", 1, 3),
@@ -94,8 +93,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodClock2", 1, 5),
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodClock2", 1, 6),
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodClock2", 1, 7) };
-        ItemStack[] PaintingF1 = new ItemStack[] {
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodPaintingT0", 1),
+        ItemStack[] PaintingF1 = new ItemStack[] { getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodPaintingT0", 1),
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodPaintingT0", 1, 1),
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodPaintingT0", 1, 2),
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodPaintingT0", 1, 3),
@@ -268,8 +266,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         for (int i = 0; i < 16; i++) {
             addShapedRecipe(
                     FClockF1[i],
-                    new Object[] { F1wood[i], getModItem(Minecraft.ID, "clock", 1), F1wood[i], F1wood[i],
-                            "stickWood", F1wood[i], F1wood[i], "plateGold", F1wood[i] });
+                    new Object[] { F1wood[i], getModItem(Minecraft.ID, "clock", 1), F1wood[i], F1wood[i], "stickWood",
+                            F1wood[i], F1wood[i], "plateGold", F1wood[i] });
             addShapedRecipe(
                     PaintingF1[i],
                     new Object[] { F1wood[i], F1wood[i], F1wood[i], F1wood[i],
@@ -327,8 +325,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 addShapedRecipe(
                         PaintingF2[i],
                         new Object[] { F2wood[i], F2wood[i], F2wood[i], F2wood[i],
-                                getModItem(BiblioCraft.ID, "item.PaintingCanvas", 1), F2wood[i], F2wood[i],
-                                F2wood[i], F2wood[i] });
+                                getModItem(BiblioCraft.ID, "item.PaintingCanvas", 1), F2wood[i], F2wood[i], F2wood[i],
+                                F2wood[i] });
                 addShapelessCraftingRecipe(
                         fancySignF2[i],
                         new Object[] { getModItem(Minecraft.ID, "paper", 1), getModItem(Minecraft.ID, "sign", 1),
@@ -483,9 +481,9 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 1),
-                new Object[] { "dyeBlack", getModItem(Minecraft.ID, "crafting_table", 1), "craftingFeather",
-                        "PlumSlab", getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 1),
-                        "PlumSlab", "PlumSlab", "PlumSlab", "PlumSlab" });
+                new Object[] { "dyeBlack", getModItem(Minecraft.ID, "crafting_table", 1), "craftingFeather", "PlumSlab",
+                        getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 1), "PlumSlab",
+                        "PlumSlab", "PlumSlab", "PlumSlab" });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 17),
@@ -508,8 +506,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 17),
                 new Object[] { "PlumSlab", "PlumSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 17), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 17), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 0),
@@ -557,9 +554,9 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 0),
-                new Object[] { "dyeBlack", getModItem(Minecraft.ID, "crafting_table", 1), "craftingFeather",
-                        "PineSlab", getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 0),
-                        "PineSlab", "PineSlab", "PineSlab", "PineSlab" });
+                new Object[] { "dyeBlack", getModItem(Minecraft.ID, "crafting_table", 1), "craftingFeather", "PineSlab",
+                        getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 0), "PineSlab",
+                        "PineSlab", "PineSlab", "PineSlab" });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 16),
@@ -582,8 +579,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 16),
                 new Object[] { "PineSlab", "PineSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 16), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 16), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 2),
@@ -647,8 +643,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 18),
-                new Object[] { "PoplarSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 18), null,
-                        null, null, null, null, null, null });
+                new Object[] { "PoplarSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 18), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 18),
@@ -657,8 +653,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 18),
                 new Object[] { "PoplarSlab", "PoplarSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 18), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 18), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 3),
@@ -722,8 +717,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 19),
-                new Object[] { "SequoiaSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 19), null,
-                        null, null, null, null, null, null });
+                new Object[] { "SequoiaSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 19), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 19),
@@ -732,8 +727,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 19),
                 new Object[] { "SequoiaSlab", "SequoiaSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 19), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 19), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 4),
@@ -781,9 +775,9 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 4),
-                new Object[] { "dyeBlack", getModItem(Minecraft.ID, "crafting_table", 1), "craftingFeather",
-                        "TeakSlab", getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 4),
-                        "TeakSlab", "TeakSlab", "TeakSlab", "TeakSlab" });
+                new Object[] { "dyeBlack", getModItem(Minecraft.ID, "crafting_table", 1), "craftingFeather", "TeakSlab",
+                        getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 4), "TeakSlab",
+                        "TeakSlab", "TeakSlab", "TeakSlab" });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 20),
@@ -806,8 +800,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 20),
                 new Object[] { "TeakSlab", "TeakSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 20), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 20), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 5),
@@ -871,8 +864,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 21),
-                new Object[] { "WalnutSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 21), null,
-                        null, null, null, null, null, null });
+                new Object[] { "WalnutSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 21), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 21),
@@ -881,8 +874,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 21),
                 new Object[] { "WalnutSlab", "WalnutSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 21), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 21), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 6),
@@ -946,8 +938,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 22),
-                new Object[] { "WengeSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 22), null,
-                        null, null, null, null, null, null });
+                new Object[] { "WengeSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 22), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 22),
@@ -956,8 +948,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 22),
                 new Object[] { "WengeSlab", "WengeSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 22), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 22), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 7),
@@ -1021,8 +1012,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 23),
-                new Object[] { "WillowSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 23), null,
-                        null, null, null, null, null, null });
+                new Object[] { "WillowSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 23), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 23),
@@ -1031,8 +1022,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 23),
                 new Object[] { "WillowSlab", "WillowSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 23), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 23), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 0),
@@ -1096,8 +1086,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 0),
-                new Object[] { "AcaciaSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 0), null,
-                        null, null, null, null, null, null });
+                new Object[] { "AcaciaSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 0), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 0),
@@ -1106,8 +1096,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 0),
                 new Object[] { "AcaciaSlab", "AcaciaSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 0), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 0), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 1),
@@ -1181,8 +1170,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 1),
                 new Object[] { "BalsaSlab", "BalsaSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 1), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 1), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 2),
@@ -1246,8 +1234,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 2),
-                new Object[] { "BaobabSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 2), null,
-                        null, null, null, null, null, null });
+                new Object[] { "BaobabSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 2), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 2),
@@ -1256,8 +1244,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 2),
                 new Object[] { "BaobabSlab", "BaobabSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 2), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 2), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 3),
@@ -1321,8 +1308,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 3),
-                new Object[] { "CherrySlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 3), null,
-                        null, null, null, null, null, null });
+                new Object[] { "CherrySlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 3), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 3),
@@ -1331,8 +1318,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 3),
                 new Object[] { "CherrySlab", "CherrySlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 3), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 3), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 4),
@@ -1396,8 +1382,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 4),
-                new Object[] { "ChestnutSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 4), null,
-                        null, null, null, null, null, null });
+                new Object[] { "ChestnutSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 4), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 4),
@@ -1406,8 +1392,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 4),
                 new Object[] { "ChestnutSlab", "ChestnutSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 4), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 4), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 5),
@@ -1471,8 +1456,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 5),
-                new Object[] { "CitrusSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 5), null,
-                        null, null, null, null, null, null });
+                new Object[] { "CitrusSlab", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 5), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 5),
@@ -1481,8 +1466,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 5),
                 new Object[] { "CitrusSlab", "CitrusSlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 5), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 5), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 6),
@@ -1556,8 +1540,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 6),
                 new Object[] { "EbonySlab", "EbonySlab", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 6), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 6), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 7),
@@ -1633,8 +1616,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 7),
                 new Object[] { "GreenheartSlabs", "GreenheartSlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 7), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 7), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 8),
@@ -1698,8 +1680,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 8),
-                new Object[] { "KapokSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 8), null,
-                        null, null, null, null, null, null });
+                new Object[] { "KapokSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 8), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 8),
@@ -1708,8 +1690,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 8),
                 new Object[] { "KapokSlabs", "KapokSlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 8), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 8), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 9),
@@ -1773,8 +1754,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 9),
-                new Object[] { "LarchSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 9), null,
-                        null, null, null, null, null, null });
+                new Object[] { "LarchSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 9), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 9),
@@ -1783,8 +1764,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 9),
                 new Object[] { "LarchSlabs", "LarchSlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 9), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 9), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 10),
@@ -1848,8 +1828,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 10),
-                new Object[] { "LimeSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 10), null,
-                        null, null, null, null, null, null });
+                new Object[] { "LimeSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 10), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 10),
@@ -1858,8 +1838,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 10),
                 new Object[] { "LimeSlabs", "LimeSlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 10), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 10), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 11),
@@ -1923,8 +1902,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 11),
-                new Object[] { "MahoeSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 11), null,
-                        null, null, null, null, null, null });
+                new Object[] { "MahoeSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 11), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 11),
@@ -1933,8 +1912,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 11),
                 new Object[] { "MahoeSlabs", "MahoeSlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 11), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 11), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 12),
@@ -2008,8 +1986,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 12),
                 new Object[] { "MahoganySlabs", "MahoganySlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 12), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 12), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 13),
@@ -2073,8 +2050,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 13),
-                new Object[] { "MappleSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 13), null,
-                        null, null, null, null, null, null });
+                new Object[] { "MappleSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 13), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 13),
@@ -2083,8 +2060,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 13),
                 new Object[] { "MappleSlabs", "MappleSlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 13), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 13), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 14),
@@ -2148,8 +2124,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 14),
-                new Object[] { "PalmSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 14), null,
-                        null, null, null, null, null, null });
+                new Object[] { "PalmSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 14), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 14),
@@ -2158,8 +2134,7 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 14),
                 new Object[] { "PalmSlabs", "PalmSlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 14), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 14), null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 15),
@@ -2223,8 +2198,8 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack3", 1, 15),
-                new Object[] { "PapayaSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 15), null,
-                        null, null, null, null, null, null });
+                new Object[] { "PapayaSlabs", getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 15), null, null,
+                        null, null, null, null, null });
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack4", 1, 15),
@@ -2233,7 +2208,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack5", 1, 15),
                 new Object[] { "PapayaSlabs", "PapayaSlabs", null,
-                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 15), null, null, null, null,
-                        null });
+                        getModItem(BiblioWoodsForestryEdition.ID, "seatBack2", 1, 15), null, null, null, null, null });
     }
 }

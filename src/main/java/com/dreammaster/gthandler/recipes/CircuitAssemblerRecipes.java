@@ -1,5 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
+import static gregtech.api.enums.Mods.StevesCarts2;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -14,14 +22,6 @@ import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.OpenComputers;
 
 public class CircuitAssemblerRecipes implements Runnable {
 
@@ -448,24 +448,24 @@ public class CircuitAssemblerRecipes implements Runnable {
 
             // Rocket Circuits
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Quantumprocessor.get(1L), RocketMaterial[0],
-                            GT_Utility.getIntegratedCircuit(1)},
+                    new ItemStack[] { ItemList.Circuit_Quantumprocessor.get(1L), RocketMaterial[0],
+                            GT_Utility.getIntegratedCircuit(1) },
                     tMat.getMolten(576L * tMultiplier / 2L),
                     RocketChip[0],
                     9000,
                     480,
                     true);
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Data.get(1L), RocketMaterial[0],
-                            GT_Utility.getIntegratedCircuit(1)},
+                    new ItemStack[] { ItemList.Circuit_Data.get(1L), RocketMaterial[0],
+                            GT_Utility.getIntegratedCircuit(1) },
                     tMat.getMolten(576L * tMultiplier / 2L),
                     RocketChip[0],
                     9000,
                     480,
                     true);
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Nanocomputer.get(1L), RocketMaterial[0],
-                            GT_Utility.getIntegratedCircuit(1)},
+                    new ItemStack[] { ItemList.Circuit_Nanocomputer.get(1L), RocketMaterial[0],
+                            GT_Utility.getIntegratedCircuit(1) },
                     tMat.getMolten(576L * tMultiplier / 2L),
                     RocketChip[0],
                     9000,
@@ -477,32 +477,32 @@ public class CircuitAssemblerRecipes implements Runnable {
                 DataStickWScheme.setTagCompound(
                         GT_Utility.getNBTContainingShort(new NBTTagCompound(), "rocket_tier", (short) i));
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{RocketMaterial[(i - 1)], ItemList.Circuit_Elite.get(1L),
-                                DataStickWScheme.splitStack(0)},
+                        new ItemStack[] { RocketMaterial[(i - 1)], ItemList.Circuit_Elite.get(1L),
+                                DataStickWScheme.splitStack(0) },
                         tMat.getMolten(576L * tMultiplier / 2L),
                         RocketChip[(i - 1)],
                         9000,
                         EUperRecipe[(i - 2)],
                         true);
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{RocketMaterial[(i - 1)], ItemList.Circuit_Elitenanocomputer.get(1L),
-                                DataStickWScheme.splitStack(0)},
+                        new ItemStack[] { RocketMaterial[(i - 1)], ItemList.Circuit_Elitenanocomputer.get(1L),
+                                DataStickWScheme.splitStack(0) },
                         tMat.getMolten(576L * tMultiplier / 2L),
                         RocketChip[(i - 1)],
                         9000,
                         EUperRecipe[(i - 2)],
                         true);
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{RocketMaterial[(i - 1)], ItemList.Circuit_Quantumcomputer.get(1L),
-                                DataStickWScheme.splitStack(0)},
+                        new ItemStack[] { RocketMaterial[(i - 1)], ItemList.Circuit_Quantumcomputer.get(1L),
+                                DataStickWScheme.splitStack(0) },
                         tMat.getMolten(576L * tMultiplier / 2L),
                         RocketChip[(i - 1)],
                         9000,
                         EUperRecipe[(i - 2)],
                         true);
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{RocketMaterial[(i - 1)], ItemList.Circuit_Crystalprocessor.get(1L),
-                                DataStickWScheme.splitStack(0)},
+                        new ItemStack[] { RocketMaterial[(i - 1)], ItemList.Circuit_Crystalprocessor.get(1L),
+                                DataStickWScheme.splitStack(0) },
                         tMat.getMolten(576L * tMultiplier / 2L),
                         RocketChip[(i - 1)],
                         9000,
@@ -515,24 +515,24 @@ public class CircuitAssemblerRecipes implements Runnable {
                 DataStickWScheme.setTagCompound(
                         GT_Utility.getNBTContainingShort(new NBTTagCompound(), "rocket_tier", (short) (i + 100)));
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{RocketMaterial[i], ItemList.Circuit_Quantumprocessor.get(1L),
-                                DataStickWScheme.splitStack(0)},
+                        new ItemStack[] { RocketMaterial[i], ItemList.Circuit_Quantumprocessor.get(1L),
+                                DataStickWScheme.splitStack(0) },
                         tMat.getMolten(576L * tMultiplier / 2L),
                         ExtraChips[i],
                         9000,
                         EUperRecipe[i],
                         true);
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{RocketMaterial[i], ItemList.Circuit_Data.get(1L),
-                                DataStickWScheme.splitStack(0)},
+                        new ItemStack[] { RocketMaterial[i], ItemList.Circuit_Data.get(1L),
+                                DataStickWScheme.splitStack(0) },
                         tMat.getMolten(576L * tMultiplier / 2L),
                         ExtraChips[i],
                         9000,
                         EUperRecipe[i],
                         true);
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{RocketMaterial[i], ItemList.Circuit_Nanocomputer.get(1L),
-                                DataStickWScheme.splitStack(0)},
+                        new ItemStack[] { RocketMaterial[i], ItemList.Circuit_Nanocomputer.get(1L),
+                                DataStickWScheme.splitStack(0) },
                         tMat.getMolten(576L * tMultiplier / 2L),
                         ExtraChips[i],
                         9000,
@@ -541,55 +541,55 @@ public class CircuitAssemblerRecipes implements Runnable {
             }
             // Primitive Circuit
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                    new ItemStack[] { ItemList.Circuit_Board_Phenolic_Good.get(1L),
                             ItemList.Circuit_Chip_Simple_SoC.get(1L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1)},
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1) },
                     tMat.getMolten(36L * tMultiplier / 2L),
                     CustomItemList.NandChipBoard.get(1),
                     300,
                     120);
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                    new ItemStack[] { ItemList.Circuit_Board_Phenolic_Good.get(1L),
                             ItemList.Circuit_Chip_Simple_SoC.get(1L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1)},
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1) },
                     tMat.getMolten(36L * tMultiplier / 2L),
                     CustomItemList.NandChipBoard.get(1),
                     150,
                     120);
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                    new ItemStack[] { ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                             ItemList.Circuit_Chip_Simple_SoC.get(2L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1)},
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1) },
                     tMat.getMolten(36L * tMultiplier / 2L),
                     CustomItemList.NandChipBoard.get(2),
                     300,
                     480);
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                    new ItemStack[] { ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                             ItemList.Circuit_Chip_Simple_SoC.get(2L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1)},
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1) },
                     tMat.getMolten(36L * tMultiplier / 2L),
                     CustomItemList.NandChipBoard.get(2),
                     150,
                     480);
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                    new ItemStack[] { ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                             ItemList.Circuit_Chip_Simple_SoC.get(4L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1)},
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1) },
                     tMat.getMolten(36L * tMultiplier / 2L),
                     CustomItemList.NandChipBoard.get(4),
                     300,
                     1920);
             GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[]{ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                    new ItemStack[] { ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                             ItemList.Circuit_Chip_Simple_SoC.get(4L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1)},
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 1) },
                     tMat.getMolten(36L * tMultiplier / 2L),
                     CustomItemList.NandChipBoard.get(4),
                     150,
@@ -597,19 +597,19 @@ public class CircuitAssemblerRecipes implements Runnable {
             if (IndustrialCraft2.isModLoaded()) {
                 // Basic Circuit
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        new ItemStack[] { ItemList.Circuit_Board_Coated_Basic.get(1L),
                                 ItemList.Circuit_Parts_Resistor.get(2L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2),
-                                ItemList.Circuit_Parts_Vacuum_Tube.get(2L)},
+                                ItemList.Circuit_Parts_Vacuum_Tube.get(2L) },
                         tMat.getMolten(144L * tMultiplier / 2L),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1L, 0),
                         200,
                         16);
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        new ItemStack[] { ItemList.Circuit_Board_Coated_Basic.get(1L),
                                 ItemList.Circuit_Parts_ResistorSMD.get(2L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2),
-                                ItemList.Circuit_Parts_Vacuum_Tube.get(2L)},
+                                ItemList.Circuit_Parts_Vacuum_Tube.get(2L) },
                         tMat.getMolten(144L * tMultiplier / 2L),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1L, 0),
                         200,
@@ -617,19 +617,19 @@ public class CircuitAssemblerRecipes implements Runnable {
 
                 // Good Circuit
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        new ItemStack[] { ItemList.Circuit_Board_Phenolic_Good.get(1L),
                                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2L, 0),
                                 ItemList.Circuit_Parts_Diode.get(2L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2)},
+                                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2) },
                         tMat.getMolten(144L * tMultiplier / 2L),
                         ItemList.Circuit_Good.get(1L),
                         300,
                         30);
                 GT_Values.RA.addCircuitAssemblerRecipe(
-                        new ItemStack[]{ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        new ItemStack[] { ItemList.Circuit_Board_Phenolic_Good.get(1L),
                                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2L, 0),
                                 ItemList.Circuit_Parts_DiodeSMD.get(2L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2)},
+                                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2) },
                         tMat.getMolten(144L * tMultiplier / 2L),
                         ItemList.Circuit_Good.get(1L),
                         300,

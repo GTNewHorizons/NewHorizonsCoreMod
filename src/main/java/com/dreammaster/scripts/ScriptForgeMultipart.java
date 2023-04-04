@@ -24,8 +24,7 @@ public class ScriptForgeMultipart implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ForgeMicroblocks.ID, "sawStone", 1),
                 new Object[] { "stickWood", "stickStone", "stickStone", "stickWood",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SawBladeStone", 1), "stickStone", null, null,
-                        null });
+                        getModItem(NewHorizonsCoreMod.ID, "item.SawBladeStone", 1), "stickStone", null, null, null });
 
         addShapedRecipe(
                 getModItem(ForgeMicroblocks.ID, "sawIron", 1),
@@ -35,8 +34,7 @@ public class ScriptForgeMultipart implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ForgeMicroblocks.ID, "sawDiamond", 1),
                 new Object[] { "stickWood", "stickSteel", "stickSteel", "stickWood",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SawBladeDiamond", 1), "stickSteel", null, null,
-                        null });
+                        getModItem(NewHorizonsCoreMod.ID, "item.SawBladeDiamond", 1), "stickSteel", null, null, null });
 
         addShapedRecipe(
                 getModItem(ForgeMicroblocks.ID, "stoneRod", 2),

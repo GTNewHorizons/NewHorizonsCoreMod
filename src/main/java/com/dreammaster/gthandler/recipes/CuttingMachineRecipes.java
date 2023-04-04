@@ -1,5 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.ProjectRedCore;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.ZTones;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -12,13 +19,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-
-import static gregtech.api.enums.Mods.ProjectRedCore;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.ZTones;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.TinkerConstruct;
 
 public class CuttingMachineRecipes implements Runnable {
 

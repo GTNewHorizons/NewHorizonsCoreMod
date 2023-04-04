@@ -1,21 +1,21 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.ExtraTrees;
-import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.Witchery;
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.Witchery;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;

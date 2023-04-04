@@ -1,5 +1,10 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -14,11 +19,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.enums.Mods.TinkerConstruct;
 
 public class FluidSolidifierRecipes implements Runnable {
 

@@ -19,7 +19,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.ModIDs;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 
@@ -45,13 +45,13 @@ public class ScriptEC2 implements IScriptLoader {
         final ItemStack AE2FC_FLUID_TERMINAL = getModItem(AE2FluidCraft.ID, "part_fluid_terminal", 1, 0);
         final ItemStack EC_FLUID_TERMINAL = getModItem(ExtraCells2.ID, "part.base", 1, 3);
         final ItemStack AE2FC_INTERFACE = getModItem(AE2FluidCraft.ID, "fluid_interface", 1, 0);
-        final ItemStack EC2_INTERFACE = getModItem(ModIDs.ExtraCells2.ID, "ecbaseblock", 1, 0);
+        final ItemStack EC2_INTERFACE = getModItem(Mods.ExtraCells2.ID, "ecbaseblock", 1, 0);
         final ItemStack AE2FC_AUTO_FILLER = getModItem(AE2FluidCraft.ID, "fluid_auto_filler", 1, 0);
-        final ItemStack EC2_AUTO_FILLER = getModItem(ModIDs.ExtraCells2.ID, "ecbaseblock", 1, 1);
+        final ItemStack EC2_AUTO_FILLER = getModItem(Mods.ExtraCells2.ID, "ecbaseblock", 1, 1);
         final ItemStack AE2FC_PORTABLE_CELL = getModItem(AE2FluidCraft.ID, "portable_fluid_cell", 1, 0);
-        final ItemStack EC2_PORTABLE_CELL = getModItem(ModIDs.ExtraCells2.ID, "storage.fluid.portable", 1, 0);
+        final ItemStack EC2_PORTABLE_CELL = getModItem(Mods.ExtraCells2.ID, "storage.fluid.portable", 1, 0);
         final ItemStack AE2FC_TANK = getModItem(AE2FluidCraft.ID, "certus_quartz_tank", 1, 0);
-        final ItemStack EC2_TANK = getModItem(ModIDs.ExtraCells2.ID, "certustank", 1, 0);
+        final ItemStack EC2_TANK = getModItem(Mods.ExtraCells2.ID, "certustank", 1, 0);
 
         final ItemStack[] ae_components = new ItemStack[] {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 57), // 256k
@@ -63,30 +63,26 @@ public class ScriptEC2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingStorage", 1, 2), // 4096k
                 getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingStorage", 1, 3), // 16384k
                 getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1, 0),
-                getModItem(AE2FluidCraft.ID, "walrus", 1, 0),
-                getModItem(AE2FluidCraft.ID, "part_fluid_export", 1, 0),
+                getModItem(AE2FluidCraft.ID, "walrus", 1, 0), getModItem(AE2FluidCraft.ID, "part_fluid_export", 1, 0),
                 getModItem(AE2FluidCraft.ID, "part_fluid_import", 1, 0),
                 getModItem(AE2FluidCraft.ID, "part_fluid_level_emitter", 1, 0),
                 getModItem(AE2FluidCraft.ID, "part_fluid_storage_monitor", 1, 0),
                 getModItem(AE2FluidCraft.ID, "part_fluid_conversion_monitor", 1, 0),
                 getModItem(AE2FluidCraft.ID, "wireless_fluid_terminal", 1, 0) };
-        final ItemStack[] ec_components = new ItemStack[] {
-                getModItem(ModIDs.ExtraCells2.ID, "storage.component", 1, 0), // 256k
-                getModItem(ModIDs.ExtraCells2.ID, "storage.component", 1, 1), // 1024k
-                getModItem(ModIDs.ExtraCells2.ID, "storage.component", 1, 2), // 4096k
-                getModItem(ModIDs.ExtraCells2.ID, "storage.component", 1, 3), // 16384k
-                getModItem(ModIDs.ExtraCells2.ID, "craftingstorage", 1, 0), // 256k
-                getModItem(ModIDs.ExtraCells2.ID, "craftingstorage", 1, 1), // 1024k
-                getModItem(ModIDs.ExtraCells2.ID, "craftingstorage", 1, 2), // 4096k
-                getModItem(ModIDs.ExtraCells2.ID, "craftingstorage", 1, 3), // 16384k
-                getModItem(ModIDs.ExtraCells2.ID, "storage.physical.void", 1, 0),
-                getModItem(ModIDs.ExtraCells2.ID, "walrus", 1, 0),
-                getModItem(ModIDs.ExtraCells2.ID, "part.base", 1, 0),
-                getModItem(ModIDs.ExtraCells2.ID, "part.base", 1, 1),
-                getModItem(ModIDs.ExtraCells2.ID, "part.base", 1, 4),
-                getModItem(ModIDs.ExtraCells2.ID, "part.base", 1, 10),
-                getModItem(ModIDs.ExtraCells2.ID, "part.base", 1, 11),
-                getModItem(ModIDs.ExtraCells2.ID, "terminal.fluid.wireless", 1, OreDictionary.WILDCARD_VALUE) };
+        final ItemStack[] ec_components = new ItemStack[] { getModItem(Mods.ExtraCells2.ID, "storage.component", 1, 0), // 256k
+                getModItem(Mods.ExtraCells2.ID, "storage.component", 1, 1), // 1024k
+                getModItem(Mods.ExtraCells2.ID, "storage.component", 1, 2), // 4096k
+                getModItem(Mods.ExtraCells2.ID, "storage.component", 1, 3), // 16384k
+                getModItem(Mods.ExtraCells2.ID, "craftingstorage", 1, 0), // 256k
+                getModItem(Mods.ExtraCells2.ID, "craftingstorage", 1, 1), // 1024k
+                getModItem(Mods.ExtraCells2.ID, "craftingstorage", 1, 2), // 4096k
+                getModItem(Mods.ExtraCells2.ID, "craftingstorage", 1, 3), // 16384k
+                getModItem(Mods.ExtraCells2.ID, "storage.physical.void", 1, 0),
+                getModItem(Mods.ExtraCells2.ID, "walrus", 1, 0), getModItem(Mods.ExtraCells2.ID, "part.base", 1, 0),
+                getModItem(Mods.ExtraCells2.ID, "part.base", 1, 1), getModItem(Mods.ExtraCells2.ID, "part.base", 1, 4),
+                getModItem(Mods.ExtraCells2.ID, "part.base", 1, 10),
+                getModItem(Mods.ExtraCells2.ID, "part.base", 1, 11),
+                getModItem(Mods.ExtraCells2.ID, "terminal.fluid.wireless", 1, OreDictionary.WILDCARD_VALUE) };
 
         // Covert recipes
         GameRegistry.addShapelessRecipe(AE2FC_FLUID_STORAGE_BUS, EC_FLUID_STORAGE_BUS);

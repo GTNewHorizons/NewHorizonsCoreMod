@@ -1,13 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.OpenPrinters;
+import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 
@@ -38,16 +38,17 @@ public class MaceratorRecipes implements Runnable {
         if (IndustrialCraft2.isModLoaded()) {
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 2L, 0),
-                    new ItemStack[]{CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L),
-                            CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L)},
-                    new int[]{10000, 10000, 5000, 2500},
+                    new ItemStack[] { CustomItemList.MaceratedPlantmass.get(1L),
+                            CustomItemList.MaceratedPlantmass.get(1L), CustomItemList.MaceratedPlantmass.get(1L),
+                            CustomItemList.MaceratedPlantmass.get(1L) },
+                    new int[] { 10000, 10000, 5000, 2500 },
                     200,
                     30);
 
             GT_Values.RA.addPulveriserRecipe(
                     GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2L),
-                    new ItemStack[]{GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L),},
-                    new int[]{10000},
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L), },
+                    new int[] { 10000 },
                     100,
                     16);
         }

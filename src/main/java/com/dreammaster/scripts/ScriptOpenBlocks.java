@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.RandomThings;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 

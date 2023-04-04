@@ -1,9 +1,6 @@
 package com.dreammaster.gthandler;
 
 import static gregtech.api.enums.Mods.AdventureBackpack;
-import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Computronics;
@@ -16,8 +13,11 @@ import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.OpenPrinters;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 
@@ -1091,8 +1091,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     GT_ModHandler.getModItem(GalacticraftCore.ID, "item.noseCone", 1L, 0),
                     bits,
                     new Object[] { "SNH", "CPC", "PPP", 'N', GT_ModHandler
-                            .getModItem(ProjectRedIllumination.ID, "projectred.illumination.cagelamp2.inv", 1L, 14), 'P',
-                            GT_ModHandler.getModItem(GalacticraftCore.ID, "item.heavyPlating", 1L, 0), 'C',
+                            .getModItem(ProjectRedIllumination.ID, "projectred.illumination.cagelamp2.inv", 1L, 14),
+                            'P', GT_ModHandler.getModItem(GalacticraftCore.ID, "item.heavyPlating", 1L, 0), 'C',
                             OrePrefixes.screw.get(Materials.StainlessSteel), 'S', ToolDictNames.craftingToolScrewdriver,
                             'H', ToolDictNames.craftingToolHardHammer });
 
@@ -1187,7 +1187,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         }
 
-        if (ModIDs.GraviSuite.isModLoaded()) {
+        if (Mods.GraviSuite.isModLoaded()) {
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1, GT_Values.W),
                     bits,
@@ -1195,7 +1195,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             OrePrefixes.circuit.get(Materials.Advanced), 'M', ItemList.Electric_Motor_HV, 'B',
                             GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1, GT_Values.W), 'W',
                             OrePrefixes.wireGt04.get(Materials.AnnealedCopper), 'E',
-                            GT_ModHandler.getModItem(ModIDs.GraviSuite.ID, "itemSimpleItem", 1, 6) });
+                            GT_ModHandler.getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 6) });
             if ((BuildCraftFactory.isModLoaded()) && (AdventureBackpack.isModLoaded())) GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpack", 1, GT_Values.W),
                     bits,
@@ -1204,14 +1204,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             GT_ModHandler.getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0), 'C',
                             GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1), 'Z',
                             GT_ModHandler.getModItem(AdventureBackpack.ID, "backpackComponent", 1, 5), 'E',
-                            GT_ModHandler.getModItem(ModIDs.GraviSuite.ID, "itemSimpleItem", 1, 6) });
+                            GT_ModHandler.getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 6) });
 
-            GT_ModHandler
-                    .removeRecipeByOutput(GT_ModHandler.getModItem(ModIDs.GraviSuite.ID, "itemSimpleItem", 1, 3));
+            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 3));
             GT_ModHandler.addCraftingRecipe(
-                    GT_ModHandler.getModItem(ModIDs.GraviSuite.ID, "itemSimpleItem", 1, 3),
+                    GT_ModHandler.getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 3),
                     new Object[] { "OCO", "XWX", "OCO", 'C', OrePrefixes.wireGt12.get(Materials.SuperconductorLuV), 'X',
-                            GT_ModHandler.getModItem(ModIDs.GraviSuite.ID, "itemSimpleItem", 1, 2), 'O',
+                            GT_ModHandler.getModItem(Mods.GraviSuite.ID, "itemSimpleItem", 1, 2), 'O',
                             GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1), 'W',
                             ItemList.Transformer_LuV_IV.get(1, o) });
         }

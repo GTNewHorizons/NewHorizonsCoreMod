@@ -1,5 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GalaxySpace;
+
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -8,9 +11,6 @@ import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
-
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GalaxySpace;
 
 public class FluidCannerRecipes implements Runnable {
 

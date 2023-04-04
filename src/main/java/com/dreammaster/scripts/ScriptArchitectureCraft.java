@@ -26,8 +26,8 @@ public class ScriptArchitectureCraft implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(ArchitectureCraft.ID, "sawbench", 1),
-                new Object[] { "screwSteel", getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1),
-                        "screwSteel", getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1),
+                new Object[] { "screwSteel", getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1), "screwSteel",
+                        getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1),
                         getModItem(ArchitectureCraft.ID, "sawblade", 1),
                         getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1), "craftingToolScrewdriver",
                         getModItem(ArchitectureCraft.ID, "largePulley", 1), "craftingToolHardHammer" });

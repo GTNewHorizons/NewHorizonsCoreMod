@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;

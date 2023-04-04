@@ -1,5 +1,7 @@
 package com.dreammaster.modcustomdrops;
 
+import static gregtech.api.enums.Mods.Thaumcraft;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -25,14 +27,11 @@ import thaumcraft.common.lib.FakeThaumcraftPlayer;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import eu.usrv.yamcore.persisteddata.PersistedDataBase;
-
-import static gregtech.api.enums.Mods.Thaumcraft;
 
 public class CustomDropsHandler {
 

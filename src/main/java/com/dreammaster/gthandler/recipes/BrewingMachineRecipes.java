@@ -1,9 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 
 import java.lang.reflect.Field;
 

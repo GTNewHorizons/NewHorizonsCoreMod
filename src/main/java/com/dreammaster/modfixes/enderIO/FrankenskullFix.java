@@ -1,6 +1,5 @@
 package com.dreammaster.modfixes.enderIO;
 
-import gregtech.api.enums.Mods;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -8,6 +7,7 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.machine.soul.SoulBinderRecipeManager;
 import crazypants.enderio.material.FrankenSkull;
+import gregtech.api.enums.Mods;
 
 public class FrankenskullFix {
 

@@ -1,9 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.EnderZoo;
-import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.SGCraft;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;

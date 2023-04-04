@@ -1,15 +1,14 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.objects.GT_ItemStack;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Disassembler;
-
-import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 
 public class RecipeRemoval implements Runnable {
 

@@ -310,8 +310,7 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
 
             addShapelessCraftingRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "seatBack5", 1, i),
-                    new Object[] { BOBwood[i], BOBwood[i],
-                            getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i), });
+                    new Object[] { BOBwood[i], BOBwood[i], getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i), });
 
             addShapelessCraftingRecipe(
                     fancySignBOP[i],

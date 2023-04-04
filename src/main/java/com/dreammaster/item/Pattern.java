@@ -1,5 +1,7 @@
 package com.dreammaster.item;
 
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+
 import mantle.items.abstracts.CraftingItem;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -7,8 +9,6 @@ import net.minecraft.item.ItemStack;
 
 import tconstruct.library.crafting.PatternBuilder;
 import tconstruct.library.util.IPattern;
-
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 
 public class Pattern extends CraftingItem implements IPattern {
 

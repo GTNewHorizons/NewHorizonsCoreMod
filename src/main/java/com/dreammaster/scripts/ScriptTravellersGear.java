@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BiblioCraft;
-import static gregtech.api.enums.Mods.TravellersGear;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.TravellersGear;
 
 import java.util.Arrays;
 import java.util.List;

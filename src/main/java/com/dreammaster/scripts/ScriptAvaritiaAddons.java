@@ -1,12 +1,12 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -59,8 +59,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         "plateDenseObsidian", "chestObsidian", "plateDenseObsidian", "craftingToolWrench",
                         "chestDiamond", "craftingToolScrewdriver" });
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(IronChests.ID, "BlockIronChest", 2, 2),
-                        ItemList.Electric_Piston_HV.get(1),
+                new ItemStack[] { getModItem(IronChests.ID, "BlockIronChest", 2, 2), ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4),
                         GT_Utility.getIntegratedCircuit(1), },
                 GT_Values.NF,

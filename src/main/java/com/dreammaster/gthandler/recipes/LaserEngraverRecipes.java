@@ -1,11 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.GT_Values.NF;
 import static gregtech.api.enums.GT_Values.NI;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -179,13 +179,14 @@ public class LaserEngraverRecipes implements Runnable {
             if (SuperSolarPanels.isModLoaded()) {
                 // Photonically Enhanced Wafer
                 GT_Values.RA.addLaserEngraverRecipe(
-                        new ItemStack[]{ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
+                        new ItemStack[] { ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
                                 Materials.Glowstone.getNanite(1),
-                                GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 0L, 0) // Solar Light Splitter
+                                GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 0L, 0) // Solar Light
+                                                                                                      // Splitter
                         },
-                        new FluidStack[]{Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000)},
-                        new ItemStack[]{ItemList.Circuit_Silicon_Wafer7.get(1L)},
-                        new FluidStack[]{Materials.Tin.getMolten(1000L)},
+                        new FluidStack[] { Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000) },
+                        new ItemStack[] { ItemList.Circuit_Silicon_Wafer7.get(1L) },
+                        new FluidStack[] { Materials.Tin.getMolten(1000L) },
                         10 * 20,
                         7_864_320,
                         true);

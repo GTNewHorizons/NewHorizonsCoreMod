@@ -1,5 +1,15 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -15,16 +25,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.Gendustry;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
 
 public class CentrifugeRecipes implements Runnable {
 

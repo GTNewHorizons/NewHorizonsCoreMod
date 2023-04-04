@@ -388,7 +388,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
             return true;
         }
         if (tCanonicalName.contains("appeng") || tCanonicalName.contains(GregTech.ID)) // Don't accelerate ANY gregtech
-                                                                                      // machines
+                                                                                       // machines
         {
             return true;
         }

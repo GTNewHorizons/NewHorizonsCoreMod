@@ -1,13 +1,13 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -90,11 +90,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         final Block Vines = Blocks.vine;
         final String IronPlate = "plateIron";
         final String EnderPearlPlate = "plateEnderPearl";
-        final ItemStack InvertedBlueLamp = getModItem(
-                ProjectRedIllumination.ID,
-                "projectred.illumination.lamp",
-                1,
-                27);
+        final ItemStack InvertedBlueLamp = getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 27);
         final ItemStack ClearGlassPane = getModItem(TinkerConstruct.ID, "GlassPane", 1);
         final Block Netherrack = Blocks.netherrack;
         final ItemStack WovenSilk = getModItem(Forestry.ID, "craftingMaterial", 1, 3);

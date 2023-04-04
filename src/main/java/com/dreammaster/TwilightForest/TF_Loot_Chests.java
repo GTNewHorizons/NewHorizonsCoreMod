@@ -1,5 +1,8 @@
 package com.dreammaster.TwilightForest;
 
+import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.Thaumcraft;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -9,9 +12,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.Thaumcraft;
 
 public class TF_Loot_Chests {
 
@@ -97,7 +97,7 @@ public class TF_Loot_Chests {
         TFTreasure.basement.uncommon.add(new ItemStack(Items.potionitem, 1, 8195), 6); // potion fire resistance i
         TFTreasure.basement.uncommon.add(GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 8, 0), 12); // Alumentum
         TFTreasure.basement.uncommon.add(GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 16, 14), 6); // Salis
-                                                                                                             // Mundus
+                                                                                                              // Mundus
         TFTreasure.basement.rare.add(new ItemStack(Items.potionitem, 1, 8257), 6); // potion regen ii
         TFTreasure.basement.rare.add(new ItemStack(Items.potionitem, 1, 8229), 6); // potion health ii
         TFTreasure.basement.rare.add(new ItemStack(Items.potionitem, 1, 8258), 6); // potion extended swiftness ii
@@ -132,7 +132,7 @@ public class TF_Loot_Chests {
         TFTreasure.tower_library.common.add(new ItemStack(Items.potionitem, 1, 8201), 6); // potion strength i
         TFTreasure.tower_library.common.add(GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1, 0), 12); // Alumentum
         TFTreasure.tower_library.common.add(GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 4, 14), 6); // Salis
-                                                                                                               // Mundus
+                                                                                                                // Mundus
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8198), 6); // potion night vision i
         TFTreasure.tower_library.uncommon.add(GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 2, 1), 8); // Nitor
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8193), 6); // potion regen i
@@ -141,7 +141,7 @@ public class TF_Loot_Chests {
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8195), 6); // potion fire resistance i
         TFTreasure.tower_library.uncommon.add(GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 1, 0), 8); // Alumentum
         TFTreasure.tower_library.uncommon.add(GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 4, 14), 6); // Salis
-                                                                                                                 // Mundus
+                                                                                                                  // Mundus
         TFTreasure.tower_library.uncommon.add(new ItemStack(Items.potionitem, 1, 8233), 6); // potion strength ii
         TFTreasure.tower_library.uncommon
                 .add(GT_ModHandler.getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0), 1);

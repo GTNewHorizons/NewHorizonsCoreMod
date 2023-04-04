@@ -1,29 +1,29 @@
 package com.dreammaster.gthandler;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.util.GT_ModHandler;
-
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
-import static gregtech.api.enums.Mods.NaturesCompass;
-import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.OpenSecurity;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
+import static gregtech.api.enums.Mods.NaturesCompass;
+import static gregtech.api.enums.Mods.OpenPrinters;
+import static gregtech.api.enums.Mods.OpenSecurity;
 import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Translocator;
+import static gregtech.api.enums.Mods.ZTones;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.util.GT_ModHandler;
 
 public class GT_Recipe_Remover implements Runnable {
 
@@ -96,8 +96,11 @@ public class GT_Recipe_Remover implements Runnable {
                 false,
                 true);
         // BG2
-        GT_ModHandler
-                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(MineAndBladeBattleGear2.ID, "quiver", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(MineAndBladeBattleGear2.ID, "quiver", 1L, 0),
+                true,
+                false,
+                true);
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(MineAndBladeBattleGear2.ID, "shield.wood", 1L, 0),
                 true,
@@ -223,8 +226,11 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
-        GT_ModHandler
-                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(MineAndBladeBattleGear2.ID, "chain", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(MineAndBladeBattleGear2.ID, "chain", 1L, 0),
+                true,
+                false,
+                true);
         // Draconic Evolution
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(DraconicEvolution.ID, "chaosShard", 1L, 0),
@@ -334,34 +340,47 @@ public class GT_Recipe_Remover implements Runnable {
         // IC2
         GT_ModHandler.removeRecipeByOutputDelayed(ItemList.IC2_Energium_Dust.get(1L));
         GT_ModHandler.removeRecipeByOutputDelayed(ItemList.IC2_LapotronCrystal.get(1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoChestplate", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoLegs", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1L));
         GT_ModHandler
-                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorQuantumChestplate", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorQuantumLegs", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorEnergypack", 1L));
+                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1L));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoChestplate", 1L));
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1L));
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoLegs", 1L));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1L));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorQuantumChestplate", 1L));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1L));
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorQuantumLegs", 1L));
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorBatpack", 1L));
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1L));
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorEnergypack", 1L));
         GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemAdvBat", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1L));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1L));
-        GT_ModHandler
-                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpack", 1L, GT_Values.W));
-        GT_ModHandler
-                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1L, GT_Values.W));
-        GT_ModHandler
-                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1L, GT_Values.W));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1L));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpackElectric", 1L));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorJetpack", 1L, GT_Values.W));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1L, GT_Values.W));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1L, GT_Values.W));
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBatChargeCrystal", 1L, GT_Values.W));
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBatChargeLamaCrystal", 1L, GT_Values.W));
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemTreetapElectric", 1, GT_Values.W));
-        GT_ModHandler.removeRecipeByOutputDelayed(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, GT_Values.W));
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, GT_Values.W));
         // Natural Compass
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(NaturesCompass.ID, "NaturesCompass", 1L, 0),
@@ -410,8 +429,11 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
-        GT_ModHandler
-                .removeRecipeByOutputDelayed(GT_ModHandler.getModItem(OpenSecurity.ID, "alarm", 1L, 0), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(OpenSecurity.ID, "alarm", 1L, 0),
+                true,
+                false,
+                true);
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(OpenSecurity.ID, "entitydetector", 1L, 0),
                 true,

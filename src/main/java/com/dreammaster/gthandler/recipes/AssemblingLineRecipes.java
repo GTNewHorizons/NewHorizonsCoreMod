@@ -31,8 +31,7 @@ public class AssemblingLineRecipes implements Runnable {
             GT_Values.RA.addAssemblylineRecipe(
                     GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),
                     2500,
-                    new ItemStack[] {
-                            GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),
+                    new ItemStack[] { GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),
                             CustomItemList.IceCompressedPlate.get(3L), CustomItemList.IceCompressedPlate.get(3L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmiridium, 4) },
                     new FluidStack[] { new FluidStack(solderIndalloy, 36) },

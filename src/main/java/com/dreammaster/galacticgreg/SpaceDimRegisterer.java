@@ -1,5 +1,9 @@
 package com.dreammaster.galacticgreg;
 
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.GalaxySpace;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +18,6 @@ import bloodasp.galacticgreg.api.ModContainer;
 import bloodasp.galacticgreg.api.ModDBMDef;
 import bloodasp.galacticgreg.api.ModDimensionDef;
 import bloodasp.galacticgreg.api.SpecialBlockComb;
-
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GalaxySpace;
 
 /**
  * In this class, you'll find everything you need in order to tell GGreg what to do and where. Everything is done in

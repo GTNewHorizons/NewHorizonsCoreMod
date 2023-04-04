@@ -1,9 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Gendustry;
+import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IndustrialCraft2Classic;

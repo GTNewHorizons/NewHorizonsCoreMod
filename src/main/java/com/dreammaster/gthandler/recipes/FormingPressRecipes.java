@@ -1,7 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;

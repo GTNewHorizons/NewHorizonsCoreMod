@@ -161,8 +161,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
                 getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodlabel", 1, 11),
                 getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodlabel", 1, 12) };
 
-        ItemStack[] bookcaseNatura = new ItemStack[] {
-                getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodBookcase", 1),
+        ItemStack[] bookcaseNatura = new ItemStack[] { getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodBookcase", 1),
                 getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodBookcase", 1, 1),
                 getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodBookcase", 1, 2),
                 getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodBookcase", 1, 3),
@@ -306,8 +305,7 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
 
             addShapelessCraftingRecipe(
                     getModItem(BiblioWoodsNaturaEdition.ID, "seatBack5", 1, i),
-                    new Object[] { Nwood[i], Nwood[i],
-                            getModItem(BiblioWoodsNaturaEdition.ID, "seatBack2", 1, i), });
+                    new Object[] { Nwood[i], Nwood[i], getModItem(BiblioWoodsNaturaEdition.ID, "seatBack2", 1, i), });
         }
     }
 }

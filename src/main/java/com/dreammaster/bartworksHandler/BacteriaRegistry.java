@@ -1,11 +1,11 @@
 package com.dreammaster.bartworksHandler;
 
-import static gregtech.api.enums.Mods.Genetics;
 import static com.dreammaster.gthandler.GT_CoreModSupport.*;
 import static com.github.bartimaeusnek.bartworks.API.BioObjectAdder.*;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.*;
 import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 
 import java.awt.*;

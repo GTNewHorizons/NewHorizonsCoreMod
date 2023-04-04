@@ -1,10 +1,10 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 
 import net.minecraft.init.Items;

@@ -1,12 +1,12 @@
 package com.dreammaster.bartworksHandler;
 
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+
 import com.github.bartimaeusnek.bartworks.API.BorosilicateGlass;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
-
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 
 public class BWGlassAdder {
 

@@ -1,5 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.TwilightForest;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -7,8 +9,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-
-import static gregtech.api.enums.Mods.TwilightForest;
 
 public class ElectrolyzerRecipes implements Runnable {
 

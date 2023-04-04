@@ -1,27 +1,27 @@
 package com.dreammaster.auxiliary;
 
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Aroma1997Core;
+import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiblioCraft;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderZoo;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ForgeRelocation;
-import static gregtech.api.enums.Mods.MalisisDoors;
-import static gregtech.api.enums.Mods.Mantle;
-import static gregtech.api.enums.Mods.OpenSecurity;
-import static gregtech.api.enums.Mods.SleepingBags;
-import static gregtech.api.enums.Mods.ThaumicHorizons;
-import static gregtech.api.enums.Mods.ThaumicMachina;
-import static gregtech.api.enums.Mods.WarpTheory;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.MalisisDoors;
+import static gregtech.api.enums.Mods.Mantle;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.OpenSecurity;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.SleepingBags;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicHorizons;
+import static gregtech.api.enums.Mods.ThaumicMachina;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.WarpTheory;
 
 import net.minecraft.item.ItemStack;
 
@@ -112,7 +112,7 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GT_ModHandler.getModItem(TwilightForest.ID, "tile.TFTrophy", 1));
         }
 
-        if (WarpTheory.isModLoaded()){
+        if (WarpTheory.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(WarpTheory.ID, "blockVanish", 1));
         }
 

@@ -1,20 +1,7 @@
 package com.dreammaster.gthandler;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
-import com.dreammaster.item.ItemList;
-
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_Log;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
-
-import static gregtech.api.enums.Mods.BloodArsenal;
-import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -31,9 +18,22 @@ import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
+import com.dreammaster.item.ItemList;
+
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_Log;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_OreDictionary implements Runnable {
 
@@ -67,8 +67,9 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.Mytryl", 1L, 0));
         GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.CallistoIce, ItemList.CallistoIceIngot.getIS());
         GT_OreDictUnificator.registerOre("ingotColdCallistoIce", ItemList.CallistoIceColdIngot.getIS());
-        GT_OreDictUnificator
-                .registerOre("blockCallistoIce", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.CallistoColdIce", 1L, 0));
+        GT_OreDictUnificator.registerOre(
+                "blockCallistoIce",
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.CallistoColdIce", 1L, 0));
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.CallistoIce, ItemList.CallistoIceDust.getIS());
         GT_OreDictUnificator.registerOre("plateColdCallistoIce", ItemList.CallistoIcePlate.getIS());
         GT_OreDictUnificator
@@ -79,7 +80,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 ItemList.CallistoIceCompressedPlate.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.Ledox, ItemList.LedoxIngot.getIS());
         GT_OreDictUnificator.registerOre("ingotColdLedox", ItemList.LedoxColdIngot.getIS());
-        GT_OreDictUnificator.registerOre("blockLedox", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.Ledox", 1L, 0));
+        GT_OreDictUnificator
+                .registerOre("blockLedox", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.Ledox", 1L, 0));
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Ledox, ItemList.LedoxDust.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.plate, Materials.Ledox, ItemList.LedoxPlate.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.plateDense, Materials.Ledox, ItemList.LedoxDensePlate.getIS());
@@ -160,12 +162,15 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 "dustCokeOvenBrick",
                 GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrickDust", 1L, 0));
-        GT_OreDictUnificator
-                .registerOre("ingotCokeOvenBrick", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1L, 0));
-        GT_OreDictUnificator
-                .registerOre("leather", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 1L, 0));
-        GT_OreDictUnificator
-                .registerOre("itemLeather", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 1L, 0));
+        GT_OreDictUnificator.registerOre(
+                "ingotCokeOvenBrick",
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1L, 0));
+        GT_OreDictUnificator.registerOre(
+                "leather",
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 1L, 0));
+        GT_OreDictUnificator.registerOre(
+                "itemLeather",
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 1L, 0));
         GT_OreDictUnificator.registerOre(
                 "dustPotassiumHydroxide",
                 GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 1L, 0));
@@ -271,7 +276,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 Materials.Copper,
                 GT_ModHandler.getModItem(GalaxySpace.ID, "metalsblock", 1L, 9));
 
-        GT_OreDictUnificator.registerOre("chestSteel", GT_ModHandler.getModItem(IronChests.ID, "BlockIronChest", 1L, 4));
+        GT_OreDictUnificator
+                .registerOre("chestSteel", GT_ModHandler.getModItem(IronChests.ID, "BlockIronChest", 1L, 4));
 
         GT_OreDictUnificator.registerOre("craftingToolShears", new ItemStack(Items.shears, 1, 32767));
 
@@ -290,8 +296,10 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
 
         GT_OreDictUnificator.registerOre("beeComb", GT_ModHandler.getModItem(Gendustry.ID, "HoneyComb", 1L));
 
-        GT_OreDictUnificator.registerOre("itemBeeswax", GT_ModHandler.getModItem(PamsHarvestCraft.ID, "beeswaxItem", 1L, 0));
-        GT_OreDictUnificator.registerOre("foodFlour", GT_ModHandler.getModItem(PamsHarvestCraft.ID, "flourItem", 1L, 0));
+        GT_OreDictUnificator
+                .registerOre("itemBeeswax", GT_ModHandler.getModItem(PamsHarvestCraft.ID, "beeswaxItem", 1L, 0));
+        GT_OreDictUnificator
+                .registerOre("foodFlour", GT_ModHandler.getModItem(PamsHarvestCraft.ID, "flourItem", 1L, 0));
         GT_OreDictUnificator
                 .registerOre("listAllmeatcooked", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2893));
         GT_OreDictUnificator
@@ -333,8 +341,9 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 "craftingToolCrowbar",
                 GT_ModHandler.getModItem(Railcraft.ID, "tool.crowbar.reinforced", 1L, 0));
-        GT_OreDictUnificator
-                .registerOre("craftingToolCrowbar", GT_ModHandler.getModItem(Railcraft.ID, "tool.crowbar.magic", 1L, 0));
+        GT_OreDictUnificator.registerOre(
+                "craftingToolCrowbar",
+                GT_ModHandler.getModItem(Railcraft.ID, "tool.crowbar.magic", 1L, 0));
         GT_OreDictUnificator
                 .registerOre("craftingToolCrowbar", GT_ModHandler.getModItem(Railcraft.ID, "tool.crowbar.void", 1L, 0));
 
@@ -385,8 +394,10 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
 
         GT_OreDictUnificator.registerOre("dyeLime", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2877));
 
-        GT_OreDictUnificator
-                .registerOre(OrePrefixes.log, Materials.Wood, GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockRubWood", 1L, 0));
+        GT_OreDictUnificator.registerOre(
+                OrePrefixes.log,
+                Materials.Wood,
+                GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockRubWood", 1L, 0));
 
         // GTNH-Circuits
         GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.Piko, ItemList.PikoCircuit.getIS());

@@ -1,10 +1,10 @@
 package com.dreammaster.lib;
 
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import gregtech.api.enums.Mods;
 
 public final class Refstrings {
 
-    public static final String MODID = NewHorizonsCoreMod.ID;
+    public static final String MODID = Mods.Names.NEW_HORIZONS_CORE_MOD;
     public static final String NAME = "GT: New Horizons";
     public static final String VERSION = BuildVersion.VERSION;
     public static final String CLIENTSIDE = "com.dreammaster.main.ClientProxy";
