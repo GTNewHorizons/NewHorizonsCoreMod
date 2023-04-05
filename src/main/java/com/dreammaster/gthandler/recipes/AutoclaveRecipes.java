@@ -1,6 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -140,15 +142,11 @@ public class AutoclaveRecipes implements Runnable {
                     480);
         }
         if (GTPlusPlus.isModLoaded()) {
-            GT_Values.RA.addAutoclaveRecipe(
-                    ItemList.Circuit_Silicon_Wafer6.get(1L),
-                    ELEMENT.STANDALONE.HYPOGEN.getDust(1),
-                    Materials.BioMediumSterilized.getFluid(8_000L),
-                    ItemList.Circuit_Wafer_Bioware.get(1L),
-                    10000,
-                    60 * 20,
-                    (int) TierEU.RECIPE_UHV,
-                    false);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(ItemList.Circuit_Silicon_Wafer6.get(1L), ELEMENT.STANDALONE.HYPOGEN.getDust(1))
+                    .itemOutputs(ItemList.Circuit_Wafer_Bioware.get(1L)).outputChances(10000)
+                    .fluidInputs(Materials.BioMediumSterilized.getFluid(8_000L)).noFluidOutputs().duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UHV).addTo(sAutoclaveRecipes);
         }
     }
 

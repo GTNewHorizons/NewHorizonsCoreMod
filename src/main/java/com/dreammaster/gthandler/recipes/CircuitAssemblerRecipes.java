@@ -1,6 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.*;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -135,7 +137,7 @@ public class CircuitAssemblerRecipes implements Runnable {
 
                 FluidStack(solderIndalloy, 144),
                 ItemList.Circuit_Neuroprocessor.get(1L),
-                50,
+                2 * SECONDS + 10 * TICKS,
                 614400,
                 true);
         GT_Values.RA.addCircuitAssemblerRecipe(
@@ -226,16 +228,15 @@ public class CircuitAssemblerRecipes implements Runnable {
                 true);
         if (GTPlusPlus.isModLoaded()) {
             // Bio SoC
-            GT_Values.RA.addCircuitAssemblerRecipe(
-                    new ItemStack[] { ItemList.Circuit_Board_Bio_Ultra.get(1L),
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Bio_Ultra.get(1L),
                             ItemList.Circuit_Parts_Chip_Bioware.get(1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
-                            ELEMENT.STANDALONE.CHRONOMATIC_GLASS.getBolt(8) },
-                    new FluidStack(solderUEV, 144),
-                    ItemList.Circuit_Bioprocessor.get(1L),
-                    75,
-                    2457600,
-                    true);
+                            ELEMENT.STANDALONE.CHRONOMATIC_GLASS.getBolt(8))
+                    .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderUEV, 144))
+                    .noFluidOutputs().requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS)
+                    .eut((int) TierEU.RECIPE_UEV).addTo(sCircuitAssemblerRecipes);
         }
         GT_Values.RA.addCircuitAssemblerRecipe(
                 new ItemStack[] { ItemList.Circuit_Board_Bio_Ultra.get(1L), ItemList.Circuit_Bioprocessor.get(2L),
