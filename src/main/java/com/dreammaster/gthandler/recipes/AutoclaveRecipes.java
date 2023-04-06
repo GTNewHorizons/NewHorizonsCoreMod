@@ -1,9 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.EnderZoo;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.Gendustry;
-import static gregtech.api.enums.Mods.SGCraft;
+import static gregtech.api.enums.Mods.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -11,13 +10,11 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ELEMENT;
 
 public class AutoclaveRecipes implements Runnable {
 
@@ -143,6 +140,13 @@ public class AutoclaveRecipes implements Runnable {
                     8000,
                     12000,
                     480);
+        }
+        if (GTPlusPlus.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(ItemList.Circuit_Silicon_Wafer6.get(1L), ELEMENT.STANDALONE.HYPOGEN.getDust(1))
+                    .itemOutputs(ItemList.Circuit_Wafer_Bioware.get(1L)).outputChances(10000)
+                    .fluidInputs(Materials.BioMediumSterilized.getFluid(8_000L)).noFluidOutputs().duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UHV).addTo(sAutoclaveRecipes);
         }
     }
 

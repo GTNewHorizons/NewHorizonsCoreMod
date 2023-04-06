@@ -6,6 +6,8 @@ import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -13,10 +15,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
@@ -164,7 +163,10 @@ public class CuttingMachineRecipes implements Runnable {
                 900,
                 1920,
                 true);
-
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Bioware.get(1L))
+                .itemOutputs(ItemList.Circuit_Parts_Chip_Bioware.get(16L), ItemList.Circuit_Chip_Biocell.get(16L))
+                .fluidInputs(Materials.UUMatter.getFluid(8_000L)).noFluidOutputs().duration(15 * SECONDS)
+                .eut((int) TierEU.RECIPE_UEV).addTo(sCutterRecipes);
         if (IndustrialCraft2.isModLoaded()) {
             GT_Values.RA.addCutterRecipe(
                     GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0),

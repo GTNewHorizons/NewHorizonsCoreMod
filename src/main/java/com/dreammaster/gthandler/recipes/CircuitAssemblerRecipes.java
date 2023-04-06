@@ -1,12 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.OpenComputers;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.StevesCarts2;
+import static gregtech.api.enums.Mods.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.*;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -22,6 +18,7 @@ import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ELEMENT;
 
 public class CircuitAssemblerRecipes implements Runnable {
 
@@ -62,6 +59,10 @@ public class CircuitAssemblerRecipes implements Runnable {
         // Recipes with High Tier Soldering
         Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
                 ? FluidRegistry.getFluid("molten.indalloy140")
+                : FluidRegistry.getFluid("molten.solderingalloy");
+
+        Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
+                ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
                 : FluidRegistry.getFluid("molten.solderingalloy");
 
         // Crystal Circuits
@@ -136,7 +137,7 @@ public class CircuitAssemblerRecipes implements Runnable {
 
                 FluidStack(solderIndalloy, 144),
                 ItemList.Circuit_Neuroprocessor.get(1L),
-                3 * 20,
+                2 * SECONDS + 10 * TICKS,
                 614400,
                 true);
         GT_Values.RA.addCircuitAssemblerRecipe(
@@ -225,6 +226,18 @@ public class CircuitAssemblerRecipes implements Runnable {
                 37,
                 614400,
                 true);
+        if (GTPlusPlus.isModLoaded()) {
+            // Bio SoC
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Bio_Ultra.get(1L),
+                            ItemList.Circuit_Parts_Chip_Bioware.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
+                            ELEMENT.STANDALONE.CHRONOMATIC_GLASS.getBolt(8))
+                    .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderUEV, 144))
+                    .noFluidOutputs().requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS)
+                    .eut((int) TierEU.RECIPE_UEV).addTo(sCircuitAssemblerRecipes);
+        }
         GT_Values.RA.addCircuitAssemblerRecipe(
                 new ItemStack[] { ItemList.Circuit_Board_Bio_Ultra.get(1L), ItemList.Circuit_Bioprocessor.get(2L),
                         ItemList.Circuit_Parts_InductorASMD.get(12L), ItemList.Circuit_Parts_CapacitorASMD.get(16L),
