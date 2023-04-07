@@ -420,35 +420,35 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
                         GT_Utility.getIntegratedCircuit(24) },
                 Materials.Silicone.getMolten(288L),
-                AE2_ME_Dense_Covered_Cable,
+                AE2_ME_Backbone_Covered_Cable,
                 250,
                 1920);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1) },
                 Materials.StyreneButadieneRubber.getMolten(144L),
-                AE2_ME_Dense_Covered_Cable,
+                AE2_ME_Backbone_Covered_Cable,
                 250,
                 1920);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1) },
                 Materials.Silicone.getMolten(144L),
-                AE2_ME_Dense_Covered_Cable,
+                AE2_ME_Backbone_Covered_Cable,
                 250,
                 1920);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1) },
                 Materials.StyreneButadieneRubber.getMolten(144L),
-                AE2_ME_Dense_Covered_Cable,
+                AE2_ME_Backbone_Covered_Cable,
                 250,
                 1920);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1) },
                 Materials.Silicone.getMolten(144L),
-                AE2_ME_Dense_Covered_Cable,
+                AE2_ME_Backbone_Covered_Cable,
                 250,
                 1920);
         GT_Values.RA.addAssemblerRecipe(
