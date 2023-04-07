@@ -696,7 +696,7 @@ public class ScriptAE2FC implements IScriptLoader {
         // Fluid decoder
         addShapedRecipe(
                 AE2FC_DECODER,
-                new Object[] { IRON_PLATE, ItemList.Machine_HV_Disassembler.get(1), IRON_PLATE, AE2_GLASS_CABLE,
+                new Object[] { IRON_PLATE, ItemList.Machine_HV_FluidExtractor.get(1), IRON_PLATE, AE2_GLASS_CABLE,
                         AE2_WORK_BENCH, AE2_GLASS_CABLE, IRON_PLATE, IRON_PLATE, IRON_PLATE });
         // Ingredient Buffer
         addShapedRecipe(
