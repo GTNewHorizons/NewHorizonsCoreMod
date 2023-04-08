@@ -24,5 +24,4 @@ public class RecipeRemoval implements Runnable {
         }
     }
 
-
 }
