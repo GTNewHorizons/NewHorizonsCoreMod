@@ -5214,14 +5214,14 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L) },
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 39),
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 39),
                     100,
                     16);
         }
 
         if (AppliedEnergistics2.isModLoaded()) {
             GT_Values.RA.addAssemblerRecipe(
-                    GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 24),
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 24),
                     CustomItemList.EssentiaCircuit.get(1L),
                     CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                     100,
@@ -5233,7 +5233,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L) },
                     Materials.SolderingAlloy.getMolten(144L),
-                    GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiPart", 1L, 180),
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 180),
                     100,
                     4);
 
@@ -5243,13 +5243,13 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L) },
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 39),
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 39),
                     100,
                     16);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { ItemList.Hatch_Output_Bus_HV.get(1L),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiPart", 1L, 440),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 4L, 30),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 440),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30),
                             GT_Utility.getIntegratedCircuit(1) },
                     GT_Values.NF,
                     ItemList.Hatch_Output_Bus_ME.get(1),
@@ -5258,7 +5258,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { ItemList.Hatch_Output_HV.get(1L),
                             GT_ModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1L),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 4L, 30),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30),
                             GT_Utility.getIntegratedCircuit(1) },
                     GT_Values.NF,
                     ItemList.Hatch_Output_ME.get(1),
@@ -5266,8 +5266,8 @@ public class AssemblerRecipes implements Runnable {
                     480);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { ItemList.Hatch_Input_Bus_HV.get(1L),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiPart", 1L, 440),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 4L, 30),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 440),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30),
                             GT_Utility.getIntegratedCircuit(1) },
                     GT_Values.NF,
                     ItemList.Hatch_Input_Bus_ME.get(1),
@@ -8052,7 +8052,7 @@ public class AssemblerRecipes implements Runnable {
                         new ItemStack[] { ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                                 GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Titanium, 2L),
                                 GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
                                 GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
                                 GT_Utility.getIntegratedCircuit(1) },
                         tMat.getMolten(144L * tMultiplier / 2L),
@@ -8064,7 +8064,7 @@ public class AssemblerRecipes implements Runnable {
                         new ItemStack[] { ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                                 GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 2L),
                                 GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
                                 GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
                                 GT_Utility.getIntegratedCircuit(1) },
                         tMat.getMolten(144L * tMultiplier / 2L),
@@ -8076,7 +8076,7 @@ public class AssemblerRecipes implements Runnable {
                         new ItemStack[] { ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
                                 GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Chrome, 2L),
                                 GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
                                 GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
                                 GT_Utility.getIntegratedCircuit(1) },
                         tMat.getMolten(144L * tMultiplier / 2L),
