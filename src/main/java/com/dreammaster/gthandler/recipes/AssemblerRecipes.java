@@ -8047,41 +8047,47 @@ public class AssemblerRecipes implements Runnable {
                         350,
                         256);
                 // ME Upgrade 1
-                GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Chrome, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
-                                GT_Utility.getIntegratedCircuit(1) },
-                        tMat.getMolten(144L * tMultiplier / 2L),
-                        GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L),
-                        250,
-                        256);
+                GT_Values.RA
+                        .addAssemblerRecipe(
+                                new ItemStack[] { ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Chrome, 2L),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
+                                        GT_ModHandler
+                                                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
+                                        GT_Utility.getIntegratedCircuit(1) },
+                                tMat.getMolten(144L * tMultiplier / 2L),
+                                GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L),
+                                250,
+                                256);
                 // ME Upgrade 2
-                GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Titanium, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
-                                GT_Utility.getIntegratedCircuit(1) },
-                        tMat.getMolten(144L * tMultiplier / 2L),
-                        GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L, 1),
-                        250,
-                        1024);
+                GT_Values.RA
+                        .addAssemblerRecipe(
+                                new ItemStack[] { ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Titanium, 2L),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
+                                        GT_ModHandler
+                                                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
+                                        GT_Utility.getIntegratedCircuit(1) },
+                                tMat.getMolten(144L * tMultiplier / 2L),
+                                GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L, 1),
+                                250,
+                                1024);
                 // ME Upgrade 3
-                GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
-                                GT_Utility.getIntegratedCircuit(1) },
-                        tMat.getMolten(144L * tMultiplier / 2L),
-                        GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L, 2),
-                        250,
-                        4096);
+                GT_Values.RA
+                        .addAssemblerRecipe(
+                                new ItemStack[] { ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 2L),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
+                                        GT_ModHandler
+                                                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
+                                        GT_Utility.getIntegratedCircuit(1) },
+                                tMat.getMolten(144L * tMultiplier / 2L),
+                                GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L, 2),
+                                250,
+                                4096);
             }
 
             if (Computronics.isModLoaded()) {
