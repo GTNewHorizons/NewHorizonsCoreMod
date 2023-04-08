@@ -5347,7 +5347,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5372,7 +5372,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5397,7 +5397,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5422,7 +5422,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5447,7 +5447,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5472,7 +5472,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5497,7 +5497,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5686,7 +5686,7 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
         // ===================================================================================================
-        // PlasmaArcFurnaceLuV
+        // Plasma Arc Furnace
         // ===================================================================================================
 
         CustomItemList.PlasmaArcFurnaceLuV.set(
@@ -5698,7 +5698,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         32000,
                         0,
                         1,
@@ -5724,7 +5724,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5750,7 +5750,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5776,7 +5776,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5802,7 +5802,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5828,7 +5828,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5854,7 +5854,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -6645,95 +6645,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.pipeLarge.get(Materials.Polybenzimidazole), 'M', ItemList.Electric_Motor_UMV, 'C',
                         OrePrefixes.circuit.get(Materials.Piko), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() });
-
-        // ===================================================================================================
-        // Disassembler
-        // ===================================================================================================
-        CustomItemList.DisassemblerLuV.set(
-                new GT_MetaTileEntity_Disassembler(11160, "basicmachine.disassembler.tier.06", "Elite Disassembler", 6)
-                        .getStackForm(1L));
-        CustomItemList.DisassemblerZPM.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11161,
-                        "basicmachine.disassembler.tier.07",
-                        "Elite Disassembler II",
-                        7).getStackForm(1L));
-        CustomItemList.DisassemblerUV.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11162,
-                        "basicmachine.disassembler.tier.08",
-                        "Ultimate Deconstructor",
-                        8).getStackForm(1L));
-        CustomItemList.DisassemblerUHV.set(
-                new GT_MetaTileEntity_Disassembler(11163, "basicmachine.disassembler.tier.09", "Epic Deconstructor", 9)
-                        .getStackForm(1L));
-        CustomItemList.DisassemblerUEV.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11164,
-                        "basicmachine.disassembler.tier.10",
-                        "Epic Deconstructor II",
-                        10).getStackForm(1L));
-        CustomItemList.DisassemblerUIV.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11165,
-                        "basicmachine.disassembler.tier.11",
-                        "Epic Deconstructor III",
-                        11).getStackForm(1L));
-        CustomItemList.DisassemblerUMV.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11166,
-                        "basicmachine.disassembler.tier.12",
-                        "Epic Deconstructor IV",
-                        12).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerLuV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_LuV, 'H', ItemList.Hull_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'W',
-                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerZPM.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_ZPM, 'H', ItemList.Hull_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Naquadah) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UV, 'H', ItemList.Hull_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.Superconductor), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUHV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UHV, 'H', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUEV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UEV, 'H', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUIV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UIV, 'H', CustomItemList.Hull_UIV, 'C',
-                        OrePrefixes.circuit.get(Materials.Optical), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUMV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UMV, 'H', CustomItemList.Hull_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.Piko), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
 
         // ===================================================================================================
         // Fermenter

@@ -35,7 +35,7 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
                 aNameRegional,
                 aTier,
                 1,
-                "It can fix broken ores...and get rid of any disassembly data you don't want!",
+                "Can fix GT items with broken NBT data, will erase everything!",
                 2,
                 1,
                 "NameRemover.png",
@@ -151,7 +151,6 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
         description.add(UNDERLINE + "Second Slot" + RESET);
         description.add("One of the following circuits:");
         description.add(BOLD + "Circuit 1:" + RESET + "  Attempt to fix broken ores by removing the Display Name tag");
-        description.add(BOLD + "Circuit 2:" + RESET + "  Remove GT Disassembler tags");
         description.add(BOLD + "Circuit 3:" + RESET + "  Remove Railcraft stacking tag");
         description.add(BOLD + "Circuit 4:" + RESET + "  Remove Anvil repair tag");
         description.add(BOLD + "Circuit 5:" + RESET + "  Remove Dye from Leather armor");
