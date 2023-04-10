@@ -5897,7 +5897,7 @@ public class AssemblerRecipes implements Runnable {
             // Road Lines
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { new ItemStack(Items.redstone, 3),
-                            GT_OreDictUnificator.get(ItemList.Dye_Bonemeal.get(1L)),
+                            GT_OreDictUnificator.get(ItemList.Dye_Bonemeal.get(3L)),
                             GT_Utility.getIntegratedCircuit(24) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "road_line", 8L, 0),
