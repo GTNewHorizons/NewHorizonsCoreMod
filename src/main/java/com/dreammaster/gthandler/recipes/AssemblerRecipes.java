@@ -13,10 +13,10 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftCore;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraCells2;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.Forestry;
@@ -5214,14 +5214,14 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L) },
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 39),
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 39),
                     100,
                     16);
         }
 
         if (AppliedEnergistics2.isModLoaded()) {
             GT_Values.RA.addAssemblerRecipe(
-                    GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 24),
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 24),
                     CustomItemList.EssentiaCircuit.get(1L),
                     CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                     100,
@@ -5233,7 +5233,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L) },
                     Materials.SolderingAlloy.getMolten(144L),
-                    GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiPart", 1L, 180),
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 180),
                     100,
                     4);
 
@@ -5243,13 +5243,13 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L) },
                     GT_Values.NF,
-                    GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 39),
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 39),
                     100,
                     16);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { ItemList.Hatch_Output_Bus_HV.get(1L),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiPart", 1L, 440),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 4L, 30),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 440),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30),
                             GT_Utility.getIntegratedCircuit(1) },
                     GT_Values.NF,
                     ItemList.Hatch_Output_Bus_ME.get(1),
@@ -5258,7 +5258,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { ItemList.Hatch_Output_HV.get(1L),
                             GT_ModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1L),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 4L, 30),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30),
                             GT_Utility.getIntegratedCircuit(1) },
                     GT_Values.NF,
                     ItemList.Hatch_Output_ME.get(1),
@@ -5266,8 +5266,8 @@ public class AssemblerRecipes implements Runnable {
                     480);
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { ItemList.Hatch_Input_Bus_HV.get(1L),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiPart", 1L, 440),
-                            GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 4L, 30),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 440),
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30),
                             GT_Utility.getIntegratedCircuit(1) },
                     GT_Values.NF,
                     ItemList.Hatch_Input_Bus_ME.get(1),
@@ -5749,6 +5749,214 @@ public class AssemblerRecipes implements Runnable {
                     GT_ModHandler.getModItem(IronTanks.ID, "titaniumTungstensteelUpgrade", 1L, 0),
                     1300,
                     480);
+        }
+
+        if (Chisel.isModLoaded()) {
+            // --- Items
+            // Chisel
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "chisel", 1L, 0),
+                    300,
+                    30);
+            // Obsidian Chisel
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 2L) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "obsidianChisel", 1L, 0),
+                    400,
+                    30);
+            // Diamond Chisel
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "diamondChisel", 1L, 0),
+                    600,
+                    30);
+            // Nether Star Chisel
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Bedrockium, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.VanadiumSteel, 2L) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "netherStarChisel", 1L, 0),
+                    24000,
+                    480);
+
+            // --- Blocks
+            // Factory Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "factoryblock", 16L, 0),
+                    100,
+                    24);
+            // Technical Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 5),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
+                            GT_Utility.getIntegratedCircuit(11) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "technical", 16L, 0),
+                    100,
+                    24);
+            // Tyrian
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                            GT_Utility.getIntegratedCircuit(14) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "tyrian", 8L, 0),
+                    100,
+                    24);
+            // Futura
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.redstone, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "futura", 8L, 0),
+                    100,
+                    24);
+            // Fantasy Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.gold_nugget, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "fantasyblock", 8L, 0),
+                    100,
+                    24);
+            // Grimstone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.coal, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "grimstone", 8L, 0),
+                    100,
+                    24);
+            // Hex Plating
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2), new ItemStack(Items.coal, 4),
+                            GT_Utility.getIntegratedCircuit(11) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "hexPlating", 4L, 0),
+                    100,
+                    24);
+            // Holystone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.feather, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "holystone", 8L, 0),
+                    100,
+                    24);
+            // Laboratory Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.quartz, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "laboratoryblock", 8L, 0),
+                    100,
+                    24);
+            // Lavastone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), GT_Utility.getIntegratedCircuit(24) },
+                    Materials.Lava.getFluid(1000L),
+                    GT_ModHandler.getModItem(Chisel.ID, "lavastone", 8L, 0),
+                    100,
+                    24);
+            // Paperwall
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Items.paper, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "paperwall", 8L, 0),
+                    100,
+                    24);
+            // Paperwall Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Items.paper, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                            GT_Utility.getIntegratedCircuit(11) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "paperwall_block", 8L, 0),
+                    100,
+                    24);
+            // Road Lines
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Items.redstone, 3),
+                            GT_OreDictUnificator.get(ItemList.Dye_Bonemeal.get(3L)),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "road_line", 8L, 0),
+                    100,
+                    24);
+            // Temple Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_OreDictUnificator.get(new ItemStack(Items.dye, 1, 4)),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "templeblock", 8L, 0),
+                    100,
+                    24);
+            // Mossy Temple Block
+            if (BiomesOPlenty.isModLoaded()) {
+                GT_Values.RA.addAssemblerRecipe(
+                        new ItemStack[] { GT_ModHandler.getModItem(Chisel.ID, "templeblock", 8L, 0),
+                                GT_ModHandler.getModItem(BiomesOPlenty.ID, "moss", 8L, 0),
+                                GT_Utility.getIntegratedCircuit(24) },
+                        GT_Values.NF,
+                        GT_ModHandler.getModItem(Chisel.ID, "mossy_templeblock", 4L, 0),
+                        100,
+                        24);
+            }
+            // Valentines Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_OreDictUnificator.get(new ItemStack(Items.dye, 1, 9)),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "valentines", 8L, 0),
+                    100,
+                    24);
+            // Voidstone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2), new ItemStack(Blocks.obsidian, 2),
+                            new ItemStack(Items.ender_pearl, 1), GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "voidstone", 8L, 0),
+                    100,
+                    24);
+            // Energised Voidstone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2), new ItemStack(Blocks.obsidian, 2),
+                            new ItemStack(Items.ender_pearl, 1), new ItemStack(Items.glowstone_dust, 1),
+                            GT_Utility.getIntegratedCircuit(11) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "voidstone2", 8L, 0),
+                    100,
+                    24);
+            // Warning Sign
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2), new ItemStack(Items.sign, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "warningSign", 4L, 0),
+                    100,
+                    24);
+            // Waterstone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), GT_Utility.getIntegratedCircuit(24) },
+                    Materials.Water.getFluid(1000L),
+                    GT_ModHandler.getModItem(Chisel.ID, "waterstone", 8L, 0),
+                    100,
+                    24);
         }
     }
 
@@ -8048,41 +8256,47 @@ public class AssemblerRecipes implements Runnable {
                         350,
                         256);
                 // ME Upgrade 1
-                GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Titanium, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 41),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
-                                GT_Utility.getIntegratedCircuit(1) },
-                        tMat.getMolten(144L * tMultiplier / 2L),
-                        GT_ModHandler.getModItem(ExtraCells2.ID, "oc.upgrade", 1L, 2),
-                        250,
-                        256);
+                GT_Values.RA
+                        .addAssemblerRecipe(
+                                new ItemStack[] { ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Chrome, 2L),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
+                                        GT_ModHandler
+                                                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 24),
+                                        GT_Utility.getIntegratedCircuit(1) },
+                                tMat.getMolten(144L * tMultiplier / 2L),
+                                GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L),
+                                250,
+                                256);
                 // ME Upgrade 2
-                GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 41),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
-                                GT_Utility.getIntegratedCircuit(1) },
-                        tMat.getMolten(144L * tMultiplier / 2L),
-                        GT_ModHandler.getModItem(ExtraCells2.ID, "oc.upgrade", 1L, 1),
-                        250,
-                        1024);
+                GT_Values.RA
+                        .addAssemblerRecipe(
+                                new ItemStack[] { ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Titanium, 2L),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
+                                        GT_ModHandler
+                                                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 25),
+                                        GT_Utility.getIntegratedCircuit(1) },
+                                tMat.getMolten(144L * tMultiplier / 2L),
+                                GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L, 1),
+                                250,
+                                1024);
                 // ME Upgrade 3
-                GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Chrome, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
-                                GT_ModHandler.getModItem(ExtraCells2.ID, "item.ItemMultiMaterial", 1L, 41),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
-                                GT_Utility.getIntegratedCircuit(1) },
-                        tMat.getMolten(144L * tMultiplier / 2L),
-                        GT_ModHandler.getModItem(ExtraCells2.ID, "oc.upgrade", 1L),
-                        250,
-                        4096);
+                GT_Values.RA
+                        .addAssemblerRecipe(
+                                new ItemStack[] { ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 2L),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 13),
+                                        GT_ModHandler
+                                                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 41),
+                                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 26),
+                                        GT_Utility.getIntegratedCircuit(1) },
+                                tMat.getMolten(144L * tMultiplier / 2L),
+                                GT_ModHandler.getModItem(OpenComputers.ID, "item.ae", 1L, 2),
+                                250,
+                                4096);
             }
 
             if (Computronics.isModLoaded()) {
