@@ -5816,8 +5816,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Futura
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
-                            new ItemStack(Items.redstone, 1),
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.redstone, 1),
                             GT_Utility.getIntegratedCircuit(24) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "futura", 8L, 0),
@@ -5825,8 +5824,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Fantasy Block
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
-                            new ItemStack(Items.gold_nugget, 1),
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.gold_nugget, 1),
                             GT_Utility.getIntegratedCircuit(24) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "fantasyblock", 8L, 0),
@@ -5834,8 +5832,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Grimstone
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
-                            new ItemStack(Items.coal, 1),
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.coal, 1),
                             GT_Utility.getIntegratedCircuit(24) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "grimstone", 8L, 0),
@@ -5843,8 +5840,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Hex Plating
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 2),
-                            new ItemStack(Items.coal, 4),
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2), new ItemStack(Items.coal, 4),
                             GT_Utility.getIntegratedCircuit(11) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "hexPlating", 4L, 0),
@@ -5852,8 +5848,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Holystone
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
-                            new ItemStack(Items.feather, 1),
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.feather, 1),
                             GT_Utility.getIntegratedCircuit(24) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "holystone", 8L, 0),
@@ -5861,8 +5856,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Laboratory Block
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
-                            new ItemStack(Items.quartz, 1),
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), new ItemStack(Items.quartz, 1),
                             GT_Utility.getIntegratedCircuit(24) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "laboratoryblock", 8L, 0),
@@ -5870,8 +5864,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Lavastone
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
-                            GT_Utility.getIntegratedCircuit(24) },
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), GT_Utility.getIntegratedCircuit(24) },
                     Materials.Lava.getFluid(1000L),
                     GT_ModHandler.getModItem(Chisel.ID, "lavastone", 8L, 0),
                     100,
@@ -5915,9 +5908,9 @@ public class AssemblerRecipes implements Runnable {
             // Mossy Temple Block
             if (BiomesOPlenty.isModLoaded()) {
                 GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[]{GT_ModHandler.getModItem(Chisel.ID, "templeblock", 8L, 0),
+                        new ItemStack[] { GT_ModHandler.getModItem(Chisel.ID, "templeblock", 8L, 0),
                                 GT_ModHandler.getModItem(BiomesOPlenty.ID, "moss", 8L, 0),
-                                GT_Utility.getIntegratedCircuit(24)},
+                                GT_Utility.getIntegratedCircuit(24) },
                         GT_Values.NF,
                         GT_ModHandler.getModItem(Chisel.ID, "mossy_templeblock", 4L, 0),
                         100,
@@ -5934,20 +5927,16 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Voidstone
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 2),
-                            new ItemStack(Blocks.obsidian, 2),
-                            new ItemStack(Items.ender_pearl, 1),
-                            GT_Utility.getIntegratedCircuit(24) },
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2), new ItemStack(Blocks.obsidian, 2),
+                            new ItemStack(Items.ender_pearl, 1), GT_Utility.getIntegratedCircuit(24) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "voidstone", 8L, 0),
                     100,
                     24);
             // Energised Voidstone
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 2),
-                            new ItemStack(Blocks.obsidian, 2),
-                            new ItemStack(Items.ender_pearl, 1),
-                            new ItemStack(Items.glowstone_dust, 1),
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2), new ItemStack(Blocks.obsidian, 2),
+                            new ItemStack(Items.ender_pearl, 1), new ItemStack(Items.glowstone_dust, 1),
                             GT_Utility.getIntegratedCircuit(11) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "voidstone2", 8L, 0),
@@ -5955,8 +5944,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Warning Sign
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 2),
-                            new ItemStack(Items.sign, 1),
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2), new ItemStack(Items.sign, 1),
                             GT_Utility.getIntegratedCircuit(24) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(Chisel.ID, "warningSign", 4L, 0),
@@ -5964,8 +5952,7 @@ public class AssemblerRecipes implements Runnable {
                     24);
             // Waterstone
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
-                            GT_Utility.getIntegratedCircuit(24) },
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4), GT_Utility.getIntegratedCircuit(24) },
                     Materials.Water.getFluid(1000L),
                     GT_ModHandler.getModItem(Chisel.ID, "waterstone", 8L, 0),
                     100,
