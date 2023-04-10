@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftCore;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraBees;
@@ -52,7 +53,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
-import static gregtech.api.enums.Mods.Chisel;
 
 import java.util.List;
 
@@ -5752,6 +5752,7 @@ public class AssemblerRecipes implements Runnable {
         }
 
         if (Chisel.isModLoaded()) {
+            // --- Items
             // Chisel
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L),
@@ -5785,6 +5786,190 @@ public class AssemblerRecipes implements Runnable {
                     24000,
                     480);
 
+            // --- Blocks
+            // Factory Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "factoryblock", 16L, 0),
+                    200,
+                    16);
+            // Technical Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 5),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
+                            GT_Utility.getIntegratedCircuit(11) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "technical", 16L, 0),
+                    200,
+                    16);
+            // Tyrian
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                            GT_Utility.getIntegratedCircuit(14) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "tyrian", 8L, 0),
+                    200,
+                    16);
+            // Futura
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            new ItemStack(Items.redstone, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "futura", 8L, 0),
+                    200,
+                    16);
+            // Fantasy Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            new ItemStack(Items.gold_nugget, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "fantasyblock", 8L, 0),
+                    200,
+                    16);
+            // Grimstone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            new ItemStack(Items.coal, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "grimstone", 8L, 0),
+                    200,
+                    16);
+            // Hex Plating
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            new ItemStack(Items.coal, 4),
+                            GT_Utility.getIntegratedCircuit(11) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "hexPlating", 4L, 0),
+                    200,
+                    16);
+            // Holystone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            new ItemStack(Items.feather, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "holystone", 8L, 0),
+                    200,
+                    16);
+            // Laboratory Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            new ItemStack(Items.quartz, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "laboratoryblock", 8L, 0),
+                    200,
+                    16);
+            // Lavastone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    Materials.Lava.getFluid(1000L),
+                    GT_ModHandler.getModItem(Chisel.ID, "lavastone", 8L, 0),
+                    200,
+                    16);
+            // Paperwall
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Items.paper, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "paperwall", 8L, 0),
+                    200,
+                    16);
+            // Paperwall Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Items.paper, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
+                            GT_Utility.getIntegratedCircuit(11) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "paperwall_block", 8L, 0),
+                    200,
+                    16);
+            // Road Lines
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Items.redstone, 3),
+                            GT_OreDictUnificator.get(ItemList.Dye_Bonemeal.get(1L)),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "road_line", 8L, 0),
+                    200,
+                    16);
+            // Temple Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_OreDictUnificator.get(new ItemStack(Items.dye, 1, 4)),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "templeblock", 8L, 0),
+                    200,
+                    16);
+            // Mossy Temple Block
+            if (BiomesOPlenty.isModLoaded()) {
+                GT_Values.RA.addAssemblerRecipe(
+                        new ItemStack[]{GT_ModHandler.getModItem(Chisel.ID, "templeblock", 8L, 0),
+                                GT_ModHandler.getModItem(BiomesOPlenty.ID, "moss", 8L, 0),
+                                GT_Utility.getIntegratedCircuit(24)},
+                        GT_Values.NF,
+                        GT_ModHandler.getModItem(Chisel.ID, "mossy_templeblock", 4L, 0),
+                        200,
+                        16);
+            }
+            // Valentines Block
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_OreDictUnificator.get(new ItemStack(Items.dye, 1, 9)),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "valentines", 8L, 0),
+                    200,
+                    16);
+            // Voidstone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2),
+                            new ItemStack(Blocks.obsidian, 2),
+                            new ItemStack(Items.ender_pearl, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "voidstone", 8L, 0),
+                    200,
+                    16);
+            // Energised Voidstone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2),
+                            new ItemStack(Blocks.obsidian, 2),
+                            new ItemStack(Items.ender_pearl, 1),
+                            new ItemStack(Items.glowstone_dust, 1),
+                            GT_Utility.getIntegratedCircuit(11) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "voidstone2", 8L, 0),
+                    200,
+                    16);
+            // Warning Sign
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 2),
+                            new ItemStack(Items.sign, 1),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "warningSign", 4L, 0),
+                    200,
+                    16);
+            // Waterstone
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { new ItemStack(Blocks.stone, 4),
+                            GT_Utility.getIntegratedCircuit(24) },
+                    Materials.Water.getFluid(1000L),
+                    GT_ModHandler.getModItem(Chisel.ID, "waterstone", 8L, 0),
+                    200,
+                    16);
         }
     }
 
