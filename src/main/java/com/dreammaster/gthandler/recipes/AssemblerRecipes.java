@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftCore;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraBees;
@@ -52,7 +53,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
-import static gregtech.api.enums.Mods.Chisel;
 
 import java.util.List;
 
