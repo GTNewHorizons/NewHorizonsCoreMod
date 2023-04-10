@@ -52,6 +52,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.Chisel;
 
 import java.util.List;
 
@@ -5748,6 +5749,42 @@ public class AssemblerRecipes implements Runnable {
                     GT_ModHandler.getModItem(IronTanks.ID, "titaniumTungstensteelUpgrade", 1L, 0),
                     1300,
                     480);
+        }
+
+        if (Chisel.isModLoaded()) {
+            // Chisel
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "chisel", 1L, 0),
+                    300,
+                    30);
+            // Obsidian Chisel
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 2L) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "obsidianChisel", 1L, 0),
+                    400,
+                    30);
+            // Diamond Chisel
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "diamondChisel", 1L, 0),
+                    600,
+                    30);
+            // Nether Star Chisel
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Bedrockium, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.VanadiumSteel, 2L) },
+                    GT_Values.NF,
+                    GT_ModHandler.getModItem(Chisel.ID, "netherStarChisel", 1L, 0),
+                    24000,
+                    480);
+
         }
     }
 
