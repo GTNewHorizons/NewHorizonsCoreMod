@@ -421,7 +421,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 120);
         // Glauconite Dust
         GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glauconite, 13L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glauconite, 21L),
                 ItemList.Cell_Empty.get(6L),
                 GT_Values.NF,
                 Materials.Hydrogen.getGas(2000L),
