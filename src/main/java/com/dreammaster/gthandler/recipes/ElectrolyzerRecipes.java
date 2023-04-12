@@ -149,6 +149,51 @@ public class ElectrolyzerRecipes implements Runnable {
                 null,
                 100,
                 480);
+        //Kaolinite
+        GT_Values.RA.addElectrolyzerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Kaolinite, 17L),
+                ItemList.Cell_Empty.get(2L),
+                GT_Values.NF,
+                Materials.Hydrogen.getGas(4000L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 6L),
+                GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 2L),
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Values.NI,
+                null,
+                100,
+                480);
+        //Kyanite
+        GT_Values.RA.addElectrolyzerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 8L),
+                GT_Values.NI,
+                GT_Values.NF,
+                GT_Values.NF,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 3L),
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Values.NI,
+                null,
+                100,
+                480);
+        //Spodumene
+        GT_Values.RA.addElectrolyzerRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spodumene, 20L),
+                GT_Values.NI,
+                GT_Values.NF,
+                Materials.Oxygen.getGas(1000L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lithium, 2L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L),
+                GT_Values.NI,
+                GT_Values.NI,
+                GT_Values.NI,
+                null,
+                100,
+                480);
         // BlueTopaz
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BlueTopaz, 13L),
@@ -166,7 +211,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 480);
         // Topaz
         GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BlueTopaz, 13L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Topaz, 13L),
                 ItemList.Cell_Empty.get(3L),
                 GT_Values.NF,
                 Materials.Fluorine.getGas(2000L),
