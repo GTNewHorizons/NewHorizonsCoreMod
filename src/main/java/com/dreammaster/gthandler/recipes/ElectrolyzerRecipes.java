@@ -8,7 +8,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
 
 public class ElectrolyzerRecipes implements Runnable {
 
@@ -149,7 +148,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 null,
                 100,
                 480);
-        //Kaolinite
+        // Kaolinite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Kaolinite, 17L),
                 ItemList.Cell_Empty.get(2L),
@@ -164,7 +163,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 null,
                 480,
                 90);
-        //Kyanite
+        // Kyanite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 8L),
                 GT_Values.NI,
@@ -179,7 +178,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 null,
                 160,
                 60);
-        //Spodumene
+        // Spodumene
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spodumene, 20L),
                 GT_Values.NI,
@@ -304,7 +303,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spessartine, 20L),
                 GT_Values.NI,
                 GT_Values.NF,
-                GT_Values.NF,
+                Materials.Oxygen.getGas(3000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manganese, 3L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L),
@@ -451,13 +450,13 @@ public class ElectrolyzerRecipes implements Runnable {
                 120);
         // Mica
         GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 13L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 38L),
                 GT_Values.NI,
                 GT_Values.NF,
-                Materials.Fluorine.getGas(2000L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L),
+                Materials.Fluorine.getGas(4000L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 2L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 18L),
                 GT_Values.NI,
                 GT_Values.NI,
                 GT_Values.NI,
