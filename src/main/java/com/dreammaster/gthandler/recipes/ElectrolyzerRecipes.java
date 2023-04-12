@@ -379,7 +379,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pollucite, 26L),
                 ItemList.Cell_Empty.get(3L),
                 GT_Values.NF,
-                Materials.Hydrogen.getFluid(4000L),
+                Materials.Hydrogen.getGas(4000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Caesium, 2L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L),
