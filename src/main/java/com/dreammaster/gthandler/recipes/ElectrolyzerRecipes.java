@@ -269,21 +269,6 @@ public class ElectrolyzerRecipes implements Runnable {
                 null,
                 156,
                 120);
-        // Lazurite
-        GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 49L),
-                GT_Values.NI,
-                GT_Values.NF,
-                GT_Values.NF,
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 8L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 18L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 8L),
-                GT_Values.NI,
-                GT_Values.NI,
-                null,
-                156,
-                120);
         // Pyrope
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pyrope, 20L),
