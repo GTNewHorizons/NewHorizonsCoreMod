@@ -117,8 +117,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                100,
-                480);
+                40,
+                30);
         // Jade
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Jade, 20L),
@@ -132,8 +132,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                100,
-                480);
+                200,
+                90);
         // Almandine
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Almandine, 20L),
@@ -162,8 +162,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                100,
-                480);
+                480,
+                90);
         //Kyanite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Kyanite, 8L),
@@ -177,8 +177,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                100,
-                480);
+                160,
+                60);
         //Spodumene
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spodumene, 20L),
@@ -192,8 +192,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                100,
-                480);
+                180,
+                90);
         // BlueTopaz
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BlueTopaz, 13L),
@@ -207,8 +207,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                100,
-                480);
+                208,
+                120);
         // Topaz
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Topaz, 13L),
@@ -222,8 +222,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                100,
-                480);
+                160,
+                120);
         // Clay
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 25L),
@@ -252,8 +252,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                156,
-                120);
+                522,
+                90);
         // Grossular
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Grossular, 20L),
@@ -267,8 +267,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                156,
-                120);
+                440,
+                90);
         // Pyrope
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pyrope, 20L),
@@ -282,8 +282,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                156,
-                120);
+                400,
+                90);
         // Ruby
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 6L),
@@ -297,8 +297,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                156,
-                120);
+                144,
+                60);
         // Spessartine
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spessartine, 20L),
@@ -312,8 +312,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                156,
-                120);
+                440,
+                90);
         // Tanzanite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tanzanite, 44L),
@@ -342,8 +342,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                156,
-                120);
+                260,
+                90);
         // Biotite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 45L),
@@ -372,8 +372,8 @@ public class ElectrolyzerRecipes implements Runnable {
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
-                156,
-                120);
+                120,
+                60);
         // Pollucite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pollucite, 26L),
