@@ -77,7 +77,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Alumina
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Oxygen.getGas(3000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 2L),
@@ -92,7 +92,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Cryolite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 10L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Fluorine.getGas(6000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 3L),
@@ -107,7 +107,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Magnesia
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesia, 2L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Oxygen.getGas(1000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L),
@@ -122,7 +122,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Jade
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Jade, 20L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Oxygen.getGas(1000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 2L),
@@ -137,7 +137,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Almandine
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Almandine, 20L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Oxygen.getGas(3000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 3L),
@@ -227,7 +227,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Clay
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 25L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Water.getFluid(6000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 2L),
@@ -242,7 +242,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Emerald
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 29L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Oxygen.getFluid(3000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Beryllium, 3L),
@@ -257,7 +257,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Grossular
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Grossular, 20L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Oxygen.getFluid(3000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 3L),
@@ -272,7 +272,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Lazurite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 49L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 8L),
@@ -287,7 +287,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Pyrope
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pyrope, 20L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesia, 6L),
@@ -302,7 +302,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Ruby
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 6L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1L),
@@ -317,7 +317,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Spessartine
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spessartine, 20L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manganese, 3L),
@@ -347,7 +347,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Potassium Feldspar
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 26L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Oxygen.getFluid(1000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 2L),
@@ -362,7 +362,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Biotite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 45L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Fluorine.getGas(4000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 2L),
@@ -377,27 +377,12 @@ public class ElectrolyzerRecipes implements Runnable {
         // Red Granite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GraniteRed, 6L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                 GT_Values.NI,
-                GT_Values.NI,
-                GT_Values.NI,
-                GT_Values.NI,
-                null,
-                156,
-                120);
-        // Spodumene
-        GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spodumene, 20L),
-                GT_Utility.getIntegratedCircuit(1),
-                GT_Values.NF,
-                Materials.Oxygen.getFluid(1000L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lithium, 2L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L),
                 GT_Values.NI,
                 GT_Values.NI,
                 GT_Values.NI,
@@ -482,7 +467,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Mica
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 13L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Fluorine.getGas(2000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L),
@@ -512,7 +497,7 @@ public class ElectrolyzerRecipes implements Runnable {
         // Zeolite
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 41L),
-                GT_Utility.getIntegratedCircuit(1),
+                GT_Values.NI,
                 GT_Values.NF,
                 Materials.Oxygen.getGas(18000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L),
