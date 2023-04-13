@@ -29,9 +29,9 @@ public class FluidExtractorRecipes implements Runnable {
         GT_Values.RA.addFluidExtractionRecipe(
                 ItemList.GalliumArsenideCrystal.get(1L),
                 GT_Values.NI,
-                Materials.GalliumArsenide.getMolten(144L),
+                Materials.GalliumArsenide.getMolten(288L),
                 10000,
-                24,
+                48,
                 37);
 
         if (PamsHarvestCraft.isModLoaded()) {
