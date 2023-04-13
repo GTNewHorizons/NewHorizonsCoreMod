@@ -1,6 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GTNHIntergalactic;
+import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
