@@ -1,7 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 
@@ -21,7 +21,7 @@ public class SpaceAssemblerRecipes implements Runnable {
 
     @Override
     public void run() {
-        if (GalaxySpace.isModLoaded()) {
+        if (GTNHIntergalactic.isModLoaded()) {
 
             Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
                     ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
