@@ -448,16 +448,16 @@ public class ElectrolyzerRecipes implements Runnable {
                 null,
                 420,
                 120);
-        // Mica  //todo fix tomorrow
+        // Mica
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 38L),
-                GT_Values.NI,
+                ItemList.Cell_Empty.get(11L),
                 GT_Values.NF,
                 Materials.Fluorine.getGas(4000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 2L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 18L),
-                GT_Values.NI,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 6L),
+                GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 11L),
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
