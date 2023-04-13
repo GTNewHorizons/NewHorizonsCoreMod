@@ -1,4 +1,4 @@
-//version: 1679836390
+//version: 1680120787
 /*
  DO NOT CHANGE THIS FILE!
  Also, you may replace this file at any time if there is an update available.
@@ -73,7 +73,7 @@ plugins {
     id 'com.diffplug.spotless' version '6.7.2' apply false
     id 'com.modrinth.minotaur' version '2.+' apply false
     id 'com.matthewprenger.cursegradle' version '1.4.0' apply false
-    id 'com.gtnewhorizons.retrofuturagradle' version '1.2.3'
+    id 'com.gtnewhorizons.retrofuturagradle' version '1.2.4'
 }
 boolean settingsupdated = verifySettingsGradle()
 settingsupdated = verifyGitAttributes() || settingsupdated
@@ -405,8 +405,6 @@ minecraft {
     extraRunJvmArguments.add("-ea:${modGroup}")
 
     if (usesMixins.toBoolean() || forceEnableMixins.toBoolean()) {
-        extraTweakClasses.add("org.spongepowered.asm.launch.MixinTweaker")
-
         if (usesMixinDebug.toBoolean()) {
             extraRunJvmArguments.addAll([
                 "-Dmixin.debug.countInjections=true",
@@ -561,8 +559,9 @@ repositories {
 
 def mixinProviderGroup = "io.github.legacymoddingmc"
 def mixinProviderModule = "unimixins"
-def mixinProviderVersion = "0.1.5"
-def mixinProviderSpec = "${mixinProviderGroup}:${mixinProviderModule}:${mixinProviderVersion}"
+def mixinProviderVersion = "0.1.6"
+def mixinProviderSpecNoClassifer = "${mixinProviderGroup}:${mixinProviderModule}:${mixinProviderVersion}"
+def mixinProviderSpec = "${mixinProviderSpecNoClassifer}:dev"
 
 dependencies {
     if (usesMixins.toBoolean()) {
@@ -574,8 +573,10 @@ dependencies {
             runtimeOnlyNonPublishable('org.jetbrains:intellij-fernflower:1.2.1.16')
         }
     }
-    if (usesMixins.toBoolean() || forceEnableMixins.toBoolean()) {
+    if (usesMixins.toBoolean()) {
         implementation(mixinProviderSpec)
+    } else if (forceEnableMixins.toBoolean()) {
+        runtimeOnlyNonPublishable(mixinProviderSpec)
     }
 }
 
@@ -591,10 +592,11 @@ pluginManager.withPlugin('org.jetbrains.kotlin.kapt') {
 // https://docs.gradle.org/8.0.2/userguide/resolution_rules.html#sec:substitution_with_classifier
 configurations.all {
     resolutionStrategy.dependencySubstitution {
-        substitute module('com.gtnewhorizon:gtnhmixins') using module(mixinProviderSpec) withoutClassifier() because("Unimixins replaces other mixin mods")
-        substitute module('com.github.GTNewHorizons:Mixingasm') using module(mixinProviderSpec) withoutClassifier() because("Unimixins replaces other mixin mods")
-        substitute module('com.github.GTNewHorizons:SpongePoweredMixin') using module(mixinProviderSpec) withoutClassifier() because("Unimixins replaces other mixin mods")
-        substitute module('com.github.GTNewHorizons:SpongeMixins') using module(mixinProviderSpec) withoutClassifier() because("Unimixins replaces other mixin mods")
+        substitute module('com.gtnewhorizon:gtnhmixins') using module(mixinProviderSpecNoClassifer) withClassifier("dev") because("Unimixins replaces other mixin mods")
+        substitute module('com.github.GTNewHorizons:Mixingasm') using module(mixinProviderSpecNoClassifer) withClassifier("dev") because("Unimixins replaces other mixin mods")
+        substitute module('com.github.GTNewHorizons:SpongePoweredMixin') using module(mixinProviderSpecNoClassifer) withClassifier("dev") because("Unimixins replaces other mixin mods")
+        substitute module('com.github.GTNewHorizons:SpongeMixins') using module(mixinProviderSpecNoClassifer) withClassifier("dev") because("Unimixins replaces other mixin mods")
+        substitute module('io.github.legacymoddingmc:unimixins') using module(mixinProviderSpecNoClassifer) withClassifier("dev") because("Our previous unimixins upload was missing the dev classifier")
     }
 }
 
@@ -809,10 +811,6 @@ public abstract class RunHotswappableMinecraftTask extends RunMinecraftTask {
             !file.path.contains("2.9.4-nightly-20150209") // Remove lwjgl2
         }
         this.classpath(project.java17DependenciesCfg)
-
-        if (!(project.usesMixins.toBoolean() || project.forceEnableMixins.toBoolean())) {
-            this.extraArgs.addAll("--tweakClass", "org.spongepowered.asm.launch.MixinTweaker")
-        }
     }
 }
 
