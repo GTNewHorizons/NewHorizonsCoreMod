@@ -480,15 +480,15 @@ public class ElectrolyzerRecipes implements Runnable {
                 120);
         // Zeolite
         GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 41L),
-                GT_Values.NI,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 64L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 49L),
                 GT_Values.NF,
                 Materials.Oxygen.getGas(18000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 4L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 27L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 9L),
-                GT_Values.NI,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 64L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 17L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 9L),
                 GT_Values.NI,
                 null,
                 944,
