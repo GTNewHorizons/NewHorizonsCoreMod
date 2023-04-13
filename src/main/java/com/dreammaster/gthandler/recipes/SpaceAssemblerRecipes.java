@@ -21,7 +21,7 @@ public class SpaceAssemblerRecipes implements Runnable {
 
     @Override
     public void run() {
-        if (gtnhintergalactic.isModLoaded()) {
+        if (GTNHIntergalactic.isModLoaded()) {
 
             Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
                     ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
