@@ -375,14 +375,14 @@ public class ElectrolyzerRecipes implements Runnable {
                 60);
         // Pollucite
         GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pollucite, 26L),
-                ItemList.Cell_Empty.get(3L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Pollucite, 22L),
+                ItemList.Cell_Empty.get(1L),
                 GT_Values.NF,
-                Materials.Hydrogen.getGas(4000L),
+                Materials.Water.getFluid(2000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Caesium, 2L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L),
-                GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 3L),
+                GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 1L),
                 GT_Values.NI,
                 GT_Values.NI,
                 null,
