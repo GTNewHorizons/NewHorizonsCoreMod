@@ -3,56 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
 import static gregtech.api.enums.GT_Values.W;
-import static gregtech.api.enums.Mods.AE2FluidCraft;
-import static gregtech.api.enums.Mods.AdvancedSolarPanel;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.BuildCraftCore;
-import static gregtech.api.enums.Mods.BuildCraftFactory;
-import static gregtech.api.enums.Mods.BuildCraftTransport;
-import static gregtech.api.enums.Mods.Chisel;
-import static gregtech.api.enums.Mods.Computronics;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.FloodLights;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.ForgeMicroblocks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.Gendustry;
-import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.IronChests;
-import static gregtech.api.enums.Mods.IronTanks;
-import static gregtech.api.enums.Mods.JABBA;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NEIOrePlugin;
-import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NaturesCompass;
-import static gregtech.api.enums.Mods.OpenBlocks;
-import static gregtech.api.enums.Mods.OpenComputers;
-import static gregtech.api.enums.Mods.OpenGlasses;
-import static gregtech.api.enums.Mods.OpenModularTurrets;
-import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.OpenSecurity;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.SuperSolarPanels;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.*;
 
 import java.util.List;
 
@@ -1703,7 +1654,7 @@ public class AssemblerRecipes implements Runnable {
                 300,
                 7680);
 
-        // UEV-UMV casings+hulls
+        // UEV-UXV casings+hulls
         GT_Values.RA.addAssemblerRecipe(
                 GT_OreDictUnificator.get(CustomItemList.BedrockiumPlate.get(8L)),
                 GT_Utility.getIntegratedCircuit(8),
@@ -1722,13 +1673,17 @@ public class AssemblerRecipes implements Runnable {
                 CustomItemList.Casing_UMV.get(1L),
                 50,
                 16);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SuperconductorUMVBase, 8L),
-                GT_Utility.getIntegratedCircuit(8),
-                CustomItemList.Casing_UXV.get(1L),
-                50,
-                16);
-
+        if (GoodGenerator.isModLoaded()) {
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] {
+                            GT_OreDictUnificator
+                                    .get(OrePrefixes.plate, Materials.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
+                            GT_OreDictUnificator.get("plateShirabon", 4), GT_Utility.getIntegratedCircuit(8) },
+                    null,
+                    CustomItemList.Casing_UXV.get(1L),
+                    50,
+                    16);
+        }
         GT_Values.RA.addAssemblerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 2L),
                 CustomItemList.Casing_UEV.get(1L),
@@ -1751,9 +1706,9 @@ public class AssemblerRecipes implements Runnable {
                 50,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.Quantium, 2L),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 2L),
                 CustomItemList.Casing_UXV.get(1L),
-                Materials.Polybenzimidazole.getMolten(576L),
+                MaterialsKevlar.Kevlar.getMolten(576L),
                 CustomItemList.Hull_UXV.get(1L),
                 50,
                 16);
