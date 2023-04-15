@@ -456,7 +456,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 Materials.Fluorine.getGas(4000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 2L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 6L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 6L),
                 GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 11L),
                 GT_Values.NI,
                 GT_Values.NI,
