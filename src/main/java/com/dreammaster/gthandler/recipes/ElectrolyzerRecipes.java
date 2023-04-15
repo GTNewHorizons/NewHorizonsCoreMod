@@ -435,15 +435,15 @@ public class ElectrolyzerRecipes implements Runnable {
                 120);
         // Vermiculite
         GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vermiculite, 37L),
-                ItemList.Cell_Empty.get(2L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vermiculite, 29L),
+                ItemList.Cell_Empty.get(8L),
                 GT_Values.NF,
-                Materials.Hydrogen.getGas(10000L),
+                Materials.Water.getFluid(4000L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 3L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L),
-                GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 2L),
-                GT_Values.NI,
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 4L),
+                GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 6L),
+                GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 2L),
                 GT_Values.NI,
                 null,
                 420,
