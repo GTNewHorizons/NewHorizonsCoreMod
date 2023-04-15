@@ -107,9 +107,9 @@ public class GT_Loader_Machines {
                 CustomItemList.Hull_UXV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UXV, 'W',
-                        OrePrefixes.wireGt16.get(Materials.Quantium), 'H',
-                        OrePrefixes.plate.get(Materials.SuperconductorUMVBase), 'P',
-                        OrePrefixes.plateDense.get(Materials.Polybenzimidazole) });
+                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'H',
+                        OrePrefixes.plate.get(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'P',
+                        OrePrefixes.plateDense.get(MaterialsKevlar.Kevlar) });
 
         CustomItemList.Hull_MAXV.set(
                 new GT_MetaTileEntity_BasicHull(
@@ -7717,6 +7717,14 @@ public class GT_Loader_Machines {
                         12,
                         "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
 
+        CustomItemList.Transformer_MAX_UXV.set(
+                new GT_MetaTileEntity_Transformer(
+                        11224,
+                        "transformer.tier.13",
+                        "Extended Mega Ultimate Transformer",
+                        13,
+                        "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
+
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Transformer_UEV_UHV.get(1L),
                 bitsd,
@@ -7744,6 +7752,13 @@ public class GT_Loader_Machines {
                 new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UMV, 'C',
                         OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'B',
                         OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_QPIC });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Transformer_MAX_UXV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UXV, 'C',
+                        OrePrefixes.wireGt01.get(Materials.Infinity), 'B',
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Circuit_Chip_QPIC });
 
         // TODO:recipes
 
@@ -7803,6 +7818,12 @@ public class GT_Loader_Machines {
                         13,
                         "",
                         16).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_4by4_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_4by4_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -7872,6 +7893,12 @@ public class GT_Loader_Machines {
                         "",
                         9).getStackForm(1L));
 
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_3by3_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
+
         CustomItemList.Battery_Buffer_3by3_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11255,
@@ -7939,6 +7966,12 @@ public class GT_Loader_Machines {
                         13,
                         "",
                         4).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_2by2_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_2by2_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -8008,6 +8041,12 @@ public class GT_Loader_Machines {
                         "",
                         1).getStackForm(1L));
 
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_1by1_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
+
         CustomItemList.Battery_Buffer_1by1_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11275,
@@ -8046,6 +8085,15 @@ public class GT_Loader_Machines {
                         "batterycharger.16.tier.12",
                         "Mega Ultimate Battery Charger",
                         12,
+                        "",
+                        4).getStackForm(1L));
+
+        CustomItemList.Battery_Charger_4by4_UXV.set(
+                new GT_MetaTileEntity_Charger(
+                        11283,
+                        "batterycharger.16.tier.13",
+                        "Extended Mega Ultimate Battery Charger",
+                        13,
                         "",
                         4).getStackForm(1L));
 
@@ -8198,6 +8246,14 @@ public class GT_Loader_Machines {
                         12,
                         "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
 
+        CustomItemList.WetTransformer_MAX_UXV.set(
+                new GT_MetaTileEntity_WetTransformer(
+                        12013,
+                        "wettransformer.tier.13",
+                        "Extended Mega Ultimate Power Transformer",
+                        13,
+                        "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
+
         if (GTPlusPlus.isModLoaded()) {
             CustomItemList.Transformer_HA_UEV_UHV.set(
                     new GregtechMetaTransformerHiAmp(
@@ -8227,6 +8283,13 @@ public class GT_Loader_Machines {
                             "Mega Ultimate Hi-Amp Transformer",
                             12,
                             "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
+            CustomItemList.Transformer_HA_MAX_UXV.set(
+                    new GregtechMetaTransformerHiAmp(
+                            11913,
+                            "transformer.ha.tier.13",
+                            "Extended Mega Ultimate Hi-Amp Transformer",
+                            13,
+                            "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.Transformer_HA_UEV_UHV.get(1L),
@@ -8257,6 +8320,14 @@ public class GT_Loader_Machines {
                             Character.valueOf('C'), OrePrefixes.wireGt04.get(Materials.BlackPlutonium),
                             Character.valueOf('B'), OrePrefixes.wireGt04.get(Materials.Quantium),
                             Character.valueOf('K'), ItemList.Casing_Fusion_Coil });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.Transformer_HA_MAX_UXV.get(1L),
+                    bitsd,
+                    new Object[] { "KBB", "CMK", "KBB", Character.valueOf('M'), CustomItemList.Transformer_MAX_UXV,
+                            Character.valueOf('C'), OrePrefixes.wireGt04.get(Materials.Infinity),
+                            Character.valueOf('B'), OrePrefixes.wireGt04.get(Materials.BlackPlutonium),
+                            Character.valueOf('K'), ItemList.Casing_Coil_Infinity });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_LV_ULV.get(1L),
@@ -8379,6 +8450,15 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.Infinity), 'X',
                             OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1, 'P',
                             ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_HA_UXV_UMV });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_MAX_UXV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Universium), 'C',
+                            OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
+                            OrePrefixes.spring.get(Materials.SpaceTime), 'X',
+                            OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
+                            ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_HA_MAX_UXV });
         } else {
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_LV_ULV.get(1L),
@@ -8500,6 +8580,15 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.Infinity), 'X',
                             OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
                             ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_UXV_UMV });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_MAX_UXV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Universium), 'C',
+                            OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
+                            OrePrefixes.spring.get(Materials.SpaceTime), 'X',
+                            OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
+                            ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_MAX_UXV });
         }
 
         // ===================================================================================================
