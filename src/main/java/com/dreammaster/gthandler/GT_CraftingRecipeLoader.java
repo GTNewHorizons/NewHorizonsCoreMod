@@ -1,23 +1,6 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.Mods.AdventureBackpack;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.BuildCraftFactory;
-import static gregtech.api.enums.Mods.Computronics;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.enums.Mods.OpenComputers;
-import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 
@@ -59,7 +42,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
     @Override
     public void run() {
-        // UEV, UIV, UMV casings
+        // UEV, UIV, UMV, UXV casings
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Casing_UEV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
@@ -72,11 +55,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 CustomItemList.Casing_UMV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SpaceTime) });
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Casing_UXV.get(1L),
-                GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SuperconductorUMVBase) });
-
+        if (GoodGenerator.isModLoaded()) {
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.Casing_UXV.get(1L),
+                    GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
+                    new Object[] { "PSP", "SwS", "PSP", 'P',
+                            OrePrefixes.plate.get(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
+                            GT_OreDictUnificator.get("plateShirabon", 1) });
+        }
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
 
