@@ -1769,7 +1769,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
             GT_ModHandler.addCraftingRecipe(
                     aBlankClayCast,
-                    new Object[] { "CC ", "CC ", "   ",  'C', new ItemStack(Items.clay_ball, 1)});
+                    new Object[] { "CC ", "CC ", "   ", 'C', new ItemStack(Items.clay_ball, 1) });
 
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 0),
