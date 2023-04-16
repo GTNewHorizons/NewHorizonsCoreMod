@@ -84,7 +84,8 @@ import gregtech.common.items.GT_MetaGenerated_Item_01;
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"
                 + "after:HardcoreEnderExpansion;"
-                + "after:BloodArsenal;")
+                + "after:BloodArsenal;"
+                + "after:EMT;")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
