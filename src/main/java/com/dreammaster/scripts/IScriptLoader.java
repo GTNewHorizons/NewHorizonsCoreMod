@@ -158,7 +158,7 @@ public interface IScriptLoader {
         return new ItemStack(GT_MetaGenerated_Item_01.INSTANCE, 1, meta);
     }
 
-    default ItemStack createItemStack(String aModID, String aItem, long aAmount, int aMeta, String aNBTString,
+    static ItemStack createItemStack(String aModID, String aItem, long aAmount, int aMeta, String aNBTString,
             ItemStack aReplacement) {
         ItemStack s = getModItem(aModID, aItem, aAmount, aMeta);
         if (s == null) return aReplacement;

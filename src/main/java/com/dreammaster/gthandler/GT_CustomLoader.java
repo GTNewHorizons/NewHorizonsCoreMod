@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.*;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -159,7 +158,7 @@ public class GT_CustomLoader {
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
         OreDictionary.run();
-        if (Loader.isModLoaded("Thaumcraft")) TCLoader.run();
+        if (Thaumcraft.isModLoaded()) TCLoader.run();
         ScriptLoader.run();
     }
 }
