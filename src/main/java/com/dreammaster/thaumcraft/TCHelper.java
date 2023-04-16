@@ -3,6 +3,7 @@ package com.dreammaster.thaumcraft;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.IArcaneRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategoryList;
@@ -20,9 +21,16 @@ public class TCHelper {
         rcl.research.remove(research);
     }
 
-    public static void removeRecipe(ItemStack output) {
+    public static void removeArcaneRecipe(ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof IArcaneRecipe) return ((IArcaneRecipe) recipe).getRecipeOutput().isItemEqual(output);
+            return false;
+        });
+    }
+
+    public static void removeCrucibleRecipe(ItemStack output) {
+        ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
+            if (recipe instanceof CrucibleRecipe) return ((CrucibleRecipe) recipe).getRecipeOutput().isItemEqual(output);
             return false;
         });
     }
