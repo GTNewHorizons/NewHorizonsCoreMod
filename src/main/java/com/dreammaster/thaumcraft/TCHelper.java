@@ -206,6 +206,7 @@ public class TCHelper {
 
     public static void orphanResearch(final String research) {
         final BiConsumer<String[], Consumer<String[]>> removeHelper = (list, setter) -> {
+            if (list == null) return;
             for (int i = 0; i < list.length; i++) {
                 if (list[i] != null && list[i].equals(research)) {
                     list = ArrayUtils.remove(list, i);
