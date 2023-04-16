@@ -21,7 +21,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
     @Override
     public String getScriptName() {
-        return null;
+        return "Thaumcraft Core Mod";
     }
 
     @Override
