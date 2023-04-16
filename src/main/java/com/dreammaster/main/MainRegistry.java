@@ -50,6 +50,7 @@ import com.dreammaster.network.CoreModDispatcher;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
@@ -83,8 +84,7 @@ import gregtech.common.items.GT_MetaGenerated_Item_01;
                 + "required-after:YAMCore@[0.5.76,);"
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"
-                + "after:HardcoreEnderExpansion;"
-                + "after:BloodArsenal;")
+                + "after:HardcoreEnderExpansion;")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -456,6 +456,7 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void CompleteLoad(FMLLoadCompleteEvent event) {
+        ScriptLoader.run();
         if (BartWorks.isModLoaded()) {
             BW_RadHatchMaterial.runRadHatchAdder();
         }
