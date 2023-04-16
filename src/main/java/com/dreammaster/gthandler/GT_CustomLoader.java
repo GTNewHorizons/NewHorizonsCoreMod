@@ -8,7 +8,6 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.modfixes.enderIO.FrankenskullFix;
-import com.dreammaster.thaumcraft.TCLoader;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
@@ -157,6 +156,5 @@ public class GT_CustomLoader {
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
         OreDictionary.run();
-        if (Thaumcraft.isModLoaded()) TCLoader.run();
     }
 }
