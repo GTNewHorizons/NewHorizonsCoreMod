@@ -225,7 +225,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 120);
         // Clay
         GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 25L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 13L),
                 ItemList.Cell_Empty.get(12L),
                 GT_Values.NF,
                 Materials.Oxygen.getFluid(3000L),
