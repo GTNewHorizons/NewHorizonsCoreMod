@@ -1763,6 +1763,71 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     com.dreammaster.item.ItemList.ShapeDrillHead.getIS(),
                     new Object[] { " F ", " C ", " W ", 'W', ToolDictNames.craftingToolWireCutter, 'F',
                             ToolDictNames.craftingToolFile, 'C', aBlankCast });
+
+            // Add Clay Casts
+            ItemStack aBlankClayCast = GT_ModHandler.getModItem(TinkerConstruct.ID, "blankPattern", 1, 3);
+
+            GT_ModHandler.addCraftingRecipe(
+                    aBlankClayCast,
+                    new Object[] { "CC ", "CC ", "   ", 'C', new ItemStack(Items.clay_ball, 1) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 0),
+                    new Object[] { "CW ", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 1),
+                    new Object[] { "C W", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 2),
+                    new Object[] { "C  ", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 3),
+                    new Object[] { "C  ", " W ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 4),
+                    new Object[] { "C  ", "  W", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 5),
+                    new Object[] { "C  ", "   ", "W  ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 6),
+                    new Object[] { "C  ", "   ", " W ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 7),
+                    new Object[] { "C  ", "   ", "  W", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 8),
+                    new Object[] { "WC ", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 9),
+                    new Object[] { " CW", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 10),
+                    new Object[] { " C ", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 11),
+                    new Object[] { " C ", " W ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 12),
+                    new Object[] { " C ", "  W", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 13),
+                    new Object[] { " C ", "   ", "W  ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 22),
+                    new Object[] { " C ", "   ", " W ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 25),
+                    new Object[] { " C ", "   ", "  W", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 26),
+                    new Object[] { "W C", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "clayPattern", 1, 27),
+                    new Object[] { " WC", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "Clay Cast", 1, 3),
+                    new Object[] { "  C", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
         }
     }
 }
