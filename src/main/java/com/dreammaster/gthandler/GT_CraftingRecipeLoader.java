@@ -1827,7 +1827,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     new Object[] { " WC", "   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Clay Cast", 1, 3),
-                    new Object[] { "  C", "W   ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+                    new Object[] { "  C", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
         }
     }
 }
