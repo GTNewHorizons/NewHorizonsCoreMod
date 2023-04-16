@@ -107,8 +107,18 @@ public class TCHelper {
         ri.setSiblings(ArrayUtils.add(ri.siblings, sibling));
     }
 
+    private static Field tags = null;
+
     public static void setResearchAspects(final String research, AspectList aspects) {
-        ResearchCategories.getResearch(research).tags.aspects = aspects.aspects;
+        try {
+            if (tags == null) {
+                tags = ResearchItem.class.getField("tags");
+                tags.setAccessible(true);
+            }
+            tags.set(ResearchCategories.getResearch(research), aspects);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     public static void setResearchComplexity(final String research, int complexity) {
