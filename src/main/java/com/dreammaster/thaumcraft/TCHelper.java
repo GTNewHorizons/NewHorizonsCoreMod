@@ -27,7 +27,9 @@ public class TCHelper {
     public static IRecipe findCraftingRecipe(ItemStack stack) {
         for (Object craft : CraftingManager.getInstance().getRecipeList()) {
             if (craft instanceof IRecipe) {
-                if (((IRecipe) craft).getRecipeOutput().isItemEqual(stack)) return (IRecipe) craft;
+                if (((IRecipe) craft).getRecipeOutput() != null
+                        && ((IRecipe) craft).getRecipeOutput().isItemEqual(stack))
+                    return (IRecipe) craft;
             }
         }
         return null;
@@ -36,7 +38,9 @@ public class TCHelper {
     public static IArcaneRecipe findArcaneRecipe(ItemStack stack) {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof IArcaneRecipe) {
-                if (((IArcaneRecipe) craft).getRecipeOutput().isItemEqual(stack)) return (IArcaneRecipe) craft;
+                if (((IArcaneRecipe) craft).getRecipeOutput() != null
+                        && ((IArcaneRecipe) craft).getRecipeOutput().isItemEqual(stack))
+                    return (IArcaneRecipe) craft;
             }
         }
         return null;
@@ -45,7 +49,9 @@ public class TCHelper {
     public static CrucibleRecipe findCrucibleRecipe(ItemStack stack) {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof CrucibleRecipe) {
-                if (((CrucibleRecipe) craft).getRecipeOutput().isItemEqual(stack)) return (CrucibleRecipe) craft;
+                if (((CrucibleRecipe) craft).getRecipeOutput() != null
+                        && ((CrucibleRecipe) craft).getRecipeOutput().isItemEqual(stack))
+                    return (CrucibleRecipe) craft;
             }
         }
         return null;
@@ -54,7 +60,8 @@ public class TCHelper {
     public static InfusionRecipe findInfusionRecipe(ItemStack stack) {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof InfusionRecipe) {
-                if (((ItemStack) ((InfusionRecipe) craft).getRecipeOutput()).isItemEqual(stack))
+                if (((InfusionRecipe) craft).getRecipeOutput() != null
+                        && ((ItemStack) ((InfusionRecipe) craft).getRecipeOutput()).isItemEqual(stack))
                     return (InfusionRecipe) craft;
             }
         }
@@ -64,7 +71,8 @@ public class TCHelper {
     public static InfusionEnchantmentRecipe findInfusionEnchantRecipe(int effectID) {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof InfusionEnchantmentRecipe) {
-                if (((InfusionEnchantmentRecipe) craft).getEnchantment().effectId == effectID)
+                if (((InfusionEnchantmentRecipe) craft).getEnchantment() != null
+                        && ((InfusionEnchantmentRecipe) craft).getEnchantment().effectId == effectID)
                     return (InfusionEnchantmentRecipe) craft;
             }
         }
@@ -223,23 +231,24 @@ public class TCHelper {
 
     public static void removeArcaneRecipe(final ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
-            if (recipe instanceof IArcaneRecipe) return ((IArcaneRecipe) recipe).getRecipeOutput().isItemEqual(output);
+            if (recipe instanceof IArcaneRecipe) return ((IArcaneRecipe) recipe).getRecipeOutput() != null
+                    && ((IArcaneRecipe) recipe).getRecipeOutput().isItemEqual(output);
             return false;
         });
     }
 
     public static void removeCrucibleRecipe(final ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
-            if (recipe instanceof CrucibleRecipe)
-                return ((CrucibleRecipe) recipe).getRecipeOutput().isItemEqual(output);
+            if (recipe instanceof CrucibleRecipe) return ((CrucibleRecipe) recipe).getRecipeOutput() != null
+                    && ((CrucibleRecipe) recipe).getRecipeOutput().isItemEqual(output);
             return false;
         });
     }
 
     public static void removeInfusionRecipe(final ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
-            if (recipe instanceof InfusionRecipe)
-                return ((ItemStack) ((InfusionRecipe) recipe).getRecipeOutput()).isItemEqual(output);
+            if (recipe instanceof InfusionRecipe) return ((InfusionRecipe) recipe).getRecipeOutput() != null
+                    && ((ItemStack) ((InfusionRecipe) recipe).getRecipeOutput()).isItemEqual(output);
             return false;
         });
     }
@@ -247,7 +256,8 @@ public class TCHelper {
     public static void removeInfusionEnchantmentRecipe(final int effectID) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof InfusionEnchantmentRecipe)
-                return ((InfusionEnchantmentRecipe) recipe).getEnchantment().effectId == effectID;
+                return ((InfusionEnchantmentRecipe) recipe).getEnchantment() != null
+                        && ((InfusionEnchantmentRecipe) recipe).getEnchantment().effectId == effectID;
             return false;
         });
     }
