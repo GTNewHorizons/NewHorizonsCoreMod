@@ -60,7 +60,7 @@ public class TCHelper {
     public static InfusionRecipe findInfusionRecipe(ItemStack stack) {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof InfusionRecipe) {
-                if (((InfusionRecipe) craft).getRecipeOutput() != null
+                if (((InfusionRecipe) craft).getRecipeOutput() instanceof ItemStack
                         && ((ItemStack) ((InfusionRecipe) craft).getRecipeOutput()).isItemEqual(stack))
                     return (InfusionRecipe) craft;
             }
@@ -248,8 +248,9 @@ public class TCHelper {
 
     public static void removeInfusionRecipe(final ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
-            if (recipe instanceof InfusionRecipe) return ((InfusionRecipe) recipe).getRecipeOutput() != null
-                    && ((ItemStack) ((InfusionRecipe) recipe).getRecipeOutput()).isItemEqual(output);
+            if (recipe instanceof InfusionRecipe)
+                return ((InfusionRecipe) recipe).getRecipeOutput() instanceof ItemStack
+                        && ((ItemStack) ((InfusionRecipe) recipe).getRecipeOutput()).isItemEqual(output);
             return false;
         });
     }
