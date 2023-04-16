@@ -162,8 +162,9 @@ public class TCHelper {
                         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
                             if (craft instanceof InfusionRecipe) {
                                 InfusionRecipe theCraft = (InfusionRecipe) craft;
-                                if (theCraft.getRecipeOutput() != null && ((ItemStack) theCraft.getRecipeOutput())
-                                        .isItemEqual((ItemStack) recipe.getRecipeOutput())) {
+                                if (theCraft.getRecipeOutput() instanceof ItemStack
+                                        && ((ItemStack) theCraft.getRecipeOutput())
+                                                .isItemEqual((ItemStack) recipe.getRecipeOutput())) {
                                     pages[x] = new ResearchPage(theCraft);
                                     break;
                                 }
