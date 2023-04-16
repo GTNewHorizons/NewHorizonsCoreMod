@@ -7,13 +7,18 @@ public class ScriptLoader {
     public static void run() {
         IScriptLoader[] scripts = new IScriptLoader[] { new ScriptAE2FC(), new ScriptAFSU(),
                 new ScriptIndustrialApiary(), new ScriptAppliedEnergistics2(), new ScriptArchitectureCraft(),
-                new ScriptAvaritiaAddons(), new ScriptBetterQuesting(), new ScriptBiblioCraft(),
-                new ScriptBiblioWoodsBoP(), new ScriptBiblioWoodsForestry(), new ScriptBiblioWoodsNatura(),
-                new ScriptComputronics(), new ScriptEC2(), new ScriptEnderIO(), new ScriptEnderZoo(),
-                new ScriptForgeMultipart(), new ScriptHoloInventory(), new ScriptIguanaTweaks(), new ScriptJABBA(),
-                new ScriptNuclearControl(), new ScriptOpenBlocks(), new ScriptSleepingBags(), new ScriptSpiceOfLife(),
+                new ScriptAutomagy(), new ScriptAvaritia(), new ScriptAvaritiaAddons(), new ScriptBetterQuesting(),
+                new ScriptBiblioCraft(), new ScriptBiblioWoodsBoP(), new ScriptBiblioWoodsForestry(),
+                new ScriptBiblioWoodsNatura(), new ScriptBloodMagic(), new ScriptComputronics(), new ScriptEC2(),
+                new ScriptEMT(), new ScriptEnderIO(), new ScriptEnderZoo(), new ScriptExtraBees(),
+                new ScriptExtraUtilities(), new ScriptForbiddenMagic(), new ScriptForestry(),
+                new ScriptForgeMultipart(), new ScriptGadomancy(), new ScriptHoloInventory(), new ScriptIguanaTweaks(),
+                new ScriptJABBA(), new ScriptMagicBees(), new ScriptNuclearControl(), new ScriptOpenBlocks(),
+                new ScriptRailcraft(), new ScriptRunicTablet(), new ScriptSleepingBags(), new ScriptSpiceOfLife(),
+                new ScriptTaintedMagic(), new ScriptTCCoreMod(), new ScriptThaumcraft(), new ScriptThaumicBases(),
                 new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics(),
-                new ScriptTravellersGear() };
+                new ScriptThaumicExploration(), new ScriptThaumicHorizons(), new ScriptThaumicMachina(),
+                new ScriptThaumicTinkerer(), new ScriptWarpTheory(), new ScriptWitchery(), new ScriptTravellersGear() };
 
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
