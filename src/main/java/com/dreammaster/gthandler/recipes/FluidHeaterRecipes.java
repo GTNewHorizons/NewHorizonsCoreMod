@@ -1,9 +1,10 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.BartWorks;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
@@ -12,7 +13,7 @@ public class FluidHeaterRecipes implements Runnable {
 
     @Override
     public void run() {
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
 
             GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes.addRecipe(
                     false,

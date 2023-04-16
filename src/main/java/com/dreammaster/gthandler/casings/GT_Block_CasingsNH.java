@@ -66,9 +66,7 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister aIconRegister) {
-        // super.registerBlockIcons(aIconRegister);
-    }
+    public void registerBlockIcons(IIconRegister aIconRegister) {}
 
     @Override
     public IIcon getIcon(int aSide, int aMeta) {

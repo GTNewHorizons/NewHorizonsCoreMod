@@ -1,5 +1,10 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.Computronics;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -16,13 +21,13 @@ public class ScriptComputronics implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList("Avaritia", "computronics", "gregtech");
+        return Arrays.asList(Avaritia.ID, Computronics.ID, GregTech.ID, OpenComputers.ID, Thaumcraft.ID);
     }
 
     @Override
     public void loadRecipes() {
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("computronics", "computronics.ocSpecialParts", 1),
+                getModItem(Computronics.ID, "computronics.ocSpecialParts", 1),
                 "aaaaaaaaa",
                 "abbbbbbbc",
                 "abdefedbc",
@@ -41,14 +46,14 @@ public class ScriptComputronics implements IScriptLoader {
                 'd',
                 "circuitBio",
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 14),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14),
                 'f',
-                getModItem("OpenComputers", "item", 1, 103),
+                getModItem(OpenComputers.ID, "item", 1, 103),
                 'g',
-                getModItem("gregtech", "gt.metaitem.03", 1, 32163),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32163),
                 'h',
                 "ingotInfinity",
                 'i',
-                getModItem("Avaritia", "big_pearl", 1));
+                getModItem(Avaritia.ID, "big_pearl", 1));
     }
 }

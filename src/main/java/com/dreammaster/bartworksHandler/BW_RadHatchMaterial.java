@@ -1,10 +1,11 @@
 package com.dreammaster.bartworksHandler;
 
+import static gregtech.api.enums.Mods.GTPlusPlus;
+
 import net.minecraft.item.ItemStack;
 
 import com.github.bartimaeusnek.bartworks.util.BWRecipes;
 
-import cpw.mods.fml.common.Loader;
 import gtPlusPlus.core.material.Material;
 import gtPlusPlus.core.util.minecraft.ItemUtils;
 
@@ -12,7 +13,7 @@ public class BW_RadHatchMaterial {
 
     public static void runRadHatchAdder() {
 
-        if (Loader.isModLoaded("miscutils")) {
+        if (GTPlusPlus.isModLoaded()) {
             ItemStack err = ItemUtils.getErrorStack(1);
 
             for (Material material : Material.mMaterialMap) {

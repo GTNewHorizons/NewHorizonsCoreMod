@@ -7,6 +7,7 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.machine.soul.SoulBinderRecipeManager;
 import crazypants.enderio.material.FrankenSkull;
+import gregtech.api.enums.Mods;
 
 public class FrankenskullFix {
 
@@ -28,6 +29,6 @@ public class FrankenskullFix {
         root.setTag(SoulBinderRecipeManager.KEY_OUTPUT_STACK, stackRoot);
 
         SoulBinderRecipeManager.getInstance().addRecipeFromNBT(root);
-        FMLInterModComms.sendMessage("EnderIO", "recipe:soulbinder", root);
+        FMLInterModComms.sendMessage(Mods.EnderIO.ID, "recipe:soulbinder", root);
     }
 }

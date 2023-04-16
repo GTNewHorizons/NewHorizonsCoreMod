@@ -1,5 +1,7 @@
 package com.dreammaster.item;
 
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+
 import mantle.items.abstracts.CraftingItem;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,7 +13,7 @@ import tconstruct.library.util.IPattern;
 public class Pattern extends CraftingItem implements IPattern {
 
     public Pattern(String[] names, String[] tex, CreativeTabs tab) {
-        super(names, tex, "", "dreamcraft", tab);
+        super(names, tex, "", NewHorizonsCoreMod.ID, tab);
     }
 
     public Pattern(String[] names, String[] tex, String folder, String modTexturePrefix, CreativeTabs tab) {

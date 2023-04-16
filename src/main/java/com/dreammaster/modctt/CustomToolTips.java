@@ -29,7 +29,6 @@ public class CustomToolTips {
                 return null;
             }
 
-            // String tUnlocName = pItem.getUnlocalizedName();
             GameRegistry.UniqueIdentifier UID = GameRegistry.findUniqueIdentifierFor(pItem.getItem());
             String tCompareName = UID.toString();
             if (pItem.getItemDamage() > 0) {
@@ -37,7 +36,6 @@ public class CustomToolTips {
             }
 
             for (ItemToolTip itt : mToolTips) {
-                // if (itt.getUnlocalizedName().equalsIgnoreCase(tUnlocName)) return itt;
                 if (itt.mUnlocalizedName.equalsIgnoreCase(tCompareName)) {
                     return itt;
                 }

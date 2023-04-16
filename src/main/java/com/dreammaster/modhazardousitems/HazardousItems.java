@@ -89,7 +89,6 @@ public class HazardousItems {
             for (HazardousItem hi : hazardousItem) {
                 if (hi.exactMatch) {
                     // Exact match
-                    // if (hi.itemName.equals(pInHand.getUnlocalizedName()))
                     if (hi.itemName.equals(ItemDescriptor.fromItem(pInHand.getItem()))) {
                         continue; // Dont read to new list
                     }
@@ -98,8 +97,6 @@ public class HazardousItems {
                     {
                         // "contains" match
                         String p1 = hi.itemName.toLowerCase();
-                        // String p2 =
-                        // pInHand.getUnlocalizedName().toLowerCase();
                         String p2 = ItemDescriptor.fromItem(pInHand.getItem()).toString().toLowerCase();
 
                         if (p2.contains(p1)) {
@@ -210,14 +207,12 @@ public class HazardousItems {
         for (HazardousItem hi : hazardousItem) {
             if (hi.exactMatch) {
                 // Exact match
-                // if (hi.itemName.equals(pItemStack.getUnlocalizedName()))
                 if (hi.itemName.equals(ItemDescriptor.fromStack(pItemStack).toString())) {
                     return hi;
                 }
             } else {
                 // "contains" match
                 String p1 = hi.itemName.toLowerCase();
-                // String p2 = pItemStack.getUnlocalizedName().toLowerCase();
                 String p2 = ItemDescriptor.fromStack(pItemStack).toString().toLowerCase();
 
                 if (p2.contains(p1)) {

@@ -25,13 +25,9 @@ import eu.usrv.yamcore.iface.IExtendedModItem;
 public final class WitherProtectionRing extends Item implements IBauble, IExtendedModItem<WitherProtectionRing> {
 
     Random _mRnd = new Random();
-    // private static final String NBTTAG_VISVICTUS = "VisVictus";
-    // private static final String NBTTAG_PotionEffectID = "PotionEffectID";
-    // private static final String NBTTAG_PotionLevel = "PotionLevel";
 
     private final String _mItemName;
     private final String _mCreativeTab;
-    // private static int MaxDurability = 1000;
 
     @Override
     public WitherProtectionRing getConstructedItem() {
@@ -105,19 +101,6 @@ public final class WitherProtectionRing extends Item implements IBauble, IExtend
     public void onUnequipped(ItemStack arg0, EntityLivingBase pEntityBase) {}
 
     // ------------------ NBT Start
-    /*
-     * @Override public void onCreated(ItemStack pItemStack, World pWorld, EntityPlayer pEntityPlayer) {
-     * CreateOrInitNBTTag(pItemStack); } private int GetNBTVictusVis(ItemStack pItemStack) { int tVis =
-     * pItemStack.stackTagCompound.getInteger(NBTTAG_VISVICTUS); return tVis; } private void DamageItem(ItemStack
-     * pItemStack) { int tCurrentDura = GetNBTVictusVis(pItemStack); if (tCurrentDura > 0) {
-     * pItemStack.stackTagCompound.setInteger(NBTTAG_VISVICTUS, --tCurrentDura); } } private Potion
-     * getNBTPotion(ItemStack pItemStack) { try { int tPotionID =
-     * pItemStack.stackTagCompound.getInteger(NBTTAG_PotionEffectID); return Potion.potionTypes[tPotionID]; } catch
-     * (Exception e) { return null; } } private PotionEffect getNBTPotionEffect(ItemStack pItemStack) { PotionEffect
-     * tEff = null; int tPotionLv = pItemStack.stackTagCompound.getInteger(NBTTAG_PotionLevel); Potion tPot =
-     * getNBTPotion(pItemStack); if (tPot != null && tPotionLv > -1) { tEff = new PotionEffect(tPot.getId(), 40,
-     * tPotionLv); } return tEff; }
-     */
     @Override
     public void addInformation(ItemStack pItemStack, EntityPlayer pWorld, List list, boolean par4) {
         list.add(
@@ -132,12 +115,6 @@ public final class WitherProtectionRing extends Item implements IBauble, IExtend
                         EnumChatFormatting.ITALIC));
     }
 
-    /*
-     * private void CreateOrInitNBTTag(ItemStack pItemStack) { if( pItemStack.stackTagCompound == null ) {
-     * pItemStack.setTagCompound( new NBTTagCompound( ) ); pItemStack.stackTagCompound.setInteger(NBTTAG_VISVICTUS,
-     * 10000); pItemStack.stackTagCompound.setInteger(NBTTAG_PotionEffectID, Potion.heal.getId());
-     * pItemStack.stackTagCompound.setInteger(NBTTAG_PotionLevel, 5); } } // ------------------ NBT End
-     */
     @Override
     public void onWornTick(ItemStack arg0, EntityLivingBase pEntity) {
         if (!(pEntity instanceof EntityPlayer)) {
@@ -147,16 +124,10 @@ public final class WitherProtectionRing extends Item implements IBauble, IExtend
         if (_mRnd.nextInt(20) == 0) {
             EntityPlayer tPlayer = (EntityPlayer) pEntity;
             InventoryBaubles tBaubles = PlayerHandler.getPlayerBaubles(tPlayer);
-            // PotionEffect tEff = getNBTPotionEffect(arg0);
-            // int tStoredVictus = GetNBTVictusVis(arg0);
 
-            /*
-             * if (tEff == null || tStoredVictus < 1) { return; }
-             */
             Potion tPot = Potion.wither;
             if (tPlayer.isPotionActive(tPot)) {
                 tPlayer.removePotionEffect(tPot.id);
-                // DamageItem(arg0);
             }
         }
     }

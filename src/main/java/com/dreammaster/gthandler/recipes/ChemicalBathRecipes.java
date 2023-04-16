@@ -1,5 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -8,7 +16,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -33,7 +40,7 @@ public class ChemicalBathRecipes implements Runnable {
         GT_Values.RA.addChemicalBathRecipe(
                 new ItemStack(Items.leather, 2, 0),
                 Materials.PhosphoricAcid.getFluid(144),
-                GT_ModHandler.getModItem("Backpack", "tannedLeather", 1L, 0),
+                GT_ModHandler.getModItem(Backpack.ID, "tannedLeather", 1L, 0),
                 GT_Values.NI,
                 GT_Values.NI,
                 new int[] { 10000 },
@@ -42,7 +49,7 @@ public class ChemicalBathRecipes implements Runnable {
         GT_Values.RA.addChemicalBathRecipe(
                 CustomItemList.ArtificialLeather.get(2L),
                 Materials.PhosphoricAcid.getFluid(144),
-                GT_ModHandler.getModItem("Backpack", "tannedLeather", 1L, 0),
+                GT_ModHandler.getModItem(Backpack.ID, "tannedLeather", 1L, 0),
                 GT_Values.NI,
                 GT_Values.NI,
                 new int[] { 10000 },
@@ -132,22 +139,24 @@ public class ChemicalBathRecipes implements Runnable {
                 240,
                 16);
 
-        GT_Values.RA.addChemicalBathRecipe(
-                GT_ModHandler.getModItem("IC2", "itemBiochaff", 1L, 0),
-                Materials.Water.getFluid(750L),
-                GT_ModHandler.getModItem("Forestry", "mulch", 8L, 0),
-                GT_ModHandler.getModItem("Forestry", "mulch", 4L, 0),
-                GT_ModHandler.getModItem("Forestry", "mulch", 4L, 0),
-                new int[] { 10000, 3300, 2000 },
-                500,
-                30);
+        if (Forestry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
+            GT_Values.RA.addChemicalBathRecipe(
+                    GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 1L, 0),
+                    Materials.Water.getFluid(750L),
+                    GT_ModHandler.getModItem(Forestry.ID, "mulch", 8L, 0),
+                    GT_ModHandler.getModItem(Forestry.ID, "mulch", 4L, 0),
+                    GT_ModHandler.getModItem(Forestry.ID, "mulch", 4L, 0),
+                    new int[] { 10000, 3300, 2000 },
+                    500,
+                    30);
+        }
 
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
             GT_Values.RA.addChemicalBathRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.nanite, Materials.Silver, 0, false),
                     Materials.Grade7PurifiedWater.getFluid(1000L),
                     Materials.Grade8PurifiedWater.getFluid(900L),
-                    GT_ModHandler.getModItem("miscutils", "particleBase", 1L, 24), // Unknown particle
+                    GT_ModHandler.getModItem(GTPlusPlus.ID, "particleBase", 1L, 24), // Unknown particle
                     GT_Values.NI,
                     GT_Values.NI,
                     new int[] { 100 },
@@ -155,20 +164,20 @@ public class ChemicalBathRecipes implements Runnable {
                     3_932_160);
         }
 
-        if (Loader.isModLoaded("EnderIO")) {
+        if (EnderIO.isModLoaded()) {
             GT_Values.RA.addChemicalBathRecipe(
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
                     new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 4),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 4),
                     GT_Values.NI,
                     GT_Values.NI,
                     new int[] { 10000 },
                     500,
                     30);
             GT_Values.RA.addChemicalBathRecipe(
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 1),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 1),
                     new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72),
-                    GT_ModHandler.getModItem("EnderIO", "blockFusedQuartz", 1L, 5),
+                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 5),
                     GT_Values.NI,
                     GT_Values.NI,
                     new int[] { 10000 },
@@ -176,9 +185,9 @@ public class ChemicalBathRecipes implements Runnable {
                     30);
         }
 
-        if (Loader.isModLoaded("harvestcraft")) {
+        if (PamsHarvestCraft.isModLoaded()) {
             GT_Values.RA.addChemicalBathRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "wovencottonItem", 2L, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2L, 0),
                     Materials.PolyvinylChloride.getMolten(144L),
                     CustomItemList.ArtificialLeather.get(2L),
                     GT_Values.NI,

@@ -1,6 +1,11 @@
 package com.dreammaster.witchery;
 
 import static com.dreammaster.witchery.WitcheryBrewRegistryAccessor.*;
+import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.StevesCarts2;
 
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -23,7 +28,6 @@ import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
 import com.emoniph.witchery.crafting.KettleRecipes;
 import com.emoniph.witchery.crafting.SpinningRecipes;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
@@ -188,7 +192,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack[] { new ItemStack(Witchery.Blocks.WISPY_COTTON, 4),
                         Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1) });
         SpinningWheel.addRecipe(
-                GT_ModHandler.getModItem("BloodArsenal", "blood_burned_string", 1L),
+                GT_ModHandler.getModItem(BloodArsenal.ID, "blood_burned_string", 1L),
                 Witchery.Items.GENERIC.itemTormentedTwine.createStack(1),
                 new ItemStack[] { Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4),
                         Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1) });
@@ -211,8 +215,8 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 true,
                 Witchery.Items.GENERIC.itemRedstoneSoup.createStack(),
                 Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(),
-                GT_ModHandler.getModItem("StevesCarts", "ModuleComponents", 1L, 45),
-                GT_ModHandler.getModItem("HardcoreEnderExpansion", "end_powder", 1L),
+                GT_ModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45),
+                GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                 Witchery.Items.GENERIC.itemDropOfLuck.createStack(),
                 Witchery.Items.GENERIC.itemBatWool.createStack());
 
@@ -225,7 +229,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack(Witchery.Items.CHALK_GOLDEN),
                 new ItemStack(Witchery.Items.CHALK_RITUAL),
                 Witchery.Items.GENERIC.itemMandrakeRoot.createStack(),
-                GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 1L, 2086),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086),
                 Witchery.Items.GENERIC.itemDiamondVapour.createStack());
         addBrewRecipe(
                 2000,
@@ -234,68 +238,16 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack(Items.nether_wart),
                 new ItemStack(Items.blaze_rod),
                 new ItemStack(Items.nether_star));
-        if (Loader.isModLoaded("HardcoreEnderExpansion")) {
+        if (HardcoreEnderExpansion.isModLoaded()) {
             addBrewRecipe(
                     4000,
                     new ItemStack(Witchery.Items.CHALK_OTHERWHERE),
                     new ItemStack(Witchery.Items.CHALK_RITUAL),
-                    GT_ModHandler.getModItem("gregtech", "gt.metaitem.01", 1L, 2533),
-                    GT_ModHandler.getModItem("HardcoreEnderExpansion", "end_powder", 1L),
+                    GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2533),
+                    GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
-                    GT_ModHandler.getModItem("dreamcraft", "item.ManyullynCrystal", 1L, 0));
+                    GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1L, 0));
         }
-        /*
-         * // examples: // add an oven recipe // does not use oredict on input // smelt an apple to charcoal, filling 2
-         * jar into 2 foul fume // notice: you can't have different input/output jar count, even if it is not a jar.
-         * WitchesOven.addRecipe(new ItemStack(Items.apple, 1), null, 2, new ItemStack(Items.coal, 1, 1), 1,
-         * Witchery.Items.GENERIC.itemFoulFume.createStack(), 2); // use oredict on input // smelt an iron ingot into 6
-         * iron bar, filling 2 jar into 2 foul fume // notice: you can't have different input/output jar count, even if
-         * it is not a jar. WitchesOven.addRecipe(null, "ingotIron", 2, new ItemStack(Blocks.iron_bars, 6), 1,
-         * Witchery.Items.GENERIC.itemFoulFume.createStack(), 2); // notice: if this recipe already have a vanilla
-         * furnace counterpart, e.g. smelt iron dust to iron ingot // you don't need to specify the 4th and 5th
-         * argument. // smelt an iron dust to an iron ingot, filling 3 jar into 3 foul fume WitchesOven.addRecipe(null,
-         * "dustIron", 2, null, 0, Witchery.Items.GENERIC.itemFoulFume.createStack(), 3); // remove an oven recipe //
-         * this remove the first recipe that produce an iron ingot // this does not respect oredict...
-         * WitchesOven.removeRecipe(WitchesOven.findRecipeForOutput(new ItemStack(Items.iron_ingot))); // this remove
-         * the first recipe that consumes an iron ingot // this does not respect oredict...
-         * WitchesOven.removeRecipe(WitchesOven.findRecipeUsingIngredient(new ItemStack(Items.iron_ingot))); // add
-         * recipe to distillery // distill an apple and a slime ball to an apple and a foul fume, consuming one jar //
-         * empty slots can be set to null safely Distillery.addRecipe(new ItemStack(Items.apple, 1),new
-         * ItemStack(Items.slime_ball, 1), 1, new ItemStack(Items.apple,
-         * 1),Witchery.Items.GENERIC.itemFoulFume.createStack(), null,null); // remove a distillery recipe // remove all
-         * recipe that uses an apple and a slime ball to produce some output
-         * Distillery.removeRecipe(Distillery.getDistillingResult(new ItemStack(Items.apple, 1), new
-         * ItemStack(Items.slime_ball, 1), Witchery.Items.GENERIC.itemEmptyClayJar.createStack(jarCount))); // add a
-         * kettle recipe // arguments from first to last // output, in this case a slime ball // 1 if hat bonus applies,
-         * 0 if not // 0 if no familiar can boost. 1 if cat, 2 if toad, 3 if owl Kettle.addRecipe(new
-         * ItemStack(Items.slime_ball, 1), 1, 0, 1000.0F, 0xffffff, 0, true, new ItemStack(Items.apple, 1), new
-         * ItemStack(Items.sugar, 1)) // remove a kettle recipe // remove the first recipe that produces a slime_ball,
-         * if any Kettle.removeRecipe(new ItemStack(Items.slime_ball, 1)); // remove a specific kettle recipe
-         * removeRecipe(Kettle.findRecipeWithSomeInputsAndAnOutput(new
-         * ItemStack[]{Witchery.Items.GENERIC.itemRedstoneSoup.createStack(), new ItemStack(Items.potionitem, 1, 8258),
-         * new ItemStack(Items.ender_eye), new ItemStack(Items.ender_eye),
-         * Witchery.Items.GENERIC.itemDropOfLuck.createStack(),
-         * Witchery.Items.GENERIC.itemBatWool.createStack()},Witchery.Items.GENERIC.itemSpiritOfOtherwhere.createStack(2
-         * ))); // remove all recipes that produces a slime_ball, if any removeAllKettleRecipes(new
-         * ItemStack(Items.slime_ball, 1)); // add a spinning wheel recipe // add 2 apple, 1 slime ball and 1 foul fume
-         * into string to get 3 cobweb SpinningWheel.addRecipe(new ItemStack(Blocks.web, 3), new
-         * ItemStack(Items.string), new ItemStack[]{new ItemStack(Items.apple, 2),new ItemStack(Items.slime_ball, 1),
-         * Witchery.Items.GENERIC.itemFoulFume.createStack() }); // remove a spinning wheel recipe // remove a recipe
-         * that produce 1 iron bar from a string that got combined with 2 apple and 1 slime ball
-         * SpinningWheel.removeRecipe(new ItemStack(Blocks.iron_bars), new ItemStack(Items.string), new
-         * ItemStack(Items.apple, 2),new ItemStack(Items.slime_ball, 1)); // remove a recipe that produce 1 iron bar
-         * from a string that got combined with 2 apple, 1 slime ball and 1 foul fume SpinningWheel.removeRecipe(new
-         * ItemStack(Blocks.web, 3), new ItemStack(Items.string), new ItemStack(Items.apple, 2),new
-         * ItemStack(Items.slime_ball, 1), Witchery.Items.GENERIC.itemFoulFume.createStack()); // add a infusion //
-         * seems complex and require code, ask a coder for that // remove a infusion // remove infusion with id 1. //
-         * don't know what infusion 1 is though. probably shouldn't do this anyway.
-         * Infusions.remove(Infusions.getInfusion(1)); // cauldron // add recipe // add a recipe for apple that takes
-         * 1000 alter power and 1 string and 1 iron bar, with string as the last item. addBrewRecipe(1000, new
-         * ItemStack(Items.apple, 2), new ItemStack(Items.string), new ItemStack(Blocks.iron_bars)); // remove recipe //
-         * removes the vanilla recipe for CHALK_OTHERWHERE removeBrewRecipe(new ItemStack(Witchery.Items.CHALK_RITUAL),
-         * new ItemStack(Items.nether_wart), Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(), new
-         * ItemStack(Items.ender_pearl));
-         */
         // rites
         // TODO write doc
 

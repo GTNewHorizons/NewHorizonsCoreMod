@@ -1,5 +1,8 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GregTech;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -12,7 +15,6 @@ import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
 import com.dreammaster.gthandler.turboCharger.GT_MetaTileEntity_TurboCharger;
 import com.dreammaster.item.food.QuantumBread;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.*;
 import gregtech.api.metatileentity.implementations.*;
@@ -105,9 +107,9 @@ public class GT_Loader_Machines {
                 CustomItemList.Hull_UXV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UXV, 'W',
-                        OrePrefixes.wireGt16.get(Materials.Quantium), 'H',
-                        OrePrefixes.plate.get(Materials.SuperconductorUMVBase), 'P',
-                        OrePrefixes.plateDense.get(Materials.Polybenzimidazole) });
+                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'H',
+                        OrePrefixes.plate.get(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'P',
+                        OrePrefixes.plateDense.get(MaterialsKevlar.Kevlar) });
 
         CustomItemList.Hull_MAXV.set(
                 new GT_MetaTileEntity_BasicHull(
@@ -136,18 +138,6 @@ public class GT_Loader_Machines {
                         "basicgenerator.plasmagenerator.tier.09",
                         "Ultimate Pocket Sun",
                         8).getStackForm(1L));
-
-        // CustomItemList.Generator_Plasma_UHV.set(new GT_MetaTileEntity_PlasmaGenerator(
-        // 10754, "basicgenerator.plasmagenerator.tier.10", "Legendary Pocket Sun", 9).getStackForm(1L));
-
-        // CustomItemList.Generator_Plasma_UEV.set(new GT_MetaTileEntity_PlasmaGenerator(
-        // 10755, "basicgenerator.plasmagenerator.tier.11", "Legendary Pocket Sun II",10).getStackForm(1L));
-
-        // CustomItemList.Generator_Plasma_UIV.set(new GT_MetaTileEntity_PlasmaGenerator(
-        // 10756, "basicgenerator.plasmagenerator.tier.12", "Legendary Pocket Sun III",11).getStackForm(1L));
-
-        // CustomItemList.Generator_Plasma_UMV.set(new GT_MetaTileEntity_PlasmaGenerator(
-        // 10757, "basicgenerator.plasmagenerator.tier.13", "Legendary Pocket Sun IV",12).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Generator_Plasma_ZPMV.get(1L),
@@ -508,10 +498,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), }).getStackForm(1L));
 
-        // AmplifabricatorLuV
-        // AmplifabricatorZPM
-        // AmplifabricatorUV
-
         // ===================================================================================================
         // AssemblingMachineLuV
         // ===================================================================================================
@@ -689,9 +675,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // AssemblingMachineLuV
-        // AssemblingMachineZPM
-        // AssemblingMachineUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -879,9 +862,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getPlate(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), }).getStackForm(1L));
 
-        // AutoclaveLuV
-        // AutoclaveZPM
-        // AutoclaveUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -1062,9 +1042,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // BendingMachineLuV
-        // BendingMachineZPM
-        // BendingMachineUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -1238,9 +1215,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // CompressorLuV
-        // CompressorZPM
-        // CompressorUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -1435,9 +1409,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B',
                                 OreDictNames.craftingDiamondBlade }).getStackForm(1L));
 
-        // CuttingMachineLuV
-        // CuttingMachineZPM
-        // CuttingMachineUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -1985,9 +1956,6 @@ public class GT_Loader_Machines {
                                 OrePrefixes.wireGt04.get(Materials.Infinity), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
 
-        // ElectrolyzerLuV
-        // ElectrolyzerZPM
-        // ElectrolyzerUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -2175,9 +2143,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // ElectromagneticSeparatorLuV
-        // ElectromagneticSeparatorZPM
-        // ElectromagneticSeparatorUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -2365,9 +2330,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
 
-        // ExtractorLuV
-        // ExtractorZPM
-        // ExtractorUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -2548,9 +2510,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getPipe(), 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
 
-        // ExtruderLuV
-        // ExtruderZPM
-        // ExtruderUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -2738,9 +2697,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B', OreDictNames.craftingChest })
                                         .getStackForm(1L));
 
-        // FluidSolidifierLuV
-        // FluidSolidifierZPM
-        // FluidSolidifierUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -2914,9 +2870,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // FormingPressLuV
-        // FormingPressZPM
-        // FormingPressUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -3104,9 +3057,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil(), 'A', OreDictNames.craftingAnvil })
                                         .getStackForm(1L));
 
-        // ForgeHammerLuV
-        // ForgeHammerZPM
-        // ForgeHammerUV
         // ===================================================================================================
         // CONTINUE HERE 18.10.2015 00:22
         // ===================================================================================================
@@ -3294,9 +3244,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'D',
                                 OreDictNames.craftingIndustrialDiamond }).getStackForm(1L));
 
-        // LatheLuV
-        // LatheZPM
-        // LatheUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -3477,9 +3424,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // PrecisionLaserEngraverLuV
-        // PrecisionLaserEngraverZPM
-        // PrecisionLaserEngraverUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -3667,9 +3611,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G', OreDictNames.craftingGrinder })
                                         .getStackForm(1L));
 
-        // MaceratorLuV
-        // MaceratorZPM
-        // MaceratorUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -3763,10 +3704,6 @@ public class GT_Loader_Machines {
                         'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4() });
 
-        // MassFabricatorLuV
-        // MassFabricatorZPM
-        // MassFabricatorUV
-        // MassFabricatorUHV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -4144,9 +4081,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP }).getStackForm(1L));
 
-        // OreWashingPlantLuV
-        // OreWashingPlantZPM
-        // OreWashingPlantUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -4320,9 +4254,6 @@ public class GT_Loader_Machines {
                                 OrePrefixes.wireGt08.get(Materials.Osmium), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // PolarizerLuV
-        // PolarizerZPM
-        // PolarizerUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -4503,9 +4434,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 OrePrefixes.dust.get(Materials.NetherStar) }).getStackForm(1L));
 
-        // RecyclerLuV
-        // RecyclerZPM
-        // RecyclerUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -4594,9 +4522,6 @@ public class GT_Loader_Machines {
                         'E', ItemList.Emitter_UMV, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4() });
 
-        // ReplicatorLuV
-        // ReplicatorZPM
-        // ReplicatorUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -4672,9 +4597,6 @@ public class GT_Loader_Machines {
                 new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UMV, 'T', ItemList.Emitter_UMV, 'R',
                         ItemList.Sensor_UMV, 'C', OrePrefixes.circuit.get(Materials.Quantum), 'W',
                         OrePrefixes.cableGt01.get(Materials.Draconium) });
-        // ScannerLuV
-        // ScannerZPM
-        // ScannerUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -4848,9 +4770,6 @@ public class GT_Loader_Machines {
                                 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // SiftingMachineLuV
-        // SiftingMachineZPM
-        // SiftingMachineUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -5038,9 +4957,6 @@ public class GT_Loader_Machines {
                 20,
                 524200);
 
-        // SlicingMachineLuV
-        // SlicingMachineZPM
-        // SlicingMachineUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -5221,9 +5137,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'O',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
 
-        // ThermalCentrifugeLuV
-        // ThermalCentrifugeZPM
-        // ThermalCentrifugeUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -5397,9 +5310,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // WiremillLuV
-        // WiremillZPM
-        // WiremillUV
         // ===================================================================================================
 
         // ===================================================================================================
@@ -5425,13 +5335,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getPipeL(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'P', ItemList.Electric_Pump_ZPM });
 
-        // Disabled for now, as the Pump causes too much lag with the size - OK will not add any more ;]
-        /*
-         * GT_ModHandler.addCraftingRecipe(CustomItemList.PumpUV.get(1L, new Object[0]), bitsd, new Object[] { "CPC",
-         * "PMP", "BPB", 'M', ItemList.Hull_UV, 'B', AdvancedGTMaterials.UV.getPipeL(), 'C',
-         * AdvancedGTMaterials.UV.getCircuit(), 'P', ItemList.Electric_Pump_UV});
-         */
-
         // ===================================================================================================
         // ArcFurnaceLuV
         // ===================================================================================================
@@ -5444,7 +5347,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5469,7 +5372,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5494,7 +5397,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5519,7 +5422,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5544,7 +5447,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5569,7 +5472,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5594,7 +5497,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         128000,
                         0,
                         1,
@@ -5610,9 +5513,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'G',
                                 OrePrefixes.cell.get(Materials.Graphite) }).getStackForm(1L));
 
-        // ArcFurnaceLuV
-        // ArcFurnaceZPM
-        // ArcFurnaceUV
         // ===================================================================================================
         // CentrifugeLuV
         // ===================================================================================================
@@ -5785,12 +5685,8 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
 
-        // CentrifugeLuV
-        // CentrifugeZPM
-        // CentrifugeUV
-
         // ===================================================================================================
-        // PlasmaArcFurnaceLuV
+        // Plasma Arc Furnace
         // ===================================================================================================
 
         CustomItemList.PlasmaArcFurnaceLuV.set(
@@ -5802,7 +5698,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         32000,
                         0,
                         1,
@@ -5828,7 +5724,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5854,7 +5750,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5880,7 +5776,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5906,7 +5802,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5932,7 +5828,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5958,7 +5854,7 @@ public class GT_Loader_Machines {
                         "",
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
-                        4,
+                        9,
                         64000,
                         0,
                         1,
@@ -5974,10 +5870,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'T',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                                 OrePrefixes.cell.get(Materials.Graphite) }).getStackForm(1L));
-        // PlasmaArcFurnaceLuV
-        // PlasmaArcFurnaceZPM
-        // PlasmaArcFurnaceUV
-
         // ===================================================================================================
         // World Accelerator Lv-UV
         // ===================================================================================================
@@ -6753,95 +6645,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.pipeLarge.get(Materials.Polybenzimidazole), 'M', ItemList.Electric_Motor_UMV, 'C',
                         OrePrefixes.circuit.get(Materials.Piko), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() });
-
-        // ===================================================================================================
-        // Disassembler
-        // ===================================================================================================
-        CustomItemList.DisassemblerLuV.set(
-                new GT_MetaTileEntity_Disassembler(11160, "basicmachine.disassembler.tier.06", "Elite Disassembler", 6)
-                        .getStackForm(1L));
-        CustomItemList.DisassemblerZPM.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11161,
-                        "basicmachine.disassembler.tier.07",
-                        "Elite Disassembler II",
-                        7).getStackForm(1L));
-        CustomItemList.DisassemblerUV.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11162,
-                        "basicmachine.disassembler.tier.08",
-                        "Ultimate Deconstructor",
-                        8).getStackForm(1L));
-        CustomItemList.DisassemblerUHV.set(
-                new GT_MetaTileEntity_Disassembler(11163, "basicmachine.disassembler.tier.09", "Epic Deconstructor", 9)
-                        .getStackForm(1L));
-        CustomItemList.DisassemblerUEV.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11164,
-                        "basicmachine.disassembler.tier.10",
-                        "Epic Deconstructor II",
-                        10).getStackForm(1L));
-        CustomItemList.DisassemblerUIV.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11165,
-                        "basicmachine.disassembler.tier.11",
-                        "Epic Deconstructor III",
-                        11).getStackForm(1L));
-        CustomItemList.DisassemblerUMV.set(
-                new GT_MetaTileEntity_Disassembler(
-                        11166,
-                        "basicmachine.disassembler.tier.12",
-                        "Epic Deconstructor IV",
-                        12).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerLuV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_LuV, 'H', ItemList.Hull_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'W',
-                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerZPM.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_ZPM, 'H', ItemList.Hull_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Naquadah) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UV, 'H', ItemList.Hull_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.Superconductor), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUHV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UHV, 'H', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUEV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UEV, 'H', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUIV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UIV, 'H', CustomItemList.Hull_UIV, 'C',
-                        OrePrefixes.circuit.get(Materials.Optical), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.DisassemblerUMV.get(1L),
-                bitsd,
-                new Object[] { "RCR", "WHW", "RCR", 'R', ItemList.Robot_Arm_UMV, 'H', CustomItemList.Hull_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.Piko), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
 
         // ===================================================================================================
         // Fermenter
@@ -7914,6 +7717,14 @@ public class GT_Loader_Machines {
                         12,
                         "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
 
+        CustomItemList.Transformer_MAX_UXV.set(
+                new GT_MetaTileEntity_Transformer(
+                        11224,
+                        "transformer.tier.13",
+                        "Extended Mega Ultimate Transformer",
+                        13,
+                        "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
+
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Transformer_UEV_UHV.get(1L),
                 bitsd,
@@ -7941,6 +7752,13 @@ public class GT_Loader_Machines {
                 new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UMV, 'C',
                         OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'B',
                         OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_QPIC });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Transformer_MAX_UXV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UXV, 'C',
+                        OrePrefixes.wireGt01.get(Materials.Infinity), 'B',
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Circuit_Chip_QPIC });
 
         // TODO:recipes
 
@@ -8000,6 +7818,12 @@ public class GT_Loader_Machines {
                         13,
                         "",
                         16).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_4by4_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_4by4_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -8069,6 +7893,12 @@ public class GT_Loader_Machines {
                         "",
                         9).getStackForm(1L));
 
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_3by3_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
+
         CustomItemList.Battery_Buffer_3by3_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11255,
@@ -8136,6 +7966,12 @@ public class GT_Loader_Machines {
                         13,
                         "",
                         4).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_2by2_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_2by2_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -8205,6 +8041,12 @@ public class GT_Loader_Machines {
                         "",
                         1).getStackForm(1L));
 
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_1by1_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
+
         CustomItemList.Battery_Buffer_1by1_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11275,
@@ -8243,6 +8085,15 @@ public class GT_Loader_Machines {
                         "batterycharger.16.tier.12",
                         "Mega Ultimate Battery Charger",
                         12,
+                        "",
+                        4).getStackForm(1L));
+
+        CustomItemList.Battery_Charger_4by4_UXV.set(
+                new GT_MetaTileEntity_Charger(
+                        11283,
+                        "batterycharger.16.tier.13",
+                        "Extended Mega Ultimate Battery Charger",
+                        13,
                         "",
                         4).getStackForm(1L));
 
@@ -8395,7 +8246,15 @@ public class GT_Loader_Machines {
                         12,
                         "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
 
-        if (Loader.isModLoaded("miscutils")) {
+        CustomItemList.WetTransformer_MAX_UXV.set(
+                new GT_MetaTileEntity_WetTransformer(
+                        12013,
+                        "wettransformer.tier.13",
+                        "Extended Mega Ultimate Power Transformer",
+                        13,
+                        "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
+
+        if (GTPlusPlus.isModLoaded()) {
             CustomItemList.Transformer_HA_UEV_UHV.set(
                     new GregtechMetaTransformerHiAmp(
                             11989,
@@ -8424,6 +8283,13 @@ public class GT_Loader_Machines {
                             "Mega Ultimate Hi-Amp Transformer",
                             12,
                             "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
+            CustomItemList.Transformer_HA_MAX_UXV.set(
+                    new GregtechMetaTransformerHiAmp(
+                            11913,
+                            "transformer.ha.tier.13",
+                            "Extended Mega Ultimate Hi-Amp Transformer",
+                            13,
+                            "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.Transformer_HA_UEV_UHV.get(1L),
@@ -8456,13 +8322,21 @@ public class GT_Loader_Machines {
                             Character.valueOf('K'), ItemList.Casing_Fusion_Coil });
 
             GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.Transformer_HA_MAX_UXV.get(1L),
+                    bitsd,
+                    new Object[] { "KBB", "CMK", "KBB", Character.valueOf('M'), CustomItemList.Transformer_MAX_UXV,
+                            Character.valueOf('C'), OrePrefixes.wireGt04.get(Materials.Infinity),
+                            Character.valueOf('B'), OrePrefixes.wireGt04.get(Materials.BlackPlutonium),
+                            Character.valueOf('K'), ItemList.Casing_Coil_Infinity });
+
+            GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_LV_ULV.get(1L),
                     bitsd,
                     new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Lead), 'C',
                             OrePrefixes.cableGt16.get(Materials.Lead), 'S', OrePrefixes.spring.get(Materials.Tin), 'X',
                             OrePrefixes.cableGt08.get(Materials.Tin), 'O', OrePrefixes.cell.get(Materials.Lubricant),
                             'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 877) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 877) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_MV_LV.get(1L),
@@ -8471,7 +8345,7 @@ public class GT_Loader_Machines {
                             OrePrefixes.cableGt16.get(Materials.Tin), 'S', OrePrefixes.spring.get(Materials.AnyCopper),
                             'X', OrePrefixes.cableGt08.get(Materials.AnyCopper), 'O',
                             OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 878) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 878) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_HV_MV.get(1L),
@@ -8480,7 +8354,7 @@ public class GT_Loader_Machines {
                             OrePrefixes.cableGt16.get(Materials.AnyCopper), 'S', OrePrefixes.spring.get(Materials.Gold),
                             'X', OrePrefixes.cableGt08.get(Materials.Gold), 'O',
                             OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 879) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 879) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_EV_HV.get(1L),
@@ -8489,7 +8363,7 @@ public class GT_Loader_Machines {
                             OrePrefixes.cableGt16.get(Materials.Gold), 'S', OrePrefixes.spring.get(Materials.Aluminium),
                             'X', OrePrefixes.cableGt08.get(Materials.Aluminium), 'O',
                             OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 880) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 880) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_IV_EV.get(1L),
@@ -8499,7 +8373,7 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.Tungsten), 'X',
                             OrePrefixes.cableGt08.get(Materials.Tungsten), 'O',
                             OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 881) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 881) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_LuV_IV.get(1L),
@@ -8509,7 +8383,7 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.VanadiumGallium), 'X',
                             OrePrefixes.cableGt08.get(Materials.VanadiumGallium), 'O',
                             OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 882) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 882) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_ZPM_LuV.get(1L),
@@ -8519,7 +8393,7 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.Naquadah), 'X',
                             OrePrefixes.cableGt08.get(Materials.Naquadah), 'O',
                             OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 883) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_UV_ZPM.get(1L),
@@ -8529,7 +8403,7 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.NaquadahAlloy), 'X',
                             OrePrefixes.cableGt08.get(Materials.NaquadahAlloy), 'O',
                             OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 884) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 884) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_UHV_UV.get(1L),
@@ -8539,7 +8413,7 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.Neutronium), 'X',
                             OrePrefixes.wireGt08.get(Materials.Bedrockium), 'O',
                             OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 885) });
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 885) });
 
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_UEV_UHV.get(1L),
@@ -8576,6 +8450,15 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.Infinity), 'X',
                             OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1, 'P',
                             ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_HA_UXV_UMV });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_MAX_UXV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Universium), 'C',
+                            OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
+                            OrePrefixes.spring.get(Materials.SpaceTime), 'X',
+                            OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
+                            ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_HA_MAX_UXV });
         } else {
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_LV_ULV.get(1L),
@@ -8697,6 +8580,15 @@ public class GT_Loader_Machines {
                             OrePrefixes.spring.get(Materials.Infinity), 'X',
                             OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
                             ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_UXV_UMV });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_MAX_UXV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Universium), 'C',
+                            OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
+                            OrePrefixes.spring.get(Materials.SpaceTime), 'X',
+                            OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
+                            ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_MAX_UXV });
         }
 
         // ===================================================================================================
@@ -8879,25 +8771,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), // DONT COPY THIS it has superconductor:
                                                                                // cable->wire
                         'X', OrePrefixes.circuit.get(Materials.Infinite) });
-
-        // CustomItemList.Battery_TurboCharger_4by4_UEV.set(new GT_MetaTileEntity_TurboCharger(
-        // 12050, "batteryturbocharger.16.tier.10", "Extremely Ultimate Turbo Charger",10,"64A in /16A out",
-        // 4).getStackForm(1L));
-
-        // CustomItemList.Battery_TurboCharger_4by4_UIV.set(new GT_MetaTileEntity_TurboCharger(
-        // 12051, "batteryturbocharger.16.tier.11", "Insanely Ultimate Turbo Charger",11,"64A in /16A out",
-        // 4).getStackForm(1L));
-
-        // CustomItemList.Battery_TurboCharger_4by4_UMV.set(new GT_MetaTileEntity_TurboCharger(
-        // 12052, "batteryturbocharger.16.tier.12", "Mega Ultimate Turbo Charger",12,"64A in /16A out",
-        // 4).getStackForm(1L));
-
-        // CustomItemList.Battery_TurboCharger_4by4_UXV.set(new GT_MetaTileEntity_TurboCharger(
-        // 12053, "batteryturbocharger.16.tier.13", "Extended Mega Ultimate Turbo Charger",13,"64A in /16A out",
-        // 4).getStackForm(1L));
-
-        // CustomItemList.Battery_TurboCharger_4by4_MAXV.set(new GT_MetaTileEntity_TurboCharger(
-        // 12055, "batteryturbocharger.16.tier.14", "Maximum Turbo Charger",14,"64A in /16A out", 4).getStackForm(1L));
 
         // TODO add Conveyor Modules for more Tiers
         // ===================================================================================================
@@ -9157,17 +9030,7 @@ public class GT_Loader_Machines {
                         false,
                         0,
                         "CIRCUITASSEMBLER",
-                        null
-                // new Object[] {
-                // "RCE", "KHK", "WCW",
-                // 'R', ItemList.Robot_Arm_UXV,
-                // 'E', ItemList.Emitter_UXV,
-                // 'H', CustomItemList.Hull_UXV,
-                // 'K', ItemList.Conveyor_Module_UXV,
-                // 'C', GT_CustomLoader.AdvancedGTMaterials.UXV.getCircuit(),
-                // 'W', GT_CustomLoader.AdvancedGTMaterials.UXV.getCable()
-                // }
-                ).getStackForm(1L));
+                        null).getStackForm(1L));
         CustomItemList.CircuitAssemblerMAX.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         12096,
@@ -9187,17 +9050,7 @@ public class GT_Loader_Machines {
                         false,
                         0,
                         "CIRCUITASSEMBLER",
-                        null
-                // new Object[] {
-                // "RCE", "KHK", "WCW",
-                // 'R', ItemList.Robot_Arm_MAX,
-                // 'E', ItemList.Emitter_MAX,
-                // 'H', CustomItemList.Hull_MAX,
-                // 'K', ItemList.Conveyor_Module_MAX,
-                // 'C', GT_CustomLoader.AdvancedGTMaterials.MAX.getCircuit(),
-                // 'W', GT_CustomLoader.AdvancedGTMaterials.MAX.getCable()
-                // }
-                ).getStackForm(1L));
+                        null).getStackForm(1L));
 
         // ===================================================================================================
         // Input Hatches
@@ -9247,12 +9100,12 @@ public class GT_Loader_Machines {
                 CustomItemList.Hatch_Output_MAX.get(1) };
         ItemStack[][] flInputs = new ItemStack[5][3];
         ItemStack[][] flInputs2 = new ItemStack[5][3];
-        ItemStack[] tanks = { GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 132),
-                GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 133),
-                GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 134),
-                GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 120),
-                GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 121),
-                GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 1, 122), };
+        ItemStack[] tanks = { GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 132),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 133),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 134),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 120),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 121),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 122), };
         ItemStack[] hulls = { CustomItemList.Hull_UEV.get(1), CustomItemList.Hull_UIV.get(1),
                 CustomItemList.Hull_UMV.get(1), CustomItemList.Hull_UXV.get(1), CustomItemList.Hull_MAXV.get(1), };
 

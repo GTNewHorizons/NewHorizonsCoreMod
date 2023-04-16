@@ -1,10 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.BartWorks;
+
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -37,7 +38,7 @@ public class DistillationRecipes implements Runnable {
                 600,
                 1920);
 
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
             GT_Values.RA.addDistillationTowerRecipe(
                     Materials.Grade2PurifiedWater.getFluid(1000L),
                     new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(900L),

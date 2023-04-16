@@ -1,19 +1,20 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ELEMENT;
 
 public class AutoclaveRecipes implements Runnable {
 
@@ -37,7 +38,7 @@ public class AutoclaveRecipes implements Runnable {
                 480);
 
         GT_Values.RA.addAutoclaveRecipe(
-                GT_ModHandler.getModItem("EnderZoo", "enderFragment", 4L, 0),
+                GT_ModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0),
                 GT_Utility.getIntegratedCircuit(1),
                 Materials.Water.getFluid(100),
                 new ItemStack(Items.ender_pearl, 1, 0),
@@ -46,7 +47,7 @@ public class AutoclaveRecipes implements Runnable {
                 30,
                 false);
         GT_Values.RA.addAutoclaveRecipe(
-                GT_ModHandler.getModItem("EnderZoo", "enderFragment", 4L, 0),
+                GT_ModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0),
                 GT_Utility.getIntegratedCircuit(2),
                 GT_ModHandler.getDistilledWater(50L),
                 new ItemStack(Items.ender_pearl, 1, 0),
@@ -55,7 +56,7 @@ public class AutoclaveRecipes implements Runnable {
                 30,
                 false);
         GT_Values.RA.addAutoclaveRecipe(
-                GT_ModHandler.getModItem("EnderZoo", "enderFragment", 4L, 0),
+                GT_ModHandler.getModItem(EnderZoo.ID, "enderFragment", 4L, 0),
                 GT_Utility.getIntegratedCircuit(3),
                 Materials.Void.getMolten(18),
                 new ItemStack(Items.ender_pearl, 1, 0),
@@ -122,7 +123,7 @@ public class AutoclaveRecipes implements Runnable {
                 400,
                 480);
 
-        if (Loader.isModLoaded("GalacticraftMars")) {
+        if (GalacticraftMars.isModLoaded()) {
             GT_Values.RA.addAutoclaveRecipe(
                     ItemList.Circuit_Parts_RawCrystalParts.get(1L),
                     FluidRegistry.getFluidStack("bacterialsludge", 250),
@@ -131,7 +132,7 @@ public class AutoclaveRecipes implements Runnable {
                     12000,
                     480);
         }
-        if (Loader.isModLoaded("gendustry")) {
+        if (Gendustry.isModLoaded()) {
             GT_Values.RA.addAutoclaveRecipe(
                     ItemList.Circuit_Parts_RawCrystalParts.get(1L),
                     FluidRegistry.getFluidStack("mutagen", 250),
@@ -139,6 +140,13 @@ public class AutoclaveRecipes implements Runnable {
                     8000,
                     12000,
                     480);
+        }
+        if (GTPlusPlus.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(ItemList.Circuit_Silicon_Wafer6.get(1L), ELEMENT.STANDALONE.HYPOGEN.getDust(1))
+                    .itemOutputs(ItemList.Circuit_Wafer_Bioware.get(1L)).outputChances(10000)
+                    .fluidInputs(Materials.BioMediumSterilized.getFluid(8_000L)).noFluidOutputs().duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UHV).addTo(sAutoclaveRecipes);
         }
     }
 
@@ -181,12 +189,12 @@ public class AutoclaveRecipes implements Runnable {
                 960,
                 true);
 
-        if (Loader.isModLoaded("SGCraft")) {
+        if (SGCraft.isModLoaded()) {
             GT_Values.RA.addAutoclaveSpaceRecipe(
                     com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64),
                     GT_Values.NI,
                     Materials.Silver.getPlasma(8000L),
-                    GT_ModHandler.getModItem("SGCraft", "sgCoreCrystal", 1L),
+                    GT_ModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L),
                     10000,
                     3600,
                     131000,

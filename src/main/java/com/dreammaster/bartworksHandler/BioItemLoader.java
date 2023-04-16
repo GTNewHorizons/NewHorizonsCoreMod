@@ -4,6 +4,8 @@ import static com.dreammaster.bartworksHandler.BacteriaRegistry.CultureSet;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.CLEANROOM;
 import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.addBacterialVatRecipe;
 import static gregtech.api.enums.GT_Values.*;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -32,7 +34,7 @@ public class BioItemLoader {
     static {
         BIOTEMS = new SimpleSubItemClass(new String[] { "itemCollagen", "itemGelatin", "itemAgar" })
                 .setCreativeTab(MainMod.BIO_TAB);
-        GameRegistry.registerItem(BIOTEMS, "GTNHBioItems", "bartworks");
+        GameRegistry.registerItem(BIOTEMS, "GTNHBioItems", BartWorks.ID);
         BIOTEMSSTACKS = new ItemStack[] { new ItemStack(BIOTEMS, 1, 0), new ItemStack(BIOTEMS, 1, 1),
                 new ItemStack(BIOTEMS, 1, 2), };
         BIOFLUIDS = new GT_Fluid[] {
@@ -123,7 +125,7 @@ public class BioItemLoader {
                 BW_Util.getMachineVoltageFromTier(8));
         addBacterialVatRecipe(
                 new ItemStack[] { ItemList.IC2_Energium_Dust.get(8), Materials.Mytryl.getDust(1),
-                        GT_ModHandler.getModItem("harvestcraft", "seaweedItem", 64) },
+                        GT_ModHandler.getModItem(PamsHarvestCraft.ID, "seaweedItem", 64) },
                 CultureSet.get("TcetiEBac"),
                 new FluidStack[] { new FluidStack(BIOFLUIDS[2], 50) },
                 new FluidStack[] { new FluidStack(BIOFLUIDS[3], 50) },

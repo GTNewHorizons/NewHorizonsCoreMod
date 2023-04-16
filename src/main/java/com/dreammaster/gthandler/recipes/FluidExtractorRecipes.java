@@ -1,11 +1,14 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.OpenBlocks;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -26,203 +29,203 @@ public class FluidExtractorRecipes implements Runnable {
         GT_Values.RA.addFluidExtractionRecipe(
                 ItemList.GalliumArsenideCrystal.get(1L),
                 GT_Values.NI,
-                Materials.GalliumArsenide.getMolten(144L),
+                Materials.GalliumArsenide.getMolten(288L),
                 10000,
-                24,
+                48,
                 37);
 
-        if (Loader.isModLoaded("harvestcraft")) {
+        if (PamsHarvestCraft.isModLoaded()) {
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "catfishrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "catfishrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "crayfishrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "crayfishrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "jellyfishrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "jellyfishrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "mudfishrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "mudfishrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "greenheartfishItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "greenheartfishItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "catfishrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "catfishrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "anchovyrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "anchovyrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "bassrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "bassrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "carprawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "carprawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "octopusrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "octopusrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "charrrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "charrrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "clamrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "clamrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "crabrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "crabrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "crayfishrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "crayfishrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "eelrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "eelrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "frograwItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "frograwItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "grouperrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "grouperrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "herringrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "herringrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "perchrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "perchrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "scalloprawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "scalloprawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "shrimprawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "shrimprawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "snailrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "snailrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "snapperrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "snapperrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "tilapiarawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "tilapiarawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "troutrawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "troutrawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "tunarawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "tunarawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "turtlerawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "turtlerawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
                     16,
                     4);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("harvestcraft", "walleyerawItem", 1, 0),
+                    GT_ModHandler.getModItem(PamsHarvestCraft.ID, "walleyerawItem", 1, 0),
                     GT_Values.NI,
                     Materials.FishOil.getFluid(50L),
                     10000,
@@ -230,9 +233,9 @@ public class FluidExtractorRecipes implements Runnable {
                     4);
         }
 
-        if (Loader.isModLoaded("OpenBlocks") && Loader.isModLoaded("TConstruct")) {
+        if (OpenBlocks.isModLoaded() && TinkerConstruct.isModLoaded()) {
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "oreBerries", 1L, 5),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 1L, 5),
                     GT_Values.NI,
                     new FluidStack(FluidRegistry.getFluid("xpjuice"), 250),
                     10000,
@@ -240,9 +243,9 @@ public class FluidExtractorRecipes implements Runnable {
                     16);
         }
 
-        if (Loader.isModLoaded("TConstruct")) {
+        if (TinkerConstruct.isModLoaded()) {
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "materials", 1L, 14),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 14),
                     GT_Values.NI,
                     FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
                     10000,
@@ -257,7 +260,7 @@ public class FluidExtractorRecipes implements Runnable {
                     100,
                     30);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "MetalBlock", 1L, 10),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 10),
                     GT_Values.NI,
                     new FluidStack(FluidRegistry.getFluid("ender"), 2250),
                     10000,
@@ -272,21 +275,21 @@ public class FluidExtractorRecipes implements Runnable {
                     100,
                     16);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 0),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0),
                     GT_Values.NI,
                     new FluidStack(FluidRegistry.getFluid("glue"), 144),
                     10000,
                     100,
                     16);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "strangeFood", 1L, 1),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 1),
                     GT_Values.NI,
                     new FluidStack(FluidRegistry.getFluid("glue"), 144),
                     10000,
                     100,
                     16);
             GT_Values.RA.addFluidExtractionRecipe(
-                    GT_ModHandler.getModItem("TConstruct", "materials", 1L, 36),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 36),
                     GT_Values.NI,
                     new FluidStack(FluidRegistry.getFluid("glue"), 144),
                     10000,

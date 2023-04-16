@@ -74,8 +74,6 @@ public class SkullFireSwordDropFix extends ModFixBase {
                 break;
             }
         }
-        // MainRegistry.Logger.info( String.format( "SkullFireSwordDropFix::isValidSkeletonEntity > %b [%s]", tValue,
-        // pEntity.getClass().getCanonicalName() ) );
         return tValue;
     }
 
@@ -92,12 +90,6 @@ public class SkullFireSwordDropFix extends ModFixBase {
         event.entityLiving.worldObj.spawnEntityInWorld(entityitem);
     }
 
-    /*
-     * private void addDrop( LivingDropsEvent event, ItemStack drop ) { EntityItem entityitem = new EntityItem(
-     * event.entityLiving.worldObj, event.entityLiving.posX, event.entityLiving.posY, event.entityLiving.posZ, drop );
-     * entityitem.delayBeforeCanPickup = 10; event.drops.add( entityitem ); }
-     */
-
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onLivingDrops(LivingDropsEvent event) {
         try {
@@ -105,12 +97,10 @@ public class SkullFireSwordDropFix extends ModFixBase {
                 return;
             }
 
-            // MainRegistry.Logger.info( "SkullFireSwordDropFix::onLivingDrops" );
             if (event.recentlyHit && isValidSkeletonEntity(event.entityLiving)
                     && event.source.getEntity() instanceof EntityPlayer) {
                 EntityPlayer player = (EntityPlayer) event.source.getEntity();
                 if (player.getHeldItem() != null && player.getHeldItem().getItem() == mSkullFireSword.getItem()) {
-                    // MainRegistry.Logger.info( "SkullFireSwordDropFix::Perform DropAction" );
 
                     if (event.drops.isEmpty()) {
                         dropWitherHeadsInWorld(event, new ItemStack(Items.skull, 1, 1));

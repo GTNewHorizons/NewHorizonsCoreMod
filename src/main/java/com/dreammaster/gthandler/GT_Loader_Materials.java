@@ -1,5 +1,7 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
@@ -12,26 +14,8 @@ public class GT_Loader_Materials {
     }
 
     private void registerMaterialRecipes() {
-        /*
-         * GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NaquadahAlloy,
-         * 2L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] { OrePrefixes.dust.get(Materials.Naquadah),
-         * OrePrefixes.dust.get(Materials.Naquadah), OrePrefixes.dust.get(Materials.Carbon),
-         * OrePrefixes.dust.get(Materials.Trinium)});
-         * GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.ElectrumFlux,
-         * 4L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] { OrePrefixes.dust.get(Materials.RoseGold),
-         * OrePrefixes.dust.get(Materials.InfusedGold), OrePrefixes.dust.get(Materials.AstralSilver),
-         * OrePrefixes.dust.get(Materials.SterlingSilver), OrePrefixes.dust.get(Materials.SolderingAlloy),
-         * OrePrefixes.dust.get(Materials.RedSteel), OrePrefixes.dust.get(Materials.BlueSteel),
-         * OrePrefixes.dust.get(Materials.NaquadahAlloy)});
-         * GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Duralumin, 8L),
-         * GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[] { OrePrefixes.dust.get(Materials.Aluminium),
-         * OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
-         * OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
-         * OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.AnyCopper),
-         * OrePrefixes.dust.get(Materials.Manganese), OrePrefixes.dust.get(Materials.Magnesium)});
-         */
         GT_ModHandler.addShapelessCraftingRecipe(
-                GT_ModHandler.getModItem("dreamcraft", "item.AlumiteDust", 8L),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.AlumiteDust", 8L),
                 GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
                         OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),

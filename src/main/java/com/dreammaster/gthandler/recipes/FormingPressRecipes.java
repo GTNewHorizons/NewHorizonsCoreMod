@@ -1,11 +1,18 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.BuildCraftSilicon;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.ProjectRedCore;
+import static gregtech.api.enums.Mods.Thaumcraft;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -220,26 +227,26 @@ public class FormingPressRecipes implements Runnable {
                 256);
         GT_Values.RA.addFormingPressRecipe(
                 ItemList.Shape_Empty.get(1L),
-                GT_ModHandler.getModItem("dreamcraft", "item.MoldHelmet", 0, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.MoldHelmet", 1, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 0, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0),
                 200,
                 256);
         GT_Values.RA.addFormingPressRecipe(
                 ItemList.Shape_Empty.get(1L),
-                GT_ModHandler.getModItem("dreamcraft", "item.MoldChestplate", 0, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.MoldChestplate", 1, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 0, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0),
                 200,
                 256);
         GT_Values.RA.addFormingPressRecipe(
                 ItemList.Shape_Empty.get(1L),
-                GT_ModHandler.getModItem("dreamcraft", "item.MoldLeggings", 0, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.MoldLeggings", 1, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0),
                 200,
                 256);
         GT_Values.RA.addFormingPressRecipe(
                 ItemList.Shape_Empty.get(1L),
-                GT_ModHandler.getModItem("dreamcraft", "item.MoldBoots", 0, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.MoldBoots", 1, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 0, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0),
                 200,
                 256);
 
@@ -407,8 +414,8 @@ public class FormingPressRecipes implements Runnable {
                 256);
         GT_Values.RA.addFormingPressRecipe(
                 ItemList.Shape_Empty.get(1L),
-                GT_ModHandler.getModItem("dreamcraft", "item.ExtruderShapeBoat", 0, 0),
-                GT_ModHandler.getModItem("dreamcraft", "item.ExtruderShapeBoat", 1, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0),
+                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 1, 0),
                 200,
                 256);
 
@@ -431,44 +438,44 @@ public class FormingPressRecipes implements Runnable {
                 100,
                 30);
 
-        if (Loader.isModLoaded("BloodArsenal")) {
+        if (BloodArsenal.isModLoaded()) {
             GT_Values.RA.addFormingPressRecipe(
-                    GT_ModHandler.getModItem("BloodArsenal", "glass_shard", 2L, 0),
+                    GT_ModHandler.getModItem(BloodArsenal.ID, "glass_shard", 2L, 0),
                     ItemList.Shape_Mold_Block.get(0L),
                     new ItemStack(Blocks.glass, 1, 0),
                     100,
                     30);
         }
 
-        if (Loader.isModLoaded("BuildCraft|Silicon")) {
+        if (BuildCraftSilicon.isModLoaded()) {
             GT_Values.RA.addFormingPressRecipe(
                     ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
-                    GT_ModHandler.getModItem("BuildCraft|Silicon", "redstoneChipset", 1L, 4),
+                    GT_ModHandler.getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1L, 4),
                     CustomItemList.EssentiaCircuit.get(1L),
                     300,
                     480);
         }
-        if (Loader.isModLoaded("ProjRed|Core")) {
+        if (ProjectRedCore.isModLoaded()) {
             GT_Values.RA.addFormingPressRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 2L),
                     CustomItemList.EtchedLowVoltageWiring.get(1L),
-                    GT_ModHandler.getModItem("ProjRed|Core", "projectred.core.part", 1L, 0),
+                    GT_ModHandler.getModItem(ProjectRedCore.ID, "projectred.core.part", 1L, 0),
                     100,
                     16);
         }
 
-        if (Loader.isModLoaded("Thaumcraft")) {
+        if (Thaumcraft.isModLoaded()) {
             GT_Values.RA.addForgeHammerRecipe(
-                    GT_ModHandler.getModItem("Thaumcraft", "ItemEldritchObject", 1L, 3),
+                    GT_ModHandler.getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3),
                     CustomItemList.PrimordialPearlFragment.get(3L),
                     16,
                     7680);
         }
-        if (Loader.isModLoaded("bartworks")) {
+        if (BartWorks.isModLoaded()) {
             // Optical CPU Containment Housing
             GT_Values.RA.addFormingPressRecipe(
                     new ItemStack[] { ItemList.Circuit_Board_Optical.get(1L),
-                            GT_ModHandler.getModItem("miscutils", "itemFoilBotmium", 1L),
+                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilBotmium", 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),
