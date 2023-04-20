@@ -92,8 +92,9 @@ public class GT_Loader_Machines {
                 CustomItemList.Hull_UMV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UMV, 'W',
-                        OrePrefixes.wireGt12.get(Materials.Quantium), 'H', OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime),
-                        'P', OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
+                        OrePrefixes.wireGt12.get(Materials.Quantium), 'H',
+                        OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime), 'P',
+                        OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
 
         CustomItemList.Hull_UXV.set(
                 new GT_MetaTileEntity_BasicHull(
@@ -8445,8 +8446,8 @@ public class GT_Loader_Machines {
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_UXV_UMV.get(1L),
                     bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime), 'C',
-                            OrePrefixes.wireGt16.get(Materials.Quantium), 'S',
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime),
+                            'C', OrePrefixes.wireGt16.get(Materials.Quantium), 'S',
                             OrePrefixes.spring.get(Materials.Infinity), 'X',
                             OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1, 'P',
                             ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_HA_UXV_UMV });
@@ -8454,8 +8455,8 @@ public class GT_Loader_Machines {
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_MAX_UXV.get(1L),
                     bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium),
+                            'C', OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
                             OrePrefixes.spring.get(MaterialsUEVplus.SpaceTime), 'X',
                             OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
                             ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_HA_MAX_UXV });
@@ -8575,8 +8576,8 @@ public class GT_Loader_Machines {
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_UXV_UMV.get(1L),
                     bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime), 'C',
-                            OrePrefixes.wireGt16.get(Materials.Quantium), 'S',
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime),
+                            'C', OrePrefixes.wireGt16.get(Materials.Quantium), 'S',
                             OrePrefixes.spring.get(Materials.Infinity), 'X',
                             OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
                             ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_UXV_UMV });
@@ -8584,8 +8585,8 @@ public class GT_Loader_Machines {
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.WetTransformer_MAX_UXV.get(1L),
                     bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium),
+                            'C', OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
                             OrePrefixes.spring.get(MaterialsUEVplus.SpaceTime), 'X',
                             OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
                             ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_MAX_UXV });

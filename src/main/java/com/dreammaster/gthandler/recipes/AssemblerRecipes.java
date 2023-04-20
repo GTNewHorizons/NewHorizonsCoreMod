@@ -1675,9 +1675,8 @@ public class AssemblerRecipes implements Runnable {
                 16);
         if (GoodGenerator.isModLoaded()) {
             GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] {
-                            GT_OreDictUnificator
-                                    .get(OrePrefixes.plate, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
+                    new ItemStack[] { GT_OreDictUnificator
+                            .get(OrePrefixes.plate, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
                             GT_OreDictUnificator.get("plateShirabon", 4), GT_Utility.getIntegratedCircuit(8) },
                     null,
                     CustomItemList.Casing_UXV.get(1L),
@@ -5273,17 +5272,15 @@ public class AssemblerRecipes implements Runnable {
         }
 
         if (GalaxySpace.isModLoaded()) {
-            GT_Values.RA
-                    .addAssemblerRecipe(
-                            new ItemStack[] {
-                                    GT_OreDictUnificator
-                                            .get(OrePrefixes.wireGt01, Materials.SuperconductorUIVBase, 30L),
-                                    GT_OreDictUnificator.get(OrePrefixes.pipeTiny, MaterialsUEVplus.TranscendentMetal, 20L),
-                                    ItemList.Electric_Pump_UIV.get(1L), GT_Utility.getIntegratedCircuit(9) },
-                            new FluidStack(FluidRegistry.getFluid("liquid helium"), 34000),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 30L),
-                            3200,
-                            31457280);
+            GT_Values.RA.addAssemblerRecipe(
+                    new ItemStack[] {
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIVBase, 30L),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeTiny, MaterialsUEVplus.TranscendentMetal, 20L),
+                            ItemList.Electric_Pump_UIV.get(1L), GT_Utility.getIntegratedCircuit(9) },
+                    new FluidStack(FluidRegistry.getFluid("liquid helium"), 34000),
+                    GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 30L),
+                    3200,
+                    31457280);
 
             GT_Values.RA.addAssemblerRecipe(
                     GT_ModHandler.getModItem(GalaxySpace.ID, "item.CompressedPlates", 1L, 7),

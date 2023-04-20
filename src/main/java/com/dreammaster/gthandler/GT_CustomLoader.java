@@ -2,7 +2,6 @@ package com.dreammaster.gthandler;
 
 import static gregtech.api.enums.Mods.*;
 
-import gregtech.api.enums.MaterialsUEVplus;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -12,6 +11,7 @@ import com.dreammaster.modfixes.enderIO.FrankenskullFix;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 
 /**
