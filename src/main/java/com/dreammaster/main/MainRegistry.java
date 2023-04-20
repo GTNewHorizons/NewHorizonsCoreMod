@@ -50,6 +50,8 @@ import com.dreammaster.network.CoreModDispatcher;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.dreammaster.scripts.ScriptLoader;
+import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
@@ -345,6 +347,8 @@ public class MainRegistry {
         if (BartWorks.isModLoaded()) {
             BWGlassAdder.registerGlasses();
         }
+
+        if (Thaumcraft.isModLoaded()) TCLoader.run();
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -455,6 +459,7 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void CompleteLoad(FMLLoadCompleteEvent event) {
+        ScriptLoader.run();
         if (BartWorks.isModLoaded()) {
             BW_RadHatchMaterial.runRadHatchAdder();
         }

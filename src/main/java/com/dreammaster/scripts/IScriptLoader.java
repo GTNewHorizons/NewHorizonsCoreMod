@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.getModItem;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,6 +10,8 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.JsonToNBT;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.main.MainRegistry;
@@ -145,13 +149,25 @@ public interface IScriptLoader {
     }
 
     /**
-     * Helper function to get the GT_MetaGenerated_Item_02 item based on its meta.
+     * Helper function to get the GT_MetaGenerated_Item_01 item based on its meta.
      * 
      * @param meta the meta id of the item to look at.
      * @return an itemstack with a stacksize of 1 corresponding to the item looked for.
      */
     default ItemStack getMeta01(int meta) {
         return new ItemStack(GT_MetaGenerated_Item_01.INSTANCE, 1, meta);
+    }
+
+    default ItemStack createItemStack(String aModID, String aItem, long aAmount, int aMeta, String aNBTString,
+            ItemStack aReplacement) {
+        ItemStack s = getModItem(aModID, aItem, aAmount, aMeta);
+        if (s == null) return aReplacement;
+        try {
+            s.stackTagCompound = (NBTTagCompound) JsonToNBT.func_150315_a(aNBTString);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return s;
     }
 
     /**
