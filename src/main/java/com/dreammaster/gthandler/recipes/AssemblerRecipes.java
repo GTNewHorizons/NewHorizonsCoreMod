@@ -1668,7 +1668,7 @@ public class AssemblerRecipes implements Runnable {
                 50,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 8L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 8L),
                 GT_Utility.getIntegratedCircuit(8),
                 CustomItemList.Casing_UMV.get(1L),
                 50,
@@ -1677,7 +1677,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] {
                             GT_OreDictUnificator
-                                    .get(OrePrefixes.plate, Materials.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
+                                    .get(OrePrefixes.plate, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
                             GT_OreDictUnificator.get("plateShirabon", 4), GT_Utility.getIntegratedCircuit(8) },
                     null,
                     CustomItemList.Casing_UXV.get(1L),
@@ -3501,7 +3501,7 @@ public class AssemblerRecipes implements Runnable {
             // Humongous input hatch
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { CustomItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1) },
-                    Materials.Space.getMolten(5_760L),
+                    MaterialsUEVplus.Space.getMolten(5_760L),
                     ItemRegistry.humongousInputHatch.copy(),
                     50 * 20,
                     (int) TierEU.RECIPE_UMV,
@@ -5278,7 +5278,7 @@ public class AssemblerRecipes implements Runnable {
                             new ItemStack[] {
                                     GT_OreDictUnificator
                                             .get(OrePrefixes.wireGt01, Materials.SuperconductorUIVBase, 30L),
-                                    GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.TranscendentMetal, 20L),
+                                    GT_OreDictUnificator.get(OrePrefixes.pipeTiny, MaterialsUEVplus.TranscendentMetal, 20L),
                                     ItemList.Electric_Pump_UIV.get(1L), GT_Utility.getIntegratedCircuit(9) },
                             new FluidStack(FluidRegistry.getFluid("liquid helium"), 34000),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 30L),
@@ -7517,7 +7517,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Dilithium, 64L),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Pumice, 64L),
                             CI.getNumberedAdvancedCircuit(12) },
-                    Materials.SpaceTime.getMolten(10000L),
+                    MaterialsUEVplus.SpaceTime.getMolten(10000L),
                     GT_ModHandler.getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1L, 0),
                     300,
                     125829120);
@@ -7532,7 +7532,7 @@ public class AssemblerRecipes implements Runnable {
                     .addAssemblerRecipe(
                             new ItemStack[] {
                                     GT_OreDictUnificator
-                                            .get(OrePrefixes.pipeQuadruple, Materials.TranscendentMetal, 1L),
+                                            .get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.TranscendentMetal, 1L),
                                     CustomItemList.Hull_UIV.get(1L), GT_Utility.getIntegratedCircuit(4) },
                             Materials.Polybenzimidazole.getMolten(2304L),
                             ItemList.Hatch_Input_Multi_2x2_UIV.get(1L),
