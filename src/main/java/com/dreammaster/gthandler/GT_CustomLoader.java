@@ -2,6 +2,7 @@ package com.dreammaster.gthandler;
 
 import static gregtech.api.enums.Mods.*;
 
+import gregtech.api.enums.MaterialsUEVplus;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -50,7 +51,7 @@ public class GT_CustomLoader {
                 Materials.CosmicNeutronium),
         UMV(OrePrefixes.circuit.get(Materials.Piko), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
                 Materials.Quantium, null, null, BartWorks.isModLoaded() ? "blockGlassUMV" : "glassReinforced",
-                Materials.TranscendentMetal, Materials.Infinity);
+                MaterialsUEVplus.TranscendentMetal, Materials.Infinity);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;
