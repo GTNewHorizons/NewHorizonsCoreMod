@@ -17,6 +17,7 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
 
+import gregtech.api.enums.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -26,10 +27,6 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
@@ -758,7 +755,7 @@ public class MixerRecipes implements Runnable {
         // UIV Superconductor dust recipe.
         GT_Values.RA.addMixerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, GT_CoreModSupport.RadoxPolymer, 4L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.TranscendentMetal, 10L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.TranscendentMetal, 10L),
                 GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustRhugnor", 6L),
                 GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustChromaticGlass", 5L),
                 GT_Utility.getIntegratedCircuit(2),
@@ -1316,7 +1313,7 @@ public class MixerRecipes implements Runnable {
         if (BartWorks.isModLoaded()) {
             // UMV Superconductor dust recipe.
             GT_Values.RA.addMixerRecipe(
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SpaceTime, 6L),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.SpaceTime, 6L),
                     GT_OreDictUnificator.get(OrePrefixes.dust, getBartWorksMaterialByIGNName("Orundum"), 3L),
                     GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustHypogen", 11L),
                     GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustTitansteel", 5L),
