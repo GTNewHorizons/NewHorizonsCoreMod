@@ -27,7 +27,17 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.ThaumicTinkerer.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.ThaumicTinkerer.ID,
+                Mods.Thaumcraft.ID,
+                Mods.Forestry.ID,
+                Mods.PamsHarvestCraft.ID,
+                Mods.ElectroMagicTools.ID,
+                Mods.ForbiddenMagic.ID,
+                Mods.IndustrialCraft2.ID,
+                Mods.StevesCarts2.ID,
+                Mods.ExtraUtilities.ID,
+                Mods.EnderStorage.ID);
     }
 
     @Override
