@@ -27,7 +27,12 @@ public class ScriptThaumicExploration implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList("ThaumicExploration", Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                "ThaumicExploration",
+                Mods.Thaumcraft.ID,
+                Mods.ExtraUtilities.ID,
+                Mods.BiomesOPlenty.ID,
+                Mods.PamsHarvestCraft.ID);
     }
 
     @Override
