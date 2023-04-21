@@ -27,7 +27,15 @@ public class ScriptEMT implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.ElectroMagicTools.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.ElectroMagicTools.ID,
+                Mods.Thaumcraft.ID,
+                Mods.IndustrialCraft2.ID,
+                "ProjRed|Integration",
+                Mods.AdvancedSolarPanel.ID,
+                Mods.GalacticraftCore.ID,
+                Mods.Avaritia.ID,
+                Mods.ThaumicEnergistics.ID);
     }
 
     @Override
