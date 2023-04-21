@@ -26,7 +26,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Thaumcraft.ID);
+        return Arrays.asList(Mods.Thaumcraft.ID, Mods.MagicBees.ID);
     }
 
     @Override
