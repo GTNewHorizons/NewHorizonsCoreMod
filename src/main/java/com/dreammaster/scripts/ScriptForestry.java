@@ -26,7 +26,7 @@ public class ScriptForestry implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Forestry.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(Mods.Forestry.ID, Mods.Thaumcraft.ID, Mods.MagicBees.ID);
     }
 
     @Override
