@@ -24,7 +24,12 @@ public class ScriptAvaritia implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Avaritia.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.Avaritia.ID,
+                Mods.Thaumcraft.ID,
+                Mods.ThaumicBases.ID,
+                Mods.Gadomancy.ID,
+                Mods.TaintedMagic.ID);
     }
 
     @Override
