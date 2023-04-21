@@ -28,7 +28,12 @@ public class ScriptWitchery implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Witchery.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.Witchery.ID,
+                Mods.Thaumcraft.ID,
+                Mods.IndustrialCraft2.ID,
+                Mods.BloodArsenal.ID,
+                Mods.TinkerConstruct.ID);
     }
 
     @Override
