@@ -48,7 +48,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 Mods.GalacticraftCore.ID,
                 Mods.ForbiddenMagic.ID,
                 Mods.GalacticraftMars.ID,
-                Mods.MalisisDoors.ID);
+                Mods.MalisisDoors.ID,
+                Mods.ExtraUtilities.ID);
     }
 
     @Override

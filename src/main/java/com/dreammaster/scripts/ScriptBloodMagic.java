@@ -28,7 +28,27 @@ public class ScriptBloodMagic implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.BloodMagic.ID, Mods.BloodArsenal.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.BloodMagic.ID,
+                Mods.BloodArsenal.ID,
+                Mods.Thaumcraft.ID,
+                Mods.Witchery.ID,
+                Mods.ExtraUtilities.ID,
+                Mods.EnderIO.ID,
+                Mods.TinkerConstruct.ID,
+                Mods.MineAndBladeBattleGear2.ID,
+                Mods.Railcraft.ID,
+                Mods.IndustrialCraft2.ID,
+                Mods.BuildCraftFactory.ID,
+                Mods.IronChests.ID,
+                Mods.ThaumicTinkerer.ID,
+                Mods.IronTanks.ID,
+                Mods.ElectroMagicTools.ID,
+                Mods.StevesCarts2.ID,
+                Mods.EnderStorage.ID,
+                Mods.DraconicEvolution.ID,
+                Mods.Avaritia.ID,
+                Mods.ForbiddenMagic.ID);
     }
 
     @Override
