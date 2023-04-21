@@ -21,6 +21,7 @@ import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategoryList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import gregtech.api.util.GT_Utility;
 
 public class TCHelper {
 
@@ -28,7 +29,7 @@ public class TCHelper {
         for (Object craft : CraftingManager.getInstance().getRecipeList()) {
             if (craft instanceof IRecipe) {
                 if (((IRecipe) craft).getRecipeOutput() != null
-                        && ((IRecipe) craft).getRecipeOutput().isItemEqual(stack))
+                        && GT_Utility.areStacksEqual(((IRecipe) craft).getRecipeOutput(), stack))
                     return (IRecipe) craft;
             }
         }
@@ -39,7 +40,7 @@ public class TCHelper {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof IArcaneRecipe) {
                 if (((IArcaneRecipe) craft).getRecipeOutput() != null
-                        && ((IArcaneRecipe) craft).getRecipeOutput().isItemEqual(stack))
+                        && GT_Utility.areStacksEqual(((IArcaneRecipe) craft).getRecipeOutput(), stack))
                     return (IArcaneRecipe) craft;
             }
         }
@@ -50,7 +51,7 @@ public class TCHelper {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof CrucibleRecipe) {
                 if (((CrucibleRecipe) craft).getRecipeOutput() != null
-                        && ((CrucibleRecipe) craft).getRecipeOutput().isItemEqual(stack))
+                        && GT_Utility.areStacksEqual(((CrucibleRecipe) craft).getRecipeOutput(), stack))
                     return (CrucibleRecipe) craft;
             }
         }
@@ -61,7 +62,7 @@ public class TCHelper {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof InfusionRecipe) {
                 if (((InfusionRecipe) craft).getRecipeOutput() instanceof ItemStack
-                        && ((ItemStack) ((InfusionRecipe) craft).getRecipeOutput()).isItemEqual(stack))
+                        && GT_Utility.areStacksEqual(((ItemStack) ((InfusionRecipe) craft).getRecipeOutput()), stack))
                     return (InfusionRecipe) craft;
             }
         }
@@ -135,8 +136,8 @@ public class TCHelper {
                     for (Object craft : CraftingManager.getInstance().getRecipeList()) {
                         if (craft instanceof IRecipe) {
                             IRecipe theCraft = (IRecipe) craft;
-                            if (theCraft.getRecipeOutput() != null
-                                    && theCraft.getRecipeOutput().isItemEqual(recipe.getRecipeOutput())) {
+                            if (theCraft.getRecipeOutput() != null && GT_Utility
+                                    .areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
                                 pages[x] = new ResearchPage(theCraft);
                                 break;
                             }
@@ -147,8 +148,8 @@ public class TCHelper {
                     for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
                         if (craft instanceof IArcaneRecipe) {
                             IArcaneRecipe theCraft = (IArcaneRecipe) craft;
-                            if (theCraft.getRecipeOutput() != null
-                                    && theCraft.getRecipeOutput().isItemEqual(recipe.getRecipeOutput())) {
+                            if (theCraft.getRecipeOutput() != null && GT_Utility
+                                    .areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
                                 pages[x] = new ResearchPage(theCraft);
                                 break;
                             }
@@ -159,8 +160,8 @@ public class TCHelper {
                     for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
                         if (craft instanceof CrucibleRecipe) {
                             CrucibleRecipe theCraft = (CrucibleRecipe) craft;
-                            if (theCraft.getRecipeOutput() != null
-                                    && theCraft.getRecipeOutput().isItemEqual(recipe.getRecipeOutput())) {
+                            if (theCraft.getRecipeOutput() != null && GT_Utility
+                                    .areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
                                 pages[x] = new ResearchPage(theCraft);
                                 break;
                             }
@@ -172,9 +173,9 @@ public class TCHelper {
                         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
                             if (craft instanceof InfusionRecipe) {
                                 InfusionRecipe theCraft = (InfusionRecipe) craft;
-                                if (theCraft.getRecipeOutput() instanceof ItemStack
-                                        && ((ItemStack) theCraft.getRecipeOutput())
-                                                .isItemEqual((ItemStack) recipe.getRecipeOutput())) {
+                                if (theCraft.getRecipeOutput() instanceof ItemStack && GT_Utility.areStacksEqual(
+                                        ((ItemStack) theCraft.getRecipeOutput()),
+                                        (ItemStack) recipe.getRecipeOutput())) {
                                     pages[x] = new ResearchPage(theCraft);
                                     break;
                                 }
@@ -244,7 +245,7 @@ public class TCHelper {
     public static void removeArcaneRecipe(final ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof IArcaneRecipe) return ((IArcaneRecipe) recipe).getRecipeOutput() != null
-                    && ((IArcaneRecipe) recipe).getRecipeOutput().isItemEqual(output);
+                    && GT_Utility.areStacksEqual(((IArcaneRecipe) recipe).getRecipeOutput(), output);
             return false;
         });
     }
@@ -252,7 +253,7 @@ public class TCHelper {
     public static void removeCrucibleRecipe(final ItemStack output) {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof CrucibleRecipe) return ((CrucibleRecipe) recipe).getRecipeOutput() != null
-                    && ((CrucibleRecipe) recipe).getRecipeOutput().isItemEqual(output);
+                    && GT_Utility.areStacksEqual(((CrucibleRecipe) recipe).getRecipeOutput(), output);
             return false;
         });
     }
@@ -261,7 +262,7 @@ public class TCHelper {
         ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof InfusionRecipe)
                 return ((InfusionRecipe) recipe).getRecipeOutput() instanceof ItemStack
-                        && ((ItemStack) ((InfusionRecipe) recipe).getRecipeOutput()).isItemEqual(output);
+                        && GT_Utility.areStacksEqual(((ItemStack) ((InfusionRecipe) recipe).getRecipeOutput()), output);
             return false;
         });
     }
