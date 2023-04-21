@@ -26,7 +26,12 @@ public class ScriptExtraBees implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.ExtraBees.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.ExtraBees.ID,
+                Mods.Thaumcraft.ID,
+                Mods.MagicBees.ID,
+                Mods.Forestry.ID,
+                Mods.PamsHarvestCraft.ID);
     }
 
     @Override
