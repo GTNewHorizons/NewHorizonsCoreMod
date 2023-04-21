@@ -26,7 +26,7 @@ public class ScriptRunicTablet implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Thaumcraft.ID);
+        return Arrays.asList(Mods.Thaumcraft.ID, Mods.DraconicEvolution.ID, "ThaumicExploration", "Automagy");
     }
 
     @Override
