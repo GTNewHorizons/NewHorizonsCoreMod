@@ -11,6 +11,7 @@ import com.dreammaster.modfixes.enderIO.FrankenskullFix;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 
 /**
@@ -50,7 +51,7 @@ public class GT_CustomLoader {
                 Materials.CosmicNeutronium),
         UMV(OrePrefixes.circuit.get(Materials.Piko), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
                 Materials.Quantium, null, null, BartWorks.isModLoaded() ? "blockGlassUMV" : "glassReinforced",
-                Materials.TranscendentMetal, Materials.Infinity);
+                MaterialsUEVplus.TranscendentMetal, Materials.Infinity);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;

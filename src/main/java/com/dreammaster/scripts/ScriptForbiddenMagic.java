@@ -27,7 +27,20 @@ public class ScriptForbiddenMagic implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.ForbiddenMagic.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.ForbiddenMagic.ID,
+                Mods.Thaumcraft.ID,
+                Mods.Witchery.ID,
+                Mods.BiomesOPlenty.ID,
+                Mods.Botania.ID,
+                Mods.Backpack.ID,
+                Mods.BloodMagic.ID,
+                Mods.ThaumicTinkerer.ID,
+                Mods.AppliedEnergistics2.ID,
+                Mods.EnderIO.ID,
+                Mods.IndustrialCraft2.ID,
+                Mods.TinkerConstruct.ID,
+                Mods.BloodArsenal.ID);
     }
 
     @Override

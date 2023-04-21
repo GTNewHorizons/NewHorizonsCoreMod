@@ -26,7 +26,14 @@ public class ScriptWarpTheory implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.WarpTheory.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.WarpTheory.ID,
+                Mods.Thaumcraft.ID,
+                Mods.BiomesOPlenty.ID,
+                Mods.ThaumicBases.ID,
+                Mods.BloodMagic.ID,
+                Mods.Witchery.ID,
+                Mods.AppliedEnergistics2.ID);
     }
 
     @Override

@@ -54,13 +54,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Casing_UMV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.SpaceTime) });
+                new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime) });
         if (GoodGenerator.isModLoaded()) {
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.Casing_UXV.get(1L),
                     GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { "PSP", "SwS", "PSP", 'P',
-                            OrePrefixes.plate.get(Materials.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
+                            OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
                             GT_OreDictUnificator.get("plateShirabon", 1) });
         }
         // Mine and Blade Battlegear remove recipes NBT?
@@ -664,11 +664,11 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             machinehull = CustomItemList.Hull_UMV.get(1L);
                             break;
                         case 13: // UXV
-                            hull = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TranscendentMetal, 1L);
+                            hull = GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.TranscendentMetal, 1L);
                             machinehull = CustomItemList.Hull_UXV.get(1L);
                             break;
                         default: // MAX
-                            hull = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SpaceTime, 1L);
+                            hull = GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 1L);
                             machinehull = CustomItemList.Hull_MAXV.get(1L);
                             break;
                     }

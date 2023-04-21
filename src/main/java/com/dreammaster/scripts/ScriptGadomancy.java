@@ -25,7 +25,7 @@ public class ScriptGadomancy implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Gadomancy.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(Mods.Gadomancy.ID, Mods.Thaumcraft.ID, Mods.ThaumicTinkerer.ID);
     }
 
     @Override

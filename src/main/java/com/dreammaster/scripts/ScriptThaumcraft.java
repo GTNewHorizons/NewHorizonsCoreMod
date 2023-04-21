@@ -29,7 +29,27 @@ public class ScriptThaumcraft implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.Thaumcraft.ID,
+                Mods.ThaumicBases.ID,
+                Mods.TinkerConstruct.ID,
+                Mods.RandomThings.ID,
+                Mods.BiomesOPlenty.ID,
+                Mods.PamsHarvestCraft.ID,
+                "ProjRed|Integration",
+                Mods.Railcraft.ID,
+                Mods.Backpack.ID,
+                Mods.TwilightForest.ID,
+                Mods.Natura.ID,
+                Mods.BuildCraftFactory.ID,
+                Mods.IguanaTweaksTinkerConstruct.ID,
+                Mods.Forestry.ID,
+                Mods.IndustrialCraft2.ID,
+                Mods.GalacticraftCore.ID,
+                Mods.ForbiddenMagic.ID,
+                Mods.GalacticraftMars.ID,
+                Mods.MalisisDoors.ID,
+                Mods.ExtraUtilities.ID);
     }
 
     @Override

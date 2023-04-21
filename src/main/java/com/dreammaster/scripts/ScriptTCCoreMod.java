@@ -26,7 +26,25 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.Thaumcraft.ID,
+                Mods.MagicBees.ID,
+                Mods.ExtraUtilities.ID,
+                Mods.ProjectRedIllumination.ID,
+                Mods.EternalSingularity.ID,
+                Mods.TwilightForest.ID,
+                Mods.IndustrialCraft2.ID,
+                Mods.DraconicEvolution.ID,
+                Mods.PamsHarvestCraft.ID,
+                Mods.TinkerConstruct.ID,
+                Mods.BiomesOPlenty.ID,
+                Mods.EnderStorage.ID,
+                Mods.IronChests.ID,
+                Mods.OpenBlocks.ID,
+                Mods.Backpack.ID,
+                "Automagy",
+                Mods.HardcoreEnderExpansion.ID,
+                Mods.Avaritia.ID);
     }
 
     @Override

@@ -26,7 +26,15 @@ public class ScriptExtraUtilities implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.ExtraUtilities.ID, Mods.Thaumcraft.ID, Mods.ProjectRedIllumination.ID);
+        return Arrays.asList(
+                Mods.ExtraUtilities.ID,
+                Mods.Thaumcraft.ID,
+                Mods.ProjectRedIllumination.ID,
+                Mods.TinkerConstruct.ID,
+                Mods.Avaritia.ID,
+                Mods.GTPlusPlus.ID,
+                Mods.TwilightForest.ID,
+                Mods.Botania.ID);
     }
 
     @Override
