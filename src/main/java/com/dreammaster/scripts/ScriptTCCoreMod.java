@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -49,8 +48,6 @@ public class ScriptTCCoreMod implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         new ResearchItem(
                 "WITHERRING",
                 "ARTIFICE",

@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -40,8 +39,6 @@ public class ScriptEMT implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeArcaneRecipe(getModItem("EMT", "EMTItems", 1, 14, missing));
         TCHelper.removeArcaneRecipe(getModItem("EMT", "ThaumiumWing", 1, 0, missing));
         TCHelper.removeInfusionRecipe(createItemStack("EMT", "NanosuitWing", 1, 26, "{charge:10.0d}", missing));

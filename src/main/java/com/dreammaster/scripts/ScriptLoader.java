@@ -1,10 +1,14 @@
 package com.dreammaster.scripts;
 
+import net.minecraft.util.EnumChatFormatting;
+
 import com.dreammaster.main.MainRegistry;
 
 public class ScriptLoader {
 
     public static void run() {
+        IScriptLoader.missing.setStackDisplayName(EnumChatFormatting.RED + "Missing item! Please report it on github!");
+
         IScriptLoader[] scripts = new IScriptLoader[] { new ScriptAE2FC(), new ScriptAFSU(),
                 new ScriptIndustrialApiary(), new ScriptAppliedEnergistics2(), new ScriptArchitectureCraft(),
                 new ScriptAutomagy(), new ScriptAvaritia(), new ScriptAvaritiaAddons(), new ScriptBetterQuesting(),

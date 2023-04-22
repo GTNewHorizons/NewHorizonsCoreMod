@@ -6,7 +6,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -65,8 +64,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         .add(Aspect.ENTROPY, 2000).add(Aspect.EARTH, 2000).add(Aspect.WATER, 2000),
                 SingularityDrive,
                 CECInfusionItems);
-
-        ItemStack missing = new ItemStack(Blocks.dirt);
 
         TCHelper.removeInfusionRecipe(
                 getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.provider", 1, 0, missing));

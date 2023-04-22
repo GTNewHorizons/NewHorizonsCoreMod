@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -29,8 +28,6 @@ public class ScriptThaumicHorizons implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeArcaneRecipe(getModItem("ThaumicHorizons", "planarConduit", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem("ThaumicHorizons", "transductionAmplifier", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem("ThaumicHorizons", "vortexStabilizer", 1, 0, missing));

@@ -7,7 +7,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -47,8 +46,6 @@ public class ScriptOpenBlocks implements IScriptLoader {
         addShapelessCraftingRecipe(devNull, new Object[] { voidDropFilter });
 
         GT_Values.RA.addAssemblerRecipe(new ItemStack[] { trashCan, circuit2 }, ender250, devNull, 300, 30);
-
-        ItemStack missing = new ItemStack(Blocks.dirt);
 
         new ResearchItem(
                 "GOLDENEGG",

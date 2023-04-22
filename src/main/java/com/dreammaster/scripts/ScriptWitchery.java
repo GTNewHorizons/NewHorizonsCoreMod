@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -38,9 +37,6 @@ public class ScriptWitchery implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         ResearchCategories.registerCategory(
                 "WITCHERY",
                 new ResourceLocation("dreamcraft:textures/thaumcraft/icon/icon_Witchery.png"),
