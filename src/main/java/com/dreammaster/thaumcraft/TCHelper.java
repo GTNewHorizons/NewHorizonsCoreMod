@@ -243,36 +243,36 @@ public class TCHelper {
     }
 
     public static void removeArcaneRecipe(final ItemStack output) {
-        ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
+        if (!ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof IArcaneRecipe) return ((IArcaneRecipe) recipe).getRecipeOutput() != null
                     && GT_Utility.areStacksEqual(((IArcaneRecipe) recipe).getRecipeOutput(), output);
             return false;
-        });
+        })) throw new RuntimeException("removeArcaneRecipe did nothing!");
     }
 
     public static void removeCrucibleRecipe(final ItemStack output) {
-        ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
+        if (!ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof CrucibleRecipe) return ((CrucibleRecipe) recipe).getRecipeOutput() != null
                     && GT_Utility.areStacksEqual(((CrucibleRecipe) recipe).getRecipeOutput(), output);
             return false;
-        });
+        })) throw new RuntimeException("removeCrucibleRecipe did nothing!");
     }
 
     public static void removeInfusionRecipe(final ItemStack output) {
-        ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
+        if (!ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof InfusionRecipe)
                 return ((InfusionRecipe) recipe).getRecipeOutput() instanceof ItemStack
                         && GT_Utility.areStacksEqual(((ItemStack) ((InfusionRecipe) recipe).getRecipeOutput()), output);
             return false;
-        });
+        })) throw new RuntimeException("removeInfusionRecipe did nothing!");
     }
 
     public static void removeInfusionEnchantmentRecipe(final int effectID) {
-        ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
+        if (!ThaumcraftApi.getCraftingRecipes().removeIf(recipe -> {
             if (recipe instanceof InfusionEnchantmentRecipe)
                 return ((InfusionEnchantmentRecipe) recipe).getEnchantment() != null
                         && ((InfusionEnchantmentRecipe) recipe).getEnchantment().effectId == effectID;
             return false;
-        });
+        })) throw new RuntimeException("removeInfusionEnchantmentRecipe did nothing!");
     }
 }
