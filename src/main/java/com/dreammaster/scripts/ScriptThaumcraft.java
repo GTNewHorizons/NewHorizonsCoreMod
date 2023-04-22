@@ -36,7 +36,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 Mods.RandomThings.ID,
                 Mods.BiomesOPlenty.ID,
                 Mods.PamsHarvestCraft.ID,
-                "ProjRed|Integration",
+                Mods.ProjectRedIntegration.ID,
                 Mods.Railcraft.ID,
                 Mods.Backpack.ID,
                 Mods.TwilightForest.ID,

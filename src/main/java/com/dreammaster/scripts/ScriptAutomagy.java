@@ -27,7 +27,7 @@ public class ScriptAutomagy implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Thaumcraft.ID, "Automagy", Mods.Genetics.ID, Mods.AppliedEnergistics2.ID);
+        return Arrays.asList(Mods.Thaumcraft.ID, Mods.Automagy.ID, Mods.Genetics.ID, Mods.AppliedEnergistics2.ID);
     }
 
     @Override

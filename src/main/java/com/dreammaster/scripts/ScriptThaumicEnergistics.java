@@ -32,7 +32,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 ThaumicEnergistics.ID,
                 EternalSingularity.ID,
                 AppliedEnergistics2.ID,
-                "ae2stuff",
+                AE2Stuff.ID,
                 TinkerConstruct.ID);
     }
 

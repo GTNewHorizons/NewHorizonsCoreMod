@@ -31,7 +31,7 @@ public class ScriptEMT implements IScriptLoader {
                 Mods.ElectroMagicTools.ID,
                 Mods.Thaumcraft.ID,
                 Mods.IndustrialCraft2.ID,
-                "ProjRed|Integration",
+                Mods.ProjectRedIntegration.ID,
                 Mods.AdvancedSolarPanel.ID,
                 Mods.GalacticraftCore.ID,
                 Mods.Avaritia.ID,

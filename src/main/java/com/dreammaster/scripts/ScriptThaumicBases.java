@@ -33,7 +33,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 Mods.IronTanks.ID,
                 Mods.ExtraUtilities.ID,
                 Mods.GTPlusPlus.ID,
-                "CarpentersBlocks",
+                Mods.CarpentersBlocks.ID,
                 Mods.TwilightForest.ID,
                 Mods.ThaumicTinkerer.ID);
     }

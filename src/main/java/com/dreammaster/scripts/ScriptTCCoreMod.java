@@ -42,7 +42,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 Mods.IronChests.ID,
                 Mods.OpenBlocks.ID,
                 Mods.Backpack.ID,
-                "Automagy",
+                Mods.Automagy.ID,
                 Mods.HardcoreEnderExpansion.ID,
                 Mods.Avaritia.ID);
     }
