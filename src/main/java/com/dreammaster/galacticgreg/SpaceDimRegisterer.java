@@ -355,29 +355,58 @@ public class SpaceDimRegisterer {
         modCGalaxySpace.addDimensionDef(dimKupierBelt);
         return modCGalaxySpace;
     }
-    
+
     /**
      * Mod Amun-Ra
      */
     private ModContainer setupAmunRa() {
         ModContainer modAmunRa = new ModContainer("GalacticraftAmunRa");
-        
-        final List<ModDBMDef> DBMNeper = Arrays.asList(new ModDBMDef(Blocks.stone), new ModDBMDef("tile.baseBlockRock", 10));
+
+        final List<ModDBMDef> DBMNeper = Arrays
+                .asList(new ModDBMDef(Blocks.stone), new ModDBMDef("tile.baseBlockRock", 10));
         final List<ModDBMDef> DBMMaahes = Collections.singletonList(new ModDBMDef("tile.baseBlockRock", 1));
         final List<ModDBMDef> DBMAnubis = Collections.singletonList(new ModDBMDef("tile.baseBlockRock", 1));
         final List<ModDBMDef> DBMHorus = Collections.singletonList(new ModDBMDef(Blocks.obsidian));
         final List<ModDBMDef> DBMSeth = Collections.singletonList(new ModDBMDef(Blocks.hardened_clay));
-        
-        modAmunRa.addDimensionDef(new ModDimensionDef("Neper", "de.katzenpapst.amunra.world.neper.NeperChunkProvider", Enums.DimensionType.Planet, DBMNeper));
-        modAmunRa.addDimensionDef(new ModDimensionDef("Maahes", "de.katzenpapst.amunra.world.maahes.MaahesChunkProvider", Enums.DimensionType.Planet, DBMMaahes));
-        modAmunRa.addDimensionDef(new ModDimensionDef("Anubis", "de.katzenpapst.amunra.world.anubis.AnubisChunkProvider", Enums.DimensionType.Planet, DBMAnubis));
-        modAmunRa.addDimensionDef(new ModDimensionDef("Horus", "de.katzenpapst.amunra.world.horus.HorusChunkProvider", Enums.DimensionType.Planet, DBMHorus));
-        modAmunRa.addDimensionDef(new ModDimensionDef("Seth", "de.katzenpapst.amunra.world.seth.SethChunkProvider", Enums.DimensionType.Planet, DBMSeth));
-        
-        ModDimensionDef dimMehenBelt = new ModDimensionDef("Mehen Belt", "de.katzenpapst.amunra.world.asteroidWorld.AmunRaAsteroidsChunkProvider", Enums.DimensionType.Asteroid);
+
+        modAmunRa.addDimensionDef(
+                new ModDimensionDef(
+                        "Neper",
+                        "de.katzenpapst.amunra.world.neper.NeperChunkProvider",
+                        Enums.DimensionType.Planet,
+                        DBMNeper));
+        modAmunRa.addDimensionDef(
+                new ModDimensionDef(
+                        "Maahes",
+                        "de.katzenpapst.amunra.world.maahes.MaahesChunkProvider",
+                        Enums.DimensionType.Planet,
+                        DBMMaahes));
+        modAmunRa.addDimensionDef(
+                new ModDimensionDef(
+                        "Anubis",
+                        "de.katzenpapst.amunra.world.anubis.AnubisChunkProvider",
+                        Enums.DimensionType.Planet,
+                        DBMAnubis));
+        modAmunRa.addDimensionDef(
+                new ModDimensionDef(
+                        "Horus",
+                        "de.katzenpapst.amunra.world.horus.HorusChunkProvider",
+                        Enums.DimensionType.Planet,
+                        DBMHorus));
+        modAmunRa.addDimensionDef(
+                new ModDimensionDef(
+                        "Seth",
+                        "de.katzenpapst.amunra.world.seth.SethChunkProvider",
+                        Enums.DimensionType.Planet,
+                        DBMSeth));
+
+        ModDimensionDef dimMehenBelt = new ModDimensionDef(
+                "Mehen Belt",
+                "de.katzenpapst.amunra.world.asteroidWorld.AmunRaAsteroidsChunkProvider",
+                Enums.DimensionType.Asteroid);
         dimMehenBelt.addAsteroidMaterial(GTOreTypes.BlackGranite);
         modAmunRa.addDimensionDef(dimMehenBelt);
-        
+
         return modAmunRa;
     }
 }
