@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -26,13 +25,12 @@ public class ScriptRunicTablet implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Thaumcraft.ID, Mods.DraconicEvolution.ID, "ThaumicExploration", "Automagy");
+        return Arrays
+                .asList(Mods.Thaumcraft.ID, Mods.DraconicEvolution.ID, Mods.ThaumicExploration.ID, Mods.Automagy.ID);
     }
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         new ResearchItem(
                 "RUNEDTABLET",
                 "ELDRITCH",

@@ -5,9 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -31,8 +28,6 @@ public class ScriptThaumicMachina implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.orphanResearch("@TMTHAUMATURGY");
         TCHelper.removeResearch("@TMTHAUMATURGY");
         TCHelper.removeArcaneRecipe(getModItem("ThaumicMachina", "wandAugmentationCore", 1, 0, missing));

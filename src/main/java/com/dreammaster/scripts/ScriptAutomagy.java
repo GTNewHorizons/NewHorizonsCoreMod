@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -27,12 +26,11 @@ public class ScriptAutomagy implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.Thaumcraft.ID, "Automagy", Mods.Genetics.ID, Mods.AppliedEnergistics2.ID);
+        return Arrays.asList(Mods.Thaumcraft.ID, Mods.Automagy.ID, Mods.Genetics.ID, Mods.AppliedEnergistics2.ID);
     }
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
         TCHelper.removeArcaneRecipe(getModItem("Automagy", "blockTorchInversion", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem("Automagy", "blockRedcrystal", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem("Automagy", "blockRedcrystalAmp", 2, 0, missing));

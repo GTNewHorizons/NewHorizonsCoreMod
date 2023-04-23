@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -53,8 +52,6 @@ public class ScriptBloodMagic implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeInfusionRecipe(getModItem("BloodArsenal", "wand_caps", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem("BloodArsenal", "wand_cores", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem("BloodArsenal", "wand_cores", 1, 1, missing));

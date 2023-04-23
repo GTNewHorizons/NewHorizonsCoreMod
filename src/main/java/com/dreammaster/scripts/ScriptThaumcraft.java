@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -19,8 +18,6 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.Mods;
 
 public class ScriptThaumcraft implements IScriptLoader {
-
-    private final ItemStack missing = new ItemStack(Blocks.dirt);
 
     @Override
     public String getScriptName() {
@@ -36,7 +33,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 Mods.RandomThings.ID,
                 Mods.BiomesOPlenty.ID,
                 Mods.PamsHarvestCraft.ID,
-                "ProjRed|Integration",
+                Mods.ProjectRedIntegration.ID,
                 Mods.Railcraft.ID,
                 Mods.Backpack.ID,
                 Mods.TwilightForest.ID,
