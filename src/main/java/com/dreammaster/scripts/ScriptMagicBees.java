@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -32,8 +31,6 @@ public class ScriptMagicBees implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeInfusionRecipe(getModItem("MagicBees", "miscResources", 3, 17, missing));
         TCHelper.removeInfusionRecipe(getModItem("MagicBees", "miscResources", 3, 17, missing));
         TCHelper.removeCrucibleRecipe(getModItem("MagicBees", "miscResources", 1, 7, missing));

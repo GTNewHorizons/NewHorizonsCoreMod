@@ -5,9 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
-
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -31,8 +28,6 @@ public class ScriptRailcraft implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeArcaneRecipe(getModItem("Railcraft", "tool.crowbar.magic", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem("Railcraft", "tool.crowbar.void", 1, 0, missing));
         TCHelper.moveResearch("RC_Crowbar", "ARTIFICE", 0, -4);

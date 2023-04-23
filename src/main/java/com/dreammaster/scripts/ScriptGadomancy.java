@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -30,8 +29,6 @@ public class ScriptGadomancy implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeInfusionRecipe(getModItem("gadomancy", "itemSilverwoodGolemPlacer", 1, 8, missing));
         TCHelper.removeInfusionRecipe(
                 createItemStack(

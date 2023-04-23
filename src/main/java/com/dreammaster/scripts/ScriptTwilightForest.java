@@ -35,8 +35,6 @@ public class ScriptTwilightForest implements IScriptLoader {
                 new Object[] { Blocks.cobblestone, Blocks.stone, Blocks.cobblestone, Blocks.cobblestone, "dyeBlack",
                         Blocks.cobblestone, Blocks.cobblestone, Blocks.cobblestone, Blocks.cobblestone });
 
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         ThaumcraftApi.registerObjectTag(
                 getModItem("TwilightForest", "tile.TFRoots", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2));
