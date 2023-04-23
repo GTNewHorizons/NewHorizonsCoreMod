@@ -29,7 +29,7 @@ public class TCHelper {
         for (Object craft : CraftingManager.getInstance().getRecipeList()) {
             if (craft instanceof IRecipe) {
                 if (((IRecipe) craft).getRecipeOutput() != null
-                        && GT_Utility.areStacksEqual(((IRecipe) craft).getRecipeOutput(), stack))
+                        && GT_Utility.areStacksEqual(((IRecipe) craft).getRecipeOutput(), stack, true))
                     return (IRecipe) craft;
             }
         }
@@ -40,7 +40,7 @@ public class TCHelper {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof IArcaneRecipe) {
                 if (((IArcaneRecipe) craft).getRecipeOutput() != null
-                        && GT_Utility.areStacksEqual(((IArcaneRecipe) craft).getRecipeOutput(), stack))
+                        && GT_Utility.areStacksEqual(((IArcaneRecipe) craft).getRecipeOutput(), stack, true))
                     return (IArcaneRecipe) craft;
             }
         }
@@ -51,7 +51,7 @@ public class TCHelper {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof CrucibleRecipe) {
                 if (((CrucibleRecipe) craft).getRecipeOutput() != null
-                        && GT_Utility.areStacksEqual(((CrucibleRecipe) craft).getRecipeOutput(), stack))
+                        && GT_Utility.areStacksEqual(((CrucibleRecipe) craft).getRecipeOutput(), stack, true))
                     return (CrucibleRecipe) craft;
             }
         }
@@ -61,8 +61,8 @@ public class TCHelper {
     public static InfusionRecipe findInfusionRecipe(ItemStack stack) {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof InfusionRecipe) {
-                if (((InfusionRecipe) craft).getRecipeOutput() instanceof ItemStack
-                        && GT_Utility.areStacksEqual(((ItemStack) ((InfusionRecipe) craft).getRecipeOutput()), stack))
+                if (((InfusionRecipe) craft).getRecipeOutput() instanceof ItemStack && GT_Utility
+                        .areStacksEqual(((ItemStack) ((InfusionRecipe) craft).getRecipeOutput()), stack, true))
                     return (InfusionRecipe) craft;
             }
         }

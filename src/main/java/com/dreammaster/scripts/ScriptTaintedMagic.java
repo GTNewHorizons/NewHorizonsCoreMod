@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -32,8 +31,6 @@ public class ScriptTaintedMagic implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeCrucibleRecipe(getModItem("TaintedMagic", "BlockShadowOre", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing));
         TCHelper.removeCrucibleRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing));

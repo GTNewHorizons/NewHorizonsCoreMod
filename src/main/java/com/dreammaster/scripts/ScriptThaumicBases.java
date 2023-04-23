@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -33,15 +32,13 @@ public class ScriptThaumicBases implements IScriptLoader {
                 Mods.IronTanks.ID,
                 Mods.ExtraUtilities.ID,
                 Mods.GTPlusPlus.ID,
-                "CarpentersBlocks",
+                Mods.CarpentersBlocks.ID,
                 Mods.TwilightForest.ID,
                 Mods.ThaumicTinkerer.ID);
     }
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeArcaneRecipe(getModItem("thaumicbases", "relocator", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem("thaumicbases", "relocator", 1, 6, missing));
         TCHelper.removeArcaneRecipe(getModItem("thaumicbases", "advAlchFurnace", 1, 0, missing));

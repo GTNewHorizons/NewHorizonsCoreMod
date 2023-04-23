@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
@@ -184,4 +185,6 @@ public interface IScriptLoader {
         }
         return true;
     }
+
+    ItemStack missing = new ItemStack(Blocks.fire);
 }

@@ -5,7 +5,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -42,8 +41,6 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        ItemStack missing = new ItemStack(Blocks.dirt);
-
         TCHelper.removeArcaneRecipe(getModItem("ThaumicTinkerer", "interface", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem("ThaumicTinkerer", "connector", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem("ThaumicTinkerer", "dislocator", 1, 0, missing));
