@@ -503,6 +503,37 @@ public class DTPFRecipes implements Runnable {
                                 40 * 20,
                                 128_000_000,
                                 eternal_heat);
+
+                // Raw Tesseract v3
+                GT_Values.RA
+                        .addPlasmaForgeRecipe(
+                                new ItemStack[] {
+                                        GT_OreDictUnificator
+                                                .get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 32L),
+                                        ALLOY.BLACK_TITANIUM.getPlate(24), ALLOY.ZERON_100.getScrew(16),
+                                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1L, 32105), },
+                                new FluidStack[] { MaterialsUEVplus.ExcitedDTSC.getFluid(1000) },
+                                new ItemStack[] { ItemList.Tesseract.get(16) },
+                                new FluidStack[] { MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(2000) },
+                                40 * 20,
+                                512_000_000,
+                                eternal_heat);
+
+                // Transcendent metal
+                GT_Values.RA.addPlasmaForgeRecipe(
+                        new ItemStack[] { ItemList.Tesseract.get(32),
+                                GT_OreDictUnificator.get("blockCosmicNeutronium", 40), },
+                        new FluidStack[] { ALLOY.TITANSTEEL.getFluidStack(144 * 40 * 9),
+                                Materials.CallistoIce.getMolten(144 * 20 * 9), Materials.Ledox.getMolten(144 * 20 * 9),
+                                Materials.Tungsten.getMolten(144 * 40 * 9),
+                                MaterialsUEVplus.ExcitedDTSC.getFluid(5632) },
+                        new ItemStack[] { MaterialsUEVplus.TranscendentMetal.getBlocks(40),
+                                MaterialsUEVplus.TranscendentMetal.getDust(24) },
+                        new FluidStack[] { MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(5632 * 2),
+                                ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144 * 20 * 9) },
+                        40 * 20,
+                        256_000_000,
+                        eternal_heat);
             }
 
             if (Avaritia.isModLoaded()) {
@@ -616,37 +647,6 @@ public class DTPFRecipes implements Runnable {
                                 Materials.Infinity.getMolten(256L * 144L) },
                         base_time / 4,
                         409_600_000,
-                        eternal_heat);
-
-                // Raw Tesseract v3
-                GT_Values.RA
-                        .addPlasmaForgeRecipe(
-                                new ItemStack[] {
-                                        GT_OreDictUnificator
-                                                .get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 32L),
-                                        ALLOY.BLACK_TITANIUM.getPlate(24), ALLOY.ZERON_100.getScrew(16),
-                                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1L, 32105), },
-                                new FluidStack[] { MaterialsUEVplus.ExcitedDTSC.getFluid(1000) },
-                                new ItemStack[] { ItemList.Tesseract.get(16) },
-                                new FluidStack[] { MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(2000) },
-                                40 * 20,
-                                512_000_000,
-                                eternal_heat);
-
-                // Transcendent metal
-                GT_Values.RA.addPlasmaForgeRecipe(
-                        new ItemStack[] { ItemList.Tesseract.get(32),
-                                GT_OreDictUnificator.get("blockCosmicNeutronium", 40), },
-                        new FluidStack[] { ALLOY.TITANSTEEL.getFluidStack(144 * 40 * 9),
-                                Materials.CallistoIce.getMolten(144 * 20 * 9), Materials.Ledox.getMolten(144 * 20 * 9),
-                                Materials.Tungsten.getMolten(144 * 40 * 9),
-                                MaterialsUEVplus.ExcitedDTSC.getFluid(5632) },
-                        new ItemStack[] { MaterialsUEVplus.TranscendentMetal.getBlocks(40),
-                                MaterialsUEVplus.TranscendentMetal.getDust(24) },
-                        new FluidStack[] { MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(5632 * 2),
-                                ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144 * 20 * 9) },
-                        40 * 20,
-                        256_000_000,
                         eternal_heat);
             }
 
