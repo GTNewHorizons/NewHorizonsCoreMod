@@ -329,13 +329,13 @@ public class MainRegistry {
             }
 
             SpaceDimReg = new SpaceDimRegisterer();
-            if (!SpaceDimReg.Init()) {
+            if (!SpaceDimReg.init()) {
                 Logger.error(
                         "Unable to register SpaceDimensions; You are probably using the wrong Version of GalacticGreg");
                 AddLoginError("[SpaceDim] Unable to register SpaceDimensions. Wrong Version of GGreg found!");
             } else {
                 Logger.debug("Registering SpaceDimensions");
-                SpaceDimReg.Register();
+                SpaceDimReg.register();
             }
         }
         if (TwilightForest.isModLoaded()) {
