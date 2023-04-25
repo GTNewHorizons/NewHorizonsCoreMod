@@ -2803,326 +2803,326 @@ public class ExtruderRecipes implements Runnable {
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 1),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolRod", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolRod", 1L, 1671),
                     150,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 1),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolRod", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolRod", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 2),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "pickaxeHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "pickaxeHead", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 2),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "pickaxeHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "pickaxeHead", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 3),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "shovelHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "shovelHead", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 3),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "shovelHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "shovelHead", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 4),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "hatchetHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "hatchetHead", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 4),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "hatchetHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "hatchetHead", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 5),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "swordBlade", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "swordBlade", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 5),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "swordBlade", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "swordBlade", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 6),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "wideGuard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "wideGuard", 1L, 1671),
                     150,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 6),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "wideGuard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "wideGuard", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 7),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "handGuard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "handGuard", 1L, 1671),
                     150,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 7),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "handGuard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "handGuard", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 8),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "crossbar", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "crossbar", 1L, 1671),
                     150,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 8),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "crossbar", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "crossbar", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 9),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "binding", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "binding", 1L, 1671),
                     150,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 9),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "binding", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "binding", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 10),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "frypanHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "frypanHead", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 10),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "frypanHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "frypanHead", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 11),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "signHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "signHead", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 11),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "signHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "signHead", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 12),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "knifeBlade", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "knifeBlade", 1L, 1671),
                     150,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 12),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "knifeBlade", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "knifeBlade", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 13),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "chiselHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "chiselHead", 1L, 1671),
                     150,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 13),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "chiselHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "chiselHead", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 3L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 14),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toughRod", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toughRod", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 6L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 6L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 14),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toughRod", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toughRod", 1L, 1671),
                     400,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 3L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 15),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toughBinding", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toughBinding", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 6L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 6L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 15),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toughBinding", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toughBinding", 1L, 1671),
                     400,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 8L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 16),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "heavyPlate", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "heavyPlate", 1L, 1671),
                     800,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 16),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "heavyPlate", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "heavyPlate", 1L, 1671),
                     1000,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 8L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 17),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "broadAxeHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "broadAxeHead", 1L, 1671),
                     800,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 17),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "broadAxeHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "broadAxeHead", 1L, 1671),
                     1000,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 8L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 18),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "scytheBlade", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "scytheBlade", 1L, 1671),
                     800,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 18),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "scytheBlade", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "scytheBlade", 1L, 1671),
                     1000,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 8L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 19),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "excavatorHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "excavatorHead", 1L, 1671),
                     800,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 19),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "excavatorHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "excavatorHead", 1L, 1671),
                     1000,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 8L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 20),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "largeSwordBlade", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "largeSwordBlade", 1L, 1671),
                     800,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 20),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "largeSwordBlade", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "largeSwordBlade", 1L, 1671),
                     1000,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 8L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 21),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "hammerHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "hammerHead", 1L, 1671),
                     800,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 16L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 21),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "hammerHead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "hammerHead", 1L, 1671),
                     1000,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 3L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 22),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "fullGuard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "fullGuard", 1L, 1671),
                     300,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 6L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 6L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 22),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "fullGuard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "fullGuard", 1L, 1671),
                     400,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 3L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 25),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "arrowhead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "arrowhead", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 6L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 6L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "metalPattern", 0L, 25),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "arrowhead", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "arrowhead", 1L, 1671),
                     300,
                     122880);
 
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Cast", 0L, 0),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "ShurikenPart", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "ShurikenPart", 1L, 1671),
                     150,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 1L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Cast", 0L, 0),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "ShurikenPart", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "ShurikenPart", 1L, 1671),
                     200,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 4L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Cast", 0L, 1),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CrossbowLimbPart", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CrossbowLimbPart", 1L, 1671),
                     400,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 8L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 8L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Cast", 0L, 1),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CrossbowLimbPart", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CrossbowLimbPart", 1L, 1671),
                     500,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 5L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Cast", 0L, 2),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CrossbowBodyPart", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CrossbowBodyPart", 1L, 1671),
                     600,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 10L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 10L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Cast", 0L, 2),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CrossbowBodyPart", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CrossbowBodyPart", 1L, 1671),
                     750,
                     122880);
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 2L, 4),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Cast", 0L, 3),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "BowLimbPart", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "BowLimbPart", 1L, 1671),
                     350,
                     122880);
             GT_Values.RA.addExtruderRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 3L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 3L, 1671),
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Cast", 0L, 3),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "BowLimbPart", 1L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "BowLimbPart", 1L, 1671),
                     450,
                     122880);
         }
@@ -3131,7 +3131,7 @@ public class ExtruderRecipes implements Runnable {
             GT_Values.RA.addExtruderRecipe(
                     GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 4),
                     GT_ModHandler.getModItem(TinkersGregworks.ID, "tgregworks.shardcast", 0L, 0),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 500),
+                    GT_ModHandler.getModItem(TinkerConstruct.ID, "toolShard", 2L, 1671),
                     150,
                     122880);
         }
