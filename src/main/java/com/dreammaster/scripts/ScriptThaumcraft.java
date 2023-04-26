@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -15,14 +14,13 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.config.ConfigResearch;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.Materials;
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Mods;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
 
 public class ScriptThaumcraft implements IScriptLoader {
 
@@ -1618,12 +1616,11 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.clearPages("PHIAL");
         TCHelper.addResearchPage("PHIAL", new ResearchPage("tc.research_page.PHIAL.1"));
         ConfigResearch.recipes.put(
-                "PHIAL",
-                GT_ModHandler.addShapelessCraftingRecipe(
-                        GT_ModHandler.getModItem(Thaumcraft.ID, "itemEssence", 1L, 0),
-                        new Object[] { new ItemStack(Items.glass_bottle, 1),
-                                OrePrefixes.round.get(Materials.AnyRubber) }));
-
+                "Phial",
+                GameRegistry.addShapedRecipe(
+                        new ItemStack(ConfigItems.itemEssence, 8, 0),
+                        new Object[] { "GR  ", "  ", "  ", Character.valueOf('G'), Items.glass_bottle,
+                                Character.valueOf('R'), getModItem("gregtech", "gt.metaitem.01", 1, 25880, missing) }));
         TCHelper.addResearchPage(
                 "PHIAL",
                 new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "ItemEssence", 1, 0, missing))));
