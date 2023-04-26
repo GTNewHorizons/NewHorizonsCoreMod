@@ -1,10 +1,12 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -15,7 +17,11 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
 
 public class ScriptThaumcraft implements IScriptLoader {
 
@@ -1610,6 +1616,9 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 12, missing));
         TCHelper.clearPages("PHIAL");
         TCHelper.addResearchPage("PHIAL", new ResearchPage("tc.research_page.PHIAL.1"));
+        GT_ModHandler.addShapelessCraftingRecipe(
+                GT_ModHandler.getModItem(Thaumcraft.ID, "itemEssence", 1L, 0),
+                new Object[] { new ItemStack(Items.glass_bottle, 1), OrePrefixes.round.get(Materials.AnyRubber) });
         TCHelper.addResearchPage(
                 "PHIAL",
                 new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "ItemEssence", 1, 0, missing))));

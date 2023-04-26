@@ -1461,12 +1461,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     new Object[] { "T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C',
                             OrePrefixes.dust.get(Materials.Coal) });
         }
-        if (Thaumcraft.isModLoaded()) {
-            GT_ModHandler.addShapelessCraftingRecipe(
-                    GT_ModHandler.getModItem(Thaumcraft.ID, "itemEssence", 1L, 0),
-                    new Object[] { new ItemStack(Items.glass_bottle, 1), OrePrefixes.round.get(Materials.AnyRubber) });
 
-        }
         if (TinkerConstruct.isModLoaded()) {
             ItemStack aBlankCast = GT_ModHandler.getModItem(TinkerConstruct.ID, "blankPattern", 1, 1);
 
