@@ -14,13 +14,11 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumcraft.common.config.ConfigItems;
-import thaumcraft.common.config.ConfigResearch;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Mods;
+import gregtech.api.util.GT_ModHandler;
 
 public class ScriptThaumcraft implements IScriptLoader {
 
@@ -1582,6 +1580,10 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void alchemy() {
         // ALCHEMY
 
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(Mods.Thaumcraft.ID, "ItemEssence", 1),
+                new Object[] { Items.glass_bottle, "roundAnyRubber" });
+
         TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 4, missing));
         TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 1, missing));
@@ -1615,24 +1617,6 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 12, missing));
         TCHelper.clearPages("PHIAL");
         TCHelper.addResearchPage("PHIAL", new ResearchPage("tc.research_page.PHIAL.1"));
-        ConfigResearch.recipes.put(
-                "Phial",
-                GameRegistry.addShapedRecipe(
-                        new ItemStack(ConfigItems.itemEssence, 1, 0),
-                        new Object[] { "GR  ", "  ", "  ", Character.valueOf('G'), Items.glass_bottle,
-                                Character.valueOf('R'), getModItem("gregtech", "gt.metaitem.01", 1, 25880, missing) }));
-        ConfigResearch.recipes.put(
-                "Phial",
-                GameRegistry.addShapedRecipe(
-                        new ItemStack(ConfigItems.itemEssence, 1, 0),
-                        new Object[] { "GR  ", "  ", "  ", Character.valueOf('G'), Items.glass_bottle,
-                                Character.valueOf('R'), getModItem("gregtech", "gt.metaitem.01", 1, 25635, missing) }));
-        ConfigResearch.recipes.put(
-                "Phial",
-                GameRegistry.addShapedRecipe(
-                        new ItemStack(ConfigItems.itemEssence, 1, 0),
-                        new Object[] { "GR  ", "  ", "  ", Character.valueOf('G'), Items.glass_bottle,
-                                Character.valueOf('R'), getModItem("gregtech", "gt.metaitem.01", 1, 25471, missing) }));
         TCHelper.addResearchPage(
                 "PHIAL",
                 new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "ItemEssence", 1, 0, missing))));
