@@ -5,6 +5,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -15,7 +16,9 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
 import gregtech.api.enums.Mods;
+import gregtech.api.util.GT_ModHandler;
 
 public class ScriptThaumcraft implements IScriptLoader {
 
@@ -1576,6 +1579,10 @@ public class ScriptThaumcraft implements IScriptLoader {
 
     private void alchemy() {
         // ALCHEMY
+
+        GT_ModHandler.addShapelessCraftingRecipe(
+                getModItem(Mods.Thaumcraft.ID, "ItemEssence", 1),
+                new Object[] { new ItemStack(Items.glass_bottle), "roundAnyRubber" });
 
         TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 4, missing));
         TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 0, missing));

@@ -1,22 +1,6 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.Mods.AdvancedSolarPanel;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
-import static gregtech.api.enums.Mods.NaturesCompass;
-import static gregtech.api.enums.Mods.OpenPrinters;
-import static gregtech.api.enums.Mods.OpenSecurity;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.Translocator;
-import static gregtech.api.enums.Mods.ZTones;
+import static gregtech.api.enums.Mods.*;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -771,6 +755,12 @@ public class GT_Recipe_Remover implements Runnable {
                 true);
         GT_ModHandler.removeRecipeByOutputDelayed(
                 GT_ModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 19),
+                true,
+                false,
+                true);
+        // Thaumcraft
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_ModHandler.getModItem(Thaumcraft.ID, "ItemEssence", 1L, 0),
                 true,
                 false,
                 true);
