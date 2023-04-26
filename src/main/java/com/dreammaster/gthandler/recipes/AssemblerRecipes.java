@@ -5074,7 +5074,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { alveary, GT_ModHandler.getModItem(Forestry.ID, "thermionicTubes", 4L, 3),
                             GT_ModHandler.getModItem(Forestry.ID, "craftingMaterial", 4L, 3),
-                            GT_ModHandler.getModItem(Forestry.ID, "pollenFertile", 1L, GT_Values.W)},
+                            GT_ModHandler.getModItem(Forestry.ID, "pollenFertile", 1L, GT_Values.W) },
                     Materials.Honey.getFluid(2500L),
                     GT_ModHandler.getModItem(Forestry.ID, "alveary", 1L, 7),
                     1200,
