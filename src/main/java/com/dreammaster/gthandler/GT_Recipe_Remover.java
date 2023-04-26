@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.enums.GT_Values.DW;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.DraconicEvolution;
@@ -18,17 +19,63 @@ import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Translocator;
 import static gregtech.api.enums.Mods.ZTones;
 
+import java.util.ArrayList;
+
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.ShapedRecipes;
+import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_Utility;
 
 public class GT_Recipe_Remover implements Runnable {
 
     private static final String aTextMachineBeta = "machine.beta";
     private static final String aTextMachineAlpha = "machine.alpha";
+
+    public static boolean removeRecipeShapeless(ItemStack aOutput, ItemStack... aRecipe) {
+        @SuppressWarnings("unchecked")
+        ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
+        InventoryCrafting aCrafting = new InventoryCrafting(new Container() {
+
+            @Override
+            public boolean canInteractWith(EntityPlayer player) {
+                return false;
+            }
+        }, 3, 3);
+        for (int i = 0; i < aRecipe.length && i < 9; i++) aCrafting.setInventorySlotContents(i, aRecipe[i]);
+        return tList.removeIf(
+                recipe -> (recipe instanceof ShapelessRecipes || recipe instanceof ShapelessOreRecipe)
+                        && GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true)
+                        && (aRecipe.length == 0 || recipe.matches(aCrafting, DW)));
+    }
+
+    public static boolean removeRecipeShaped(ItemStack aOutput, ItemStack... aRecipe) {
+        @SuppressWarnings("unchecked")
+        ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
+        InventoryCrafting aCrafting = new InventoryCrafting(new Container() {
+
+            @Override
+            public boolean canInteractWith(EntityPlayer player) {
+                return false;
+            }
+        }, 3, 3);
+        for (int i = 0; i < aRecipe.length && i < 9; i++) aCrafting.setInventorySlotContents(i, aRecipe[i]);
+        return tList.removeIf(
+                recipe -> (recipe instanceof ShapedRecipes || recipe instanceof ShapedOreRecipe)
+                        && GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true)
+                        && (aRecipe.length == 0 || recipe.matches(aCrafting, DW)));
+    }
 
     public void run() {
         // Vanilla
