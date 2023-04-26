@@ -15,6 +15,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import thaumcraft.common.config.ConfigResearch;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -1616,9 +1617,13 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 12, missing));
         TCHelper.clearPages("PHIAL");
         TCHelper.addResearchPage("PHIAL", new ResearchPage("tc.research_page.PHIAL.1"));
-        GT_ModHandler.addShapelessCraftingRecipe(
-                GT_ModHandler.getModItem(Thaumcraft.ID, "itemEssence", 1L, 0),
-                new Object[] { new ItemStack(Items.glass_bottle, 1), OrePrefixes.round.get(Materials.AnyRubber) });
+        ConfigResearch.recipes.put(
+                "PHIAL",
+                GT_ModHandler.addShapelessCraftingRecipe(
+                        GT_ModHandler.getModItem(Thaumcraft.ID, "itemEssence", 1L, 0),
+                        new Object[] { new ItemStack(Items.glass_bottle, 1),
+                                OrePrefixes.round.get(Materials.AnyRubber) }));
+
         TCHelper.addResearchPage(
                 "PHIAL",
                 new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "ItemEssence", 1, 0, missing))));
