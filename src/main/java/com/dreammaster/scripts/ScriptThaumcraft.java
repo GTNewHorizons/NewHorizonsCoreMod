@@ -1618,10 +1618,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         ConfigResearch.recipes.put(
                 "Phial",
                 GameRegistry.addShapedRecipe(
-                        new ItemStack(ConfigItems.itemEssence, 8, 0),
+                        new ItemStack(ConfigItems.itemEssence, 1, 0),
                         new Object[] { "GR  ", "  ", "  ", Character.valueOf('G'), Items.glass_bottle,
                                 Character.valueOf('R'), getModItem("gregtech", "gt.metaitem.01", 1, 25880, missing) }));
-        TCHelper.addResearchPage(
+        ConfigResearch.recipes.put(
+                "Phial",
+                GameRegistry.addShapedRecipe(
+                        new ItemStack(ConfigItems.itemEssence, 1, 0),
+                        new Object[] { "GR  ", "  ", "  ", Character.valueOf('G'), Items.glass_bottle,
+                                Character.valueOf('R'), getModItem("gregtech", "gt.metaitem.01", 1, 25635, missing) }));        ConfigResearch.recipes.put(
+                "Phial",
+                GameRegistry.addShapedRecipe(
+                        new ItemStack(ConfigItems.itemEssence, 1, 0),
+                        new Object[] { "GR  ", "  ", "  ", Character.valueOf('G'), Items.glass_bottle,
+                                Character.valueOf('R'), getModItem("gregtech", "gt.metaitem.01", 1, 25471, missing) }));TCHelper.addResearchPage(
                 "PHIAL",
                 new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "ItemEssence", 1, 0, missing))));
         ThaumcraftApi.addCrucibleRecipe(
