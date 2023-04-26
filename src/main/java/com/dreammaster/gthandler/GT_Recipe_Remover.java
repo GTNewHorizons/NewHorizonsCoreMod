@@ -20,16 +20,16 @@ import static gregtech.api.enums.Mods.Translocator;
 import static gregtech.api.enums.Mods.ZTones;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.ShapedRecipes;
-import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraft.item.crafting.*;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -75,6 +75,19 @@ public class GT_Recipe_Remover implements Runnable {
                 recipe -> (recipe instanceof ShapedRecipes || recipe instanceof ShapedOreRecipe)
                         && GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true)
                         && (aRecipe.length == 0 || recipe.matches(aCrafting, DW)));
+    }
+
+    public static boolean removeFurnaceSmeltingByOutputAndInput(ItemStack aOutput, ItemStack aInput) {
+        HashSet<ItemStack> toRemove = new HashSet<>();
+        for (Map.Entry<ItemStack, ItemStack> recipe : (Set<Map.Entry<ItemStack, ItemStack>>) (FurnaceRecipes.smelting()
+                .getSmeltingList().entrySet())) {
+            if (GT_Utility.areStacksEqual(recipe.getValue(), aOutput, true)
+                    && (aInput == null || GT_Utility.areStacksEqual(recipe.getKey(), aInput, true))) {
+                toRemove.add(recipe.getKey());
+            }
+        }
+        toRemove.forEach(i -> FurnaceRecipes.smelting().getSmeltingList().remove(i));
+        return !toRemove.isEmpty();
     }
 
     public void run() {
