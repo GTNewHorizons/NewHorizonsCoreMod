@@ -1582,7 +1582,7 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         GT_ModHandler.addShapelessCraftingRecipe(
                 getModItem(Mods.Thaumcraft.ID, "ItemEssence", 1),
-                new Object[] { Items.glass_bottle, "roundAnyRubber" });
+                new Object[] { new ItemStack(Items.glass_bottle), "roundAnyRubber" });
 
         TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 4, missing));
         TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 0, missing));
