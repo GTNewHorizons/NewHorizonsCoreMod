@@ -1323,12 +1323,12 @@ public class BlastFurnaceRecipes implements Runnable {
                 1511);
 
         GT_Values.RA.addBlastRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 9L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 9L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ilmenite, 5L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L),
                 GT_Values.NF,
-                Materials.CarbonMonoxide.getGas(9000L),
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 4L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rutile, 4L),
+                Materials.CarbonMonoxide.getGas(1000L),
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rutile, 3L),
                 3200,
                 480,
                 1700);
