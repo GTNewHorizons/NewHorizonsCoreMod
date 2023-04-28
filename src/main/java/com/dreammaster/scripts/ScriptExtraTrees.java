@@ -27,6 +27,25 @@ public class ScriptExtraTrees implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
+        recipes1();
+        recipes2();
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.MushroomPowder", 5, 0, missing))
+                .itemOutputs(getModItem("ExtraTrees", "misc", 1, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("potion.wheatyjuice", 1000)).noFluidOutputs().duration(400)
+                .eut(16).addTo(sMixerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("ExtraTrees", "misc", 1, 6, missing),
+                        getModItem("ExtraTrees", "misc", 4, 12, missing))
+                .itemOutputs(getModItem("ExtraTrees", "misc", 1, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(600).eut(16)
+                .addTo(sMixerRecipes);
+
+    }
+
+    public void recipes1() {
+
         addShapelessCraftingRecipe(
                 getModItem("ExtraTrees", "database", 1, 0, missing),
                 new Object[] { getModItem("ExtraTrees", "database", 1, 0, missing) });
@@ -1928,6 +1947,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                         createItemStack("ExtraTrees", "planks", 1, 2, "{meta:2}", missing),
                         createItemStack("ExtraTrees", "planks", 1, 2, "{meta:2}", missing), "stickWood",
                         createItemStack("ExtraTrees", "planks", 1, 2, "{meta:2}", missing) });
+    }
+
+    public void recipes2() {
         addShapedRecipe(
                 createItemStack("ExtraTrees", "gate", 4, 34, "{meta:34}", missing),
                 new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
@@ -3825,18 +3847,5 @@ public class ScriptExtraTrees implements IScriptLoader {
                 new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
                         getModItem("minecraft", "planks", 1, 5, missing), "stickWood", "stickWood",
                         getModItem("minecraft", "planks", 1, 5, missing), "stickWood" });
-
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.MushroomPowder", 5, 0, missing))
-                .itemOutputs(getModItem("ExtraTrees", "misc", 1, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.wheatyjuice", 1000)).noFluidOutputs().duration(400)
-                .eut(16).addTo(sMixerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("ExtraTrees", "misc", 1, 6, missing),
-                        getModItem("ExtraTrees", "misc", 4, 12, missing))
-                .itemOutputs(getModItem("ExtraTrees", "misc", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(600).eut(16)
-                .addTo(sMixerRecipes);
-
     }
 }
