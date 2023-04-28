@@ -1,12 +1,16 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.FluidRegistry;
 
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -16,6 +20,8 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
 public class ScriptBloodMagic implements IScriptLoader {
@@ -52,6 +58,240 @@ public class ScriptBloodMagic implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+
+        addShapelessCraftingRecipe(
+                getModItem("AWWayofTime", "telepositionFocus", 1, 0, missing),
+                new Object[] { getModItem("AWWayofTime", "telepositionFocus", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 3, 2, missing),
+                new Object[] { "platePlastic", "platePlastic", "platePlastic",
+                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
+                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
+                        getModItem("AWWayofTime", "magicales", 1, 0, missing), "platePlastic", "platePlastic",
+                        "platePlastic" });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "inputRoutingFocus", 1, 0, missing),
+                new Object[] { getModItem("AWWayofTime", "reinforcedSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "blankSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "reinforcedSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "blankSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 32, missing),
+                        getModItem("AWWayofTime", "blankSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "reinforcedSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "blankSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "reinforcedSlate", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("AWWayofTime", "bloodMagicIncenseItem", 1, 0, missing),
+                new Object[] { getModItem("witchery", "ingredient", 1, 18, missing),
+                        getModItem("witchery", "ingredient", 1, 18, missing),
+                        getModItem("witchery", "ingredient", 1, 18, missing),
+                        getModItem("witchery", "ingredient", 1, 18, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2816, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2816, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2815, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2815, missing),
+                        getModItem("BiomesOPlenty", "misc", 1, 1, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "AlchemicalWizardrytile.blockSpellModifier", 1, 0, missing),
+                new Object[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 14, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 18, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "AlchemicalWizardrytile.blockSpellModifier", 1, 1, missing),
+                new Object[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 14, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 19, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "AlchemicalWizardrytile.blockSpellModifier", 1, 2, missing),
+                new Object[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 14, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 20, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "AlchemicalWizardrytile.blockSpellModifier", 1, 3, missing),
+                new Object[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 14, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 21, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "AlchemicalWizardrytile.blockSpellEffect", 1, 0, missing),
+                new Object[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 14, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 10, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "AlchemicalWizardrytile.blockSpellEffect", 1, 1, missing),
+                new Object[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 14, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 11, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "AlchemicalWizardrytile.blockSpellEffect", 1, 2, missing),
+                new Object[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 14, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 12, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+        addShapedRecipe(
+                getModItem("AWWayofTime", "AlchemicalWizardrytile.blockSpellEffect", 1, 3, missing),
+                new Object[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 14, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 13, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("AWWayofTime", "weakBloodOrb", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("AWWayofTime", "apprenticeBloodOrb", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("AWWayofTime", "magicianBloodOrb", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("AWWayofTime", "masterBloodOrb", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("AWWayofTime", "archmageBloodOrb", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("AWWayofTime", "transcendentBloodOrb", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("BloodArsenal", "transparent_orb", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("ForbiddenMagic", "EldritchOrb", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
+                        getModItem("Avaritia", "Orb_Armok", 0, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).noFluidOutputs().duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "itemRitualDiviner", 1, 0, missing),
+                        getModItem("minecraft", "redstone_torch", 2, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "ritualDismantler", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "inputRoutingFocus", 1, 0, missing),
+                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem("AWWayofTime", "outputRoutingFocus", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "inputRoutingFocus", 1, 0, missing),
+                        getModItem("gregtech", "gt.integrated_circuit", 0, 2, missing))
+                .itemOutputs(getModItem("AWWayofTime", "outputRoutingFocus", 1, 1, missing)).noFluidInputs()
+                .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "inputRoutingFocus", 1, 0, missing),
+                        getModItem("gregtech", "gt.integrated_circuit", 0, 3, missing))
+                .itemOutputs(getModItem("AWWayofTime", "outputRoutingFocus", 1, 2, missing)).noFluidInputs()
+                .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "inputRoutingFocus", 1, 0, missing),
+                        getModItem("gregtech", "gt.integrated_circuit", 0, 4, missing))
+                .itemOutputs(getModItem("AWWayofTime", "outputRoutingFocus", 1, 3, missing)).noFluidInputs()
+                .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("AWWayofTime", "inputRoutingFocus", 1, 0, missing),
+                        getModItem("gregtech", "gt.integrated_circuit", 0, 5, missing))
+                .itemOutputs(getModItem("AWWayofTime", "outputRoutingFocus", 1, 4, missing)).noFluidInputs()
+                .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing))
+                .itemOutputs(getModItem("dreamcraft", "item.ArcaneSlate", 9, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).noFluidOutputs().duration(200).eut(48)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_stone", 1, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "blankSlate", 9, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).noFluidOutputs().duration(400).eut(64)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_stone", 1, 1, missing))
+                .itemOutputs(getModItem("AWWayofTime", "reinforcedSlate", 9, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).noFluidOutputs().duration(600).eut(120)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_stone", 1, 2, missing))
+                .itemOutputs(getModItem("AWWayofTime", "imbuedSlate", 9, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).noFluidOutputs().duration(800).eut(480)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_stone", 1, 3, missing))
+                .itemOutputs(getModItem("AWWayofTime", "demonicSlate", 9, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).noFluidOutputs().duration(1000).eut(1920)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_stone", 1, 4, missing))
+                .itemOutputs(getModItem("AWWayofTime", "bloodMagicBaseItems", 9, 27, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).noFluidOutputs().duration(1200).eut(7680)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 0, missing))
+                .itemOutputs(getModItem("AWWayofTime", "blankSlate", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 250)).noFluidOutputs().duration(400).eut(64)
+                .addTo(sCutterRecipes);
+
         TCHelper.removeInfusionRecipe(getModItem("BloodArsenal", "wand_caps", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem("BloodArsenal", "wand_cores", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem("BloodArsenal", "wand_cores", 1, 1, missing));
