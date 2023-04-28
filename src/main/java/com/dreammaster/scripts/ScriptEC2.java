@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.ExtraCells2;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,6 +19,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
@@ -125,6 +127,14 @@ public class ScriptEC2 implements IScriptLoader {
                         getModItem(ExtraCells2.ID, "storage.physical.advanced.singularity", 1, 0),
                         getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1)));
         GameRegistry.addRecipe(new NBTRecipe(EC2_TANK, AE2FC_TANK));
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("appliedenergistics2", "tile.BlockCraftingUnit", 1, 0, missing),
+                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 38, missing))
+                .itemOutputs(getModItem("appliedenergistics2", "tile.BlockCraftingStorage", 1, 3, missing))
+                .noFluidInputs().noFluidOutputs().duration(400).eut(480).addTo(sAssemblerRecipes);
+
     }
 
     public static class NBTRecipe implements IRecipe {
