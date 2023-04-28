@@ -64,6 +64,11 @@ public interface IScriptLoader {
         String slotMappings = "abcdefghi";
         try {
             for (int i = 0; i < 9; i++) {
+                if (i >= inputs.length) {
+                    slots[i] = null;
+                    fullString.append(" ");
+                    continue;
+                }
                 Object o = inputs[i];
                 if (o instanceof ItemStack) {
                     final ItemStack itemStack = ((ItemStack) o).copy();
