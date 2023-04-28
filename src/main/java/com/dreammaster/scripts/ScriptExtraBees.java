@@ -1,9 +1,14 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 
 import java.util.Arrays;
 import java.util.List;
+
+import net.minecraftforge.fluids.FluidRegistry;
 
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -12,6 +17,8 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
 public class ScriptExtraBees implements IScriptLoader {
@@ -33,6 +40,55 @@ public class ScriptExtraBees implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+
+        addShapelessCraftingRecipe(
+                getModItem("ExtraBees", "dictionary", 1, 0, missing),
+                new Object[] { getModItem("ExtraBees", "dictionary", 1, 0, missing) });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "misc", 1, 1, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 1, 500, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "misc", 1, 2, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 1, 501, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "misc", 1, 3, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 1, 502, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "misc", 1, 4, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 1, 503, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "misc", 1, 5, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 1, 526, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "honeyDrop", 1, 8, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 1, 32415, missing)).outputChances(1000)
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .addTo(sFluidExtractionRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "honeyDrop", 1, 9, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 1, 32425, missing)).outputChances(1000)
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .addTo(sFluidExtractionRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "honeyDrop", 1, 10, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 1, 32418, missing)).outputChances(1000)
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .addTo(sFluidExtractionRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "honeyDrop", 1, 11, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 1, 32416, missing)).outputChances(1000)
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .addTo(sFluidExtractionRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "honeyDrop", 1, 13, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 1, 32429, missing)).outputChances(1000)
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .addTo(sFluidExtractionRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "honeyDrop", 1, 12, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 1, 32414, missing)).outputChances(1000)
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .addTo(sFluidExtractionRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "honeyDrop", 1, 14, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 1, 32417, missing)).outputChances(1000)
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .addTo(sFluidExtractionRecipes);
+
         new ResearchItem(
                 "HEALINGFRAME",
                 "MAGICBEES",
