@@ -1,6 +1,8 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +17,8 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
 public class ScriptForbiddenMagic implements IScriptLoader {
@@ -44,6 +48,23 @@ public class ScriptForbiddenMagic implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        addShapedRecipe(
+                getModItem("ForbiddenMagic", "Crystalwell", 1, 0, missing),
+                new Object[] { getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
+                        getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
+                        getModItem("Thaumcraft", "ItemShard", 1, 2, missing), "dyeBlack",
+                        getModItem("ForbiddenMagic", "Crystalwell", 1, 32767, missing), "dyeBlack",
+                        getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
+                        getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
+                        getModItem("Thaumcraft", "ItemShard", 1, 5, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("gregtech", "gt.metaitem.02", 2, 32414, missing),
+                new Object[] { getModItem("ForbiddenMagic", "InkFlower", 1, 0, missing) });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ForbiddenMagic", "InkFlower", 1, 0, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 2, 32414, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+
         // WANDS
         TCHelper.clearPages("CAP_manasteel");
         TCHelper.clearPages("CAP_terrasteel");
