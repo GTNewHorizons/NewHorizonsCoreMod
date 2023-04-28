@@ -1,11 +1,14 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
 
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -15,6 +18,8 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
 public class ScriptEMT implements IScriptLoader {
@@ -34,11 +39,69 @@ public class ScriptEMT implements IScriptLoader {
                 Mods.AdvancedSolarPanel.ID,
                 Mods.GalacticraftCore.ID,
                 Mods.Avaritia.ID,
-                Mods.ThaumicEnergistics.ID);
+                Mods.ThaumicEnergistics.ID,
+                Mods.TinkerConstruct.ID);
     }
 
     @Override
     public void loadRecipes() {
+
+        addShapelessCraftingRecipe(
+                getModItem("EMT", "EMTItems", 1, 8, missing),
+                new Object[] { getModItem("TConstruct", "materials", 1, 36, missing),
+                        getModItem("TConstruct", "materials", 1, 36, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("TConstruct", "materials", 2, 36, missing),
+                new Object[] { getModItem("EMT", "EMTItems", 1, 8, missing) });
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("gregtech", "gt.metaitem.01", 4, 2880, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 0, 32307, missing))
+                .itemOutputs(getModItem("EMT", "EMTItems", 1, 10, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("minecraft", "paper", 12, 0, missing),
+                        getModItem("EMT", "EMTItems", 4, 10, missing))
+                .itemOutputs(getModItem("EMT", "EMTItems", 1, 9, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 6912)).noFluidOutputs().duration(600).eut(30)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("minecraft", "paper", 12, 0, missing),
+                        getModItem("EMT", "EMTItems", 4, 10, missing))
+                .itemOutputs(getModItem("EMT", "EMTItems", 1, 9, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 6912)).noFluidOutputs().duration(600).eut(30)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.01", 0, 32307, missing))
+                .itemOutputs(getModItem("EMT", "EMTItems", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).noFluidOutputs().duration(100).eut(16)
+                .addTo(sFluidSolidficationRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.01", 0, 32307, missing))
+                .itemOutputs(getModItem("EMT", "EMTItems", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 288)).noFluidOutputs().duration(100).eut(16)
+                .addTo(sFluidSolidficationRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.01", 0, 32307, missing))
+                .itemOutputs(getModItem("EMT", "EMTItems", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).noFluidOutputs().duration(100).eut(30)
+                .addTo(sFluidSolidficationRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("EMT", "EMTItems", 1, 8, missing)).noItemOutputs()
+                .outputChances(16).noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("refinedglue", 288))
+                .duration(10000).eut(100).addTo(sFluidExtractionRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("gregtech", "gt.metaitem.01", 4, 2880, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 0, 32307, missing))
+                .itemOutputs(getModItem("EMT", "EMTItems", 1, 10, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "ItemNugget", 1, 21, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 22, 826, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("EMT", "EMTItems", 1, 10, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 2880, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+
         TCHelper.removeArcaneRecipe(getModItem("EMT", "EMTItems", 1, 14, missing));
         TCHelper.removeArcaneRecipe(getModItem("EMT", "ThaumiumWing", 1, 0, missing));
         TCHelper.removeInfusionRecipe(createItemStack("EMT", "NanosuitWing", 1, 26, "{charge:10.0d}", missing));
