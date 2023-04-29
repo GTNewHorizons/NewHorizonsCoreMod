@@ -22,13 +22,14 @@ public class ScriptLoader {
                 new ScriptEnderZoo(), new ScriptEnhancedLootBags(), new ScriptExtraBees(), new ScriptExtraTrees(),
                 new ScriptExtraUtilities(), new ScriptFloodLight(), new ScriptForbiddenMagic(), new ScriptForestry(),
                 new ScriptForgeMultipart(), new ScriptGadomancy(), new ScriptGalacticraft(), new ScriptGendustry(),
-                new ScriptGenetics(), new ScriptGregtechPlusPlus(), new ScriptHoloInventory(), new ScriptIguanaTweaks(),
-                new ScriptJABBA(), new ScriptMagicBees(), new ScriptNuclearControl(), new ScriptOpenBlocks(),
-                new ScriptRailcraft(), new ScriptRunicTablet(), new ScriptSleepingBags(), new ScriptSpiceOfLife(),
-                new ScriptTaintedMagic(), new ScriptTCCoreMod(), new ScriptThaumcraft(), new ScriptThaumicBases(),
-                new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics(),
-                new ScriptThaumicExploration(), new ScriptThaumicHorizons(), new ScriptThaumicMachina(),
-                new ScriptThaumicTinkerer(), new ScriptWarpTheory(), new ScriptWitchery(), new ScriptTravellersGear() };
+                new ScriptGenetics(), new ScriptGraviSuite(), new ScriptGregtechPlusPlus(), new ScriptHoloInventory(),
+                new ScriptIguanaTweaks(), new ScriptJABBA(), new ScriptMagicBees(), new ScriptNuclearControl(),
+                new ScriptOpenBlocks(), new ScriptRailcraft(), new ScriptRunicTablet(), new ScriptSleepingBags(),
+                new ScriptSpiceOfLife(), new ScriptTaintedMagic(), new ScriptTCCoreMod(), new ScriptThaumcraft(),
+                new ScriptThaumicBases(), new ScriptTranslocator(), new ScriptTwilightForest(),
+                new ScriptThaumicEnergistics(), new ScriptThaumicExploration(), new ScriptThaumicHorizons(),
+                new ScriptThaumicMachina(), new ScriptThaumicTinkerer(), new ScriptWarpTheory(), new ScriptWitchery(),
+                new ScriptTravellersGear() };
 
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
