@@ -2,6 +2,8 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
 public class ScriptTwilightForest implements IScriptLoader {
@@ -34,6 +37,48 @@ public class ScriptTwilightForest implements IScriptLoader {
                 TF_ROOF_TILE,
                 new Object[] { Blocks.cobblestone, Blocks.stone, Blocks.cobblestone, Blocks.cobblestone, "dyeBlack",
                         Blocks.cobblestone, Blocks.cobblestone, Blocks.cobblestone, Blocks.cobblestone });
+
+        addShapedRecipe(
+                getModItem("TwilightForest", "tile.TFTowerDevice", 1, 12, missing),
+                new Object[] { getModItem("TwilightForest", "tile.TFTowerStone", 1, 1, missing),
+                        getModItem("TwilightForest", "item.carminite", 1, 0, missing),
+                        getModItem("TwilightForest", "tile.TFTowerStone", 1, 1, missing),
+                        getModItem("TwilightForest", "item.carminite", 1, 0, missing), "blockRedstone",
+                        getModItem("TwilightForest", "item.carminite", 1, 0, missing),
+                        getModItem("TwilightForest", "tile.TFTowerStone", 1, 1, missing),
+                        getModItem("TwilightForest", "item.carminite", 1, 0, missing),
+                        getModItem("TwilightForest", "tile.TFTowerStone", 1, 1, missing) });
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2339, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 0, 32306, missing))
+                .itemOutputs(getModItem("TwilightForest", "item.steeleafIngot", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(100).eut(4).addTo(sAlloySmelterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
+                        getModItem("TwilightForest", "item.trophy", 0, 1, missing))
+                .itemOutputs(getModItem("TwilightForest", "item.nagaScale", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(64).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("Thaumcraft", "ItemResource", 6, 14, missing),
+                        getModItem("TwilightForest", "item.trophy", 0, 0, missing))
+                .itemOutputs(getModItem("TwilightForest", "item.fieryBlood", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(1200).eut(1024).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("minecraft", "ghast_tear", 1, 0, missing),
+                        getModItem("TwilightForest", "item.trophy", 0, 3, missing))
+                .itemOutputs(getModItem("TwilightForest", "item.fieryTears", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(1500).eut(256).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("Thaumcraft", "ItemResource", 8, 14, missing),
+                        getModItem("TwilightForest", "item.trophy", 0, 3, missing))
+                .itemOutputs(getModItem("TwilightForest", "item.carminite", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(1500).eut(4096).addTo(sAssemblerRecipes);
 
         ThaumcraftApi.registerObjectTag(
                 getModItem("TwilightForest", "tile.TFRoots", 1, 0, missing),
