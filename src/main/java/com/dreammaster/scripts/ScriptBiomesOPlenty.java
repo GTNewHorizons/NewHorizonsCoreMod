@@ -235,8 +235,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .fluidOutputs(FluidRegistry.getFluidStack("poison", 1000)).duration(10000).eut(20)
                 .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "honeyBlock", 1, 0, missing)).noItemOutputs()
-                .outputChances(40).noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000))
-                .duration(10000).eut(1200).addTo(sFluidExtractionRecipes);
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(10000).eut(1200)
+                .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "misc", 1, 2, missing))
                 .itemOutputs(getModItem("BiomesOPlenty", "food", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).noFluidOutputs().duration(1).eut(1)

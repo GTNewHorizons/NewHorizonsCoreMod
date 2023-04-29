@@ -87,8 +87,8 @@ public class ScriptEMT implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).noFluidOutputs().duration(100).eut(30)
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("EMT", "EMTItems", 1, 8, missing)).noItemOutputs()
-                .outputChances(16).noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("refinedglue", 288))
-                .duration(10000).eut(100).addTo(sFluidExtractionRecipes);
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(10000).eut(100)
+                .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("gregtech", "gt.metaitem.01", 4, 2880, missing),

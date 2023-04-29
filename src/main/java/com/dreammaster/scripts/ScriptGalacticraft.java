@@ -1291,1709 +1291,754 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void plasmaArcFurnaceRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing))
-                .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 10, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 41, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemTier3Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 37, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 32, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier4Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 16, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 52, 32462, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier5Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier6Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 64, 32464, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 61))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 61)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier7Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT5", 50, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 19))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 19)).duration(466).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 0, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 1, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 2, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 70))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 70)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalaxySpace", "item.Tier8Rocket", 1, 3, missing))
-                .itemOutputs(getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
+                .itemOutputs(
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT8", 18, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 64, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT7", 53, 0, missing),
+                        getModItem("dreamcraft", "item.HeavyDutyAlloyIngotT6", 20, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 22))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 22)).duration(533).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing),
+                        getModItem("minecraft", "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing))
-                .itemOutputs(getModItem("minecraft", "diamond", 4, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing))
-                .itemOutputs(getModItem("minecraft", "diamond", 4, 0, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing),
+                        getModItem("minecraft", "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 12, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing),
+                        getModItem("minecraft", "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 12, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 12, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 12, missing))
-                .itemOutputs(getModItem("minecraft", "diamond", 4, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 12, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 12, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 12, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 12, missing))
-                .itemOutputs(getModItem("minecraft", "diamond", 4, 0, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing),
+                        getModItem("minecraft", "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing),
+                        getModItem("minecraft", "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing))
-                .itemOutputs(getModItem("minecraft", "diamond", 4, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing))
-                .itemOutputs(getModItem("minecraft", "diamond", 4, 0, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 6, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 24, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 40, 11305, missing),
+                        getModItem("minecraft", "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemAstroMiner", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 3, 32464, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 3, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 3, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 10, 11028, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemAstroMiner", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemAstroMiner", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 3, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemAstroMiner", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 11028, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemAstroMiner", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 3, 32464, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemAstroMiner", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 8, 32463, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemAstroMiner", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 3, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemAstroMiner", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 10, 11028, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 3, 32464, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 8, 32463, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 3, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 10, 11028, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 21, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 21, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 21, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 21, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 28, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 28, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 28, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 1, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 28, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 35, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 35, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 35, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 2, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 35, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 42, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 42, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
-                .outputChances(10000, 10000, 10000, 10000)
-                .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
-                .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing))
+                .itemOutputs(
+                        getModItem("gregtech", "gt.metaitem.01", 11, 32462, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 42, 11305, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 5, 11340, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 42, 11305, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.buggy", 1, 3, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
-                .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
-                .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
-                .addTo(sPlasmaArcFurnaceRecipes);
+
     }
 
     private void benderRecipes() {

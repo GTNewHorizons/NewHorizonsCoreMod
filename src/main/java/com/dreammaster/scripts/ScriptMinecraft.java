@@ -2276,11 +2276,11 @@ public class ScriptMinecraft implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(25).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "sand", 1, 32767, missing)).noItemOutputs()
-                .outputChances(48).noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("molten.glass", 144))
-                .duration(10000).eut(200).addTo(sFluidExtractionRecipes);
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("molten.glass", 144)).duration(10000).eut(200)
+                .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "obsidian", 1, 0, missing)).noItemOutputs()
-                .outputChances(30).noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("obsidian.molten", 288))
-                .duration(10000).eut(600).addTo(sFluidExtractionRecipes);
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("obsidian.molten", 288)).duration(10000)
+                .eut(600).addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("minecraft", "sand", 4, 32767, missing),
