@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 
@@ -43,6 +44,18 @@ public class ScriptThaumicBases implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+
+        addShapelessCraftingRecipe(
+                getModItem("thaumicbases", "relocator", 1, 0, missing),
+                new Object[] { getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                        getModItem("thaumicbases", "relocator", 1, 6, missing),
+                        getModItem("Thaumcraft", "ItemResource", 1, 1, missing) });
+
+        addShapelessCraftingRecipe(
+                getModItem("thaumicbases", "relocator", 1, 6, missing),
+                new Object[] { getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
+                        getModItem("thaumicbases", "relocator", 1, 0, missing),
+                        getModItem("Thaumcraft", "ItemResource", 1, 0, missing) });
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem("thaumicbases", "eldritchArk", 1, 0, missing))
                 .itemOutputs(getModItem("thaumicbases", "genericSlab", 2, 0, missing))

@@ -398,6 +398,11 @@ public class ScriptThaumcraft implements IScriptLoader {
         // THAUMATURGY
 
         addShapedRecipe(
+                getModItem("Thaumcraft", "WandCap", 1, 0, missing),
+                new Object[] { "screwIron", "foilIron", "screwIron", "foilIron", "ringIron", "foilIron", "screwIron",
+                        "foilIron", "screwIron" });
+
+        addShapedRecipe(
                 createItemStack(
                         "Thaumcraft",
                         "WandCasting",
