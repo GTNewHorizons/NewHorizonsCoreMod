@@ -1,12 +1,15 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.FluidRegistry;
 
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -16,6 +19,8 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
 public class ScriptWitchery implements IScriptLoader {
@@ -37,6 +42,160 @@ public class ScriptWitchery implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        addShapedRecipe(
+                getModItem("witchery", "seedswormwood", 1, 0, missing),
+                new Object[] { getModItem("witchery", "mutator", 1, 0, missing),
+                        getModItem("witchery", "somniancotton", 1, 0, missing), null,
+                        getModItem("witchery", "somniancotton", 1, 0, missing),
+                        getModItem("minecraft", "wheat", 1, 0, missing),
+                        getModItem("witchery", "somniancotton", 1, 0, missing), null,
+                        getModItem("witchery", "somniancotton", 1, 0, missing), null });
+        addShapelessCraftingRecipe(
+                getModItem("witchery", "ingredient", 2, 130, missing),
+                new Object[] { getModItem("witchery", "ingredient", 1, 130, missing),
+                        getModItem("minecraft", "magma_cream", 1, 0, missing),
+                        getModItem("minecraft", "blaze_powder", 1, 0, missing), "dustTinyNetherStar" });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 16, missing),
+                new Object[] { null, null, getModItem("gregtech", "gt.metaitem.01", 1, 2622, missing), null, null, null,
+                        null, null, null });
+        addShapedRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 2622, missing),
+                new Object[] { null, null, getModItem("witchery", "ingredient", 1, 16, missing), null, null, null, null,
+                        null, null });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 140, missing),
+                new Object[] { "platePaper", "string", "platePaper", "string",
+                        getModItem("witchery", "ingredient", 1, 163, missing), "string", "platePaper", "string",
+                        "platePaper" });
+        addShapelessCraftingRecipe(
+                getModItem("witchery", "ingredient", 4, 7, missing),
+                new Object[] { getModItem("minecraft", "bone", 1, 0, missing), "craftingToolKnife" });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 81, missing),
+                new Object[] { getModItem("witchery", "ingredient", 1, 22, missing),
+                        getModItem("witchery", "ingredient", 1, 21, missing),
+                        getModItem("witchery", "garlic", 1, 0, missing), "dyeBlack", "craftingBook", "craftingFeather",
+                        getModItem("witchery", "ingredient", 1, 69, missing),
+                        getModItem("witchery", "ingredient", 1, 156, missing), "listAllseed" });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 106, missing),
+                new Object[] { getModItem("minecraft", "stained_hardened_clay", 1, 0, missing),
+                        getModItem("BiomesOPlenty", "mud", 1, 1, missing),
+                        getModItem("minecraft", "mycelium", 1, 0, missing), "dyeBlack", "craftingBook",
+                        "craftingFeather", getModItem("minecraft", "netherrack", 1, 0, missing),
+                        getModItem("minecraft", "dirt", 1, 2, missing),
+                        getModItem("TConstruct", "CraftedSoil", 1, 5, missing) });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 127, missing),
+                new Object[] { createItemStack("witchery", "poppet", 1, 0, "{WITCDamage:0}", missing),
+                        getModItem("witchery", "ingredient", 1, 7, missing),
+                        getModItem("witchery", "ingredient", 1, 14, missing), "dyeBlack", "craftingBook",
+                        "craftingFeather", getModItem("witchery", "ingredient", 1, 74, missing),
+                        getModItem("witchery", "ingredient", 1, 25, missing), "flowerYellow" });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 46, missing),
+                new Object[] { getModItem("witchery", "ingredient", 1, 27, missing),
+                        getModItem("witchery", "ingredient", 1, 27, missing),
+                        getModItem("witchery", "ingredient", 1, 27, missing), "dyeBlack", "craftingBook",
+                        "craftingFeather", getModItem("witchery", "ingredient", 1, 27, missing),
+                        getModItem("witchery", "ingredient", 1, 27, missing),
+                        getModItem("witchery", "ingredient", 1, 27, missing) });
+        addShapedRecipe(
+                getModItem("witchery", "cauldronbook", 1, 0, missing),
+                new Object[] { getModItem("witchery", "ingredient", 1, 31, missing),
+                        getModItem("witchery", "ingredient", 1, 33, missing),
+                        getModItem("witchery", "ingredient", 1, 32, missing), "dyeBlack", "craftingBook",
+                        "craftingFeather", getModItem("witchery", "ingredient", 1, 34, missing),
+                        getModItem("witchery", "ingredient", 1, 35, missing),
+                        getModItem("witchery", "ingredient", 1, 28, missing) });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 107, missing),
+                new Object[] { getModItem("witchery", "chalkritual", 1, 0, missing),
+                        getModItem("witchery", "circletalisman", 1, 0, missing),
+                        getModItem("witchery", "chalkritual", 1, 0, missing), "dyeBlack", "craftingBook",
+                        "craftingFeather", getModItem("witchery", "glintweed", 1, 0, missing),
+                        getModItem("witchery", "ingredient", 1, 78, missing),
+                        getModItem("witchery", "grassper", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 47, missing),
+                new Object[] { getModItem("witchery", "ingredient", 1, 27, missing),
+                        getModItem("witchery", "ingredient", 1, 10, missing),
+                        getModItem("witchery", "ingredient", 1, 27, missing), "dyeBlack", "craftingBook",
+                        "craftingFeather", getModItem("witchery", "ingredient", 1, 27, missing),
+                        getModItem("minecraft", "cauldron", 1, 0, missing),
+                        getModItem("witchery", "ingredient", 1, 27, missing) });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 48, missing),
+                new Object[] { getModItem("witchery", "ingredient", 1, 17, missing),
+                        getModItem("witchery", "ingredient", 1, 37, missing),
+                        getModItem("witchery", "ingredient", 1, 17, missing), "dyeBlack", "craftingBook",
+                        "craftingFeather", getModItem("witchery", "ingredient", 1, 17, missing),
+                        getModItem("witchery", "ingredient", 1, 37, missing),
+                        getModItem("witchery", "ingredient", 1, 17, missing) });
+        addShapedRecipe(
+                getModItem("witchery", "ingredient", 1, 49, missing),
+                new Object[] { getModItem("witchery", "ingredient", 1, 34, missing),
+                        getModItem("witchery", "ingredient", 1, 34, missing),
+                        getModItem("witchery", "ingredient", 1, 34, missing), "dyeBlack", "craftingBook",
+                        "craftingFeather", getModItem("witchery", "ingredient", 1, 21, missing),
+                        getModItem("minecraft", "cauldron", 1, 0, missing),
+                        getModItem("witchery", "ingredient", 1, 21, missing) });
+        addShapedRecipe(
+                getModItem("witchery", "earmuffs", 1, 0, missing),
+                new Object[] { "screwThaumium", "springSteel", "screwThaumium",
+                        getModItem("Backpack", "tannedLeather", 1, 0, missing), "craftingToolWrench",
+                        getModItem("Backpack", "tannedLeather", 1, 0, missing), "ringThaumium",
+                        "craftingToolScrewdriver", "ringThaumium" });
+        addShapedRecipe(
+                getModItem("witchery", "snowpressureplate", 6, 0, missing),
+                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
+                        getModItem("Railcraft", "slab", 1, 3, missing), "springAnyIron",
+                        getModItem("Railcraft", "slab", 1, 3, missing), "screwWood", "craftingToolScrewdriver",
+                        "screwWood" });
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("Railcraft", "slab", 2, 3, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 24032, missing),
+                        getModItem("gregtech", "gt.integrated_circuit", 0, 9, missing))
+                .itemOutputs(getModItem("witchery", "snowpressureplate", 2, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("Railcraft", "slab", 2, 3, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 24304, missing),
+                        getModItem("gregtech", "gt.integrated_circuit", 0, 9, missing))
+                .itemOutputs(getModItem("witchery", "snowpressureplate", 2, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "bone", 1, 0, missing))
+                .itemOutputs(getModItem("witchery", "ingredient", 8, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(100).eut(24)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "bone", 1, 0, missing))
+                .itemOutputs(getModItem("witchery", "ingredient", 8, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 16)).noFluidOutputs().duration(100)
+                .eut(24).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "bone", 1, 0, missing))
+                .itemOutputs(getModItem("witchery", "ingredient", 8, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(50).eut(24)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("minecraft", "clay_ball", 4, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 0, 32305, missing))
+                .itemOutputs(getModItem("witchery", "ingredient", 4, 26, missing)).noFluidInputs().noFluidOutputs()
+                .duration(400).eut(30).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("witchery", "seedsbelladonna", 1, 0, missing),
+                        getModItem("witchery", "seedsmandrake", 1, 0, missing),
+                        getModItem("witchery", "seedsartichoke", 1, 0, missing),
+                        getModItem("witchery", "seedssnowbell", 1, 0, missing))
+                .itemOutputs(getModItem("witchery", "ingredient", 1, 153, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(400).eut(120)
+                .addTo(sMixerRecipes);
+
         ResearchCategories.registerCategory(
                 "WITCHERY",
                 new ResourceLocation("dreamcraft:textures/thaumcraft/icon/icon_Witchery.png"),
