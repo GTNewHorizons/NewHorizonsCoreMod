@@ -27,1790 +27,7 @@ public class ScriptMinecraft implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "crafting_table", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "flint", 1, 0, missing),
-                        getModItem("minecraft", "flint", 1, 0, missing), "logWood", "logWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "chest", 1, 0, missing),
-                new Object[] { "logWood", "plankWood", "logWood", "plankWood",
-                        getModItem("minecraft", "flint", 1, 0, missing), "plankWood", "logWood", "plankWood",
-                        "logWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "trapped_chest", 1, 0, missing),
-                new Object[] { null, getModItem("minecraft", "tripwire_hook", 1, 0, missing), null, "screwAnyIron",
-                        getModItem("minecraft", "chest", 1, 0, missing), "screwAnyIron", null,
-                        "craftingToolScrewdriver", null });
-        addShapedRecipe(
-                getModItem("minecraft", "furnace", 1, 0, missing),
-                new Object[] { "cobblestone", "cobblestone", "cobblestone",
-                        getModItem("minecraft", "flint", 1, 0, missing),
-                        getModItem("minecraft", "flint", 1, 0, missing),
-                        getModItem("minecraft", "flint", 1, 0, missing), "cobblestone", "cobblestone", "cobblestone" });
-        addShapedRecipe(
-                getModItem("minecraft", "dispenser", 1, 0, missing),
-                new Object[] { "cobblestone", "ringAnyIron", "cobblestone", "springIron",
-                        getModItem("minecraft", "string", 1, 0, missing), "springIron", "gearGtSmallAnyIron",
-                        "stickRedAlloy", "gearGtSmallAnyIron" });
-        addShapedRecipe(
-                getModItem("minecraft", "dropper", 1, 0, missing),
-                new Object[] { "cobblestone", "ringAnyIron", "cobblestone", "springSmallIron",
-                        getModItem("minecraft", "string", 1, 0, missing), "springSmallIron", "gearGtSmallAnyIron",
-                        "stickRedAlloy", "gearGtSmallAnyIron" });
-        addShapedRecipe(
-                getModItem("minecraft", "piston", 1, 0, missing),
-                new Object[] { getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "gearGtSmallAnyIron",
-                        "fenceWood", "gearGtSmallAnyIron", "cobblestone", "plateRedAlloy", "cobblestone" });
-        addShapedRecipe(
-                getModItem("minecraft", "sticky_piston", 1, 0, missing),
-                new Object[] { null, "craftingToolSoftHammer", null, null, "slimeball", null, null,
-                        getModItem("minecraft", "piston", 1, 0, missing), null });
-        addShapedRecipe(
-                getModItem("minecraft", "rail", 8, 0, missing),
-                new Object[] { "screwAnyIron", null, "screwAnyIron",
-                        getModItem("Railcraft", "part.rail", 1, 0, missing),
-                        getModItem("Railcraft", "part.railbed", 1, 0, missing),
-                        getModItem("Railcraft", "part.rail", 1, 0, missing), "craftingToolScrewdriver", null,
-                        "craftingToolHardHammer" });
-        addShapedRecipe(
-                getModItem("minecraft", "detector_rail", 1, 0, missing),
-                new Object[] { "screwAnyIron", getModItem("Railcraft", "detector", 1, 1, missing), "screwAnyIron",
-                        getModItem("Railcraft", "part.rail", 1, 0, missing),
-                        getModItem("Railcraft", "part.railbed", 1, 0, missing),
-                        getModItem("Railcraft", "part.rail", 1, 0, missing), "craftingToolScrewdriver", "stickRedAlloy",
-                        "craftingToolHardHammer" });
-        addShapedRecipe(
-                getModItem("minecraft", "activator_rail", 2, 0, missing),
-                new Object[] { "screwAnyIron", getModItem("minecraft", "redstone_torch", 1, 0, missing), "screwAnyIron",
-                        getModItem("Railcraft", "part.rail", 1, 0, missing),
-                        getModItem("Railcraft", "part.railbed", 1, 0, missing),
-                        getModItem("Railcraft", "part.rail", 1, 0, missing), "craftingToolScrewdriver", "stickRedAlloy",
-                        "craftingToolHardHammer" });
-        addShapedRecipe(
-                getModItem("minecraft", "noteblock", 1, 0, missing),
-                new Object[] { "plankWood", "plankWood", "plankWood",
-                        getModItem("minecraft", "iron_bars", 1, 0, missing), "gearWood",
-                        getModItem("minecraft", "iron_bars", 1, 0, missing), "plankWood", "stickRedAlloy",
-                        "plankWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "jukebox", 1, 0, missing),
-                new Object[] { "logWood", getModItem("gregtech", "gt.metaitem.01", 1, 26500, missing), "logWood",
-                        getModItem("minecraft", "noteblock", 1, 0, missing), "record",
-                        getModItem("minecraft", "noteblock", 1, 0, missing), "logWood", "gearAnyIron", "logWood" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "lit_pumpkin", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "pumpkin", 1, 0, missing),
-                        getModItem("minecraft", "torch", 1, 0, missing), "craftingToolKnife" });
-        addShapedRecipe(
-                getModItem("minecraft", "trapdoor", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "flint", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "trapdoor", 2, 0, missing),
-                new Object[] { getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood", "screwAnyIron", "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "trapdoor", 3, 0, missing),
-                new Object[] { getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood", "screwSteel", "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "wooden_slab", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "stone_pressure_plate", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolHardHammer", "screwIron",
-                        getModItem("minecraft", "stone_slab", 1, 0, missing), "springAnyIron",
-                        getModItem("minecraft", "stone_slab", 1, 0, missing), "screwIron", "craftingToolScrewdriver",
-                        "screwIron" });
-        addShapedRecipe(
-                getModItem("minecraft", "wooden_pressure_plate", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing), "springAnyIron",
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing), "screwWood",
-                        "craftingToolScrewdriver", "screwWood" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "glass_pane", 2, 0, missing),
-                new Object[] { "craftingToolSaw", "glass" });
-        addShapedRecipe(
-                getModItem("minecraft", "torch", 3, 0, missing),
-                new Object[] { "gemCoal", null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "torch", 2, 0, missing),
-                new Object[] { "gemCharcoal", null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "torch", 1, 0, missing),
-                new Object[] { "gemLignite", null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "torch", 5, 0, missing),
-                new Object[] { "fuelCoke", null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "torch", 5, 0, missing),
-                new Object[] { "blockWool", getModItem("Railcraft", "fluid.creosote.bucket", 1, 0, missing),
-                        "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "torch", 4, 0, missing),
-                new Object[] { getModItem("TwilightForest", "item.torchberries", 1, 0, missing), null, "stickWood",
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "torch", 3, 0, missing),
-                new Object[] { "itemBeeswax", getModItem("minecraft", "string", 1, 0, missing), "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "torch", 2, 0, missing),
-                new Object[] { getModItem("IC2", "itemHarz", 1, 0, missing),
-                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", null });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "lever", 1, 0, missing),
-                new Object[] { "stickWood", getModItem("minecraft", "stone_button", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "stone_button", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "wooden_button", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem("minecraft", "wooden_pressure_plate", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "redstone_torch", 1, 0, missing),
-                new Object[] { "dustRedstone", null, getModItem("minecraft", "torch", 1, 0, missing), null });
-        addShapedRecipe(
-                getModItem("minecraft", "ladder", 2, 0, missing),
-                new Object[] { "stickWood", "craftingToolScrewdriver", "stickWood",
-                        getModItem("minecraft", "string", 1, 0, missing), "screwWood",
-                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", "craftingToolSoftHammer",
-                        "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "ladder", 4, 0, missing),
-                new Object[] { "stickWood", "craftingToolScrewdriver", "stickWood",
-                        getModItem("minecraft", "string", 1, 0, missing), "screwAnyIron",
-                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", "craftingToolSoftHammer",
-                        "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "ladder", 8, 0, missing),
-                new Object[] { "stickWood", "craftingToolScrewdriver", "stickWood",
-                        getModItem("minecraft", "string", 1, 0, missing), "screwSteel",
-                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", "craftingToolSoftHammer",
-                        "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "fence", 1, 0, missing),
-                new Object[] { "stickWood", getModItem("minecraft", "planks", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "fence", 2, 0, missing),
-                new Object[] { "screwAnyIron", "craftingToolScrewdriver", "screwAnyIron", "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "fence", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "fence", 2, 0, missing),
-                new Object[] { null, null, null, "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "fence", 4, 0, missing),
-                new Object[] { "screwAnyIron", "craftingToolScrewdriver", "screwAnyIron", "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "fence", 6, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "fence_gate", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "flint", 1, 0, missing), null,
-                        getModItem("minecraft", "flint", 1, 0, missing),
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "fence_gate", 2, 0, missing),
-                new Object[] { "screwAnyIron", "craftingToolScrewdriver", "screwAnyIron",
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "fence_gate", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "planks", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "fence_gate", 2, 0, missing),
-                new Object[] { null, null, null, getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
-                        "stickWood", getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "fence_gate", 4, 0, missing),
-                new Object[] { "screwAnyIron", "craftingToolScrewdriver", "screwAnyIron",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "fence_gate", 6, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
-                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "redstone_lamp", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "glass_pane", 1, 0, missing),
-                        getModItem("minecraft", "glass_pane", 1, 0, missing),
-                        getModItem("minecraft", "glass_pane", 1, 0, missing),
-                        getModItem("minecraft", "glass_pane", 1, 0, missing),
-                        getModItem("minecraft", "glowstone", 1, 0, missing),
-                        getModItem("minecraft", "glass_pane", 1, 0, missing),
-                        getModItem("minecraft", "glass_pane", 1, 0, missing), "stickRedAlloy",
-                        getModItem("minecraft", "glass_pane", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "tripwire_hook", 1, 0, missing),
-                new Object[] { "ringAnyIron", "stickWood", "ringAnyIron",
-                        getModItem("minecraft", "string", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "string", 1, 0, missing), null,
-                        getModItem("minecraft", "string", 1, 0, missing), null });
-        addShapedRecipe(
-                getModItem("minecraft", "anvil", 1, 0, missing),
-                new Object[] { "blockIron", "blockIron", "blockIron", "screwAnyIron", "blockIron", "screwAnyIron",
-                        "plateAnyIron", "blockIron", "plateAnyIron" });
-        addShapedRecipe(
-                getModItem("minecraft", "daylight_detector", 1, 0, missing),
-                new Object[] { getModItem("TConstruct", "GlassPane", 1, 0, missing),
-                        getModItem("TConstruct", "GlassPane", 1, 0, missing),
-                        getModItem("TConstruct", "GlassPane", 1, 0, missing), "plateNetherQuartz", "plateCertusQuartz",
-                        "plateNetherQuartz", "slabWood", "stickRedAlloy", "slabWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "hopper", 1, 0, missing),
-                new Object[] { "plateAnyIron", getModItem("minecraft", "chest", 1, 0, missing), "plateAnyIron",
-                        "plateAnyIron", "gearAnyIron", "plateAnyIron", "craftingToolHardHammer", "plateAnyIron",
-                        "craftingToolFile" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 0, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeWhite", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 0, missing),
-                new Object[] { "blockWool", "dyeWhite" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "string", 1, 0, missing), null,
-                        getModItem("minecraft", "string", 1, 0, missing), null,
-                        getModItem("minecraft", "string", 1, 0, missing), null,
-                        getModItem("minecraft", "string", 1, 0, missing), null,
-                        getModItem("minecraft", "string", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 1, 0, missing),
-                new Object[] { getModItem("BiomesOPlenty", "plants", 1, 7, missing),
-                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
-                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
-                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
-                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
-                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
-                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
-                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
-                        getModItem("BiomesOPlenty", "plants", 1, 7, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 1, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeOrange", "blockWool",
-                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 1, missing),
-                new Object[] { "blockWool", "dyeOrange" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 2, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeMagenta", "blockWool",
-                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 2, missing),
-                new Object[] { "blockWool", "dyeMagenta" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 3, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeLightBlue", "blockWool",
-                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 3, missing),
-                new Object[] { "blockWool", "dyeLightBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 4, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeYellow", "blockWool",
-                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 4, missing),
-                new Object[] { "blockWool", "dyeYellow" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 5, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeLime", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 5, missing),
-                new Object[] { "blockWool", "dyeLime" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 6, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyePink", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 6, missing),
-                new Object[] { "blockWool", "dyePink" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 7, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeGray", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 7, missing),
-                new Object[] { "blockWool", "dyeGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 8, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeLightGray", "blockWool",
-                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 8, missing),
-                new Object[] { "blockWool", "dyeLightGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 9, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeCyan", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 9, missing),
-                new Object[] { "blockWool", "dyeCyan" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 10, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyePurple", "blockWool",
-                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 10, missing),
-                new Object[] { "blockWool", "dyePurple" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 11, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeBlue", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 11, missing),
-                new Object[] { "blockWool", "dyeBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 12, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeBrown", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 12, missing),
-                new Object[] { "blockWool", "dyeBrown" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 13, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeGreen", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 13, missing),
-                new Object[] { "blockWool", "dyeGreen" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 14, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeRed", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 14, missing),
-                new Object[] { "blockWool", "dyeRed" });
-        addShapedRecipe(
-                getModItem("minecraft", "wool", 7, 15, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeBlack", "blockWool", "blockWool",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "wool", 1, 15, missing),
-                new Object[] { "blockWool", "dyeBlack" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 0, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeWhite", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 0, missing),
-                new Object[] { "glass", "dyeWhite" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 1, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeOrange", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 1, missing),
-                new Object[] { "glass", "dyeOrange" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 2, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeMagenta", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 2, missing),
-                new Object[] { "glass", "dyeMagenta" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 3, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeLightBlue", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 3, missing),
-                new Object[] { "glass", "dyeLightBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 4, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeYellow", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 4, missing),
-                new Object[] { "glass", "dyeYellow" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 5, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeLime", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 5, missing),
-                new Object[] { "glass", "dyeLime" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 6, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyePink", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 6, missing),
-                new Object[] { "glass", "dyePink" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 7, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeGray", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 7, missing),
-                new Object[] { "glass", "dyeGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 8, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeLightGray", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 8, missing),
-                new Object[] { "glass", "dyeLightGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 9, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeCyan", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 9, missing),
-                new Object[] { "glass", "dyeCyan" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 10, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyePurple", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 10, missing),
-                new Object[] { "glass", "dyePurple" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 11, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeBlue", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 11, missing),
-                new Object[] { "glass", "dyeBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 12, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeBrown", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 12, missing),
-                new Object[] { "glass", "dyeBrown" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 13, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeGreen", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 13, missing),
-                new Object[] { "glass", "dyeGreen" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 14, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeRed", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 14, missing),
-                new Object[] { "glass", "dyeRed" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass", 7, 15, missing),
-                new Object[] { "glass", "glass", "glass", "glass", "dyeBlack", "glass", "glass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass", 1, 15, missing),
-                new Object[] { "glass", "dyeBlack" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 0, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeWhite", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 0, missing),
-                new Object[] { "paneGlass", "dyeWhite" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 1, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeOrange", "paneGlass",
-                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 1, missing),
-                new Object[] { "paneGlass", "dyeOrange" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 2, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeMagenta", "paneGlass",
-                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 2, missing),
-                new Object[] { "paneGlass", "dyeMagenta" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 3, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeLightBlue", "paneGlass",
-                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 3, missing),
-                new Object[] { "paneGlass", "dyeLightBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 4, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeYellow", "paneGlass",
-                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 4, missing),
-                new Object[] { "paneGlass", "dyeYellow" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 5, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeLime", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 5, missing),
-                new Object[] { "paneGlass", "dyeLime" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 6, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyePink", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 6, missing),
-                new Object[] { "paneGlass", "dyePink" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 7, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeGray", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 7, missing),
-                new Object[] { "paneGlass", "dyeGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 8, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeLightGray", "paneGlass",
-                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 8, missing),
-                new Object[] { "paneGlass", "dyeLightGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 9, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeCyan", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 9, missing),
-                new Object[] { "paneGlass", "dyeCyan" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 10, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyePurple", "paneGlass",
-                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 10, missing),
-                new Object[] { "paneGlass", "dyePurple" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 11, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeBlue", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 11, missing),
-                new Object[] { "paneGlass", "dyeBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 12, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeBrown", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 12, missing),
-                new Object[] { "paneGlass", "dyeBrown" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 13, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeGreen", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 13, missing),
-                new Object[] { "paneGlass", "dyeGreen" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 14, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeRed", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 14, missing),
-                new Object[] { "paneGlass", "dyeRed" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_glass_pane", 7, 15, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeBlack", "paneGlass", "paneGlass",
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_glass_pane", 1, 15, missing),
-                new Object[] { "paneGlass", "dyeBlack" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 0, missing),
-                        getModItem("minecraft", "wool", 1, 0, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 0, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 0, missing),
-                        getModItem("minecraft", "wool", 1, 0, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 1, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeOrange",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 1, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeOrange" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 1, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 1, missing),
-                        getModItem("minecraft", "wool", 1, 1, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 1, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 1, missing),
-                        getModItem("minecraft", "wool", 1, 1, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 2, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeMagenta",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 2, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeMagenta" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 2, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 2, missing),
-                        getModItem("minecraft", "wool", 1, 2, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 2, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 2, missing),
-                        getModItem("minecraft", "wool", 1, 2, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 3, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeLightBlue",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 3, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeLightBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 3, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 3, missing),
-                        getModItem("minecraft", "wool", 1, 3, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 3, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 3, missing),
-                        getModItem("minecraft", "wool", 1, 3, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 4, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeYellow",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 4, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeYellow" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 4, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 4, missing),
-                        getModItem("minecraft", "wool", 1, 4, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 4, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 4, missing),
-                        getModItem("minecraft", "wool", 1, 4, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 5, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeLime",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 5, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeLime" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 5, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 5, missing),
-                        getModItem("minecraft", "wool", 1, 5, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 5, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 5, missing),
-                        getModItem("minecraft", "wool", 1, 5, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 6, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyePink",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 6, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyePink" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 6, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 6, missing),
-                        getModItem("minecraft", "wool", 1, 6, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 6, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 6, missing),
-                        getModItem("minecraft", "wool", 1, 6, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 7, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeGray",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 7, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 7, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 7, missing),
-                        getModItem("minecraft", "wool", 1, 7, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 7, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 7, missing),
-                        getModItem("minecraft", "wool", 1, 7, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 8, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeLightGray",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 8, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeLightGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 8, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 8, missing),
-                        getModItem("minecraft", "wool", 1, 8, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 8, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 8, missing),
-                        getModItem("minecraft", "wool", 1, 8, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 9, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeCyan",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 9, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeCyan" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 9, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 9, missing),
-                        getModItem("minecraft", "wool", 1, 9, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 9, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 9, missing),
-                        getModItem("minecraft", "wool", 1, 9, missing), "craftingToolSaw", null, null, null, null, null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 10, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyePurple",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 10, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyePurple" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 10, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 10, missing),
-                        getModItem("minecraft", "wool", 1, 10, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 10, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 10, missing),
-                        getModItem("minecraft", "wool", 1, 10, missing), "craftingToolSaw", null, null, null, null,
-                        null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 11, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeBlue",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 11, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 11, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 11, missing),
-                        getModItem("minecraft", "wool", 1, 11, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 11, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 11, missing),
-                        getModItem("minecraft", "wool", 1, 11, missing), "craftingToolSaw", null, null, null, null,
-                        null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 12, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeBrown",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 12, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeBrown" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 12, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 12, missing),
-                        getModItem("minecraft", "wool", 1, 12, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 12, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 12, missing),
-                        getModItem("minecraft", "wool", 1, 12, missing), "craftingToolSaw", null, null, null, null,
-                        null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 13, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeGreen",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 13, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeGreen" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 13, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 13, missing),
-                        getModItem("minecraft", "wool", 1, 13, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 13, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 13, missing),
-                        getModItem("minecraft", "wool", 1, 13, missing), "craftingToolSaw", null, null, null, null,
-                        null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 14, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeRed",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 14, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeRed" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 14, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 14, missing),
-                        getModItem("minecraft", "wool", 1, 14, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 14, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 14, missing),
-                        getModItem("minecraft", "wool", 1, 14, missing), "craftingToolSaw", null, null, null, null,
-                        null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 7, 15, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeBlack",
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "carpet", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "carpet", 1, 15, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeBlack" });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 1, 15, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 15, missing),
-                        getModItem("minecraft", "wool", 1, 15, missing), null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "carpet", 3, 15, missing),
-                new Object[] { getModItem("minecraft", "wool", 1, 15, missing),
-                        getModItem("minecraft", "wool", 1, 15, missing), "craftingToolSaw", null, null, null, null,
-                        null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 0, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeWhite",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeWhite" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 1, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeOrange",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 1, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeOrange" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 2, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeMagenta",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 2, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeMagenta" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 3, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLightBlue",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 3, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLightBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 4, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeYellow",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 4, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeYellow" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 5, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLime",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 5, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLime" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 6, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyePink",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 6, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyePink" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 7, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeGray",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 7, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 8, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLightGray",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 8, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLightGray" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 9, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeCyan",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 9, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeCyan" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 10, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyePurple",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 10, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyePurple" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 11, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBlue",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 11, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBlue" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 12, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBrown",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 12, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBrown" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 13, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeGreen",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 13, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeGreen" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 14, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeRed",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 14, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeRed" });
-        addShapedRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 7, 15, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBlack",
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
-                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
-                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stained_hardened_clay", 1, 15, missing),
-                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBlack" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "sugar", 1, 0, missing),
-                new Object[] { "craftingToolMortar", getModItem("minecraft", "reeds", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_sword", 1, 0, missing),
-                new Object[] { null, getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null,
-                        "craftingToolFile", getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        "craftingToolHardHammer", null, getModItem("minecraft", "stick", 1, 0, missing), null });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_shovel", 1, 0, missing),
-                new Object[] { "craftingToolFile", getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        "craftingToolHardHammer", null, getModItem("minecraft", "stick", 1, 0, missing), null, null,
-                        getModItem("minecraft", "stick", 1, 0, missing), null });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_pickaxe", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("minecraft", "diamond", 1, 0, missing),
-                        getModItem("minecraft", "diamond", 1, 0, missing), "craftingToolFile",
-                        getModItem("minecraft", "stick", 1, 0, missing), "craftingToolHardHammer", null,
-                        getModItem("minecraft", "stick", 1, 0, missing), null });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_axe", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("minecraft", "diamond", 1, 0, missing), "craftingToolHardHammer",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("minecraft", "stick", 1, 0, missing), null, "craftingToolFile",
-                        getModItem("minecraft", "stick", 1, 0, missing), null });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_hoe", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("minecraft", "diamond", 1, 0, missing), "craftingToolHardHammer", "craftingToolFile",
-                        getModItem("minecraft", "stick", 1, 0, missing), null, null,
-                        getModItem("minecraft", "stick", 1, 0, missing), null });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_helmet", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null, null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_chestplate", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_leggings", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null,
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_boots", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null,
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null, null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "iron_horse_armor", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "craftingToolScrewdriver",
-                        getModItem("minecraft", "iron_helmet", 1, 0, missing), "plateIron",
-                        getModItem("minecraft", "iron_chestplate", 1, 0, missing), "plateIron",
-                        getModItem("minecraft", "iron_leggings", 1, 0, missing), "screwIron",
-                        getModItem("minecraft", "iron_leggings", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "golden_horse_armor", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "craftingToolScrewdriver",
-                        getModItem("minecraft", "golden_helmet", 1, 0, missing), "plateGold",
-                        getModItem("minecraft", "golden_chestplate", 1, 0, missing), "plateGold",
-                        getModItem("minecraft", "golden_leggings", 1, 0, missing), "screwGold",
-                        getModItem("minecraft", "golden_leggings", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "diamond_horse_armor", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "craftingToolScrewdriver",
-                        getModItem("minecraft", "diamond_helmet", 1, 0, missing), "plateDiamond",
-                        getModItem("minecraft", "diamond_chestplate", 1, 0, missing), "plateDiamond",
-                        getModItem("minecraft", "diamond_leggings", 1, 0, missing), "screwDiamond",
-                        getModItem("minecraft", "diamond_leggings", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "saddle", 1, 0, missing),
-                new Object[] { "itemLeather", getModItem("Backpack", "tannedLeather", 1, 0, missing), "itemLeather",
-                        "itemLeather", getModItem("minecraft", "carpet", 1, 32767, missing), "itemLeather",
-                        "ringAnyIron", getModItem("minecraft", "string", 1, 0, missing), "ringAnyIron" });
-        addShapedRecipe(
-                getModItem("minecraft", "clock", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 28086, missing), "plateGold",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 26086, missing),
-                        getModItem("minecraft", "comparator", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 26086, missing), "craftingToolScrewdriver",
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27086, missing), "craftingToolWrench" });
-        addShapedRecipe(
-                getModItem("minecraft", "compass", 1, 0, missing),
-                new Object[] { "screwIron", "paneGlass", "boltIron", "ringZinc", "plateIron", "ringZinc",
-                        "boltRedAlloy", "craftingToolScrewdriver", "screwIron" });
-        addShapedRecipe(
-                getModItem("minecraft", "clay", 2, 0, missing),
-                new Object[] { "itemClay", "itemClay", "itemClay", "itemClay",
-                        getModItem("minecraft", "water_bucket", 1, 0, missing), "itemClay", "itemClay", "itemClay",
-                        "itemClay" });
-        addShapedRecipe(
-                getModItem("minecraft", "clay", 2, 0, missing),
-                new Object[] { "itemClay", "itemClay", "itemClay", "itemClay",
-                        getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0, missing), "itemClay", "itemClay",
-                        "itemClay", "itemClay" });
-        addShapedRecipe(
-                getModItem("minecraft", "pumpkin_seeds", 2, 0, missing),
-                new Object[] { getModItem("minecraft", "pumpkin", 1, 0, missing), "craftingToolHardHammer" });
-        addShapedRecipe(
-                getModItem("minecraft", "pumpkin_seeds", 2, 0, missing),
-                new Object[] { getModItem("minecraft", "pumpkin", 1, 0, missing), "craftingToolSoftHammer",
-                        getModItem("minecraft", "pumpkin", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "melon_seeds", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "melon", 1, 0, missing), "craftingToolHardHammer" });
-        addShapedRecipe(
-                getModItem("minecraft", "melon_seeds", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "melon", 1, 0, missing), "craftingToolSoftHammer",
-                        getModItem("minecraft", "melon", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "melon", 6, 0, missing),
-                new Object[] { "craftingToolKnife", getModItem("minecraft", "melon_block", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "gunpowder", 1, 0, missing),
-                new Object[] { "dustSmallGunpowder", "dustSmallGunpowder", "dustSmallGunpowder",
-                        "dustSmallGunpowder" });
-        addShapelessCraftingRecipe(
-                getModItem("gregtech", "gt.metaitem.02", 1, 32559, missing),
-                new Object[] { getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2881, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("gregtech", "gt.metaitem.02", 1, 32559, missing),
-                new Object[] { getModItem("harvestcraft", "freshwaterItem", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2881, missing),
-                        getModItem("harvestcraft", "freshwaterItem", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "chest_minecart", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem("minecraft", "chest", 1, 0, missing),
-                        "craftingToolWrench", null, getModItem("minecraft", "minecart", 1, 0, missing), null, null,
-                        "craftingToolScrewdriver", null });
-        addShapedRecipe(
-                getModItem("minecraft", "furnace_minecart", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem("minecraft", "furnace", 1, 0, missing),
-                        "craftingToolWrench", null, getModItem("minecraft", "minecart", 1, 0, missing), null, null,
-                        "craftingToolScrewdriver", null });
-        addShapedRecipe(
-                getModItem("minecraft", "hopper_minecart", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem("minecraft", "hopper", 1, 0, missing),
-                        "craftingToolWrench", null, getModItem("minecraft", "minecart", 1, 0, missing), null, null,
-                        "craftingToolScrewdriver", null });
-        addShapedRecipe(
-                getModItem("minecraft", "map", 1, 0, missing),
-                new Object[] { "paperEmpty", "paperEmpty", "paperEmpty", "paperEmpty",
-                        getModItem("minecraft", "compass", 1, 0, missing), "paperEmpty", "paperEmpty", "paperEmpty",
-                        "paperEmpty" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "dye", 3, 15, missing),
-                new Object[] { getModItem("minecraft", "bone", 1, 0, missing), "craftingToolMortar" });
-        addShapedRecipe(
-                getModItem("minecraft", "lead", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "string", 1, 0, missing),
-                        getModItem("minecraft", "string", 1, 0, missing),
-                        getModItem("minecraft", "string", 1, 0, missing),
-                        getModItem("minecraft", "string", 1, 0, missing), "slimeball",
-                        getModItem("minecraft", "string", 1, 0, missing),
-                        getModItem("minecraft", "string", 1, 0, missing),
-                        getModItem("minecraft", "string", 1, 0, missing),
-                        getModItem("minecraft", "string", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "pumpkin_pie", 1, 0, missing),
-                new Object[] { "craftingToolRollingPin", getModItem("minecraft", "pumpkin", 1, 0, missing), "dustSugar",
-                        getModItem("minecraft", "pumpkin", 1, 0, missing), "dustSugar", null, "dustSugar", null,
-                        null });
-        addShapedRecipe(
-                getModItem("minecraft", "comparator", 1, 0, missing),
-                new Object[] { "screwIron", "craftingRedstoneTorch", "screwIron", "craftingRedstoneTorch",
-                        "plateNetherQuartz", "craftingRedstoneTorch",
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "comparator", 1, 0, missing),
-                new Object[] { "screwIron", "craftingRedstoneTorch", "screwIron", "craftingRedstoneTorch",
-                        "plateCertusQuartz", "craftingRedstoneTorch",
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "comparator", 1, 0, missing),
-                new Object[] { "screwIron", "craftingRedstoneTorch", "screwIron", "craftingRedstoneTorch",
-                        "plateChargedCertusQuartz", "craftingRedstoneTorch",
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "comparator", 1, 0, missing),
-                new Object[] { "screwIron", "craftingRedstoneTorch", "screwIron", "craftingRedstoneTorch",
-                        "plateQuartzite", "craftingRedstoneTorch",
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "repeater", 1, 0, missing),
-                new Object[] { "screwIron", null, "screwIron", "craftingRedstoneTorch", "craftingToolScrewdriver",
-                        "craftingRedstoneTorch", getModItem("minecraft", "stone_pressure_plate", 1, 0, missing),
-                        "stickRedAlloy", getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "item_frame", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "string", 1, 0, missing), "ringAnyIron",
-                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", "itemLeather", "stickWood",
-                        "stickWood", "stickWood", "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "bed", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "carpet", 1, 32767, missing),
-                        getModItem("minecraft", "carpet", 1, 32767, missing),
-                        getModItem("minecraft", "carpet", 1, 32767, missing), "plankWood", "plankWood", "plankWood",
-                        "fenceWood", "craftingToolSoftHammer", "fenceWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "fishing_rod", 1, 0, missing),
-                new Object[] { null, null, "stickLongWood", null, "stickLongWood",
-                        getModItem("minecraft", "string", 1, 0, missing), "stickLongWood", "craftingToolWireCutter",
-                        "ringAnyIron" });
-        addShapedRecipe(
-                getModItem("minecraft", "paper", 2, 0, missing),
-                new Object[] { "dustWood", "dustWood", "dustWood", "dustWood",
-                        getModItem("minecraft", "water_bucket", 1, 0, missing), "dustWood", "dustWood", "dustWood",
-                        "dustWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "paper", 2, 0, missing),
-                new Object[] { "dustWood", "dustWood", "dustWood", "dustWood",
-                        getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0, missing), "dustWood", "dustWood",
-                        "dustWood", "dustWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "string", 1, 0, missing),
-                new Object[] { getModItem("Natura", "barleyFood", 1, 3, missing),
-                        getModItem("Natura", "barleyFood", 1, 3, missing),
-                        getModItem("Natura", "barleyFood", 1, 3, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "flower_pot", 1, 0, missing),
-                new Object[] { "craftingToolFile",
-                        getModItem("IguanaTweaksTConstruct", "clayBucketFired", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stone_slab", 1, 0, missing),
-                new Object[] { "craftingToolSaw", "stone" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stone_slab", 1, 1, missing),
-                new Object[] { "craftingToolSaw", "sandstone" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stone_slab", 1, 3, missing),
-                new Object[] { "craftingToolSaw", "cobblestone" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stone_slab", 1, 4, missing),
-                new Object[] { "craftingToolSaw", getModItem("minecraft", "brick_block", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stone_slab", 1, 5, missing),
-                new Object[] { "craftingToolSaw", "stoneBricks" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stone_slab", 1, 6, missing),
-                new Object[] { "craftingToolSaw", "stoneNetherBrick" });
-        addShapelessCraftingRecipe(
-                getModItem("minecraft", "stone_slab", 1, 7, missing),
-                new Object[] { "craftingToolSaw", "blockQuartz" });
-        addShapedRecipe(
-                getModItem("minecraft", "brick_block", 2, 0, missing),
-                new Object[] { "ingotBrick", "ingotBrick", "ingotBrick", "ingotBrick",
-                        getModItem("minecraft", "water_bucket", 1, 0, missing), "ingotBrick", "ingotBrick",
-                        "ingotBrick", "ingotBrick" });
-        addShapedRecipe(
-                getModItem("minecraft", "brick_block", 2, 0, missing),
-                new Object[] { "ingotBrick", "ingotBrick", "ingotBrick", "ingotBrick",
-                        getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0, missing), "ingotBrick",
-                        "ingotBrick", "ingotBrick", "ingotBrick" });
-        addShapedRecipe(
-                getModItem("minecraft", "nether_brick", 2, 0, missing),
-                new Object[] { "ingotBrickNether", "ingotBrickNether", "ingotBrickNether", "ingotBrickNether",
-                        getModItem("minecraft", "lava_bucket", 1, 0, missing), "ingotBrickNether", "ingotBrickNether",
-                        "ingotBrickNether", "ingotBrickNether" });
-        addShapedRecipe(
-                getModItem("minecraft", "nether_brick", 2, 0, missing),
-                new Object[] { "ingotBrickNether", "ingotBrickNether", "ingotBrickNether", "ingotBrickNether",
-                        getModItem("IguanaTweaksTConstruct", "clayBucketLava", 1, 0, missing), "ingotBrickNether",
-                        "ingotBrickNether", "ingotBrickNether", "ingotBrickNether" });
-        addShapedRecipe(
-                getModItem("minecraft", "wooden_door", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "trapdoor", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem("minecraft", "planks", 1, 0, missing), "ringAnyIron", "screwAnyIron",
-                        getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "planks", 1, 0, missing), "craftingToolSaw" });
-        addShapedRecipe(
-                getModItem("minecraft", "wooden_door", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "trapdoor", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem("minecraft", "planks", 1, 0, missing), "ringCopper", "screwCopper",
-                        getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "planks", 1, 0, missing), "craftingToolSaw" });
-        addShapedRecipe(
-                getModItem("minecraft", "wooden_door", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "trapdoor", 1, 0, missing), "craftingToolSaw",
-                        getModItem("minecraft", "planks", 1, 0, missing), "ringAnyIron", "screwAnyIron",
-                        getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "planks", 1, 0, missing), "craftingToolScrewdriver" });
-        addShapedRecipe(
-                getModItem("minecraft", "wooden_door", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "trapdoor", 1, 0, missing), "craftingToolSaw",
-                        getModItem("minecraft", "planks", 1, 0, missing), "ringCopper", "screwCopper",
-                        getModItem("minecraft", "planks", 1, 0, missing),
-                        getModItem("minecraft", "planks", 1, 0, missing), "craftingToolScrewdriver" });
-        addShapedRecipe(
-                getModItem("minecraft", "iron_door", 1, 0, missing),
-                new Object[] { "plateAnyIron", getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
-                        "craftingToolHardHammer", "plateAnyIron", "ringSteel", "screwSteel", "plateAnyIron",
-                        "plateAnyIron", "craftingToolScrewdriver" });
-        addShapedRecipe(
-                getModItem("minecraft", "iron_door", 1, 0, missing),
-                new Object[] { "plateAnyIron", getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
-                        "craftingToolScrewdriver", "plateAnyIron", "ringSteel", "screwSteel", "plateAnyIron",
-                        "plateAnyIron", "craftingToolHardHammer" });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "sign", 3, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing), null, "stickWood", null });
-        addShapedRecipe(
-                getModItem("minecraft", "boat", 1, 0, missing),
-                new Object[] { "plankWood", null, "plankWood", "plankWood", "craftingToolKnife", "plankWood",
-                        "slabWood", "slabWood", "slabWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "painting", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "string", 1, 0, missing), "ringAnyIron",
-                        getModItem("minecraft", "string", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "carpet", 1, 32767, missing), "stickWood", "stickWood", "stickWood",
-                        "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "flint_and_steel", 1, 0, missing),
-                new Object[] { null, "gearGtSmallSteel", null, null, getModItem("minecraft", "flint", 1, 0, missing),
-                        null, null, "springSmallSteel", null });
-        addShapedRecipe(
-                getModItem("minecraft", "shears", 1, 0, missing),
-                new Object[] { "plateIron", "screwIron", "plateIron", "craftingToolHardHammer", "ringIron",
-                        "craftingToolFile", "stickWood", "craftingToolScrewdriver", "stickWood" });
-        addShapedRecipe(
-                getModItem("minecraft", "nether_star", 16, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.03", 1, 2506, missing), "craftingToolCrowbar" });
-        addShapedRecipe(
-                getModItem("minecraft", "mossy_cobblestone", 1, 0, missing),
-                new Object[] { getModItem("BiomesOPlenty", "moss", 1, 0, missing),
-                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
-                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
-                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
-                        getModItem("minecraft", "cobblestone", 1, 0, missing),
-                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
-                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
-                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
-                        getModItem("BiomesOPlenty", "moss", 1, 0, missing) });
-        addShapedRecipe(
-                getModItem("minecraft", "book", 1, 0, missing),
-                new Object[] { getModItem("minecraft", "string", 1, 0, missing), "paperEmpty", "itemLeather",
-                        getModItem("minecraft", "string", 1, 0, missing), "paperEmpty",
-                        getModItem("TConstruct", "buckets", 1, 25, missing),
-                        getModItem("minecraft", "string", 1, 0, missing), "paperEmpty", "itemLeather" });
-        addShapedRecipe(
-                getModItem("minecraft", "bookshelf", 1, 0, missing),
-                new Object[] { "plateWood", "plateWood", "plateWood", getModItem("minecraft", "book", 1, 0, missing),
-                        getModItem("minecraft", "book", 1, 0, missing), getModItem("minecraft", "book", 1, 0, missing),
-                        "plateWood", "plateWood", "plateWood" });
-        addShapedRecipe(
-                getModItem("gregtech", "gt.metaitem.01", 9, 9032, missing),
-                new Object[] { "craftingToolSaw", "ingotIron", null, null, null, null, null, null, null });
-        addShapedRecipe(
-                getModItem("minecraft", "gold_nugget", 9, 0, missing),
-                new Object[] { "craftingToolSaw", "ingotGold", null, null, null, null, null, null, null });
+        craftingRecipes();
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem("dreamcraft", "item.UnfiredClayBrick", 1, 0, missing),
@@ -4087,5 +2304,1792 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(100).eut(8).addTo(sSlicerRecipes);
         GT_ModHandler.setFuelValue(getModItem("minecraft", "wooden_pressure_plate", 1, 0, missing), (short) 75);
 
+    }
+
+    private void craftingRecipes() {
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "crafting_table", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "flint", 1, 0, missing),
+                        getModItem("minecraft", "flint", 1, 0, missing), "logWood", "logWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "chest", 1, 0, missing),
+                new Object[] { "logWood", "plankWood", "logWood", "plankWood",
+                        getModItem("minecraft", "flint", 1, 0, missing), "plankWood", "logWood", "plankWood",
+                        "logWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "trapped_chest", 1, 0, missing),
+                new Object[] { null, getModItem("minecraft", "tripwire_hook", 1, 0, missing), null, "screwAnyIron",
+                        getModItem("minecraft", "chest", 1, 0, missing), "screwAnyIron", null,
+                        "craftingToolScrewdriver", null });
+        addShapedRecipe(
+                getModItem("minecraft", "furnace", 1, 0, missing),
+                new Object[] { "cobblestone", "cobblestone", "cobblestone",
+                        getModItem("minecraft", "flint", 1, 0, missing),
+                        getModItem("minecraft", "flint", 1, 0, missing),
+                        getModItem("minecraft", "flint", 1, 0, missing), "cobblestone", "cobblestone", "cobblestone" });
+        addShapedRecipe(
+                getModItem("minecraft", "dispenser", 1, 0, missing),
+                new Object[] { "cobblestone", "ringAnyIron", "cobblestone", "springIron",
+                        getModItem("minecraft", "string", 1, 0, missing), "springIron", "gearGtSmallAnyIron",
+                        "stickRedAlloy", "gearGtSmallAnyIron" });
+        addShapedRecipe(
+                getModItem("minecraft", "dropper", 1, 0, missing),
+                new Object[] { "cobblestone", "ringAnyIron", "cobblestone", "springSmallIron",
+                        getModItem("minecraft", "string", 1, 0, missing), "springSmallIron", "gearGtSmallAnyIron",
+                        "stickRedAlloy", "gearGtSmallAnyIron" });
+        addShapedRecipe(
+                getModItem("minecraft", "piston", 1, 0, missing),
+                new Object[] { getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "gearGtSmallAnyIron",
+                        "fenceWood", "gearGtSmallAnyIron", "cobblestone", "plateRedAlloy", "cobblestone" });
+        addShapedRecipe(
+                getModItem("minecraft", "sticky_piston", 1, 0, missing),
+                new Object[] { null, "craftingToolSoftHammer", null, null, "slimeball", null, null,
+                        getModItem("minecraft", "piston", 1, 0, missing), null });
+        addShapedRecipe(
+                getModItem("minecraft", "rail", 8, 0, missing),
+                new Object[] { "screwAnyIron", null, "screwAnyIron",
+                        getModItem("Railcraft", "part.rail", 1, 0, missing),
+                        getModItem("Railcraft", "part.railbed", 1, 0, missing),
+                        getModItem("Railcraft", "part.rail", 1, 0, missing), "craftingToolScrewdriver", null,
+                        "craftingToolHardHammer" });
+        addShapedRecipe(
+                getModItem("minecraft", "detector_rail", 1, 0, missing),
+                new Object[] { "screwAnyIron", getModItem("Railcraft", "detector", 1, 1, missing), "screwAnyIron",
+                        getModItem("Railcraft", "part.rail", 1, 0, missing),
+                        getModItem("Railcraft", "part.railbed", 1, 0, missing),
+                        getModItem("Railcraft", "part.rail", 1, 0, missing), "craftingToolScrewdriver", "stickRedAlloy",
+                        "craftingToolHardHammer" });
+        addShapedRecipe(
+                getModItem("minecraft", "activator_rail", 2, 0, missing),
+                new Object[] { "screwAnyIron", getModItem("minecraft", "redstone_torch", 1, 0, missing), "screwAnyIron",
+                        getModItem("Railcraft", "part.rail", 1, 0, missing),
+                        getModItem("Railcraft", "part.railbed", 1, 0, missing),
+                        getModItem("Railcraft", "part.rail", 1, 0, missing), "craftingToolScrewdriver", "stickRedAlloy",
+                        "craftingToolHardHammer" });
+        addShapedRecipe(
+                getModItem("minecraft", "noteblock", 1, 0, missing),
+                new Object[] { "plankWood", "plankWood", "plankWood",
+                        getModItem("minecraft", "iron_bars", 1, 0, missing), "gearWood",
+                        getModItem("minecraft", "iron_bars", 1, 0, missing), "plankWood", "stickRedAlloy",
+                        "plankWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "jukebox", 1, 0, missing),
+                new Object[] { "logWood", getModItem("gregtech", "gt.metaitem.01", 1, 26500, missing), "logWood",
+                        getModItem("minecraft", "noteblock", 1, 0, missing), "record",
+                        getModItem("minecraft", "noteblock", 1, 0, missing), "logWood", "gearAnyIron", "logWood" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "lit_pumpkin", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "pumpkin", 1, 0, missing),
+                        getModItem("minecraft", "torch", 1, 0, missing), "craftingToolKnife" });
+        addShapedRecipe(
+                getModItem("minecraft", "trapdoor", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "flint", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "trapdoor", 2, 0, missing),
+                new Object[] { getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood", "screwAnyIron", "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "trapdoor", 3, 0, missing),
+                new Object[] { getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood", "screwSteel", "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "wooden_slab", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "stone_pressure_plate", 2, 0, missing),
+                new Object[] { "screwIron", "craftingToolHardHammer", "screwIron",
+                        getModItem("minecraft", "stone_slab", 1, 0, missing), "springAnyIron",
+                        getModItem("minecraft", "stone_slab", 1, 0, missing), "screwIron", "craftingToolScrewdriver",
+                        "screwIron" });
+        addShapedRecipe(
+                getModItem("minecraft", "wooden_pressure_plate", 2, 0, missing),
+                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing), "springAnyIron",
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing), "screwWood",
+                        "craftingToolScrewdriver", "screwWood" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "glass_pane", 2, 0, missing),
+                new Object[] { "craftingToolSaw", "glass" });
+        addShapedRecipe(
+                getModItem("minecraft", "torch", 3, 0, missing),
+                new Object[] { "gemCoal", null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "torch", 2, 0, missing),
+                new Object[] { "gemCharcoal", null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "torch", 1, 0, missing),
+                new Object[] { "gemLignite", null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "torch", 5, 0, missing),
+                new Object[] { "fuelCoke", null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "torch", 5, 0, missing),
+                new Object[] { "blockWool", getModItem("Railcraft", "fluid.creosote.bucket", 1, 0, missing),
+                        "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "torch", 4, 0, missing),
+                new Object[] { getModItem("TwilightForest", "item.torchberries", 1, 0, missing), null, "stickWood",
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "torch", 3, 0, missing),
+                new Object[] { "itemBeeswax", getModItem("minecraft", "string", 1, 0, missing), "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "torch", 2, 0, missing),
+                new Object[] { getModItem("IC2", "itemHarz", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", null });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "lever", 1, 0, missing),
+                new Object[] { "stickWood", getModItem("minecraft", "stone_button", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "stone_button", 2, 0, missing),
+                new Object[] { "craftingToolSaw", getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "wooden_button", 2, 0, missing),
+                new Object[] { "craftingToolSaw", getModItem("minecraft", "wooden_pressure_plate", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "redstone_torch", 1, 0, missing),
+                new Object[] { "dustRedstone", null, getModItem("minecraft", "torch", 1, 0, missing), null });
+        addShapedRecipe(
+                getModItem("minecraft", "ladder", 2, 0, missing),
+                new Object[] { "stickWood", "craftingToolScrewdriver", "stickWood",
+                        getModItem("minecraft", "string", 1, 0, missing), "screwWood",
+                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", "craftingToolSoftHammer",
+                        "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "ladder", 4, 0, missing),
+                new Object[] { "stickWood", "craftingToolScrewdriver", "stickWood",
+                        getModItem("minecraft", "string", 1, 0, missing), "screwAnyIron",
+                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", "craftingToolSoftHammer",
+                        "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "ladder", 8, 0, missing),
+                new Object[] { "stickWood", "craftingToolScrewdriver", "stickWood",
+                        getModItem("minecraft", "string", 1, 0, missing), "screwSteel",
+                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", "craftingToolSoftHammer",
+                        "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "fence", 1, 0, missing),
+                new Object[] { "stickWood", getModItem("minecraft", "planks", 1, 0, missing), "stickWood", "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood", "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "fence", 2, 0, missing),
+                new Object[] { "screwAnyIron", "craftingToolScrewdriver", "screwAnyIron", "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood", "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "fence", 4, 0, missing),
+                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood", "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "fence", 2, 0, missing),
+                new Object[] { null, null, null, "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood", "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "fence", 4, 0, missing),
+                new Object[] { "screwAnyIron", "craftingToolScrewdriver", "screwAnyIron", "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood", "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "fence", 6, 0, missing),
+                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood", "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "fence_gate", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "flint", 1, 0, missing), null,
+                        getModItem("minecraft", "flint", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "fence_gate", 2, 0, missing),
+                new Object[] { "screwAnyIron", "craftingToolScrewdriver", "screwAnyIron",
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "fence_gate", 4, 0, missing),
+                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "planks", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "fence_gate", 2, 0, missing),
+                new Object[] { null, null, null, getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
+                        "stickWood", getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "fence_gate", 4, 0, missing),
+                new Object[] { "screwAnyIron", "craftingToolScrewdriver", "screwAnyIron",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "fence_gate", 6, 0, missing),
+                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing),
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing), "stickWood",
+                        getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "redstone_lamp", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "glass_pane", 1, 0, missing),
+                        getModItem("minecraft", "glass_pane", 1, 0, missing),
+                        getModItem("minecraft", "glass_pane", 1, 0, missing),
+                        getModItem("minecraft", "glass_pane", 1, 0, missing),
+                        getModItem("minecraft", "glowstone", 1, 0, missing),
+                        getModItem("minecraft", "glass_pane", 1, 0, missing),
+                        getModItem("minecraft", "glass_pane", 1, 0, missing), "stickRedAlloy",
+                        getModItem("minecraft", "glass_pane", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "tripwire_hook", 1, 0, missing),
+                new Object[] { "ringAnyIron", "stickWood", "ringAnyIron",
+                        getModItem("minecraft", "string", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "string", 1, 0, missing), null,
+                        getModItem("minecraft", "string", 1, 0, missing), null });
+        addShapedRecipe(
+                getModItem("minecraft", "anvil", 1, 0, missing),
+                new Object[] { "blockIron", "blockIron", "blockIron", "screwAnyIron", "blockIron", "screwAnyIron",
+                        "plateAnyIron", "blockIron", "plateAnyIron" });
+        addShapedRecipe(
+                getModItem("minecraft", "daylight_detector", 1, 0, missing),
+                new Object[] { getModItem("TConstruct", "GlassPane", 1, 0, missing),
+                        getModItem("TConstruct", "GlassPane", 1, 0, missing),
+                        getModItem("TConstruct", "GlassPane", 1, 0, missing), "plateNetherQuartz", "plateCertusQuartz",
+                        "plateNetherQuartz", "slabWood", "stickRedAlloy", "slabWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "hopper", 1, 0, missing),
+                new Object[] { "plateAnyIron", getModItem("minecraft", "chest", 1, 0, missing), "plateAnyIron",
+                        "plateAnyIron", "gearAnyIron", "plateAnyIron", "craftingToolHardHammer", "plateAnyIron",
+                        "craftingToolFile" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 0, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeWhite", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 0, missing),
+                new Object[] { "blockWool", "dyeWhite" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "string", 1, 0, missing), null,
+                        getModItem("minecraft", "string", 1, 0, missing), null,
+                        getModItem("minecraft", "string", 1, 0, missing), null,
+                        getModItem("minecraft", "string", 1, 0, missing), null,
+                        getModItem("minecraft", "string", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 1, 0, missing),
+                new Object[] { getModItem("BiomesOPlenty", "plants", 1, 7, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 7, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 7, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 1, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeOrange", "blockWool",
+                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 1, missing),
+                new Object[] { "blockWool", "dyeOrange" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 2, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeMagenta", "blockWool",
+                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 2, missing),
+                new Object[] { "blockWool", "dyeMagenta" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 3, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeLightBlue", "blockWool",
+                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 3, missing),
+                new Object[] { "blockWool", "dyeLightBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 4, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeYellow", "blockWool",
+                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 4, missing),
+                new Object[] { "blockWool", "dyeYellow" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 5, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeLime", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 5, missing),
+                new Object[] { "blockWool", "dyeLime" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 6, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyePink", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 6, missing),
+                new Object[] { "blockWool", "dyePink" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 7, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeGray", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 7, missing),
+                new Object[] { "blockWool", "dyeGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 8, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeLightGray", "blockWool",
+                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 8, missing),
+                new Object[] { "blockWool", "dyeLightGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 9, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeCyan", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 9, missing),
+                new Object[] { "blockWool", "dyeCyan" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 10, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyePurple", "blockWool",
+                        "blockWool", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 10, missing),
+                new Object[] { "blockWool", "dyePurple" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 11, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeBlue", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 11, missing),
+                new Object[] { "blockWool", "dyeBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 12, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeBrown", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 12, missing),
+                new Object[] { "blockWool", "dyeBrown" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 13, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeGreen", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 13, missing),
+                new Object[] { "blockWool", "dyeGreen" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 14, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeRed", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 14, missing),
+                new Object[] { "blockWool", "dyeRed" });
+        addShapedRecipe(
+                getModItem("minecraft", "wool", 7, 15, missing),
+                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool", "dyeBlack", "blockWool", "blockWool",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "blockWool" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "wool", 1, 15, missing),
+                new Object[] { "blockWool", "dyeBlack" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 0, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeWhite", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 0, missing),
+                new Object[] { "glass", "dyeWhite" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 1, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeOrange", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 1, missing),
+                new Object[] { "glass", "dyeOrange" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 2, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeMagenta", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 2, missing),
+                new Object[] { "glass", "dyeMagenta" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 3, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeLightBlue", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 3, missing),
+                new Object[] { "glass", "dyeLightBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 4, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeYellow", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 4, missing),
+                new Object[] { "glass", "dyeYellow" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 5, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeLime", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 5, missing),
+                new Object[] { "glass", "dyeLime" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 6, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyePink", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 6, missing),
+                new Object[] { "glass", "dyePink" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 7, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeGray", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 7, missing),
+                new Object[] { "glass", "dyeGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 8, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeLightGray", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 8, missing),
+                new Object[] { "glass", "dyeLightGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 9, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeCyan", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 9, missing),
+                new Object[] { "glass", "dyeCyan" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 10, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyePurple", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 10, missing),
+                new Object[] { "glass", "dyePurple" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 11, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeBlue", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 11, missing),
+                new Object[] { "glass", "dyeBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 12, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeBrown", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 12, missing),
+                new Object[] { "glass", "dyeBrown" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 13, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeGreen", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 13, missing),
+                new Object[] { "glass", "dyeGreen" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 14, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeRed", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 14, missing),
+                new Object[] { "glass", "dyeRed" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass", 7, 15, missing),
+                new Object[] { "glass", "glass", "glass", "glass", "dyeBlack", "glass", "glass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "glass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass", 1, 15, missing),
+                new Object[] { "glass", "dyeBlack" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 0, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeWhite", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 0, missing),
+                new Object[] { "paneGlass", "dyeWhite" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 1, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeOrange", "paneGlass",
+                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 1, missing),
+                new Object[] { "paneGlass", "dyeOrange" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 2, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeMagenta", "paneGlass",
+                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 2, missing),
+                new Object[] { "paneGlass", "dyeMagenta" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 3, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeLightBlue", "paneGlass",
+                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 3, missing),
+                new Object[] { "paneGlass", "dyeLightBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 4, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeYellow", "paneGlass",
+                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 4, missing),
+                new Object[] { "paneGlass", "dyeYellow" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 5, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeLime", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 5, missing),
+                new Object[] { "paneGlass", "dyeLime" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 6, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyePink", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 6, missing),
+                new Object[] { "paneGlass", "dyePink" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 7, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeGray", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 7, missing),
+                new Object[] { "paneGlass", "dyeGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 8, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeLightGray", "paneGlass",
+                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 8, missing),
+                new Object[] { "paneGlass", "dyeLightGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 9, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeCyan", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 9, missing),
+                new Object[] { "paneGlass", "dyeCyan" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 10, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyePurple", "paneGlass",
+                        "paneGlass", getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 10, missing),
+                new Object[] { "paneGlass", "dyePurple" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 11, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeBlue", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 11, missing),
+                new Object[] { "paneGlass", "dyeBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 12, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeBrown", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 12, missing),
+                new Object[] { "paneGlass", "dyeBrown" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 13, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeGreen", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 13, missing),
+                new Object[] { "paneGlass", "dyeGreen" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 14, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeRed", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 14, missing),
+                new Object[] { "paneGlass", "dyeRed" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_glass_pane", 7, 15, missing),
+                new Object[] { "paneGlass", "paneGlass", "paneGlass", "paneGlass", "dyeBlack", "paneGlass", "paneGlass",
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing), "paneGlass" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_glass_pane", 1, 15, missing),
+                new Object[] { "paneGlass", "dyeBlack" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 0, missing),
+                        getModItem("minecraft", "wool", 1, 0, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 0, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 0, missing),
+                        getModItem("minecraft", "wool", 1, 0, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 1, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeOrange",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 1, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeOrange" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 1, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 1, missing),
+                        getModItem("minecraft", "wool", 1, 1, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 1, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 1, missing),
+                        getModItem("minecraft", "wool", 1, 1, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 2, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeMagenta",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 2, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeMagenta" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 2, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 2, missing),
+                        getModItem("minecraft", "wool", 1, 2, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 2, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 2, missing),
+                        getModItem("minecraft", "wool", 1, 2, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 3, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeLightBlue",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 3, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeLightBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 3, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 3, missing),
+                        getModItem("minecraft", "wool", 1, 3, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 3, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 3, missing),
+                        getModItem("minecraft", "wool", 1, 3, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 4, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeYellow",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 4, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeYellow" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 4, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 4, missing),
+                        getModItem("minecraft", "wool", 1, 4, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 4, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 4, missing),
+                        getModItem("minecraft", "wool", 1, 4, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 5, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeLime",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 5, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeLime" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 5, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 5, missing),
+                        getModItem("minecraft", "wool", 1, 5, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 5, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 5, missing),
+                        getModItem("minecraft", "wool", 1, 5, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 6, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyePink",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 6, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyePink" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 6, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 6, missing),
+                        getModItem("minecraft", "wool", 1, 6, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 6, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 6, missing),
+                        getModItem("minecraft", "wool", 1, 6, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 7, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeGray",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 7, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 7, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 7, missing),
+                        getModItem("minecraft", "wool", 1, 7, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 7, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 7, missing),
+                        getModItem("minecraft", "wool", 1, 7, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 8, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeLightGray",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 8, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeLightGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 8, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 8, missing),
+                        getModItem("minecraft", "wool", 1, 8, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 8, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 8, missing),
+                        getModItem("minecraft", "wool", 1, 8, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 9, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeCyan",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 9, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeCyan" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 9, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 9, missing),
+                        getModItem("minecraft", "wool", 1, 9, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 9, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 9, missing),
+                        getModItem("minecraft", "wool", 1, 9, missing), "craftingToolSaw", null, null, null, null, null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 10, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyePurple",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 10, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyePurple" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 10, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 10, missing),
+                        getModItem("minecraft", "wool", 1, 10, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 10, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 10, missing),
+                        getModItem("minecraft", "wool", 1, 10, missing), "craftingToolSaw", null, null, null, null,
+                        null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 11, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeBlue",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 11, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 11, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 11, missing),
+                        getModItem("minecraft", "wool", 1, 11, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 11, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 11, missing),
+                        getModItem("minecraft", "wool", 1, 11, missing), "craftingToolSaw", null, null, null, null,
+                        null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 12, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeBrown",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 12, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeBrown" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 12, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 12, missing),
+                        getModItem("minecraft", "wool", 1, 12, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 12, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 12, missing),
+                        getModItem("minecraft", "wool", 1, 12, missing), "craftingToolSaw", null, null, null, null,
+                        null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 13, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeGreen",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 13, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeGreen" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 13, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 13, missing),
+                        getModItem("minecraft", "wool", 1, 13, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 13, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 13, missing),
+                        getModItem("minecraft", "wool", 1, 13, missing), "craftingToolSaw", null, null, null, null,
+                        null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 14, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeRed",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 14, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeRed" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 14, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 14, missing),
+                        getModItem("minecraft", "wool", 1, 14, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 14, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 14, missing),
+                        getModItem("minecraft", "wool", 1, 14, missing), "craftingToolSaw", null, null, null, null,
+                        null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 7, 15, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing), "dyeBlack",
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "carpet", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "carpet", 1, 15, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 0, missing), "dyeBlack" });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 1, 15, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 15, missing),
+                        getModItem("minecraft", "wool", 1, 15, missing), null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "carpet", 3, 15, missing),
+                new Object[] { getModItem("minecraft", "wool", 1, 15, missing),
+                        getModItem("minecraft", "wool", 1, 15, missing), "craftingToolSaw", null, null, null, null,
+                        null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 0, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeWhite",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeWhite" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 1, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeOrange",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 1, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeOrange" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 2, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeMagenta",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 2, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeMagenta" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 3, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLightBlue",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 3, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLightBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 4, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeYellow",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 4, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeYellow" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 5, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLime",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 5, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLime" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 6, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyePink",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 6, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyePink" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 7, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeGray",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 7, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 8, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLightGray",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 8, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeLightGray" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 9, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeCyan",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 9, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeCyan" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 10, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyePurple",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 10, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyePurple" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 11, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBlue",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 11, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBlue" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 12, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBrown",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 12, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBrown" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 13, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeGreen",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 13, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeGreen" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 14, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeRed",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 14, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeRed" });
+        addShapedRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 7, 15, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBlack",
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing),
+                        getModItem("ExtraUtilities", "paintbrush", 1, 0, missing),
+                        getModItem("minecraft", "hardened_clay", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stained_hardened_clay", 1, 15, missing),
+                new Object[] { getModItem("minecraft", "hardened_clay", 1, 0, missing), "dyeBlack" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "sugar", 1, 0, missing),
+                new Object[] { "craftingToolMortar", getModItem("minecraft", "reeds", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_sword", 1, 0, missing),
+                new Object[] { null, getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null,
+                        "craftingToolFile", getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        "craftingToolHardHammer", null, getModItem("minecraft", "stick", 1, 0, missing), null });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_shovel", 1, 0, missing),
+                new Object[] { "craftingToolFile", getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        "craftingToolHardHammer", null, getModItem("minecraft", "stick", 1, 0, missing), null, null,
+                        getModItem("minecraft", "stick", 1, 0, missing), null });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_pickaxe", 1, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("minecraft", "diamond", 1, 0, missing),
+                        getModItem("minecraft", "diamond", 1, 0, missing), "craftingToolFile",
+                        getModItem("minecraft", "stick", 1, 0, missing), "craftingToolHardHammer", null,
+                        getModItem("minecraft", "stick", 1, 0, missing), null });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_axe", 1, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("minecraft", "diamond", 1, 0, missing), "craftingToolHardHammer",
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("minecraft", "stick", 1, 0, missing), null, "craftingToolFile",
+                        getModItem("minecraft", "stick", 1, 0, missing), null });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_hoe", 1, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("minecraft", "diamond", 1, 0, missing), "craftingToolHardHammer", "craftingToolFile",
+                        getModItem("minecraft", "stick", 1, 0, missing), null, null,
+                        getModItem("minecraft", "stick", 1, 0, missing), null });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_helmet", 1, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null, null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_chestplate", 1, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_leggings", 1, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null,
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_boots", 1, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null,
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
+                        getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing), null, null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "iron_horse_armor", 1, 0, missing),
+                new Object[] { "craftingToolHardHammer", "craftingToolScrewdriver",
+                        getModItem("minecraft", "iron_helmet", 1, 0, missing), "plateIron",
+                        getModItem("minecraft", "iron_chestplate", 1, 0, missing), "plateIron",
+                        getModItem("minecraft", "iron_leggings", 1, 0, missing), "screwIron",
+                        getModItem("minecraft", "iron_leggings", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "golden_horse_armor", 1, 0, missing),
+                new Object[] { "craftingToolHardHammer", "craftingToolScrewdriver",
+                        getModItem("minecraft", "golden_helmet", 1, 0, missing), "plateGold",
+                        getModItem("minecraft", "golden_chestplate", 1, 0, missing), "plateGold",
+                        getModItem("minecraft", "golden_leggings", 1, 0, missing), "screwGold",
+                        getModItem("minecraft", "golden_leggings", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "diamond_horse_armor", 1, 0, missing),
+                new Object[] { "craftingToolHardHammer", "craftingToolScrewdriver",
+                        getModItem("minecraft", "diamond_helmet", 1, 0, missing), "plateDiamond",
+                        getModItem("minecraft", "diamond_chestplate", 1, 0, missing), "plateDiamond",
+                        getModItem("minecraft", "diamond_leggings", 1, 0, missing), "screwDiamond",
+                        getModItem("minecraft", "diamond_leggings", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "saddle", 1, 0, missing),
+                new Object[] { "itemLeather", getModItem("Backpack", "tannedLeather", 1, 0, missing), "itemLeather",
+                        "itemLeather", getModItem("minecraft", "carpet", 1, 32767, missing), "itemLeather",
+                        "ringAnyIron", getModItem("minecraft", "string", 1, 0, missing), "ringAnyIron" });
+        addShapedRecipe(
+                getModItem("minecraft", "clock", 1, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 28086, missing), "plateGold",
+                        getModItem("gregtech", "gt.metaitem.01", 1, 28086, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 26086, missing),
+                        getModItem("minecraft", "comparator", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 26086, missing), "craftingToolScrewdriver",
+                        getModItem("gregtech", "gt.metaitem.01", 1, 27086, missing), "craftingToolWrench" });
+        addShapedRecipe(
+                getModItem("minecraft", "compass", 1, 0, missing),
+                new Object[] { "screwIron", "paneGlass", "boltIron", "ringZinc", "plateIron", "ringZinc",
+                        "boltRedAlloy", "craftingToolScrewdriver", "screwIron" });
+        addShapedRecipe(
+                getModItem("minecraft", "clay", 2, 0, missing),
+                new Object[] { "itemClay", "itemClay", "itemClay", "itemClay",
+                        getModItem("minecraft", "water_bucket", 1, 0, missing), "itemClay", "itemClay", "itemClay",
+                        "itemClay" });
+        addShapedRecipe(
+                getModItem("minecraft", "clay", 2, 0, missing),
+                new Object[] { "itemClay", "itemClay", "itemClay", "itemClay",
+                        getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0, missing), "itemClay", "itemClay",
+                        "itemClay", "itemClay" });
+        addShapedRecipe(
+                getModItem("minecraft", "pumpkin_seeds", 2, 0, missing),
+                new Object[] { getModItem("minecraft", "pumpkin", 1, 0, missing), "craftingToolHardHammer" });
+        addShapedRecipe(
+                getModItem("minecraft", "pumpkin_seeds", 2, 0, missing),
+                new Object[] { getModItem("minecraft", "pumpkin", 1, 0, missing), "craftingToolSoftHammer",
+                        getModItem("minecraft", "pumpkin", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "melon_seeds", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "melon", 1, 0, missing), "craftingToolHardHammer" });
+        addShapedRecipe(
+                getModItem("minecraft", "melon_seeds", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "melon", 1, 0, missing), "craftingToolSoftHammer",
+                        getModItem("minecraft", "melon", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "melon", 6, 0, missing),
+                new Object[] { "craftingToolKnife", getModItem("minecraft", "melon_block", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "gunpowder", 1, 0, missing),
+                new Object[] { "dustSmallGunpowder", "dustSmallGunpowder", "dustSmallGunpowder",
+                        "dustSmallGunpowder" });
+        addShapelessCraftingRecipe(
+                getModItem("gregtech", "gt.metaitem.02", 1, 32559, missing),
+                new Object[] { getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2881, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("gregtech", "gt.metaitem.02", 1, 32559, missing),
+                new Object[] { getModItem("harvestcraft", "freshwaterItem", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2881, missing),
+                        getModItem("harvestcraft", "freshwaterItem", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "chest_minecart", 1, 0, missing),
+                new Object[] { "craftingToolHardHammer", getModItem("minecraft", "chest", 1, 0, missing),
+                        "craftingToolWrench", null, getModItem("minecraft", "minecart", 1, 0, missing), null, null,
+                        "craftingToolScrewdriver", null });
+        addShapedRecipe(
+                getModItem("minecraft", "furnace_minecart", 1, 0, missing),
+                new Object[] { "craftingToolHardHammer", getModItem("minecraft", "furnace", 1, 0, missing),
+                        "craftingToolWrench", null, getModItem("minecraft", "minecart", 1, 0, missing), null, null,
+                        "craftingToolScrewdriver", null });
+        addShapedRecipe(
+                getModItem("minecraft", "hopper_minecart", 1, 0, missing),
+                new Object[] { "craftingToolHardHammer", getModItem("minecraft", "hopper", 1, 0, missing),
+                        "craftingToolWrench", null, getModItem("minecraft", "minecart", 1, 0, missing), null, null,
+                        "craftingToolScrewdriver", null });
+        addShapedRecipe(
+                getModItem("minecraft", "map", 1, 0, missing),
+                new Object[] { "paperEmpty", "paperEmpty", "paperEmpty", "paperEmpty",
+                        getModItem("minecraft", "compass", 1, 0, missing), "paperEmpty", "paperEmpty", "paperEmpty",
+                        "paperEmpty" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "dye", 3, 15, missing),
+                new Object[] { getModItem("minecraft", "bone", 1, 0, missing), "craftingToolMortar" });
+        addShapedRecipe(
+                getModItem("minecraft", "lead", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing), "slimeball",
+                        getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "pumpkin_pie", 1, 0, missing),
+                new Object[] { "craftingToolRollingPin", getModItem("minecraft", "pumpkin", 1, 0, missing), "dustSugar",
+                        getModItem("minecraft", "pumpkin", 1, 0, missing), "dustSugar", null, "dustSugar", null,
+                        null });
+        addShapedRecipe(
+                getModItem("minecraft", "comparator", 1, 0, missing),
+                new Object[] { "screwIron", "craftingRedstoneTorch", "screwIron", "craftingRedstoneTorch",
+                        "plateNetherQuartz", "craftingRedstoneTorch",
+                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing), "craftingToolScrewdriver",
+                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "comparator", 1, 0, missing),
+                new Object[] { "screwIron", "craftingRedstoneTorch", "screwIron", "craftingRedstoneTorch",
+                        "plateCertusQuartz", "craftingRedstoneTorch",
+                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing), "craftingToolScrewdriver",
+                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "comparator", 1, 0, missing),
+                new Object[] { "screwIron", "craftingRedstoneTorch", "screwIron", "craftingRedstoneTorch",
+                        "plateChargedCertusQuartz", "craftingRedstoneTorch",
+                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing), "craftingToolScrewdriver",
+                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "comparator", 1, 0, missing),
+                new Object[] { "screwIron", "craftingRedstoneTorch", "screwIron", "craftingRedstoneTorch",
+                        "plateQuartzite", "craftingRedstoneTorch",
+                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing), "craftingToolScrewdriver",
+                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "repeater", 1, 0, missing),
+                new Object[] { "screwIron", null, "screwIron", "craftingRedstoneTorch", "craftingToolScrewdriver",
+                        "craftingRedstoneTorch", getModItem("minecraft", "stone_pressure_plate", 1, 0, missing),
+                        "stickRedAlloy", getModItem("minecraft", "stone_pressure_plate", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "item_frame", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "string", 1, 0, missing), "ringAnyIron",
+                        getModItem("minecraft", "string", 1, 0, missing), "stickWood", "itemLeather", "stickWood",
+                        "stickWood", "stickWood", "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "bed", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "carpet", 1, 32767, missing),
+                        getModItem("minecraft", "carpet", 1, 32767, missing),
+                        getModItem("minecraft", "carpet", 1, 32767, missing), "plankWood", "plankWood", "plankWood",
+                        "fenceWood", "craftingToolSoftHammer", "fenceWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "fishing_rod", 1, 0, missing),
+                new Object[] { null, null, "stickLongWood", null, "stickLongWood",
+                        getModItem("minecraft", "string", 1, 0, missing), "stickLongWood", "craftingToolWireCutter",
+                        "ringAnyIron" });
+        addShapedRecipe(
+                getModItem("minecraft", "paper", 2, 0, missing),
+                new Object[] { "dustWood", "dustWood", "dustWood", "dustWood",
+                        getModItem("minecraft", "water_bucket", 1, 0, missing), "dustWood", "dustWood", "dustWood",
+                        "dustWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "paper", 2, 0, missing),
+                new Object[] { "dustWood", "dustWood", "dustWood", "dustWood",
+                        getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0, missing), "dustWood", "dustWood",
+                        "dustWood", "dustWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "string", 1, 0, missing),
+                new Object[] { getModItem("Natura", "barleyFood", 1, 3, missing),
+                        getModItem("Natura", "barleyFood", 1, 3, missing),
+                        getModItem("Natura", "barleyFood", 1, 3, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "flower_pot", 1, 0, missing),
+                new Object[] { "craftingToolFile",
+                        getModItem("IguanaTweaksTConstruct", "clayBucketFired", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stone_slab", 1, 0, missing),
+                new Object[] { "craftingToolSaw", "stone" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stone_slab", 1, 1, missing),
+                new Object[] { "craftingToolSaw", "sandstone" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stone_slab", 1, 3, missing),
+                new Object[] { "craftingToolSaw", "cobblestone" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stone_slab", 1, 4, missing),
+                new Object[] { "craftingToolSaw", getModItem("minecraft", "brick_block", 1, 0, missing) });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stone_slab", 1, 5, missing),
+                new Object[] { "craftingToolSaw", "stoneBricks" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stone_slab", 1, 6, missing),
+                new Object[] { "craftingToolSaw", "stoneNetherBrick" });
+        addShapelessCraftingRecipe(
+                getModItem("minecraft", "stone_slab", 1, 7, missing),
+                new Object[] { "craftingToolSaw", "blockQuartz" });
+        addShapedRecipe(
+                getModItem("minecraft", "brick_block", 2, 0, missing),
+                new Object[] { "ingotBrick", "ingotBrick", "ingotBrick", "ingotBrick",
+                        getModItem("minecraft", "water_bucket", 1, 0, missing), "ingotBrick", "ingotBrick",
+                        "ingotBrick", "ingotBrick" });
+        addShapedRecipe(
+                getModItem("minecraft", "brick_block", 2, 0, missing),
+                new Object[] { "ingotBrick", "ingotBrick", "ingotBrick", "ingotBrick",
+                        getModItem("IguanaTweaksTConstruct", "clayBucketWater", 1, 0, missing), "ingotBrick",
+                        "ingotBrick", "ingotBrick", "ingotBrick" });
+        addShapedRecipe(
+                getModItem("minecraft", "nether_brick", 2, 0, missing),
+                new Object[] { "ingotBrickNether", "ingotBrickNether", "ingotBrickNether", "ingotBrickNether",
+                        getModItem("minecraft", "lava_bucket", 1, 0, missing), "ingotBrickNether", "ingotBrickNether",
+                        "ingotBrickNether", "ingotBrickNether" });
+        addShapedRecipe(
+                getModItem("minecraft", "nether_brick", 2, 0, missing),
+                new Object[] { "ingotBrickNether", "ingotBrickNether", "ingotBrickNether", "ingotBrickNether",
+                        getModItem("IguanaTweaksTConstruct", "clayBucketLava", 1, 0, missing), "ingotBrickNether",
+                        "ingotBrickNether", "ingotBrickNether", "ingotBrickNether" });
+        addShapedRecipe(
+                getModItem("minecraft", "wooden_door", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "trapdoor", 1, 0, missing), "craftingToolScrewdriver",
+                        getModItem("minecraft", "planks", 1, 0, missing), "ringAnyIron", "screwAnyIron",
+                        getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing), "craftingToolSaw" });
+        addShapedRecipe(
+                getModItem("minecraft", "wooden_door", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "trapdoor", 1, 0, missing), "craftingToolScrewdriver",
+                        getModItem("minecraft", "planks", 1, 0, missing), "ringCopper", "screwCopper",
+                        getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing), "craftingToolSaw" });
+        addShapedRecipe(
+                getModItem("minecraft", "wooden_door", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "trapdoor", 1, 0, missing), "craftingToolSaw",
+                        getModItem("minecraft", "planks", 1, 0, missing), "ringAnyIron", "screwAnyIron",
+                        getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing), "craftingToolScrewdriver" });
+        addShapedRecipe(
+                getModItem("minecraft", "wooden_door", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "trapdoor", 1, 0, missing), "craftingToolSaw",
+                        getModItem("minecraft", "planks", 1, 0, missing), "ringCopper", "screwCopper",
+                        getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing), "craftingToolScrewdriver" });
+        addShapedRecipe(
+                getModItem("minecraft", "iron_door", 1, 0, missing),
+                new Object[] { "plateAnyIron", getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
+                        "craftingToolHardHammer", "plateAnyIron", "ringSteel", "screwSteel", "plateAnyIron",
+                        "plateAnyIron", "craftingToolScrewdriver" });
+        addShapedRecipe(
+                getModItem("minecraft", "iron_door", 1, 0, missing),
+                new Object[] { "plateAnyIron", getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
+                        "craftingToolScrewdriver", "plateAnyIron", "ringSteel", "screwSteel", "plateAnyIron",
+                        "plateAnyIron", "craftingToolHardHammer" });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32470, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32471, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32472, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32473, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32474, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32475, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32476, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32477, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32478, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32479, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32480, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32481, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32482, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32483, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32484, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32485, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32486, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32487, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32488, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32489, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32490, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32491, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32492, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32493, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32494, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32495, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32496, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32497, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32498, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "sign", 3, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 32499, missing), null, "stickWood", null });
+        addShapedRecipe(
+                getModItem("minecraft", "boat", 1, 0, missing),
+                new Object[] { "plankWood", null, "plankWood", "plankWood", "craftingToolKnife", "plankWood",
+                        "slabWood", "slabWood", "slabWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "painting", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "string", 1, 0, missing), "ringAnyIron",
+                        getModItem("minecraft", "string", 1, 0, missing), "stickWood",
+                        getModItem("minecraft", "carpet", 1, 32767, missing), "stickWood", "stickWood", "stickWood",
+                        "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "flint_and_steel", 1, 0, missing),
+                new Object[] { null, "gearGtSmallSteel", null, null, getModItem("minecraft", "flint", 1, 0, missing),
+                        null, null, "springSmallSteel", null });
+        addShapedRecipe(
+                getModItem("minecraft", "shears", 1, 0, missing),
+                new Object[] { "plateIron", "screwIron", "plateIron", "craftingToolHardHammer", "ringIron",
+                        "craftingToolFile", "stickWood", "craftingToolScrewdriver", "stickWood" });
+        addShapedRecipe(
+                getModItem("minecraft", "nether_star", 16, 0, missing),
+                new Object[] { getModItem("gregtech", "gt.metaitem.03", 1, 2506, missing), "craftingToolCrowbar" });
+        addShapedRecipe(
+                getModItem("minecraft", "mossy_cobblestone", 1, 0, missing),
+                new Object[] { getModItem("BiomesOPlenty", "moss", 1, 0, missing),
+                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
+                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
+                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
+                        getModItem("minecraft", "cobblestone", 1, 0, missing),
+                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
+                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
+                        getModItem("BiomesOPlenty", "moss", 1, 0, missing),
+                        getModItem("BiomesOPlenty", "moss", 1, 0, missing) });
+        addShapedRecipe(
+                getModItem("minecraft", "book", 1, 0, missing),
+                new Object[] { getModItem("minecraft", "string", 1, 0, missing), "paperEmpty", "itemLeather",
+                        getModItem("minecraft", "string", 1, 0, missing), "paperEmpty",
+                        getModItem("TConstruct", "buckets", 1, 25, missing),
+                        getModItem("minecraft", "string", 1, 0, missing), "paperEmpty", "itemLeather" });
+        addShapedRecipe(
+                getModItem("minecraft", "bookshelf", 1, 0, missing),
+                new Object[] { "plateWood", "plateWood", "plateWood", getModItem("minecraft", "book", 1, 0, missing),
+                        getModItem("minecraft", "book", 1, 0, missing), getModItem("minecraft", "book", 1, 0, missing),
+                        "plateWood", "plateWood", "plateWood" });
+        addShapedRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 9, 9032, missing),
+                new Object[] { "craftingToolSaw", "ingotIron", null, null, null, null, null, null, null });
+        addShapedRecipe(
+                getModItem("minecraft", "gold_nugget", 9, 0, missing),
+                new Object[] { "craftingToolSaw", "ingotGold", null, null, null, null, null, null, null });
     }
 }

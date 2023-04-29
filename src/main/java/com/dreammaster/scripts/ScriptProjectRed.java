@@ -31,6 +31,14 @@ public class ScriptProjectRed implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        craftingRecipes();
+
+        recipes1();
+        recipes2();
+
+    }
+
+    private void craftingRecipes() {
         addShapedRecipe(
                 getModItem("ProjRed|Expansion", "projectred.expansion.machine1", 1, 1, missing),
                 new Object[] { getModItem("minecraft", "brick_block", 1, 0, missing),
@@ -1010,7 +1018,9 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem("minecraft", "glowstone_dust", 1, 0, missing),
                         getModItem("gregtech", "gt.metaitem.02", 1, 32414, missing),
                         getModItem("gregtech", "gt.metaitem.02", 1, 32414, missing), null, null, null, null, null });
+    }
 
+    private void recipes1() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("ProjRed|Core", "projectred.core.part", 1, 0, missing),
@@ -2997,6 +3007,9 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem("ProjRed|Transportation", "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
+    }
+
+    private void recipes2() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("ProjRed|Core", "projectred.core.part", 1, 44, missing),

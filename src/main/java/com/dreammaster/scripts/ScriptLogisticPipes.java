@@ -290,6 +290,13 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 new Object[] { null, null, null, "craftingToolScrewdriver",
                         getModItem("LogisticsPipes", "item.itemUpgrade", 1, 10, missing), null, null, null, null });
 
+        recipes1();
+        recipes2();
+        recipes3();
+
+    }
+
+    private void recipes1() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("gregtech", "gt.blockmachines", 1, 21, missing),
@@ -1995,6 +2002,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem("IC2", "itemBatRE", 1, 32767, missing))
                 .itemOutputs(getModItem("LogisticsPipes", "item.itemModule", 1, 300, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
+    }
+
+    private void recipes2() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("LogisticsPipes", "item.itemModule", 2, 1, missing),
@@ -3709,6 +3719,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemOutputs(getModItem("LogisticsPipes", "item.itemModule", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(1600)
                 .eut(120).addTo(sAssemblerRecipes);
+    }
+
+    private void recipes3() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("LogisticsPipes", "item.itemModule", 1, 9, missing),
@@ -4737,6 +4750,5 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem("gregtech", "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem("LogisticsPipes", "item.itemUpgrade", 4, 22, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sAssemblerRecipes);
-
     }
 }
