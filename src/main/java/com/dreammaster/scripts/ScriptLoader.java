@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import java.util.ArrayList;
+
 import net.minecraft.util.EnumChatFormatting;
 
 import com.dreammaster.main.MainRegistry;
@@ -38,16 +40,26 @@ public class ScriptLoader {
                 new ScriptWarpTheory(), new ScriptWirelessRedstone(), new ScriptWitchery(),
                 new ScriptTravellersGear() };
 
+        ArrayList<String> errored = new ArrayList<>();
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
-                final long timeStart = System.currentTimeMillis();
-                script.loadRecipes();
-                final long timeToLoad = System.currentTimeMillis() - timeStart;
-                MainRegistry.Logger.info("Loaded " + script.getScriptName() + " script in " + timeToLoad + " ms.");
+                try {
+                    final long timeStart = System.currentTimeMillis();
+                    script.loadRecipes();
+                    final long timeToLoad = System.currentTimeMillis() - timeStart;
+                    MainRegistry.Logger.info("Loaded " + script.getScriptName() + " script in " + timeToLoad + " ms.");
+                } catch (Exception ex) {
+                    errored.add(script.getScriptName());
+                    MainRegistry.Logger.error(
+                            "There was an error while loading " + script.getScriptName() + "! Printing stacktrace:");
+                    ex.printStackTrace();
+                }
             } else {
                 MainRegistry.Logger.info(
                         "Missing dependencies to load " + script.getScriptName() + " script. It won't be loaded.");
             }
         }
+        if (!errored.isEmpty()) throw new RuntimeException(
+                "Scripts " + errored + " thrown an exception! Scroll up the log to see the stacktrace!");
     }
 }
