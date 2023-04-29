@@ -16,4 +16,8 @@ public class ChiselHelper {
         CarvingUtils.getChiselRegistry()
                 .removeVariation(Block.getBlockFromItem(stack.getItem()), stack.getItemDamage());
     }
+
+    public static void addGroup(String groupName) {
+        CarvingUtils.getChiselRegistry().addGroup(new CarvingUtils.SimpleCarvingGroup(groupName));
+    }
 }
