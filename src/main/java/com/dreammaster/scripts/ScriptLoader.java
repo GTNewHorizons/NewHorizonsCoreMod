@@ -34,8 +34,8 @@ public class ScriptLoader {
                 new ScriptTaintedMagic(), new ScriptTCCoreMod(), new ScriptThaumcraft(), new ScriptThaumicBases(),
                 new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics(),
                 new ScriptThaumicExploration(), new ScriptThaumicHorizons(), new ScriptThaumicMachina(),
-                new ScriptThaumicTinkerer(), new ScriptTinkersConstruct(), new ScriptWarpTheory(), new ScriptWitchery(),
-                new ScriptTravellersGear() };
+                new ScriptThaumicTinkerer(), new ScriptTinkersConstruct(), new ScriptTinkersDefence(),
+                new ScriptWarpTheory(), new ScriptWitchery(), new ScriptTravellersGear() };
 
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
