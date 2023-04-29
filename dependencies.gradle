@@ -31,4 +31,5 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:GTplusplus:1.8.37:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Nuclear-Control:2.4.16:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ProjectRed:4.7.9-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Chisel:2.11.0-GTNH:dev") { transitive = false }
 }
