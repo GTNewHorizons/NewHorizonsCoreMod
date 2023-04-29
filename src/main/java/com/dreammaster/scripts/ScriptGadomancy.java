@@ -1,11 +1,14 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
 
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -13,6 +16,8 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
 public class ScriptGadomancy implements IScriptLoader {
@@ -29,6 +34,32 @@ public class ScriptGadomancy implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+
+        addShapelessCraftingRecipe(
+                getModItem("Thaumcraft", "blockCosmeticSlabStone", 2, 1, missing),
+                new Object[] { getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing), "craftingToolSaw" });
+        addShapedRecipe(
+                getModItem("Thaumcraft", "blockStairsEldritch", 4, 0, missing),
+                new Object[] { getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing), null, null,
+                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing),
+                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing), null,
+                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing),
+                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing),
+                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing) });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing))
+                .itemOutputs(getModItem("Thaumcraft", "blockCosmeticSlabStone", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(400).eut(30)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing))
+                .itemOutputs(getModItem("Thaumcraft", "blockCosmeticSlabStone", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(400)
+                .eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 11, missing))
+                .itemOutputs(getModItem("Thaumcraft", "blockCosmeticSlabStone", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .addTo(sCutterRecipes);
+
         TCHelper.removeInfusionRecipe(getModItem("gadomancy", "itemSilverwoodGolemPlacer", 1, 8, missing));
         TCHelper.removeInfusionRecipe(
                 createItemStack(
