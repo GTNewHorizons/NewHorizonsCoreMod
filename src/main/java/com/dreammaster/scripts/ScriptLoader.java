@@ -35,7 +35,8 @@ public class ScriptLoader {
                 new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics(),
                 new ScriptThaumicExploration(), new ScriptThaumicHorizons(), new ScriptThaumicMachina(),
                 new ScriptThaumicTinkerer(), new ScriptTinkersConstruct(), new ScriptTinkersDefence(),
-                new ScriptWarpTheory(), new ScriptWitchery(), new ScriptTravellersGear() };
+                new ScriptWarpTheory(), new ScriptWirelessRedstone(), new ScriptWitchery(),
+                new ScriptTravellersGear() };
 
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
