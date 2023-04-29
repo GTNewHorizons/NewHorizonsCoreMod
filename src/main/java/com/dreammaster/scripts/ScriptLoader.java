@@ -30,11 +30,11 @@ public class ScriptLoader {
                 new ScriptMinecraft(), new ScriptNatura(), new ScriptNuclearControl(), new ScriptOpenBlocks(),
                 new ScriptOpenModularTurrets(), new ScriptProjectRed(), new ScriptRailcraft(), new ScriptRandomThings(),
                 new ScriptRemoteIO(), new ScriptRunicTablet(), new ScriptSleepingBags(), new ScriptSpiceOfLife(),
-                new ScriptStevesCarts(), new ScriptStevesFactoryManager(), new ScriptTaintedMagic(),
-                new ScriptTCCoreMod(), new ScriptThaumcraft(), new ScriptThaumicBases(), new ScriptTranslocator(),
-                new ScriptTwilightForest(), new ScriptThaumicEnergistics(), new ScriptThaumicExploration(),
-                new ScriptThaumicHorizons(), new ScriptThaumicMachina(), new ScriptThaumicTinkerer(),
-                new ScriptWarpTheory(), new ScriptWitchery(), new ScriptTravellersGear() };
+                new ScriptStevesCarts(), new ScriptStevesFactoryManager(), new ScriptSuperSolarPanels(),
+                new ScriptTaintedMagic(), new ScriptTCCoreMod(), new ScriptThaumcraft(), new ScriptThaumicBases(),
+                new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics(),
+                new ScriptThaumicExploration(), new ScriptThaumicHorizons(), new ScriptThaumicMachina(),
+                new ScriptThaumicTinkerer(), new ScriptWarpTheory(), new ScriptWitchery(), new ScriptTravellersGear() };
 
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
