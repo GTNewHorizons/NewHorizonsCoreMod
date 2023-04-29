@@ -1,11 +1,14 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
 
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -15,6 +18,8 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
 public class ScriptThaumicTinkerer implements IScriptLoader {
@@ -41,6 +46,48 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+
+        addShapedRecipe(
+                getModItem("ThaumicTinkerer", "darkQuartzSlab", 2, 0, missing),
+                new Object[] { "craftingToolSaw", getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing) });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem("ThaumicTinkerer", "darkQuartzSlab", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(100).eut(8)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem("ThaumicTinkerer", "darkQuartzSlab", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 4)).noFluidOutputs().duration(100).eut(8)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem("ThaumicTinkerer", "darkQuartzSlab", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(50).eut(8)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("gregtech", "gt.metaitem.01", 1, 24506, missing),
+                        getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem("ThaumicTinkerer", "darkQuartz", 1, 1, missing)).noFluidInputs()
+                .noFluidOutputs().duration(50).eut(16).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("gregtech", "gt.metaitem.01", 1, 24515, missing),
+                        getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem("ThaumicTinkerer", "darkQuartz", 1, 1, missing)).noFluidInputs()
+                .noFluidOutputs().duration(50).eut(16).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("gregtech", "gt.metaitem.01", 1, 24545, missing),
+                        getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem("ThaumicTinkerer", "darkQuartz", 1, 1, missing)).noFluidInputs()
+                .noFluidOutputs().duration(50).eut(16).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem("gregtech", "gt.metaitem.01", 1, 24890, missing),
+                        getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing))
+                .itemOutputs(getModItem("ThaumicTinkerer", "darkQuartz", 1, 1, missing)).noFluidInputs()
+                .noFluidOutputs().duration(50).eut(16).addTo(sLaserEngraverRecipes);
+
         TCHelper.removeArcaneRecipe(getModItem("ThaumicTinkerer", "interface", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem("ThaumicTinkerer", "connector", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem("ThaumicTinkerer", "dislocator", 1, 0, missing));
