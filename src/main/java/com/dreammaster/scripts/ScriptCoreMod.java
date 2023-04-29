@@ -10,6 +10,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Mods;
 import gregtech.api.util.GT_ModHandler;
 
 public class ScriptCoreMod implements IScriptLoader {
@@ -21,7 +22,7 @@ public class ScriptCoreMod implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList();
+        return Arrays.asList(Mods.TinkerConstruct.ID, Mods.BartWorks.ID);
     }
 
     @Override
