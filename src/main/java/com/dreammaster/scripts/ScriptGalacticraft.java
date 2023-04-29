@@ -738,6 +738,18 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing),
                 new Object[] { getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing) });
 
+        arcFurnaceRecipes();
+        assemblerRecipes();
+        blastFurnaceRecipes();
+        cannerRecipes();
+        extruderRecipes();
+        fluidCannerRecipes();
+        maceratorRecipes();
+        plasmaArcFurnaceRecipes();
+        benderRecipes();
+    }
+
+    private void arcFurnaceRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 0, missing))
                 .itemOutputs(
                         getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing),
@@ -1054,6 +1066,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem("gregtech", "gt.metaitem.01", 4, 11306, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
+    }
+
+    private void assemblerRecipes() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("harvestcraft", "wovencottonItem", 8, 0, missing),
@@ -1177,6 +1192,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem("gregtech", "gt.metaitem.02", 3, 19305, missing))
                 .itemOutputs(getModItem("GalacticraftCore", "item.parachute", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(480).addTo(sAssemblerRecipes);
+    }
+
+    private void blastFurnaceRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftMars", "item.itemBasicAsteroids", 2, 4, missing))
                 .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 1, 11028, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1500).eut(120).specialValue(1500).addTo(sBlastRecipes);
@@ -1186,6 +1204,9 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "tile.fallenMeteor", 1, 0, missing))
                 .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 2, 11340, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(120).specialValue(1000).addTo(sBlastRecipes);
+    }
+
+    private void cannerRecipes() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("minecraft", "apple", 6, 0, missing),
@@ -1210,6 +1231,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem("GalacticraftCore", "item.canister", 1, 0, missing))
                 .itemOutputs(getModItem("GalacticraftCore", "item.basicItem", 1, 18, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(1).addTo(sCannerRecipes);
+    }
+
+    private void extruderRecipes() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("IC2", "blockAlloyGlass", 1, 0, missing),
@@ -1234,11 +1258,17 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem("gregtech", "gt.metaitem.01", 0, 32352, missing))
                 .itemOutputs(getModItem("GalacticraftCore", "item.steelPole", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sExtruderRecipes);
+    }
+
+    private void fluidCannerRecipes() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem("GalacticraftCore", "item.fuelCanisterPartial", 1, 1001, missing))
                 .itemOutputs(getModItem("GalacticraftCore", "item.fuelCanisterPartial", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("fuel", 1000)).noFluidOutputs().duration(16).eut(1)
                 .addTo(sFluidCannerRecipes);
+    }
+
+    private void maceratorRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "tile.gcBlockCore", 1, 12, missing))
                 .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 9, 2340, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
@@ -1257,6 +1287,9 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.basicItem", 1, 2, missing))
                 .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 1, 2020, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+    }
+
+    private void plasmaArcFurnaceRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.spaceship", 1, 0, missing))
                 .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 20, 32462, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
@@ -2961,12 +2994,14 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
+    }
+
+    private void benderRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.basicItem", 2, 7, missing))
                 .itemOutputs(getModItem("GalacticraftCore", "item.canister", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(8).addTo(sBenderRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.basicItem", 2, 6, missing))
                 .itemOutputs(getModItem("GalacticraftCore", "item.canister", 1, 1, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(8).addTo(sBenderRecipes);
-
     }
 }
