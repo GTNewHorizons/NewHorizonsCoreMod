@@ -24,13 +24,13 @@ public class ScriptLoader {
                 new ScriptForgeMultipart(), new ScriptGadomancy(), new ScriptGalacticraft(), new ScriptGendustry(),
                 new ScriptGenetics(), new ScriptGraviSuite(), new ScriptGregtech(), new ScriptGregtechPlusPlus(),
                 new ScriptHardcoreEnderExpansion(), new ScriptHarvestcraft(), new ScriptHarvestcraftNether(),
-                new ScriptHoloInventory(), new ScriptIguanaTweaks(), new ScriptJABBA(), new ScriptMagicBees(),
-                new ScriptNuclearControl(), new ScriptOpenBlocks(), new ScriptRailcraft(), new ScriptRunicTablet(),
-                new ScriptSleepingBags(), new ScriptSpiceOfLife(), new ScriptTaintedMagic(), new ScriptTCCoreMod(),
-                new ScriptThaumcraft(), new ScriptThaumicBases(), new ScriptTranslocator(), new ScriptTwilightForest(),
-                new ScriptThaumicEnergistics(), new ScriptThaumicExploration(), new ScriptThaumicHorizons(),
-                new ScriptThaumicMachina(), new ScriptThaumicTinkerer(), new ScriptWarpTheory(), new ScriptWitchery(),
-                new ScriptTravellersGear() };
+                new ScriptHoloInventory(), new ScriptIguanaTweaks(), new ScriptIndustrialCraft(), new ScriptJABBA(),
+                new ScriptMagicBees(), new ScriptNuclearControl(), new ScriptOpenBlocks(), new ScriptRailcraft(),
+                new ScriptRunicTablet(), new ScriptSleepingBags(), new ScriptSpiceOfLife(), new ScriptTaintedMagic(),
+                new ScriptTCCoreMod(), new ScriptThaumcraft(), new ScriptThaumicBases(), new ScriptTranslocator(),
+                new ScriptTwilightForest(), new ScriptThaumicEnergistics(), new ScriptThaumicExploration(),
+                new ScriptThaumicHorizons(), new ScriptThaumicMachina(), new ScriptThaumicTinkerer(),
+                new ScriptWarpTheory(), new ScriptWitchery(), new ScriptTravellersGear() };
 
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
