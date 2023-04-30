@@ -10,6 +10,9 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.forestry.ForestryHelper;
+
+import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -100,6 +103,86 @@ public class ScriptGenetics implements IScriptLoader {
                         getModItem("Genetics", "misc", 1, 10, missing), getModItem("Genetics", "misc", 1, 11, missing),
                         getModItem("Genetics", "misc", 1, 10, missing), "gearGtSmallDiamond",
                         getModItem("gregtech", "gt.metaitem.01", 1, 32602, missing), "gearGtSmallDiamond" });
+
+        ForestryHelper.removeCarpenterRecipe(getModItem("Genetics", "database", 1, 0, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("molten.redstone", 2880),
+                getModItem("dreamcraft", "item.Display", 1, 0, missing),
+                getModItem("Genetics", "database", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27533, missing),
+                'b',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'c',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27533, missing),
+                'd',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'e',
+                "circuitData",
+                'f',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'g',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27533, missing),
+                'h',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'i',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27533, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("molten.redstone", 4320),
+                getModItem("dreamcraft", "item.Display", 1, 0, missing),
+                getModItem("Genetics", "analyst", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Genetics", "misc", 1, 9, missing),
+                'b',
+                getModItem("Forestry", "treealyzer", 1, 0, missing),
+                'c',
+                getModItem("Genetics", "misc", 1, 9, missing),
+                'd',
+                getModItem("Forestry", "beealyzer", 1, 0, missing),
+                'e',
+                getModItem("Genetics", "misc", 1, 10, missing),
+                'f',
+                getModItem("Forestry", "flutterlyzer", 1, 0, missing),
+                'g',
+                getModItem("Genetics", "misc", 1, 9, missing),
+                'h',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'i',
+                getModItem("Genetics", "misc", 1, 9, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("molten.redstone", 4320),
+                getModItem("dreamcraft", "item.Display", 1, 0, missing),
+                getModItem("Genetics", "registry", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Genetics", "misc", 1, 9, missing),
+                'b',
+                getModItem("ExtraTrees", "database", 1, 0, missing),
+                'c',
+                getModItem("Genetics", "misc", 1, 9, missing),
+                'd',
+                getModItem("Botany", "database", 1, 0, missing),
+                'e',
+                getModItem("Genetics", "misc", 1, 10, missing),
+                'f',
+                getModItem("ExtraBees", "dictionary", 1, 0, missing),
+                'g',
+                getModItem("Genetics", "misc", 1, 9, missing),
+                'h',
+                getModItem("ExtraTrees", "databaseMoth", 1, 0, missing),
+                'i',
+                getModItem("Genetics", "misc", 1, 9, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
