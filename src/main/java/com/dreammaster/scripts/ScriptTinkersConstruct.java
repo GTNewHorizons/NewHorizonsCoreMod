@@ -2,12 +2,22 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
 
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
+
+import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.DryingRackRecipes;
+import tconstruct.library.crafting.Smeltery;
+
+import com.dreammaster.oredict.OreDictHelper;
+import com.dreammaster.tinkersConstruct.TConstructHelper;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 import gregtech.api.util.GT_ModHandler;
@@ -26,6 +36,9 @@ public class ScriptTinkersConstruct implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        OreDictionary.registerOre("bucketEnder", getModItem("TConstruct", "buckets", 1, 23, missing));
+        OreDictHelper.removeOreDict("nuggetAluminium", getModItem("TConstruct", "oreBerries", 1, 4, missing));
+
         addShapedRecipe(
                 getModItem("TConstruct", "LavaTank", 1, 0, missing),
                 new Object[] { getModItem("TConstruct", "Smeltery", 1, 2, missing),
@@ -1324,6 +1337,1621 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         getModItem("ForgeMicroblock", "stoneRod", 1, 0, missing),
                         getModItem("TMechworks", "LengthWire", 1, 0, missing),
                         getModItem("ForgeMicroblock", "stoneRod", 1, 0, missing) });
+
+        TConstructHelper.removeBasinRecipe(getModItem("minecraft", "iron_block", 1, 0, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("minecraft", "gold_block", 1, 0, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("minecraft", "obsidian", 1, 0, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("minecraft", "emerald_block", 1, 0, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "MetalBlock", 1, 0, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "MetalBlock", 1, 1, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "MetalBlock", 1, 2, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("IC2", "blockMetal", 1, 0, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("IC2", "blockMetal", 1, 2, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("IC2", "blockMetal", 1, 1, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "MetalBlock", 1, 6, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "MetalBlock", 1, 7, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "MetalBlock", 1, 8, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "GlueBlock", 1, 0, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("gregtech", "gt.blockmetal5", 1, 11, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "materials", 1, 2, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "Smeltery", 1, 4, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "Smeltery", 1, 5, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "MetalBlock", 1, 10, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.blockores", 1, 33, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "SearedBrick", 1, 1, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("GalaxySpace", "phobosblocks", 1, 4, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "GravelOre", 1, 5, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "materials", 1, 39, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.metaitem.01", 1, 2033, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "SearedBrick", 1, 2, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.blockores", 1, 382, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "materials", 1, 38, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.metaitem.01", 1, 2382, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "materials", 1, 29, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.metaitem.01", 1, 9382, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "MetalBlock", 1, 1, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "materials", 1, 41, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.metaitem.01", 1, 2386, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "materials", 1, 30, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.metaitem.01", 1, 9386, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "MetalBlock", 1, 2, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "MetalBlock", 1, 10, missing));
+        TConstructHelper.removeTableRecipe(getModItem("BuildCraft|Core", "ironGearItem", 1, 0, missing));
+        TConstructHelper.removeTableRecipe(getModItem("BuildCraft|Core", "goldGearItem", 1, 0, missing));
+        TConstructHelper.removeTableRecipe(getModItem("Forestry", "gearBronze", 1, 0, missing));
+        TConstructHelper.removeTableRecipe(getModItem("Forestry", "gearCopper", 1, 0, missing));
+        TConstructHelper.removeTableRecipe(getModItem("Forestry", "gearTin", 1, 0, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31085, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31034, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31054, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31303, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31302, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31089, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31305, missing));
+        TConstructHelper.removeTableRecipe(getModItem("IC2", "itemIngot", 1, 0, missing));
+        TConstructHelper.removeTableRecipe(getModItem("IC2", "itemIngot", 1, 1, missing));
+        TConstructHelper.removeTableRecipe(getModItem("IC2", "itemIngot", 1, 2, missing));
+        TConstructHelper.removeTableRecipe(getModItem("IC2", "itemIngot", 1, 3, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("minecraft", "chainmail_helmet", 1, 0, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("minecraft", "chainmail_chestplate", 1, 0, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("minecraft", "chainmail_leggings", 1, 0, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("minecraft", "chainmail_boots", 1, 0, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.metaitem.01", 1, 9033, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "materials", 1, 3, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.metaitem.01", 1, 11033, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("GalaxySpace", "item.Ingots", 1, 1, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("gregtech", "gt.blockmetal2", 1, 5, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("TConstruct", "MetalBlock", 1, 0, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("BloodArsenal", "blood_infused_iron_block", 1, 0, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("minecraft", "sand", 1, 0, missing));
+        TConstructHelper.removeSmelterAlloyMix(FluidRegistry.getFluidStack("alumite.molten", 32));
+        TConstructHelper.removeMeltingRecipe(getModItem("TConstruct", "CraftedSoil", 1, 1, missing));
+        TConstructHelper.removeTableRecipe(getModItem("minecraft", "golden_apple", 1, 0, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "gearCast", 1, 0, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31321, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31382, missing));
+        TConstructHelper.removeTableRecipe(getModItem("gregtech", "gt.metaitem.02", 1, 31386, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "materials", 1, 29, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "materials", 1, 30, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "materials", 1, 4, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "materials", 1, 5, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "materials", 1, 11, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "materials", 1, 22, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("minecraft", "snowball", 1, 0, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 14, missing));
+        TConstructHelper.removeMeltingRecipe(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 15, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("IC2", "blockMetal", 1, 5, missing));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 2019, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
+                1585,
+                500,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11019, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
+                1585,
+                500,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 19, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
+                1585,
+                500,
+                FluidRegistry.getFluidStack("aluminum.molten", 16));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 1019, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
+                1585,
+                500,
+                FluidRegistry.getFluidStack("aluminum.molten", 36));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 2890, missing),
+                GameRegistry.findBlock("minecraft", "sand"),
+                0,
+                800,
+                FluidRegistry.getFluidStack("glass.molten", 1000));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "oreBerries", 1, 4, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
+                1585,
+                500,
+                FluidRegistry.getFluidStack("aluminum.molten", 16));
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 9035, missing),
+                FluidRegistry.getFluidStack("copper.molten", 16),
+                getModItem("TConstruct", "metalPattern", 1, 27, missing),
+                false,
+                20);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 9057, missing),
+                FluidRegistry.getFluidStack("tin.molten", 16),
+                getModItem("TConstruct", "metalPattern", 1, 27, missing),
+                false,
+                20);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 9032, missing),
+                FluidRegistry.getFluidStack("iron.molten", 16),
+                getModItem("TConstruct", "metalPattern", 1, 27, missing),
+                false,
+                20);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 9300, missing),
+                FluidRegistry.getFluidStack("bronze.molten", 16),
+                getModItem("TConstruct", "metalPattern", 1, 27, missing),
+                false,
+                20);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11035, missing),
+                FluidRegistry.getFluidStack("copper.molten", 144),
+                getModItem("TConstruct", "metalPattern", 1, 0, missing),
+                false,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11057, missing),
+                FluidRegistry.getFluidStack("tin.molten", 144),
+                getModItem("TConstruct", "metalPattern", 1, 0, missing),
+                false,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11300, missing),
+                FluidRegistry.getFluidStack("bronze.molten", 144),
+                getModItem("TConstruct", "metalPattern", 1, 0, missing),
+                false,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("TConstruct", "materials", 1, 14, missing),
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
+                getModItem("TConstruct", "metalPattern", 1, 0, missing),
+                false,
+                100);
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 1, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 2, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 3, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 4, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 5, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 6, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 7, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 8, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 9, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 10, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 11, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 12, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 13, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 14, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 15, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 16, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 17, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 18, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 19, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 20, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 21, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 22, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 25, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 26, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "metalPattern", 1, 27, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "Cast", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "Cast", 1, 1, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "Cast", 1, 2, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "Cast", 1, 3, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 32, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1032, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2032, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3032, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4032, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 930, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1930, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2930, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3930, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4930, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 931, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1931, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2931, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3931, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4931, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 917, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1917, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2917, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3917, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4917, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 936, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1936, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2936, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3936, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4936, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 870, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1870, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 28706, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3870, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4870, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 834, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1834, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2834, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3834, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4834, missing),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 35, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1035, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2035, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3035, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4035, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 871, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1871, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2871, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3871, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4871, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 840, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1840, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2840, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3840, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4840, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 855, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1855, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2855, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3855, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4855, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 57, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("tin.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1057, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("tin.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2057, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("tin.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3057, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("tin.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4057, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("tin.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 824, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1824, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2824, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3824, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4824, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("tin.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 937, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1937, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2937, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3937, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4937, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 86, missing),
+                GameRegistry.findBlock("minecraft", "gold_ore"),
+                0,
+                600,
+                FluidRegistry.getFluidStack("gold.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1086, missing),
+                GameRegistry.findBlock("minecraft", "gold_ore"),
+                0,
+                600,
+                FluidRegistry.getFluidStack("gold.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2086, missing),
+                GameRegistry.findBlock("minecraft", "gold_ore"),
+                0,
+                600,
+                FluidRegistry.getFluidStack("gold.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3086, missing),
+                GameRegistry.findBlock("minecraft", "gold_ore"),
+                0,
+                600,
+                FluidRegistry.getFluidStack("gold.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4086, missing),
+                GameRegistry.findBlock("minecraft", "gold_ore"),
+                0,
+                600,
+                FluidRegistry.getFluidStack("gold.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 19, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                5,
+                400,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1019, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                5,
+                400,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2019, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                5,
+                400,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3019, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                5,
+                400,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4019, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                5,
+                400,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 34, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                34,
+                400,
+                FluidRegistry.getFluidStack("nickel.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1034, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                34,
+                400,
+                FluidRegistry.getFluidStack("nickel.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2034, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                34,
+                400,
+                FluidRegistry.getFluidStack("nickel.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3034, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                34,
+                400,
+                FluidRegistry.getFluidStack("nickel.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4034, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                34,
+                400,
+                FluidRegistry.getFluidStack("nickel.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 89, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                89,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1089, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                89,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2089, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                89,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3089, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                89,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4089, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                89,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 54, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                54,
+                500,
+                FluidRegistry.getFluidStack("silver.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1054, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                54,
+                500,
+                FluidRegistry.getFluidStack("silver.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2054, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                54,
+                500,
+                FluidRegistry.getFluidStack("silver.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3054, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                54,
+                500,
+                FluidRegistry.getFluidStack("silver.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4054, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                54,
+                500,
+                FluidRegistry.getFluidStack("silver.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 85, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                85,
+                800,
+                FluidRegistry.getFluidStack("platinum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1085, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                85,
+                800,
+                FluidRegistry.getFluidStack("platinum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2085, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                85,
+                800,
+                FluidRegistry.getFluidStack("platinum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3085, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                85,
+                800,
+                FluidRegistry.getFluidStack("platinum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4085, missing),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                85,
+                800,
+                FluidRegistry.getFluidStack("platinum.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 501, missing),
+                GameRegistry.findBlock("minecraft", "emerald_ore"),
+                0,
+                800,
+                FluidRegistry.getFluidStack("emerald.liquid", 640));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 1501, missing),
+                GameRegistry.findBlock("minecraft", "emerald_ore"),
+                0,
+                800,
+                FluidRegistry.getFluidStack("emerald.liquid", 640));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 2501, missing),
+                GameRegistry.findBlock("minecraft", "emerald_ore"),
+                0,
+                800,
+                FluidRegistry.getFluidStack("emerald.liquid", 640));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 3501, missing),
+                GameRegistry.findBlock("minecraft", "emerald_ore"),
+                0,
+                800,
+                FluidRegistry.getFluidStack("emerald.liquid", 640));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.blockores", 1, 4501, missing),
+                GameRegistry.findBlock("minecraft", "emerald_ore"),
+                0,
+                800,
+                FluidRegistry.getFluidStack("emerald.liquid", 640));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32300, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32301, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32302, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32303, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32304, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32305, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32306, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32307, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32308, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32309, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32310, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32311, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32312, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32313, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32314, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32315, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32316, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32317, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32318, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32319, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32320, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32321, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32322, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32323, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32324, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32325, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32326, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32327, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32328, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32329, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32330, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32350, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32351, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32352, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32353, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32354, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32355, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32356, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32357, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32358, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32359, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32360, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32361, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32362, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32363, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32364, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32365, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32366, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32367, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32368, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32369, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32370, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32371, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32372, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32373, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32374, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32375, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32376, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ExtruderShapeBoat", 1, 0, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MarshmallowForm", 1, 0, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldChestplate", 1, 0, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldHelmet", 1, 0, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldLeggings", 1, 0, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldBoots", 1, 0, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                5,
+                800,
+                FluidRegistry.getFluidStack("steel.molten", 576));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 2880, missing),
+                GameRegistry.findBlock("TConstruct", "GlueBlock"),
+                0,
+                250,
+                FluidRegistry.getFluidStack("glue", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11880, missing),
+                GameRegistry.findBlock("TConstruct", "GlueBlock"),
+                0,
+                300,
+                FluidRegistry.getFluidStack("glue", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 17880, missing),
+                GameRegistry.findBlock("TConstruct", "GlueBlock"),
+                0,
+                350,
+                FluidRegistry.getFluidStack("glue", 288));
+        Smeltery.addMelting(
+                getModItem("EMT", "EMTItems", 1, 10, missing),
+                GameRegistry.findBlock("TConstruct", "GlueBlock"),
+                0,
+                400,
+                FluidRegistry.getFluidStack("glue", 576));
+        Smeltery.addMelting(
+                getModItem("EMT", "EMTItems", 1, 8, missing),
+                GameRegistry.findBlock("TConstruct", "GlueBlock"),
+                0,
+                200,
+                FluidRegistry.getFluidStack("glue", 288));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11033, missing),
+                GameRegistry.findBlock("TConstruct", "GravelOre"),
+                5,
+                650,
+                FluidRegistry.getFluidStack("cobalt.molten", 144));
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("TConstruct", "materials", 1, 12, missing),
+                FluidRegistry.getFluidStack("aluminum.molten", 144),
+                getModItem("TConstruct", "metalPattern", 1, 0, missing),
+                false,
+                200);
+        Smeltery.addMelting(
+                getModItem("TConstruct", "materials", 1, 12, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                6,
+                500,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11305, missing),
+                FluidRegistry.getFluidStack("steel.molten", 144),
+                getModItem("TConstruct", "metalPattern", 1, 0, missing),
+                false,
+                800);
+        TConstructRegistry.getBasinCasting().addCastingRecipe(
+                getModItem("TConstruct", "Smeltery", 1, 4, missing),
+                FluidRegistry.getFluidStack("stone.seared", 360),
+                null,
+                false,
+                245);
+        TConstructRegistry.getBasinCasting().addCastingRecipe(
+                getModItem("TConstruct", "Smeltery", 1, 5, missing),
+                FluidRegistry.getFluidStack("stone.seared", 360),
+                getModItem("minecraft", "cobblestone", 1, 0, missing),
+                false,
+                245);
+        Smeltery.addMelting(
+                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 0, missing),
+                GameRegistry.findBlock("minecraft", "obsidian"),
+                0,
+                850,
+                FluidRegistry.getFluidStack("obsidian.molten", 288));
+        Smeltery.addMelting(
+                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 1, missing),
+                GameRegistry.findBlock("minecraft", "obsidian"),
+                0,
+                850,
+                FluidRegistry.getFluidStack("obsidian.molten", 288));
+        TConstructRegistry.getBasinCasting().addCastingRecipe(
+                getModItem("TConstruct", "MetalBlock", 1, 10, missing),
+                FluidRegistry.getFluidStack("ender", 2250),
+                null,
+                false,
+                250);
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 2089, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11089, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 9089, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 16));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 17089, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 144));
+        Smeltery.addMelting(
+                getModItem("gregtech", "gt.metaitem.01", 1, 23089, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 72));
+        Smeltery.addMelting(
+                getModItem("IC2", "blockMetal", 1, 4, missing),
+                GameRegistry.findBlock("IC2", "blockMetal"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("lead.molten", 1296));
+        Smeltery.addMelting(
+                getModItem("TConstruct", "MetalBlock", 1, 10, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                10,
+                250,
+                FluidRegistry.getFluidStack("ender", 2250));
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "glass_bottle", 1, 0, missing),
+                FluidRegistry.getFluidStack("glass.molten", 144),
+                getModItem("gregtech", "gt.metaitem.01", 1, 32305, missing),
+                false,
+                200);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("TConstruct", "strangeFood", 4, 0, missing))
+                .itemOutputs(getModItem("TConstruct", "slime.gel", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "slime_ball", 4, 0, missing))
+                .itemOutputs(getModItem("TConstruct", "slime.gel", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("IC2", "itemArmorBronzeHelmet", 1, 0, missing),
+                FluidRegistry.getFluidStack("bronze.molten", 720),
+                getModItem("dreamcraft", "item.MoldHelmet", 1, 0, missing),
+                false,
+                500);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("IC2", "itemArmorBronzeChestplate", 1, 0, missing),
+                FluidRegistry.getFluidStack("bronze.molten", 1152),
+                getModItem("dreamcraft", "item.MoldChestplate", 1, 0, missing),
+                false,
+                800);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("IC2", "itemArmorBronzeLegs", 1, 0, missing),
+                FluidRegistry.getFluidStack("bronze.molten", 1008),
+                getModItem("dreamcraft", "item.MoldLeggings", 1, 0, missing),
+                false,
+                700);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("IC2", "itemArmorBronzeBoots", 1, 0, missing),
+                FluidRegistry.getFluidStack("bronze.molten", 576),
+                getModItem("dreamcraft", "item.MoldBoots", 1, 0, missing),
+                false,
+                400);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("Railcraft", "armor.steel.helmet", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 720),
+                getModItem("dreamcraft", "item.MoldHelmet", 1, 0, missing),
+                false,
+                500);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("Railcraft", "armor.steel.plate", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 1152),
+                getModItem("dreamcraft", "item.MoldChestplate", 1, 0, missing),
+                false,
+                800);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("Railcraft", "armor.steel.legs", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 1008),
+                getModItem("dreamcraft", "item.MoldLeggings", 1, 0, missing),
+                false,
+                700);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("Railcraft", "armor.steel.boots", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldBoots", 1, 0, missing),
+                false,
+                400);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "iron_helmet", 1, 0, missing),
+                FluidRegistry.getFluidStack("iron.molten", 720),
+                getModItem("dreamcraft", "item.MoldHelmet", 1, 0, missing),
+                false,
+                500);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "iron_chestplate", 1, 0, missing),
+                FluidRegistry.getFluidStack("iron.molten", 1152),
+                getModItem("dreamcraft", "item.MoldChestplate", 1, 0, missing),
+                false,
+                800);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "iron_leggings", 1, 0, missing),
+                FluidRegistry.getFluidStack("iron.molten", 1008),
+                getModItem("dreamcraft", "item.MoldLeggings", 1, 0, missing),
+                false,
+                700);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "iron_boots", 1, 0, missing),
+                FluidRegistry.getFluidStack("iron.molten", 576),
+                getModItem("dreamcraft", "item.MoldBoots", 1, 0, missing),
+                false,
+                400);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "golden_helmet", 1, 0, missing),
+                FluidRegistry.getFluidStack("gold.molten", 720),
+                getModItem("dreamcraft", "item.MoldHelmet", 1, 0, missing),
+                false,
+                500);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "golden_chestplate", 1, 0, missing),
+                FluidRegistry.getFluidStack("gold.molten", 1152),
+                getModItem("dreamcraft", "item.MoldChestplate", 1, 0, missing),
+                false,
+                800);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "golden_leggings", 1, 0, missing),
+                FluidRegistry.getFluidStack("gold.molten", 1008),
+                getModItem("dreamcraft", "item.MoldLeggings", 1, 0, missing),
+                false,
+                700);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("minecraft", "golden_boots", 1, 0, missing),
+                FluidRegistry.getFluidStack("gold.molten", 576),
+                getModItem("dreamcraft", "item.MoldBoots", 1, 0, missing),
+                false,
+                400);
+        Smeltery.addAlloyMixing(
+                FluidRegistry.getFluidStack("alumite.molten", 32),
+                FluidRegistry.getFluidStack("aluminum.molten", 80),
+                FluidRegistry.getFluidStack("steel.molten", 32),
+                FluidRegistry.getFluidStack("obsidian.molten", 32));
+        Smeltery.addSmelteryFuel(FluidRegistry.getFluid("ic2hotcoolant"), 900, 55);
+        Smeltery.addSmelteryFuel(FluidRegistry.getFluid("ic2pahoehoelava"), 3000, 90);
+        DryingRackRecipes.addDryingRecipe(
+                getModItem("TConstruct", "strangeFood", 1, 1, missing),
+                6000,
+                getModItem("TConstruct", "jerky", 1, 7, missing));
+        DryingRackRecipes.addDryingRecipe(
+                getModItem("TConstruct", "strangeFood", 1, 0, missing),
+                6000,
+                getModItem("TConstruct", "jerky", 1, 6, missing));
+        DryingRackRecipes.addDryingRecipe(
+                getModItem("harvestcraft", "muttonrawItem", 1, 0, missing),
+                12000,
+                getModItem("TConstruct", "jerky", 1, 3, missing));
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem("dreamcraft", "item.UnfiredSearedBrick", 1, 0, missing),
