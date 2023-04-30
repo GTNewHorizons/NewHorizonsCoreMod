@@ -295,6 +295,12 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GT_ModHandler.getModItem(SGCraft.ID, "sgControllerCrystal", 1, 0, missing));
         }
 
+        if (BloodMagic.isModLoaded()) {
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(BloodMagic.ID, "Altar", 1, 0, missing),
+                    "Altar of GregoriusT's Blood");
+        }
+
         MainRegistry.Logger.info("Added NEI Config");
     }
 
