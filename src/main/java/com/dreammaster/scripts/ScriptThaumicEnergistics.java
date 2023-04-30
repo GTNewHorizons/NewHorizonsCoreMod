@@ -1,6 +1,12 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AE2Stuff;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.Gadomancy;
+import static gregtech.api.enums.Mods.TaintedMagic;
+import static gregtech.api.enums.Mods.ThaumicEnergistics;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes;

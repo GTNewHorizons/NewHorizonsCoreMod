@@ -1,7 +1,9 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
 
 import java.util.Arrays;
 import java.util.List;

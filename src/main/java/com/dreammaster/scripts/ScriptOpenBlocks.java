@@ -1,9 +1,15 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.OpenBlocks;
+import static gregtech.api.enums.Mods.RandomThings;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
 
 import java.util.Arrays;
 import java.util.List;

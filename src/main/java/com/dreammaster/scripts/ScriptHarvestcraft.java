@@ -2,7 +2,12 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
 
 import java.util.Arrays;
 import java.util.List;

@@ -2,7 +2,22 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBenderRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBrewingRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistilleryRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFermentingRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLatheRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sWiremillRecipes;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,6 +1,15 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AdventureBackpack;
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.SleepingBags;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBrewingRecipes;
