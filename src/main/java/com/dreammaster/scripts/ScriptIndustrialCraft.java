@@ -10,6 +10,8 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.oredict.OreDictHelper;
+
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 
 public class ScriptIndustrialCraft implements IScriptLoader {
@@ -26,6 +28,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        OreDictHelper.removeOreDict("plateSteel", getModItem("IC2", "itemPlates", 1, 5, missing));
+
         addShapelessCraftingRecipe(
                 getModItem("IC2", "blockMiningPipe", 1, 0, missing),
                 new Object[] { getModItem("IC2", "blockMiningTip", 1, 0, missing) });
@@ -645,7 +649,116 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         "plateRubber", null, "craftingToolSoftHammer", null, null,
                         getModItem("TConstruct", "buckets", 1, 25, missing), null });
 
-        OreDictHelper.removeOreDict("plateSteel", getModItem("IC2", "itemPlates", 1, 5, missing));
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("IC2", "blockKineticGenerator", 1, 4, missing),
+                "---------",
+                "---------",
+                "--aabaa--",
+                "--cdedc--",
+                "--bfgfb--",
+                "--chehc--",
+                "--aabaa--",
+                "---------",
+                "---------",
+                'a',
+                "plateDoubleStainlessSteel",
+                'b',
+                getModItem("IC2", "itemRecipePart", 1, 12, missing),
+                'c',
+                "itemCasingStainlessSteel",
+                'd',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32612, missing),
+                'e',
+                "cableGt01Platinum",
+                'f',
+                "circuitData",
+                'g',
+                getModItem("gregtech", "gt.blockcasings2", 1, 3, missing),
+                'h',
+                "gearGtSmallTitanium");
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("IC2", "blockGenerator", 1, 9, missing),
+                "---------",
+                "---------",
+                "--aabaa--",
+                "--cdedc--",
+                "--fghgf--",
+                "--cijic--",
+                "--aabaa--",
+                "---------",
+                "---------",
+                'a',
+                "plateDoubleStainlessSteel",
+                'b',
+                getModItem("IC2", "itemRecipePart", 1, 12, missing),
+                'c',
+                "rotorStainlessSteel",
+                'd',
+                "gearTitanium",
+                'e',
+                getModItem("gregtech", "gt.blockmachines", 1, 13, missing),
+                'f',
+                "cableGt01Platinum",
+                'g',
+                "circuitData",
+                'h',
+                getModItem("gregtech", "gt.blockcasings2", 1, 11, missing),
+                'i',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32602, missing),
+                'j',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32538, missing));
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("IC2", "blockMachine2", 1, 0, missing),
+                "---------",
+                "---------",
+                "---------",
+                "--abcba--",
+                "--defed--",
+                "--agaga--",
+                "---------",
+                "---------",
+                "---------",
+                'a',
+                "plateTitanium",
+                'b',
+                "lensNetherStar",
+                'c',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32672, missing),
+                'd',
+                getModItem("IC2", "itemBatLamaCrystal", 1, 32767, missing),
+                'e',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32603, missing),
+                'f',
+                getModItem("IC2", "blockElectric", 1, 5, missing),
+                'g',
+                "cableGt04Aluminium");
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("IC2", "blockKineticGenerator", 1, 0, missing),
+                "---------",
+                "---------",
+                "--aabaa--",
+                "--cdedc--",
+                "--bfgfb--",
+                "--chehc--",
+                "--aabaa--",
+                "---------",
+                "---------",
+                'a',
+                "plateDoubleStainlessSteel",
+                'b',
+                getModItem("IC2", "itemRecipePart", 1, 12, missing),
+                'c',
+                "itemCasingStainlessSteel",
+                'd',
+                "gearGtSmallTitanium",
+                'e',
+                "cableGt01Platinum",
+                'f',
+                "circuitData",
+                'g',
+                getModItem("gregtech", "gt.blockcasings2", 1, 3, missing),
+                'h',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32602, missing));
 
         GT_Values.RA.addFuel(
                 createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"ic2biogas\",Amount:1000}}", missing),
