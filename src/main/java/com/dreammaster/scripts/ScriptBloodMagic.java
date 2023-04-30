@@ -17,7 +17,11 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
+import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
+import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 
+import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
@@ -162,6 +166,695 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 9, missing),
                         getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
                         getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
+
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "weakBloodOrb", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "apprenticeBloodOrb", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "magicianBloodOrb", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "masterBloodOrb", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "archmageBloodOrb", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "transcendentBloodOrb", 1, 0, missing));
+        BloodMagicHelper.removeBindingRecipe(getModItem("AWWayofTime", "energySword", 1, 0, missing));
+        BloodMagicHelper.removeBindingRecipe(getModItem("AWWayofTime", "boundPickaxe", 1, 0, missing));
+        BloodMagicHelper.removeBindingRecipe(getModItem("AWWayofTime", "boundAxe", 1, 0, missing));
+        BloodMagicHelper.removeBindingRecipe(getModItem("AWWayofTime", "boundShovel", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "blankSlate", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "reinforcedSlate", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("BloodArsenal", "blood_stone", 1, 1, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "imbuedSlate", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "demonicSlate", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 27, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "crystallos", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "sanctus", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "weakFillingAgent", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "alchemyFlask", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "weakBindingAgent", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "standardBindingAgent", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "mundaneLengtheningCatalyst", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "averageLengtheningCatalyst", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "greaterLengtheningCatalyst", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "mundanePowerCatalyst", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "averagePowerCatalyst", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "greaterPowerCatalyst", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "blankSpell", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "aether", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("minecraft", "web", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 5, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("minecraft", "leather", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("minecraft", "fire_charge", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "daggerOfSacrifice", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "incendium", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "magicales", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "crepitous", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "terrae", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "aquasalus", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "tennebrae", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "activationCrystal", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "bloodSocket", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "waterScribeTool", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "fireScribeTool", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "earthScribeTool", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "airScribeTool", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "duskScribeTool", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "dawnScribeTool", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "activationCrystal", 1, 1, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "standardFillingAgent", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "enhancedFillingAgent", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "telepositionFocus", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("AWWayofTime", "enhancedTelepositionFocus", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 4, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "itemComplexSpellCrystal", 1, 0, missing));
+        BloodMagicHelper.removeBindingRecipe(getModItem("AWWayofTime", "energyBlaster", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 15, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 16, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 17, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 30, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 0, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 1, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 2, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 6, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 7, missing));
+        BloodMagicHelper.removeAlchemyRecipe(getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 8, missing));
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "weakBloodOrb", 1, 0, missing),
+                getModItem("dreamcraft", "item.WeakOrb", 1, 0, missing),
+                1,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "apprenticeBloodOrb", 1, 0, missing),
+                getModItem("dreamcraft", "item.ApprenticeOrb", 1, 0, missing),
+                2,
+                10000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "magicianBloodOrb", 1, 0, missing),
+                getModItem("dreamcraft", "item.MagicianOrb", 1, 0, missing),
+                3,
+                30000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "masterBloodOrb", 1, 0, missing),
+                getModItem("dreamcraft", "item.MasterOrb", 1, 0, missing),
+                4,
+                60000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "archmageBloodOrb", 1, 0, missing),
+                getModItem("dreamcraft", "item.ArchmageOrb", 1, 0, missing),
+                5,
+                120000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "transcendentBloodOrb", 1, 0, missing),
+                getModItem("dreamcraft", "item.TranscendentOrb", 1, 0, missing),
+                6,
+                300000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "blankSlate", 1, 0, missing),
+                getModItem("dreamcraft", "item.ArcaneSlate", 1, 0, missing),
+                1,
+                1000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "reinforcedSlate", 1, 0, missing),
+                getModItem("AWWayofTime", "blankSlate", 1, 0, missing),
+                2,
+                2500,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "imbuedSlate", 1, 0, missing),
+                getModItem("AWWayofTime", "reinforcedSlate", 1, 0, missing),
+                3,
+                7500,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "demonicSlate", 1, 0, missing),
+                getModItem("AWWayofTime", "imbuedSlate", 1, 0, missing),
+                4,
+                20000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 27, missing),
+                getModItem("AWWayofTime", "demonicSlate", 1, 0, missing),
+                5,
+                60000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                createItemStack(
+                        "IC2",
+                        "itemFluidCell",
+                        1,
+                        0,
+                        "{Fluid:{FluidName:\"lifeessence\",Amount:1000}}",
+                        missing),
+                getModItem("IC2", "itemFluidCell", 1, 0, missing),
+                1,
+                1000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "alchemyFlask", 1, 0, missing),
+                getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
+                2,
+                4000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "blankSpell", 1, 0, missing),
+                createItemStack("IC2", "itemBatCrystal", 1, 1, "{charge:1000000.0d}", missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "daggerOfSacrifice", 1, 0, missing),
+                getModItem("AWWayofTime", "sacrificialKnife", 1, 0, missing),
+                2,
+                10000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "activationCrystal", 1, 0, missing),
+                getModItem("AWWayofTime", "blankSpell", 1, 0, missing),
+                3,
+                20000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "bloodSocket", 1, 0, missing),
+                getModItem("AWWayofTime", "emptySocket", 1, 0, missing),
+                3,
+                40000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "waterScribeTool", 1, 0, missing),
+                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                3,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "fireScribeTool", 1, 0, missing),
+                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                3,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "earthScribeTool", 1, 0, missing),
+                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                3,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "airScribeTool", 1, 0, missing),
+                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                3,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "duskScribeTool", 1, 0, missing),
+                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
+                4,
+                10000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "dawnScribeTool", 1, 0, missing),
+                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                6,
+                100000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 32, missing),
+                getModItem("EnderZoo", "enderFragment", 1, 0, missing),
+                4,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("AWWayofTime", "enhancedTelepositionFocus", 1, 0, missing),
+                getModItem("AWWayofTime", "telepositionFocus", 1, 0, missing),
+                4,
+                20000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("dreamcraft", "tile.BloodyThaumium", 1, 0, missing),
+                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 4, missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("dreamcraft", "tile.BloodyVoid", 1, 0, missing),
+                getModItem("thaumicbases", "voidBlock", 1, 0, missing),
+                3,
+                10000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("dreamcraft", "tile.BloodyIchorium", 1, 0, missing),
+                getModItem("gregtech", "gt.blockmetal8", 1, 13, missing),
+                5,
+                50000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_diamond_bound", 1, 0, missing),
+                getModItem("BloodArsenal", "blood_infused_diamond_active", 1, 0, missing),
+                5,
+                10000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("Railcraft", "brick.bloodstained", 1, 2, missing),
+                getModItem("minecraft", "sandstone", 1, 2, missing),
+                2,
+                3500,
+                20,
+                20,
+                false);
+        BindingRegistry.registerRecipe(
+                getModItem("AWWayofTime", "energySword", 1, 0, missing),
+                getModItem("Thaumcraft", "ItemSwordElemental", 1, 0, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("AWWayofTime", "boundPickaxe", 1, 0, missing),
+                getModItem("Thaumcraft", "ItemPickaxeElemental", 1, 0, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("AWWayofTime", "boundAxe", 1, 0, missing),
+                getModItem("Thaumcraft", "ItemAxeElemental", 1, 0, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("AWWayofTime", "boundShovel", 1, 0, missing),
+                getModItem("Thaumcraft", "ItemShovelElemental", 1, 0, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("AWWayofTime", "energyBlaster", 1, 0, missing),
+                getModItem("dreamcraft", "item.Blaster", 1, 0, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 0, missing),
+                getModItem("gregtech", "gt.metaitem.01", 1, 23522, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 0, missing),
+                getModItem("gregtech", "gt.metaitem.01", 1, 23516, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 0, missing),
+                getModItem("gregtech", "gt.metaitem.01", 1, 23523, missing));
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "largeBloodStoneBrick", 4, 0, missing),
+                25,
+                new ItemStack[] { getModItem("AWWayofTime", "ritualStone", 1, 0, missing),
+                        getModItem("AWWayofTime", "ritualStone", 1, 0, missing),
+                        getModItem("AWWayofTime", "ritualStone", 1, 0, missing),
+                        getModItem("AWWayofTime", "ritualStone", 1, 0, missing),
+                        getModItem("AWWayofTime", "weakBloodShard", 1, 0, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing),
+                5,
+                new ItemStack[] { getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
+                        getModItem("Genetics", "misc", 1, 4, missing),
+                        getModItem("minecraft", "glowstone_dust", 1, 0, missing),
+                        getModItem("minecraft", "redstone", 1, 0, missing),
+                        getModItem("minecraft", "gunpowder", 1, 0, missing) },
+                1);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "crystallos", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("BiomesOPlenty", "hardIce", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2702, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2702, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2702, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "sanctus", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 2351, missing),
+                        getModItem("minecraft", "glowstone_dust", 1, 0, missing),
+                        getModItem("minecraft", "glowstone_dust", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2890, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "weakFillingAgent", 1, 0, missing),
+                20,
+                new ItemStack[] { getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing),
+                        getModItem("minecraft", "glowstone_dust", 1, 0, missing),
+                        getModItem("minecraft", "redstone", 1, 0, missing),
+                        getModItem("minecraft", "nether_wart", 1, 0, missing),
+                        getModItem("minecraft", "blaze_powder", 1, 0, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "weakBindingAgent", 1, 0, missing),
+                20,
+                new ItemStack[] { getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2020, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2805, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2805, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "mundaneLengtheningCatalyst", 1, 0, missing),
+                40,
+                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 2028, missing),
+                        getModItem("minecraft", "redstone", 1, 0, missing),
+                        getModItem("minecraft", "redstone", 1, 0, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "weakBindingAgent", 1, 0, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "averageLengtheningCatalyst", 1, 0, missing),
+                60,
+                new ItemStack[] { getModItem("AWWayofTime", "standardBindingAgent", 1, 0, missing),
+                        getModItem("AWWayofTime", "mundaneLengtheningCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "mundaneLengtheningCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "greaterLengtheningCatalyst", 1, 0, missing),
+                80,
+                new ItemStack[] { getModItem("AWWayofTime", "aquasalus", 1, 0, missing),
+                        getModItem("AWWayofTime", "averageLengtheningCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "averageLengtheningCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "mundanePowerCatalyst", 1, 0, missing),
+                40,
+                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 2028, missing),
+                        getModItem("minecraft", "glowstone_dust", 1, 0, missing),
+                        getModItem("minecraft", "glowstone_dust", 1, 0, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "weakBindingAgent", 1, 0, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "averagePowerCatalyst", 1, 0, missing),
+                60,
+                new ItemStack[] { getModItem("AWWayofTime", "standardBindingAgent", 1, 0, missing),
+                        getModItem("AWWayofTime", "mundanePowerCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "mundanePowerCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "greaterPowerCatalyst", 1, 0, missing),
+                80,
+                new ItemStack[] { getModItem("AWWayofTime", "incendium", 1, 0, missing),
+                        getModItem("AWWayofTime", "averagePowerCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "averagePowerCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "standardBindingAgent", 1, 0, missing),
+                40,
+                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 2028, missing),
+                        getModItem("AWWayofTime", "weakBindingAgent", 1, 0, missing),
+                        getModItem("AWWayofTime", "weakBindingAgent", 1, 0, missing),
+                        getModItem("AWWayofTime", "sanctus", 1, 0, missing),
+                        getModItem("AWWayofTime", "crystallos", 1, 0, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "aether", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("EMT", "EMTItems", 1, 8, missing),
+                        getModItem("minecraft", "feather", 1, 0, missing),
+                        getModItem("minecraft", "feather", 1, 0, missing),
+                        getModItem("minecraft", "ghast_tear", 1, 0, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("minecraft", "web", 1, 0, missing),
+                5,
+                new ItemStack[] { getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing),
+                        getModItem("minecraft", "string", 1, 0, missing) },
+                1);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 5, missing),
+                5,
+                new ItemStack[] { getModItem("minecraft", "bone", 1, 0, missing),
+                        getModItem("minecraft", "bone", 1, 0, missing), getModItem("minecraft", "bone", 1, 0, missing),
+                        getModItem("minecraft", "bone", 1, 0, missing),
+                        getModItem("minecraft", "gunpowder", 1, 0, missing) },
+                1);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("minecraft", "leather", 3, 0, missing),
+                6,
+                new ItemStack[] { getModItem("minecraft", "rotten_flesh", 1, 0, missing),
+                        getModItem("minecraft", "rotten_flesh", 1, 0, missing),
+                        getModItem("minecraft", "rotten_flesh", 1, 0, missing),
+                        getModItem("minecraft", "water_bucket", 1, 0, missing),
+                        getModItem("minecraft", "flint", 1, 0, missing) },
+                1);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("minecraft", "fire_charge", 1, 0, missing),
+                9,
+                new ItemStack[] { getModItem("minecraft", "blaze_powder", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2535, missing),
+                        getModItem("minecraft", "gunpowder", 1, 0, missing) },
+                1);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "incendium", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 2541, missing),
+                        getModItem("minecraft", "blaze_powder", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 1347, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2807, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "magicales", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing),
+                        getModItem("minecraft", "gunpowder", 1, 0, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "crepitous", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("AWWayofTime", "blankSlate", 1, 0, missing),
+                        getModItem("minecraft", "gunpowder", 1, 0, missing),
+                        getModItem("minecraft", "gunpowder", 1, 0, missing),
+                        getModItem("AWWayofTime", "blankSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "terrae", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 45, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2935, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2936, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "aquasalus", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("minecraft", "potion", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2543, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2543, missing),
+                        getModItem("minecraft", "dye", 1, 0, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "tennebrae", 1, 0, missing),
+                10,
+                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2535, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2536, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2538, missing),
+                        getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing) },
+                2);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "activationCrystal", 1, 1, missing),
+                500,
+                new ItemStack[] { getModItem("AWWayofTime", "activationCrystal", 1, 0, missing),
+                        getModItem("AWWayofTime", "demonBloodShard", 1, 0, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 0, missing),
+                        getModItem("AWWayofTime", "aquasalus", 1, 0, missing),
+                        getModItem("AWWayofTime", "aether", 1, 0, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "standardFillingAgent", 1, 0, missing),
+                40,
+                new ItemStack[] { getModItem("AWWayofTime", "weakFillingAgent", 1, 0, missing),
+                        getModItem("AWWayofTime", "terrae", 1, 0, missing),
+                        getModItem("AWWayofTime", "aquasalus", 1, 0, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "enhancedFillingAgent", 1, 0, missing),
+                60,
+                new ItemStack[] { getModItem("AWWayofTime", "standardFillingAgent", 1, 0, missing),
+                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
+                        getModItem("AWWayofTime", "crystallos", 1, 0, missing),
+                        getModItem("AWWayofTime", "aether", 1, 0, missing),
+                        getModItem("AWWayofTime", "sanctus", 1, 0, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing),
+                15,
+                new ItemStack[] { getModItem("AWWayofTime", "simpleCatalyst", 1, 0, missing),
+                        getModItem("AWWayofTime", "terrae", 1, 0, missing),
+                        getModItem("AWWayofTime", "terrae", 1, 0, missing),
+                        getModItem("minecraft", "dye", 1, 15, missing),
+                        getModItem("minecraft", "nether_wart", 1, 0, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 4, missing),
+                30,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 8, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 8, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 5, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 1086, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "itemComplexSpellCrystal", 1, 0, missing),
+                150,
+                new ItemStack[] { getModItem("AWWayofTime", "blankSpell", 1, 0, missing),
+                        getModItem("AWWayofTime", "weakBloodShard", 1, 0, missing),
+                        getModItem("AWWayofTime", "weakBloodShard", 1, 0, missing),
+                        getModItem("dreamcraft", "item.EngravedGoldChip", 1, 0, missing),
+                        getModItem("dreamcraft", "item.EngravedDiamondCrystalChip", 1, 0, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 2, 15, missing),
+                20,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 4, missing),
+                        getModItem("AWWayofTime", "imbuedSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "imbuedSlate", 1, 0, missing),
+                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
+                        getModItem("AWWayofTime", "magicales", 1, 0, missing) },
+                4);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 16, missing),
+                60,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 15, missing),
+                        getModItem("AWWayofTime", "terrae", 1, 0, missing),
+                        getModItem("AWWayofTime", "terrae", 1, 0, missing),
+                        getModItem("AWWayofTime", "demonicSlate", 1, 0, missing) },
+                5);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 17, missing),
+                120,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 27, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 16, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 16, missing),
+                        getModItem("AWWayofTime", "aquasalus", 1, 0, missing),
+                        getModItem("AWWayofTime", "incendium", 1, 0, missing) },
+                5);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 30, missing),
+                250,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 17, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 29, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 29, missing),
+                        getModItem("AWWayofTime", "weakBloodShard", 1, 0, missing),
+                        getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 27, missing) },
+                6);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 0, missing),
+                20,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing),
+                        getModItem("AWWayofTime", "incendium", 1, 0, missing),
+                        getModItem("AWWayofTime", "incendium", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 25028, missing),
+                        getModItem("gregtech", "gt.metaitem.02", 1, 25028, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 1, missing),
+                20,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing),
+                        getModItem("AWWayofTime", "tennebrae", 1, 0, missing),
+                        getModItem("AWWayofTime", "tennebrae", 1, 0, missing),
+                        getModItem("witchery", "ingredient", 1, 56, missing),
+                        getModItem("witchery", "ingredient", 1, 56, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 2, missing),
+                20,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing),
+                        getModItem("AWWayofTime", "terrae", 1, 0, missing),
+                        getModItem("AWWayofTime", "terrae", 1, 0, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2542, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2542, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 6, missing),
+                40,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2346, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2346, missing),
+                        getModItem("dreamcraft", "item.ChargedCertusQuartzDust", 1, 0, missing),
+                        getModItem("dreamcraft", "item.ChargedCertusQuartzDust", 1, 0, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 7, missing),
+                40,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2702, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2702, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2379, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2379, missing) },
+                3);
+        AlchemyRecipeRegistry.registerRecipe(
+                getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 8, missing),
+                40,
+                new ItemStack[] { getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 3, missing),
+                        getModItem("IC2", "itemDust2", 1, 2, missing), getModItem("IC2", "itemDust2", 1, 2, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2367, missing),
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2367, missing) },
+                3);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.ArcaneSlate", 9, 0, missing))
                 .itemOutputs(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing)).noFluidInputs()
