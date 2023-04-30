@@ -362,6 +362,12 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.setOverrideName(creativeBank, "Chaotic Capacitor Bank");
         }
 
+        if (BiblioWoodsBoPEdition.isModLoaded()) {
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodcase", 1, 4, missing),
+                    "Hellbark Case");
+        }
+
         API.setOverrideName(new ItemStack(Blocks.ender_chest), "Personal Ender Chest");
 
         MainRegistry.Logger.info("Added NEI Config");
