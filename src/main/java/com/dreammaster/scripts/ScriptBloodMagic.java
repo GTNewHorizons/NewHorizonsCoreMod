@@ -2,8 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -164,6 +163,24 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
                         getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 25, missing) });
 
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.ArcaneSlate", 9, 0, missing))
+                .itemOutputs(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("AWWayofTime", "blankSlate", 9, 0, missing))
+                .itemOutputs(getModItem("BloodArsenal", "blood_stone", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("AWWayofTime", "reinforcedSlate", 9, 0, missing))
+                .itemOutputs(getModItem("BloodArsenal", "blood_stone", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("AWWayofTime", "imbuedSlate", 9, 0, missing))
+                .itemOutputs(getModItem("BloodArsenal", "blood_stone", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("AWWayofTime", "demonicSlate", 9, 0, missing))
+                .itemOutputs(getModItem("BloodArsenal", "blood_stone", 1, 3, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("AWWayofTime", "bloodMagicBaseItems", 9, 27, missing))
+                .itemOutputs(getModItem("BloodArsenal", "blood_stone", 1, 4, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("AWWayofTime", "blankSlate", 4, 0, missing),
