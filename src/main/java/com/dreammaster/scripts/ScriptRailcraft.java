@@ -7,6 +7,8 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
 import java.util.Arrays;
 import java.util.List;
 
+import mods.railcraft.api.crafting.RailcraftCraftingManager;
+
 import net.minecraftforge.fluids.FluidRegistry;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -15,8 +17,11 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchPage;
 
+import com.dreammaster.forestry.ForestryHelper;
+import com.dreammaster.railcraft.RailcraftHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 import gregtech.api.util.GT_ModHandler;
@@ -900,6 +905,426 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem("Railcraft", "brick.nether", 4, 5, missing),
                 new Object[] { "stoneCobble", getModItem("minecraft", "netherrack", 1, 0, missing), null,
                         getModItem("minecraft", "netherrack", 1, 0, missing), "stoneCobble", null, null, null, null });
+
+        ForestryHelper.removeCarpenterRecipe(
+                createItemStack(
+                        "Railcraft",
+                        "backpack.trackman.t2",
+                        1,
+                        0,
+                        "{display:{Lore:[0:\"§7§oDesigned by Railcraft, Inc.\"]}}",
+                        missing));
+        ForestryHelper.removeCarpenterRecipe(
+                createItemStack(
+                        "Railcraft",
+                        "backpack.iceman.t2",
+                        1,
+                        0,
+                        "{display:{Lore:[0:\"§7§oDesigned by Railcraft, Inc.\"]}}",
+                        missing));
+        ForestryHelper.removeCarpenterRecipe(
+                createItemStack(
+                        "Railcraft",
+                        "backpack.apothecary.t2",
+                        1,
+                        0,
+                        "{display:{Lore:[0:\"§7§oDesigned by Railcraft, Inc.\"]}}",
+                        missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("seedoil", 5000),
+                getModItem("Railcraft", "backpack.trackman.t1", 1, 0, missing),
+                getModItem("Railcraft", "backpack.trackman.t2", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'b',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'c',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'd',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'e',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'f',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'g',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'h',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'i',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("seedoil", 5000),
+                getModItem("Railcraft", "backpack.iceman.t1", 1, 0, missing),
+                getModItem("Railcraft", "backpack.iceman.t2", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'b',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'c',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'd',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'e',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'f',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'g',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'h',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'i',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("seedoil", 5000),
+                getModItem("Railcraft", "backpack.apothecary.t1", 1, 0, missing),
+                getModItem("Railcraft", "backpack.apothecary.t2", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'b',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'c',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'd',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'e',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'f',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'g',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'h',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'i',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing));
+        GT_Values.RA.addFuel(
+                createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"creosote\",Amount:1000}}", missing),
+                getModItem("IC2", "itemFluidCell", 1, 0, missing),
+                8,
+                0);
+        GT_Values.RA.addFuel(
+                getModItem("gregtech", "gt.metaitem.01", 1, 30712, missing),
+                getModItem("IC2", "itemFluidCell", 1, 0, missing),
+                8,
+                0);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Railcraft", "fuel.coke", 9, 0, missing))
+                .itemOutputs(getModItem("Railcraft", "cube", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Railcraft", "slab", 2, 2, missing))
+                .itemOutputs(getModItem("Railcraft", "cube", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Railcraft", "slab", 4, 38, missing))
+                .itemOutputs(getModItem("Railcraft", "cube", 1, 8, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.AdvancedCokeOvenBrick", 4, 0, missing))
+                .itemOutputs(getModItem("Railcraft", "machine.alpha", 1, 12, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.CokeOvenBrick", 4, 0, missing))
+                .itemOutputs(getModItem("Railcraft", "machine.alpha", 1, 7, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Railcraft", "cube", 1, 0, missing))
+                .itemOutputs(getModItem("Railcraft", "fuel.coke", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(400).eut(5).addTo(sCentrifugeRecipes);
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.plate", 4, 0, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.plate", 4, 1, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.plate", 4, 2, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.plate", 4, 3, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rail", 8, 0, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rail", 6, 0, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rail", 16, 0, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rail", 8, 1, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rail", 8, 3, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rail", 8, 4, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rail", 6, 5, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "machine.delta", 8, 0, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rebar", 4, 0, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rebar", 6, 0, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.rebar", 8, 0, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "post", 16, 2, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "post", 32, 2, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "post", 12, 2, missing));
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "post", 20, 2, missing));
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 4, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'c',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'd',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'e',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'f',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'g',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'i',
+                getModItem("Railcraft", "part.tie", 1, 0, missing));
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 4, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'b',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'c',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'e',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'g',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'h',
+                getModItem("Railcraft", "part.tie", 1, 0, missing),
+                'i',
+                getModItem("Railcraft", "part.tie", 1, 0, missing));
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 4, 1, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("minecraft", "stone", 1, 0, missing),
+                'c',
+                getModItem("minecraft", "stone", 1, 0, missing),
+                'd',
+                getModItem("Railcraft", "part.rebar", 1, 0, missing),
+                'e',
+                getModItem("Railcraft", "part.rebar", 1, 0, missing),
+                'f',
+                getModItem("Railcraft", "part.rebar", 1, 0, missing),
+                'g',
+                getModItem("minecraft", "stone", 1, 0, missing),
+                'i',
+                getModItem("minecraft", "stone", 1, 0, missing));
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 4, 1, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("minecraft", "stone", 1, 0, missing),
+                'b',
+                getModItem("Railcraft", "part.rebar", 1, 0, missing),
+                'c',
+                getModItem("minecraft", "stone", 1, 0, missing),
+                'e',
+                getModItem("Railcraft", "part.rebar", 1, 0, missing),
+                'g',
+                getModItem("minecraft", "stone", 1, 0, missing),
+                'h',
+                getModItem("Railcraft", "part.rebar", 1, 0, missing),
+                'i',
+                getModItem("minecraft", "stone", 1, 0, missing));
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 1, 4, missing),
+                "abc",
+                "def",
+                "ghi",
+                'b',
+                getModItem("Railcraft", "slab", 1, 38, missing),
+                'e',
+                getModItem("Railcraft", "post", 1, 0, missing));
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 1, 5, missing),
+                "abc",
+                "def",
+                "ghi",
+                'b',
+                getModItem("Railcraft", "slab", 1, 2, missing),
+                'e',
+                getModItem("Railcraft", "post", 1, 1, missing));
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 1, 6, missing),
+                "abc",
+                "def",
+                "ghi",
+                'b',
+                getModItem("Railcraft", "slab", 1, 6, missing),
+                'e',
+                getModItem("Railcraft", "post", 1, 2, missing));
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 16, 2, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "stickAnyIron",
+                'b',
+                "stickAnyIron",
+                'c',
+                "stickAnyIron",
+                'e',
+                "stickAnyIron",
+                'g',
+                "stickAnyIron",
+                'h',
+                "stickAnyIron",
+                'i',
+                "stickAnyIron");
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 16, 2, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "stickAnyIron",
+                'c',
+                "stickAnyIron",
+                'd',
+                "stickAnyIron",
+                'e',
+                "stickAnyIron",
+                'f',
+                "stickAnyIron",
+                'g',
+                "stickAnyIron",
+                'i',
+                "stickAnyIron");
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 12, 2, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "stickBronze",
+                'b',
+                "stickBronze",
+                'c',
+                "stickBronze",
+                'e',
+                "stickBronze",
+                'g',
+                "stickBronze",
+                'h',
+                "stickBronze",
+                'i',
+                "stickBronze");
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 12, 2, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "stickBronze",
+                'c',
+                "stickBronze",
+                'd',
+                "stickBronze",
+                'e',
+                "stickBronze",
+                'f',
+                "stickBronze",
+                'g',
+                "stickBronze",
+                'i',
+                "stickBronze");
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 32, 2, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "stickSteel",
+                'b',
+                "stickSteel",
+                'c',
+                "stickSteel",
+                'e',
+                "stickSteel",
+                'g',
+                "stickSteel",
+                'h',
+                "stickSteel",
+                'i',
+                "stickSteel");
+        RailcraftCraftingManager.rollingMachine.addRecipe(
+                getModItem("Railcraft", "post", 32, 2, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "stickSteel",
+                'c',
+                "stickSteel",
+                'd',
+                "stickSteel",
+                'e',
+                "stickSteel",
+                'f',
+                "stickSteel",
+                'g',
+                "stickSteel",
+                'i',
+                "stickSteel");
+        RailcraftHelper.removeRollingRecipe(getModItem("Railcraft", "part.plate", 4, 4, missing));
+        RecipeManagers.fabricatorManager.addRecipe(
+                getModItem("Forestry", "waxCast", 1, 32767, missing),
+                FluidRegistry.getFluidStack("glass", 2000),
+                getModItem("Railcraft", "glass", 4, 0, missing),
+                new Object[] { "abc", "def", "ghi", 'a', getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing),
+                        'b', getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing), 'c',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing), 'd',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2057, missing), 'e',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2522, missing), 'f',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2032, missing), 'g',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing), 'h',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing), 'i',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing) });
+        RecipeManagers.fabricatorManager.addRecipe(
+                getModItem("Forestry", "waxCast", 1, 32767, missing),
+                FluidRegistry.getFluidStack("glass", 2000),
+                getModItem("Railcraft", "glass", 4, 0, missing),
+                new Object[] { "abc", "def", "ghi", 'a', getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing),
+                        'b', getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing), 'c',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing), 'd',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2057, missing), 'e',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2516, missing), 'f',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2032, missing), 'g',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing), 'h',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing), 'i',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing) });
+        RecipeManagers.fabricatorManager.addRecipe(
+                getModItem("Forestry", "waxCast", 1, 32767, missing),
+                FluidRegistry.getFluidStack("glass", 2000),
+                getModItem("Railcraft", "glass", 4, 0, missing),
+                new Object[] { "abc", "def", "ghi", 'a', getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing),
+                        'b', getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing), 'c',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing), 'd',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2057, missing), 'e',
+                        getModItem("dreamcraft", "item.ChargedCertusQuartzDust", 1, 0, missing), 'f',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2032, missing), 'g',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing), 'h',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing), 'i',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing) });
+        RecipeManagers.fabricatorManager.addRecipe(
+                getModItem("Forestry", "waxCast", 1, 32767, missing),
+                FluidRegistry.getFluidStack("glass", 2000),
+                getModItem("Railcraft", "glass", 4, 0, missing),
+                new Object[] { "abc", "def", "ghi", 'a', getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing),
+                        'b', getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing), 'c',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing), 'd',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2057, missing), 'e',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2523, missing), 'f',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2032, missing), 'g',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing), 'h',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing), 'i',
+                        getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing) });
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

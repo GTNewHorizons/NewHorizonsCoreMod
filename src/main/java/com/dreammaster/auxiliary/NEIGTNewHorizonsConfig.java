@@ -318,6 +318,13 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
                     "Altar of GregoriusT's Blood");
         }
 
+        if (Railcraft.isModLoaded()) {
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(Railcraft.ID, "upgrade.lapotron", 1, 0, missing),
+                    "Lapatron Loader Upgrade");
+            API.setOverrideName(GT_ModHandler.getModItem(Railcraft.ID, "part.plate", 1, 4, missing), "Lead Plate");
+        }
+
         MainRegistry.Logger.info("Added NEI Config");
     }
 
