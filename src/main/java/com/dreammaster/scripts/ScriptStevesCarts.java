@@ -9,6 +9,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -879,6 +880,51 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem("gregtech", "gt.metaitem.01", 1, 11385, missing),
                 new Object[] { getModItem("StevesCarts", "ModuleComponents", 1, 49, missing) });
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("StevesCarts", "upgrade", 1, 14, missing),
+                "---------",
+                "---------",
+                "--abcba--",
+                "--ddddd--",
+                "--cdedc--",
+                "--ddddd--",
+                "--abcba--",
+                "---------",
+                "---------",
+                'a',
+                "plateDenseNaquadria",
+                'b',
+                "ingotInfinity",
+                'c',
+                getModItem("StevesCarts", "upgrade", 1, 5, missing),
+                'd',
+                "plateEnhancedGalgadorian",
+                'e',
+                getModItem("gregtech", "gt.blockmachines", 1, 1192, missing));
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("StevesCarts", "CartModule", 1, 61, missing),
+                "---------",
+                "---------",
+                "--abcba--",
+                "--ddddd--",
+                "--edfde--",
+                "--ddddd--",
+                "--abcba--",
+                "---------",
+                "---------",
+                'a',
+                getModItem("Railcraft", "firestone.refined", 1, 0, missing),
+                'b',
+                "ingotInfinity",
+                'c',
+                getModItem("StevesCarts", "upgrade", 1, 19, missing),
+                'd',
+                "plateEnhancedGalgadorian",
+                'e',
+                getModItem("StevesCarts", "upgrade", 1, 18, missing),
+                'f',
+                getModItem("IC2", "blockReactorChamber", 1, 0, missing));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem("StevesCarts", "ModuleComponents", 9, 46, missing))
                 .itemOutputs(getModItem("StevesCarts", "ModuleComponents", 1, 48, missing)).noFluidInputs()
