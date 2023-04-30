@@ -9,6 +9,10 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.Smeltery;
+import cpw.mods.fml.common.registry.GameRegistry;
+import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 import gregtech.api.util.GT_ModHandler;
@@ -314,6 +318,517 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_ModHandler.addSmeltingRecipe(
                 getModItem("dreamcraft", "item.UnfiredCokeOvenBrick", 1, 0, missing),
                 getModItem("dreamcraft", "item.CokeOvenBrick", 1, 0, missing));
+
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeBolt", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeHoeHead", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeGear", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapePlate", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormAnvil", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormPlate", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormLeggings", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormBaguette", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormGear", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormRotor", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeBottle", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeRotor", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeTurbineBlade", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeSmallGear", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormBoots", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeLargePipe", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormSmallGear", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormCasing", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeWire", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormChestplate", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeShovelHead", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormBread", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeIngot", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormIngot", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeFileHead", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeRod", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeHugePipe", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeSwordBlade", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeRing", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeCasing", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormNuggets", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeSmallPipe", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormName", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeHammerHead", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeTinyPipe", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormCylinder", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormBottle", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeAxeHead", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeSawBlade", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormBlock", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeCell", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormArrowHead", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeBoat", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormCoinage", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormBall", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeBlock", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormHelmet", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapePickaxeHead", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormBuns", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.ShapeNormalPipe", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MarshmallowFormMold", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormStick", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormStickLong", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormScrew", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormRing", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormBolt", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormRound", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormTurbineBlade", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormPipeTiny", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormPipeSmall", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormPipeMedium", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormPipeLarge", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        Smeltery.addMelting(
+                getModItem("dreamcraft", "item.MoldFormPipeHuge", 1, 0, missing),
+                GameRegistry.findBlock("TConstruct", "MetalBlock"),
+                7,
+                500,
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.LedoxDust", 1, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "item.LedoxIngot", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.01", 9, 11388, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.BlackPlutonium", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.MytrylIngot", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.Mytryl", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.blockgem3", 9, 4, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.CompressedCharcoal", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "coal_block", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.CompressedCoal", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Railcraft", "cube", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.CompressedCoalCoke", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.CompressedCharcoal", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.DoubleCompressedCharcoal", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.CompressedCoal", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.DoubleCompressedCoal", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.CompressedCoalCoke", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.DoubleCompressedCoalCoke", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.DoubleCompressedCharcoal", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.TripleCompressedCharcoal", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.DoubleCompressedCoal", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.TripleCompressedCoal", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.DoubleCompressedCoalCoke", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.TripleCompressedCoalCoke", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.TripleCompressedCharcoal", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.QuadrupleCompressedCharcoal", 1, 0, missing))
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.TripleCompressedCoal", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.QuadrupleCompressedCoal", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.TripleCompressedCoalCoke", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.QuadrupleCompressedCoalCoke", 1, 0, missing))
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem("dreamcraft", "tile.QuadrupleCompressedCharcoal", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.QuintupleCompressedCharcoal", 1, 0, missing))
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "tile.QuadrupleCompressedCoal", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.QuintupleCompressedCoal", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem("dreamcraft", "tile.QuadrupleCompressedCoalCoke", 9, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "tile.QuintupleCompressedCoalCoke", 1, 0, missing))
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.ChargedCertusQuartzDust", 1, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "item.ChargedCertusQuartzPlate", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.BioBall", 1, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "item.CompressedBioBall", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("dreamcraft", "item.BioOrganicMesh", 1, 0, missing))
+                .itemOutputs(getModItem("dreamcraft", "item.BioCarbonPlate", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Railcraft", "machine.alpha", 1, 7, missing))
+                .itemOutputs(getModItem("dreamcraft", "item.CokeOvenBrick", 4, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Railcraft", "machine.alpha", 1, 12, missing))
+                .itemOutputs(getModItem("dreamcraft", "item.AdvancedCokeOvenBrick", 4, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        RecipeManagers.carpenterManager.addRecipe(
+                20,
+                FluidRegistry.getFluidStack("seedoil", 500),
+                getModItem("Forestry", "sturdyMachine", 1, 0, missing),
+                getModItem("dreamcraft", "item.EngineCore", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'b',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17526, missing),
+                'e',
+                getModItem("minecraft", "piston", 1, 0, missing));
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("dreamcraft", "item.ExtruderShapeBoat", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeBoat", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("dreamcraft", "item.MoldBoots", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormBoots", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("dreamcraft", "item.MoldChestplate", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormChestplate", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("dreamcraft", "item.MoldHelmet", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormHelmet", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("dreamcraft", "item.MoldLeggings", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormLeggings", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("dreamcraft", "item.MarshmallowForm", 1, 0, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MarshmallowFormMold", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("dreamcraft", "item.BowFletchingCast", 1, 0, missing),
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
+                getModItem("TConstruct", "fletching", 1, 32767, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("dreamcraft", "item.BowStringCast", 1, 0, missing),
+                FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
+                getModItem("TConstruct", "bowstring", 1, 32767, missing),
+                true,
+                100);
+
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("AdvancedSolarPanel", "asp_crafting_items", 1, 4, missing),
