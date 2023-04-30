@@ -2,11 +2,13 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -16,6 +18,7 @@ import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
+import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
@@ -61,6 +64,13 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem("gregtech", "gt.metaitem.02", 2, 32414, missing),
                 new Object[] { getModItem("ForbiddenMagic", "InkFlower", 1, 0, missing) });
 
+        ChiselHelper.addGroup("netherstar");
+        ChiselHelper.addVariationFromStack("netherstar", getModItem("ForbiddenMagic", "StarBlock", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("netherstar", getModItem("gregtech", "gt.blockgem3", 1, 3, missing));
+
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
+                .itemOutputs(getModItem("ForbiddenMagic", "FMResource", 9, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(1200).eut(5).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem("ForbiddenMagic", "InkFlower", 1, 0, missing))
                 .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 2, 32414, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
