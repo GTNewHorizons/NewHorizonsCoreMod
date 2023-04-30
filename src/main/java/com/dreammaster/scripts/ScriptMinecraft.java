@@ -35,6 +35,18 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_ModHandler.addSmeltingRecipe(
                 getModItem("gregtech", "gt.metaitem.02", 1, 32561, missing),
                 getModItem("minecraft", "bread", 1, 0, missing));
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "blockCustomPlant", 1, 3, missing))
+                .itemOutputs(getModItem("minecraft", "blaze_powder", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "blockCustomPlant", 1, 2, missing))
+                .itemOutputs(getModItem("Thaumcraft", "ItemResource", 1, 3, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "hay_block", 1, 0, missing))
+                .itemOutputs(getModItem("minecraft", "wheat", 9, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestthenether", "glowFlower", 2, 0, missing))
+                .itemOutputs(getModItem("minecraft", "glowstone_dust", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("minecraft", "clay_ball", 1, 0, missing),
