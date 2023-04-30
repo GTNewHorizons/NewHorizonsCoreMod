@@ -9,6 +9,8 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.chisel.ChiselHelper;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 import gregtech.api.util.GT_ModHandler;
@@ -1849,6 +1851,20 @@ public class ScriptNatura implements IScriptLoader {
                         getModItem("Natura", "redwood", 1, 0, missing), "craftingToolScrewdriver",
                         getModItem("Natura", "redwood", 1, 0, missing),
                         getModItem("Natura", "redwood", 1, 0, missing) });
+
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 1, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 2, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 3, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 4, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 5, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 6, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 7, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 8, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 9, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 10, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 11, missing));
+        ChiselHelper.addVariationFromStack("bookshelf", getModItem("Natura", "Natura.bookshelf", 1, 12, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
