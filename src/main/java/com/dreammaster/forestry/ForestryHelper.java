@@ -21,11 +21,13 @@ public class ForestryHelper {
                         .filter(r -> GT_Utility.areStacksEqual(r.getInput(), input, true)).findFirst().orElse(null));
     }
 
-    public static void removeSqueezerRecipe(FluidStack input) {
-        RecipeManagers.squeezerManager.removeRecipe(
-                RecipeManagers.squeezerManager.recipes().stream()
-                        .filter(r -> GT_Utility.areFluidsEqual(r.getFluidOutput(), input, true)).findFirst()
-                        .orElse(null));
+    public static void removeSqueezerRecipe(FluidStack output, ItemStack... inputs) {
+        RecipeManagers.squeezerManager.removeRecipe(RecipeManagers.squeezerManager.recipes().stream().filter(r -> {
+            if (!GT_Utility.areFluidsEqual(r.getFluidOutput(), output, true)) return false;
+            for (int i = 0, inputsLength = inputs.length; i < inputsLength; i++)
+                if (!GT_Utility.areStacksEqual(r.getResources()[i], inputs[i], true)) return false;
+            return true;
+        }).findFirst().orElse(null));
     }
 
     public static void removeFabricatorRecipe(ItemStack output) {

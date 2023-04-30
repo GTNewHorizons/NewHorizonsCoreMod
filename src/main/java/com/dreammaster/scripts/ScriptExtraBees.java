@@ -8,6 +8,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -16,8 +17,10 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
+import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -44,6 +47,306 @@ public class ScriptExtraBees implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem("ExtraBees", "dictionary", 1, 0, missing),
                 new Object[] { getModItem("ExtraBees", "dictionary", 1, 0, missing) });
+
+        ForestryHelper.removeCarpenterRecipe(getModItem("ExtraBees", "dictionary", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem("ExtraBees", "misc", 1, 0, missing));
+        ForestryHelper.removeSqueezerRecipe(
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("ExtraBees", "honeyDrop", 1, 8, missing));
+        ForestryHelper.removeSqueezerRecipe(
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("ExtraBees", "honeyDrop", 1, 9, missing));
+        ForestryHelper.removeSqueezerRecipe(
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("ExtraBees", "honeyDrop", 1, 10, missing));
+        ForestryHelper.removeSqueezerRecipe(
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("ExtraBees", "honeyDrop", 1, 11, missing));
+        ForestryHelper.removeSqueezerRecipe(
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("ExtraBees", "honeyDrop", 1, 12, missing));
+        ForestryHelper.removeSqueezerRecipe(
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("ExtraBees", "honeyDrop", 1, 13, missing));
+        ForestryHelper.removeSqueezerRecipe(
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("ExtraBees", "honeyDrop", 1, 14, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("molten.redstone", 1440),
+                getModItem("Forestry", "beealyzer", 1, 32767, missing),
+                getModItem("ExtraBees", "dictionary", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'b',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17501, missing),
+                'c',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'd',
+                "itemCasingGold",
+                'e',
+                "circuitAdvanced",
+                'f',
+                "itemCasingGold",
+                'g',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'h',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'i',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("for.honey", 7500),
+                getModItem("Forestry", "alveary", 1, 0, missing),
+                getModItem("ExtraBees", "alveary", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "thermionicTubes", 1, 12, missing),
+                'b',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17533, missing),
+                'c',
+                getModItem("Forestry", "thermionicTubes", 1, 12, missing),
+                'd',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17532, missing),
+                'e',
+                getModItem("ExtraBees", "hiveFrame.soul", 1, 0, missing),
+                'f',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17532, missing),
+                'g',
+                getModItem("Forestry", "thermionicTubes", 1, 12, missing),
+                'h',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17533, missing),
+                'i',
+                getModItem("Forestry", "thermionicTubes", 1, 12, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("for.honey", 7500),
+                getModItem("Forestry", "alveary", 1, 0, missing),
+                getModItem("ExtraBees", "alveary", 1, 1, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "thermionicTubes", 1, 10, missing),
+                'b',
+                getModItem("Forestry", "frameProven", 1, 0, missing),
+                'c',
+                getModItem("Forestry", "thermionicTubes", 1, 10, missing),
+                'd',
+                getModItem("Forestry", "frameProven", 1, 0, missing),
+                'e',
+                getModItem("gregtech", "gt.blockmachines", 1, 4985, missing),
+                'f',
+                getModItem("Forestry", "frameProven", 1, 0, missing),
+                'g',
+                getModItem("Forestry", "thermionicTubes", 1, 10, missing),
+                'h',
+                getModItem("Forestry", "frameProven", 1, 0, missing),
+                'i',
+                getModItem("Forestry", "thermionicTubes", 1, 10, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("for.honey", 7500),
+                getModItem("Forestry", "alveary", 1, 0, missing),
+                getModItem("ExtraBees", "alveary", 1, 2, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "thermionicTubes", 1, 8, missing),
+                'b',
+                getModItem("IC2", "blockRubber", 1, 0, missing),
+                'c',
+                getModItem("Forestry", "thermionicTubes", 1, 8, missing),
+                'd',
+                getModItem("IC2", "blockRubber", 1, 0, missing),
+                'e',
+                getModItem("minecraft", "brick_block", 1, 0, missing),
+                'f',
+                getModItem("IC2", "blockRubber", 1, 0, missing),
+                'g',
+                getModItem("Forestry", "thermionicTubes", 1, 8, missing),
+                'h',
+                getModItem("IC2", "blockRubber", 1, 0, missing),
+                'i',
+                getModItem("Forestry", "thermionicTubes", 1, 8, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("for.honey", 7500),
+                getModItem("Forestry", "alveary", 1, 0, missing),
+                getModItem("ExtraBees", "alveary", 1, 3, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "thermionicTubes", 1, 2, missing),
+                'b',
+                getModItem("minecraft", "stained_glass", 1, 32767, missing),
+                'c',
+                getModItem("Forestry", "thermionicTubes", 1, 2, missing),
+                'd',
+                getModItem("minecraft", "stained_glass", 1, 32767, missing),
+                'e',
+                getModItem("minecraft", "redstone_lamp", 1, 0, missing),
+                'f',
+                getModItem("minecraft", "stained_glass", 1, 32767, missing),
+                'g',
+                getModItem("Forestry", "thermionicTubes", 1, 2, missing),
+                'h',
+                getModItem("minecraft", "stained_glass", 1, 32767, missing),
+                'i',
+                getModItem("Forestry", "thermionicTubes", 1, 2, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("for.honey", 7500),
+                getModItem("Forestry", "alveary", 1, 0, missing),
+                getModItem("ExtraBees", "alveary", 1, 4, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "thermionicTubes", 1, 1, missing),
+                'b',
+                getModItem("gregtech", "gt.blockmachines", 1, 1460, missing),
+                'c',
+                getModItem("Forestry", "thermionicTubes", 1, 1, missing),
+                'd',
+                getModItem("Forestry", "chipsets", 1, 2, missing),
+                'e',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32602, missing),
+                'f',
+                getModItem("Forestry", "chipsets", 1, 2, missing),
+                'g',
+                getModItem("Forestry", "thermionicTubes", 1, 1, missing),
+                'h',
+                getModItem("gregtech", "gt.blockmachines", 1, 1460, missing),
+                'i',
+                getModItem("Forestry", "thermionicTubes", 1, 1, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("for.honey", 7500),
+                getModItem("Forestry", "alveary", 1, 0, missing),
+                getModItem("ExtraBees", "alveary", 1, 5, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "thermionicTubes", 1, 3, missing),
+                'b',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17810, missing),
+                'c',
+                getModItem("Forestry", "thermionicTubes", 1, 3, missing),
+                'd',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32631, missing),
+                'e',
+                getModItem("Forestry", "apiculture", 1, 0, missing),
+                'f',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32631, missing),
+                'g',
+                getModItem("Forestry", "thermionicTubes", 1, 3, missing),
+                'h',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17810, missing),
+                'i',
+                getModItem("Forestry", "thermionicTubes", 1, 3, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("for.honey", 7500),
+                getModItem("Forestry", "alveary", 1, 0, missing),
+                getModItem("ExtraBees", "alveary", 1, 6, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "thermionicTubes", 1, 0, missing),
+                'b',
+                "circuitAdvanced",
+                'c',
+                getModItem("Forestry", "thermionicTubes", 1, 0, missing),
+                'd',
+                getModItem("gregtech", "gt.blockmachines", 1, 1587, missing),
+                'e',
+                getModItem("gregtech", "gt.blockmachines", 1, 13, missing),
+                'f',
+                getModItem("gregtech", "gt.blockmachines", 1, 1587, missing),
+                'g',
+                getModItem("Forestry", "thermionicTubes", 1, 0, missing),
+                'h',
+                getModItem("gregtech", "gt.blockmachines", 1, 1587, missing),
+                'i',
+                getModItem("Forestry", "thermionicTubes", 1, 0, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                20,
+                FluidRegistry.getFluidStack("for.honey", 1000),
+                getModItem("gregtech", "gt.metaitem.02", 1, 31889, missing),
+                getModItem("ExtraBees", "misc", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "beeswax", 1, 0, missing),
+                'b',
+                getModItem("Forestry", "pollen", 1, 0, missing),
+                'c',
+                getModItem("Forestry", "beeswax", 1, 2, missing),
+                'd',
+                getModItem("Forestry", "royalJelly", 1, 0, missing),
+                'e',
+                getModItem("Forestry", "beeswax", 1, 0, missing),
+                'f',
+                getModItem("Forestry", "royalJelly", 1, 0, missing),
+                'g',
+                getModItem("Forestry", "beeswax", 1, 2, missing),
+                'h',
+                getModItem("Forestry", "pollen", 1, 0, missing),
+                'i',
+                getModItem("Forestry", "beeswax", 1, 2, missing));
+        RecipeManagers.squeezerManager.addRecipe(
+                20,
+                new ItemStack[] { getModItem("ExtraBees", "honeyDrop", 1, 8, missing), },
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("gregtech", "gt.metaitem.02", 1, 32415, missing),
+                100);
+        RecipeManagers.squeezerManager.addRecipe(
+                20,
+                new ItemStack[] { getModItem("ExtraBees", "honeyDrop", 1, 9, missing), },
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("gregtech", "gt.metaitem.02", 1, 32425, missing),
+                100);
+        RecipeManagers.squeezerManager.addRecipe(
+                20,
+                new ItemStack[] { getModItem("ExtraBees", "honeyDrop", 1, 10, missing), },
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("gregtech", "gt.metaitem.02", 1, 32418, missing),
+                100);
+        RecipeManagers.squeezerManager.addRecipe(
+                20,
+                new ItemStack[] { getModItem("ExtraBees", "honeyDrop", 1, 11, missing), },
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("gregtech", "gt.metaitem.02", 1, 32416, missing),
+                100);
+        RecipeManagers.squeezerManager.addRecipe(
+                20,
+                new ItemStack[] { getModItem("ExtraBees", "honeyDrop", 1, 13, missing), },
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("gregtech", "gt.metaitem.02", 1, 32429, missing),
+                100);
+        RecipeManagers.squeezerManager.addRecipe(
+                20,
+                new ItemStack[] { getModItem("ExtraBees", "honeyDrop", 1, 12, missing), },
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("gregtech", "gt.metaitem.02", 1, 32414, missing),
+                100);
+        RecipeManagers.squeezerManager.addRecipe(
+                20,
+                new ItemStack[] { getModItem("ExtraBees", "honeyDrop", 1, 14, missing), },
+                FluidRegistry.getFluidStack("for.honey", 200),
+                getModItem("gregtech", "gt.metaitem.02", 1, 32417, missing),
+                100);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraBees", "misc", 1, 1, missing))
                 .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 1, 500, missing)).outputChances(10000)
