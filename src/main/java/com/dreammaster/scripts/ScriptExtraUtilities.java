@@ -2,8 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,6 +17,8 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.thaumcraft.TCHelper;
+import com.dreammaster.tinkersConstruct.TConstructHelper;
+import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
@@ -477,6 +478,215 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 new Object[] { getModItem("minecraft", "iron_ingot", 1, 0, missing),
                         createItemStack("ExtraUtilities", "divisionSigil", 1, 0, "{damage:256}", missing),
                         getModItem("minecraft", "diamond", 1, 0, missing) });
+
+        // mods.extraUtils.QED.removeRecipe(<*>); // <- scripts
+        EnderConstructorRecipesHandler.recipes.clear();
+
+        TConstructHelper.removeTableRecipe(getModItem("ExtraUtilities", "bedrockiumIngot", 1, 0, missing));
+        TConstructHelper.removeBasinRecipe(getModItem("ExtraUtilities", "block_bedrockium", 1, 0, missing));
+        EnderConstructorRecipesHandler.addRecipe(
+                getModItem("ExtraUtilities", "enderQuarry", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "plateEuropium",
+                'b',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32675, missing),
+                'c',
+                "plateEuropium",
+                'd',
+                getModItem("ExtraUtilities", "enderThermicPump", 1, 0, missing),
+                'e',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 12, missing),
+                'f',
+                getModItem("ExtraUtilities", "enderThermicPump", 1, 0, missing),
+                'g',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 11, missing),
+                'h',
+                getModItem("IC2", "blockMachine2", 1, 11, missing),
+                'i',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 11, missing));
+        EnderConstructorRecipesHandler.addRecipe(
+                getModItem("ExtraUtilities", "enderThermicPump", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 1, missing),
+                'b',
+                "circuitData",
+                'c',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 1, missing),
+                'd',
+                getModItem("BuildCraft|Factory", "tankBlock", 1, 0, missing),
+                'e',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 11, missing),
+                'f',
+                getModItem("BuildCraft|Factory", "tankBlock", 1, 0, missing),
+                'g',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 1, missing),
+                'h',
+                getModItem("gregtech", "gt.blockmachines", 1, 1143, missing),
+                'i',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 1, missing));
+        EnderConstructorRecipesHandler.addRecipe(
+                getModItem("ExtraUtilities", "magnumTorch", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("minecraft", "potion", 1, 8225, missing),
+                'b',
+                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                'c',
+                getModItem("minecraft", "potion", 1, 8229, missing),
+                'd',
+                getModItem("ExtraUtilities", "chandelier", 1, 0, missing),
+                'e',
+                getModItem("gregtech", "gt.metaitem.01", 1, 23306, missing),
+                'f',
+                getModItem("ExtraUtilities", "chandelier", 1, 0, missing),
+                'g',
+                getModItem("ExtraUtilities", "chandelier", 1, 0, missing),
+                'h',
+                getModItem("gregtech", "gt.metaitem.01", 1, 23306, missing),
+                'i',
+                getModItem("ExtraUtilities", "chandelier", 1, 0, missing));
+        EnderConstructorRecipesHandler.addRecipe(
+                getModItem("ExtraUtilities", "extractor_base", 1, 12, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("ExtraUtilities", "extractor_base", 1, 0, missing),
+                'b',
+                getModItem("BuildCraft|Transport", "item.buildcraftPipe.pipepowerdiamond", 1, 0, missing),
+                'c',
+                getModItem("ExtraUtilities", "extractor_base", 1, 0, missing),
+                'd',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17533, missing),
+                'e',
+                getModItem("ExtraUtilities", "nodeUpgrade", 1, 8, missing),
+                'f',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17533, missing),
+                'g',
+                getModItem("ExtraUtilities", "extractor_base", 1, 0, missing),
+                'h',
+                getModItem("BuildCraft|Transport", "item.buildcraftPipe.pipepowerdiamond", 1, 0, missing),
+                'i',
+                getModItem("ExtraUtilities", "extractor_base", 1, 0, missing));
+        EnderConstructorRecipesHandler.addRecipe(
+                getModItem("ExtraUtilities", "extractor_base", 1, 13, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("ExtraUtilities", "extractor_base", 1, 12, missing),
+                'b',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17533, missing),
+                'c',
+                getModItem("ExtraUtilities", "extractor_base", 1, 12, missing),
+                'd',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17533, missing),
+                'e',
+                getModItem("gregtech", "gt.metaitem.01", 1, 11395, missing),
+                'f',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17533, missing),
+                'g',
+                getModItem("ExtraUtilities", "extractor_base", 1, 12, missing),
+                'h',
+                getModItem("ExtraUtilities", "extractor_base", 1, 12, missing),
+                'i',
+                getModItem("ExtraUtilities", "extractor_base", 1, 12, missing));
+        EnderConstructorRecipesHandler.addRecipe(
+                getModItem("miscutils", "blockCompressedObsidian", 1, 5, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "dustRedstone",
+                'b',
+                "dustGlowstone",
+                'c',
+                "dustRedstone",
+                'd',
+                "dustGlowstone",
+                'e',
+                "blockObsidian",
+                'f',
+                "dustGlowstone",
+                'g',
+                "dustRedstone",
+                'h',
+                "dustGlowstone",
+                'i',
+                "dustRedstone");
+        EnderConstructorRecipesHandler.addRecipe(
+                getModItem("ExtraUtilities", "endMarker", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'b',
+                getModItem("minecraft", "ender_eye", 1, 0, missing),
+                'e',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 1, missing),
+                'h',
+                getModItem("ExtraUtilities", "decorativeBlock1", 1, 1, missing));
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "unstableingot", 9, 2, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "decorativeBlock1", 1, 5, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "unstableingot", 9, 0, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "decorativeBlock1", 1, 5, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 0, missing))
+                .itemOutputs(getModItem("minecraft", "cobblestone", 9, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 1, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 2, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 1, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 3, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 2, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 4, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 3, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 5, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 4, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 6, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 5, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 7, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 6, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 8, missing))
+                .itemOutputs(getModItem("minecraft", "dirt", 9, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 9, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 8, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 10, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 9, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 11, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 10, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 12, missing))
+                .itemOutputs(getModItem("minecraft", "gravel", 9, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 13, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 12, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 14, missing))
+                .itemOutputs(getModItem("minecraft", "sand", 9, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraUtilities", "cobblestone_compressed", 1, 15, missing))
+                .itemOutputs(getModItem("ExtraUtilities", "cobblestone_compressed", 9, 14, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
