@@ -9,6 +9,9 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.forestry.ForestryHelper;
+
+import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -1947,6 +1950,62 @@ public class ScriptExtraTrees implements IScriptLoader {
                         createItemStack("ExtraTrees", "planks", 1, 2, "{meta:2}", missing),
                         createItemStack("ExtraTrees", "planks", 1, 2, "{meta:2}", missing), "stickWood",
                         createItemStack("ExtraTrees", "planks", 1, 2, "{meta:2}", missing) });
+
+        ForestryHelper.removeCarpenterRecipe(getModItem("ExtraTrees", "database", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem("ExtraTrees", "databaseMoth", 1, 0, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("molten.redstone", 1440),
+                getModItem("Forestry", "treealyzer", 1, 0, missing),
+                getModItem("ExtraTrees", "database", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'b',
+                "itemCasingGold",
+                'c',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'd',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'e',
+                "circuitAdvanced",
+                'f',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17501, missing),
+                'g',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'h',
+                "itemCasingGold",
+                'i',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("molten.redstone", 1440),
+                getModItem("Forestry", "flutterlyzer", 1, 0, missing),
+                getModItem("ExtraTrees", "databaseMoth", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'b',
+                "itemCasingGold",
+                'c',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'd',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17501, missing),
+                'e',
+                "circuitAdvanced",
+                'f',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'g',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'h',
+                "itemCasingGold",
+                'i',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing));
+
     }
 
     public void recipes2() {
