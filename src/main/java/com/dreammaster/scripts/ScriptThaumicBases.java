@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 
 import java.util.Arrays;
@@ -16,6 +17,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
+import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
@@ -56,6 +58,12 @@ public class ScriptThaumicBases implements IScriptLoader {
                 new Object[] { getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
                         getModItem("thaumicbases", "relocator", 1, 0, missing),
                         getModItem("Thaumcraft", "ItemResource", 1, 0, missing) });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "ItemResource", 9, 3, missing))
+                .itemOutputs(getModItem("thaumicbases", "quicksilverBlock", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+
+        OreDictHelper.removeOreDict("gravel", getModItem("thaumicbases", "oldGravel", 1, 0, missing));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem("thaumicbases", "eldritchArk", 1, 0, missing))
                 .itemOutputs(getModItem("thaumicbases", "genericSlab", 2, 0, missing))
