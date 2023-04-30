@@ -18,6 +18,7 @@ import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 
+import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
@@ -70,6 +71,8 @@ public class ScriptThaumcraft implements IScriptLoader {
 
     private void basics() {
         // BASICS
+
+        ChiselHelper.addVariationFromStack("thaumium", getModItem("gregtech", "gt.blockmetal7", 1, 4, missing));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.01", 1, 2514, missing))
                 .itemOutputs(getModItem("Thaumcraft", "ItemResource", 1, 6, missing)).outputChances(7000)
@@ -1634,6 +1637,10 @@ public class ScriptThaumcraft implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
                 new Object[] { "craftingToolMortar", getModItem("Thaumcraft", "ItemShard", 1, 6, missing) });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "ItemResource", 9, 4, missing))
+                .itemOutputs(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 5, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "ItemShard", 1, 6, missing))
                 .itemOutputs(getModItem("Thaumcraft", "ItemResource", 1, 14, missing)).outputChances(10000)
@@ -3957,6 +3964,10 @@ public class ScriptThaumcraft implements IScriptLoader {
 
     private void golemancy() {
         // GOLEMANCY
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "rotten_flesh", 9, 0, missing))
+                .itemOutputs(getModItem("Thaumcraft", "blockTaint", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockChestHungry", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "TrunkSpawner", 1, 0, missing));
