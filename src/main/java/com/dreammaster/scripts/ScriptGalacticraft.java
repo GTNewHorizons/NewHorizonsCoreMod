@@ -9,6 +9,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -737,6 +738,34 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing),
                 new Object[] { getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing) });
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("GalacticraftCore", "item.infiniteOxygen", 1, 0, missing),
+                "--abbba--",
+                "-abcccba-",
+                "-bcdedcb-",
+                "-bcfgfcb-",
+                "-bcdhdcb-",
+                "-bcfgfcb-",
+                "-bcdedcb-",
+                "-abcccba-",
+                "--abbba--",
+                'a',
+                "ingotInfinity",
+                'b',
+                "plateNeutronium",
+                'c',
+                getModItem("dreamcraft", "item.HeavyDutyPlateTier8", 1, 0, missing),
+                'd',
+                getModItem("GalacticraftCore", "item.oxygenTankUltraHeavyFull", 1, 0, missing),
+                'e',
+                getModItem("gregtech", "gt.metaitem.01", 1, 32616, missing),
+                'f',
+                getModItem("gregtech", "gt.metaitem.03", 1, 32105, missing),
+                'g',
+                "pipeSmallInfinity",
+                'h',
+                getModItem("gregtech", "gt.blockmachines", 1, 122, missing));
 
         GT_Values.RA.addFuel(
                 createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"oil\",Amount:1000}}", missing),
