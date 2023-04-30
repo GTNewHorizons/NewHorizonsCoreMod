@@ -9,6 +9,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import tconstruct.library.TConstructRegistry;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.util.GT_ModHandler;
 
@@ -387,6 +388,358 @@ public class ScriptGregtech implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem("structurelib", "item.structurelib.constructableTrigger", 1, 0, missing),
                 new Object[] { "dyeBlue", "platePaper", "dyeBlue", "dyeWhite" });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("TConstruct", "strangeFood", 1, 0, missing))
+                .itemOutputs(getModItem("gregtech", "gt.metaitem.01", 2, 2896, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32300, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                null,
+                false,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32301, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormPlate", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32302, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormCasing", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32303, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormGear", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32304, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormCoinage", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32305, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormBottle", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32306, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormIngot", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32307, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormBall", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32308, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormBlock", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32309, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormNuggets", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32310, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormBuns", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32311, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormBread", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32312, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormBaguette", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32313, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormCylinder", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32314, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormAnvil", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32315, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormName", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32316, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormArrowHead", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32317, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormSmallGear", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32318, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormStick", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32319, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormBolt", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32320, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormRound", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32321, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormScrew", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32322, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormRing", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32323, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormStickLong", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32325, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormTurbineBlade", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32324, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormRotor", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32326, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormPipeTiny", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32327, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormPipeSmall", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32328, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormPipeMedium", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32329, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormPipeLarge", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32330, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.MoldFormPipeHuge", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32350, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapePlate", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32351, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeRod", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32352, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeBolt", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32354, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeCell", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32353, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeRing", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32355, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeIngot", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32356, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeWire", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32357, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeCasing", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32358, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeTinyPipe", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32359, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeSmallPipe", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32360, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeNormalPipe", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32361, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeLargePipe", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32362, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeHugePipe", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32363, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeBlock", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32364, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeSwordBlade", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32365, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapePickaxeHead", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32366, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeShovelHead", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32367, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeAxeHead", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32368, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeHoeHead", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32369, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeHammerHead", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32370, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeFileHead", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32371, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeSawBlade", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32372, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeGear", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32373, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeBottle", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32374, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeRotor", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32376, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeTurbineBlade", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                getModItem("gregtech", "gt.metaitem.01", 1, 32375, missing),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem("dreamcraft", "item.ShapeSmallGear", 1, 0, missing),
+                true,
+                100);
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem("gregtech", "gt.metaitem.01", 1, 2892, missing),
