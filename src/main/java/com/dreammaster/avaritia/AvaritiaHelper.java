@@ -11,6 +11,6 @@ public class AvaritiaHelper {
     @SuppressWarnings("unchecked")
     public static void removeExtremeCraftingRecipe(ItemStack output) {
         ExtremeCraftingManager.getInstance().getRecipeList().removeIf(
-                r -> r instanceof IRecipe && GT_Utility.areStacksEqual(((IRecipe) r).getRecipeOutput(), output, true));
+                r -> r instanceof IRecipe && GT_Utility.areStacksEqual(((IRecipe) r).getRecipeOutput(), output, false));
     }
 }
