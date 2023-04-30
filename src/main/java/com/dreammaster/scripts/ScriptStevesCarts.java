@@ -880,6 +880,10 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem("gregtech", "gt.metaitem.01", 1, 11385, missing),
                 new Object[] { getModItem("StevesCarts", "ModuleComponents", 1, 49, missing) });
 
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("StevesCarts", "ModuleComponents", 9, 46, missing))
+                .itemOutputs(getModItem("StevesCarts", "ModuleComponents", 1, 48, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("minecraft", "detector_rail", 1, 0, missing),
