@@ -9,6 +9,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.oredict.OreDictHelper;
 import gregtech.api.enums.GT_Values;
 
 public class ScriptIndustrialCraft implements IScriptLoader {
@@ -643,6 +644,50 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 new Object[] { "plateRubber", getModItem("IC2", "itemArmorHazmatLeggings", 1, 32767, missing),
                         "plateRubber", null, "craftingToolSoftHammer", null, null,
                         getModItem("TConstruct", "buckets", 1, 25, missing), null });
+
+        OreDictHelper.removeOreDict("plateSteel", getModItem("IC2", "itemPlates", 1, 5, missing));
+
+        GT_Values.RA.addFuel(
+                createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"ic2biogas\",Amount:1000}}", missing),
+                getModItem("IC2", "itemFluidCell", 1, 0, missing),
+                40,
+                1);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("IC2", "itemUran238", 9, 0, missing))
+                .itemOutputs(getModItem("IC2", "blockMetal", 1, 3, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "reeds", 8, 0, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "sapling", 8, 32767, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "saplings", 8, 32767, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "colorizedSaplings", 8, 32767, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("IC2", "blockRubSapling", 8, 0, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Forestry", "sapling", 8, 32767, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Natura", "florasapling", 8, 32767, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Natura", "Rare Sapling", 8, 32767, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "blockCustomPlant", 8, 0, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Thaumcraft", "blockCustomPlant", 8, 1, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("TwilightForest", "tile.TFSapling", 8, 32767, missing))
+                .itemOutputs(getModItem("IC2", "itemFuelPlantBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
