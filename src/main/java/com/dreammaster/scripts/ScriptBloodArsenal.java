@@ -8,6 +8,10 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
+import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
+
+import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import gregtech.api.enums.GT_Values;
@@ -35,6 +39,156 @@ public class ScriptBloodArsenal implements IScriptLoader {
                         getModItem("minecraft", "redstone_lamp", 1, 0, missing),
                         getModItem("BloodArsenal", "blood_stained_glass", 1, 0, missing), "plateBloodInfusedIron",
                         getModItem("BloodArsenal", "blood_stained_glass", 1, 0, missing), "plateBloodInfusedIron" });
+
+        BloodMagicHelper.removeBindingRecipe(getModItem("BloodArsenal", "bound_sickle", 1, 0, missing));
+        BloodMagicHelper.removeBindingRecipe(getModItem("BloodArsenal", "bound_bow", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("BloodArsenal", "blood_infused_wood", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("BloodArsenal", "blood_infused_iron_block", 1, 0, missing));
+        BloodMagicHelper.removeBindingRecipe(getModItem("BloodArsenal", "bound_igniter", 1, 0, missing));
+        BloodMagicHelper.removeBindingRecipe(getModItem("BloodArsenal", "bound_shears", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("BloodArsenal", "blood_infused_diamond_active", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("BloodArsenal", "blood_infused_glowstone_dust", 1, 0, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem("BloodArsenal", "soul_fragment", 1, 0, missing));
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_wood", 1, 0, missing),
+                getModItem("minecraft", "log", 1, 0, missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_wood", 1, 0, missing),
+                getModItem("minecraft", "log", 1, 1, missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_wood", 1, 0, missing),
+                getModItem("minecraft", "log", 1, 2, missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_wood", 1, 0, missing),
+                getModItem("minecraft", "log", 1, 3, missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_wood", 1, 0, missing),
+                getModItem("minecraft", "log2", 1, 0, missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_wood", 1, 0, missing),
+                getModItem("minecraft", "log2", 1, 1, missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_stained_glass", 1, 0, missing),
+                getModItem("minecraft", "glass", 1, 0, missing),
+                1,
+                200,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_stained_ice", 1, 0, missing),
+                getModItem("minecraft", "ice", 1, 0, missing),
+                1,
+                400,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_stained_ice_packed", 1, 0, missing),
+                getModItem("minecraft", "packed_ice", 1, 0, missing),
+                1,
+                600,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_iron_block", 1, 0, missing),
+                getModItem("minecraft", "iron_block", 1, 0, missing),
+                4,
+                64000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_glowstone", 1, 0, missing),
+                getModItem("minecraft", "glowstone", 1, 0, missing),
+                4,
+                28000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_diamond_active", 1, 0, missing),
+                getModItem("BloodArsenal", "blood_infused_diamond_unactive", 1, 0, missing),
+                4,
+                120000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_diamond", 1, 0, missing),
+                getModItem("gregtech", "gt.metaitem.02", 1, 30500, missing),
+                4,
+                12000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_infused_glowstone_dust", 1, 0, missing),
+                getModItem("minecraft", "glowstone_dust", 1, 0, missing),
+                3,
+                7000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "blood_burned_string", 1, 0, missing),
+                getModItem("witchery", "ingredient", 1, 102, missing),
+                2,
+                5000,
+                20,
+                20,
+                false);
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("BloodArsenal", "soul_fragment", 1, 0, missing),
+                getModItem("BloodArsenal", "heart", 1, 0, missing),
+                4,
+                100000,
+                20,
+                20,
+                false);
+        BindingRegistry.registerRecipe(
+                getModItem("BloodArsenal", "bound_sickle", 1, 0, missing),
+                getModItem("Thaumcraft", "ItemHoeElemental", 1, 0, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("BloodArsenal", "bound_bow", 1, 0, missing),
+                getModItem("Thaumcraft", "ItemBowBone", 1, 0, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("BloodArsenal", "bound_igniter", 1, 0, missing),
+                getModItem("Natura", "natura.flintandblaze", 1, 0, missing));
+        BindingRegistry.registerRecipe(
+                getModItem("BloodArsenal", "bound_shears", 1, 0, missing),
+                getModItem("EnderIO", "item.darkSteel_shears", 1, 0, missing));
 
         TConstructHelper.removeTableRecipe(getModItem("TConstruct", "pickaxeHead", 1, 251, missing));
         TConstructHelper.removeTableRecipe(getModItem("TConstruct", "shovelHead", 1, 251, missing));
