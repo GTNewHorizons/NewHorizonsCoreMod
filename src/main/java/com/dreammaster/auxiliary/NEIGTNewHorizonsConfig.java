@@ -51,6 +51,23 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
         if (GraviSuite.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(GraviSuite.ID, "BlockRelocatorPortal", 1));
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0, missing),
+                    "Superconductor Cover");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 1, missing),
+                    "Superconductor");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2, missing),
+                    "Cooling Core");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 3, missing),
+                    "Gravitation Engine");
+            API.setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 4, missing), "Magnetron");
+            API.setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 5, missing), "Vajra Core");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 6, missing),
+                    "Engine Booster");
         }
 
         if (HardcoreEnderExpansion.isModLoaded()) {
