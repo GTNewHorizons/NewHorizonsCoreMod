@@ -13,13 +13,13 @@ import net.minecraft.potion.Potion;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 
+import com.dreammaster.lib.Refstrings;
+import com.dreammaster.main.NHItems;
+
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import baubles.common.container.InventoryBaubles;
 import baubles.common.lib.PlayerHandler;
-
-import com.dreammaster.lib.Refstrings;
-import com.dreammaster.main.NHItems;
 import eu.usrv.yamcore.iface.IExtendedModItem;
 
 public final class WitherProtectionRing extends Item implements IBauble, IExtendedModItem<WitherProtectionRing> {

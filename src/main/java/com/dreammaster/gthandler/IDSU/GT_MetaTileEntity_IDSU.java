@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.common.util.ForgeDirection;
 
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
@@ -53,20 +54,21 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
     public void loadNBTData(NBTTagCompound aNBT) {}
 
     @Override
-    public boolean allowPullStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, byte aSide, ItemStack aStack) {
+    public boolean allowPullStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, ForgeDirection side,
+            ItemStack aStack) {
         return false;
     }
 
     @Override
-    public boolean allowPutStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, byte aSide, ItemStack aStack) {
+    public boolean allowPutStack(IGregTechTileEntity aBaseMetaTileEntity, int aIndex, ForgeDirection side,
+            ItemStack aStack) {
         return false;
     }
 
     @Override
-    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, byte aSide, byte aFacing, byte aColorIndex,
-            boolean aActive, boolean aRedstone) {
-        return new ITexture[] {
-                aSide == aFacing ? new GT_RenderedTexture(_mIDSU_Out) : new GT_RenderedTexture(_mIDSU) };
+    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection facing,
+            int colorIndex, boolean aActive, boolean aRedstone) {
+        return new ITexture[] { side == facing ? new GT_RenderedTexture(_mIDSU_Out) : new GT_RenderedTexture(_mIDSU) };
     }
 
     @Override
@@ -75,7 +77,7 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
     }
 
     @Override
-    public boolean isFacingValid(byte aFacing) {
+    public boolean isFacingValid(ForgeDirection facing) {
         return true;
     }
 
@@ -95,13 +97,13 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
     }
 
     @Override
-    public boolean isOutputFacing(byte aSide) {
-        return aSide == getBaseMetaTileEntity().getFrontFacing();
+    public boolean isOutputFacing(ForgeDirection side) {
+        return side == getBaseMetaTileEntity().getFrontFacing();
     }
 
     @Override
-    public boolean isInputFacing(byte aSide) {
-        return !isOutputFacing(aSide);
+    public boolean isInputFacing(ForgeDirection side) {
+        return !isOutputFacing(side);
     }
 
     @Override

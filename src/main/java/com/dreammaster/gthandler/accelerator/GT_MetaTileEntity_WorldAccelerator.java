@@ -164,26 +164,28 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     }
 
     @Override
-    public ITexture[] getTexture(IGregTechTileEntity pBaseMetaTileEntity, byte pSide, byte pFacing, byte pColorIndex,
-            boolean pActive, boolean pRedstone) {
+    public ITexture[] getTexture(IGregTechTileEntity pBaseMetaTileEntity, ForgeDirection side, ForgeDirection facing,
+            int colorIndex, boolean pActive, boolean pRedstone) {
         if (mMode == 0) {
-            return new ITexture[] { Textures.BlockIcons.MACHINE_CASINGS[mTier][pColorIndex + 1],
-                    pSide < 2 ? null
+            return new ITexture[] { Textures.BlockIcons.MACHINE_CASINGS[mTier][colorIndex + 1],
+                    side.offsetY != 0 ? null
                             : pActive ? new GT_RenderedTexture(_mGTIco_Norm_Active)
                                     : new GT_RenderedTexture(_mGTIco_Norm_Idle) };
         } else {
-            return new ITexture[] { Textures.BlockIcons.MACHINE_CASINGS[mTier][pColorIndex + 1], pSide < 2 ? null
+            return new ITexture[] { Textures.BlockIcons.MACHINE_CASINGS[mTier][colorIndex + 1], side.offsetY != 0 ? null
                     : pActive ? new GT_RenderedTexture(_mGTIco_TE_Active) : new GT_RenderedTexture(_mGTIco_TE_Idle) };
         }
     }
 
     @Override
-    public boolean allowPullStack(IGregTechTileEntity pBaseMetaTileEntity, int pIndex, byte pSide, ItemStack pStack) {
+    public boolean allowPullStack(IGregTechTileEntity pBaseMetaTileEntity, int pIndex, ForgeDirection side,
+            ItemStack pStack) {
         return false;
     }
 
     @Override
-    public boolean allowPutStack(IGregTechTileEntity pBaseMetaTileEntity, int pIndex, byte pSide, ItemStack pStack) {
+    public boolean allowPutStack(IGregTechTileEntity pBaseMetaTileEntity, int pIndex, ForgeDirection side,
+            ItemStack pStack) {
         return false;
     }
 
@@ -229,7 +231,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     }
 
     @Override
-    public boolean isFacingValid(byte aFacing) {
+    public boolean isFacingValid(ForgeDirection facing) {
         return true;
     }
 
@@ -239,7 +241,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     }
 
     @Override
-    public boolean isInputFacing(byte aSide) {
+    public boolean isInputFacing(ForgeDirection side) {
         return true;
     }
 
@@ -272,8 +274,8 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
 
     // This uses the Wrench as second tool to cycle speeds
     @Override
-    public boolean onWrenchRightClick(byte aSide, byte aWrenchingSide, EntityPlayer pPlayer, float aX, float aY,
-            float aZ) {
+    public boolean onWrenchRightClick(ForgeDirection side, ForgeDirection wrenchingSide, EntityPlayer pPlayer, float aX,
+            float aY, float aZ) {
         incSpeedTierOverride();
 
         markDirty();
@@ -285,7 +287,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
     }
 
     @Override
-    public void onScrewdriverRightClick(byte pSide, EntityPlayer pPlayer, float pX, float pY, float pZ) {
+    public void onScrewdriverRightClick(ForgeDirection side, EntityPlayer pPlayer, float pX, float pY, float pZ) {
         if (pPlayer.isSneaking()) {
             if (mMode == 0) {
                 incRadiusTierOverride();
@@ -350,7 +352,7 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
             }
 
             for (ForgeDirection tDir : ForgeDirection.VALID_DIRECTIONS) {
-                TileEntity tTile = pBaseMetaTileEntity.getTileEntityAtSide((byte) tDir.ordinal());
+                TileEntity tTile = pBaseMetaTileEntity.getTileEntityAtSide(tDir);
                 if (isTEBlackListed(tTile)) {
                     continue;
                 }

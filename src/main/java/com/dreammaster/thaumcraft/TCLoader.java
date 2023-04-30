@@ -2,9 +2,9 @@ package com.dreammaster.thaumcraft;
 
 import net.minecraft.util.ResourceLocation;
 
-import thaumcraft.api.research.ResearchCategories;
-
 import com.dreammaster.lib.Refstrings;
+
+import thaumcraft.api.research.ResearchCategories;
 
 public class TCLoader {
 

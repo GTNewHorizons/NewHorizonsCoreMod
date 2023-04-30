@@ -5,14 +5,14 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.Mods;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchPage;
-
-import com.dreammaster.thaumcraft.TCHelper;
-import gregtech.api.enums.Mods;
 
 public class ScriptThaumicMachina implements IScriptLoader {
 

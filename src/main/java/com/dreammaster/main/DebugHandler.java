@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import com.dreammaster.config.CoreModConfig;
+
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public final class DebugHandler {

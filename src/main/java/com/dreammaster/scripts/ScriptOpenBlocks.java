@@ -11,16 +11,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.GT_Values;
+import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-
-import com.dreammaster.thaumcraft.TCHelper;
-
-import gregtech.api.enums.GT_Values;
-import gregtech.api.util.GT_Utility;
 
 public class ScriptOpenBlocks implements IScriptLoader {
 

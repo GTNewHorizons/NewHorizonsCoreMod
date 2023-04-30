@@ -222,9 +222,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     }
 
     @Override
-    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, byte aSide, byte aFacing, byte aColorIndex,
-            boolean aActive, boolean aRedstone) {
-        if (aSide == aFacing) {
+    public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection facing,
+            int colorIndex, boolean aActive, boolean aRedstone) {
+        if (side == facing) {
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()),
                     new GT_RenderedTexture(
                             aActive ? Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE
@@ -438,11 +438,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     public void onPostTick(IGregTechTileEntity aBaseMetaTileEntity, long aTick) {
         if (aTick % 200L == 0L) {
             // refresh casing on state change
-            int Xpos = aBaseMetaTileEntity.getXCoord()
-                    + ForgeDirection.getOrientation(aBaseMetaTileEntity.getBackFacing()).offsetX;
+            int Xpos = aBaseMetaTileEntity.getXCoord() + aBaseMetaTileEntity.getBackFacing().offsetX;
             int Ypos = aBaseMetaTileEntity.getYCoord() + 3;
-            int Zpos = aBaseMetaTileEntity.getZCoord()
-                    + ForgeDirection.getOrientation(aBaseMetaTileEntity.getBackFacing()).offsetZ;
+            int Zpos = aBaseMetaTileEntity.getZCoord() + aBaseMetaTileEntity.getBackFacing().offsetZ;
             try {
                 aBaseMetaTileEntity.getWorld()
                         .markBlockRangeForRenderUpdate(Xpos - 1, Ypos, Zpos - 1, Xpos + 1, Ypos, Zpos + 1);
@@ -480,7 +478,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     }
 
     @Override
-    public void onScrewdriverRightClick(byte aSide, EntityPlayer aPlayer, float aX, float aY, float aZ) {
+    public void onScrewdriverRightClick(ForgeDirection side, EntityPlayer aPlayer, float aX, float aY, float aZ) {
         if (!aPlayer.isSneaking()) { // change mode
             mode = mode == 1 ? 0 : 1;
             if (mode == 0) {
