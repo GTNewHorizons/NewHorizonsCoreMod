@@ -1,5 +1,8 @@
 package com.dreammaster.tinkersConstruct;
 
+import java.lang.reflect.Field;
+import java.util.Map;
+
 import mantle.utils.ItemMetaWrapper;
 
 import net.minecraft.item.ItemStack;
@@ -9,9 +12,6 @@ import net.minecraftforge.fluids.FluidStack;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.Smeltery;
 import gregtech.api.util.GT_Utility;
-
-import java.lang.reflect.Field;
-import java.util.Map;
 
 public class TConstructHelper {
 
@@ -39,17 +39,14 @@ public class TConstructHelper {
     private static Map<Fluid, Integer[]> smelteryFuelList = null;
 
     @SuppressWarnings("unchecked")
-    public static void removeFuel(Fluid input){
+    public static void removeFuel(Fluid input) {
 
-        if(smelteryFuelList == null)
-        {
-            try{
+        if (smelteryFuelList == null) {
+            try {
                 Field smelteryFuels = Smeltery.class.getDeclaredField("smelteryFuels");
                 smelteryFuels.setAccessible(true);
                 smelteryFuelList = (Map<Fluid, Integer[]>) smelteryFuels.get(Smeltery.instance);
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
         }
