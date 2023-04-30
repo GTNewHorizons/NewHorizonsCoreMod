@@ -3,7 +3,10 @@ package com.dreammaster.auxiliary;
 import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.*;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagInt;
+import net.minecraft.nbt.NBTTagString;
 
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
@@ -129,6 +132,9 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.setOverrideName(
                     GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
                     "Universal Storage Housing");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing),
+                    "Neutronium Energy Cell");
         }
 
         if (BartWorks.isModLoaded()) {
@@ -324,6 +330,39 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
                     "Lapatron Loader Upgrade");
             API.setOverrideName(GT_ModHandler.getModItem(Railcraft.ID, "part.plate", 1, 4, missing), "Lead Plate");
         }
+
+        if (StevesCarts2.isModLoaded()) {
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 61, missing),
+                    "Infinity Engine");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(StevesCarts2.ID, "upgrade", 1, 14, missing),
+                    "Upgrade: Integrated Infinity Reactor");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 76, missing),
+                    "Quantum Minecart Hull");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 81, missing),
+                    "Galgadorian Minecart Hull");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 39, missing),
+                    "Reinforced Minecart Hull");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 38, missing),
+                    "Standard Minecart Hull");
+            API.setOverrideName(
+                    GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 37, missing),
+                    "Wooden Minecart Hull");
+        }
+
+        if (EnderIO.isModLoaded()) {
+            ItemStack creativeBank = GT_ModHandler.getModItem(EnderIO.ID, "blockCapBank", 1, 0, missing);
+            creativeBank.setTagInfo("type", new NBTTagString("CREATIVE"));
+            creativeBank.setTagInfo("storedEnergyRF", new NBTTagInt(2500000));
+            API.setOverrideName(creativeBank, "Chaotic Capacitor Bank");
+        }
+
+        API.setOverrideName(new ItemStack(Blocks.ender_chest), "Personal Ender Chest");
 
         MainRegistry.Logger.info("Added NEI Config");
     }
