@@ -738,6 +738,23 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 11, missing),
                 new Object[] { getModItem("GalacticraftMars", "item.spaceshipTier2", 1, 13, missing) });
 
+        GT_Values.RA.addFuel(
+                createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"oil\",Amount:1000}}", missing),
+                getModItem("IC2", "itemFluidCell", 1, 0, missing),
+                16,
+                0);
+        GT_Values.RA.addFuel(
+                getModItem("gregtech", "gt.metaitem.01", 1, 30707, missing),
+                getModItem("IC2", "itemCellEmpty", 1, 0, missing),
+                16,
+                0);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.01", 9, 11340, missing))
+                .itemOutputs(getModItem("GalacticraftCore", "tile.gcBlockCore", 1, 12, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("GalacticraftCore", "item.cheeseCurd", 9, 0, missing))
+                .itemOutputs(getModItem("GalacticraftCore", "tile.moonBlock", 1, 2, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+
         arcFurnaceRecipes();
         assemblerRecipes();
         blastFurnaceRecipes();
