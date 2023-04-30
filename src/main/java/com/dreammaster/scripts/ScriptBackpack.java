@@ -6,6 +6,9 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraftforge.oredict.OreDictionary;
+
+import tconstruct.library.crafting.DryingRackRecipes;
 import gregtech.api.enums.Mods;
 
 public class ScriptBackpack implements IScriptLoader {
@@ -22,6 +25,59 @@ public class ScriptBackpack implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 0, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 1, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 2, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 3, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 4, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 5, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 6, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 7, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 8, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 9, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 10, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 11, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 12, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 13, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 14, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 15, missing));
+        OreDictionary.registerOre("SmallBackpacks", getModItem("Backpack", "backpack", 1, 16, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 100, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 101, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 102, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 103, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 104, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 105, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 106, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 107, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 108, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 109, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 110, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 111, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 112, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 113, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 114, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 115, missing));
+        OreDictionary.registerOre("MediumBackpacks", getModItem("Backpack", "backpack", 1, 116, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 200, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 201, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 202, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 203, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 204, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 205, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 206, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 207, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 208, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 209, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 210, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 211, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 212, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 213, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 214, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 215, missing));
+        OreDictionary.registerOre("BigBackpacks", getModItem("Backpack", "backpack", 1, 216, missing));
+
         addShapedRecipe(
                 getModItem("Backpack", "boundLeather", 1, 0, missing),
                 new Object[] { getModItem("minecraft", "string", 1, 0, missing), "itemLeather",
@@ -470,6 +526,11 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem("Backpack", "backpack", 1, 100, missing),
                         getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem("TConstruct", "CraftingSlab", 1, 0, missing), "ringTitanium" });
+
+        DryingRackRecipes.addDryingRecipe(
+                getModItem("Backpack", "boundLeather", 1, 0, missing),
+                12000,
+                getModItem("Backpack", "tannedLeather", 1, 0, missing));
 
     }
 }
