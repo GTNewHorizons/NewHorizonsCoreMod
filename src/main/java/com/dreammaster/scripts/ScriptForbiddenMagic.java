@@ -17,7 +17,9 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 
+import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -74,6 +76,16 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem("ForbiddenMagic", "InkFlower", 1, 0, missing))
                 .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 2, 32414, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+
+        BloodMagicHelper.removeAltarRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 3, missing));
+        AltarRecipeRegistry.registerAltarRecipe(
+                getModItem("ForbiddenMagic", "WandCores", 1, 3, missing),
+                getModItem("ForbiddenMagic", "WandCores", 1, 6, missing),
+                4,
+                50000,
+                20,
+                20,
+                false);
 
         // WANDS
         TCHelper.clearPages("CAP_manasteel");
