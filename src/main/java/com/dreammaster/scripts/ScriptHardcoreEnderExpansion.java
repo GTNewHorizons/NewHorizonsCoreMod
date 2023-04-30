@@ -295,6 +295,21 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GT_ModHandler.addSmeltingRecipe(
                 getModItem("HardcoreEnderExpansion", "sphalerite", 1, 0, missing),
                 getModItem("gregtech", "gt.metaitem.01", 1, 11036, missing));
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("HardcoreEnderExpansion", "endium_ingot", 9, 0, missing))
+                .itemOutputs(getModItem("HardcoreEnderExpansion", "endium_block", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("HardcoreEnderExpansion", "dry_splinter", 9, 0, missing))
+                .itemOutputs(getModItem("HardcoreEnderExpansion", "spooky_log", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("HardcoreEnderExpansion", "death_flower", 1, 0, missing))
+                .itemOutputs(getModItem("minecraft", "dye", 4, 13, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("HardcoreEnderExpansion", "death_flower", 1, 15, missing))
+                .itemOutputs(getModItem("minecraft", "dye", 4, 8, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("HardcoreEnderExpansion", "crossed_decoration", 1, 6, missing))
+                .itemOutputs(getModItem("minecraft", "dye", 4, 14, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("HardcoreEnderExpansion", "endium_block", 1, 0, missing),
