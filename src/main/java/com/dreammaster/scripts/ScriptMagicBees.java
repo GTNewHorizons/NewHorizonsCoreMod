@@ -9,6 +9,7 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -16,9 +17,13 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import vazkii.botania.api.BotaniaAPI;
 
+import com.dreammaster.botania.BotaniaHelper;
+import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -71,6 +76,102 @@ public class ScriptMagicBees implements IScriptLoader {
                         getModItem("MagicBees", "miscResources", 1, 17, missing),
                         getModItem("minecraft", "compass", 1, 0, missing), "screwSteelMagnetic", "gemExquisiteDiamond",
                         "craftingToolScrewdriver" });
+
+        ForestryHelper.removeCarpenterRecipe(getModItem("MagicBees", "backpack.thaumaturgeT2", 1, 0, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("seedoil", 5000),
+                getModItem("MagicBees", "backpack.thaumaturgeT1", 1, 0, missing),
+                getModItem("MagicBees", "backpack.thaumaturgeT2", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'b',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'c',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'd',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'e',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'f',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'g',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'h',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing),
+                'i',
+                getModItem("Forestry", "craftingMaterial", 1, 3, missing));
+        BotaniaHelper
+                .removePetalRecipe(createItemStack("Botania", "specialFlower", 1, 0, "{type:\"beegonia\"}", missing));
+        BotaniaAPI.registerPetalRecipe(
+                createItemStack("Botania", "specialFlower", 1, 0, "{type:\"beegonia\"}", missing),
+                "flowerIngredientWhite",
+                "flowerIngredientYellow",
+                "flowerIngredientYellow",
+                "flowerIngredientBlack",
+                "powderMana",
+                "powderMana",
+                "powderMana",
+                "flowerAnemoneWhite");
+        BotaniaHelper
+                .removePetalRecipe(createItemStack("Botania", "specialFlower", 1, 0, "{type:\"hiveacynth\"}", missing));
+        BotaniaAPI.registerPetalRecipe(
+                createItemStack("Botania", "specialFlower", 1, 0, "{type:\"hiveacynth\"}", missing),
+                "flowerIngredientLightBlue",
+                "flowerIngredientCyan",
+                "flowerIngredientCyan",
+                "flowerIngredientBlue",
+                "powderMana",
+                getModItem("MagicBees", "wax", 1, 1, missing),
+                getModItem("MagicBees", "miscResources", 1, 7, missing),
+                "powderMana",
+                "redstoneRoot",
+                "runeSpringB",
+                "flowerIcyIris");
+        BotaniaHelper
+                .removePetalRecipe(createItemStack("Botania", "specialFlower", 1, 0, "{type:\"hibeescus\"}", missing));
+        BotaniaAPI.registerPetalRecipe(
+                createItemStack("Botania", "specialFlower", 1, 0, "{type:\"hibeescus\"}", missing),
+                "flowerIngredientOrange",
+                "flowerIngredientMagenta",
+                "flowerIngredientMagenta",
+                "flowerIngredientMagenta",
+                "flowerIngredientRed",
+                "powderMana",
+                getModItem("MagicBees", "wax", 1, 1, missing),
+                getModItem("MagicBees", "wax", 1, 2, missing),
+                "runeEnvyB",
+                "runeGreedB",
+                "runePrideB",
+                getModItem("MagicBees", "miscResources", 1, 10, missing),
+                "redstoneRoot",
+                "eternalLifeEssence",
+                "flowerHibiscusPink");
+
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 0, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 1, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 2, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 3, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 4, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 5, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 6, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 7, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 8, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 9, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 10, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 11, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 12, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 13, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 14, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 15, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 16, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 17, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 18, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 19, missing));
+        OreDictionary.registerOre("beeComb", getModItem("MagicBees", "comb", 1, 20, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
