@@ -5,6 +5,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.Mods;
 
 public class ScriptAE2WC implements IScriptLoader {
@@ -36,5 +37,26 @@ public class ScriptAE2WC implements IScriptLoader {
                         getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 38, missing),
                         getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 47, missing),
                         getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 38, missing) });
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("ae2wct", "infinityBoosterCard", 1, 0, missing),
+                "aaaaaaaaa",
+                "abcbabcba",
+                "acdcacdca",
+                "abcbabcba",
+                "aaaaaaaaa",
+                "abcbabcba",
+                "acdcacdca",
+                "abcbabcba",
+                "aaaaaaaaa",
+                'a',
+                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 42, missing),
+                'b',
+                getModItem("Avaritia", "Resource", 1, 6, missing),
+                'c',
+                getModItem("Avaritia", "Resource", 1, 4, missing),
+                'd',
+                getModItem("Avaritia", "Resource", 1, 5, missing));
+
     }
 }
