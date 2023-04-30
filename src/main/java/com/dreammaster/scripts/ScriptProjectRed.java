@@ -9,6 +9,11 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import tconstruct.library.crafting.Smeltery;
+
+import com.dreammaster.chisel.ChiselHelper;
+import com.dreammaster.tinkersConstruct.TConstructHelper;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -35,6 +40,36 @@ public class ScriptProjectRed implements IScriptLoader {
 
         recipes1();
         recipes2();
+
+        ChiselHelper.addGroup("ruby");
+        ChiselHelper.addGroup("sapphire");
+        ChiselHelper.addGroup("peridot");
+        TConstructHelper.removeSmelterAlloyMix(FluidRegistry.getFluidStack("redmetal.molten", 144));
+        Smeltery.addAlloyMixing(
+                FluidRegistry.getFluidStack("redmetal.molten", 144),
+                FluidRegistry.getFluidStack("redstone.molten", 576),
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.01", 9, 2812, missing))
+                .itemOutputs(getModItem("ProjRed|Exploration", "projectred.exploration.stone", 1, 11, missing))
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ProjRed|Core", "projectred.core.part", 1, 57, missing))
+                .itemOutputs(getModItem("ProjRed|Core", "projectred.core.part", 1, 55, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+        ChiselHelper.addVariationFromStack("ruby", getModItem("BiomesOPlenty", "gemOre", 1, 3, missing));
+        ChiselHelper.addVariationFromStack("ruby", getModItem("gregtech", "gt.blockgem2", 1, 11, missing));
+        ChiselHelper.addVariationFromStack(
+                "ruby",
+                getModItem("ProjRed|Exploration", "projectred.exploration.stone", 1, 5, missing));
+        ChiselHelper.addVariationFromStack("sapphire", getModItem("BiomesOPlenty", "gemOre", 1, 13, missing));
+        ChiselHelper.addVariationFromStack("sapphire", getModItem("gregtech", "gt.blockgem2", 1, 12, missing));
+        ChiselHelper.addVariationFromStack(
+                "sapphire",
+                getModItem("ProjRed|Exploration", "projectred.exploration.stone", 1, 6, missing));
+        ChiselHelper.addVariationFromStack("peridot", getModItem("BiomesOPlenty", "gemOre", 1, 5, missing));
+        ChiselHelper.addVariationFromStack("peridot", getModItem("gregtech", "gt.blockgem2", 1, 4, missing));
+        ChiselHelper.addVariationFromStack(
+                "peridot",
+                getModItem("ProjRed|Exploration", "projectred.exploration.stone", 1, 7, missing));
 
     }
 
