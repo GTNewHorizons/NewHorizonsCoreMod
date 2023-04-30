@@ -120,6 +120,15 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 getModItem("BiomesOPlenty", "driedDirt", 1, 0, missing),
                 getModItem("minecraft", "dirt", 1, 0, missing));
         GT_ModHandler.setFuelValue(getModItem("BiomesOPlenty", "bamboo", 1, 0, missing), (short) 100);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "packed_ice", 16, 0, missing))
+                .itemOutputs(getModItem("BiomesOPlenty", "hardIce", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "bones", 2, 0, missing))
+                .itemOutputs(getModItem("BiomesOPlenty", "bones", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "bones", 2, 1, missing))
+                .itemOutputs(getModItem("BiomesOPlenty", "bones", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem("Forestry", "beeswax", 2, 0, missing),
