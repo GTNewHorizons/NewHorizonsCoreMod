@@ -7,6 +7,8 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraftforge.oredict.OreDictionary;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 import gregtech.api.util.GT_ModHandler;
@@ -25,6 +27,12 @@ public class ScriptHarvestcraft implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        OreDictionary.registerOre("toolMortarandpestle", getModItem("gregtech", "gt.metatool.01", 1, 24, missing));
+        OreDictionary.registerOre("toolCuttingboard", getModItem("gregtech", "gt.metatool.01", 1, 34, missing));
+        OreDictionary.registerOre("toolMixingbowl", getModItem("minecraft", "bowl", 1, 0, missing));
+        OreDictionary.registerOre("toolBakeware", getModItem("gregtech", "gt.metatool.01", 1, 46, missing));
+        OreDictionary.registerOre("toolJuicer", getModItem("gregtech", "gt.metatool.01", 1, 14, missing));
+
         addShapedRecipe(
                 getModItem("harvestcraft", "animaltrap", 1, 0, missing),
                 new Object[] { "stickWood", getModItem("Natura", "trapdoor.eucalyptus", 1, 0, missing), "stickWood",
@@ -418,6 +426,241 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 new Object[] { getModItem("harvestcraft", "saucepanItem", 1, 0, missing),
                         getModItem("harvestcraft", "chocolatebarItem", 1, 0, missing),
                         getModItem("BiomesOPlenty", "food", 1, 9, missing) });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "silkentofuItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "firmtofuItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "beeswaxItem", 4, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "waxItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Forestry", "beeswax", 4, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "waxItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "soybeanItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "soymilkItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "food", 1, 9, missing))
+                .itemOutputs(getModItem("harvestcraft", "honeyItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "apple", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "applejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "applejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "melon", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "melonjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "carrot", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "carrotjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "food", 2, 2, missing))
+                .itemOutputs(getModItem("harvestcraft", "carrotjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "strawberryItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "strawberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.02", 1, 32554, missing))
+                .itemOutputs(getModItem("harvestcraft", "grapejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "grapeItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "grapejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 45, missing))
+                .itemOutputs(getModItem("harvestcraft", "blueberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "blueberryItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "blueberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Natura", "berry", 1, 1, missing))
+                .itemOutputs(getModItem("harvestcraft", "blueberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 5, missing))
+                .itemOutputs(getModItem("harvestcraft", "cherryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "cherryItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "cherryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Forestry", "fruits", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "cherryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 43, missing))
+                .itemOutputs(getModItem("harvestcraft", "blackberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "blackberryItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "blackberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Natura", "berry", 1, 2, missing))
+                .itemOutputs(getModItem("harvestcraft", "blackberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "raspberryItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "raspberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 44, missing))
+                .itemOutputs(getModItem("harvestcraft", "raspberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Natura", "berry", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "raspberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Forestry", "fruits", 1, 6, missing))
+                .itemOutputs(getModItem("harvestcraft", "papayajuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "papayaItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "papayajuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 58, missing))
+                .itemOutputs(getModItem("harvestcraft", "starfruitjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "starfruitItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "starfruitjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "pomegranateItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "pomegranatejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 57, missing))
+                .itemOutputs(getModItem("harvestcraft", "mangojuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "mangoItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "mangojuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "limeItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "limejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 3, missing))
+                .itemOutputs(getModItem("harvestcraft", "limejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 17, missing))
+                .itemOutputs(getModItem("harvestcraft", "limejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "orangeItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "orangejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 1, missing))
+                .itemOutputs(getModItem("harvestcraft", "orangejuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "food", 1, 3, missing))
+                .itemOutputs(getModItem("harvestcraft", "peachjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 12, missing))
+                .itemOutputs(getModItem("harvestcraft", "peachjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "peachItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "peachjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "kiwiItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "kiwijuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 46, missing))
+                .itemOutputs(getModItem("harvestcraft", "cranberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "cranberryItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "cranberryjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "cactusfruitItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "cactusfruitjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "plumItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "plumjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 8, missing))
+                .itemOutputs(getModItem("harvestcraft", "plumjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Forestry", "fruits", 1, 4, missing))
+                .itemOutputs(getModItem("harvestcraft", "plumjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "pearItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "pearjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "food", 1, 12, missing))
+                .itemOutputs(getModItem("harvestcraft", "pearjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 22, missing))
+                .itemOutputs(getModItem("harvestcraft", "pearjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 23, missing))
+                .itemOutputs(getModItem("harvestcraft", "pearjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 10, missing))
+                .itemOutputs(getModItem("harvestcraft", "apricotjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "apricotItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "apricotjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "persimmonItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "persimmonjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BiomesOPlenty", "food", 1, 8, missing))
+                .itemOutputs(getModItem("harvestcraft", "persimmonjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 11, missing))
+                .itemOutputs(getModItem("harvestcraft", "grapefruitjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "grapefruitItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "grapefruitjuiceItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 32, missing))
+                .itemOutputs(getModItem("harvestcraft", "figjuiceItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "figItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "figjuiceItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 35, missing))
+                .itemOutputs(getModItem("harvestcraft", "oliveoilItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "oliveItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "oliveoilItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "sunflowerseedsItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "oliveoilItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "walnutItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "oliveoilItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Forestry", "fruits", 1, 1, missing))
+                .itemOutputs(getModItem("harvestcraft", "oliveoilItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "waxcombItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "beeswaxItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "candleberryItem", 4, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "beeswaxItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("minecraft", "egg", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "mayoItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "tomatoItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "ketchupItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("gregtech", "gt.metaitem.02", 1, 32552, missing))
+                .itemOutputs(getModItem("harvestcraft", "ketchupItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "peanutItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "peanutbutterItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "mustardseedsItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "mustardItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "almondItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "almondbutterItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 9, missing))
+                .itemOutputs(getModItem("harvestcraft", "almondbutterItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "cashewItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "cashewbutterItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("ExtraTrees", "food", 1, 51, missing))
+                .itemOutputs(getModItem("harvestcraft", "cashewbutterItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "chestnutItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "chestnutbutterItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("Forestry", "fruits", 1, 2, missing))
+                .itemOutputs(getModItem("harvestcraft", "chestnutbutterItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("harvestcraft", "pistachioItem", 1, 0, missing))
+                .itemOutputs(getModItem("harvestcraft", "pistachiobutterItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem("harvestcraft", "venisonrawItem", 1, 0, missing),
