@@ -9,6 +9,9 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.forestry.ForestryHelper;
+
+import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -67,6 +70,34 @@ public class ScriptBotany implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem("gregtech", "gt.metaitem.01", 1, 1022, missing),
                 new Object[] { getModItem("Botany", "misc", 1, 3, missing) });
+
+        ForestryHelper.removeCarpenterRecipe(getModItem("Botany", "database", 1, 0, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("molten.redstone", 1440),
+                getModItem("dreamcraft", "item.Display", 1, 0, missing),
+                getModItem("Botany", "database", 1, 0, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'b',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17500, missing),
+                'c',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'd',
+                "itemCasingGold",
+                'e',
+                "circuitAdvanced",
+                'f',
+                "itemCasingGold",
+                'g',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing),
+                'h',
+                getModItem("gregtech", "gt.metaitem.01", 1, 17501, missing),
+                'i',
+                getModItem("gregtech", "gt.metaitem.01", 1, 27500, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
