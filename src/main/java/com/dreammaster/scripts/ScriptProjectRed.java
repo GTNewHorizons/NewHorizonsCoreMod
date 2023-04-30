@@ -7,6 +7,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.*;
 import java.util.Arrays;
 import java.util.List;
 
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import tconstruct.library.crafting.Smeltery;
@@ -40,6 +41,9 @@ public class ScriptProjectRed implements IScriptLoader {
 
         recipes1();
         recipes2();
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(getModItem("ProjRed|Fabrication", "projectred.fabrication.icchip", 1, 1, missing), "aaaaaaaaa", "abbbbbbba", "abcccccba", "abcdedcba", "abcefecba", "abcdedcba", "abcccccba", "abbbbbbba", "aaaaaaaaa", 'a', "plateNeutronium", 'b', "circuitMaster", 'c', "circuitUltimate", 'd', "circuitSuperconductor", 'e', "circuitInfinite", 'f', getModItem("OpenComputers", "item", 1, 43, missing));
+
 
         ChiselHelper.addGroup("ruby");
         ChiselHelper.addGroup("sapphire");
