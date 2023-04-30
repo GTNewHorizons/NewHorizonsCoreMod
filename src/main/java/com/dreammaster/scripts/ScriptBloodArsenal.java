@@ -8,6 +8,8 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.tinkersConstruct.TConstructHelper;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
 
@@ -33,6 +35,43 @@ public class ScriptBloodArsenal implements IScriptLoader {
                         getModItem("minecraft", "redstone_lamp", 1, 0, missing),
                         getModItem("BloodArsenal", "blood_stained_glass", 1, 0, missing), "plateBloodInfusedIron",
                         getModItem("BloodArsenal", "blood_stained_glass", 1, 0, missing), "plateBloodInfusedIron" });
+
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "pickaxeHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "shovelHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "hatchetHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "heavyPlate", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "toughRod", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "toughBinding", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "swordBlade", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "wideGuard", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "handGuard", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "crossbar", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "knifeBlade", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "frypanHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "signHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "chiselHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "broadAxeHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "excavatorHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "largeSwordBlade", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "hammerHead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "arrowhead", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "ShurikenPart", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "BowLimbPart", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "CrossbowLimbPart", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "CrossbowBodyPart", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "fullGuard", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "scytheBlade", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "binding", 1, 251, missing));
+        TConstructHelper.removeTableRecipe(getModItem("TConstruct", "toolRod", 1, 251, missing));
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_money", 4, 0, missing))
+                .itemOutputs(getModItem("BloodArsenal", "blood_money", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_money", 4, 1, missing))
+                .itemOutputs(getModItem("BloodArsenal", "blood_money", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_money", 4, 2, missing))
+                .itemOutputs(getModItem("BloodArsenal", "blood_money", 1, 3, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem("BloodArsenal", "blood_money", 1, 1, missing))
                 .itemOutputs(
