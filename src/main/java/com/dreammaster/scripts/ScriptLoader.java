@@ -32,13 +32,13 @@ public class ScriptLoader {
                 new ScriptMagicBees(), new ScriptMalisDoors(), new ScriptMechworks(), new ScriptMinecraft(),
                 new ScriptNatura(), new ScriptNuclearControl(), new ScriptOpenBlocks(), new ScriptOpenComputers(),
                 new ScriptOpenModularTurrets(), new ScriptProjectRed(), new ScriptRailcraft(), new ScriptRandomThings(),
-                new ScriptRemoteIO(), new ScriptRunicTablet(), new ScriptSleepingBags(), new ScriptSpiceOfLife(),
-                new ScriptStevesCarts(), new ScriptStevesFactoryManager(), new ScriptSuperSolarPanels(),
-                new ScriptTaintedMagic(), new ScriptTCCoreMod(), new ScriptThaumcraft(), new ScriptThaumicBases(),
-                new ScriptTranslocator(), new ScriptTwilightForest(), new ScriptThaumicEnergistics(),
-                new ScriptThaumicExploration(), new ScriptThaumicHorizons(), new ScriptThaumicMachina(),
-                new ScriptThaumicTinkerer(), new ScriptTinkersConstruct(), new ScriptTinkersDefence(),
-                new ScriptWarpTheory(), new ScriptWirelessRedstone(), new ScriptWitchery(),
+                new ScriptRemoteIO(), new ScriptRunicTablet(), new ScriptSGCraft(), new ScriptSleepingBags(),
+                new ScriptSpiceOfLife(), new ScriptStevesCarts(), new ScriptStevesFactoryManager(),
+                new ScriptSuperSolarPanels(), new ScriptTaintedMagic(), new ScriptTCCoreMod(), new ScriptThaumcraft(),
+                new ScriptThaumicBases(), new ScriptTranslocator(), new ScriptTwilightForest(),
+                new ScriptThaumicEnergistics(), new ScriptThaumicExploration(), new ScriptThaumicHorizons(),
+                new ScriptThaumicMachina(), new ScriptThaumicTinkerer(), new ScriptTinkersConstruct(),
+                new ScriptTinkersDefence(), new ScriptWarpTheory(), new ScriptWirelessRedstone(), new ScriptWitchery(),
                 new ScriptTravellersGear() };
 
         ArrayList<String> errored = new ArrayList<>();
