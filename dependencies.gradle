@@ -18,7 +18,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:bartworks:0.6.14:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.3.45-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.3.6:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:ForestryMC:4.6.5:api") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:ForestryMC:4.6.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Binnie:2.0.48:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:gendustry:1.6.5.5-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:AppleCore:3.2.10:dev") { transitive = false }

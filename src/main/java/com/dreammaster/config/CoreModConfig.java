@@ -23,6 +23,8 @@ public class CoreModConfig extends ConfigManager {
     public boolean ModCustomDrops_Enabled;
     public boolean ModAdminErrorLogs_Enabled;
     public boolean ModBabyChest_Enabled;
+    public boolean ForestryStampsAndChunkLoaderCoinsEnabled;
+    public boolean ForestryStampsAndChunkLoaderCoinsServerEnabled;
 
     public boolean AvaritiaFixEnabled;
     public boolean MinetweakerFurnaceFixEnabled;
@@ -62,6 +64,8 @@ public class CoreModConfig extends ConfigManager {
         ModAdminErrorLogs_Enabled = true;
         ModBabyChest_Enabled = true;
         OreDictItems_Enabled = true;
+        ForestryStampsAndChunkLoaderCoinsEnabled = true;
+        ForestryStampsAndChunkLoaderCoinsServerEnabled = false;
 
         AvaritiaFixEnabled = false;
         MinetweakerFurnaceFixEnabled = true;
@@ -133,6 +137,16 @@ public class CoreModConfig extends ConfigManager {
                 "Modules",
                 ModBabyChest_Enabled,
                 "A complete, full working example for a custom chest, with its own renderer for items and blocks, custom sound and a GUI");
+        ForestryStampsAndChunkLoaderCoinsEnabled = _mainConfig.getBoolean(
+                "ForestryStampsAndChunkLoaderCoinsEnabled",
+                "Modules",
+                ForestryStampsAndChunkLoaderCoinsEnabled,
+                "Enables crafting recipes for Forestry stamps and Chunk Loader Coins. Only works on single player");
+        ForestryStampsAndChunkLoaderCoinsServerEnabled = _mainConfig.getBoolean(
+                "ForestryStampsAndChunkLoaderCoinsServerEnabled",
+                "Modules",
+                ForestryStampsAndChunkLoaderCoinsServerEnabled,
+                "Enables crafting recipes for Forestry stamps and Chunk Loader Coins on server");
 
         AvaritiaFixEnabled = _mainConfig.getBoolean(
                 "AvaritiaFixEnabled",

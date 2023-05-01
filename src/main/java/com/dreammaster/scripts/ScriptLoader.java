@@ -39,7 +39,7 @@ public class ScriptLoader {
                 new ScriptThaumicEnergistics(), new ScriptThaumicExploration(), new ScriptThaumicHorizons(),
                 new ScriptThaumicMachina(), new ScriptThaumicTinkerer(), new ScriptTinkersConstruct(),
                 new ScriptTinkersDefence(), new ScriptWarpTheory(), new ScriptWirelessRedstone(), new ScriptWitchery(),
-                new ScriptTravellersGear() };
+                new ScriptTravellersGear(), ScriptZZClientOnly.instance };
 
         ArrayList<String> errored = new ArrayList<>();
         for (IScriptLoader script : scripts) {
