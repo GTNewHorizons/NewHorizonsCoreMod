@@ -74,6 +74,299 @@ public class ScriptForestry implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
+        craftingRecipes();
+
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "core", 1, 1, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 4, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 5, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 6, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "iodineCapsule", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "craftingMaterial", 1, 4, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "craftingMaterial", 1, 6, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "chipsets", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "chipsets", 1, 1, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "chipsets", 1, 2, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "chipsets", 1, 3, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 0, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 1, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 2, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 3, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 4, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 5, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 6, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 7, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 8, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 9, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 10, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 11, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 12, missing));
+        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 13, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "carton", 2, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "kitShovel", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "kitPickaxe", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "woodPulp", 4, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "solderingIron", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "oakStick", 2, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "candle", 24, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "candle", 6, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 1, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 2, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 3, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "crate", 24, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Minecraft.ID, "torch", 2, 0, missing));
+        ForestryHelper.removeCentrifugeRecipe(getModItem(Forestry.ID, "beeCombs", 1, 9, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "minerBagT2", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "diggerBagT2", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "foresterBagT2", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "hunterBagT2", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "adventurerBagT2", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "builderBagT2", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "beealyzer", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "treealyzer", 1, 0, missing));
+        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing));
+
+        recipes1();
+        recipes2();
+
+        GT_Values.RA.addFuel(
+                getModItem(Forestry.ID, "bucketShortMead", 1, 0, missing),
+                getModItem(Minecraft.ID, "bucket", 1, 0, missing),
+                4,
+                0);
+        GT_Values.RA.addFuel(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 30711, missing),
+                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),
+                2,
+                0);
+        GT_Values.RA.addFuel(
+                getModItem(Forestry.ID, "canBiomass", 1, 0, missing),
+                getModItem(Forestry.ID, "canEmpty", 1, 0, missing),
+                8,
+                0);
+        OreDictionary.registerOre("foodHoneydrop", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
+        OreDictionary.registerOre("listAllsugar", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "beeswax", 9, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "refractoryWax", 9, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(MagicBees.ID, "wax", 9, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(MagicBees.ID, "wax", 9, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(MagicBees.ID, "wax", 9, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "paper", 8, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 2896, missing))
+                .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(8).addTo(sAlloySmelterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "impregnatedCasing", 1, 0, missing),
+                        getModItem(Forestry.ID, "craftingMaterial", 8, 6, missing))
+                .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                        getModItem(IndustrialCraft2.ID, "itemCasing", 4, 2, missing))
+                .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(800).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18300, missing))
+                .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(800).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17500, missing))
+                .itemOutputs(getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(1200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17057, missing),
+                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
+                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(120).eut(8).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "craftingMaterial", 5, 3, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                .itemOutputs(getModItem(Forestry.ID, "apiaristHelmet", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "craftingMaterial", 8, 3, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                .itemOutputs(getModItem(Forestry.ID, "apiaristChest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "craftingMaterial", 7, 3, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 7, missing))
+                .itemOutputs(getModItem(Forestry.ID, "apiaristLegs", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "craftingMaterial", 4, 3, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                .itemOutputs(getModItem(Forestry.ID, "apiaristBoots", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "apiculture", 1, 2, missing),
+                        getModItem(Minecraft.ID, "minecart", 1, 0, missing))
+                .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(16).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "apiculture", 1, 0, missing),
+                        getModItem(Minecraft.ID, "minecart", 1, 0, missing))
+                .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(16).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "book", 1, 0, missing),
+                        getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
+                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(Forestry.ID, "factory2", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing))
+                .itemOutputs(getModItem(Forestry.ID, "propolis", 1, 0, missing)).outputChances(500).noFluidInputs()
+                .noFluidOutputs().duration(400).eut(40).addTo(sCentrifugeRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32309, missing))
+                .itemOutputs(getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 200)).noFluidOutputs().duration(400).eut(8)
+                .addTo(sFluidSolidficationRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "beeswax", 9, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "refractoryWax", 9, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(MagicBees.ID, "wax", 9, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(MagicBees.ID, "wax", 9, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(MagicBees.ID, "wax", 9, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sPressRecipes);
+
+        new ResearchItem(
+                "PROVENFRAME",
+                "MAGICBEES",
+                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
+                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("potentia"), 6),
+                7,
+                0,
+                3,
+                getModItem(Forestry.ID, "frameProven", 1, 0, missing)).setParents("MB_EssenceArmor").setConcealed()
+                        .setPages(new ResearchPage("Forestry.research_page.PROVENFRAME")).registerResearchItem();
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "PROVENFRAME",
+                getModItem(Forestry.ID, "frameProven", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
+                        .add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("perditio"), 15)
+                        .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aqua"), 15),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                'b',
+                getModItem(Forestry.ID, "honeydew", 1, 0, missing),
+                'c',
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                'd',
+                getModItem(Forestry.ID, "propolis", 1, 0, missing),
+                'e',
+                getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
+                'f',
+                getModItem(Forestry.ID, "propolis", 1, 3, missing),
+                'g',
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                'h',
+                getModItem(Forestry.ID, "royalJelly", 1, 0, missing),
+                'i',
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing));
+        TCHelper.addResearchPage(
+                "PROVENFRAME",
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Forestry.ID, "frameProven", 1, 0, missing))));
+        new ResearchItem(
+                "PROVENGRAFTER",
+                "MAGICBEES",
+                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("permutatio"), 12)
+                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("arbor"), 6),
+                -5,
+                -3,
+                3,
+                getModItem(Forestry.ID, "grafterProven", 1, 0, missing)).setParents("MB_Scoop").setConcealed()
+                        .setPages(new ResearchPage("Forestry.research_page.PROVENGRAFTER")).registerResearchItem();
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "PROVENGRAFTER",
+                getModItem(Forestry.ID, "grafterProven", 1, 0, missing),
+                3,
+                new AspectList().add(Aspect.getAspect("instrumentum"), 25).add(Aspect.getAspect("permutatio"), 25)
+                        .add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("arbor"), 10),
+                getModItem(Forestry.ID, "grafter", 1, 0, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "sapling", 1, 1, missing),
+                        getModItem(Minecraft.ID, "sapling", 1, 2, missing),
+                        getModItem(Forestry.ID, "pollen", 1, 0, missing),
+                        getModItem(Minecraft.ID, "sapling", 1, 3, missing),
+                        getModItem(Minecraft.ID, "sapling", 1, 4, missing),
+                        getModItem(Minecraft.ID, "sapling", 1, 5, missing),
+                        getModItem(Forestry.ID, "pollen", 1, 1, missing),
+                        getModItem(Minecraft.ID, "sapling", 1, 0, missing), });
+        TCHelper.addResearchPage(
+                "PROVENGRAFTER",
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Forestry.ID, "grafterProven", 1, 0, missing))));
+    }
+
+    private void craftingRecipes() {
         addShapedRecipe(
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 new Object[] { "itemCasingBronze", "screwSteel", "itemCasingBronze", "screwSteel",
@@ -1167,57 +1460,9 @@ public class ScriptForestry implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                 new Object[] { getModItem(Forestry.ID, "cart.beehouse", 1, 1, missing) });
+    }
 
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "core", 1, 1, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 4, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 5, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 6, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "iodineCapsule", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "craftingMaterial", 1, 4, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "craftingMaterial", 1, 6, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "chipsets", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "chipsets", 1, 1, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "chipsets", 1, 2, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "chipsets", 1, 3, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 0, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 1, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 2, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 3, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 4, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 5, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 6, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 7, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 8, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 9, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 10, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 11, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 12, missing));
-        ForestryHelper.removeFabricatorRecipe(getModItem(Forestry.ID, "thermionicTubes", 4, 13, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "carton", 2, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "kitShovel", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "kitPickaxe", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "woodPulp", 4, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "solderingIron", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "oakStick", 2, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "candle", 24, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "candle", 6, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 1, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 2, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "stamps", 9, 3, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "crate", 24, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Minecraft.ID, "torch", 2, 0, missing));
-        ForestryHelper.removeCentrifugeRecipe(getModItem(Forestry.ID, "beeCombs", 1, 9, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "minerBagT2", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "diggerBagT2", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "foresterBagT2", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "hunterBagT2", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "adventurerBagT2", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "builderBagT2", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "beealyzer", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "treealyzer", 1, 0, missing));
-        ForestryHelper.removeCarpenterRecipe(getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing));
+    private void recipes1() {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1152),
@@ -3088,6 +3333,9 @@ public class ScriptForestry implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 1246, missing),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing));
+    }
+
+    private void recipes2() {
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("water", 100),
@@ -4395,239 +4643,5 @@ public class ScriptForestry implements IScriptLoader {
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("water", 1));
-        GT_Values.RA.addFuel(
-                getModItem(Forestry.ID, "bucketShortMead", 1, 0, missing),
-                getModItem(Minecraft.ID, "bucket", 1, 0, missing),
-                4,
-                0);
-        GT_Values.RA.addFuel(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 30711, missing),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),
-                2,
-                0);
-        GT_Values.RA.addFuel(
-                getModItem(Forestry.ID, "canBiomass", 1, 0, missing),
-                getModItem(Forestry.ID, "canEmpty", 1, 0, missing),
-                8,
-                0);
-        OreDictionary.registerOre("foodHoneydrop", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
-        OreDictionary.registerOre("listAllsugar", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "beeswax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "refractoryWax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 2896, missing))
-                .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(8).addTo(sAlloySmelterRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "impregnatedCasing", 1, 0, missing),
-                        getModItem(Forestry.ID, "craftingMaterial", 8, 6, missing))
-                .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 4, 2, missing))
-                .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(800).eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18300, missing))
-                .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(800).eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17500, missing))
-                .itemOutputs(getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17057, missing),
-                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
-                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(120).eut(8).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "craftingMaterial", 5, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
-                .itemOutputs(getModItem(Forestry.ID, "apiaristHelmet", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "craftingMaterial", 8, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
-                .itemOutputs(getModItem(Forestry.ID, "apiaristChest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "craftingMaterial", 7, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 7, missing))
-                .itemOutputs(getModItem(Forestry.ID, "apiaristLegs", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "craftingMaterial", 4, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
-                .itemOutputs(getModItem(Forestry.ID, "apiaristBoots", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "apiculture", 1, 2, missing),
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing))
-                .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "apiculture", 1, 0, missing),
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing))
-                .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "book", 1, 0, missing),
-                        getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem(Forestry.ID, "factory2", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing))
-                .itemOutputs(getModItem(Forestry.ID, "propolis", 1, 0, missing)).outputChances(500).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(40).addTo(sCentrifugeRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32309, missing))
-                .itemOutputs(getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 200)).noFluidOutputs().duration(400).eut(8)
-                .addTo(sFluidSolidficationRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "beeswax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "refractoryWax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
-
-        new ResearchItem(
-                "PROVENFRAME",
-                "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("fabrico"), 12)
-                        .add(Aspect.getAspect("cognitio"), 9).add(Aspect.getAspect("potentia"), 6),
-                7,
-                0,
-                3,
-                getModItem(Forestry.ID, "frameProven", 1, 0, missing)).setParents("MB_EssenceArmor").setConcealed()
-                        .setPages(new ResearchPage("Forestry.research_page.PROVENFRAME")).registerResearchItem();
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "PROVENFRAME",
-                getModItem(Forestry.ID, "frameProven", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
-                        .add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("perditio"), 15)
-                        .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aqua"), 15),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
-                'b',
-                getModItem(Forestry.ID, "honeydew", 1, 0, missing),
-                'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
-                'd',
-                getModItem(Forestry.ID, "propolis", 1, 0, missing),
-                'e',
-                getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                'f',
-                getModItem(Forestry.ID, "propolis", 1, 3, missing),
-                'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
-                'h',
-                getModItem(Forestry.ID, "royalJelly", 1, 0, missing),
-                'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing));
-        TCHelper.addResearchPage(
-                "PROVENFRAME",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Forestry.ID, "frameProven", 1, 0, missing))));
-        new ResearchItem(
-                "PROVENGRAFTER",
-                "MAGICBEES",
-                new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("permutatio"), 12)
-                        .add(Aspect.getAspect("metallum"), 9).add(Aspect.getAspect("arbor"), 6),
-                -5,
-                -3,
-                3,
-                getModItem(Forestry.ID, "grafterProven", 1, 0, missing)).setParents("MB_Scoop").setConcealed()
-                        .setPages(new ResearchPage("Forestry.research_page.PROVENGRAFTER")).registerResearchItem();
-        ThaumcraftApi.addInfusionCraftingRecipe(
-                "PROVENGRAFTER",
-                getModItem(Forestry.ID, "grafterProven", 1, 0, missing),
-                3,
-                new AspectList().add(Aspect.getAspect("instrumentum"), 25).add(Aspect.getAspect("permutatio"), 25)
-                        .add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("arbor"), 10),
-                getModItem(Forestry.ID, "grafter", 1, 0, missing),
-                new ItemStack[] { getModItem(Minecraft.ID, "sapling", 1, 1, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 2, missing),
-                        getModItem(Forestry.ID, "pollen", 1, 0, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 3, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 4, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 5, missing),
-                        getModItem(Forestry.ID, "pollen", 1, 1, missing),
-                        getModItem(Minecraft.ID, "sapling", 1, 0, missing), });
-        TCHelper.addResearchPage(
-                "PROVENGRAFTER",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Forestry.ID, "grafterProven", 1, 0, missing))));
     }
 }
