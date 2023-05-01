@@ -8,12 +8,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagString;
 
-import codechicken.nei.api.API;
-import codechicken.nei.api.IConfigureNEI;
-
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
+
+import codechicken.nei.api.API;
+import codechicken.nei.api.IConfigureNEI;
 import gregtech.api.util.GT_ModHandler;
 
 public class NEIGTNewHorizonsConfig implements IConfigureNEI {

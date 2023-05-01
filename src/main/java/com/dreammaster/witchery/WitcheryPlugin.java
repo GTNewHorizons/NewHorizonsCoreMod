@@ -14,10 +14,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import alkalus.main.api.RecipeManager.Kettle;
-import alkalus.main.api.RecipeManager.SpinningWheel;
-import alkalus.main.api.plugin.base.BasePluginWitchery;
-
 import com.emoniph.witchery.Witchery;
 import com.emoniph.witchery.brewing.AltarPower;
 import com.emoniph.witchery.brewing.BrewItemKey;
@@ -28,6 +24,9 @@ import com.emoniph.witchery.brewing.action.BrewActionRitualRecipe;
 import com.emoniph.witchery.crafting.KettleRecipes;
 import com.emoniph.witchery.crafting.SpinningRecipes;
 
+import alkalus.main.api.RecipeManager.Kettle;
+import alkalus.main.api.RecipeManager.SpinningWheel;
+import alkalus.main.api.plugin.base.BasePluginWitchery;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;

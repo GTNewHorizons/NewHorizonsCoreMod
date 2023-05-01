@@ -30,15 +30,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
 import java.util.Arrays;
 import java.util.List;
 
-import mods.railcraft.api.crafting.RailcraftCraftingManager;
-
 import net.minecraftforge.fluids.FluidRegistry;
-
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.aspects.AspectList;
-import thaumcraft.api.research.ResearchCategories;
-import thaumcraft.api.research.ResearchPage;
 
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.railcraft.RailcraftHelper;
@@ -47,6 +39,12 @@ import com.dreammaster.thaumcraft.TCHelper;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.util.GT_ModHandler;
+import mods.railcraft.api.crafting.RailcraftCraftingManager;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.research.ResearchCategories;
+import thaumcraft.api.research.ResearchPage;
 
 public class ScriptRailcraft implements IScriptLoader {
 

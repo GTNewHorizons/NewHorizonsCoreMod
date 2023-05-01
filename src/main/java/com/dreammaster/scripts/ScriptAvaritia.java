@@ -35,16 +35,15 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.aspects.AspectList;
-
 import com.dreammaster.avaritia.AvaritiaHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.avaritia.crafting.CompressorManager;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
 
 public class ScriptAvaritia implements IScriptLoader {
 

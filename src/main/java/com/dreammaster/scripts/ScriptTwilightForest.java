@@ -14,10 +14,10 @@ import java.util.List;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.enums.GT_Values;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-import gregtech.api.enums.GT_Values;
 
 public class ScriptTwilightForest implements IScriptLoader {
 

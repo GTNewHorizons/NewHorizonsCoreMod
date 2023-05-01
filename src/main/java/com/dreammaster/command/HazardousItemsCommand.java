@@ -11,6 +11,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.server.MinecraftServer;
 
 import com.dreammaster.main.MainRegistry;
+
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 
 public class HazardousItemsCommand implements ICommand {

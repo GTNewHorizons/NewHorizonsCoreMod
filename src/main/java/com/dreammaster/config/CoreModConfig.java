@@ -3,6 +3,7 @@ package com.dreammaster.config;
 import java.io.File;
 
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
+
 import eu.usrv.yamcore.config.ConfigManager;
 
 public class CoreModConfig extends ConfigManager {

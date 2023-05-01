@@ -2,11 +2,6 @@ package com.dreammaster.railcraftStones;
 
 import java.util.Random;
 
-import mods.railcraft.common.blocks.aesthetics.cube.BlockCube;
-import mods.railcraft.common.blocks.aesthetics.cube.EnumCube;
-import mods.railcraft.common.plugins.forge.WorldPlugin;
-import mods.railcraft.common.worldgen.WorldGenQuarry;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -16,6 +11,10 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import mods.railcraft.common.blocks.aesthetics.cube.BlockCube;
+import mods.railcraft.common.blocks.aesthetics.cube.EnumCube;
+import mods.railcraft.common.plugins.forge.WorldPlugin;
+import mods.railcraft.common.worldgen.WorldGenQuarry;
 
 public final class NH_QuarryPopulator {
 

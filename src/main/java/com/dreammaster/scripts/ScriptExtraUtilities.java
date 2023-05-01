@@ -34,16 +34,16 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.thaumcraft.TCHelper;
+import com.dreammaster.tinkersConstruct.TConstructHelper;
+import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
+
+import gregtech.api.enums.GT_Values;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-
-import com.dreammaster.thaumcraft.TCHelper;
-import com.dreammaster.tinkersConstruct.TConstructHelper;
-import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
-import gregtech.api.enums.GT_Values;
 
 public class ScriptExtraUtilities implements IScriptLoader {
 

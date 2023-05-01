@@ -116,15 +116,15 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(IBlockAccess aWorld, int xCoord, int yCoord, int zCoord, int aSide) {
+    public IIcon getIcon(IBlockAccess aWorld, int xCoord, int yCoord, int zCoord, int ordinalSide) {
         int tMeta = aWorld.getBlockMetadata(xCoord, yCoord, zCoord);
         if (!isTurbineMeta(tMeta) && tMeta < 9 || tMeta == 15) {
-            return getIcon(aSide, tMeta);
+            return getIcon(ordinalSide, tMeta);
         }
         if (!isTurbineMeta(tMeta) || !mConnectedMachineTextures) {
-            return getIcon(aSide, tMeta);
+            return getIcon(ordinalSide, tMeta);
         }
-        if (aSide == 1) {
+        if (ordinalSide == 1) {
             TileEntity tTileEntity;
             IMetaTileEntity tMetaTileEntity;
 
@@ -142,39 +142,39 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
                         }
                         // check for direction and placement and apply the texture
                         switch (((IGregTechTileEntity) tTileEntity).getFrontFacing()) {
-                            case 2:
+                            case NORTH:
                                 if (xi < 2 && xi > -2 && zi < 1) { // if invalid position ignore (aka too far away)
                                     try {
                                         return getTurbineCasing(tMeta, -xi + 1 - zi * 3, active);
                                     } catch (Exception e) {
-                                        return getIcon(aSide, tMeta);
+                                        return getIcon(ordinalSide, tMeta);
                                     }
                                 }
                                 break;
-                            case 3:
+                            case SOUTH:
                                 if (xi < 2 && xi > -2 && zi > -1) {
                                     try {
                                         return getTurbineCasing(tMeta, -xi + 1 + (2 - zi) * 3, active);
                                     } catch (Exception e) {
-                                        return getIcon(aSide, tMeta);
+                                        return getIcon(ordinalSide, tMeta);
                                     }
                                 }
                                 break;
-                            case 4:
+                            case WEST:
                                 if (zi < 2 && zi > -2 && xi < 1) {
                                     try {
                                         return getTurbineCasing(tMeta, -xi + (1 - zi) * 3, active);
                                     } catch (Exception e) {
-                                        return getIcon(aSide, tMeta);
+                                        return getIcon(ordinalSide, tMeta);
                                     }
                                 }
                                 break;
-                            case 5:
+                            case EAST:
                                 if (zi < 2 && zi > -2 && xi > -1) {
                                     try {
                                         return getTurbineCasing(tMeta, -xi + 2 + (1 - zi) * 3, active);
                                     } catch (Exception e) {
-                                        return getIcon(aSide, tMeta);
+                                        return getIcon(ordinalSide, tMeta);
                                     }
                                 }
                         }
@@ -182,7 +182,7 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
                 }
             }
         }
-        return getIcon(aSide, tMeta);
+        return getIcon(ordinalSide, tMeta);
     }
 
     @Override
