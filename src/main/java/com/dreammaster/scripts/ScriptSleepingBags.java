@@ -20,7 +20,7 @@ public class ScriptSleepingBags implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(SleepingBags.ID, AdventureBackpack.ID, OpenBlocks.ID);
+        return Arrays.asList(SleepingBags.ID, AdventureBackpack.ID, OpenBlocks.ID, Backpack.ID);
     }
 
     @Override

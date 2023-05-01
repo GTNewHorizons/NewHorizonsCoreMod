@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.*;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.JsonToNBT;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -36,7 +37,8 @@ public class CustomToolTips {
             }
 
             for (ItemToolTip itt : mToolTips) {
-                if (itt.mUnlocalizedName.equalsIgnoreCase(tCompareName)) {
+                if (itt.mUnlocalizedName.equalsIgnoreCase(tCompareName)
+                        && (itt.mNBT.isEmpty() || JsonToNBT.func_150315_a(itt.mNBT).equals(pItem.stackTagCompound))) {
                     return itt;
                 }
             }
@@ -63,12 +65,19 @@ public class CustomToolTips {
         @XmlAttribute(name = "ToolTip")
         protected String mToolTip;
 
+        @XmlAttribute(name = "NBT")
+        protected String mNBT;
+
         public String getUnlocalizedName() {
             return mUnlocalizedName;
         }
 
         public String getToolTip() {
             return mToolTip;
+        }
+
+        public String getNBT() {
+            return mNBT;
         }
     }
 }

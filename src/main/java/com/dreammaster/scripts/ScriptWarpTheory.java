@@ -1,5 +1,14 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.WarpTheory;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -9,7 +18,6 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.Mods;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -26,46 +34,46 @@ public class ScriptWarpTheory implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.WarpTheory.ID,
-                Mods.Thaumcraft.ID,
-                Mods.BiomesOPlenty.ID,
-                Mods.ThaumicBases.ID,
-                Mods.BloodMagic.ID,
-                Mods.Witchery.ID,
-                Mods.AppliedEnergistics2.ID);
+                WarpTheory.ID,
+                Thaumcraft.ID,
+                BiomesOPlenty.ID,
+                ThaumicBases.ID,
+                BloodMagic.ID,
+                Witchery.ID,
+                AppliedEnergistics2.ID);
     }
 
     @Override
     public void loadRecipes() {
-        TCHelper.removeArcaneRecipe(getModItem("WarpTheory", "item.warptheory.paper", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("WarpTheory", "item.warptheory.cleanserminor", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("WarpTheory", "item.warptheory.cleanser", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("WarpTheory", "item.warptheory.amulet", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing));
         TCHelper.clearPrereq("warptheory.paper");
         TCHelper.addResearchPrereq("warptheory.paper", "RESEARCHER2", false);
         TCHelper.clearPages("warptheory.paper");
         TCHelper.addResearchPage("warptheory.paper", new ResearchPage("research.warptheory.paper"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "warptheory.paper",
-                getModItem("WarpTheory", "item.warptheory.paper", 2, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.paper", 2, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 8).add(Aspect.getAspect("terra"), 8),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'e',
-                getModItem("minecraft", "paper", 1, 0, missing),
+                getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
         TCHelper.addResearchPage(
                 "warptheory.paper",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("WarpTheory", "item.warptheory.paper", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(WarpTheory.ID, "item.warptheory.paper", 1, 0, missing))));
         TCHelper.setResearchAspects(
                 "warptheory.paper",
                 new AspectList().add(Aspect.getAspect("alienis"), 6).add(Aspect.getAspect("praecantatio"), 6)
@@ -96,35 +104,35 @@ public class ScriptWarpTheory implements IScriptLoader {
                 -1,
                 -2,
                 2,
-                getModItem("WarpTheory", "item.warptheory.cleanserminor", 1, 0, missing))
+                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing))
                         .setParents("ELDRITCHMINOR", "warptheory.paper")
                         .setPages(new ResearchPage("research.warptheory.warpcleanserminor")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "PURETEARMINOR",
-                getModItem("WarpTheory", "item.warptheory.cleanserminor", 1, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("desidia"), 16)
                         .add(Aspect.getAspect("fames"), 16).add(Aspect.getAspect("gelum"), 16)
                         .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("venenum"), 32),
-                getModItem("BiomesOPlenty", "hardIce", 1, 0, missing),
-                new ItemStack[] { getModItem("thaumicbases", "resource", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32553, missing),
-                        getModItem("thaumicbases", "quicksilverBlock", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 30694, missing),
-                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
-                        getModItem("witchery", "ingredient", 1, 36, missing),
-                        getModItem("thaumicbases", "resource", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 32553, missing),
-                        getModItem("thaumicbases", "quicksilverBlock", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 30694, missing),
-                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
-                        getModItem("witchery", "ingredient", 1, 36, missing), });
+                getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing),
+                new ItemStack[] { getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32553, missing),
+                        getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 30694, missing),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 36, missing),
+                        getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32553, missing),
+                        getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 30694, missing),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 36, missing), });
         TCHelper.addResearchPage(
                 "PURETEARMINOR",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("WarpTheory", "item.warptheory.cleanserminor", 1, 0, missing))));
+                                getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing))));
         TCHelper.orphanResearch("warptheory.cleanser");
         TCHelper.removeResearch("warptheory.cleanser");
         new ResearchItem(
@@ -136,56 +144,56 @@ public class ScriptWarpTheory implements IScriptLoader {
                 -4,
                 -1,
                 3,
-                getModItem("WarpTheory", "item.warptheory.cleanser", 1, 0, missing))
+                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing))
                         .setParents("ELDRITCHMAJOR", "warptheory.paper", "ICHORIUM")
                         .setPages(new ResearchPage("research.warptheory.warpcleanser")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "PURETEAR",
-                getModItem("WarpTheory", "item.warptheory.cleanser", 1, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("permutatio"), 32)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("sano"), 16),
-                getModItem("minecraft", "nether_star", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 11978, missing),
-                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 10, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 24500, missing),
-                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 11, missing),
-                        getModItem("minecraft", "ghast_tear", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("minecraft", "ghast_tear", 1, 0, missing),
-                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 11, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 24500, missing),
-                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 10, missing), });
+                getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24500, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                        getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24500, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing), });
         TCHelper.addResearchPage(
                 "PURETEAR",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("WarpTheory", "item.warptheory.cleanser", 1, 0, missing))));
+                                getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing))));
         TCHelper.orphanResearch("warptheory.amulet");
         TCHelper.clearPrereq("warptheory.amulet");
         TCHelper.addResearchPrereq("warptheory.amulet", "PURETEAR", false);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "warptheory.amulet",
-                getModItem("WarpTheory", "item.warptheory.amulet", 1, 0, missing),
+                getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("auram"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 64)
                         .add(Aspect.getAspect("permutatio"), 32),
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 0, missing),
-                new ItemStack[] { getModItem("WarpTheory", "item.warptheory.cleanser", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 11978, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("WarpTheory", "item.warptheory.cleanser", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 11978, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing), });
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0, missing),
+                new ItemStack[] { getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing), });
         TCHelper.setResearchAspects(
                 "warptheory.amulet",
                 new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("auram"), 15)

@@ -1,17 +1,51 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MalisisDoors;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.Natura;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.PamsHarvestTheNether;
+import static gregtech.api.enums.Mods.ProjectRedIntegration;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.RandomThings;
+import static gregtech.api.enums.Mods.StevesCarts2;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.Mods;
-import gregtech.api.util.GT_ModHandler;
+import gregtech.api.enums.GT_Values;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -29,26 +63,29 @@ public class ScriptThaumcraft implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.Thaumcraft.ID,
-                Mods.ThaumicBases.ID,
-                Mods.TinkerConstruct.ID,
-                Mods.RandomThings.ID,
-                Mods.BiomesOPlenty.ID,
-                Mods.PamsHarvestCraft.ID,
-                Mods.ProjectRedIntegration.ID,
-                Mods.Railcraft.ID,
-                Mods.Backpack.ID,
-                Mods.TwilightForest.ID,
-                Mods.Natura.ID,
-                Mods.BuildCraftFactory.ID,
-                Mods.IguanaTweaksTinkerConstruct.ID,
-                Mods.Forestry.ID,
-                Mods.IndustrialCraft2.ID,
-                Mods.GalacticraftCore.ID,
-                Mods.ForbiddenMagic.ID,
-                Mods.GalacticraftMars.ID,
-                Mods.MalisisDoors.ID,
-                Mods.ExtraUtilities.ID);
+                Thaumcraft.ID,
+                ThaumicBases.ID,
+                TinkerConstruct.ID,
+                RandomThings.ID,
+                BiomesOPlenty.ID,
+                PamsHarvestCraft.ID,
+                ProjectRedIntegration.ID,
+                Railcraft.ID,
+                Backpack.ID,
+                TwilightForest.ID,
+                Natura.ID,
+                BuildCraftFactory.ID,
+                IguanaTweaksTinkerConstruct.ID,
+                Forestry.ID,
+                IndustrialCraft2.ID,
+                GalacticraftCore.ID,
+                ForbiddenMagic.ID,
+                GalacticraftMars.ID,
+                MalisisDoors.ID,
+                ExtraUtilities.ID,
+                BartWorks.ID,
+                PamsHarvestTheNether.ID,
+                StevesCarts2.ID);
     }
 
     @Override
@@ -67,25 +104,52 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void basics() {
         // BASICS
 
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTable", 1, 14, missing));
+        ChiselHelper.addVariationFromStack("thaumium", getModItem(GregTech.ID, "gt.blockmetal7", 1, 4, missing));
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2514, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing)).outputChances(7000)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 200)).noFluidOutputs().duration(2000).eut(24)
+                .addTo(sAutoclaveRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2514, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing)).outputChances(9000)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).noFluidOutputs().duration(1500)
+                .eut(24).addTo(sAutoclaveRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2514, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing)).outputChances(10000)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(24)
+                .addTo(sAutoclaveRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 801, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemNugget", 8, 5, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 2, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
+
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTable", 1, 14, missing));
         TCHelper.clearPages("PLANTS");
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.1"));
         TCHelper.addResearchPage(
                 "PLANTS",
                 new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing))));
+                        TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing))));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.2"));
         TCHelper.addResearchPage(
                 "PLANTS",
                 new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "blockWoodenDevice", 1, 7, missing))));
+                        TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 7, missing))));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.3"));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.4"));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.5"));
         TCHelper.addResearchPage("PLANTS", new ResearchPage("tc.research_page.PLANTS.6"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 5)
                         .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
@@ -93,22 +157,22 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemShard", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
                         .add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
@@ -116,22 +180,22 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemShard", 1, 1, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
                         .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 10)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
@@ -139,22 +203,22 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemShard", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemShard", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemShard", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemShard", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemShard", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemShard", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemShard", 1, 2, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
@@ -162,22 +226,22 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemShard", 1, 3, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
                         .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 5),
@@ -185,22 +249,22 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemShard", 1, 4, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
                         .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 10),
@@ -208,22 +272,22 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemShard", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemShard", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemShard", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemShard", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemShard", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemShard", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemShard", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ASPECTS",
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("aqua"), 10)
                         .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("perditio"), 10),
@@ -231,47 +295,47 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemShard", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 'd',
-                getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemShard", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
         TCHelper.clearPages("ORE");
         TCHelper.addResearchPage("ORE", new ResearchPage("tc.research_page.ORE.1"));
         TCHelper.addResearchPage("ORE", new ResearchPage("tc.research_page.ORE.2"));
         TCHelper.addResearchPage(
                 "ORE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCrystal", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing))));
         TCHelper.addResearchPage(
                 "ORE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCrystal", 1, 1, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing))));
         TCHelper.addResearchPage(
                 "ORE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCrystal", 1, 2, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing))));
         TCHelper.addResearchPage(
                 "ORE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCrystal", 1, 3, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing))));
         TCHelper.addResearchPage(
                 "ORE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCrystal", 1, 4, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing))));
         TCHelper.addResearchPage(
                 "ORE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCrystal", 1, 5, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing))));
         TCHelper.addResearchPage(
                 "ORE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCrystal", 1, 6, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing))));
         TCHelper.addResearchPage("ORE", new ResearchPage("tc.research_page.ORE.3"));
         TCHelper.addResearchPage("ORE", new ResearchPage("tc.research_page.ORE.4"));
         TCHelper.setResearchAspects(
@@ -303,7 +367,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("NODEPRESERVE", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DECONSTRUCTOR",
-                getModItem("Thaumcraft", "blockTable", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "blockTable", 1, 14, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
                 "abc",
                 "def",
@@ -311,15 +375,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "screwThaumium",
                 'b',
-                getModItem("Thaumcraft", "ItemThaumometer", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing),
                 'c',
                 "screwThaumium",
                 'd',
-                getModItem("Thaumcraft", "ItemPickThaumium", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0, missing),
                 'e',
-                getModItem("Thaumcraft", "blockTable", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemAxeThaumium", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0, missing),
                 'g',
                 "plateThaumium",
                 'h',
@@ -351,7 +415,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 1,
                 1,
                 1,
-                getModItem("minecraft", "skull", 1, 1, missing)).registerResearchItem();
+                getModItem(Minecraft.ID, "skull", 1, 1, missing)).registerResearchItem();
         TCHelper.addResearchSibling("WARP", "WARPWARNING");
         TCHelper.addResearchSibling("RESEARCH", "WARPWARNING");
         ResearchCategories.getResearch("WARPWARNING").setAutoUnlock();
@@ -368,63 +432,82 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void thaumaturgy() {
         // THAUMATURGY
 
-        TCHelper.removeArcaneRecipe(getModItem("thaumicbases", "resource", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 5, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 6, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 8, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandCap", 1, 4, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandCap", 1, 2, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandCap", 1, 7, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandRod", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandRod", 1, 3, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandRod", 1, 4, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandRod", 1, 5, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandRod", 1, 6, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandRod", 1, 7, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandRod", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 50, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 51, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 52, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 53, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 54, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 55, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 56, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 57, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "FocusFire", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "FocusExcavation", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "FocusFrost", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "FocusShock", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "FocusTrade", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "FocusPouch", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 9, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 10, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 11, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockMetalDevice", 2, 14, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 5, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "FocusWarding", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "FocusPortableHole", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "FocusHellbat", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemAmuletVis", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 8, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockMetalDevice", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 13, missing));
+        addShapedRecipe(
+                getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
+                new Object[] { "screwIron", "foilIron", "screwIron", "foilIron", "ringIron", "foilIron", "screwIron",
+                        "foilIron", "screwIron" });
+
+        addShapedRecipe(
+                createItemStack(
+                        Thaumcraft.ID,
+                        "WandCasting",
+                        1,
+                        0,
+                        "{aqua:0,terra:0,ignis:0,ordo:0,perditio:0,aer:0}",
+                        missing),
+                new Object[] { getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing), "screwAluminium",
+                        getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing), "screwAluminium",
+                        getModItem(Forestry.ID, "oakStick", 1, 0, missing), "screwAluminium",
+                        getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing), "screwAluminium",
+                        getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing) });
+
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "resource", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 5, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 6, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 8, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 4, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 2, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 7, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 3, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 4, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 5, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 6, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 7, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 50, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 51, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 52, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 53, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 54, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 55, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 56, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 57, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "FocusFire", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "FocusFrost", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "FocusTrade", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "FocusPouch", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 9, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 2, 14, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "FocusWarding", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemAmuletVis", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 13, missing));
         TCHelper.clearPages("BASICTHAUMATURGY");
         TCHelper.addResearchPage("BASICTHAUMATURGY", new ResearchPage("tc.research_page.BASICTHAUMATURGY.1"));
         TCHelper.addResearchPage("BASICTHAUMATURGY", new ResearchPage("tc.research_page.BASICTHAUMATURGY.2"));
         TCHelper.addResearchPage(
                 "BASICTHAUMATURGY",
-                new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "WandCap", 1, 0, missing))));
+                new ResearchPage(TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing))));
         TCHelper.addResearchPage(
                 "BASICTHAUMATURGY",
-                new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "WandCasting", 1, 0, missing))));
+                new ResearchPage(TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "WandCasting", 1, 0, missing))));
         TCHelper.clearPages("CAP_copper");
         TCHelper.addResearchPage("CAP_copper", new ResearchPage("tc.research_page.CAP_copper.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_copper",
-                getModItem("Thaumcraft", "WandCap", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("ignis"), 15)
                         .add(Aspect.getAspect("aer"), 15),
                 "abc",
@@ -450,7 +533,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwSteel");
         TCHelper.addResearchPage(
                 "CAP_copper",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 3, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 3, missing))));
         TCHelper.setResearchAspects(
                 "CAP_copper",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 3).add(Aspect.getAspect("metallum"), 6)
@@ -461,7 +544,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("CAP_gold", new ResearchPage("tc.research_page.CAP_gold.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_gold",
-                getModItem("Thaumcraft", "WandCap", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("ignis"), 20)
                         .add(Aspect.getAspect("aer"), 20),
                 "abc",
@@ -487,7 +570,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwAluminium");
         TCHelper.addResearchPage(
                 "CAP_gold",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 1, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing))));
         TCHelper.setResearchAspects(
                 "CAP_gold",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("metallum"), 6)
@@ -497,7 +580,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("CAP_silver", new ResearchPage("tc.research_page.CAP_silver.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_silver",
-                getModItem("Thaumcraft", "WandCap", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("ignis"), 25)
                         .add(Aspect.getAspect("aer"), 25),
                 "abc",
@@ -523,28 +606,28 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwStainlessSteel");
         TCHelper.addResearchPage(
                 "CAP_silver",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 5, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 5, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CAP_silver",
-                getModItem("Thaumcraft", "WandCap", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 4, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("auram"), 18).add(Aspect.getAspect("potentia"), 30)
                         .add(Aspect.getAspect("praecantatio"), 18),
-                getModItem("Thaumcraft", "WandCap", 1, 5, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2054, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2054, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2054, missing), });
+                getModItem(Thaumcraft.ID, "WandCap", 1, 5, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2054, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2054, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2054, missing), });
         TCHelper.addResearchPage(
                 "CAP_silver",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "WandCap", 1, 4, missing))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 4, missing))));
         TCHelper.clearPages("CAP_thaumium");
         TCHelper.addResearchPage("CAP_thaumium", new ResearchPage("tc.research_page.CAP_thaumium.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_thaumium",
-                getModItem("Thaumcraft", "WandCap", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("ignis"), 30)
                         .add(Aspect.getAspect("aer"), 30),
                 "abc",
@@ -570,23 +653,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwKnightmetal");
         TCHelper.addResearchPage(
                 "CAP_thaumium",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 6, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 6, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CAP_thaumium",
-                getModItem("Thaumcraft", "WandCap", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 2, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("auram"), 25).add(Aspect.getAspect("potentia"), 40)
                         .add(Aspect.getAspect("praecantatio"), 25),
-                getModItem("Thaumcraft", "WandCap", 1, 6, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing), });
+                getModItem(Thaumcraft.ID, "WandCap", 1, 6, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing), });
         TCHelper.addResearchPage(
                 "CAP_thaumium",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "WandCap", 1, 2, missing))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 2, missing))));
         TCHelper.setResearchAspects(
                 "CAP_thaumium",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("auram"), 9)
@@ -604,7 +687,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("ROD_greatwood", new ResearchPage("tc.research_page.ROD_greatwood.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_greatwood",
-                getModItem("Thaumcraft", "WandRod", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("aqua"), 20)
                         .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 20),
@@ -612,14 +695,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'c',
-                getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                 'e',
-                getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                 'g',
-                getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing));
         TCHelper.addResearchPage(
                 "ROD_greatwood",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "WandRod", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing))));
         TCHelper.setResearchAspects(
                 "ROD_greatwood",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 6)
@@ -627,15 +710,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_greatwood", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_reed",
-                getModItem("Thaumcraft", "WandRod", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 5, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("motus"), 12)
                         .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitreus"), 6),
-                getModItem("TConstruct", "trap.punji", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing), });
+                getModItem(TinkerConstruct.ID, "trap.punji", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "ROD_reed",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
@@ -647,7 +730,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
                                 createItemStack(
-                                        "Thaumcraft",
+                                        Thaumcraft.ID,
                                         "WandCasting",
                                         1,
                                         45,
@@ -655,15 +738,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                                         missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_blaze",
-                getModItem("Thaumcraft", "WandRod", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 6, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("bestia"), 12).add(Aspect.getAspect("ignis"), 24)
                         .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitreus"), 6),
-                getModItem("minecraft", "blaze_rod", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing), });
+                getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing), });
         TCHelper.setResearchAspects(
                 "ROD_blaze",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
@@ -672,15 +755,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_blaze", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_obsidian",
-                getModItem("Thaumcraft", "WandRod", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 1, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("tenebrae"), 12)
                         .add(Aspect.getAspect("terra"), 24).add(Aspect.getAspect("vitreus"), 6),
-                getModItem("RandomThings", "ingredient", 1, 1, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing), });
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
         TCHelper.setResearchAspects(
                 "ROD_obsidian",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
@@ -689,15 +772,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_obsidian", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_ice",
-                getModItem("Thaumcraft", "WandRod", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 3, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("aqua"), 24).add(Aspect.getAspect("gelum"), 12)
                         .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitreus"), 6),
-                getModItem("BiomesOPlenty", "hardIce", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing), });
+                getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
         TCHelper.setResearchAspects(
                 "ROD_ice",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
@@ -706,15 +789,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_ice", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_quartz",
-                getModItem("Thaumcraft", "WandRod", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 4, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("praecantatio"), 12)
                         .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("vitreus"), 6),
-                getModItem("dreamcraft", "item.ChargedCertusQuartzRod", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing), });
+                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzRod", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), });
         TCHelper.setResearchAspects(
                 "ROD_quartz",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
@@ -723,15 +806,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_quartz", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_bone",
-                getModItem("Thaumcraft", "WandRod", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 7, missing),
                 3,
                 new AspectList().add(Aspect.getAspect("exanimis"), 12).add(Aspect.getAspect("perditio"), 24)
                         .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitreus"), 6),
-                getModItem("TConstruct", "toolRod", 1, 5, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing), });
+                getModItem(TinkerConstruct.ID, "toolRod", 1, 5, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing), });
         TCHelper.setResearchAspects(
                 "ROD_bone",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("praecantatio"), 9)
@@ -741,20 +824,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("ROD_bone", 1);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_silverwood",
-                getModItem("Thaumcraft", "WandRod", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("aer"), 48).add(Aspect.getAspect("aqua"), 48)
                         .add(Aspect.getAspect("ignis"), 48).add(Aspect.getAspect("ordo"), 48)
                         .add(Aspect.getAspect("perditio"), 48).add(Aspect.getAspect("praecantatio"), 48)
                         .add(Aspect.getAspect("terra"), 48),
-                getModItem("Thaumcraft", "blockMagicalLog", 1, 1, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing), });
+                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "ROD_silverwood",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -763,7 +846,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_silverwood", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_greatwood_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 50, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 50, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50)
                         .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
@@ -771,23 +854,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "WandRod", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.setResearchAspects(
                 "ROD_greatwood_staff",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -796,7 +879,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_greatwood_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_reed_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 55, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 55, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
                         .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
                         .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
@@ -804,23 +887,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "WandRod", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 5, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 5, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.setResearchAspects(
                 "ROD_reed_staff",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -829,7 +912,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_reed_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_blaze_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 56, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 56, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
                         .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
                         .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
@@ -837,23 +920,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "WandRod", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 6, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 6, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.setResearchAspects(
                 "ROD_blaze_staff",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -862,7 +945,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_blaze_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_obsidian_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 51, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 51, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
                         .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
                         .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
@@ -870,23 +953,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "WandRod", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 1, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 1, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.setResearchAspects(
                 "ROD_obsidian_staff",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -898,7 +981,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
                                 createItemStack(
-                                        "Thaumcraft",
+                                        Thaumcraft.ID,
                                         "WandCasting",
                                         1,
                                         84,
@@ -906,7 +989,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                                         missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_ice_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 53, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 53, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
                         .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
                         .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
@@ -914,23 +997,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "WandRod", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 3, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 3, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.setResearchAspects(
                 "ROD_ice_staff",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -939,7 +1022,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_ice_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_quartz_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 54, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 54, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
                         .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
                         .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
@@ -947,23 +1030,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "WandRod", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 4, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 4, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.setResearchAspects(
                 "ROD_quartz_staff",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -972,7 +1055,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_quartz_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_bone_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 57, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 57, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 75).add(Aspect.getAspect("terra"), 75)
                         .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aqua"), 75)
                         .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
@@ -980,23 +1063,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "WandRod", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 7, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 7, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.setResearchAspects(
                 "ROD_bone_staff",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -1006,7 +1089,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("ROD_bone_staff", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_silverwood_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 52, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 52, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("terra"), 125)
                         .add(Aspect.getAspect("ignis"), 125).add(Aspect.getAspect("aqua"), 125)
                         .add(Aspect.getAspect("ordo"), 125).add(Aspect.getAspect("perditio"), 125),
@@ -1014,23 +1097,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "WandRod", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.setResearchAspects(
                 "ROD_silverwood_staff",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("praecantatio"), 15)
@@ -1042,7 +1125,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
                                 createItemStack(
-                                        "Thaumcraft",
+                                        Thaumcraft.ID,
                                         "WandCasting",
                                         1,
                                         216,
@@ -1050,18 +1133,18 @@ public class ScriptThaumcraft implements IScriptLoader {
                                         missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSFIRE",
-                getModItem("Thaumcraft", "FocusFire", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusFire", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("perditio"), 20)
                         .add(Aspect.getAspect("ordo"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'b',
                 "gemQuartz",
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'd',
                 "gemQuartz",
                 'e',
@@ -1069,11 +1152,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "gemQuartz",
                 'g',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'h',
                 "gemQuartz",
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing));
         TCHelper.setResearchAspects(
                 "FOCUSFIRE",
                 new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("praecantatio"), 6)
@@ -1081,18 +1164,18 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSFIRE", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSEXCAVATION",
-                getModItem("Thaumcraft", "FocusExcavation", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("perditio"), 20)
                         .add(Aspect.getAspect("ordo"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'b',
                 "gemQuartz",
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'd',
                 "gemQuartz",
                 'e',
@@ -1100,11 +1183,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "gemQuartz",
                 'g',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'h',
                 "gemQuartz",
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing));
         TCHelper.setResearchAspects(
                 "FOCUSEXCAVATION",
                 new AspectList().add(Aspect.getAspect("terra"), 9).add(Aspect.getAspect("praecantatio"), 9)
@@ -1112,18 +1195,18 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSEXCAVATION", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSFROST",
-                getModItem("Thaumcraft", "FocusFrost", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusFrost", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 30).add(Aspect.getAspect("perditio"), 20)
                         .add(Aspect.getAspect("ordo"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'b',
                 "gemQuartz",
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'd',
                 "gemQuartz",
                 'e',
@@ -1131,11 +1214,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "gemQuartz",
                 'g',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'h',
                 "gemQuartz",
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing));
         TCHelper.setResearchAspects(
                 "FOCUSFROST",
                 new AspectList().add(Aspect.getAspect("aqua"), 9).add(Aspect.getAspect("gelum"), 9)
@@ -1143,18 +1226,18 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSFROST", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSSHOCK",
-                getModItem("Thaumcraft", "FocusShock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("perditio"), 20)
                         .add(Aspect.getAspect("ordo"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
                 "gemQuartz",
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'd',
                 "gemQuartz",
                 'e',
@@ -1162,11 +1245,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "gemQuartz",
                 'g',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'h',
                 "gemQuartz",
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "FOCUSSHOCK",
                 new AspectList().add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("praecantatio"), 6)
@@ -1174,30 +1257,30 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSSHOCK", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSTRADE",
-                getModItem("Thaumcraft", "FocusTrade", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusTrade", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("ordo"), 30),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'b',
                 "gemQuartz",
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'd',
                 "gemQuartz",
                 'e',
-                getModItem("dreamcraft", "item.ReinforcedGlassLense", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 1, 0, missing),
                 'f',
                 "gemQuartz",
                 'g',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'h',
                 "gemQuartz",
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing));
         TCHelper.setResearchAspects(
                 "FOCUSTRADE",
                 new AspectList().add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("praecantatio"), 9)
@@ -1205,20 +1288,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSTRADE", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FOCUSWARDING",
-                getModItem("Thaumcraft", "FocusWarding", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusWarding", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("ordo"), 25)
                         .add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("tutamen"), 25)
                         .add(Aspect.getAspect("praecantatio"), 10),
-                getModItem("gregtech", "gt.metaitem.01", 1, 24506, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("minecraft", "quartz", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("minecraft", "quartz", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing), });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Minecraft.ID, "quartz", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Minecraft.ID, "quartz", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), });
         TCHelper.setResearchAspects(
                 "FOCUSWARDING",
                 new AspectList().add(Aspect.getAspect("terra"), 12).add(Aspect.getAspect("cognitio"), 12)
@@ -1227,20 +1310,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSWARDING", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FOCUSPORTABLEHOLE",
-                getModItem("Thaumcraft", "FocusPortableHole", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("iter"), 30)
                         .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("permutatio"), 10)
                         .add(Aspect.getAspect("praecantatio"), 5),
-                getModItem("gregtech", "gt.metaitem.01", 1, 24532, missing),
-                new ItemStack[] { getModItem("minecraft", "quartz", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("minecraft", "quartz", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing), });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 24532, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "quartz", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Minecraft.ID, "quartz", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
         TCHelper.setResearchAspects(
                 "FOCUSPORTABLEHOLE",
                 new AspectList().add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("iter"), 12)
@@ -1250,20 +1333,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("NODESTABILIZERADV", 1);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FOCUSHELLBAT",
-                getModItem("Thaumcraft", "FocusHellbat", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ignis"), 40)
                         .add(Aspect.getAspect("bestia"), 20).add(Aspect.getAspect("perditio"), 10)
                         .add(Aspect.getAspect("praecantatio"), 5),
-                getModItem("gregtech", "gt.metaitem.01", 1, 24347, missing),
-                new ItemStack[] { getModItem("minecraft", "quartz", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("minecraft", "quartz", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing), });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 24347, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "quartz", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(Minecraft.ID, "quartz", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "FOCUSHELLBAT",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("iter"), 9)
@@ -1271,10 +1354,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("motus"), 3));
         TCHelper.setResearchComplexity("FOCUSHELLBAT", 3);
         ThaumcraftApi.addWarpToResearch("NODESTABILIZERADV", 2);
-        ThaumcraftApi.addWarpToItem(getModItem("Thaumcraft", "FocusHellbat", 1, 0, missing), 2);
+        ThaumcraftApi.addWarpToItem(getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0, missing), 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSPOUCH",
-                getModItem("Thaumcraft", "FocusPouch", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusPouch", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("perditio"), 20)
                         .add(Aspect.getAspect("ordo"), 20),
                 "abc",
@@ -1287,17 +1370,17 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'c',
                 "boltGold",
                 'd',
-                getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
                 'f',
-                getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                 'g',
-                getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                 'h',
-                getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                 'i',
-                getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing));
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "FOCUSPOUCH",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("vacuos"), 9)
@@ -1305,7 +1388,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSPOUCH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "NODESTABILIZER",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 35).add(Aspect.getAspect("terra"), 35)
                         .add(Aspect.getAspect("ordo"), 25),
                 "abc",
@@ -1320,15 +1403,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "blockQuartz",
                 'e',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32640, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                 'f',
                 "blockQuartz",
                 'g',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing));
         TCHelper.setResearchAspects(
                 "NODESTABILIZER",
                 new AspectList().add(Aspect.getAspect("auram"), 9).add(Aspect.getAspect("potentia"), 9)
@@ -1336,21 +1419,21 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("NODESTABILIZER", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "NODESTABILIZERADV",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("auram"), 32).add(Aspect.getAspect("ordo"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 32),
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 9, missing),
-                new ItemStack[] { getModItem("minecraft", "redstone_block", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
-                        getModItem("minecraft", "redstone_block", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
-                        getModItem("minecraft", "glowstone", 1, 0, missing),
-                        getModItem("minecraft", "redstone_block", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
-                        getModItem("minecraft", "redstone_block", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
-                        getModItem("minecraft", "glowstone", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 9, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "redstone_block", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
+                        getModItem(Minecraft.ID, "redstone_block", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
+                        getModItem(Minecraft.ID, "glowstone", 1, 0, missing),
+                        getModItem(Minecraft.ID, "redstone_block", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
+                        getModItem(Minecraft.ID, "redstone_block", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
+                        getModItem(Minecraft.ID, "glowstone", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "NODESTABILIZERADV",
                 new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
@@ -1360,7 +1443,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("NODESTABILIZERADV", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VISPOWER",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 11, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 32).add(Aspect.getAspect("aer"), 32)
                         .add(Aspect.getAspect("perditio"), 32).add(Aspect.getAspect("ordo"), 32),
                 "abc",
@@ -1369,24 +1452,24 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "blockRedstone",
                 'b',
-                getModItem("ProjRed|Integration", "projectred.integration.gate", 1, 26, missing),
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
                 'c',
                 "blockRedstone",
                 'd',
                 "plateThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 9, missing),
                 'f',
                 "plateThaumium",
                 'g',
                 "blockRedstone",
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 'i',
                 "blockRedstone");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VISPOWER",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("ordo"), 10),
                 "abc",
                 "def",
@@ -1400,7 +1483,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "ringThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'f',
                 "ringThaumium",
                 'g',
@@ -1416,15 +1499,15 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("VISPOWER", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "WANDPED",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("auram"), 10).add(Aspect.getAspect("permutatio"), 15)
                         .add(Aspect.getAspect("praecantatio"), 20).add(Aspect.getAspect("ordo"), 5),
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 1, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing), });
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 1, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing), });
         TCHelper.setResearchAspects(
                 "WANDPED",
                 new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("potentia"), 9)
@@ -1432,20 +1515,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("WANDPED", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "VISAMULET",
-                getModItem("Thaumcraft", "ItemAmuletVis", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemAmuletVis", 1, 1, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("auram"), 48)
                         .add(Aspect.getAspect("potentia"), 88).add(Aspect.getAspect("praecantatio"), 88)
                         .add(Aspect.getAspect("vitreus"), 24),
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30500, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30500, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing), });
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "VISAMULET",
                 new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("auram"), 15)
@@ -1454,20 +1537,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("VISAMULET", 4);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "WANDPEDFOC",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("permutatio"), 25)
                         .add(Aspect.getAspect("praecantatio"), 30).add(Aspect.getAspect("potentia"), 15)
                         .add(Aspect.getAspect("cognitio"), 15),
-                getModItem("ProjRed|Integration", "projectred.integration.gate", 1, 26, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 8, missing), });
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing), });
         TCHelper.setResearchAspects(
                 "WANDPEDFOC",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("auram"), 15)
@@ -1477,7 +1560,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("WANDPEDFOC", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VISCHARGERELAY",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("ordo"), 20)
                         .add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 10),
                 "abc",
@@ -1486,21 +1569,21 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "screwThaumium",
                 'b',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
                 'c',
                 "screwThaumium",
                 'd',
-                getModItem("Thaumcraft", "WandRod", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                 'e',
                 "plateThaumium",
                 'f',
-                getModItem("Thaumcraft", "WandRod", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                 'g',
-                getModItem("Thaumcraft", "WandRod", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing),
                 'h',
                 "craftingToolScrewdriver",
                 'i',
-                getModItem("Thaumcraft", "WandRod", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "VISCHARGERELAY",
                 new AspectList().add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("praecantatio"), 12)
@@ -1509,7 +1592,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("VISCHARGERELAY", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCALMANIPULATION",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 13, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 13, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("ordo"), 64)
                         .add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("terra"), 64)
                         .add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("perditio"), 64),
@@ -1517,21 +1600,21 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCosmeticSlabStone", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1, 0, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'g',
                 "plateThaumium",
                 'h',
-                getModItem("Thaumcraft", "blockTable", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing),
                 'i',
                 "plateThaumium");
         TCHelper.setResearchAspects(
@@ -1579,50 +1662,69 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void alchemy() {
         // ALCHEMY
 
-        GT_ModHandler.addShapelessCraftingRecipe(
-                getModItem(Mods.Thaumcraft.ID, "ItemEssence", 1),
+        addShapelessCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemEssence", 1),
                 new Object[] { new ItemStack(Items.glass_bottle), "roundAnyRubber" });
 
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 4, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 1, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 2, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 16, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 17, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 6, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 3, 3, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 2, 14, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 7, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 9, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 6, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemResource", 2, 8, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockMetalDevice", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockMetalDevice", 1, 9, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTube", 8, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTube", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTube", 1, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTube", 1, 5, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTube", 1, 6, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTube", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTube", 1, 4, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemResonator", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockTube", 1, 7, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockMetalDevice", 1, 12, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockJar", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockJar", 1, 3, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemBathSalts", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemSanitySoap", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 12, missing));
+        addShapelessCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                new Object[] { "craftingToolMortar", getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing) });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemResource", 9, 4, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5, missing)).noFluidInputs()
+                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 9, 4, missing)).outputChances(10000)
+                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(400).eut(30)
+                .addTo(sCutterRecipes);
+
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 2, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 3, 3, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 9, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 2, 8, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTube", 8, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTube", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTube", 1, 5, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTube", 1, 4, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResonator", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTube", 1, 7, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockJar", 1, 3, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemBathSalts", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12, missing));
         TCHelper.clearPages("PHIAL");
         TCHelper.addResearchPage("PHIAL", new ResearchPage("tc.research_page.PHIAL.1"));
         TCHelper.addResearchPage(
                 "PHIAL",
-                new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "ItemEssence", 1, 0, missing))));
+                new ResearchPage(TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing))));
         ThaumcraftApi.addCrucibleRecipe(
                 "TALLOW",
-                getModItem("Thaumcraft", "ItemResource", 1, 4, missing),
-                getModItem("gregtech", "gt.metaitem.01", 1, 2877, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2877, missing),
                 new AspectList().add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("corpus"), 4)
                         .add(Aspect.getAspect("mortuus"), 2));
         TCHelper.setResearchAspects(
@@ -1634,28 +1736,29 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("TALLOW", new ResearchPage("tc.research_page.TALLOW.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TALLOW",
-                getModItem("Thaumcraft", "blockCandle", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCandle", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("ordo"), 1)
                         .add(Aspect.getAspect("perditio"), 1).add(Aspect.getAspect("aer"), 3),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem("minecraft", "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 4, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing));
         TCHelper.addResearchPage(
                 "TALLOW",
-                new ResearchPage(TCHelper.findCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 4, missing))));
+                new ResearchPage(
+                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing))));
         TCHelper.addResearchPage(
                 "TALLOW",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCandle", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCandle", 1, 0, missing))));
         ThaumcraftApi.addCrucibleRecipe(
                 "NITOR",
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
-                getModItem("minecraft", "glowstone_dust", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("lux"), 4)
                         .add(Aspect.getAspect("potentia"), 4));
         TCHelper.setResearchAspects(
@@ -1665,20 +1768,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("NITOR", 1);
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
-                getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
-                getModItem("gregtech", "gt.metaitem.01", 1, 2535, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2535, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("perditio"), 3)
                         .add(Aspect.getAspect("potentia"), 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
-                getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
-                getModItem("gregtech", "gt.metaitem.01", 1, 2536, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2536, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("perditio"), 3)
                         .add(Aspect.getAspect("potentia"), 6));
         ThaumcraftApi.addCrucibleRecipe(
                 "ALUMENTUM",
-                getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
-                getModItem("gregtech", "gt.metaitem.01", 1, 2538, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2538, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("perditio"), 3)
                         .add(Aspect.getAspect("potentia"), 6));
         TCHelper.setResearchAspects(
@@ -1704,18 +1807,18 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ENTROPICPROCESSING", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILESSENTIA",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aer"), 10)
                         .add(Aspect.getAspect("ordo"), 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'b',
-                getModItem("Railcraft", "machine.beta", 1, 3, missing),
+                getModItem(Railcraft.ID, "machine.beta", 1, 3, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'd',
                 "plateThaumium",
                 'e',
@@ -1723,11 +1826,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "plateThaumium",
                 'g',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'h',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing));
         TCHelper.setResearchAspects(
                 "DISTILESSENTIA",
                 new AspectList().add(Aspect.getAspect("limus"), 9).add(Aspect.getAspect("praecantatio"), 6)
@@ -1735,7 +1838,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("DISTILESSENTIA", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILESSENTIA",
-                getModItem("Thaumcraft", "ItemResource", 3, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 3, 8, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aqua"), 5),
                 "abc",
                 "def",
@@ -1747,11 +1850,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'c',
                 "springSmallGold",
                 'd',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 7, missing),
                 'e',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 7, missing),
                 'f',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 7, missing),
                 'g',
                 "springSmallGold",
                 'h',
@@ -1760,7 +1863,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "springSmallGold");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILESSENTIA",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 10)
                         .add(Aspect.getAspect("ignis"), 5),
                 "abc",
@@ -1773,11 +1876,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'c',
                 "plateThaumium",
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                 'e',
-                getModItem("Railcraft", "machine.beta", 1, 3, missing),
+                getModItem(Railcraft.ID, "machine.beta", 1, 3, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                 'g',
                 "plateThaumium",
                 'h',
@@ -1786,33 +1889,33 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateThaumium");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "DISTILESSENTIA",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ignis"), 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                 'c',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'd',
-                getModItem("Thaumcraft", "blockTube", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 1, missing),
                 'e',
                 "blockThaumium",
                 'f',
-                getModItem("Thaumcraft", "blockTube", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 1, missing),
                 'g',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                 'i',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBES",
-                getModItem("Thaumcraft", "blockTube", 4, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 4, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("aqua"), 8),
                 "abc",
                 "def",
@@ -1824,11 +1927,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'c',
                 "screwThaumium",
                 'd',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'e',
                 "pipeSmallSteel",
                 'f',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'g',
                 "screwThaumium",
                 'h',
@@ -1842,7 +1945,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TUBES", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBES",
-                getModItem("Thaumcraft", "blockTube", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("aqua"), 8),
                 "abc",
                 "def",
@@ -1850,18 +1953,18 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "screwThaumium",
                 'b',
-                getModItem("minecraft", "lever", 1, 0, missing),
+                getModItem(Minecraft.ID, "lever", 1, 0, missing),
                 'c',
                 "screwThaumium",
                 'd',
                 "plateAnyRubber",
                 'e',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'f',
                 "gearGtSmallThaumium");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBES",
-                getModItem("Thaumcraft", "ItemResonator", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResonator", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("aqua"), 8),
                 "abc",
                 "def",
@@ -1873,7 +1976,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "screwThaumium",
                 'e',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'f',
                 "stickThaumium",
                 'g',
@@ -1884,7 +1987,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "craftingToolFile");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBEFILTER",
-                getModItem("Thaumcraft", "blockTube", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("aqua"), 16),
                 "abc",
                 "def",
@@ -1892,17 +1995,17 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "craftingToolScrewdriver",
                 'b',
-                getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                 'c',
                 "craftingToolFile",
                 'd',
                 "screwThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'f',
                 "screwThaumium",
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 8, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing));
         TCHelper.setResearchAspects(
                 "TUBEFILTER",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("permutatio"), 9)
@@ -1911,7 +2014,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TUBEFILTER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBEFILTER",
-                getModItem("Thaumcraft", "blockTube", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("aqua"), 16),
                 "abc",
                 "def",
@@ -1919,12 +2022,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "ringAnyRubber",
                 'e',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'f',
                 "ringAnyRubber");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TUBEFILTER",
-                getModItem("Thaumcraft", "blockTube", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("perditio"), 8)
                         .add(Aspect.getAspect("aqua"), 8),
                 "abc",
@@ -1933,12 +2036,12 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "dyeBlue",
                 'e',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'f',
                 "screwThaumium");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CENTRIFUGE",
-                getModItem("Thaumcraft", "blockTube", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("perditio"), 16)
                         .add(Aspect.getAspect("aqua"), 16),
                 "abc",
@@ -1947,19 +2050,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "screwThaumium",
                 'b',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'c',
                 "screwThaumium",
                 'd',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 1, missing),
                 'e',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                 'f',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32641, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
                 'g',
                 "screwThaumium",
                 'h',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'i',
                 "screwThaumium");
         TCHelper.setResearchAspects(
@@ -1970,32 +2073,32 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("CENTRIFUGE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CENTRIFUGE",
-                getModItem("Thaumcraft", "blockTube", 4, 4, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 4, 4, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("aqua"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockTube", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
                 'd',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'e',
                 "screwThaumium",
                 'f',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
                 'h',
-                getModItem("Thaumcraft", "blockTube", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 5, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemEssence", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ESSENTIACRYSTAL",
-                getModItem("Thaumcraft", "blockTube", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("ordo"), 15)
                         .add(Aspect.getAspect("aqua"), 10),
                 "abc",
@@ -2004,19 +2107,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "plateThaumium",
                 'b',
-                getModItem("minecraft", "dispenser", 1, 0, missing),
+                getModItem(Minecraft.ID, "dispenser", 1, 0, missing),
                 'c',
                 "plateThaumium",
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'e',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'g',
                 "screwThaumium",
                 'h',
-                getModItem("Thaumcraft", "blockTube", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
                 'i',
                 "screwThaumium");
         TCHelper.setResearchAspects(
@@ -2027,7 +2130,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ESSENTIACRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "THAUMATORIUM",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 12, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("ordo"), 10)
                         .add(Aspect.getAspect("aqua"), 10),
                 "abc",
@@ -2042,7 +2145,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "gemFlawlessAmber",
                 'e',
-                getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                 'f',
                 "gemFlawlessAmber",
                 'g',
@@ -2119,7 +2222,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("PURESILVER", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "JARLABEL",
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 2),
                 "abc",
                 "def",
@@ -2144,18 +2247,18 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("JARVOID", new ResearchPage("tc.research_page.JARVOID.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "JARVOID",
-                getModItem("Thaumcraft", "blockJar", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 3, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("vacuos"), 7).add(Aspect.getAspect("praecantatio"), 7)
                         .add(Aspect.getAspect("perditio"), 7).add(Aspect.getAspect("aqua"), 7),
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17804, missing),
-                        getModItem("minecraft", "blaze_powder", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17533, missing),
-                        getModItem("Thaumcraft", "ItemNugget", 1, 5, missing), });
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17533, missing),
+                        getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing), });
         TCHelper.addResearchPage(
                 "JARVOID",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "blockJar", 1, 3, missing))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockJar", 1, 3, missing))));
         TCHelper.setResearchAspects(
                 "JARVOID",
                 new AspectList().add(Aspect.getAspect("vacuos"), 6).add(Aspect.getAspect("perditio"), 9)
@@ -2163,8 +2266,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("JARVOID", 1);
         ThaumcraftApi.addCrucibleRecipe(
                 "BATHSALTS",
-                getModItem("Thaumcraft", "ItemBathSalts", 2, 0, missing),
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemBathSalts", 2, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 new AspectList().add(Aspect.getAspect("sano"), 10).add(Aspect.getAspect("cognitio"), 10)
                         .add(Aspect.getAspect("auram"), 10).add(Aspect.getAspect("ordo"), 10));
         TCHelper.setResearchAspects(
@@ -2175,8 +2278,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("BATHSALTS", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "SANESOAP",
-                getModItem("Thaumcraft", "ItemSanitySoap", 2, 0, missing),
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemSanitySoap", 2, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 20).add(Aspect.getAspect("cognitio"), 20)
                         .add(Aspect.getAspect("sano"), 20).add(Aspect.getAspect("ordo"), 20));
         TCHelper.setResearchAspects(
@@ -2189,24 +2292,24 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("ARCANESPA", new ResearchPage("tc.research_page.ARCANESPA.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARCANESPA",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 12, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("aqua"), 32)
                         .add(Aspect.getAspect("machina"), 8),
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                new ItemStack[] { getModItem("dreamcraft", "item.StainlessSteelBars", 1, 0, missing),
-                        getModItem("minecraft", "quartz_block", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
-                        getModItem("Thaumcraft", "ItemBathSalts", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
-                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
-                        getModItem("minecraft", "quartz_block", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                new ItemStack[] { getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                        getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "ItemBathSalts", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(Minecraft.ID, "quartz_block", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "ARCANESPA",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 12, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12, missing))));
         TCHelper.setResearchAspects(
                 "ARCANESPA",
                 new AspectList().add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("aqua"), 9)
@@ -2233,15 +2336,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("strontio"), 3));
         TCHelper.setResearchComplexity("BOTTLETAINT", 3);
         ThaumcraftApi.addWarpToResearch("BOTTLETAINT", 5);
-        ThaumcraftApi.addWarpToItem(getModItem("Thaumcraft", "ItemBottleTaint", 1, 0, missing), 1);
+        ThaumcraftApi.addWarpToItem(getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0, missing), 1);
         ThaumcraftApi.addCrucibleRecipe(
                 "THAUMIUM",
-                getModItem("Thaumcraft", "ItemResource", 1, 2, missing),
-                getModItem("minecraft", "iron_ingot", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 2, missing),
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("praecantatio"), 4));
         ThaumcraftApi.addCrucibleRecipe(
                 "GT_CRYSTALLISATION",
-                getModItem("Thaumcraft", "ItemResource", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing),
                 "dustAmber",
                 new AspectList().add(Aspect.getAspect("vitreus"), 4));
         TCHelper.refreshResearchPages("CRUCIBLE");
@@ -2281,72 +2384,149 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void artifice() {
         // ARTIFICE
 
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGoggles", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemResource", 1, 15, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemResource", 1, 10, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 3, 6, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 9, 6, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 4, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 4, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 2, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemResource", 1, 7, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemChestplateRobe", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemLeggingsRobe", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemBootsRobe", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockMetalDevice", 1, 7, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockMetalDevice", 1, 8, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockMetalDevice", 1, 13, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockLifter", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemArcaneDoor", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockWoodenDevice", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticOpaque", 8, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ArcaneDoorKey", 2, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ArcaneDoorKey", 2, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockWoodenDevice", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemCompassStone", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockWoodenDevice", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 14, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "BootsTraveller", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemAmuletRunic", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemAmuletRunic", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemRingRunic", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemRingRunic", 1, 2, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemRingRunic", 1, 3, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGirdleRunic", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGirdleRunic", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGirdleRunic", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockWoodenDevice", 1, 4, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockWoodenDevice", 1, 5, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemPickaxeElemental", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemAxeElemental", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemSwordElemental", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemShovelElemental", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemHoeElemental", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "HoverHarness", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGirdleHover", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockMirror", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "HandMirror", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockMirror", 1, 6, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockJar", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemHelmetFortress", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemChestplateFortress", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemLeggingsFortress", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemBowBone", 1, 0, missing));
+        addShapelessCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
+                new Object[] { getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
+                        getModItem(Minecraft.ID, "feather", 1, 0, missing), "dyeBlack" });
+        addShapedRecipe(
+                getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing),
+                new Object[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing), "itemCasingGold", "lensDiamond",
+                        "itemCasingGold", getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing) });
+        addShapedRecipe(
+                getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing),
+                new Object[] { "slabWood", "slabWood", "slabWood", "stickWood", "screwAnyIron", "stickWood", "slabWood",
+                        "craftingToolScrewdriver", "slabWood" });
+        addShapelessCraftingRecipe(
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 2, 0, missing),
+                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing), "craftingToolSaw" });
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(400)
+                .eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24502, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24511, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24512, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24527, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24541, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 19, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 91, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 10023, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
+                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 3, 6, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 9, 6, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 2, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBootsRobe", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 13, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockLifter", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemArcaneDoor", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 8, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ArcaneDoorKey", 2, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ArcaneDoorKey", 2, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemCompassStone", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 2, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 3, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 4, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemHoeElemental", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "HoverHarness", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGirdleHover", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockMirror", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "HandMirror", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockMirror", 1, 6, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockJar", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemHelmetFortress", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemChestplateFortress", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsFortress", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBowBone", 1, 0, missing));
         TCHelper.clearPages("RESEARCH");
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.1"));
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.2"));
         TCHelper.addResearchPage(
                 "RESEARCH",
                 new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "ItemThaumometer", 1, 0, missing))));
+                        TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing))));
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.3"));
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.4"));
         TCHelper.addResearchPage(
                 "RESEARCH",
-                new ResearchPage(TCHelper.findCraftingRecipe(getModItem("Thaumcraft", "ItemInkwell", 1, 0, missing))));
+                new ResearchPage(TCHelper.findCraftingRecipe(getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing))));
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.5"));
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.6"));
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.7"));
@@ -2357,7 +2537,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("RESEARCH", new ResearchPage("tc.research_page.RESEARCH.12"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GOGGLES",
-                getModItem("Thaumcraft", "ItemGoggles", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
                         .add(Aspect.getAspect("ignis"), 30).add(Aspect.getAspect("aqua"), 30)
                         .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("perditio"), 30),
@@ -2365,11 +2545,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                 'b',
                 "screwGold",
                 'c',
-                getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                 'd',
                 "ringGold",
                 'e',
@@ -2377,11 +2557,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "ringGold",
                 'g',
-                getModItem("Thaumcraft", "ItemThaumometer", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing),
                 'h',
                 "stickGold",
                 'i',
-                getModItem("Thaumcraft", "ItemThaumometer", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "GOGGLES",
                 new AspectList().add(Aspect.getAspect("auram"), 3).add(Aspect.getAspect("praecantatio"), 9)
@@ -2391,7 +2571,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("BASICARTIFACE", new ResearchPage("tc.research_page.BASICARTIFACE.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50)
                         .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
@@ -2399,29 +2579,29 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'd',
-                getModItem("gregtech", "gt.metaitem.01", 1, 28351, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28351, missing),
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'f',
-                getModItem("gregtech", "gt.metaitem.01", 1, 28351, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28351, missing),
                 'g',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemResource", 1, 15, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("ignis"), 10)
                         .add(Aspect.getAspect("ordo"), 10),
                 "abc",
@@ -2442,16 +2622,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'g',
                 "screwGold",
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'i',
                 "screwGold");
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("ignis"), 10)
                         .add(Aspect.getAspect("ordo"), 5),
                 "abc",
@@ -2478,10 +2658,10 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 1, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("ordo"), 10),
                 "abc",
@@ -2508,39 +2688,63 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BASICARTIFACE",
-                getModItem("Thaumcraft", "ItemResource", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("terra"), 30)
                         .add(Aspect.getAspect("ignis"), 30),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"ender\",Amount:1000}}", missing),
+                createItemStack(
+                        IndustrialCraft2.ID,
+                        "itemFluidCell",
+                        1,
+                        0,
+                        "{Fluid:{FluidName:\"ender\",Amount:1000}}",
+                        missing),
                 'b',
                 "gemMercury",
                 'c',
-                createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"ender\",Amount:1000}}", missing),
+                createItemStack(
+                        IndustrialCraft2.ID,
+                        "itemFluidCell",
+                        1,
+                        0,
+                        "{Fluid:{FluidName:\"ender\",Amount:1000}}",
+                        missing),
                 'd',
                 "gemMercury",
                 'e',
-                getModItem("minecraft", "glass_pane", 1, 0, missing),
+                getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
                 'f',
                 "gemMercury",
                 'g',
-                createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"ender\",Amount:1000}}", missing),
+                createItemStack(
+                        IndustrialCraft2.ID,
+                        "itemFluidCell",
+                        1,
+                        0,
+                        "{Fluid:{FluidName:\"ender\",Amount:1000}}",
+                        missing),
                 'h',
                 "gemMercury",
                 'i',
-                createItemStack("IC2", "itemFluidCell", 1, 0, "{Fluid:{FluidName:\"ender\",Amount:1000}}", missing));
+                createItemStack(
+                        IndustrialCraft2.ID,
+                        "itemFluidCell",
+                        1,
+                        0,
+                        "{Fluid:{FluidName:\"ender\",Amount:1000}}",
+                        missing));
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemResource", 1, 10, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANESTONE",
-                getModItem("Thaumcraft", "blockCosmeticSolid", 8, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 8, 6, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("terra"), 8)
                         .add(Aspect.getAspect("ignis"), 8).add(Aspect.getAspect("aqua"), 8)
                         .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("perditio"), 8),
@@ -2556,7 +2760,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "stone",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 32767, missing),
                 'f',
                 "stone",
                 'g',
@@ -2570,20 +2774,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ARCANESTONE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing))));
         TCHelper.addResearchPage(
                 "ARCANESTONE",
                 new ResearchPage(
                         TCHelper.findCraftingRecipe(
-                                getModItem("Thaumcraft", "blockStairsArcaneStone", 1, 0, missing))));
+                                getModItem(Thaumcraft.ID, "blockStairsArcaneStone", 1, 0, missing))));
         TCHelper.addResearchPage(
                 "ARCANESTONE",
                 new ResearchPage(
                         TCHelper.findCraftingRecipe(
-                                getModItem("Thaumcraft", "blockCosmeticSlabStone", 1, 0, missing))));
+                                getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INFUSION",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("terra"), 40)
                         .add(Aspect.getAspect("ignis"), 40).add(Aspect.getAspect("aqua"), 40)
                         .add(Aspect.getAspect("ordo"), 40).add(Aspect.getAspect("perditio"), 40),
@@ -2591,44 +2795,44 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'e',
-                getModItem("minecraft", "ender_eye", 1, 0, missing),
+                getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'g',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "INFUSION",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'e',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'g',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing));
         TCHelper.setResearchAspects(
                 "INFUSION",
                 new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("machina"), 9)
@@ -2639,7 +2843,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("PAVETRAVEL", new ResearchPage("tc.research_page.PAVETRAVEL.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "PAVETRAVEL",
-                getModItem("Thaumcraft", "blockCosmeticSolid", 4, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4, 2, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 12).add(Aspect.getAspect("ordo"), 12)
                         .add(Aspect.getAspect("terra"), 12),
                 "abc",
@@ -2654,7 +2858,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "plateInfusedEarth",
                 'e',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'f',
                 "plateInfusedEarth",
                 'g',
@@ -2666,7 +2870,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage(
                 "PAVETRAVEL",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 2, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing))));
         TCHelper.setResearchAspects(
                 "PAVETRAVEL",
                 new AspectList().add(Aspect.getAspect("iter"), 9).add(Aspect.getAspect("volatus"), 6)
@@ -2676,7 +2880,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("PAVEWARD", new ResearchPage("tc.research_page.PAVEWARD.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "PAVEWARD",
-                getModItem("Thaumcraft", "blockCosmeticSolid", 4, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 4, 3, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 12).add(Aspect.getAspect("ordo"), 12)
                         .add(Aspect.getAspect("terra"), 12),
                 "abc",
@@ -2691,7 +2895,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "plateInfusedFire",
                 'e',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'f',
                 "plateInfusedFire",
                 'g',
@@ -2703,7 +2907,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage(
                 "PAVEWARD",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 3, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 3, missing))));
         TCHelper.addResearchPage("PAVEWARD", new ResearchPage("tc.research_page.PAVEWARD.2"));
         TCHelper.setResearchAspects(
                 "PAVEWARD",
@@ -2714,7 +2918,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("GRATE", new ResearchPage("tc.research_page.GRATE.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GRATE",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("ordo"), 5),
                 "abc",
@@ -2723,30 +2927,30 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "screwSteel",
                 'b',
-                getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
                 'c',
                 "screwSteel",
                 'd',
                 "wireGt01RedAlloy",
                 'e',
-                getModItem("dreamcraft", "item.AluminiumBars", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing),
                 'f',
                 "craftingToolScrewdriver",
                 'g',
                 "screwSteel",
                 'h',
-                getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
                 'i',
                 "screwSteel");
         TCHelper.addResearchPage(
                 "GRATE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "blockMetalDevice", 1, 5, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 5, missing))));
         TCHelper.clearPages("ENCHFABRIC");
         TCHelper.addResearchPage("ENCHFABRIC", new ResearchPage("tc.research_page.ENCHFABRIC.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("terra"), 5)
                         .add(Aspect.getAspect("ignis"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
@@ -2754,23 +2958,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("minecraft", "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
                 'b',
-                getModItem("minecraft", "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
                 'c',
-                getModItem("minecraft", "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
                 'd',
-                getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                 'e',
-                getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                 'f',
-                getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
                 'g',
-                getModItem("minecraft", "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
                 'h',
-                getModItem("minecraft", "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
                 'i',
-                getModItem("minecraft", "string", 1, 0, missing));
+                getModItem(Minecraft.ID, "string", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "ENCHFABRIC",
                 new AspectList().add(Aspect.getAspect("pannus"), 6).add(Aspect.getAspect("praecantatio"), 6)
@@ -2778,94 +2982,94 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ENCHFABRIC", 1);
         TCHelper.addResearchPage(
                 "ENCHFABRIC",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemResource", 1, 7, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing))));
         TCHelper.addResearchPage("ENCHFABRIC", new ResearchPage("tc.research_page.ENCHFABRIC.2"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
-                getModItem("Thaumcraft", "ItemChestplateRobe", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
                         .add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("ordo"), 15),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'b',
                 "plateThaumium",
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'e',
                 "plateThaumium",
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing));
         TCHelper.addResearchPage(
                 "ENCHFABRIC",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemChestplateRobe", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
-                getModItem("Thaumcraft", "ItemLeggingsRobe", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
                         .add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("perditio"), 15),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'e',
                 "plateThaumium",
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'h',
                 "plateThaumium",
                 'i',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing));
         TCHelper.addResearchPage(
                 "ENCHFABRIC",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemLeggingsRobe", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ENCHFABRIC",
-                getModItem("Thaumcraft", "ItemBootsRobe", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemBootsRobe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("terra"), 15)
                         .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aqua"), 15),
                 "abc",
                 "def",
                 "ghi",
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'e',
                 "plateThaumium",
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'h',
                 "plateThaumium",
                 'i',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing));
         TCHelper.addResearchPage(
                 "ENCHFABRIC",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemBootsRobe", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBootsRobe", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANELAMP",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("perditio"), 5)
                         .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aqua"), 5),
                 "abc",
@@ -2874,19 +3078,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "paneGlassColorless",
                 'b',
-                getModItem("minecraft", "daylight_detector", 1, 0, missing),
+                getModItem(Minecraft.ID, "daylight_detector", 1, 0, missing),
                 'c',
                 "paneGlassColorless",
                 'd',
                 "plateSteel",
                 'e',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0, missing),
                 'f',
                 "plateSteel",
                 'g',
                 "paneGlassColorless",
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 'i',
                 "paneGlassColorless");
         TCHelper.setResearchAspects(
@@ -2896,17 +3100,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ARCANELAMP", 1);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "LAMPGROWTH",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("herba"), 20).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("victus"), 20).add(Aspect.getAspect("messis"), 10),
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 7, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("minecraft", "dye", 1, 15, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("minecraft", "dye", 1, 15, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing), });
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(Minecraft.ID, "dye", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(Minecraft.ID, "dye", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
         TCHelper.setResearchAspects(
                 "LAMPGROWTH",
                 new AspectList().add(Aspect.getAspect("messis"), 9).add(Aspect.getAspect("lux"), 3)
@@ -2914,17 +3118,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("LAMPGROWTH", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "LAMPFERTILITY",
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 13, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 13, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("bestia"), 20).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("victus"), 20).add(Aspect.getAspect("sano"), 10),
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 7, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("minecraft", "wheat", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("minecraft", "golden_carrot", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing), });
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 7, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(Minecraft.ID, "wheat", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(Minecraft.ID, "golden_carrot", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing), });
         TCHelper.setResearchAspects(
                 "LAMPFERTILITY",
                 new AspectList().add(Aspect.getAspect("bestia"), 9).add(Aspect.getAspect("lux"), 3)
@@ -2932,30 +3136,30 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("LAMPFERTILITY", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "LEVITATOR",
-                getModItem("Thaumcraft", "blockLifter", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockLifter", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("ordo"), 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'b',
                 "plateInfusedAir",
                 'c',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 'e',
                 "rotorThaumium",
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                 'g',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'h',
                 "plateInfusedEarth",
                 'i',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing));
         TCHelper.setResearchAspects(
                 "LEVITATOR",
                 new AspectList().add(Aspect.getAspect("aer"), 3).add(Aspect.getAspect("volatus"), 6)
@@ -2963,28 +3167,28 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("LEVITATOR", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
-                getModItem("Thaumcraft", "ItemArcaneDoor", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemArcaneDoor", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 10),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                 'c',
                 "craftingToolScrewdriver",
                 'd',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'e',
                 "ringThaumium",
                 'f',
                 "screwThaumium",
                 'g',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'h',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'i',
                 "craftingToolSaw");
         TCHelper.setResearchAspects(
@@ -2994,7 +3198,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("WARDEDARCANA", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("perditio"), 10),
                 "abc",
@@ -3007,20 +3211,20 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'c',
                 "screwThaumium",
                 'd',
-                getModItem("Thaumcraft", "blockCosmeticSlabWood", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0, missing),
                 'e',
-                getModItem("minecraft", "heavy_weighted_pressure_plate", 1, 0, missing),
+                getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCosmeticSlabWood", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0, missing),
                 'g',
                 "plateThaumium",
                 'h',
-                getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                 'i',
                 "plateThaumium");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 4, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 4, 2, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("aqua"), 10)
                         .add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("ordo"), 10)
                         .add(Aspect.getAspect("perditio"), 10).add(Aspect.getAspect("terra"), 10),
@@ -3034,11 +3238,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'c',
                 "blockGlass",
                 'd',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'e',
-                getModItem("Thaumcraft", "FocusWarding", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusWarding", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'g',
                 "blockGlass",
                 'h',
@@ -3047,7 +3251,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "blockGlass");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
-                getModItem("Thaumcraft", "ArcaneDoorKey", 2, 0, missing),
+                getModItem(Thaumcraft.ID, "ArcaneDoorKey", 2, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("ordo"), 5),
                 "abc",
@@ -3068,10 +3272,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'g',
                 "boltIron",
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WARDEDARCANA",
-                getModItem("Thaumcraft", "ArcaneDoorKey", 2, 1, missing),
+                getModItem(Thaumcraft.ID, "ArcaneDoorKey", 2, 1, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ignis"), 10)
                         .add(Aspect.getAspect("ordo"), 10),
                 "abc",
@@ -3095,7 +3299,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "craftingToolHardHammer");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANEEAR",
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("ordo"), 10),
                 "abc",
@@ -3104,21 +3308,21 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "plateThaumium",
                 'b',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32690, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing),
                 'c',
                 "plateThaumium",
                 'd',
                 "plateGold",
                 'e',
-                getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                 'f',
                 "plateGold",
                 'g',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'h',
                 "wireGt01RedAlloy",
                 'i',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing));
         TCHelper.setResearchAspects(
                 "ARCANEEAR",
                 new AspectList().add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("sensus"), 9)
@@ -3126,18 +3330,18 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ARCANEEAR", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "SINSTONE",
-                getModItem("Thaumcraft", "ItemCompassStone", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemCompassStone", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("alienis"), 10).add(Aspect.getAspect("auram"), 10)
                         .add(Aspect.getAspect("sensus"), 10).add(Aspect.getAspect("tenebrae"), 10)
                         .add(Aspect.getAspect("ordo"), 10),
-                getModItem("minecraft", "flint", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 9, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 5, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 6, missing), });
+                getModItem(Minecraft.ID, "flint", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 9, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "SINSTONE",
                 new AspectList().add(Aspect.getAspect("auram"), 6).add(Aspect.getAspect("sensus"), 3)
@@ -3146,29 +3350,29 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("SINSTONE", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BELLOWS",
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("ordo"), 10),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticSlabWood", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0, missing),
                 'b',
                 "shardAir",
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticSlabWood", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0, missing),
                 'd',
-                getModItem("Backpack", "tannedLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                 'e',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32640, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                 'f',
-                getModItem("Backpack", "tannedLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                 'g',
-                getModItem("Thaumcraft", "blockCosmeticSlabWood", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0, missing),
                 'h',
                 "shardAir",
                 'i',
-                getModItem("Thaumcraft", "blockCosmeticSlabWood", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "BELLOWS",
                 new AspectList().add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("aer"), 12)
@@ -3178,24 +3382,24 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("FLUXSCRUB", new ResearchPage("tc.research_page.FLUXSCRUB.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FLUXSCRUB",
-                getModItem("Thaumcraft", "blockStoneDevice", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("aer"), 20)
                         .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("vinculum"), 10)
                         .add(Aspect.getAspect("vitium"), 5),
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockTube", 1, 0, missing),
-                        getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
-                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
-                        getModItem("Thaumcraft", "blockTube", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
-                        getModItem("dreamcraft", "item.SteelBars", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "blockTube", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "FLUXSCRUB",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "blockStoneDevice", 1, 14, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing))));
         TCHelper.setResearchAspects(
                 "FLUXSCRUB",
                 new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("praecantatio"), 12)
@@ -3204,19 +3408,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FLUXSCRUB", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "BOOTSTRAVELLER",
-                getModItem("Thaumcraft", "BootsTraveller", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("volatus"), 25).add(Aspect.getAspect("aer"), 25)
                         .add(Aspect.getAspect("iter"), 25).add(Aspect.getAspect("aqua"), 5),
-                getModItem("minecraft", "leather_boots", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("minecraft", "feather", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("minecraft", "fish", 1, 32767, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing), });
+                getModItem(Minecraft.ID, "leather_boots", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Minecraft.ID, "feather", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Minecraft.ID, "fish", 1, 32767, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing), });
         TCHelper.setResearchAspects(
                 "BOOTSTRAVELLER",
                 new AspectList().add(Aspect.getAspect("aqua"), 9).add(Aspect.getAspect("iter"), 15)
@@ -3225,17 +3429,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("BOOTSTRAVELLER", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "RUNICARMOR",
-                getModItem("Thaumcraft", "ItemRingRunic", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 1, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("potentia"), 25).add(Aspect.getAspect("tutamen"), 25)
                         .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("alienis"), 5),
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 1, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29514, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("Thaumcraft", "ItemInkwell", 1, 0, missing),
-                        getModItem("minecraft", "blaze_powder", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29514, missing), });
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29514, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29514, missing), });
         TCHelper.setResearchAspects(
                 "RUNICARMOR",
                 new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("tutamen"), 12)
@@ -3244,20 +3448,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("RUNICARMOR", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "RUNICCHARGED",
-                getModItem("Thaumcraft", "ItemRingRunic", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 2, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("tutamen"), 32)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("alienis"), 16)
                         .add(Aspect.getAspect("aer"), 8),
-                getModItem("Thaumcraft", "ItemRingRunic", 1, 1, missing),
-                new ItemStack[] { getModItem("minecraft", "potion", 1, 8226, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("minecraft", "potion", 1, 8226, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing), });
+                getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 1, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "potion", 1, 8226, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(Minecraft.ID, "potion", 1, 8226, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing), });
         TCHelper.setResearchAspects(
                 "RUNICCHARGED",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("potentia"), 12)
@@ -3267,20 +3471,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("RUNICCHARGED", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "RUNICHEALING",
-                getModItem("Thaumcraft", "ItemRingRunic", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 3, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("aqua"), 64).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("sano"), 32).add(Aspect.getAspect("tutamen"), 32)
                         .add(Aspect.getAspect("aer"), 8),
-                getModItem("Thaumcraft", "ItemRingRunic", 1, 1, missing),
-                new ItemStack[] { getModItem("minecraft", "potion", 1, 8225, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("minecraft", "potion", 1, 8225, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing), });
+                getModItem(Thaumcraft.ID, "ItemRingRunic", 1, 1, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "potion", 1, 8225, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(Minecraft.ID, "potion", 1, 8225, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
         TCHelper.setResearchAspects(
                 "RUNICHEALING",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("aqua"), 15)
@@ -3290,35 +3494,35 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("RUNICHEALING", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "RUNICARMOR",
-                getModItem("Thaumcraft", "ItemAmuletRunic", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("potentia"), 40).add(Aspect.getAspect("tutamen"), 40)
                         .add(Aspect.getAspect("praecantatio"), 40).add(Aspect.getAspect("alienis"), 20),
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29514, missing),
-                        getModItem("minecraft", "blaze_powder", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("Thaumcraft", "ItemInkwell", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("minecraft", "blaze_powder", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29514, missing), });
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29514, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29514, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "RUNICEMERGENCY",
-                getModItem("Thaumcraft", "ItemAmuletRunic", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 1, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("terra"), 64)
                         .add(Aspect.getAspect("tutamen"), 64).add(Aspect.getAspect("vacuos"), 32)
                         .add(Aspect.getAspect("sano"), 8),
-                getModItem("Thaumcraft", "ItemAmuletRunic", 1, 0, missing),
-                new ItemStack[] { getModItem("minecraft", "potion", 1, 8233, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("minecraft", "potion", 1, 8233, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing), });
+                getModItem(Thaumcraft.ID, "ItemAmuletRunic", 1, 0, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "potion", 1, 8233, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Minecraft.ID, "potion", 1, 8233, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
         TCHelper.setResearchAspects(
                 "RUNICEMERGENCY",
                 new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("praecantatio"), 12)
@@ -3328,37 +3532,37 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("RUNICEMERGENCY", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "RUNICARMOR",
-                getModItem("Thaumcraft", "ItemGirdleRunic", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("potentia"), 55).add(Aspect.getAspect("tutamen"), 55)
                         .add(Aspect.getAspect("praecantatio"), 55).add(Aspect.getAspect("alienis"), 35),
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29514, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("minecraft", "blaze_powder", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("Thaumcraft", "ItemInkwell", 1, 0, missing),
-                        getModItem("minecraft", "blaze_powder", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("minecraft", "blaze_powder", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29514, missing), });
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29514, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29514, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "RUNICKINETIC",
-                getModItem("Thaumcraft", "ItemGirdleRunic", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 1, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("praecantatio"), 64)
                         .add(Aspect.getAspect("tutamen"), 64).add(Aspect.getAspect("bestia"), 32)
                         .add(Aspect.getAspect("telum"), 8),
-                getModItem("Thaumcraft", "ItemGirdleRunic", 1, 0, missing),
-                new ItemStack[] { getModItem("minecraft", "potion", 1, 16428, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("minecraft", "potion", 1, 16428, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "potion", 1, 16428, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Minecraft.ID, "potion", 1, 16428, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "RUNICKINETIC",
                 new AspectList().add(Aspect.getAspect("aer"), 18).add(Aspect.getAspect("praecantatio"), 15)
@@ -3368,22 +3572,22 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("RUNICKINETIC", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARCANEBORE",
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("machina"), 64).add(Aspect.getAspect("motus"), 32)
                         .add(Aspect.getAspect("perditio"), 64).add(Aspect.getAspect("potentia"), 32)
                         .add(Aspect.getAspect("vacuos"), 32),
-                getModItem("gregtech", "gt.metaitem.01", 1, 32641, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 24500, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemShovelThaumium", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 24500, missing),
-                        getModItem("Thaumcraft", "ItemPickThaumium", 1, 0, missing), });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24500, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemShovelThaumium", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24500, missing),
+                        getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "ARCANEBORE",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("perfodio"), 12)
@@ -3392,43 +3596,43 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ARCANEBORE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCANEBORE",
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 30).add(Aspect.getAspect("ordo"), 30)
                         .add(Aspect.getAspect("terra"), 30),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticSlabWood", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0, missing),
                 'b',
                 "pipeSmallSteel",
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticSlabWood", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSlabWood", 1, 0, missing),
                 'd',
                 "plateSteel",
                 'e',
-                getModItem("minecraft", "dispenser", 1, 0, missing),
+                getModItem(Minecraft.ID, "dispenser", 1, 0, missing),
                 'f',
                 "plateSteel",
                 'g',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'h',
                 "wireFineSteel",
                 'i',
-                getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ELEMENTALPICK",
-                getModItem("Thaumcraft", "ItemPickaxeElemental", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing),
                 3,
                 new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("perfodio"), 20)
                         .add(Aspect.getAspect("sensus"), 20).add(Aspect.getAspect("lucrum"), 20),
-                getModItem("Thaumcraft", "ItemPickThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 29502, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing), });
+                getModItem(Thaumcraft.ID, "ItemPickThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 29502, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing), });
         TCHelper.setResearchAspects(
                 "ELEMENTALPICK",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("ignis"), 12)
@@ -3437,17 +3641,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ELEMENTALPICK", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ELEMENTALAXE",
-                getModItem("Thaumcraft", "ItemAxeElemental", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
                 3,
                 new AspectList().add(Aspect.getAspect("aqua"), 10).add(Aspect.getAspect("arbor"), 20)
                         .add(Aspect.getAspect("fabrico"), 20).add(Aspect.getAspect("motus"), 20),
-                getModItem("Thaumcraft", "ItemAxeThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 29503, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing), });
+                getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 29503, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
         TCHelper.setResearchAspects(
                 "ELEMENTALAXE",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("motus"), 12)
@@ -3456,17 +3660,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ELEMENTALAXE", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ELEMENTALSWORD",
-                getModItem("Thaumcraft", "ItemSwordElemental", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
                 3,
                 new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("motus"), 20)
                         .add(Aspect.getAspect("potentia"), 20).add(Aspect.getAspect("telum"), 20),
-                getModItem("Thaumcraft", "ItemSwordThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 29528, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 29528, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "ELEMENTALSWORD",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("telum"), 12)
@@ -3475,17 +3679,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ELEMENTALSWORD", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ELEMENTALSHOVEL",
-                getModItem("Thaumcraft", "ItemShovelElemental", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
                 3,
                 new AspectList().add(Aspect.getAspect("fabrico"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("perfodio"), 10).add(Aspect.getAspect("praecantatio"), 20),
-                getModItem("Thaumcraft", "ItemShovelThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 29501, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing), });
+                getModItem(Thaumcraft.ID, "ItemShovelThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 29501, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
         TCHelper.setResearchAspects(
                 "ELEMENTALSHOVEL",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("terra"), 12)
@@ -3494,17 +3698,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ELEMENTALSHOVEL", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ELEMENTALHOE",
-                getModItem("Thaumcraft", "ItemHoeElemental", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemHoeElemental", 1, 0, missing),
                 3,
                 new AspectList().add(Aspect.getAspect("meto"), 10).add(Aspect.getAspect("herba"), 20)
                         .add(Aspect.getAspect("terra"), 20).add(Aspect.getAspect("messis"), 20),
-                getModItem("Thaumcraft", "ItemHoeThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 29514, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing), });
+                getModItem(Thaumcraft.ID, "ItemHoeThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 29514, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), });
         TCHelper.setResearchAspects(
                 "ELEMENTALHOE",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("victus"), 12)
@@ -3513,22 +3717,22 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ELEMENTALHOE", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "HOVERHARNESS",
-                getModItem("Thaumcraft", "HoverHarness", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "HoverHarness", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("machina"), 64)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("volatus"), 32)
                         .add(Aspect.getAspect("tutamen"), 16),
-                getModItem("minecraft", "leather_chestplate", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17019, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("ProjRed|Integration", "projectred.integration.gate", 1, 26, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17019, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing), });
+                getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "HOVERHARNESS",
                 new AspectList().add(Aspect.getAspect("volatus"), 15).add(Aspect.getAspect("machina"), 12)
@@ -3537,21 +3741,21 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("HOVERHARNESS", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "HOVERGIRDLE",
-                getModItem("Thaumcraft", "ItemGirdleHover", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGirdleHover", 1, 0, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("iter"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("volatus"), 32)
                         .add(Aspect.getAspect("tutamen"), 16),
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("minecraft", "feather", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17019, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17019, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("TwilightForest", "item.tfFeather", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Minecraft.ID, "feather", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(TwilightForest.ID, "item.tfFeather", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "HOVERGIRDLE",
                 new AspectList().add(Aspect.getAspect("volatus"), 15).add(Aspect.getAspect("motus"), 12)
@@ -3567,19 +3771,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("RUNICARMOR", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MIRROR",
-                getModItem("Thaumcraft", "blockMirror", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMirror", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("permutatio"), 24)
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("alienis"), 8),
-                getModItem("Thaumcraft", "ItemResource", 1, 10, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17367, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17367, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing), });
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing), });
         TCHelper.setResearchAspects(
                 "MIRROR",
                 new AspectList().add(Aspect.getAspect("vitreus"), 15).add(Aspect.getAspect("iter"), 12)
@@ -3589,20 +3793,20 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("MIRROR", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MIRRORHAND",
-                getModItem("Thaumcraft", "HandMirror", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "HandMirror", 1, 0, missing),
                 9,
                 new AspectList().add(Aspect.getAspect("instrumentum"), 64).add(Aspect.getAspect("iter"), 32)
                         .add(Aspect.getAspect("motus"), 24).add(Aspect.getAspect("alienis"), 16)
                         .add(Aspect.getAspect("potentia"), 8),
-                getModItem("Thaumcraft", "blockMirror", 1, 0, missing),
-                new ItemStack[] { getModItem("minecraft", "compass", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("minecraft", "map", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("Thaumcraft", "WandRod", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing), });
+                getModItem(Thaumcraft.ID, "blockMirror", 1, 0, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "compass", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(Minecraft.ID, "map", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing), });
         TCHelper.setResearchAspects(
                 "MIRRORHAND",
                 new AspectList().add(Aspect.getAspect("iter"), 18).add(Aspect.getAspect("instrumentum"), 15)
@@ -3613,19 +3817,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("MIRRORHAND", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MIRRORESSENTIA",
-                getModItem("Thaumcraft", "blockMirror", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockMirror", 1, 6, missing),
                 2,
                 new AspectList().add(Aspect.getAspect("aqua"), 24).add(Aspect.getAspect("iter"), 32)
                         .add(Aspect.getAspect("permutatio"), 16).add(Aspect.getAspect("vitreus"), 8),
-                getModItem("Thaumcraft", "ItemResource", 1, 10, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17028, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17305, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17028, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17305, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing), });
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17028, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17028, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing), });
         TCHelper.setResearchAspects(
                 "MIRRORESSENTIA",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("iter"), 12)
@@ -3636,17 +3840,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("MIRRORESSENTIA", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "JARBRAIN",
-                getModItem("Thaumcraft", "blockJar", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 1, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("exanimis"), 30)
                         .add(Aspect.getAspect("sensus"), 15).add(Aspect.getAspect("alienis"), 10),
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("minecraft", "poisonous_potato", 1, 0, missing),
-                        getModItem("minecraft", "spider_eye", 1, 0, missing),
-                        getModItem("minecraft", "water_bucket", 1, 0, missing),
-                        getModItem("minecraft", "spider_eye", 1, 0, missing),
-                        getModItem("minecraft", "poisonous_potato", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(Minecraft.ID, "poisonous_potato", 1, 0, missing),
+                        getModItem(Minecraft.ID, "spider_eye", 1, 0, missing),
+                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                        getModItem(Minecraft.ID, "spider_eye", 1, 0, missing),
+                        getModItem(Minecraft.ID, "poisonous_potato", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "JARBRAIN",
                 new AspectList().add(Aspect.getAspect("lucrum"), 15).add(Aspect.getAspect("fames"), 12)
@@ -3662,19 +3866,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("INFUSIONENCHANTMENT", 4);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARMORFORTRESS",
-                getModItem("Thaumcraft", "ItemHelmetFortress", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemHelmetFortress", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("victus"), 16),
-                getModItem("Thaumcraft", "ItemHelmetThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 29501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing), });
+                getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 29501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), });
         TCHelper.setResearchAspects(
                 "ARMORFORTRESS",
                 new AspectList().add(Aspect.getAspect("fabrico"), 15).add(Aspect.getAspect("metallum"), 12)
@@ -3683,36 +3887,36 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ARMORFORTRESS", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARMORFORTRESS",
-                getModItem("Thaumcraft", "ItemChestplateFortress", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemChestplateFortress", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("tutamen"), 40).add(Aspect.getAspect("cognitio"), 16),
-                getModItem("Thaumcraft", "ItemChestplateThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing), });
+                getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARMORFORTRESS",
-                getModItem("Thaumcraft", "ItemLeggingsFortress", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemLeggingsFortress", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("tutamen"), 24).add(Aspect.getAspect("terra"), 16),
-                getModItem("Thaumcraft", "ItemLeggingsThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing), });
+                getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), });
         TCHelper.setResearchAspects(
                 "HELMGOGGLES",
                 new AspectList().add(Aspect.getAspect("tutamen"), 15).add(Aspect.getAspect("sensus"), 12)
@@ -3742,28 +3946,28 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("MASKSIPPINGFIEND", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BONEBOW",
-                getModItem("Thaumcraft", "ItemBowBone", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemBowBone", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("perditio"), 32)
                         .add(Aspect.getAspect("terra"), 32),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Natura", "barleyFood", 1, 7, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 7, missing),
                 'b',
-                getModItem("minecraft", "bone", 1, 0, missing),
+                getModItem(Minecraft.ID, "bone", 1, 0, missing),
                 'c',
                 "screwThaumium",
                 'd',
-                getModItem("Natura", "barleyFood", 1, 7, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 7, missing),
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 'f',
-                getModItem("dreamcraft", "item.LichBone", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.LichBone", 1, 0, missing),
                 'g',
-                getModItem("Natura", "barleyFood", 1, 7, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 7, missing),
                 'h',
-                getModItem("minecraft", "bone", 1, 0, missing),
+                getModItem(Minecraft.ID, "bone", 1, 0, missing),
                 'i',
                 "screwThaumium");
         TCHelper.setResearchAspects(
@@ -3818,47 +4022,51 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void golemancy() {
         // GOLEMANCY
 
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockChestHungry", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "TrunkSpawner", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 9, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 1, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 2, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 3, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 4, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 5, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 6, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 7, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 100, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 2, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 1, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 3, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 4, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 8, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 10, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 5, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 6, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 9, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 11, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 7, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 4, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 5, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemDecoration", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemDecoration", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemDecoration", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemDecoration", 1, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemDecoration", 1, 4, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemDecoration", 1, 5, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemDecoration", 1, 6, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemGolemDecoration", 1, 7, missing));
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "rotten_flesh", 9, 0, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "TrunkSpawner", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 9, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 1, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 2, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 3, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 4, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 5, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 6, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 7, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 2, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 1, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 8, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 10, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 6, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 9, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 11, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 7, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 4, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 5, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 4, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 5, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 6, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 7, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "HUNGRYCHEST",
-                getModItem("Thaumcraft", "blockChestHungry", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
                 "abc",
@@ -3867,15 +4075,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "screwThaumium",
                 'b',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 5, missing),
                 'c',
                 "screwThaumium",
                 'd',
-                getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                 'e',
                 "chestWood",
                 'f',
-                getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                 'g',
                 "screwThaumium",
                 'h',
@@ -3889,19 +4097,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("HUNGRYCHEST", 1);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TRAVELTRUNK",
-                getModItem("Thaumcraft", "TrunkSpawner", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "TrunkSpawner", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("iter"), 16).add(Aspect.getAspect("motus"), 16)
                         .add(Aspect.getAspect("spiritus"), 16).add(Aspect.getAspect("vacuos"), 32),
-                getModItem("Thaumcraft", "blockChestHungry", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17306, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28306, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27306, missing),
-                        getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
-                        getModItem("Thaumcraft", "ItemGolemPlacer", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockWoodenDevice", 1, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27306, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28306, missing), });
+                getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17306, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28306, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27306, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27306, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28306, missing), });
         TCHelper.setResearchAspects(
                 "TRAVELTRUNK",
                 new AspectList().add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("vacuos"), 12)
@@ -3910,17 +4118,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TRAVELTRUNK", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GOLEMFETTER",
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 15),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'd',
                 "plateThaumium",
                 'e',
@@ -3928,11 +4136,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "plateThaumium",
                 'g',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing));
         TCHelper.setResearchAspects(
                 "GOLEMFETTER",
                 new AspectList().add(Aspect.getAspect("vinculum"), 9).add(Aspect.getAspect("machina"), 9)
@@ -3940,8 +4148,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("GOLEMFETTER", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMSTRAW",
-                getModItem("Thaumcraft", "ItemGolemPlacer", 1, 0, missing),
-                getModItem("minecraft", "hay_block", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 0, missing),
+                getModItem(Minecraft.ID, "hay_block", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("humanus"), 10).add(Aspect.getAspect("motus"), 10)
                         .add(Aspect.getAspect("spiritus"), 10));
         TCHelper.setResearchAspects(
@@ -3952,8 +4160,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("GOLEMSTRAW", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMWOOD",
-                getModItem("Thaumcraft", "ItemGolemPlacer", 1, 1, missing),
-                getModItem("Thaumcraft", "blockMagicalLog", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("humanus"), 14).add(Aspect.getAspect("motus"), 14)
                         .add(Aspect.getAspect("spiritus"), 14));
         TCHelper.setResearchAspects(
@@ -3966,14 +4174,14 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("GOLEMTALLOW", new ResearchPage("tc.research_page.GOLEMTALLOW.1"));
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMTALLOW",
-                getModItem("Thaumcraft", "ItemGolemPlacer", 1, 2, missing),
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("humanus"), 26).add(Aspect.getAspect("mortuus"), 26)
                         .add(Aspect.getAspect("spiritus"), 26));
         TCHelper.addResearchPage(
                 "GOLEMTALLOW",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 2, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 2, missing))));
         TCHelper.setResearchAspects(
                 "GOLEMTALLOW",
                 new AspectList().add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("permutatio"), 12)
@@ -3982,8 +4190,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("GOLEMTALLOW", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMCLAY",
-                getModItem("Thaumcraft", "ItemGolemPlacer", 1, 3, missing),
-                getModItem("minecraft", "clay", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 3, missing),
+                getModItem(Minecraft.ID, "clay", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("humanus"), 20).add(Aspect.getAspect("motus"), 20)
                         .add(Aspect.getAspect("spiritus"), 20));
         TCHelper.setResearchAspects(
@@ -3996,14 +4204,14 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("GOLEMFLESH", new ResearchPage("tc.research_page.GOLEMFLESH.1"));
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMFLESH",
-                getModItem("Thaumcraft", "ItemGolemPlacer", 1, 4, missing),
-                getModItem("Thaumcraft", "blockTaint", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockTaint", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("humanus"), 20).add(Aspect.getAspect("motus"), 20)
                         .add(Aspect.getAspect("spiritus"), 20));
         TCHelper.addResearchPage(
                 "GOLEMFLESH",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 4, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 4, missing))));
         TCHelper.setResearchAspects(
                 "GOLEMFLESH",
                 new AspectList().add(Aspect.getAspect("corpus"), 12).add(Aspect.getAspect("permutatio"), 12)
@@ -4012,8 +4220,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("GOLEMFLESH", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMSTONE",
-                getModItem("Thaumcraft", "ItemGolemPlacer", 1, 5, missing),
-                getModItem("ExtraUtilities", "cobblestone_compressed", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 5, missing),
+                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("humanus"), 26).add(Aspect.getAspect("mortuus"), 26)
                         .add(Aspect.getAspect("spiritus"), 26));
         TCHelper.setResearchAspects(
@@ -4024,8 +4232,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("GOLEMSTONE", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMIRON",
-                getModItem("Thaumcraft", "ItemGolemPlacer", 1, 6, missing),
-                getModItem("minecraft", "iron_block", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 6, missing),
+                getModItem(Minecraft.ID, "iron_block", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("humanus"), 32).add(Aspect.getAspect("mortuus"), 32)
                         .add(Aspect.getAspect("spiritus"), 32));
         TCHelper.setResearchAspects(
@@ -4039,14 +4247,14 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("GOLEMTHAUMIUM", new ResearchPage("tc.research_page.GOLEMTHAUMIUM.1"));
         ThaumcraftApi.addCrucibleRecipe(
                 "GOLEMTHAUMIUM",
-                getModItem("Thaumcraft", "ItemGolemPlacer", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 7, missing),
                 "blockThaumium",
                 new AspectList().add(Aspect.getAspect("humanus"), 40).add(Aspect.getAspect("mortuus"), 40)
                         .add(Aspect.getAspect("spiritus"), 40));
         TCHelper.addResearchPage(
                 "GOLEMTHAUMIUM",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("Thaumcraft", "ItemGolemPlacer", 1, 7, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 7, missing))));
         TCHelper.setResearchAspects(
                 "GOLEMTHAUMIUM",
                 new AspectList().add(Aspect.getAspect("permutatio"), 12).add(Aspect.getAspect("spiritus"), 12)
@@ -4063,7 +4271,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ADVANCEDGOLEM", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "COREGATHER",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 100, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 5),
                 "abc",
@@ -4078,7 +4286,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "ingotBrick",
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 'f',
                 "ingotBrick",
                 'g',
@@ -4089,13 +4297,13 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateNetherQuartz");
         ThaumcraftApi.addCrucibleRecipe(
                 "COREGATHER",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 2, missing),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 100, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("terra"), 10));
         ThaumcraftApi.addCrucibleRecipe(
                 "COREEMPTY",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 1, missing),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 100, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("vacuos"), 10));
         TCHelper.setResearchAspects(
                 "COREEMPTY",
@@ -4105,8 +4313,8 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("COREEMPTY", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "COREFILL",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 0, missing),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 100, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing),
                 new AspectList().add(Aspect.getAspect("fames"), 10).add(Aspect.getAspect("vacuos"), 10));
         TCHelper.setResearchAspects(
                 "COREFILL",
@@ -4118,19 +4326,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("COREHARVEST", new ResearchPage("tc.research_page.COREHARVEST.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "COREHARVEST",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("messis"), 10).add(Aspect.getAspect("meto"), 10)
                         .add(Aspect.getAspect("herba"), 20),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 100, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("minecraft", "wheat_seeds", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemHoeThaumium", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(Minecraft.ID, "wheat_seeds", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemHoeThaumium", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), });
         TCHelper.addResearchPage(
                 "COREHARVEST",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 3, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3, missing))));
         TCHelper.addResearchPage("COREHARVEST", new ResearchPage("tc.research_page.COREHARVEST.2"));
         TCHelper.setResearchAspects(
                 "COREHARVEST",
@@ -4142,19 +4350,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("COREGUARD", new ResearchPage("tc.research_page.COREGUARD.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "COREGUARD",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("telum"), 20).add(Aspect.getAspect("vinculum"), 20)
                         .add(Aspect.getAspect("tutamen"), 20),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 100, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17804, missing),
-                        getModItem("Thaumcraft", "ItemSwordThaumium", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), });
         TCHelper.addResearchPage(
                 "COREGUARD",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 4, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4, missing))));
         TCHelper.addResearchPage("COREGUARD", new ResearchPage("tc.research_page.COREGUARD.2"));
         TCHelper.setResearchAspects(
                 "COREGUARD",
@@ -4164,17 +4372,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("COREGUARD", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "COREUSE",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 8, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("humanus"), 20).add(Aspect.getAspect("instrumentum"), 20)
                         .add(Aspect.getAspect("machina"), 20).add(Aspect.getAspect("lucrum"), 20),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 1, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("ProjRed|Integration", "projectred.integration.gate", 1, 26, missing),
-                        getModItem("minecraft", "lever", 1, 0, missing),
-                        getModItem("minecraft", "flint_and_steel", 1, 32767, missing),
-                        getModItem("minecraft", "stone_pressure_plate", 1, 0, missing),
-                        getModItem("minecraft", "shears", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 1, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
+                        getModItem(Minecraft.ID, "lever", 1, 0, missing),
+                        getModItem(Minecraft.ID, "flint_and_steel", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing),
+                        getModItem(Minecraft.ID, "shears", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "COREUSE",
                 new AspectList().add(Aspect.getAspect("humanus"), 12).add(Aspect.getAspect("instrumentum"), 12)
@@ -4183,17 +4391,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("COREUSE", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CORESORTING",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 10, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 10, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("lucrum"), 20).add(Aspect.getAspect("fames"), 20)
                         .add(Aspect.getAspect("permutatio"), 20).add(Aspect.getAspect("vacuos"), 20),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 100, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemGolemCore", 1, 1, missing),
-                        getModItem("minecraft", "paper", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemGolemCore", 1, 0, missing),
-                        getModItem("ProjRed|Integration", "projectred.integration.gate", 1, 26, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 1, missing),
+                        getModItem(Minecraft.ID, "paper", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing),
+                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing), });
         TCHelper.setResearchAspects(
                 "CORESORTING",
                 new AspectList().add(Aspect.getAspect("fames"), 12).add(Aspect.getAspect("vacuos"), 12)
@@ -4204,21 +4412,21 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("CORELIQUID", new ResearchPage("tc.research_page.CORELIQUID.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CORELIQUID",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("aqua"), 20).add(Aspect.getAspect("vacuos"), 20)
                         .add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("iter"), 20),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 0, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("BuildCraft|Factory", "tankBlock", 1, 0, missing),
-                        getModItem("IguanaTweaksTConstruct", "clayBucketFired", 1, 0, missing),
-                        getModItem("minecraft", "bucket", 1, 0, missing),
-                        getModItem("Forestry", "canEmpty", 1, 0, missing),
-                        getModItem("IC2", "itemFluidCell", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketFired", 1, 0, missing),
+                        getModItem(Minecraft.ID, "bucket", 1, 0, missing),
+                        getModItem(Forestry.ID, "canEmpty", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "CORELIQUID",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 5, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5, missing))));
         TCHelper.addResearchPage("CORELIQUID", new ResearchPage("tc.research_page.CORELIQUID.2"));
         TCHelper.setResearchAspects(
                 "CORELIQUID",
@@ -4228,19 +4436,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("CORELIQUID", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "COREALCHEMY",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 6, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("motus"), 32)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("permutatio"), 32),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 5, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("minecraft", "potion", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("minecraft", "potion", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 5, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(Minecraft.ID, "potion", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(Minecraft.ID, "potion", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "COREALCHEMY",
                 new AspectList().add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("aqua"), 12)
@@ -4251,21 +4459,21 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("COREBUTCHER", new ResearchPage("tc.research_page.COREBUTCHER.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "COREBUTCHER",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 9, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("bestia"), 32).add(Aspect.getAspect("corpus"), 32)
                         .add(Aspect.getAspect("mortuus"), 32).add(Aspect.getAspect("telum"), 32),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 3, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("gregtech", "gt.metatool.01", 1, 36, missing),
-                        getModItem("minecraft", "iron_sword", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("minecraft", "bow", 1, 0, missing),
-                        getModItem("minecraft", "arrow", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metatool.01", 1, 36, missing),
+                        getModItem(Minecraft.ID, "iron_sword", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(Minecraft.ID, "bow", 1, 0, missing),
+                        getModItem(Minecraft.ID, "arrow", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "COREBUTCHER",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "ItemGolemCore", 1, 9, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 9, missing))));
         TCHelper.setResearchAspects(
                 "COREBUTCHER",
                 new AspectList().add(Aspect.getAspect("meto"), 12).add(Aspect.getAspect("telum"), 12)
@@ -4275,16 +4483,17 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("COREBUTCHER", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "COREFISHING",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 11, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 11, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("meto"), 20)
                         .add(Aspect.getAspect("bestia"), 32).add(Aspect.getAspect("fames"), 32),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 3, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("minecraft", "fish", 1, 0, missing), getModItem("minecraft", "fish", 1, 2, missing),
-                        getModItem("minecraft", "fish", 1, 3, missing),
-                        getModItem("minecraft", "fishing_rod", 1, 0, missing),
-                        getModItem("gregtech", "gt.metatool.01", 1, 34, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(Minecraft.ID, "fish", 1, 0, missing),
+                        getModItem(Minecraft.ID, "fish", 1, 2, missing),
+                        getModItem(Minecraft.ID, "fish", 1, 3, missing),
+                        getModItem(Minecraft.ID, "fishing_rod", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metatool.01", 1, 34, missing), });
         TCHelper.setResearchAspects(
                 "COREFISHING",
                 new AspectList().add(Aspect.getAspect("fames"), 12).add(Aspect.getAspect("aqua"), 12)
@@ -4293,16 +4502,16 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("COREFISHING", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CORELUMBER",
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 7, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("arbor"), 32).add(Aspect.getAspect("instrumentum"), 32)
                         .add(Aspect.getAspect("meto"), 20).add(Aspect.getAspect("potentia"), 32),
-                getModItem("Thaumcraft", "ItemGolemCore", 1, 3, missing),
-                new ItemStack[] { getModItem("minecraft", "nether_star", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemAxeThaumium", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemAxeElemental", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemAxeThaumium", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemAxeThaumium", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "CORELUMBER",
                 new AspectList().add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("arbor"), 12)
@@ -4314,7 +4523,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("GOLEMBELL", new ResearchPage("tc.research_page.GOLEMBELL.2"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GOLEMBELL",
-                createItemStack("Thaumcraft", "GolemBell", 1, 0, "{markers:[0:{side:1b}]}", missing),
+                createItemStack(Thaumcraft.ID, "GolemBell", 1, 0, "{markers:[0:{side:1b}]}", missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aer"), 5),
                 "abc",
                 "def",
@@ -4341,10 +4550,16 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "GOLEMBELL",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                createItemStack("Thaumcraft", "GolemBell", 1, 0, "{markers:[0:{side:1b}]}", missing))));
+                                createItemStack(
+                                        Thaumcraft.ID,
+                                        "GolemBell",
+                                        1,
+                                        0,
+                                        "{markers:[0:{side:1b}]}",
+                                        missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEAIR",
-                getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ordo"), 5),
                 "abc",
                 "def",
@@ -4352,19 +4567,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "nuggetGold",
                 'b',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'c',
                 "nuggetGold",
                 'd',
                 "nuggetThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'f',
                 "nuggetThaumium",
                 'g',
                 "nuggetGold",
                 'h',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'i',
                 "nuggetGold");
         TCHelper.setResearchAspects(
@@ -4374,7 +4589,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("UPGRADEAIR", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEEARTH",
-                getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("ordo"), 5),
                 "abc",
                 "def",
@@ -4382,19 +4597,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "nuggetGold",
                 'b',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'c',
                 "nuggetGold",
                 'd',
                 "nuggetThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'f',
                 "nuggetThaumium",
                 'g',
                 "nuggetGold",
                 'h',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'i',
                 "nuggetGold");
         TCHelper.setResearchAspects(
@@ -4404,7 +4619,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("UPGRADEEARTH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEFIRE",
-                getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("ordo"), 5),
                 "abc",
                 "def",
@@ -4412,19 +4627,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "nuggetGold",
                 'b',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'c',
                 "nuggetGold",
                 'd',
                 "nuggetThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'f',
                 "nuggetThaumium",
                 'g',
                 "nuggetGold",
                 'h',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'i',
                 "nuggetGold");
         TCHelper.setResearchAspects(
@@ -4434,7 +4649,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("UPGRADEFIRE", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEWATER",
-                getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("ordo"), 5),
                 "abc",
                 "def",
@@ -4442,19 +4657,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "nuggetGold",
                 'b',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'c',
                 "nuggetGold",
                 'd',
                 "nuggetThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'f',
                 "nuggetThaumium",
                 'g',
                 "nuggetGold",
                 'h',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'i',
                 "nuggetGold");
         TCHelper.setResearchAspects(
@@ -4464,7 +4679,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("UPGRADEWATER", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEORDER",
-                getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20),
                 "abc",
                 "def",
@@ -4472,19 +4687,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "nuggetGold",
                 'b',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'c',
                 "nuggetGold",
                 'd',
                 "nuggetThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'f',
                 "nuggetThaumium",
                 'g',
                 "nuggetGold",
                 'h',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'i',
                 "nuggetGold");
         TCHelper.setResearchAspects(
@@ -4494,7 +4709,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("UPGRADEORDER", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEENTROPY",
-                getModItem("Thaumcraft", "ItemGolemUpgrade", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 15).add(Aspect.getAspect("ordo"), 5),
                 "abc",
                 "def",
@@ -4502,19 +4717,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "nuggetGold",
                 'b',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'c',
                 "nuggetGold",
                 'd',
                 "nuggetThaumium",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 'f',
                 "nuggetThaumium",
                 'g',
                 "nuggetGold",
                 'h',
-                getModItem("Thaumcraft", "ItemNugget", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing),
                 'i',
                 "nuggetGold");
         TCHelper.setResearchAspects(
@@ -4524,7 +4739,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("UPGRADEENTROPY", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYHAT",
-                getModItem("Thaumcraft", "ItemGolemDecoration", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 10)
                         .add(Aspect.getAspect("terra"), 5),
                 "abc",
@@ -4541,7 +4756,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'g',
                 "blockWoolBlack",
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'i',
                 "blockWoolBlack");
         TCHelper.setResearchAspects(
@@ -4551,7 +4766,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TINYHAT", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYGLASSES",
-                getModItem("Thaumcraft", "ItemGolemDecoration", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("ordo"), 5),
                 "abc",
@@ -4564,7 +4779,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "screwIron",
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'f',
                 "screwIron",
                 'g',
@@ -4580,7 +4795,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TINYGLASSES", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYBOWTIE",
-                getModItem("Thaumcraft", "ItemGolemDecoration", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("aer"), 5)
                         .add(Aspect.getAspect("terra"), 5),
                 "abc",
@@ -4589,7 +4804,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "blockWoolBlack",
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'f',
                 "blockWoolBlack",
                 'g',
@@ -4603,7 +4818,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TINYBOWTIE", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYFEZ",
-                getModItem("Thaumcraft", "ItemGolemDecoration", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("aqua"), 5)
                         .add(Aspect.getAspect("terra"), 5),
                 "abc",
@@ -4614,19 +4829,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'b',
                 "blockWoolRed",
                 'c',
-                getModItem("minecraft", "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
                 'd',
                 "blockWoolRed",
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'f',
-                getModItem("minecraft", "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
                 'g',
                 "blockWoolRed",
                 'h',
                 "blockWoolRed",
                 'i',
-                getModItem("minecraft", "string", 1, 0, missing));
+                getModItem(Minecraft.ID, "string", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "TINYFEZ",
                 new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("pannus"), 9)
@@ -4634,30 +4849,30 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TINYFEZ", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYDART",
-                getModItem("Thaumcraft", "ItemGolemDecoration", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("minecraft", "arrow", 1, 0, missing),
+                getModItem(Minecraft.ID, "arrow", 1, 0, missing),
                 'b',
                 "springSmallSteel",
                 'c',
-                getModItem("minecraft", "arrow", 1, 0, missing),
+                getModItem(Minecraft.ID, "arrow", 1, 0, missing),
                 'd',
-                getModItem("minecraft", "arrow", 1, 0, missing),
+                getModItem(Minecraft.ID, "arrow", 1, 0, missing),
                 'e',
-                getModItem("minecraft", "dropper", 1, 0, missing),
+                getModItem(Minecraft.ID, "dropper", 1, 0, missing),
                 'f',
-                getModItem("minecraft", "arrow", 1, 0, missing),
+                getModItem(Minecraft.ID, "arrow", 1, 0, missing),
                 'g',
-                getModItem("minecraft", "arrow", 1, 0, missing),
+                getModItem(Minecraft.ID, "arrow", 1, 0, missing),
                 'h',
                 "springSmallSteel",
                 'i',
-                getModItem("minecraft", "arrow", 1, 0, missing));
+                getModItem(Minecraft.ID, "arrow", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "TINYDART",
                 new AspectList().add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("volatus"), 9)
@@ -4665,18 +4880,18 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TINYDART", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYVISOR",
-                getModItem("Thaumcraft", "ItemGolemDecoration", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
                 'b',
-                getModItem("minecraft", "iron_helmet", 1, 0, missing),
+                getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing),
                 'c',
-                getModItem("dreamcraft", "item.SteelBars", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
                 'd',
                 "plateSteel",
                 'e',
@@ -4690,7 +4905,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TINYVISOR", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYARMOR",
-                getModItem("Thaumcraft", "ItemGolemDecoration", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 10),
                 "abc",
@@ -4699,7 +4914,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "plateSteel",
                 'e',
-                getModItem("minecraft", "iron_chestplate", 1, 0, missing),
+                getModItem(Minecraft.ID, "iron_chestplate", 1, 0, missing),
                 'f',
                 "plateSteel",
                 'g',
@@ -4715,7 +4930,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("TINYARMOR", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TINYHAMMER",
-                getModItem("Thaumcraft", "ItemGolemDecoration", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemGolemDecoration", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("terra"), 10),
                 "abc",
@@ -4784,39 +4999,39 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void eldritch() {
         // ELDRITCH
 
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "WandRod", 1, 100, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "blockEssentiaReservoir", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "FocusPrimal", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemHelmetVoidFortress", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemChestplateVoidFortress", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemLeggingsVoidFortress", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemSanityChecker", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemEldritchObject", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemPrimalCrusher", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "blockMetalDevice", 4, 3, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "WandRod", 1, 100, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemHelmetVoidFortress", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemChestplateVoidFortress", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsVoidFortress", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemSanityChecker", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemPrimalCrusher", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockMetalDevice", 4, 3, missing));
         TCHelper.clearPages("ELDRITCHMINOR");
         TCHelper.addResearchPage("ELDRITCHMINOR", new ResearchPage("tc.research_page.ELDRITCHMINOR.1"));
         ThaumcraftApi.addCrucibleRecipe(
                 "ELDRITCHMINOR",
-                getModItem("Thaumcraft", "ItemResource", 1, 17, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
                 "listAllseed",
                 new AspectList().add(Aspect.getAspect("alienis"), 8).add(Aspect.getAspect("tenebrae"), 8)
                         .add(Aspect.getAspect("vacuos"), 8));
         TCHelper.addResearchPage(
                 "ELDRITCHMINOR",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 17, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing))));
         TCHelper.clearPages("VOIDMETAL");
         TCHelper.addResearchPage("VOIDMETAL", new ResearchPage("tc.research_page.VOIDMETAL.1"));
         ThaumcraftApi.addCrucibleRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemResource", 1, 16, missing),
-                getModItem("Thaumcraft", "ItemResource", 1, 17, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 16));
         TCHelper.addResearchPage(
                 "VOIDMETAL",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("Thaumcraft", "ItemResource", 1, 16, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing))));
         TCHelper.addResearchPage("VOIDMETAL", new ResearchPage("tc.research_page.VOIDMETAL.2"));
         TCHelper.setResearchAspects(
                 "VOIDMETAL",
@@ -4827,7 +5042,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("VOIDMETAL", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemAxeVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemAxeVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
                 "abc",
                 "def",
@@ -4848,10 +5063,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "stickVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemAxeVoid", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemAxeVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemSwordVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
                 "abc",
                 "def",
@@ -4868,10 +5083,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "stickVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemSwordVoid", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemPickVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
                 "abc",
                 "def",
@@ -4892,10 +5107,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "stickVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemPickVoid", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemShovelVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
                 "abc",
                 "def",
@@ -4912,10 +5127,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "stickVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemShovelVoid", 1, 0, missing))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemHoeVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemHoeVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("terra"), 15),
                 "abc",
                 "def",
@@ -4934,10 +5150,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "stickVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemHoeVoid", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHoeVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemHelmetVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
                 "abc",
                 "def",
@@ -4956,10 +5172,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemHelmetVoid", 1, 0, missing))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemChestplateVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
                 "abc",
                 "def",
@@ -4985,10 +5202,10 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage(
                 "VOIDMETAL",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemChestplateVoid", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemLeggingsVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
                 "abc",
                 "def",
@@ -5012,10 +5229,10 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage(
                 "VOIDMETAL",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemLeggingsVoid", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("Thaumcraft", "ItemBootsVoid", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemBootsVoid", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
                 "abc",
                 "def",
@@ -5032,10 +5249,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "plateVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemBootsVoid", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBootsVoid", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("thaumicbases", "voidFAS", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "voidFAS", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
                 "abc",
                 "def",
@@ -5043,15 +5260,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'b',
                 "plateVoid",
                 'e',
-                getModItem("minecraft", "flint_and_steel", 1, 0, missing),
+                getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
                 'h',
                 "plateVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("thaumicbases", "voidFAS", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "voidFAS", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "VOIDMETAL",
-                getModItem("thaumicbases", "voidShears", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "voidShears", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("terra"), 20),
                 "abc",
                 "def",
@@ -5061,19 +5278,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "plateVoid",
                 'e',
-                getModItem("minecraft", "shears", 1, 0, missing),
+                getModItem(Minecraft.ID, "shears", 1, 0, missing),
                 'f',
                 "plateVoid",
                 'h',
                 "plateVoid");
         TCHelper.addResearchPage(
                 "VOIDMETAL",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("thaumicbases", "voidShears", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ThaumicBases.ID, "voidShears", 1, 0, missing))));
         TCHelper.clearPages("CAP_void");
         TCHelper.addResearchPage("CAP_void", new ResearchPage("tc.research_page.CAP_void.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_void",
-                getModItem("Thaumcraft", "WandCap", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 8, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 40).add(Aspect.getAspect("ignis"), 40)
                         .add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("perditio"), 40),
                 "abc",
@@ -5099,23 +5316,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwTungstenSteel");
         TCHelper.addResearchPage(
                 "CAP_void",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "WandCap", 1, 8, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 8, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CAP_void",
-                getModItem("Thaumcraft", "WandCap", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 7, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("auram"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("vacuos"), 32),
-                getModItem("Thaumcraft", "WandCap", 1, 8, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 17, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 17, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 17, missing), });
+                getModItem(Thaumcraft.ID, "WandCap", 1, 8, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing), });
         TCHelper.addResearchPage(
                 "CAP_void",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "WandCap", 1, 7, missing))));
+                new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 7, missing))));
         TCHelper.setResearchAspects(
                 "CAP_void",
                 new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("vacuos"), 12)
@@ -5125,19 +5342,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("CAP_void", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ESSENTIARESERVOIR",
-                getModItem("Thaumcraft", "blockEssentiaReservoir", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("aqua"), 16).add(Aspect.getAspect("permutatio"), 16)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("vacuos"), 16),
-                getModItem("Thaumcraft", "blockTube", 1, 4, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "blockTube", 1, 4, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "ESSENTIARESERVOIR",
                 new AspectList().add(Aspect.getAspect("aqua"), 12).add(Aspect.getAspect("permutatio"), 12)
@@ -5146,7 +5363,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ESSENTIARESERVOIR", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FOCUSPRIMAL",
-                getModItem("Thaumcraft", "FocusPrimal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 75).add(Aspect.getAspect("terra"), 75)
                         .add(Aspect.getAspect("ignis"), 75).add(Aspect.getAspect("aer"), 75)
                         .add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75),
@@ -5156,19 +5373,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "gemExquisiteDiamond",
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 'i',
                 "gemExquisiteDiamond");
         TCHelper.setResearchAspects(
@@ -5180,21 +5397,21 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSPRIMAL", 4);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_primal_staff",
-                getModItem("Thaumcraft", "WandRod", 1, 100, missing),
+                getModItem(Thaumcraft.ID, "WandRod", 1, 100, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("aqua"), 64)
                         .add(Aspect.getAspect("terra"), 64).add(Aspect.getAspect("ignis"), 64)
                         .add(Aspect.getAspect("ordo"), 64).add(Aspect.getAspect("perditio"), 64)
                         .add(Aspect.getAspect("praecantatio"), 128),
-                getModItem("Thaumcraft", "WandRod", 1, 2, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("Thaumcraft", "WandRod", 1, 1, missing),
-                        getModItem("Thaumcraft", "WandRod", 1, 3, missing),
-                        getModItem("Thaumcraft", "WandRod", 1, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("Thaumcraft", "WandRod", 1, 5, missing),
-                        getModItem("Thaumcraft", "WandRod", 1, 6, missing),
-                        getModItem("Thaumcraft", "WandRod", 1, 7, missing), });
+                getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "WandRod", 1, 7, missing), });
         TCHelper.setResearchAspects(
                 "ROD_primal_staff",
                 new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("ignis"), 15)
@@ -5205,23 +5422,23 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ROD_primal_staff", 4);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARMORVOIDFORTRESS",
-                getModItem("Thaumcraft", "ItemHelmetVoidFortress", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemHelmetVoidFortress", 1, 0, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("metallum"), 24)
                         .add(Aspect.getAspect("pannus"), 24).add(Aspect.getAspect("sensus"), 24)
                         .add(Aspect.getAspect("tutamen"), 24).add(Aspect.getAspect("vacuos"), 24)
                         .add(Aspect.getAspect("praecantatio"), 24),
-                getModItem("Thaumcraft", "ItemHelmetVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemGoggles", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing), });
+                getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing), });
         TCHelper.setResearchAspects(
                 "ARMORVOIDFORTRESS",
                 new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("tenebrae"), 15)
@@ -5231,57 +5448,57 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("ARMORVOIDFORTRESS", 4);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARMORVOIDFORTRESS",
-                getModItem("Thaumcraft", "ItemChestplateVoidFortress", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemChestplateVoidFortress", 1, 0, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("metallum"), 32)
                         .add(Aspect.getAspect("pannus"), 32).add(Aspect.getAspect("sensus"), 32)
                         .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("vacuos"), 32)
                         .add(Aspect.getAspect("praecantatio"), 32),
-                getModItem("Thaumcraft", "ItemChestplateVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemChestplateRobe", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing), });
+                getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemChestplateRobe", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARMORVOIDFORTRESS",
-                getModItem("Thaumcraft", "ItemLeggingsVoidFortress", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemLeggingsVoidFortress", 1, 0, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("alienis"), 28).add(Aspect.getAspect("metallum"), 28)
                         .add(Aspect.getAspect("pannus"), 28).add(Aspect.getAspect("sensus"), 28)
                         .add(Aspect.getAspect("tutamen"), 28).add(Aspect.getAspect("vacuos"), 28)
                         .add(Aspect.getAspect("praecantatio"), 28),
-                getModItem("Thaumcraft", "ItemLeggingsVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemLeggingsRobe", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("harvestcraft", "hardenedleatherItem", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 7, missing), });
+                getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemLeggingsRobe", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "SANITYCHECK",
-                getModItem("Thaumcraft", "ItemSanityChecker", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemSanityChecker", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("cognitio"), 32)
                         .add(Aspect.getAspect("sensus"), 24).add(Aspect.getAspect("sano"), 16),
-                getModItem("Thaumcraft", "ItemThaumometer", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockMirror", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29500, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27330, missing), });
+                getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockMirror", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing), });
         TCHelper.setResearchAspects(
                 "SANITYCHECK",
                 new AspectList().add(Aspect.getAspect("sensus"), 12).add(Aspect.getAspect("cognitio"), 12)
@@ -5290,19 +5507,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("SANITYCHECK", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "OCULUS",
-                getModItem("Thaumcraft", "ItemEldritchObject", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("iter"), 32)
                         .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("vacuos"), 32),
-                getModItem("StevesCarts", "ModuleComponents", 1, 45, missing),
-                new ItemStack[] { getModItem("minecraft", "ender_eye", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 17, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 17, missing),
-                        getModItem("minecraft", "ender_eye", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 17, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 17, missing), });
+                getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing), });
         TCHelper.setResearchAspects(
                 "OCULUS",
                 new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("cognitio"), 12)
@@ -5312,19 +5529,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("OCULUS", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "PRIMALCRUSHER",
-                getModItem("Thaumcraft", "ItemPrimalCrusher", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemPrimalCrusher", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("instrumentum"), 24)
                         .add(Aspect.getAspect("lucrum"), 24).add(Aspect.getAspect("perditio"), 24)
                         .add(Aspect.getAspect("perfodio"), 24).add(Aspect.getAspect("telum"), 24)
                         .add(Aspect.getAspect("vacuos"), 24),
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemPickVoid", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemShovelVoid", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("Thaumcraft", "ItemPickaxeElemental", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemShovelElemental", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "PRIMALCRUSHER",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("alienis"), 12)
@@ -5334,7 +5551,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.setResearchComplexity("PRIMALCRUSHER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ADVALCHEMYFURNACE",
-                getModItem("Thaumcraft", "blockMetalDevice", 4, 3, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 4, 3, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("terra"), 32)
                         .add(Aspect.getAspect("aer"), 32).add(Aspect.getAspect("ordo"), 32),
                 "abc",
@@ -5343,19 +5560,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "plateVoid",
                 'b',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                 'c',
                 "plateVoid",
                 'd',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 'f',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                 'g',
                 "plateVoid",
                 'h',
-                getModItem("Thaumcraft", "blockMetalDevice", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                 'i',
                 "plateVoid");
         TCHelper.setResearchAspects(
@@ -5398,1500 +5615,1500 @@ public class ScriptThaumcraft implements IScriptLoader {
         // ASPECT ADDS
 
         ThaumcraftApi.registerObjectTag(
-                getModItem("BiomesOPlenty", "bones", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "bones", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("corpus"), 1).add(Aspect.getAspect("exanimis"), 3)
                         .add(Aspect.getAspect("mortuus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("BiomesOPlenty", "bones", 1, 1, missing),
+                getModItem(BiomesOPlenty.ID, "bones", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("corpus"), 2).add(Aspect.getAspect("exanimis"), 6)
                         .add(Aspect.getAspect("mortuus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("BiomesOPlenty", "bones", 1, 2, missing),
+                getModItem(BiomesOPlenty.ID, "bones", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("corpus"), 3).add(Aspect.getAspect("exanimis"), 9)
                         .add(Aspect.getAspect("mortuus"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("ForbiddenMagic", "WandCores", 1, 5, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 32).add(Aspect.getAspect("praecantatio"), 24)
                         .add(Aspect.getAspect("vitreus"), 16).add(Aspect.getAspect("infernus"), 8)
                         .add(Aspect.getAspect("tenebrae"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.moonBlock", 1, 3, missing),
+                getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("vacuos"), 2)
                         .add(Aspect.getAspect("tenebrae"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.moonBlock", 1, 4, missing),
+                getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("vacuos"), 3)
                         .add(Aspect.getAspect("tenebrae"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.moonBlock", 1, 5, missing),
+                getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("vacuos"), 1)
                         .add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.moonBlock", 1, 14, missing),
+                getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 14, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 4).add(Aspect.getAspect("ira"), 1)
                         .add(Aspect.getAspect("superbia"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("dreamcraft", "item.MoonStoneDust", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.MoonStoneDust", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.mars", 1, 4, missing),
+                getModItem(GalacticraftMars.ID, "tile.mars", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1)
                         .add(Aspect.getAspect("ignis"), 1).add(Aspect.getAspect("terra"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.mars", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "tile.mars", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("metallum"), 1)
                         .add(Aspect.getAspect("ignis"), 2).add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.mars", 1, 6, missing),
+                getModItem(GalacticraftMars.ID, "tile.mars", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("metallum"), 2)
                         .add(Aspect.getAspect("ignis"), 2).add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.mars", 1, 7, missing),
+                getModItem(GalacticraftMars.ID, "tile.mars", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("metallum"), 1)
                         .add(Aspect.getAspect("ira"), 2).add(Aspect.getAspect("superbia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.mars", 1, 9, missing),
+                getModItem(GalacticraftMars.ID, "tile.mars", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("metallum"), 3)
                         .add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("terra"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("dreamcraft", "item.MarsStoneDust", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.MarsStoneDust", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1)
                         .add(Aspect.getAspect("terra"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.asteroidsBlock", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("tenebrae"), 1)
                         .add(Aspect.getAspect("vacuos"), 1).add(Aspect.getAspect("gelum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.asteroidsBlock", 1, 1, missing),
+                getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("tenebrae"), 2)
                         .add(Aspect.getAspect("vacuos"), 2).add(Aspect.getAspect("gelum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.asteroidsBlock", 1, 2, missing),
+                getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 3).add(Aspect.getAspect("tenebrae"), 3)
                         .add(Aspect.getAspect("vacuos"), 3).add(Aspect.getAspect("gelum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("dreamcraft", "item.AsteroidsStoneDust", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.AsteroidsStoneDust", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1)
                         .add(Aspect.getAspect("gelum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.landingPad", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "tile.landingPad", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("ordo"), 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 6, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("fabrico"), 2)
                         .add(Aspect.getAspect("permutatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 7, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("fabrico"), 2)
                         .add(Aspect.getAspect("vitreus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 8, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 8, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("volatus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 9, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 10, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 10, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 11, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 11, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.meteoricIronIngot", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("magneto"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("vacuos"), 2)
                         .add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1, 6, missing),
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("tutamen"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 13, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 13, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 6).add(Aspect.getAspect("ordo"), 5)
                         .add(Aspect.getAspect("machina"), 4).add(Aspect.getAspect("instrumentum"), 3)
                         .add(Aspect.getAspect("metallum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 14, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 14, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("ordo"), 7)
                         .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("instrumentum"), 5)
                         .add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("lux"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("dreamcraft", "item.WaferTier3", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.WaferTier3", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("ordo"), 10)
                         .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("instrumentum"), 8)
                         .add(Aspect.getAspect("metallum"), 7).add(Aspect.getAspect("lux"), 6)
                         .add(Aspect.getAspect("alienis"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.aluminumWire", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("volatus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.oxygenPipe", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1)
                         .add(Aspect.getAspect("vitreus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.glowstoneTorch", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("potentia"), 1).add(Aspect.getAspect("machina"), 1)
                         .add(Aspect.getAspect("lux"), 1).add(Aspect.getAspect("sensus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "tile.arclamp", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.arclamp", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("potentia"), 5).add(Aspect.getAspect("machina"), 2)
                         .add(Aspect.getAspect("lux"), 5).add(Aspect.getAspect("tenebrae"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("electrum"), 2)
                         .add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.canister", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.canister", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("permutatio"), 1)
                         .add(Aspect.getAspect("fabrico"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.steelPole", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("ordo"), 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.heavyPlating", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("ordo"), 2)
                         .add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.null", 1, 3, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("ordo"), 2)
                         .add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("instrumentum"), 1)
                         .add(Aspect.getAspect("magneto"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 10).add(Aspect.getAspect("ordo"), 2)
                         .add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("instrumentum"), 1)
                         .add(Aspect.getAspect("magneto"), 2).add(Aspect.getAspect("vacuos"), 2)
                         .add(Aspect.getAspect("tenebrae"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.oxygenMask", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.oxygenMask", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 2).add(Aspect.getAspect("gelum"), 1)
                         .add(Aspect.getAspect("vitreus"), 1).add(Aspect.getAspect("metallum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.battery", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.battery", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("electrum"), 6).add(Aspect.getAspect("metallum"), 2)
                         .add(Aspect.getAspect("vacuos"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 15, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 15, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1)
                         .add(Aspect.getAspect("messis"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 16, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 16, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1)
                         .add(Aspect.getAspect("messis"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 17, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 17, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1)
                         .add(Aspect.getAspect("messis"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.basicItem", 1, 18, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 18, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("vitreus"), 1)
                         .add(Aspect.getAspect("messis"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.meteoricIronRaw", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("magneto"), 2).add(Aspect.getAspect("metallum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.thermalPadding", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 12).add(Aspect.getAspect("bestia"), 6)
                         .add(Aspect.getAspect("fabrico"), 3).add(Aspect.getAspect("aqua"), 2)
                         .add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.thermalPadding", 1, 1, missing),
+                getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 18).add(Aspect.getAspect("bestia"), 9)
                         .add(Aspect.getAspect("fabrico"), 5).add(Aspect.getAspect("aqua"), 3)
                         .add(Aspect.getAspect("ordo"), 3).add(Aspect.getAspect("perditio"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.thermalPadding", 1, 2, missing),
+                getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 15).add(Aspect.getAspect("bestia"), 7)
                         .add(Aspect.getAspect("fabrico"), 4).add(Aspect.getAspect("aqua"), 3)
                         .add(Aspect.getAspect("ordo"), 3).add(Aspect.getAspect("perditio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.thermalPadding", 1, 3, missing),
+                getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 9).add(Aspect.getAspect("bestia"), 5)
                         .add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("aqua"), 1)
                         .add(Aspect.getAspect("ordo"), 1).add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.null", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.hydrogenPipe", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "tile.hydrogenPipe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1)
                         .add(Aspect.getAspect("vitreus"), 1).add(Aspect.getAspect("permutatio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.bucketSludge", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "item.bucketSludge", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("venenum"), 4).add(Aspect.getAspect("aqua"), 2)
                         .add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("metallum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.oilCanisterPartial", 1, 1001, missing),
+                getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.methaneCanisterPartial", 1, 1, missing),
+                getModItem(GalacticraftMars.ID, "item.methaneCanisterPartial", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.canisterPartialLOX", 1, 1, missing),
+                getModItem(GalacticraftMars.ID, "item.canisterPartialLOX", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "item.canisterPartialLN2", 1, 1, missing),
+                getModItem(GalacticraftMars.ID, "item.canisterPartialLN2", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftCore", "item.fuelCanisterPartial", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.creeperEgg", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "tile.creeperEgg", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 10).add(Aspect.getAspect("perditio"), 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem("GalacticraftMars", "tile.denseIce", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "tile.denseIce", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 5).add(Aspect.getAspect("gelum"), 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMetal", 1, 5, missing),
+                getModItem(IndustrialCraft2.ID, "blockMetal", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("ordo"), 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartCircuitAdv", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 9).add(Aspect.getAspect("ordo"), 7)
                         .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("instrumentum"), 5)
                         .add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("lux"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartAlloy", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("vacuos"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemIngot", 1, 4, missing),
+                getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("dreamcraft", "item.ReinforcedGlassPlate", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("dreamcraft", "item.ReinforcedGlassPlate", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1)
                         .add(Aspect.getAspect("vitreus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockAlloy", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ordo"), 3)
                         .add(Aspect.getAspect("terra"), 2).add(Aspect.getAspect("fabrico"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMetal", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockMetal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("permutatio"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMetal", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "blockMetal", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("vitreus"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMetal", 1, 2, missing),
+                getModItem(IndustrialCraft2.ID, "blockMetal", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMetal", 1, 4, missing),
+                getModItem(IndustrialCraft2.ID, "blockMetal", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("ordo"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMetal", 1, 3, missing),
+                getModItem(IndustrialCraft2.ID, "blockMetal", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("venenum"), 2)
                         .add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("radio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockGenerator", 1, 6, missing),
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 40).add(Aspect.getAspect("fabrico"), 30)
                         .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("tutamen"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockHeatGenerator", 1, 2, missing),
+                getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 30).add(Aspect.getAspect("fabrico"), 18)
                         .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("permutatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockreactorvessel", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("fabrico"), 3)
                         .add(Aspect.getAspect("ordo"), 3).add(Aspect.getAspect("terra"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockReactorFluidPort", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockReactorFluidPort", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("fabrico"), 3)
                         .add(Aspect.getAspect("iter"), 3).add(Aspect.getAspect("aqua"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockReactorAccessHatch", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockReactorAccessHatch", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("fabrico"), 3)
                         .add(Aspect.getAspect("iter"), 3).add(Aspect.getAspect("machina"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockReactorRedstonePort", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockReactorRedstonePort", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("fabrico"), 3)
                         .add(Aspect.getAspect("sensus"), 2).add(Aspect.getAspect("machina"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockElectric", 1, 3, missing),
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 11).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("motus"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockElectric", 1, 4, missing),
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 11).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("volatus"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockElectric", 1, 5, missing),
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 5).add(Aspect.getAspect("machina"), 4)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ignis"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockElectric", 1, 6, missing),
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 7).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("tutamen"), 3).add(Aspect.getAspect("motus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMachine", 1, 6, missing),
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("fabrico"), 64)
                         .add(Aspect.getAspect("ordo"), 64).add(Aspect.getAspect("instrumentum"), 50));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartCarbonPlate", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ignis"), 4)
                         .add(Aspect.getAspect("vitreus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMachine", 1, 12, missing),
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("fabrico"), 8)
                         .add(Aspect.getAspect("vacuos"), 4).add(Aspect.getAspect("ignis"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemHarz", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemHarz", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("limus"), 2).add(Aspect.getAspect("motus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockMiningPipe", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockLuminatorDark", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lux"), 4).add(Aspect.getAspect("ignis"), 2)
                         .add(Aspect.getAspect("tenebrae"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "blockITNT", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 4).add(Aspect.getAspect("perditio"), 8)
                         .add(Aspect.getAspect("potentia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemRecipePart", 1, 11, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 11, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 27));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemRecipePart", 1, 12, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("ordo"), 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemRecipePart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 17).add(Aspect.getAspect("fabrico"), 3)
                         .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("magneto"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemRecipePart", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("machina"), 1).add(Aspect.getAspect("electrum"), 1)
                         .add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemRecipePart", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("sensus"), 1).add(Aspect.getAspect("fabrico"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemRecipePart", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 1)
                         .add(Aspect.getAspect("sano"), 1).add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemUran", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemUran", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("vitreus"), 14).add(Aspect.getAspect("gelum"), 6)
                         .add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("permutatio"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemMOX", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemMOX", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("metallum"), 3)
                         .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("vitreus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPlutonium", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPlutonium", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("radio"), 3).add(Aspect.getAspect("metallum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPlutoniumSmall", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPlutoniumSmall", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemDust2", 1, 2, missing),
+                getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("potentia"), 3)
                         .add(Aspect.getAspect("machina"), 2).add(Aspect.getAspect("vitreus"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemUran235", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemUran235", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 3).add(Aspect.getAspect("radio"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemContainmentbox", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 3).add(Aspect.getAspect("instrumentum"), 3)
                         .add(Aspect.getAspect("ordo"), 3).add(Aspect.getAspect("metallum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemRTGPellet", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 6)
                         .add(Aspect.getAspect("radio"), 15));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemFuelRod", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemFuelRod", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartCarbonFibre", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonFibre", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("vitreus"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartCarbonMesh", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("ignis"), 2)
                         .add(Aspect.getAspect("vitreus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolbox", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 3).add(Aspect.getAspect("metallum"), 3)
                         .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("ordo"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemShardIridium", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemShardIridium", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartIridium", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("machina"), 4).add(Aspect.getAspect("vitreus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolMEter", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolMEter", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 15).add(Aspect.getAspect("instrumentum"), 6)
                         .add(Aspect.getAspect("cognitio"), 2).add(Aspect.getAspect("lux"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemScanner", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemScanner", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 18).add(Aspect.getAspect("instrumentum"), 8)
                         .add(Aspect.getAspect("cognitio"), 4).add(Aspect.getAspect("lux"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemScannerAdv", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 10).add(Aspect.getAspect("instrumentum"), 10)
                         .add(Aspect.getAspect("cognitio"), 6).add(Aspect.getAspect("lux"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "obscurator", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "obscurator", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("lux"), 4)
                         .add(Aspect.getAspect("machina"), 4).add(Aspect.getAspect("tenebrae"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemFreq", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 4)
                         .add(Aspect.getAspect("sensus"), 4).add(Aspect.getAspect("electrum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBatREDischarged", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("electrum"), 1)
                         .add(Aspect.getAspect("vacuos"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBatCrystal", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 6).add(Aspect.getAspect("potentia"), 9)
                         .add(Aspect.getAspect("vitreus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBatLamaCrystal", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 8).add(Aspect.getAspect("potentia"), 11)
                         .add(Aspect.getAspect("sensus"), 5));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemAdvBat", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("electrum"), 2).add(Aspect.getAspect("metallum"), 2)
                         .add(Aspect.getAspect("vacuos"), 2).add(Aspect.getAspect("potentia"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBatChargeRE", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("electrum"), 2)
                         .add(Aspect.getAspect("vacuos"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBatChargeAdv", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("electrum"), 3).add(Aspect.getAspect("metallum"), 3)
                         .add(Aspect.getAspect("vacuos"), 3).add(Aspect.getAspect("potentia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBatChargeCrystal", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatChargeCrystal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("potentia"), 14)
                         .add(Aspect.getAspect("sensus"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBatChargeLamaCrystal", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatChargeLamaCrystal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("potentia"), 16)
                         .add(Aspect.getAspect("sensus"), 7));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemGrinPowder", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemGrinPowder", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("venenum"), 3).add(Aspect.getAspect("messis"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemFuelPlantBall", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBiochaff", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBiochaff", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemFertilizer", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemFertilizer", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("sano"), 2)
                         .add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemWeed", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemWeed", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartCoalBall", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("ignis"), 2)
                         .add(Aspect.getAspect("terra"), 1).add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartCoalBlock", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCoalBlock", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("potentia"), 4).add(Aspect.getAspect("ignis"), 4)
                         .add(Aspect.getAspect("terra"), 2).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemPartCoalBlock", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCoalBlock", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 2).add(Aspect.getAspect("terra"), 2)
                         .add(Aspect.getAspect("tenebrae"), 1).add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemScrap", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemScrap", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("strontio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemScrapbox", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemScrapbox", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("strontio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterBlack", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterBlack", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterCloud", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterCloud", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterMagenta", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterMagenta", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterOrange", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterOrange", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterWhite", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterWhite", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterRed", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterRed", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterGreen", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterGreen", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterBrown", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterBrown", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterBlue", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterBlue", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterLime", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterLime", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterYellow", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterYellow", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterPink", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterPink", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterDarkGrey", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterDarkGrey", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterLightGrey", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterLightGrey", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterCyan", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterCyan", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemToolPainterPurple", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemToolPainterPurple", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ordo"), 4).add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorVent", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("volatus"), 4).add(Aspect.getAspect("gelum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorVentCore", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorVentCore", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("fabrico"), 8)
                         .add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("gelum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorVentGold", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorVentGold", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("fabrico"), 12)
                         .add(Aspect.getAspect("lucrum"), 9).add(Aspect.getAspect("gelum"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorVentDiamond", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 26).add(Aspect.getAspect("fabrico"), 14)
                         .add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("gelum"), 7));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorHeatSwitch", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 12).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("gelum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorHeatSwitchCore", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitchCore", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 20).add(Aspect.getAspect("fabrico"), 8)
                         .add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("gelum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorHeatSwitchSpread", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitchSpread", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("fabrico"), 12)
                         .add(Aspect.getAspect("permutatio"), 9).add(Aspect.getAspect("gelum"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorHeatSwitchDiamond", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 26).add(Aspect.getAspect("fabrico"), 14)
                         .add(Aspect.getAspect("permutatio"), 10).add(Aspect.getAspect("gelum"), 7));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemwoodrotor", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemwoodrotor", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("tempestas"), 2).add(Aspect.getAspect("arbor"), 4)
                         .add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("permutatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemironrotor", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemironrotor", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("tempestas"), 4).add(Aspect.getAspect("metallum"), 4)
                         .add(Aspect.getAspect("instrumentum"), 2).add(Aspect.getAspect("permutatio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemsteelrotor", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemsteelrotor", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("tempestas"), 6).add(Aspect.getAspect("metallum"), 6)
                         .add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("permutatio"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemwcarbonrotor", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemwcarbonrotor", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("tempestas"), 8).add(Aspect.getAspect("metallum"), 8)
                         .add(Aspect.getAspect("instrumentum"), 6).add(Aspect.getAspect("permutatio"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorReflector", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorReflector", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ignis"), 4)
                         .add(Aspect.getAspect("vitreus"), 2).add(Aspect.getAspect("fabrico"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorReflectorThick", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("ignis"), 4)
                         .add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("fabrico"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorCondensator", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("fabrico"), 16)
                         .add(Aspect.getAspect("permutatio"), 8).add(Aspect.getAspect("gelum"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorCondensatorLap", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 24).add(Aspect.getAspect("fabrico"), 16)
                         .add(Aspect.getAspect("permutatio"), 16).add(Aspect.getAspect("gelum"), 16));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "upgradeModule", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("motus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "upgradeModule", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("electrum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "upgradeModule", 1, 2, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("lucrum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "upgradeModule", 1, 3, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("permutatio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "upgradeModule", 1, 4, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("aqua"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "upgradeModule", 1, 5, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("cognitio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "upgradeModule", 1, 6, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("ignis"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBoat", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBoat", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("ignis"), 8)
                         .add(Aspect.getAspect("vitreus"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemBoat", 1, 2, missing),
+                getModItem(IndustrialCraft2.ID, "itemBoat", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 1).add(Aspect.getAspect("limus"), 1)
                         .add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemCoin", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemCropnalyzer", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("cognitio"), 8).add(Aspect.getAspect("lux"), 2)
                         .add(Aspect.getAspect("metallum"), 4).add(Aspect.getAspect("instrumentum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemHops", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemHops", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemCofeeBeans", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemCofeeBeans", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("sensus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemDynamite", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemDynamite", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 8).add(Aspect.getAspect("strontio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemDynamiteSticky", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemDynamiteSticky", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 8).add(Aspect.getAspect("limus"), 2)
                         .add(Aspect.getAspect("strontio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemMugCoffee", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("sensus"), 2).add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemMugCoffee", 1, 2, missing),
+                getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("sensus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemRemote", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRemote", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("instrumentum"), 4)
                         .add(Aspect.getAspect("sensus"), 4).add(Aspect.getAspect("perditio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemWeedEx", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemWeedEx", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("venenum"), 8).add(Aspect.getAspect("cognitio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemTerraWart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemTerraWart", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("auram"), 8).add(Aspect.getAspect("praecantatio"), 4)
                         .add(Aspect.getAspect("victus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemCellEmpty", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 2)
                         .add(Aspect.getAspect("vitreus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemTinCan", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemTinCan", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 1).add(Aspect.getAspect("metallum"), 1)
                         .add(Aspect.getAspect("vitreus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemTinCanFilled", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemTinCanFilled", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("metallum"), 2)
                         .add(Aspect.getAspect("vitreus"), 2).add(Aspect.getAspect("victus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "itemCellHydrant", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 8).add(Aspect.getAspect("metallum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorCoolantSimple", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("gelum"), 4).add(Aspect.getAspect("metallum"), 2)
                         .add(Aspect.getAspect("vitreus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorCoolantTriple", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCoolantTriple", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("gelum"), 8).add(Aspect.getAspect("metallum"), 4)
                         .add(Aspect.getAspect("vitreus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("IC2", "reactorCoolantSix", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("gelum"), 16).add(Aspect.getAspect("metallum"), 8)
                         .add(Aspect.getAspect("vitreus"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("malisisdoors", "trapdoor_acacia", 1, 0, missing),
+                getModItem(MalisisDoors.ID, "trapdoor_acacia", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("malisisdoors", "trapdoor_birch", 1, 0, missing),
+                getModItem(MalisisDoors.ID, "trapdoor_birch", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("malisisdoors", "trapdoor_dark_oak", 1, 0, missing),
+                getModItem(MalisisDoors.ID, "trapdoor_dark_oak", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("malisisdoors", "trapdoor_jungle", 1, 0, missing),
+                getModItem(MalisisDoors.ID, "trapdoor_jungle", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("malisisdoors", "trapdoor_spruce", 1, 0, missing),
+                getModItem(MalisisDoors.ID, "trapdoor_spruce", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "blaze_powder", 1, 0, missing),
+                getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("praecantatio"), 4)
                         .add(Aspect.getAspect("instrumentum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "blaze_rod", 1, 0, missing),
+                getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 10).add(Aspect.getAspect("praecantatio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "paper", 1, 0, missing),
+                getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("cognitio"), 4).add(Aspect.getAspect("aqua"), 2)
                         .add(Aspect.getAspect("arbor"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "book", 1, 0, missing),
+                getModItem(Minecraft.ID, "book", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 1).add(Aspect.getAspect("cognitio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "enchanted_book", 1, 0, missing),
+                getModItem(Minecraft.ID, "enchanted_book", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 1).add(Aspect.getAspect("cognitio"), 1)
                         .add(Aspect.getAspect("metallum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "hopper", 1, 0, missing),
+                getModItem(Minecraft.ID, "hopper", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("arbor"), 4)
                         .add(Aspect.getAspect("vacuos"), 3).add(Aspect.getAspect("machina"), 1)
                         .add(Aspect.getAspect("permutatio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "furnace", 1, 0, missing),
+                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 6).add(Aspect.getAspect("perditio"), 6)
                         .add(Aspect.getAspect("ignis"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "stone_pressure_plate", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("machina"), 1)
                         .add(Aspect.getAspect("sensus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("minecraft", "redstone_torch", 1, 0, missing),
+                getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("potentia"), 1).add(Aspect.getAspect("machina"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.eucalyptus", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.sakura", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.ghostwood", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.bloodwood", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.hopseed", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.maple", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.maple", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.amaranth", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.amaranth", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.silverbell", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.silverbell", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.willow", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.willow", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.darkwood", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.darkwood", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Natura", "trapdoor.fusewood", 1, 0, missing),
+                getModItem(Natura.ID, "trapdoor.fusewood", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("motus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Thaumcraft", "ItemResource", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("corpus"), 4).add(Aspect.getAspect("praecantatio"), 2)
                         .add(Aspect.getAspect("mortuus"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Thaumcraft", "blockCandle", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCandle", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lux"), 5).add(Aspect.getAspect("praecantatio"), 2)
                         .add(Aspect.getAspect("pannus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFRoots", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFRoots", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFRoots", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.TFRoots", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("praecantatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.liveRoot", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.liveRoot", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("praecantatio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFFirefly", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFFirefly", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFCicada", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFCicada", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("volatus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPortal", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFPortal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tempus"), 4).add(Aspect.getAspect("praecantatio"), 4)
                         .add(Aspect.getAspect("iter"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMazestone", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMazestone", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMazestone", 1, 2, missing),
+                getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMazestone", 1, 3, missing),
+                getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMazestone", 1, 4, missing),
+                getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMazestone", 1, 5, missing),
+                getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMazestone", 1, 6, missing),
+                getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMazestone", 1, 7, missing),
+                getModItem(TwilightForest.ID, "tile.TFMazestone", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFHedge", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFHedge", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFFireflyJar", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFFireflyJar", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("vitreus"), 2).add(Aspect.getAspect("arbor"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPlant", 1, 3, missing),
+                getModItem(TwilightForest.ID, "tile.TFPlant", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 2).add(Aspect.getAspect("victus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPlant", 1, 4, missing),
+                getModItem(TwilightForest.ID, "tile.TFPlant", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPlant", 1, 8, missing),
+                getModItem(TwilightForest.ID, "tile.TFPlant", 1, 8, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPlant", 1, 9, missing),
+                getModItem(TwilightForest.ID, "tile.TFPlant", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPlant", 1, 10, missing),
+                getModItem(TwilightForest.ID, "tile.TFPlant", 1, 10, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPlant", 1, 11, missing),
+                getModItem(TwilightForest.ID, "tile.TFPlant", 1, 11, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPlant", 1, 13, missing),
+                getModItem(TwilightForest.ID, "tile.TFPlant", 1, 13, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFPlant", 1, 14, missing),
+                getModItem(TwilightForest.ID, "tile.TFPlant", 1, 14, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFFireJet", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFFireJet", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 2).add(Aspect.getAspect("aer"), 2)
                         .add(Aspect.getAspect("machina"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFFireJet", 1, 8, missing),
+                getModItem(TwilightForest.ID, "tile.TFFireJet", 1, 8, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 6).add(Aspect.getAspect("motus"), 2)
                         .add(Aspect.getAspect("machina"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFNagastone", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.TFNagastone", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFNagastone", 1, 13, missing),
+                getModItem(TwilightForest.ID, "tile.TFNagastone", 1, 13, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFSapling", 1, 5, missing),
+                getModItem(TwilightForest.ID, "tile.TFSapling", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
                         .add(Aspect.getAspect("tempus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFSapling", 1, 6, missing),
+                getModItem(TwilightForest.ID, "tile.TFSapling", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
                         .add(Aspect.getAspect("praecantatio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFSapling", 1, 7, missing),
+                getModItem(TwilightForest.ID, "tile.TFSapling", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
                         .add(Aspect.getAspect("perfodio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFSapling", 1, 9, missing),
+                getModItem(TwilightForest.ID, "tile.TFSapling", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("arbor"), 2)
                         .add(Aspect.getAspect("sensus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMoonworm", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFMoonworm", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("victus"), 1).add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMagicLogSpecial", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
                         .add(Aspect.getAspect("tempus"), 2).add(Aspect.getAspect("herba"), 2)
                         .add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMagicLogSpecial", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
                         .add(Aspect.getAspect("aer"), 2).add(Aspect.getAspect("herba"), 2)
                         .add(Aspect.getAspect("invidia"), 1).add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMagicLogSpecial", 1, 2, missing),
+                getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
                         .add(Aspect.getAspect("perfodio"), 2).add(Aspect.getAspect("herba"), 2)
                         .add(Aspect.getAspect("lucrum"), 1).add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFMagicLogSpecial", 1, 3, missing),
+                getModItem(TwilightForest.ID, "tile.TFMagicLogSpecial", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("praecantatio"), 2)
                         .add(Aspect.getAspect("motus"), 2).add(Aspect.getAspect("herba"), 2)
                         .add(Aspect.getAspect("cognitio"), 1).add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFTowerDevice", 1, 2, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
                         .add(Aspect.getAspect("potentia"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFTowerDevice", 1, 4, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
                         .add(Aspect.getAspect("potentia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFTowerDevice", 1, 5, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
                         .add(Aspect.getAspect("potentia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFTowerDevice", 1, 6, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 1)
                         .add(Aspect.getAspect("potentia"), 2).add(Aspect.getAspect("iter"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFTowerDevice", 1, 9, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 2)
                         .add(Aspect.getAspect("potentia"), 4).add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFTowerDevice", 1, 10, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 10, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 1).add(Aspect.getAspect("machina"), 2)
                         .add(Aspect.getAspect("potentia"), 4).add(Aspect.getAspect("vinculum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFShield", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFShield", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("machina"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFTrophyPedestal", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFTrophyPedestal", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 7).add(Aspect.getAspect("ordo"), 4)
                         .add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("instrumentum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFTrophyPedestal", 1, 15, missing),
+                getModItem(TwilightForest.ID, "tile.TFTrophyPedestal", 1, 15, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 7).add(Aspect.getAspect("ordo"), 12)
                         .add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("instrumentum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFAuroraBrick", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFAuroraBrick", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFUnderBrick", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFUnderBrick", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFUnderBrick", 1, 2, missing),
+                getModItem(TwilightForest.ID, "tile.TFUnderBrick", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFThorns", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFThorns", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("fabrico"), 1)
                         .add(Aspect.getAspect("telum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFThorns", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.TFThorns", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 3).add(Aspect.getAspect("fabrico"), 1)
                         .add(Aspect.getAspect("telum"), 1).add(Aspect.getAspect("aqua"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFBurntThorns", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFBurntThorns", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 2).add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFThornRose", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFThornRose", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFLeaves3", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFLeaves3", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFLeaves3", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.TFLeaves3", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFDeadrock", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFDeadrock", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TFDeadrock", 1, 2, missing),
+                getModItem(TwilightForest.ID, "tile.TFDeadrock", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("ignis"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.DarkLeaves", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.DarkLeaves", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.AuroraPillar", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.AuroraPillar", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.AuroraSlab", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.AuroraSlab", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 2).add(Aspect.getAspect("sensus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.AuroraDoubleSlab", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.AuroraDoubleSlab", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("sensus"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TrollSteinn", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TrollSteinn", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("potentia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.WispyCloud", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.WispyCloud", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 1).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("aqua"), 1).add(Aspect.getAspect("tempestas"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.FluffyCloud", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.FluffyCloud", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 1).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 1).add(Aspect.getAspect("tempestas"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.HugeStalk", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.HugeStalk", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.GiantCobble", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.GiantCobble", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("perditio"), 16));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.GiantLog", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.GiantLog", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 16));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.GiantLeaves", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.GiantLeaves", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 16));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.GiantObsidian", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 16).add(Aspect.getAspect("ignis"), 16)
                         .add(Aspect.getAspect("tenebrae"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.UberousSoil", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.UberousSoil", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("aqua"), 4)
                         .add(Aspect.getAspect("herba"), 4).add(Aspect.getAspect("victus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.HugeGloomBlock", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.HugeGloomBlock", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 4).add(Aspect.getAspect("tenebrae"), 2)
                         .add(Aspect.getAspect("herba"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.KnightmetalBlock", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 18).add(Aspect.getAspect("lucrum"), 9));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.UnripeTrollBer", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.UnripeTrollBer", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("terra"), 1)
                         .add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.TrollBer", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TrollBer", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("terra"), 1)
                         .add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.HugeLilyPad", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.HugeLilyPad", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 8).add(Aspect.getAspect("aqua"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.HugeWaterLily", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.HugeWaterLily", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 3));
-        ThaumcraftApi.registerObjectTag(getModItem("TwilightForest", "tile.Slider", 1, 0, missing), new AspectList());
+        ThaumcraftApi.registerObjectTag(getModItem(TwilightForest.ID, "tile.Slider", 1, 0, missing), new AspectList());
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.CastleBrick", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.CastleBrick", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.CastleBrick", 1, 2, missing),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("perditio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.CastleBrick", 1, 3, missing),
+                getModItem(TwilightForest.ID, "tile.CastleBrick", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.CastleMagic", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("praecantatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.CastleMagic", 1, 1, missing),
+                getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("praecantatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.CastleMagic", 1, 2, missing),
+                getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("praecantatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "tile.CastleMagic", 1, 3, missing),
+                getModItem(TwilightForest.ID, "tile.CastleMagic", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 3).add(Aspect.getAspect("ignis"), 3)
                         .add(Aspect.getAspect("praecantatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.nagaScale", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 3).add(Aspect.getAspect("tutamen"), 2)
                         .add(Aspect.getAspect("bestia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.plateNaga", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.plateNaga", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 24).add(Aspect.getAspect("tutamen"), 16)
                         .add(Aspect.getAspect("bestia"), 16).add(Aspect.getAspect("superbia"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.legsNaga", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.legsNaga", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 21).add(Aspect.getAspect("tutamen"), 14)
                         .add(Aspect.getAspect("bestia"), 14).add(Aspect.getAspect("superbia"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.scepterTwilight", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.scepterTwilight", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("iter"), 35)
                         .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
                         .add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.scepterLifeDrain", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.scepterLifeDrain", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("victus"), 15)
                         .add(Aspect.getAspect("gula"), 20).add(Aspect.getAspect("praecantatio"), 25)
                         .add(Aspect.getAspect("mortuus"), 20).add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.scepterZombie", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.scepterZombie", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("exanimis"), 35)
                         .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
                         .add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.scepterTwilight", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.scepterTwilight", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("iter"), 35)
                         .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
                         .add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.scepterLifeDrain", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.scepterLifeDrain", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("victus"), 15)
                         .add(Aspect.getAspect("gula"), 20).add(Aspect.getAspect("praecantatio"), 25)
                         .add(Aspect.getAspect("mortuus"), 20).add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.scepterZombie", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.scepterZombie", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("exanimis"), 35)
                         .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
                         .add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.tfFeather", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.tfFeather", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("aer"), 1)
                         .add(Aspect.getAspect("tenebrae"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.magicMapFocus", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.magicMapFocus", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("volatus"), 2).add(Aspect.getAspect("aer"), 1)
                         .add(Aspect.getAspect("tenebrae"), 1).add(Aspect.getAspect("lux"), 1)
                         .add(Aspect.getAspect("praecantatio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.venisonRaw", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.venisonRaw", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("mortuus"), 3).add(Aspect.getAspect("victus"), 2)
                         .add(Aspect.getAspect("bestia"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.venisonCooked", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.venisonCooked", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("mortuus"), 4).add(Aspect.getAspect("fames"), 3)
                         .add(Aspect.getAspect("fabrico"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.hydraChop", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.hydraChop", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("mortuus"), 9).add(Aspect.getAspect("victus"), 6)
                         .add(Aspect.getAspect("bestia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.fieryBlood", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.fieryBlood", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("vacuos"), 1).add(Aspect.getAspect("victus"), 4)
                         .add(Aspect.getAspect("aqua"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.trophy", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.trophy", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
                         .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("ignis"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.trophy", 1, 1, missing),
+                getModItem(TwilightForest.ID, "item.trophy", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
                         .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("terra"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.trophy", 1, 2, missing),
+                getModItem(TwilightForest.ID, "item.trophy", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
                         .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("exanimis"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.trophy", 1, 3, missing),
+                getModItem(TwilightForest.ID, "item.trophy", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
                         .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("infernus"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.trophy", 1, 4, missing),
+                getModItem(TwilightForest.ID, "item.trophy", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 10).add(Aspect.getAspect("luxuria"), 1)
                         .add(Aspect.getAspect("superbia"), 2).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("gelum"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.minotaurAxe", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.minotaurAxe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 10).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("telum"), 8).add(Aspect.getAspect("instrumentum"), 8)
                         .add(Aspect.getAspect("superbia"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.transformPowder", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.transformPowder", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("mortuus"), 4).add(Aspect.getAspect("fames"), 3)
                         .add(Aspect.getAspect("fabrico"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.meefRaw", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.meefRaw", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("mortuus"), 3).add(Aspect.getAspect("victus"), 2)
                         .add(Aspect.getAspect("bestia"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.meefSteak", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.meefSteak", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("mortuus"), 4).add(Aspect.getAspect("fames"), 3)
                         .add(Aspect.getAspect("fabrico"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.meefStroganoff", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.meefStroganoff", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("mortuus"), 4).add(Aspect.getAspect("fames"), 4)
                         .add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("arbor"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.mazeWafer", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.mazeWafer", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("messis"), 4).add(Aspect.getAspect("fames"), 3)
                         .add(Aspect.getAspect("fabrico"), 1).add(Aspect.getAspect("sano"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.oreMagnet", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.oreMagnet", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("magneto"), 4)
                         .add(Aspect.getAspect("perfodio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.oreMagnet", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.oreMagnet", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("magneto"), 4)
                         .add(Aspect.getAspect("perfodio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.crumbleHorn", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.crumbleHorn", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("praecantatio"), 14)
                         .add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("auram"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.crumbleHorn", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.crumbleHorn", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("praecantatio"), 14)
                         .add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("auram"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.peacockFan", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.peacockFan", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 18).add(Aspect.getAspect("volatus"), 10)
                         .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("praecantatio"), 6)
                         .add(Aspect.getAspect("arbor"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.peacockFan", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.peacockFan", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 18).add(Aspect.getAspect("volatus"), 10)
                         .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("praecantatio"), 6)
                         .add(Aspect.getAspect("arbor"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.moonwormQueen", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.moonwormQueen", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("victus"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("motus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.moonwormQueen", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.moonwormQueen", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("victus"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("motus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.charmOfLife1", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.charmOfLife1", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("ordo"), 16)
                         .add(Aspect.getAspect("praecantatio"), 8).add(Aspect.getAspect("victus"), 8)
                         .add(Aspect.getAspect("lucrum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.charmOfLife2", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.charmOfLife2", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("sano"), 64).add(Aspect.getAspect("ordo"), 64)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("victus"), 32)
                         .add(Aspect.getAspect("lucrum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.charmOfKeeping1", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.charmOfKeeping1", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("ordo"), 4)
                         .add(Aspect.getAspect("praecantatio"), 3).add(Aspect.getAspect("tutamen"), 3)
                         .add(Aspect.getAspect("lucrum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.charmOfKeeping2", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.charmOfKeeping2", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 16).add(Aspect.getAspect("ordo"), 16)
                         .add(Aspect.getAspect("praecantatio"), 8).add(Aspect.getAspect("tutamen"), 8)
                         .add(Aspect.getAspect("lucrum"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.charmOfKeeping3", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.charmOfKeeping3", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 64).add(Aspect.getAspect("ordo"), 64)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("tutamen"), 32)
                         .add(Aspect.getAspect("lucrum"), 16));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.towerKey", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.towerKey", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("lucrum"), 2)
                         .add(Aspect.getAspect("lux"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.borerEssence", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.borerEssence", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("lucrum"), 2)
                         .add(Aspect.getAspect("ordo"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.experiment115", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.experiment115", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("messis"), 5).add(Aspect.getAspect("fames"), 4)
                         .add(Aspect.getAspect("fabrico"), 2).add(Aspect.getAspect("alienis"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.phantomHelm", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.phantomHelm", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 5).add(Aspect.getAspect("fabrico"), 3)
                         .add(Aspect.getAspect("metallum"), 7).add(Aspect.getAspect("spiritus"), 5)
                         .add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.phantomPlate", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.phantomPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 8).add(Aspect.getAspect("fabrico"), 5)
                         .add(Aspect.getAspect("metallum"), 11).add(Aspect.getAspect("spiritus"), 8)
                         .add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.lampOfCinders", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.lampOfCinders", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 16).add(Aspect.getAspect("ignis"), 10)
                         .add(Aspect.getAspect("fabrico"), 6).add(Aspect.getAspect("praecantatio"), 8)
                         .add(Aspect.getAspect("instrumentum"), 4).add(Aspect.getAspect("luxuria"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.fieryTears", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.fieryTears", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("vacuos"), 1).add(Aspect.getAspect("ira"), 4)
                         .add(Aspect.getAspect("exanimis"), 4).add(Aspect.getAspect("spiritus"), 4)
                         .add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("aqua"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.alphaFur", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.alphaFur", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 6).add(Aspect.getAspect("gelum"), 3)
                         .add(Aspect.getAspect("bestia"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.arcticFur", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.arcticFur", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("gelum"), 1)
                         .add(Aspect.getAspect("bestia"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.iceBomb", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.iceBomb", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("gelum"), 8).add(Aspect.getAspect("motus"), 8)
                         .add(Aspect.getAspect("fabrico"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.arcticHelm", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.arcticHelm", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 3).add(Aspect.getAspect("fabrico"), 2)
                         .add(Aspect.getAspect("pannus"), 6).add(Aspect.getAspect("gelum"), 2)
                         .add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.arcticPlate", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.arcticPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 7).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("pannus"), 14).add(Aspect.getAspect("gelum"), 4)
                         .add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.arcticLegs", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.arcticLegs", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 5).add(Aspect.getAspect("fabrico"), 3)
                         .add(Aspect.getAspect("pannus"), 10).add(Aspect.getAspect("gelum"), 3)
                         .add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.arcticBoots", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.arcticBoots", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 2).add(Aspect.getAspect("fabrico"), 2)
                         .add(Aspect.getAspect("pannus"), 4).add(Aspect.getAspect("gelum"), 2)
                         .add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.yetiHelm", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.yetiHelm", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 4).add(Aspect.getAspect("fabrico"), 2)
                         .add(Aspect.getAspect("pannus"), 12).add(Aspect.getAspect("gelum"), 4)
                         .add(Aspect.getAspect("instrumentum"), 1).add(Aspect.getAspect("praecantatio"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.yetiPlate", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.yetiPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 8).add(Aspect.getAspect("fabrico"), 4)
                         .add(Aspect.getAspect("pannus"), 24).add(Aspect.getAspect("gelum"), 8)
                         .add(Aspect.getAspect("instrumentum"), 1).add(Aspect.getAspect("praecantatio"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.yetiLegs", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.yetiLegs", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 6).add(Aspect.getAspect("fabrico"), 3)
                         .add(Aspect.getAspect("pannus"), 18).add(Aspect.getAspect("gelum"), 6)
                         .add(Aspect.getAspect("instrumentum"), 1).add(Aspect.getAspect("praecantatio"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.yetiBoots", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.yetiBoots", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tutamen"), 3).add(Aspect.getAspect("fabrico"), 2)
                         .add(Aspect.getAspect("pannus"), 9).add(Aspect.getAspect("gelum"), 3)
                         .add(Aspect.getAspect("instrumentum"), 1).add(Aspect.getAspect("praecantatio"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.magicBeans", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.magicBeans", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 16).add(Aspect.getAspect("praecantatio"), 8)
                         .add(Aspect.getAspect("sensus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.giantPick", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.giantPick", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perfodio"), 32).add(Aspect.getAspect("terra"), 16)
                         .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.giantSword", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.giantSword", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 32).add(Aspect.getAspect("terra"), 16)
                         .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.enderBow", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.enderBow", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("alienis"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.iceBow", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.iceBow", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("gelum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.tripleBow", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.tripleBow", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("arbor"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.seekerBow", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.seekerBow", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("iter"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.iceSword", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.iceSword", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 4).add(Aspect.getAspect("lucrum"), 2)
                         .add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("gelum"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.glassSword", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.glassSword", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 14).add(Aspect.getAspect("vitreus"), 20)
                         .add(Aspect.getAspect("lucrum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.giantPick", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.giantPick", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("perfodio"), 32).add(Aspect.getAspect("terra"), 16)
                         .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.giantSword", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.giantSword", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 32).add(Aspect.getAspect("terra"), 16)
                         .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.enderBow", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.enderBow", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("alienis"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.iceBow", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.iceBow", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("gelum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.tripleBow", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.tripleBow", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("arbor"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.seekerBow", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.seekerBow", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("iter"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.iceSword", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.iceSword", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 4).add(Aspect.getAspect("lucrum"), 2)
                         .add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("gelum"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.glassSword", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.glassSword", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 14).add(Aspect.getAspect("vitreus"), 20)
                         .add(Aspect.getAspect("lucrum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.knightmetalRing", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.knightmetalRing", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("instrumentum"), 3).add(Aspect.getAspect("ordo"), 3)
                         .add(Aspect.getAspect("fabrico"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.chainBlock", 1, 0, missing),
+                getModItem(TwilightForest.ID, "item.chainBlock", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 10).add(Aspect.getAspect("metallum"), 20)
                         .add(Aspect.getAspect("motus"), 4).add(Aspect.getAspect("lucrum"), 8)
                         .add(Aspect.getAspect("instrumentum"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("TwilightForest", "item.chainBlock", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.chainBlock", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 10).add(Aspect.getAspect("metallum"), 20)
                         .add(Aspect.getAspect("motus"), 4).add(Aspect.getAspect("lucrum"), 8)
                         .add(Aspect.getAspect("instrumentum"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Forestry", "grafter", 1, 0, missing),
+                getModItem(Forestry.ID, "grafter", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 2).add(Aspect.getAspect("arbor"), 1)
                         .add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("Forestry", "scoop", 1, 0, missing),
+                getModItem(Forestry.ID, "scoop", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 4).add(Aspect.getAspect("pannus"), 3)
                         .add(Aspect.getAspect("instrumentum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem("thaumicbases", "tobaccoPowder", 1, 0, missing),
+                getModItem(ThaumicBases.ID, "tobaccoPowder", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("herba"), 1).add(Aspect.getAspect("humanus"), 1)
                         .add(Aspect.getAspect("perditio"), 1));
 

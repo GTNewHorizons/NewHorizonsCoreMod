@@ -25,7 +25,7 @@ public class ScriptAFSU implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(new String[] { AFSU.ID });
+        return Arrays.asList(AFSU.ID);
     }
 
     @Override

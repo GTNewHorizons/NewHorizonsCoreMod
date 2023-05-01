@@ -41,7 +41,10 @@ public class ScriptJABBA implements IScriptLoader {
                 ExtraUtilities.ID,
                 Forestry.ID,
                 Natura.ID,
-                GregTech.ID);
+                GregTech.ID,
+                BartWorks.ID,
+                EnderStorage.ID,
+                Railcraft.ID);
     }
 
     @Override
@@ -262,12 +265,12 @@ public class ScriptJABBA implements IScriptLoader {
         addShapedRecipe(
                 getModItem(JABBA.ID, "hammer", 1),
                 new Object[] { "ingotIron", "plateAnyIron", "ingotIron", "screwAnyIron", "stickAnyIron", "screwAnyIron",
-                        "craftingToolHardHammer", "stickAnyIron", getModItem("GTore", "craftingToolScrewdriver", 1) });
+                        "craftingToolHardHammer", "stickAnyIron", "craftingToolScrewdriver" });
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "tuningFork", 1),
-                new Object[] { getModItem("GTore", "craftingToolScrewdriver", 1), "stickAnyIron", null, "screwAnyIron",
-                        "plateAnyIron", "stickAnyIron", "stickAnyIron", "screwAnyIron", "craftingToolHardHammer" });
+                new Object[] { "craftingToolScrewdriver", "stickAnyIron", null, "screwAnyIron", "plateAnyIron",
+                        "stickAnyIron", "stickAnyIron", "screwAnyIron", "craftingToolHardHammer" });
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1),
