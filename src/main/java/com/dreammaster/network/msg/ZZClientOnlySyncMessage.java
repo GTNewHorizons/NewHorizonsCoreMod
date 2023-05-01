@@ -13,6 +13,9 @@ public class ZZClientOnlySyncMessage implements IMessage {
 
     boolean enabled;
 
+    @SuppressWarnings("unused")
+    public ZZClientOnlySyncMessage() {}
+
     public ZZClientOnlySyncMessage(boolean enabled) {
         this.enabled = enabled;
     }

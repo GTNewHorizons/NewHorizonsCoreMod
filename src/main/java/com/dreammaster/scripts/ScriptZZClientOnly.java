@@ -14,12 +14,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
@@ -384,7 +384,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                 getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierI", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).noFluidOutputs().duration(600).eut(120)
-                        .disabled().addTo(sAssemblerRecipes));
+                        .disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
@@ -392,7 +392,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                 getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierII", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).noFluidOutputs().duration(600).eut(480)
-                        .disabled().addTo(sAssemblerRecipes));
+                        .disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
@@ -400,7 +400,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                 getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierIII", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).noFluidOutputs().duration(600)
-                        .eut(1920).disabled().addTo(sAssemblerRecipes));
+                        .eut(1920).disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
@@ -408,7 +408,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                 getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierIV", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).noFluidOutputs().duration(600)
-                        .eut(7680).disabled().addTo(sAssemblerRecipes));
+                        .eut(7680).disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
@@ -416,15 +416,18 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                 getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierV", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).noFluidOutputs().duration(600)
-                        .eut(30720).disabled().addTo(sAssemblerRecipes));
+                        .eut(30720).disabled().hidden().addTo(sAssemblerRecipes));
 
         if (GT_Mod.gregtechproxy.isServerSide() && CoreConfig.ForestryStampsAndChunkLoaderCoinsServerEnabled) {
             stamps(true);
-            coins.forEach(r -> r.mEnabled = true);
+            coins.forEach(r -> {
+                r.mEnabled = true;
+                r.mHidden = false;
+            });
             registered = true;
         }
 
-        MinecraftForge.EVENT_BUS.register(this);
+        FMLCommonHandler.instance().bus().register(this);
 
         initialized = true;
     }
@@ -447,11 +450,17 @@ public class ScriptZZClientOnly implements IScriptLoader {
         if (!initialized) throw new RuntimeException("ZZClientOnly not initialized!");
         if (enabled && !registered) {
             stamps(true);
-            coins.forEach(r -> r.mEnabled = true);
+            coins.forEach(r -> {
+                r.mEnabled = true;
+                r.mHidden = false;
+            });
             registered = true;
         } else if (!enabled && registered) {
             stamps(false);
-            coins.forEach(r -> r.mEnabled = false);
+            coins.forEach(r -> {
+                r.mEnabled = false;
+                r.mHidden = true;
+            });
             registered = false;
         }
     }
