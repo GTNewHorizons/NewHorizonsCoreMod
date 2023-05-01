@@ -398,6 +398,35 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'h',
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 500, missing));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem("Avaritia", "Orb_Armok", 1, 0, missing),
+                "---aaa---",
+                "--ababa--",
+                "--aacaa--",
+                "-dababad-",
+                "ddeafagdd",
+                "-dddhddd-",
+                "---ddd---",
+                "---------",
+                "---------",
+                'a',
+                "plateInfinity",
+                'b',
+                getModItem("ForbiddenMagic", "EldritchOrb", 1, 0, missing),
+                'c',
+                getModItem("BloodArsenal", "blood_infused_diamond_block", 1, 0, missing),
+                'd',
+                "plateCosmicNeutronium",
+                'e',
+                getModItem("TaintedMagic", "ItemFocusTime", 1, 0, missing),
+                'f',
+                getModItem("Avaritia", "Resource", 1, 5, missing),
+                'g',
+                getModItem("TaintedMagic", "ItemFocusEldritch", 1, 0, missing),
+                'h',
+                getModItem("TConstruct", "heavyPlate", 1, 1671, missing));
+
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Sword", 1, 0, missing),
                 "-------ab",
