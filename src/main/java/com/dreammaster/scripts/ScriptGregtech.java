@@ -38,10 +38,10 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import tconstruct.library.TConstructRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.util.GT_ModHandler;
+import tconstruct.library.TConstructRegistry;
 
 public class ScriptGregtech implements IScriptLoader {
 

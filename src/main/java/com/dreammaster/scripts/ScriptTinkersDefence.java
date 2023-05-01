@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dreammaster.tinkersConstruct.TConstructHelper;
+
 import gregtech.api.enums.GT_Values;
 
 public class ScriptTinkersDefence implements IScriptLoader {

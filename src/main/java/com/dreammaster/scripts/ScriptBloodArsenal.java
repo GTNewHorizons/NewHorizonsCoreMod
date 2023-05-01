@@ -21,13 +21,12 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
-import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
-import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
-
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
+import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
+import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
+import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
 

@@ -1,10 +1,9 @@
 package com.dreammaster.railcraft;
 
-import mods.railcraft.api.crafting.RailcraftCraftingManager;
-
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.util.GT_Utility;
+import mods.railcraft.api.crafting.RailcraftCraftingManager;
 
 public class RailcraftHelper {
 

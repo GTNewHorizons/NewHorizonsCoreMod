@@ -46,12 +46,12 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import tconstruct.library.TConstructRegistry;
-import tconstruct.library.crafting.Smeltery;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.util.GT_ModHandler;
+import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.Smeltery;
 
 public class ScriptCoreMod implements IScriptLoader {
 

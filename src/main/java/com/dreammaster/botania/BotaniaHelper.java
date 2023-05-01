@@ -2,8 +2,8 @@ package com.dreammaster.botania;
 
 import net.minecraft.item.ItemStack;
 
-import vazkii.botania.api.BotaniaAPI;
 import gregtech.api.util.GT_Utility;
+import vazkii.botania.api.BotaniaAPI;
 
 public class BotaniaHelper {
 

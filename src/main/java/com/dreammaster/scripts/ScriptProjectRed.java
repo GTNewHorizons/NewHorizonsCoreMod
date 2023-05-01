@@ -47,13 +47,12 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
-import tconstruct.library.crafting.Smeltery;
-
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import tconstruct.library.crafting.Smeltery;
 
 public class ScriptProjectRed implements IScriptLoader {
 

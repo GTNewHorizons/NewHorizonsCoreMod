@@ -3,15 +3,14 @@ package com.dreammaster.tinkersConstruct;
 import java.lang.reflect.Field;
 import java.util.Map;
 
-import mantle.utils.ItemMetaWrapper;
-
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
+import gregtech.api.util.GT_Utility;
+import mantle.utils.ItemMetaWrapper;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.Smeltery;
-import gregtech.api.util.GT_Utility;
 
 public class TConstructHelper {
 

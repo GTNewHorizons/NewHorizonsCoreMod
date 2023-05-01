@@ -32,16 +32,15 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
-import tconstruct.library.TConstructRegistry;
-import tconstruct.library.crafting.DryingRackRecipes;
-import tconstruct.library.crafting.Smeltery;
-
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.util.GT_ModHandler;
+import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.DryingRackRecipes;
+import tconstruct.library.crafting.Smeltery;
 
 public class ScriptTinkersConstruct implements IScriptLoader {
 
