@@ -1,6 +1,6 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.AE2WCT;
+import static gregtech.api.enums.Mods.AE2WCT;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.util.GT_ModHandler.getModItem;

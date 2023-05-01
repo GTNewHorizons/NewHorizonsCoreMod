@@ -1,7 +1,5 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.ProjectBlue;
-import static com.dreammaster.scripts.TemporaryMods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiblioCraft;
 import static gregtech.api.enums.Mods.BuildCraftCore;
@@ -14,6 +12,8 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.ProjectBlue;
+import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;

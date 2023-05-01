@@ -1,7 +1,7 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.IronChestsMinecarts;
 import static gregtech.api.enums.Mods.IronChests;
+import static gregtech.api.enums.Mods.IronChestsMinecarts;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;

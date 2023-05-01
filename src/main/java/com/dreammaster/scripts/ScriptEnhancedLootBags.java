@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.EnhancedLootBags;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.EnhancedLootBags;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;

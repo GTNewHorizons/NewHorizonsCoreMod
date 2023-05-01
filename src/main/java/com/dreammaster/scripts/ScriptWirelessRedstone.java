@@ -1,12 +1,12 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.WirelessRedstoneCBEAddons;
-import static com.dreammaster.scripts.TemporaryMods.WirelessRedstoneCBECore;
-import static com.dreammaster.scripts.TemporaryMods.WirelessRedstoneCBELogic;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedCore;
+import static gregtech.api.enums.Mods.WirelessRedstoneCBEAddons;
+import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
+import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalRecipes;

@@ -1,7 +1,7 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.GraviSuiteNEO;
 import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.GraviSuiteNEO;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;

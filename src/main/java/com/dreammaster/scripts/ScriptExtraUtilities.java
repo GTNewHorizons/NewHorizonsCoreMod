@@ -1,7 +1,5 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.WirelessRedstoneCBECore;
-import static com.dreammaster.scripts.TemporaryMods.WirelessRedstoneCBELogic;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -21,6 +19,8 @@ import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
+import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;

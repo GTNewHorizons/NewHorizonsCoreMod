@@ -1,6 +1,6 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.BetterBuildersWands;
+import static gregtech.api.enums.Mods.BetterBuildersWands;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;

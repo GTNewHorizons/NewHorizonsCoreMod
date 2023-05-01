@@ -1,13 +1,11 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.BuildCraftBuilders;
-import static com.dreammaster.scripts.TemporaryMods.BuildCraftCompat;
-import static com.dreammaster.scripts.TemporaryMods.BuildCraftRobotics;
-import static com.dreammaster.scripts.TemporaryMods.ProjectRedExpansion;
-import static com.dreammaster.scripts.TemporaryMods.ProjectRedTransportation;
 import static gregtech.api.enums.Mods.Botany;
+import static gregtech.api.enums.Mods.BuildCraftBuilders;
+import static gregtech.api.enums.Mods.BuildCraftCompat;
 import static gregtech.api.enums.Mods.BuildCraftCore;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.BuildCraftRobotics;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.ExtraBees;
@@ -20,6 +18,8 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedCore;
+import static gregtech.api.enums.Mods.ProjectRedExpansion;
+import static gregtech.api.enums.Mods.ProjectRedTransportation;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.TinkerConstruct;

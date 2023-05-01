@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.QuestBook;
 import static gregtech.api.enums.Mods.BetterQuesting;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.QuestBook;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 

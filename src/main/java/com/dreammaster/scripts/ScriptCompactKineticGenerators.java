@@ -1,6 +1,6 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.scripts.TemporaryMods.CompactKineticGenerators;
+import static gregtech.api.enums.Mods.CompactKineticGenerators;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
