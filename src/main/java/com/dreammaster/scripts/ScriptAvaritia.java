@@ -7,12 +7,12 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.Mods;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-
-import com.dreammaster.thaumcraft.TCHelper;
-import gregtech.api.enums.Mods;
 
 public class ScriptAvaritia implements IScriptLoader {
 

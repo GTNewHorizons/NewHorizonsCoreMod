@@ -11,6 +11,7 @@ import net.minecraft.item.crafting.IRecipe;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.CrucibleRecipe;
@@ -21,7 +22,6 @@ import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategoryList;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import gregtech.api.util.GT_Utility;
 
 public class TCHelper {
 

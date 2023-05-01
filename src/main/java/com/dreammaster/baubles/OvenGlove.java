@@ -18,15 +18,14 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import baubles.api.BaubleType;
-import baubles.api.IBauble;
-import baubles.common.container.InventoryBaubles;
-import baubles.common.lib.PlayerHandler;
-
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.main.NHItems;
 
+import baubles.api.BaubleType;
+import baubles.api.IBauble;
+import baubles.common.container.InventoryBaubles;
+import baubles.common.lib.PlayerHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;

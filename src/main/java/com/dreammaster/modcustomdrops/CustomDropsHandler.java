@@ -22,8 +22,6 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
-import thaumcraft.common.lib.FakeThaumcraftPlayer;
-
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 
@@ -32,6 +30,7 @@ import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import eu.usrv.yamcore.persisteddata.PersistedDataBase;
+import thaumcraft.common.lib.FakeThaumcraftPlayer;
 
 public class CustomDropsHandler {
 

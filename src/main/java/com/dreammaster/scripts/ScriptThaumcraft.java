@@ -8,17 +8,16 @@ import java.util.List;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.Mods;
+import gregtech.api.util.GT_ModHandler;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-
-import com.dreammaster.thaumcraft.TCHelper;
-
-import gregtech.api.enums.Mods;
-import gregtech.api.util.GT_ModHandler;
 
 public class ScriptThaumcraft implements IScriptLoader {
 

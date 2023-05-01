@@ -8,15 +8,15 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
+import com.dreammaster.thaumcraft.TCHelper;
+
+import gregtech.api.enums.Mods;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-
-import com.dreammaster.thaumcraft.TCHelper;
-import gregtech.api.enums.Mods;
 
 public class ScriptWitchery implements IScriptLoader {
 

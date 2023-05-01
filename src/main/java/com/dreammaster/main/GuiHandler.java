@@ -7,6 +7,7 @@ import net.minecraft.world.World;
 import com.dreammaster.modbabychest.ContainerBabyChest;
 import com.dreammaster.modbabychest.GuiBabyChest;
 import com.dreammaster.modbabychest.TileEntityBabyChest;
+
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class GuiHandler implements IGuiHandler {

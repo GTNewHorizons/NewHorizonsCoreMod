@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.NHItems;
+
 import eu.usrv.yamcore.iface.IExtendedModItem;
 
 public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBrickForm> {
