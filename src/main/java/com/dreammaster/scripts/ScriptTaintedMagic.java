@@ -1,5 +1,14 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.ForbiddenMagic;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.TaintedMagic;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -26,62 +35,68 @@ public class ScriptTaintedMagic implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.TaintedMagic.ID, Mods.Thaumcraft.ID);
+        return Arrays.asList(
+                Mods.TaintedMagic.ID,
+                Mods.Thaumcraft.ID,
+                ForbiddenMagic.ID,
+                Forestry.ID,
+                IndustrialCraft2.ID,
+                TinkersGregworks.ID);
     }
 
     @Override
     public void loadRecipes() {
-        TCHelper.removeCrucibleRecipe(getModItem("TaintedMagic", "BlockShadowOre", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemMagicFunguar", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "BlockWarpwoodSapling", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemWarpedGoggles", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemFocusVisShard", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemFocusMageMace", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemMaterial", 2, 5, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemFocusEldritch", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemCrystalDagger", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemHelmetCultistRobe", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemChestplateCultistRobe", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemLeggingsCultistRobe", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemBootsCultist", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemHelmetCultistPlate", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemChestplateCultistPlate", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("Thaumcraft", "ItemLeggingsCultistPlate", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemHelmetCultistLeaderPlate", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemChestplateCultistLeaderPlate", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemLeggingsCultistLeaderPlate", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("TaintedMagic", "ItemVoidsentBlood", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("Thaumcraft", "ItemSwordCrimson", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemVoidmetalGoggles", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemFocusTaint", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemFocusTaintedBlast", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 6, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemThaumicDisassembler", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemVoidwalkerBoots", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemVoidwalkerSash", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemVoidFortressHelmet", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemVoidFortressChestplate", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemVoidFortressLeggings", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemShadowFortressHelmet", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemShadowFortressChestplate", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemShadowFortressLeggings", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemKatana", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemKatana", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemKatana", 1, 2, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemWandRod", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemWandRod", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemFocusTime", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemFocusMeteorology", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemPrimordialEdge", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemWandCap", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemWandCap", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("TaintedMagic", "ItemWandCap", 1, 3, missing));
-        TCHelper.removeInfusionRecipe(getModItem("TaintedMagic", "ItemWandCap", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMagicFunguar", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "BlockWarpwoodSapling", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 2, 5, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistRobe", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateCultistRobe", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsCultistRobe", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBootsCultist", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistLeaderPlate", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemChestplateCultistLeaderPlate", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemLeggingsCultistLeaderPlate", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTaintedBlast", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemShadowFortressHelmet", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemShadowFortressChestplate", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemShadowFortressLeggings", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 2, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemWandRod", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 3, missing));
+        TCHelper.removeInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0, missing));
         TCHelper.orphanResearch("SHADOWMETAL");
         TCHelper.removeResearch("SHADOWMETAL");
         new ResearchItem(
@@ -92,30 +107,30 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 0,
                 1,
                 2,
-                getModItem("TaintedMagic", "BlockShadowOre", 1, 0, missing)).setParents("TAINTEDMAGIC").setConcealed()
+                getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0, missing)).setParents("TAINTEDMAGIC").setConcealed()
                         .setPages(new ResearchPage("tm.text.SHADOWMETAL.1")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "ShadowmetalGTNH",
-                getModItem("TaintedMagic", "BlockShadowOre", 1, 0, missing),
-                getModItem("minecraft", "stone", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("tenebrae"), 6).add(Aspect.getAspect("praecantatio"), 8)
                         .add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("vacuos"), 4));
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("TaintedMagic", "BlockShadowOre", 1, 0, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "BlockShadowOre", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("ShadowmetalGTNH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
-                getModItem("TaintedMagic", "ItemShadowmetalHoe", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemShadowmetalHoe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
                 'b',
-                getModItem("gregtech", "gt.metaitem.01", 1, 11368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11368, missing),
                 'c',
                 "craftingToolHardHammer",
                 'd',
@@ -127,20 +142,20 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemShadowmetalHoe", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalHoe", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
-                getModItem("TaintedMagic", "ItemShadowmetalPick", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemShadowmetalPick", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
                 'b',
-                getModItem("gregtech", "gt.metaitem.01", 1, 11368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11368, missing),
                 'c',
-                getModItem("gregtech", "gt.metaitem.01", 1, 11368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11368, missing),
                 'd',
                 "craftingToolFile",
                 'e',
@@ -152,22 +167,22 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemShadowmetalPick", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalPick", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
-                getModItem("TaintedMagic", "ItemShadowmetalAxe", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemShadowmetalAxe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
                 'b',
-                getModItem("gregtech", "gt.metaitem.01", 1, 11368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11368, missing),
                 'c',
                 "craftingToolHardHammer",
                 'd',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
                 'e',
                 "stickWood",
                 'g',
@@ -177,10 +192,10 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemShadowmetalAxe", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalAxe", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
-                getModItem("TaintedMagic", "ItemShadowmetalSpade", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemShadowmetalSpade", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
                 "abc",
                 "def",
@@ -188,7 +203,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'a',
                 "craftingToolFile",
                 'b',
-                getModItem("gregtech", "gt.metaitem.01", 1, 11368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11368, missing),
                 'c',
                 "craftingToolHardHammer",
                 'e',
@@ -198,20 +213,20 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemShadowmetalSpade", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalSpade", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowmetalGTNH",
-                getModItem("TaintedMagic", "ItemShadowmetalSword", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("perditio"), 45).add(Aspect.getAspect("terra"), 30),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
                 'd',
                 "craftingToolFile",
                 'e',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
                 'f',
                 "craftingToolHardHammer",
                 'h',
@@ -219,7 +234,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ShadowmetalGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemShadowmetalSword", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0, missing))));
         TCHelper.orphanResearch("EVILSHARDS");
         TCHelper.removeResearch("EVILSHARDS");
         new ResearchItem(
@@ -231,28 +246,28 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 4,
                 0,
                 3,
-                getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing)).setParents("TAINTEDMAGIC").setConcealed()
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing)).setParents("TAINTEDMAGIC").setConcealed()
                         .setPages(new ResearchPage("tm.text.EVILSHARDS.1")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "EvilshardsGTNH",
-                getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 8).add(Aspect.getAspect("praecantatio"), 8)
                         .add(Aspect.getAspect("permutatio"), 8));
         TCHelper.addResearchPage(
                 "EvilshardsGTNH",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing))));
         ThaumcraftApi.addCrucibleRecipe(
                 "EvilshardsGTNH",
-                getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing),
-                getModItem("Thaumcraft", "ItemShard", 1, 6, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("vitium"), 8).add(Aspect.getAspect("praecantatio"), 8)
                         .add(Aspect.getAspect("permutatio"), 8));
         TCHelper.addResearchPage(
                 "EvilshardsGTNH",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing))));
         ThaumcraftApi.addWarpToResearch("EvilshardsGTNH", 2);
         TCHelper.orphanResearch("MAGICFUNGUAR");
         TCHelper.removeResearch("MAGICFUNGUAR");
@@ -265,11 +280,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 3,
                 -2,
                 3,
-                getModItem("TaintedMagic", "ItemMagicFunguar", 1, 0, missing)).setParents("TAINTEDMAGIC").setConcealed()
-                        .setPages(new ResearchPage("tm.text.MAGICFUNGUAR.1")).registerResearchItem();
+                getModItem(TaintedMagic.ID, "ItemMagicFunguar", 1, 0, missing)).setParents("TAINTEDMAGIC")
+                        .setConcealed().setPages(new ResearchPage("tm.text.MAGICFUNGUAR.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MagicFunguarGTNH",
-                getModItem("TaintedMagic", "ItemMagicFunguar", 4, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemMagicFunguar", 4, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 10).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 10)
                         .add(Aspect.getAspect("aer"), 10).add(Aspect.getAspect("perditio"), 10),
@@ -277,27 +292,27 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("minecraft", "brown_mushroom", 1, 0, missing),
+                getModItem(Minecraft.ID, "brown_mushroom", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemShard", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 32767, missing),
                 'c',
-                getModItem("minecraft", "red_mushroom", 1, 0, missing),
+                getModItem(Minecraft.ID, "red_mushroom", 1, 0, missing),
                 'd',
-                getModItem("Thaumcraft", "ItemShard", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 32767, missing),
                 'e',
-                getModItem("Thaumcraft", "blockCustomPlant", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 5, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemShard", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 32767, missing),
                 'g',
-                getModItem("minecraft", "blaze_powder", 1, 0, missing),
+                getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemShard", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 32767, missing),
                 'i',
-                getModItem("minecraft", "blaze_powder", 1, 0, missing));
+                getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing));
         TCHelper.addResearchPage(
                 "MagicFunguarGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemMagicFunguar", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMagicFunguar", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("MagicFunguarGTNH", 1);
         TCHelper.orphanResearch("WARPTREE");
         TCHelper.removeResearch("WARPTREE");
@@ -310,34 +325,35 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 6,
                 -1,
                 3,
-                getModItem("TaintedMagic", "BlockWarpwoodSapling", 1, 0, missing)).setParentsHidden("ShadowmetalGTNH")
+                getModItem(TaintedMagic.ID, "BlockWarpwoodSapling", 1, 0, missing)).setParentsHidden("ShadowmetalGTNH")
                         .setParents("EvilshardsGTNH").setConcealed().setPages(new ResearchPage("tm.text.WARPTREE.1"))
                         .registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "WarpTreeGTNH",
-                getModItem("TaintedMagic", "BlockWarpwoodSapling", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "BlockWarpwoodSapling", 1, 0, missing),
                 4,
                 new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("arbor"), 16)
                         .add(Aspect.getAspect("tenebrae"), 12).add(Aspect.getAspect("vitium"), 8)
                         .add(Aspect.getAspect("permutatio"), 8),
-                getModItem("Thaumcraft", "blockCustomPlant", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing), });
+                getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing), });
         TCHelper.addResearchPage(
                 "WarpTreeGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "BlockWarpwoodSapling", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "BlockWarpwoodSapling", 1, 0, missing))));
         TCHelper.addResearchPage(
                 "WarpTreeGTNH",
                 new ResearchPage(
-                        TCHelper.findCraftingRecipe(getModItem("TaintedMagic", "BlockWarpwoodPlanks", 1, 0, missing))));
+                        TCHelper.findCraftingRecipe(
+                                getModItem(TaintedMagic.ID, "BlockWarpwoodPlanks", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("WarpTreeGTNH", 3);
         TCHelper.orphanResearch("WARPEDGOGGLES");
         TCHelper.removeResearch("WARPEDGOGGLES");
@@ -350,33 +366,33 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 2,
                 3,
                 3,
-                getModItem("TaintedMagic", "ItemWarpedGoggles", 1, 0, missing)).setParents("ShadowmetalGTNH")
+                getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0, missing)).setParents("ShadowmetalGTNH")
                         .setParentsHidden("EvilshardsGTNH").registerResearchItem();
         TCHelper.addResearchPrereq("WarpedGogglesGTNH", "GOGGLES", false);
         ResearchCategories.getResearch("WarpedGogglesGTNH").setConcealed();
         TCHelper.addResearchPage("WarpedGogglesGTNH", new ResearchPage("tm.text.WARPEDGOGGLES.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "WarpedGogglesGTNH",
-                getModItem("TaintedMagic", "ItemWarpedGoggles", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("tenebrae"), 24).add(Aspect.getAspect("tutamen"), 16)
                         .add(Aspect.getAspect("sensus"), 8),
-                getModItem("Thaumcraft", "ItemGoggles", 1, 0, missing),
-                new ItemStack[] { getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 24544, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 26368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 24544, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing), });
+                getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0, missing),
+                new ItemStack[] { getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24544, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 26368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24544, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing), });
         TCHelper.addResearchPage(
                 "WarpedGogglesGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemWarpedGoggles", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("WarpedGogglesGTNH", 1);
         TCHelper.orphanResearch("FOCUSSHARD");
         TCHelper.removeResearch("FOCUSSHARD");
@@ -389,39 +405,39 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 3,
                 1,
                 3,
-                getModItem("TaintedMagic", "ItemFocusVisShard", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0, missing))
                         .setParents("EvilshardsGTNH", "FOCUSFIRE").setConcealed()
                         .setPages(new ResearchPage("tm.text.FOCUSSHARD.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "FocusShardGTNH",
-                getModItem("TaintedMagic", "ItemFocusVisShard", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("aer"), 50)
                         .add(Aspect.getAspect("perditio"), 50),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
                 'd',
-                getModItem("Thaumcraft", "ItemWispEssence", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemWispEssence", 1, 32767, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemWispEssence", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemWispEssence", 1, 32767, missing),
                 'g',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'i',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing));
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing));
         TCHelper.addResearchPage(
                 "FocusShardGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemFocusVisShard", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemFocusVisShard", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("FocusShardGTNH", 1);
         TCHelper.orphanResearch("MACEFOCUS");
         TCHelper.removeResearch("MACEFOCUS");
@@ -434,31 +450,31 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 0,
                 4,
                 3,
-                getModItem("TaintedMagic", "ItemFocusMageMace", 1, 0, missing)).setParentsHidden("TAINTEDMAGIC")
+                getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1, 0, missing)).setParentsHidden("TAINTEDMAGIC")
                         .setParents("ShadowmetalGTNH", "FOCUSFIRE").setConcealed()
                         .setPages(new ResearchPage("tm.text.MACEFOCUS.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MaceFocusGTNH",
-                getModItem("TaintedMagic", "ItemFocusMageMace", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1, 0, missing),
                 9,
                 new AspectList().add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("perditio"), 32)
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("telum"), 64)
                         .add(Aspect.getAspect("cognitio"), 8),
-                getModItem("TaintedMagic", "ItemShadowmetalSword", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27368, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17522, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 23368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 23368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17522, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27368, missing), });
+                getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27368, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27368, missing), });
         TCHelper.addResearchPage(
                 "MaceFocusGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemFocusMageMace", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusMageMace", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("MaceFocusGTNH", 1);
         TCHelper.orphanResearch("SHADOWCLOTH");
         TCHelper.removeResearch("SHADOWCLOTH");
@@ -471,11 +487,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -1,
                 2,
                 3,
-                getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing)).setParents("ShadowmetalGTNH", "ENCHFABRIC")
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing)).setParents("ShadowmetalGTNH", "ENCHFABRIC")
                         .setConcealed().setPages(new ResearchPage("tm.text.SHADOWCLOTH.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ShadowClothGTNH",
-                getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
                         .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
                         .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
@@ -483,26 +499,27 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'b',
-                getModItem("gregtech", "gt.metaitem.02", 1, 19368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 19368, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'd',
-                getModItem("gregtech", "gt.metaitem.01", 1, 29368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 29368, missing),
                 'e',
-                getModItem("gregtech", "gt.metaitem.01", 1, 29330, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 29330, missing),
                 'f',
-                getModItem("gregtech", "gt.metaitem.01", 1, 29368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 29368, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'h',
-                getModItem("gregtech", "gt.metaitem.02", 1, 19368, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 19368, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing));
         TCHelper.addResearchPage(
                 "ShadowClothGTNH",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing))));
         ThaumcraftApi.addWarpToResearch("ShadowClothGTNH", 2);
         TCHelper.orphanResearch("CREATIONSHARD");
         TCHelper.removeResearch("CREATIONSHARD");
@@ -515,42 +532,43 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 8,
                 -5,
                 3,
-                getModItem("TaintedMagic", "ItemMaterial", 1, 5, missing)).setParents("TMELDRITCHMAJOR", "PRIMPEARL")
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing)).setParents("TMELDRITCHMAJOR", "PRIMPEARL")
                         .setConcealed().setPages(new ResearchPage("tm.text.CREATIONSHARD.1")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "CreationShardGTNH",
-                getModItem("dreamcraft", "item.VoidEssence", 2, 0, missing),
-                getModItem("Thaumcraft", "ItemResource", 1, 16, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 2, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("vacuos"), 16)
                         .add(Aspect.getAspect("tenebrae"), 16));
         TCHelper.addResearchPage(
                 "CreationShardGTNH",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing))));
+                        TCHelper.findCrucibleRecipe(
+                                getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CreationShardGTNH",
-                getModItem("TaintedMagic", "ItemMaterial", 2, 5, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 2, 5, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("vacuos"), 64)
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("auram"), 64)
                         .add(Aspect.getAspect("tenebrae"), 64),
-                getModItem("minecraft", "nether_star", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing), });
+                getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.addResearchPage(
                 "CreationShardGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 5, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing))));
         ThaumcraftApi.addWarpToResearch("CreationShardGTNH", 10);
         TCHelper.orphanResearch("ELDRITCHFOCUS");
         TCHelper.removeResearch("ELDRITCHFOCUS");
@@ -563,34 +581,34 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 8,
                 -4,
                 3,
-                getModItem("TaintedMagic", "ItemFocusEldritch", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing))
                         .setParentsHidden("ShadowmetalGTNH", "EvilshardsGTNH")
                         .setParents("CreationShardGTNH", "FOCUSPORTABLEHOLE").setConcealed()
                         .setPages(new ResearchPage("tm.text.ELDRITCHFOCUS.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "EldritchFocusGTNH",
-                getModItem("TaintedMagic", "ItemFocusEldritch", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 9,
                 new AspectList().add(Aspect.getAspect("aer"), 84).add(Aspect.getAspect("alienis"), 72)
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("tenebrae"), 64)
                         .add(Aspect.getAspect("ira"), 32).add(Aspect.getAspect("potentia"), 16),
-                getModItem("TaintedMagic", "ItemMaterial", 1, 5, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "FocusPortableHole", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("Thaumcraft", "ItemEldritchObject", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("Thaumcraft", "ItemEldritchObject", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing), });
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), });
         TCHelper.addResearchPage(
                 "EldritchFocusGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemFocusEldritch", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing))));
         TCHelper.addResearchPage("EldritchFocusGTNH", new ResearchPage("tm.text.ELDRITCHFOCUS.2"));
         ThaumcraftApi.addWarpToResearch("EldritchFocusGTNH", 4);
         TCHelper.orphanResearch("CRYSTALDAGGER");
@@ -604,7 +622,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 0,
                 -3,
                 3,
-                getModItem("TaintedMagic", "ItemCrystalDagger", 1, 0, missing)).setParents("TAINTEDMAGIC")
+                getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing)).setParents("TAINTEDMAGIC")
                         .setParentsHidden("ShadowmetalGTNH").registerResearchItem();
         TCHelper.addResearchPrereq("CrystalDaggerGTNH", "ENCHFABRIC", false);
         TCHelper.addResearchPrereq("CrystalDaggerGTNH", "ESSENTIACRYSTAL", false);
@@ -613,7 +631,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage("CrystalDaggerGTNH", new ResearchPage("tm.text.CRYSTALDAGGER.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrystalDaggerGTNH",
-                getModItem("TaintedMagic", "ItemCrystalDagger", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 100).add(Aspect.getAspect("ignis"), 100)
                         .add(Aspect.getAspect("perditio"), 100).add(Aspect.getAspect("ordo"), 50)
                         .add(Aspect.getAspect("aer"), 50),
@@ -625,11 +643,17 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'b',
                 "craftingToolWrench",
                 'c',
-                createItemStack("TGregworks", "tGregToolPartKnifeBlade", 1, 1622, "{material:\"Shadow\"}", missing),
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartKnifeBlade",
+                        1,
+                        1622,
+                        "{material:\"Shadow\"}",
+                        missing),
                 'e',
-                getModItem("Thaumcraft", "blockTube", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 7, missing),
                 'g',
-                getModItem("Forestry", "oakStick", 1, 0, missing),
+                getModItem(Forestry.ID, "oakStick", 1, 0, missing),
                 'h',
                 "craftingToolScrewdriver",
                 'i',
@@ -637,7 +661,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage(
                 "CrystalDaggerGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemCrystalDagger", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("CrystalDaggerGTNH", 3);
         TCHelper.orphanResearch("CRIMSONROBES");
         TCHelper.removeResearch("CRIMSONROBES");
@@ -650,7 +674,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -2,
                 -5,
                 3,
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing)).setParentsHidden("TAINTEDMAGIC")
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing)).setParentsHidden("TAINTEDMAGIC")
                         .setParents("CrystalDaggerGTNH").registerResearchItem();
         TCHelper.addResearchPrereq("CrimsonRobesGTNH", "ShadowClothGTNH", true);
         TCHelper.addResearchPrereq("CrimsonRobesGTNH", "VOIDMETAL", false);
@@ -658,7 +682,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage("CrimsonRobesGTNH", new ResearchPage("tc.research_page.CrimsonRobesGTNH"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("ignis"), 25)
                         .add(Aspect.getAspect("perditio"), 25).add(Aspect.getAspect("aqua"), 25)
                         .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("aer"), 25),
@@ -668,28 +692,29 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'a',
                 "foilVoid",
                 'b',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
                 'c',
                 "foilVoid",
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
                 'e',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
                 'g',
                 "foilVoid",
                 'h',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
                 'i',
                 "foilVoid");
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing))));
         ThaumcraftApi.addWarpToResearch("CrimsonRobesGTNH", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
-                getModItem("Thaumcraft", "ItemHelmetCultistRobe", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemHelmetCultistRobe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
                         .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aqua"), 30)
                         .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30),
@@ -697,26 +722,26 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'b',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'e',
                 "plateVoid",
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'h',
                 "plateVoid");
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemHelmetCultistRobe", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistRobe", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
-                getModItem("Thaumcraft", "ItemChestplateCultistRobe", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemChestplateCultistRobe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
                         .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aqua"), 30)
                         .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30),
@@ -724,31 +749,31 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'b',
                 "plateVoid",
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'e',
                 "plateVoid",
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'g',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'h',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'i',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing));
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing));
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("Thaumcraft", "ItemChestplateCultistRobe", 1, 0, missing))));
+                                getModItem(Thaumcraft.ID, "ItemChestplateCultistRobe", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
-                getModItem("Thaumcraft", "ItemLeggingsCultistRobe", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemLeggingsCultistRobe", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
                         .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aqua"), 30)
                         .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30),
@@ -756,30 +781,31 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'b',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'e',
                 "plateVoid",
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'g',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'h',
                 "plateVoid",
                 'i',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing));
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing));
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemLeggingsCultistRobe", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(
+                                getModItem(Thaumcraft.ID, "ItemLeggingsCultistRobe", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CrimsonRobesGTNH",
-                getModItem("Thaumcraft", "ItemBootsCultist", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemBootsCultist", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 30).add(Aspect.getAspect("ignis"), 30)
                         .add(Aspect.getAspect("perditio"), 30).add(Aspect.getAspect("aqua"), 30)
                         .add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30),
@@ -787,21 +813,21 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'e',
                 "plateVoid",
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'g',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'h',
                 "plateVoid",
                 'i',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing));
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing));
         TCHelper.addResearchPage(
                 "CrimsonRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemBootsCultist", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemBootsCultist", 1, 0, missing))));
         TCHelper.addResearchPrereq("BLOODLUSTUPGRADE", "CrystalDaggerGTNH", false);
         ResearchCategories.getResearch("BLOODLUSTUPGRADE").setConcealed();
         TCHelper.setResearchAspects(
@@ -823,42 +849,42 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -4,
                 -4,
                 3,
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing))
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing))
                         .setParents("ELDRITCHMINOR", "CrimsonRobesGTNH").setConcealed()
                         .setPages(new ResearchPage("tm.text.KNIGHTROBES.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "KnightRobesGTNH",
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("alienis"), 32)
                         .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("ignis"), 32)
                         .add(Aspect.getAspect("fames"), 32),
-                getModItem("gregtech", "gt.metaitem.01", 1, 20330, missing),
-                new ItemStack[] { getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27346, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 29344, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 29362, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 29333, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27346, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27346, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 29344, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 29362, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 29333, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27346, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing), });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 20330, missing),
+                new ItemStack[] { getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27346, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29344, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29362, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29333, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27346, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27346, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29344, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29362, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29333, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27346, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing), });
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing))));
         ThaumcraftApi.addWarpToResearch("KnightRobesGTNH", 4);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
-                getModItem("Thaumcraft", "ItemHelmetCultistPlate", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("ignis"), 50)
                         .add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("aer"), 50),
@@ -866,26 +892,26 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'b',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'e',
                 "plateShadow",
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'h',
                 "plateShadow");
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("Thaumcraft", "ItemHelmetCultistPlate", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
-                getModItem("Thaumcraft", "ItemChestplateCultistPlate", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("ignis"), 50)
                         .add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("aer"), 50),
@@ -893,31 +919,31 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'b',
                 "plateShadow",
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'e',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'g',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'h',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'i',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing));
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing));
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("Thaumcraft", "ItemChestplateCultistPlate", 1, 0, missing))));
+                                getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "KnightRobesGTNH",
-                getModItem("Thaumcraft", "ItemLeggingsCultistPlate", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("ignis"), 50)
                         .add(Aspect.getAspect("perditio"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("aer"), 50),
@@ -925,28 +951,28 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'b',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'e',
                 "plateShadow",
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'g',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'h',
                 "plateShadow",
                 'i',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing));
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing));
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("Thaumcraft", "ItemLeggingsCultistPlate", 1, 0, missing))));
+                                getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0, missing))));
         TCHelper.orphanResearch("PRAETORARMOR");
         TCHelper.removeResearch("PRAETORARMOR");
         new ResearchItem(
@@ -959,84 +985,84 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -6,
                 -4,
                 3,
-                getModItem("Thaumcraft", "ItemHelmetCultistLeaderPlate", 1, 0, missing)).setParents("KnightRobesGTNH")
+                getModItem(Thaumcraft.ID, "ItemHelmetCultistLeaderPlate", 1, 0, missing)).setParents("KnightRobesGTNH")
                         .setConcealed().setPages(new ResearchPage("tm.text.PRAETORARMOR.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "PraetorarmorGTNH",
-                getModItem("Thaumcraft", "ItemHelmetCultistLeaderPlate", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemHelmetCultistLeaderPlate", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("praecantatio"), 64)
                         .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
-                getModItem("Thaumcraft", "ItemHelmetCultistPlate", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing), });
+                getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing), });
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("Thaumcraft", "ItemHelmetCultistLeaderPlate", 1, 0, missing))));
+                                getModItem(Thaumcraft.ID, "ItemHelmetCultistLeaderPlate", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("PraetorarmorGTNH", 5);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "PraetorarmorGTNH",
-                getModItem("Thaumcraft", "ItemChestplateCultistLeaderPlate", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemChestplateCultistLeaderPlate", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("praecantatio"), 64)
                         .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
-                getModItem("Thaumcraft", "ItemChestplateCultistPlate", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing), });
+                getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing), });
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("Thaumcraft", "ItemChestplateCultistLeaderPlate", 1, 0, missing))));
+                                getModItem(Thaumcraft.ID, "ItemChestplateCultistLeaderPlate", 1, 0, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "PraetorarmorGTNH",
-                getModItem("Thaumcraft", "ItemLeggingsCultistLeaderPlate", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemLeggingsCultistLeaderPlate", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("praecantatio"), 64)
                         .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
-                getModItem("Thaumcraft", "ItemLeggingsCultistPlate", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28368, missing), });
+                getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28368, missing), });
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("Thaumcraft", "ItemLeggingsCultistLeaderPlate", 1, 0, missing))));
+                                getModItem(Thaumcraft.ID, "ItemLeggingsCultistLeaderPlate", 1, 0, missing))));
         TCHelper.orphanResearch("VOIDSENTBLOOD");
         TCHelper.removeResearch("VOIDSENTBLOOD");
         new ResearchItem(
@@ -1048,19 +1074,19 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -7,
                 -5,
                 3,
-                getModItem("TaintedMagic", "ItemVoidsentBlood", 1, 0, missing)).setParents("PraetorarmorGTNH")
+                getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0, missing)).setParents("PraetorarmorGTNH")
                         .setConcealed().setPages(new ResearchPage("tm.text.VOIDSENTBLOOD.1")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "VoidsentGTNH",
-                getModItem("TaintedMagic", "ItemVoidsentBlood", 1, 0, missing),
-                getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
+                getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("auram"), 12).add(Aspect.getAspect("tenebrae"), 12)
                         .add(Aspect.getAspect("tutamen"), 12).add(Aspect.getAspect("vacuos"), 16)
                         .add(Aspect.getAspect("alienis"), 16));
         TCHelper.addResearchPage(
                 "VoidsentGTNH",
                 new ResearchPage(
-                        TCHelper.findCrucibleRecipe(getModItem("TaintedMagic", "ItemVoidsentBlood", 1, 0, missing))));
+                        TCHelper.findCrucibleRecipe(getModItem(TaintedMagic.ID, "ItemVoidsentBlood", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("VoidsentGTNH", 2);
         TCHelper.orphanResearch("CRIMSONBLADE");
         TCHelper.removeResearch("CRIMSONBLADE");
@@ -1073,32 +1099,32 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -7,
                 -3,
                 3,
-                getModItem("Thaumcraft", "ItemSwordCrimson", 1, 0, missing)).setParents("PraetorarmorGTNH")
+                getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0, missing)).setParents("PraetorarmorGTNH")
                         .setConcealed().setPages(new ResearchPage("tm.text.CRIMSONBLADE.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CrimsonBladeGTNH",
-                getModItem("Thaumcraft", "ItemSwordCrimson", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0, missing),
                 9,
                 new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("metallum"), 24)
                         .add(Aspect.getAspect("perditio"), 32).add(Aspect.getAspect("telum"), 64)
                         .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("tenebrae"), 32),
-                getModItem("Thaumcraft", "ItemSwordVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("TaintedMagic", "ItemCrystalDagger", 1, 0, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 7, missing), });
+                getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing), });
         TCHelper.addResearchPage(
                 "CrimsonBladeGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("Thaumcraft", "ItemSwordCrimson", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemSwordCrimson", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("CrimsonBladeGTNH", 5);
         TCHelper.orphanResearch("VOIDGOGGLES");
         TCHelper.removeResearch("VOIDGOGGLES");
@@ -1112,33 +1138,33 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 3,
                 5,
                 3,
-                getModItem("TaintedMagic", "ItemVoidmetalGoggles", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0, missing))
                         .setParents("WarpedGogglesGTNH", "VOIDMETAL").setConcealed()
                         .setPages(new ResearchPage("tm.text.VOIDGOGGLES.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "VoidgogglesGTNH",
-                getModItem("TaintedMagic", "ItemVoidmetalGoggles", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("sensus"), 32).add(Aspect.getAspect("tenebrae"), 32)
                         .add(Aspect.getAspect("tutamen"), 48).add(Aspect.getAspect("vacuos"), 64)
                         .add(Aspect.getAspect("vitreus"), 24).add(Aspect.getAspect("alienis"), 8)
                         .add(Aspect.getAspect("metallum"), 16),
-                getModItem("TaintedMagic", "ItemWarpedGoggles", 1, 0, missing),
-                new ItemStack[] { getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 24506, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 26970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 24506, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing), });
+                getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0, missing),
+                new ItemStack[] { getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 26970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), });
         TCHelper.addResearchPage(
                 "VoidgogglesGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemVoidmetalGoggles", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemVoidmetalGoggles", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("VoidgogglesGTNH", 5);
         TCHelper.orphanResearch("TAINTFOCUS");
         TCHelper.removeResearch("TAINTFOCUS");
@@ -1151,34 +1177,34 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 5,
                 2,
                 3,
-                getModItem("TaintedMagic", "ItemFocusTaint", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0, missing))
                         .setParents("EvilshardsGTNH", "BOTTLETAINT", "TAINTSHOVEL").setConcealed()
                         .setPages(new ResearchPage("tm.text.TAINTFOCUS.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TaintFocusGTNH",
-                getModItem("TaintedMagic", "ItemFocusTaint", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0, missing),
                 9,
                 new AspectList().add(Aspect.getAspect("aqua"), 72).add(Aspect.getAspect("limus"), 72)
                         .add(Aspect.getAspect("praecantatio"), 72).add(Aspect.getAspect("vitium"), 72)
                         .add(Aspect.getAspect("aer"), 64).add(Aspect.getAspect("potentia"), 32),
-                getModItem("Thaumcraft", "FocusPech", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemBottleTaint", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 12, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 12, missing),
-                        getModItem("Thaumcraft", "ItemBottleTaint", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing), });
+                getModItem(Thaumcraft.ID, "FocusPech", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
+                        getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing), });
         TCHelper.addResearchPage(
                 "TaintFocusGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemFocusTaint", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("TaintFocusGTNH", 4);
         TCHelper.orphanResearch("FOCUSTAINTEDBLAST");
         TCHelper.removeResearch("FOCUSTAINTEDBLAST");
@@ -1191,34 +1217,34 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 5,
                 3,
                 3,
-                getModItem("TaintedMagic", "ItemFocusTaintedBlast", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemFocusTaintedBlast", 1, 0, missing))
                         .setParents("TaintFocusGTNH", "FOCUSFIRE", "ELDRITCHMINOR", "FOCUSSHOCK").setConcealed()
                         .setPages(new ResearchPage("tm.text.FOCUSTAINTEDBLAST.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FocusTaintedBlastGTNH",
-                getModItem("TaintedMagic", "ItemFocusTaintedBlast", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusTaintedBlast", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("praecantatio"), 80)
                         .add(Aspect.getAspect("telum"), 72).add(Aspect.getAspect("vitium"), 84)
                         .add(Aspect.getAspect("cognitio"), 32).add(Aspect.getAspect("aer"), 48),
-                getModItem("TaintedMagic", "ItemFocusTaint", 1, 0, missing),
-                new ItemStack[] { getModItem("IC2", "blockITNT", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemBottleTaint", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("IC2", "blockITNT", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("Thaumcraft", "ItemBottleTaint", 1, 0, missing),
-                        getModItem("IC2", "blockITNT", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemBottleTaint", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
-                        getModItem("IC2", "blockITNT", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("Thaumcraft", "ItemBottleTaint", 1, 0, missing), });
+                getModItem(TaintedMagic.ID, "ItemFocusTaint", 1, 0, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(Thaumcraft.ID, "ItemBottleTaint", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "FocusTaintedBlastGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemFocusTaintedBlast", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemFocusTaintedBlast", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("FocusTaintedBlastGTNH", 6);
         TCHelper.orphanResearch("THAUMICDISASSEMBLER");
         TCHelper.removeResearch("THAUMICDISASSEMBLER");
@@ -1231,12 +1257,12 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 5,
                 -6,
                 3,
-                getModItem("TaintedMagic", "ItemThaumicDisassembler", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0, missing))
                         .setParents("TMELDRITCHMAJOR", "VOIDMETAL").setConcealed()
                         .setPages(new ResearchPage("tm.text.THAUMICDISASSEMBLER.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ThaumicdisassemblerGTNH",
-                getModItem("TaintedMagic", "ItemMaterial", 1, 6, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("perditio"), 75)
                         .add(Aspect.getAspect("terra"), 50),
                 "abc",
@@ -1251,7 +1277,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'd',
                 "plateShadow",
                 'e',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'f',
                 "plateShadow",
                 'g',
@@ -1262,30 +1288,31 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "plateVoid");
         TCHelper.addResearchPage(
                 "ThaumicdisassemblerGTNH",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemMaterial", 1, 6, missing))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6, missing))));
         ThaumcraftApi.addWarpToResearch("ThaumicdisassemblerGTNH", 4);
         TCHelper.addResearchPage("ThaumicdisassemblerGTNH", new ResearchPage("tm.text.THAUMICDISASSEMBLER.2"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ThaumicdisassemblerGTNH",
-                getModItem("TaintedMagic", "ItemThaumicDisassembler", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("instrumentum"), 32).add(Aspect.getAspect("metallum"), 32)
                         .add(Aspect.getAspect("telum"), 24).add(Aspect.getAspect("vacuos"), 24)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("potentia"), 16),
-                getModItem("TaintedMagic", "ItemMaterial", 1, 6, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemPickVoid", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("Thaumcraft", "ItemShovelVoid", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("Thaumcraft", "ItemSwordVoid", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("Thaumcraft", "ItemAxeVoid", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing), });
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(Thaumcraft.ID, "ItemAxeVoid", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing), });
         TCHelper.addResearchPage(
                 "ThaumicdisassemblerGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemThaumicDisassembler", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemThaumicDisassembler", 1, 0, missing))));
         TCHelper.orphanResearch("VOIDWALKERBOOTS");
         TCHelper.removeResearch("VOIDWALKERBOOTS");
         new ResearchItem(
@@ -1298,36 +1325,37 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 4,
                 -8,
                 3,
-                getModItem("TaintedMagic", "ItemVoidwalkerBoots", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1, 0, missing))
                         .setParents("TMELDRITCHMAJOR", "BOOTSTRAVELLER")
                         .setParentsHidden("TAINTEDMAGIC", "ShadowmetalGTNH").setConcealed()
                         .setPages(new ResearchPage("tm.text.VOIDWALKERBOOTS.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "VoidWalkerBootsGTNH",
-                getModItem("TaintedMagic", "ItemVoidwalkerBoots", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("iter"), 84)
                         .add(Aspect.getAspect("tenebrae"), 72).add(Aspect.getAspect("tutamen"), 64)
                         .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("praecantatio"), 32),
-                getModItem("Thaumcraft", "BootsTraveller", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemEldritchObject", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 18473, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "ItemEldritchObject", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 18473, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing), });
+                getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18473, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18473, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), });
         TCHelper.addResearchPage(
                 "VoidWalkerBootsGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemVoidwalkerBoots", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(
+                                getModItem(TaintedMagic.ID, "ItemVoidwalkerBoots", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("VoidWalkerBootsGTNH", 4);
         TCHelper.orphanResearch("VOIDSASH");
         TCHelper.removeResearch("VOIDSASH");
@@ -1341,7 +1369,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 3,
                 -8,
                 3,
-                getModItem("TaintedMagic", "ItemVoidwalkerSash", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0, missing))
                         .setParents("VoidWalkerBootsGTNH", "RUNICARMOR")
                         .setParentsHidden("TAINTEDMAGIC", "ShadowmetalGTNH").registerResearchItem();
         TCHelper.addResearchPrereq("VoidSashGTNH", "VOIDMETAL", false);
@@ -1349,29 +1377,29 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage("VoidSashGTNH", new ResearchPage("tm.text.VOIDSASH.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "VoidSashGTNH",
-                getModItem("TaintedMagic", "ItemVoidwalkerSash", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("iter"), 48).add(Aspect.getAspect("praecantatio"), 64)
                         .add(Aspect.getAspect("tutamen"), 84).add(Aspect.getAspect("vacuos"), 72)
                         .add(Aspect.getAspect("volatus"), 32).add(Aspect.getAspect("alienis"), 24)
                         .add(Aspect.getAspect("aer"), 16),
-                getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemGirdleRunic", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30508, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing), });
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30508, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), });
         TCHelper.addResearchPage(
                 "VoidSashGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemVoidwalkerSash", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemVoidwalkerSash", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("VoidSashGTNH", 4);
         TCHelper.orphanResearch("VOIDFORTRESS");
         TCHelper.removeResearch("VOIDFORTRESS");
@@ -1385,86 +1413,86 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 7,
                 -8,
                 3,
-                getModItem("TaintedMagic", "ItemVoidFortressHelmet", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0, missing))
                         .setParents("TMELDRITCHMAJOR", "VOIDMETAL", "ARMORFORTRESS").setParentsHidden("ShadowmetalGTNH")
                         .setConcealed().setPages(new ResearchPage("tm.text.VOIDFORTRESS.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "VoidFortressGTNH",
-                getModItem("TaintedMagic", "ItemVoidFortressHelmet", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("metallum"), 48)
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("tutamen"), 48)
                         .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 16)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("victus"), 32),
-                getModItem("Thaumcraft", "ItemHelmetVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 30501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 19473, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing), });
+                getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 19473, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing), });
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemVoidFortressHelmet", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("VoidFortressGTNH", 5);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "VoidFortressGTNH",
-                getModItem("TaintedMagic", "ItemVoidFortressChestplate", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("metallum"), 64)
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("tutamen"), 64)
                         .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 16)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("cognitio"), 32),
-                getModItem("Thaumcraft", "ItemChestplateVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 19473, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 19473, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing), });
+                getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 19473, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 19473, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), });
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemVoidFortressChestplate", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "VoidFortressGTNH",
-                getModItem("TaintedMagic", "ItemVoidFortressLeggings", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("metallum"), 32)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("tutamen"), 32)
                         .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 16)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("terra"), 32),
-                getModItem("Thaumcraft", "ItemLeggingsVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 19473, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing), });
+                getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 19473, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing), });
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemVoidFortressLeggings", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0, missing))));
         TCHelper.orphanResearch("SHADOWFORTRESSARMOR");
         TCHelper.removeResearch("SHADOWFORTRESSARMOR");
         new ResearchItem(
@@ -1477,86 +1505,86 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 8,
                 -9,
                 3,
-                getModItem("TaintedMagic", "ItemShadowFortressHelmet", 1, 0, missing)).setParents("VoidFortressGTNH")
+                getModItem(TaintedMagic.ID, "ItemShadowFortressHelmet", 1, 0, missing)).setParents("VoidFortressGTNH")
                         .setParentsHidden("ShadowmetalGTNH").setConcealed()
                         .setPages(new ResearchPage("tm.text.SHADOWFORTRESSARMOR.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ShadowFortressArmorGTNH",
-                getModItem("TaintedMagic", "ItemShadowFortressHelmet", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemShadowFortressHelmet", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("metallum"), 64)
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("tutamen"), 64)
                         .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("tenebrae"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("victus"), 48),
-                getModItem("TaintedMagic", "ItemVoidFortressHelmet", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 30501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17323, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 22599, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17323, missing), });
+                getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17323, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22599, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17323, missing), });
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemShadowFortressHelmet", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemShadowFortressHelmet", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("ShadowFortressArmorGTNH", 10);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ShadowFortressArmorGTNH",
-                getModItem("TaintedMagic", "ItemShadowFortressChestplate", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemShadowFortressChestplate", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("metallum"), 84)
                         .add(Aspect.getAspect("praecantatio"), 84).add(Aspect.getAspect("tutamen"), 84)
                         .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("tenebrae"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("cognitio"), 48),
-                getModItem("TaintedMagic", "ItemVoidFortressChestplate", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 22599, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17323, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 22599, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing), });
+                getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22599, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17323, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22599, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing), });
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemShadowFortressChestplate", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemShadowFortressChestplate", 1, 0, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ShadowFortressArmorGTNH",
-                getModItem("TaintedMagic", "ItemShadowFortressLeggings", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemShadowFortressLeggings", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("metallum"), 48)
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("tutamen"), 48)
                         .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("terra"), 48),
-                getModItem("TaintedMagic", "ItemVoidFortressLeggings", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17323, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 22599, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.blockmetal8", 1, 15, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17323, missing), });
+                getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17323, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22599, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.blockmetal8", 1, 15, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17323, missing), });
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemShadowFortressLeggings", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemShadowFortressLeggings", 1, 0, missing))));
         TCHelper.orphanResearch("THAUMIUMKATANA");
         TCHelper.removeResearch("THAUMIUMKATANA");
         new ResearchItem(
@@ -1568,32 +1596,33 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 7,
                 1,
                 3,
-                getModItem("TaintedMagic", "ItemKatana", 1, 0, missing)).setParents("ARMORFORTRESS")
+                getModItem(TaintedMagic.ID, "ItemKatana", 1, 0, missing)).setParents("ARMORFORTRESS")
                         .setParentsHidden("ShadowmetalGTNH").setConcealed()
                         .setPages(new ResearchPage("tm.text.THAUMIUMKATANA.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ThaumiumKatanaGTNH",
-                getModItem("TaintedMagic", "ItemKatana", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemKatana", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("telum"), 48).add(Aspect.getAspect("mortuus"), 24)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("motus"), 8),
-                getModItem("Thaumcraft", "ItemSwordThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17804, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17305, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17804, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17086, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 29501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17305, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing), });
+                getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), });
         TCHelper.addResearchPage(
                 "ThaumiumKatanaGTNH",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemKatana", 1, 0, missing))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("ThaumiumKatanaGTNH", 3);
         TCHelper.orphanResearch("VOIDMETALKATANA");
         TCHelper.removeResearch("VOIDMETALKATANA");
@@ -1607,33 +1636,34 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 7,
                 0,
                 3,
-                getModItem("TaintedMagic", "ItemKatana", 1, 1, missing)).setParents("ThaumiumKatanaGTNH")
+                getModItem(TaintedMagic.ID, "ItemKatana", 1, 1, missing)).setParents("ThaumiumKatanaGTNH")
                         .setParentsHidden("VOIDMETAL").setConcealed()
                         .setPages(new ResearchPage("tm.text.VOIDMETALKATANA.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "VoidMetalKatanaGTNH",
-                getModItem("TaintedMagic", "ItemKatana", 1, 1, missing),
+                getModItem(TaintedMagic.ID, "ItemKatana", 1, 1, missing),
                 9,
                 new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("metallum"), 72)
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("telum"), 64)
                         .add(Aspect.getAspect("mortuus"), 32).add(Aspect.getAspect("potentia"), 24)
                         .add(Aspect.getAspect("motus"), 16).add(Aspect.getAspect("vacuos"), 32),
-                getModItem("Thaumcraft", "ItemSwordVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17386, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17028, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17386, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17351, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17028, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing), });
+                getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17386, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17028, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17386, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17351, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17028, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), });
         TCHelper.addResearchPage(
                 "VoidMetalKatanaGTNH",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemKatana", 1, 1, missing))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 1, missing))));
         ThaumcraftApi.addWarpToResearch("VoidMetalKatanaGTNH", 6);
         TCHelper.orphanResearch("SHADOWMETALKATANA");
         TCHelper.removeResearch("SHADOWMETALKATANA");
@@ -1647,34 +1677,35 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 8,
                 -1,
                 3,
-                getModItem("TaintedMagic", "ItemKatana", 1, 2, missing)).setParents("VoidMetalKatanaGTNH")
+                getModItem(TaintedMagic.ID, "ItemKatana", 1, 2, missing)).setParents("VoidMetalKatanaGTNH")
                         .setParentsHidden("ShadowmetalGTNH").setConcealed()
                         .setPages(new ResearchPage("tm.text.SHADOWMETALKATANA.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ShadowMetalKatanaGTNH",
-                getModItem("TaintedMagic", "ItemKatana", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemKatana", 1, 2, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("metallum"), 84)
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("telum"), 72)
                         .add(Aspect.getAspect("mortuus"), 48).add(Aspect.getAspect("potentia"), 32)
                         .add(Aspect.getAspect("motus"), 24).add(Aspect.getAspect("vacuos"), 48)
                         .add(Aspect.getAspect("tenebrae"), 48),
-                getModItem("TaintedMagic", "ItemShadowmetalSword", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17323, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17316, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17323, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30501, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17316, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing), });
+                getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17323, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17323, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing), });
         TCHelper.addResearchPage(
                 "ShadowMetalKatanaGTNH",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemKatana", 1, 2, missing))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemKatana", 1, 2, missing))));
         ThaumcraftApi.addWarpToResearch("ShadowMetalKatanaGTNH", 9);
         TCHelper.addResearchPrereq("INSCRIPTIONFIRE", "ThaumiumKatanaGTNH", false);
         ResearchCategories.getResearch("INSCRIPTIONFIRE").setConcealed();
@@ -1714,37 +1745,37 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 8,
                 -2,
                 3,
-                getModItem("TaintedMagic", "ItemWandRod", 1, 0, missing)).setParentsHidden("ShadowmetalGTNH")
+                getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0, missing)).setParentsHidden("ShadowmetalGTNH")
                         .setParents("WarpTreeGTNH", "VOIDMETAL", "VOIDMETAL", "PRIMPEARL", "ROD_primal_staff")
                         .setConcealed().setPages(new ResearchPage("tm.text.ROD_warpwood.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_warpwood",
-                getModItem("TaintedMagic", "ItemWandRod", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("alienis"), 64).add(Aspect.getAspect("arbor"), 64)
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("tenebrae"), 48)
                         .add(Aspect.getAspect("instrumentum"), 32).add(Aspect.getAspect("terra"), 24),
-                getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
-                new ItemStack[] { getModItem("TaintedMagic", "BlockWarpwoodLog", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28081, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 19368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 18970, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 18970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 19368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28081, missing),
-                        getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28081, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 19368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 18970, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 18970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 19368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 28081, missing), });
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
+                new ItemStack[] { getModItem(TaintedMagic.ID, "BlockWarpwoodLog", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28081, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 19368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18970, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 19368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28081, missing),
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28081, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 19368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18970, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 19368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28081, missing), });
         TCHelper.addResearchPage(
                 "ROD_warpwood",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemWandRod", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("ROD_warpwood", 3);
         TCHelper.addResearchPage("ROD_warpwood", new ResearchPage("tm.text.ROD_warpwood.2"));
         TCHelper.orphanResearch("ROD_warpwood_staff");
@@ -1758,11 +1789,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 9,
                 -2,
                 3,
-                getModItem("TaintedMagic", "ItemWandRod", 1, 1, missing)).setParents("ROD_warpwood").setConcealed()
+                getModItem(TaintedMagic.ID, "ItemWandRod", 1, 1, missing)).setParents("ROD_warpwood").setConcealed()
                         .setPages(new ResearchPage("tm.text.ROD_warpwood_staff.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_warpwood_staff",
-                getModItem("TaintedMagic", "ItemWandRod", 1, 1, missing),
+                getModItem(TaintedMagic.ID, "ItemWandRod", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 150).add(Aspect.getAspect("terra"), 150)
                         .add(Aspect.getAspect("ignis"), 150).add(Aspect.getAspect("aer"), 150)
                         .add(Aspect.getAspect("ordo"), 150).add(Aspect.getAspect("perditio"), 150),
@@ -1772,24 +1803,24 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'a',
                 "screwShadow",
                 'b',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
                 'e',
-                getModItem("TaintedMagic", "ItemWandRod", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0, missing),
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
                 'g',
-                getModItem("TaintedMagic", "ItemWandRod", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemWandRod", 1, 0, missing),
                 'h',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 4, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 4, missing),
                 'i',
                 "screwShadow");
         TCHelper.addResearchPage(
                 "ROD_warpwood_staff",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemWandRod", 1, 1, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemWandRod", 1, 1, missing))));
         ThaumcraftApi.addWarpToResearch("ROD_warpwood_staff", 5);
         TCHelper.orphanResearch("FOCUSTIME");
         TCHelper.removeResearch("FOCUSTIME");
@@ -1804,34 +1835,34 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 11,
                 -8,
                 3,
-                getModItem("TaintedMagic", "ItemFocusTime", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing))
                         .setParents("CreationShardGTNH", "FOCUSPORTABLEHOLE", "FOCUSFIRE").setConcealed()
                         .setPages(new ResearchPage("tm.text.FOCUSTIME.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FocusTimeGTNH",
-                getModItem("TaintedMagic", "ItemFocusTime", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("alienis"), 84).add(Aspect.getAspect("lux"), 72)
                         .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("vacuos"), 48)
                         .add(Aspect.getAspect("tempus"), 24).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("permutatio"), 16),
-                getModItem("TaintedMagic", "ItemMaterial", 1, 5, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "FocusPortableHole", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("minecraft", "clock", 1, 0, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("minecraft", "clock", 1, 0, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing), });
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Minecraft.ID, "clock", 1, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Minecraft.ID, "clock", 1, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "FocusTimeGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemFocusTime", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("FocusTimeGTNH", 10);
         TCHelper.orphanResearch("FOCUSWEATHER");
         TCHelper.removeResearch("FOCUSWEATHER");
@@ -1846,35 +1877,35 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 12,
                 -7,
                 3,
-                getModItem("TaintedMagic", "ItemFocusMeteorology", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0, missing))
                         .setParents("CreationShardGTNH", "FOCUSSHOCK", "FOCUSFROST").setConcealed()
                         .setPages(new ResearchPage("tm.text.FOCUSWEATHER.1")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FocusWeatherGTNH",
-                getModItem("TaintedMagic", "ItemFocusMeteorology", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("alienis"), 84).add(Aspect.getAspect("aqua"), 72)
                         .add(Aspect.getAspect("tempestas"), 64).add(Aspect.getAspect("vacuos"), 48)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("volatus"), 24)
                         .add(Aspect.getAspect("perditio"), 16),
-                getModItem("TaintedMagic", "ItemMaterial", 1, 5, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "FocusShock", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("Thaumcraft", "FocusFrost", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing), });
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "FocusFrost", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
         TCHelper.addResearchPage(
                 "FocusWeatherGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                getModItem("TaintedMagic", "ItemFocusMeteorology", 1, 0, missing))));
+                                getModItem(TaintedMagic.ID, "ItemFocusMeteorology", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("FocusWeatherGTNH", 10);
         TCHelper.orphanResearch("PRIMALBLADE");
         TCHelper.removeResearch("PRIMALBLADE");
@@ -1888,7 +1919,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 11,
                 -5,
                 3,
-                getModItem("TaintedMagic", "ItemPrimordialEdge", 1, 0, missing)).setParents("CreationShardGTNH")
+                getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0, missing)).setParents("CreationShardGTNH")
                         .setParentsHidden("EvilshardsGTNH", "CrystalDaggerGTNH").registerResearchItem();
         TCHelper.addResearchPrereq("PrimalBladeGTNH", "VOIDMETAL", false);
         TCHelper.addResearchPrereq("PrimalBladeGTNH", "PRIMALCRUSHER", false);
@@ -1896,32 +1927,32 @@ public class ScriptTaintedMagic implements IScriptLoader {
         TCHelper.addResearchPage("PrimalBladeGTNH", new ResearchPage("tm.text.PRIMALBLADE.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "PrimalBladeGTNH",
-                getModItem("TaintedMagic", "ItemPrimordialEdge", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("alienis"), 96).add(Aspect.getAspect("metallum"), 84)
                         .add(Aspect.getAspect("telum"), 72).add(Aspect.getAspect("tenebrae"), 64)
                         .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("auram"), 32)
                         .add(Aspect.getAspect("cognitio"), 24).add(Aspect.getAspect("potentia"), 16),
-                getModItem("Thaumcraft", "ItemSwordVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemPrimalCrusher", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("TaintedMagic", "ItemCrystalDagger", 1, 0, missing),
-                        getModItem("dreamcraft", "item.VoidEssence", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17368, missing), });
+                getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemPrimalCrusher", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17368, missing), });
         TCHelper.addResearchPage(
                 "PrimalBladeGTNH",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemPrimordialEdge", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemPrimordialEdge", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("PrimalBladeGTNH", 10);
         TCHelper.orphanResearch("CAP_cloth");
         TCHelper.removeResearch("CAP_cloth");
@@ -1933,37 +1964,37 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 7,
                 5,
                 3,
-                getModItem("TaintedMagic", "ItemWandCap", 1, 1, missing)).setParents("CAP_gold", "ENCHFABRIC")
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1, missing)).setParents("CAP_gold", "ENCHFABRIC")
                         .setConcealed().setPages(new ResearchPage("tm.text.CAP_cloth.1")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_cloth",
-                getModItem("TaintedMagic", "ItemWandCap", 1, 1, missing),
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 25).add(Aspect.getAspect("ignis"), 25)
                         .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'e',
-                getModItem("Thaumcraft", "WandCap", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemResource", 1, 7, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing));
         TCHelper.addResearchPage(
                 "CAP_cloth",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemWandCap", 1, 1, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1, missing))));
         ThaumcraftApi.addWarpToResearch("CAP_cloth", 1);
         TCHelper.orphanResearch("CAP_shadowcloth");
         TCHelper.removeResearch("CAP_shadowcloth");
@@ -1976,38 +2007,38 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -2,
                 3,
                 3,
-                getModItem("TaintedMagic", "ItemWandCap", 1, 3, missing)).setParents("CAP_thaumium", "ShadowClothGTNH")
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 3, missing)).setParents("CAP_thaumium", "ShadowClothGTNH")
                         .setConcealed().setPages(new ResearchPage("tc.research_page.CAP_shadowcloth"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_shadowcloth",
-                getModItem("TaintedMagic", "ItemWandCap", 1, 3, missing),
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 50).add(Aspect.getAspect("ignis"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
                 'b',
                 "foilVibrantAlloy",
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
                 'd',
                 "foilVibrantAlloy",
                 'e',
-                getModItem("Thaumcraft", "WandCap", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "WandCap", 1, 2, missing),
                 'f',
                 "foilVibrantAlloy",
                 'g',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
                 'h',
                 "foilVibrantAlloy",
                 'i',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 1, missing));
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing));
         TCHelper.addResearchPage(
                 "CAP_shadowcloth",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemWandCap", 1, 3, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 3, missing))));
         ThaumcraftApi.addWarpToResearch("CAP_shadowcloth", 2);
         TCHelper.orphanResearch("CAP_crimsoncloth");
         TCHelper.removeResearch("CAP_crimsoncloth");
@@ -2020,12 +2051,12 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -1,
                 -6,
                 3,
-                getModItem("TaintedMagic", "ItemWandCap", 1, 2, missing)).setParentsHidden("CAP_cloth")
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 2, missing)).setParentsHidden("CAP_cloth")
                         .setParents("CrimsonRobesGTNH").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.CAP_crimsoncloth")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_crimsoncloth",
-                getModItem("TaintedMagic", "ItemWandCap", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("ignis"), 100)
                         .add(Aspect.getAspect("aqua"), 100).add(Aspect.getAspect("terra"), 100)
                         .add(Aspect.getAspect("ordo"), 100).add(Aspect.getAspect("perditio"), 100),
@@ -2033,26 +2064,26 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'b',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'c',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'd',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'e',
-                getModItem("TaintedMagic", "ItemWandCap", 1, 3, missing),
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 3, missing),
                 'f',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'g',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                 'h',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 8, missing),
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'i',
-                getModItem("TaintedMagic", "ItemMaterial", 1, 2, missing));
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing));
         TCHelper.addResearchPage(
                 "CAP_crimsoncloth",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("TaintedMagic", "ItemWandCap", 1, 2, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 2, missing))));
         ThaumcraftApi.addWarpToResearch("CAP_crimsoncloth", 4);
         TCHelper.orphanResearch("CAP_shadowmetal");
         TCHelper.removeResearch("CAP_shadowmetal");
@@ -2066,34 +2097,34 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 -4,
                 4,
                 3,
-                getModItem("TaintedMagic", "ItemWandCap", 1, 0, missing))
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0, missing))
                         .setParents("CAP_shadowcloth", "CAP_void", "PRIMPEARL").setConcealed()
                         .setPages(new ResearchPage("tc.research_page.CAP_shadowmetal")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CAP_shadowmetal",
-                getModItem("TaintedMagic", "ItemWandCap", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("alienis"), 96).add(Aspect.getAspect("praecantatio"), 96)
                         .add(Aspect.getAspect("tenebrae"), 84).add(Aspect.getAspect("metallum"), 72)
                         .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("cognitio"), 68)
                         .add(Aspect.getAspect("lucrum"), 32).add(Aspect.getAspect("fames"), 32),
-                getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "WandCap", 1, 7, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 20368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 22970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 20368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30508, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 20368, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 22970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 20368, missing),
-                        getModItem("TaintedMagic", "ItemMaterial", 1, 3, missing), });
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "WandCap", 1, 7, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 20368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 20368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30508, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 20368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 20368, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing), });
         TCHelper.addResearchPage(
                 "CAP_shadowmetal",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(getModItem("TaintedMagic", "ItemWandCap", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(getModItem(TaintedMagic.ID, "ItemWandCap", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("CAP_shadowmetal", 8);
     }
 }

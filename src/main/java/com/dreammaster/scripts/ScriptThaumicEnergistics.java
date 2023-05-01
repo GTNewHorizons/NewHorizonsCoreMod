@@ -2,9 +2,14 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Gadomancy;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TaintedMagic;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -43,7 +48,10 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 EternalSingularity.ID,
                 AppliedEnergistics2.ID,
                 AE2Stuff.ID,
-                TinkerConstruct.ID);
+                TinkerConstruct.ID,
+                BartWorks.ID,
+                IndustrialCraft2.ID,
+                Thaumcraft.ID);
     }
 
     @Override
@@ -78,1869 +86,1694 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem("appliedenergistics2", "item.ToolWirelessTerminal", 1, 32767, missing),
-                        getModItem("thaumicenergistics", "part.base", 1, 4, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "wireless.essentia.terminal", 1, 0, missing))
+                        getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, 32767, missing),
+                        getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "wireless.essentia.terminal", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitULV", 2, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 2, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 2, 32700, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 2, 32700, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 2, 32075, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 2, 32075, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 2, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitULV", 2, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 2, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 2, 32700, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 2, 32700, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 2, 32075, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 2, 32075, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 2, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitULV", 2, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 2, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 2, 32700, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 2, 32700, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 2, 32075, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 2, 32075, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 2, 4, missing),
-                        getModItem("Thaumcraft", "ItemResource", 2, 14, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32710, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32710, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("dreamcraft", "item.CircuitULV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32700, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32700, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32075, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32075, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuit", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32701, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32701, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32078, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32078, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32100, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 1, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("IC2", "itemPartCircuit", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32701, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32701, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32078, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32078, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("dreamcraft", "item.CircuitMV", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32702, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32702, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32079, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32079, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32080, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32080, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32101, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 2, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("dreamcraft", "item.CircuitMV", 16, 0, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 16, 32702, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 16, 32702, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32079, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32079, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 16, 32080, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 16, 32080, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("IC2", "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.01", 4, 32703, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.01", 4, 32703, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("gregtech", "gt.metaitem.03", 4, 32082, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(GregTech.ID, "gt.metaitem.03", 4, 32082, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem("bartworks", "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.03", 1, 32102, missing),
-                        getModItem("gregtech", "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem("thaumicenergistics", "storage.component", 1, 3, missing))
+        GT_Values.RA.stdBuilder().itemInputs(
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32102, missing),
+                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
 
         TCHelper.removeInfusionRecipe(
-                getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.provider", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "material", 1, 2, missing));
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "material", 1, 2, missing));
         TCHelper.removeArcaneRecipe(
-                getModItem("thaumicenergistics", "thaumicenergistics.block.gear.box", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 5, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "material", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "material", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 4, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "part.base", 4, 1, missing));
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.gear.box", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 5, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 4, 1, missing));
         TCHelper.removeArcaneRecipe(
-                getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.vibration.chamber", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 2, missing));
+                getModItem(
+                        ThaumicEnergistics.ID,
+                        "thaumicenergistics.block.essentia.vibration.chamber",
+                        1,
+                        0,
+                        missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 2, missing));
         TCHelper.removeArcaneRecipe(
-                getModItem("thaumicenergistics", "thaumicenergistics.block.distillation.encoder", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "focus.aewrench", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "golem.wifi.backpack", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "storage.component", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "storage.component", 1, 1, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "storage.component", 1, 2, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "storage.component", 1, 3, missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 6, missing));
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.distillation.encoder", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "focus.aewrench", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "golem.wifi.backpack", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 6, missing));
         TCHelper.removeCrucibleRecipe(
-                getModItem("thaumicenergistics", "thaumicenergistics.block.golem.gear.box", 1, 0, missing));
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.golem.gear.box", 1, 0, missing));
         TCHelper.removeInfusionRecipe(
                 createItemStack(
-                        "thaumicenergistics",
+                        ThaumicEnergistics.ID,
                         "thaumicenergistics.block.arcane.assembler",
                         1,
                         0,
                         "{stored_vis:[0:{amount:1500,key:\"aer\"},1:{amount:1500,key:\"aqua\"},2:{amount:1500,key:\"ignis\"},3:{amount:1500,key:\"ordo\"},4:{amount:1500,key:\"perditio\"},5:{amount:1500,key:\"terra\"}]}",
                         missing));
-        TCHelper.removeArcaneRecipe(getModItem("thaumicenergistics", "knowledge.core", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "knowledge.core", 1, 0, missing));
         TCHelper.removeArcaneRecipe(
-                getModItem("thaumicenergistics", "thaumicenergistics.block.knowledge.inscriber", 1, 0, missing));
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.knowledge.inscriber", 1, 0, missing));
         TCHelper.removeInfusionRecipe(
-                getModItem("thaumicenergistics", "thaumicenergistics.block.infusion.provider", 1, 0, missing));
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.infusion.provider", 1, 0, missing));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEESSPROV",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.provider", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("machina"), 64).add(Aspect.getAspect("praecantatio"), 48)
                         .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("permutatio"), 24)
                         .add(Aspect.getAspect("aqua"), 16).add(Aspect.getAspect("cognitio"), 8)
                         .add(Aspect.getAspect("lucrum"), 4),
-                getModItem("appliedenergistics2", "tile.BlockInterface", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockTube", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("thaumicenergistics", "material", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("Thaumcraft", "blockTube", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("thaumicenergistics", "material", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17330, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing), });
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",
                 new AspectList().add(Aspect.getAspect("sensus"), 21).add(Aspect.getAspect("praecantatio"), 18)
@@ -1950,7 +1783,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEESSPROV", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIRONGEARBOX",
-                getModItem("thaumicenergistics", "material", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 10).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("ordo"), 5),
                 "abc",
@@ -1976,30 +1809,30 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "stickIron");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIRONGEARBOX",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.gear.box", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.gear.box", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
                         .add(Aspect.getAspect("ordo"), 15),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'b',
                 "gearIron",
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'd',
                 "gearIron",
                 'e',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32601, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
                 'f',
                 "gearIron",
                 'g',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'h',
                 "gearIron",
                 'i',
-                getModItem("Thaumcraft", "blockCosmeticSolid", 1, 6, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEIRONGEARBOX",
                 new AspectList().add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("metallum"), 15)
@@ -2007,7 +1840,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEIRONGEARBOX", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEARCANETERM",
-                getModItem("thaumicenergistics", "part.base", 1, 5, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 5, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("ignis"), 25)
                         .add(Aspect.getAspect("aer"), 25).add(Aspect.getAspect("terra"), 25)
                         .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
@@ -2015,23 +1848,23 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17542, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17542, missing),
                 'b',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 360, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
                 'c',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17542, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17542, missing),
                 'd',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 'e',
-                getModItem("Thaumcraft", "blockTable", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "blockTable", 1, 15, missing),
                 'f',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 23, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
                 'g',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17542, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17542, missing),
                 'h',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 'i',
-                getModItem("gregtech", "gt.metaitem.01", 1, 17542, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17542, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANETERM",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("fabrico"), 12)
@@ -2045,54 +1878,54 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TECERTUSDUPE", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TECORES",
-                getModItem("thaumicenergistics", "material", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 20).add(Aspect.getAspect("perditio"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 'b',
                 "gemAmber",
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 'e',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 44, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 'h',
                 "gemAmber",
                 'i',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TECORES",
-                getModItem("thaumicenergistics", "material", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 20).add(Aspect.getAspect("ordo"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 'b',
                 "gemAmber",
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'e',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 43, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'g',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                 'h',
                 "gemAmber",
                 'i',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TECORES",
                 new AspectList().add(Aspect.getAspect("cognitio"), 12).add(Aspect.getAspect("praecantatio"), 9)
@@ -2108,62 +1941,62 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 new ResearchPage("thaumicenergistics.research_page.TEESSTERM.2"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEESSTERM",
-                getModItem("thaumicenergistics", "part.base", 1, 4, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("ordo"), 25)
                         .add(Aspect.getAspect("ignis"), 25).add(Aspect.getAspect("terra"), 25),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 23, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
                 'b',
-                getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                 'c',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 'd',
-                getModItem("thaumicenergistics", "material", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                 'e',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 380, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
                 'f',
-                getModItem("thaumicenergistics", "material", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
                 'g',
                 "plateInfusedWater",
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 8, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                 'i',
                 "plateInfusedWater");
         TCHelper.addResearchPage(
                 "thaumicenergistics.TEESSTERM",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 4, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing))));
         TCHelper.addResearchPage(
                 "thaumicenergistics.TEESSTERM",
                 new ResearchPage("thaumicenergistics.research_page.TEESSTERM.3"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEESSTERM",
-                getModItem("thaumicenergistics", "part.base", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 10),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 280, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemResource", 1, 3, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing));
         TCHelper.addResearchPage(
                 "thaumicenergistics.TEESSTERM",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 1, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 1, missing))));
         TCHelper.addResearchPage(
                 "thaumicenergistics.TEESSTERM",
                 new ResearchPage("thaumicenergistics.research_page.TEESSTERM.4"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEESSTERM",
-                getModItem("thaumicenergistics", "part.base", 1, 7, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 7, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 15).add(Aspect.getAspect("ordo"), 15),
                 "abc",
                 "def",
@@ -2177,7 +2010,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'd',
                 "screwInfusedWater",
                 'e',
-                getModItem("thaumicenergistics", "part.base", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 1, missing),
                 'f',
                 "screwInfusedWater",
                 'g',
@@ -2189,10 +2022,10 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TEESSTERM",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 7, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 7, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEESSTERM",
-                getModItem("thaumicenergistics", "part.base", 1, 8, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 8, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("ordo"), 20),
                 "abc",
                 "def",
@@ -2200,25 +2033,25 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "craftingToolScrewdriver",
                 'b',
-                getModItem("thaumicenergistics", "part.base", 1, 7, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 7, missing),
                 'c',
                 "craftingToolHardHammer",
                 'd',
                 "screwInfusedFire",
                 'e',
-                getModItem("thaumicenergistics", "material", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                 'f',
                 "screwInfusedFire",
                 'g',
                 "plateInfusedOrder",
                 'h',
-                getModItem("thaumicenergistics", "material", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
                 'i',
                 "plateInfusedOrder");
         TCHelper.addResearchPage(
                 "thaumicenergistics.TEESSTERM",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("thaumicenergistics", "part.base", 1, 8, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 8, missing))));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSTERM",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("permutatio"), 12)
@@ -2227,7 +2060,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEESSTERM", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEESSVIBCMBR",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.vibration.chamber", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.vibration.chamber", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ignis"), 35).add(Aspect.getAspect("ordo"), 35)
                         .add(Aspect.getAspect("perditio"), 35).add(Aspect.getAspect("aqua"), 35),
                 "abc",
@@ -2236,19 +2069,19 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "plateInfusedOrder",
                 'b',
-                getModItem("thaumicenergistics", "part.base", 1, 4, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing),
                 'c',
                 "plateInfusedOrder",
                 'd',
-                getModItem("thaumicenergistics", "material", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                 'e',
-                getModItem("appliedenergistics2", "tile.BlockVibrationChamber", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockVibrationChamber", 1, 0, missing),
                 'f',
-                getModItem("thaumicenergistics", "material", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                 'g',
                 "plateInfusedEntropy",
                 'h',
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
                 'i',
                 "plateInfusedEntropy");
         TCHelper.setResearchAspects(
@@ -2259,82 +2092,82 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEESSVIBCMBR", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIO",
-                getModItem("thaumicenergistics", "part.base", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("aqua"), 15)
                         .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("terra"), 15),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'b',
-                getModItem("thaumicenergistics", "material", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'd',
                 "plateInfusedOrder",
                 'e',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 240, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 240, missing),
                 'f',
                 "plateInfusedOrder",
                 'g',
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
                 'h',
-                getModItem("Thaumcraft", "blockTube", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
                 'i',
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIO",
-                getModItem("thaumicenergistics", "part.base", 1, 3, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("aqua"), 15)
                         .add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("terra"), 15),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockTube", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
                 'c',
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
                 'd',
                 "plateInfusedOrder",
                 'e',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 260, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 260, missing),
                 'f',
                 "plateInfusedOrder",
                 'g',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'h',
-                getModItem("thaumicenergistics", "material", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing));
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEIO",
-                getModItem("thaumicenergistics", "part.base", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("aqua"), 20)
                         .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("terra"), 20),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
                 'b',
                 "plateInfusedWater",
                 'c',
-                getModItem("Thaumcraft", "blockJar", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
                 'd',
-                getModItem("thaumicenergistics", "material", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                 'e',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 220, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing),
                 'f',
-                getModItem("thaumicenergistics", "material", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
                 'g',
-                getModItem("Thaumcraft", "blockTube", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
                 'h',
                 "plateInfusedWater",
                 'i',
-                getModItem("Thaumcraft", "blockTube", 1, 3, missing));
+                getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEIO",
                 new AspectList().add(Aspect.getAspect("motus"), 18).add(Aspect.getAspect("machina"), 15)
@@ -2343,7 +2176,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEIO", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEDISTILLATIONPATTERNENCODER",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.distillation.encoder", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.distillation.encoder", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25)
                         .add(Aspect.getAspect("ignis"), 25),
                 "abc",
@@ -2352,19 +2185,19 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "plateInfusedFire",
                 'b',
-                getModItem("Thaumcraft", "ItemThaumometer", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing),
                 'c',
                 "plateInfusedFire",
                 'd',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 'e',
-                getModItem("ae2stuff", "Encoder", 1, 0, missing),
+                getModItem(AE2Stuff.ID, "Encoder", 1, 0, missing),
                 'f',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 'g',
                 "plateInfusedOrder",
                 'h',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 'i',
                 "plateInfusedOrder");
         TCHelper.setResearchAspects(
@@ -2376,30 +2209,30 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEDISTILLATIONPATTERNENCODER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEFOCUSWRENCH",
-                getModItem("thaumicenergistics", "focus.aewrench", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "focus.aewrench", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("aer"), 25)
                         .add(Aspect.getAspect("ignis"), 25),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 10, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'd',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
                 'e',
-                getModItem("appliedenergistics2", "item.ToolCertusQuartzWrench", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzWrench", 1, 0, missing),
                 'f',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 11, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
                 'g',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'h',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 10, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEFOCUSWRENCH",
                 new AspectList().add(Aspect.getAspect("ignis"), 18).add(Aspect.getAspect("aer"), 15)
@@ -2408,7 +2241,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEFOCUSWRENCH", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEGOLEMWIFIBACKPACK",
-                getModItem("thaumicenergistics", "golem.wifi.backpack", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "golem.wifi.backpack", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("aer"), 30)
                         .add(Aspect.getAspect("ignis"), 30),
                 "abc",
@@ -2417,21 +2250,21 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "plateThaumium",
                 'b',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 440, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
                 'c',
                 "plateThaumium",
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 'e',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 41, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 'g',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 9, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
                 'h',
-                getModItem("appliedenergistics2", "tile.BlockCharger", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCharger", 1, 0, missing),
                 'i',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 9, missing));
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEGOLEMWIFIBACKPACK",
                 new AspectList().add(Aspect.getAspect("vacuos"), 21).add(Aspect.getAspect("potentia"), 18)
@@ -2448,7 +2281,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 new ResearchPage("thaumicenergistics.research_page.TESTORAGE.2"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.component", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("ignis"), 10)
                         .add(Aspect.getAspect("aqua"), 10),
                 "abc",
@@ -2457,29 +2290,29 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "circuitPrimitive",
                 'b',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'c',
                 "circuitPrimitive",
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'e',
-                getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'g',
                 "circuitPrimitive",
                 'h',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'i',
                 "circuitPrimitive");
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("thaumicenergistics", "storage.component", 1, 0, missing))));
+                                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.component", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("ignis"), 20)
                         .add(Aspect.getAspect("aqua"), 20),
                 "abc",
@@ -2488,29 +2321,29 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "circuitBasic",
                 'b',
-                getModItem("thaumicenergistics", "storage.component", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing),
                 'c',
                 "circuitBasic",
                 'd',
-                getModItem("thaumicenergistics", "storage.component", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing),
                 'e',
-                getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
                 'f',
-                getModItem("thaumicenergistics", "storage.component", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing),
                 'g',
                 "circuitBasic",
                 'h',
-                getModItem("thaumicenergistics", "storage.component", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing),
                 'i',
                 "circuitBasic");
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("thaumicenergistics", "storage.component", 1, 1, missing))));
+                                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.component", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 30).add(Aspect.getAspect("ignis"), 30)
                         .add(Aspect.getAspect("aqua"), 30),
                 "abc",
@@ -2519,29 +2352,29 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "circuitGood",
                 'b',
-                getModItem("thaumicenergistics", "storage.component", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing),
                 'c',
                 "circuitGood",
                 'd',
-                getModItem("thaumicenergistics", "storage.component", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing),
                 'e',
-                getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
                 'f',
-                getModItem("thaumicenergistics", "storage.component", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing),
                 'g',
                 "circuitGood",
                 'h',
-                getModItem("thaumicenergistics", "storage.component", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing),
                 'i',
                 "circuitGood");
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("thaumicenergistics", "storage.component", 1, 2, missing))));
+                                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.component", 1, 3, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 40).add(Aspect.getAspect("ignis"), 40)
                         .add(Aspect.getAspect("aqua"), 40),
                 "abc",
@@ -2550,44 +2383,44 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "circuitAdvanced",
                 'b',
-                getModItem("thaumicenergistics", "storage.component", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing),
                 'c',
                 "circuitAdvanced",
                 'd',
-                getModItem("thaumicenergistics", "storage.component", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing),
                 'e',
-                getModItem("dreamcraft", "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorEssentiaPulsatingCore", 1, 0, missing),
                 'f',
-                getModItem("thaumicenergistics", "storage.component", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing),
                 'g',
                 "circuitAdvanced",
                 'h',
-                getModItem("thaumicenergistics", "storage.component", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing),
                 'i',
                 "circuitAdvanced");
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("thaumicenergistics", "storage.component", 1, 3, missing))));
+                                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("aqua"), 10),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'b',
                 "plateInfusedFire",
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'd',
                 "plateInfusedEarth",
                 'e',
-                getModItem("TConstruct", "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
                 'f',
                 "plateInfusedEarth",
                 'g',
@@ -2599,25 +2432,25 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem("thaumicenergistics", "storage.casing", 1, 0, missing))));
+                        TCHelper.findArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.essentia", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
                         .add(Aspect.getAspect("aqua"), 15),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'b',
                 "plateInfusedFire",
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'd',
                 "plateInfusedEarth",
                 'e',
-                getModItem("thaumicenergistics", "storage.component", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing),
                 'f',
                 "plateInfusedEarth",
                 'g',
@@ -2628,34 +2461,34 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateThaumium");
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.essentia", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("terra"), 5)
                         .add(Aspect.getAspect("aqua"), 5),
-                getModItem("thaumicenergistics", "storage.casing", 1, 0, missing),
-                getModItem("thaumicenergistics", "storage.component", 1, 0, missing));
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing));
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("thaumicenergistics", "storage.essentia", 1, 0, missing))));
+                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.essentia", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("terra"), 25)
                         .add(Aspect.getAspect("aqua"), 25),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'b',
                 "plateInfusedFire",
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'd',
                 "plateInfusedEarth",
                 'e',
-                getModItem("thaumicenergistics", "storage.component", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing),
                 'f',
                 "plateInfusedEarth",
                 'g',
@@ -2666,34 +2499,34 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateThaumium");
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.essentia", 1, 1, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("terra"), 15)
                         .add(Aspect.getAspect("aqua"), 15),
-                getModItem("thaumicenergistics", "storage.casing", 1, 0, missing),
-                getModItem("thaumicenergistics", "storage.component", 1, 1, missing));
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing));
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("thaumicenergistics", "storage.essentia", 1, 1, missing))));
+                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 1, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.essentia", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("terra"), 35)
                         .add(Aspect.getAspect("aqua"), 35),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'b',
                 "plateInfusedFire",
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'd',
                 "plateInfusedEarth",
                 'e',
-                getModItem("thaumicenergistics", "storage.component", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing),
                 'f',
                 "plateInfusedEarth",
                 'g',
@@ -2704,34 +2537,34 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateThaumium");
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.essentia", 1, 2, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 2, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("terra"), 25)
                         .add(Aspect.getAspect("aqua"), 25),
-                getModItem("thaumicenergistics", "storage.casing", 1, 0, missing),
-                getModItem("thaumicenergistics", "storage.component", 1, 2, missing));
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing));
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("thaumicenergistics", "storage.essentia", 1, 2, missing))));
+                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 2, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.essentia", 1, 3, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 45).add(Aspect.getAspect("terra"), 45)
                         .add(Aspect.getAspect("aqua"), 45),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'b',
                 "plateInfusedFire",
                 'c',
-                getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'd',
                 "plateInfusedEarth",
                 'e',
-                getModItem("thaumicenergistics", "storage.component", 1, 3, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing),
                 'f',
                 "plateInfusedEarth",
                 'g',
@@ -2742,19 +2575,19 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "plateThaumium");
         ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "storage.essentia", 1, 3, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("terra"), 35)
                         .add(Aspect.getAspect("aqua"), 35),
-                getModItem("thaumicenergistics", "storage.casing", 1, 0, missing),
-                getModItem("thaumicenergistics", "storage.component", 1, 3, missing));
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing));
         TCHelper.addResearchPage(
                 "thaumicenergistics.TESTORAGE",
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
-                                getModItem("thaumicenergistics", "storage.essentia", 1, 3, missing))));
+                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("ignis"), 20),
                 "abc",
@@ -2763,19 +2596,19 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "craftingToolScrewdriver",
                 'b',
-                getModItem("thaumicenergistics", "storage.component", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing),
                 'c',
                 "craftingToolWrench",
                 'd',
                 "screwInfusedEarth",
                 'e',
-                getModItem("appliedenergistics2", "tile.BlockCellWorkbench", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCellWorkbench", 1, 0, missing),
                 'f',
                 "screwInfusedEarth",
                 'g',
                 "plateInfusedOrder",
                 'h',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 'i',
                 "plateInfusedOrder");
         TCHelper.addResearchPage(
@@ -2783,7 +2616,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
                                 getModItem(
-                                        "thaumicenergistics",
+                                        ThaumicEnergistics.ID,
                                         "thaumicenergistics.block.essentia.cell.workbench",
                                         1,
                                         0,
@@ -2797,7 +2630,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TESTORAGE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEVISINT",
-                getModItem("thaumicenergistics", "part.base", 1, 6, missing),
+                getModItem(ThaumicEnergistics.ID, "part.base", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("aqua"), 20)
                         .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("aer"), 20),
@@ -2805,15 +2638,15 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'b',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 440, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
                 'c',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'd',
                 "screwInfusedEarth",
                 'e',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 460, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460, missing),
                 'f',
                 "screwInfusedEarth",
                 'g',
@@ -2831,8 +2664,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEVISINT", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "thaumicenergistics.TETHAUMGBOX",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.golem.gear.box", 1, 0, missing),
-                getModItem("thaumicenergistics", "thaumicenergistics.block.gear.box", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.golem.gear.box", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.gear.box", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("praecantatio"), 32));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TETHAUMGBOX",
@@ -2842,26 +2675,26 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TETHAUMGBOX", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEARCANEASSEMBLER",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.arcane.assembler", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.arcane.assembler", 1, 0, missing),
                 16,
                 new AspectList().add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("fabrico"), 64)
                         .add(Aspect.getAspect("metallum"), 8).add(Aspect.getAspect("permutatio"), 32)
                         .add(Aspect.getAspect("lucrum"), 16).add(Aspect.getAspect("praecantatio"), 48)
                         .add(Aspect.getAspect("vitreus"), 16),
-                getModItem("appliedenergistics2", "tile.BlockMolecularAssembler", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1, 0, missing),
                 new ItemStack[] { createItemStack(
-                        "Thaumcraft",
+                        Thaumcraft.ID,
                         "WandCasting",
                         1,
                         32767,
                         "{aqua:15000,ignis:15000,terra:15000,cap:\"thaumium\",rod:\"silverwood\",ordo:15000,sceptre:1b,perditio:15000,aer:15000}",
-                        missing), getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing), });
+                        missing), getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANEASSEMBLER",
                 new AspectList().add(Aspect.getAspect("lucrum"), 24).add(Aspect.getAspect("fabrico"), 21)
@@ -2871,7 +2704,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEARCANEASSEMBLER", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEKNOWLEDGEINSCRIBER",
-                getModItem("thaumicenergistics", "knowledge.core", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "knowledge.core", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("aqua"), 10),
                 "abc",
@@ -2884,20 +2717,20 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'c',
                 "plateInfusedOrder",
                 'd',
-                getModItem("Thaumcraft", "ItemResource", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 9, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemZombieBrain", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemResource", 1, 9, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 9, missing),
                 'g',
                 "plateInfusedOrder",
                 'h',
-                getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 23, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
                 'i',
                 "plateInfusedOrder");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TEKNOWLEDGEINSCRIBER",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.knowledge.inscriber", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.knowledge.inscriber", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("aqua"), 20)
                         .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("aer"), 20),
@@ -2907,19 +2740,19 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'a',
                 "plateThaumium",
                 'b',
-                getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 400, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing),
                 'c',
                 "plateThaumium",
                 'd',
                 "plateInfusedEntropy",
                 'e',
-                getModItem("thaumicenergistics", "knowledge.core", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "knowledge.core", 1, 0, missing),
                 'f',
                 "plateInfusedEntropy",
                 'g',
                 "plateThaumium",
                 'h',
-                getModItem("Thaumcraft", "ItemThaumonomicon", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
                 'i',
                 "plateThaumium");
         TCHelper.setResearchAspects(
@@ -2930,22 +2763,22 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.setResearchComplexity("thaumicenergistics.TEKNOWLEDGEINSCRIBER", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "thaumicenergistics.TEINFPROV",
-                getModItem("thaumicenergistics", "thaumicenergistics.block.infusion.provider", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.infusion.provider", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("machina"), 64).add(Aspect.getAspect("ordo"), 48)
                         .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("spiritus"), 8),
-                getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.provider", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "blockMirror", 1, 6, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
-                        getModItem("thaumicenergistics", "part.base", 1, 0, missing),
-                        getModItem("thaumicenergistics", "material", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("Thaumcraft", "blockMirror", 1, 6, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("thaumicenergistics", "material", 1, 1, missing),
-                        getModItem("thaumicenergistics", "part.base", 1, 3, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 0, missing), });
+                getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockMirror", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
+                        getModItem(ThaumicEnergistics.ID, "part.base", 1, 0, missing),
+                        getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(Thaumcraft.ID, "blockMirror", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
+                        getModItem(ThaumicEnergistics.ID, "part.base", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEINFPROV",
                 new AspectList().add(Aspect.getAspect("permutatio"), 21).add(Aspect.getAspect("motus"), 18)

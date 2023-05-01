@@ -1,5 +1,9 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -17,13 +21,13 @@ public class ScriptOpenComputers implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.OpenComputers.ID);
+        return Arrays.asList(Mods.OpenComputers.ID, HardcoreEnderExpansion.ID, IndustrialCraft2.ID);
     }
 
     @Override
     public void loadRecipes() {
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("OpenComputers", "item", 1, 69, missing),
+                getModItem(OpenComputers.ID, "item", 1, 69, missing),
                 "---------",
                 "---------",
                 "--aaaaa--",
@@ -40,11 +44,11 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'c',
                 "circuitSuperconductor",
                 'd',
-                getModItem("OpenComputers", "item", 1, 103, missing),
+                getModItem(OpenComputers.ID, "item", 1, 103, missing),
                 'e',
-                getModItem("OpenComputers", "case3", 1, 0, missing));
+                getModItem(OpenComputers.ID, "case3", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("OpenComputers", "item", 1, 103, missing),
+                getModItem(OpenComputers.ID, "item", 1, 103, missing),
                 "---------",
                 "---------",
                 "--aaaaa--",
@@ -61,13 +65,13 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'c',
                 "circuitSuperconductor",
                 'd',
-                getModItem("OpenComputers", "item", 1, 10, missing),
+                getModItem(OpenComputers.ID, "item", 1, 10, missing),
                 'e',
-                getModItem("OpenComputers", "item", 1, 102, missing),
+                getModItem(OpenComputers.ID, "item", 1, 102, missing),
                 'f',
-                getModItem("OpenComputers", "item", 1, 43, missing));
+                getModItem(OpenComputers.ID, "item", 1, 43, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("OpenComputers", "item", 1, 90, missing),
+                getModItem(OpenComputers.ID, "item", 1, 90, missing),
                 "---------",
                 "---------",
                 "--abcbd--",
@@ -88,11 +92,11 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'e',
                 "plateDenseObsidian",
                 'f',
-                getModItem("IC2", "itemRTGPellet", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing),
                 'g',
-                getModItem("IC2", "blockGenerator", 1, 6, missing));
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("OpenComputers", "item", 1, 93, missing),
+                getModItem(OpenComputers.ID, "item", 1, 93, missing),
                 "---------",
                 "---------",
                 "--abcba--",
@@ -111,13 +115,13 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'd',
                 "plateDenseChrome",
                 'e',
-                getModItem("OpenComputers", "screen3", 1, 0, missing),
+                getModItem(OpenComputers.ID, "screen3", 1, 0, missing),
                 'f',
-                getModItem("IC2", "itemRTGPellet", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing),
                 'g',
-                getModItem("IC2", "blockGenerator", 1, 6, missing));
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("OpenComputers", "item", 1, 91, missing),
+                getModItem(OpenComputers.ID, "item", 1, 91, missing),
                 "---------",
                 "---------",
                 "--ababa--",
@@ -130,7 +134,7 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'a',
                 "circuitMaster",
                 'b',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32606, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing),
                 'c',
                 "circuitElite",
                 'd',
@@ -138,11 +142,11 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'e',
                 "circuitSuperconductor",
                 'f',
-                getModItem("HardcoreEnderExpansion", "biome_compass", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 0, missing),
                 'g',
-                getModItem("OpenComputers", "item", 1, 90, missing));
+                getModItem(OpenComputers.ID, "item", 1, 90, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("OpenComputers", "item", 1, 114, missing),
+                getModItem(OpenComputers.ID, "item", 1, 114, missing),
                 "aaaaaaaaa",
                 "abacdcaba",
                 "aaaaaaaaa",
@@ -153,19 +157,19 @@ public class ScriptOpenComputers implements IScriptLoader {
                 "abacdcaba",
                 "aaaaaaaaa",
                 'a',
-                getModItem("OpenComputers", "item", 1, 72, missing),
+                getModItem(OpenComputers.ID, "item", 1, 72, missing),
                 'b',
-                getModItem("OpenComputers", "item", 1, 39, missing),
+                getModItem(OpenComputers.ID, "item", 1, 39, missing),
                 'c',
-                getModItem("OpenComputers", "item", 1, 26, missing),
+                getModItem(OpenComputers.ID, "item", 1, 26, missing),
                 'd',
-                getModItem("OpenComputers", "item", 1, 106, missing),
+                getModItem(OpenComputers.ID, "item", 1, 106, missing),
                 'e',
-                getModItem("gregtech", "gt.metaitem.03", 1, 32105, missing),
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32105, missing),
                 'f',
                 "circuitSuperconductor",
                 'g',
-                getModItem("OpenComputers", "item", 1, 7, missing));
+                getModItem(OpenComputers.ID, "item", 1, 7, missing));
 
     }
 }

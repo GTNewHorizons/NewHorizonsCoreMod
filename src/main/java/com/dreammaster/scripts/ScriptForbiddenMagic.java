@@ -1,5 +1,20 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
@@ -22,9 +37,7 @@ import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
-
 import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.Mods;
 
 public class ScriptForbiddenMagic implements IScriptLoader {
 
@@ -36,51 +49,51 @@ public class ScriptForbiddenMagic implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
-                Mods.ForbiddenMagic.ID,
-                Mods.Thaumcraft.ID,
-                Mods.Witchery.ID,
-                Mods.BiomesOPlenty.ID,
-                Mods.Botania.ID,
-                Mods.Backpack.ID,
-                Mods.BloodMagic.ID,
-                Mods.ThaumicTinkerer.ID,
-                Mods.AppliedEnergistics2.ID,
-                Mods.EnderIO.ID,
-                Mods.IndustrialCraft2.ID,
-                Mods.TinkerConstruct.ID,
-                Mods.BloodArsenal.ID);
+                ForbiddenMagic.ID,
+                Thaumcraft.ID,
+                Witchery.ID,
+                BiomesOPlenty.ID,
+                Botania.ID,
+                Backpack.ID,
+                BloodMagic.ID,
+                ThaumicTinkerer.ID,
+                AppliedEnergistics2.ID,
+                EnderIO.ID,
+                IndustrialCraft2.ID,
+                TinkerConstruct.ID,
+                BloodArsenal.ID);
     }
 
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem("ForbiddenMagic", "Crystalwell", 1, 0, missing),
-                new Object[] { getModItem("Thaumcraft", "ItemShard", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 2, missing), "dyeBlack",
-                        getModItem("ForbiddenMagic", "Crystalwell", 1, 32767, missing), "dyeBlack",
-                        getModItem("Thaumcraft", "ItemShard", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 4, missing),
-                        getModItem("Thaumcraft", "ItemShard", 1, 5, missing) });
+                getModItem(ForbiddenMagic.ID, "Crystalwell", 1, 0, missing),
+                new Object[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing), "dyeBlack",
+                        getModItem(ForbiddenMagic.ID, "Crystalwell", 1, 32767, missing), "dyeBlack",
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing) });
         addShapelessCraftingRecipe(
-                getModItem("gregtech", "gt.metaitem.02", 2, 32414, missing),
-                new Object[] { getModItem("ForbiddenMagic", "InkFlower", 1, 0, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing),
+                new Object[] { getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing) });
 
         ChiselHelper.addGroup("netherstar");
-        ChiselHelper.addVariationFromStack("netherstar", getModItem("ForbiddenMagic", "StarBlock", 1, 0, missing));
-        ChiselHelper.addVariationFromStack("netherstar", getModItem("gregtech", "gt.blockgem3", 1, 3, missing));
+        ChiselHelper.addVariationFromStack("netherstar", getModItem(ForbiddenMagic.ID, "StarBlock", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("netherstar", getModItem(GregTech.ID, "gt.blockgem3", 1, 3, missing));
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
-                .itemOutputs(getModItem("ForbiddenMagic", "FMResource", 9, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(5).addTo(sCentrifugeRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem("ForbiddenMagic", "InkFlower", 1, 0, missing))
-                .itemOutputs(getModItem("gregtech", "gt.metaitem.02", 2, 32414, missing)).noFluidInputs()
+                .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(1200).eut(5).addTo(sCentrifugeRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing))
+                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
 
-        BloodMagicHelper.removeAltarRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 3, missing));
+        BloodMagicHelper.removeAltarRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 3, missing));
         AltarRecipeRegistry.registerAltarRecipe(
-                getModItem("ForbiddenMagic", "WandCores", 1, 3, missing),
-                getModItem("ForbiddenMagic", "WandCores", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 3, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 6, missing),
                 4,
                 50000,
                 20,
@@ -93,7 +106,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.clearPages("CAP_elementium");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_vinteum",
-                getModItem("ForbiddenMagic", "WandCaps", 1, 1, missing),
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 1, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("terra"), 40)
                         .add(Aspect.getAspect("ignis"), 40).add(Aspect.getAspect("aqua"), 40)
                         .add(Aspect.getAspect("ordo"), 40).add(Aspect.getAspect("perditio"), 40),
@@ -120,7 +133,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 "screwTitanium");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_witchwood_staff",
-                getModItem("ForbiddenMagic", "WandCores", 1, 10, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 10, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("terra"), 125)
                         .add(Aspect.getAspect("ignis"), 125).add(Aspect.getAspect("aqua"), 125)
                         .add(Aspect.getAspect("ordo"), 125).add(Aspect.getAspect("perditio"), 125),
@@ -128,49 +141,49 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("ForbiddenMagic", "WandCores", 1, 4, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 4, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("ForbiddenMagic", "WandCores", 1, 4, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 4, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         ThaumcraftApi.addCrucibleRecipe(
                 "VINTEUM",
-                getModItem("gregtech", "gt.metaitem.01", 1, 9529, missing),
-                getModItem("gregtech", "gt.metaitem.01", 1, 9330, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 9529, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 9330, missing),
                 new AspectList().add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("ordo"), 2)
                         .add(Aspect.getAspect("vitreus"), 2));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_witchwood",
-                getModItem("ForbiddenMagic", "WandCores", 1, 4, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 4, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("arbor"), 64).add(Aspect.getAspect("praecantatio"), 48)
                         .add(Aspect.getAspect("herba"), 32).add(Aspect.getAspect("instrumentum"), 24)
                         .add(Aspect.getAspect("vacuos"), 24),
-                getModItem("witchery", "ingredient", 1, 82, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 8529, missing),
-                        getModItem("witchery", "witchsapling", 1, 0, missing),
-                        getModItem("witchery", "ingredient", 1, 34, missing),
-                        getModItem("witchery", "witchsapling", 1, 1, missing),
-                        getModItem("witchery", "ingredient", 1, 36, missing),
-                        getModItem("witchery", "witchsapling", 1, 2, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 8529, missing),
-                        getModItem("witchery", "witchsapling", 1, 0, missing),
-                        getModItem("witchery", "ingredient", 1, 34, missing),
-                        getModItem("witchery", "witchsapling", 1, 1, missing),
-                        getModItem("witchery", "ingredient", 1, 36, missing),
-                        getModItem("witchery", "witchsapling", 1, 2, missing), });
+                getModItem(Witchery.ID, "ingredient", 1, 82, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 8529, missing),
+                        getModItem(Witchery.ID, "witchsapling", 1, 0, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                        getModItem(Witchery.ID, "witchsapling", 1, 1, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 36, missing),
+                        getModItem(Witchery.ID, "witchsapling", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 8529, missing),
+                        getModItem(Witchery.ID, "witchsapling", 1, 0, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                        getModItem(Witchery.ID, "witchsapling", 1, 1, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 36, missing),
+                        getModItem(Witchery.ID, "witchsapling", 1, 2, missing), });
         new ResearchItem(
                 "JOURNEY",
                 "FORBIDDEN",
@@ -179,7 +192,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -3,
                 1,
                 3,
-                getModItem("BiomesOPlenty", "food", 1, 7, missing))
+                getModItem(BiomesOPlenty.ID, "food", 1, 7, missing))
                         .setPages(new ResearchPage("derp.research_page.JOURNEY")).setParents("SCHOOLS").setRound()
                         .setStub().setAutoUnlock().registerResearchItem();
         new ResearchItem(
@@ -191,7 +204,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -1,
                 3,
                 3,
-                getModItem("ForbiddenMagic", "WandCores", 1, 7, missing))
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 7, missing))
                         .setPages(new ResearchPage("derp.research_page.ROD_livingwood")).setConcealed()
                         .setParents("JOURNEY", "BLOODALTAR", "BALLOFMOSS", "ROD_greatwood").registerResearchItem();
         ThaumcraftApi.addWarpToResearch("ROD_livingwood", 2);
@@ -206,10 +219,12 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 1,
                 4,
                 3,
-                getModItem("ForbiddenMagic", "WandCores", 1, 11, missing)).setPages(
-                        new ResearchPage("derp.research_page.ROD_dreamwood_v2"),
-                        new ResearchPage(
-                                TCHelper.findInfusionRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 12, missing))))
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 11, missing))
+                        .setPages(
+                                new ResearchPage("derp.research_page.ROD_dreamwood_v2"),
+                                new ResearchPage(
+                                        TCHelper.findInfusionRecipe(
+                                                getModItem(ForbiddenMagic.ID, "WandCores", 1, 12, missing))))
                         .setConcealed().setParents("ROD_livingwood", "ROD_silverwood").registerResearchItem();
         TCHelper.orphanResearch("ROD_dreamwood_staff");
         TCHelper.removeResearch("ROD_dreamwood_staff");
@@ -222,11 +237,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 3,
                 4,
                 3,
-                getModItem("ForbiddenMagic", "WandCores", 1, 13, missing)).registerResearchItem();
-        TCHelper.removeArcaneRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 13, missing));
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 13, missing)).registerResearchItem();
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 13, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_dreamwood_staff_v2",
-                getModItem("ForbiddenMagic", "WandCores", 1, 13, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 13, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("terra"), 125)
                         .add(Aspect.getAspect("ignis"), 125).add(Aspect.getAspect("aqua"), 125)
                         .add(Aspect.getAspect("ordo"), 125).add(Aspect.getAspect("perditio"), 125),
@@ -234,30 +249,31 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "blockCrystal", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 15, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                 'd',
-                getModItem("Thaumcraft", "blockCrystal", 1, 2, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'e',
-                getModItem("ForbiddenMagic", "WandCores", 1, 11, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 11, missing),
                 'f',
-                getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                 'g',
-                getModItem("ForbiddenMagic", "WandCores", 1, 11, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 11, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                 'i',
-                getModItem("Thaumcraft", "blockCrystal", 1, 5, missing));
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         TCHelper.addResearchPage(
                 "ROD_dreamwood_staff_v2",
                 new ResearchPage("derp.research_page.ROD_dreamwood_staff_v2"));
         TCHelper.addResearchPrereq("ROD_dreamwood_staff_v2", "ROD_dreamwood_v2", false);
         TCHelper.addResearchPage(
                 "ROD_dreamwood_staff_v2",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 13, missing))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 13, missing))));
         ResearchCategories.getResearch("ROD_dreamwood_staff_v2").setSpecial();
         ResearchCategories.getResearch("ROD_dreamwood_staff_v2").setConcealed();
         TCHelper.addResearchPrereq("ROD_dreamwood_staff_v2", "ROD_silverwood_staff", false);
@@ -271,29 +287,30 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 1,
                 2,
                 3,
-                getModItem("ForbiddenMagic", "WandCaps", 1, 3, missing)).registerResearchItem();
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 3, missing)).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CAP_manasteel",
-                getModItem("ForbiddenMagic", "WandCaps", 1, 4, missing),
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 4, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("praecantatio"), 48)
                         .add(Aspect.getAspect("electrum"), 32).add(Aspect.getAspect("instrumentum"), 24)
                         .add(Aspect.getAspect("machina"), 24),
-                getModItem("Thaumcraft", "WandCap", 1, 4, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 2333, missing),
-                        getModItem("Botania", "manaResource", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2333, missing),
-                        getModItem("Botania", "manaResource", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2333, missing),
-                        getModItem("Botania", "manaResource", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2333, missing),
-                        getModItem("Botania", "manaResource", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2333, missing),
-                        getModItem("Botania", "manaResource", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "WandCap", 1, 4, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        getModItem(Botania.ID, "manaResource", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        getModItem(Botania.ID, "manaResource", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        getModItem(Botania.ID, "manaResource", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        getModItem(Botania.ID, "manaResource", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        getModItem(Botania.ID, "manaResource", 1, 0, missing), });
         TCHelper.addResearchPage("CAP_manasteel", new ResearchPage("derp.research_page.CAP_manasteel"));
         TCHelper.addResearchPage(
                 "CAP_manasteel",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("ForbiddenMagic", "WandCaps", 1, 4, missing))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 4, missing))));
         ResearchCategories.getResearch("CAP_manasteel").setConcealed();
         TCHelper.addResearchPrereq("CAP_manasteel", "ROD_livingwood", false);
         TCHelper.addResearchPrereq("CAP_manasteel", "CAP_silver", false);
@@ -308,29 +325,30 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 3,
                 2,
                 3,
-                getModItem("ForbiddenMagic", "WandCaps", 1, 2, missing)).registerResearchItem();
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2, missing)).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CAP_terrasteel",
-                getModItem("ForbiddenMagic", "WandCaps", 1, 2, missing),
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("ordo"), 64)
                         .add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("superbia"), 20)
                         .add(Aspect.getAspect("strontio"), 10),
-                getModItem("ForbiddenMagic", "WandCaps", 1, 3, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.02", 1, 30501, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17339, missing),
-                        getModItem("Botania", "manaResource", 1, 4, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30501, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing),
-                        getModItem("Botania", "manaResource", 1, 4, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17339, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 3, missing), });
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 3, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17339, missing),
+                        getModItem(Botania.ID, "manaResource", 1, 4, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
+                        getModItem(Botania.ID, "manaResource", 1, 4, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17339, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
         TCHelper.addResearchPage("CAP_terrasteel", new ResearchPage("derp.research_page.CAP_terrasteel"));
         TCHelper.addResearchPage(
                 "CAP_terrasteel",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("ForbiddenMagic", "WandCaps", 1, 2, missing))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2, missing))));
         ResearchCategories.getResearch("CAP_terrasteel").setConcealed();
         TCHelper.addResearchPrereq("CAP_terrasteel", "CAP_manasteel", false);
         TCHelper.addResearchPrereq("CAP_terrasteel", "TRANSEMERALD", true);
@@ -344,11 +362,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 3,
                 4,
                 3,
-                getModItem("ForbiddenMagic", "WandCaps", 1, 5, missing)).registerResearchItem();
-        TCHelper.removeArcaneRecipe(getModItem("ForbiddenMagic", "WandCaps", 1, 6, missing));
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5, missing)).registerResearchItem();
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 6, missing));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CAP_elementium",
-                getModItem("ForbiddenMagic", "WandCaps", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 6, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 40).add(Aspect.getAspect("aqua"), 40)
                         .add(Aspect.getAspect("aer"), 40),
                 "abc",
@@ -376,10 +394,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.addResearchPrereq("CAP_elementium", "CAP_manasteel", false);
         TCHelper.addResearchPage(
                 "CAP_elementium",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("ForbiddenMagic", "WandCaps", 1, 6, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 6, missing))));
         TCHelper.addResearchPage(
                 "CAP_elementium",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("ForbiddenMagic", "WandCaps", 1, 5, missing))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5, missing))));
         ResearchCategories.getResearch("CAP_elementium").setConcealed();
         new ResearchItem(
                 "VINTEUM",
@@ -389,12 +408,12 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -4,
                 2,
                 3,
-                getModItem("gregtech", "gt.metaitem.01", 1, 8529, missing))
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 8529, missing))
                         .setPages(
                                 new ResearchPage("derp.research_page.VINTEUM"),
                                 new ResearchPage(
                                         TCHelper.findCrucibleRecipe(
-                                                getModItem("gregtech", "gt.metaitem.01", 1, 9529, missing))))
+                                                getModItem(GregTech.ID, "gt.metaitem.01", 1, 9529, missing))))
                         .setConcealed().setParents("JOURNEY", "THAUMIUM", "GT_ADVANCEDMETALLURGY")
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("VINTEUM", 1);
@@ -407,10 +426,10 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -5,
                 3,
                 3,
-                getModItem("ForbiddenMagic", "WandCaps", 1, 1, missing)).setPages(
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 1, missing)).setPages(
                         new ResearchPage("derp.research_page.CAP_vinteum"),
                         new ResearchPage(
-                                TCHelper.findArcaneRecipe(getModItem("ForbiddenMagic", "WandCaps", 1, 1, missing))))
+                                TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 1, missing))))
                         .setConcealed().setParents("VINTEUM", "CAP_thaumium").registerResearchItem();
         ThaumcraftApi.addWarpToResearch("CAP_vinteum", 3);
         new ResearchItem(
@@ -422,10 +441,10 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -4,
                 0,
                 3,
-                getModItem("ForbiddenMagic", "WandCores", 1, 4, missing)).setPages(
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 4, missing)).setPages(
                         new ResearchPage("derp.research_page.ROD_witchwood"),
                         new ResearchPage(
-                                TCHelper.findInfusionRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 4, missing))))
+                                TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 4, missing))))
                         .setConcealed().setParents("VINTEUM", "ANOINTINGPASTE", "OVEN").registerResearchItem();
         ThaumcraftApi.addWarpToResearch("ROD_witchwood", 2);
         new ResearchItem(
@@ -437,10 +456,10 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -2,
                 0,
                 3,
-                getModItem("ForbiddenMagic", "WandCores", 1, 10, missing)).setPages(
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 10, missing)).setPages(
                         new ResearchPage("derp.research_page.ROD_witchwood_staff"),
                         new ResearchPage(
-                                TCHelper.findArcaneRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 10, missing))))
+                                TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 10, missing))))
                         .setSpecial().setConcealed().setParents("ROD_witchwood", "ROD_silverwood_staff")
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("ROD_witchwood_staff", 4);
@@ -457,46 +476,46 @@ public class ScriptForbiddenMagic implements IScriptLoader {
 
         // END OF WANDS
 
-        TCHelper.removeCrucibleRecipe(getModItem("ForbiddenMagic", "FMResource", 4, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("ForbiddenMagic", "Crystalwell", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("ForbiddenMagic", "UmbralBush", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("ForbiddenMagic", "RingNutrition", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("ForbiddenMagic", "Bloodwell", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "BlinkFocus", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "ArcaneCakeItem", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "DiabolistFork", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "SkullAxe", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "BloodRapier", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "WrathCage", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("ForbiddenMagic", "MobCrystal", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "MorphPickaxe", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "MorphAxe", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "MorphShovel", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "MorphSword", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "TaintShovel", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "TaintPickaxe", 1, 0, missing));
-        TCHelper.removeCrucibleRecipe(getModItem("ForbiddenMagic", "TaintSapling", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("ForbiddenMagic", "TaintBlock", 9, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "EldritchOrb", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("ForbiddenMagic", "Primewell", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "SubCollar", 1, 0, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 1, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 6, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem("ForbiddenMagic", "WandCores", 1, 9, missing));
-        TCHelper.removeInfusionRecipe(getModItem("ForbiddenMagic", "WandCaps", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(ForbiddenMagic.ID, "FMResource", 4, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "Crystalwell", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(ForbiddenMagic.ID, "UmbralBush", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "RingNutrition", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "Bloodwell", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "BlinkFocus", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "ArcaneCakeItem", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "DiabolistFork", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "SkullAxe", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "BloodRapier", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "WrathCage", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(ForbiddenMagic.ID, "MobCrystal", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "MorphPickaxe", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "MorphAxe", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "MorphShovel", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "MorphSword", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "TaintShovel", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "TaintPickaxe", 1, 0, missing));
+        TCHelper.removeCrucibleRecipe(getModItem(ForbiddenMagic.ID, "TaintSapling", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "TaintBlock", 9, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "EldritchOrb", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "Primewell", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "SubCollar", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 1, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 6, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 9, missing));
+        TCHelper.removeInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0, missing));
         TCHelper.clearPages("RIDINGCROP");
         TCHelper.addResearchPage("RIDINGCROP", new ResearchPage("forbidden.research_page.RIDINGCROP.1"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RIDINGCROP",
-                getModItem("ForbiddenMagic", "RidingCrop", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "RidingCrop", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("ignis"), 5)
                         .add(Aspect.getAspect("aer"), 5),
                 "abc",
                 "def",
                 "ghi",
                 'b',
-                getModItem("Backpack", "boundLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "boundLeather", 1, 0, missing),
                 'd',
                 "screwIron",
                 'e',
@@ -511,32 +530,33 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 "craftingToolSoftHammer");
         TCHelper.addResearchPage(
                 "RIDINGCROP",
-                new ResearchPage(TCHelper.findArcaneRecipe(getModItem("ForbiddenMagic", "RidingCrop", 1, 0, missing))));
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(getModItem(ForbiddenMagic.ID, "RidingCrop", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "CRYSTALWELL",
-                getModItem("ForbiddenMagic", "Crystalwell", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "Crystalwell", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 5).add(Aspect.getAspect("ordo"), 5),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'b',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'c',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'd',
                 "dyeBlack",
                 'e',
-                getModItem("Thaumcraft", "ItemInkwell", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemInkwell", 1, 32767, missing),
                 'f',
                 "dyeBlack",
                 'g',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 'h',
-                getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'i',
-                getModItem("Thaumcraft", "ItemResource", 1, 14, missing));
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing));
         TCHelper.setResearchAspects(
                 "CRYSTALWELL",
                 new AspectList().add(Aspect.getAspect("cognitio"), 18).add(Aspect.getAspect("vitreus"), 15)
@@ -545,8 +565,8 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("CRYSTALWELL", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "BLACKFLOWER",
-                getModItem("ForbiddenMagic", "UmbralBush", 1, 0, missing),
-                getModItem("minecraft", "double_plant", 1, 4, missing),
+                getModItem(ForbiddenMagic.ID, "UmbralBush", 1, 0, missing),
+                getModItem(Minecraft.ID, "double_plant", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("victus"), 10));
         TCHelper.setResearchAspects(
                 "BLACKFLOWER",
@@ -555,7 +575,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("BLACKFLOWER", 2);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "RINGFOOD",
-                getModItem("ForbiddenMagic", "RingNutrition", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "RingNutrition", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 35).add(Aspect.getAspect("aer"), 35)
                         .add(Aspect.getAspect("ignis"), 35).add(Aspect.getAspect("terra"), 35)
                         .add(Aspect.getAspect("perditio"), 35),
@@ -569,15 +589,15 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 'c',
                 "screwInfusedAir",
                 'd',
-                getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1, missing),
                 'f',
-                getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
                 'g',
                 "screwInfusedEarth",
                 'h',
-                getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
                 'i',
                 "screwInfusedFire");
         TCHelper.setResearchAspects(
@@ -588,7 +608,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("RINGFOOD", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "BLOODWELL",
-                getModItem("ForbiddenMagic", "Bloodwell", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "Bloodwell", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 25).add(Aspect.getAspect("aer"), 25)
                         .add(Aspect.getAspect("ignis"), 25).add(Aspect.getAspect("terra"), 25)
                         .add(Aspect.getAspect("perditio"), 25),
@@ -598,19 +618,19 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 'a',
                 "screwInfusedWater",
                 'b',
-                getModItem("AWWayofTime", "bucketLife", 1, 0, missing),
+                getModItem(BloodMagic.ID, "bucketLife", 1, 0, missing),
                 'c',
                 "screwInfusedAir",
                 'd',
-                getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
                 'e',
-                getModItem("Thaumcraft", "ItemInkwell", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
                 'f',
-                getModItem("Thaumcraft", "ItemEssence", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
                 'g',
                 "screwInfusedEarth",
                 'h',
-                getModItem("AWWayofTime", "weakBloodOrb", 1, 0, missing),
+                getModItem(BloodMagic.ID, "weakBloodOrb", 1, 0, missing),
                 'i',
                 "screwInfusedFire");
         TCHelper.setResearchAspects(
@@ -621,24 +641,24 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("BLOODWELL", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FOCUSBLINK",
-                getModItem("ForbiddenMagic", "BlinkFocus", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "BlinkFocus", 1, 0, missing),
                 8,
                 new AspectList().add(Aspect.getAspect("desidia"), 16).add(Aspect.getAspect("infernus"), 16)
                         .add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("perditio"), 32)
                         .add(Aspect.getAspect("alienis"), 8).add(Aspect.getAspect("praecantatio"), 8),
-                getModItem("Thaumcraft", "FocusPortableHole", 1, 0, missing),
-                new ItemStack[] { getModItem("witchery", "ingredient", 1, 92, missing),
-                        getModItem("ThaumicTinkerer", "kamiResource", 1, 7, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32724, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32724, missing),
-                        getModItem("witchery", "ingredient", 1, 92, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32724, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32724, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 5, missing),
-                        getModItem("ThaumicTinkerer", "kamiResource", 1, 7, missing), });
+                getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
+                new ItemStack[] { getModItem(Witchery.ID, "ingredient", 1, 92, missing),
+                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(Witchery.ID, "ingredient", 1, 92, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
+                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing), });
         TCHelper.setResearchAspects(
                 "FOCUSBLINK",
                 new AspectList().add(Aspect.getAspect("desidia"), 21).add(Aspect.getAspect("iter"), 18)
@@ -648,24 +668,24 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("FOCUSBLINK", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ARCANECAKE",
-                getModItem("ForbiddenMagic", "ArcaneCakeItem", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "ArcaneCakeItem", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("fabrico"), 32).add(Aspect.getAspect("fames"), 32)
                         .add(Aspect.getAspect("gula"), 16).add(Aspect.getAspect("aqua"), 64)
                         .add(Aspect.getAspect("limus"), 16).add(Aspect.getAspect("praecantatio"), 8),
-                getModItem("minecraft", "cake", 1, 0, missing),
-                new ItemStack[] { getModItem("ForbiddenMagic", "StarBlock", 1, 0, missing),
-                        getModItem("minecraft", "milk_bucket", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing),
-                        getModItem("minecraft", "egg", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "StarBlock", 1, 0, missing),
-                        getModItem("minecraft", "egg", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing),
-                        getModItem("minecraft", "milk_bucket", 1, 0, missing), });
+                getModItem(Minecraft.ID, "cake", 1, 0, missing),
+                new ItemStack[] { getModItem(ForbiddenMagic.ID, "StarBlock", 1, 0, missing),
+                        getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
+                        getModItem(Minecraft.ID, "egg", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "StarBlock", 1, 0, missing),
+                        getModItem(Minecraft.ID, "egg", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
+                        getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "ARCANECAKE",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("gula"), 15)
@@ -674,20 +694,20 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("ARCANECAKE", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "FORK",
-                getModItem("ForbiddenMagic", "DiabolistFork", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "DiabolistFork", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("telum"), 32).add(Aspect.getAspect("infernus"), 24)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("machina"), 8),
-                getModItem("Thaumcraft", "ItemSwordThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.metaitem.01", 1, 23977, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27541, missing),
-                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 23977, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27541, missing),
-                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 23977, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 27541, missing),
-                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 1, missing), });
+                getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 23977, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27541, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23977, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27541, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23977, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27541, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing), });
         TCHelper.setResearchAspects(
                 "FORK",
                 new AspectList().add(Aspect.getAspect("tenebrae"), 18).add(Aspect.getAspect("praecantatio"), 15)
@@ -697,22 +717,22 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("FORK", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "SKULLAXE",
-                getModItem("ForbiddenMagic", "SkullAxe", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "SkullAxe", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("infernus"), 32).add(Aspect.getAspect("ira"), 24)
                         .add(Aspect.getAspect("telum"), 24).add(Aspect.getAspect("potentia"), 16)
                         .add(Aspect.getAspect("mortuus"), 8),
-                getModItem("Thaumcraft", "ItemAxeElemental", 1, 0, missing),
-                new ItemStack[] { getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("minecraft", "skull", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("minecraft", "skull", 1, 1, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30502, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("minecraft", "skull", 1, 2, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("minecraft", "skull", 1, 4, missing), });
+                getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
+                new ItemStack[] { getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(Minecraft.ID, "skull", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(Minecraft.ID, "skull", 1, 1, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(Minecraft.ID, "skull", 1, 2, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(Minecraft.ID, "skull", 1, 4, missing), });
         TCHelper.setResearchAspects(
                 "SKULLAXE",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("instrumentum"), 15)
@@ -722,22 +742,22 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("SKULLAXE", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "BLOODRAPIER",
-                getModItem("ForbiddenMagic", "BloodRapier", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "BloodRapier", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("victus"), 24)
                         .add(Aspect.getAspect("telum"), 16).add(Aspect.getAspect("fames"), 32)
                         .add(Aspect.getAspect("gula"), 8),
-                getModItem("Thaumcraft", "ItemSwordVoid", 1, 0, missing),
-                new ItemStack[] { getModItem("minecraft", "feather", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 12, missing),
-                        getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30514, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 12, missing),
-                        getModItem("ForbiddenMagic", "GluttonyShard", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
+                new ItemStack[] { getModItem(Minecraft.ID, "feather", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
+                        getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30514, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
+                        getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "BLOODRAPIER",
                 new AspectList().add(Aspect.getAspect("tenebrae"), 18).add(Aspect.getAspect("gula"), 15)
@@ -747,8 +767,8 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("BLOODRAPIER", 2);
         ThaumcraftApi.addCrucibleRecipe(
                 "TRANSEMERALD",
-                getModItem("ForbiddenMagic", "FMResource", 4, 0, missing),
-                getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "FMResource", 4, 0, missing),
+                getModItem(ForbiddenMagic.ID, "FMResource", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("lucrum"), 4).add(Aspect.getAspect("vitreus"), 4));
         TCHelper.setResearchAspects(
                 "TRANSEMERALD",
@@ -758,30 +778,30 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("TRANSEMERALD", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "WRATHCAGE",
-                getModItem("ForbiddenMagic", "WrathCage", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "WrathCage", 1, 0, missing),
                 15,
                 new AspectList().add(Aspect.getAspect("ira"), 32).add(Aspect.getAspect("machina"), 32)
                         .add(Aspect.getAspect("bestia"), 64).add(Aspect.getAspect("metallum"), 48)
                         .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("exanimis"), 16)
                         .add(Aspect.getAspect("praecantatio"), 32),
-                getModItem("EnderIO", "itemBrokenSpawner", 1, 0, missing),
-                new ItemStack[] { getModItem("gregtech", "gt.blockmetal7", 1, 4, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "MobCrystal", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "MobCrystal", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "MobCrystal", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "MobCrystal", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockJar", 1, 0, missing), });
+                getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0, missing),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.blockmetal7", 1, 4, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "MobCrystal", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "MobCrystal", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "MobCrystal", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "MobCrystal", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing), });
         ThaumcraftApi.addCrucibleRecipe(
                 "WRATHCAGE",
-                getModItem("ForbiddenMagic", "MobCrystal", 1, 0, missing),
-                getModItem("IC2", "itemBatCrystal", 1, 32767, missing),
+                getModItem(ForbiddenMagic.ID, "MobCrystal", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
                 new AspectList().add(Aspect.getAspect("cognitio"), 10).add(Aspect.getAspect("potentia"), 10)
                         .add(Aspect.getAspect("praecantatio"), 10).add(Aspect.getAspect("vitreus"), 10));
         TCHelper.setResearchAspects(
@@ -794,76 +814,76 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("WRATHCAGE", 5);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MORPHTOOLS",
-                getModItem("ForbiddenMagic", "MorphPickaxe", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "MorphPickaxe", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("invidia"), 16).add(Aspect.getAspect("instrumentum"), 16)
                         .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("cognitio"), 8)
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("potentia"), 8),
-                getModItem("Thaumcraft", "ItemPickaxeElemental", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "WandRod", 1, 2, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30500, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30502, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing), });
+                getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MORPHTOOLS",
-                getModItem("ForbiddenMagic", "MorphAxe", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "MorphAxe", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("invidia"), 16).add(Aspect.getAspect("instrumentum"), 16)
                         .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("cognitio"), 8)
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("potentia"), 8),
-                getModItem("Thaumcraft", "ItemAxeElemental", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "WandRod", 1, 2, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30500, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30502, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing), });
+                getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MORPHTOOLS",
-                getModItem("ForbiddenMagic", "MorphShovel", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "MorphShovel", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("invidia"), 16).add(Aspect.getAspect("instrumentum"), 16)
                         .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("cognitio"), 8)
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("potentia"), 8),
-                getModItem("Thaumcraft", "ItemShovelElemental", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "WandRod", 1, 2, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30500, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30502, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing), });
+                getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MORPHTOOLS",
-                getModItem("ForbiddenMagic", "MorphSword", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "MorphSword", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("invidia"), 16).add(Aspect.getAspect("telum"), 16)
                         .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("cognitio"), 8)
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("potentia"), 8),
-                getModItem("Thaumcraft", "ItemSwordElemental", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "WandRod", 1, 2, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30500, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30502, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 1, missing), });
+                getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing), });
         TCHelper.setResearchAspects(
                 "MORPHTOOLS",
                 new AspectList().add(Aspect.getAspect("invidia"), 18).add(Aspect.getAspect("instrumentum"), 15)
@@ -873,21 +893,21 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("MORPHTOOLS", 5);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TAINTSHOVEL",
-                getModItem("ForbiddenMagic", "TaintShovel", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "TaintShovel", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("perfodio"), 16).add(Aspect.getAspect("sano"), 16)
                         .add(Aspect.getAspect("vitreus"), 32).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("limus"), 8).add(Aspect.getAspect("instrumentum"), 8),
-                getModItem("Thaumcraft", "ItemShovelElemental", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "WandRod", 1, 2, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30514, missing),
-                        getModItem("TConstruct", "strangeFood", 1, 0, missing),
-                        getModItem("TConstruct", "strangeFood", 1, 0, missing),
-                        getModItem("minecraft", "slime_ball", 1, 0, missing),
-                        getModItem("minecraft", "slime_ball", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30503, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 4, missing), });
+                getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30514, missing),
+                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
+                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
+                        getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
+                        getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30503, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), });
         TCHelper.setResearchAspects(
                 "TAINTSHOVEL",
                 new AspectList().add(Aspect.getAspect("vitreus"), 21).add(Aspect.getAspect("vitium"), 18)
@@ -897,21 +917,21 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("TAINTSHOVEL", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TAINTPICK",
-                getModItem("ForbiddenMagic", "TaintPickaxe", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "TaintPickaxe", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("perfodio"), 16).add(Aspect.getAspect("instrumentum"), 8)
                         .add(Aspect.getAspect("vitium"), 16).add(Aspect.getAspect("perditio"), 32)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("mortuus"), 8),
-                getModItem("Thaumcraft", "ItemPickaxeElemental", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "WandRod", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30514, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.02", 1, 30509, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 5, missing), });
+                getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30514, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30509, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing), });
         TCHelper.setResearchAspects(
                 "TAINTPICK",
                 new AspectList().add(Aspect.getAspect("vitium"), 18).add(Aspect.getAspect("perditio"), 15)
@@ -920,7 +940,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("TAINTPICK", 3);
         ThaumcraftApi.addCrucibleRecipe(
                 "TAINTTREE",
-                getModItem("ForbiddenMagic", "TaintSapling", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "TaintSapling", 1, 0, missing),
                 "treeSapling",
                 new AspectList().add(Aspect.getAspect("venenum"), 8).add(Aspect.getAspect("vitium"), 20));
         TCHelper.setResearchAspects(
@@ -931,29 +951,29 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("TAINTTREE", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TAINTSTONE",
-                getModItem("ForbiddenMagic", "TaintBlock", 9, 0, missing),
+                getModItem(ForbiddenMagic.ID, "TaintBlock", 9, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 9).add(Aspect.getAspect("perditio"), 9),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem("minecraft", "stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 'b',
-                getModItem("minecraft", "stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 'c',
-                getModItem("minecraft", "stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 'd',
-                getModItem("minecraft", "stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 'e',
-                getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
                 'f',
-                getModItem("minecraft", "stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 'g',
-                getModItem("minecraft", "stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 'h',
-                getModItem("minecraft", "stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 'i',
-                getModItem("minecraft", "stone", 1, 0, missing));
+                getModItem(Minecraft.ID, "stone", 1, 0, missing));
         TCHelper.setResearchAspects(
                 "TAINTSTONE",
                 new AspectList().add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("vitium"), 9)
@@ -961,24 +981,24 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("TAINTSTONE", 2);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ELDRITCHORB",
-                getModItem("ForbiddenMagic", "EldritchOrb", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "EldritchOrb", 1, 0, missing),
                 15,
                 new AspectList().add(Aspect.getAspect("alienis"), 48).add(Aspect.getAspect("tenebrae"), 32)
                         .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("victus"), 64)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("vitreus"), 8),
-                getModItem("BloodArsenal", "transparent_orb", 1, 0, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemEldritchObject", 1, 0, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32724, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32726, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 32724, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17970, missing),
-                        getModItem("Thaumcraft", "blockCrystal", 1, 6, missing),
-                        getModItem("Thaumcraft", "ItemEldritchObject", 1, 0, missing), });
+                getModItem(BloodArsenal.ID, "transparent_orb", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32726, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "ELDRITCHORB",
                 new AspectList().add(Aspect.getAspect("vacuos"), 18).add(Aspect.getAspect("victus"), 15)
@@ -988,7 +1008,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("ELDRITCHORB", 6);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "PRIMEWELL",
-                getModItem("ForbiddenMagic", "Primewell", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "Primewell", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 100).add(Aspect.getAspect("ignis"), 100)
                         .add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("terra"), 100)
                         .add(Aspect.getAspect("ordo"), 100).add(Aspect.getAspect("perditio"), 100),
@@ -998,13 +1018,13 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 'a',
                 "screwInfusedAir",
                 'b',
-                getModItem("Thaumcraft", "ItemEldritchObject", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 'c',
                 "screwInfusedEarth",
                 'd',
                 "screwInfusedFire",
                 'e',
-                getModItem("Thaumcraft", "ItemInkwell", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
                 'f',
                 "screwInfusedOrder",
                 'g',
@@ -1022,21 +1042,21 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("PRIMEWELL", 1);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "SUBCOLLAR",
-                getModItem("ForbiddenMagic", "SubCollar", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "SubCollar", 1, 0, missing),
                 10,
                 new AspectList().add(Aspect.getAspect("vinculum"), 8).add(Aspect.getAspect("infernus"), 8)
                         .add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("corpus"), 16)
                         .add(Aspect.getAspect("luxuria"), 8).add(Aspect.getAspect("praecantatio"), 32),
-                getModItem("Thaumcraft", "ItemBaubleBlanks", 1, 2, missing),
-                new ItemStack[] { getModItem("Thaumcraft", "ItemAmuletVis", 1, 1, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 4, missing),
-                        getModItem("minecraft", "lead", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 4, missing),
-                        getModItem("minecraft", "lead", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 4, missing),
-                        getModItem("minecraft", "lead", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 4, missing),
-                        getModItem("minecraft", "lead", 1, 0, missing), });
+                getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "ItemAmuletVis", 1, 1, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 4, missing),
+                        getModItem(Minecraft.ID, "lead", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 4, missing),
+                        getModItem(Minecraft.ID, "lead", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 4, missing),
+                        getModItem(Minecraft.ID, "lead", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 4, missing),
+                        getModItem(Minecraft.ID, "lead", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "SUBCOLLAR",
                 new AspectList().add(Aspect.getAspect("vinculum"), 18).add(Aspect.getAspect("auram"), 15)
@@ -1051,22 +1071,22 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("HELLFIRE", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_infernal",
-                getModItem("ForbiddenMagic", "WandCores", 1, 1, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 1, missing),
                 7,
                 new AspectList().add(Aspect.getAspect("superbia"), 16).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("infernus"), 32).add(Aspect.getAspect("ignis"), 48)
                         .add(Aspect.getAspect("instrumentum"), 8),
-                getModItem("Thaumcraft", "WandRod", 1, 6, missing),
-                new ItemStack[] { getModItem("ForbiddenMagic", "NetherShard", 1, 3, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17379, missing),
-                        getModItem("minecraft", "skull", 1, 1, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 3, missing),
-                        getModItem("minecraft", "blaze_rod", 1, 0, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 3, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 14, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 3, missing),
-                        getModItem("minecraft", "ghast_tear", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 17379, missing), });
+                getModItem(Thaumcraft.ID, "WandRod", 1, 6, missing),
+                new ItemStack[] { getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17379, missing),
+                        getModItem(Minecraft.ID, "skull", 1, 1, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3, missing),
+                        getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3, missing),
+                        getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17379, missing), });
         TCHelper.setResearchAspects(
                 "ROD_infernal",
                 new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("ignis"), 12)
@@ -1076,24 +1096,24 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("ROD_infernal", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_blood",
-                getModItem("ForbiddenMagic", "WandCores", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 6, missing),
                 9,
                 new AspectList().add(Aspect.getAspect("aqua"), 16).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("victus"), 24).add(Aspect.getAspect("exanimis"), 8)
                         .add(Aspect.getAspect("alienis"), 8),
-                getModItem("AWWayofTime", "masterBloodOrb", 1, 0, missing),
-                new ItemStack[] { getModItem("AWWayofTime", "demonicSlate", 1, 0, missing),
-                        getModItem("AWWayofTime", "sanctus", 1, 0, missing),
-                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
-                        getModItem("AWWayofTime", "incendium", 1, 0, missing),
-                        getModItem("AWWayofTime", "aether", 1, 0, missing),
-                        getModItem("AWWayofTime", "bloodMagicBaseAlchemyItems", 1, 0, missing),
-                        getModItem("AWWayofTime", "demonicSlate", 1, 0, missing),
-                        getModItem("AWWayofTime", "terrae", 1, 0, missing),
-                        getModItem("AWWayofTime", "tennebrae", 1, 0, missing),
-                        getModItem("AWWayofTime", "aquasalus", 1, 0, missing),
-                        getModItem("AWWayofTime", "crystallos", 1, 0, missing),
-                        getModItem("AWWayofTime", "crepitous", 1, 0, missing), });
+                getModItem(BloodMagic.ID, "masterBloodOrb", 1, 0, missing),
+                new ItemStack[] { getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "sanctus", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "incendium", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "aether", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "terrae", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "tennebrae", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "aquasalus", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "crystallos", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "crepitous", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "ROD_blood",
                 new AspectList().add(Aspect.getAspect("victus"), 15).add(Aspect.getAspect("aqua"), 12)
@@ -1154,24 +1174,24 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.setResearchComplexity("CLUSTER", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_tainted",
-                getModItem("ForbiddenMagic", "WandCores", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 0, missing),
                 12,
                 new AspectList().add(Aspect.getAspect("vitium"), 32).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("perditio"), 48).add(Aspect.getAspect("venenum"), 24)
                         .add(Aspect.getAspect("alienis"), 8).add(Aspect.getAspect("tenebrae"), 32),
-                getModItem("Thaumcraft", "WandRod", 1, 1, missing),
-                new ItemStack[] { getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 12, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 12, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 11, missing),
-                        getModItem("ForbiddenMagic", "NetherShard", 1, 2, missing),
-                        getModItem("Thaumcraft", "ItemResource", 1, 12, missing), });
+                getModItem(Thaumcraft.ID, "WandRod", 1, 1, missing),
+                new ItemStack[] { getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing), });
         TCHelper.setResearchAspects(
                 "ROD_tainted",
                 new AspectList().add(Aspect.getAspect("vitium"), 18).add(Aspect.getAspect("praecantatio"), 15)
@@ -1181,7 +1201,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("ROD_tainted", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ROD_blood_staff",
-                getModItem("ForbiddenMagic", "WandCores", 1, 9, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 9, missing),
                 new AspectList().add(Aspect.getAspect("aqua"), 40).add(Aspect.getAspect("ignis"), 40)
                         .add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("terra"), 40)
                         .add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("ordo"), 40),
@@ -1191,19 +1211,19 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 'a',
                 "screwInfusedOrder",
                 'b',
-                getModItem("ThaumicTinkerer", "kamiResource", 1, 6, missing),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
                 'c',
-                getModItem("AWWayofTime", "demonBloodShard", 1, 0, missing),
+                getModItem(BloodMagic.ID, "demonBloodShard", 1, 0, missing),
                 'd',
-                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 29, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 29, missing),
                 'e',
-                getModItem("ForbiddenMagic", "WandCores", 1, 3, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 3, missing),
                 'f',
-                getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 28, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28, missing),
                 'g',
-                getModItem("ForbiddenMagic", "WandCores", 1, 3, missing),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 3, missing),
                 'h',
-                getModItem("ThaumicTinkerer", "kamiResource", 1, 7, missing),
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing),
                 'i',
                 "screwInfusedEntropy");
         TCHelper.setResearchAspects(
@@ -1217,25 +1237,26 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         TCHelper.addResearchPage("CAP_alchemical", new ResearchPage("forbidden.research_page.CAP_alchemical.1"));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CAP_alchemical",
-                getModItem("ForbiddenMagic", "WandCaps", 1, 0, missing),
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("victus"), 16).add(Aspect.getAspect("aqua"), 32)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("permutatio"), 8)
                         .add(Aspect.getAspect("metallum"), 8),
-                getModItem("Thaumcraft", "WandCap", 1, 1, missing),
-                new ItemStack[] { getModItem("AWWayofTime", "magicales", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing),
-                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing),
-                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing),
-                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing),
-                        getModItem("AWWayofTime", "magicales", 1, 0, missing),
-                        getModItem("gregtech", "gt.metaitem.01", 1, 2330, missing), });
+                getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing),
+                new ItemStack[] { getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing), });
         TCHelper.addResearchPage(
                 "CAP_alchemical",
-                new ResearchPage(TCHelper.findInfusionRecipe(getModItem("ForbiddenMagic", "WandCaps", 1, 0, missing))));
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0, missing))));
         TCHelper.setResearchAspects(
                 "CAP_alchemical",
                 new AspectList().add(Aspect.getAspect("victus"), 15).add(Aspect.getAspect("aqua"), 12)

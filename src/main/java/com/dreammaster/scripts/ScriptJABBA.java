@@ -41,7 +41,10 @@ public class ScriptJABBA implements IScriptLoader {
                 ExtraUtilities.ID,
                 Forestry.ID,
                 Natura.ID,
-                GregTech.ID);
+                GregTech.ID,
+                BartWorks.ID,
+                EnderStorage.ID,
+                Railcraft.ID);
     }
 
     @Override

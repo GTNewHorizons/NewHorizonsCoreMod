@@ -19,7 +19,7 @@ public class ScriptArchitectureCraft implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(ArchitectureCraft.ID, GregTech.ID);
+        return Arrays.asList(ArchitectureCraft.ID, GregTech.ID, TinkerConstruct.ID);
     }
 
     @Override

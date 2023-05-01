@@ -130,9 +130,9 @@ public class ScriptEC2 implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem("appliedenergistics2", "tile.BlockCraftingUnit", 1, 0, missing),
-                        getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 38, missing))
-                .itemOutputs(getModItem("appliedenergistics2", "tile.BlockCraftingStorage", 1, 3, missing))
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 3, missing))
                 .noFluidInputs().noFluidOutputs().duration(400).eut(480).addTo(sAssemblerRecipes);
 
     }

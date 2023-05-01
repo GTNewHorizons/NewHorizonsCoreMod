@@ -1,5 +1,10 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.TemporaryMods.CompactKineticGenerators;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -16,27 +21,28 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList("compactkineticgenerators");
+        return Arrays.asList(CompactKineticGenerators.ID, GTPlusPlus.ID, IndustrialCraft2.ID);
     }
 
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem("compactkineticgenerators", "IridiumBlade", 1, 0, missing),
+                getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
                 new Object[] { "plateAlloyIridium", "plateAlloyIridium", "plateAlloyIridium", "plateAlloyIridium",
                         "ringOsmium", "plateAlloyIridium", "plateAlloyIridium", "plateAlloyIridium",
                         "plateAlloyIridium" });
         addShapedRecipe(
-                getModItem("compactkineticgenerators", "IridiumRotor", 1, 0, missing),
-                new Object[] { getModItem("miscutils", "itemIridiumShaft", 1, 0, missing),
-                        getModItem("compactkineticgenerators", "IridiumBlade", 1, 0, missing), "craftingToolHardHammer",
-                        getModItem("compactkineticgenerators", "IridiumBlade", 1, 0, missing), "ringChrome",
-                        getModItem("compactkineticgenerators", "IridiumBlade", 1, 0, missing), "craftingToolWrench",
-                        getModItem("compactkineticgenerators", "IridiumBlade", 1, 0, missing),
-                        getModItem("miscutils", "itemIridiumShaft", 1, 0, missing) });
+                getModItem(CompactKineticGenerators.ID, "IridiumRotor", 1, 0, missing),
+                new Object[] { getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing),
+                        getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
+                        "craftingToolHardHammer",
+                        getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing), "ringChrome",
+                        getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing), "craftingToolWrench",
+                        getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
+                        getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing) });
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 0, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 0, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -49,7 +55,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleTungstenSteel",
                 'b',
-                getModItem("IC2", "blockKineticGenerator", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 0, missing),
                 'c',
                 "itemCasingTungstenSteel",
                 'd',
@@ -59,11 +65,11 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'f',
                 "circuitElite",
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 14, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing),
                 'h',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32603, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 1, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 1, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -76,7 +82,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleIridium",
                 'b',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 0, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 0, missing),
                 'c',
                 "itemCasingIridium",
                 'd',
@@ -86,11 +92,11 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'f',
                 "circuitMaster",
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 15, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 15, missing),
                 'h',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32604, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 2, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 2, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -103,9 +109,9 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNaquadah",
                 'b',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 1, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 1, missing),
                 'c',
-                getModItem("dreamcraft", "item.IridiumAlloyItemCasing", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
                 'd',
                 "gearGtSmallDraconium",
                 'e',
@@ -113,11 +119,11 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'f',
                 "circuitUltimate",
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 16, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 16, missing),
                 'h',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32606, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 3, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 3, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -130,7 +136,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNeutronium",
                 'b',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 2, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 2, missing),
                 'c',
                 "itemCasingNeutronium",
                 'd',
@@ -140,11 +146,11 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'f',
                 "circuitSuperconductor",
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 17, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 17, missing),
                 'h',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32607, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32607, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 4, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 4, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -157,21 +163,21 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleTungstenSteel",
                 'b',
-                getModItem("IC2", "blockKineticGenerator", 1, 4, missing),
+                getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 4, missing),
                 'c',
                 "itemCasingTungstenSteel",
                 'd',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32613, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
                 'e',
                 "cableGt02Tungsten",
                 'f',
                 "circuitElite",
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 14, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing),
                 'h',
                 "gearGtSmallDesh");
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 5, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 5, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -184,21 +190,21 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleIridium",
                 'b',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 4, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 4, missing),
                 'c',
                 "itemCasingIridium",
                 'd',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32614, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32614, missing),
                 'e',
                 "wireGt04HSSG",
                 'f',
                 "circuitMaster",
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 15, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 15, missing),
                 'h',
                 "gearGtSmallOriharukon");
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 6, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 6, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -211,21 +217,21 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNaquadah",
                 'b',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 5, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 5, missing),
                 'c',
-                getModItem("dreamcraft", "item.IridiumAlloyItemCasing", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
                 'd',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32615, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32615, missing),
                 'e',
                 "cableGt04VanadiumGallium",
                 'f',
                 "circuitUltimate",
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 16, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 16, missing),
                 'h',
                 "gearGtSmallDraconium");
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 7, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 7, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -238,21 +244,21 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNeutronium",
                 'b',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 6, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 6, missing),
                 'c',
                 "itemCasingNeutronium",
                 'd',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32616, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32616, missing),
                 'e',
                 "cableGt08Duranium",
                 'f',
                 "circuitSuperconductor",
                 'g',
-                getModItem("gregtech", "gt.blockmachines", 1, 17, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 17, missing),
                 'h',
                 "gearGtSmallElectrumFlux");
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 8, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 8, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -265,25 +271,25 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleTungstenSteel",
                 'b',
-                getModItem("miscutils", "itemTungstenSteelShaft", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing),
                 'c',
                 "rotorTungstenSteel",
                 'd',
                 "gearDesh",
                 'e',
-                getModItem("gregtech", "gt.blockmachines", 1, 14, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing),
                 'f',
                 "cableGt02Tungsten",
                 'g',
                 "circuitElite",
                 'h',
-                getModItem("IC2", "blockGenerator", 1, 9, missing),
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 9, missing),
                 'i',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32603, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
                 'j',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32540, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 9, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 9, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -296,25 +302,25 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleIridium",
                 'b',
-                getModItem("miscutils", "itemTungstenSteelShaft", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing),
                 'c',
                 "rotorIridium",
                 'd',
                 "gearOriharukon",
                 'e',
-                getModItem("gregtech", "gt.blockmachines", 1, 15, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 15, missing),
                 'f',
                 "wireGt04HSSG",
                 'g',
                 "circuitMaster",
                 'h',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 8, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 8, missing),
                 'i',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32604, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
                 'j',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32545, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32545, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 10, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 10, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -327,25 +333,25 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNaquadah",
                 'b',
-                getModItem("miscutils", "itemIridiumShaft", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing),
                 'c',
                 "rotorOsmium",
                 'd',
                 "gearDraconium",
                 'e',
-                getModItem("gregtech", "gt.blockmachines", 1, 16, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 16, missing),
                 'f',
                 "cableGt04VanadiumGallium",
                 'g',
                 "circuitUltimate",
                 'h',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 9, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 9, missing),
                 'i',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32606, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing),
                 'j',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32550, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32550, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 11, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 11, missing),
                 "---------",
                 "---------",
                 "--aabaa--",
@@ -358,23 +364,23 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNeutronium",
                 'b',
-                getModItem("miscutils", "itemIridiumShaft", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing),
                 'c',
                 "rotorNeutronium",
                 'd',
                 "gearElectrumFlux",
                 'e',
-                getModItem("gregtech", "gt.blockmachines", 1, 17, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 17, missing),
                 'f',
                 "cableGt08Duranium",
                 'g',
                 "circuitSuperconductor",
                 'h',
-                getModItem("compactkineticgenerators", "BlockCkg", 1, 10, missing),
+                getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 10, missing),
                 'i',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32607, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32607, missing),
                 'j',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32555, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32555, missing));
 
     }
 }

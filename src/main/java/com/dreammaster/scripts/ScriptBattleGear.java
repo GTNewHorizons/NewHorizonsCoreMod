@@ -1,11 +1,15 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
-
-import gregtech.api.enums.Mods;
 
 public class ScriptBattleGear implements IScriptLoader {
 
@@ -16,75 +20,87 @@ public class ScriptBattleGear implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.MineAndBladeBattleGear2.ID);
+        return Arrays.asList(MineAndBladeBattleGear2.ID, Backpack.ID, TinkerConstruct.ID, TinkersGregworks.ID);
     }
 
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem("battlegear2", "shield.wood", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "shield.wood", 1, 0, missing),
                 new Object[] { "itemFlint", "logWood", "itemFlint", "logWood", "stoneCobble", "logWood", "itemFlint",
                         "logWood", "itemFlint" });
         addShapedRecipe(
-                getModItem("battlegear2", "shield.hide", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "shield.hide", 1, 0, missing),
                 new Object[] { "itemFlint", "itemLeather", "itemFlint", "itemLeather",
-                        getModItem("battlegear2", "shield.wood", 1, 0, missing), "itemLeather", "itemFlint",
-                        "itemLeather", "itemFlint" });
+                        getModItem(MineAndBladeBattleGear2.ID, "shield.wood", 1, 0, missing), "itemLeather",
+                        "itemFlint", "itemLeather", "itemFlint" });
         addShapedRecipe(
-                getModItem("battlegear2", "shield.iron", 1, 0, missing),
-                new Object[] { getModItem("TConstruct", "heavyPlate", 1, 2, missing),
-                        getModItem("TConstruct", "toughBinding", 1, 2, missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 2, missing), "craftingToolHardHammer",
-                        getModItem("TConstruct", "toughRod", 1, 2, missing), "craftingToolFile", null,
-                        getModItem("TConstruct", "toughRod", 1, 2, missing), null });
+                getModItem(MineAndBladeBattleGear2.ID, "shield.iron", 1, 0, missing),
+                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing),
+                        getModItem(TinkerConstruct.ID, "toughBinding", 1, 2, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing), "craftingToolHardHammer",
+                        getModItem(TinkerConstruct.ID, "toughRod", 1, 2, missing), "craftingToolFile", null,
+                        getModItem(TinkerConstruct.ID, "toughRod", 1, 2, missing), null });
         addShapedRecipe(
-                getModItem("battlegear2", "shield.gold", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "shield.gold", 1, 0, missing),
                 new Object[] {
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartLargePlate",
                                 1,
                                 1505,
                                 "{material:\"Gold\"}",
                                 missing),
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartToughBind",
                                 1,
                                 1505,
                                 "{material:\"Gold\"}",
                                 missing),
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartLargePlate",
                                 1,
                                 1505,
                                 "{material:\"Gold\"}",
                                 missing),
                         "craftingToolHardHammer",
-                        createItemStack("TGregworks", "tGregToolPartToughRod", 1, 1505, "{material:\"Gold\"}", missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartToughRod",
+                                1,
+                                1505,
+                                "{material:\"Gold\"}",
+                                missing),
                         "craftingToolFile", null,
-                        createItemStack("TGregworks", "tGregToolPartToughRod", 1, 1505, "{material:\"Gold\"}", missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartToughRod",
+                                1,
+                                1505,
+                                "{material:\"Gold\"}",
+                                missing),
                         null });
         addShapedRecipe(
-                getModItem("battlegear2", "shield.diamond", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "shield.diamond", 1, 0, missing),
                 new Object[] {
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartLargePlate",
                                 1,
                                 1594,
                                 "{material:\"Diamond\"}",
                                 missing),
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartToughBind",
                                 1,
                                 1594,
                                 "{material:\"Diamond\"}",
                                 missing),
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartLargePlate",
                                 1,
                                 1594,
@@ -92,7 +108,7 @@ public class ScriptBattleGear implements IScriptLoader {
                                 missing),
                         "craftingToolHardHammer",
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartToughRod",
                                 1,
                                 1594,
@@ -100,7 +116,7 @@ public class ScriptBattleGear implements IScriptLoader {
                                 missing),
                         "craftingToolFile", null,
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartToughRod",
                                 1,
                                 1594,
@@ -108,93 +124,117 @@ public class ScriptBattleGear implements IScriptLoader {
                                 missing),
                         null });
         addShapedRecipe(
-                getModItem("battlegear2", "dagger.wood", 1, 0, missing),
-                new Object[] { getModItem("gregtech", "gt.metaitem.01", 1, 17809, missing), "craftingToolFile", null,
+                getModItem(MineAndBladeBattleGear2.ID, "dagger.wood", 1, 0, missing),
+                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "craftingToolFile", null,
                         "stickWood", "craftingToolHardHammer", null });
         addShapedRecipe(
-                getModItem("battlegear2", "dagger.stone", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "dagger.stone", 1, 0, missing),
                 new Object[] { "plateStone", "craftingToolFile", null, "stickWood", "craftingToolHardHammer", null });
         addShapedRecipe(
-                getModItem("battlegear2", "dagger.iron", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "dagger.iron", 1, 0, missing),
                 new Object[] { "plateAnyIron", "craftingToolFile", null, "stickWood", "craftingToolHardHammer", null });
         addShapedRecipe(
-                getModItem("battlegear2", "dagger.diamond", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "dagger.diamond", 1, 0, missing),
                 new Object[] { "plateDiamond", "craftingToolFile", null, "stickWood", "craftingToolHardHammer", null });
         addShapedRecipe(
-                getModItem("battlegear2", "spear.wood", 1, 0, missing),
-                new Object[] { null, getModItem("minecraft", "string", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "string", 1, 0, missing), "itemLeather",
-                        getModItem("minecraft", "string", 1, 0, missing), "stickWood",
-                        getModItem("minecraft", "string", 1, 0, missing), null });
+                getModItem(MineAndBladeBattleGear2.ID, "spear.wood", 1, 0, missing),
+                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
+                        getModItem(Minecraft.ID, "string", 1, 0, missing), "itemLeather",
+                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
+                        getModItem(Minecraft.ID, "string", 1, 0, missing), null });
         addShapedRecipe(
-                getModItem("battlegear2", "spear.stone", 1, 0, missing),
-                new Object[] { "screwAnyIron", getModItem("TConstruct", "arrowhead", 1, 1, missing), null,
-                        getModItem("battlegear2", "spear.wood", 1, 0, missing), "screwAnyIron", null, "craftingToolSaw",
-                        "craftingToolScrewdriver", null });
+                getModItem(MineAndBladeBattleGear2.ID, "spear.stone", 1, 0, missing),
+                new Object[] { "screwAnyIron", getModItem(TinkerConstruct.ID, "arrowhead", 1, 1, missing), null,
+                        getModItem(MineAndBladeBattleGear2.ID, "spear.wood", 1, 0, missing), "screwAnyIron", null,
+                        "craftingToolSaw", "craftingToolScrewdriver", null });
         addShapedRecipe(
-                getModItem("battlegear2", "spear.iron", 1, 0, missing),
-                new Object[] { "screwSteel", getModItem("TConstruct", "arrowhead", 1, 2, missing), null,
-                        getModItem("battlegear2", "spear.wood", 1, 0, missing), "screwSteel", null, "craftingToolSaw",
-                        "craftingToolScrewdriver", null });
+                getModItem(MineAndBladeBattleGear2.ID, "spear.iron", 1, 0, missing),
+                new Object[] { "screwSteel", getModItem(TinkerConstruct.ID, "arrowhead", 1, 2, missing), null,
+                        getModItem(MineAndBladeBattleGear2.ID, "spear.wood", 1, 0, missing), "screwSteel", null,
+                        "craftingToolSaw", "craftingToolScrewdriver", null });
         addShapedRecipe(
-                getModItem("battlegear2", "spear.gold", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "spear.gold", 1, 0, missing),
                 new Object[] { "screwAluminium",
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartArrowHead",
                                 1,
                                 1505,
                                 "{material:\"Gold\"}",
                                 missing),
-                        null, getModItem("battlegear2", "spear.wood", 1, 0, missing), "screwAluminium", null,
-                        "craftingToolSaw", "craftingToolScrewdriver", null });
+                        null, getModItem(MineAndBladeBattleGear2.ID, "spear.wood", 1, 0, missing), "screwAluminium",
+                        null, "craftingToolSaw", "craftingToolScrewdriver", null });
         addShapedRecipe(
-                getModItem("battlegear2", "spear.diamond", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "spear.diamond", 1, 0, missing),
                 new Object[] { "screwStainlessSteel",
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartArrowHead",
                                 1,
                                 1594,
                                 "{material:\"Diamond\"}",
                                 missing),
-                        null, getModItem("battlegear2", "spear.wood", 1, 0, missing), "screwStainlessSteel", null,
-                        "craftingToolSaw", "craftingToolScrewdriver", null });
+                        null, getModItem(MineAndBladeBattleGear2.ID, "spear.wood", 1, 0, missing),
+                        "screwStainlessSteel", null, "craftingToolSaw", "craftingToolScrewdriver", null });
         addShapedRecipe(
-                getModItem("battlegear2", "waraxe.wood", 1, 0, missing),
-                new Object[] { getModItem("TConstruct", "hatchetHead", 1, 0, missing), "craftingToolSoftHammer",
-                        getModItem("TConstruct", "hatchetHead", 1, 0, missing),
-                        getModItem("TConstruct", "hatchetHead", 1, 0, missing), "stickWood",
-                        getModItem("TConstruct", "hatchetHead", 1, 0, missing), null, "stickWood", null });
+                getModItem(MineAndBladeBattleGear2.ID, "waraxe.wood", 1, 0, missing),
+                new Object[] { getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing), "craftingToolSoftHammer",
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing),
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing), "stickWood",
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing), null, "stickWood", null });
         addShapedRecipe(
-                getModItem("battlegear2", "waraxe.stone", 1, 0, missing),
-                new Object[] { getModItem("TConstruct", "hatchetHead", 1, 1, missing), "craftingToolScrewdriver",
-                        getModItem("TConstruct", "hatchetHead", 1, 1, missing),
-                        getModItem("TConstruct", "hatchetHead", 1, 1, missing), "stickWood",
-                        getModItem("TConstruct", "hatchetHead", 1, 1, missing), "screwAnyIron", "stickWood",
+                getModItem(MineAndBladeBattleGear2.ID, "waraxe.stone", 1, 0, missing),
+                new Object[] { getModItem(TinkerConstruct.ID, "hatchetHead", 1, 1, missing), "craftingToolScrewdriver",
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 1, missing),
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 1, missing), "stickWood",
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 1, missing), "screwAnyIron", "stickWood",
                         "screwAnyIron" });
         addShapedRecipe(
-                getModItem("battlegear2", "waraxe.iron", 1, 0, missing),
-                new Object[] { getModItem("TConstruct", "hatchetHead", 1, 2, missing), "craftingToolScrewdriver",
-                        getModItem("TConstruct", "hatchetHead", 1, 2, missing),
-                        getModItem("TConstruct", "hatchetHead", 1, 2, missing), "stickWood",
-                        getModItem("TConstruct", "hatchetHead", 1, 2, missing), "screwSteel", "stickWood",
+                getModItem(MineAndBladeBattleGear2.ID, "waraxe.iron", 1, 0, missing),
+                new Object[] { getModItem(TinkerConstruct.ID, "hatchetHead", 1, 2, missing), "craftingToolScrewdriver",
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 2, missing),
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 2, missing), "stickWood",
+                        getModItem(TinkerConstruct.ID, "hatchetHead", 1, 2, missing), "screwSteel", "stickWood",
                         "screwSteel" });
         addShapedRecipe(
-                getModItem("battlegear2", "waraxe.gold", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "waraxe.gold", 1, 0, missing),
                 new Object[] {
-                        createItemStack("TGregworks", "tGregToolPartAxeHead", 1, 1505, "{material:\"Gold\"}", missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartAxeHead",
+                                1,
+                                1505,
+                                "{material:\"Gold\"}",
+                                missing),
                         "craftingToolScrewdriver",
-                        createItemStack("TGregworks", "tGregToolPartAxeHead", 1, 1505, "{material:\"Gold\"}", missing),
-                        createItemStack("TGregworks", "tGregToolPartAxeHead", 1, 1505, "{material:\"Gold\"}", missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartAxeHead",
+                                1,
+                                1505,
+                                "{material:\"Gold\"}",
+                                missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartAxeHead",
+                                1,
+                                1505,
+                                "{material:\"Gold\"}",
+                                missing),
                         "stickWood",
-                        createItemStack("TGregworks", "tGregToolPartAxeHead", 1, 1505, "{material:\"Gold\"}", missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartAxeHead",
+                                1,
+                                1505,
+                                "{material:\"Gold\"}",
+                                missing),
                         "screwAluminium", "stickWood", "screwAluminium" });
         addShapedRecipe(
-                getModItem("battlegear2", "waraxe.diamond", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "waraxe.diamond", 1, 0, missing),
                 new Object[] {
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartAxeHead",
                                 1,
                                 1594,
@@ -202,14 +242,14 @@ public class ScriptBattleGear implements IScriptLoader {
                                 missing),
                         "craftingToolScrewdriver",
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartAxeHead",
                                 1,
                                 1594,
                                 "{material:\"Diamond\"}",
                                 missing),
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartAxeHead",
                                 1,
                                 1594,
@@ -217,7 +257,7 @@ public class ScriptBattleGear implements IScriptLoader {
                                 missing),
                         "stickWood",
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartAxeHead",
                                 1,
                                 1594,
@@ -225,40 +265,40 @@ public class ScriptBattleGear implements IScriptLoader {
                                 missing),
                         "screwStainlessSteel", "stickWood", "screwStainlessSteel" });
         addShapedRecipe(
-                getModItem("battlegear2", "mace.wood", 1, 0, missing),
-                new Object[] { null, getModItem("TConstruct", "heavyPlate", 1, 0, missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 0, missing), null,
-                        getModItem("TConstruct", "heavyPlate", 1, 0, missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 0, missing), "stickWood", "craftingToolSoftHammer",
-                        null });
+                getModItem(MineAndBladeBattleGear2.ID, "mace.wood", 1, 0, missing),
+                new Object[] { null, getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing), null,
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing), "stickWood",
+                        "craftingToolSoftHammer", null });
         addShapedRecipe(
-                getModItem("battlegear2", "mace.stone", 1, 0, missing),
-                new Object[] { "screwAnyIron", getModItem("TConstruct", "heavyPlate", 1, 1, missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 1, missing), "screwAnyIron",
-                        getModItem("TConstruct", "heavyPlate", 1, 1, missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 1, missing), "stickWood", "craftingToolHardHammer",
-                        "craftingToolScrewdriver" });
+                getModItem(MineAndBladeBattleGear2.ID, "mace.stone", 1, 0, missing),
+                new Object[] { "screwAnyIron", getModItem(TinkerConstruct.ID, "heavyPlate", 1, 1, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 1, missing), "screwAnyIron",
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 1, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 1, missing), "stickWood",
+                        "craftingToolHardHammer", "craftingToolScrewdriver" });
         addShapedRecipe(
-                getModItem("battlegear2", "mace.iron", 1, 0, missing),
-                new Object[] { "screwSteel", getModItem("TConstruct", "heavyPlate", 1, 2, missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 0, missing), "screwSteel",
-                        getModItem("TConstruct", "heavyPlate", 1, 0, missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 2, missing), "stickWood", "craftingToolHardHammer",
-                        "craftingToolScrewdriver" });
+                getModItem(MineAndBladeBattleGear2.ID, "mace.iron", 1, 0, missing),
+                new Object[] { "screwSteel", getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing), "screwSteel",
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing), "stickWood",
+                        "craftingToolHardHammer", "craftingToolScrewdriver" });
         addShapedRecipe(
-                getModItem("battlegear2", "mace.gold", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "mace.gold", 1, 0, missing),
                 new Object[] { "screwAluminium",
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartLargePlate",
                                 1,
                                 1505,
                                 "{material:\"Gold\"}",
                                 missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 1, missing), "screwAluminium",
-                        getModItem("TConstruct", "heavyPlate", 1, 1, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 1, missing), "screwAluminium",
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 1, missing),
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartLargePlate",
                                 1,
                                 1505,
@@ -266,19 +306,19 @@ public class ScriptBattleGear implements IScriptLoader {
                                 missing),
                         "stickWood", "craftingToolHardHammer", "craftingToolScrewdriver" });
         addShapedRecipe(
-                getModItem("battlegear2", "mace.diamond", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "mace.diamond", 1, 0, missing),
                 new Object[] { "screwStainlessSteel",
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartLargePlate",
                                 1,
                                 1594,
                                 "{material:\"Diamond\"}",
                                 missing),
-                        getModItem("TConstruct", "heavyPlate", 1, 2, missing), "screwStainlessSteel",
-                        getModItem("TConstruct", "heavyPlate", 1, 2, missing),
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing), "screwStainlessSteel",
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing),
                         createItemStack(
-                                "TGregworks",
+                                TinkersGregworks.ID,
                                 "tGregToolPartLargePlate",
                                 1,
                                 1594,
@@ -286,11 +326,11 @@ public class ScriptBattleGear implements IScriptLoader {
                                 missing),
                         "stickWood", "craftingToolHardHammer", "craftingToolScrewdriver" });
         addShapedRecipe(
-                getModItem("battlegear2", "quiver", 1, 0, missing),
+                getModItem(MineAndBladeBattleGear2.ID, "quiver", 1, 0, missing),
                 new Object[] { "itemLeather", "ringAnyIron", "itemLeather", "itemLeather",
-                        getModItem("minecraft", "string", 1, 0, missing), "itemLeather",
-                        getModItem("Backpack", "tannedLeather", 1, 0, missing), "itemLeather",
-                        getModItem("Backpack", "tannedLeather", 1, 0, missing) });
+                        getModItem(Minecraft.ID, "string", 1, 0, missing), "itemLeather",
+                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "itemLeather",
+                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing) });
 
     }
 }
