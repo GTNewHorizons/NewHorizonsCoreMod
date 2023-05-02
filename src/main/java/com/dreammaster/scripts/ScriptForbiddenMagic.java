@@ -278,6 +278,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ResearchCategories.getResearch("ROD_dreamwood_staff_v2").setConcealed();
         TCHelper.addResearchPrereq("ROD_dreamwood_staff_v2", "ROD_silverwood_staff", false);
         ThaumcraftApi.addWarpToResearch("ROD_dreamwood_staff_v2", 3);
+        TCHelper.removeArcaneRecipe(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 4, missing));
         new ResearchItem(
                 "CAP_manasteel",
                 "FORBIDDEN",
