@@ -24,7 +24,9 @@ public class GT_CustomLoader {
         LuV(OrePrefixes.circuit.get(Materials.Master), OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
                 Materials.VanadiumGallium, OrePrefixes.wireGt02.get(Materials.HSSG),
                 OrePrefixes.gemExquisite.get(Materials.Diamond), gregtech.api.enums.ItemList.Gravistar,
-                BartWorks.isModLoaded() ? "blockGlassLuV" : "glassReinforced", Materials.Chrome, Materials.Enderium),
+                BartWorks.isModLoaded() ? "blockGlassLuV" : "glassReinforced",
+                BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome,
+                Materials.Enderium),
 
         ZPM(OrePrefixes.circuit.get(Materials.Ultimate), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
                 Materials.Naquadah, OrePrefixes.wireGt02.get(Materials.Naquadah),
