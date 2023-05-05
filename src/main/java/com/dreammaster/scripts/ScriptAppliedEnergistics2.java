@@ -18,6 +18,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sWiremillRecipes;
@@ -1792,6 +1793,11 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 2516, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).specialValue(1000).addTo(sBlastRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing))
+                .itemOutputs(
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockTinyTNT", 1, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockTinyTNT", 1, 0, missing))
+                .noFluidInputs().noFluidOutputs().duration(600).eut(5).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2516, missing),
