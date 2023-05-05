@@ -26,6 +26,8 @@ import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
@@ -33,6 +35,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
@@ -942,6 +945,24 @@ public class ScriptAvaritia implements IScriptLoader {
                         getModItem(Minecraft.ID, "nether_star", 2, 0, missing))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 1, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(480).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.crafting_table, 9))
+                .itemOutputs(getModItem(Avaritia.ID, "Double_Craft", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Double_Craft", 9, 0, missing))
+                .itemOutputs(getModItem(Avaritia.ID, "Triple_Craft", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 9, 1, missing))
+                .itemOutputs(getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Double_Craft", 1, 0))
+                .itemOutputs(new ItemStack(Blocks.crafting_table, 9)).noFluidInputs().noFluidOutputs().duration(300)
+                .eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Triple_Craft", 1, 0))
+                .itemOutputs(getModItem(Avaritia.ID, "Double_Craft", 9, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0))
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
