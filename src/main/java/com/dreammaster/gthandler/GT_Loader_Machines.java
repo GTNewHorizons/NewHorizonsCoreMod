@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
 
@@ -44,6 +45,8 @@ public class GT_Loader_Machines {
 
         // MetaTileEntity ID Range: look at end of file
         // GT 5.08.30
+
+        Materials LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
 
         // ===================================================================================================
         // Hull
@@ -3920,9 +3923,8 @@ public class GT_Loader_Machines {
                         0,
                         "ORE_WASHER",
                         new Object[] { "RGR", "CEC", "WMW", 'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL, 'R',
-                                OrePrefixes.rotor.get(Materials.Chrome), 'E',
-                                GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
-                                GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
+                                OrePrefixes.rotor.get(LuVMat2), 'E', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR,
+                                'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP }).getStackForm(1L));
 
@@ -5359,7 +5361,7 @@ public class GT_Loader_Machines {
                         0,
                         "ARC_FURNACE",
                         new Object[] { "WGW", "CMC", "PPP", 'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL, 'P',
-                                OrePrefixes.plateDouble.get(Materials.Chrome), 'C',
+                                OrePrefixes.plateDouble.get(LuVMat2), 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), 'G',
                                 OrePrefixes.cell.get(Materials.Graphite) }).getStackForm(1L));
@@ -5710,7 +5712,7 @@ public class GT_Loader_Machines {
                         0,
                         "PLASMA_ARC_FURNACE",
                         new Object[] { "WGW", "CMC", "TPT", 'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL, 'P',
-                                OrePrefixes.plateDouble.get(Materials.Chrome), 'C',
+                                OrePrefixes.plateDouble.get(LuVMat2), 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), 'T',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
@@ -6072,6 +6074,9 @@ public class GT_Loader_Machines {
         long bitsd = GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.NOT_REMOVABLE
                 | GT_ModHandler.RecipeBits.REVERSIBLE
                 | GT_ModHandler.RecipeBits.BUFFERED;
+
+        Materials LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
+
         // ===================================================================================================
         // Canning Machine
         // ===================================================================================================
@@ -6588,8 +6593,7 @@ public class GT_Loader_Machines {
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ChemicalReactorLuV.get(1L),
                 bitsd,
-                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_LuV, 'R',
-                        OrePrefixes.rotor.get(Materials.Chrome), 'P',
+                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_LuV, 'R', OrePrefixes.rotor.get(LuVMat2), 'P',
                         OrePrefixes.pipeMedium.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_LuV, 'C',
                         OrePrefixes.circuit.get(Materials.Master), 'W',
                         OrePrefixes.cableGt01.get(Materials.VanadiumGallium) });
@@ -7630,7 +7634,7 @@ public class GT_Loader_Machines {
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MixerLuV.get(1L),
                 bitsd,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Chrome), 'M',
+                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(LuVMat2), 'M',
                         ItemList.Electric_Motor_LuV, 'B', ItemList.Hull_LuV, 'C',
                         OrePrefixes.circuit.get(Materials.Master), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
