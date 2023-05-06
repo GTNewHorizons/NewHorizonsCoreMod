@@ -5,14 +5,19 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import tconstruct.library.crafting.DryingRackRecipes;
 
 public class ScriptBackpack implements IScriptLoader {
@@ -96,70 +101,43 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 1, missing),
-                new Object[] { "SmallBackpacks", "dyeBlack",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 2, missing),
-                new Object[] { "SmallBackpacks", "dyeRed",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 3, missing),
-                new Object[] { "SmallBackpacks", "dyeGreen",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 4, missing),
-                new Object[] { "SmallBackpacks", "dyeBrown",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 5, missing),
-                new Object[] { "SmallBackpacks", "dyeBlue",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 6, missing),
-                new Object[] { "SmallBackpacks", "dyePurple",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 7, missing),
-                new Object[] { "SmallBackpacks", "dyeCyan",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 8, missing),
-                new Object[] { "SmallBackpacks", "dyeLightGray",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 9, missing),
-                new Object[] { "SmallBackpacks", "dyeGray",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 10, missing),
-                new Object[] { "SmallBackpacks", "dyePink",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 11, missing),
-                new Object[] { "SmallBackpacks", "dyeLime",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 12, missing),
-                new Object[] { "SmallBackpacks", "dyeYellow",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 13, missing),
-                new Object[] { "SmallBackpacks", "dyeLightBlue",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 14, missing),
-                new Object[] { "SmallBackpacks", "dyeMagenta",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 15, missing),
-                new Object[] { "SmallBackpacks", "dyeOrange",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 16, missing),
-                new Object[] { "SmallBackpacks", "dyeWhite",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
+
+        HashMap<Integer, String> IDOffsetToDyeMap = new HashMap<>();
+        IDOffsetToDyeMap.put(1, "dyeBlack");
+        IDOffsetToDyeMap.put(2, "dyeRed");
+        IDOffsetToDyeMap.put(3, "dyeGreen");
+        IDOffsetToDyeMap.put(4, "dyeBrown");
+        IDOffsetToDyeMap.put(5, "dyeBlue");
+        IDOffsetToDyeMap.put(6, "dyePurple");
+        IDOffsetToDyeMap.put(7, "dyeCyan");
+        IDOffsetToDyeMap.put(8, "dyeLightGray");
+        IDOffsetToDyeMap.put(9, "dyeGray");
+        IDOffsetToDyeMap.put(10, "dyePink");
+        IDOffsetToDyeMap.put(11, "dyeLime");
+        IDOffsetToDyeMap.put(12, "dyeYellow");
+        IDOffsetToDyeMap.put(13, "dyeLightBlue");
+        IDOffsetToDyeMap.put(14, "dyeMagenta");
+        IDOffsetToDyeMap.put(15, "dyeOrange");
+        IDOffsetToDyeMap.put(16, "dyeWhite");
+
+        for (Map.Entry<Integer, String> entry : IDOffsetToDyeMap.entrySet()) {
+            GameRegistry.addRecipe(
+                    new ColoredBackpackRecipe(
+                            getModItem(Backpack.ID, "backpack", 1, entry.getKey(), missing),
+                            "SmallBackpacks",
+                            entry.getValue()));
+            GameRegistry.addRecipe(
+                    new ColoredBackpackRecipe(
+                            getModItem(Backpack.ID, "backpack", 1, 100 + entry.getKey(), missing),
+                            "MediumBackpacks",
+                            entry.getValue()));
+            GameRegistry.addRecipe(
+                    new ColoredBackpackRecipe(
+                            getModItem(Backpack.ID, "backpack", 1, 200 + entry.getKey(), missing),
+                            "BigBackpacks",
+                            entry.getValue()));
+        }
+
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 100, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -167,10 +145,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 0, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 101, missing),
-                new Object[] { "MediumBackpacks", "dyeBlack",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 101, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -178,10 +152,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 1, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 102, missing),
-                new Object[] { "MediumBackpacks", "dyeRed",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 102, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -189,10 +159,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 2, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 103, missing),
-                new Object[] { "MediumBackpacks", "dyeGreen",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 103, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -200,10 +166,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 3, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 104, missing),
-                new Object[] { "MediumBackpacks", "dyeBrown",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 104, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -211,10 +173,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 4, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 105, missing),
-                new Object[] { "MediumBackpacks", "dyeBlue",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 105, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -222,10 +180,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 5, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 106, missing),
-                new Object[] { "MediumBackpacks", "dyePurple",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 106, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -233,10 +187,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 6, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 107, missing),
-                new Object[] { "MediumBackpacks", "dyeCyan",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 107, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -244,10 +194,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 7, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 108, missing),
-                new Object[] { "MediumBackpacks", "dyeLightBlue",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 108, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -255,10 +201,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 8, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 109, missing),
-                new Object[] { "MediumBackpacks", "dyeGray",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 109, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -266,10 +208,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 9, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 110, missing),
-                new Object[] { "MediumBackpacks", "dyePink",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 110, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -277,10 +215,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 10, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 111, missing),
-                new Object[] { "MediumBackpacks", "dyeLime",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 111, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -288,10 +222,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 11, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 112, missing),
-                new Object[] { "MediumBackpacks", "dyeYellow",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 112, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -299,10 +229,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 12, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 113, missing),
-                new Object[] { "MediumBackpacks", "dyeLightBlue",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 113, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -310,10 +236,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 13, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 114, missing),
-                new Object[] { "MediumBackpacks", "dyeMagenta",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 114, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -321,10 +243,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 14, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 115, missing),
-                new Object[] { "MediumBackpacks", "dyeOrange",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 115, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -332,10 +250,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 15, missing),
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
                         getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 116, missing),
-                new Object[] { "MediumBackpacks", "dyeWhite",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 116, missing),
                 new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
@@ -350,10 +264,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 100, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 201, missing),
-                new Object[] { "BigBackpacks", "dyeBlack",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 201, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -361,9 +271,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 101, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 202, missing),
-                new Object[] { "BigBackpacks", "dyeRed", getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 202, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -371,10 +278,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 102, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 203, missing),
-                new Object[] { "BigBackpacks", "dyeGreen",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 203, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -382,10 +285,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 103, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 204, missing),
-                new Object[] { "BigBackpacks", "dyeBrown",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 204, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -393,9 +292,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 104, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 205, missing),
-                new Object[] { "BigBackpacks", "dyeBlue", getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 205, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -403,10 +299,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 105, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 206, missing),
-                new Object[] { "BigBackpacks", "dyePurple",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 206, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -414,9 +306,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 106, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 207, missing),
-                new Object[] { "BigBackpacks", "dyeCyan", getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 207, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -424,10 +313,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 107, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 208, missing),
-                new Object[] { "BigBackpacks", "dyeLightGray",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 208, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -435,9 +320,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 108, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 209, missing),
-                new Object[] { "BigBackpacks", "dyeGray", getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 209, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -445,9 +327,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 109, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 210, missing),
-                new Object[] { "BigBackpacks", "dyePink", getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 210, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -455,9 +334,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 110, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 211, missing),
-                new Object[] { "BigBackpacks", "dyeLime", getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 211, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -465,10 +341,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 111, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 212, missing),
-                new Object[] { "BigBackpacks", "dyeYellow",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 212, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -476,10 +348,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 112, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 213, missing),
-                new Object[] { "BigBackpacks", "dyeLightBlue",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 213, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -487,10 +355,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 113, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 214, missing),
-                new Object[] { "BigBackpacks", "dyeMagenta",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 214, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -498,10 +362,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 114, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 215, missing),
-                new Object[] { "BigBackpacks", "dyeOrange",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 215, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -509,10 +369,6 @@ public class ScriptBackpack implements IScriptLoader {
                         getModItem(Backpack.ID, "backpack", 1, 115, missing),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapelessCraftingRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 216, missing),
-                new Object[] { "BigBackpacks", "dyeWhite",
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing) });
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 216, missing),
                 new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
@@ -541,5 +397,28 @@ public class ScriptBackpack implements IScriptLoader {
                 12000,
                 getModItem(Backpack.ID, "tannedLeather", 1, 0, missing));
 
+    }
+
+    private static class ColoredBackpackRecipe extends ShapelessOreRecipe {
+
+        private final int backpackMatch;
+
+        public ColoredBackpackRecipe(ItemStack result, String backpack, String... dyes) {
+            super(result, backpack, dyes, getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing));
+            backpackMatch = OreDictionary.getOreID(backpack);
+        }
+
+        @Override
+        public ItemStack getCraftingResult(InventoryCrafting crafting) {
+            ItemStack result = super.getCraftingResult(crafting);
+            for (int i = 0, imax = crafting.getSizeInventory(); i < imax; i++) {
+                ItemStack stack = crafting.getStackInSlot(i);
+                if (Arrays.stream(OreDictionary.getOreIDs(stack)).anyMatch(j -> j == backpackMatch)) {
+                    result.stackTagCompound = stack.stackTagCompound;
+                    break;
+                }
+            }
+            return result;
+        }
     }
 }
