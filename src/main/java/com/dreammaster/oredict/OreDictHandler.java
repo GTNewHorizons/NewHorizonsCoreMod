@@ -178,6 +178,8 @@ public class OreDictHandler {
 
         OreDictionary.registerOre("foodSalt", ItemList.EdibleSalt.getIS());
 
+        OreDictionary.registerOre("ingotHotBrickNether", ItemList.HotNetherrackBrick.getIS());
+
         // Olivine = Peridot
         for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {
             OreDictionary.registerOre("blockPeridot", stack);
