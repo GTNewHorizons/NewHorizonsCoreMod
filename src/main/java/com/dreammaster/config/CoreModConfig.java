@@ -55,7 +55,7 @@ public class CoreModConfig extends ConfigManager {
     @Override
     protected void PreInit() {
         ModLoginMessage_Enabled = true;
-        ModPackVersion = "2.3.3";
+        ModPackVersion = "2.3.4";
         ModDebugVersionDisplay_Enabled = true;
         ModHazardousItems_Enabled = false;
         ModCustomToolTips_Enabled = false;
