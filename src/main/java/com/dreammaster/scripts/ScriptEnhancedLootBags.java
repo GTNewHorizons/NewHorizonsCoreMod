@@ -24,6 +24,13 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
+
+import com.dreammaster.recipes.NBTItem;
+import com.dreammaster.recipes.ShapelessUniversalRecipe;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+
 public class ScriptEnhancedLootBags implements IScriptLoader {
 
     @Override
@@ -53,17 +60,19 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessCraftingRecipe(
-                createItemStack(
-                        EnhancedLootBags.ID,
-                        "lootbag",
-                        1,
-                        1,
-                        "{ench:[0:{lvl:3s,id:35s}],RepairCost:2}",
-                        missing),
-                new Object[] { getModItem(EnhancedLootBags.ID, "lootbag", 1, 1, missing),
+        GameRegistry.addRecipe(
+                new ShapelessUniversalRecipe(
+                        createItemStack(
+                                EnhancedLootBags.ID,
+                                "lootbag",
+                                1,
+                                1,
+                                "{ench:[0:{lvl:3s,id:35s}],RepairCost:2}",
+                                missing),
+                        getModItem(EnhancedLootBags.ID, "lootbag", 1, 1, missing),
+                        new NBTItem().item(Items.enchanted_book).setNBT("{StoredEnchantments:[0:{lvl:3s,id:35s}]}"),
                         getModItem(Minecraft.ID, "enchanted_book", 1, 0, missing),
-                        getModItem(Minecraft.ID, "clay_ball", 1, 0, missing) });
+                        getModItem(Minecraft.ID, "clay_ball", 1, 0, missing)));
         addShapelessCraftingRecipe(
                 createItemStack(
                         EnhancedLootBags.ID,
