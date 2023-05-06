@@ -120,12 +120,12 @@ public class ElectrolyzerRecipes implements Runnable {
                 30);
         //Brick Dust
         GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Brick, 13L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Brick, 17L),
                 GT_Values.NI,
                 GT_Values.NF,
                 GT_Values.NF,
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 3L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 12L),
                 GT_Values.NI,
                 GT_Values.NI,
                 GT_Values.NI,
