@@ -57,11 +57,11 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
                     ArrayList<ItemStack> ores = OreDictionary.getOres((String) this.recipe[y][x]);
                     this.recipeXY[y * 3 + x] = ores;
                     HashSet<GT_Utility.ItemId> oresHashes = new HashSet<>();
-                    ores.forEach(o -> {
+                    for (ItemStack o : ores) {
                         ItemStack i = o.copy();
                         i.stackTagCompound = null;
                         oresHashes.add(GT_Utility.ItemId.createNoCopy(i));
-                    });
+                    }
                     this.recipe[y][x] = oresHashes;
                 } else if (this.recipe[y][x] instanceof ItemStack) {
                     this.recipe[y][x] = ((ItemStack) this.recipe[y][x]).copy();
