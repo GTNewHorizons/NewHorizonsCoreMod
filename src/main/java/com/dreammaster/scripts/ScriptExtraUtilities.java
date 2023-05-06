@@ -1225,6 +1225,16 @@ public class ScriptExtraUtilities implements IScriptLoader {
         }
 
         @Override
+        public ItemStack getRecipeOutput() {
+            ItemStack stack = super.getRecipeOutput();
+            if (stack.stackTagCompound == null && !NBTToUpdate.isEmpty()) {
+                for (Map.Entry<String, NBTBase> entry : NBTToUpdate.entrySet())
+                    stack.setTagInfo(entry.getKey(), entry.getValue());
+            }
+            return stack;
+        }
+
+        @Override
         public ItemStack getCraftingResult(InventoryCrafting crafting) {
             ItemStack result = super.getCraftingResult(crafting);
             for (int i = 0, imax = crafting.getSizeInventory(); i < imax; i++) {
