@@ -194,8 +194,8 @@ public class ScriptBackpack implements IScriptLoader {
 
         private final int backpackMatch;
 
-        public ColoredBackpackRecipe(ItemStack result, String backpack, String... dyes) {
-            super(result, backpack, dyes, getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing));
+        public ColoredBackpackRecipe(ItemStack result, String backpack, String dye) {
+            super(result, backpack, dye, getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing));
             backpackMatch = OreDictionary.getOreID(backpack);
         }
 

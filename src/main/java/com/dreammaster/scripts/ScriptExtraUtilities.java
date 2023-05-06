@@ -1219,8 +1219,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
 
         private final Map<String, NBTBase> NBTToUpdate;
 
-        public FilterRecipe(ItemStack result, Map<String, NBTBase> NBTToUpdate, Object... recipe) {
-            super(result, result, recipe);
+        public FilterRecipe(ItemStack result, Map<String, NBTBase> NBTToUpdate, Object recipeModifier) {
+            super(result, result, recipeModifier);
             this.NBTToUpdate = NBTToUpdate;
         }
 
