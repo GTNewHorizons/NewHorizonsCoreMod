@@ -25,7 +25,7 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
     Object[] recipeXY = new Object[9];
 
     public ShapedUniversalRecipe(ItemStack result, Object... recipe) {
-        super(result, 'x', missing);
+        super(result, "xxx", "xxx", "xxx", 'x', missing);
         output = result.copy();
         if (recipe.length > 3 && recipe[0] instanceof String
                 && recipe[1] instanceof String
@@ -46,7 +46,7 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
             for (int y = 0; y < 3; y++) {
                 for (int x = 0; x < 3; x++) {
                     int i = y * 3 + x;
-                    this.recipe[y][x] = recipe.length > i ? recipe[i] : null;
+                    this.recipe[y][x] = i >= recipe.length ? null : recipe[i];
                 }
             }
         }
@@ -94,7 +94,7 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
     public boolean matches(InventoryCrafting inv, World world) {
         for (int y = 0; y < 3; y++) {
             for (int x = 0; x < 3; x++) {
-                ItemStack stack = inv.getStackInRowAndColumn(y, x);
+                ItemStack stack = inv.getStackInRowAndColumn(x, y);
                 Object r = this.recipe[y][x];
                 if (r == null ^ stack == null) return false;
                 if (stack == null) continue;
