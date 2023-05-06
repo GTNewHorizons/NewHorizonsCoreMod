@@ -31,11 +31,11 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
             if (value instanceof String) {
                 ArrayList<ItemStack> ores = OreDictionary.getOres((String) value);
                 HashSet<GT_Utility.ItemId> oresHashes = new HashSet<>();
-                ores.forEach(o -> {
-                    ItemStack oi = o.copy();
-                    oi.stackTagCompound = null;
-                    oresHashes.add(GT_Utility.ItemId.createNoCopy(oi));
-                });
+                for (ItemStack o : ores) {
+                    ItemStack i = o.copy();
+                    i.stackTagCompound = null;
+                    oresHashes.add(GT_Utility.ItemId.createNoCopy(i));
+                }
                 this.recipe.add(oresHashes);
             } else if (value instanceof ItemStack) this.recipe.add(((ItemStack) value).copy());
             else if (value instanceof Item) this.recipe.add(new ItemStack((Item) value));
