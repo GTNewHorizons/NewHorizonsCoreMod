@@ -1,5 +1,7 @@
 package com.dreammaster.recipes;
 
+import static com.dreammaster.scripts.IScriptLoader.missing;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -23,7 +25,7 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
     Object[] recipeXY = new Object[9];
 
     public ShapedUniversalRecipe(ItemStack result, Object... recipe) {
-        super(result);
+        super(result, 'x', missing);
         output = result.copy();
         if (recipe.length > 3 && recipe[0] instanceof String
                 && recipe[1] instanceof String
