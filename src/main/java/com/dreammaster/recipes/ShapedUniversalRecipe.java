@@ -8,20 +8,22 @@ import net.minecraft.block.Block;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
-public class ShapedUniversalRecipe implements IRecipe {
+public class ShapedUniversalRecipe extends ShapedOreRecipe {
 
     ItemStack output;
     Object[][] recipe = new Object[3][3];
+    Object[] recipeXY = new Object[9];
 
     public ShapedUniversalRecipe(ItemStack result, Object... recipe) {
+        super(result);
         output = result.copy();
         if (recipe.length > 3 && recipe[0] instanceof String
                 && recipe[1] instanceof String
@@ -51,6 +53,7 @@ public class ShapedUniversalRecipe implements IRecipe {
                 if (this.recipe[y][x] == null) continue;
                 if (this.recipe[y][x] instanceof String) {
                     ArrayList<ItemStack> ores = OreDictionary.getOres((String) this.recipe[y][x]);
+                    this.recipeXY[y * 3 + x] = ores;
                     HashSet<GT_Utility.ItemId> oresHashes = new HashSet<>();
                     ores.forEach(o -> {
                         ItemStack i = o.copy();
@@ -58,20 +61,27 @@ public class ShapedUniversalRecipe implements IRecipe {
                         oresHashes.add(GT_Utility.ItemId.createNoCopy(i));
                     });
                     this.recipe[y][x] = oresHashes;
-                } else if (this.recipe[y][x] instanceof ItemStack)
+                } else if (this.recipe[y][x] instanceof ItemStack) {
                     this.recipe[y][x] = ((ItemStack) this.recipe[y][x]).copy();
-                else if (this.recipe[y][x] instanceof Item) this.recipe[y][x] = new ItemStack((Item) this.recipe[y][x]);
-                else if (this.recipe[y][x] instanceof Block)
+                    this.recipeXY[y * 3 + x] = this.recipe[y][x];
+                } else if (this.recipe[y][x] instanceof Item) {
+                    this.recipe[y][x] = new ItemStack((Item) this.recipe[y][x]);
+                    this.recipeXY[y * 3 + x] = this.recipe[y][x];
+                } else if (this.recipe[y][x] instanceof Block) {
                     this.recipe[y][x] = new ItemStack((Block) this.recipe[y][x]);
-                else if (this.recipe[y][x] instanceof ItemData) {
+                    this.recipeXY[y * 3 + x] = this.recipe[y][x];
+                } else if (this.recipe[y][x] instanceof ItemData) {
                     ItemData data = (ItemData) this.recipe[y][x];
                     ItemStack itemStack = GT_OreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
                     if (itemStack == null) {
                         throw new NullPointerException("bad item passed in the recipe");
                     } else {
                         this.recipe[y][x] = itemStack;
+                        this.recipeXY[y * 3 + x] = this.recipe[y][x];
                     }
-                } else if (this.recipe[y][x] instanceof NBTItem) {} else {
+                } else if (this.recipe[y][x] instanceof NBTItem) {
+                    this.recipeXY[y * 3 + x] = ((NBTItem) this.recipe[y][x]).getStack();
+                } else {
                     throw new IllegalArgumentException("Wrong argument in recipe");
                 }
             }
@@ -120,5 +130,15 @@ public class ShapedUniversalRecipe implements IRecipe {
     @Override
     public ItemStack getRecipeOutput() {
         return output;
+    }
+
+    @Override
+    public Object[] getInput() {
+        return recipeXY;
+    }
+
+    @Override
+    public ShapedOreRecipe setMirrored(boolean mirror) {
+        throw new UnsupportedOperationException();
     }
 }
