@@ -300,6 +300,17 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
         }
 
         @Override
+        public ItemStack getRecipeOutput() {
+            ItemStack stack = super.getRecipeOutput();
+            if (stack.stackTagCompound == null) {
+                NBTTagCompound wearableData = new NBTTagCompound();
+                wearableData.setByte("type", outType);
+                stack.setTagInfo("wearableData", wearableData);
+            }
+            return stack;
+        }
+
+        @Override
         public ItemStack getCraftingResult(InventoryCrafting crafting) {
             ItemStack result = super.getCraftingResult(crafting);
             Item resultItem = result.getItem();
@@ -311,7 +322,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                     wearableData.setByte("type", outType);
                     if (stack.stackTagCompound.getCompoundTag("wearableData").hasKey("inventory")) wearableData.setTag(
                             "inventory",
-                            stack.stackTagCompound.getCompoundTag("wearableData").getCompoundTag("inventory").copy());
+                            stack.stackTagCompound.getCompoundTag("wearableData").getTagList("inventory", 10).copy());
                     result.stackTagCompound.setTag("wearableData", wearableData);
                     break;
                 }
