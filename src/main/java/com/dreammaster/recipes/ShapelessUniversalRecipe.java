@@ -8,20 +8,22 @@ import net.minecraft.block.Block;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
-public class ShapelessUniversalRecipe implements IRecipe {
+public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
 
     ItemStack output;
-    ArrayList<Object> recipe = new ArrayList<Object>();
+    ArrayList<Object> recipe = new ArrayList<>();
+    ArrayList<Object> recipeXY = new ArrayList<>();
 
     public ShapelessUniversalRecipe(ItemStack result, Object... recipe) {
+        super(result);
         output = result.copy();
         if (recipe.length > 9) throw new IllegalArgumentException("Too many recipe arguments");
         for (Object value : recipe) {
@@ -52,6 +54,8 @@ public class ShapelessUniversalRecipe implements IRecipe {
                 throw new IllegalArgumentException("Wrong argument in recipe");
             }
         }
+        recipeXY.addAll(this.recipe);
+        recipeXY.replaceAll(o -> o instanceof NBTItem ? ((NBTItem) o).getStack() : o);
     }
 
     @Override
@@ -103,5 +107,10 @@ public class ShapelessUniversalRecipe implements IRecipe {
     @Override
     public ItemStack getRecipeOutput() {
         return output;
+    }
+
+    @Override
+    public ArrayList<Object> getInput() {
+        return recipeXY;
     }
 }

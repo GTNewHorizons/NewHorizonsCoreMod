@@ -14,9 +14,9 @@ import gregtech.api.util.GT_Utility;
 
 public class NBTItem {
 
-    ItemStack stack;
-    NBTTagCompound nbt;
-    boolean exact = false;
+    private ItemStack stack;
+    private NBTTagCompound nbt;
+    private boolean exact = false;
 
     public NBTItem() {}
 
@@ -82,5 +82,11 @@ public class NBTItem {
     public NBTItem matchExact() {
         exact = true;
         return this;
+    }
+
+    public ItemStack getStack() {
+        ItemStack stack = this.stack.copy();
+        if (nbt != null && !nbt.hasNoTags()) stack.stackTagCompound = (NBTTagCompound) nbt.copy();
+        return stack;
     }
 }
