@@ -1232,7 +1232,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 if (stack != null && stack.isItemEqual(result)) {
                     result.stackTagCompound = stack.stackTagCompound;
                     for (Map.Entry<String, NBTBase> entry : NBTToUpdate.entrySet())
-                        result.stackTagCompound.setTag(entry.getKey(), entry.getValue());
+                        result.setTagInfo(entry.getKey(), entry.getValue());
                     break;
                 }
             }
