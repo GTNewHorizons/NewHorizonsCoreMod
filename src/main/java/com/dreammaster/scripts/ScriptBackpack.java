@@ -11,10 +11,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.IntStream;
 
 import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -138,244 +141,32 @@ public class ScriptBackpack implements IScriptLoader {
                             entry.getValue()));
         }
 
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 100, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 101, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 1, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 102, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 2, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 103, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 3, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 104, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 4, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 105, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 5, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 106, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 6, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 107, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 7, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 108, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 8, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 109, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 9, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 110, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 10, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 111, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 11, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 112, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 12, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 113, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 13, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 114, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 14, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 115, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 15, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 116, missing),
-                new Object[] { "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "ringStainlessSteel", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 16, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringStainlessSteel" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 200, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 100, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 201, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 101, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 202, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 102, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 203, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 103, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 204, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 104, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 205, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 105, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 206, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 106, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 207, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 107, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 208, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 108, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 209, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 109, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 210, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 110, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 211, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 111, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 212, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 112, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 213, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 113, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 214, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 114, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 215, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 115, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
-        addShapedRecipe(
-                getModItem(Backpack.ID, "backpack", 1, 216, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 116, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium" });
+        for (Integer offset : IntStream.rangeClosed(0, 16).toArray()) {
+            GameRegistry.addRecipe(
+                    new UpgradeBackpackRecipe(
+                            getModItem(Backpack.ID, "backpack", 1, 100 + offset, missing),
+                            "aba",
+                            "bcb",
+                            "aba",
+                            'a',
+                            "ringStainlessSteel",
+                            'b',
+                            getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                            'c',
+                            getModItem(Backpack.ID, "backpack", 1, offset, missing)));
+            GameRegistry.addRecipe(
+                    new UpgradeBackpackRecipe(
+                            getModItem(Backpack.ID, "backpack", 1, 200 + offset, missing),
+                            "aba",
+                            "bcb",
+                            "aba",
+                            'a',
+                            "ringTitanium",
+                            'b',
+                            getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                            'c',
+                            getModItem(Backpack.ID, "backpack", 1, 100 + offset, missing)));
+        }
         addShapedRecipe(
                 getModItem(Backpack.ID, "workbenchbackpack", 1, 17, missing),
                 new Object[] { "materialCloth", "ringSteel", "materialCloth",
@@ -414,6 +205,27 @@ public class ScriptBackpack implements IScriptLoader {
             for (int i = 0, imax = crafting.getSizeInventory(); i < imax; i++) {
                 ItemStack stack = crafting.getStackInSlot(i);
                 if (Arrays.stream(OreDictionary.getOreIDs(stack)).anyMatch(j -> j == backpackMatch)) {
+                    result.stackTagCompound = stack.stackTagCompound;
+                    break;
+                }
+            }
+            return result;
+        }
+    }
+
+    private static class UpgradeBackpackRecipe extends ShapedOreRecipe {
+
+        public UpgradeBackpackRecipe(ItemStack result, Object... recipe) {
+            super(result, recipe);
+        }
+
+        @Override
+        public ItemStack getCraftingResult(InventoryCrafting crafting) {
+            ItemStack result = super.getCraftingResult(crafting);
+            Item resultItem = result.getItem();
+            for (int i = 0, imax = crafting.getSizeInventory(); i < imax; i++) {
+                ItemStack stack = crafting.getStackInSlot(i);
+                if (stack != null && stack.getItem() == resultItem) {
                     result.stackTagCompound = stack.stackTagCompound;
                     break;
                 }
