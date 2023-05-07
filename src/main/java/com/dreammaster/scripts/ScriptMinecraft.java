@@ -1354,6 +1354,138 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(100).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(Minecraft.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(BiomesOPlenty.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(ExtraTrees.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(Forestry.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(Forestry.ID, "planksFireproof", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(Natura.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        getModItem(Witchery.ID, "witchwood", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(Minecraft.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(BiomesOPlenty.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(ExtraTrees.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(Forestry.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(Forestry.ID, "planksFireproof", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(Natura.ID, "planks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        getModItem(Witchery.ID, "witchwood", 2, 32767, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(100).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).noFluidInputs().noFluidOutputs()
