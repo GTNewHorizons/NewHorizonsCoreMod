@@ -19,6 +19,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import gregtech.api.GregTech_API;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.util.GT_ModHandler;
@@ -28,6 +29,10 @@ public class GT_Recipe_Remover implements Runnable {
 
     private static final String aTextMachineBeta = "machine.beta";
     private static final String aTextMachineAlpha = "machine.alpha";
+
+    public static void removeRecipeShapelessBuffered(Object aOutput, Object... aRecipe) {
+        GregTech_API.sAfterGTPostload.add(() -> removeRecipeShapeless(aOutput, aRecipe));
+    }
 
     public static boolean removeRecipeShapeless(Object aOutput, Object... aRecipe) {
         List<ItemStack> outputs;
@@ -84,6 +89,10 @@ public class GT_Recipe_Remover implements Runnable {
         });
     }
 
+    public static void removeRecipeShapedBuffered(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
+        GregTech_API.sAfterGTPostload.add(() -> removeRecipeShaped(aOutput, row1, row2, row3));
+    }
+
     private static Field recipeWidthField = null;
 
     public static boolean removeRecipeShaped(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
@@ -124,9 +133,9 @@ public class GT_Recipe_Remover implements Runnable {
             }
             int height = (r instanceof ShapedOreRecipe ? r.getRecipeSize() / width : ((ShapedRecipes) r).recipeHeight);
 
-            for (int y = 0; y < 3; y++) {
-                for (int x = 0; x < 3; x++) {
-                    Object rStack = (y >= height || x >= width ? null : inputs[x * width + y]);
+            for (int x = 0; x < 3; x++) {
+                for (int y = 0; y < 3; y++) {
+                    Object rStack = (y >= height || x >= width ? null : inputs[x + y * width]);
                     Object rRecipe = (x >= recipe[y].length ? null : recipe[y][x]);
                     if (rStack == null ^ rRecipe == null) return false;
                     if (rStack == null) continue;
@@ -154,7 +163,7 @@ public class GT_Recipe_Remover implements Runnable {
         });
     }
 
-    public static void removeRecipeShaped(Object aOutput) {
+    public static void removeRecipeShapedBuffered(Object aOutput) {
         if (aOutput instanceof String) {
             for (ItemStack stack : OreDictionary.getOres((String) aOutput)) {
                 GT_ModHandler.removeRecipeByOutputDelayed(stack, true, true, true);
@@ -11534,187 +11543,187 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOreOutputDelayed("nuggetIron");
         removeRecipeByOreOutputDelayed("torchStone");
 
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8502, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
-        removeRecipeShapeless(getModItem("minecraft", "dye", 1, 4, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 8502, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
+        removeRecipeShapelessBuffered(getModItem("minecraft", "dye", 1, 4, missing));
+        removeRecipeShapelessBuffered(
                 getModItem("minecraft", "dye", 3, 15, missing),
                 getModItem("BiomesOPlenty", "bones", 1, 0, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("minecraft", "dye", 6, 15, missing),
                 getModItem("BiomesOPlenty", "bones", 1, 1, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("minecraft", "dye", 12, 15, missing),
                 getModItem("BiomesOPlenty", "bones", 1, 2, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("BiomesOPlenty", "misc", 1, 9, missing),
                 getModItem("BiomesOPlenty", "flowers", 1, 2, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("BiomesOPlenty", "misc", 1, 8, missing),
                 getModItem("BiomesOPlenty", "flowers", 1, 9, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("BiomesOPlenty", "misc", 1, 8, missing),
                 getModItem("BiomesOPlenty", "flowers2", 1, 1, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("BiomesOPlenty", "misc", 1, 5, missing),
                 getModItem("BiomesOPlenty", "flowers2", 1, 5, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("BiomesOPlenty", "misc", 1, 5, missing),
                 getModItem("BiomesOPlenty", "mushrooms", 1, 2, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("BiomesOPlenty", "misc", 1, 7, missing),
                 getModItem("BiomesOPlenty", "moss", 1, 0, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("BiomesOPlenty", "misc", 1, 6, missing),
                 getModItem("BiomesOPlenty", "mushrooms", 1, 4, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("BiomesOPlenty", "misc", 1, 6, missing),
                 getModItem("BiomesOPlenty", "plants", 1, 7, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8502, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
-        removeRecipeShapeless(getModItem("minecraft", "dye", 1, 4, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2530, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8530, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2500, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2881, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2506, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2084, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing));
-        removeRecipeShapeless("dustEnderPearl");
-        removeRecipeShapeless("gemEnderPearl");
-        removeRecipeShapeless("dustEnderEye");
-        removeRecipeShapeless("gemEnderEye");
-        removeRecipeShapeless("dustRuby");
-        removeRecipeShapeless("gemRuby");
-        removeRecipeShapeless("dustSapphire");
-        removeRecipeShapeless("gemSapphire");
-        removeRecipeShapeless("dustGreenSapphire");
-        removeRecipeShapeless("gemGreenSapphire");
-        removeRecipeShapeless("dustOlivine");
-        removeRecipeShapeless("gemOlivine");
-        removeRecipeShapeless("dustTopaz");
-        removeRecipeShapeless("gemTopaz");
-        removeRecipeShapeless("dustTanzanite");
-        removeRecipeShapeless("gemTanzanite");
-        removeRecipeShapeless("dustAmethyst");
-        removeRecipeShapeless("gemAmethyst");
-        removeRecipeShapeless("dustJasper");
-        removeRecipeShapeless("gemJasper");
-        removeRecipeShapeless("dustGarnetYellow");
-        removeRecipeShapeless("gemGarnetYellow");
-        removeRecipeShapeless("dustGarnetRed");
-        removeRecipeShapeless("gemGarnetRed");
-        removeRecipeShapeless("dustForce");
-        removeRecipeShapeless("gemForce");
-        removeRecipeShapeless("dustForcillium");
-        removeRecipeShapeless("gemForcillium");
-        removeRecipeShapeless("dustForcicium");
-        removeRecipeShapeless("gemForcicium");
-        removeRecipeShapeless("dustDilithium");
-        removeRecipeShapeless("gemDilithium");
-        removeRecipeShapeless("dustAmber");
-        removeRecipeShapeless("gemAmber");
-        removeRecipeShapeless("dustFoolsRuby");
-        removeRecipeShapeless("gemFoolsRuby");
-        removeRecipeShapeless("dustBlueTopaz");
-        removeRecipeShapeless("gemBlueTopaz");
-        removeRecipeShapeless("dustMonazite");
-        removeRecipeShapeless("gemMonazite");
-        removeRecipeShapeless("dustQuartzite");
-        removeRecipeShapeless("gemQuartzite");
-        removeRecipeShapeless("dustLazurite");
-        removeRecipeShapeless("gemLazurite");
-        removeRecipeShapeless("dustSodalite");
-        removeRecipeShapeless("gemSodalite");
-        removeRecipeShapeless("dustNiter");
-        removeRecipeShapeless("gemNiter");
-        removeRecipeShapeless("dustTricalciumPhosphate");
-        removeRecipeShapeless("gemTricalciumPhosphate");
-        removeRecipeShapeless("dustLignite");
-        removeRecipeShapeless("gemLignite");
-        removeRecipeShapeless("dustInfusedEntropy");
-        removeRecipeShapeless("gemInfusedEntropy");
-        removeRecipeShapeless("dustInfusedOrder");
-        removeRecipeShapeless("gemInfusedOrder");
-        removeRecipeShapeless("dustVinteum");
-        removeRecipeShapeless("gemVinteum");
-        removeRecipeShapeless("dustInfusedAir");
-        removeRecipeShapeless("gemInfusedAir");
-        removeRecipeShapeless("dustInfusedFire");
-        removeRecipeShapeless("gemInfusedFire");
-        removeRecipeShapeless("dustInfusedEarth");
-        removeRecipeShapeless("gemInfusedEarth");
-        removeRecipeShapeless("dustInfusedWater");
-        removeRecipeShapeless("gemInfusedWater");
-        removeRecipeShapeless("dustCoal"/* ERRORSTACK <- itemcount */, "blockCoal");
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 8502, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
+        removeRecipeShapelessBuffered(getModItem("minecraft", "dye", 1, 4, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 2530, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 8530, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 2500, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 2881, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 2506, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 2084, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing));
+        removeRecipeShapelessBuffered("dustEnderPearl");
+        removeRecipeShapelessBuffered("gemEnderPearl");
+        removeRecipeShapelessBuffered("dustEnderEye");
+        removeRecipeShapelessBuffered("gemEnderEye");
+        removeRecipeShapelessBuffered("dustRuby");
+        removeRecipeShapelessBuffered("gemRuby");
+        removeRecipeShapelessBuffered("dustSapphire");
+        removeRecipeShapelessBuffered("gemSapphire");
+        removeRecipeShapelessBuffered("dustGreenSapphire");
+        removeRecipeShapelessBuffered("gemGreenSapphire");
+        removeRecipeShapelessBuffered("dustOlivine");
+        removeRecipeShapelessBuffered("gemOlivine");
+        removeRecipeShapelessBuffered("dustTopaz");
+        removeRecipeShapelessBuffered("gemTopaz");
+        removeRecipeShapelessBuffered("dustTanzanite");
+        removeRecipeShapelessBuffered("gemTanzanite");
+        removeRecipeShapelessBuffered("dustAmethyst");
+        removeRecipeShapelessBuffered("gemAmethyst");
+        removeRecipeShapelessBuffered("dustJasper");
+        removeRecipeShapelessBuffered("gemJasper");
+        removeRecipeShapelessBuffered("dustGarnetYellow");
+        removeRecipeShapelessBuffered("gemGarnetYellow");
+        removeRecipeShapelessBuffered("dustGarnetRed");
+        removeRecipeShapelessBuffered("gemGarnetRed");
+        removeRecipeShapelessBuffered("dustForce");
+        removeRecipeShapelessBuffered("gemForce");
+        removeRecipeShapelessBuffered("dustForcillium");
+        removeRecipeShapelessBuffered("gemForcillium");
+        removeRecipeShapelessBuffered("dustForcicium");
+        removeRecipeShapelessBuffered("gemForcicium");
+        removeRecipeShapelessBuffered("dustDilithium");
+        removeRecipeShapelessBuffered("gemDilithium");
+        removeRecipeShapelessBuffered("dustAmber");
+        removeRecipeShapelessBuffered("gemAmber");
+        removeRecipeShapelessBuffered("dustFoolsRuby");
+        removeRecipeShapelessBuffered("gemFoolsRuby");
+        removeRecipeShapelessBuffered("dustBlueTopaz");
+        removeRecipeShapelessBuffered("gemBlueTopaz");
+        removeRecipeShapelessBuffered("dustMonazite");
+        removeRecipeShapelessBuffered("gemMonazite");
+        removeRecipeShapelessBuffered("dustQuartzite");
+        removeRecipeShapelessBuffered("gemQuartzite");
+        removeRecipeShapelessBuffered("dustLazurite");
+        removeRecipeShapelessBuffered("gemLazurite");
+        removeRecipeShapelessBuffered("dustSodalite");
+        removeRecipeShapelessBuffered("gemSodalite");
+        removeRecipeShapelessBuffered("dustNiter");
+        removeRecipeShapelessBuffered("gemNiter");
+        removeRecipeShapelessBuffered("dustTricalciumPhosphate");
+        removeRecipeShapelessBuffered("gemTricalciumPhosphate");
+        removeRecipeShapelessBuffered("dustLignite");
+        removeRecipeShapelessBuffered("gemLignite");
+        removeRecipeShapelessBuffered("dustInfusedEntropy");
+        removeRecipeShapelessBuffered("gemInfusedEntropy");
+        removeRecipeShapelessBuffered("dustInfusedOrder");
+        removeRecipeShapelessBuffered("gemInfusedOrder");
+        removeRecipeShapelessBuffered("dustVinteum");
+        removeRecipeShapelessBuffered("gemVinteum");
+        removeRecipeShapelessBuffered("dustInfusedAir");
+        removeRecipeShapelessBuffered("gemInfusedAir");
+        removeRecipeShapelessBuffered("dustInfusedFire");
+        removeRecipeShapelessBuffered("gemInfusedFire");
+        removeRecipeShapelessBuffered("dustInfusedEarth");
+        removeRecipeShapelessBuffered("gemInfusedEarth");
+        removeRecipeShapelessBuffered("dustInfusedWater");
+        removeRecipeShapelessBuffered("gemInfusedWater");
+        removeRecipeShapelessBuffered("dustCoal"/* ERRORSTACK <- itemcount */, "blockCoal");
+        removeRecipeShapelessBuffered(
                 getModItem("minecraft", "coal", 9, 1, missing),
                 getModItem("gregtech", "gt.blockgem3", 1, 4, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("gregtech", "gt.metaitem.01", 9, 2536, missing),
                 getModItem("gregtech", "gt.blockgem3", 1, 4, missing));
-        removeRecipeShapeless(getModItem("harvestcraft", "cottonItem", 1, 0, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(getModItem("harvestcraft", "cottonItem", 1, 0, missing));
+        removeRecipeShapelessBuffered(
                 getModItem("IC2", "itemCofeePowder", 1, 0, missing),
                 getModItem("IC2", "itemCofeeBeans", 1, 0, missing));
-        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 0, missing));
-        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 1, missing));
-        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 2, missing));
-        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 3, missing));
-        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 4, missing));
-        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 5, missing));
-        removeRecipeShapeless(getModItem("minecraft", "string", 1, 0, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2526, missing));
-        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2501, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(getModItem("Thaumcraft", "ItemShard", 1, 0, missing));
+        removeRecipeShapelessBuffered(getModItem("Thaumcraft", "ItemShard", 1, 1, missing));
+        removeRecipeShapelessBuffered(getModItem("Thaumcraft", "ItemShard", 1, 2, missing));
+        removeRecipeShapelessBuffered(getModItem("Thaumcraft", "ItemShard", 1, 3, missing));
+        removeRecipeShapelessBuffered(getModItem("Thaumcraft", "ItemShard", 1, 4, missing));
+        removeRecipeShapelessBuffered(getModItem("Thaumcraft", "ItemShard", 1, 5, missing));
+        removeRecipeShapelessBuffered(getModItem("minecraft", "string", 1, 0, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 2526, missing));
+        removeRecipeShapelessBuffered(getModItem("gregtech", "gt.metaitem.01", 1, 2501, missing));
+        removeRecipeShapelessBuffered(
                 getModItem("minecraft", "gunpowder", 1, 0, missing),
                 getModItem("minecraft", "coal", 1, 1, missing),
                 getModItem("minecraft", "coal", 1, 1, missing),
                 getModItem("minecraft", "coal", 1, 1, missing),
                 getModItem("minecraft", "glowstone_dust", 1, 0, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(
                 getModItem("minecraft", "dye", 3, 15, missing),
                 getModItem("minecraft", "bone", 1, 0, missing));
-        removeRecipeShapeless(getModItem("minecraft", "nether_star", 1, 0, missing));
-        removeRecipeShapeless(getModItem("minecraft", "sand", 1, 0, missing));
-        removeRecipeShapeless(getModItem("minecraft", "glowstone_dust", 1, 0, missing));
-        removeRecipeShapeless(getModItem("minecraft", "glass", 1, 0, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(getModItem("minecraft", "nether_star", 1, 0, missing));
+        removeRecipeShapelessBuffered(getModItem("minecraft", "sand", 1, 0, missing));
+        removeRecipeShapelessBuffered(getModItem("minecraft", "glowstone_dust", 1, 0, missing));
+        removeRecipeShapelessBuffered(getModItem("minecraft", "glass", 1, 0, missing));
+        removeRecipeShapelessBuffered(
                 getModItem("Natura", "barleyFood", 1, 8, missing),
                 getModItem("Natura", "Bluebells", 1, 0, missing));
-        removeRecipeShapeless(getModItem("Thaumcraft", "ItemResource", 1, 6, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(getModItem("Thaumcraft", "ItemResource", 1, 6, missing));
+        removeRecipeShapelessBuffered(
                 getModItem("Thaumcraft", "ItemInkwell", 1, 0, missing),
                 getModItem("minecraft", "glass_bottle", 1, 0, missing),
                 getModItem("minecraft", "feather", 1, 0, missing),
                 "dyeBlack");
-        removeRecipeShapeless(getModItem("TwilightForest", "item.fieryIngot", 1, 0, missing));
-        removeRecipeShapeless(
+        removeRecipeShapelessBuffered(getModItem("TwilightForest", "item.fieryIngot", 1, 0, missing));
+        removeRecipeShapelessBuffered(
                 getModItem("witchery", "ingredient", 1, 130, missing),
                 getModItem("witchery", "ingredient", 1, 130, missing),
                 getModItem("minecraft", "magma_cream", 1, 0, missing),
                 getModItem("minecraft", "blaze_powder", 1, 0, missing));
 
-        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 0, missing));
-        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 1, missing));
-        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 2, missing));
-        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 3, missing));
-        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 4, missing));
-        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 5, missing));
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(getModItem("BinnieCore", "storage", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("BinnieCore", "storage", 1, 1, missing));
+        removeRecipeShapedBuffered(getModItem("BinnieCore", "storage", 1, 2, missing));
+        removeRecipeShapedBuffered(getModItem("BinnieCore", "storage", 1, 3, missing));
+        removeRecipeShapedBuffered(getModItem("BinnieCore", "storage", 1, 4, missing));
+        removeRecipeShapedBuffered(getModItem("BinnieCore", "storage", 1, 5, missing));
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "wheat", 1, 0, missing),
                 new Object[] { getModItem("BiomesOPlenty", "plants", 1, 6, missing),
                         getModItem("BiomesOPlenty", "plants", 1, 6, missing),
                         getModItem("BiomesOPlenty", "plants", 1, 6, missing) },
                 new Object[0],
                 new Object[0]);
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("EnderIO", "itemAlloy", 1, 6, missing),
                 new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
                 new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
                 new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("EnderIO", "itemAlloy", 1, 8, missing),
                 new Object[] { getModItem("EnderIO", "itemMaterial", 1, 11, missing),
                         getModItem("EnderIO", "itemMaterial", 1, 11, missing),
@@ -11725,7 +11734,7 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("EnderIO", "itemMaterial", 1, 11, missing),
                         getModItem("EnderIO", "itemMaterial", 1, 11, missing),
                         getModItem("EnderIO", "itemMaterial", 1, 11, missing) });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "ender_pearl", 1, 0, missing),
                 new Object[] { getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
                         getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
@@ -11736,14 +11745,14 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
                         getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
                         getModItem("EnderIO", "itemPowderIngot", 1, 5, missing) });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "ender_pearl", 1, 0, missing),
                 new Object[] { null, getModItem("EnderZoo", "enderFragment", 1, 0, missing), null },
                 new Object[] { getModItem("EnderZoo", "enderFragment", 1, 0, missing),
                         getModItem("EnderZoo", "enderFragment", 1, 0, missing),
                         getModItem("EnderZoo", "enderFragment", 1, 0, missing) },
                 new Object[] { null, getModItem("EnderZoo", "enderFragment", 1, 0, missing), null });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("ExtraUtilities", "unstableingot", 1, 0, missing)/*
                                                                              * createItemStack("ExtraUtilities",
                                                                              * "unstableingot", 1, 0, "{Bug:1b}",
@@ -11757,50 +11766,50 @@ public class GT_Recipe_Remover implements Runnable {
                                                                                             * "{damage:256}", missing)
                                                                                             */ },
                 new Object[] { getModItem("minecraft", "diamond", 1, 0, missing) });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("ForbiddenMagic", "FMResource", 9, 0, missing),
                 new Object[] { getModItem("minecraft", "emerald", 1, 0, missing) },
                 new Object[0],
                 new Object[0]);
-        removeRecipeShaped(getModItem("ForbiddenMagic", "FMResource", 2, 1, missing));
-        removeRecipeShaped(getModItem("gendustry", "GeneSampleBlank", 1, 0, missing));
-        removeRecipeShaped(getModItem("gendustry", "GeneTemplate", 1, 0, missing));
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(getModItem("ForbiddenMagic", "FMResource", 2, 1, missing));
+        removeRecipeShapedBuffered(getModItem("gendustry", "GeneSampleBlank", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("gendustry", "GeneTemplate", 1, 0, missing));
+        removeRecipeShapedBuffered(
                 getModItem("gregtech", "gt.metaitem.01", 1, 8530, missing),
                 new Object[] { "shardApatite", "shardApatite", "shardApatite" },
                 new Object[] { "shardApatite", "shardApatite", "shardApatite" },
                 new Object[] { "shardApatite", "shardApatite", "shardApatite" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotSilver",
                 new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
                 new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
                 new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotLead",
                 new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" },
                 new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" },
                 new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotDraconium",
                 new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" },
                 new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" },
                 new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotDraconiumAwakened",
                 new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" },
                 new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" },
                 new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotVibrantAlloy",
                 new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" },
                 new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" },
                 new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotPulsatingIron",
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotThauminite",
                 new Object[] { getModItem("thaumicbases", "resource", 1, 0, missing),
                         getModItem("thaumicbases", "resource", 1, 0, missing),
@@ -11811,57 +11820,57 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("thaumicbases", "resource", 1, 0, missing),
                         getModItem("thaumicbases", "resource", 1, 0, missing),
                         getModItem("thaumicbases", "resource", 1, 0, missing) });
-        removeRecipeShaped(getModItem("minecraft", "stone_button", 1, 0, missing));
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(getModItem("minecraft", "stone_button", 1, 0, missing));
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "string", 1, 0, missing),
                 new Object[] { "cropCotton", "cropCotton", "cropCotton" },
                 new Object[0],
                 new Object[0]);
-        removeRecipeShaped(getModItem("minecraft", "speckled_melon", 1, 0, missing));
-        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 0, missing));
-        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 1, missing));
-        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 3, missing));
-        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 4, missing));
-        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 5, missing));
-        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 6, missing));
-        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 7, missing));
-        removeRecipeShaped(getModItem("minecraft", "bookshelf", 1, 0, missing));
-        removeRecipeShaped(getModItem("minecraft", "packed_ice", 4, 0, missing));
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(getModItem("minecraft", "speckled_melon", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "stone_slab", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "stone_slab", 1, 1, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "stone_slab", 1, 3, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "stone_slab", 1, 4, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "stone_slab", 1, 5, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "stone_slab", 1, 6, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "stone_slab", 1, 7, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "bookshelf", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "packed_ice", 4, 0, missing));
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "gunpowder", 1, 0, missing),
                 new Object[] { getModItem("Natura", "barleyFood", 1, 4, missing),
                         getModItem("Natura", "barleyFood", 1, 4, missing), null },
                 new Object[] { getModItem("Natura", "barleyFood", 1, 4, missing),
                         getModItem("Natura", "barleyFood", 1, 4, missing), null },
                 new Object[0]);
-        removeRecipeShaped(getModItem("minecraft", "chest_minecart", 1, 0, missing));
-        removeRecipeShaped(getModItem("minecraft", "furnace_minecart", 1, 0, missing));
-        removeRecipeShaped(getModItem("minecraft", "hopper_minecart", 1, 0, missing));
-        removeRecipeShaped(getModItem("minecraft", "tnt_minecart", 1, 0, missing));
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(getModItem("minecraft", "chest_minecart", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "furnace_minecart", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "hopper_minecart", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("minecraft", "tnt_minecart", 1, 0, missing));
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "iron_ingot", 1, 0, missing),
                 new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" },
                 new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" },
                 new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" });
-        removeRecipeShaped("nuggetIron");
-        removeRecipeShaped(
+        removeRecipeShapedBuffered("nuggetIron");
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "gold_ingot", 1, 0, missing),
                 new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" },
                 new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" },
                 new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "wooden_slab", 6, 0, missing),
                 new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
                         getModItem("minecraft", "planks", 1, 0, missing),
                         getModItem("minecraft", "planks", 1, 0, missing) },
                 new Object[0],
                 new Object[0]);
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "blaze_powder", 1, 0, missing),
                 new Object[] { getModItem("Thaumcraft", "blockCustomPlant", 1, 3, missing) },
                 new Object[0],
                 new Object[0]);
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "leather_helmet", 1, 0, missing),
                 new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
@@ -11869,7 +11878,7 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
                 new Object[0]);
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "leather_chestplate", 1, 0, missing),
                 new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
@@ -11879,7 +11888,7 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "leather_leggings", 1, 0, missing),
                 new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
@@ -11888,14 +11897,14 @@ public class GT_Recipe_Remover implements Runnable {
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
                 new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "leather_boots", 1, 0, missing),
                 new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
                 new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
                         getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
                 new Object[0]);
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "emerald", 1, 0, missing),
                 new Object[] { getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
                         getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
@@ -11906,7 +11915,7 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
                         getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
                         getModItem("ForbiddenMagic", "FMResource", 1, 0, missing) });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "diamond", 1, 0, missing),
                 new Object[] { getModItem("MagicBees", "beeNugget", 1, 5, missing),
                         getModItem("MagicBees", "beeNugget", 1, 5, missing),
@@ -11917,73 +11926,73 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("MagicBees", "beeNugget", 1, 5, missing),
                         getModItem("MagicBees", "beeNugget", 1, 5, missing),
                         getModItem("MagicBees", "beeNugget", 1, 5, missing) });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "paper", 2, 0, missing),
                 new Object[] { getModItem("minecraft", "reeds", 1, 0, missing),
                         getModItem("minecraft", "reeds", 1, 0, missing),
                         getModItem("minecraft", "reeds", 1, 0, missing) },
                 new Object[0],
                 new Object[0]);
-        removeRecipeShaped(getModItem("minecraft", "sand", 1, 0, missing));
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(getModItem("minecraft", "sand", 1, 0, missing));
+        removeRecipeShapedBuffered(
                 getModItem("minecraft", "leather", 1, 0, missing),
                 new Object[] { getModItem("Natura", "barleyFood", 1, 6, missing),
                         getModItem("Natura", "barleyFood", 1, 6, missing) },
                 new Object[] { getModItem("Natura", "barleyFood", 1, 6, missing),
                         getModItem("Natura", "barleyFood", 1, 6, missing) },
                 new Object[0]);
-        removeRecipeShaped(getModItem("OpenBlocks", "paintBrush", 1, 0, missing));
-        removeRecipeShaped(getModItem("OpenBlocks", "goldenEye", 1, 32767, missing));
-        removeRecipeShaped(getModItem("Railcraft", "cart.energy.batbox", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "cart.energy.cesu", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "cart.energy.mfe", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "cart.tank", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "cart.anchor.personal", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "cart.anchor", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "cart.work", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "tool.electric.meter", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "armor.goggles", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "tool.magnifying.glass", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "tool.signal.tuner", 1, 0, missing));
-        removeRecipeShaped(getModItem("Railcraft", "tool.surveyor", 1, 0, missing));
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(getModItem("OpenBlocks", "paintBrush", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("OpenBlocks", "goldenEye", 1, 32767, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "cart.energy.batbox", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "cart.energy.cesu", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "cart.energy.mfe", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "cart.tank", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "cart.anchor.personal", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "cart.anchor", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "cart.work", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "tool.electric.meter", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "armor.goggles", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "tool.magnifying.glass", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "tool.signal.tuner", 1, 0, missing));
+        removeRecipeShapedBuffered(getModItem("Railcraft", "tool.surveyor", 1, 0, missing));
+        removeRecipeShapedBuffered(
                 getModItem("Thaumcraft", "ItemResource", 1, 6, missing),
                 new Object[] { getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 0, missing) },
                 new Object[0],
                 new Object[0]);
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("Thaumcraft", "ItemResource", 1, 6, missing),
                 new Object[] { getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 1, missing) },
                 new Object[0],
                 new Object[0]);
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotThaumium",
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" });
-        removeRecipeShaped(getModItem("thaumicbases", "crystalSlab", 1, 32767, missing));
-        removeRecipeShaped(getModItem("thaumicbases", "genericSlab", 1, 32767, missing));
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(getModItem("thaumicbases", "crystalSlab", 1, 32767, missing));
+        removeRecipeShapedBuffered(getModItem("thaumicbases", "genericSlab", 1, 32767, missing));
+        removeRecipeShapedBuffered(
                 "ingotTin",
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotCopper",
                 new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" },
                 new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" },
                 new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotSteel",
                 new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" },
                 new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" },
                 new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 "ingotBronze",
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("gregtech", "gt.metaitem.01", 1, 11019, missing),
                 new Object[] { getModItem("TConstruct", "materials", 1, 22, missing),
                         getModItem("TConstruct", "materials", 1, 22, missing),
@@ -11994,7 +12003,7 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("TConstruct", "materials", 1, 22, missing),
                         getModItem("TConstruct", "materials", 1, 22, missing),
                         getModItem("TConstruct", "materials", 1, 22, missing) });
-        removeRecipeShaped(
+        removeRecipeShapedBuffered(
                 getModItem("gregtech", "gt.metaitem.01", 1, 11019, missing),
                 new Object[] { getModItem("TConstruct", "materials", 1, 12, missing), null, null },
                 new Object[0],
