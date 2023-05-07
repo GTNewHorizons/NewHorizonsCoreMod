@@ -16,6 +16,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.*;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -74,6 +75,12 @@ public class GT_Recipe_Remover implements Runnable {
         }
         toRemove.forEach(i -> FurnaceRecipes.smelting().getSmeltingList().remove(i));
         return !toRemove.isEmpty();
+    }
+
+    public static void removeRecipeByOreOutputDelayed(String aOutput) {
+        for (ItemStack stack : OreDictionary.getOres(aOutput)) {
+            GT_ModHandler.removeRecipeByOutputDelayed(stack, true, false, true);
+        }
     }
 
     public void run() {
@@ -5368,15 +5375,13 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutputDelayed(getModItem("IC2", "itemRTGPellet", 1, 0, missing), true, false, true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("IC2", "itemOreIridium", 1, 0, missing), true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
+        removeRecipeByOreOutputDelayed("ingotSilver");
+        removeRecipeByOreOutputDelayed("ingotLead");
+        removeRecipeByOreOutputDelayed("ingotDraconium");
+        removeRecipeByOreOutputDelayed("ingotDraconiumAwakened");
+        removeRecipeByOreOutputDelayed("ingotVibrantAlloy");
+        removeRecipeByOreOutputDelayed("ingotPulsatingIron");
+        removeRecipeByOreOutputDelayed("ingotThauminite");
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("thaumicbases", "resource", 1, 0, missing), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
@@ -6871,7 +6876,7 @@ public class GT_Recipe_Remover implements Runnable {
                 true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "stonebrick", 1, 0, missing), true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
+        removeRecipeByOreOutputDelayed("nuggetIron");
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "lit_pumpkin", 1, 0, missing), true, false, true);
         GT_ModHandler
@@ -7268,7 +7273,7 @@ public class GT_Recipe_Remover implements Runnable {
                 true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "ender_eye", 1, 0, missing), true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
+        removeRecipeByOreOutputDelayed("ingotThaumium");
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "golden_apple", 1, 0, missing), true, false, true);
         GT_ModHandler
@@ -7353,7 +7358,10 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutputDelayed(getModItem("minecraft", "shears", 1, 0, missing), true, false, true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "nether_star", 1, 0, missing), true, false, true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
+        removeRecipeByOreOutputDelayed("ingotTin");
+        removeRecipeByOreOutputDelayed("ingotCopper");
+        removeRecipeByOreOutputDelayed("ingotSteel");
+        removeRecipeByOreOutputDelayed("ingotBronze");
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "wooden_door", 1, 0, missing), true, false, true);
         GT_ModHandler
@@ -10467,7 +10475,6 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
-        // GT_ModHandler.removeRecipeByOutputDelayed(ERRORSTACK, true, false, true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("TConstruct", "materials", 1, 25, missing), true, false, true);
         GT_ModHandler
