@@ -4558,6 +4558,11 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
+
+        removals2();
+    }
+
+    private void removals2() {
         GT_ModHandler.removeRecipeByOutputDelayed(
                 getModItem("ExtraUtilities", "angelRing", 1, 0, missing),
                 true,
@@ -11994,6 +11999,5 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("TConstruct", "materials", 1, 12, missing), null, null },
                 new Object[0],
                 new Object[0]);
-
     }
 }
