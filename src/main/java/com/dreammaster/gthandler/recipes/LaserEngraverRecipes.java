@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 
-import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
@@ -241,39 +240,34 @@ public class LaserEngraverRecipes implements Runnable {
         }
 
         // Optical to Wafer Buff Recipes
-            GT_Values.RA.addLaserEngraverRecipe(
-                    ItemList.Circuit_Silicon_Wafer6.get(1L),
-                    GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L).copy(),
-                    CustomItemList.RawPicoWafer.get(16),
-                    6000,
-                    1887440,
-                    true);
-            GT_Values.RA.addLaserEngraverRecipe(
-                    ItemList.Circuit_Silicon_Wafer6.get(1L),
-                    GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald , 1L).copy(),
-                    ItemList.Circuit_Wafer_SoC2.get(16),
-                    6000,
-                    1887440,
-                    true);
-            GT_Values.RA.addLaserEngraverRecipe(
-                    ItemList.Circuit_Silicon_Wafer6.get(1L),
-                    GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1L).copy(),
-                    ItemList.Circuit_Wafer_QPIC.get(16),
-                    6000,
-                    1887440,
-                    true);
-            GT_Values.RA.addLaserEngraverRecipe(
-                    ItemList.Circuit_Silicon_Wafer6.get(1L),
-                    GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L).copy(),
-                    ItemList.Circuit_Wafer_NPIC.get(16),
-                    6000,
-                    1887440,
-                    true);
-
-
-
-
-
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer6.get(1L),
+                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L).copy(),
+                CustomItemList.RawPicoWafer.get(16),
+                6000,
+                1887440,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer6.get(1L),
+                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1L).copy(),
+                ItemList.Circuit_Wafer_SoC2.get(32),
+                45 * 20,
+                122880,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer6.get(1L),
+                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1L).copy(),
+                ItemList.Circuit_Wafer_QPIC.get(16),
+                6000,
+                1887440,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer6.get(1L),
+                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L).copy(),
+                ItemList.Circuit_Wafer_NPIC.get(32),
+                60 * 20,
+                491520,
+                true);
 
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT
