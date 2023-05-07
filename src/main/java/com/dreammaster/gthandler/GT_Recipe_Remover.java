@@ -4,6 +4,7 @@ import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,9 +16,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.*;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-
-import org.apache.commons.lang3.NotImplementedException;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -84,22 +84,84 @@ public class GT_Recipe_Remover implements Runnable {
         });
     }
 
+    private static Field recipeWidthField = null;
+
     public static boolean removeRecipeShaped(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
-        throw new NotImplementedException("removeRecipeShapeless");
-        /*
-         * @SuppressWarnings("unchecked") ArrayList<IRecipe> tList = (ArrayList<IRecipe>)
-         * CraftingManager.getInstance().getRecipeList(); InventoryCrafting aCrafting = new InventoryCrafting(new
-         * Container() {
-         * @Override public boolean canInteractWith(EntityPlayer player) { return false; } }, 3, 3); for (int i = 0; i <
-         * aRecipe.length && i < 9; i++) aCrafting.setInventorySlotContents(i, aRecipe[i]); return tList.removeIf(
-         * recipe -> (recipe instanceof ShapedRecipes || recipe instanceof ShapedOreRecipe) &&
-         * GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true) && (aRecipe.length == 0 ||
-         * recipe.matches(aCrafting, DW)));
-         */
+        if (recipeWidthField == null) {
+            try {
+                recipeWidthField = ShapedOreRecipe.class.getField("width");
+                recipeWidthField.setAccessible(true);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+        List<ItemStack> outputs;
+        if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
+        else if (aOutput instanceof String) outputs = OreDictionary.getOres((String) aOutput);
+        else throw new IllegalArgumentException("Wrong output");
+
+        HashSet<GT_Utility.ItemId> outputsHashed = new HashSet<>();
+        for (ItemStack output : outputs) {
+            outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
+        }
+
+        @SuppressWarnings("unchecked")
+        ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
+        Object[][] recipe = new Object[][] { row1, row2, row3 };
+        return tList.removeIf(r -> {
+            if (!(r instanceof ShapedOreRecipe) && !(r instanceof ShapedRecipes)) return false;
+            ItemStack rOut = r.getRecipeOutput().copy();
+            rOut.stackTagCompound = null;
+            if (!outputsHashed.contains(GT_Utility.ItemId.createNoCopy(rOut))) return false;
+            Object[] inputs = (r instanceof ShapedOreRecipe ? ((ShapedOreRecipe) r).getInput()
+                    : ((ShapedRecipes) r).recipeItems);
+            int width;
+            try {
+                width = (r instanceof ShapedOreRecipe ? (int) recipeWidthField.get(r)
+                        : ((ShapedRecipes) r).recipeWidth);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+            int height = (r instanceof ShapedOreRecipe ? r.getRecipeSize() / width : ((ShapedRecipes) r).recipeHeight);
+
+            for (int y = 0; y < 3; y++) {
+                for (int x = 0; x < 3; x++) {
+                    Object rStack = (y >= height || x >= width ? null : inputs[x * width + y]);
+                    Object rRecipe = (x >= recipe[y].length ? null : recipe[y][x]);
+                    if (rStack == null ^ rRecipe == null) return false;
+                    if (rStack == null) continue;
+                    HashSet<GT_Utility.ItemId> rInputHashed = new HashSet<>();
+                    if (rStack instanceof ItemStack)
+                        rInputHashed.add(GT_Utility.ItemId.createNoCopy((ItemStack) rStack));
+                    else if (rStack instanceof ArrayList) {
+                        for (ItemStack stack : ((ArrayList<ItemStack>) rStack)) {
+                            rInputHashed.add(GT_Utility.ItemId.createNoCopy(stack));
+                        }
+                    } else if (rStack == null) continue;
+                    ItemStack toCompare;
+                    if (rRecipe instanceof ItemStack) {
+                        toCompare = ((ItemStack) rRecipe).copy();
+                        toCompare.stackTagCompound = null;
+                    } else if (rRecipe instanceof String) {
+                        toCompare = OreDictionary.getOres((String) rRecipe).get(0).copy();
+                        toCompare.stackTagCompound = null;
+                    } else throw new IllegalArgumentException("Invalid recipe");
+                    if (!rInputHashed.contains(GT_Utility.ItemId.createNoCopy(toCompare))) return false;
+                }
+            }
+
+            return true;
+        });
     }
 
-    public static boolean removeRecipeShaped(Object aOutput) {
-        throw new NotImplementedException("removeRecipeShapeless");
+    public static void removeRecipeShaped(Object aOutput) {
+        if (aOutput instanceof String) {
+            for (ItemStack stack : OreDictionary.getOres((String) aOutput)) {
+                GT_ModHandler.removeRecipeByOutputDelayed(stack, true, true, true);
+            }
+        } else if (aOutput instanceof ItemStack) {
+            GT_ModHandler.removeRecipeByOutputDelayed((ItemStack) aOutput, true, true, true);
+        } else throw new IllegalArgumentException("Invalid output");
     }
 
     public static void removeRecipeByOreOutputDelayed(String aOutput) {
