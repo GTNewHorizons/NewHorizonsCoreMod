@@ -12,6 +12,11 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import gregtech.api.util.GT_Utility;
 
+/**
+ * Item with specified NBT tags. For use in {@link ShapedUniversalRecipe} / {@link ShapelessUniversalRecipe}
+ *
+ * @author kuba6000
+ */
 public class NBTItem {
 
     private ItemStack stack;

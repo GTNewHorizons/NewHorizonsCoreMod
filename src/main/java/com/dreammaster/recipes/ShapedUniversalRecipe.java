@@ -18,6 +18,11 @@ import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
+/**
+ * ShapedOreRecipe implementation with NBT checking support. Use {@link NBTItem} in input objects to check for NBT
+ *
+ * @author kuba6000
+ */
 public class ShapedUniversalRecipe extends ShapedOreRecipe {
 
     ItemStack output;
