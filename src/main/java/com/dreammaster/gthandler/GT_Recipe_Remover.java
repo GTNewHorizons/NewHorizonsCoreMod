@@ -34,6 +34,11 @@ public class GT_Recipe_Remover implements Runnable {
         GregTech_API.sAfterGTPostload.add(() -> removeRecipeShapeless(aOutput, aRecipe));
     }
 
+    /**
+     * Removes only shapeless recipes by output and inputs, supports OreDictionary tags
+     *
+     * @author kuba6000
+     */
     public static boolean removeRecipeShapeless(Object aOutput, Object... aRecipe) {
         List<ItemStack> outputs;
         if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
@@ -95,6 +100,11 @@ public class GT_Recipe_Remover implements Runnable {
 
     private static Field recipeWidthField = null;
 
+    /**
+     * Removes only shaped recipes by output and inputs, supports OreDictionary tags
+     *
+     * @author kuba6000
+     */
     public static boolean removeRecipeShaped(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
         if (recipeWidthField == null) {
             try {
@@ -164,6 +174,15 @@ public class GT_Recipe_Remover implements Runnable {
     }
 
     public static void removeRecipeShapedBuffered(Object aOutput) {
+        GregTech_API.sAfterGTPostload.add(() -> removeRecipeShaped(aOutput));
+    }
+
+    /**
+     * Removes only shaped recipes by output, supports OreDictionary tag
+     *
+     * @author kuba6000
+     */
+    public static void removeRecipeShaped(Object aOutput) {
         if (aOutput instanceof String) {
             for (ItemStack stack : OreDictionary.getOres((String) aOutput)) {
                 GT_ModHandler.removeRecipeByOutputDelayed(stack, true, true, true);
@@ -173,6 +192,11 @@ public class GT_Recipe_Remover implements Runnable {
         } else throw new IllegalArgumentException("Invalid output");
     }
 
+    /**
+     * Removes recipes by output using OreDictionary tag
+     *
+     * @author kuba6000
+     */
     public static void removeRecipeByOreOutputDelayed(String aOutput) {
         for (ItemStack stack : OreDictionary.getOres(aOutput)) {
             GT_ModHandler.removeRecipeByOutputDelayed(stack, true, false, true);
