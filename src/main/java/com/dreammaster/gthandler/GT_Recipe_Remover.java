@@ -89,7 +89,7 @@ public class GT_Recipe_Remover implements Runnable {
     public static boolean removeRecipeShaped(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
         if (recipeWidthField == null) {
             try {
-                recipeWidthField = ShapedOreRecipe.class.getField("width");
+                recipeWidthField = ShapedOreRecipe.class.getDeclaredField("width");
                 recipeWidthField.setAccessible(true);
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
