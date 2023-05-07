@@ -251,23 +251,23 @@ public class LaserEngraverRecipes implements Runnable {
             GT_Values.RA.addLaserEngraverRecipe(
                     ItemList.Circuit_Silicon_Wafer6.get(1L),
                     GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald , 1L).copy(),
-                    ItemList.Circuit_Wafer_SoC2.get(16),
-                    6000,
-                    1887440,
+                    ItemList.Circuit_Wafer_SoC2.get(32),
+                    45 * 20,
+                    122880,
                     true);
             GT_Values.RA.addLaserEngraverRecipe(
                     ItemList.Circuit_Silicon_Wafer6.get(1L),
                     GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1L).copy(),
                     ItemList.Circuit_Wafer_QPIC.get(16),
-                    6000,
+                    120*20,
                     1887440,
                     true);
             GT_Values.RA.addLaserEngraverRecipe(
                     ItemList.Circuit_Silicon_Wafer6.get(1L),
                     GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L).copy(),
-                    ItemList.Circuit_Wafer_NPIC.get(16),
-                    6000,
-                    1887440,
+                    ItemList.Circuit_Wafer_NPIC.get(32),
+                    60 * 20,
+                    491520,
                     true);
 
 
