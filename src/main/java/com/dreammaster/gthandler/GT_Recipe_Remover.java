@@ -4,16 +4,25 @@ import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.*;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import org.apache.commons.lang3.NotImplementedException;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_Utility;
 
 public class GT_Recipe_Remover implements Runnable {
 
@@ -21,17 +30,58 @@ public class GT_Recipe_Remover implements Runnable {
     private static final String aTextMachineAlpha = "machine.alpha";
 
     public static boolean removeRecipeShapeless(Object aOutput, Object... aRecipe) {
-        throw new NotImplementedException("removeRecipeShapeless");
-        /*
-         * @SuppressWarnings("unchecked") ArrayList<IRecipe> tList = (ArrayList<IRecipe>)
-         * CraftingManager.getInstance().getRecipeList(); InventoryCrafting aCrafting = new InventoryCrafting(new
-         * Container() {
-         * @Override public boolean canInteractWith(EntityPlayer player) { return false; } }, 3, 3); for (int i = 0; i <
-         * aRecipe.length && i < 9; i++) aCrafting.setInventorySlotContents(i, aRecipe[i]); return tList.removeIf(
-         * recipe -> (recipe instanceof ShapelessRecipes || recipe instanceof ShapelessOreRecipe) &&
-         * GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true) && (aRecipe.length == 0 ||
-         * recipe.matches(aCrafting, DW)));
-         */
+        List<ItemStack> outputs;
+        if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
+        else if (aOutput instanceof String) outputs = OreDictionary.getOres((String) aOutput);
+        else throw new IllegalArgumentException("Wrong output");
+
+        HashSet<GT_Utility.ItemId> outputsHashed = new HashSet<>();
+        for (ItemStack output : outputs) {
+            outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
+        }
+
+        @SuppressWarnings("unchecked")
+        ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
+        ArrayList<Object> aRecipeList = new ArrayList<>(Arrays.asList(aRecipe));
+        return tList.removeIf(r -> {
+            if (!(r instanceof ShapelessOreRecipe) && !(r instanceof ShapelessRecipes)) return false;
+            ItemStack rOut = r.getRecipeOutput().copy();
+            rOut.stackTagCompound = null;
+            if (!outputsHashed.contains(GT_Utility.ItemId.createNoCopy(rOut))) return false;
+            if (aRecipeList.isEmpty()) return true;
+            ArrayList<Object> recipe = (ArrayList<Object>) aRecipeList.clone();
+            List rInputs = (r instanceof ShapelessOreRecipe ? ((ShapelessOreRecipe) r).getInput()
+                    : ((ShapelessRecipes) r).recipeItems);
+            for (Object rInput : rInputs) {
+                HashSet<GT_Utility.ItemId> rInputHashed = new HashSet<>();
+                if (rInput instanceof ItemStack) rInputHashed.add(GT_Utility.ItemId.createNoCopy((ItemStack) rInput));
+                else if (rInput instanceof ArrayList) {
+                    for (ItemStack stack : ((ArrayList<ItemStack>) rInput)) {
+                        rInputHashed.add(GT_Utility.ItemId.createNoCopy(stack));
+                    }
+                } else if (rInput == null) continue;
+                else return false;// ?????
+                boolean found = false;
+                for (Iterator<Object> iterator = recipe.iterator(); iterator.hasNext();) {
+                    Object o = iterator.next();
+                    ItemStack stack;
+                    if (o instanceof ItemStack) {
+                        stack = ((ItemStack) o).copy();
+                        stack.stackTagCompound = null;
+                    } else if (o instanceof String) {
+                        stack = OreDictionary.getOres((String) o).get(0).copy();
+                        stack.stackTagCompound = null;
+                    } else throw new IllegalArgumentException("Invalid recipe");
+                    if (rInputHashed.contains(GT_Utility.ItemId.createNoCopy(stack))) {
+                        found = true;
+                        iterator.remove();
+                        break;
+                    }
+                }
+                if (!found) return false;
+            }
+            return recipe.isEmpty();
+        });
     }
 
     public static boolean removeRecipeShaped(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
