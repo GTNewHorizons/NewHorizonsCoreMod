@@ -5106,6 +5106,11 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2, missing),
+                true,
+                false,
+                true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("Forestry", "sturdyMachine", 1, 0, missing), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(getModItem("Forestry", "core", 1, 0, missing), true, false, true);
