@@ -1,80 +1,55 @@
 package com.dreammaster.gthandler;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
-import static gregtech.api.enums.GT_Values.DW;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.*;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
+
+import org.apache.commons.lang3.NotImplementedException;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_Utility;
 
 public class GT_Recipe_Remover implements Runnable {
 
     private static final String aTextMachineBeta = "machine.beta";
     private static final String aTextMachineAlpha = "machine.alpha";
 
-    public static boolean removeRecipeShapeless(ItemStack aOutput, ItemStack... aRecipe) {
-        @SuppressWarnings("unchecked")
-        ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
-        InventoryCrafting aCrafting = new InventoryCrafting(new Container() {
-
-            @Override
-            public boolean canInteractWith(EntityPlayer player) {
-                return false;
-            }
-        }, 3, 3);
-        for (int i = 0; i < aRecipe.length && i < 9; i++) aCrafting.setInventorySlotContents(i, aRecipe[i]);
-        return tList.removeIf(
-                recipe -> (recipe instanceof ShapelessRecipes || recipe instanceof ShapelessOreRecipe)
-                        && GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true)
-                        && (aRecipe.length == 0 || recipe.matches(aCrafting, DW)));
+    public static boolean removeRecipeShapeless(Object aOutput, Object... aRecipe) {
+        throw new NotImplementedException("removeRecipeShapeless");
+        /*
+         * @SuppressWarnings("unchecked") ArrayList<IRecipe> tList = (ArrayList<IRecipe>)
+         * CraftingManager.getInstance().getRecipeList(); InventoryCrafting aCrafting = new InventoryCrafting(new
+         * Container() {
+         * @Override public boolean canInteractWith(EntityPlayer player) { return false; } }, 3, 3); for (int i = 0; i <
+         * aRecipe.length && i < 9; i++) aCrafting.setInventorySlotContents(i, aRecipe[i]); return tList.removeIf(
+         * recipe -> (recipe instanceof ShapelessRecipes || recipe instanceof ShapelessOreRecipe) &&
+         * GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true) && (aRecipe.length == 0 ||
+         * recipe.matches(aCrafting, DW)));
+         */
     }
 
-    public static boolean removeRecipeShaped(ItemStack aOutput, ItemStack... aRecipe) {
-        @SuppressWarnings("unchecked")
-        ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
-        InventoryCrafting aCrafting = new InventoryCrafting(new Container() {
-
-            @Override
-            public boolean canInteractWith(EntityPlayer player) {
-                return false;
-            }
-        }, 3, 3);
-        for (int i = 0; i < aRecipe.length && i < 9; i++) aCrafting.setInventorySlotContents(i, aRecipe[i]);
-        return tList.removeIf(
-                recipe -> (recipe instanceof ShapedRecipes || recipe instanceof ShapedOreRecipe)
-                        && GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true)
-                        && (aRecipe.length == 0 || recipe.matches(aCrafting, DW)));
+    public static boolean removeRecipeShaped(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
+        throw new NotImplementedException("removeRecipeShapeless");
+        /*
+         * @SuppressWarnings("unchecked") ArrayList<IRecipe> tList = (ArrayList<IRecipe>)
+         * CraftingManager.getInstance().getRecipeList(); InventoryCrafting aCrafting = new InventoryCrafting(new
+         * Container() {
+         * @Override public boolean canInteractWith(EntityPlayer player) { return false; } }, 3, 3); for (int i = 0; i <
+         * aRecipe.length && i < 9; i++) aCrafting.setInventorySlotContents(i, aRecipe[i]); return tList.removeIf(
+         * recipe -> (recipe instanceof ShapedRecipes || recipe instanceof ShapedOreRecipe) &&
+         * GT_Utility.areStacksEqual(recipe.getRecipeOutput(), aOutput, true) && (aRecipe.length == 0 ||
+         * recipe.matches(aCrafting, DW)));
+         */
     }
 
-    public static boolean removeFurnaceSmeltingByOutputAndInput(ItemStack aOutput, ItemStack aInput) {
-        HashSet<ItemStack> toRemove = new HashSet<>();
-        for (Map.Entry<ItemStack, ItemStack> recipe : (Set<Map.Entry<ItemStack, ItemStack>>) (FurnaceRecipes.smelting()
-                .getSmeltingList().entrySet())) {
-            if (GT_Utility.areStacksEqual(recipe.getValue(), aOutput, true)
-                    && (aInput == null || GT_Utility.areStacksEqual(recipe.getKey(), aInput, true))) {
-                toRemove.add(recipe.getKey());
-            }
-        }
-        toRemove.forEach(i -> FurnaceRecipes.smelting().getSmeltingList().remove(i));
-        return !toRemove.isEmpty();
+    public static boolean removeRecipeShaped(Object aOutput) {
+        throw new NotImplementedException("removeRecipeShapeless");
     }
 
     public static void removeRecipeByOreOutputDelayed(String aOutput) {
@@ -1555,12 +1530,14 @@ public class GT_Recipe_Remover implements Runnable {
                 false,
                 true);
 
+        // AUTOGENERATED FROM SCRIPTS
+
+        GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.01", 1, 17318, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 22318, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 2318, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 11318, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 24318, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 20318, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.01", 1, 17318, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Backpack", "boundLeather", 1, 32767, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "gravel", 1, 32767, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("EMT", "EMTItems", 1, 10, missing));
@@ -1611,10 +1588,10 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeFurnaceSmelting(getModItem("StevesCarts", "ModuleComponents", 1, 18, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("StevesCarts", "ModuleComponents", 1, 11, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("StevesCarts", "ModuleComponents", 1, 21, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("BiomesOPlenty", "gemOre", 1, 14, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("EMT", "EMTItems", 1, 1, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("EMT", "EMTItems", 1, 2, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Thaumcraft", "blockCustomOre", 1, 7, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("BiomesOPlenty", "gemOre", 1, 14, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.blockores", 1, 6514, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.blockores", 1, 4514, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.blockores", 1, 2514, missing));
@@ -1623,31 +1600,32 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.blockores", 1, 3514, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.blockores", 1, 1514, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Thaumcraft", "ItemShard", 1, 6, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.01", 1, 17804, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemDust", 1, 11, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemPlates", 1, 7, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Railcraft", "dust", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TwilightForest", "tile.GiantObsidian", 1, 32767, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Railcraft", "machine.beta", 1, 10, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemDust", 1, 11, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.01", 1, 17804, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.01", 1, 2804, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemDensePlates", 1, 7, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("EnderIO", "itemPowderIngot", 1, 7, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemPlates", 1, 7, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemDensePlates", 1, 7, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.01", 1, 32630, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "materials", 1, 36, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.blockmachines", 1, 9320, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.blockmachines", 1, 9321, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.01", 1, 32630, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "CraftedSoil", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "CraftedSoil", 1, 2, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "materials", 1, 39, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "materials", 1, 38, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "materials", 1, 41, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "materials", 1, 42, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "SearedBrick", 1, 5, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "GravelOre", 1, 4, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "materials", 1, 40, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "SearedBrick", 1, 5, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "CraftedSoil", 1, 1, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "CraftedSoil", 1, 6, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TwilightForest", "item.ironwoodRaw", 1, 32767, missing));
+
         GT_ModHandler.removeRecipeByOutputDelayed(
                 getModItem("appliedenergistics2", "tile.BlockFluix", 1, 0, missing),
                 true,
@@ -4158,6 +4136,274 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.physical", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.physical", 1, 1, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.physical", 1, 2, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.physical", 1, 3, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 1, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 2, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 3, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.casing", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "certustank", 1, 0, missing), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "fluidcrafter", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "pattern.fluid", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 0, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 1, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 2, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 12, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 3, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 4, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 5, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 6, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 7, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 8, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 10, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 11, missing), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.fluid", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.fluid", 1, 1, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.fluid", 1, 2, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.fluid", 1, 3, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.fluid", 1, 4, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.fluid", 1, 5, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.fluid", 1, 6, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 4, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 5, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 6, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 7, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 8, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 9, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 10, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.casing", 1, 1, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "ecbaseblock", 1, 0, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "ecbaseblock", 1, 1, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "hardmedrive", 1, 0, missing), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "vibrantchamberfluid", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.physical", 1, 4, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.fluid.portable", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "terminal.fluid.wireless", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "oc.upgrade", 1, 2, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "oc.upgrade", 1, 1, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "oc.upgrade", 1, 0, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 13, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 14, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "part.base", 1, 15, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "storage.gas", 1, 0, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "storage.gas", 1, 1, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "storage.gas", 1, 2, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "storage.gas", 1, 3, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "storage.gas", 1, 4, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "storage.gas", 1, 5, missing), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem("extracells", "storage.gas", 1, 6, missing), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 11, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 12, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 13, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 14, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 15, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 16, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.component", 1, 17, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "storage.casing", 1, 2, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "craftingstorage", 1, 0, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "craftingstorage", 1, 1, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "craftingstorage", 1, 2, missing),
+                true,
+                false,
+                true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                getModItem("extracells", "craftingstorage", 1, 3, missing),
+                true,
+                false,
+                true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("ExtraTrees", "machine", 1, 0, missing), true, false, true);
         GT_ModHandler
@@ -4860,11 +5106,6 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2, missing),
-                true,
-                false,
-                true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("Forestry", "sturdyMachine", 1, 0, missing), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(getModItem("Forestry", "core", 1, 0, missing), true, false, true);
@@ -5375,13 +5616,6 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutputDelayed(getModItem("IC2", "itemRTGPellet", 1, 0, missing), true, false, true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("IC2", "itemOreIridium", 1, 0, missing), true, false, true);
-        removeRecipeByOreOutputDelayed("ingotSilver");
-        removeRecipeByOreOutputDelayed("ingotLead");
-        removeRecipeByOreOutputDelayed("ingotDraconium");
-        removeRecipeByOreOutputDelayed("ingotDraconiumAwakened");
-        removeRecipeByOreOutputDelayed("ingotVibrantAlloy");
-        removeRecipeByOreOutputDelayed("ingotPulsatingIron");
-        removeRecipeByOreOutputDelayed("ingotThauminite");
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("thaumicbases", "resource", 1, 0, missing), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
@@ -6301,12 +6535,22 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("IC2", "itemLathingTool", 1, 0, missing), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem("IC2", "itemTurningBlanksWood", 1, 209715, missing),
+                getModItem("IC2", "itemTurningBlanksWood", 1, 209715, missing)/*
+                                                                               * createItemStack("IC2",
+                                                                               * "itemTurningBlanksWood", 1, 209715,
+                                                                               * "{state:{l0:3,l1:3,l2:3,l3:3,l4:3}}",
+                                                                               * missing)
+                                                                               */,
                 true,
                 false,
                 true);
         GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem("IC2", "itemTurningBlanks", 1, 349525, missing),
+                getModItem("IC2", "itemTurningBlanks", 1, 349525, missing)/*
+                                                                           * createItemStack("IC2", "itemTurningBlanks",
+                                                                           * 1, 349525,
+                                                                           * "{state:{l0:5,l1:5,l2:5,l3:5,l4:5}}",
+                                                                           * missing)
+                                                                           */,
                 true,
                 false,
                 true);
@@ -6876,7 +7120,6 @@ public class GT_Recipe_Remover implements Runnable {
                 true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "stonebrick", 1, 0, missing), true, false, true);
-        removeRecipeByOreOutputDelayed("nuggetIron");
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "lit_pumpkin", 1, 0, missing), true, false, true);
         GT_ModHandler
@@ -7273,7 +7516,6 @@ public class GT_Recipe_Remover implements Runnable {
                 true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "ender_eye", 1, 0, missing), true, false, true);
-        removeRecipeByOreOutputDelayed("ingotThaumium");
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "golden_apple", 1, 0, missing), true, false, true);
         GT_ModHandler
@@ -7358,10 +7600,6 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeRecipeByOutputDelayed(getModItem("minecraft", "shears", 1, 0, missing), true, false, true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "nether_star", 1, 0, missing), true, false, true);
-        removeRecipeByOreOutputDelayed("ingotTin");
-        removeRecipeByOreOutputDelayed("ingotCopper");
-        removeRecipeByOreOutputDelayed("ingotSteel");
-        removeRecipeByOreOutputDelayed("ingotBronze");
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("minecraft", "wooden_door", 1, 0, missing), true, false, true);
         GT_ModHandler
@@ -10101,8 +10339,6 @@ public class GT_Recipe_Remover implements Runnable {
                 .removeRecipeByOutputDelayed(getModItem("Thaumcraft", "WandCap", 1, 0, missing), true, false, true);
         GT_ModHandler
                 .removeRecipeByOutputDelayed(getModItem("Thaumcraft", "WandCasting", 1, 0, missing), true, false, true);
-        GT_ModHandler
-                .removeRecipeByOutputDelayed(getModItem("Thaumcraft", "ItemEssence", 1, 0, missing), true, false, true);
         GT_ModHandler.removeRecipeByOutputDelayed(
                 getModItem("Thaumcraft", "ItemResource", 1, 4, missing),
                 true,
@@ -11161,6 +11397,486 @@ public class GT_Recipe_Remover implements Runnable {
                 true,
                 false,
                 true);
+
+        removeRecipeByOreOutputDelayed("nuggetLead");
+        removeRecipeByOreOutputDelayed("nuggetSilver");
+        removeRecipeByOreOutputDelayed("nuggetTin");
+        removeRecipeByOreOutputDelayed("nuggetCopper");
+        removeRecipeByOreOutputDelayed("nuggetSteel");
+        removeRecipeByOreOutputDelayed("nuggetPulsatingIron");
+        removeRecipeByOreOutputDelayed("nuggetVibrantAlloy");
+        removeRecipeByOreOutputDelayed("nuggetDraconium");
+        removeRecipeByOreOutputDelayed("nuggetDraconiumAwakened");
+        removeRecipeByOreOutputDelayed("blockObsidian");
+        removeRecipeByOreOutputDelayed("nuggetGold");
+        removeRecipeByOreOutputDelayed("nuggetIron");
+        removeRecipeByOreOutputDelayed("torchStone");
+
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8502, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
+        removeRecipeShapeless(getModItem("minecraft", "dye", 1, 4, missing));
+        removeRecipeShapeless(
+                getModItem("minecraft", "dye", 3, 15, missing),
+                getModItem("BiomesOPlenty", "bones", 1, 0, missing));
+        removeRecipeShapeless(
+                getModItem("minecraft", "dye", 6, 15, missing),
+                getModItem("BiomesOPlenty", "bones", 1, 1, missing));
+        removeRecipeShapeless(
+                getModItem("minecraft", "dye", 12, 15, missing),
+                getModItem("BiomesOPlenty", "bones", 1, 2, missing));
+        removeRecipeShapeless(
+                getModItem("BiomesOPlenty", "misc", 1, 9, missing),
+                getModItem("BiomesOPlenty", "flowers", 1, 2, missing));
+        removeRecipeShapeless(
+                getModItem("BiomesOPlenty", "misc", 1, 8, missing),
+                getModItem("BiomesOPlenty", "flowers", 1, 9, missing));
+        removeRecipeShapeless(
+                getModItem("BiomesOPlenty", "misc", 1, 8, missing),
+                getModItem("BiomesOPlenty", "flowers2", 1, 1, missing));
+        removeRecipeShapeless(
+                getModItem("BiomesOPlenty", "misc", 1, 5, missing),
+                getModItem("BiomesOPlenty", "flowers2", 1, 5, missing));
+        removeRecipeShapeless(
+                getModItem("BiomesOPlenty", "misc", 1, 5, missing),
+                getModItem("BiomesOPlenty", "mushrooms", 1, 2, missing));
+        removeRecipeShapeless(
+                getModItem("BiomesOPlenty", "misc", 1, 7, missing),
+                getModItem("BiomesOPlenty", "moss", 1, 0, missing));
+        removeRecipeShapeless(
+                getModItem("BiomesOPlenty", "misc", 1, 6, missing),
+                getModItem("BiomesOPlenty", "mushrooms", 1, 4, missing));
+        removeRecipeShapeless(
+                getModItem("BiomesOPlenty", "misc", 1, 6, missing),
+                getModItem("BiomesOPlenty", "plants", 1, 7, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8502, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
+        removeRecipeShapeless(getModItem("minecraft", "dye", 1, 4, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2530, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8530, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2500, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 8503, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2881, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2506, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2084, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2836, missing));
+        removeRecipeShapeless("dustEnderPearl");
+        removeRecipeShapeless("gemEnderPearl");
+        removeRecipeShapeless("dustEnderEye");
+        removeRecipeShapeless("gemEnderEye");
+        removeRecipeShapeless("dustRuby");
+        removeRecipeShapeless("gemRuby");
+        removeRecipeShapeless("dustSapphire");
+        removeRecipeShapeless("gemSapphire");
+        removeRecipeShapeless("dustGreenSapphire");
+        removeRecipeShapeless("gemGreenSapphire");
+        removeRecipeShapeless("dustOlivine");
+        removeRecipeShapeless("gemOlivine");
+        removeRecipeShapeless("dustTopaz");
+        removeRecipeShapeless("gemTopaz");
+        removeRecipeShapeless("dustTanzanite");
+        removeRecipeShapeless("gemTanzanite");
+        removeRecipeShapeless("dustAmethyst");
+        removeRecipeShapeless("gemAmethyst");
+        removeRecipeShapeless("dustJasper");
+        removeRecipeShapeless("gemJasper");
+        removeRecipeShapeless("dustGarnetYellow");
+        removeRecipeShapeless("gemGarnetYellow");
+        removeRecipeShapeless("dustGarnetRed");
+        removeRecipeShapeless("gemGarnetRed");
+        removeRecipeShapeless("dustForce");
+        removeRecipeShapeless("gemForce");
+        removeRecipeShapeless("dustForcillium");
+        removeRecipeShapeless("gemForcillium");
+        removeRecipeShapeless("dustForcicium");
+        removeRecipeShapeless("gemForcicium");
+        removeRecipeShapeless("dustDilithium");
+        removeRecipeShapeless("gemDilithium");
+        removeRecipeShapeless("dustAmber");
+        removeRecipeShapeless("gemAmber");
+        removeRecipeShapeless("dustFoolsRuby");
+        removeRecipeShapeless("gemFoolsRuby");
+        removeRecipeShapeless("dustBlueTopaz");
+        removeRecipeShapeless("gemBlueTopaz");
+        removeRecipeShapeless("dustMonazite");
+        removeRecipeShapeless("gemMonazite");
+        removeRecipeShapeless("dustQuartzite");
+        removeRecipeShapeless("gemQuartzite");
+        removeRecipeShapeless("dustLazurite");
+        removeRecipeShapeless("gemLazurite");
+        removeRecipeShapeless("dustSodalite");
+        removeRecipeShapeless("gemSodalite");
+        removeRecipeShapeless("dustNiter");
+        removeRecipeShapeless("gemNiter");
+        removeRecipeShapeless("dustTricalciumPhosphate");
+        removeRecipeShapeless("gemTricalciumPhosphate");
+        removeRecipeShapeless("dustLignite");
+        removeRecipeShapeless("gemLignite");
+        removeRecipeShapeless("dustInfusedEntropy");
+        removeRecipeShapeless("gemInfusedEntropy");
+        removeRecipeShapeless("dustInfusedOrder");
+        removeRecipeShapeless("gemInfusedOrder");
+        removeRecipeShapeless("dustVinteum");
+        removeRecipeShapeless("gemVinteum");
+        removeRecipeShapeless("dustInfusedAir");
+        removeRecipeShapeless("gemInfusedAir");
+        removeRecipeShapeless("dustInfusedFire");
+        removeRecipeShapeless("gemInfusedFire");
+        removeRecipeShapeless("dustInfusedEarth");
+        removeRecipeShapeless("gemInfusedEarth");
+        removeRecipeShapeless("dustInfusedWater");
+        removeRecipeShapeless("gemInfusedWater");
+        removeRecipeShapeless("dustCoal"/* ERRORSTACK <- itemcount */, "blockCoal");
+        removeRecipeShapeless(
+                getModItem("minecraft", "coal", 9, 1, missing),
+                getModItem("gregtech", "gt.blockgem3", 1, 4, missing));
+        removeRecipeShapeless(
+                getModItem("gregtech", "gt.metaitem.01", 9, 2536, missing),
+                getModItem("gregtech", "gt.blockgem3", 1, 4, missing));
+        removeRecipeShapeless(getModItem("harvestcraft", "cottonItem", 1, 0, missing));
+        removeRecipeShapeless(
+                getModItem("IC2", "itemCofeePowder", 1, 0, missing),
+                getModItem("IC2", "itemCofeeBeans", 1, 0, missing));
+        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 0, missing));
+        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 1, missing));
+        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 2, missing));
+        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 3, missing));
+        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 4, missing));
+        removeRecipeShapeless(getModItem("Thaumcraft", "ItemShard", 1, 5, missing));
+        removeRecipeShapeless(getModItem("minecraft", "string", 1, 0, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2526, missing));
+        removeRecipeShapeless(getModItem("gregtech", "gt.metaitem.01", 1, 2501, missing));
+        removeRecipeShapeless(
+                getModItem("minecraft", "gunpowder", 1, 0, missing),
+                getModItem("minecraft", "coal", 1, 1, missing),
+                getModItem("minecraft", "coal", 1, 1, missing),
+                getModItem("minecraft", "coal", 1, 1, missing),
+                getModItem("minecraft", "glowstone_dust", 1, 0, missing));
+        removeRecipeShapeless(
+                getModItem("minecraft", "dye", 3, 15, missing),
+                getModItem("minecraft", "bone", 1, 0, missing));
+        removeRecipeShapeless(getModItem("minecraft", "nether_star", 1, 0, missing));
+        removeRecipeShapeless(getModItem("minecraft", "sand", 1, 0, missing));
+        removeRecipeShapeless(getModItem("minecraft", "glowstone_dust", 1, 0, missing));
+        removeRecipeShapeless(getModItem("minecraft", "glass", 1, 0, missing));
+        removeRecipeShapeless(
+                getModItem("Natura", "barleyFood", 1, 8, missing),
+                getModItem("Natura", "Bluebells", 1, 0, missing));
+        removeRecipeShapeless(getModItem("Thaumcraft", "ItemResource", 1, 6, missing));
+        removeRecipeShapeless(
+                getModItem("Thaumcraft", "ItemInkwell", 1, 0, missing),
+                getModItem("minecraft", "glass_bottle", 1, 0, missing),
+                getModItem("minecraft", "feather", 1, 0, missing),
+                "dyeBlack");
+        removeRecipeShapeless(getModItem("TwilightForest", "item.fieryIngot", 1, 0, missing));
+        removeRecipeShapeless(
+                getModItem("witchery", "ingredient", 1, 130, missing),
+                getModItem("witchery", "ingredient", 1, 130, missing),
+                getModItem("minecraft", "magma_cream", 1, 0, missing),
+                getModItem("minecraft", "blaze_powder", 1, 0, missing));
+
+        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 0, missing));
+        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 1, missing));
+        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 2, missing));
+        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 3, missing));
+        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 4, missing));
+        removeRecipeShaped(getModItem("BinnieCore", "storage", 1, 5, missing));
+        removeRecipeShaped(
+                getModItem("minecraft", "wheat", 1, 0, missing),
+                new Object[] { getModItem("BiomesOPlenty", "plants", 1, 6, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 6, missing),
+                        getModItem("BiomesOPlenty", "plants", 1, 6, missing) },
+                new Object[0],
+                new Object[0]);
+        removeRecipeShaped(
+                getModItem("EnderIO", "itemAlloy", 1, 6, missing),
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" },
+                new Object[] { "nuggetDarkSteel", "nuggetDarkSteel", "nuggetDarkSteel" });
+        removeRecipeShaped(
+                getModItem("EnderIO", "itemAlloy", 1, 8, missing),
+                new Object[] { getModItem("EnderIO", "itemMaterial", 1, 11, missing),
+                        getModItem("EnderIO", "itemMaterial", 1, 11, missing),
+                        getModItem("EnderIO", "itemMaterial", 1, 11, missing) },
+                new Object[] { getModItem("EnderIO", "itemMaterial", 1, 11, missing),
+                        getModItem("EnderIO", "itemMaterial", 1, 11, missing),
+                        getModItem("EnderIO", "itemMaterial", 1, 11, missing) },
+                new Object[] { getModItem("EnderIO", "itemMaterial", 1, 11, missing),
+                        getModItem("EnderIO", "itemMaterial", 1, 11, missing),
+                        getModItem("EnderIO", "itemMaterial", 1, 11, missing) });
+        removeRecipeShaped(
+                getModItem("minecraft", "ender_pearl", 1, 0, missing),
+                new Object[] { getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
+                        getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
+                        getModItem("EnderIO", "itemPowderIngot", 1, 5, missing) },
+                new Object[] { getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
+                        getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
+                        getModItem("EnderIO", "itemPowderIngot", 1, 5, missing) },
+                new Object[] { getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
+                        getModItem("EnderIO", "itemPowderIngot", 1, 5, missing),
+                        getModItem("EnderIO", "itemPowderIngot", 1, 5, missing) });
+        removeRecipeShaped(
+                getModItem("minecraft", "ender_pearl", 1, 0, missing),
+                new Object[] { null, getModItem("EnderZoo", "enderFragment", 1, 0, missing), null },
+                new Object[] { getModItem("EnderZoo", "enderFragment", 1, 0, missing),
+                        getModItem("EnderZoo", "enderFragment", 1, 0, missing),
+                        getModItem("EnderZoo", "enderFragment", 1, 0, missing) },
+                new Object[] { null, getModItem("EnderZoo", "enderFragment", 1, 0, missing), null });
+        removeRecipeShaped(
+                getModItem("ExtraUtilities", "unstableingot", 1, 0, missing)/*
+                                                                             * createItemStack("ExtraUtilities",
+                                                                             * "unstableingot", 1, 0, "{Bug:1b}",
+                                                                             * missing)
+                                                                             */,
+                new Object[] { getModItem("minecraft", "iron_ingot", 1, 0, missing) },
+                new Object[] { getModItem("ExtraUtilities", "divisionSigil", 1, 0, missing)/*
+                                                                                            * createItemStack(
+                                                                                            * "ExtraUtilities",
+                                                                                            * "divisionSigil", 1, 0,
+                                                                                            * "{damage:256}", missing)
+                                                                                            */ },
+                new Object[] { getModItem("minecraft", "diamond", 1, 0, missing) });
+        removeRecipeShaped(
+                getModItem("ForbiddenMagic", "FMResource", 9, 0, missing),
+                new Object[] { getModItem("minecraft", "emerald", 1, 0, missing) },
+                new Object[0],
+                new Object[0]);
+        removeRecipeShaped(getModItem("ForbiddenMagic", "FMResource", 2, 1, missing));
+        removeRecipeShaped(getModItem("gendustry", "GeneSampleBlank", 1, 0, missing));
+        removeRecipeShaped(getModItem("gendustry", "GeneTemplate", 1, 0, missing));
+        removeRecipeShaped(
+                getModItem("gregtech", "gt.metaitem.01", 1, 8530, missing),
+                new Object[] { "shardApatite", "shardApatite", "shardApatite" },
+                new Object[] { "shardApatite", "shardApatite", "shardApatite" },
+                new Object[] { "shardApatite", "shardApatite", "shardApatite" });
+        removeRecipeShaped(
+                "ingotSilver",
+                new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
+                new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
+                new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" });
+        removeRecipeShaped(
+                "ingotLead",
+                new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" },
+                new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" },
+                new Object[] { "nuggetLead", "nuggetLead", "nuggetLead" });
+        removeRecipeShaped(
+                "ingotDraconium",
+                new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" },
+                new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" },
+                new Object[] { "nuggetDraconium", "nuggetDraconium", "nuggetDraconium" });
+        removeRecipeShaped(
+                "ingotDraconiumAwakened",
+                new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" },
+                new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" },
+                new Object[] { "nuggetDraconiumAwakened", "nuggetDraconiumAwakened", "nuggetDraconiumAwakened" });
+        removeRecipeShaped(
+                "ingotVibrantAlloy",
+                new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" },
+                new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" },
+                new Object[] { "nuggetVibrantAlloy", "nuggetVibrantAlloy", "nuggetVibrantAlloy" });
+        removeRecipeShaped(
+                "ingotPulsatingIron",
+                new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
+                new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
+                new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" });
+        removeRecipeShaped(
+                "ingotThauminite",
+                new Object[] { getModItem("thaumicbases", "resource", 1, 0, missing),
+                        getModItem("thaumicbases", "resource", 1, 0, missing),
+                        getModItem("thaumicbases", "resource", 1, 0, missing) },
+                new Object[] { getModItem("thaumicbases", "resource", 1, 0, missing),
+                        getModItem("thaumicbases", "resource", 1, 0, missing),
+                        getModItem("thaumicbases", "resource", 1, 0, missing) },
+                new Object[] { getModItem("thaumicbases", "resource", 1, 0, missing),
+                        getModItem("thaumicbases", "resource", 1, 0, missing),
+                        getModItem("thaumicbases", "resource", 1, 0, missing) });
+        removeRecipeShaped(getModItem("minecraft", "stone_button", 1, 0, missing));
+        removeRecipeShaped(
+                getModItem("minecraft", "string", 1, 0, missing),
+                new Object[] { "cropCotton", "cropCotton", "cropCotton" },
+                new Object[0],
+                new Object[0]);
+        removeRecipeShaped(getModItem("minecraft", "speckled_melon", 1, 0, missing));
+        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 0, missing));
+        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 1, missing));
+        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 3, missing));
+        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 4, missing));
+        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 5, missing));
+        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 6, missing));
+        removeRecipeShaped(getModItem("minecraft", "stone_slab", 1, 7, missing));
+        removeRecipeShaped(getModItem("minecraft", "bookshelf", 1, 0, missing));
+        removeRecipeShaped(getModItem("minecraft", "packed_ice", 4, 0, missing));
+        removeRecipeShaped(
+                getModItem("minecraft", "gunpowder", 1, 0, missing),
+                new Object[] { getModItem("Natura", "barleyFood", 1, 4, missing),
+                        getModItem("Natura", "barleyFood", 1, 4, missing), null },
+                new Object[] { getModItem("Natura", "barleyFood", 1, 4, missing),
+                        getModItem("Natura", "barleyFood", 1, 4, missing), null },
+                new Object[0]);
+        removeRecipeShaped(getModItem("minecraft", "chest_minecart", 1, 0, missing));
+        removeRecipeShaped(getModItem("minecraft", "furnace_minecart", 1, 0, missing));
+        removeRecipeShaped(getModItem("minecraft", "hopper_minecart", 1, 0, missing));
+        removeRecipeShaped(getModItem("minecraft", "tnt_minecart", 1, 0, missing));
+        removeRecipeShaped(
+                getModItem("minecraft", "iron_ingot", 1, 0, missing),
+                new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" },
+                new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" },
+                new Object[] { "nuggetIron", "nuggetIron", "nuggetIron" });
+        removeRecipeShaped("nuggetIron");
+        removeRecipeShaped(
+                getModItem("minecraft", "gold_ingot", 1, 0, missing),
+                new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" },
+                new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" },
+                new Object[] { "nuggetGold", "nuggetGold", "nuggetGold" });
+        removeRecipeShaped(
+                getModItem("minecraft", "wooden_slab", 6, 0, missing),
+                new Object[] { getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing),
+                        getModItem("minecraft", "planks", 1, 0, missing) },
+                new Object[0],
+                new Object[0]);
+        removeRecipeShaped(
+                getModItem("minecraft", "blaze_powder", 1, 0, missing),
+                new Object[] { getModItem("Thaumcraft", "blockCustomPlant", 1, 3, missing) },
+                new Object[0],
+                new Object[0]);
+        removeRecipeShaped(
+                getModItem("minecraft", "leather_helmet", 1, 0, missing),
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
+                new Object[0]);
+        removeRecipeShaped(
+                getModItem("minecraft", "leather_chestplate", 1, 0, missing),
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) });
+        removeRecipeShaped(
+                getModItem("minecraft", "leather_leggings", 1, 0, missing),
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing),
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) });
+        removeRecipeShaped(
+                getModItem("minecraft", "leather_boots", 1, 0, missing),
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
+                new Object[] { getModItem("harvestcraft", "wovencottonItem", 1, 0, missing), null,
+                        getModItem("harvestcraft", "wovencottonItem", 1, 0, missing) },
+                new Object[0]);
+        removeRecipeShaped(
+                getModItem("minecraft", "emerald", 1, 0, missing),
+                new Object[] { getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
+                        getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
+                        getModItem("ForbiddenMagic", "FMResource", 1, 0, missing) },
+                new Object[] { getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
+                        getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
+                        getModItem("ForbiddenMagic", "FMResource", 1, 0, missing) },
+                new Object[] { getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
+                        getModItem("ForbiddenMagic", "FMResource", 1, 0, missing),
+                        getModItem("ForbiddenMagic", "FMResource", 1, 0, missing) });
+        removeRecipeShaped(
+                getModItem("minecraft", "diamond", 1, 0, missing),
+                new Object[] { getModItem("MagicBees", "beeNugget", 1, 5, missing),
+                        getModItem("MagicBees", "beeNugget", 1, 5, missing),
+                        getModItem("MagicBees", "beeNugget", 1, 5, missing) },
+                new Object[] { getModItem("MagicBees", "beeNugget", 1, 5, missing),
+                        getModItem("MagicBees", "beeNugget", 1, 5, missing),
+                        getModItem("MagicBees", "beeNugget", 1, 5, missing) },
+                new Object[] { getModItem("MagicBees", "beeNugget", 1, 5, missing),
+                        getModItem("MagicBees", "beeNugget", 1, 5, missing),
+                        getModItem("MagicBees", "beeNugget", 1, 5, missing) });
+        removeRecipeShaped(
+                getModItem("minecraft", "paper", 2, 0, missing),
+                new Object[] { getModItem("minecraft", "reeds", 1, 0, missing),
+                        getModItem("minecraft", "reeds", 1, 0, missing),
+                        getModItem("minecraft", "reeds", 1, 0, missing) },
+                new Object[0],
+                new Object[0]);
+        removeRecipeShaped(getModItem("minecraft", "sand", 1, 0, missing));
+        removeRecipeShaped(
+                getModItem("minecraft", "leather", 1, 0, missing),
+                new Object[] { getModItem("Natura", "barleyFood", 1, 6, missing),
+                        getModItem("Natura", "barleyFood", 1, 6, missing) },
+                new Object[] { getModItem("Natura", "barleyFood", 1, 6, missing),
+                        getModItem("Natura", "barleyFood", 1, 6, missing) },
+                new Object[0]);
+        removeRecipeShaped(getModItem("OpenBlocks", "paintBrush", 1, 0, missing));
+        removeRecipeShaped(getModItem("OpenBlocks", "goldenEye", 1, 32767, missing));
+        removeRecipeShaped(getModItem("Railcraft", "cart.energy.batbox", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "cart.energy.cesu", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "cart.energy.mfe", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "cart.tank", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "cart.anchor.personal", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "cart.anchor", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "cart.work", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "tool.electric.meter", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "armor.goggles", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "tool.magnifying.glass", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "tool.signal.tuner", 1, 0, missing));
+        removeRecipeShaped(getModItem("Railcraft", "tool.surveyor", 1, 0, missing));
+        removeRecipeShaped(
+                getModItem("Thaumcraft", "ItemResource", 1, 6, missing),
+                new Object[] { getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 0, missing) },
+                new Object[0],
+                new Object[0]);
+        removeRecipeShaped(
+                getModItem("Thaumcraft", "ItemResource", 1, 6, missing),
+                new Object[] { getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 1, missing) },
+                new Object[0],
+                new Object[0]);
+        removeRecipeShaped(
+                "ingotThaumium",
+                new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
+                new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
+                new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" });
+        removeRecipeShaped(getModItem("thaumicbases", "crystalSlab", 1, 32767, missing));
+        removeRecipeShaped(getModItem("thaumicbases", "genericSlab", 1, 32767, missing));
+        removeRecipeShaped(
+                "ingotTin",
+                new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
+                new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
+                new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" });
+        removeRecipeShaped(
+                "ingotCopper",
+                new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" },
+                new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" },
+                new Object[] { "nuggetCopper", "nuggetCopper", "nuggetCopper" });
+        removeRecipeShaped(
+                "ingotSteel",
+                new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" },
+                new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" },
+                new Object[] { "nuggetSteel", "nuggetSteel", "nuggetSteel" });
+        removeRecipeShaped(
+                "ingotBronze",
+                new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
+                new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
+                new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" });
+        removeRecipeShaped(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11019, missing),
+                new Object[] { getModItem("TConstruct", "materials", 1, 22, missing),
+                        getModItem("TConstruct", "materials", 1, 22, missing),
+                        getModItem("TConstruct", "materials", 1, 22, missing) },
+                new Object[] { getModItem("TConstruct", "materials", 1, 22, missing),
+                        getModItem("TConstruct", "materials", 1, 22, missing),
+                        getModItem("TConstruct", "materials", 1, 22, missing) },
+                new Object[] { getModItem("TConstruct", "materials", 1, 22, missing),
+                        getModItem("TConstruct", "materials", 1, 22, missing),
+                        getModItem("TConstruct", "materials", 1, 22, missing) });
+        removeRecipeShaped(
+                getModItem("gregtech", "gt.metaitem.01", 1, 11019, missing),
+                new Object[] { getModItem("TConstruct", "materials", 1, 12, missing), null, null },
+                new Object[0],
+                new Object[0]);
 
     }
 }
