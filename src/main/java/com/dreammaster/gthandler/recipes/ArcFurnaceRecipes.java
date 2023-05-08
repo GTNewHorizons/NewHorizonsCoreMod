@@ -1,10 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.GT_Values.RA;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GT_RecipeConstants.UniversalArcFurnace;
 
-import net.minecraft.item.ItemStack;
-
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
@@ -14,11 +15,8 @@ public class ArcFurnaceRecipes implements Runnable {
 
     @Override
     public void run() {
-        RA.addArcFurnaceRecipe(
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1L),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L), },
-                null,
-                50,
-                90);
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L)).noFluidInputs()
+                .noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
     }
 }

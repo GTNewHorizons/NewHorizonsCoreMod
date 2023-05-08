@@ -7,6 +7,9 @@ import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.awt.*;
 import java.util.LinkedHashMap;
@@ -27,6 +30,7 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
@@ -175,15 +179,10 @@ public class BacteriaRegistry {
                 BW_Util.getMachineVoltageFromTier(8));
 
         // LightRadox + Nq -> Enriched Naquadah condensation int aChance, int aDuration, int aEUt, boolean aCleanroom
-        GT_Values.RA.addAutoclaveSpaceRecipe(
-                Materials.Naquadah.getDust(1),
-                GT_Values.NI,
-                RadoxLight.getGas(2000),
-                Materials.NaquadahEnriched.getDust(3),
-                10000,
-                350,
-                BW_Util.getMachineVoltageFromTier(5),
-                false);
+        GT_Values.RA.stdBuilder().itemInputs(Materials.Naquadah.getDust(1))
+                .itemOutputs(Materials.NaquadahEnriched.getDust(3)).outputChances(10000)
+                .fluidInputs(RadoxLight.getGas(2000)).noFluidOutputs().duration(17 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_IV).addTo(sAutoclaveRecipes);
 
         // super heavy -> heavy radox conversion
         GT_Values.RA.addCentrifugeRecipe(
@@ -202,15 +201,10 @@ public class BacteriaRegistry {
                 BW_Util.getMachineVoltageFromTier(8));
 
         // heavy radox + Nq+ -> Nq*
-        GT_Values.RA.addAutoclaveSpaceRecipe(
-                Materials.NaquadahEnriched.getDust(1),
-                GT_Values.NI,
-                RadoxHeavy.getFluid(4000),
-                Materials.Naquadria.getDust(3),
-                10000,
-                350,
-                BW_Util.getMachineVoltageFromTier(7),
-                false);
+        GT_Values.RA.stdBuilder().itemInputs(Materials.NaquadahEnriched.getDust(1))
+                .itemOutputs(Materials.Naquadria.getDust(3)).outputChances(10000).fluidInputs(RadoxHeavy.getFluid(4000))
+                .noFluidOutputs().duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sAutoclaveRecipes);
+
     }
 
     private void runGTRecipes() {
