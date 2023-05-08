@@ -2545,6 +2545,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("FloodLights", "mantle", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("FloodLights", "growLight", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ForbiddenMagic", "RidingCrop", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "sturdyMachine", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "core", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "factory", 1, 0, missing));
