@@ -32,13 +32,6 @@ public class WiremillRecipes implements Runnable {
                 .itemOutputs(CustomItemList.TungstenString.get(4L)).noFluidInputs().noFluidOutputs()
                 .duration(60 * SECONDS).eut(1024).addTo(sWiremillRecipes);
 
-        GT_Values.RA.addWiremillRecipe(
-                GT_Utility.getIntegratedCircuit(3),
-                Materials.BorosilicateGlass.getIngots(1),
-                ItemList.Circuit_Parts_GlassFiber.get(8L),
-                200,
-                120);
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(Materials.BorosilicateGlass.getIngots(1), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).noFluidInputs().noFluidOutputs()
@@ -51,7 +44,6 @@ public class WiremillRecipes implements Runnable {
             GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Natura.ID, "barleyFood", 2L, 3))
                     .itemOutputs(new ItemStack(Items.string, 1, 0)).noFluidInputs().noFluidOutputs()
                     .duration(10 * SECONDS).eut(8).addTo(sWiremillRecipes);
-
         }
     }
 }
