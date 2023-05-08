@@ -59,18 +59,21 @@ public class GT_Recipe_Remover implements Runnable {
             rOut.stackTagCompound = null;
             if (!outputsHashed.contains(GT_Utility.ItemId.createNoCopy(rOut))) return false;
             if (aRecipeList.isEmpty()) return true;
+            @SuppressWarnings("unchecked")
             ArrayList<Object> recipe = (ArrayList<Object>) aRecipeList.clone();
-            List rInputs = (r instanceof ShapelessOreRecipe ? ((ShapelessOreRecipe) r).getInput()
+            @SuppressWarnings("unchecked")
+            List<Object> rInputs = (r instanceof ShapelessOreRecipe ? ((ShapelessOreRecipe) r).getInput()
                     : ((ShapelessRecipes) r).recipeItems);
             for (Object rInput : rInputs) {
                 HashSet<GT_Utility.ItemId> rInputHashed = new HashSet<>();
                 if (rInput instanceof ItemStack) rInputHashed.add(GT_Utility.ItemId.createNoCopy((ItemStack) rInput));
                 else if (rInput instanceof ArrayList) {
+                    // noinspection unchecked
                     for (ItemStack stack : ((ArrayList<ItemStack>) rInput)) {
                         rInputHashed.add(GT_Utility.ItemId.createNoCopy(stack));
                     }
                 } else if (rInput == null) continue;
-                else return false;// ?????
+                else return false;// custom?
                 boolean found = false;
                 for (Iterator<Object> iterator = recipe.iterator(); iterator.hasNext();) {
                     Object o = iterator.next();
@@ -153,10 +156,11 @@ public class GT_Recipe_Remover implements Runnable {
                     if (rStack instanceof ItemStack)
                         rInputHashed.add(GT_Utility.ItemId.createNoCopy((ItemStack) rStack));
                     else if (rStack instanceof ArrayList) {
+                        // noinspection unchecked
                         for (ItemStack stack : ((ArrayList<ItemStack>) rStack)) {
                             rInputHashed.add(GT_Utility.ItemId.createNoCopy(stack));
                         }
-                    } else if (rStack == null) continue;
+                    } else return false; // custom?
                     ItemStack toCompare;
                     if (rRecipe instanceof ItemStack) {
                         toCompare = ((ItemStack) rRecipe).copy();
