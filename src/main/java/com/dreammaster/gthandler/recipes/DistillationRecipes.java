@@ -70,21 +70,29 @@ public class DistillationRecipes implements Runnable {
 
     public static void distilleryRecipes() {
         // Sodium Potassium
-        GT_Values.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).noItemOutputs()
-                .fluidInputs(Materials.Sodium.getFluid(1000))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sodiumpotassium"), 1000)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sDistilleryRecipes);
+
+        // null check because looks like the fluid is missing in dev
+        FluidStack sodium = Materials.Sodium.getFluid(1000);
+        if (sodium != null) {
+            GT_Values.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).noItemOutputs().fluidInputs(sodium)
+                    .fluidOutputs(FluidRegistry.getFluidStack("sodiumpotassium", 1000)).duration(20 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(sDistilleryRecipes);
+        }
 
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
                 .fluidInputs(Materials.Biomass.getFluid(40)).fluidOutputs(Materials.Ethanol.getFluid(20))
                 .duration(16 * TICKS).eut(24).addTo(sDistilleryRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
-                .fluidInputs(Materials.Milk.getFluid(1000)).fluidOutputs(FluidRegistry.getFluidStack("fluidmilk", 1000))
-                .duration(5 * SECONDS).eut(2).addTo(sDistilleryRecipes);
+        // null check because looks like the fluid is missing in dev, should find what mod registers it
+        FluidStack fluidMilk = FluidRegistry.getFluidStack("fluidmilk", 1000);
+        if (fluidMilk != null) {
+            GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
+                    .fluidInputs(Materials.Milk.getFluid(1000)).fluidOutputs(fluidMilk.copy()).duration(5 * SECONDS)
+                    .eut(2).addTo(sDistilleryRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
-                .fluidInputs(FluidRegistry.getFluidStack("fluidmilk", 1000)).fluidOutputs(Materials.Milk.getFluid(1000))
-                .duration(5 * SECONDS).eut(2).addTo(sDistilleryRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
+                    .fluidInputs(fluidMilk.copy()).fluidOutputs(Materials.Milk.getFluid(1000)).duration(5 * SECONDS)
+                    .eut(2).addTo(sDistilleryRecipes);
+        }
     }
 }
