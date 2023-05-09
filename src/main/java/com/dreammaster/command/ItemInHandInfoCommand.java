@@ -71,7 +71,11 @@ public class ItemInHandInfoCommand implements ICommand {
                     .SendPlain(pCmdSender, String.format("FluidContainer:  [%s]", getFluidContainerContents(inHand)));
             PlayerChatHelper
                     .SendPlain(pCmdSender, String.format("ClassName:  [%s]", inHand.getItem().getClass().toString()));
-            PlayerChatHelper.SendPlain(pCmdSender, String.format("ItemNBT:  [%s]", inHand.stackTagCompound));
+            PlayerChatHelper.SendPlain(
+                    pCmdSender,
+                    String.format(
+                            "ItemNBT:  [%s]",
+                            inHand.stackTagCompound == null ? "null" : inHand.stackTagCompound.toString()));
 
         } catch (Exception e) {
             e.printStackTrace();

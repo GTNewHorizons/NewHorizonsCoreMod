@@ -29,16 +29,23 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagByte;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -190,15 +197,21 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
                 new Object[] { getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing), "craftingRedstoneTorch" });
-        addShapelessCraftingRecipe(
-                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing), "blockWool" });
-        addShapelessCraftingRecipe(
-                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing), "stickWood" });
+        GameRegistry.addRecipe(
+                new FilterRecipe(
+                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
+                        Collections.singletonMap("Inverted", new NBTTagByte((byte) 1)),
+                        "craftingRedstoneTorch"));
+        GameRegistry.addRecipe(
+                new FilterRecipe(
+                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
+                        Collections.singletonMap("FuzzyNBT", new NBTTagByte((byte) 1)),
+                        "blockWool"));
+        GameRegistry.addRecipe(
+                new FilterRecipe(
+                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
+                        Collections.singletonMap("FuzzyMeta", new NBTTagByte((byte) 1)),
+                        "stickWood"));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
                 new Object[] { "plateLapis", getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
@@ -209,9 +222,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapelessCraftingRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
                 new Object[] { getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing), "craftingRedstoneTorch" });
+        GameRegistry.addRecipe(
+                new FilterRecipe(
+                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
+                        Collections.singletonMap("Inverted", new NBTTagByte((byte) 1)),
+                        "craftingRedstoneTorch"));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 2, missing),
                 new Object[] { "plateLapis", getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0, missing), "plateLapis",
@@ -1198,5 +1213,40 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "EXURINGS_CRAFTING",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(getModItem(ExtraUtilities.ID, "angelRing", 1, 4, missing))));
+    }
+
+    private static class FilterRecipe extends ShapelessOreRecipe {
+
+        private final Map<String, NBTBase> NBTToUpdate;
+
+        public FilterRecipe(ItemStack result, Map<String, NBTBase> NBTToUpdate, Object recipeModifier) {
+            super(result, result, recipeModifier);
+            this.NBTToUpdate = NBTToUpdate;
+        }
+
+        @Override
+        public ItemStack getRecipeOutput() {
+            ItemStack stack = super.getRecipeOutput();
+            if (stack.stackTagCompound == null && !NBTToUpdate.isEmpty()) {
+                for (Map.Entry<String, NBTBase> entry : NBTToUpdate.entrySet())
+                    stack.setTagInfo(entry.getKey(), entry.getValue());
+            }
+            return stack;
+        }
+
+        @Override
+        public ItemStack getCraftingResult(InventoryCrafting crafting) {
+            ItemStack result = super.getCraftingResult(crafting);
+            for (int i = 0, imax = crafting.getSizeInventory(); i < imax; i++) {
+                ItemStack stack = crafting.getStackInSlot(i);
+                if (stack != null && stack.isItemEqual(result)) {
+                    result.stackTagCompound = stack.stackTagCompound;
+                    for (Map.Entry<String, NBTBase> entry : NBTToUpdate.entrySet())
+                        result.setTagInfo(entry.getKey(), entry.getValue());
+                    break;
+                }
+            }
+            return result;
+        }
     }
 }
