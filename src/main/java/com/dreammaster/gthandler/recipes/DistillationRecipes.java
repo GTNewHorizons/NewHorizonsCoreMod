@@ -70,10 +70,10 @@ public class DistillationRecipes implements Runnable {
 
     public static void distilleryRecipes() {
         // Sodium Potassium
-        GT_Values.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).noItemOutputs().fluidInputs(Materials.Sodium.getFluid(1000))
+        GT_Values.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).noItemOutputs()
+                .fluidInputs(Materials.Sodium.getFluid(1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("sodiumpotassium", 1000)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sDistilleryRecipes);
-
 
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
                 .fluidInputs(Materials.Biomass.getFluid(40)).fluidOutputs(Materials.Ethanol.getFluid(20))
