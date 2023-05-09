@@ -30,6 +30,9 @@ public class GT_Recipe_Remover implements Runnable {
     private static final String aTextMachineBeta = "machine.beta";
     private static final String aTextMachineAlpha = "machine.alpha";
 
+    @SuppressWarnings("unchecked")
+    private static final ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
+
     public static void removeRecipeShapelessDelayed(Object aOutput, Object... aRecipe) {
         GregTech_API.sAfterGTPostload.add(() -> removeRecipeShapeless(aOutput, aRecipe));
     }
@@ -50,8 +53,6 @@ public class GT_Recipe_Remover implements Runnable {
             outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
         }
 
-        @SuppressWarnings("unchecked")
-        ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
         ArrayList<Object> aRecipeList = new ArrayList<>(Arrays.asList(aRecipe));
         return tList.removeIf(r -> {
             if (!(r instanceof ShapelessOreRecipe) && !(r instanceof ShapelessRecipes)) return false;
@@ -127,8 +128,6 @@ public class GT_Recipe_Remover implements Runnable {
             outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
         }
 
-        @SuppressWarnings("unchecked")
-        ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
         Object[][] recipe = new Object[][] { row1, row2, row3 };
         return tList.removeIf(r -> {
             if (!(r instanceof ShapedOreRecipe) && !(r instanceof ShapedRecipes)) return false;
@@ -187,13 +186,22 @@ public class GT_Recipe_Remover implements Runnable {
      * @author kuba6000
      */
     public static void removeRecipeShaped(Object aOutput) {
-        if (aOutput instanceof String) {
-            for (ItemStack stack : OreDictionary.getOres((String) aOutput)) {
-                GT_ModHandler.removeRecipeByOutputDelayed(stack, true, true, false);
-            }
-        } else if (aOutput instanceof ItemStack) {
-            GT_ModHandler.removeRecipeByOutputDelayed((ItemStack) aOutput, true, true, false);
-        } else throw new IllegalArgumentException("Invalid output");
+        List<ItemStack> outputs;
+        if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
+        else if (aOutput instanceof String) outputs = OreDictionary.getOres((String) aOutput);
+        else throw new IllegalArgumentException("Wrong output");
+
+        HashSet<GT_Utility.ItemId> outputsHashed = new HashSet<>();
+        for (ItemStack output : outputs) {
+            outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
+        }
+
+        tList.removeIf(r -> {
+            if (!(r instanceof ShapedOreRecipe) && !(r instanceof ShapedRecipes)) return false;
+            ItemStack stack = r.getRecipeOutput().copy();
+            stack.stackTagCompound = null;
+            return outputsHashed.contains(GT_Utility.ItemId.createNoCopy(stack));
+        });
     }
 
     public static void removeRecipeByOutputDelayed(Object aOutput) {
@@ -206,13 +214,25 @@ public class GT_Recipe_Remover implements Runnable {
      * @author kuba6000
      */
     public static void removeRecipeByOutput(Object aOutput) {
-        if (aOutput instanceof String) {
-            for (ItemStack stack : OreDictionary.getOres((String) aOutput)) {
-                GT_ModHandler.removeRecipeByOutputDelayed(stack, true, false, false);
-            }
-        } else if (aOutput instanceof ItemStack) {
-            GT_ModHandler.removeRecipeByOutputDelayed((ItemStack) aOutput, true, false, false);
-        } else throw new IllegalArgumentException("Invalid output");
+        List<ItemStack> outputs;
+        if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
+        else if (aOutput instanceof String) outputs = OreDictionary.getOres((String) aOutput);
+        else throw new IllegalArgumentException("Wrong output");
+
+        HashSet<GT_Utility.ItemId> outputsHashed = new HashSet<>();
+        for (ItemStack output : outputs) {
+            outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
+        }
+
+        tList.removeIf(r -> {
+            if (!(r instanceof ShapelessOreRecipe) && !(r instanceof ShapelessRecipes)
+                    && !(r instanceof ShapedOreRecipe)
+                    && !(r instanceof ShapedRecipes))
+                return false;
+            ItemStack stack = r.getRecipeOutput().copy();
+            stack.stackTagCompound = null;
+            return outputsHashed.contains(GT_Utility.ItemId.createNoCopy(stack));
+        });
     }
 
     public void run() {
