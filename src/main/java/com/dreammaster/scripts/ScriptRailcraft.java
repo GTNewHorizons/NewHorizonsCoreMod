@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -39,7 +40,6 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
-import gregtech.api.util.GT_ModHandler;
 import mods.railcraft.api.crafting.RailcraftCraftingManager;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1468,7 +1468,9 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 9, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(2).addTo(sAssemblerRecipes);
-        GT_ModHandler.setFuelValue(getModItem(Railcraft.ID, "fluid.creosote.bucket", 1, 0, missing), (short) 6400);
+        Module_CustomFuels.registerCustomFuelValue(
+                getModItem(Railcraft.ID, "fluid.creosote.bucket", 1, 0, missing),
+                (short) 6400);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 5, 0, missing),

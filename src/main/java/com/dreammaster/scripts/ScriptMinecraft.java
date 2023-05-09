@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
@@ -2507,7 +2508,8 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 32398, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "melon", 8, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(8).addTo(sSlicerRecipes);
-        GT_ModHandler.setFuelValue(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing), (short) 75);
+        Module_CustomFuels
+                .registerCustomFuelValue(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing), (short) 75);
 
     }
 

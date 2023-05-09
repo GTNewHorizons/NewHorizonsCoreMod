@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
@@ -138,7 +139,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(BiomesOPlenty.ID, "driedDirt", 1, 0, missing),
                 getModItem(Minecraft.ID, "dirt", 1, 0, missing));
-        GT_ModHandler.setFuelValue(getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing), (short) 100);
+        Module_CustomFuels.registerCustomFuelValue(getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing), (short) 100);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "packed_ice", 16, 0, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sCompressorRecipes);

@@ -2,6 +2,7 @@ package com.dreammaster.modcustomfuels;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.HashMap;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -14,6 +15,7 @@ import com.dreammaster.main.MainRegistry;
 
 import cpw.mods.fml.common.IFuelHandler;
 import eu.usrv.yamcore.auxiliary.LogHelper;
+import gregtech.api.util.GT_Utility;
 
 public class CustomFuelsHandler implements IFuelHandler {
 
@@ -22,8 +24,14 @@ public class CustomFuelsHandler implements IFuelHandler {
     private CustomFuelsFactory _mCfF = new CustomFuelsFactory();
     private CustomFuels _mCustomFuels;
 
+    private HashMap<GT_Utility.ItemId, Short> customFuelToValueMap = new HashMap<>();
+
     public CustomFuelsHandler() {
         _mConfigFileName = String.format("config/%s/CustomFuels.xml", Refstrings.COLLECTIONID);
+    }
+
+    public void registerCustomFuelValue(ItemStack fuel, short value) {
+        customFuelToValueMap.put(GT_Utility.ItemId.createNoCopy(fuel), value);
     }
 
     public void InitSampleConfig() {
@@ -90,6 +98,16 @@ public class CustomFuelsHandler implements IFuelHandler {
 
     @Override
     public int getBurnTime(ItemStack pIS) {
+        ItemStack stack;
+        if (pIS.stackTagCompound == null) stack = pIS;
+        else {
+            stack = pIS.copy();
+            stack.stackTagCompound = null;
+        }
+
+        Short fuelValue = customFuelToValueMap.get(GT_Utility.ItemId.createNoCopy(stack));
+        if (fuelValue != null) return fuelValue;
+
         try {
             int tReturnValue = 0;
 
