@@ -7,7 +7,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -33,6 +32,27 @@ public class GT_Recipe_Remover implements Runnable {
     @SuppressWarnings("unchecked")
     private static final ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
 
+    private static HashSet<GT_Utility.ItemId> getItemsHashed(Object item) {
+        HashSet<GT_Utility.ItemId> hashedItems = new HashSet<>();
+        if (item instanceof ItemStack) {
+            ItemStack iCopy = ((ItemStack) item).copy();
+            iCopy.stackTagCompound = null;
+            hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+        } else if (item instanceof String) {
+            for (ItemStack stack : OreDictionary.getOres((String) item)) {
+                hashedItems.add(GT_Utility.ItemId.createNoCopy(stack));
+            }
+        } else if (item instanceof ArrayList) {
+            // noinspection unchecked
+            for (ItemStack stack : (ArrayList<ItemStack>) item) {
+                ItemStack iCopy = stack.copy();
+                iCopy.stackTagCompound = null;
+                hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+            }
+        } else throw new IllegalArgumentException("Invalid input");
+        return hashedItems;
+    }
+
     public static void removeRecipeShapelessDelayed(Object aOutput, Object... aRecipe) {
         GregTech_API.sAfterGTPostload.add(() -> removeRecipeShapeless(aOutput, aRecipe));
     }
@@ -43,15 +63,7 @@ public class GT_Recipe_Remover implements Runnable {
      * @author kuba6000
      */
     public static boolean removeRecipeShapeless(Object aOutput, Object... aRecipe) {
-        List<ItemStack> outputs;
-        if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
-        else if (aOutput instanceof String) outputs = OreDictionary.getOres((String) aOutput);
-        else throw new IllegalArgumentException("Wrong output");
-
-        HashSet<GT_Utility.ItemId> outputsHashed = new HashSet<>();
-        for (ItemStack output : outputs) {
-            outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
-        }
+        HashSet<GT_Utility.ItemId> outputsHashed = getItemsHashed(aOutput);
 
         ArrayList<Object> aRecipeList = new ArrayList<>(Arrays.asList(aRecipe));
         return tList.removeIf(r -> {
@@ -66,15 +78,12 @@ public class GT_Recipe_Remover implements Runnable {
             List<Object> rInputs = (r instanceof ShapelessOreRecipe ? ((ShapelessOreRecipe) r).getInput()
                     : ((ShapelessRecipes) r).recipeItems);
             for (Object rInput : rInputs) {
-                HashSet<GT_Utility.ItemId> rInputHashed = new HashSet<>();
-                if (rInput instanceof ItemStack) rInputHashed.add(GT_Utility.ItemId.createNoCopy((ItemStack) rInput));
-                else if (rInput instanceof ArrayList) {
-                    // noinspection unchecked
-                    for (ItemStack stack : ((ArrayList<ItemStack>) rInput)) {
-                        rInputHashed.add(GT_Utility.ItemId.createNoCopy(stack));
-                    }
-                } else if (rInput == null) continue;
-                else return false;// custom?
+                HashSet<GT_Utility.ItemId> rInputHashed;
+                try {
+                    rInputHashed = getItemsHashed(rInput);
+                } catch (Exception ex) {
+                    return false;
+                }
                 boolean found = false;
                 for (Iterator<Object> iterator = recipe.iterator(); iterator.hasNext();) {
                     Object o = iterator.next();
@@ -118,15 +127,7 @@ public class GT_Recipe_Remover implements Runnable {
                 throw new RuntimeException(ex);
             }
         }
-        List<ItemStack> outputs;
-        if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
-        else if (aOutput instanceof String) outputs = OreDictionary.getOres((String) aOutput);
-        else throw new IllegalArgumentException("Wrong output");
-
-        HashSet<GT_Utility.ItemId> outputsHashed = new HashSet<>();
-        for (ItemStack output : outputs) {
-            outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
-        }
+        HashSet<GT_Utility.ItemId> outputsHashed = getItemsHashed(aOutput);
 
         Object[][] recipe = new Object[][] { row1, row2, row3 };
         return tList.removeIf(r -> {
@@ -151,15 +152,12 @@ public class GT_Recipe_Remover implements Runnable {
                     Object rRecipe = (x >= recipe[y].length ? null : recipe[y][x]);
                     if (rStack == null ^ rRecipe == null) return false;
                     if (rStack == null) continue;
-                    HashSet<GT_Utility.ItemId> rInputHashed = new HashSet<>();
-                    if (rStack instanceof ItemStack)
-                        rInputHashed.add(GT_Utility.ItemId.createNoCopy((ItemStack) rStack));
-                    else if (rStack instanceof ArrayList) {
-                        // noinspection unchecked
-                        for (ItemStack stack : ((ArrayList<ItemStack>) rStack)) {
-                            rInputHashed.add(GT_Utility.ItemId.createNoCopy(stack));
-                        }
-                    } else return false; // custom?
+                    HashSet<GT_Utility.ItemId> rInputHashed;
+                    try {
+                        rInputHashed = getItemsHashed(rStack);
+                    } catch (Exception ex) {
+                        return false;
+                    }
                     ItemStack toCompare;
                     if (rRecipe instanceof ItemStack) {
                         toCompare = ((ItemStack) rRecipe).copy();
@@ -186,15 +184,7 @@ public class GT_Recipe_Remover implements Runnable {
      * @author kuba6000
      */
     public static void removeRecipeShaped(Object aOutput) {
-        List<ItemStack> outputs;
-        if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
-        else if (aOutput instanceof String) outputs = OreDictionary.getOres((String) aOutput);
-        else throw new IllegalArgumentException("Wrong output");
-
-        HashSet<GT_Utility.ItemId> outputsHashed = new HashSet<>();
-        for (ItemStack output : outputs) {
-            outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
-        }
+        HashSet<GT_Utility.ItemId> outputsHashed = getItemsHashed(aOutput);
 
         tList.removeIf(r -> {
             if (!(r instanceof ShapedOreRecipe) && !(r instanceof ShapedRecipes)) return false;
@@ -214,15 +204,7 @@ public class GT_Recipe_Remover implements Runnable {
      * @author kuba6000
      */
     public static void removeRecipeByOutput(Object aOutput) {
-        List<ItemStack> outputs;
-        if (aOutput instanceof ItemStack) outputs = Collections.singletonList((ItemStack) aOutput);
-        else if (aOutput instanceof String) outputs = OreDictionary.getOres((String) aOutput);
-        else throw new IllegalArgumentException("Wrong output");
-
-        HashSet<GT_Utility.ItemId> outputsHashed = new HashSet<>();
-        for (ItemStack output : outputs) {
-            outputsHashed.add(GT_Utility.ItemId.createNoCopy(output));
-        }
+        HashSet<GT_Utility.ItemId> outputsHashed = getItemsHashed(aOutput);
 
         tList.removeIf(r -> {
             if (!(r instanceof ShapelessOreRecipe) && !(r instanceof ShapelessRecipes)
