@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistillationRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistilleryRecipes;
@@ -79,9 +80,11 @@ public class DistillationRecipes implements Runnable {
                 .fluidInputs(Materials.Biomass.getFluid(40)).fluidOutputs(Materials.Ethanol.getFluid(20))
                 .duration(16 * TICKS).eut(24).addTo(sDistilleryRecipes);
 
-        // null check because looks like the fluid is missing in dev, should find what mod registers it
-        FluidStack fluidMilk = FluidRegistry.getFluidStack("fluidmilk", 1000);
-        if (fluidMilk != null) {
+        // unify milk from Automagy
+
+        if (Automagy.isModLoaded()) {
+            FluidStack fluidMilk = FluidRegistry.getFluidStack("fluidmilk", 1000);
+
             GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
                     .fluidInputs(Materials.Milk.getFluid(1000)).fluidOutputs(fluidMilk.copy()).duration(5 * SECONDS)
                     .eut(2).addTo(sDistilleryRecipes);
