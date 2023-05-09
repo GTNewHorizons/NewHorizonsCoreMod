@@ -35,10 +35,14 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sWiremillRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.oredict.OreDictHelper;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 
@@ -675,29 +679,62 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemPartCFPowder", 1, 0, missing),
                 new Object[] { "dustCalcite", "dustCalcite", "dustStone", "dustClay", "dustQuartzSand", null, null,
                         null, null });
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing),
-                new Object[] { "plateRubber", getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 32767, missing),
-                        "plateRubber", null, "craftingToolSoftHammer", null, null,
-                        getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing), null });
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing),
-                new Object[] { "plateRubber",
-                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 32767, missing), "plateRubber",
-                        null, "craftingToolSoftHammer", null, null,
-                        getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing), null });
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0, missing),
-                new Object[] { "plateRubber",
-                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 32767, missing), "plateRubber",
-                        null, "craftingToolSoftHammer", null, null,
-                        getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing), null });
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0, missing),
-                new Object[] { "plateRubber",
-                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 32767, missing), "plateRubber",
-                        null, "craftingToolSoftHammer", null, null,
-                        getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing), null });
+        GameRegistry.addRecipe(
+                new ArmorRepairRecipe(
+                        getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing),
+                        "aba",
+                        "-c-",
+                        "-d-",
+                        'a',
+                        "plateRubber",
+                        'b',
+                        getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, wildcard, missing),
+                        'c',
+                        "craftingToolSoftHammer",
+                        'd',
+                        getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing)));
+        GameRegistry.addRecipe(
+                new ArmorRepairRecipe(
+                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing),
+                        "aba",
+                        "-c-",
+                        "-d-",
+                        'a',
+                        "plateRubber",
+                        'b',
+                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, wildcard, missing),
+                        'c',
+                        "craftingToolSoftHammer",
+                        'd',
+                        getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing)));
+        GameRegistry.addRecipe(
+                new ArmorRepairRecipe(
+                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0, missing),
+                        "aba",
+                        "-c-",
+                        "-d-",
+                        'a',
+                        "plateRubber",
+                        'b',
+                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, wildcard, missing),
+                        'c',
+                        "craftingToolSoftHammer",
+                        'd',
+                        getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing)));
+        GameRegistry.addRecipe(
+                new ArmorRepairRecipe(
+                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0, missing),
+                        "aba",
+                        "-c-",
+                        "-d-",
+                        'a',
+                        "plateRubber",
+                        'b',
+                        getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, wildcard, missing),
+                        'c',
+                        "craftingToolSoftHammer",
+                        'd',
+                        getModItem(TinkerConstruct.ID, "buckets", 1, 25, missing)));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 4, missing),
@@ -1601,5 +1638,25 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 missing))
                 .noFluidInputs().noFluidOutputs().duration(200).eut(120).addTo(sVacuumRecipes);
 
+    }
+
+    private static class ArmorRepairRecipe extends ShapedOreRecipe {
+
+        public ArmorRepairRecipe(ItemStack result, Object... recipe) {
+            super(result, recipe);
+        }
+
+        @Override
+        public ItemStack getCraftingResult(InventoryCrafting crafting) {
+            ItemStack result = super.getCraftingResult(crafting);
+            for (int i = 0, imax = crafting.getSizeInventory(); i < imax; i++) {
+                ItemStack stack = crafting.getStackInSlot(i);
+                if (stack != null && stack.getItem() == result.getItem()) {
+                    result.stackTagCompound = stack.stackTagCompound;
+                    break;
+                }
+            }
+            return result;
+        }
     }
 }
