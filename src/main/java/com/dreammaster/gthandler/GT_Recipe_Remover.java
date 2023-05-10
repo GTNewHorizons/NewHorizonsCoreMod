@@ -38,10 +38,7 @@ public class GT_Recipe_Remover implements Runnable {
 
     private static void addToBuffer(HashSet<GT_Utility.ItemId> outputs, Function<IRecipe, Boolean> whenToRemove) {
         for (GT_Utility.ItemId output : outputs) {
-            if (bufferMap.containsKey(output)) bufferMap.get(output).add(whenToRemove);
-            else
-                // noinspection ArraysAsListWithZeroOrOneArgument
-                bufferMap.put(output, Arrays.asList(whenToRemove));
+            bufferMap.computeIfAbsent(output, o -> new ArrayList<>()).add(whenToRemove);
         }
         if (GregTech_API.sPostloadFinished) stopBuffering();
     }
