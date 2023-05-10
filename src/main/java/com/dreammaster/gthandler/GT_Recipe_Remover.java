@@ -46,6 +46,7 @@ public class GT_Recipe_Remover implements Runnable {
     private static void stopBuffering() {
         tList.removeIf(r -> {
             ItemStack rCopy = r.getRecipeOutput();
+            if (rCopy == null) return false; // ????????????????????
             if (rCopy.stackTagCompound != null) {
                 rCopy = rCopy.copy();
                 rCopy.stackTagCompound = null;
@@ -106,19 +107,14 @@ public class GT_Recipe_Remover implements Runnable {
                 boolean found = false;
                 for (Iterator<Object> iterator = recipe.iterator(); iterator.hasNext();) {
                     Object o = iterator.next();
-                    ItemStack stack;
-                    if (o instanceof ItemStack) {
-                        stack = ((ItemStack) o).copy();
-                        stack.stackTagCompound = null;
-                    } else if (o instanceof String) {
-                        stack = OreDictionary.getOres((String) o).get(0).copy();
-                        stack.stackTagCompound = null;
-                    } else throw new IllegalArgumentException("Invalid recipe");
-                    if (rInputHashed.contains(GT_Utility.ItemId.createNoCopy(stack))) {
-                        found = true;
-                        iterator.remove();
-                        break;
+                    for (GT_Utility.ItemId id : getItemsHashed(o)) {
+                        if (rInputHashed.contains(id)) {
+                            found = true;
+                            iterator.remove();
+                            break;
+                        }
                     }
+                    if (found) break;
                 }
                 if (!found) return false;
             }
@@ -168,15 +164,14 @@ public class GT_Recipe_Remover implements Runnable {
                     } catch (Exception ex) {
                         return false;
                     }
-                    ItemStack toCompare;
-                    if (rRecipe instanceof ItemStack) {
-                        toCompare = ((ItemStack) rRecipe).copy();
-                        toCompare.stackTagCompound = null;
-                    } else if (rRecipe instanceof String) {
-                        toCompare = OreDictionary.getOres((String) rRecipe).get(0).copy();
-                        toCompare.stackTagCompound = null;
-                    } else throw new IllegalArgumentException("Invalid recipe");
-                    if (!rInputHashed.contains(GT_Utility.ItemId.createNoCopy(toCompare))) return false;
+                    boolean found = false;
+                    for (GT_Utility.ItemId id : getItemsHashed(rRecipe)) {
+                        if (rInputHashed.contains(id)) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) return false;
                 }
             }
 
@@ -4572,9 +4567,9 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeShapedDelayed(getModItem("gendustry", "GeneTemplate", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem("gregtech", "gt.metaitem.01", 1, 8530, missing),
-                new Object[] { "shardApatite", "shardApatite", "shardApatite" },
-                new Object[] { "shardApatite", "shardApatite", "shardApatite" },
-                new Object[] { "shardApatite", "shardApatite", "shardApatite" });
+                new Object[] { "nuggetApatite", "nuggetApatite", "nuggetApatite" },
+                new Object[] { "nuggetApatite", "nuggetApatite", "nuggetApatite" },
+                new Object[] { "nuggetApatite", "nuggetApatite", "nuggetApatite" });
         removeRecipeShapedDelayed(
                 "ingotSilver",
                 new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
