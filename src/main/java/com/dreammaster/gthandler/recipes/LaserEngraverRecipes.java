@@ -3,9 +3,12 @@ package com.dreammaster.gthandler.recipes;
 import static gregtech.api.enums.GT_Values.NF;
 import static gregtech.api.enums.GT_Values.NI;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -19,6 +22,7 @@ import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -28,6 +32,15 @@ public class LaserEngraverRecipes implements Runnable {
 
     @Override
     public void run() {
+        // Energised tesseract
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Tesseract.get(1),
+                        GT_Utility.copyAmount(0, GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01:>", 1, 32105)))
+                .itemOutputs(ItemList.EnergisedTesseract.get(1)).noFluidInputs()
+                .fluidOutputs(MaterialsUEVplus.ExcitedDTEC.getFluid(100)).requiresCleanRoom().duration(30 * SECONDS)
+                .eut(32_000_000).noOptimize().addTo(sLaserEngraverRecipes);
+
         // Mysterious crystal upgrading
         GT_Values.RA.addLaserEngraverRecipe(
                 CustomItemList.MysteriousCrystalPlate.get(9),
