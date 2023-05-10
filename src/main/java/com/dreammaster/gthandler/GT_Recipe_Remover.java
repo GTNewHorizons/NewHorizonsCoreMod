@@ -1,7 +1,25 @@
 package com.dreammaster.gthandler;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
+import static gregtech.api.enums.Mods.NaturesCompass;
+import static gregtech.api.enums.Mods.OpenPrinters;
+import static gregtech.api.enums.Mods.OpenSecurity;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.StevesCarts2;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.Translocator;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.lang.reflect.Field;
@@ -15,10 +33,15 @@ import java.util.function.Function;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.*;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.ShapedRecipes;
+import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+
+import com.dreammaster.main.MainRegistry;
 
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.GT_Values;
@@ -44,6 +67,7 @@ public class GT_Recipe_Remover implements Runnable {
     }
 
     private static void stopBuffering() {
+        int i = tList.size();
         tList.removeIf(r -> {
             ItemStack rCopy = r.getRecipeOutput();
             if (rCopy == null) return false; // ????????????????????
@@ -58,6 +82,7 @@ public class GT_Recipe_Remover implements Runnable {
             }
             return false;
         });
+        MainRegistry.Logger.info("Removed " + (i - tList.size()) + " recipes!");
         bufferMap.clear();
     }
 
@@ -4495,6 +4520,17 @@ public class GT_Recipe_Remover implements Runnable {
                 getModItem("witchery", "ingredient", 1, 130, missing),
                 getModItem("minecraft", "magma_cream", 1, 0, missing),
                 getModItem("minecraft", "blaze_powder", 1, 0, missing));
+        removeRecipeShapelessDelayed(
+                "ingotThauminite",
+                getModItem("thaumicbases", "resource", 1, 0, missing),
+                getModItem("thaumicbases", "resource", 1, 0, missing),
+                getModItem("thaumicbases", "resource", 1, 0, missing),
+                getModItem("thaumicbases", "resource", 1, 0, missing),
+                getModItem("thaumicbases", "resource", 1, 0, missing),
+                getModItem("thaumicbases", "resource", 1, 0, missing),
+                getModItem("thaumicbases", "resource", 1, 0, missing),
+                getModItem("thaumicbases", "resource", 1, 0, missing),
+                getModItem("thaumicbases", "resource", 1, 0, missing));
 
         removeRecipeShapedDelayed(getModItem("BinnieCore", "storage", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem("BinnieCore", "storage", 1, 1, missing));
@@ -4567,9 +4603,12 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeShapedDelayed(getModItem("gendustry", "GeneTemplate", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem("gregtech", "gt.metaitem.01", 1, 8530, missing),
-                new Object[] { "nuggetApatite", "nuggetApatite", "nuggetApatite" },
-                new Object[] { "nuggetApatite", "nuggetApatite", "nuggetApatite" },
-                new Object[] { "nuggetApatite", "nuggetApatite", "nuggetApatite" });
+                new Object[] { getModItem("MagicBees", "beeNugget", 1, 7), getModItem("MagicBees", "beeNugget", 1, 7),
+                        getModItem("MagicBees", "beeNugget", 1, 7) },
+                new Object[] { getModItem("MagicBees", "beeNugget", 1, 7), getModItem("MagicBees", "beeNugget", 1, 7),
+                        getModItem("MagicBees", "beeNugget", 1, 7) },
+                new Object[] { getModItem("MagicBees", "beeNugget", 1, 7), getModItem("MagicBees", "beeNugget", 1, 7),
+                        getModItem("MagicBees", "beeNugget", 1, 7) });
         removeRecipeShapedDelayed(
                 "ingotSilver",
                 new Object[] { "nuggetSilver", "nuggetSilver", "nuggetSilver" },
@@ -4600,17 +4639,6 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" });
-        removeRecipeShapedDelayed(
-                "ingotThauminite",
-                new Object[] { getModItem("thaumicbases", "resource", 1, 0, missing),
-                        getModItem("thaumicbases", "resource", 1, 0, missing),
-                        getModItem("thaumicbases", "resource", 1, 0, missing) },
-                new Object[] { getModItem("thaumicbases", "resource", 1, 0, missing),
-                        getModItem("thaumicbases", "resource", 1, 0, missing),
-                        getModItem("thaumicbases", "resource", 1, 0, missing) },
-                new Object[] { getModItem("thaumicbases", "resource", 1, 0, missing),
-                        getModItem("thaumicbases", "resource", 1, 0, missing),
-                        getModItem("thaumicbases", "resource", 1, 0, missing) });
         removeRecipeShapedDelayed(getModItem("minecraft", "stone_button", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem("minecraft", "string", 1, 0, missing),
@@ -4799,5 +4827,6 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { getModItem("TConstruct", "materials", 1, 12, missing), null, null },
                 new Object[0],
                 new Object[0]);
+
     }
 }
