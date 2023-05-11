@@ -430,21 +430,6 @@ public class DTPFRecipes implements Runnable {
                             eternal_heat);
                 }
 
-                // Energised tesseract
-                GT_Values.RA
-                        .addLaserEngraverRecipe(
-                                new ItemStack[] { ItemList.Tesseract.get(1),
-                                        GT_Utility.copyAmount(
-                                                0L,
-                                                GT_ModHandler
-                                                        .getModItem(GTPlusPlus.ID, "MU-metaitem.01:>", 1, 32105)) },
-                                new FluidStack[] { GT_Values.NF },
-                                new ItemStack[] { ItemList.EnergisedTesseract.get(1) },
-                                new FluidStack[] { MaterialsUEVplus.ExcitedDTEC.getFluid(100L) },
-                                30 * 20,
-                                32_000_000,
-                                true);
-
                 // SpaceTime v1
                 GT_Values.RA.addPlasmaForgeRecipe(
                         new ItemStack[] { ItemList.EnergisedTesseract.get(1) },
