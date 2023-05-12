@@ -219,11 +219,7 @@ public class GT_Recipe_Remover implements Runnable {
      * @author kuba6000
      */
     public static void removeRecipeByOutputDelayed(Object aOutput) {
-        addToBuffer(
-                getItemsHashed(aOutput),
-                r -> r instanceof ShapelessOreRecipe || r instanceof ShapelessRecipes
-                        || r instanceof ShapedOreRecipe
-                        || r instanceof ShapedRecipes);
+        addToBuffer(getItemsHashed(aOutput), r -> true);
     }
 
     public void run() {
