@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLatheRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
@@ -75,16 +74,5 @@ public class LatheRecipes implements Runnable {
                         new ItemStack(Items.bowl, 1),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1))
                 .noFluidInputs().noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sLatheRecipes);
-
-        if (Forestry.isModLoaded()) {
-            for (int i = 0; i < 29; i++) {
-                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Forestry.ID, "slabs", 1, i))
-                        .itemOutputs(
-                                new ItemStack(Items.bowl, 1),
-                                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1))
-                        .noFluidInputs().noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(8)
-                        .addTo(sLatheRecipes);
-            }
-        }
     }
 }
