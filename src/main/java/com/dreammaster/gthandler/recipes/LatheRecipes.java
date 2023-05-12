@@ -77,23 +77,8 @@ public class LatheRecipes implements Runnable {
                 .noFluidInputs().noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sLatheRecipes);
 
         if (Forestry.isModLoaded()) {
-            // todo: investigate why getModItem is null here
-            for (int i = 0; i < 8; i++) {
-                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Forestry.ID, "slabs1", 1, i))
-                        .itemOutputs(
-                                new ItemStack(Items.bowl, 1),
-                                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1))
-                        .noFluidInputs().noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(8)
-                        .addTo(sLatheRecipes);
-
-                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Forestry.ID, "slabs2", 1, i))
-                        .itemOutputs(
-                                new ItemStack(Items.bowl, 1),
-                                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1))
-                        .noFluidInputs().noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(8)
-                        .addTo(sLatheRecipes);
-
-                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Forestry.ID, "slabs3", 1, i))
+            for (int i = 0; i < 29; i++) {
+                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Forestry.ID, "slabs", 1, i))
                         .itemOutputs(
                                 new ItemStack(Items.bowl, 1),
                                 GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1))
