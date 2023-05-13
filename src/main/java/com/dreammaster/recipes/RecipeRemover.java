@@ -123,8 +123,10 @@ public class RecipeRemover {
                     : ((ShapelessRecipes) r).recipeItems);
             for (Object rInput : rInputs) {
                 HashSet<GT_Utility.ItemId> rInputHashed;
+                HashSet<GT_Utility.ItemId> rInputHashedNoWildcard;
                 try {
                     rInputHashed = getItemsHashed(rInput, true);
+                    rInputHashedNoWildcard = getItemsHashed(rInput, false);
                 } catch (Exception ex) {
                     return false;
                 }
@@ -136,6 +138,15 @@ public class RecipeRemover {
                             found = true;
                             iterator.remove();
                             break;
+                        }
+                    }
+                    if (!found) {
+                        for (GT_Utility.ItemId id : getItemsHashed(o, true)) {
+                            if (rInputHashedNoWildcard.contains(id)) {
+                                found = true;
+                                iterator.remove();
+                                break;
+                            }
                         }
                     }
                     if (found) break;
@@ -193,6 +204,15 @@ public class RecipeRemover {
                         if (rInputHashed.contains(id)) {
                             found = true;
                             break;
+                        }
+                    }
+                    if (!found) {
+                        rInputHashed = getItemsHashed(rStack, false);
+                        for (GT_Utility.ItemId id : getItemsHashed(rRecipe, true)) {
+                            if (rInputHashed.contains(id)) {
+                                found = true;
+                                break;
+                            }
                         }
                     }
                     if (!found) return false;
