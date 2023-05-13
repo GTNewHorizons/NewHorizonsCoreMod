@@ -7,9 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
@@ -23,8 +21,6 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 import gregtech.common.items.GT_MetaGenerated_Item_02;
 
@@ -83,30 +79,6 @@ public interface IScriptLoader {
      */
     default boolean addShapelessRecipe(ItemStack aOutput, Object... inputs) {
         try {
-            ItemStack[] tRecipe = new ItemStack[9];
-            int i = 0;
-            for (Object tObject : inputs) {
-                if (tObject == null) continue;
-                if (tObject instanceof ItemStack) {
-                    tRecipe[i] = (ItemStack) tObject;
-                } else if (tObject instanceof String) {
-                    tRecipe[i] = GT_OreDictUnificator.getFirstOre(tObject, 1);
-                    if (tRecipe[i] == null) break;
-                } else if (tObject instanceof Block) {
-                    tRecipe[i] = new ItemStack((Block) tObject);
-                } else if (tObject instanceof Item) {
-                    tRecipe[i] = new ItemStack((Item) tObject);
-                } else if (tObject instanceof ItemData) {
-                    ItemData data = (ItemData) tObject;
-                    tRecipe[i] = GT_OreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
-                } else if (tObject instanceof NBTItem) {
-                    tRecipe[i] = ((NBTItem) tObject).getStack();
-                } else if (tObject instanceof IItemContainer) {
-                    tRecipe[i] = ((IItemContainer) tObject).get(1);
-                }
-                i++;
-            }
-            GT_ModHandler.removeRecipe(tRecipe);
             GameRegistry.addRecipe(new ShapelessUniversalRecipe(aOutput, inputs));
         } catch (Exception e) {
             MainRegistry.Logger.error("a recipe went wrong:");
