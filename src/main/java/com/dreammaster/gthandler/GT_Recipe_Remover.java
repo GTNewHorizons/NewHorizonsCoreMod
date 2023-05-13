@@ -80,8 +80,10 @@ public class GT_Recipe_Remover implements Runnable {
             rCopy = rCopy.copy();
             rCopy.setItemDamage(wildcard);
             GT_Utility.ItemId keyWildcard = GT_Utility.ItemId.createNoCopy(rCopy);
-            if (!bufferMap.containsKey(key) && !bufferMap.containsKey(keyWildcard)) return false;
-            for (Function<IRecipe, Boolean> whenToRemove : bufferMap.get(key)) {
+            List<Function<IRecipe, Boolean>> listWhenToRemove = bufferMap.get(key);
+            if (listWhenToRemove == null) listWhenToRemove = bufferMap.get(keyWildcard);
+            if (listWhenToRemove == null) return false;
+            for (Function<IRecipe, Boolean> whenToRemove : listWhenToRemove) {
                 if (whenToRemove.apply(r)) return true;
             }
             return false;
