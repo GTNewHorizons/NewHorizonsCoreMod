@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
+import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.DraconicEvolution;
@@ -76,7 +77,10 @@ public class GT_Recipe_Remover implements Runnable {
                 rCopy.stackTagCompound = null;
             }
             GT_Utility.ItemId key = GT_Utility.ItemId.createNoCopy(rCopy);
-            if (!bufferMap.containsKey(key)) return false;
+            rCopy = rCopy.copy();
+            rCopy.setItemDamage(wildcard);
+            GT_Utility.ItemId keyWildcard = GT_Utility.ItemId.createNoCopy(rCopy);
+            if (!bufferMap.containsKey(key) && !bufferMap.containsKey(keyWildcard)) return false;
             for (Function<IRecipe, Boolean> whenToRemove : bufferMap.get(key)) {
                 if (whenToRemove.apply(r)) return true;
             }
@@ -86,15 +90,25 @@ public class GT_Recipe_Remover implements Runnable {
         bufferMap.clear();
     }
 
-    private static HashSet<GT_Utility.ItemId> getItemsHashed(Object item) {
+    private static HashSet<GT_Utility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
         HashSet<GT_Utility.ItemId> hashedItems = new HashSet<>();
         if (item instanceof ItemStack) {
             ItemStack iCopy = ((ItemStack) item).copy();
             iCopy.stackTagCompound = null;
             hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+            if (includeWildcardVariants) {
+                iCopy = iCopy.copy();
+                iCopy.setItemDamage(wildcard);
+                hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+            }
         } else if (item instanceof String) {
             for (ItemStack stack : OreDictionary.getOres((String) item)) {
                 hashedItems.add(GT_Utility.ItemId.createNoCopy(stack));
+                if (includeWildcardVariants) {
+                    stack = stack.copy();
+                    stack.setItemDamage(wildcard);
+                    hashedItems.add(GT_Utility.ItemId.createNoCopy(stack));
+                }
             }
         } else if (item instanceof ArrayList) {
             // noinspection unchecked
@@ -102,6 +116,11 @@ public class GT_Recipe_Remover implements Runnable {
                 ItemStack iCopy = stack.copy();
                 iCopy.stackTagCompound = null;
                 hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+                if (includeWildcardVariants) {
+                    iCopy = iCopy.copy();
+                    iCopy.setItemDamage(wildcard);
+                    hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+                }
             }
         } else throw new IllegalArgumentException("Invalid input");
         return hashedItems;
@@ -114,7 +133,7 @@ public class GT_Recipe_Remover implements Runnable {
      */
     public static void removeRecipeShapelessDelayed(Object aOutput, Object... aRecipe) {
         ArrayList<Object> aRecipeList = new ArrayList<>(Arrays.asList(aRecipe));
-        addToBuffer(getItemsHashed(aOutput), r -> {
+        addToBuffer(getItemsHashed(aOutput, false), r -> {
             if (!(r instanceof ShapelessOreRecipe) && !(r instanceof ShapelessRecipes)) return false;
             if (aRecipeList.isEmpty()) return true;
             @SuppressWarnings("unchecked")
@@ -125,14 +144,14 @@ public class GT_Recipe_Remover implements Runnable {
             for (Object rInput : rInputs) {
                 HashSet<GT_Utility.ItemId> rInputHashed;
                 try {
-                    rInputHashed = getItemsHashed(rInput);
+                    rInputHashed = getItemsHashed(rInput, true);
                 } catch (Exception ex) {
                     return false;
                 }
                 boolean found = false;
                 for (Iterator<Object> iterator = recipe.iterator(); iterator.hasNext();) {
                     Object o = iterator.next();
-                    for (GT_Utility.ItemId id : getItemsHashed(o)) {
+                    for (GT_Utility.ItemId id : getItemsHashed(o, false)) {
                         if (rInputHashed.contains(id)) {
                             found = true;
                             iterator.remove();
@@ -164,7 +183,7 @@ public class GT_Recipe_Remover implements Runnable {
             }
         }
         Object[][] recipe = new Object[][] { row1, row2, row3 };
-        addToBuffer(getItemsHashed(aOutput), r -> {
+        addToBuffer(getItemsHashed(aOutput, false), r -> {
             if (!(r instanceof ShapedOreRecipe) && !(r instanceof ShapedRecipes)) return false;
             Object[] inputs = (r instanceof ShapedOreRecipe ? ((ShapedOreRecipe) r).getInput()
                     : ((ShapedRecipes) r).recipeItems);
@@ -185,12 +204,12 @@ public class GT_Recipe_Remover implements Runnable {
                     if (rStack == null) continue;
                     HashSet<GT_Utility.ItemId> rInputHashed;
                     try {
-                        rInputHashed = getItemsHashed(rStack);
+                        rInputHashed = getItemsHashed(rStack, true);
                     } catch (Exception ex) {
                         return false;
                     }
                     boolean found = false;
-                    for (GT_Utility.ItemId id : getItemsHashed(rRecipe)) {
+                    for (GT_Utility.ItemId id : getItemsHashed(rRecipe, false)) {
                         if (rInputHashed.contains(id)) {
                             found = true;
                             break;
@@ -210,7 +229,7 @@ public class GT_Recipe_Remover implements Runnable {
      * @author kuba6000
      */
     public static void removeRecipeShapedDelayed(Object aOutput) {
-        addToBuffer(getItemsHashed(aOutput), r -> r instanceof ShapedOreRecipe || r instanceof ShapedRecipes);
+        addToBuffer(getItemsHashed(aOutput, false), r -> r instanceof ShapedOreRecipe || r instanceof ShapedRecipes);
     }
 
     /**
@@ -219,14 +238,14 @@ public class GT_Recipe_Remover implements Runnable {
      * @author kuba6000
      */
     public static void removeRecipeByOutputDelayed(Object aOutput) {
-        addToBuffer(getItemsHashed(aOutput), r -> true);
+        addToBuffer(getItemsHashed(aOutput, false), r -> true);
     }
 
     public void run() {
         GregTech_API.sAfterGTPostload.add(GT_Recipe_Remover::stopBuffering);
 
         // Vanilla
-        GT_ModHandler.removeRecipeByOutputDelayed(new ItemStack(Blocks.iron_bars, 1, 32767), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(new ItemStack(Blocks.iron_bars, 1, wildcard), true, false, true);
         // AE
         GT_ModHandler.removeRecipeByOutputDelayed(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 2),
@@ -1704,8 +1723,8 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 11318, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 24318, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 20318, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("Backpack", "boundLeather", 1, 32767, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "gravel", 1, 32767, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("Backpack", "boundLeather", 1, wildcard, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "gravel", 1, wildcard, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("EMT", "EMTItems", 1, 10, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("EnderIO", "itemMaterial", 1, 2, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "quartz_block", 1, 0, missing));
@@ -1714,24 +1733,25 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeFurnaceSmelting(getModItem("FloodLights", "rawFilament", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("GalacticraftMars", "item.itemBasicAsteroids", 1, 4, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("GalacticraftMars", "tile.asteroidsBlock", 1, 4, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("GalacticraftCore", "item.meteoricIronRaw", 1, 32767, missing));
+        GT_ModHandler
+                .removeFurnaceSmelting(getModItem("GalacticraftCore", "item.meteoricIronRaw", 1, wildcard, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("GalacticraftMars", "item.null", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "chainmail_boots", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "blockRubWood", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "slime_ball", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemMugCoffee", 1, 32767, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemMugCoffee", 1, wildcard, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemRecipePart", 1, 4, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemOreIridium", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "obsidian", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "clay_ball", 1, 32767, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "netherrack", 1, 32767, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "clay_ball", 1, wildcard, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "netherrack", 1, wildcard, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("gregtech", "gt.metaitem.02", 1, 32561, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "oreBerries", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "oreBerries", 1, 1, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "oreBerries", 1, 2, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "oreBerries", 1, 3, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "oreBerries", 1, 4, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "sand", 1, 32767, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "sand", 1, wildcard, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "soul_sand", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Natura", "heatsand", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Natura", "tree", 1, 0, missing));
@@ -1741,7 +1761,7 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeFurnaceSmelting(getModItem("Natura", "redwood", 1, 0, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Natura", "redwood", 1, 1, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Natura", "redwood", 1, 2, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "stone", 1, 32767, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("minecraft", "stone", 1, wildcard, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("ProjRed|Core", "projectred.core.part", 1, 41, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("ProjRed|Core", "projectred.core.part", 1, 42, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("ProjRed|Core", "projectred.core.part", 1, 43, missing));
@@ -1771,7 +1791,7 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemDust", 1, 11, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemPlates", 1, 7, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Railcraft", "dust", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("TwilightForest", "tile.GiantObsidian", 1, 32767, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("TwilightForest", "tile.GiantObsidian", 1, wildcard, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("Railcraft", "machine.beta", 1, 10, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("EnderIO", "itemPowderIngot", 1, 7, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("IC2", "itemDensePlates", 1, 7, missing));
@@ -1790,7 +1810,7 @@ public class GT_Recipe_Remover implements Runnable {
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "materials", 1, 40, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "CraftedSoil", 1, 1, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "CraftedSoil", 1, 6, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem("TwilightForest", "item.ironwoodRaw", 1, 32767, missing));
+        GT_ModHandler.removeFurnaceSmelting(getModItem("TwilightForest", "item.ironwoodRaw", 1, wildcard, missing));
 
         removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockFluix", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockQuartz", 1, 0, missing));
@@ -1943,16 +1963,16 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("Avaritia", "Resource", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem("Avaritia", "Resource", 1, 6, missing));
         removeRecipeByOutputDelayed(getModItem("Avaritia", "Resource", 1, 7, missing));
-        removeRecipeByOutputDelayed(getModItem("eternalsingularity", "combined_singularity", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Backpack", "backpack", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Backpack", "workbenchbackpack", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("eternalsingularity", "combined_singularity", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Backpack", "backpack", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Backpack", "workbenchbackpack", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("Backpack", "boundLeather", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("betterbuilderswands", "wandStone", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("betterbuilderswands", "wandIron", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("betterbuilderswands", "wandDiamond", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("betterbuilderswands", "wandUnbreakable", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("betterbuilderswands", "wandUnbreakable", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("questbook", "ItemQuestBook", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("BinnieCore", "fieldKit", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("BinnieCore", "fieldKit", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "gemOre", 1, 11, missing));
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "gems", 1, 5, missing));
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "jarEmpty", 1, 0, missing));
@@ -2150,7 +2170,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("Botany", "trowelIron", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Botany", "trowelGold", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Botany", "trowelDiamond", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Botany", "insulatedTube", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Botany", "insulatedTube", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("Botany", "soilMeter", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("CarpentersBlocks", "blockCarpentersBlock", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("CarpentersBlocks", "blockCarpentersCollapsibleBlock", 1, 0, missing));
@@ -2216,7 +2236,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("AdvancedSolarPanel", "asp_crafting_items", 1, 7, missing));
         removeRecipeByOutputDelayed(getModItem("AdvancedSolarPanel", "asp_crafting_items", 1, 8, missing));
         removeRecipeByOutputDelayed(getModItem("Thaumcraft", "blockCosmeticSolid", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem("EMT", "DiamondChainsaw", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("EMT", "DiamondChainsaw", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("EMT", "EMTItems", 1, 5, missing));
         removeRecipeByOutputDelayed(getModItem("EMT", "FeatherWing", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EMT", "EMTItems", 1, 12, missing));
@@ -2225,7 +2245,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("EMT", "EMTItems", 1, 9, missing));
         removeRecipeByOutputDelayed(getModItem("EMT", "EMTItems", 1, 10, missing));
         removeRecipeByOutputDelayed(getModItem("EMT", "EMTItems", 1, 13, missing));
-        removeRecipeByOutputDelayed(getModItem("EMT", "Omnitool", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("EMT", "Omnitool", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "blockStirlingGenerator", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "blockCombustionGenerator", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "blockZombieGenerator", 1, 0, missing));
@@ -2236,7 +2256,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("EnderIO", "blockSolarPanel", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "blockSagMill", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "blockAlloySmelter", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("EnderIO", "blockCapBank", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("EnderIO", "blockCapBank", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "blockPainter", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "blockCrafter", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemBasicCapacitor", 1, 6, missing));
@@ -2351,12 +2371,12 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemFunctionUpgrade", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemYetaWrench", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemConduitProbe", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("EnderIO", "itemTravelStaff", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("EnderIO", "itemTravelStaff", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemXpTransfer", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemSoulVessel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemGliderWing", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemGliderWing", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem("EnderIO", "itemMagnet", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("EnderIO", "itemMagnet", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemOCConduit", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemMachinePart", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemMachinePart", 1, 3, missing));
@@ -2406,10 +2426,10 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("ExtraTrees", "misc", 1, 11, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraTrees", "misc", 1, 5, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraTrees", "misc", 1, 13, missing));
-        removeRecipeByOutputDelayed(getModItem("ExtraTrees", "door", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("ExtraTrees", "gate", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("ExtraTrees", "fence", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("ExtraTrees", "multifence", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("ExtraTrees", "door", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("ExtraTrees", "gate", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("ExtraTrees", "fence", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("ExtraTrees", "multifence", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "angelRing", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "angelRing", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "angelRing", 1, 2, missing));
@@ -2526,9 +2546,9 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "spike_base", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "spike_base_gold", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "spike_base_diamond", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "generator", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "generator.8", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "generator.64", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "generator", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "generator.8", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "generator.64", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "heatingElement", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "nodeUpgrade", 1, 10, missing));
         removeRecipeByOutputDelayed(getModItem("ExtraUtilities", "golden_lasso", 1, 0, missing));
@@ -2618,7 +2638,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("Forestry", "ambrosia", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "honeyPot", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "letters", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Forestry", "fencesFireproof", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Forestry", "fencesFireproof", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "catalogue", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "apiaristBag", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "lepidopteristBag", 1, 0, missing));
@@ -2640,8 +2660,8 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("Forestry", "alveary", 1, 7, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "arboriculture", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "lepidopterology", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Forestry", "fences", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Forestry", "cart.beehouse", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Forestry", "fences", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Forestry", "cart.beehouse", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("gregtech", "gt.blockmachines", 1, 875, missing));
         removeRecipeByOutputDelayed(getModItem("miscutils", "frameAccelerated", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("miscutils", "frameMutagenic", 1, 0, missing));
@@ -2690,9 +2710,9 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("gendustry", "PowerModule", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("gendustry", "GeneticsProcessor", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("gendustry", "EnvProcessor", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("gendustry", "ApiaryUpgrade", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("gendustry", "IndustrialGrafter", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("gendustry", "IndustrialScoop", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("gendustry", "ApiaryUpgrade", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("gendustry", "IndustrialGrafter", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("gendustry", "IndustrialScoop", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("gendustry", "MutagenTank", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("gendustry", "BeeReceptacle", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("gendustry", "PowerModule", 1, 0, missing));
@@ -2730,13 +2750,13 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("GraviSuite", "itemSimpleItem", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("GraviSuite", "itemSimpleItem", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem("GraviSuite", "itemSimpleItem", 1, 5, missing));
-        removeRecipeByOutputDelayed(getModItem("GraviSuite", "vajra", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("GraviSuite", "vajra", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("GraviSuite", "itemSimpleItem", 1, 6, missing));
         removeRecipeByOutputDelayed(getModItem("GraviSuite", "advChainsaw", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("GraviSuite", "advDDrill", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("GraviSuite", "graviTool", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("GraviSuite", "ultimateLappack", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("gravisuiteneo", "epicLappack", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("gravisuiteneo", "epicLappack", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("gregtech", "gt.metaitem.02", 1, 500, missing));
         removeRecipeByOutputDelayed(getModItem("gregtech", "gt.metaitem.02", 1, 1500, missing));
         removeRecipeByOutputDelayed(getModItem("gregtech", "gt.metaitem.02", 1, 2500, missing));
@@ -2791,7 +2811,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("HardcoreEnderExpansion", "curse", 1, 265, missing));
         removeRecipeByOutputDelayed(getModItem("HardcoreEnderExpansion", "curse", 1, 10, missing));
         removeRecipeByOutputDelayed(getModItem("HardcoreEnderExpansion", "curse", 1, 266, missing));
-        removeRecipeByOutputDelayed(getModItem("harvestcraft", "sink", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("harvestcraft", "sink", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("harvestcraft", "market", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("harvestcraft", "spamcompressedsaltBlockalt", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("harvestcraft", "oven", 1, 0, missing));
@@ -2887,7 +2907,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("IC2", "itemPartCoalChunk", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemPartCarbonMesh", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "blockAlloyGlass", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "itemToolIridiumDrill", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "itemToolIridiumDrill", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemToolWrenchElectric", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "windmeter", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemRecipePart", 1, 7, missing));
@@ -2902,19 +2922,19 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("IC2", "itemupgradekit", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemFluidCell", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "blockMachine", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorReflector", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorReflectorThick", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVent", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVentCore", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVentGold", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVentDiamond", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVentSpread", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorHeatSwitch", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorHeatSwitchCore", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorHeatSwitchSpread", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorHeatSwitchDiamond", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCondensator", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCondensatorLap", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorReflector", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorReflectorThick", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVent", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVentCore", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVentGold", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVentDiamond", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorVentSpread", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorHeatSwitch", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorHeatSwitchCore", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorHeatSwitchSpread", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorHeatSwitchDiamond", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCondensator", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCondensatorLap", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemTreetap", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "blockRubber", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemRecipePart", 1, 6, missing));
@@ -2985,9 +3005,9 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("IC2", "itemArmorHazmatChestplate", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemArmorHazmatLeggings", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemArmorHazmatLeggings", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCoolantSimple", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCoolantTriple", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCoolantSix", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCoolantSimple", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCoolantTriple", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "reactorCoolantSix", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemArmorRubBoots", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemStaticBoots", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "blockGenerator", 1, 7, missing));
@@ -3017,8 +3037,8 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("IC2", "itemContainmentbox", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemToolbox", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemPlutoniumSmall", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "itemMOX", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("IC2", "itemUran", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "itemMOX", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("IC2", "itemUran", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemRecipePart", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemRecipePart", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem("IC2", "itemRecipePart", 1, 2, missing));
@@ -3089,7 +3109,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("MagicBees", "miscResources", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem("MagicBees", "miscResources", 1, 6, missing));
         removeRecipeByOutputDelayed(getModItem("MagicBees", "moonDial", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("MagicBees", "magnet", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("MagicBees", "magnet", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("MagicBees", "magicbees.enchantedEarth", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("malisisdoors", "iron_trapdoor", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("malisisdoors", "sliding_trapdoor", 1, 0, missing));
@@ -3150,7 +3170,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("TMechworks", "SignalBus", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TMechworks", "SignalTerminal", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TMechworks", "LengthWire", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("TMechworks", "SpoolWire", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("TMechworks", "SpoolWire", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("minecraft", "chest", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("minecraft", "trapped_chest", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("minecraft", "crafting_table", 1, 0, missing));
@@ -3337,14 +3357,14 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("minecraft", "nether_star", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("minecraft", "wooden_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("minecraft", "iron_door", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "planks", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "natura.stick", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "Natura.workbench", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "planks", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "natura.stick", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "Natura.workbench", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("Natura", "natura.flintandblaze", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "Natura.bookshelf", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "Natura.fence", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "plankSlab1", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "plankSlab2", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "Natura.bookshelf", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "Natura.fence", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "plankSlab1", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "plankSlab2", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("Natura", "pressureplate.eucalyptus", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Natura", "pressureplate.sakura", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Natura", "pressureplate.ghostwood", 1, 0, missing));
@@ -3398,8 +3418,8 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("Natura", "fenceGate.willow", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Natura", "fenceGate.darkwood", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Natura", "fenceGate.fusewood", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "natura.emptybowl", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("Natura", "redwoodDoorItem", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "natura.emptybowl", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "redwoodDoorItem", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("harvestcraft", "blackberryItem", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("harvestcraft", "blueberryItem", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("harvestcraft", "raspberryItem", 1, 0, missing));
@@ -3499,7 +3519,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("OpenBlocks", "tastyClay", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("OpenBlocks", "cursor", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("openglasses", "openglassesterminal", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("openglasses", "openglasses", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("openglasses", "openglasses", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("openmodularturrets", "baseTierWood", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("openmodularturrets", "baseTierOneBlock", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("openmodularturrets", "baseTierTwoBlock", 1, 0, missing));
@@ -3582,10 +3602,10 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("ProjRed|Core", "projectred.core.part", 1, 56, missing));
         removeRecipeByOutputDelayed(getModItem("ProjRed|Exploration", "projectred.exploration.stone", 1, 11, missing));
         removeRecipeByOutputDelayed(
-                getModItem("ProjRed|Exploration", "projectred.exploration.backpack", 1, 32767, missing));
+                getModItem("ProjRed|Exploration", "projectred.exploration.backpack", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("ProjRed|Exploration", "projectred.exploration.barrel", 1, 0, missing));
         removeRecipeByOutputDelayed(
-                getModItem("ProjRed|Transmission", "projectred.transmission.wire", 1, 32767, missing));
+                getModItem("ProjRed|Transmission", "projectred.transmission.wire", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("ProjRed|Exploration", "projectred.exploration.sawgold", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ProjRed|Exploration", "projectred.exploration.sawruby", 1, 0, missing));
         removeRecipeByOutputDelayed(
@@ -3741,7 +3761,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("Railcraft", "cube", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "slab", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "anvil", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Railcraft", "track", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Railcraft", "track", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "track.elevator", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "signal", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "signal", 1, 2, missing));
@@ -3817,7 +3837,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("Railcraft", "cart.track.layer", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "cart.track.remover", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "firestone.cut", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Railcraft", "firestone.refined", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Railcraft", "firestone.refined", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "cart.redstone.flux", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "machine.gamma", 1, 10, missing));
         removeRecipeByOutputDelayed(getModItem("Railcraft", "machine.gamma", 1, 11, missing));
@@ -3833,8 +3853,8 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("RandomThings", "advancedItemCollector", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("RandomThings", "dyeingMachine", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("RandomThings", "playerinterface", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("RandomThings", "filter", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("RandomThings", "ingredient", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("RandomThings", "filter", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("RandomThings", "ingredient", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("RandomThings", "fertilizedDirt", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("RandomThings", "fluidDisplay", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("RandomThings", "advancedFluidDisplay", 1, 0, missing));
@@ -3851,8 +3871,8 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("RIO", "item.chip.location", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("RIO", "item.io_tool", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("RIO", "item.blank_plate", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("RIO", "item.chip.transfer", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("RIO", "item.chip.upgrade", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("RIO", "item.chip.transfer", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("RIO", "item.chip.upgrade", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("RIO", "item.pda", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("RIO", "item.remoteAccessor", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("RIO", "item.linker", 1, 0, missing));
@@ -4039,7 +4059,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("TaintedMagic", "ItemShadowmetalAxe", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TaintedMagic", "ItemShadowmetalSpade", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TaintedMagic", "ItemShadowmetalSword", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("Thaumcraft", "blockCrystal", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("Thaumcraft", "blockCrystal", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Thaumcraft", "blockCosmeticOpaque", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem("Thaumcraft", "WandCap", 1, 0, missing));
@@ -4083,7 +4103,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("thaumicenergistics", "storage.essentia", 1, 3, missing));
         removeRecipeByOutputDelayed(
                 getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("ThaumicExploration", "blankSeal", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("ThaumicExploration", "blankSeal", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("ThaumicTinkerer", "shareBook", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ThaumicTinkerer", "darkQuartzItem", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ThaumicTinkerer", "darkQuartz", 1, 0, missing));
@@ -4152,8 +4172,8 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("TConstruct", "trap.punji", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "materials", 1, 22, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "MeatBlock", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("TConstruct", "WoolSlab1", 1, 32767, missing));
-        removeRecipeByOutputDelayed(getModItem("TConstruct", "WoolSlab2", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("TConstruct", "WoolSlab1", 1, wildcard, missing));
+        removeRecipeByOutputDelayed(getModItem("TConstruct", "WoolSlab2", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "CraftedSoil", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "SearedSlab", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "SearedSlab", 1, 1, missing));
@@ -4234,7 +4254,7 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("TConstruct", "trap.barricade.spruce", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "trap.barricade.birch", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "trap.barricade.jungle", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("TConstruct", "explosive.slime", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("TConstruct", "explosive.slime", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "slime.channel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "blood.channel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "slime.pad", 1, 0, missing));
@@ -4243,11 +4263,11 @@ public class GT_Recipe_Remover implements Runnable {
         removeRecipeByOutputDelayed(getModItem("TConstruct", "CraftingSlab", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "ToolStationBlock", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "CraftingSlab", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem("TConstruct", "ToolStationBlock", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("TConstruct", "ToolStationBlock", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "CraftingSlab", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "CraftingSlab", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "CraftingSlab", 1, 3, missing));
-        removeRecipeByOutputDelayed(getModItem("TConstruct", "ToolForgeBlock", 1, 32767, missing));
+        removeRecipeByOutputDelayed(getModItem("TConstruct", "ToolForgeBlock", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "CraftingSlab", 1, 5, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "FurnaceSlab", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TConstruct", "CraftedSoil", 1, 0, missing));
@@ -4757,7 +4777,7 @@ public class GT_Recipe_Remover implements Runnable {
                         getModItem("Natura", "barleyFood", 1, 6, missing) },
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem("OpenBlocks", "paintBrush", 1, 0, missing));
-        removeRecipeShapedDelayed(getModItem("OpenBlocks", "goldenEye", 1, 32767, missing));
+        removeRecipeShapedDelayed(getModItem("OpenBlocks", "goldenEye", 1, wildcard, missing));
         removeRecipeShapedDelayed(getModItem("Railcraft", "cart.energy.batbox", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem("Railcraft", "cart.energy.cesu", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem("Railcraft", "cart.energy.mfe", 1, 0, missing));
@@ -4785,8 +4805,8 @@ public class GT_Recipe_Remover implements Runnable {
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" },
                 new Object[] { "nuggetThaumium", "nuggetThaumium", "nuggetThaumium" });
-        removeRecipeShapedDelayed(getModItem("thaumicbases", "crystalSlab", 1, 32767, missing));
-        removeRecipeShapedDelayed(getModItem("thaumicbases", "genericSlab", 1, 32767, missing));
+        removeRecipeShapedDelayed(getModItem("thaumicbases", "crystalSlab", 1, wildcard, missing));
+        removeRecipeShapedDelayed(getModItem("thaumicbases", "genericSlab", 1, wildcard, missing));
         removeRecipeShapedDelayed(
                 "ingotTin",
                 new Object[] { "nuggetTin", "nuggetTin", "nuggetTin" },
