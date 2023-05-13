@@ -18,9 +18,9 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sWiremillRecipes;
+import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
 import java.util.List;
@@ -2186,21 +2186,21 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2516, missing),
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sChemicalRecipes);
+                .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(UniversalChemical);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 3, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2017, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sChemicalRecipes);
+                .addTo(UniversalChemical);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 3, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2017, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 1000)).noFluidOutputs().duration(700)
-                .eut(30).addTo(sChemicalRecipes);
+                .eut(30).addTo(UniversalChemical);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 8, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);

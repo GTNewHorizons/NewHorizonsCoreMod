@@ -17,7 +17,7 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalRecipes;
+import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
 import java.util.List;
@@ -254,28 +254,28 @@ public class ScriptRandomThings implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(1200).eut(30)
-                .addTo(sChemicalRecipes);
+                .addTo(UniversalChemical);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "dirt", 1, 0, missing),
                         getModItem(Minecraft.ID, "dye", 4, 15, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "fertilizedDirt", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sChemicalRecipes);
+                .addTo(UniversalChemical);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "dirt", 1, 0, missing),
                         getModItem(Forestry.ID, "fertilizerCompound", 2, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "fertilizedDirt", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sChemicalRecipes);
+                .addTo(UniversalChemical);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "dirt", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemFertilizer", 2, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "fertilizedDirt", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sChemicalRecipes);
+                .addTo(UniversalChemical);
 
     }
 }
