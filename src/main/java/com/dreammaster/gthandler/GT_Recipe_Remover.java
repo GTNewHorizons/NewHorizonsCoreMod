@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.function.Function;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
@@ -78,7 +79,7 @@ public class GT_Recipe_Remover implements Runnable {
             }
             GT_Utility.ItemId key = GT_Utility.ItemId.createNoCopy(rCopy);
             rCopy = rCopy.copy();
-            rCopy.setItemDamage(wildcard);
+            Items.feather.setDamage(rCopy, wildcard);
             GT_Utility.ItemId keyWildcard = GT_Utility.ItemId.createNoCopy(rCopy);
             List<Function<IRecipe, Boolean>> listWhenToRemove = bufferMap.get(key);
             if (listWhenToRemove == null) listWhenToRemove = bufferMap.get(keyWildcard);
@@ -100,7 +101,7 @@ public class GT_Recipe_Remover implements Runnable {
             hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
             if (includeWildcardVariants) {
                 iCopy = iCopy.copy();
-                iCopy.setItemDamage(wildcard);
+                Items.feather.setDamage(iCopy, wildcard);
                 hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
             }
         } else if (item instanceof String) {
@@ -108,7 +109,7 @@ public class GT_Recipe_Remover implements Runnable {
                 hashedItems.add(GT_Utility.ItemId.createNoCopy(stack));
                 if (includeWildcardVariants) {
                     stack = stack.copy();
-                    stack.setItemDamage(wildcard);
+                    Items.feather.setDamage(stack, wildcard);
                     hashedItems.add(GT_Utility.ItemId.createNoCopy(stack));
                 }
             }
@@ -120,7 +121,7 @@ public class GT_Recipe_Remover implements Runnable {
                 hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
                 if (includeWildcardVariants) {
                     iCopy = iCopy.copy();
-                    iCopy.setItemDamage(wildcard);
+                    Items.feather.setDamage(iCopy, wildcard);
                     hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
                 }
             }
