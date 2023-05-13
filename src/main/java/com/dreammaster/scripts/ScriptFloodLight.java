@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
@@ -32,40 +31,66 @@ public class ScriptFloodLight implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(FloodLights.ID, "electricFloodlight", 1, 0, missing),
-                new Object[] { "plateSteel", "lensGlass", "plateSteel", "circuitBasic",
-                        getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing), "circuitBasic",
-                        "plateSteel", "wireGt01Copper", "plateSteel" });
+                "plateSteel",
+                "lensGlass",
+                "plateSteel",
+                "circuitBasic",
+                getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
+                "circuitBasic",
+                "plateSteel",
+                "wireGt01Copper",
+                "plateSteel");
         addShapedRecipe(
                 getModItem(FloodLights.ID, "carbonFloodlight", 1, 0, missing),
-                new Object[] { "plateSteel", "lensGlass", "plateSteel", "circuitBasic",
-                        getModItem(FloodLights.ID, "carbonLantern", 1, 0, missing), "circuitBasic", "plateSteel",
-                        "wireGt01Copper", "plateSteel" });
+                "plateSteel",
+                "lensGlass",
+                "plateSteel",
+                "circuitBasic",
+                getModItem(FloodLights.ID, "carbonLantern", 1, 0, missing),
+                "circuitBasic",
+                "plateSteel",
+                "wireGt01Copper",
+                "plateSteel");
         addShapedRecipe(
                 getModItem(FloodLights.ID, "uvFloodlight", 1, 0, missing),
-                new Object[] { "plateSteel", "lensDiamond", "plateSteel", "circuitBasic",
-                        getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing), "circuitBasic",
-                        "plateSteel", "wireGt01Copper", "plateSteel" });
+                "plateSteel",
+                "lensDiamond",
+                "plateSteel",
+                "circuitBasic",
+                getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
+                "circuitBasic",
+                "plateSteel",
+                "wireGt01Copper",
+                "plateSteel");
         addShapedRecipe(
                 getModItem(FloodLights.ID, "carbonLantern", 1, 0, missing),
-                new Object[] { "paneGlass", "paneGlass", "paneGlass",
-                        getModItem(FloodLights.ID, "mantle", 1, 0, missing),
-                        getModItem(FloodLights.ID, "carbonDissolver", 1, 0, missing),
-                        getModItem(FloodLights.ID, "mantle", 1, 0, missing), "paneGlass",
-                        getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing), "paneGlass" });
-        addShapelessCraftingRecipe(
+                "paneGlass",
+                "paneGlass",
+                "paneGlass",
+                getModItem(FloodLights.ID, "mantle", 1, 0, missing),
+                getModItem(FloodLights.ID, "carbonDissolver", 1, 0, missing),
+                getModItem(FloodLights.ID, "mantle", 1, 0, missing),
+                "paneGlass",
+                getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
+                "paneGlass");
+        addShapelessRecipe(
                 getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 2, 0, missing),
-                new Object[] { getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 1, missing),
-                new Object[] { getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 0, missing),
-                        getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 0, missing) });
+                getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 0, missing),
+                getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(FloodLights.ID, "growLight", 1, 0, missing),
-                new Object[] { getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8, missing),
-                        getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing), "circuitAdvanced",
-                        getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing), "circuitAdvanced",
-                        "plateTitanium", "wireGt01Cobalt", "plateTitanium" });
+                getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8, missing),
+                getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
+                "circuitAdvanced",
+                "plateTitanium",
+                "wireGt01Cobalt",
+                "plateTitanium");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

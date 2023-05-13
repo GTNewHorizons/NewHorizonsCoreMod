@@ -45,219 +45,331 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "baseTierWood", 1, 0, missing),
-                new Object[] { "plateIron", "stoneCobble", "plateIron", "plankWood",
-                        getModItem(OpenModularTurrets.ID, "sensorTierOneItem", 1, 0, missing), "plankWood", "plateIron",
-                        "stoneCobble", "plateIron" });
+                "plateIron",
+                "stoneCobble",
+                "plateIron",
+                "plankWood",
+                getModItem(OpenModularTurrets.ID, "sensorTierOneItem", 1, 0, missing),
+                "plankWood",
+                "plateIron",
+                "stoneCobble",
+                "plateIron");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "baseTierOneBlock", 1, 0, missing),
-                new Object[] { "plateSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32501, missing), "plateSteel",
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "sensorTierTwoItem", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing), "plateSteel",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing), "plateSteel" });
+                "plateSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32501, missing),
+                "plateSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "sensorTierTwoItem", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateSteel",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                "plateSteel");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "baseTierTwoBlock", 1, 0, missing),
-                new Object[] { "plateDarkSteel",
-                        createItemStack(
-                                EnderIO.ID,
-                                "blockCapBank",
-                                1,
-                                1,
-                                "{type:\"SIMPLE\",storedEnergyRF:0}",
-                                missing),
-                        "plateDarkSteel", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "sensorTierThreeItem", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing), "plateDarkSteel",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing), "plateDarkSteel" });
+                "plateDarkSteel",
+                createItemStack(EnderIO.ID, "blockCapBank", 1, 1, "{type:\"SIMPLE\",storedEnergyRF:0}", missing),
+                "plateDarkSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "sensorTierThreeItem", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                "plateDarkSteel");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "baseTierThreeBlock", 1, 0, missing),
-                new Object[] { "plateEnergeticAlloy",
-                        createItemStack(
-                                EnderIO.ID,
-                                "blockCapBank",
-                                1,
-                                2,
-                                "{type:\"ACTIVATED\",storedEnergyRF:0}",
-                                missing),
-                        "plateEnergeticAlloy", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "sensorTierFourItem", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing), "plateEnergeticAlloy",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing), "plateEnergeticAlloy" });
+                "plateEnergeticAlloy",
+                createItemStack(EnderIO.ID, "blockCapBank", 1, 2, "{type:\"ACTIVATED\",storedEnergyRF:0}", missing),
+                "plateEnergeticAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "sensorTierFourItem", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateEnergeticAlloy",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
+                "plateEnergeticAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "baseTierFourBlock", 1, 0, missing),
-                new Object[] { "plateVibrantAlloy",
-                        createItemStack(
-                                EnderIO.ID,
-                                "blockCapBank",
-                                1,
-                                3,
-                                "{type:\"VIBRANT\",storedEnergyRF:0}",
-                                missing),
-                        "plateVibrantAlloy", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "sensorTierFiveItem", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing), "plateVibrantAlloy",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing), "plateVibrantAlloy" });
+                "plateVibrantAlloy",
+                createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
+                "plateVibrantAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "sensorTierFiveItem", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateVibrantAlloy",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                "plateVibrantAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "sensorTierOneItem", 1, 0, missing),
-                new Object[] { "plateBronze", "dustRedstone", "plateBronze", "craftingRedstoneTorch", "plateIron",
-                        "craftingRedstoneTorch", "plateBronze", "dustRedstone", "plateBronze" });
+                "plateBronze",
+                "dustRedstone",
+                "plateBronze",
+                "craftingRedstoneTorch",
+                "plateIron",
+                "craftingRedstoneTorch",
+                "plateBronze",
+                "dustRedstone",
+                "plateBronze");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "sensorTierTwoItem", 1, 0, missing),
-                new Object[] { "plateSteel", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing), "plateSteel",
-                        "circuitBasic", getModItem(OpenModularTurrets.ID, "sensorTierOneItem", 1, 0, missing),
-                        "circuitBasic", "plateSteel", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateSteel" });
+                "plateSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateSteel",
+                "circuitBasic",
+                getModItem(OpenModularTurrets.ID, "sensorTierOneItem", 1, 0, missing),
+                "circuitBasic",
+                "plateSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateSteel");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "sensorTierThreeItem", 1, 0, missing),
-                new Object[] { "plateDarkSteel", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateDarkSteel", "circuitGood",
-                        getModItem(OpenModularTurrets.ID, "sensorTierTwoItem", 1, 0, missing), "circuitGood",
-                        "plateDarkSteel", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateDarkSteel" });
+                "plateDarkSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateDarkSteel",
+                "circuitGood",
+                getModItem(OpenModularTurrets.ID, "sensorTierTwoItem", 1, 0, missing),
+                "circuitGood",
+                "plateDarkSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateDarkSteel");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "sensorTierFourItem", 1, 0, missing),
-                new Object[] { "plateEnergeticAlloy", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateEnergeticAlloy", "circuitAdvanced",
-                        getModItem(OpenModularTurrets.ID, "sensorTierThreeItem", 1, 0, missing), "circuitAdvanced",
-                        "plateEnergeticAlloy", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateEnergeticAlloy" });
+                "plateEnergeticAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateEnergeticAlloy",
+                "circuitAdvanced",
+                getModItem(OpenModularTurrets.ID, "sensorTierThreeItem", 1, 0, missing),
+                "circuitAdvanced",
+                "plateEnergeticAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateEnergeticAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "sensorTierFiveItem", 1, 0, missing),
-                new Object[] { "plateVibrantAlloy", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateVibrantAlloy", "circuitMaster",
-                        getModItem(OpenModularTurrets.ID, "sensorTierFourItem", 1, 0, missing), "circuitMaster",
-                        "plateVibrantAlloy", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateVibrantAlloy" });
+                "plateVibrantAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateVibrantAlloy",
+                "circuitMaster",
+                getModItem(OpenModularTurrets.ID, "sensorTierFourItem", 1, 0, missing),
+                "circuitMaster",
+                "plateVibrantAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateVibrantAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "screwIron", "springIron",
-                        "screwIron", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "craftingPiston",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "screwIron",
+                "springIron",
+                "screwIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "craftingPiston",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "ringIron", "craftingToolWrench",
-                        "ringIron", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "ringIron",
+                "craftingToolWrench",
+                "ringIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "disposeItemTurret", 1, 0, missing),
-                new Object[] { "craftingToolWrench", getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing),
-                        "craftingToolHardHammer", "plateIron",
-                        getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing), "plateIron", "stoneCobble",
-                        "craftingRedstoneTorch", "stoneCobble" });
+                "craftingToolWrench",
+                getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing),
+                "craftingToolHardHammer",
+                "plateIron",
+                getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing),
+                "plateIron",
+                "stoneCobble",
+                "craftingRedstoneTorch",
+                "stoneCobble");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "potatoCannonTurret", 1, 0, missing),
-                new Object[] { "craftingToolWrench", getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing),
-                        "craftingToolHardHammer", "plateIron",
-                        getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing), "plateIron",
-                        "craftingRedstoneTorch", getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing),
-                        "craftingRedstoneTorch" });
+                "craftingToolWrench",
+                getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing),
+                "craftingToolHardHammer",
+                "plateIron",
+                getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing),
+                "plateIron",
+                "craftingRedstoneTorch",
+                getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing),
+                "craftingRedstoneTorch");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "machineGunTurret", 1, 0, missing),
-                new Object[] { "craftingToolWrench", getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing),
-                        "craftingToolHardHammer", "plateSteel",
-                        getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing), "plateSteel",
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "chamberTierTwo", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing) });
+                "craftingToolWrench",
+                getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing),
+                "craftingToolHardHammer",
+                "plateSteel",
+                getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing),
+                "plateSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "chamberTierTwo", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing));
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "incendiaryTurret", 1, 0, missing),
-                new Object[] { getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing),
-                        "craftingToolHardHammer", getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing), "plateSteel",
-                        getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing), "plateSteel",
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing) });
+                getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing),
+                "craftingToolHardHammer",
+                getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing),
+                "plateSteel",
+                getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing));
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "grenadeTurret", 1, 0, missing),
-                new Object[] { "craftingToolWrench",
-                        getModItem(OpenModularTurrets.ID, "barrelTierThree", 1, 0, missing), "craftingToolHardHammer",
-                        "plateDarkSteel", getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0, missing),
-                        "plateDarkSteel", "plateDarkSteel", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateDarkSteel" });
+                "craftingToolWrench",
+                getModItem(OpenModularTurrets.ID, "barrelTierThree", 1, 0, missing),
+                "craftingToolHardHammer",
+                "plateDarkSteel",
+                getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0, missing),
+                "plateDarkSteel",
+                "plateDarkSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateDarkSteel");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "relativisticTurret", 1, 0, missing),
-                new Object[] { "plateDarkSteel", getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        "plateDarkSteel", getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
-                        getModItem(OpenModularTurrets.ID, "sensorTierThreeItem", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing), "plateDarkSteel",
-                        "plateEnderiumBase", "plateDarkSteel" });
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                "plateDarkSteel",
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                getModItem(OpenModularTurrets.ID, "sensorTierThreeItem", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                "plateDarkSteel",
+                "plateEnderiumBase",
+                "plateDarkSteel");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "grenadeTurret", 1, 0, missing),
-                new Object[] { "craftingToolWrench",
-                        getModItem(OpenModularTurrets.ID, "barrelTierThree", 1, 0, missing), "craftingToolHardHammer",
-                        "plateDarkSteel", getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0, missing),
-                        "plateDarkSteel", "plateDarkSteel", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateDarkSteel" });
+                "craftingToolWrench",
+                getModItem(OpenModularTurrets.ID, "barrelTierThree", 1, 0, missing),
+                "craftingToolHardHammer",
+                "plateDarkSteel",
+                getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0, missing),
+                "plateDarkSteel",
+                "plateDarkSteel",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateDarkSteel");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "rocketTurret", 1, 0, missing),
-                new Object[] { "plateEnergeticAlloy",
-                        getModItem(OpenModularTurrets.ID, "barrelTierFour", 1, 0, missing), "plateEnergeticAlloy",
-                        getModItem(OpenModularTurrets.ID, "chamberTierFour", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "barrelTierFour", 1, 0, missing),
-                        getModItem(OpenModularTurrets.ID, "chamberTierFour", 1, 0, missing), "plateEnergeticAlloy",
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing), "plateEnergeticAlloy" });
+                "plateEnergeticAlloy",
+                getModItem(OpenModularTurrets.ID, "barrelTierFour", 1, 0, missing),
+                "plateEnergeticAlloy",
+                getModItem(OpenModularTurrets.ID, "chamberTierFour", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "barrelTierFour", 1, 0, missing),
+                getModItem(OpenModularTurrets.ID, "chamberTierFour", 1, 0, missing),
+                "plateEnergeticAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateEnergeticAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "teleporterTurret", 1, 0, missing),
-                new Object[] { "craftingToolWrench", getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0, missing),
-                        "craftingToolHardHammer", getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
-                        getModItem(OpenModularTurrets.ID, "sensorTierFourItem", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing), "plateEnergeticAlloy",
-                        getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing), "plateEnergeticAlloy" });
+                "craftingToolWrench",
+                getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0, missing),
+                "craftingToolHardHammer",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
+                getModItem(OpenModularTurrets.ID, "sensorTierFourItem", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
+                "plateEnergeticAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateEnergeticAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "railGunTurret", 1, 0, missing),
-                new Object[] { "craftingToolWrench", getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0, missing),
-                        "craftingToolHardHammer", "plateVibrantAlloy",
-                        getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0, missing), "plateVibrantAlloy",
-                        "plateVibrantAlloy", getModItem(OpenModularTurrets.ID, "chamberTierFive", 1, 0, missing),
-                        "plateVibrantAlloy" });
+                "craftingToolWrench",
+                getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0, missing),
+                "craftingToolHardHammer",
+                "plateVibrantAlloy",
+                getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0, missing),
+                "plateVibrantAlloy",
+                "plateVibrantAlloy",
+                getModItem(OpenModularTurrets.ID, "chamberTierFive", 1, 0, missing),
+                "plateVibrantAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "laserTurret", 1, 0, missing),
-                new Object[] { "craftingToolWrench", getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0, missing),
-                        "craftingToolHardHammer", "itemVibrantCrystal",
-                        getModItem(OpenModularTurrets.ID, "chamberTierFive", 1, 0, missing), "itemVibrantCrystal",
-                        "plateEnergeticAlloy", getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                        "plateEnergeticAlloy" });
+                "craftingToolWrench",
+                getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0, missing),
+                "craftingToolHardHammer",
+                "itemVibrantCrystal",
+                getModItem(OpenModularTurrets.ID, "chamberTierFive", 1, 0, missing),
+                "itemVibrantCrystal",
+                "plateEnergeticAlloy",
+                getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
+                "plateEnergeticAlloy");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "hardWallTierOne", 9, 0, missing),
-                new Object[] { "stoneSmooth", getModItem(Minecraft.ID, "gravel", 1, 0, missing), "stoneSmooth",
-                        getModItem(Minecraft.ID, "clay", 1, 0, missing), "sand",
-                        getModItem(Minecraft.ID, "clay", 1, 0, missing), "stoneSmooth",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing), "stoneSmooth" });
+                "stoneSmooth",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "stoneSmooth",
+                getModItem(Minecraft.ID, "clay", 1, 0, missing),
+                "sand",
+                getModItem(Minecraft.ID, "clay", 1, 0, missing),
+                "stoneSmooth",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "stoneSmooth");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "fenceTierOne", 5, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "ringSteel",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "screwSteel",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "screwSteel",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "ringSteel",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing) });
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "ringSteel",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "screwSteel",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "screwSteel",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "ringSteel",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing));
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
-                new Object[] { "screwIron", "plateGold", "craftingToolWrench", "circuitBasic", "dustRedstone",
-                        "circuitBasic", "craftingToolScrewdriver", "plateIron", "screwIron" });
+                "screwIron",
+                "plateGold",
+                "craftingToolWrench",
+                "circuitBasic",
+                "dustRedstone",
+                "circuitBasic",
+                "craftingToolScrewdriver",
+                "plateIron",
+                "screwIron");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "expanderPowerTierOne", 1, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing), "screwIron", "craftingToolFile",
-                        "screwIron" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
+                "screwIron",
+                "craftingToolFile",
+                "screwIron");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "expanderInvTierOne", 1, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing), "chestWood",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing), "screwIron", "craftingToolFile",
-                        "screwIron" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
+                "chestWood",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
+                "screwIron",
+                "craftingToolFile",
+                "screwIron");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "leverBlock", 1, 0, missing),
-                new Object[] { "rodStone", "rodStone", "rodStone", null, null, "rodStone" });
+                "rodStone",
+                "rodStone",
+                "rodStone",
+                null,
+                null,
+                "rodStone");
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "bulletCraftable", 64, 0, missing),
-                new Object[] { "foilSteel", "ringIron", "foilSteel", "plateIron", "dustGunpowder", "plateIron",
-                        "foilSteel", "boltIron", "foilSteel" });
+                "foilSteel",
+                "ringIron",
+                "foilSteel",
+                "plateIron",
+                "dustGunpowder",
+                "plateIron",
+                "foilSteel",
+                "boltIron",
+                "foilSteel");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

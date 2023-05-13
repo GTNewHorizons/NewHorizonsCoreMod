@@ -20,7 +20,6 @@ import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -76,365 +75,513 @@ public class ScriptGregtech implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 1145, missing),
-                new Object[] { "circuitOptical", getModItem(SGCraft.ID, "ic2PowerUnit", 1, 0, missing),
-                        "circuitOptical", getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
-                        getModItem(SGCraft.ID, "stargateBase", 1, 0, missing),
-                        getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
-                        getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
-                        getModItem(SGCraft.ID, "ocInterface", 1, 0, missing),
-                        getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing) });
+                "circuitOptical",
+                getModItem(SGCraft.ID, "ic2PowerUnit", 1, 0, missing),
+                "circuitOptical",
+                getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
+                getModItem(SGCraft.ID, "stargateBase", 1, 0, missing),
+                getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
+                getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
+                getModItem(SGCraft.ID, "ocInterface", 1, 0, missing),
+                getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 500, missing),
-                new Object[] { null, getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), null,
-                        "craftingToolFile", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        "craftingToolHardHammer", null, null, null });
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                null,
+                "craftingToolFile",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "craftingToolHardHammer",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 1500, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), "gemDiamond", "gemDiamond",
-                        "craftingToolFile", null, "craftingToolHardHammer", null, null, null });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "gemDiamond",
+                "gemDiamond",
+                "craftingToolFile",
+                null,
+                "craftingToolHardHammer",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 2500, missing),
-                new Object[] { "craftingToolFile", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        "craftingToolHardHammer", null, null, null, null, null, null });
+                "craftingToolFile",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "craftingToolHardHammer",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 3500, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), "gemDiamond",
-                        "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), null,
-                        null, "craftingToolFile", null, null });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "gemDiamond",
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                null,
+                null,
+                "craftingToolFile",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 4500, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), "gemDiamond",
-                        "craftingToolHardHammer", "craftingToolFile", null, null, null, null, null });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "gemDiamond",
+                "craftingToolHardHammer",
+                "craftingToolFile",
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 28809, missing),
-                new Object[] { "craftingToolKnife", null, null, null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), null });
-        addShapelessCraftingRecipe(
+                "craftingToolKnife",
+                null,
+                null,
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2890, missing),
-                new Object[] { "craftingToolMortar", getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1890, missing),
-                new Object[] { "craftingToolMortar", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing),
-                new Object[] { "craftingToolMortar", "listAllmeatraw" });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                "listAllmeatraw");
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing),
-                new Object[] { "craftingToolMortar", "listAllfishraw" });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                "listAllfishraw");
+        addShapelessRecipe(
                 getModItem(Minecraft.ID, "sugar", 4, 0, missing),
-                new Object[] { "craftingToolMortar", getModItem(CropsPlusPlus.ID, "foodBerries", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                getModItem(CropsPlusPlus.ID, "foodBerries", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2893, missing),
-                new Object[] { "craftingToolMortar", "listAllmeatcooked" });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                "listAllmeatcooked");
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2893, missing),
-                new Object[] { "craftingToolMortar", "listAllfishcooked" });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                "listAllfishcooked");
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing),
-                new Object[] { "craftingToolMortar", "logWood" });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                "logWood");
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1625, missing),
-                new Object[] { "craftingToolMortar", getModItem(Minecraft.ID, "brick", 1, 0, missing) });
+                "craftingToolMortar",
+                getModItem(Minecraft.ID, "brick", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22874, missing),
-                new Object[] { "stickPlastic", "craftingToolHardHammer", "stickPlastic" });
+                "stickPlastic",
+                "craftingToolHardHammer",
+                "stickPlastic");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
-                new Object[] { "cropBarley", null, null, "craftingToolMortar", null, null });
+                "cropBarley",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
-                new Object[] { "cropWheat", null, null, "craftingToolMortar", null, null });
+                "cropWheat",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
-                new Object[] { "cropRye", null, null, "craftingToolMortar", null, null });
+                "cropRye",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
-                new Object[] { "cropOats", null, null, "craftingToolMortar", null, null });
+                "cropOats",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockores", 1, 817, missing), null, null,
-                        "craftingToolMortar", null, null });
+                getModItem(GregTech.ID, "gt.blockores", 1, 817, missing),
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockores", 1, 1817, missing), null, null,
-                        "craftingToolMortar", null, null });
+                getModItem(GregTech.ID, "gt.blockores", 1, 1817, missing),
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockores", 1, 2817, missing), null, null,
-                        "craftingToolMortar", null, null });
+                getModItem(GregTech.ID, "gt.blockores", 1, 2817, missing),
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockores", 1, 3817, missing), null, null,
-                        "craftingToolMortar", null, null });
+                getModItem(GregTech.ID, "gt.blockores", 1, 3817, missing),
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockores", 1, 4817, missing), null, null,
-                        "craftingToolMortar", null, null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.blockores", 1, 4817, missing),
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1805, missing),
-                new Object[] { "craftingToolMortar", getModItem(Minecraft.ID, "clay_ball", 1, 0, missing) });
+                "craftingToolMortar",
+                getModItem(Minecraft.ID, "clay_ball", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32, missing),
-                new Object[] { "nuggetIron", null, null, "craftingToolMortar", null, null });
+                "nuggetIron",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 86, missing),
-                new Object[] { "nuggetGold", null, null, "craftingToolMortar", null, null });
+                "nuggetGold",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 35, missing),
-                new Object[] { "nuggetCopper", null, null, "craftingToolMortar", null, null });
+                "nuggetCopper",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 57, missing),
-                new Object[] { "nuggetTin", null, null, "craftingToolMortar", null, null });
+                "nuggetTin",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 54, missing),
-                new Object[] { "nuggetSilver", null, null, "craftingToolMortar", null, null });
+                "nuggetSilver",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 89, missing),
-                new Object[] { "nuggetLead", null, null, "craftingToolMortar", null, null });
+                "nuggetLead",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 36, missing),
-                new Object[] { "nuggetZinc", null, null, "craftingToolMortar", null, null });
+                "nuggetZinc",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 34, missing),
-                new Object[] { "nuggetNickel", null, null, "craftingToolMortar", null, null });
+                "nuggetNickel",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockcasings2", 1, 11, missing),
-                new Object[] { "itemCasingStainlessSteel", "circuitAdvanced", "itemCasingStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing), "itemCasingStainlessSteel",
-                        "circuitAdvanced", "itemCasingStainlessSteel" });
-        addShapelessCraftingRecipe(
+                "itemCasingStainlessSteel",
+                "circuitAdvanced",
+                "itemCasingStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                "itemCasingStainlessSteel",
+                "circuitAdvanced",
+                "itemCasingStainlessSteel");
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
-                new Object[] { getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing) });
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22880, missing),
-                new Object[] { "stickRubber", "craftingToolHardHammer", "stickRubber" });
+                "stickRubber",
+                "craftingToolHardHammer",
+                "stickRubber");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22530, missing),
-                new Object[] { "stickApatite", "craftingToolHardHammer", "stickApatite" });
+                "stickApatite",
+                "craftingToolHardHammer",
+                "stickApatite");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22526, missing),
-                new Object[] { "stickLapis", "craftingToolHardHammer", "stickLapis" });
+                "stickLapis",
+                "craftingToolHardHammer",
+                "stickLapis");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22524, missing),
-                new Object[] { "stickLazurite", "craftingToolHardHammer", "stickLazurite" });
+                "stickLazurite",
+                "craftingToolHardHammer",
+                "stickLazurite");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22525, missing),
-                new Object[] { "stickSodalite", "craftingToolHardHammer", "stickSodalite" });
+                "stickSodalite",
+                "craftingToolHardHammer",
+                "stickSodalite");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22532, missing),
-                new Object[] { "stickEnderPearl", "craftingToolHardHammer", "stickEnderPearl" });
+                "stickEnderPearl",
+                "craftingToolHardHammer",
+                "stickEnderPearl");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22533, missing),
-                new Object[] { "stickEnderEye", "craftingToolHardHammer", "stickEnderEye" });
-        addShapelessCraftingRecipe(
+                "stickEnderEye",
+                "craftingToolHardHammer",
+                "stickEnderEye");
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 2, 4905, missing),
-                new Object[] { getModItem(MCFrames.ID, "mcframes.frame", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(MCFrames.ID, "mcframes.frame", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "scaffolding", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(OpenBlocks.ID, "scaffolding", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1890, missing),
-                new Object[] { "craftingToolMortar", getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolMortar",
+                getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 2, 2322, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 2305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1047, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1345, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1034, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1029, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1030, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1048, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1028, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2305, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 10, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1047, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1345, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1034, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1029, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1030, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1048, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1028, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockcasings2", 1, 10, missing),
-                new Object[] { "itemCasingStainlessSteel", "circuitAdvanced", "itemCasingStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing), "itemCasingStainlessSteel",
-                        "circuitAdvanced", "itemCasingStainlessSteel" });
+                "itemCasingStainlessSteel",
+                "circuitAdvanced",
+                "itemCasingStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                "itemCasingStainlessSteel",
+                "circuitAdvanced",
+                "itemCasingStainlessSteel");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 20849, missing),
-                new Object[] { "stoneGraniteBlack", null, null, null, "craftingToolFile", null });
+                "stoneGraniteBlack",
+                null,
+                null,
+                null,
+                "craftingToolFile",
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 20850, missing),
-                new Object[] { "stoneGraniteRed", null, null, null, "craftingToolFile", null });
+                "stoneGraniteRed",
+                null,
+                null,
+                null,
+                "craftingToolFile",
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockcasings2", 1, 6, missing),
-                new Object[] { "itemCasingStainlessSteel", "circuitElite", "itemCasingStainlessSteel", "circuitElite",
-                        getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing), "circuitElite",
-                        "itemCasingStainlessSteel", "circuitElite", "itemCasingStainlessSteel" });
+                "itemCasingStainlessSteel",
+                "circuitElite",
+                "itemCasingStainlessSteel",
+                "circuitElite",
+                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                "circuitElite",
+                "itemCasingStainlessSteel",
+                "circuitElite",
+                "itemCasingStainlessSteel");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
-                new Object[] { "craftingToolHardHammer", null, null, "ingotObsidian", null, null, "ingotObsidian", null,
-                        null });
+                "craftingToolHardHammer",
+                null,
+                null,
+                "ingotObsidian",
+                null,
+                null,
+                "ingotObsidian",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockstones", 1, 2, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockstones", 1, 1, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockstones", 1, 1, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockstones", 1, 5, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockstones", 1, 3, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockstones", 1, 3, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockconcretes", 1, 10, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockconcretes", 1, 9, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockconcretes", 1, 9, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockconcretes", 1, 13, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockconcretes", 1, 11, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockconcretes", 1, 11, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockstones", 1, 10, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockstones", 1, 9, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockstones", 1, 9, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockstones", 1, 13, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockstones", 1, 11, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockstones", 1, 11, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockgranites", 1, 2, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockgranites", 1, 1, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockgranites", 1, 1, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockgranites", 1, 5, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockgranites", 1, 3, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockgranites", 1, 3, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockgranites", 1, 10, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockgranites", 1, 9, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockgranites", 1, 9, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockgranites", 1, 13, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockgranites", 1, 11, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
-                new Object[] { "dyeBrown" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing),
-                new Object[] { "dyeLightGray" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing),
-                new Object[] { "dyeYellow" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
-                new Object[] { "dyeWhite" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                new Object[] { "dyeBlue" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing),
-                new Object[] { "dyeGray" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing),
-                new Object[] { "dyeLime" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing),
-                new Object[] { "dyeOrange" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing),
-                new Object[] { "dyeRed" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing),
-                new Object[] { "dyePurple" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing),
-                new Object[] { "dyePink" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing),
-                new Object[] { "dyeMagenta" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
-                new Object[] { "dyeBlack" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
-                new Object[] { "dyeGreen" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing),
-                new Object[] { "dyeCyan" });
-        addShapelessCraftingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing),
-                new Object[] { "dyeLightBlue" });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockgranites", 1, 11, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing), "dyeBrown");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing), "dyeLightGray");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing), "dyeYellow");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing), "dyeWhite");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing), "dyeBlue");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing), "dyeGray");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing), "dyeLime");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing), "dyeOrange");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing), "dyeRed");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing), "dyePurple");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing), "dyePink");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing), "dyeMagenta");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing), "dyeBlack");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing), "dyeGreen");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing), "dyeCyan");
+        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing), "dyeLightBlue");
+        addShapelessRecipe(
                 getModItem(StructureLib.ID, "item.structurelib.constructableTrigger", 1, 0, missing),
-                new Object[] { "dyeBlue", "platePaper", "dyeBlue", "dyeWhite" });
+                "dyeBlue",
+                "platePaper",
+                "dyeBlue",
+                "dyeWhite");
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32752, missing),

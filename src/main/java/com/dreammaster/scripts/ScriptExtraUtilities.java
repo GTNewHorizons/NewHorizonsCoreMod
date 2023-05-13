@@ -21,7 +21,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -88,115 +87,172 @@ public class ScriptExtraUtilities implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 12, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing), "plateDiamond",
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing), "plateTitanium",
-                        "circuitData", "plateTitanium",
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing), "plateDiamond",
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing) });
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing),
+                "plateDiamond",
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing),
+                "plateTitanium",
+                "circuitData",
+                "plateTitanium",
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing),
+                "plateDiamond",
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "carpet", 1, 15, missing),
-                        getModItem(Minecraft.ID, "carpet", 1, 15, missing), null,
-                        getModItem(Minecraft.ID, "carpet", 1, 15, missing),
-                        getModItem(Minecraft.ID, "carpet", 1, 15, missing), null,
-                        getModItem(Minecraft.ID, "carpet", 1, 15, missing),
-                        getModItem(Minecraft.ID, "carpet", 1, 15, missing), null });
+                getModItem(Minecraft.ID, "carpet", 1, 15, missing),
+                getModItem(Minecraft.ID, "carpet", 1, 15, missing),
+                null,
+                getModItem(Minecraft.ID, "carpet", 1, 15, missing),
+                getModItem(Minecraft.ID, "carpet", 1, 15, missing),
+                null,
+                getModItem(Minecraft.ID, "carpet", 1, 15, missing),
+                getModItem(Minecraft.ID, "carpet", 1, 15, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "timer", 1, 0, missing),
-                new Object[] { "plateRedAlloy", "gearWood", "plateRedAlloy", "gearWood",
-                        getModItem(Minecraft.ID, "clock", 1, 0, missing), "gearWood", "plateRedAlloy", "stickRedAlloy",
-                        "plateRedAlloy" });
+                "plateRedAlloy",
+                "gearWood",
+                "plateRedAlloy",
+                "gearWood",
+                getModItem(Minecraft.ID, "clock", 1, 0, missing),
+                "gearWood",
+                "plateRedAlloy",
+                "stickRedAlloy",
+                "plateRedAlloy");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing), "plateStainlessSteel",
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing), "plateStainlessSteel",
-                        "gemEnderEye", "plateStainlessSteel",
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing), "plateStainlessSteel",
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing) });
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing),
+                "plateStainlessSteel",
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing),
+                "plateStainlessSteel",
+                "gemEnderEye",
+                "plateStainlessSteel",
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing),
+                "plateStainlessSteel",
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 1, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 4, missing),
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 11, missing), "gearDiamond",
-                        getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 11, missing),
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 4, missing),
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing) });
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 4, missing),
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 11, missing),
+                "gearDiamond",
+                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 11, missing),
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 4, missing),
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 2, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 26, missing),
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateTitanium",
-                        "gearDiamond", "plateTitanium",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 26, missing),
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing) });
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 26, missing),
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateTitanium",
+                "gearDiamond",
+                "plateTitanium",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 26, missing),
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 3, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateTitanium",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateTitanium",
-                        "gearDiamond", "plateTitanium",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateTitanium",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing) });
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateTitanium",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateTitanium",
+                "gearDiamond",
+                "plateTitanium",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateTitanium",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 4, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateTungstenSteel",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateTungstenSteel",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 3, missing), "plateTungstenSteel",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateTungstenSteel",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing) });
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateTungstenSteel",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateTungstenSteel",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 3, missing),
+                "plateTungstenSteel",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateTungstenSteel",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 5, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateChrome",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateChrome",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 4, missing), "plateChrome",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "plateChrome",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing) });
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateChrome",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateChrome",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 4, missing),
+                "plateChrome",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "plateChrome",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 6, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing), "gearTitanium",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "gearDiamond",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing), "gearTitanium",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing) });
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                "gearTitanium",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "gearDiamond",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                "gearTitanium",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 7, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing), "gearTungstenSteel",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing), "gearTungstenSteel",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 6, missing), "gearTungstenSteel",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing), "gearTungstenSteel",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing) });
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                "gearTungstenSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                "gearTungstenSteel",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 6, missing),
+                "gearTungstenSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                "gearTungstenSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 8, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing), "gearChrome",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing), "gearChrome",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 7, missing), "gearChrome",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing), "gearChrome",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing) });
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                "gearChrome",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                "gearChrome",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 7, missing),
+                "gearChrome",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                "gearChrome",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 9, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "enderThermicPump", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing), "pipeLargeTungstenSteel",
-                        "pipeSmallStainlessSteel", "pipeLargeTungstenSteel",
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "enderThermicPump", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing) });
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "enderThermicPump", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                "pipeLargeTungstenSteel",
+                "pipeSmallStainlessSteel",
+                "pipeLargeTungstenSteel",
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "enderThermicPump", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
-                new Object[] { "plateRedAlloy", "plateDiamond", "plateRedAlloy", "plateDiamond", "gearStainlessSteel",
-                        "plateDiamond", "plateRedAlloy", "plateDiamond", "plateRedAlloy" });
+                "plateRedAlloy",
+                "plateDiamond",
+                "plateRedAlloy",
+                "plateDiamond",
+                "gearStainlessSteel",
+                "plateDiamond",
+                "plateRedAlloy",
+                "plateDiamond",
+                "plateRedAlloy");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
-                new Object[] { "plateRedAlloy", getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "plateRedAlloy",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "gearStainlessSteel",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "plateRedAlloy",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "plateRedAlloy" });
-        addShapelessCraftingRecipe(
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "gearStainlessSteel",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "plateRedAlloy");
+        addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing) });
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing));
         GameRegistry.addRecipe(
                 new FilterRecipe(
                         getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
@@ -214,14 +270,18 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         "stickWood"));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
-                new Object[] { "plateLapis", getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        "plateLapis", getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "plateLapis",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "plateLapis" });
-        addShapelessCraftingRecipe(
+                "plateLapis",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "plateLapis",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 1, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "plateLapis",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "plateLapis");
+        addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing) });
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing));
         GameRegistry.addRecipe(
                 new FilterRecipe(
                         getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 10, missing),
@@ -229,306 +289,587 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         "craftingRedstoneTorch"));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 2, missing),
-                new Object[] { "plateLapis", getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0, missing), "plateLapis",
-                        getModItem(Minecraft.ID, "iron_pickaxe", 1, 0, missing), "gearDiamond",
-                        getModItem(Minecraft.ID, "iron_pickaxe", 1, 0, missing), "plateLapis",
-                        getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0, missing), "plateLapis" });
+                "plateLapis",
+                getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0, missing),
+                "plateLapis",
+                getModItem(Minecraft.ID, "iron_pickaxe", 1, 0, missing),
+                "gearDiamond",
+                getModItem(Minecraft.ID, "iron_pickaxe", 1, 0, missing),
+                "plateLapis",
+                getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0, missing),
+                "plateLapis");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 5, missing),
-                new Object[] { "plateEnderEye", getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 2, missing),
-                        "plateEnderEye", "gearIridium",
-                        getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 0, missing), "gearIridium",
-                        "plateEnderEye", "plateNetherStar", "plateEnderEye" });
+                "plateEnderEye",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 2, missing),
+                "plateEnderEye",
+                "gearIridium",
+                getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 0, missing),
+                "gearIridium",
+                "plateEnderEye",
+                "plateNetherStar",
+                "plateEnderEye");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 6, missing),
-                new Object[] { "plateEnderEye", getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 2, missing),
-                        "plateEnderEye", "gearIridium",
-                        getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing), "gearIridium",
-                        "plateEnderEye", "plateNetherStar", "plateEnderEye" });
+                "plateEnderEye",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 2, missing),
+                "plateEnderEye",
+                "gearIridium",
+                getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing),
+                "gearIridium",
+                "plateEnderEye",
+                "plateNetherStar",
+                "plateEnderEye");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 7, missing),
-                new Object[] { "plateRedAlloy", getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
-                        "plateRedAlloy", "craftingToolWrench", "gearDiamond",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "plateRedAlloy",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "plateRedAlloy" });
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy",
+                "craftingToolWrench",
+                "gearDiamond",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 8, missing),
-                new Object[] { "plateRedAlloy", "craftingToolWrench", "plateRedAlloy",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "gearDiamond",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "plateRedAlloy", null,
-                        "plateRedAlloy" });
+                "plateRedAlloy",
+                "craftingToolWrench",
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "gearDiamond",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy",
+                null,
+                "plateRedAlloy");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 8, missing),
-                new Object[] { "plateRedAlloy", null, "plateRedAlloy",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "gearDiamond",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "plateRedAlloy",
-                        "craftingToolWrench", "plateRedAlloy" });
+                "plateRedAlloy",
+                null,
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "gearDiamond",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy",
+                "craftingToolWrench",
+                "plateRedAlloy");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 9, missing),
-                new Object[] { "plateRedAlloy", getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
-                        "plateRedAlloy", getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "gearDiamond",
-                        "craftingToolWrench", "plateRedAlloy",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "plateRedAlloy" });
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "gearDiamond",
+                "craftingToolWrench",
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 3, missing),
-                new Object[] { "plateRedAlloy", getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
-                        "plateRedAlloy", "craftingToolWrench", "gearDiamond",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing), "plateRedAlloy",
-                        getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing), "plateRedAlloy" });
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy",
+                "craftingToolWrench",
+                "gearDiamond",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                "plateRedAlloy",
+                getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
+                "plateRedAlloy");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                new Object[] { null, getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null, "stickWood",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "stickWood", null, null });
+                null,
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                null,
+                "stickWood",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "stickWood",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "drum", 1, 0, missing),
-                new Object[] { "plateSteel", "ringMeteoricSteel", "plateSteel", "plateSteel", "pipeHugeSteel",
-                        "plateSteel", "plateSteel", "ringMeteoricSteel", "plateSteel" });
+                "plateSteel",
+                "ringMeteoricSteel",
+                "plateSteel",
+                "plateSteel",
+                "pipeHugeSteel",
+                "plateSteel",
+                "plateSteel",
+                "ringMeteoricSteel",
+                "plateSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "drum", 1, 1, missing),
-                new Object[] { "plateBedrockium", "ringTungstenSteel", "plateBedrockium", "plateBedrockium",
-                        getModItem(ExtraUtilities.ID, "drum", 1, 0, missing), "plateBedrockium", "plateBedrockium",
-                        "ringTungstenSteel", "plateBedrockium" });
+                "plateBedrockium",
+                "ringTungstenSteel",
+                "plateBedrockium",
+                "plateBedrockium",
+                getModItem(ExtraUtilities.ID, "drum", 1, 0, missing),
+                "plateBedrockium",
+                "plateBedrockium",
+                "ringTungstenSteel",
+                "plateBedrockium");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "conveyor", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(Minecraft.ID, "rail", 1, 0, missing),
-                        "craftingToolWrench", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                        "frameGtSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                        "gearGtSmallSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        "gearGtSmallSteel" });
+                "craftingToolHardHammer",
+                getModItem(Minecraft.ID, "rail", 1, 0, missing),
+                "craftingToolWrench",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "frameGtSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "filing", 1, 0, missing),
-                new Object[] { "plateSteel", "chestWood", "plateSteel", "screwSteel",
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing), "screwSteel", "plateSteel",
-                        "chestWood", "plateSteel" });
+                "plateSteel",
+                "chestWood",
+                "plateSteel",
+                "screwSteel",
+                getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing),
+                "screwSteel",
+                "plateSteel",
+                "chestWood",
+                "plateSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "filing", 1, 1, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8, missing),
-                        getModItem(ExtraUtilities.ID, "filing", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8, missing), "screwSteel",
-                        getModItem(ExtraUtilities.ID, "filing", 1, 0, missing), "screwSteel",
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8, missing),
-                        getModItem(ExtraUtilities.ID, "filing", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8, missing) });
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8, missing),
+                getModItem(ExtraUtilities.ID, "filing", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8, missing),
+                "screwSteel",
+                getModItem(ExtraUtilities.ID, "filing", 1, 0, missing),
+                "screwSteel",
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8, missing),
+                getModItem(ExtraUtilities.ID, "filing", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 8, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "watering_can", 1, 1, missing),
-                new Object[] { "craftingToolHardHammer", "ringSteel", "craftingToolScrewdriver", "plateAnyIron",
-                        "plateAnyIron", "stickAnyIron", "plateAnyIron", "plateAnyIron", "screwSteel" });
+                "craftingToolHardHammer",
+                "ringSteel",
+                "craftingToolScrewdriver",
+                "plateAnyIron",
+                "plateAnyIron",
+                "stickAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "screwSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "watering_can", 1, 1, missing),
-                new Object[] { "craftingToolScrewdriver", "ringSteel", "craftingToolHardHammer", "plateAnyIron",
-                        "plateAnyIron", "stickAnyIron", "plateAnyIron", "plateAnyIron", "screwSteel" });
+                "craftingToolScrewdriver",
+                "ringSteel",
+                "craftingToolHardHammer",
+                "plateAnyIron",
+                "plateAnyIron",
+                "stickAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "screwSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "watering_can", 1, 3, missing),
-                new Object[] { "craftingToolHardHammer", "ringNeutronium", "craftingToolScrewdriver", "plateBedrockium",
-                        "plateBedrockium", "plateBedrockium", "plateBedrockium", "plateBedrockium",
-                        "screwNeutronium" });
+                "craftingToolHardHammer",
+                "ringNeutronium",
+                "craftingToolScrewdriver",
+                "plateBedrockium",
+                "plateBedrockium",
+                "plateBedrockium",
+                "plateBedrockium",
+                "plateBedrockium",
+                "screwNeutronium");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "watering_can", 1, 3, missing),
-                new Object[] { "craftingToolScrewdriver", "ringNeutronium", "craftingToolHardHammer", "plateBedrockium",
-                        "plateBedrockium", "plateBedrockium", "plateBedrockium", "plateBedrockium",
-                        "screwNeutronium" });
+                "craftingToolScrewdriver",
+                "ringNeutronium",
+                "craftingToolHardHammer",
+                "plateBedrockium",
+                "plateBedrockium",
+                "plateBedrockium",
+                "plateBedrockium",
+                "plateBedrockium",
+                "screwNeutronium");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", "blockWool",
-                        getModItem(Minecraft.ID, "noteblock", 1, 0, missing), "blockWool", "blockWool",
-                        getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing), "blockWool" });
+                "blockWool",
+                "blockWool",
+                "blockWool",
+                "blockWool",
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                "blockWool",
+                "blockWool",
+                getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing),
+                "blockWool");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "sound_muffler", 1, 1, missing),
-                new Object[] { "blockWool", getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing), "blockWool",
-                        getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing),
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing) });
+                "blockWool",
+                getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing),
+                "blockWool",
+                getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing),
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "sound_muffler", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                new Object[] { "foilSteel", "plateSteel", "foilSteel", "craftingToolWrench", "stickRedAlloy",
-                        "craftingToolHardHammer", "foilSteel", "plateSteel", "foilSteel" });
+                "foilSteel",
+                "plateSteel",
+                "foilSteel",
+                "craftingToolWrench",
+                "stickRedAlloy",
+                "craftingToolHardHammer",
+                "foilSteel",
+                "plateSteel",
+                "foilSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing),
-                new Object[] { "foilSteel", "circuitBasic", "foilSteel", "craftingToolWrench",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), "craftingToolHardHammer", "foilSteel",
-                        "circuitBasic", "foilSteel" });
+                "foilSteel",
+                "circuitBasic",
+                "foilSteel",
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "craftingToolHardHammer",
+                "foilSteel",
+                "circuitBasic",
+                "foilSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing),
-                new Object[] { "foilSteel", "circuitGood", "foilSteel", "craftingToolWrench",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), "craftingToolHardHammer", "foilSteel",
-                        "circuitGood", "foilSteel" });
+                "foilSteel",
+                "circuitGood",
+                "foilSteel",
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "craftingToolHardHammer",
+                "foilSteel",
+                "circuitGood",
+                "foilSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
-                new Object[] { "foilSteel", "circuitAdvanced", "foilSteel", "craftingToolWrench",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing), "craftingToolHardHammer", "foilSteel",
-                        "circuitAdvanced", "foilSteel" });
+                "foilSteel",
+                "circuitAdvanced",
+                "foilSteel",
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing),
+                "craftingToolHardHammer",
+                "foilSteel",
+                "circuitAdvanced",
+                "foilSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing),
-                new Object[] { "foilSteel", "circuitData", "foilSteel", "craftingToolWrench",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing), "craftingToolHardHammer", "foilSteel",
-                        "circuitData", "foilSteel" });
+                "foilSteel",
+                "circuitData",
+                "foilSteel",
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
+                "craftingToolHardHammer",
+                "foilSteel",
+                "circuitData",
+                "foilSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing),
-                new Object[] { "foilRedAlloy", "plateRedAlloy", "foilRedAlloy", "craftingToolWrench",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), "craftingToolHardHammer", "foilRedAlloy",
-                        "plateRedAlloy", "foilRedAlloy" });
+                "foilRedAlloy",
+                "plateRedAlloy",
+                "foilRedAlloy",
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "craftingToolHardHammer",
+                "foilRedAlloy",
+                "plateRedAlloy",
+                "foilRedAlloy");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 12, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        "screwSteel", getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), "screwSteel",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "screwSteel",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "screwSteel",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 12, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        "screwSteel", getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), "screwSteel",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "screwSteel",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "screwSteel",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 13, missing),
-                new Object[] { "foilSteel", "circuitBasic", "foilSteel", "craftingToolWrench",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing), "craftingToolHardHammer", "foilSteel",
-                        "circuitBasic", "foilSteel" });
+                "foilSteel",
+                "circuitBasic",
+                "foilSteel",
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing),
+                "craftingToolHardHammer",
+                "foilSteel",
+                "circuitBasic",
+                "foilSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "pipes", 1, 14, missing),
-                new Object[] { "foilElectrum", "plateElectrum", "foilElectrum", "craftingToolWrench",
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing), "craftingToolHardHammer",
-                        "foilElectrum", "plateElectrum", "foilElectrum" });
+                "foilElectrum",
+                "plateElectrum",
+                "foilElectrum",
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing),
+                "craftingToolHardHammer",
+                "foilElectrum",
+                "plateElectrum",
+                "foilElectrum");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base_remote", 1, 0, missing),
-                new Object[] { "craftingToolWrench", getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
-                        "craftingToolHardHammer", "screwEnderPearl",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing), "screwEnderPearl",
-                        getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing) });
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
+                "craftingToolHardHammer",
+                "screwEnderPearl",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "screwEnderPearl",
+                getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base_remote", 1, 6, missing),
-                new Object[] { "craftingToolWrench", getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
-                        "craftingToolHardHammer", "screwEnderPearl",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing), "screwEnderPearl",
-                        getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
-                        getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
-                        getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing) });
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
+                "craftingToolHardHammer",
+                "screwEnderPearl",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                "screwEnderPearl",
+                getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
+                getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
+                getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
-                new Object[] { "craftingToolWrench", getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
-                        "craftingToolHardHammer", "screwEnderPearl",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing), "screwEnderPearl",
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing), "pipeMediumBrass",
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing) });
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
+                "craftingToolHardHammer",
+                "screwEnderPearl",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "screwEnderPearl",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing),
+                "pipeMediumBrass",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
-                new Object[] { "craftingToolWrench", getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
-                        "craftingToolHardHammer", "screwEnderPearl",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing), "screwEnderPearl",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing) });
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
+                "craftingToolHardHammer",
+                "screwEnderPearl",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                "screwEnderPearl",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
-                new Object[] { "plateIron", "craftingToolHardHammer", "plateIron", "plateIron", "gemEnderPearl",
-                        "plateIron", "plateIron", "plateIron", "plateIron" });
-        addShapelessCraftingRecipe(
+                "plateIron",
+                "craftingToolHardHammer",
+                "plateIron",
+                "plateIron",
+                "gemEnderPearl",
+                "plateIron",
+                "plateIron",
+                "plateIron",
+                "plateIron");
+        addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 0, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "unstableingot", 1, 2, missing) });
+                getModItem(ExtraUtilities.ID, "unstableingot", 1, 2, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        "craftingToolSaw", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "chestWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), null });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "craftingToolSaw",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "chestWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "chestMini", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        "craftingToolSaw", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "itemFlint",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), null });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "craftingToolSaw",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "itemFlint",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderCollector", 1, 0, missing),
-                new Object[] { "lensEnderPearl", "blockEnderObsidian", "lensEnderPearl", "craftingToolHardHammer",
-                        "blockEnderObsidian", "craftingToolWrench", "stoneObsidian", "stoneObsidian",
-                        "stoneObsidian" });
-        addShapelessCraftingRecipe(
+                "lensEnderPearl",
+                "blockEnderObsidian",
+                "lensEnderPearl",
+                "craftingToolHardHammer",
+                "blockEnderObsidian",
+                "craftingToolWrench",
+                "stoneObsidian",
+                "stoneObsidian",
+                "stoneObsidian");
+        addShapelessRecipe(
                 getModItem(ExtraUtilities.ID, "enderCollector", 1, 0, missing),
-                new Object[] { getModItem(RandomThings.ID, "advancedItemCollector", 1, 0, missing) });
+                getModItem(RandomThings.ID, "advancedItemCollector", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "endConstructor", 1, 0, missing),
-                new Object[] { "plateEnderEye", getModItem(HardcoreEnderExpansion.ID, "altar_nexus", 1, 0, missing),
-                        "plateEnderEye", "blockEnderObsidian",
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing), "blockEnderObsidian",
-                        "plateTitanium", getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 12, missing),
-                        "plateTitanium" });
+                "plateEnderEye",
+                getModItem(HardcoreEnderExpansion.ID, "altar_nexus", 1, 0, missing),
+                "plateEnderEye",
+                "blockEnderObsidian",
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing),
+                "blockEnderObsidian",
+                "plateTitanium",
+                getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 12, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "spike_base_wood", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Minecraft.ID, "wooden_sword", 1, 0, missing),
-                        "craftingToolScrewdriver", "screwWood", "plateWood", "screwWood", "plateWood", "logWood",
-                        "plateWood" });
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "wooden_sword", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "screwWood",
+                "plateWood",
+                "screwWood",
+                "plateWood",
+                "logWood",
+                "plateWood");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "spike_base", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Minecraft.ID, "iron_sword", 1, 0, missing),
-                        "craftingToolScrewdriver", "screwIron", "plateAnyIron", "screwIron", "plateAnyIron",
-                        "blockIron", "plateAnyIron" });
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "iron_sword", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "screwIron",
+                "plateAnyIron",
+                "screwIron",
+                "plateAnyIron",
+                "blockIron",
+                "plateAnyIron");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "spike_base_gold", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Minecraft.ID, "golden_sword", 1, 0, missing),
-                        "craftingToolScrewdriver", "screwGold", "plateGold", "screwGold", "plateGold", "blockGold",
-                        "plateGold" });
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "golden_sword", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "screwGold",
+                "plateGold",
+                "screwGold",
+                "plateGold",
+                "blockGold",
+                "plateGold");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "spike_base_diamond", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Minecraft.ID, "diamond_sword", 1, 0, missing),
-                        "craftingToolScrewdriver", "screwDiamond", "plateDiamond", "screwDiamond", "plateDiamond",
-                        "blockDiamond", "plateDiamond" });
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "diamond_sword", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "screwDiamond",
+                "plateDiamond",
+                "screwDiamond",
+                "plateDiamond",
+                "blockDiamond",
+                "plateDiamond");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "builderswand", 1, 0, missing),
-                new Object[] { null, null, "ingotUnstable", null, "ingotUnstable", null, "stickObsidian", null, null });
+                null,
+                null,
+                "ingotUnstable",
+                null,
+                "ingotUnstable",
+                null,
+                "stickObsidian",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "creativebuilderswand", 1, 0, missing),
-                new Object[] { null, "ingotUnstable", "ingotUnstable", null, "ingotUnstable", "ingotUnstable",
-                        "stickObsidian", null, null });
+                null,
+                "ingotUnstable",
+                "ingotUnstable",
+                null,
+                "ingotUnstable",
+                "ingotUnstable",
+                "stickObsidian",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "shears", 1, 0, missing),
-                new Object[] { "ingotUnstable", null, "ingotUnstable",
-                        getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "shears", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing) });
+                "ingotUnstable",
+                null,
+                "ingotUnstable",
+                getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "shears", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "ethericsword", 1, 0, missing),
-                new Object[] { null, "ingotUnstable", null, null, "ingotUnstable", null, null,
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null });
+                null,
+                "ingotUnstable",
+                null,
+                null,
+                "ingotUnstable",
+                null,
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "lawSword", 1, 0, missing),
-                new Object[] { null, getModItem(TinkerConstruct.ID, "largeSwordBlade", 1, 314, missing), null, null,
-                        "ingotUnstable", null, null, getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null });
+                null,
+                getModItem(TinkerConstruct.ID, "largeSwordBlade", 1, 314, missing),
+                null,
+                null,
+                "ingotUnstable",
+                null,
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "erosionShovel", 1, 0, missing),
-                new Object[] { null, "ingotUnstable", null, null,
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null, null,
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null });
+                null,
+                "ingotUnstable",
+                null,
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null,
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "destructionpickaxe", 1, 0, missing),
-                new Object[] { "ingotUnstable", "ingotUnstable", "ingotUnstable", null,
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null, null,
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null });
+                "ingotUnstable",
+                "ingotUnstable",
+                "ingotUnstable",
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null,
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "defoliageAxe", 1, 0, missing),
-                new Object[] { "ingotUnstable", "ingotUnstable", null, "ingotUnstable",
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null, null,
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null });
+                "ingotUnstable",
+                "ingotUnstable",
+                null,
+                "ingotUnstable",
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null,
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "temporalHoe", 1, 0, missing),
-                new Object[] { "ingotUnstable", "ingotUnstable", null, null,
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null, null,
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing), null });
+                "ingotUnstable",
+                "ingotUnstable",
+                null,
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null,
+                null,
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
-                        createItemStack(ExtraUtilities.ID, "divisionSigil", 1, 0, "{damage:256}", missing),
-                        getModItem(Minecraft.ID, "diamond", 1, 0, missing) });
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
+                createItemStack(ExtraUtilities.ID, "divisionSigil", 1, 0, "{damage:256}", missing),
+                getModItem(Minecraft.ID, "diamond", 1, 0, missing));
 
         // mods.extraUtils.QED.removeRecipe(<*>); // <- scripts
         EnderConstructorRecipesHandler.recipes.clear();

@@ -16,7 +16,6 @@ import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
@@ -60,30 +59,41 @@ public class ScriptDraconicEvolution implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(DraconicEvolution.ID, "magnet", 1, 0, missing),
-                new Object[] { "blockSteelMagnetic", "ingotSteelMagnetic", "ingotSteelMagnetic", null, null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32518, missing), "blockSteelMagnetic",
-                        "ingotSteelMagnetic", "ingotSteelMagnetic" });
+                "blockSteelMagnetic",
+                "ingotSteelMagnetic",
+                "ingotSteelMagnetic",
+                null,
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32518, missing),
+                "blockSteelMagnetic",
+                "ingotSteelMagnetic",
+                "ingotSteelMagnetic");
         addShapedRecipe(
                 getModItem(DraconicEvolution.ID, "draconiumChest", 1, 0, missing),
-                new Object[] { "plateObsidian", getModItem(EnderIO.ID, "blockCapBank", 1, 1, missing), "plateObsidian",
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
-                        getModItem(AvaritiaAddons.ID, "CompressedChest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing), "plateObsidian", "plateObsidian",
-                        "plateObsidian" });
-        addShapelessCraftingRecipe(
+                "plateObsidian",
+                getModItem(EnderIO.ID, "blockCapBank", 1, 1, missing),
+                "plateObsidian",
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                getModItem(AvaritiaAddons.ID, "CompressedChest", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
+                "plateObsidian",
+                "plateObsidian",
+                "plateObsidian");
+        addShapelessRecipe(
                 getModItem(DraconicEvolution.ID, "safetyMatch", 1, 1000, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32471, missing), "dustDraconium" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32471, missing),
+                "dustDraconium");
         addShapedRecipe(
                 getModItem(DraconicEvolution.ID, "xRayBlock", 8, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing) });
+                getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                getModItem(Minecraft.ID, "glass_pane", 1, 0, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(DraconicEvolution.ID, "teleporterMKI", 1, 0, missing),

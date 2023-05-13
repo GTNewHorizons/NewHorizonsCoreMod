@@ -14,7 +14,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -73,560 +72,989 @@ public class ScriptIndustrialCraft implements IScriptLoader {
     public void loadRecipes() {
         OreDictHelper.removeOreDict("plateSteel", getModItem(IndustrialCraft2.ID, "itemPlates", 1, 5, missing));
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "blockMiningTip", 1, 0, missing) });
+                getModItem(IndustrialCraft2.ID, "blockMiningTip", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 3, missing),
-                new Object[] { "cableGt01AnyCopper", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32501, missing),
-                        "cableGt01AnyCopper", "circuitBasic", getModItem(GregTech.ID, "gt.blockcasings", 1, 2, missing),
-                        "circuitBasic", "itemCasingSteel",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing), "itemCasingSteel" });
+                "cableGt01AnyCopper",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32501, missing),
+                "cableGt01AnyCopper",
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 2, missing),
+                "circuitBasic",
+                "itemCasingSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 8, missing),
-                new Object[] { "itemCasingSteel", getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                        "itemCasingSteel", getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing), "circuitBasic",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing) });
+                "itemCasingSteel",
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
+                "itemCasingSteel",
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
+                "circuitBasic",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                new Object[] { "plateAnyRubber", "plateCopper", "plateAnyRubber", "plateCopper", "plateSilver",
-                        "plateCopper", "plateAnyRubber", "plateCopper", "plateAnyRubber" });
+                "plateAnyRubber",
+                "plateCopper",
+                "plateAnyRubber",
+                "plateCopper",
+                "plateSilver",
+                "plateCopper",
+                "plateAnyRubber",
+                "plateCopper",
+                "plateAnyRubber");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 0, missing),
-                new Object[] { "cableGt01Tin", "plateSteel", "cableGt01Tin",
-                        getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing), "plateSteel",
-                        getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing), "plateSteel" });
+                "cableGt01Tin",
+                "plateSteel",
+                "cableGt01Tin",
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
+                "plateSteel",
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
+                "plateSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing),
-                new Object[] { "cableGt01AnyCopper", "plateBronze", "cableGt01AnyCopper",
-                        getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
-                        getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing), "plateBronze",
-                        getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing), "plateBronze" });
+                "cableGt01AnyCopper",
+                "plateBronze",
+                "cableGt01AnyCopper",
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                "plateBronze",
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                "plateBronze");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 1, missing),
-                new Object[] { "cableGt01Gold", "batteryElite", "cableGt01Gold", "batteryElite",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing), "batteryElite",
-                        "plateStainlessSteel", "batteryElite", "plateStainlessSteel" });
+                "cableGt01Gold",
+                "batteryElite",
+                "cableGt01Gold",
+                "batteryElite",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                "batteryElite",
+                "plateStainlessSteel",
+                "batteryElite",
+                "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing),
-                new Object[] { "cableGt01TungstenSteel", "batteryMaster", "cableGt01TungstenSteel", "batteryMaster",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing), "batteryMaster", "circuitData",
-                        "batteryMaster", "circuitData" });
+                "cableGt01TungstenSteel",
+                "batteryMaster",
+                "cableGt01TungstenSteel",
+                "batteryMaster",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing),
+                "batteryMaster",
+                "circuitData",
+                "batteryMaster",
+                "circuitData");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
-                new Object[] { "plateAnyRubber", "plateAnyRubber", "plateAnyRubber", "plateAnyRubber", "plateAnyRubber",
-                        "plateAnyRubber", null, null, null });
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockScaffold", 1, 0, missing),
-                new Object[] { "screwIron", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "screwIron",
-                        "craftingToolWrench", "frameGtWood", "craftingToolScrewdriver" });
+                "screwIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "screwIron",
+                "craftingToolWrench",
+                "frameGtWood",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockIronScaffold", 1, 0, missing),
-                new Object[] { "screwSteel", "plateIron", "screwSteel", "craftingToolWrench", "frameGtIron",
-                        "craftingToolScrewdriver" });
+                "screwSteel",
+                "plateIron",
+                "screwSteel",
+                "craftingToolWrench",
+                "frameGtIron",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemToolMiningLaser", 1, 0, missing),
-                new Object[] { "plateTitanium", getModItem(NewHorizonsCoreMod.ID, "item.LaserEmitter", 1, 0, missing),
-                        "plateTitanium", "circuitMaster", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
-                        "circuitMaster", "craftingToolFile",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing), "craftingToolHardHammer" });
+                "plateTitanium",
+                getModItem(NewHorizonsCoreMod.ID, "item.LaserEmitter", 1, 0, missing),
+                "plateTitanium",
+                "circuitMaster",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
+                "circuitMaster",
+                "craftingToolFile",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing),
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorPlating", 1, 0, missing),
-                new Object[] { "plateAlloyAdvanced", "plateAlloyAdvanced", "plateAlloyAdvanced", "plateAlloyAdvanced",
-                        "plateDenseLead", "plateAlloyAdvanced", "plateAlloyAdvanced", "plateAlloyAdvanced",
-                        "plateAlloyAdvanced" });
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "plateDenseLead",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0, missing),
-                new Object[] { "plateDenseCopper", "plateCopper", "plateDenseCopper", "plateSilver",
-                        getModItem(IndustrialCraft2.ID, "reactorPlating", 1, 0, missing), "plateSilver",
-                        "plateDenseCopper", "plateCopper", "plateDenseCopper" });
+                "plateDenseCopper",
+                "plateCopper",
+                "plateDenseCopper",
+                "plateSilver",
+                getModItem(IndustrialCraft2.ID, "reactorPlating", 1, 0, missing),
+                "plateSilver",
+                "plateDenseCopper",
+                "plateCopper",
+                "plateDenseCopper");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorPlatingExplosive", 1, 0, missing),
-                new Object[] { "plateDenseLead", "plateAlloyAdvanced", "plateDenseLead", "plateAlloyAdvanced",
-                        getModItem(IndustrialCraft2.ID, "reactorPlating", 1, 0, missing), "plateAlloyAdvanced",
-                        "plateDenseLead", "plateAlloyAdvanced", "plateDenseLead" });
+                "plateDenseLead",
+                "plateAlloyAdvanced",
+                "plateDenseLead",
+                "plateAlloyAdvanced",
+                getModItem(IndustrialCraft2.ID, "reactorPlating", 1, 0, missing),
+                "plateAlloyAdvanced",
+                "plateDenseLead",
+                "plateAlloyAdvanced",
+                "plateDenseLead");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "ringStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "ringStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemwoodrotor", 1, 1, missing),
-                new Object[] { "screwSteel", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
-                        "craftingToolWrench", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
-                        "ringStainlessSteel", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
-                        "craftingToolScrewdriver", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
-                        "screwSteel" });
+                "screwSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
+                "craftingToolWrench",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
+                "ringStainlessSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
+                "craftingToolScrewdriver",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 7, missing),
+                "screwSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing),
-                new Object[] { "plateIron", "plateIron", "plateIron", "plateIron", "ringTitanium", "plateIron",
-                        "plateIron", "plateIron", "plateIron" });
+                "plateIron",
+                "plateIron",
+                "plateIron",
+                "plateIron",
+                "ringTitanium",
+                "plateIron",
+                "plateIron",
+                "plateIron",
+                "plateIron");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemironrotor", 1, 1, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 11, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing), "craftingToolHardHammer",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing), "ringTitanium",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing), "craftingToolWrench",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 11, missing) });
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 11, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing),
+                "craftingToolHardHammer",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing),
+                "ringTitanium",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing),
+                "craftingToolWrench",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 8, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 11, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing),
-                new Object[] { "plateStainlessSteel", "plateStainlessSteel", "plateStainlessSteel",
-                        "plateStainlessSteel", "ringTungstenSteel", "plateStainlessSteel", "plateStainlessSteel",
-                        "plateStainlessSteel", "plateStainlessSteel" });
-        addShapelessCraftingRecipe(
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "ringTungstenSteel",
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "plateStainlessSteel");
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing),
-                new Object[] { getModItem(Railcraft.ID, "part.turbine.blade", 1, 0, missing) });
+                getModItem(Railcraft.ID, "part.turbine.blade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemsteelrotor", 1, 1, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing), "craftingToolHardHammer",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing), "ringTungstenSteel",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing), "craftingToolWrench",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing) });
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing),
+                "craftingToolHardHammer",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing),
+                "ringTungstenSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing),
+                "craftingToolWrench",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 10, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing), "ringIridium",
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing) });
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
+                "ringIridium",
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemwcarbonrotor", 1, 1, missing),
-                new Object[] { getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing), "craftingToolHardHammer",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing), "ringIridium",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing), "craftingToolWrench",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
-                        getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing) });
+                getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
+                "craftingToolHardHammer",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
+                "ringIridium",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
+                "craftingToolWrench",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
+                getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 5, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing), "circuitGood",
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 11, missing), "circuitGood",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "circuitGood",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 11, missing),
+                "circuitGood",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemSteamTurbineBlade", 1, 0, missing),
-                new Object[] { getModItem(Railcraft.ID, "part.turbine.disk", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Railcraft.ID, "part.turbine.disk", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemSteamTurbine", 1, 0, missing),
-                new Object[] { getModItem(Railcraft.ID, "part.turbine.rotor", 1, 0, missing) });
+                getModItem(Railcraft.ID, "part.turbine.rotor", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemSteamTurbine", 1, 0, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemSteamTurbineBlade", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemSteamTurbineBlade", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemSteamTurbineBlade", 1, 0, missing), null,
-                        "craftingToolWrench", null });
+                getModItem(IndustrialCraft2.ID, "itemSteamTurbineBlade", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemSteamTurbineBlade", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemSteamTurbineBlade", 1, 0, missing),
+                null,
+                "craftingToolWrench",
+                null);
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
-                new Object[] { "plateAnyIron", "plateAnyIron", "plateAnyIron", "plateAnyIron", "craftingToolWrench",
-                        "plateAnyIron", "plateAnyIron", getModItem(Minecraft.ID, "furnace", 1, 0, missing),
-                        "plateAnyIron" });
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "plateAnyIron",
+                "craftingToolWrench",
+                "plateAnyIron",
+                "plateAnyIron",
+                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
+                "plateAnyIron");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
-                new Object[] { "plateAluminium", getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "plateAluminium",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "plateAluminium",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "plateAluminium" });
+                "plateAluminium",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "plateAluminium",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "plateAluminium",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "plateAluminium");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentCore", 1, 1, missing),
-                new Object[] { "plateDoubleCopper", "plateSilver", "plateDoubleCopper", "plateSilver",
-                        getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing), "plateSilver",
-                        "plateDoubleCopper", "plateSilver", "plateDoubleCopper" });
+                "plateDoubleCopper",
+                "plateSilver",
+                "plateDoubleCopper",
+                "plateSilver",
+                getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
+                "plateSilver",
+                "plateDoubleCopper",
+                "plateSilver",
+                "plateDoubleCopper");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing),
-                new Object[] { getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing) });
+                getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentGold", 1, 1, missing),
-                new Object[] { "screwStainlessSteel", "plateGold", "screwStainlessSteel", "plateGold",
-                        getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing), "plateGold",
-                        "screwStainlessSteel", "plateGold", "screwStainlessSteel" });
+                "screwStainlessSteel",
+                "plateGold",
+                "screwStainlessSteel",
+                "plateGold",
+                getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing),
+                "plateGold",
+                "screwStainlessSteel",
+                "plateGold",
+                "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorVentSpread", 1, 0, missing),
-                new Object[] { getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "plateDenseTin",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "plateDenseTin",
-                        getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing), "plateDenseTin",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "plateDenseTin",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing) });
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "plateDenseTin",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "plateDenseTin",
+                getModItem(IndustrialCraft2.ID, "reactorVent", 1, 1, missing),
+                "plateDenseTin",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "plateDenseTin",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing),
-                new Object[] { "plateSilver", "circuitAdvanced", "plateSilver", "plateAluminium", "plateCopper",
-                        "plateAluminium", "plateSilver", "plateAluminium", "plateSilver" });
+                "plateSilver",
+                "circuitAdvanced",
+                "plateSilver",
+                "plateAluminium",
+                "plateCopper",
+                "plateAluminium",
+                "plateSilver",
+                "plateAluminium",
+                "plateSilver");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchCore", 1, 1, missing),
-                new Object[] { "plateDoubleCopper", "plateSilver", "plateDoubleCopper", "plateSilver",
-                        getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing), "plateSilver",
-                        "plateDoubleCopper", "plateSilver", "plateDoubleCopper" });
+                "plateDoubleCopper",
+                "plateSilver",
+                "plateDoubleCopper",
+                "plateSilver",
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing),
+                "plateSilver",
+                "plateDoubleCopper",
+                "plateSilver",
+                "plateDoubleCopper");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchSpread", 1, 1, missing),
-                new Object[] { "screwStainlessSteel", "plateGold", "screwStainlessSteel", "plateGold",
-                        getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing), "plateGold",
-                        "screwStainlessSteel", "plateGold", "screwStainlessSteel" });
+                "screwStainlessSteel",
+                "plateGold",
+                "screwStainlessSteel",
+                "plateGold",
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing),
+                "plateGold",
+                "screwStainlessSteel",
+                "plateGold",
+                "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1, missing),
-                new Object[] { "plateLapis", "circuitData", "plateLapis",
-                        getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing), "plateDiamond",
-                        getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing), "plateLapis",
-                        "circuitData", "plateLapis" });
+                "plateLapis",
+                "circuitData",
+                "plateLapis",
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing),
+                "plateDiamond",
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitch", 1, 1, missing),
+                "plateLapis",
+                "circuitData",
+                "plateLapis");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1, missing),
-                new Object[] { "plateRedAlloy", getModItem(IndustrialCraft2.ID, "reactorHeatSwitchCore", 1, 1, missing),
-                        "plateRedAlloy", "plateRedAlloy",
-                        getModItem(IndustrialCraft2.ID, "reactorVentCore", 1, 1, missing), "plateRedAlloy",
-                        "plateRedAlloy", getModItem(IndustrialCraft2.ID, "reactorHeatSwitchCore", 1, 1, missing),
-                        "plateRedAlloy" });
-        addShapelessCraftingRecipe(
+                "plateRedAlloy",
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitchCore", 1, 1, missing),
+                "plateRedAlloy",
+                "plateRedAlloy",
+                getModItem(IndustrialCraft2.ID, "reactorVentCore", 1, 1, missing),
+                "plateRedAlloy",
+                "plateRedAlloy",
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitchCore", 1, 1, missing),
+                "plateRedAlloy");
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 32767, missing), "dustRedAlloy",
-                        "dustRedAlloy", "dustRedAlloy", "dustRedAlloy", "dustRedAlloy", "dustRedAlloy", "dustRedAlloy",
-                        "dustRedAlloy" });
+                getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 32767, missing),
+                "dustRedAlloy",
+                "dustRedAlloy",
+                "dustRedAlloy",
+                "dustRedAlloy",
+                "dustRedAlloy",
+                "dustRedAlloy",
+                "dustRedAlloy",
+                "dustRedAlloy");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, 1, missing),
-                new Object[] { "plateDoubleRedAlloy", getModItem(IndustrialCraft2.ID, "reactorVentGold", 1, 1, missing),
-                        "plateDoubleRedAlloy", getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1, missing),
-                        "plateDenseLapis", getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1, missing),
-                        "plateDoubleRedAlloy",
-                        getModItem(IndustrialCraft2.ID, "reactorHeatSwitchSpread", 1, 1, missing),
-                        "plateDoubleRedAlloy" });
-        addShapelessCraftingRecipe(
+                "plateDoubleRedAlloy",
+                getModItem(IndustrialCraft2.ID, "reactorVentGold", 1, 1, missing),
+                "plateDoubleRedAlloy",
+                getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1, missing),
+                "plateDenseLapis",
+                getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1, missing),
+                "plateDoubleRedAlloy",
+                getModItem(IndustrialCraft2.ID, "reactorHeatSwitchSpread", 1, 1, missing),
+                "plateDoubleRedAlloy");
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, 1, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, 32767, missing), "dustLapis",
-                        "dustLapis", "dustLapis", "dustLapis", "dustLapis", "dustLapis", "dustLapis", "dustLapis" });
+                getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, 32767, missing),
+                "dustLapis",
+                "dustLapis",
+                "dustLapis",
+                "dustLapis",
+                "dustLapis",
+                "dustLapis",
+                "dustLapis",
+                "dustLapis");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemTreetap", 1, 0, missing),
-                new Object[] { "craftingToolSoftHammer", "screwWood", "craftingToolScrewdriver", "pipeMediumWood",
-                        "pipeMediumWood", "pipeSmallWood", "pipeLargeWood", "craftingToolSaw", "craftingToolFile" });
+                "craftingToolSoftHammer",
+                "screwWood",
+                "craftingToolScrewdriver",
+                "pipeMediumWood",
+                "pipeMediumWood",
+                "pipeSmallWood",
+                "pipeLargeWood",
+                "craftingToolSaw",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 6, missing),
-                new Object[] { "itemCasingAnyCopper", "itemCasingAnyCopper", "itemCasingAnyCopper", "screwCopper",
-                        "craftingToolWrench", "screwCopper", "itemCasingAnyCopper", "itemCasingAnyCopper",
-                        "itemCasingAnyCopper" });
+                "itemCasingAnyCopper",
+                "itemCasingAnyCopper",
+                "itemCasingAnyCopper",
+                "screwCopper",
+                "craftingToolWrench",
+                "screwCopper",
+                "itemCasingAnyCopper",
+                "itemCasingAnyCopper",
+                "itemCasingAnyCopper");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBarrel", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "ringIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "ringIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "ringIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "ringIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing),
-                new Object[] { "plateStone", "craftingToolHardHammer", "plateStone", null, "plateStone", null });
-        addShapelessCraftingRecipe(
+                "plateStone",
+                "craftingToolHardHammer",
+                "plateStone",
+                null,
+                "plateStone",
+                null);
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0, missing),
-                new Object[] { "craftingToolMortar", "cropCoffee" });
+                "craftingToolMortar",
+                "cropCoffee");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 3, missing),
-                new Object[] { "screwSteel", "plateSteel", "screwSteel", "craftingToolWrench",
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectricBoatHull", 1, 0, missing),
-                        "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing) });
+                "screwSteel",
+                "plateSteel",
+                "screwSteel",
+                "craftingToolWrench",
+                getModItem(NewHorizonsCoreMod.ID, "item.ElectricBoatHull", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing),
-                new Object[] { "plateAnyRubber", "craftingToolSaw", "plateAnyRubber", "plateAnyRubber",
-                        "craftingToolSoftHammer", "plateAnyRubber", "plateAnyRubber", "plateAnyRubber",
-                        "plateAnyRubber" });
-        addShapelessCraftingRecipe(
+                "plateAnyRubber",
+                "craftingToolSaw",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "craftingToolSoftHammer",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber");
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemBoat", 1, 2, missing), "plateAnyRubber",
-                        "plateAnyRubber", "craftingToolHardHammer" });
+                getModItem(IndustrialCraft2.ID, "itemBoat", 1, 2, missing),
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "windmeter", 1, 0, missing),
-                new Object[] { "screwStainlessSteel", "rotorAluminium", "craftingToolScrewdriver",
-                        "gearGtSmallStainlessSteel", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing),
-                        "gearGtSmallStainlessSteel", "plateStainlessSteel", "batteryBasic", "plateStainlessSteel" });
+                "screwStainlessSteel",
+                "rotorAluminium",
+                "craftingToolScrewdriver",
+                "gearGtSmallStainlessSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing),
+                "gearGtSmallStainlessSteel",
+                "plateStainlessSteel",
+                "batteryBasic",
+                "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemDoorAlloy", 1, 0, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0, missing), "craftingToolHardHammer",
-                        getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing), "ringLead", "screwLead",
-                        getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing), "plateDenseLead",
-                        "craftingToolScrewdriver" });
+                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0, missing),
+                "craftingToolHardHammer",
+                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
+                "ringLead",
+                "screwLead",
+                getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
+                "plateDenseLead",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemToolPainter", 1, 0, missing),
-                new Object[] { "blockWool", "blockWool", "blockWool", null, "stickSteel", null, null, "stickSteel",
-                        null });
+                "blockWool",
+                "blockWool",
+                "blockWool",
+                null,
+                "stickSteel",
+                null,
+                null,
+                "stickSteel",
+                null);
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, 0, missing),
-                new Object[] { "batteryBasic", "cableGt01Tin", "batteryBasic", "circuitBasic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17315, missing), "circuitBasic", "batteryBasic",
-                        "cableGt01Tin", "batteryBasic" });
+                "batteryBasic",
+                "cableGt01Tin",
+                "batteryBasic",
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17315, missing),
+                "circuitBasic",
+                "batteryBasic",
+                "cableGt01Tin",
+                "batteryBasic");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 0, missing),
-                new Object[] { "screwIron", "circuitBasic", "screwIron", "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing), "craftingToolHardHammer",
-                        "screwIron", "chestIron", "screwIron" });
+                "screwIron",
+                "circuitBasic",
+                "screwIron",
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                "craftingToolHardHammer",
+                "screwIron",
+                "chestIron",
+                "screwIron");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockCrop", 1, 0, missing),
-                new Object[] { "stickLongWood", null, "stickLongWood", "stickLongWood", null, "stickLongWood" });
+                "stickLongWood",
+                null,
+                "stickLongWood",
+                "stickLongWood",
+                null,
+                "stickLongWood");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemFoamSprayer", 1, 0, missing),
-                new Object[] { "pipeSmallSteel", "craftingToolScrewdriver", "screwIron", "craftingToolSaw",
-                        "pipeSmallSteel", getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing), "screwIron",
-                        getModItem(Minecraft.ID, "stone_button", 1, 0, missing), "circuitBasic" });
+                "pipeSmallSteel",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "craftingToolSaw",
+                "pipeSmallSteel",
+                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
+                "screwIron",
+                getModItem(Minecraft.ID, "stone_button", 1, 0, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorAlloyChestplate", 1, 0, missing),
-                new Object[] { "plateAlloyAdvanced", "craftingToolHardHammer", "plateAlloyAdvanced",
-                        "plateAlloyAdvanced", getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing),
-                        "plateAlloyAdvanced", "plateAlloyAdvanced",
-                        getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing), "plateAlloyAdvanced" });
+                "plateAlloyAdvanced",
+                "craftingToolHardHammer",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing),
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
+                "plateAlloyAdvanced");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorAlloyChestplate", 1, 0, missing),
-                new Object[] { "plateAlloyAdvanced", "craftingToolHardHammer", "plateAlloyAdvanced",
-                        "plateAlloyAdvanced", getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
-                        "plateAlloyAdvanced", "plateAlloyAdvanced",
-                        getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing), "plateAlloyAdvanced" });
+                "plateAlloyAdvanced",
+                "craftingToolHardHammer",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing),
+                "plateAlloyAdvanced");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing),
-                new Object[] { "itemCasingSteel", "craftingToolHardHammer", "itemCasingSteel",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "screwSteel",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "itemCasingSteel",
-                        "craftingToolScrewdriver", "itemCasingSteel" });
+                "itemCasingSteel",
+                "craftingToolHardHammer",
+                "itemCasingSteel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "screwSteel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "itemCasingSteel",
+                "craftingToolScrewdriver",
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemNanoSaber", 1, 0, missing),
-                new Object[] { "plateAlloyIridium",
-                        createItemStack(
-                                TinkersGregworks.ID,
-                                "tGregToolPartLargeSwordBlade",
-                                1,
-                                1529,
-                                "{material:\"TungstenSteel\"}",
-                                missing),
-                        "plateAlloyIridium", "circuitMaster", "batteryMaster", "circuitMaster", "craftingToolFile",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing), "craftingToolHardHammer" });
+                "plateAlloyIridium",
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargeSwordBlade",
+                        1,
+                        1529,
+                        "{material:\"TungstenSteel\"}",
+                        missing),
+                "plateAlloyIridium",
+                "circuitMaster",
+                "batteryMaster",
+                "circuitMaster",
+                "craftingToolFile",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing),
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "obscurator", 1, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "cableGt01Gold",
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing), "cableGt01Gold",
-                        "itemCasingAnyIron", "batteryAdvanced", "itemCasingAnyIron" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "cableGt01Gold",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "cableGt01Gold",
+                "itemCasingAnyIron",
+                "batteryAdvanced",
+                "itemCasingAnyIron");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemScanner", 1, 0, missing),
-                new Object[] { "itemCasingGold", "plateStainlessSteel", "itemCasingGold", "circuitAdvanced",
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing), "circuitAdvanced",
-                        "cableGt01Gold", "batteryElite", "cableGt01Gold" });
+                "itemCasingGold",
+                "plateStainlessSteel",
+                "itemCasingGold",
+                "circuitAdvanced",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "circuitAdvanced",
+                "cableGt01Gold",
+                "batteryElite",
+                "cableGt01Gold");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0, missing),
-                new Object[] { "itemCasingTitanium", getModItem(IndustrialCraft2.ID, "itemScanner", 1, 32767, missing),
-                        "itemCasingTitanium", "circuitData",
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing), "circuitData",
-                        "cableGt01Nichrome", "batteryMaster", "cableGt01Nichrome" });
+                "itemCasingTitanium",
+                getModItem(IndustrialCraft2.ID, "itemScanner", 1, 32767, missing),
+                "itemCasingTitanium",
+                "circuitData",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "circuitData",
+                "cableGt01Nichrome",
+                "batteryMaster",
+                "cableGt01Nichrome");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing),
-                new Object[] { "cableGt01AnyCopper", "itemCasingSteel", "cableGt01AnyCopper", "itemCasingSteel",
-                        "craftingToolScrewdriver", "itemCasingSteel", "circuitBasic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "circuitBasic" });
+                "cableGt01AnyCopper",
+                "itemCasingSteel",
+                "cableGt01AnyCopper",
+                "itemCasingSteel",
+                "craftingToolScrewdriver",
+                "itemCasingSteel",
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing),
-                new Object[] { "cableGt02Gold", "itemCasingStainlessSteel", "cableGt02Gold", "itemCasingStainlessSteel",
-                        "craftingToolScrewdriver", "itemCasingStainlessSteel", "circuitAdvanced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing), "circuitAdvanced" });
+                "cableGt02Gold",
+                "itemCasingStainlessSteel",
+                "cableGt02Gold",
+                "itemCasingStainlessSteel",
+                "craftingToolScrewdriver",
+                "itemCasingStainlessSteel",
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "circuitAdvanced");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 1, missing),
-                new Object[] { "screwSteel", "plateSteel", "screwSteel", "circuitBasic",
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing), "circuitBasic",
-                        "craftingToolHardHammer", "plateSteel", "craftingToolScrewdriver" });
+                "screwSteel",
+                "plateSteel",
+                "screwSteel",
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                "circuitBasic",
+                "craftingToolHardHammer",
+                "plateSteel",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 2, missing),
-                new Object[] { "screwSteel", getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                        "screwSteel", "circuitBasic", getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        "circuitBasic", "craftingToolHardHammer",
-                        getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                        "craftingToolScrewdriver" });
+                "screwSteel",
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
+                "screwSteel",
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                "circuitBasic",
+                "craftingToolHardHammer",
+                getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 2, missing),
-                new Object[] { getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "chestIron",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "itemCasingSteel",
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing), "itemCasingSteel", "circuitBasic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "circuitBasic" });
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "chestIron",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                "itemCasingSteel",
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 6, missing),
-                new Object[] { "itemCasingAnyIron", "itemCasingAnyIron", "itemCasingAnyIron", "craftingChest",
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing), "craftingChest", "itemCasingAnyIron",
-                        "itemCasingAnyIron", "itemCasingAnyIron" });
+                "itemCasingAnyIron",
+                "itemCasingAnyIron",
+                "itemCasingAnyIron",
+                "craftingChest",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                "craftingChest",
+                "itemCasingAnyIron",
+                "itemCasingAnyIron",
+                "itemCasingAnyIron");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 5, missing),
-                new Object[] { "itemCasingAnyIron", "circuitBasic", "itemCasingAnyIron",
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing), "itemCasingAnyIron",
-                        "craftingChest", "itemCasingAnyIron" });
+                "itemCasingAnyIron",
+                "circuitBasic",
+                "itemCasingAnyIron",
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
+                "itemCasingAnyIron",
+                "craftingChest",
+                "itemCasingAnyIron");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 4, missing),
-                new Object[] { "itemCasingAnyIron", "circuitBasic", "itemCasingAnyIron",
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing), "pipeLargeSteel",
-                        getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing), "pipeLargeSteel" });
+                "itemCasingAnyIron",
+                "circuitBasic",
+                "itemCasingAnyIron",
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
+                "pipeLargeSteel",
+                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
+                "pipeLargeSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 3, missing),
-                new Object[] { "itemCasingAnyIron", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
-                        "itemCasingAnyIron", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "itemCasingAnyIron",
-                        "circuitBasic", "itemCasingAnyIron" });
+                "itemCasingAnyIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                "itemCasingAnyIron",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "itemCasingAnyIron",
+                "circuitBasic",
+                "itemCasingAnyIron");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 0, missing),
-                new Object[] { "itemCasingSteel", "circuitBasic", "itemCasingSteel", "pipeMediumSteel",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 6, missing), "pipeMediumSteel",
-                        "itemCasingSteel", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                        "itemCasingSteel" });
+                "itemCasingSteel",
+                "circuitBasic",
+                "itemCasingSteel",
+                "pipeMediumSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 6, missing),
+                "pipeMediumSteel",
+                "itemCasingSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 15, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1, missing), "pipeMediumSteel",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 6, missing), "pipeMediumSteel",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "circuitBasic",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing) });
+                getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1, missing),
+                "pipeMediumSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 6, missing),
+                "pipeMediumSteel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "circuitBasic",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 14, missing),
-                new Object[] { "itemCasingSteel", "itemCasingSteel", "itemCasingSteel", "pipeMediumSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing), "pipeMediumSteel",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "circuitBasic",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing) });
+                "itemCasingSteel",
+                "itemCasingSteel",
+                "itemCasingSteel",
+                "pipeMediumSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                "pipeMediumSteel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "circuitBasic",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 12, missing),
-                new Object[] { "itemCasingSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
-                        "itemCasingSteel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "chestSteel",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "itemCasingSteel", "circuitBasic",
-                        "itemCasingSteel" });
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                "itemCasingSteel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "chestSteel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "itemCasingSteel",
+                "circuitBasic",
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 11, missing),
-                new Object[] { "circuitElite", getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing),
-                        "circuitElite", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32654, missing),
-                        getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32654, missing) });
+                "circuitElite",
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing),
+                "circuitElite",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32654, missing),
+                getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32654, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing), "circuitAdvanced",
-                        "cableGt04Gold", "circuitAdvanced" });
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                "circuitAdvanced",
+                "cableGt04Gold",
+                "circuitAdvanced");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 9, missing),
-                new Object[] { "plateRedAlloy", "itemCasingSteel", "plateRedAlloy", "springSteelMagnetic",
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing), "springSteelMagnetic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "circuitBasic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing) });
+                "plateRedAlloy",
+                "itemCasingSteel",
+                "plateRedAlloy",
+                "springSteelMagnetic",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                "springSteelMagnetic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockChargepad", 1, 3, missing),
-                new Object[] { "screwStainlessSteel",
-                        getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing), "screwStainlessSteel",
-                        "circuitData", getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing), "circuitData",
-                        "itemCasingStainlessSteel", "craftingToolScrewdriver", "itemCasingStainlessSteel" });
+                "screwStainlessSteel",
+                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
+                "screwStainlessSteel",
+                "circuitData",
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing),
+                "circuitData",
+                "itemCasingStainlessSteel",
+                "craftingToolScrewdriver",
+                "itemCasingStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockChargepad", 1, 2, missing),
-                new Object[] { "screwAluminium",
-                        getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1, 0, missing), "screwAluminium",
-                        "circuitAdvanced", getModItem(IndustrialCraft2.ID, "blockElectric", 1, 1, missing),
-                        "circuitAdvanced", "itemCasingAluminium", "craftingToolScrewdriver", "itemCasingAluminium" });
+                "screwAluminium",
+                getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1, 0, missing),
+                "screwAluminium",
+                "circuitAdvanced",
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 1, missing),
+                "circuitAdvanced",
+                "itemCasingAluminium",
+                "craftingToolScrewdriver",
+                "itemCasingAluminium");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockChargepad", 1, 1, missing),
-                new Object[] { "screwSteel", getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing),
-                        "screwSteel", "circuitGood", getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing),
-                        "circuitGood", "itemCasingSteel", "craftingToolScrewdriver", "itemCasingSteel" });
+                "screwSteel",
+                getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing),
+                "screwSteel",
+                "circuitGood",
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing),
+                "circuitGood",
+                "itemCasingSteel",
+                "craftingToolScrewdriver",
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockChargepad", 1, 0, missing),
-                new Object[] { "screwIron", getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing),
-                        "screwIron", "circuitBasic", getModItem(IndustrialCraft2.ID, "blockElectric", 1, 0, missing),
-                        "circuitBasic", "itemCasingAnyIron", "craftingToolScrewdriver", "itemCasingAnyIron" });
+                "screwIron",
+                getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing),
+                "screwIron",
+                "circuitBasic",
+                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 0, missing),
+                "circuitBasic",
+                "itemCasingAnyIron",
+                "craftingToolScrewdriver",
+                "itemCasingAnyIron");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 1, missing),
-                new Object[] { "itemCasingSteel", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                        "itemCasingSteel", "pipeMediumSteel",
-                        getModItem(GregTech.ID, "gt.blockcasings3", 1, 14, missing), "pipeMediumSteel",
-                        "itemCasingSteel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        "itemCasingSteel" });
+                "itemCasingSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
+                "itemCasingSteel",
+                "pipeMediumSteel",
+                getModItem(GregTech.ID, "gt.blockcasings3", 1, 14, missing),
+                "pipeMediumSteel",
+                "itemCasingSteel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 0, missing),
-                new Object[] { "itemCasingSteel", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                        "itemCasingSteel", "screwSteel", getModItem(GregTech.ID, "gt.blockcasings3", 1, 14, missing),
-                        "screwSteel", "itemCasingSteel", "craftingIronFurnace", "itemCasingSteel" });
-        addShapelessCraftingRecipe(
+                "itemCasingSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
+                "itemCasingSteel",
+                "screwSteel",
+                getModItem(GregTech.ID, "gt.blockcasings3", 1, 14, missing),
+                "screwSteel",
+                "itemCasingSteel",
+                "craftingIronFurnace",
+                "itemCasingSteel");
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing) });
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 2, missing),
-                new Object[] { "itemCasingStainlessSteel", "rotorStainlessSteel", "itemCasingStainlessSteel",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing), "cableGt04Gold",
-                        "rotorStainlessSteel", "cableGt04Gold" });
+                "itemCasingStainlessSteel",
+                "rotorStainlessSteel",
+                "itemCasingStainlessSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
+                "cableGt04Gold",
+                "rotorStainlessSteel",
+                "cableGt04Gold");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 1, missing),
-                new Object[] { "itemCasingStainlessSteel", "rotorStainlessSteel", "itemCasingStainlessSteel",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
-                        getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing), "circuitAdvanced",
-                        "rotorStainlessSteel", "circuitAdvanced" });
+                "itemCasingStainlessSteel",
+                "rotorStainlessSteel",
+                "itemCasingStainlessSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
+                getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
+                "circuitAdvanced",
+                "rotorStainlessSteel",
+                "circuitAdvanced");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 7, missing),
-                new Object[] { "itemCasingSteel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        "itemCasingSteel", getModItem(GregTech.ID, "gt.blockmachines", 1, 2006, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 2006, missing), "itemCasingSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "itemCasingSteel" });
+                "itemCasingSteel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 2006, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 2006, missing),
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17084, missing),
-                new Object[] { "craftingToolHardHammer", null, null, "ingotIridium", null, null, "ingotIridium", null,
-                        null });
+                "craftingToolHardHammer",
+                null,
+                null,
+                "ingotIridium",
+                null,
+                null,
+                "ingotIridium",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17084, missing),
-                new Object[] { "craftingToolHardHammer", null, null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 13084, missing), null, null });
+                "craftingToolHardHammer",
+                null,
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 13084, missing),
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 16, 17084, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.03", 1, 3084, missing), "craftingToolCrowbar",
-                        null });
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 3084, missing),
+                "craftingToolCrowbar",
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 3084, missing),
-                new Object[] { "plateIridium", "ingotIridium", "craftingToolHardHammer", "plateIridium", null, null,
-                        "craftingToolFile", null, null });
+                "plateIridium",
+                "ingotIridium",
+                "craftingToolHardHammer",
+                "plateIridium",
+                null,
+                null,
+                "craftingToolFile",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 4084, missing),
-                new Object[] { "plateIridium", "ingotIridium", "craftingToolHardHammer", "craftingToolFile", null,
-                        null });
+                "plateIridium",
+                "ingotIridium",
+                "craftingToolHardHammer",
+                "craftingToolFile",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 12084, missing),
-                new Object[] { "plateIridium", "plateIridium", "ingotIridium", "craftingToolHardHammer",
-                        "craftingToolFile", null });
+                "plateIridium",
+                "plateIridium",
+                "ingotIridium",
+                "craftingToolHardHammer",
+                "craftingToolFile",
+                null);
         addShapedRecipe(
                 createItemStack(
                         GregTech.ID,
@@ -635,50 +1063,105 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         12,
                         "{GT.ToolStats:{PrimaryMaterial:\"Iridium\",MaxDamage:512000L,SecondaryMaterial:\"Steel\"}}",
                         missing),
-                new Object[] { "ingotIridium", "ingotIridium", null, "ingotIridium", "ingotIridium", "stickSteel",
-                        "ingotIridium", "ingotIridium", null });
+                "ingotIridium",
+                "ingotIridium",
+                null,
+                "ingotIridium",
+                "ingotIridium",
+                "stickSteel",
+                "ingotIridium",
+                "ingotIridium",
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 1084, missing),
-                new Object[] { "plateIridium", "ingotIridium", "ingotIridium", "craftingToolFile", null,
-                        "craftingToolHardHammer", null, null, null });
+                "plateIridium",
+                "ingotIridium",
+                "ingotIridium",
+                "craftingToolFile",
+                null,
+                "craftingToolHardHammer",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 13084, missing),
-                new Object[] { "plateIridium", "plateIridium", null, "plateIridium", "plateIridium", null,
-                        "craftingToolHardHammer", "craftingToolFile", null });
+                "plateIridium",
+                "plateIridium",
+                null,
+                "plateIridium",
+                "plateIridium",
+                null,
+                "craftingToolHardHammer",
+                "craftingToolFile",
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 84, missing),
-                new Object[] { null, "plateIridium", null, "craftingToolFile", "plateIridium", "craftingToolHardHammer",
-                        null, null, null });
+                null,
+                "plateIridium",
+                null,
+                "craftingToolFile",
+                "plateIridium",
+                "craftingToolHardHammer",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 7084, missing),
-                new Object[] { "plateIridium", "plateIridium", null, "craftingToolFile", "craftingToolHardHammer", null,
-                        null, null, null });
+                "plateIridium",
+                "plateIridium",
+                null,
+                "craftingToolFile",
+                "craftingToolHardHammer",
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 2084, missing),
-                new Object[] { "craftingToolFile", "plateIridium", "craftingToolHardHammer" });
+                "craftingToolFile",
+                "plateIridium",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 16, 11084, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.03", 1, 1084, missing), "craftingToolCrowbar",
-                        null });
+                getModItem(GregTech.ID, "gt.metaitem.03", 1, 1084, missing),
+                "craftingToolCrowbar",
+                null);
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing),
-                new Object[] { "screwSteel", "stickSteel", "craftingToolScrewdriver", "plateAnyRubber", "stickSteel",
-                        "stickSteel", "stickSteel", "plateAnyRubber", "screwSteel" });
+                "screwSteel",
+                "stickSteel",
+                "craftingToolScrewdriver",
+                "plateAnyRubber",
+                "stickSteel",
+                "stickSteel",
+                "stickSteel",
+                "plateAnyRubber",
+                "screwSteel");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
-                new Object[] { "craftingToolCrowbar", getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing),
-                        "craftingToolScrewdriver", "craftingToolWrench", "craftingToolHardHammer",
-                        "craftingToolFile" });
-        addShapelessCraftingRecipe(
+                "craftingToolCrowbar",
+                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing) });
+                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemPartCFPowder", 1, 0, missing),
-                new Object[] { "dustCalcite", "dustCalcite", "dustStone", "dustClay", "dustQuartzSand", null, null,
-                        null, null });
+                "dustCalcite",
+                "dustCalcite",
+                "dustStone",
+                "dustClay",
+                "dustQuartzSand",
+                null,
+                null,
+                null,
+                null);
         GameRegistry.addRecipe(
                 new ArmorRepairRecipe(
                         getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing),

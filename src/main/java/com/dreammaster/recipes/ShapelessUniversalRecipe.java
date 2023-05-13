@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
@@ -42,25 +43,39 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                     oresHashes.add(GT_Utility.ItemId.createNoCopy(i));
                 }
                 this.recipe.add(oresHashes);
-            } else if (value instanceof ItemStack) this.recipe.add(((ItemStack) value).copy());
-            else if (value instanceof Item) this.recipe.add(new ItemStack((Item) value));
-            else if (value instanceof Block) this.recipe.add(new ItemStack((Block) value));
-            else if (value instanceof ItemData) {
+                this.recipeXY.add(ores);
+            } else if (value instanceof ItemStack) {
+                ItemStack i = ((ItemStack) value).copy();
+                this.recipe.add(i);
+                this.recipeXY.add(i);
+            } else if (value instanceof IItemContainer) {
+                ItemStack i = ((IItemContainer) value).get(1);
+                this.recipe.add(i);
+                this.recipeXY.add(i);
+            } else if (value instanceof Item) {
+                ItemStack i = new ItemStack((Item) value);
+                this.recipe.add(i);
+                this.recipeXY.add(i);
+            } else if (value instanceof Block) {
+                ItemStack i = new ItemStack((Block) value);
+                this.recipe.add(i);
+                this.recipeXY.add(i);
+            } else if (value instanceof ItemData) {
                 ItemData data = (ItemData) value;
                 ItemStack itemStack = GT_OreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
                 if (itemStack == null) {
                     throw new NullPointerException("bad item passed in the recipe");
                 } else {
                     this.recipe.add(itemStack);
+                    this.recipeXY.add(itemStack);
                 }
             } else if (value instanceof NBTItem) {
                 this.recipe.add(value);
+                this.recipeXY.add(((NBTItem) value).getStack());
             } else {
                 throw new IllegalArgumentException("Wrong argument in recipe");
             }
         }
-        recipeXY.addAll(this.recipe);
-        recipeXY.replaceAll(o -> o instanceof NBTItem ? ((NBTItem) o).getStack() : o);
     }
 
     @Override

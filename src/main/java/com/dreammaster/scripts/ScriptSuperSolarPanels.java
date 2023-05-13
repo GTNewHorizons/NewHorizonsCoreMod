@@ -28,42 +28,58 @@ public class ScriptSuperSolarPanels implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32756, missing),
-                new Object[] { "craftingToolCrowbar",
-                        getModItem(SuperSolarPanels.ID, "SpectralSolarPanel", 1, 0, missing), "craftingToolScrewdriver",
-                        "craftingToolWrench", "craftingToolHardHammer", "craftingToolFile" });
+                "craftingToolCrowbar",
+                getModItem(SuperSolarPanels.ID, "SpectralSolarPanel", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32757, missing),
-                new Object[] { "craftingToolCrowbar",
-                        getModItem(SuperSolarPanels.ID, "SingularSolarPanel", 1, 0, missing), "craftingToolScrewdriver",
-                        "craftingToolWrench", "craftingToolHardHammer", "craftingToolFile" });
+                "craftingToolCrowbar",
+                getModItem(SuperSolarPanels.ID, "SingularSolarPanel", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32758, missing),
-                new Object[] { "craftingToolCrowbar", getModItem(SuperSolarPanels.ID, "AdminSolarPanel", 1, 0, missing),
-                        "craftingToolScrewdriver", "craftingToolWrench", "craftingToolHardHammer",
-                        "craftingToolFile" });
+                "craftingToolCrowbar",
+                getModItem(SuperSolarPanels.ID, "AdminSolarPanel", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32759, missing),
-                new Object[] { "craftingToolCrowbar",
-                        getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1, 0, missing), "craftingToolScrewdriver",
-                        "craftingToolWrench", "craftingToolHardHammer", "craftingToolFile" });
+                "craftingToolCrowbar",
+                getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(SuperSolarPanels.ID, "solarsplitter", 1, 0, missing),
-                new Object[] { getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0, missing),
-                        getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing),
-                        getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0, missing),
-                        getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0, missing),
-                        getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing),
-                        getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0, missing),
-                        getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0, missing),
-                        getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing),
-                        getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0, missing) });
+                getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0, missing),
+                getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing),
+                getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0, missing),
+                getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0, missing),
+                getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing),
+                getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0, missing),
+                getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0, missing),
+                getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing),
+                getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0, missing));
         addShapedRecipe(
                 getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1, 0, missing),
-                new Object[] { getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing),
-                        "plateElectrumFlux", getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing),
-                        "plateElectrumFlux", "plateDenseInfinityCatalyst", "plateElectrumFlux",
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing), "plateElectrumFlux",
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing) });
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing),
+                "plateElectrumFlux",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing),
+                "plateElectrumFlux",
+                "plateDenseInfinityCatalyst",
+                "plateElectrumFlux",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing),
+                "plateElectrumFlux",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

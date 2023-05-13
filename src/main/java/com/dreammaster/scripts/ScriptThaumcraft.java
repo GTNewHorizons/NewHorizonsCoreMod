@@ -26,7 +26,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
@@ -434,8 +433,15 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
-                new Object[] { "screwIron", "foilIron", "screwIron", "foilIron", "ringIron", "foilIron", "screwIron",
-                        "foilIron", "screwIron" });
+                "screwIron",
+                "foilIron",
+                "screwIron",
+                "foilIron",
+                "ringIron",
+                "foilIron",
+                "screwIron",
+                "foilIron",
+                "screwIron");
 
         addShapedRecipe(
                 createItemStack(
@@ -445,11 +451,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                         0,
                         "{aqua:0,terra:0,ignis:0,ordo:0,perditio:0,aer:0}",
                         missing),
-                new Object[] { getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing), "screwAluminium",
-                        getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing), "screwAluminium",
-                        getModItem(Forestry.ID, "oakStick", 1, 0, missing), "screwAluminium",
-                        getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing), "screwAluminium",
-                        getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing) });
+                getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing),
+                "screwAluminium",
+                getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
+                "screwAluminium",
+                getModItem(Forestry.ID, "oakStick", 1, 0, missing),
+                "screwAluminium",
+                getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
+                "screwAluminium",
+                getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing));
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "resource", 1, 2, missing));
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing));
@@ -1662,13 +1672,15 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void alchemy() {
         // ALCHEMY
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "ItemEssence", 1),
-                new Object[] { new ItemStack(Items.glass_bottle), "roundAnyRubber" });
+                new ItemStack(Items.glass_bottle),
+                "roundAnyRubber");
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                new Object[] { "craftingToolMortar", getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing) });
+                "craftingToolMortar",
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemResource", 9, 4, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5, missing)).noFluidInputs()
@@ -2384,25 +2396,37 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void artifice() {
         // ARTIFICE
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
-                        getModItem(Minecraft.ID, "feather", 1, 0, missing), "dyeBlack" });
+                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
+                getModItem(Minecraft.ID, "feather", 1, 0, missing),
+                "dyeBlack");
         addShapedRecipe(
                 getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing), "itemCasingGold", "lensDiamond",
-                        "itemCasingGold", getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing) });
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
+                "itemCasingGold",
+                "lensDiamond",
+                "itemCasingGold",
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing),
-                new Object[] { "slabWood", "slabWood", "slabWood", "stickWood", "screwAnyIron", "stickWood", "slabWood",
-                        "craftingToolScrewdriver", "slabWood" });
-        addShapelessCraftingRecipe(
+                "slabWood",
+                "slabWood",
+                "slabWood",
+                "stickWood",
+                "screwAnyIron",
+                "stickWood",
+                "slabWood",
+                "craftingToolScrewdriver",
+                "slabWood");
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 2, 0, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing), "craftingToolSaw" });
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                "craftingToolSaw");
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))

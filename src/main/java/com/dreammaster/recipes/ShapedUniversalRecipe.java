@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
@@ -70,6 +71,9 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
                     this.recipe[y][x] = oresHashes;
                 } else if (this.recipe[y][x] instanceof ItemStack) {
                     this.recipe[y][x] = ((ItemStack) this.recipe[y][x]).copy();
+                    this.recipeXY[y * 3 + x] = this.recipe[y][x];
+                } else if (this.recipe[y][x] instanceof IItemContainer) {
+                    this.recipe[y][x] = ((IItemContainer) this.recipe[y][x]).get(1);
                     this.recipeXY[y * 3 + x] = this.recipe[y][x];
                 } else if (this.recipe[y][x] instanceof Item) {
                     this.recipe[y][x] = new ItemStack((Item) this.recipe[y][x]);

@@ -13,7 +13,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -63,13 +62,13 @@ public class ScriptEMT implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 36, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 36, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "materials", 1, 36, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 36, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "materials", 2, 36, missing),
-                new Object[] { getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing) });
+                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

@@ -11,7 +11,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
@@ -59,115 +58,179 @@ public class ScriptWitchery implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(Witchery.ID, "seedswormwood", 1, 0, missing),
-                new Object[] { getModItem(Witchery.ID, "mutator", 1, 0, missing),
-                        getModItem(Witchery.ID, "somniancotton", 1, 0, missing), null,
-                        getModItem(Witchery.ID, "somniancotton", 1, 0, missing),
-                        getModItem(Minecraft.ID, "wheat", 1, 0, missing),
-                        getModItem(Witchery.ID, "somniancotton", 1, 0, missing), null,
-                        getModItem(Witchery.ID, "somniancotton", 1, 0, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(Witchery.ID, "mutator", 1, 0, missing),
+                getModItem(Witchery.ID, "somniancotton", 1, 0, missing),
+                null,
+                getModItem(Witchery.ID, "somniancotton", 1, 0, missing),
+                getModItem(Minecraft.ID, "wheat", 1, 0, missing),
+                getModItem(Witchery.ID, "somniancotton", 1, 0, missing),
+                null,
+                getModItem(Witchery.ID, "somniancotton", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Witchery.ID, "ingredient", 2, 130, missing),
-                new Object[] { getModItem(Witchery.ID, "ingredient", 1, 130, missing),
-                        getModItem(Minecraft.ID, "magma_cream", 1, 0, missing),
-                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing), "dustTinyNetherStar" });
+                getModItem(Witchery.ID, "ingredient", 1, 130, missing),
+                getModItem(Minecraft.ID, "magma_cream", 1, 0, missing),
+                getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                "dustTinyNetherStar");
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 16, missing),
-                new Object[] { null, null, getModItem(GregTech.ID, "gt.metaitem.01", 1, 2622, missing), null, null,
-                        null, null, null, null });
+                null,
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2622, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2622, missing),
-                new Object[] { null, null, getModItem(Witchery.ID, "ingredient", 1, 16, missing), null, null, null,
-                        null, null, null });
+                null,
+                null,
+                getModItem(Witchery.ID, "ingredient", 1, 16, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 140, missing),
-                new Object[] { "platePaper", "string", "platePaper", "string",
-                        getModItem(Witchery.ID, "ingredient", 1, 163, missing), "string", "platePaper", "string",
-                        "platePaper" });
-        addShapelessCraftingRecipe(
+                "platePaper",
+                "string",
+                "platePaper",
+                "string",
+                getModItem(Witchery.ID, "ingredient", 1, 163, missing),
+                "string",
+                "platePaper",
+                "string",
+                "platePaper");
+        addShapelessRecipe(
                 getModItem(Witchery.ID, "ingredient", 4, 7, missing),
-                new Object[] { getModItem(Minecraft.ID, "bone", 1, 0, missing), "craftingToolKnife" });
+                getModItem(Minecraft.ID, "bone", 1, 0, missing),
+                "craftingToolKnife");
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 81, missing),
-                new Object[] { getModItem(Witchery.ID, "ingredient", 1, 22, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 21, missing),
-                        getModItem(Witchery.ID, "garlic", 1, 0, missing), "dyeBlack", "craftingBook", "craftingFeather",
-                        getModItem(Witchery.ID, "ingredient", 1, 69, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 156, missing), "listAllseed" });
+                getModItem(Witchery.ID, "ingredient", 1, 22, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 21, missing),
+                getModItem(Witchery.ID, "garlic", 1, 0, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Witchery.ID, "ingredient", 1, 69, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 156, missing),
+                "listAllseed");
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 106, missing),
-                new Object[] { getModItem(Minecraft.ID, "stained_hardened_clay", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "mud", 1, 1, missing),
-                        getModItem(Minecraft.ID, "mycelium", 1, 0, missing), "dyeBlack", "craftingBook",
-                        "craftingFeather", getModItem(Minecraft.ID, "netherrack", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 5, missing) });
+                getModItem(Minecraft.ID, "stained_hardened_clay", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "mud", 1, 1, missing),
+                getModItem(Minecraft.ID, "mycelium", 1, 0, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Minecraft.ID, "netherrack", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 127, missing),
-                new Object[] { createItemStack(Witchery.ID, "poppet", 1, 0, "{WITCDamage:0}", missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 7, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 14, missing), "dyeBlack", "craftingBook",
-                        "craftingFeather", getModItem(Witchery.ID, "ingredient", 1, 74, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 25, missing), "flowerYellow" });
+                createItemStack(Witchery.ID, "poppet", 1, 0, "{WITCDamage:0}", missing),
+                getModItem(Witchery.ID, "ingredient", 1, 7, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 14, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Witchery.ID, "ingredient", 1, 74, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 25, missing),
+                "flowerYellow");
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 46, missing),
-                new Object[] { getModItem(Witchery.ID, "ingredient", 1, 27, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 27, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 27, missing), "dyeBlack", "craftingBook",
-                        "craftingFeather", getModItem(Witchery.ID, "ingredient", 1, 27, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 27, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 27, missing) });
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing));
         addShapedRecipe(
                 getModItem(Witchery.ID, "cauldronbook", 1, 0, missing),
-                new Object[] { getModItem(Witchery.ID, "ingredient", 1, 31, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 33, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 32, missing), "dyeBlack", "craftingBook",
-                        "craftingFeather", getModItem(Witchery.ID, "ingredient", 1, 34, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 35, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 28, missing) });
+                getModItem(Witchery.ID, "ingredient", 1, 31, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 33, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 32, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 35, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 28, missing));
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 107, missing),
-                new Object[] { getModItem(Witchery.ID, "chalkritual", 1, 0, missing),
-                        getModItem(Witchery.ID, "circletalisman", 1, 0, missing),
-                        getModItem(Witchery.ID, "chalkritual", 1, 0, missing), "dyeBlack", "craftingBook",
-                        "craftingFeather", getModItem(Witchery.ID, "glintweed", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 78, missing),
-                        getModItem(Witchery.ID, "grassper", 1, 0, missing) });
+                getModItem(Witchery.ID, "chalkritual", 1, 0, missing),
+                getModItem(Witchery.ID, "circletalisman", 1, 0, missing),
+                getModItem(Witchery.ID, "chalkritual", 1, 0, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Witchery.ID, "glintweed", 1, 0, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 78, missing),
+                getModItem(Witchery.ID, "grassper", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 47, missing),
-                new Object[] { getModItem(Witchery.ID, "ingredient", 1, 27, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 10, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 27, missing), "dyeBlack", "craftingBook",
-                        "craftingFeather", getModItem(Witchery.ID, "ingredient", 1, 27, missing),
-                        getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 27, missing) });
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 10, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing),
+                getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 27, missing));
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 48, missing),
-                new Object[] { getModItem(Witchery.ID, "ingredient", 1, 17, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 37, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 17, missing), "dyeBlack", "craftingBook",
-                        "craftingFeather", getModItem(Witchery.ID, "ingredient", 1, 17, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 37, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 17, missing) });
+                getModItem(Witchery.ID, "ingredient", 1, 17, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 37, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 17, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Witchery.ID, "ingredient", 1, 17, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 37, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 17, missing));
         addShapedRecipe(
                 getModItem(Witchery.ID, "ingredient", 1, 49, missing),
-                new Object[] { getModItem(Witchery.ID, "ingredient", 1, 34, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 34, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 34, missing), "dyeBlack", "craftingBook",
-                        "craftingFeather", getModItem(Witchery.ID, "ingredient", 1, 21, missing),
-                        getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 21, missing) });
+                getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                "dyeBlack",
+                "craftingBook",
+                "craftingFeather",
+                getModItem(Witchery.ID, "ingredient", 1, 21, missing),
+                getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 21, missing));
         addShapedRecipe(
                 getModItem(Witchery.ID, "earmuffs", 1, 0, missing),
-                new Object[] { "screwThaumium", "springSteel", "screwThaumium",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "craftingToolWrench",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "ringThaumium",
-                        "craftingToolScrewdriver", "ringThaumium" });
+                "screwThaumium",
+                "springSteel",
+                "screwThaumium",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "craftingToolWrench",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "ringThaumium",
+                "craftingToolScrewdriver",
+                "ringThaumium");
         addShapedRecipe(
                 getModItem(Witchery.ID, "snowpressureplate", 6, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Railcraft.ID, "slab", 1, 3, missing), "springAnyIron",
-                        getModItem(Railcraft.ID, "slab", 1, 3, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Railcraft.ID, "slab", 1, 3, missing),
+                "springAnyIron",
+                getModItem(Railcraft.ID, "slab", 1, 3, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

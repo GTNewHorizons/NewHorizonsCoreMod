@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
@@ -47,125 +46,207 @@ public class ScriptNuclearControl implements IScriptLoader {
                 200,
                 16);
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                new Object[] { getModItem(Natura.ID, "Bluebells", 1, 0, missing) });
+                getModItem(Natura.ID, "Bluebells", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 0, missing),
-                new Object[] { "glassReinforced", "glassReinforced", "glassReinforced", "plateDenseLead",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing), "plateDenseLead",
-                        "circuitAdvanced", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing),
-                        "circuitAdvanced" });
+                "glassReinforced",
+                "glassReinforced",
+                "glassReinforced",
+                "plateDenseLead",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "plateDenseLead",
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing),
+                "circuitAdvanced");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 1, missing),
-                new Object[] { "glassReinforced",
-                        getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 0, missing), "glassReinforced",
-                        getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 2, missing),
-                        getModItem(Minecraft.ID, "repeater", 1, 0, missing), "cableGt01Gold",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1, missing), "cableGt01Gold" });
+                "glassReinforced",
+                getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 0, missing),
+                "glassReinforced",
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 2, missing),
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                "cableGt01Gold",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 1, missing),
+                "cableGt01Gold");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 2, missing),
-                new Object[] { "plateIron", getModItem(Minecraft.ID, "noteblock", 1, 0, missing), "plateIron",
-                        "circuitBasic", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        "circuitBasic", "cableGt01RedAlloy",
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing), "cableGt01RedAlloy" });
+                "plateIron",
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                "plateIron",
+                "circuitBasic",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                "circuitBasic",
+                "cableGt01RedAlloy",
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing),
+                "cableGt01RedAlloy");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 3, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing), "glassReinforced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32680, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing), "circuitBasic",
-                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 0, missing), "circuitBasic" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing),
+                "glassReinforced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32680, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "circuitBasic",
+                getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 0, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(Minecraft.ID, "stained_glass_pane", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing), "circuitBasic",
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing), "circuitBasic", "plateIron",
-                        "cableGt01RedAlloy", "plateIron" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                getModItem(Minecraft.ID, "stained_glass_pane", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "circuitBasic",
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing),
+                "circuitBasic",
+                "plateIron",
+                "cableGt01RedAlloy",
+                "plateIron");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(Minecraft.ID, "stained_glass_pane", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "cableGt01RedAlloy",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                getModItem(Minecraft.ID, "stained_glass_pane", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "cableGt01RedAlloy",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 6, missing),
-                new Object[] { "plateIron", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing), "plateIron",
-                        "cableGt01Platinum", getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
-                        "cableGt01Platinum", "plateIron", "circuitAdvanced", "plateIron" });
+                "plateIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "plateIron",
+                "cableGt01Platinum",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
+                "cableGt01Platinum",
+                "plateIron",
+                "circuitAdvanced",
+                "plateIron");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 7, missing),
-                new Object[] { "plateLead", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing), "plateLead",
-                        "cableGt01Platinum", getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
-                        "cableGt01Platinum", "plateLead", "circuitAdvanced", "plateLead" });
+                "plateLead",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "plateLead",
+                "cableGt01Platinum",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
+                "cableGt01Platinum",
+                "plateLead",
+                "circuitAdvanced",
+                "plateLead");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 8, missing),
-                new Object[] { "plateSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing), "plateSteel",
-                        "cableGt01Platinum", getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
-                        "cableGt01Platinum", "circuitAdvanced",
-                        getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing), "circuitAdvanced" });
+                "plateSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "plateSteel",
+                "cableGt01Platinum",
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
+                "cableGt01Platinum",
+                "circuitAdvanced",
+                getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
+                "circuitAdvanced");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 9, missing),
-                new Object[] { getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
-                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
-                        getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing), "plateAlloyCarbon",
-                        "circuitAdvanced", "plateAlloyCarbon", "craftingToolWrench", "craftingToolHardHammer",
-                        "craftingToolScrewdriver" });
+                getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
+                getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
+                getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
+                "plateAlloyCarbon",
+                "circuitAdvanced",
+                "plateAlloyCarbon",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 10, missing),
-                new Object[] { getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
-                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),
-                        getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing), "plateAlloyCarbon",
-                        "plateSteel", "plateAlloyCarbon", "craftingToolWrench", "craftingToolHardHammer",
-                        "craftingToolScrewdriver" });
+                getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
+                getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),
+                getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
+                "plateAlloyCarbon",
+                "plateSteel",
+                "plateAlloyCarbon",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 0, missing),
-                new Object[] { "paneGlassWhite", "paneGlassWhite", "paneGlassWhite", "paneGlassWhite",
-                        getModItem(Minecraft.ID, "redstone_lamp", 1, 0, missing), "paneGlassWhite", "paneGlassWhite",
-                        "wireGt01RedAlloy", "paneGlassWhite" });
+                "paneGlassWhite",
+                "paneGlassWhite",
+                "paneGlassWhite",
+                "paneGlassWhite",
+                getModItem(Minecraft.ID, "redstone_lamp", 1, 0, missing),
+                "paneGlassWhite",
+                "paneGlassWhite",
+                "wireGt01RedAlloy",
+                "paneGlassWhite");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 2, missing),
-                new Object[] { "paneGlassOrange", "paneGlassOrange", "paneGlassOrange", "paneGlassOrange",
-                        getModItem(Minecraft.ID, "redstone_lamp", 1, 0, missing), "paneGlassOrange", "paneGlassOrange",
-                        "wireGt01RedAlloy", "paneGlassOrange" });
+                "paneGlassOrange",
+                "paneGlassOrange",
+                "paneGlassOrange",
+                "paneGlassOrange",
+                getModItem(Minecraft.ID, "redstone_lamp", 1, 0, missing),
+                "paneGlassOrange",
+                "paneGlassOrange",
+                "wireGt01RedAlloy",
+                "paneGlassOrange");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "ItemToolThermometer", 1, 0, missing),
-                new Object[] { "stickIron", "plateGlass", null, "plateGlass", "cellMercury", "plateGlass", null,
-                        "plateGlass", "plateGlass" });
+                "stickIron",
+                "plateGlass",
+                null,
+                "plateGlass",
+                "cellMercury",
+                "plateGlass",
+                null,
+                "plateGlass",
+                "plateGlass");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "ItemToolDigitalThermometer", 1, 0, missing),
-                new Object[] { getModItem(IC2NuclearControl.ID, "ItemToolThermometer", 1, 0, missing), "plateGlass",
-                        null, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing), null, "plateGlass",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing) });
+                getModItem(IC2NuclearControl.ID, "ItemToolThermometer", 1, 0, missing),
+                "plateGlass",
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                null,
+                "plateGlass",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing));
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
-                new Object[] { "dyeRed", "dyeYellow", "dyeGreen", "dyeWhite", "circuitAdvanced", "dyeMagenta",
-                        "dyeBlack", "dyeCyan", "dyeBlue" });
+                "dyeRed",
+                "dyeYellow",
+                "dyeGreen",
+                "dyeWhite",
+                "circuitAdvanced",
+                "dyeMagenta",
+                "dyeBlack",
+                "dyeCyan",
+                "dyeBlue");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "networkLink", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 0, missing), "plateAluminium",
-                        getModItem(Minecraft.ID, "comparator", 1, 0, missing), "plateAluminium" });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 0, missing),
+                "plateAluminium",
+                getModItem(Minecraft.ID, "comparator", 1, 0, missing),
+                "plateAluminium");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "remoteMonitor", 1, 0, missing),
-                new Object[] { "cableGt01Tin", getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                        "cableGt01Tin", getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
-                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing), "plateAlloyCarbon",
-                        getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing), "plateAlloyCarbon" });
+                "cableGt01Tin",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "cableGt01Tin",
+                getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
+                getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),
+                getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
+                "plateAlloyCarbon",
+                getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
+                "plateAlloyCarbon");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

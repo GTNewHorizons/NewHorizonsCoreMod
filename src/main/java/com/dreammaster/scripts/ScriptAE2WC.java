@@ -26,19 +26,26 @@ public class ScriptAE2WC implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(AE2WCT.ID, "magnetCard", 1, 0, missing),
-                new Object[] { "plateLapis", getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 300, missing),
-                        "plateLapis", "plateNeodymiumMagnetic",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
-                        "plateNeodymiumMagnetic", "plateNeodymiumMagnetic", "plateNeodymiumMagnetic",
-                        "plateNeodymiumMagnetic" });
+                "plateLapis",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 300, missing),
+                "plateLapis",
+                "plateNeodymiumMagnetic",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
+                "plateNeodymiumMagnetic",
+                "plateNeodymiumMagnetic",
+                "plateNeodymiumMagnetic",
+                "plateNeodymiumMagnetic");
         addShapedRecipe(
                 getModItem(AE2WCT.ID, "wirelessCraftingTerminal", 1, 0, missing),
-                new Object[] { "pearlFluix", getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1, 0, missing),
-                        "pearlFluix", "crystalPureFluix",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing), "crystalPureFluix",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing) });
+                "pearlFluix",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1, 0, missing),
+                "pearlFluix",
+                "crystalPureFluix",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
+                "crystalPureFluix",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AE2WCT.ID, "infinityBoosterCard", 1, 0, missing),

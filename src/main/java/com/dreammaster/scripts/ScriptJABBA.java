@@ -247,190 +247,366 @@ public class ScriptJABBA implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "barrel", 1),
-                new Object[] { "logWood", "slabWood", "logWood", "logWood", getModItem(Minecraft.ID, "chest", 1),
-                        "logWood", "logWood", "logWood", "logWood" });
+                "logWood",
+                "slabWood",
+                "logWood",
+                "logWood",
+                getModItem(Minecraft.ID, "chest", 1),
+                "logWood",
+                "logWood",
+                "logWood",
+                "logWood");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "mover", 1),
-                new Object[] { "stickAnyIron", "stickAnyIron", "roundAnyRubber", "stickAnyIron", "craftingToolWrench",
-                        "roundAnyRubber", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32100), "plateSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32100) });
+                "stickAnyIron",
+                "stickAnyIron",
+                "roundAnyRubber",
+                "stickAnyIron",
+                "craftingToolWrench",
+                "roundAnyRubber",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32100),
+                "plateSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32100));
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "moverDiamond", 1),
-                new Object[] { "stickDiamond", "stickDiamond", "roundPlastic", "stickDiamond", "craftingToolWrench",
-                        "roundPlastic", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32101), "plateNetherStar",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32101) });
+                "stickDiamond",
+                "stickDiamond",
+                "roundPlastic",
+                "stickDiamond",
+                "craftingToolWrench",
+                "roundPlastic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32101),
+                "plateNetherStar",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32101));
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "hammer", 1),
-                new Object[] { "ingotIron", "plateAnyIron", "ingotIron", "screwAnyIron", "stickAnyIron", "screwAnyIron",
-                        "craftingToolHardHammer", "stickAnyIron", "craftingToolScrewdriver" });
+                "ingotIron",
+                "plateAnyIron",
+                "ingotIron",
+                "screwAnyIron",
+                "stickAnyIron",
+                "screwAnyIron",
+                "craftingToolHardHammer",
+                "stickAnyIron",
+                "craftingToolScrewdriver");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "tuningFork", 1),
-                new Object[] { "craftingToolScrewdriver", "stickAnyIron", null, "screwAnyIron", "plateAnyIron",
-                        "stickAnyIron", "stickAnyIron", "screwAnyIron", "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                "stickAnyIron",
+                null,
+                "screwAnyIron",
+                "plateAnyIron",
+                "stickAnyIron",
+                "stickAnyIron",
+                "screwAnyIron",
+                "craftingToolHardHammer");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1),
-                new Object[] { "stickWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809), "stickWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809), getModItem(JABBA.ID, "barrel", 1),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809), "stickWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809), "stickWood" });
+                "stickWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809),
+                "stickWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809),
+                getModItem(JABBA.ID, "barrel", 1),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809),
+                "stickWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809),
+                "stickWood");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 1),
-                new Object[] { "stickCopper", "plateCopper", "stickCopper", "plateCopper",
-                        getModItem(JABBA.ID, "barrel", 1), "plateCopper", "stickCopper", "plateCopper",
-                        "stickCopper" });
+                "stickCopper",
+                "plateCopper",
+                "stickCopper",
+                "plateCopper",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateCopper",
+                "stickCopper",
+                "plateCopper",
+                "stickCopper");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 2),
-                new Object[] { "stickIron", "plateIron", "stickIron", "plateIron", getModItem(JABBA.ID, "barrel", 1),
-                        "plateIron", "stickIron", "plateIron", "stickIron" });
+                "stickIron",
+                "plateIron",
+                "stickIron",
+                "plateIron",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateIron",
+                "stickIron",
+                "plateIron",
+                "stickIron");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 3),
-                new Object[] { "stickBronze", "plateBronze", "stickBronze", "plateBronze",
-                        getModItem(JABBA.ID, "barrel", 1), "plateBronze", "stickBronze", "plateBronze",
-                        "stickBronze" });
+                "stickBronze",
+                "plateBronze",
+                "stickBronze",
+                "plateBronze",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateBronze",
+                "stickBronze",
+                "plateBronze",
+                "stickBronze");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 4),
-                new Object[] { "stickSteel", "plateSteel", "stickSteel", "plateSteel",
-                        getModItem(JABBA.ID, "barrel", 1), "plateSteel", "stickSteel", "plateSteel", "stickSteel" });
+                "stickSteel",
+                "plateSteel",
+                "stickSteel",
+                "plateSteel",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateSteel",
+                "stickSteel",
+                "plateSteel",
+                "stickSteel");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 5),
-                new Object[] { "stickAluminium", "plateAluminium", "stickAluminium", "plateAluminium",
-                        getModItem(JABBA.ID, "barrel", 1), "plateAluminium", "stickAluminium", "plateAluminium",
-                        "stickAluminium" });
+                "stickAluminium",
+                "plateAluminium",
+                "stickAluminium",
+                "plateAluminium",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateAluminium",
+                "stickAluminium",
+                "plateAluminium",
+                "stickAluminium");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 6),
-                new Object[] { "stickStainlessSteel", "plateStainlessSteel", "stickStainlessSteel",
-                        "plateStainlessSteel", getModItem(JABBA.ID, "barrel", 1), "plateStainlessSteel",
-                        "stickStainlessSteel", "plateStainlessSteel", "stickStainlessSteel" });
+                "stickStainlessSteel",
+                "plateStainlessSteel",
+                "stickStainlessSteel",
+                "plateStainlessSteel",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateStainlessSteel",
+                "stickStainlessSteel",
+                "plateStainlessSteel",
+                "stickStainlessSteel");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 7),
-                new Object[] { "stickTitanium", "plateTitanium", "stickTitanium", "plateTitanium",
-                        getModItem(JABBA.ID, "barrel", 1), "plateTitanium", "stickTitanium", "plateTitanium",
-                        "stickTitanium" });
+                "stickTitanium",
+                "plateTitanium",
+                "stickTitanium",
+                "plateTitanium",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateTitanium",
+                "stickTitanium",
+                "plateTitanium",
+                "stickTitanium");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 8),
-                new Object[] { "stickTungstenSteel", "plateTungstenSteel", "stickTungstenSteel", "plateTungstenSteel",
-                        getModItem(JABBA.ID, "barrel", 1), "plateTungstenSteel", "stickTungstenSteel",
-                        "plateTungstenSteel", "stickTungstenSteel" });
+                "stickTungstenSteel",
+                "plateTungstenSteel",
+                "stickTungstenSteel",
+                "plateTungstenSteel",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateTungstenSteel",
+                "stickTungstenSteel",
+                "plateTungstenSteel",
+                "stickTungstenSteel");
 
         if (BartWorks.isModLoaded()) {
             addShapedRecipe(
                     getModItem(JABBA.ID, "upgradeStructural", 1, 9),
-                    new Object[] { "stickRhodium-PlatedPalladium", "plateRhodium-PlatedPalladium",
-                            "stickRhodium-PlatedPalladium", "plateRhodium-PlatedPalladium",
-                            getModItem(JABBA.ID, "barrel", 1), "plateRhodium-PlatedPalladium",
-                            "stickRhodium-PlatedPalladium", "plateRhodium-PlatedPalladium",
-                            "stickRhodium-PlatedPalladium" });
+                    "stickRhodium-PlatedPalladium",
+                    "plateRhodium-PlatedPalladium",
+                    "stickRhodium-PlatedPalladium",
+                    "plateRhodium-PlatedPalladium",
+                    getModItem(JABBA.ID, "barrel", 1),
+                    "plateRhodium-PlatedPalladium",
+                    "stickRhodium-PlatedPalladium",
+                    "plateRhodium-PlatedPalladium",
+                    "stickRhodium-PlatedPalladium");
 
         } else {
 
             addShapedRecipe(
                     getModItem(JABBA.ID, "upgradeStructural", 1, 9),
-                    new Object[] { "stickChrome", "plateChrome", "stickChrome", "plateChrome",
-                            getModItem(JABBA.ID, "barrel", 1), "plateChrome", "stickChrome", "plateChrome",
-                            "stickChrome" });
+                    "stickChrome",
+                    "plateChrome",
+                    "stickChrome",
+                    "plateChrome",
+                    getModItem(JABBA.ID, "barrel", 1),
+                    "plateChrome",
+                    "stickChrome",
+                    "plateChrome",
+                    "stickChrome");
         }
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 10),
-                new Object[] { "stickIridium", "plateIridium", "stickIridium", "plateIridium",
-                        getModItem(JABBA.ID, "barrel", 1), "plateIridium", "stickIridium", "plateIridium",
-                        "stickIridium" });
+                "stickIridium",
+                "plateIridium",
+                "stickIridium",
+                "plateIridium",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateIridium",
+                "stickIridium",
+                "plateIridium",
+                "stickIridium");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 11),
-                new Object[] { "stickOsmium", "plateOsmium", "stickOsmium", "plateOsmium",
-                        getModItem(JABBA.ID, "barrel", 1), "plateOsmium", "stickOsmium", "plateOsmium",
-                        "stickOsmium" });
+                "stickOsmium",
+                "plateOsmium",
+                "stickOsmium",
+                "plateOsmium",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateOsmium",
+                "stickOsmium",
+                "plateOsmium",
+                "stickOsmium");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 12),
-                new Object[] { "stickNeutronium", "plateNeutronium", "stickNeutronium", "plateNeutronium",
-                        getModItem(JABBA.ID, "barrel", 1), "plateNeutronium", "stickNeutronium", "plateNeutronium",
-                        "stickNeutronium" });
+                "stickNeutronium",
+                "plateNeutronium",
+                "stickNeutronium",
+                "plateNeutronium",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateNeutronium",
+                "stickNeutronium",
+                "plateNeutronium",
+                "stickNeutronium");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 13),
-                new Object[] { "stickBlackPlutonium", "plateBlackPlutonium", "stickBlackPlutonium",
-                        "plateBlackPlutonium", getModItem(JABBA.ID, "barrel", 1), "plateBlackPlutonium",
-                        "stickBlackPlutonium", "plateBlackPlutonium", "stickBlackPlutonium" });
+                "stickBlackPlutonium",
+                "plateBlackPlutonium",
+                "stickBlackPlutonium",
+                "plateBlackPlutonium",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateBlackPlutonium",
+                "stickBlackPlutonium",
+                "plateBlackPlutonium",
+                "stickBlackPlutonium");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 2, 1),
-                new Object[] { "plateEnderEye", getModItem(Minecraft.ID, "piston", 1), "plateEnderEye",
-                        getModItem(Minecraft.ID, "piston", 1), getModItem(EnderStorage.ID, "enderChest", 1),
-                        getModItem(Minecraft.ID, "piston", 1), "plateEnderEye", getModItem(Minecraft.ID, "piston", 1),
-                        "plateEnderEye" });
+                "plateEnderEye",
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateEnderEye",
+                getModItem(Minecraft.ID, "piston", 1),
+                getModItem(EnderStorage.ID, "enderChest", 1),
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateEnderEye",
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateEnderEye");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 2, 1),
-                new Object[] { "plateEnderEye", getModItem(Minecraft.ID, "sticky_piston", 1), "plateEnderEye",
-                        getModItem(Minecraft.ID, "piston", 1), getModItem(EnderStorage.ID, "enderChest", 1),
-                        getModItem(Minecraft.ID, "piston", 1), "plateEnderEye",
-                        getModItem(Minecraft.ID, "sticky_piston", 1), "plateEnderEye" });
+                "plateEnderEye",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "plateEnderEye",
+                getModItem(Minecraft.ID, "piston", 1),
+                getModItem(EnderStorage.ID, "enderChest", 1),
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateEnderEye",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "plateEnderEye");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1, 2),
-                new Object[] { "plateRedAlloy", getModItem(Minecraft.ID, "piston", 1), "plateRedAlloy",
-                        getModItem(Minecraft.ID, "piston", 1), getModItem(Minecraft.ID, "redstone_block", 1),
-                        getModItem(Minecraft.ID, "piston", 1), "plateRedAlloy", getModItem(Minecraft.ID, "piston", 1),
-                        "plateRedAlloy" });
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "piston", 1),
+                getModItem(Minecraft.ID, "redstone_block", 1),
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateRedAlloy");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1, 2),
-                new Object[] { "plateRedAlloy", getModItem(Minecraft.ID, "sticky_piston", 1), "plateRedAlloy",
-                        getModItem(Minecraft.ID, "piston", 1), getModItem(Minecraft.ID, "redstone_block", 1),
-                        getModItem(Minecraft.ID, "piston", 1), "plateRedAlloy",
-                        getModItem(Minecraft.ID, "sticky_piston", 1), "plateRedAlloy" });
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "piston", 1),
+                getModItem(Minecraft.ID, "redstone_block", 1),
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateRedAlloy",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "plateRedAlloy");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1, 3),
-                new Object[] { "plateIron", getModItem(Minecraft.ID, "piston", 1), "plateIron",
-                        getModItem(Minecraft.ID, "piston", 1), getModItem(Minecraft.ID, "hopper", 1),
-                        getModItem(Minecraft.ID, "piston", 1), "plateIron", getModItem(Minecraft.ID, "piston", 1),
-                        "plateIron" });
+                "plateIron",
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateIron",
+                getModItem(Minecraft.ID, "piston", 1),
+                getModItem(Minecraft.ID, "hopper", 1),
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateIron",
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateIron");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1, 3),
-                new Object[] { "plateIron", getModItem(Minecraft.ID, "sticky_piston", 1), "plateIron",
-                        getModItem(Minecraft.ID, "piston", 1), getModItem(Minecraft.ID, "hopper", 1),
-                        getModItem(Minecraft.ID, "piston", 1), "plateIron",
-                        getModItem(Minecraft.ID, "sticky_piston", 1), "plateIron" });
+                "plateIron",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "plateIron",
+                getModItem(Minecraft.ID, "piston", 1),
+                getModItem(Minecraft.ID, "hopper", 1),
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateIron",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "plateIron");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1, 7),
-                new Object[] { "plateIron", getModItem(Minecraft.ID, "piston", 1), "plateIron",
-                        getModItem(Minecraft.ID, "piston", 1), getModItem(Railcraft.ID, "machine.beta", 1, 11),
-                        getModItem(Minecraft.ID, "piston", 1), "plateIron", getModItem(Minecraft.ID, "piston", 1),
-                        "plateIron" });
+                "plateIron",
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateIron",
+                getModItem(Minecraft.ID, "piston", 1),
+                getModItem(Railcraft.ID, "machine.beta", 1, 11),
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateIron",
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateIron");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1, 7),
-                new Object[] { "plateIron", getModItem(Minecraft.ID, "sticky_piston", 1), "plateIron",
-                        getModItem(Minecraft.ID, "piston", 1), getModItem(Railcraft.ID, "machine.beta", 1, 11),
-                        getModItem(Minecraft.ID, "piston", 1), "plateIron",
-                        getModItem(Minecraft.ID, "sticky_piston", 1), "plateIron" });
+                "plateIron",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "plateIron",
+                getModItem(Minecraft.ID, "piston", 1),
+                getModItem(Railcraft.ID, "machine.beta", 1, 11),
+                getModItem(Minecraft.ID, "piston", 1),
+                "plateIron",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "plateIron");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1),
-                new Object[] { "screwSteel", getModItem(Minecraft.ID, "piston", 1), "screwSteel", "screwSteel",
-                        getModItem(JABBA.ID, "barrel", 1), "screwSteel", null, "craftingToolScrewdriver", null });
+                "screwSteel",
+                getModItem(Minecraft.ID, "piston", 1),
+                "screwSteel",
+                "screwSteel",
+                getModItem(JABBA.ID, "barrel", 1),
+                "screwSteel",
+                null,
+                "craftingToolScrewdriver",
+                null);
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeCore", 1),
-                new Object[] { "screwSteel", getModItem(Minecraft.ID, "sticky_piston", 1), "screwSteel", "screwSteel",
-                        getModItem(JABBA.ID, "barrel", 1), "screwSteel", null, "craftingToolScrewdriver", null });
+                "screwSteel",
+                getModItem(Minecraft.ID, "sticky_piston", 1),
+                "screwSteel",
+                "screwSteel",
+                getModItem(JABBA.ID, "barrel", 1),
+                "screwSteel",
+                null,
+                "craftingToolScrewdriver",
+                null);
     }
 }

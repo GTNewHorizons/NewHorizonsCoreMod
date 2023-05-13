@@ -53,12 +53,15 @@ public class ScriptBloodArsenal implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(BloodArsenal.ID, "blood_lamp", 1, 0, missing),
-                new Object[] { "plateBloodInfusedIron",
-                        getModItem(BloodArsenal.ID, "blood_stained_glass", 1, 0, missing), "plateBloodInfusedIron",
-                        getModItem(BloodArsenal.ID, "blood_stained_glass", 1, 0, missing),
-                        getModItem(Minecraft.ID, "redstone_lamp", 1, 0, missing),
-                        getModItem(BloodArsenal.ID, "blood_stained_glass", 1, 0, missing), "plateBloodInfusedIron",
-                        getModItem(BloodArsenal.ID, "blood_stained_glass", 1, 0, missing), "plateBloodInfusedIron" });
+                "plateBloodInfusedIron",
+                getModItem(BloodArsenal.ID, "blood_stained_glass", 1, 0, missing),
+                "plateBloodInfusedIron",
+                getModItem(BloodArsenal.ID, "blood_stained_glass", 1, 0, missing),
+                getModItem(Minecraft.ID, "redstone_lamp", 1, 0, missing),
+                getModItem(BloodArsenal.ID, "blood_stained_glass", 1, 0, missing),
+                "plateBloodInfusedIron",
+                getModItem(BloodArsenal.ID, "blood_stained_glass", 1, 0, missing),
+                "plateBloodInfusedIron");
 
         BloodMagicHelper.removeBindingRecipe(getModItem(BloodArsenal.ID, "bound_sickle", 1, 0, missing));
         BloodMagicHelper.removeBindingRecipe(getModItem(BloodArsenal.ID, "bound_bow", 1, 0, missing));

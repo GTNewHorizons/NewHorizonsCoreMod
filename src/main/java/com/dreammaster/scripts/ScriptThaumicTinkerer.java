@@ -63,7 +63,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing));
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.blockmetal8", 1, 13, missing),

@@ -85,17 +85,26 @@ public class ScriptAvaritia implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Avaritia.ID, "Dire_Crafting", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(Avaritia.ID, "Triple_Craft", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "waferAdvanced",
-                        getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0, missing), "waferAdvanced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing), "circuitElite",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                getModItem(Avaritia.ID, "Triple_Craft", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "waferAdvanced",
+                getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0, missing),
+                "waferAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                "circuitElite",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing));
         addShapedRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 0, missing),
-                new Object[] { "screwDiamond", "plateDiamond", "screwDiamond", "plateDiamond",
-                        getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing), "plateDiamond",
-                        "screwDiamond", "plateDiamond", "screwDiamond" });
+                "screwDiamond",
+                "plateDiamond",
+                "screwDiamond",
+                "plateDiamond",
+                getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                "plateDiamond",
+                "screwDiamond",
+                "plateDiamond",
+                "screwDiamond");
 
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Neutron_Collector", 1, 0, missing));
         AvaritiaHelper.removeExtremeCraftingRecipe(getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing));

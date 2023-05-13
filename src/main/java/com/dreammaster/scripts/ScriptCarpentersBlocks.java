@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
@@ -34,171 +33,236 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 2, 0, missing),
-                new Object[] { "frameGtWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
-                        "frameGtWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
-                        "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
-                        "frameGtWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "frameGtWood" });
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 8, 0, missing),
-                new Object[] { "frameGtWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                        "frameGtWood", "frameGtWood", "craftingToolScrewdriver", "frameGtWood", "frameGtWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing), "frameGtWood" });
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                "frameGtWood",
+                "frameGtWood",
+                "craftingToolScrewdriver",
+                "frameGtWood",
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 12, 0, missing),
-                new Object[] { "frameGtWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
-                        "frameGtWood", "frameGtWood", "craftingToolScrewdriver", "frameGtWood", "frameGtWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing), "frameGtWood" });
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                "frameGtWood",
+                "frameGtWood",
+                "craftingToolScrewdriver",
+                "frameGtWood",
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 16, 0, missing),
-                new Object[] { "frameGtWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
-                        "frameGtWood", "frameGtWood", "craftingToolScrewdriver", "frameGtWood", "frameGtWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing), "frameGtWood" });
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
+                "frameGtWood",
+                "frameGtWood",
+                "craftingToolScrewdriver",
+                "frameGtWood",
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
+                "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 20, 0, missing),
-                new Object[] { "frameGtWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27306, missing),
-                        "frameGtWood", "frameGtWood", "craftingToolScrewdriver", "frameGtWood", "frameGtWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27306, missing), "frameGtWood" });
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27306, missing),
+                "frameGtWood",
+                "frameGtWood",
+                "craftingToolScrewdriver",
+                "frameGtWood",
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27306, missing),
+                "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 24, 0, missing),
-                new Object[] { "frameGtWood", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
-                        "frameGtWood", "frameGtWood", "craftingToolScrewdriver", "frameGtWood", "frameGtWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing), "frameGtWood" });
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
+                "frameGtWood",
+                "frameGtWood",
+                "craftingToolScrewdriver",
+                "frameGtWood",
+                "frameGtWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
+                "frameGtWood");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "itemCarpentersChisel", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(TinkerConstruct.ID, "chiselHead", 1, 2, missing),
-                        "craftingToolSaw", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing), "stickAnyIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "stickAnyIron",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing) });
+                "craftingToolScrewdriver",
+                getModItem(TinkerConstruct.ID, "chiselHead", 1, 2, missing),
+                "craftingToolSaw",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                "stickAnyIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "stickAnyIron",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "itemCarpentersHammer", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.02", 1, 5032, missing),
-                        "craftingToolSaw", getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing), "stickAnyIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "stickAnyIron",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing) });
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 5032, missing),
+                "craftingToolSaw",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                "stickAnyIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "stickAnyIron",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersSafe", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersDaylightSensor", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "daylight_detector", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "dustRedstone",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "daylight_detector", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "dustRedstone",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
-                        getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
-                        getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing),
-                        "craftingToolSoftHammer",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing) });
+                getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
+                getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
+                getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing),
+                "craftingToolSoftHammer",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersTorch", 2, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "torch", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "torch", 1, 0, missing) });
+                getModItem(Minecraft.ID, "torch", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "torch", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersGarageDoor", 5, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "ringIron",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "ringIron",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "ringIron",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "ringIron",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing) });
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "ringIron",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "ringIron",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "ringIron",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "ringIron",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersLadder", 1, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "ladder", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing) });
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "ladder", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "fenceWood",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing) });
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "fenceWood",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 2, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), "springAnyIron",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "springAnyIron",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing));
+        addShapelessRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersButton", 1, 0, missing),
-                new Object[] { "craftingToolSaw",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersFlowerPot", 1, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "flower_pot", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), null,
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing), null });
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "flower_pot", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                null,
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersGate", 1, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "fence_gate", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing) });
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "fence_gate", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersHatch", 1, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing) });
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersLever", 1, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "lever", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), null, "craftingToolScrewdriver",
-                        null });
-        addShapelessCraftingRecipe(
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "lever", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                null,
+                "craftingToolScrewdriver",
+                null);
+        addShapelessRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 2, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        "craftingToolSaw" });
-        addShapelessCraftingRecipe(
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                "craftingToolSaw");
+        addShapelessRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersStairs", 1, 0, missing),
-                new Object[] { "craftingToolSaw",
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(CarpentersBlocks.ID, "blockCarpentersSlope", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(CarpentersBlocks.ID, "itemCarpentersTile", 1, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing),
-                        "craftingToolRollingPin", "itemClay" });
+                getModItem(CarpentersBlocks.ID, "blockCarpentersPressurePlate", 1, 0, missing),
+                "craftingToolRollingPin",
+                "itemClay");
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "itemCarpentersDoor", 1, 0, missing),
-                new Object[] { getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(Minecraft.ID, "wooden_door", 1, 0, missing),
-                        getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing), "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing) });
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(Minecraft.ID, "wooden_door", 1, 0, missing),
+                getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

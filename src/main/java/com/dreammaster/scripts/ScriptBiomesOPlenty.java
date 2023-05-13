@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
@@ -47,94 +46,116 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessCraftingRecipe(
-                getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing),
-                new Object[] { "bottleEmpty" });
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing), "bottleEmpty");
+        addShapelessRecipe(
                 getModItem(Minecraft.ID, "glass_bottle", 1, 0, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "mudball", 2, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "mudball", 2, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing) });
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapedRecipe(
                 getModItem(BiomesOPlenty.ID, "dartBlower", 1, 0, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing), "ringWood",
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing), null,
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing), "ringWood",
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing) });
+                getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
+                "ringWood",
+                getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
+                getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
+                null,
+                getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
+                getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
+                "ringWood",
+                getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing));
         addShapedRecipe(
                 getModItem(BiomesOPlenty.ID, "dart", 1, 0, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "plants", 1, 5, missing), null, null,
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing), null, null,
-                        getModItem(Minecraft.ID, "feather", 1, 0, missing), null, null });
+                getModItem(BiomesOPlenty.ID, "plants", 1, 5, missing),
+                null,
+                null,
+                getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
+                null,
+                null,
+                getModItem(Minecraft.ID, "feather", 1, 0, missing),
+                null,
+                null);
         addShapedRecipe(
                 getModItem(BiomesOPlenty.ID, "scytheDiamond", 1, 0, missing),
-                new Object[] { "gemDiamond", "plateDiamond", "craftingToolHardHammer", "stickWood", "craftingToolFile",
-                        "plateDiamond", "stickWood", null, null });
-        addShapelessCraftingRecipe(
+                "gemDiamond",
+                "plateDiamond",
+                "craftingToolHardHammer",
+                "stickWood",
+                "craftingToolFile",
+                "plateDiamond",
+                "stickWood",
+                null,
+                null);
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2816, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "planks", 2, 14, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "logs4", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "logs4", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(Minecraft.ID, "bucket", 1, 0, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "bopBucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "bopBucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "rocks", 1, 1, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "rocks", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "rocks", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "rocks", 1, 0, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "rocks", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "rocks", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 15, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing), "dustGlowstone" });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing),
+                "dustGlowstone");
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 15, missing),
-                new Object[] { getModItem(GTPlusPlus.ID, "item.BasicAgrichemItem", 1, 1, missing), "dustGlowstone" });
-        addShapelessCraftingRecipe(
+                getModItem(GTPlusPlus.ID, "item.BasicAgrichemItem", 1, 1, missing),
+                "dustGlowstone");
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 12, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing), "dustGlowstone", "dyePink" });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing),
+                "dustGlowstone",
+                "dyePink");
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 13, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing), "dustGlowstone", "dyeOrange" });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing),
+                "dustGlowstone",
+                "dyeOrange");
+        addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 14, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing), "dustGlowstone", "dyeBlue" });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing),
+                "dustGlowstone",
+                "dyeBlue");
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "flowers", 1, 9, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "flowers", 1, 9, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "flowers2", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "flowers2", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "flowers2", 1, 5, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "flowers2", 1, 5, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "mushrooms", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "mushrooms", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "mushrooms", 1, 4, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BiomesOPlenty.ID, "mushrooms", 1, 4, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
-                new Object[] { getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing) });
+                getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing));
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(BiomesOPlenty.ID, "driedDirt", 1, 0, missing),

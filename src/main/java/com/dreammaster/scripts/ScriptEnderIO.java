@@ -18,7 +18,6 @@ import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
@@ -197,667 +196,1101 @@ public class ScriptEnderIO implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockStirlingGenerator", 1, 0, missing),
-                new Object[] { "itemCasingAnyIron", "circuitBasic", "itemCasingAnyIron", "rotorIron",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "rotorIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "craftingIronFurnace",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing) });
+                "itemCasingAnyIron",
+                "circuitBasic",
+                "itemCasingAnyIron",
+                "rotorIron",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "rotorIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "craftingIronFurnace",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockCombustionGenerator", 1, 0, missing),
-                new Object[] { "itemCasingSteel", "circuitGood", "itemCasingSteel", "rotorSteel",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "rotorSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing) });
+                "itemCasingSteel",
+                "circuitGood",
+                "itemCasingSteel",
+                "rotorSteel",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "rotorSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockZombieGenerator", 1, 0, missing),
-                new Object[] { "itemCasingSteel", "circuitGood", "itemCasingSteel",
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing) });
+                "itemCasingSteel",
+                "circuitGood",
+                "itemCasingSteel",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockFrankenzombieGenerator", 1, 0, missing),
-                new Object[] { "itemCasingDarkSteel", "circuitAdvanced", "itemCasingDarkSteel",
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 2, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing) });
+                "itemCasingDarkSteel",
+                "circuitAdvanced",
+                "itemCasingDarkSteel",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 2, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockEnderGenerator", 1, 0, missing),
-                new Object[] { "itemCasingEndSteel", "circuitData", "itemCasingEndSteel",
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 3, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing) });
+                "itemCasingEndSteel",
+                "circuitData",
+                "itemCasingEndSteel",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 3, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 1, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "blockSolarPanel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "blockSolarPanel", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 1, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "blockSolarPanel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "blockSolarPanel", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 2, missing),
-                new Object[] { "plateEndSteel", getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2, missing),
-                        "plateEndSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "blockSolarPanel", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing) });
+                "plateEndSteel",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2, missing),
+                "plateEndSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "blockSolarPanel", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 2, missing),
-                new Object[] { "plateEndSteel", getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2, missing),
-                        "plateEndSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "blockSolarPanel", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing) });
+                "plateEndSteel",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2, missing),
+                "plateEndSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "blockSolarPanel", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 2, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSagMill", 1, 0, missing),
-                new Object[] { "itemCasingSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        "itemCasingSteel", "circuitBasic", getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        "circuitBasic", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing) });
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                "itemCasingSteel",
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockAlloySmelter", 1, 0, missing),
-                new Object[] { "circuitBasic", "craftingIronFurnace", "circuitBasic", "craftingIronFurnace",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "craftingIronFurnace",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing) });
+                "circuitBasic",
+                "craftingIronFurnace",
+                "circuitBasic",
+                "craftingIronFurnace",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "craftingIronFurnace",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 1, "{type:\"SIMPLE\",storedEnergyRF:0}", missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing), "circuitBasic",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing), "plateRedstone",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "plateRedstone",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                "plateRedstone",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "plateRedstone",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 1, "{type:\"SIMPLE\",storedEnergyRF:0}", missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing), "circuitBasic",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing), "plateRedstone",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "plateRedstone",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
+                "plateRedstone",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "plateRedstone",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 2, "{type:\"ACTIVATED\",storedEnergyRF:0}", missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing), "circuitGood",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32537, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
+                "circuitGood",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32537, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 2, "{type:\"ACTIVATED\",storedEnergyRF:0}", missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing), "circuitGood",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32537, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
+                "circuitGood",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32537, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing), "circuitAdvanced",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing), "circuitAdvanced",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                        getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32054, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32054, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing), "circuitAdvanced",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing), "circuitAdvanced",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                        getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32054, missing),
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32054, missing),
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPainter", 1, 0, missing),
-                new Object[] { "itemCasingSteel", "rotorSteel", "itemCasingSteel", "circuitBasic",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "circuitBasic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "rotorSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing) });
+                "itemCasingSteel",
+                "rotorSteel",
+                "itemCasingSteel",
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "rotorSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing),
-                new Object[] { "itemCasingSteel", getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        "itemCasingSteel", "circuitBasic", getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        "circuitBasic", "itemCasingSteel", getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        "itemCasingSteel" });
+                "itemCasingSteel",
+                getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
+                "itemCasingSteel",
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "circuitBasic",
+                "itemCasingSteel",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                new Object[] { "itemCasingSteel", "plateElectricalSteel", "itemCasingSteel", "plateElectricalSteel",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing), "plateElectricalSteel",
-                        "itemCasingSteel", "plateElectricalSteel", "itemCasingSteel" });
+                "itemCasingSteel",
+                "plateElectricalSteel",
+                "itemCasingSteel",
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                "plateElectricalSteel",
+                "itemCasingSteel",
+                "plateElectricalSteel",
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                new Object[] { "itemCasingSteel", "plateElectricalSteel", "itemCasingSteel", "plateElectricalSteel",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing), "plateElectricalSteel",
-                        "itemCasingSteel", "plateElectricalSteel", "itemCasingSteel" });
+                "itemCasingSteel",
+                "plateElectricalSteel",
+                "itemCasingSteel",
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
+                "plateElectricalSteel",
+                "itemCasingSteel",
+                "plateElectricalSteel",
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 2, missing),
-                new Object[] { "itemCasingSoularium", "plateSoularium", "itemCasingSoularium", "plateSoularium",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing), "plateSoularium",
-                        "itemCasingSoularium", "plateSoularium", "itemCasingSoularium" });
+                "itemCasingSoularium",
+                "plateSoularium",
+                "itemCasingSoularium",
+                "plateSoularium",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
+                "plateSoularium",
+                "itemCasingSoularium",
+                "plateSoularium",
+                "itemCasingSoularium");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 2, missing),
-                new Object[] { "itemCasingSoularium", "plateSoularium", "itemCasingSoularium", "plateSoularium",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing), "plateSoularium",
-                        "itemCasingSoularium", "plateSoularium", "itemCasingSoularium" });
+                "itemCasingSoularium",
+                "plateSoularium",
+                "itemCasingSoularium",
+                "plateSoularium",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
+                "plateSoularium",
+                "itemCasingSoularium",
+                "plateSoularium",
+                "itemCasingSoularium");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 3, missing),
-                new Object[] { "itemCasingEndSteel", "plateEndSteel", "itemCasingEndSteel", "plateEndSteel",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing), "plateEndSteel",
-                        "itemCasingEndSteel", "plateEndSteel", "itemCasingEndSteel" });
+                "itemCasingEndSteel",
+                "plateEndSteel",
+                "itemCasingEndSteel",
+                "plateEndSteel",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                "plateEndSteel",
+                "itemCasingEndSteel",
+                "plateEndSteel",
+                "itemCasingEndSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 3, missing),
-                new Object[] { "itemCasingEndSteel", "plateEndSteel", "itemCasingEndSteel", "plateEndSteel",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing), "plateEndSteel",
-                        "itemCasingEndSteel", "plateEndSteel", "itemCasingEndSteel" });
+                "itemCasingEndSteel",
+                "plateEndSteel",
+                "itemCasingEndSteel",
+                "plateEndSteel",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                "plateEndSteel",
+                "itemCasingEndSteel",
+                "plateEndSteel",
+                "itemCasingEndSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockVat", 1, 0, missing),
-                new Object[] { "itemCasingSteel", getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
-                        "itemCasingSteel", getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "craftingIronFurnace",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing) });
+                "itemCasingSteel",
+                getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
+                "itemCasingSteel",
+                getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "craftingIronFurnace",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPowerMonitor", 1, 0, missing),
-                new Object[] { "plateElectricalSteel", getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                        "plateElectricalSteel", "circuitBasic",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "circuitBasic",
-                        getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemConduitProbe", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing) });
+                "plateElectricalSteel",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "plateElectricalSteel",
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemConduitProbe", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockFarmStation", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "plateDensePulsatingIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing), "gearElectricalSteel",
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing), "gearElectricalSteel" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "plateDensePulsatingIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
+                "gearElectricalSteel",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
+                "gearElectricalSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockWirelessCharger", 1, 0, missing),
-                new Object[] { "plateElectricalSteel", getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                        "plateElectricalSteel", "circuitAdvanced",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "circuitAdvanced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing) });
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
+                "plateElectricalSteel",
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockWirelessCharger", 1, 0, missing),
-                new Object[] { "plateElectricalSteel", getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                        "plateElectricalSteel", "circuitAdvanced",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "circuitAdvanced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing) });
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
+                "plateElectricalSteel",
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
-                new Object[] { "itemCasingSteel", getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        "itemCasingSteel", getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4461, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "itemCasingSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing), "itemCasingSteel" });
+                "itemCasingSteel",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "itemCasingSteel",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4461, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTank", 1, 1, missing),
-                new Object[] { "plateDarkSteel", getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
-                        "plateDarkSteel", getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4460, missing),
-                        getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), "plateDarkSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing), "plateDarkSteel" });
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4460, missing),
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "plateDarkSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                "plateDarkSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockReservoir", 2, 0, missing),
-                new Object[] { getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing) });
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTransceiver", 1, 0, missing),
-                new Object[] { getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 3, missing), "circuitMaster",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 3, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing), "frameGtEnderium",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing) });
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 3, missing),
+                "circuitMaster",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 3, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
+                "frameGtEnderium",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockBuffer", 1, 0, missing),
-                new Object[] { "plateElectricalSteel", "chestWood", "plateElectricalSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing), "frameGtDarkSteel",
-                        "circuitBasic" });
+                "plateElectricalSteel",
+                "chestWood",
+                "plateElectricalSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "frameGtDarkSteel",
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockBuffer", 1, 1, missing),
-                new Object[] { "plateElectricalSteel", getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing),
-                        "plateElectricalSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32519, missing),
-                        "frameGtDarkSteel", "circuitBasic" });
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing),
+                "plateElectricalSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32519, missing),
+                "frameGtDarkSteel",
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockInventoryPanel", 1, 0, missing),
-                new Object[] { "plateDarkSteel", getModItem(EnderIO.ID, "itemFunctionUpgrade", 1, 0, missing),
-                        "plateDarkSteel", getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing), "plateDarkSteel",
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing), "plateDarkSteel" });
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "itemFunctionUpgrade", 1, 0, missing),
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
+                "plateDarkSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 0, missing),
-                new Object[] { "screwElectricalSteel", "plateElectricalSteel", "screwElectricalSteel",
-                        "plateElectricalSteel", "ringElectricalSteel", "plateElectricalSteel", "screwElectricalSteel",
-                        "plateElectricalSteel", "screwElectricalSteel" });
+                "screwElectricalSteel",
+                "plateElectricalSteel",
+                "screwElectricalSteel",
+                "plateElectricalSteel",
+                "ringElectricalSteel",
+                "plateElectricalSteel",
+                "screwElectricalSteel",
+                "plateElectricalSteel",
+                "screwElectricalSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 1, missing),
-                new Object[] { "screwEnergeticAlloy", "plateEnergeticAlloy", "screwEnergeticAlloy",
-                        "plateEnergeticAlloy", "ringEnergeticAlloy", "plateEnergeticAlloy", "screwEnergeticAlloy",
-                        "plateEnergeticAlloy", "screwEnergeticAlloy" });
+                "screwEnergeticAlloy",
+                "plateEnergeticAlloy",
+                "screwEnergeticAlloy",
+                "plateEnergeticAlloy",
+                "ringEnergeticAlloy",
+                "plateEnergeticAlloy",
+                "screwEnergeticAlloy",
+                "plateEnergeticAlloy",
+                "screwEnergeticAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 2, missing),
-                new Object[] { "screwVibrantAlloy", "plateVibrantAlloy", "screwVibrantAlloy", "plateVibrantAlloy",
-                        "ringVibrantAlloy", "plateVibrantAlloy", "screwVibrantAlloy", "plateVibrantAlloy",
-                        "screwVibrantAlloy" });
+                "screwVibrantAlloy",
+                "plateVibrantAlloy",
+                "screwVibrantAlloy",
+                "plateVibrantAlloy",
+                "ringVibrantAlloy",
+                "plateVibrantAlloy",
+                "screwVibrantAlloy",
+                "plateVibrantAlloy",
+                "screwVibrantAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 3, missing),
-                new Object[] { "screwRedstoneAlloy", "plateRedstoneAlloy", "screwRedstoneAlloy", "plateRedstoneAlloy",
-                        "ringRedstoneAlloy", "plateRedstoneAlloy", "screwRedstoneAlloy", "plateRedstoneAlloy",
-                        "screwRedstoneAlloy" });
+                "screwRedstoneAlloy",
+                "plateRedstoneAlloy",
+                "screwRedstoneAlloy",
+                "plateRedstoneAlloy",
+                "ringRedstoneAlloy",
+                "plateRedstoneAlloy",
+                "screwRedstoneAlloy",
+                "plateRedstoneAlloy",
+                "screwRedstoneAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 4, missing),
-                new Object[] { "screwConductiveIron", "plateConductiveIron", "screwConductiveIron",
-                        "plateConductiveIron", "ringConductiveIron", "plateConductiveIron", "screwConductiveIron",
-                        "plateConductiveIron", "screwConductiveIron" });
+                "screwConductiveIron",
+                "plateConductiveIron",
+                "screwConductiveIron",
+                "plateConductiveIron",
+                "ringConductiveIron",
+                "plateConductiveIron",
+                "screwConductiveIron",
+                "plateConductiveIron",
+                "screwConductiveIron");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 5, missing),
-                new Object[] { "screwPulsatingIron", "platePulsatingIron", "screwPulsatingIron", "platePulsatingIron",
-                        "ringPulsatingIron", "platePulsatingIron", "screwPulsatingIron", "platePulsatingIron",
-                        "screwPulsatingIron" });
+                "screwPulsatingIron",
+                "platePulsatingIron",
+                "screwPulsatingIron",
+                "platePulsatingIron",
+                "ringPulsatingIron",
+                "platePulsatingIron",
+                "screwPulsatingIron",
+                "platePulsatingIron",
+                "screwPulsatingIron");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 6, missing),
-                new Object[] { "screwDarkSteel", "plateDarkSteel", "screwDarkSteel", "plateDarkSteel", "ringDarkSteel",
-                        "plateDarkSteel", "screwDarkSteel", "plateDarkSteel", "screwDarkSteel" });
+                "screwDarkSteel",
+                "plateDarkSteel",
+                "screwDarkSteel",
+                "plateDarkSteel",
+                "ringDarkSteel",
+                "plateDarkSteel",
+                "screwDarkSteel",
+                "plateDarkSteel",
+                "screwDarkSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 7, missing),
-                new Object[] { "screwSoularium", "plateSoularium", "screwSoularium", "plateSoularium", "ringSoularium",
-                        "plateSoularium", "screwSoularium", "plateSoularium", "screwSoularium" });
+                "screwSoularium",
+                "plateSoularium",
+                "screwSoularium",
+                "plateSoularium",
+                "ringSoularium",
+                "plateSoularium",
+                "screwSoularium",
+                "plateSoularium",
+                "screwSoularium");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBall", 4, 8, missing),
-                new Object[] { "screwEndSteel", "plateEndSteel", "screwEndSteel", "plateEndSteel", "ringEndSteel",
-                        "plateEndSteel", "screwEndSteel", "plateEndSteel", "screwEndSteel" });
+                "screwEndSteel",
+                "plateEndSteel",
+                "screwEndSteel",
+                "plateEndSteel",
+                "ringEndSteel",
+                "plateEndSteel",
+                "screwEndSteel",
+                "plateEndSteel",
+                "screwEndSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBallEndergy", 4, 0, missing),
-                new Object[] { "screwCrudeSteel", "plateCrudeSteel", "screwCrudeSteel", "plateCrudeSteel",
-                        "ringCrudeSteel", "plateCrudeSteel", "screwCrudeSteel", "plateCrudeSteel", "screwCrudeSteel" });
+                "screwCrudeSteel",
+                "plateCrudeSteel",
+                "screwCrudeSteel",
+                "plateCrudeSteel",
+                "ringCrudeSteel",
+                "plateCrudeSteel",
+                "screwCrudeSteel",
+                "plateCrudeSteel",
+                "screwCrudeSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBallEndergy", 4, 1, missing),
-                new Object[] { "screwCrystallineAlloy", "plateCrystallineAlloy", "screwCrystallineAlloy",
-                        "plateCrystallineAlloy", "ringCrystallineAlloy", "plateCrystallineAlloy",
-                        "screwCrystallineAlloy", "plateCrystallineAlloy", "screwCrystallineAlloy" });
+                "screwCrystallineAlloy",
+                "plateCrystallineAlloy",
+                "screwCrystallineAlloy",
+                "plateCrystallineAlloy",
+                "ringCrystallineAlloy",
+                "plateCrystallineAlloy",
+                "screwCrystallineAlloy",
+                "plateCrystallineAlloy",
+                "screwCrystallineAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBallEndergy", 4, 2, missing),
-                new Object[] { "screwMelodicAlloy", "plateMelodicAlloy", "screwMelodicAlloy", "plateMelodicAlloy",
-                        "ringMelodicAlloy", "plateMelodicAlloy", "screwMelodicAlloy", "plateMelodicAlloy",
-                        "screwMelodicAlloy" });
+                "screwMelodicAlloy",
+                "plateMelodicAlloy",
+                "screwMelodicAlloy",
+                "plateMelodicAlloy",
+                "ringMelodicAlloy",
+                "plateMelodicAlloy",
+                "screwMelodicAlloy",
+                "plateMelodicAlloy",
+                "screwMelodicAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBallEndergy", 4, 3, missing),
-                new Object[] { "screwStellarAlloy", "plateStellarAlloy", "screwStellarAlloy", "plateStellarAlloy",
-                        "ringStellarAlloy", "plateStellarAlloy", "screwStellarAlloy", "plateStellarAlloy",
-                        "screwStellarAlloy" });
+                "screwStellarAlloy",
+                "plateStellarAlloy",
+                "screwStellarAlloy",
+                "plateStellarAlloy",
+                "ringStellarAlloy",
+                "plateStellarAlloy",
+                "screwStellarAlloy",
+                "plateStellarAlloy",
+                "screwStellarAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBallEndergy", 4, 4, missing),
-                new Object[] { "screwCrystallinePinkSlime", "plateCrystallinePinkSlime", "screwCrystallinePinkSlime",
-                        "plateCrystallinePinkSlime", "ringCrystallinePinkSlime", "plateCrystallinePinkSlime",
-                        "screwCrystallinePinkSlime", "plateCrystallinePinkSlime", "screwCrystallinePinkSlime" });
+                "screwCrystallinePinkSlime",
+                "plateCrystallinePinkSlime",
+                "screwCrystallinePinkSlime",
+                "plateCrystallinePinkSlime",
+                "ringCrystallinePinkSlime",
+                "plateCrystallinePinkSlime",
+                "screwCrystallinePinkSlime",
+                "plateCrystallinePinkSlime",
+                "screwCrystallinePinkSlime");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBallEndergy", 4, 5, missing),
-                new Object[] { "screwEnergeticSilver", "plateEnergeticSilver", "screwEnergeticSilver",
-                        "plateEnergeticSilver", "ringEnergeticSilver", "plateEnergeticSilver", "screwEnergeticSilver",
-                        "plateEnergeticSilver", "screwEnergeticSilver" });
+                "screwEnergeticSilver",
+                "plateEnergeticSilver",
+                "screwEnergeticSilver",
+                "plateEnergeticSilver",
+                "ringEnergeticSilver",
+                "plateEnergeticSilver",
+                "screwEnergeticSilver",
+                "plateEnergeticSilver",
+                "screwEnergeticSilver");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGrindingBallEndergy", 4, 6, missing),
-                new Object[] { "screwVividAlloy", "plateVividAlloy", "screwVividAlloy", "plateVividAlloy",
-                        "ringVividAlloy", "plateVividAlloy", "screwVividAlloy", "plateVividAlloy", "screwVividAlloy" });
+                "screwVividAlloy",
+                "plateVividAlloy",
+                "screwVividAlloy",
+                "plateVividAlloy",
+                "ringVividAlloy",
+                "plateVividAlloy",
+                "screwVividAlloy",
+                "plateVividAlloy",
+                "screwVividAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockEnderIo", 1, 0, missing),
-                new Object[] { "plateElectricalSteel", getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        "plateElectricalSteel", getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        "lensEnderEye", getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        "plateElectricalSteel", getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        "plateElectricalSteel" });
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                "lensEnderEye",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                "plateElectricalSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTravelAnchor", 1, 0, missing),
-                new Object[] { "plateElectricalSteel", getModItem(OpenBlocks.ID, "elevator", 1, 0, missing),
-                        "plateElectricalSteel", getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing), "plateElectricalSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32670, missing), "plateElectricalSteel" });
+                "plateElectricalSteel",
+                getModItem(OpenBlocks.ID, "elevator", 1, 0, missing),
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
+                "plateElectricalSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32670, missing),
+                "plateElectricalSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSliceAndSplice", 1, 0, missing),
-                new Object[] { "plateSoularium", getModItem(Minecraft.ID, "shears", 1, 0, missing), "plateSoularium",
-                        "circuitGood", getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "circuitGood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        getModItem(Minecraft.ID, "iron_axe", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing) });
+                "plateSoularium",
+                getModItem(Minecraft.ID, "shears", 1, 0, missing),
+                "plateSoularium",
+                "circuitGood",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "circuitGood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                getModItem(Minecraft.ID, "iron_axe", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSoulBinder", 1, 0, missing),
-                new Object[] { "plateSoularium", getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
-                        "plateSoularium", "circuitAdvanced", getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        "circuitAdvanced", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing) });
+                "plateSoularium",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
+                "plateSoularium",
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPoweredSpawner", 1, 0, missing),
-                new Object[] { "plateDarkSteel", "itemSkull", "plateDarkSteel", "plateSoularium",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "plateSoularium",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing) });
+                "plateDarkSteel",
+                "itemSkull",
+                "plateDarkSteel",
+                "plateSoularium",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "plateSoularium",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing),
+                getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockKillerJoe", 1, 0, missing),
-                new Object[] { "itemCasingAluminium", "circuitGood", "itemCasingAluminium",
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing) });
+                "itemCasingAluminium",
+                "circuitGood",
+                "itemCasingAluminium",
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockAttractor", 1, 0, missing),
-                new Object[] { null, getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing), null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing), "plateSoularium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing), "plateSoularium",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "plateSoularium" });
+                null,
+                getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing),
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                "plateSoularium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                "plateSoularium",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "plateSoularium");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSpawnGuard", 1, 0, missing),
-                new Object[] { null, getModItem(EnderIO.ID, "blockEndermanSkull", 1, 2, missing), null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing), "plateSoularium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing), "plateSoularium",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "plateSoularium" });
+                null,
+                getModItem(EnderIO.ID, "blockEndermanSkull", 1, 2, missing),
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                "plateSoularium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                "plateSoularium",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "plateSoularium");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockExperienceObelisk", 1, 0, missing),
-                new Object[] { null, getModItem(EnderIO.ID, "itemXpTransfer", 1, 0, missing), null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing), "plateSoularium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing), "plateSoularium",
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing), "plateSoularium" });
+                null,
+                getModItem(EnderIO.ID, "itemXpTransfer", 1, 0, missing),
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                "plateSoularium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
+                "plateSoularium",
+                getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                "plateSoularium");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockWeatherObelisk", 1, 0, missing),
-                new Object[] { null, getModItem(EnderIO.ID, "itemMaterial", 1, 10, missing), null, "bucketLava",
-                        "plateSoularium", "bucketWater", "plateSoularium",
-                        getModItem(EnderIO.ID, "blockCapBank", 1, 2, missing), "plateSoularium" });
+                null,
+                getModItem(EnderIO.ID, "itemMaterial", 1, 10, missing),
+                null,
+                "bucketLava",
+                "plateSoularium",
+                "bucketWater",
+                "plateSoularium",
+                getModItem(EnderIO.ID, "blockCapBank", 1, 2, missing),
+                "plateSoularium");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockEnchanter", 1, 0, missing),
-                new Object[] { getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing), "craftingBook",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing), null, "plateDarkSteel", null,
-                        "plateDarkSteel", getModItem(Minecraft.ID, "enchanting_table", 1, 0, missing),
-                        "plateDarkSteel" });
+                getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
+                "craftingBook",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                null,
+                "plateDarkSteel",
+                null,
+                "plateDarkSteel",
+                getModItem(Minecraft.ID, "enchanting_table", 1, 0, missing),
+                "plateDarkSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockDarkIronBars", 3, 0, missing),
-                new Object[] { null, "craftingToolHardHammer", null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing) });
+                null,
+                "craftingToolHardHammer",
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23364, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSoulariumBars", 3, 0, missing),
-                new Object[] { null, "craftingToolHardHammer", null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing) });
+                null,
+                "craftingToolHardHammer",
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23379, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockEndSteelBars", 3, 0, missing),
-                new Object[] { null, "craftingToolHardHammer", null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing) });
+                null,
+                "craftingToolHardHammer",
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23401, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockDarkSteelLadder", 1, 0, missing),
-                new Object[] { getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), "wireFineSteel", "screwSteel",
-                        "wireFineSteel", getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
-                        "craftingToolWrench", getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing) });
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "wireFineSteel",
+                "screwSteel",
+                "wireFineSteel",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "craftingToolWrench",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockElectricLight", 8, 0, missing),
-                new Object[] { getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing), "plateSiliconSolarGrade",
-                        getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
-                        "plateSiliconSolarGrade", "circuitBasic",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing), "circuitBasic" });
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                "plateSiliconSolarGrade",
+                getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
+                "plateSiliconSolarGrade",
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockElectricLight", 8, 0, missing),
-                new Object[] { getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing), "plateSiliconSolarGrade",
-                        getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
-                        "plateSiliconSolarGrade", "circuitBasic",
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing), "circuitBasic" });
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                "plateSiliconSolarGrade",
+                getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
+                "plateSiliconSolarGrade",
+                "circuitBasic",
+                getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockElectricLight", 16, 2, missing),
-                new Object[] { getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                        getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing), "plateSiliconSolarGrade",
-                        getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 0, missing),
-                        "plateSiliconSolarGrade", "plateIron", "wireGt01RedAlloy", "plateIron" });
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
+                "plateSiliconSolarGrade",
+                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 0, missing),
+                "plateSiliconSolarGrade",
+                "plateIron",
+                "wireGt01RedAlloy",
+                "plateIron");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockReinforcedObsidian", 1, 0, missing),
-                new Object[] { "plateDarkSteel", getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
-                        "plateDarkSteel", getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), "blockObsidian",
-                        getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), "plateDarkSteel",
-                        getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), "plateDarkSteel" });
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "blockObsidian",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
+                "plateDarkSteel");
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "itemCoordSelector", 1, 0, "{bc:x:0,default:1b,bc:y:0,bc:z:0}", missing),
-                new Object[] { "plateElectricalSteel", "gemEnderEye", "plateElectricalSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
-                        getModItem(Minecraft.ID, "compass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing), "plateElectricalSteel",
-                        "gemEnderEye", "plateElectricalSteel" });
-        addShapelessCraftingRecipe(
+                "plateElectricalSteel",
+                "gemEnderEye",
+                "plateElectricalSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
+                getModItem(Minecraft.ID, "compass", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
+                "plateElectricalSteel",
+                "gemEnderEye",
+                "plateElectricalSteel");
+        addShapelessRecipe(
                 getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
-                new Object[] { getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing) });
+                getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemFunctionUpgrade", 1, 0, missing),
-                new Object[] { "plateSiliconSolarGrade", getModItem(EnderIO.ID, "itemMaterial", 1, 1, missing),
-                        "plateSiliconSolarGrade", "circuitAdvanced", "gemEnderEye", "circuitAdvanced",
-                        "plateSiliconSolarGrade", "plateElectricalSteel", "plateSiliconSolarGrade" });
+                "plateSiliconSolarGrade",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 1, missing),
+                "plateSiliconSolarGrade",
+                "circuitAdvanced",
+                "gemEnderEye",
+                "circuitAdvanced",
+                "plateSiliconSolarGrade",
+                "plateElectricalSteel",
+                "plateSiliconSolarGrade");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemYetaWrench", 1, 0, missing),
-                new Object[] { "ingotElectricalSteel", "craftingToolHardHammer", "ingotElectricalSteel",
-                        "ingotElectricalSteel", "gearElectricalSteel", "ingotElectricalSteel", null,
-                        "ingotElectricalSteel", null });
+                "ingotElectricalSteel",
+                "craftingToolHardHammer",
+                "ingotElectricalSteel",
+                "ingotElectricalSteel",
+                "gearElectricalSteel",
+                "ingotElectricalSteel",
+                null,
+                "ingotElectricalSteel",
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemConduitProbe", 1, 0, missing),
-                new Object[] { "plateSiliconSolarGrade", getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing),
-                        "plateSiliconSolarGrade", "circuitBasic",
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
-                        "circuitBasic", "plateElectricalSteel",
-                        getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 2, missing), "plateElectricalSteel" });
+                "plateSiliconSolarGrade",
+                getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing),
+                "plateSiliconSolarGrade",
+                "circuitBasic",
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
+                "circuitBasic",
+                "plateElectricalSteel",
+                getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 2, missing),
+                "plateElectricalSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemTravelStaff", 1, 16, missing),
-                new Object[] { "craftingToolScrewdriver", "circuitAdvanced",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing), "screwVibrantAlloy", "stickDarkSteel",
-                        "circuitAdvanced", "stickDarkSteel", "screwVibrantAlloy", "craftingToolWrench" });
+                "craftingToolScrewdriver",
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing),
+                "screwVibrantAlloy",
+                "stickDarkSteel",
+                "circuitAdvanced",
+                "stickDarkSteel",
+                "screwVibrantAlloy",
+                "craftingToolWrench");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemXpTransfer", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", "circuitAdvanced",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing), "screwEnergeticAlloy", "stickSoularium",
-                        "circuitAdvanced", "stickSoularium", "screwEnergeticAlloy", "craftingToolWrench" });
+                "craftingToolScrewdriver",
+                "circuitAdvanced",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
+                "screwEnergeticAlloy",
+                "stickSoularium",
+                "circuitAdvanced",
+                "stickSoularium",
+                "screwEnergeticAlloy",
+                "craftingToolWrench");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGliderWing", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "stickDarkSteel", "itemLeather", "stickDarkSteel",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "itemLeather", "itemLeather",
-                        "itemLeather", "itemLeather" });
+                "craftingToolHardHammer",
+                "stickDarkSteel",
+                "itemLeather",
+                "stickDarkSteel",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather",
+                "itemLeather",
+                "itemLeather",
+                "itemLeather");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemGliderWing", 1, 1, missing),
-                new Object[] { "screwDarkSteel", "stickDarkSteel", "screwDarkSteel",
-                        getModItem(EnderIO.ID, "itemGliderWing", 1, 0, missing), "plateDarkSteel",
-                        getModItem(EnderIO.ID, "itemGliderWing", 1, 0, missing), "craftingToolWrench", "stickDarkSteel",
-                        "craftingToolScrewdriver" });
+                "screwDarkSteel",
+                "stickDarkSteel",
+                "screwDarkSteel",
+                getModItem(EnderIO.ID, "itemGliderWing", 1, 0, missing),
+                "plateDarkSteel",
+                getModItem(EnderIO.ID, "itemGliderWing", 1, 0, missing),
+                "craftingToolWrench",
+                "stickDarkSteel",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemMagnet", 1, 16, missing),
-                new Object[] { "plateElectricalSteel", "plateConductiveIron", "plateConductiveIron",
-                        "craftingToolWrench", "screwSteelMagnetic",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing), "plateElectricalSteel",
-                        "plateConductiveIron", "plateConductiveIron" });
+                "plateElectricalSteel",
+                "plateConductiveIron",
+                "plateConductiveIron",
+                "craftingToolWrench",
+                "screwSteelMagnetic",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                "plateElectricalSteel",
+                "plateConductiveIron",
+                "plateConductiveIron");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.endSteel_helmet", 1, 0, missing),
-                new Object[] { "plateEndSteel", "plateEndSteel", "plateEndSteel", "plateEndSteel",
-                        "craftingToolHardHammer", "plateEndSteel", null,
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 6, missing), null });
+                "plateEndSteel",
+                "plateEndSteel",
+                "plateEndSteel",
+                "plateEndSteel",
+                "craftingToolHardHammer",
+                "plateEndSteel",
+                null,
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 6, missing),
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.endSteel_chestplate", 1, 0, missing),
-                new Object[] { "plateEndSteel", "craftingToolHardHammer", "plateEndSteel", "plateEndSteel",
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 6, missing), "plateEndSteel", "plateEndSteel",
-                        "plateEndSteel", "plateEndSteel" });
+                "plateEndSteel",
+                "craftingToolHardHammer",
+                "plateEndSteel",
+                "plateEndSteel",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 6, missing),
+                "plateEndSteel",
+                "plateEndSteel",
+                "plateEndSteel",
+                "plateEndSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.endSteel_leggings", 1, 0, missing),
-                new Object[] { "plateEndSteel", "plateEndSteel", "plateEndSteel", "plateEndSteel",
-                        "craftingToolHardHammer", "plateEndSteel", "plateEndSteel",
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 6, missing), "plateEndSteel" });
+                "plateEndSteel",
+                "plateEndSteel",
+                "plateEndSteel",
+                "plateEndSteel",
+                "craftingToolHardHammer",
+                "plateEndSteel",
+                "plateEndSteel",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 6, missing),
+                "plateEndSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.endSteel_boots", 1, 0, missing),
-                new Object[] { "plateEndSteel", getModItem(EnderIO.ID, "itemFrankenSkull", 1, 6, missing),
-                        "plateEndSteel", "plateEndSteel", "craftingToolHardHammer", "plateEndSteel", null, null,
-                        null });
+                "plateEndSteel",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 6, missing),
+                "plateEndSteel",
+                "plateEndSteel",
+                "craftingToolHardHammer",
+                "plateEndSteel",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.stellar_helmet", 1, 0, missing),
-                new Object[] { "plateStellarAlloy", "plateStellarAlloy", "plateStellarAlloy", "plateStellarAlloy",
-                        "craftingToolHardHammer", "plateStellarAlloy", null,
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing), null });
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "craftingToolHardHammer",
+                "plateStellarAlloy",
+                null,
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.stellar_chestplate", 1, 0, missing),
-                new Object[] { "plateStellarAlloy", "craftingToolHardHammer", "plateStellarAlloy", "plateStellarAlloy",
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing), "plateStellarAlloy",
-                        "plateStellarAlloy", "plateStellarAlloy", "plateStellarAlloy" });
+                "plateStellarAlloy",
+                "craftingToolHardHammer",
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "plateStellarAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.stellar_leggings", 1, 0, missing),
-                new Object[] { "plateStellarAlloy", "plateStellarAlloy", "plateStellarAlloy", "plateStellarAlloy",
-                        "craftingToolHardHammer", "plateStellarAlloy", "plateStellarAlloy",
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing), "plateStellarAlloy" });
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "craftingToolHardHammer",
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
+                "plateStellarAlloy");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.stellar_boots", 1, 0, missing),
-                new Object[] { "plateStellarAlloy", getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
-                        "plateStellarAlloy", "plateStellarAlloy", "craftingToolHardHammer", "plateStellarAlloy", null,
-                        null, null });
+                "plateStellarAlloy",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
+                "plateStellarAlloy",
+                "plateStellarAlloy",
+                "craftingToolHardHammer",
+                "plateStellarAlloy",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.endSteel_pickaxe", 1, 0, missing),
-                new Object[] { "plateEndSteel", "ingotEndSteel", "ingotEndSteel", "craftingToolFile",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing), "craftingToolHardHammer", null,
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing), null });
+                "plateEndSteel",
+                "ingotEndSteel",
+                "ingotEndSteel",
+                "craftingToolFile",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
+                "craftingToolHardHammer",
+                null,
+                getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.endSteel_axe", 1, 0, missing),
-                new Object[] { "plateEndSteel", "ingotEndSteel", "craftingToolHardHammer", "plateEndSteel",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing), "plateEndSteel", "craftingToolFile",
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing), null });
+                "plateEndSteel",
+                "ingotEndSteel",
+                "craftingToolHardHammer",
+                "plateEndSteel",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
+                "plateEndSteel",
+                "craftingToolFile",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.endSteel_sword", 1, 0, missing),
-                new Object[] { null, "plateEndSteel", null, "craftingToolFile", "plateEndSteel",
-                        "craftingToolHardHammer", null, getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing), null });
+                null,
+                "plateEndSteel",
+                null,
+                "craftingToolFile",
+                "plateEndSteel",
+                "craftingToolHardHammer",
+                null,
+                getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.stellar_pickaxe", 1, 0, missing),
-                new Object[] { "plateStellarAlloy", "ingotStellarAlloy", "ingotStellarAlloy", "craftingToolFile",
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing), "craftingToolHardHammer", null,
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing), null });
+                "plateStellarAlloy",
+                "ingotStellarAlloy",
+                "ingotStellarAlloy",
+                "craftingToolFile",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
+                "craftingToolHardHammer",
+                null,
+                getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.stellar_axe", 1, 0, missing),
-                new Object[] { "plateStellarAlloy", "ingotStellarAlloy", "craftingToolHardHammer", "plateStellarAlloy",
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing), "plateStellarAlloy",
-                        "craftingToolFile", getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing), null });
+                "plateStellarAlloy",
+                "ingotStellarAlloy",
+                "craftingToolHardHammer",
+                "plateStellarAlloy",
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
+                "plateStellarAlloy",
+                "craftingToolFile",
+                getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "item.stellar_sword", 1, 0, missing),
-                new Object[] { null, getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing), null,
-                        "craftingToolFile", "plateStellarAlloy", "craftingToolHardHammer", null,
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing), null });
+                null,
+                getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
+                null,
+                "craftingToolFile",
+                "plateStellarAlloy",
+                "craftingToolHardHammer",
+                null,
+                getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
+                null);
         addShapedRecipe(
                 getModItem(EnderIO.ID, "itemMaterial", 1, 12, missing),
-                new Object[] { "craftingToolScrewdriver", "screwEndSteel", "stickDarkSteel", "screwEndSteel",
-                        "stickDarkSteel", "screwEndSteel", "stickDarkSteel", "screwEndSteel",
-                        "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                "screwEndSteel",
+                "stickDarkSteel",
+                "screwEndSteel",
+                "stickDarkSteel",
+                "screwEndSteel",
+                "stickDarkSteel",
+                "screwEndSteel",
+                "craftingToolHardHammer");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

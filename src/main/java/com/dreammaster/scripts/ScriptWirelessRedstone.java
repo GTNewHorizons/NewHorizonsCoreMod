@@ -38,33 +38,48 @@ public class ScriptWirelessRedstone implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(WirelessRedstoneCBECore.ID, "stoneBowl", 1, 0, missing),
-                new Object[] { "plateStone", null, "plateStone", "plateStone", "craftingToolHardHammer", "plateStone",
-                        "plateStone", "plateStone", "plateStone" });
+                "plateStone",
+                null,
+                "plateStone",
+                "plateStone",
+                "craftingToolHardHammer",
+                "plateStone",
+                "plateStone",
+                "plateStone",
+                "plateStone");
         addShapedRecipe(
                 getModItem(WirelessRedstoneCBEAddons.ID, "remote", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver",
-                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
-                        "craftingToolFile", "circuitAdvanced",
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing), "circuitAdvanced",
-                        "itemCasingTungstenSteel", "screwTungstenSteel", "itemCasingTungstenSteel" });
+                "craftingToolScrewdriver",
+                getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
+                "craftingToolFile",
+                "circuitAdvanced",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "circuitAdvanced",
+                "itemCasingTungstenSteel",
+                "screwTungstenSteel",
+                "itemCasingTungstenSteel");
         addShapedRecipe(
                 getModItem(WirelessRedstoneCBEAddons.ID, "sniffer", 1, 0, missing),
-                new Object[] { getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing),
-                        "itemCasingTungstenSteel", "stickTungstenSteel", "itemCasingTungstenSteel",
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing) });
+                getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing),
+                getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
+                getModItem(WirelessRedstoneCBECore.ID, "recieverDish", 1, 0, missing),
+                "itemCasingTungstenSteel",
+                "stickTungstenSteel",
+                "itemCasingTungstenSteel",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing));
         addShapedRecipe(
                 getModItem(WirelessRedstoneCBEAddons.ID, "psniffer", 1, 0, missing),
-                new Object[] { getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0, missing),
-                        getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0, missing),
-                        "itemCasingTungstenSteel", "stickTungstenSteel", "itemCasingTungstenSteel",
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing) });
+                getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0, missing),
+                getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 1, 0, missing),
+                getModItem(WirelessRedstoneCBECore.ID, "blazeRecieverDish", 1, 0, missing),
+                "itemCasingTungstenSteel",
+                "stickTungstenSteel",
+                "itemCasingTungstenSteel",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

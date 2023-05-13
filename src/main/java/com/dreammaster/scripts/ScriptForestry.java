@@ -17,7 +17,6 @@ import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -368,1097 +367,2290 @@ public class ScriptForestry implements IScriptLoader {
     private void craftingRecipes() {
         addShapedRecipe(
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                new Object[] { "itemCasingBronze", "screwSteel", "itemCasingBronze", "screwSteel",
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing), "screwSteel", "itemCasingBronze",
-                        "screwSteel", "itemCasingBronze" });
+                "itemCasingBronze",
+                "screwSteel",
+                "itemCasingBronze",
+                "screwSteel",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                "screwSteel",
+                "itemCasingBronze",
+                "screwSteel",
+                "itemCasingBronze");
         addShapedRecipe(
                 getModItem(Forestry.ID, "core", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "treealyzer", 1, 0, missing),
-                        getModItem(Forestry.ID, "beealyzer", 1, 0, missing),
-                        getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "circuitBasic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "circuitBasic" });
+                getModItem(Forestry.ID, "treealyzer", 1, 0, missing),
+                getModItem(Forestry.ID, "beealyzer", 1, 0, missing),
+                getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 0, missing),
-                new Object[] { "plateCupronickel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        "plateCupronickel", "ringAnyRubber", getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        "ringAnyRubber", "gearGtSmallSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "gearGtSmallSteel" });
+                "plateCupronickel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "plateCupronickel",
+                "ringAnyRubber",
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                "ringAnyRubber",
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 1, missing),
-                new Object[] { "plateCupronickel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        "plateCupronickel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing), "gearGtSmallSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "gearGtSmallSteel" });
+                "plateCupronickel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "plateCupronickel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 2, missing),
-                new Object[] { "plateCupronickel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        "plateCupronickel", getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "gearGtSmallSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "gearGtSmallSteel" });
+                "plateCupronickel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "plateCupronickel",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 3, missing),
-                new Object[] { "plateCupronickel", getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
-                        "plateCupronickel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "gearGtSmallSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "gearGtSmallSteel" });
+                "plateCupronickel",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
+                "plateCupronickel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 4, missing),
-                new Object[] { "plateCupronickel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        "plateCupronickel", getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing), "gearGtSmallSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "gearGtSmallSteel" });
+                "plateCupronickel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "plateCupronickel",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 5, missing),
-                new Object[] { "plateCupronickel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        "plateCupronickel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing), "gearGtSmallSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "gearGtSmallSteel" });
+                "plateCupronickel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "plateCupronickel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 6, missing),
-                new Object[] { "plateCupronickel", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        "plateCupronickel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "gearGtSmallSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "gearGtSmallSteel" });
+                "plateCupronickel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                "plateCupronickel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 7, missing),
-                new Object[] { "plateCupronickel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
-                        "plateCupronickel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
-                        getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing), "gearGtSmallAluminium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32681, missing), "gearGtSmallAluminium" });
+                "plateCupronickel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
+                "plateCupronickel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                "gearGtSmallAluminium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32681, missing),
+                "gearGtSmallAluminium");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory2", 1, 1, missing),
-                new Object[] { "plateIron", "ringIron", "plateIron", "plateIron", "craftingToolHardHammer", "plateIron",
-                        "plateIron", "ringIron", "plateIron" });
+                "plateIron",
+                "ringIron",
+                "plateIron",
+                "plateIron",
+                "craftingToolHardHammer",
+                "plateIron",
+                "plateIron",
+                "ringIron",
+                "plateIron");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                new Object[] { "screwIron", getModItem(Minecraft.ID, "bookshelf", 1, 0, missing), "screwIron",
-                        "craftingToolSaw", getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
-                        "craftingToolScrewdriver", "screwIron", getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        "screwIron" });
+                "screwIron",
+                getModItem(Minecraft.ID, "bookshelf", 1, 0, missing),
+                "screwIron",
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                "screwIron");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                new Object[] { "screwIron", getModItem(Minecraft.ID, "bookshelf", 1, 0, missing), "screwIron",
-                        "craftingToolSaw", getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing),
-                        "craftingToolScrewdriver", "screwIron", getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        "screwIron" });
+                "screwIron",
+                getModItem(Minecraft.ID, "bookshelf", 1, 0, missing),
+                "screwIron",
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                "screwIron");
         addShapedRecipe(
                 getModItem(Forestry.ID, "mail", 1, 0, missing),
-                new Object[] { "plateIron", getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "plateIron",
-                        "dyeBlue", getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing), "dyeBlue",
-                        "gearGtSmallBronze", "chestWood", "gearGtSmallBronze" });
+                "plateIron",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "plateIron",
+                "dyeBlue",
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing),
+                "dyeBlue",
+                "gearGtSmallBronze",
+                "chestWood",
+                "gearGtSmallBronze");
         addShapedRecipe(
                 getModItem(Forestry.ID, "mail", 1, 1, missing),
-                new Object[] { getModItem(Forestry.ID, "thermionicTubes", 1, 9, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        getModItem(Forestry.ID, "thermionicTubes", 1, 9, missing), "plateSteel",
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing), "plateSteel", "gearGtSmallSteel",
-                        "circuitBasic", "gearGtSmallSteel" });
+                getModItem(Forestry.ID, "thermionicTubes", 1, 9, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                getModItem(Forestry.ID, "thermionicTubes", 1, 9, missing),
+                "plateSteel",
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                "plateSteel",
+                "gearGtSmallSteel",
+                "circuitBasic",
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "engine", 1, 3, missing),
-                new Object[] { "plateCupronickel", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        "plateCupronickel", "circuitBasic", getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        "circuitBasic", "gearGtSmallSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "gearGtSmallSteel" });
+                "plateCupronickel",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "plateCupronickel",
+                "circuitBasic",
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                "circuitBasic",
+                "gearGtSmallSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "apiculture", 1, 2, missing),
-                new Object[] { "slabWood", "slabWood", "slabWood",
-                        getModItem(Forestry.ID, "frameUntreated", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.WoodenCasing", 1, 0, missing),
-                        getModItem(Forestry.ID, "frameUntreated", 1, 0, missing), "beeComb", "slabWood", "beeComb" });
-        addShapelessCraftingRecipe(
+                "slabWood",
+                "slabWood",
+                "slabWood",
+                getModItem(Forestry.ID, "frameUntreated", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.WoodenCasing", 1, 0, missing),
+                getModItem(Forestry.ID, "frameUntreated", 1, 0, missing),
+                "beeComb",
+                "slabWood",
+                "beeComb");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "apiculture", 1, 2, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "apiary", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "apiary", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "beealyzer", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "beealyzer", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Forestry.ID, "beealyzer", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "treealyzer", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "treealyzer", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Forestry.ID, "treealyzer", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing) });
+                getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "infuser", 1, 0, missing),
-                new Object[] { null, "stickBronze", null, null, "stickIron", null, "craftingToolHardHammer",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "craftingToolFile" });
+                null,
+                "stickBronze",
+                null,
+                null,
+                "stickIron",
+                null,
+                "craftingToolHardHammer",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(Forestry.ID, "pipette", 1, 0, missing),
-                new Object[] { null, "plateAnyRubber", "plateAnyRubber", null, "cellEmpty", "plateAnyRubber",
-                        "boltGlass", null, null });
+                null,
+                "plateAnyRubber",
+                "plateAnyRubber",
+                null,
+                "cellEmpty",
+                "plateAnyRubber",
+                "boltGlass",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(Forestry.ID, "naturalistHelmet", 1, 0, missing),
-                new Object[] { "screwIron", "ringIron", "screwIron", "lensGlass", null, "lensGlass", null, null,
-                        null });
+                "screwIron",
+                "ringIron",
+                "screwIron",
+                "lensGlass",
+                null,
+                "lensGlass",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(Forestry.ID, "frameUntreated", 1, 0, missing),
-                new Object[] { "slabWood", "slabWood", "slabWood", "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood", "stickWood", "stickWood",
-                        "stickWood" });
+                "slabWood",
+                "slabWood",
+                "slabWood",
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                "stickWood",
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "apiaristBag", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(Forestry.ID, "apicultureChest", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather", "itemLeather",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "itemLeather" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Forestry.ID, "apicultureChest", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                "itemLeather",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "apiaristBag", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "apiaristBag", 1, 0, missing) });
+                getModItem(Forestry.ID, "apiaristBag", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "lepidopteristBag", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(Forestry.ID, "lepidopterology", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather", "itemLeather",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "itemLeather" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Forestry.ID, "lepidopterology", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                "itemLeather",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "lepidopteristBag", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "lepidopteristBag", 1, 0, missing) });
+                getModItem(Forestry.ID, "lepidopteristBag", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "minerBag", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "ingotIron",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather", "ingotIron",
-                        "itemLeather", "itemLeather", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "itemLeather" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "ingotIron",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                "ingotIron",
+                "itemLeather",
+                "itemLeather",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "minerBag", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "minerBag", 1, 0, missing) });
+                getModItem(Forestry.ID, "minerBag", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "diggerBag", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "stone",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather", "stone",
-                        "itemLeather", "itemLeather", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "itemLeather" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "stone",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                "stone",
+                "itemLeather",
+                "itemLeather",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "diggerBag", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "diggerBag", 1, 0, missing) });
+                getModItem(Forestry.ID, "diggerBag", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "foresterBag", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "logWood",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather", "logWood",
-                        "itemLeather", "itemLeather", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "itemLeather" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "logWood",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                "logWood",
+                "itemLeather",
+                "itemLeather",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "foresterBag", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "foresterBag", 1, 0, missing) });
+                getModItem(Forestry.ID, "foresterBag", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "hunterBag", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(Minecraft.ID, "feather", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather",
-                        getModItem(Minecraft.ID, "feather", 1, 0, missing), "itemLeather", "itemLeather",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "itemLeather" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Minecraft.ID, "feather", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                getModItem(Minecraft.ID, "feather", 1, 0, missing),
+                "itemLeather",
+                "itemLeather",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "hunterBag", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "hunterBag", 1, 0, missing) });
+                getModItem(Forestry.ID, "hunterBag", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "builderBag", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "fenceWood",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather", "fenceWood",
-                        "itemLeather", "itemLeather", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "itemLeather" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "fenceWood",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                "fenceWood",
+                "itemLeather",
+                "itemLeather",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "builderBag", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "builderBag", 1, 0, missing) });
+                getModItem(Forestry.ID, "builderBag", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 0, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 0, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 1, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 1, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 1, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 1, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 1, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 1, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 1, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 1, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 1, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 1, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 1, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 1, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 1, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 1, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 1, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 1, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 1, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 2, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 2, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 2, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 2, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 2, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 2, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 2, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 2, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 2, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 2, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 2, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 2, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 2, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 2, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 2, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 2, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 2, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 3, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 3, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 3, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 3, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 3, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 3, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 3, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 3, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 3, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 3, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 3, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 3, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 3, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 3, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 3, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 3, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 3, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 4, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 4, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 4, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 4, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 4, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 4, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 4, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 4, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 4, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 4, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 4, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 4, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 4, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 4, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 4, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 4, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 4, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 5, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 5, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 5, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 5, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 5, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 5, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 5, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 5, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 5, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 5, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 5, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 5, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 5, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 5, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 5, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 5, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 5, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 6, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 6, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 6, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 6, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 6, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 6, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 6, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 6, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 6, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 6, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 6, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 6, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 6, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 6, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 6, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 6, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 6, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 7, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 7, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 7, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 7, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 7, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 7, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 7, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 7, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 7, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 7, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 7, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 7, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 7, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 7, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 7, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 7, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 7, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 8, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 8, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 8, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 8, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 8, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 8, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 8, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 8, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 8, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 8, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 8, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 8, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 8, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 8, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 8, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 8, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 8, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 9, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 9, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 9, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 9, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 9, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 9, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 9, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 9, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 9, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 9, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 9, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 9, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 9, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 9, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 9, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 9, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 9, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 10, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 10, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 10, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 10, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 10, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 10, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 10, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 10, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 10, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 10, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 10, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 10, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 10, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 10, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 10, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 10, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 10, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 11, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 11, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 11, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 11, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 11, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 11, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 11, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 11, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 11, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 11, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 11, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 11, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 11, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 11, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 11, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 11, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 11, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 12, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 12, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 12, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 12, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 12, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 12, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 12, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 12, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 12, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 12, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 12, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 12, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 12, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 12, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 12, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 12, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 12, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 13, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 13, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 13, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 13, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 13, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 13, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 13, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 13, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 13, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 13, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 13, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 13, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 13, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 13, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 13, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 13, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 13, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 14, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 14, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 14, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 14, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 14, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 14, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 14, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 14, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 14, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 14, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 14, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 14, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 14, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 14, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 14, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 14, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 14, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 15, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 15, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 15, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 15, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 15, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 15, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 15, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 15, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 15, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 15, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 15, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 15, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 15, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 15, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 15, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 15, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 15, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 16, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 16, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 16, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 16, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 16, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 16, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 16, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 16, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 16, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 16, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 16, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 16, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 16, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 16, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 16, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 16, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 16, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 17, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 17, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 17, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 17, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 17, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 17, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 17, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 17, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 17, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 17, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 17, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 17, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 17, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 17, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 17, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 17, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 17, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 18, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 18, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 18, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 18, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 18, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 18, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 18, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 18, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 18, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 18, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 18, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 18, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 18, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 18, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 18, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 18, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 18, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 19, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 19, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 19, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 19, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 19, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 19, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 19, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 19, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 19, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 19, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 19, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 19, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 19, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 19, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 19, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 19, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 19, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 20, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 20, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 20, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 20, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 20, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 20, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 20, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 20, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 20, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 20, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 20, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 20, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 20, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 20, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 20, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 20, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 20, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 21, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 21, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 21, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 21, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 21, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 21, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 21, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 21, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 21, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 21, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 21, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 21, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 21, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 21, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 21, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 21, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 21, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 22, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 22, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 22, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 22, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 22, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 22, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 22, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 22, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 22, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 22, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 22, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 22, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 22, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 22, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 22, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 22, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 22, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 23, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 23, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 23, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 23, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 23, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 23, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 23, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 23, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 23, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 23, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 23, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 23, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 23, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 23, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 23, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 23, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 23, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 24, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 24, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 24, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 24, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 24, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 24, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 24, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 24, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 24, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 24, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 24, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 24, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 24, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 24, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 24, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 24, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 24, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 25, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 25, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 25, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 25, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 25, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 25, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 25, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 25, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 25, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 25, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 25, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 25, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 25, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 25, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 25, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 25, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 25, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 26, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 26, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 26, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 26, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 26, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 26, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 26, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 26, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 26, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 26, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 26, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 26, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 26, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 26, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 26, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 26, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 26, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 27, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 27, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 27, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 27, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 27, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 27, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 27, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 27, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 27, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 27, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 27, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 27, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 27, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 27, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 27, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 27, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 27, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 1, 28, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 28, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 28, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 28, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 28, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 28, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 28, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 2, 28, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 28, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 28, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 28, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 28, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fences", 4, 28, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 28, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planks", 1, 28, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 28, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 28, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planks", 1, 29, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planks", 1, 29, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 0, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 0, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 0, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 1, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 1, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 1, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 1, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 1, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 1, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 1, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 1, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 1, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 1, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 1, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 1, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 1, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 1, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 1, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 1, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 1, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 2, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 2, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 2, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 2, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 2, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 2, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 2, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 2, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 2, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 2, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 2, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 2, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 2, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 2, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 2, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 2, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 2, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 3, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 3, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 3, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 3, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 3, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 3, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 3, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 3, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 3, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 3, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 3, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 3, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 3, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 3, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 3, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 3, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 3, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 4, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 4, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 4, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 4, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 4, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 4, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 4, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 4, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 4, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 4, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 4, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 4, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 4, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 4, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 4, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 4, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 4, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 5, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 5, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 5, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 5, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 5, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 5, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 5, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 5, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 5, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 5, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 5, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 5, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 5, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 5, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 5, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 5, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 5, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 6, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 6, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 6, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 6, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 6, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 6, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 6, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 6, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 6, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 6, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 6, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 6, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 6, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 6, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 6, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 6, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 6, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 7, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 7, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 7, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 7, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 7, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 7, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 7, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 7, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 7, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 7, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 7, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 7, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 7, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 7, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 7, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 7, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 7, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 8, missing),
-                new Object[] { null, null, null, "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 8, missing),
-                        "stickWood", "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 8, missing),
-                        "stickWood" });
+                null,
+                null,
+                null,
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 8, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 8, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 8, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 8, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 8, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 8, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 8, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 8, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 8, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 8, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 8, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 8, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 9, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 9, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 9, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 9, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 9, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 9, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 9, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 9, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 9, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 9, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 9, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 9, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 9, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 9, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 9, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 9, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 9, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 10, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 10, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 10, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 10, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 10, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 10, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 10, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 10, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 10, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 10, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 10, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 10, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 10, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 10, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 10, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 10, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 10, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 11, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 11, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 11, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 11, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 11, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 11, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 11, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 11, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 11, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 11, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 11, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 11, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 11, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 11, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 11, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 11, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 11, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 12, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 12, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 12, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 12, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 12, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 12, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 12, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 12, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 12, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 12, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 12, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 12, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 12, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 12, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 12, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 12, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 12, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 13, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 13, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 13, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 13, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 13, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 13, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 13, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 13, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 13, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 13, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 13, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 13, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 13, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 13, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 13, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 13, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 13, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 14, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 14, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 14, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 14, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 14, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 14, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 14, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 14, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 14, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 14, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 14, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 14, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 14, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 14, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 14, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 14, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 14, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 15, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 15, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 15, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 15, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 15, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 15, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 15, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 15, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 15, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 15, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 15, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 15, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 15, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 15, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 15, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 15, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 15, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 16, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 16, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 16, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 16, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 16, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 16, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 16, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 16, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 16, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 16, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 16, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 16, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 16, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 16, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 16, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 16, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 16, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 17, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 17, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 17, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 17, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 17, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 17, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 17, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 17, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 17, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 17, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 17, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 17, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 17, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 17, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 17, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 17, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 17, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 18, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 18, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 18, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 18, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 18, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 18, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 18, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 18, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 18, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 18, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 18, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 18, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 18, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 18, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 18, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 18, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 18, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 19, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 19, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 19, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 19, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 19, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 19, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 19, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 19, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 19, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 19, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 19, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 19, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 19, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 19, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 19, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 19, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 19, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 20, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 20, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 20, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 20, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 20, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 20, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 20, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 20, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 20, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 20, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 20, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 20, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 20, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 20, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 20, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 20, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 20, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 21, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 21, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 21, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 21, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 21, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 21, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 21, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 21, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 21, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 21, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 21, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 21, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 21, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 21, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 21, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 21, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 21, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 22, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 22, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 22, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 22, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 22, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 22, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 22, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 22, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 22, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 22, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 22, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 22, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 22, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 22, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 22, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 22, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 22, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 23, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 23, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 23, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 23, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 23, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 23, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 23, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 23, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 23, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 23, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 23, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 23, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 23, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 23, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 23, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 23, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 23, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 24, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 24, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 24, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 24, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 24, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 24, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 24, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 24, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 24, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 24, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 24, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 24, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 24, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 24, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 24, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 24, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 24, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 25, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 25, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 25, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 25, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 25, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 25, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 25, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 25, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 25, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 25, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 25, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 25, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 25, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 25, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 25, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 25, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 25, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 26, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 26, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 26, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 26, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 26, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 26, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 26, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 26, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 26, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 26, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 26, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 26, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 26, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 26, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 26, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 26, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 26, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 27, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 27, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 27, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 27, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 27, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 27, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 27, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 27, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 27, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 27, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 27, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 27, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 27, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 27, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 27, missing), "stickWood" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 27, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 27, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 1, 28, missing),
-                new Object[] { "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 28, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 28, missing), "stickWood",
-                        "stickWood", getModItem(Forestry.ID, "planksFireproof", 1, 28, missing), "stickWood" });
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 28, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 28, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 28, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 2, 28, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 28, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 28, missing), "stickWood" });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 28, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 28, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(Forestry.ID, "fencesFireproof", 4, 28, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 28, missing), "stickWood", "stickWood",
-                        getModItem(Forestry.ID, "planksFireproof", 1, 28, missing), "stickWood" });
-        addShapelessCraftingRecipe(
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 28, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Forestry.ID, "planksFireproof", 1, 28, missing),
+                "stickWood");
+        addShapelessRecipe(
                 getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                new Object[] { getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10, missing) });
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Forestry.ID, "cart.beehouse", 1, 0, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, "screwSteel",
-                        getModItem(Forestry.ID, "apiculture", 1, 2, missing), "screwSteel", "screwSteel",
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing), "screwSteel" });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                "screwSteel",
+                getModItem(Forestry.ID, "apiculture", 1, 2, missing),
+                "screwSteel",
+                "screwSteel",
+                getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                "screwSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "cart.beehouse", 1, 1, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, "screwSteel",
-                        getModItem(Forestry.ID, "apiculture", 1, 0, missing), "screwSteel", "screwSteel",
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing), "screwSteel" });
-        addShapelessCraftingRecipe(
+                null,
+                "craftingToolScrewdriver",
+                null,
+                "screwSteel",
+                getModItem(Forestry.ID, "apiculture", 1, 0, missing),
+                "screwSteel",
+                "screwSteel",
                 getModItem(Minecraft.ID, "minecart", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "cart.beehouse", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "screwSteel");
+        addShapelessRecipe(
                 getModItem(Minecraft.ID, "minecart", 1, 0, missing),
-                new Object[] { getModItem(Forestry.ID, "cart.beehouse", 1, 1, missing) });
+                getModItem(Forestry.ID, "cart.beehouse", 1, 0, missing));
+        addShapelessRecipe(
+                getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                getModItem(Forestry.ID, "cart.beehouse", 1, 1, missing));
     }
 
     private void recipes1() {

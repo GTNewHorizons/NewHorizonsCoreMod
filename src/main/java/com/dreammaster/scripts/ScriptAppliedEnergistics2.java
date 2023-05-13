@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -94,10 +93,10 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         ItemStack[] FluixSmartCableColor = new ItemStack[16];
         ItemStack[] FluixDenseSmartCableColor = new ItemStack[16];
         ItemStack[] FluixBackboneSmartCableColor = new ItemStack[16];
-        GT_ModHandler.addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 SuperSpeedCard,
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
-                        CustomItemList.MysteriousCrystal });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
+                CustomItemList.MysteriousCrystal);
 
         GT_Values.RA.addAssemblerRecipe(
                 CraftingUnit,
@@ -167,7 +166,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                     new Object[] { "dPS", "CGC", "SCh", 'P', CERTUS_PLATE, 'S',
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 1L), 'C',
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 1L), 'G', components[i] });
-            GT_ModHandler.addShapelessCraftingRecipe(cells[i], new Object[] { AE2_ADVANCED_HOUSING, components[i] });
+            addShapelessRecipe(cells[i], AE2_ADVANCED_HOUSING, components[i]);
         }
         GT_ModHandler.addCraftingRecipe(
                 components[0],
@@ -272,9 +271,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         for (int i = 0; i < 16; i++) {
             FluixCoveredCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 20 + i);
 
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 36),
-                    new Object[] { FluixCoveredCableColor[i] });
+                    FluixCoveredCableColor[i]);
         }
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { AE2_ME_Glass_Cable, GT_Utility.getIntegratedCircuit(24) },
@@ -354,9 +353,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         for (int i = 0; i < 16; i++) {
             FluixDenseCoveredCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 520 + i);
 
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 536),
-                    new Object[] { FluixDenseCoveredCableColor[i] });
+                    FluixDenseCoveredCableColor[i]);
         }
 
         GT_Values.RA.addAssemblerRecipe(
@@ -433,9 +432,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         for (int i = 0; i < 16; i++) {
             FluixBackboneCoveredCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 540 + i);
 
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 556),
-                    new Object[] { FluixBackboneCoveredCableColor[i] });
+                    FluixBackboneCoveredCableColor[i]);
         }
 
         GT_Values.RA.addAssemblerRecipe(
@@ -512,9 +511,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         for (int i = 0; i < 16; i++) {
             FluixSmartCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 40 + i);
 
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 56),
-                    new Object[] { FluixSmartCableColor[i] });
+                    FluixSmartCableColor[i]);
         }
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
@@ -533,9 +532,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         // --- ME Smart Dense Cable Fluix
         for (int i = 0; i < 16; i++) {
             FluixDenseSmartCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 60 + i);
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 76),
-                    new Object[] { FluixDenseSmartCableColor[i] });
+                    FluixDenseSmartCableColor[i]);
         }
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 56),
@@ -554,9 +553,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         // --- ME Smart Backbone Cable Fluix
         for (int i = 0; i < 16; i++) {
             FluixBackboneSmartCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 560 + i);
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 576),
-                    new Object[] { FluixBackboneSmartCableColor[i] });
+                    FluixBackboneSmartCableColor[i]);
         }
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 76),
@@ -629,9 +628,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_ModHandler.removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1),
-                new Object[] { "craftingToolHardHammer", "plateCertusQuartz", "screwCertusQuartz", "plateTungsten",
-                        "gemEnderEye", "plateTungsten", "screwCertusQuartz", "plateTungsten",
-                        "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                "plateCertusQuartz",
+                "screwCertusQuartz",
+                "plateTungsten",
+                "gemEnderEye",
+                "plateTungsten",
+                "screwCertusQuartz",
+                "plateTungsten",
+                "craftingToolScrewdriver");
 
         AvaritiaHelper.removeExtremeCraftingRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing));
@@ -657,815 +662,1193 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, 0, missing),
-                new Object[] { "plateTitanium", "circuitAdvanced", "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing), "plateTitanium",
-                        "circuitAdvanced", "plateTitanium" });
+                "plateTitanium",
+                "circuitAdvanced",
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "plateTitanium",
+                "circuitAdvanced",
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing), "circuitAdvanced",
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing), "circuitAdvanced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing), "cableGt08Aluminium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "circuitAdvanced",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "cableGt08Aluminium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing), "circuitMaster",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing), "circuitMaster",
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 194, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing) });
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
+                "circuitMaster",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "circuitMaster",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 194, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
-                new Object[] { "plateStainlessSteel", "circuitGood", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateStainlessSteel",
-                        "circuitGood", "plateStainlessSteel" });
+                "plateStainlessSteel",
+                "circuitGood",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateStainlessSteel",
+                "circuitGood",
+                "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockDrive", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium",
-                        "circuitAdvanced", "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium",
+                "circuitAdvanced",
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGrowthAccelerator", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 574, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 574, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing), "plateTitanium",
-                        "circuitBasic", getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        "circuitBasic", "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
-                        "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "plateTitanium",
+                "circuitBasic",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "circuitBasic",
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1, 0, missing),
-                new Object[] { "plateTitanium", "blockGlass", "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 214, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing), "plateTitanium",
-                        "blockGlass", "plateTitanium" });
+                "plateTitanium",
+                "blockGlass",
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 214, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
+                "plateTitanium",
+                "blockGlass",
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCharger", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing), "plateTitanium",
-                        "cableGt01Copper", getModItem(GregTech.ID, "gt.blockmachines", 1, 374, missing),
-                        "cableGt01Copper", "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing), "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateTitanium",
+                "cableGt01Copper",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 374, missing),
+                "cableGt01Copper",
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumRing", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumLinkChamber", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing), "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialPylon", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialIOPort", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialPylon", 1, 0, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialPylon", 1, 0, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 4, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium" });
-        addShapelessCraftingRecipe(
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 4, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium");
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCellWorkbench", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        "craftingToolWrench", "screwTitanium",
-                        getModItem(Minecraft.ID, "crafting_table", 1, 0, missing), "screwTitanium", "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
-                        "plateTitanium" });
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "craftingToolWrench",
+                "screwTitanium",
+                getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
+                "screwTitanium",
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        "plateTitanium", getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockDrive", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockDrive", 1, 0, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        "plateTitanium" });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockDrive", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockDrive", 1, 0, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCondenser", 1, 0, missing),
-                new Object[] { "plateTitanium", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
-                        "plateTitanium", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing), "plateTitanium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing), "plateTitanium" });
+                "plateTitanium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
+                "plateTitanium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
+                "plateTitanium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyAcceptor", 1, 0, missing),
-                new Object[] { "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing), "plateGlowstone",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing), "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateGlowstone",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockVibrationChamber", 1, 0, missing),
-                new Object[] { "plateTitanium", "screwTitanium", "plateTitanium", "craftingToolScrewdriver",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 264, missing), "craftingToolWrench",
-                        "plateTitanium", getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyAcceptor", 1, 0, missing),
-                        "plateTitanium" });
+                "plateTitanium",
+                "screwTitanium",
+                "plateTitanium",
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 264, missing),
+                "craftingToolWrench",
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyAcceptor", 1, 0, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSecurity", 1, 0, missing),
-                new Object[] { "plateTitanium", getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
-                        "plateTitanium", getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        "plateTitanium" });
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.SkyStoneStairBlock", 4, 0, missing),
-                new Object[] { null, null, getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
-                        null, getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing) });
+                null,
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.SkyStoneBlockStairBlock", 4, 0, missing),
-                new Object[] { null, null, getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
-                        null, getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing) });
+                null,
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 1, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.SkyStoneBrickStairBlock", 4, 0, missing),
-                new Object[] { null, null, getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
-                        null, getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing) });
+                null,
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 2, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.SkyStoneSmallBrickStairBlock", 4, 0, missing),
-                new Object[] { null, null, getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
-                        null, getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing) });
+                null,
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 3, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.FluixStairBlock", 4, 0, missing),
-                new Object[] { null, null, getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing), null,
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing) });
+                null,
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.QuartzStairBlock", 4, 0, missing),
-                new Object[] { null, null, getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing), null,
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing) });
+                null,
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartz", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.ChiseledQuartzStairBlock", 4, 0, missing),
-                new Object[] { null, null,
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing), null,
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing) });
+                null,
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzChiseled", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.QuartzPillarStairBlock", 4, 0, missing),
-                new Object[] { null, null, getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
-                        null, getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing) });
+                null,
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzPillar", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16, missing),
-                new Object[] { "stickCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
-                        "stickCertusQuartz", getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing), "stickCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
-                        "stickCertusQuartz" });
+                "stickCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
+                "stickCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
+                "stickCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
+                "stickCertusQuartz");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 44, missing),
-                new Object[] { "stickNetherQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        "stickNetherQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        "stickNetherQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        "stickNetherQuartz" });
+                "stickNetherQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "stickNetherQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "stickNetherQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "stickNetherQuartz");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 43, missing),
-                new Object[] { "stickCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        "stickCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        "stickCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        "stickCertusQuartz" });
+                "stickCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "stickCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "stickCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                "stickCertusQuartz");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
-                        "plateEnderEye", getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
-                        "plateEnderEye", "gemEnderPearl", "plateEnderEye",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing), "plateEnderEye",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
+                "plateEnderEye",
+                "gemEnderPearl",
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing),
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
-                        "plateEnderEye", getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
-                        "plateEnderEye", "gemEnderPearl", "plateEnderEye",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing), "plateEnderEye",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateEnderEye",
+                "gemEnderPearl",
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing), null,
-                        "stickEnderEye", null, getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "circuitAdvanced", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing),
+                null,
+                "stickEnderEye",
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSkyCompass", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "screwCertusQuartz", "plateSteel", "stickSteelMagnetic", "plateSteel", "screwCertusQuartz",
-                        "plateSteel", "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "screwCertusQuartz",
+                "plateSteel",
+                "stickSteelMagnetic",
+                "plateSteel",
+                "screwCertusQuartz",
+                "plateSteel",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSkyCompass", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "screwCertusQuartz", "plateSteel", "stickSteelMagnetic", "plateSteel", "screwCertusQuartz",
-                        "plateSteel", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "screwCertusQuartz",
+                "plateSteel",
+                "stickSteelMagnetic",
+                "plateSteel",
+                "screwCertusQuartz",
+                "plateSteel",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                new Object[] { "craftingToolScrewdriver", "plateTitanium", "craftingToolHardHammer",
-                        "screwCertusQuartz", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        "screwCertusQuartz", "plateGlowstone", "plateRedAlloy", "plateGlowstone" });
+                "craftingToolScrewdriver",
+                "plateTitanium",
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "screwCertusQuartz",
+                "plateGlowstone",
+                "plateRedAlloy",
+                "plateGlowstone");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
-                new Object[] { "stickNetherQuartz", "screwQuartzite", "stickNetherQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing), "circuitGood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing), "stickNetherQuartz",
-                        "craftingToolScrewdriver", "stickNetherQuartz" });
+                "stickNetherQuartz",
+                "screwQuartzite",
+                "stickNetherQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
+                "circuitGood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "stickNetherQuartz",
+                "craftingToolScrewdriver",
+                "stickNetherQuartz");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
-                new Object[] { "stickNetherQuartz", "craftingToolScrewdriver", "stickNetherQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing), "circuitGood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing), "stickNetherQuartz",
-                        "screwQuartzite", "stickNetherQuartz" });
+                "stickNetherQuartz",
+                "craftingToolScrewdriver",
+                "stickNetherQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
+                "circuitGood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "stickNetherQuartz",
+                "screwQuartzite",
+                "stickNetherQuartz");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
-                new Object[] { "craftingToolScrewdriver",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
-                        "craftingToolSoftHammer", "screwCertusQuartz",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing), "screwCertusQuartz",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
+                "craftingToolSoftHammer",
+                "screwCertusQuartz",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500, missing),
-                new Object[] { "craftingToolScrewdriver",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
-                        "craftingToolSoftHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32635, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32635, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32655, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing) });
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
+                "craftingToolSoftHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32635, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32635, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32655, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480, missing),
-                new Object[] { "craftingToolScrewdriver",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
-                        "craftingToolSoftHammer", "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing), "screwCertusQuartz",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
+                "craftingToolSoftHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 420, missing),
-                new Object[] { "craftingToolScrewdriver",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing),
-                        "craftingToolHardHammer", "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
-                        "screwCertusQuartz", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing),
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 340, missing),
-                new Object[] { "craftingToolScrewdriver",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
-                        "craftingToolSoftHammer", "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 52, missing),
-                        "screwCertusQuartz", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
+                "craftingToolSoftHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 52, missing),
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
-                new Object[] { "platePlatinum", "plateTitanium", null, "plateRedAlloy",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing), "plateTitanium",
-                        "platePlatinum", "plateTitanium", null });
+                "platePlatinum",
+                "plateTitanium",
+                null,
+                "plateRedAlloy",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                "plateTitanium",
+                "platePlatinum",
+                "plateTitanium",
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
-                new Object[] { "plateGold", "plateAluminium", null, "plateRedAlloy",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing), "plateAluminium",
-                        "plateGold", "plateAluminium", null });
+                "plateGold",
+                "plateAluminium",
+                null,
+                "plateRedAlloy",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                "plateAluminium",
+                "plateGold",
+                "plateAluminium",
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 52, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
-                        "plateGlowstone", getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
-                        "plateGlowstone", "itemCertusQuartz", "plateGlowstone", "plateAluminium", "plateAluminium",
-                        "plateAluminium" });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
+                "plateGlowstone",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
+                "plateGlowstone",
+                "itemCertusQuartz",
+                "plateGlowstone",
+                "plateAluminium",
+                "plateAluminium",
+                "plateAluminium");
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 27, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 53, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                        "craftingWorkBench" });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                "craftingWorkBench");
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 26, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
-                        "craftingRedstoneTorch", "craftingRedstoneTorch",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
+                "craftingRedstoneTorch",
+                "craftingRedstoneTorch",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing));
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 29, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing));
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 31, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing),
+                getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing));
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 30, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 55, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 9255, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 9255, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 42, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
-                        "gemCertusQuartz", "plateEnderPearl", "plateTitanium", "plateAluminium", "plateTitanium", null,
-                        null, null });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
+                "gemCertusQuartz",
+                "plateEnderPearl",
+                "plateTitanium",
+                "plateAluminium",
+                "plateTitanium",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 300, missing),
-                new Object[] { "craftingToolScrewdriver",
-                        getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0, missing),
-                        "craftingToolHardHammer", "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
-                        "screwCertusQuartz", "gemFluix", "gemFluix", "gemFluix" });
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzPickaxe", 1, 0, missing),
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
+                "screwCertusQuartz",
+                "gemFluix",
+                "gemFluix",
+                "gemFluix");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltIron", null, null, "boltIron" });
+                "boltIron",
+                null,
+                null,
+                "boltIron");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltCopper", null, null, "boltCopper" });
+                "boltCopper",
+                null,
+                null,
+                "boltCopper");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltBronze", null, null, "boltBronze" });
+                "boltBronze",
+                null,
+                null,
+                "boltBronze");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltTin", null, null, "boltTin" });
+                "boltTin",
+                null,
+                null,
+                "boltTin");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 120, missing),
-                new Object[] { "boltSteel", null, null, "boltSteel" });
+                "boltSteel",
+                null,
+                null,
+                "boltSteel");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 120, missing),
-                new Object[] { "boltAluminium", null, null, "boltAluminium" });
+                "boltAluminium",
+                null,
+                null,
+                "boltAluminium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltLead", null, null, "boltLead" });
+                "boltLead",
+                null,
+                null,
+                "boltLead");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltNickel", null, null, "boltNickel" });
+                "boltNickel",
+                null,
+                null,
+                "boltNickel");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltSilver", null, null, "boltSilver" });
+                "boltSilver",
+                null,
+                null,
+                "boltSilver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltBrass", null, null, "boltBrass" });
+                "boltBrass",
+                null,
+                null,
+                "boltBrass");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
-                new Object[] { "boltInvar", null, null, "boltInvar" });
+                "boltInvar",
+                null,
+                null,
+                "boltInvar");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 3, 120, missing),
-                new Object[] { "boltStainlessSteel", null, null, "boltStainlessSteel" });
+                "boltStainlessSteel",
+                null,
+                null,
+                "boltStainlessSteel");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 120, missing),
-                new Object[] { "boltTitanium", null, null, "boltTitanium" });
+                "boltTitanium",
+                null,
+                null,
+                "boltTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 260, missing),
-                new Object[] { "craftingToolScrewdriver", "plateTitanium", "craftingToolHardHammer",
-                        "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
-                        "screwCertusQuartz", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                "craftingToolScrewdriver",
+                "plateTitanium",
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320, missing),
-                new Object[] { "craftingToolScrewdriver", "blockHopper", "craftingToolHardHammer", "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
-                        "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing) });
+                "craftingToolScrewdriver",
+                "blockHopper",
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 240, missing),
-                new Object[] { "craftingToolScrewdriver", "plateTitanium", "craftingToolHardHammer",
-                        "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
-                        "screwCertusQuartz", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                "craftingToolScrewdriver",
+                "plateTitanium",
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460, missing),
-                new Object[] { "craftingToolScrewdriver", "plateTitanium", "craftingToolHardHammer",
-                        "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing) });
+                "craftingToolScrewdriver",
+                "plateTitanium",
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzWrench", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
-                        "craftingToolWrench",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing), null,
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing), null });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                "craftingToolWrench",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolNetherQuartzWrench", 1, 0, missing),
-                new Object[] { "gemQuartz", "craftingToolWrench", "gemQuartz", "gemQuartz", "gemQuartz", "gemQuartz",
-                        null, "gemQuartz", null });
+                "gemQuartz",
+                "craftingToolWrench",
+                "gemQuartz",
+                "gemQuartz",
+                "gemQuartz",
+                "gemQuartz",
+                null,
+                "gemQuartz",
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolMassCannon", 1, 0, missing),
-                new Object[] { "plateTitanium", "plateTitanium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing), null,
-                        "plateTitanium", null, null });
+                "plateTitanium",
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
+                null,
+                "plateTitanium",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolMemoryCard", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
-                        "circuitData", "plateTitanium", "plateGold", "plateRedAlloy", "plateGold", null, null, null });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                "circuitData",
+                "plateTitanium",
+                "plateGold",
+                "plateRedAlloy",
+                "plateGold",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolChargedStaff", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing), null,
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing), null, null, null, "stickThaumium" });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
+                null,
+                null,
+                null,
+                "stickThaumium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolEntropyManipulator", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing), null,
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing), null, null, null,
-                        "stickThaumium" });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
+                null,
+                null,
+                null,
+                "stickThaumium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolColorApplicator", 1, 0, missing),
-                new Object[] { "wireGt01Aluminium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
-                        "wireGt01Aluminium",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing), null,
-                        "stickSteel", null });
+                "wireGt01Aluminium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
+                "wireGt01Aluminium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
+                null,
+                "stickSteel",
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolBiometricCard", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing), "plateTitanium", "plateGold",
-                        "plateRedAlloy", "plateGold", null, null, null });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "plateTitanium",
+                "plateGold",
+                "plateRedAlloy",
+                "plateGold",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1, 0, missing),
-                new Object[] { null, getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing), null,
-                        "screwTitanium", getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
-                        "screwTitanium", "craftingToolScrewdriver",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        "craftingToolWrench" });
+                null,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
+                null,
+                "screwTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                "screwTitanium",
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "craftingToolWrench");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing),
-                new Object[] { "craftingToolScrewdriver", "itemIlluminatedPanel", "craftingToolHardHammer",
-                        "screwCertusQuartz", getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
-                        "screwCertusQuartz", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                "craftingToolScrewdriver",
+                "itemIlluminatedPanel",
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing),
-                new Object[] { "craftingToolScrewdriver", "chestWood", "craftingToolHardHammer", "screwCertusQuartz",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing), "screwCertusQuartz",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing) });
+                "craftingToolScrewdriver",
+                "chestWood",
+                "craftingToolHardHammer",
+                "screwCertusQuartz",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
+                "screwCertusQuartz",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel", "gemCertusQuartz", "plateStainlessSteel",
-                        "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                "gemCertusQuartz",
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel", "gemCertusQuartz", "plateStainlessSteel",
-                        "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
-        addShapelessCraftingRecipe(
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                "gemCertusQuartz",
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                        "gemCertusQuartz" });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
+                "gemCertusQuartz");
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing));
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing));
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing));
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
-        addShapelessCraftingRecipe(
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
-        addShapelessCraftingRecipe(
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing),
-                        "plateStainlessSteel", "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
-        addShapelessCraftingRecipe(
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
+        addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0, missing),
-                new Object[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing) });
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "plateStainlessSteel",
-                        "screwCertusQuartz", "plateAluminium", "craftingToolScrewdriver" });
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
-                        "screwCertusQuartz", "plateStainlessSteel",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "plateStainlessSteel",
-                        "screwCertusQuartz", "plateAluminium", "craftingToolHardHammer" });
+                "craftingToolScrewdriver",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                "screwCertusQuartz",
+                "plateStainlessSteel",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "plateStainlessSteel",
+                "screwCertusQuartz",
+                "plateAluminium",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                new Object[] { "circuitPrimitive",
-                        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
-                        "circuitPrimitive",
-                        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.LogicProcessorItemGoldCore", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
-                        "circuitPrimitive",
-                        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
-                        "circuitPrimitive" });
+                "circuitPrimitive",
+                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
+                "circuitPrimitive",
+                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.LogicProcessorItemGoldCore", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
+                "circuitPrimitive",
+                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
+                "circuitPrimitive");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
-                new Object[] { "circuitBasic",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing), "circuitBasic",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.LogicProcessorItemGoldCore", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing), "circuitBasic",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing), "circuitBasic" });
+                "circuitBasic",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                "circuitBasic",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.LogicProcessorItemGoldCore", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                "circuitBasic",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
-                new Object[] { "circuitGood",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing), "circuitGood",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemDiamondCore", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing), "circuitGood",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing), "circuitGood" });
+                "circuitGood",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
+                "circuitGood",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemDiamondCore", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
+                "circuitGood",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
+                "circuitGood");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
-                new Object[] { "circuitAdvanced",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing), "circuitAdvanced",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemDiamondCore", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing), "circuitAdvanced",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
-                        "circuitAdvanced" });
+                "circuitAdvanced",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
+                "circuitAdvanced",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemDiamondCore", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
+                "circuitAdvanced",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
+                "circuitAdvanced");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
-                new Object[] { "plateGlowstone",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing), "plateGlowstone",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                        getModItem(
-                                NewHorizonsCoreMod.ID,
-                                "item.EngineeringProcessorSpatialPulsatingCore",
-                                1,
-                                0,
-                                missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing), "plateGlowstone",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                        "plateGlowstone" });
+                "plateGlowstone",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                "plateGlowstone",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorSpatialPulsatingCore", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                "plateGlowstone",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
+                "plateGlowstone");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
-                new Object[] { "plateEnderPearl",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing), "plateEnderPearl",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
-                        getModItem(
-                                NewHorizonsCoreMod.ID,
-                                "item.EngineeringProcessorSpatialPulsatingCore",
-                                1,
-                                0,
-                                missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing), "plateEnderPearl",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
-                        "plateEnderPearl" });
+                "plateEnderPearl",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
+                "plateEnderPearl",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorSpatialPulsatingCore", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
+                "plateEnderPearl",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
+                "plateEnderPearl");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing),
-                new Object[] { "plateEnderEye",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing), "plateEnderEye",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
-                        getModItem(
-                                NewHorizonsCoreMod.ID,
-                                "item.EngineeringProcessorSpatialPulsatingCore",
-                                1,
-                                0,
-                                missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing), "plateEnderEye",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
-                        "plateEnderEye" });
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorSpatialPulsatingCore", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
+                "plateEnderEye",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
+                "plateEnderEye");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolPortableCell", 1, 0, missing),
-                new Object[] { null, getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
-                        null, "screwTitanium", getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
-                        "screwTitanium", "craftingToolScrewdriver",
-                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                        "craftingToolWrench" });
+                null,
+                getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
+                null,
+                "screwTitanium",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
+                "screwTitanium",
+                "craftingToolScrewdriver",
+                getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
+                "craftingToolWrench");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInscriber", 1, 0, missing),
-                new Object[] { "plateTitanium", "gemFluix", "plateTitanium",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 604, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing), "plateTitanium", "gemFluix",
-                        "plateTitanium" });
+                "plateTitanium",
+                "gemFluix",
+                "plateTitanium",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 604, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                "plateTitanium",
+                "gemFluix",
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzCuttingKnife", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "screwTitanium", "stickWood", "gemCertusQuartz", "stickWood",
-                        "screwTitanium", "plateCertusQuartz", "gemCertusQuartz", "craftingToolFile" });
+                "craftingToolHardHammer",
+                "screwTitanium",
+                "stickWood",
+                "gemCertusQuartz",
+                "stickWood",
+                "screwTitanium",
+                "plateCertusQuartz",
+                "gemCertusQuartz",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolNetherQuartzCuttingKnife", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "screwTitanium", "stickWood", "gemNetherQuartz", "stickWood",
-                        "screwTitanium", "plateNetherQuartz", "gemNetherQuartz", "craftingToolFile" });
+                "craftingToolHardHammer",
+                "screwTitanium",
+                "stickWood",
+                "gemNetherQuartz",
+                "stickWood",
+                "screwTitanium",
+                "plateNetherQuartz",
+                "gemNetherQuartz",
+                "craftingToolFile");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

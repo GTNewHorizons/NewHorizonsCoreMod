@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
@@ -51,9 +50,9 @@ public class ScriptExtraBees implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(ExtraBees.ID, "dictionary", 1, 0, missing),
-                new Object[] { getModItem(ExtraBees.ID, "dictionary", 1, 0, missing) });
+                getModItem(ExtraBees.ID, "dictionary", 1, 0, missing));
 
         ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "dictionary", 1, 0, missing));
         ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "misc", 1, 0, missing));
