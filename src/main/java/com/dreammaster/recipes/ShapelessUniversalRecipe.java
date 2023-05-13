@@ -1,10 +1,13 @@
 package com.dreammaster.recipes;
 
+import static com.dreammaster.scripts.IScriptLoader.wildcard;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -91,13 +94,14 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                     iterator.remove();
                     continue invloop;
                 } else if (r instanceof HashSet) {
-                    ItemStack copy = stack;
-                    if (copy.stackTagCompound != null) {
-                        copy = stack.copy();
-                        copy.stackTagCompound = null;
-                    }
+                    ItemStack copy = stack.copy();
+                    copy.stackTagCompound = null;
                     // noinspection unchecked
-                    if (!((HashSet<GT_Utility.ItemId>) r).contains(GT_Utility.ItemId.createNoCopy(copy))) continue;
+                    if (!((HashSet<GT_Utility.ItemId>) r).contains(GT_Utility.ItemId.createNoCopy(copy))) {
+                        Items.feather.setDamage(copy, wildcard);
+                        // noinspection unchecked
+                        if (!((HashSet<GT_Utility.ItemId>) r).contains(GT_Utility.ItemId.createNoCopy(copy))) continue;
+                    }
                     iterator.remove();
                     continue invloop;
                 } else if (r instanceof NBTItem) {
