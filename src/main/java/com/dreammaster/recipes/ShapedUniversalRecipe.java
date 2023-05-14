@@ -31,6 +31,7 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
     ItemStack output;
     Object[][] recipe = new Object[3][3];
     Object[] recipeXY = new Object[9];
+    int maxX, maxY = 0;
 
     public ShapedUniversalRecipe(ItemStack result, Object... recipe) {
         super(result, "xxx", "xxx", "xxx", 'x', missing);
@@ -56,13 +57,21 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
                     for (int x = 0; x < 2; x++) {
                         int i = y * 2 + x;
                         this.recipe[y][x] = recipe[i];
+                        if (recipe[i] != null) {
+                            if (maxX < x) maxX = x;
+                            if (maxY < y) maxY = y;
+                        }
                     }
                 }
             } else {
                 for (int y = 0; y < 3; y++) {
                     for (int x = 0; x < 3; x++) {
                         int i = y * 3 + x;
-                        this.recipe[y][x] = i >= recipe.length ? null : recipe[i];
+                        if (!(i >= recipe.length)) {
+                            this.recipe[y][x] = recipe[i];
+                            if (maxX < x) maxX = x;
+                            if (maxY < y) maxY = y;
+                        }
                     }
                 }
             }
@@ -112,10 +121,19 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
 
     @Override
     public boolean matches(InventoryCrafting inv, World world) {
+        for (int y = 0; y < (3 - maxY); y++) {
+            for (int x = 0; x < (3 - maxX); x++) {
+                if (matches(inv, x, y)) return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean matches(InventoryCrafting inv, int offsetX, int offsetY) {
         for (int y = 0; y < 3; y++) {
             for (int x = 0; x < 3; x++) {
                 ItemStack stack = inv.getStackInRowAndColumn(x, y);
-                Object r = this.recipe[y][x];
+                Object r = x - offsetX < 0 || y - offsetY < 0 ? null : this.recipe[y - offsetY][x - offsetX];
                 if (r == null ^ stack == null) return false;
                 if (stack == null) continue;
                 if (r instanceof ItemStack) {
