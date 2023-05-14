@@ -104,7 +104,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 1, 0, missing),
                 "craftingToolSaw",
-                getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, 32767, missing),
+                getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing),
                 null);
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "experience_table", 1, 0, missing),
@@ -183,13 +183,13 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "charm_pouch", 1, 0, missing),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                getModItem(HardcoreEnderExpansion.ID, "rune", 1, 32767, missing),
+                getModItem(HardcoreEnderExpansion.ID, "rune", 1, wildcard, missing),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                getModItem(HardcoreEnderExpansion.ID, "rune", 1, 32767, missing),
+                getModItem(HardcoreEnderExpansion.ID, "rune", 1, wildcard, missing),
                 getModItem(Thaumcraft.ID, "FocusPouch", 1, 0, missing),
-                getModItem(HardcoreEnderExpansion.ID, "rune", 1, 32767, missing),
+                getModItem(HardcoreEnderExpansion.ID, "rune", 1, wildcard, missing),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                getModItem(HardcoreEnderExpansion.ID, "rune", 1, 32767, missing),
+                getModItem(HardcoreEnderExpansion.ID, "rune", 1, wildcard, missing),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing));
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "curse", 4, 0, missing),
@@ -515,15 +515,18 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("ender", 250))
                 .fluidOutputs(FluidRegistry.getFluidStack("endergoo", 1000)).duration(600).eut(480)
                 .addTo(sCentrifugeRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, 32767, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lava", 144)).noFluidOutputs().duration(300).eut(120)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, 32767, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2hotcoolant", 72)).noFluidOutputs().duration(300).eut(120)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, 32767, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).noFluidOutputs().duration(150).eut(120)
                 .addTo(sCutterRecipes);

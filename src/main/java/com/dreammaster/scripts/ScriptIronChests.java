@@ -326,7 +326,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "planks", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
@@ -473,28 +473,28 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Natura.ID, "planks", 1, 32767, missing),
+                        getModItem(Natura.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(BiomesOPlenty.ID, "planks", 1, 32767, missing),
+                        getModItem(BiomesOPlenty.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Forestry.ID, "planks", 1, 32767, missing),
+                        getModItem(Forestry.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Forestry.ID, "planksFireproof", 1, 32767, missing),
+                        getModItem(Forestry.ID, "planksFireproof", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
@@ -760,7 +760,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Witchery.ID, "witchwood", 1, 32767, missing),
+                        getModItem(Witchery.ID, "witchwood", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
@@ -788,21 +788,21 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 32767, missing),
+                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, 32767, missing),
+                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ForbiddenMagic.ID, "TaintPlank", 1, 32767, missing),
+                        getModItem(ForbiddenMagic.ID, "TaintPlank", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
@@ -815,7 +815,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(150).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "planks", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
@@ -962,28 +962,28 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Natura.ID, "planks", 1, 32767, missing),
+                        getModItem(Natura.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(BiomesOPlenty.ID, "planks", 1, 32767, missing),
+                        getModItem(BiomesOPlenty.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Forestry.ID, "planks", 1, 32767, missing),
+                        getModItem(Forestry.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Forestry.ID, "planksFireproof", 1, 32767, missing),
+                        getModItem(Forestry.ID, "planksFireproof", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
@@ -1249,7 +1249,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Witchery.ID, "witchwood", 1, 32767, missing),
+                        getModItem(Witchery.ID, "witchwood", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
@@ -1277,21 +1277,21 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 32767, missing),
+                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, 32767, missing),
+                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ForbiddenMagic.ID, "TaintPlank", 1, 32767, missing),
+                        getModItem(ForbiddenMagic.ID, "TaintPlank", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()

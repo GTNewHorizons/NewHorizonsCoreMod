@@ -363,7 +363,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .duration(100).eut(30).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "sand", 2, 32767, missing),
+                        getModItem(Minecraft.ID, "sand", 2, wildcard, missing),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 6, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).noFluidOutputs().duration(100).eut(16)
@@ -377,7 +377,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "sand", 2, 32767, missing),
+                        getModItem(Minecraft.ID, "sand", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2530, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 5, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).noFluidOutputs().duration(100).eut(16)

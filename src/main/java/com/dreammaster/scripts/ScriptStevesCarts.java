@@ -641,7 +641,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "blockEmerald",
                 "gemFlawlessDiamond",
                 "circuitAdvanced",
-                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                 "circuitAdvanced",
                 "plateGlowstone",
                 getModItem(StevesCarts2.ID, "upgrade", 1, 0, missing),
@@ -1499,25 +1499,25 @@ public class ScriptStevesCarts implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                        getModItem(Minecraft.ID, "sapling", 8, 32767, missing))
+                        getModItem(Minecraft.ID, "sapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                        getModItem(BiomesOPlenty.ID, "saplings", 8, 32767, missing))
+                        getModItem(BiomesOPlenty.ID, "saplings", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                        getModItem(BiomesOPlenty.ID, "colorizedSaplings", 8, 32767, missing))
+                        getModItem(BiomesOPlenty.ID, "colorizedSaplings", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                        getModItem(Forestry.ID, "saplingGE", 8, 32767, missing))
+                        getModItem(Forestry.ID, "saplingGE", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1529,25 +1529,25 @@ public class ScriptStevesCarts implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                        getModItem(Natura.ID, "florasapling", 8, 32767, missing))
+                        getModItem(Natura.ID, "florasapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                        getModItem(Natura.ID, "Rare Sapling", 8, 32767, missing))
+                        getModItem(Natura.ID, "Rare Sapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                        getModItem(Thaumcraft.ID, "blockCustomPlant", 8, 32767, missing))
+                        getModItem(Thaumcraft.ID, "blockCustomPlant", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                        getModItem(TwilightForest.ID, "tile.TFSapling", 8, 32767, missing))
+                        getModItem(TwilightForest.ID, "tile.TFSapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

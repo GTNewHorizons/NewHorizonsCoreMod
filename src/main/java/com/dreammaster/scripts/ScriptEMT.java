@@ -517,7 +517,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("vitium"), 8)
                         .add(Aspect.getAspect("terra"), 8),
                 getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorNanoChestplate", 1, 32767, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorNanoChestplate", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 19028, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 19028, missing),
@@ -556,8 +556,8 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("machina"), 64).add(Aspect.getAspect("potentia"), 48)
                         .add(Aspect.getAspect("volatus"), 48).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("vitium"), 16).add(Aspect.getAspect("terra"), 16),
-                getModItem(ElectroMagicTools.ID, "NanosuitWing", 1, 32767, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorQuantumChestplate", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "NanosuitWing", 1, wildcard, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorQuantumChestplate", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 19083, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 19083, missing),
@@ -597,7 +597,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("volatus"), 48).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("vitium"), 16).add(Aspect.getAspect("terra"), 16)
                         .add(Aspect.getAspect("lucrum"), 8),
-                getModItem(IndustrialCraft2.ID, "itemArmorQuantumChestplate", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemArmorQuantumChestplate", 1, wildcard, missing),
                 new ItemStack[] { getModItem(ElectroMagicTools.ID, "ShieldBlock", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 19324, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
@@ -687,7 +687,7 @@ public class ScriptEMT implements IScriptLoader {
                         102,
                         "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,SecondaryMaterial:\"Titanium\"},GT.ItemCharge:400000L}",
                         missing),
-                new ItemStack[] { getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 32767, missing),
+                new ItemStack[] { getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
@@ -724,8 +724,8 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("metallum"), 24)
                         .add(Aspect.getAspect("telum"), 16).add(Aspect.getAspect("terra"), 8)
                         .add(Aspect.getAspect("praecantatio"), 16),
-                getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, 32767, missing),
-                new ItemStack[] { getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, wildcard, missing),
+                new ItemStack[] { getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
@@ -768,7 +768,7 @@ public class ScriptEMT implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1361, missing),
-                        getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1361, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), });
@@ -798,12 +798,12 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("motus"), 48).add(Aspect.getAspect("potentia"), 24)
                         .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("volatus"), 8).add(Aspect.getAspect("iter"), 16),
-                getModItem(ElectroMagicTools.ID, "ElectricBootsTraveller", 1, 32767, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "ElectricBootsTraveller", 1, wildcard, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1442, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1442, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), });
@@ -837,13 +837,13 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("tutamen"), 48).add(Aspect.getAspect("praecantatio"), 24)
                         .add(Aspect.getAspect("volatus"), 16).add(Aspect.getAspect("iter"), 24)
                         .add(Aspect.getAspect("aer"), 8),
-                getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1, 32767, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1, wildcard, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1563, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1563, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
@@ -918,7 +918,7 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("instrumentum"), 48).add(Aspect.getAspect("perfodio"), 24)
                         .add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("lucrum"), 32)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("ignis"), 8),
-                getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, wildcard, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
@@ -956,7 +956,7 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("instrumentum"), 32).add(Aspect.getAspect("telum"), 24)
                         .add(Aspect.getAspect("potentia"), 24).add(Aspect.getAspect("lucrum"), 16)
                         .add(Aspect.getAspect("praecantatio"), 8),
-                getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard, missing),
                 new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
@@ -992,7 +992,7 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("instrumentum"), 48).add(Aspect.getAspect("telum"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("lucrum"), 24)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("aer"), 8),
-                getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, wildcard, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
@@ -1031,7 +1031,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("electrum"), 16)
                         .add(Aspect.getAspect("auram"), 8),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1462, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1120, missing),
@@ -1068,7 +1068,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("electrum"), 16)
                         .add(Aspect.getAspect("auram"), 8),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1482, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1120, missing),
@@ -1126,7 +1126,7 @@ public class ScriptEMT implements IScriptLoader {
                 'g',
                 getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 10, missing),
                 'h',
-                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                 'i',
                 getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 10, missing));
         TCHelper.addResearchPage(
@@ -1154,13 +1154,13 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("potentia"), 32)
                         .add(Aspect.getAspect("sensus"), 24).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("auram"), 8).add(Aspect.getAspect("electrum"), 8),
-                getModItem(ElectroMagicTools.ID, "ElectricGogglesRevealing", 1, 32767, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "ElectricGogglesRevealing", 1, wildcard, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1442, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
@@ -1193,14 +1193,14 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("sensus"), 32).add(Aspect.getAspect("praecantatio"), 24)
                         .add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("electrum"), 16)
                         .add(Aspect.getAspect("lucrum"), 8),
-                getModItem(ElectroMagicTools.ID, "NanosuitGogglesRevealing", 1, 32767, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "NanosuitGogglesRevealing", 1, wildcard, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1563, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
@@ -1237,13 +1237,13 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("auram"), 16).add(Aspect.getAspect("electrum"), 16)
                         .add(Aspect.getAspect("lucrum"), 8).add(Aspect.getAspect("aer"), 16)
                         .add(Aspect.getAspect("lux"), 32),
-                getModItem(ElectroMagicTools.ID, "QuantumGogglesRevealing", 1, 32767, missing),
+                getModItem(ElectroMagicTools.ID, "QuantumGogglesRevealing", 1, wildcard, missing),
                 new ItemStack[] { getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1624, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17324, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MysteriousCrystal", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MysteriousCrystal", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17324, missing),
@@ -2051,12 +2051,12 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("herba"), 16)
                         .add(Aspect.getAspect("electrum"), 8),
                 getModItem(Thaumcraft.ID, "ItemHoeElemental", 1, 0, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, 32767, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
@@ -2097,7 +2097,7 @@ public class ScriptEMT implements IScriptLoader {
                 'd',
                 getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
                 'e',
-                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                 'f',
                 getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
                 'g',
@@ -2143,9 +2143,9 @@ public class ScriptEMT implements IScriptLoader {
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6, missing),
@@ -2178,14 +2178,14 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 24).add(Aspect.getAspect("ignis"), 24)
                         .add(Aspect.getAspect("bestia"), 16),
                 getModItem(ElectroMagicTools.ID, "Mjolnir", 1, 0, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemNanoSaber", 1, 32767, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemNanoSaber", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
@@ -2670,11 +2670,11 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
                 new ItemStack[] { getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1461, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1461, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1461, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1461, missing), });
         TCHelper.addResearchPage(
                 "EnergyBallFocus",
@@ -2704,7 +2704,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("motus"), 48).add(Aspect.getAspect("telum"), 32)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("potentia"), 10),
                 getModItem(Thaumcraft.ID, "FocusHellbat", 1, 0, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemToolMiningLaser", 1, 32767, missing),
+                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemToolMiningLaser", 1, wildcard, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                         getModItem(Minecraft.ID, "firework_charge", 1, 0, missing),
@@ -2753,7 +2753,7 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("permutatio"), 48).add(Aspect.getAspect("potentia"), 24)
                         .add(Aspect.getAspect("machina"), 32).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("cognitio"), 8),
-                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                 new ItemStack[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 22, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 21330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
@@ -2798,7 +2798,7 @@ public class ScriptEMT implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20970, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1660, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1660, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20970, missing),

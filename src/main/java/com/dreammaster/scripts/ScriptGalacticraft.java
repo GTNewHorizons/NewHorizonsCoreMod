@@ -351,24 +351,24 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.machineTiered", 1, 0, missing),
                 "compressedSteel",
-                getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, wildcard, missing),
                 "compressedSteel",
                 "cableGt01AnyCopper",
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
                 "cableGt01AnyCopper",
                 "waferBasic",
-                getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, wildcard, missing),
                 "waferBasic");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.machineTiered", 1, 8, missing),
                 "compressedTitanium",
-                getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, wildcard, missing),
                 "compressedTitanium",
                 "cableGt02Gold",
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
                 "cableGt02Gold",
                 "waferAdvanced",
-                getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, wildcard, missing),
                 "waferAdvanced");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.spinThruster", 1, 0, missing),
@@ -960,7 +960,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 23884, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 1, missing));
         addShapelessRecipe(
-                getModItem(GalacticraftCore.ID, "item.battery", 1, 32767, missing),
+                getModItem(GalacticraftCore.ID, "item.battery", 1, wildcard, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.standardWrench", 1, 0, missing),
@@ -1201,13 +1201,13 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "wireFineSteel");
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing),
-                getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 32767, missing));
+                getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, wildcard, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0, missing),
-                getModItem(GalacticraftCore.ID, "item.spaceship", 1, 32767, missing));
+                getModItem(GalacticraftCore.ID, "item.spaceship", 1, wildcard, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing),
-                getModItem(GalacticraftCore.ID, "item.buggy", 1, 32767, missing));
+                getModItem(GalacticraftCore.ID, "item.buggy", 1, wildcard, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing),
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1, missing));
@@ -1219,7 +1219,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing),
-                getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 32767, missing));
+                getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, wildcard, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing));

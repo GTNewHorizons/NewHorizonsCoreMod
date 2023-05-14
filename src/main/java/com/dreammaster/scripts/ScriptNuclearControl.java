@@ -250,7 +250,7 @@ public class ScriptNuclearControl implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IC2NuclearControl.ID, "ItemToolDigitalThermometer", 1, 32767, missing),
+                        getModItem(IC2NuclearControl.ID, "ItemToolDigitalThermometer", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);

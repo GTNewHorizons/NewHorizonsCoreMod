@@ -154,9 +154,9 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0, missing),
-                getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
-                getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
-                getModItem(Minecraft.ID, "carpet", 1, 32767, missing),
+                getModItem(Minecraft.ID, "carpet", 1, wildcard, missing),
+                getModItem(Minecraft.ID, "carpet", 1, wildcard, missing),
+                getModItem(Minecraft.ID, "carpet", 1, wildcard, missing),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),

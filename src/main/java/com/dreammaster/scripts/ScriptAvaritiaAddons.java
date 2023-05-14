@@ -102,7 +102,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
         // clearing NBT of th
         addShapelessRecipe(
                 getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1),
-                getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1, 32767),
+                getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1, wildcard),
                 "platePaper");
 
         // Infinity Chest

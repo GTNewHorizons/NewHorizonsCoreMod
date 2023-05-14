@@ -917,12 +917,12 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 10, missing),
                 "plateRedAlloy",
                 "plateSteel",
-                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 7, missing),
                 "plateSteel",
-                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10, missing),
@@ -1416,7 +1416,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 "circuitAdvanced",
                 "itemCasingAluminium",
                 "cableGt02Platinum",
-                getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                 "cableGt02Platinum",
                 "itemCasingAluminium",
                 "circuitAdvanced",
@@ -1920,7 +1920,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         "stickSteel"));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 4, missing));
         RecipeManagers.fabricatorManager.addRecipe(
-                getModItem(Forestry.ID, "waxCast", 1, 32767, missing),
+                getModItem(Forestry.ID, "waxCast", 1, wildcard, missing),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0, missing),
                 new Object[] { "abc", "def", "ghi", 'a', getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing),
@@ -1933,7 +1933,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2836, missing), 'i',
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing) });
         RecipeManagers.fabricatorManager.addRecipe(
-                getModItem(Forestry.ID, "waxCast", 1, 32767, missing),
+                getModItem(Forestry.ID, "waxCast", 1, wildcard, missing),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0, missing),
                 new Object[] { "abc", "def", "ghi", 'a', getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing),
@@ -1946,7 +1946,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2836, missing), 'i',
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing) });
         RecipeManagers.fabricatorManager.addRecipe(
-                getModItem(Forestry.ID, "waxCast", 1, 32767, missing),
+                getModItem(Forestry.ID, "waxCast", 1, wildcard, missing),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0, missing),
                 new Object[] { "abc", "def", "ghi", 'a', getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing),
@@ -1959,7 +1959,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2836, missing), 'i',
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing) });
         RecipeManagers.fabricatorManager.addRecipe(
-                getModItem(Forestry.ID, "waxCast", 1, 32767, missing),
+                getModItem(Forestry.ID, "waxCast", 1, wildcard, missing),
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Railcraft.ID, "glass", 4, 0, missing),
                 new Object[] { "abc", "def", "ghi", 'a', getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing),
@@ -2095,7 +2095,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stained_glass_pane", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         createItemStack(
                                 ForgeMicroblocks.ID,
@@ -2151,7 +2151,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stained_glass_pane", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         createItemStack(
                                 ForgeMicroblocks.ID,
@@ -2207,7 +2207,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stained_glass_pane", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17304, missing),
                         createItemStack(
                                 ForgeMicroblocks.ID,
@@ -2263,7 +2263,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stained_glass_pane", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17307, missing),
                         createItemStack(
                                 ForgeMicroblocks.ID,
@@ -2319,7 +2319,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "stained_glass_pane", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         createItemStack(
                                 ForgeMicroblocks.ID,
@@ -2355,7 +2355,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Railcraft.ID, "firestone.cracked", 1, 32767, missing),
+                        getModItem(Railcraft.ID, "firestone.cracked", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "redstone_block", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.refined", 1, 5000, missing))

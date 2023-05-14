@@ -26,9 +26,9 @@ public class ScriptSleepingBags implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(SleepingBags.ID, "sleepingBag", 1),
-                getModItem(Minecraft.ID, "carpet", 1, 32767),
-                getModItem(Minecraft.ID, "carpet", 1, 32767),
-                getModItem(Minecraft.ID, "carpet", 1, 32767),
+                getModItem(Minecraft.ID, "carpet", 1, wildcard),
+                getModItem(Minecraft.ID, "carpet", 1, wildcard),
+                getModItem(Minecraft.ID, "carpet", 1, wildcard),
                 "blockWool",
                 "blockWool",
                 "blockWool",

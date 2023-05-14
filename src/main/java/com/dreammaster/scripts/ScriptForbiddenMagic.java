@@ -71,7 +71,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 "dyeBlack",
-                getModItem(ForbiddenMagic.ID, "Crystalwell", 1, 32767, missing),
+                getModItem(ForbiddenMagic.ID, "Crystalwell", 1, wildcard, missing),
                 "dyeBlack",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
@@ -550,7 +550,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 'd',
                 "dyeBlack",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemInkwell", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemInkwell", 1, wildcard, missing),
                 'f',
                 "dyeBlack",
                 'g',
@@ -803,7 +803,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "WRATHCAGE",
                 getModItem(ForbiddenMagic.ID, "MobCrystal", 1, 0, missing),
-                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("cognitio"), 10).add(Aspect.getAspect("potentia"), 10)
                         .add(Aspect.getAspect("praecantatio"), 10).add(Aspect.getAspect("vitreus"), 10));
         TCHelper.setResearchAspects(

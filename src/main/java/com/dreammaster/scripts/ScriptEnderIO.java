@@ -184,7 +184,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 'g',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32607, missing),
                 'h',
-                getModItem(EnderIO.ID, "itemCoordSelector", 1, 32767, missing),
+                getModItem(EnderIO.ID, "itemCoordSelector", 1, wildcard, missing),
                 'i',
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2, missing),
                 'j',

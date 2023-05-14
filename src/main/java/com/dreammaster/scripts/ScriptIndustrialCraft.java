@@ -124,11 +124,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "cableGt01AnyCopper",
                 "plateBronze",
                 "cableGt01AnyCopper",
-                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
-                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                 "plateBronze",
-                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                 "plateBronze");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 1, missing),
@@ -462,7 +462,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateRedAlloy");
         addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 1, missing),
-                getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCondensator", 1, wildcard, missing),
                 "dustRedAlloy",
                 "dustRedAlloy",
                 "dustRedAlloy",
@@ -484,7 +484,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateDoubleRedAlloy");
         addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, 1, missing),
-                getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCondensatorLap", 1, wildcard, missing),
                 "dustLapis",
                 "dustLapis",
                 "dustLapis",
@@ -715,7 +715,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0, missing),
                 "itemCasingTitanium",
-                getModItem(IndustrialCraft2.ID, "itemScanner", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemScanner", 1, wildcard, missing),
                 "itemCasingTitanium",
                 "circuitData",
                 getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
@@ -1295,7 +1295,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 'c',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32672, missing),
                 'd',
-                getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                 'e',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
                 'f',
@@ -1347,25 +1347,25 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sapling", 8, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "saplings", 8, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "saplings", 8, wildcard, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "colorizedSaplings", 8, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "colorizedSaplings", 8, wildcard, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockRubSapling", 8, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "sapling", 8, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "sapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 8, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Sapling", 8, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Sapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 8, 0, missing))
@@ -1374,7 +1374,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 8, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "tile.TFSapling", 8, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "tile.TFSapling", 8, wildcard, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
 
@@ -2062,7 +2062,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockBasalt", 1, 0, missing))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2844, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.LapotronDust", 30, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()

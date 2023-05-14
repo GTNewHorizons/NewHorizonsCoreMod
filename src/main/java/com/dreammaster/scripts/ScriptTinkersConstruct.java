@@ -843,7 +843,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 5, missing),
                 "craftingToolSaw",
-                getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 32767, missing));
+                getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, wildcard, missing));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 0, missing),
                 "craftingToolSaw",

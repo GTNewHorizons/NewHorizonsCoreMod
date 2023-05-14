@@ -508,131 +508,131 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(OpenBlocks.ID, "builder_guide", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(300).eut(64)
                 .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 15, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblack", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 14, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyered", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 13, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 12, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyebrown", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 11, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblue", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 10, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepurple", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 9, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyecyan", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 8, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightgray", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 7, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegray", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 6, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepink", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 5, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelime", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 4, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeyellow", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 3, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightblue", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 2, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyemagenta", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 1, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeorange", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyewhite", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 15, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblack", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 14, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyered", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 13, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 12, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyebrown", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 11, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblue", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 10, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepurple", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 9, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyecyan", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 8, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightgray", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 7, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegray", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 6, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepink", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 5, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelime", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 4, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeyellow", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 3, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightblue", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 2, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyemagenta", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 1, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeorange", 144)).noFluidOutputs()
                 .duration(200).eut(20).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyewhite", 144)).noFluidOutputs().duration(200)
                 .eut(20).addTo(sChemicalBathRecipes);

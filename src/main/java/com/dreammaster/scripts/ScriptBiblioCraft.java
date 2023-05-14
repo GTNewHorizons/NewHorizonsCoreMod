@@ -758,19 +758,19 @@ public class ScriptBiblioCraft implements IScriptLoader {
         for (int i = 1; i < 16; i++) {
             addShapelessRecipe(
                     getModItem(BiblioCraft.ID, "BiblioLantern", 1, i),
-                    getModItem(BiblioCraft.ID, "BiblioLantern", 1, 32767),
+                    getModItem(BiblioCraft.ID, "BiblioLantern", 1, wildcard),
                     colorsLamp[i - 1]);
             addShapelessRecipe(
                     getModItem(BiblioCraft.ID, "BiblioIronLantern", 1, i),
-                    getModItem(BiblioCraft.ID, "BiblioIronLantern", 1, 32767),
+                    getModItem(BiblioCraft.ID, "BiblioIronLantern", 1, wildcard),
                     colorsLamp[i - 1]);
             addShapelessRecipe(
                     getModItem(BiblioCraft.ID, "BiblioLamp", 1, i),
-                    getModItem(BiblioCraft.ID, "BiblioLamp", 1, 32767),
+                    getModItem(BiblioCraft.ID, "BiblioLamp", 1, wildcard),
                     colorsLamp[i - 1]);
             addShapelessRecipe(
                     getModItem(BiblioCraft.ID, "BiblioIronLamp", 1, i),
-                    getModItem(BiblioCraft.ID, "BiblioIronLamp", 1, 32767),
+                    getModItem(BiblioCraft.ID, "BiblioIronLamp", 1, wildcard),
                     colorsLamp[i - 1]);
         }
         for (int i = 0; i < 16; i++) {
@@ -931,6 +931,6 @@ public class ScriptBiblioCraft implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(BiblioCraft.ID, "item.BiblioClipboard", 1),
                 "platePaper",
-                getModItem(BiblioCraft.ID, "item.BiblioClipboard", 1, 32767));
+                getModItem(BiblioCraft.ID, "item.BiblioClipboard", 1, wildcard));
     }
 }

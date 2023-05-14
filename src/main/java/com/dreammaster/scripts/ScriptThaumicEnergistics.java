@@ -85,7 +85,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, 32767, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, wildcard, missing),
                         getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "wireless.essentia.terminal", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(120).addTo(sAssemblerRecipes);
@@ -2685,7 +2685,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         Thaumcraft.ID,
                         "WandCasting",
                         1,
-                        32767,
+                        wildcard,
                         "{aqua:15000,ignis:15000,terra:15000,cap:\"thaumium\",rod:\"silverwood\",ordo:15000,sceptre:1b,perditio:15000,aer:15000}",
                         missing), getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),

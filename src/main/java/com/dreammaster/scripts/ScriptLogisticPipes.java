@@ -1400,7 +1400,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(Minecraft.ID, "enchanted_book", 1, 32767, missing))
+                        getModItem(Minecraft.ID, "enchanted_book", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
@@ -1418,7 +1418,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 12, missing),
-                        getModItem(Minecraft.ID, "writable_book", 1, 32767, missing))
+                        getModItem(Minecraft.ID, "writable_book", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 13, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
@@ -2468,7 +2468,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatRE", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatRE", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 300, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
     }
@@ -3666,7 +3666,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).noFluidOutputs().duration(1600)
                 .eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 32767, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("chlorine", 1000)).noFluidOutputs()
                 .duration(1600).eut(30).addTo(sChemicalBathRecipes);
@@ -4311,7 +4312,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 0, 32767, missing),
+                        getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 0, wildcard, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsRemoteOrdererLogistics", 1, 0, missing))
@@ -4893,7 +4894,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                        getModItem(Minecraft.ID, "wool", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "wool", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 29305, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 26, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))

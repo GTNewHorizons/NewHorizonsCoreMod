@@ -310,7 +310,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                 "string",
                 "plateAnyRubber",
-                getModItem(AdventureBackpack.ID, "pistonBoots", 1, 32767, missing),
+                getModItem(AdventureBackpack.ID, "pistonBoots", 1, wildcard, missing),
                 "plateAnyRubber",
                 null,
                 null,

@@ -620,7 +620,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base_remote", 1, 0, missing),
                 "craftingToolWrench",
-                getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
+                getModItem(ExtraUtilities.ID, "pipes", 1, wildcard, missing),
                 "craftingToolHardHammer",
                 "screwEnderPearl",
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
@@ -631,7 +631,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base_remote", 1, 6, missing),
                 "craftingToolWrench",
-                getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
+                getModItem(ExtraUtilities.ID, "pipes", 1, wildcard, missing),
                 "craftingToolHardHammer",
                 "screwEnderPearl",
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
@@ -642,7 +642,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
                 "craftingToolWrench",
-                getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
+                getModItem(ExtraUtilities.ID, "pipes", 1, wildcard, missing),
                 "craftingToolHardHammer",
                 "screwEnderPearl",
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
@@ -653,7 +653,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
                 "craftingToolWrench",
-                getModItem(ExtraUtilities.ID, "pipes", 1, 32767, missing),
+                getModItem(ExtraUtilities.ID, "pipes", 1, wildcard, missing),
                 "craftingToolHardHammer",
                 "screwEnderPearl",
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),

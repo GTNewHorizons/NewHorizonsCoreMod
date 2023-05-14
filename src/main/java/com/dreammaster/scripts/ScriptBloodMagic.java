@@ -4183,7 +4183,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 6, missing),
                         'b',
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         'c',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 6, missing),
                         'd',

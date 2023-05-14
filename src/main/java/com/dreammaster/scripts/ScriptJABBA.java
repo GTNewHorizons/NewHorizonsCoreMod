@@ -50,46 +50,49 @@ public class ScriptJABBA implements IScriptLoader {
     @Override
     public void loadRecipes() {
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Minecraft.ID, "planks", 8, 32767), getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(BiomesOPlenty.ID, "planks", 8, 32767),
+                new ItemStack[] { getModItem(Minecraft.ID, "planks", 8, wildcard),
                         getModItem(Minecraft.ID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "barrel", 1),
                 200,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(ExtraTrees.ID, "planks", 8, 32767), getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(ExtraUtilities.ID, "colorWoodPlanks", 8, 32767),
+                new ItemStack[] { getModItem(BiomesOPlenty.ID, "planks", 8, wildcard),
                         getModItem(Minecraft.ID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "barrel", 1),
                 200,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Forestry.ID, "planks", 8, 32767), getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Forestry.ID, "planksFireproof", 8, 32767),
+                new ItemStack[] { getModItem(ExtraTrees.ID, "planks", 8, wildcard),
                         getModItem(Minecraft.ID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "barrel", 1),
                 200,
                 16);
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Natura.ID, "planks", 8, 32767), getModItem(Minecraft.ID, "chest", 1) },
+                new ItemStack[] { getModItem(ExtraUtilities.ID, "colorWoodPlanks", 8, wildcard),
+                        getModItem(Minecraft.ID, "chest", 1) },
+                GT_Values.NF,
+                getModItem(JABBA.ID, "barrel", 1),
+                200,
+                16);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(Forestry.ID, "planks", 8, wildcard),
+                        getModItem(Minecraft.ID, "chest", 1) },
+                GT_Values.NF,
+                getModItem(JABBA.ID, "barrel", 1),
+                200,
+                16);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(Forestry.ID, "planksFireproof", 8, wildcard),
+                        getModItem(Minecraft.ID, "chest", 1) },
+                GT_Values.NF,
+                getModItem(JABBA.ID, "barrel", 1),
+                200,
+                16);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { getModItem(Natura.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "barrel", 1),
                 200,

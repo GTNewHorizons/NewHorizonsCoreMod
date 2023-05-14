@@ -1234,7 +1234,7 @@ public class ScriptMalisDoors implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 2, 32767, missing))
+                        getModItem(Natura.ID, "natura.stick", 2, wildcard, missing))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sAssemblerRecipes);
@@ -1262,7 +1262,7 @@ public class ScriptMalisDoors implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 2, 32767, missing))
+                        getModItem(Natura.ID, "natura.stick", 2, wildcard, missing))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sAssemblerRecipes);

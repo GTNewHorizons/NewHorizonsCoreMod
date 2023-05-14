@@ -3897,37 +3897,37 @@ public class ScriptNatura implements IScriptLoader {
                 .itemOutputs(getModItem(Natura.ID, "plankSlab2", 2, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(25).eut(4)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "willow", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "willow", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))

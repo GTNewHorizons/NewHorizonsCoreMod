@@ -1095,13 +1095,13 @@ public class ScriptCoreMod implements IScriptLoader {
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.BowFletchingCast", 1, 0, missing),
                 FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
-                getModItem(TinkerConstruct.ID, "fletching", 1, 32767, missing),
+                getModItem(TinkerConstruct.ID, "fletching", 1, wildcard, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.BowStringCast", 1, 0, missing),
                 FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
-                getModItem(TinkerConstruct.ID, "bowstring", 1, 32767, missing),
+                getModItem(TinkerConstruct.ID, "bowstring", 1, wildcard, missing),
                 true,
                 100);
 
@@ -1454,31 +1454,31 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24502, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24511, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24512, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24527, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24541, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
@@ -1502,25 +1502,25 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24533, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NanoCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24532, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NanoCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24533, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.QuantumCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24532, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.QuantumCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
@@ -1903,7 +1903,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzRod", 2, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(200).eut(16).addTo(sLatheRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sandstone", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sandstone", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(160).eut(16).addTo(sLatheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0, missing))
@@ -1911,13 +1911,13 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 1299, missing))
                 .noFluidInputs().noFluidOutputs().duration(160).eut(16).addTo(sLatheRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 2, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "brown_mushroom", 1, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 2, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mushrooms", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mushrooms", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 2, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "whitemushroomItem", 1, 0, missing))

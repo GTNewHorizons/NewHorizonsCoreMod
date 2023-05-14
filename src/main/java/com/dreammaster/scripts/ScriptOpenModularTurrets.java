@@ -235,9 +235,9 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 "plateDarkSteel",
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 "plateDarkSteel",
-                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                 getModItem(OpenModularTurrets.ID, "sensorTierThreeItem", 1, 0, missing),
-                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                 "plateDarkSteel",
                 "plateEnderiumBase",
                 "plateDarkSteel");
