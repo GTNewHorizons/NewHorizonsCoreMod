@@ -51,10 +51,19 @@ public class ShapedUniversalRecipe extends ShapedOreRecipe {
                 }
             }
         } else {
-            for (int y = 0; y < 3; y++) {
-                for (int x = 0; x < 3; x++) {
-                    int i = y * 3 + x;
-                    this.recipe[y][x] = i >= recipe.length ? null : recipe[i];
+            if (recipe.length == 4) {
+                for (int y = 0; y < 2; y++) {
+                    for (int x = 0; x < 2; x++) {
+                        int i = y * 2 + x;
+                        this.recipe[y][x] = recipe[i];
+                    }
+                }
+            } else {
+                for (int y = 0; y < 3; y++) {
+                    for (int x = 0; x < 3; x++) {
+                        int i = y * 3 + x;
+                        this.recipe[y][x] = i >= recipe.length ? null : recipe[i];
+                    }
                 }
             }
         }
