@@ -39,6 +39,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
 import mods.railcraft.api.crafting.RailcraftCraftingManager;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1634,6 +1635,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3, missing),
                 'i',
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3, missing));
+        GT_Values.RA.addFuel(Materials.Creosote.getCells(1), null, 8, 0);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sCompressorRecipes);
