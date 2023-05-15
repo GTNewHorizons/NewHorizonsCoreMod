@@ -4,6 +4,9 @@ import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMa
 import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
 import static gregtech.api.enums.GT_Values.W;
 import static gregtech.api.enums.Mods.*;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.List;
 
@@ -3190,14 +3193,14 @@ public class AssemblerRecipes implements Runnable {
                 480);
 
         // Irradiant Uranium
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { Materials.Uranium.getIngots(1),
-                        GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2),
-                100,
-                480);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        Materials.Uranium.getIngots(1),
+                        GT_ModHandler.getModItem(AdvancedSolarPanel.ID,"asp_crafting_items", 1, 0))
+                .noFluidInputs()
+                .noFluidOutputs()
+                .itemOutputs(GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2))
+                .duration(5 * SECONDS).eut(480).addTo(sAssemblerRecipes);
 
         // Solar Light Splitter
         GT_Values.RA.addAssemblerRecipe(
