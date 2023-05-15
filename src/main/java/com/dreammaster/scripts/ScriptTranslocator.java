@@ -22,13 +22,25 @@ public class ScriptTranslocator implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(Translocator.ID, "translocator", 2),
-                new Object[] { "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium", "pipeMediumBrass",
-                        "gemEnderPearl", "pipeMediumBrass", "itemCasingAluminium", "plateRedAlloy",
-                        "itemCasingAluminium" });
+                "itemCasingAluminium",
+                "plateRedAlloy",
+                "itemCasingAluminium",
+                "pipeMediumBrass",
+                "gemEnderPearl",
+                "pipeMediumBrass",
+                "itemCasingAluminium",
+                "plateRedAlloy",
+                "itemCasingAluminium");
         addShapedRecipe(
                 getModItem(Translocator.ID, "translocator", 2, 1),
-                new Object[] { "itemCasingAluminium", "plateRedAlloy", "itemCasingAluminium", "pipeMediumSteel",
-                        "gemEnderPearl", "pipeMediumSteel", "itemCasingAluminium", "plateRedAlloy",
-                        "itemCasingAluminium" });
+                "itemCasingAluminium",
+                "plateRedAlloy",
+                "itemCasingAluminium",
+                "pipeMediumSteel",
+                "gemEnderPearl",
+                "pipeMediumSteel",
+                "itemCasingAluminium",
+                "plateRedAlloy",
+                "itemCasingAluminium");
     }
 }

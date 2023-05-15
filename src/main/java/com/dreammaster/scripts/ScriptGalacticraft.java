@@ -15,7 +15,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -64,719 +63,1169 @@ public class ScriptGalacticraft implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.landingPad", 3, 0, missing),
-                new Object[] { "compressedIron", "compressedIron", "compressedIron", "plateAlloyAdvanced",
-                        "plateAlloyAdvanced", "plateAlloyAdvanced", "blockIron", "blockIron", "blockIron" });
+                "compressedIron",
+                "compressedIron",
+                "compressedIron",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "blockIron",
+                "blockIron",
+                "blockIron");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.landingPad", 3, 1, missing),
-                new Object[] { "compressedSteel", "compressedSteel", "compressedSteel", "plateAlloyAdvanced",
-                        "plateAlloyAdvanced", "plateAlloyAdvanced", "blockSteel", "blockSteel", "blockSteel" });
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "blockSteel",
+                "blockSteel",
+                "blockSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.oxygenCollector", 1, 0, missing),
-                new Object[] { "compressedAluminium",
-                        getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
-                        "compressedAluminium", getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing), "compressedSteel",
-                        "cableGt02Aluminium", "compressedSteel" });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                "compressedSteel",
+                "cableGt02Aluminium",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.oxygenCompressor", 1, 0, missing),
-                new Object[] { "compressedAluminium",
-                        getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
-                        "compressedAluminium", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
-                        getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing), "compressedSteel",
-                        "compressedBronze", "compressedSteel" });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
+                "compressedAluminium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                "compressedSteel",
+                "compressedBronze",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.oxygenCompressor", 1, 4, missing),
-                new Object[] { "compressedAluminium",
-                        getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
-                        "compressedAluminium", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
-                        getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing), "compressedSteel",
-                        "compressedBronze", "compressedSteel" });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
+                "compressedAluminium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
+                getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
+                "compressedSteel",
+                "compressedBronze",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.machine2", 1, 8, missing),
-                new Object[] { "compressedSteel",
-                        getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
-                        "compressedSteel",
-                        getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
-                        "compressedSteel",
-                        getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
-                        "compressedSteel" });
+                "compressedSteel",
+                getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
+                "compressedSteel",
+                getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
+                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
+                "compressedSteel",
+                getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.distributor", 1, 0, missing),
-                new Object[] { "compressedAluminium", getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
-                        "compressedAluminium", getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing), "compressedSteel",
-                        getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing), "compressedSteel" });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "compressedSteel",
+                getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.sealer", 1, 0, missing),
-                new Object[] { "compressedAluminium", getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                        "compressedAluminium", getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.distributor", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing), "compressedDesh",
-                        getModItem(GalacticraftCore.ID, "tile.oxygenDetector", 1, 0, missing), "compressedDesh" });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.distributor", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "compressedDesh",
+                getModItem(GalacticraftCore.ID, "tile.oxygenDetector", 1, 0, missing),
+                "compressedDesh");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.oxygenDetector", 1, 0, missing),
-                new Object[] { "compressedDesh", "compressedSteel", "compressedDesh",
-                        getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing), "compressedAluminium",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing), "compressedAluminium" });
+                "compressedDesh",
+                "compressedSteel",
+                "compressedDesh",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "compressedAluminium",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing),
+                "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.fuelLoader", 1, 0, missing),
-                new Object[] { "compressedSteel", "waferBasic", "compressedSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing), "compressedAluminium",
-                        "pipeMediumSteel", "compressedAluminium" });
+                "compressedSteel",
+                "waferBasic",
+                "compressedSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                "compressedAluminium",
+                "pipeMediumSteel",
+                "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.cargo", 1, 0, missing),
-                new Object[] { "compressedAluminium", getModItem(Minecraft.ID, "hopper", 1, 0, missing),
-                        "compressedAluminium", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 9233, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing), "compressedDesh",
-                        "pipeMediumBrass", "compressedDesh" });
+                "compressedAluminium",
+                getModItem(Minecraft.ID, "hopper", 1, 0, missing),
+                "compressedAluminium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 9233, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                "compressedDesh",
+                "pipeMediumBrass",
+                "compressedDesh");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.cargo", 1, 4, missing),
-                new Object[] { "compressedDesh", "pipeMediumBrass", "compressedDesh",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 9233, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing), "compressedAluminium",
-                        getModItem(Minecraft.ID, "hopper", 1, 0, missing), "compressedAluminium" });
+                "compressedDesh",
+                "pipeMediumBrass",
+                "compressedDesh",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 9233, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                "compressedAluminium",
+                getModItem(Minecraft.ID, "hopper", 1, 0, missing),
+                "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
-                new Object[] { "craftingToolHardHammer", "compressedTin", null, "compressedTin", "stone",
-                        "compressedTin", null, "compressedTin", "craftingToolWrench" });
+                "craftingToolHardHammer",
+                "compressedTin",
+                null,
+                "compressedTin",
+                "stone",
+                "compressedTin",
+                null,
+                "compressedTin",
+                "craftingToolWrench");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 3, missing),
-                new Object[] { null, "compressedTin", "craftingToolHardHammer", "compressedTin", "stone",
-                        "compressedTin", "craftingToolWrench", "compressedTin", null });
+                null,
+                "compressedTin",
+                "craftingToolHardHammer",
+                "compressedTin",
+                "stone",
+                "compressedTin",
+                "craftingToolWrench",
+                "compressedTin",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.airLockFrame", 2, 0, missing),
-                new Object[] { "compressedDesh", "screwStainlessSteel", "compressedDesh",
-                        getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing), "compressedAluminium",
-                        "screwStainlessSteel", "compressedAluminium" });
+                "compressedDesh",
+                "screwStainlessSteel",
+                "compressedDesh",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "compressedAluminium",
+                "screwStainlessSteel",
+                "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.airLockFrame", 1, 1, missing),
-                new Object[] { "compressedDesh",
-                        getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing), "compressedDesh",
-                        getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing), "waferAdvanced",
-                        "wireGt01RedAlloy", "waferAdvanced" });
+                "compressedDesh",
+                getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
+                "compressedDesh",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "waferAdvanced",
+                "wireGt01RedAlloy",
+                "waferAdvanced");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.enclosed", 1, 1, missing),
-                new Object[] { "craftingToolHardHammer",
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing), null,
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing), null,
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing), "craftingToolFile" });
+                "craftingToolHardHammer",
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                null,
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                null,
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.enclosed", 1, 13, missing),
-                new Object[] { "craftingToolHardHammer",
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 11, missing), null,
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 11, missing),
-                        getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 11, missing), null,
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 11, missing), "craftingToolFile" });
+                "craftingToolHardHammer",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 11, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 11, missing),
+                getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 11, missing),
+                null,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 11, missing),
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.enclosed", 1, 14, missing),
-                new Object[] { "craftingToolHardHammer",
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing), null,
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing), null,
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing), "craftingToolFile" });
+                "craftingToolHardHammer",
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                null,
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                null,
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.enclosed", 1, 15, missing),
-                new Object[] { "craftingToolHardHammer",
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing), null,
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
-                        getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing), null,
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing), "craftingToolFile" });
+                "craftingToolHardHammer",
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
+                null,
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
+                null,
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.enclosed", 1, 11, missing),
-                new Object[] { "craftingToolHardHammer",
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing), null,
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing), null,
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing),
-                        "craftingToolFile" });
+                "craftingToolHardHammer",
+                getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing),
+                null,
+                getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
+                getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing),
+                null,
+                getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing),
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.enclosed", 1, 12, missing),
-                new Object[] { "craftingToolHardHammer",
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing), null,
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing), null,
-                        getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing),
-                        "craftingToolFile" });
-        addShapelessCraftingRecipe(
-                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
-                new Object[] { "cableGt01Aluminium" });
+                "craftingToolHardHammer",
+                getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing),
+                null,
+                getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 4, missing),
+                getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing),
+                null,
+                getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing),
+                "craftingToolFile");
+        addShapelessRecipe(getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing), "cableGt01Aluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.aluminumWire", 3, 1, missing),
-                new Object[] { "compressedAluminium", "compressedAluminium", "compressedAluminium",
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing), "compressedAluminium",
-                        "compressedAluminium", "compressedAluminium" });
+                "compressedAluminium",
+                "compressedAluminium",
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                "compressedAluminium",
+                "compressedAluminium",
+                "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.solar", 1, 0, missing),
-                new Object[] { "compressedAluminium", getModItem(GalacticraftCore.ID, "item.basicItem", 1, 1, missing),
-                        "compressedAluminium", getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing), "compressedSteel",
-                        "waferBasic", "compressedSteel" });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 1, missing),
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                "compressedSteel",
+                "waferBasic",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.solar", 1, 4, missing),
-                new Object[] { "compressedAluminium", getModItem(GalacticraftCore.ID, "item.basicItem", 1, 1, missing),
-                        "compressedAluminium", getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
-                        getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "waferAdvanced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing) });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 1, missing),
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "waferAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 1, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing), "waferBasic",
-                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing) });
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                "waferBasic",
+                getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.machineTiered", 1, 0, missing),
-                new Object[] { "compressedSteel", getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, 32767, missing),
-                        "compressedSteel", "cableGt01AnyCopper",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing), "cableGt01AnyCopper", "waferBasic",
-                        getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, 32767, missing), "waferBasic" });
+                "compressedSteel",
+                getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, wildcard, missing),
+                "compressedSteel",
+                "cableGt01AnyCopper",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
+                "cableGt01AnyCopper",
+                "waferBasic",
+                getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, wildcard, missing),
+                "waferBasic");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.machineTiered", 1, 8, missing),
-                new Object[] { "compressedTitanium",
-                        getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, 32767, missing), "compressedTitanium",
-                        "cableGt02Gold", getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing), "cableGt02Gold",
-                        "waferAdvanced", getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, 32767, missing),
-                        "waferAdvanced" });
+                "compressedTitanium",
+                getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, wildcard, missing),
+                "compressedTitanium",
+                "cableGt02Gold",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                "cableGt02Gold",
+                "waferAdvanced",
+                getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, wildcard, missing),
+                "waferAdvanced");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.spinThruster", 1, 0, missing),
-                new Object[] { "compressedTitanium", "compressedTitanium", "compressedTitanium",
-                        getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1, missing), "waferAdvanced",
-                        getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1, missing),
-                        getModItem(GalacticraftCore.ID, "item.engine", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.engine", 1, 0, missing) });
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1, missing),
+                "waferAdvanced",
+                getModItem(GalacticraftCore.ID, "item.fuelCanisterPartial", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.engine", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.heavyPlating", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.engine", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.viewScreen", 1, 0, missing),
-                new Object[] { "compressedSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
-                        "compressedSteel", "waferBasic", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        "waferBasic", "compressedSteel", "compressedSteel", "compressedSteel" });
+                "compressedSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                "compressedSteel",
+                "waferBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "waferBasic",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.telemetry", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.basicItem", 1, 19, missing), "compressedTin",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing), "waferBasic", "compressedTin",
-                        "waferBasic", "compressedTin", "compressedCopper", "compressedTin" });
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 19, missing),
+                "compressedTin",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                "waferBasic",
+                "compressedTin",
+                "waferBasic",
+                "compressedTin",
+                "compressedCopper",
+                "compressedTin");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.arclamp", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalaxySpace.ID, "ceresglowstone", 1, 0, missing),
-                        getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalaxySpace.ID, "ceresglowstone", 1, 0, missing),
+                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.arclamp", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalaxySpace.ID, "ioglowstone", 1, 0, missing),
-                        getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalaxySpace.ID, "ioglowstone", 1, 0, missing),
+                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.arclamp", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalaxySpace.ID, "enceladusglowstone", 1, 0, missing),
-                        getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalaxySpace.ID, "enceladusglowstone", 1, 0, missing),
+                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.arclamp", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalaxySpace.ID, "proteusglowstone", 1, 0, missing),
-                        getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalaxySpace.ID, "proteusglowstone", 1, 0, missing),
+                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.arclamp", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalaxySpace.ID, "plutoglowstone", 1, 0, missing),
-                        getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalaxySpace.ID, "plutoglowstone", 1, 0, missing),
+                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 16, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenGear", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing) });
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenTankLightFull", 1, 1000, missing),
-                new Object[] { "compressedAluminium", getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        "compressedAluminium", "compressedAluminium", "cellEmpty", "compressedAluminium",
-                        "compressedAluminium", "compressedAluminium", "compressedAluminium" });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                "compressedAluminium",
+                "compressedAluminium",
+                "cellEmpty",
+                "compressedAluminium",
+                "compressedAluminium",
+                "compressedAluminium",
+                "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenTankLightFull", 1, 1000, missing),
-                new Object[] { "compressedAluminium", getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        "compressedAluminium", "compressedAluminium",
-                        getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing), "compressedAluminium",
-                        "compressedAluminium", "compressedAluminium", "compressedAluminium" });
+                "compressedAluminium",
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                "compressedAluminium",
+                "compressedAluminium",
+                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
+                "compressedAluminium",
+                "compressedAluminium",
+                "compressedAluminium",
+                "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenTankMedFull", 1, 2000, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
-                        getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
-                        getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
-                        getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
-                        getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
-                        getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing) });
+                getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
+                getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
+                getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenTankHeavyFull", 1, 3000, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32406, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32406, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenTankSuperHeavyFull", 1, 4000, missing),
-                new Object[] { getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32411, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing) });
+                getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32411, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 5000, missing),
-                new Object[] { "plateTripleTrinium", getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        "plateTripleTrinium", "plateTripleTrinium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32412, missing), "plateTripleTrinium",
-                        "plateTripleTrinium", "plateTripleTrinium", "plateTripleTrinium" });
+                "plateTripleTrinium",
+                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                "plateTripleTrinium",
+                "plateTripleTrinium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32412, missing),
+                "plateTripleTrinium",
+                "plateTripleTrinium",
+                "plateTripleTrinium",
+                "plateTripleTrinium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
-                new Object[] { "ringRedAlloy", "lensDiamond", "ringRedAlloy", "circuitAdvanced", "lensReinforcedGlass",
-                        "circuitAdvanced", "screwStainlessSteel", "craftingToolScrewdriver", "screwStainlessSteel" });
+                "ringRedAlloy",
+                "lensDiamond",
+                "ringRedAlloy",
+                "circuitAdvanced",
+                "lensReinforcedGlass",
+                "circuitAdvanced",
+                "screwStainlessSteel",
+                "craftingToolScrewdriver",
+                "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.sensorGlasses", 1, 0, missing),
-                new Object[] { "circuitData", "screwMeteoricSteel", "circuitData", "ringDesh", "boltDesh", "ringDesh",
-                        getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing) });
+                "circuitData",
+                "screwMeteoricSteel",
+                "circuitData",
+                "ringDesh",
+                "boltDesh",
+                "ringDesh",
+                getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_pickaxe", 1, 0, missing),
-                new Object[] { "compressedSteel", "compressedSteel", "compressedSteel", "craftingToolFile", "stickWood",
-                        "craftingToolHardHammer", null, "stickWood", null });
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "craftingToolFile",
+                "stickWood",
+                "craftingToolHardHammer",
+                null,
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_axe", 1, 0, missing),
-                new Object[] { "compressedSteel", "compressedSteel", "craftingToolHardHammer", "compressedSteel",
-                        "stickWood", null, "craftingToolFile", "stickWood", null });
+                "compressedSteel",
+                "compressedSteel",
+                "craftingToolHardHammer",
+                "compressedSteel",
+                "stickWood",
+                null,
+                "craftingToolFile",
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_hoe", 1, 0, missing),
-                new Object[] { "compressedSteel", "compressedSteel", "craftingToolHardHammer", "craftingToolFile",
-                        "stickWood", null, null, "stickWood", null });
+                "compressedSteel",
+                "compressedSteel",
+                "craftingToolHardHammer",
+                "craftingToolFile",
+                "stickWood",
+                null,
+                null,
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_shovel", 1, 0, missing),
-                new Object[] { "craftingToolFile", "compressedSteel", "craftingToolHardHammer", null, "stickWood", null,
-                        null, "stickWood", null });
+                "craftingToolFile",
+                "compressedSteel",
+                "craftingToolHardHammer",
+                null,
+                "stickWood",
+                null,
+                null,
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_sword", 1, 0, missing),
-                new Object[] { null, "compressedSteel", null, "craftingToolFile", "compressedSteel",
-                        "craftingToolHardHammer", null, "stickWood", null });
+                null,
+                "compressedSteel",
+                null,
+                "craftingToolFile",
+                "compressedSteel",
+                "craftingToolHardHammer",
+                null,
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_helmet", 1, 0, missing),
-                new Object[] { "compressedSteel", "compressedSteel", "compressedSteel", "compressedSteel",
-                        "craftingToolHardHammer", "compressedSteel", null, null, null });
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "craftingToolHardHammer",
+                "compressedSteel",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_chestplate", 1, 0, missing),
-                new Object[] { "compressedSteel", "craftingToolHardHammer", "compressedSteel", "compressedSteel",
-                        "compressedSteel", "compressedSteel", "compressedSteel", "compressedSteel",
-                        "compressedSteel" });
+                "compressedSteel",
+                "craftingToolHardHammer",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_leggings", 1, 0, missing),
-                new Object[] { "compressedSteel", "compressedSteel", "compressedSteel", "compressedSteel",
-                        "craftingToolHardHammer", "compressedSteel", "compressedSteel", null, "compressedSteel" });
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "craftingToolHardHammer",
+                "compressedSteel",
+                "compressedSteel",
+                null,
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.steel_boots", 1, 0, missing),
-                new Object[] { "compressedSteel", null, "compressedSteel", "compressedSteel", "craftingToolHardHammer",
-                        "compressedSteel", null, null, null });
+                "compressedSteel",
+                null,
+                "compressedSteel",
+                "compressedSteel",
+                "craftingToolHardHammer",
+                "compressedSteel",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshHelmet", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "craftingToolHardHammer",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), null, null, null });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "craftingToolHardHammer",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshChestplate", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "craftingToolHardHammer",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "craftingToolHardHammer",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshLeggings", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "craftingToolHardHammer",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), null,
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "craftingToolHardHammer",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                null,
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshBoots", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), null,
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "craftingToolHardHammer",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), null, null, null });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                null,
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "craftingToolHardHammer",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_pickaxe", 1, 0, missing),
-                new Object[] { "compressedTitanium", "compressedTitanium", "compressedTitanium", "craftingToolFile",
-                        "stickWood", "craftingToolHardHammer", null, "stickWood", null });
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "craftingToolFile",
+                "stickWood",
+                "craftingToolHardHammer",
+                null,
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_axe", 1, 0, missing),
-                new Object[] { "compressedTitanium", "compressedTitanium", "craftingToolHardHammer",
-                        "compressedTitanium", "stickWood", null, "craftingToolFile", "stickWood", null });
+                "compressedTitanium",
+                "compressedTitanium",
+                "craftingToolHardHammer",
+                "compressedTitanium",
+                "stickWood",
+                null,
+                "craftingToolFile",
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_hoe", 1, 0, missing),
-                new Object[] { "compressedTitanium", "compressedTitanium", "craftingToolHardHammer", "craftingToolFile",
-                        "stickWood", null, null, "stickWood", null });
+                "compressedTitanium",
+                "compressedTitanium",
+                "craftingToolHardHammer",
+                "craftingToolFile",
+                "stickWood",
+                null,
+                null,
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_shovel", 1, 0, missing),
-                new Object[] { "craftingToolFile", "compressedTitanium", "craftingToolHardHammer", null, "stickWood",
-                        null, null, "stickWood", null });
+                "craftingToolFile",
+                "compressedTitanium",
+                "craftingToolHardHammer",
+                null,
+                "stickWood",
+                null,
+                null,
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_sword", 1, 0, missing),
-                new Object[] { null, "compressedTitanium", null, "craftingToolFile", "compressedTitanium",
-                        "craftingToolHardHammer", null, "stickWood", null });
+                null,
+                "compressedTitanium",
+                null,
+                "craftingToolFile",
+                "compressedTitanium",
+                "craftingToolHardHammer",
+                null,
+                "stickWood",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshPick", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "craftingToolFile", "stickDesh",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), null, "stickDesh",
-                        "craftingToolHardHammer" });
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "craftingToolFile",
+                "stickDesh",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                null,
+                "stickDesh",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshAxe", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "stickDesh",
-                        "craftingToolHardHammer", "craftingToolFile", "stickDesh", null });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "stickDesh",
+                "craftingToolHardHammer",
+                "craftingToolFile",
+                "stickDesh",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshHoe", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing), "craftingToolFile", "stickDesh",
-                        "craftingToolHardHammer", null, "stickDesh", null });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                "craftingToolFile",
+                "stickDesh",
+                "craftingToolHardHammer",
+                null,
+                "stickDesh",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshSpade", 1, 0, missing),
-                new Object[] { "craftingToolFile", getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing), null, "stickDesh",
-                        "craftingToolHardHammer", null, "stickDesh", null });
+                "craftingToolFile",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                null,
+                "stickDesh",
+                "craftingToolHardHammer",
+                null,
+                "stickDesh",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshSword", 1, 0, missing),
-                new Object[] { null, getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing), "craftingToolFile",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "craftingToolHardHammer", null,
-                        "stickDesh", null });
+                null,
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                "craftingToolFile",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "craftingToolHardHammer",
+                null,
+                "stickDesh",
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_helmet", 1, 0, missing),
-                new Object[] { "compressedTitanium", "compressedTitanium", "compressedTitanium", "compressedTitanium",
-                        "craftingToolHardHammer", "compressedTitanium", null, null, null });
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "craftingToolHardHammer",
+                "compressedTitanium",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_chestplate", 1, 0, missing),
-                new Object[] { "compressedTitanium", "craftingToolHardHammer", "compressedTitanium",
-                        "compressedTitanium", "compressedTitanium", "compressedTitanium", "compressedTitanium",
-                        "compressedTitanium", "compressedTitanium" });
+                "compressedTitanium",
+                "craftingToolHardHammer",
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_leggings", 1, 0, missing),
-                new Object[] { "compressedTitanium", "compressedTitanium", "compressedTitanium", "compressedTitanium",
-                        "craftingToolHardHammer", "compressedTitanium", "compressedTitanium", null,
-                        "compressedTitanium" });
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "compressedTitanium",
+                "craftingToolHardHammer",
+                "compressedTitanium",
+                "compressedTitanium",
+                null,
+                "compressedTitanium");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.titanium_boots", 1, 0, missing),
-                new Object[] { "compressedTitanium", null, "compressedTitanium", "compressedTitanium",
-                        "craftingToolHardHammer", "compressedTitanium", null, null, null });
+                "compressedTitanium",
+                null,
+                "compressedTitanium",
+                "compressedTitanium",
+                "craftingToolHardHammer",
+                "compressedTitanium",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "compressedTin",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "compressedTin", "compressedSteel",
-                        "compressedTin", getModItem(Minecraft.ID, "iron_bars", 1, 0, missing), "compressedTin",
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing) });
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "compressedTin",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "compressedTin",
+                "compressedSteel",
+                "compressedTin",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
+                "compressedTin",
+                getModItem(Minecraft.ID, "iron_bars", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 21305, missing), "stickLongStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 21305, missing), "screwSteel",
-                        "craftingToolWrench", "screwSteel" });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21305, missing),
+                "stickLongStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21305, missing),
+                "screwSteel",
+                "craftingToolWrench",
+                "screwSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
-                new Object[] { "compressedSteel", getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                        "compressedSteel", "compressedSteel",
-                        getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing), "compressedSteel",
-                        getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing) });
+                "compressedSteel",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "compressedSteel",
+                "compressedSteel",
+                getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
+                "compressedSteel",
+                getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oilExtractor", 1, 0, missing),
-                new Object[] { "pipeTinySteel", "craftingToolScrewdriver", "screwStainlessSteel", "screwStainlessSteel",
-                        getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
-                        "compressedBronze",
-                        getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, 14, missing),
-                        "compressedBronze", "compressedBronze" });
+                "pipeTinySteel",
+                "craftingToolScrewdriver",
+                "screwStainlessSteel",
+                "screwStainlessSteel",
+                getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
+                "compressedBronze",
+                getModItem(ProjectRedIllumination.ID, "projectred.illumination.lightbutton", 1, 14, missing),
+                "compressedBronze",
+                "compressedBronze");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggymat", 1, 0, missing),
-                new Object[] { "compressedSteel", "plateAnyRubber", "compressedSteel", "plateAnyRubber",
-                        "compressedTitanium", "plateAnyRubber", "compressedSteel", "plateAnyRubber",
-                        "compressedSteel" });
+                "compressedSteel",
+                "plateAnyRubber",
+                "compressedSteel",
+                "plateAnyRubber",
+                "compressedTitanium",
+                "plateAnyRubber",
+                "compressedSteel",
+                "plateAnyRubber",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggymat", 1, 1, missing),
-                new Object[] { null, getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing), "compressedSteel",
-                        getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing), "compressedSteel",
-                        "compressedSteel", "compressedSteel", "compressedSteel" });
+                null,
+                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
+                "compressedSteel",
+                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggymat", 1, 2, missing),
-                new Object[] { "compressedSteel", getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
-                        "compressedSteel", "compressedSteel",
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing), "compressedSteel",
-                        "compressedSteel", "compressedSteel", "compressedSteel" });
+                "compressedSteel",
+                getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
+                "compressedSteel",
+                "compressedSteel",
+                getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing),
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel",
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 19, missing),
-                new Object[] { "compressedAluminium", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        "compressedAluminium", "waferBasic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing), "waferBasic", "compressedTin",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing), "compressedTin" });
+                "compressedAluminium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                "compressedAluminium",
+                "waferBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "waferBasic",
+                "compressedTin",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing),
+                "compressedTin");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.walkway", 2, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), null, "blockDesh", null,
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                null,
+                "blockDesh",
+                null,
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 1, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 23884, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23884, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 23884, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.null", 1, 1, missing) });
-        addShapelessCraftingRecipe(
-                getModItem(GalacticraftCore.ID, "item.battery", 1, 32767, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing) });
+                getModItem(GalacticraftMars.ID, "item.null", 1, 1, missing));
+        addShapelessRecipe(
+                getModItem(GalacticraftCore.ID, "item.battery", 1, wildcard, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.standardWrench", 1, 0, missing),
-                new Object[] { "plateSteel", "craftingToolSaw", "plateSteel", "screwSteel", "stickSteel", "screwSteel",
-                        "craftingToolScrewdriver", "stickSteel", "craftingToolFile" });
+                "plateSteel",
+                "craftingToolSaw",
+                "plateSteel",
+                "screwSteel",
+                "stickSteel",
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "stickSteel",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
-                new Object[] { "ringRedAlloy", "compressedIron", "ringRedAlloy", "compressedIron", "lensDiamond",
-                        "compressedIron", "ringRedAlloy", "compressedIron", "ringRedAlloy" });
+                "ringRedAlloy",
+                "compressedIron",
+                "ringRedAlloy",
+                "compressedIron",
+                "lensDiamond",
+                "compressedIron",
+                "ringRedAlloy",
+                "compressedIron",
+                "ringRedAlloy");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 6, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.beamReflector", 1, 0, missing),
-                new Object[] { "ringDesh", getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
-                        "ringDesh", "screwDesh", "stickDesh", "screwDesh",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "blockDesh",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing) });
+                "ringDesh",
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
+                "ringDesh",
+                "screwDesh",
+                "stickDesh",
+                "screwDesh",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "blockDesh",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.beamReceiver", 1, 0, missing),
-                new Object[] { "compressedTin", "ringDesh", "compressedTin", "ringDesh",
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing), "ringDesh",
-                        "compressedTin", "ringDesh", "compressedTin" });
+                "compressedTin",
+                "ringDesh",
+                "compressedTin",
+                "ringDesh",
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
+                "ringDesh",
+                "compressedTin",
+                "ringDesh",
+                "compressedTin");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.telepadShort", 1, 0, missing),
-                new Object[] { "compressedTitanium", getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        "compressedTitanium", getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32672, missing),
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing), "compressedTitanium",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "compressedTitanium" });
+                "compressedTitanium",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "compressedTitanium",
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32672, missing),
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
+                "compressedTitanium",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "compressedTitanium");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.marsMachine", 1, 4, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing),
-                        getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2, missing),
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 3, missing),
-                        getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 3, missing),
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing),
-                        getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing) });
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing),
+                getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2, missing),
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 3, missing),
+                getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 3, missing),
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing),
+                getModItem(Minecraft.ID, "clock", 1, 0, missing),
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.marsMachine", 1, 0, missing),
-                new Object[] { "compressedTitanium",
-                        getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing), "compressedTitanium",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings2", 1, 4, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(AE2FluidCraft.ID, "certus_quartz_tank", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing) });
+                "compressedTitanium",
+                getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
+                "compressedTitanium",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.blockcasings2", 1, 4, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(AE2FluidCraft.ID, "certus_quartz_tank", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.marsMachine", 1, 8, missing),
-                new Object[] { "waferAdvanced", getModItem(GalacticraftCore.ID, "item.basicItem", 1, 19, missing),
-                        "waferAdvanced", getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "cableGt02Aluminium",
-                        getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing), "cableGt02Aluminium" });
+                "waferAdvanced",
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 19, missing),
+                "waferAdvanced",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "cableGt02Aluminium",
+                getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
+                "cableGt02Aluminium");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.grapple", 1, 0, missing),
-                new Object[] { null, null, "toolHeadArrowMeteoricSteel",
-                        getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 1, 0, missing),
-                        "ringMeteoricSteel", null, null });
+                null,
+                null,
+                "toolHeadArrowMeteoricSteel",
+                getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 1, 0, missing),
+                "ringMeteoricSteel",
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.minerBase", 4, 0, missing),
-                new Object[] { "compressedTitanium", "chestSteel", "compressedTitanium",
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing), "frameGtTungsten",
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing), "compressedDesh",
-                        getModItem(GalacticraftCore.ID, "tile.machineTiered", 1, 0, missing), "compressedDesh" });
+                "compressedTitanium",
+                "chestSteel",
+                "compressedTitanium",
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
+                "frameGtTungsten",
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
+                "compressedDesh",
+                getModItem(GalacticraftCore.ID, "tile.machineTiered", 1, 0, missing),
+                "compressedDesh");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.orionDrive", 1, 0, missing),
-                new Object[] { "compressedTitanium",
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing), "compressedTitanium",
-                        "circuitMaster", "oc:hdd3", "circuitMaster", "compressedSteel",
-                        getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing), "compressedSteel" });
+                "compressedTitanium",
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
+                "compressedTitanium",
+                "circuitMaster",
+                "oc:hdd3",
+                "circuitMaster",
+                "compressedSteel",
+                getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
+                "compressedSteel");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing),
-                new Object[] { null, getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "stickPlastic",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "stickPlastic",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "stickPlastic",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), null });
+                null,
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "stickPlastic",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "stickPlastic",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "stickPlastic",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 20, missing),
-                new Object[] { "circuitAdvanced", getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                        "circuitAdvanced", getModItem(GalacticraftCore.ID, "item.basicItem", 1, 10, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 10, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 8, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 13, missing),
-                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 8, missing) });
-        addShapelessCraftingRecipe(
+                "circuitAdvanced",
+                getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 10, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 10, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 8, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 13, missing),
+                getModItem(GalacticraftCore.ID, "item.basicItem", 1, 8, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.schematic", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.schematic", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftCore.ID, "item.schematic", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.schematic", 1, 1, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.schematic", 1, 0, missing) });
+                getModItem(GalacticraftCore.ID, "item.schematic", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.schematic", 1, 1, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.schematic", 1, 0, missing), null, null, null, null,
-                        null, null, null, null });
+                getModItem(GalacticraftMars.ID, "item.schematic", 1, 0, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.schematic", 1, 2, missing),
-                new Object[] { null, getModItem(GalacticraftMars.ID, "item.schematic", 1, 0, missing), null, null, null,
-                        null, null, null, null });
+                null,
+                getModItem(GalacticraftMars.ID, "item.schematic", 1, 0, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.schematic", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.schematic", 1, 1, missing), null, null, null, null,
-                        null, null, null, null });
+                getModItem(GalacticraftMars.ID, "item.schematic", 1, 1, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.schematic", 1, 2, missing),
-                new Object[] { null, getModItem(GalacticraftMars.ID, "item.schematic", 1, 1, missing), null, null, null,
-                        null, null, null, null });
+                null,
+                getModItem(GalacticraftMars.ID, "item.schematic", 1, 1, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.schematic", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.schematic", 1, 2, missing), null, null, null, null,
-                        null, null, null, null });
+                getModItem(GalacticraftMars.ID, "item.schematic", 1, 2, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.schematic", 1, 1, missing),
-                new Object[] { null, getModItem(GalacticraftMars.ID, "item.schematic", 1, 2, missing), null, null, null,
-                        null, null, null, null });
+                null,
+                getModItem(GalacticraftMars.ID, "item.schematic", 1, 2, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.parachute", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing),
-                        getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing), "wireFineSteel", null,
-                        "wireFineSteel", "wireFineSteel", "wireFineSteel", "wireFineSteel" });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing),
+                "wireFineSteel",
+                null,
+                "wireFineSteel",
+                "wireFineSteel",
+                "wireFineSteel",
+                "wireFineSteel");
+        addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 32767, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, wildcard, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.spaceship", 1, 32767, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftCore.ID, "item.spaceship", 1, wildcard, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftCore.ID, "item.buggy", 1, 32767, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftCore.ID, "item.buggy", 1, wildcard, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 32767, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
-                new Object[] { getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing) });
+                getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(GalacticraftCore.ID, "item.infiniteOxygen", 1, 0, missing),

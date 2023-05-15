@@ -22,7 +22,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
@@ -89,287 +88,498 @@ public class ScriptCoreMod implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
-                new Object[] { "craftingToolFile", "sandstone", "craftingToolSaw" });
+                "craftingToolFile",
+                "sandstone",
+                "craftingToolSaw");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
-                new Object[] { "craftingToolFile", "cobblestone", "craftingToolSaw" });
+                "craftingToolFile",
+                "cobblestone",
+                "craftingToolSaw");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.LongObsidianRod", 2, 0, missing),
-                new Object[] { "craftingToolSaw", "stoneObsidian", "craftingToolFile" });
+                "craftingToolSaw",
+                "stoneObsidian",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.LongStoneRod", 2, 0, missing),
-                new Object[] { "craftingToolSaw", "stone", "craftingToolFile" });
+                "craftingToolSaw",
+                "stone",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 1, 0, missing),
-                new Object[] { "listAllmushroom", null, null, "craftingToolMortar", null, null, null, null, null });
+                "listAllmushroom",
+                null,
+                null,
+                "craftingToolMortar",
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                new Object[] { "platePlastic", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        "platePlastic", "circuitBasic", "cableGt01Tin", "circuitBasic", "screwIron",
-                        "craftingToolScrewdriver", "screwIron" });
+                "platePlastic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                "platePlastic",
+                "circuitBasic",
+                "cableGt01Tin",
+                "circuitBasic",
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.LaserEmitter", 1, 0, missing),
-                new Object[] { "itemCasingTitanium", "lensRuby", "itemCasingTitanium",
-                        getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing), "plateAlloyAdvanced",
-                        "plateAlloyAdvanced", "plateAlloyAdvanced" });
+                "itemCasingTitanium",
+                "lensRuby",
+                "itemCasingTitanium",
+                getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing),
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced",
+                "plateAlloyAdvanced");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.DiamondDrillTip", 1, 0, missing),
-                new Object[] { "plateDiamond", "plateSteel", "plateDiamond", "plateDiamond", "plateSteel",
-                        "plateDiamond", "plateSteel", "craftingToolHardHammer", "plateSteel" });
+                "plateDiamond",
+                "plateSteel",
+                "plateDiamond",
+                "plateDiamond",
+                "plateSteel",
+                "plateDiamond",
+                "plateSteel",
+                "craftingToolHardHammer",
+                "plateSteel");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedIridiumDrillTip", 1, 0, missing),
-                new Object[] { "plateAlloyIridium", "plateSteel", "plateAlloyIridium", "plateAlloyIridium",
-                        "plateSteel", "plateAlloyIridium", "plateSteel", "craftingToolHardHammer", "plateSteel" });
+                "plateAlloyIridium",
+                "plateSteel",
+                "plateAlloyIridium",
+                "plateAlloyIridium",
+                "plateSteel",
+                "plateAlloyIridium",
+                "plateSteel",
+                "craftingToolHardHammer",
+                "plateSteel");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SawBladeDiamond", 1, 0, missing),
-                new Object[] { "plateDiamond", "plateDiamond", null, "craftingToolFile", "craftingToolHardHammer",
-                        null });
+                "plateDiamond",
+                "plateDiamond",
+                null,
+                "craftingToolFile",
+                "craftingToolHardHammer",
+                null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SawBladeStone", 1, 0, missing),
-                new Object[] { "plateStone", "plateStone", null, "craftingToolFile", "craftingToolHardHammer", null });
+                "plateStone",
+                "plateStone",
+                null,
+                "craftingToolFile",
+                "craftingToolHardHammer",
+                null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SawBladeArdite", 1, 0, missing),
-                new Object[] { "plateArdite", "plateArdite", null, "craftingToolFile", "craftingToolHardHammer",
-                        null });
+                "plateArdite",
+                "plateArdite",
+                null,
+                "craftingToolFile",
+                "craftingToolHardHammer",
+                null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SawBladeManyullyn", 1, 0, missing),
-                new Object[] { "plateManyullyn", "plateManyullyn", null, "craftingToolFile", "craftingToolHardHammer",
-                        null });
+                "plateManyullyn",
+                "plateManyullyn",
+                null,
+                "craftingToolFile",
+                "craftingToolHardHammer",
+                null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SawBladeRuby", 1, 0, missing),
-                new Object[] { "plateRuby", "plateRuby", null, "craftingToolFile", "craftingToolHardHammer", null });
+                "plateRuby",
+                "plateRuby",
+                null,
+                "craftingToolFile",
+                "craftingToolHardHammer",
+                null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SawBladeSapphire", 1, 0, missing),
-                new Object[] { "plateSapphire", "plateSapphire", null, "craftingToolFile", "craftingToolHardHammer",
-                        null });
+                "plateSapphire",
+                "plateSapphire",
+                null,
+                "craftingToolFile",
+                "craftingToolHardHammer",
+                null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SawBladePeridot", 1, 0, missing),
-                new Object[] { "platePeridot", "platePeridot", null, "craftingToolFile", "craftingToolHardHammer",
-                        null });
+                "platePeridot",
+                "platePeridot",
+                null,
+                "craftingToolFile",
+                "craftingToolHardHammer",
+                null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.BowFletchingCast", 1, 0, missing),
-                new Object[] { null, null, "craftingToolHardHammer", null,
-                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing), "craftingToolKnife", null, null,
-                        "craftingToolFile" });
+                null,
+                null,
+                "craftingToolHardHammer",
+                null,
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing),
+                "craftingToolKnife",
+                null,
+                null,
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.BowFletchingCast", 1, 0, missing),
-                new Object[] { null, null, "craftingToolHardHammer", null, "plateBrass", "craftingToolKnife", null,
-                        null, "craftingToolFile" });
+                null,
+                null,
+                "craftingToolHardHammer",
+                null,
+                "plateBrass",
+                "craftingToolKnife",
+                null,
+                null,
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.BowStringCast", 1, 0, missing),
-                new Object[] { null, null, null, null, getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing),
-                        "craftingToolHardHammer", null, "craftingToolFile", "craftingToolKnife" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing),
+                "craftingToolHardHammer",
+                null,
+                "craftingToolFile",
+                "craftingToolKnife");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.BowStringCast", 1, 0, missing),
-                new Object[] { null, null, null, null, "plateBrass", "craftingToolHardHammer", null, "craftingToolFile",
-                        "craftingToolKnife" });
+                null,
+                null,
+                null,
+                null,
+                "plateBrass",
+                "craftingToolHardHammer",
+                null,
+                "craftingToolFile",
+                "craftingToolKnife");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "coal", 1, 1, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null, null, null, null,
-                        null, null, null });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "redstone", 1, 0, missing),
-                new Object[] { null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null, null, null,
-                        null, null, null });
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2890, missing),
-                new Object[] { null, null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null, null,
-                        null, null, null });
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
-                new Object[] { null, null, null, null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2805, missing),
-                new Object[] { null, null, null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null,
-                        null, null, null });
+                null,
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2299, missing),
-                new Object[] { null, null, null, null, null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        null, null, null });
+                null,
+                null,
+                null,
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1802, missing),
-                new Object[] { null, null, null, null, null, null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null });
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2934, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2823, missing),
-                new Object[] { null, null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2022, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2939, missing),
-                new Object[] { null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2032, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2057, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2034, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2035, missing),
-                new Object[] { null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2896, missing),
-                new Object[] { null, null, null, null, null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                null,
+                null,
+                null,
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1625, missing),
-                new Object[] { null, null, getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                null,
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2304, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemHarz", 1, 0, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null, null });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 39, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "materials", 1, 40, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1054, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2086, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 37, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "leather", 1, 0, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing), null,
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                null,
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1343, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
-                        getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
+                getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.RawSDHCAlloy", 1, 0, missing),
-                new Object[] { "screwStainlessSteel", "craftingToolScrewdriver", "screwStainlessSteel",
-                        getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1, 0, missing),
-                        getModItem(GalaxySpace.ID, "item.CompressedCoal", 1, 0, missing),
-                        getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1, 0, missing),
-                        "screwStainlessSteel", "craftingToolHardHammer", "screwStainlessSteel" });
+                "screwStainlessSteel",
+                "craftingToolScrewdriver",
+                "screwStainlessSteel",
+                getModItem(GalaxySpace.ID, "item.CompressedDualBronze", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.CompressedCoal", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.CompressedDualAluminium", 1, 0, missing),
+                "screwStainlessSteel",
+                "craftingToolHardHammer",
+                "screwStainlessSteel");
         addShapedRecipe(
                 createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 0, "{Durability:1000}", missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing));
+        addShapelessRecipe(
                 createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 0, "{Durability:1000}", missing),
-                new Object[] { getModItem(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 0, missing), "itemLeather",
-                        "itemLeather", "itemLeather" });
+                getModItem(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 0, missing),
+                "itemLeather",
+                "itemLeather",
+                "itemLeather");
         addShapedRecipe(
                 createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 1, "{Durability:1000}", missing),
-                new Object[] { "itemLeather", getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        "itemLeather", getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "itemLeather",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing));
+        addShapelessRecipe(
                 createItemStack(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 1, "{Durability:1000}", missing),
-                new Object[] { getModItem(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 1, missing), "itemLeather",
-                        "itemLeather", "itemLeather" });
+                getModItem(NewHorizonsCoreMod.ID, "item.OvenGlove", 1, 1, missing),
+                "itemLeather",
+                "itemLeather",
+                "itemLeather");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
-                new Object[] { "stickDiamond", "stickDiamond", "stickDiamond", "stickDiamond", "craftingToolWrench",
-                        "stickDiamond", "stickDiamond", "stickDiamond", "stickDiamond" });
+                "stickDiamond",
+                "stickDiamond",
+                "stickDiamond",
+                "stickDiamond",
+                "craftingToolWrench",
+                "stickDiamond",
+                "stickDiamond",
+                "stickDiamond",
+                "stickDiamond");
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormCoinage", 1, 0, missing),
-                new Object[] { null, null, null, null, getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing),
-                        null, "craftingToolFile", "craftingToolWireCutter", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing),
+                null,
+                "craftingToolFile",
+                "craftingToolWireCutter",
+                null);
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.UnfiredCokeOvenBrick", 1, 0, missing),
@@ -885,13 +1095,13 @@ public class ScriptCoreMod implements IScriptLoader {
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.BowFletchingCast", 1, 0, missing),
                 FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
-                getModItem(TinkerConstruct.ID, "fletching", 1, 32767, missing),
+                getModItem(TinkerConstruct.ID, "fletching", 1, wildcard, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.BowStringCast", 1, 0, missing),
                 FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
-                getModItem(TinkerConstruct.ID, "bowstring", 1, 32767, missing),
+                getModItem(TinkerConstruct.ID, "bowstring", 1, wildcard, missing),
                 true,
                 100);
 
@@ -1244,31 +1454,31 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24502, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24511, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24512, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24527, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24541, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
@@ -1292,25 +1502,25 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24533, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NanoCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24532, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NanoCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24533, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.QuantumCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 24532, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.QuantumCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
@@ -1693,7 +1903,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzRod", 2, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(200).eut(16).addTo(sLatheRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sandstone", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sandstone", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(160).eut(16).addTo(sLatheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0, missing))
@@ -1701,13 +1911,13 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 1299, missing))
                 .noFluidInputs().noFluidOutputs().duration(160).eut(16).addTo(sLatheRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 2, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "brown_mushroom", 1, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 2, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mushrooms", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mushrooms", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 2, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "whitemushroomItem", 1, 0, missing))

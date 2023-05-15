@@ -100,7 +100,7 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(
                 34,
                 createItemStack(Railcraft.ID, "cart.loco.electric", 1, 0, "{model:\"railcraft:default\"}", missing));
-        metaExtraItemMap.put(35, getModItem(IndustrialCraft2.ID, "itemCropSeed", 1, 32767, missing));
+        metaExtraItemMap.put(35, getModItem(IndustrialCraft2.ID, "itemCropSeed", 1, wildcard, missing));
         metaExtraItemMap.put(36, getModItem(PamsHarvestCraft.ID, "beefwellingtonItem", 1, 0, missing));
         metaExtraItemMap.put(37, getModItem(NewHorizonsCoreMod.ID, "item.LogicProcessorItemGoldCore", 1, 0, missing));
         metaExtraItemMap

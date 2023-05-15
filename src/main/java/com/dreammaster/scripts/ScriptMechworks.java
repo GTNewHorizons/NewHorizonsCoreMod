@@ -31,16 +31,26 @@ public class ScriptMechworks implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 0, missing),
-                new Object[] { "plateBrass", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing), "plateBrass",
-                        "gearSteel", getModItem(Minecraft.ID, "dispenser", 1, 0, missing), "gearSteel", "plateBrass",
-                        "craftingPiston", "plateBrass" });
+                "plateBrass",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "plateBrass",
+                "gearSteel",
+                getModItem(Minecraft.ID, "dispenser", 1, 0, missing),
+                "gearSteel",
+                "plateBrass",
+                "craftingPiston",
+                "plateBrass");
         addShapedRecipe(
                 getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing), "plateBrass",
-                        getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing), "plateBrass", "plateBrass",
-                        "plateBrass", "plateBrass" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
+                "plateBrass",
+                getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
+                "plateBrass",
+                "plateBrass",
+                "plateBrass",
+                "plateBrass");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

@@ -42,6 +42,7 @@ public class ScriptLoader {
                 new ScriptTravellersGear(), ScriptZZClientOnly.instance };
 
         ArrayList<String> errored = new ArrayList<>();
+        final long totalTimeStart = System.currentTimeMillis();
         for (IScriptLoader script : scripts) {
             if (script.isScriptLoadable()) {
                 try {
@@ -60,6 +61,8 @@ public class ScriptLoader {
                         "Missing dependencies to load " + script.getScriptName() + " script. It won't be loaded.");
             }
         }
+        final long totalTimeToLoad = System.currentTimeMillis() - totalTimeStart;
+        MainRegistry.Logger.info("Script loader took " + totalTimeToLoad + " ms.");
         if (!errored.isEmpty()) throw new RuntimeException(
                 "Scripts " + errored + " thrown an exception! Scroll up the log to see the stacktrace!");
     }

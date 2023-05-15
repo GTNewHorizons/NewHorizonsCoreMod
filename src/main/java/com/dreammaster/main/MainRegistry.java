@@ -50,6 +50,7 @@ import com.dreammaster.network.CoreModDispatcher;
 import com.dreammaster.oredict.OreDictHandler;
 import com.dreammaster.railcraftStones.NH_GeodePopulator;
 import com.dreammaster.railcraftStones.NH_QuarryPopulator;
+import com.dreammaster.recipes.RecipeRemover;
 import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
@@ -459,6 +460,7 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void CompleteLoad(FMLLoadCompleteEvent event) {
+        RecipeRemover.run();
         ScriptLoader.run();
         if (BartWorks.isModLoaded()) {
             BW_RadHatchMaterial.runRadHatchAdder();

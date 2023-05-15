@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -50,14 +49,26 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "CompressedChest", 1),
-                new Object[] { "plateDenseObsidian", "plateDenseObsidian", "plateDenseObsidian", "chestDiamond",
-                        ItemList.Electric_Piston_HV.get(1), "chestDiamond", "plateDenseObsidian", "plateDenseObsidian",
-                        "plateDenseObsidian" });
+                "plateDenseObsidian",
+                "plateDenseObsidian",
+                "plateDenseObsidian",
+                "chestDiamond",
+                ItemList.Electric_Piston_HV.get(1),
+                "chestDiamond",
+                "plateDenseObsidian",
+                "plateDenseObsidian",
+                "plateDenseObsidian");
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "CompressedChest", 1),
-                new Object[] { "stickObsidian", ItemList.Electric_Piston_HV.get(1), "stickObsidian",
-                        "plateDenseObsidian", "chestObsidian", "plateDenseObsidian", "craftingToolWrench",
-                        "chestDiamond", "craftingToolScrewdriver" });
+                "stickObsidian",
+                ItemList.Electric_Piston_HV.get(1),
+                "stickObsidian",
+                "plateDenseObsidian",
+                "chestObsidian",
+                "plateDenseObsidian",
+                "craftingToolWrench",
+                "chestDiamond",
+                "craftingToolScrewdriver");
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(IronChests.ID, "BlockIronChest", 2, 2), ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4),
@@ -78,17 +89,21 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1),
-                new Object[] { "plateRedAlloy", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744), "plateRedAlloy",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603),
-                        getModItem(Avaritia.ID, "Dire_Crafting", 1),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32633), "circuitElite",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32633) });
+                "plateRedAlloy",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744),
+                "plateRedAlloy",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603),
+                getModItem(Avaritia.ID, "Dire_Crafting", 1),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32633),
+                "circuitElite",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32633));
 
         // clearing NBT of th
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1),
-                new Object[] { getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1, 32767), "platePaper" });
+                getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1, wildcard),
+                "platePaper");
 
         // Infinity Chest
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(

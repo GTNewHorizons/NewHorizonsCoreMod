@@ -11,7 +11,6 @@ import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
@@ -63,40 +62,49 @@ public class ScriptMagicBees implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1540, missing),
-                new Object[] { getModItem(MagicBees.ID, "miscResources", 1, 18, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(MagicBees.ID, "miscResources", 1, 18, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1543, missing),
-                new Object[] { getModItem(MagicBees.ID, "miscResources", 1, 19, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(MagicBees.ID, "miscResources", 1, 19, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1541, missing),
-                new Object[] { getModItem(MagicBees.ID, "miscResources", 1, 20, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(MagicBees.ID, "miscResources", 1, 20, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1542, missing),
-                new Object[] { getModItem(MagicBees.ID, "miscResources", 1, 21, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(MagicBees.ID, "miscResources", 1, 21, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1545, missing),
-                new Object[] { getModItem(MagicBees.ID, "miscResources", 1, 22, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(MagicBees.ID, "miscResources", 1, 22, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1544, missing),
-                new Object[] { getModItem(MagicBees.ID, "miscResources", 1, 23, missing) });
+                getModItem(MagicBees.ID, "miscResources", 1, 23, missing));
         addShapedRecipe(
                 getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "gemAmber",
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing), "itemLeather", "gemAmber",
-                        "itemLeather", "itemLeather", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        "itemLeather" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "gemAmber",
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                "itemLeather",
+                "gemAmber",
+                "itemLeather",
+                "itemLeather",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "itemLeather");
+        addShapelessRecipe(
                 getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0, missing),
-                new Object[] { getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0, missing) });
+                getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0, missing));
         addShapedRecipe(
                 getModItem(MagicBees.ID, "magnet", 1, 0, missing),
-                new Object[] { "craftingToolWrench", "plateIron", "screwSteelMagnetic",
-                        getModItem(Minecraft.ID, "compass", 1, 0, missing),
-                        getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
-                        getModItem(Minecraft.ID, "compass", 1, 0, missing), "screwSteelMagnetic", "gemExquisiteDiamond",
-                        "craftingToolScrewdriver" });
+                "craftingToolWrench",
+                "plateIron",
+                "screwSteelMagnetic",
+                getModItem(Minecraft.ID, "compass", 1, 0, missing),
+                getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
+                getModItem(Minecraft.ID, "compass", 1, 0, missing),
+                "screwSteelMagnetic",
+                "gemExquisiteDiamond",
+                "craftingToolScrewdriver");
 
         ForestryHelper.removeCarpenterRecipe(getModItem(MagicBees.ID, "backpack.thaumaturgeT2", 1, 0, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -355,7 +363,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .duration(100).eut(30).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "sand", 2, 32767, missing),
+                        getModItem(Minecraft.ID, "sand", 2, wildcard, missing),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 6, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).noFluidOutputs().duration(100).eut(16)
@@ -369,7 +377,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "sand", 2, 32767, missing),
+                        getModItem(Minecraft.ID, "sand", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2530, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 5, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).noFluidOutputs().duration(100).eut(16)

@@ -98,9 +98,15 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         // Industrial Apiary
         addShapedRecipe(
                 ItemList.Machine_IndustrialApiary.get(1),
-                new Object[] { FrameHousing, EnhancedCircuitBoard, FrameHousing, ItemList.Robot_Arm_HV.get(1),
-                        ItemList.FR_Casing_Sturdy.get(1), ItemList.Robot_Arm_HV.get(1), AlvearyLighting, AlvearySieve,
-                        AlvearyLighting });
+                FrameHousing,
+                EnhancedCircuitBoard,
+                FrameHousing,
+                ItemList.Robot_Arm_HV.get(1),
+                ItemList.FR_Casing_Sturdy.get(1),
+                ItemList.Robot_Arm_HV.get(1),
+                AlvearyLighting,
+                AlvearySieve,
+                AlvearyLighting);
 
         // Upgrade Frame
         GT_Values.RA.addAssemblerRecipe(ItemList.Circuit_Board_Plastic.get(1), IntegratedCPU, UpgradeFrame, 200, 24);
@@ -121,149 +127,314 @@ public class ScriptIndustrialApiary implements IScriptLoader {
         for (int i = 0; i < AccelerationUpgrades.length; i++) {
             addShapedRecipe(
                     AccelerationUpgrades[i].get(6),
-                    new Object[] { SmallSteelGear, UpgradeFrame, SmallSteelGear, UpgradeFrame, Accelerators[i],
-                            UpgradeFrame, SmallStainlessGear, UpgradeFrame, SmallStainlessGear });
+                    SmallSteelGear,
+                    UpgradeFrame,
+                    SmallSteelGear,
+                    UpgradeFrame,
+                    Accelerators[i],
+                    UpgradeFrame,
+                    SmallStainlessGear,
+                    UpgradeFrame,
+                    SmallStainlessGear);
         }
 
         // Upgraded Acceleration Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_Acceleration_8_Upgraded.get(1),
-                new Object[] { IndustrialApiaryUpgrade_PRODUCTION, IndustrialApiaryUpgrade_PRODUCTION,
-                        IndustrialApiaryUpgrade_PRODUCTION, IndustrialApiaryUpgrade_PRODUCTION,
-                        AccelerationUpgrades[7].get(1), IndustrialApiaryUpgrade_PRODUCTION,
-                        IndustrialApiaryUpgrade_PRODUCTION, IndustrialApiaryUpgrade_PRODUCTION,
-                        IndustrialApiaryUpgrade_PRODUCTION });
+                IndustrialApiaryUpgrade_PRODUCTION,
+                IndustrialApiaryUpgrade_PRODUCTION,
+                IndustrialApiaryUpgrade_PRODUCTION,
+                IndustrialApiaryUpgrade_PRODUCTION,
+                AccelerationUpgrades[7].get(1),
+                IndustrialApiaryUpgrade_PRODUCTION,
+                IndustrialApiaryUpgrade_PRODUCTION,
+                IndustrialApiaryUpgrade_PRODUCTION,
+                IndustrialApiaryUpgrade_PRODUCTION);
 
         // Production Upgrade
         addShapedRecipe(
                 IndustrialApiaryUpgrade_PRODUCTION,
-                new Object[] { SmallSteelGear, Sugar, SmallSteelGear, RoyalJelly, UpgradeFrame, RoyalJelly,
-                        SmallStainlessGear, Sugar, SmallStainlessGear });
+                SmallSteelGear,
+                Sugar,
+                SmallSteelGear,
+                RoyalJelly,
+                UpgradeFrame,
+                RoyalJelly,
+                SmallStainlessGear,
+                Sugar,
+                SmallStainlessGear);
 
         // Plain Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_PLAINS.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Grass, UpgradeFrame, Grass,
-                        SmallStainlessGear, EnvironmentalProcessor, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                Grass,
+                UpgradeFrame,
+                Grass,
+                SmallStainlessGear,
+                EnvironmentalProcessor,
+                SmallStainlessGear);
 
         // Light Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_LIGHT.get(1),
-                new Object[] { SmallSteelGear, GlowstoneGlass, SmallSteelGear, GlowstoneGlass, UpgradeFrame,
-                        GlowstoneGlass, SmallStainlessGear, GlowstoneGlass, SmallStainlessGear });
+                SmallSteelGear,
+                GlowstoneGlass,
+                SmallSteelGear,
+                GlowstoneGlass,
+                UpgradeFrame,
+                GlowstoneGlass,
+                SmallStainlessGear,
+                GlowstoneGlass,
+                SmallStainlessGear);
 
         // Unlight Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_UNLIGHT.get(1),
-                new Object[] { SmallSteelGear, ReinforcedDarkGlass, SmallSteelGear, ReinforcedDarkGlass, UpgradeFrame,
-                        ReinforcedDarkGlass, SmallStainlessGear, ReinforcedDarkGlass, SmallStainlessGear });
+                SmallSteelGear,
+                ReinforcedDarkGlass,
+                SmallSteelGear,
+                ReinforcedDarkGlass,
+                UpgradeFrame,
+                ReinforcedDarkGlass,
+                SmallStainlessGear,
+                ReinforcedDarkGlass,
+                SmallStainlessGear);
 
         // Flowering Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_FLOWERING.get(1),
-                new Object[] { SmallSteelGear, Blocks.red_flower, SmallSteelGear, BotanyPollen, UpgradeFrame,
-                        BotanyPollen, SmallStainlessGear, Blocks.yellow_flower, SmallStainlessGear });
+                SmallSteelGear,
+                Blocks.red_flower,
+                SmallSteelGear,
+                BotanyPollen,
+                UpgradeFrame,
+                BotanyPollen,
+                SmallStainlessGear,
+                Blocks.yellow_flower,
+                SmallStainlessGear);
 
         // Winter Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_WINTER.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, HardenedIce, UpgradeFrame,
-                        HardenedIce, SmallStainlessGear, EnvironmentalProcessor, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                HardenedIce,
+                UpgradeFrame,
+                HardenedIce,
+                SmallStainlessGear,
+                EnvironmentalProcessor,
+                SmallStainlessGear);
 
         // Dryer Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_DRYER.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Sand, UpgradeFrame, Sand,
-                        SmallStainlessGear, LavaBucket, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                Sand,
+                UpgradeFrame,
+                Sand,
+                SmallStainlessGear,
+                LavaBucket,
+                SmallStainlessGear);
 
         // Automation Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_AUTOMATION.get(1),
-                new Object[] { LVPiston, IntegratedCPU, LVPiston, IntegratedCPU, UpgradeFrame, IntegratedCPU,
-                        LVRobotArm, IntegratedCPU, LVRobotArm });
+                LVPiston,
+                IntegratedCPU,
+                LVPiston,
+                IntegratedCPU,
+                UpgradeFrame,
+                IntegratedCPU,
+                LVRobotArm,
+                IntegratedCPU,
+                LVRobotArm);
 
         // Humidifier Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_HUMIDIFIER.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Cactus, UpgradeFrame, Cactus,
-                        SmallStainlessGear, WaterBucket, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                Cactus,
+                UpgradeFrame,
+                Cactus,
+                SmallStainlessGear,
+                WaterBucket,
+                SmallStainlessGear);
 
         // HELL Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_HELL.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Items.blaze_rod, UpgradeFrame,
-                        Items.ghast_tear, SmallStainlessGear, EnvironmentalProcessor, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                Items.blaze_rod,
+                UpgradeFrame,
+                Items.ghast_tear,
+                SmallStainlessGear,
+                EnvironmentalProcessor,
+                SmallStainlessGear);
 
         // Pollen Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_POLLEN.get(1),
-                new Object[] { SmallSteelGear, SteelBars, SmallSteelGear, TitaniumRotor, UpgradeFrame, TitaniumRotor,
-                        SmallStainlessGear, SteelBars, SmallStainlessGear });
+                SmallSteelGear,
+                SteelBars,
+                SmallSteelGear,
+                TitaniumRotor,
+                UpgradeFrame,
+                TitaniumRotor,
+                SmallStainlessGear,
+                SteelBars,
+                SmallStainlessGear);
 
         // Desert Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_DESERT.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Sand, UpgradeFrame, Sand,
-                        SmallStainlessGear, EnvironmentalProcessor, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                Sand,
+                UpgradeFrame,
+                Sand,
+                SmallStainlessGear,
+                EnvironmentalProcessor,
+                SmallStainlessGear);
 
         // Cooler Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_COOLER.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Snow, UpgradeFrame, Snow,
-                        SmallStainlessGear, HardenedIce, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                Snow,
+                UpgradeFrame,
+                Snow,
+                SmallStainlessGear,
+                HardenedIce,
+                SmallStainlessGear);
 
         // Lifespan Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_LIFESPAN.get(1),
-                new Object[] { SmallSteelGear, FermentedSpiderEye, SmallSteelGear, Cactus, UpgradeFrame, Cactus,
-                        SmallStainlessGear, FermentedSpiderEye, SmallStainlessGear });
+                SmallSteelGear,
+                FermentedSpiderEye,
+                SmallSteelGear,
+                Cactus,
+                UpgradeFrame,
+                Cactus,
+                SmallStainlessGear,
+                FermentedSpiderEye,
+                SmallStainlessGear);
 
         // Seal Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_SEAL.get(1),
-                new Object[] { SmallSteelGear, RubberPlate, SmallSteelGear, BeesWax, UpgradeFrame, BeesWax,
-                        SmallStainlessGear, RubberPlate, SmallStainlessGear });
+                SmallSteelGear,
+                RubberPlate,
+                SmallSteelGear,
+                BeesWax,
+                UpgradeFrame,
+                BeesWax,
+                SmallStainlessGear,
+                RubberPlate,
+                SmallStainlessGear);
 
         // Genetic Stabilizer Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_STABILIZER.get(1),
-                new Object[] { SmallSteelGear, GeneticsProcessor, SmallSteelGear, RedAlloyPlate, UpgradeFrame,
-                        RedAlloyPlate, SmallStainlessGear, GeneticsProcessor, SmallStainlessGear });
+                SmallSteelGear,
+                GeneticsProcessor,
+                SmallSteelGear,
+                RedAlloyPlate,
+                UpgradeFrame,
+                RedAlloyPlate,
+                SmallStainlessGear,
+                GeneticsProcessor,
+                SmallStainlessGear);
 
         // Jungle Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_JUNGLE.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Vines, UpgradeFrame, Vines,
-                        SmallStainlessGear, EnvironmentalProcessor, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                Vines,
+                UpgradeFrame,
+                Vines,
+                SmallStainlessGear,
+                EnvironmentalProcessor,
+                SmallStainlessGear);
 
         // Territory Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_TERRITORY.get(1),
-                new Object[] { SmallSteelGear, IronPlate, SmallSteelGear, EnderPearlPlate, UpgradeFrame,
-                        EnderPearlPlate, SmallStainlessGear, IronPlate, SmallStainlessGear });
+                SmallSteelGear,
+                IronPlate,
+                SmallSteelGear,
+                EnderPearlPlate,
+                UpgradeFrame,
+                EnderPearlPlate,
+                SmallStainlessGear,
+                IronPlate,
+                SmallStainlessGear);
 
         // Ocean Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_OCEAN.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, WaterBucket, UpgradeFrame,
-                        WaterBucket, SmallStainlessGear, EnvironmentalProcessor, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                WaterBucket,
+                UpgradeFrame,
+                WaterBucket,
+                SmallStainlessGear,
+                EnvironmentalProcessor,
+                SmallStainlessGear);
 
         // Open Sky Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_SKY.get(1),
-                new Object[] { SmallSteelGear, InvertedBlueLamp, SmallSteelGear, ClearGlassPane, UpgradeFrame,
-                        ClearGlassPane, SmallStainlessGear, ClearGlassPane, SmallStainlessGear });
+                SmallSteelGear,
+                InvertedBlueLamp,
+                SmallSteelGear,
+                ClearGlassPane,
+                UpgradeFrame,
+                ClearGlassPane,
+                SmallStainlessGear,
+                ClearGlassPane,
+                SmallStainlessGear);
 
         // Heater Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_HEATER.get(1),
-                new Object[] { SmallSteelGear, ClimateControlModule, SmallSteelGear, Netherrack, UpgradeFrame,
-                        Netherrack, SmallStainlessGear, LavaBucket, SmallStainlessGear });
+                SmallSteelGear,
+                ClimateControlModule,
+                SmallSteelGear,
+                Netherrack,
+                UpgradeFrame,
+                Netherrack,
+                SmallStainlessGear,
+                LavaBucket,
+                SmallStainlessGear);
 
         // Sieve Upgrade
         addShapedRecipe(
                 ItemList.IndustrialApiary_Upgrade_SIEVE.get(1),
-                new Object[] { SmallSteelGear, WovenSilk, SmallSteelGear, SteelBars, UpgradeFrame, SteelBars,
-                        SmallStainlessGear, WovenSilk, SmallStainlessGear });
+                SmallSteelGear,
+                WovenSilk,
+                SmallSteelGear,
+                SteelBars,
+                UpgradeFrame,
+                SteelBars,
+                SmallStainlessGear,
+                WovenSilk,
+                SmallStainlessGear);
     }
 }

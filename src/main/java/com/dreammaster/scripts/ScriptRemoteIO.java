@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
@@ -49,72 +48,109 @@ public class ScriptRemoteIO implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "tile.remote_interface", 2, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing), "circuitElite",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1541, missing), "circuitElite",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32683, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing),
+                "circuitElite",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 1541, missing),
+                "circuitElite",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32683, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing));
+        addShapelessRecipe(
                 getModItem(RemoteIO.ID, "tile.remote_interface", 1, 0, missing),
-                new Object[] { getModItem(RandomThings.ID, "playerinterface", 1, 0, missing) });
+                getModItem(RandomThings.ID, "playerinterface", 1, 0, missing));
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "tile.machine", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing), "pipeMediumTitanium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing), "pipeMediumTitanium",
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing), "pipeMediumTitanium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing), "pipeMediumTitanium",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                "pipeMediumTitanium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                "pipeMediumTitanium",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing),
+                "pipeMediumTitanium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                "pipeMediumTitanium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing));
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing), "plateTitanium", "plateTitanium",
-                        "plateTitanium" });
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                "plateTitanium",
+                "plateTitanium",
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "skylight", 1, 0, missing),
-                new Object[] { "plateObsidian", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "plateObsidian", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "plateObsidian",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "plateObsidian" });
+                "plateObsidian",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "plateObsidian",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 21, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "plateObsidian",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "plateObsidian");
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "intelligentWorkbench", 1, 0, missing),
-                new Object[] { null, getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing), null,
-                        "screwTitanium", getModItem(GregTech.ID, "gt.blockcasings4", 1, 0, missing), "screwTitanium",
-                        null, "craftingToolScrewdriver", null });
-        addShapelessCraftingRecipe(
+                null,
                 getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing),
-                new Object[] { getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing) });
+                null,
+                "screwTitanium",
+                getModItem(GregTech.ID, "gt.blockcasings4", 1, 0, missing),
+                "screwTitanium",
+                null,
+                "craftingToolScrewdriver",
+                null);
+        addShapelessRecipe(
+                getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing),
+                getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing));
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "item.io_tool", 1, 0, missing),
-                new Object[] { "plateTungstenSteel", "craftingToolSaw", "plateTungstenSteel", "screwTungstenSteel",
-                        "stickTungstenSteel", "screwTungstenSteel", "craftingToolScrewdriver", "stickTungstenSteel",
-                        "craftingToolFile" });
+                "plateTungstenSteel",
+                "craftingToolSaw",
+                "plateTungstenSteel",
+                "screwTungstenSteel",
+                "stickTungstenSteel",
+                "screwTungstenSteel",
+                "craftingToolScrewdriver",
+                "stickTungstenSteel",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "item.linker", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", "boltElectrum", "screwIron", "boltElectrum", "lensEnderEye",
-                        "ringSteel", "screwIron", "ringSteel",
-                        getModItem(RemoteIO.ID, "item.io_tool", 1, 0, missing) });
+                "craftingToolScrewdriver",
+                "boltElectrum",
+                "screwIron",
+                "boltElectrum",
+                "lensEnderEye",
+                "ringSteel",
+                "screwIron",
+                "ringSteel",
+                getModItem(RemoteIO.ID, "item.io_tool", 1, 0, missing));
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "item.remoteAccessor", 1, 0, missing),
-                new Object[] { "itemCasingTungstenSteel",
-                        getModItem(RemoteIO.ID, "tile.remote_interface", 1, 0, missing), "itemCasingTungstenSteel",
-                        getModItem(RemoteIO.ID, "item.linker", 1, 0, missing),
-                        getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing),
-                        getModItem(RemoteIO.ID, "item.linker", 1, 0, missing), "screwTungstenSteel",
-                        getModItem(RemoteIO.ID, "item.wireless_transmitter", 1, 0, missing), "screwTungstenSteel" });
+                "itemCasingTungstenSteel",
+                getModItem(RemoteIO.ID, "tile.remote_interface", 1, 0, missing),
+                "itemCasingTungstenSteel",
+                getModItem(RemoteIO.ID, "item.linker", 1, 0, missing),
+                getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing),
+                getModItem(RemoteIO.ID, "item.linker", 1, 0, missing),
+                "screwTungstenSteel",
+                getModItem(RemoteIO.ID, "item.wireless_transmitter", 1, 0, missing),
+                "screwTungstenSteel");
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "item.pda", 1, 0, missing),
-                new Object[] { "screwIron", "itemCasingAluminium", "screwIron", "circuitBasic",
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing), "circuitBasic",
-                        "itemCasingAluminium",
-                        createItemStack(GregTech.ID, "gt.metaitem.01", 1, 32518, "{GT.ItemCharge:100000L}", missing),
-                        "itemCasingAluminium" });
+                "screwIron",
+                "itemCasingAluminium",
+                "screwIron",
+                "circuitBasic",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "circuitBasic",
+                "itemCasingAluminium",
+                createItemStack(GregTech.ID, "gt.metaitem.01", 1, 32518, "{GT.ItemCharge:100000L}", missing),
+                "itemCasingAluminium");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

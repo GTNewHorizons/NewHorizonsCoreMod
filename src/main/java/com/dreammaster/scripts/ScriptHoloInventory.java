@@ -22,7 +22,14 @@ public class ScriptHoloInventory implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(HoloInventory.ID, "Hologlasses", 1),
-                new Object[] { "stickSteel", "screwSteel", "stickSteel", "ringSteel", "boltSteel", "ringSteel",
-                        "lensInfusedEntropy", "craftingToolScrewdriver", "lensInfusedEntropy" });
+                "stickSteel",
+                "screwSteel",
+                "stickSteel",
+                "ringSteel",
+                "boltSteel",
+                "ringSteel",
+                "lensInfusedEntropy",
+                "craftingToolScrewdriver",
+                "lensInfusedEntropy");
     }
 }
