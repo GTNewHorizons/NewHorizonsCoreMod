@@ -44,6 +44,7 @@ import com.dreammaster.oredict.OreDictHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
 
 public class ScriptIndustrialCraft implements IScriptLoader {
 
@@ -636,7 +637,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "screwIron",
                 "craftingToolSaw",
                 "pipeSmallSteel",
-                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
+                Materials.Empty.getCells(1),
                 "screwIron",
                 getModItem(Minecraft.ID, "stone_button", 1, 0, missing),
                 "circuitBasic");
@@ -809,7 +810,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
                 "pipeLargeSteel",
-                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
+                Materials.Empty.getCells(1),
                 "pipeLargeSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 3, missing),
@@ -1330,17 +1331,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 'h',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
 
-        GT_Values.RA.addFuel(
-                createItemStack(
-                        IndustrialCraft2.ID,
-                        "itemFluidCell",
-                        1,
-                        0,
-                        "{Fluid:{FluidName:\"ic2biogas\",Amount:1000}}",
-                        missing),
-                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
-                40,
-                1);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemUran238", 9, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMetal", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
@@ -2103,25 +2093,10 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 5143, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(350).eut(256).addTo(sWiremillRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"ic2hotcoolant\",Amount:1000}}",
-                                missing))
-                .itemOutputs(
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"ic2coolant\",Amount:1000}}",
-                                missing))
-                .noFluidInputs().noFluidOutputs().duration(200).eut(120).addTo(sVacuumRecipes);
-
+        GT_Values.RA.stdBuilder().noItemInputs().noItemOutputs()
+                .fluidInputs(FluidRegistry.getFluidStack("ic2hotcoolant", 1000))
+                .fluidOutputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(200).eut(120)
+                .addTo(sVacuumRecipes);
     }
 
     private static class ArmorRepairRecipe extends ShapedOreRecipe {
