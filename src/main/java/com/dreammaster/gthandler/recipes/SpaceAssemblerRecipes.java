@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
@@ -25,6 +26,10 @@ public class SpaceAssemblerRecipes implements Runnable {
 
             Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
                     ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
+                    : FluidRegistry.getFluid("molten.solderingalloy");
+
+            Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
+                    ? FluidRegistry.getFluid("molten.indalloy140")
                     : FluidRegistry.getFluid("molten.solderingalloy");
 
             if (BartWorks.isModLoaded()) {
@@ -100,6 +105,20 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null,
                         null);
             }
+
+            // Memory Tier 3.5
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { ItemList.Circuit_Board_Elite.get(4), ItemList.Circuit_Chip_Ram.get(64),
+                            ItemList.Circuit_Chip_SoC.get(64), ItemList.Circuit_Chip_NAND.get(64),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L) },
+                    new FluidStack[] { new FluidStack(solderIndalloy, 1152) },
+                    GT_ModHandler.getModItem(OpenComputers.ID, "item", 64L, 39),
+                    1,
+                    10 * SECONDS,
+                    (int) TierEU.RECIPE_UV,
+                    null,
+                    null);
         }
     }
 }
