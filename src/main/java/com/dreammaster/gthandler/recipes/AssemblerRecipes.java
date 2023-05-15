@@ -3189,6 +3189,16 @@ public class AssemblerRecipes implements Runnable {
                 100,
                 480);
 
+        // Irradiant Uranium
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { Materials.Uranium.getIngots(1),
+                        GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0),
+                        GT_Utility.getIntegratedCircuit(1) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2),
+                100,
+                480);
+
         // Solar Light Splitter
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_ModHandler.getModItem(SuperSolarPanels.ID, "bluecomponent", 3L, 0),
