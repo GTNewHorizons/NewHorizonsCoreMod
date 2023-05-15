@@ -3195,9 +3195,8 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         Materials.Uranium.getIngots(1),
-                        GT_ModHandler.getModItem(AdvancedSolarPanel.ID,"asp_crafting_items", 1, 0))
-                .noFluidInputs()
-                .noFluidOutputs()
+                        GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0))
+                .noFluidInputs().noFluidOutputs()
                 .itemOutputs(GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2))
                 .duration(5 * SECONDS).eut(480).addTo(sAssemblerRecipes);
 
