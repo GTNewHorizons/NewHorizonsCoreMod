@@ -11,7 +11,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
@@ -59,401 +58,677 @@ public class ScriptHarvestcraft implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.maple", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.maple", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.amaranth", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.amaranth", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.silverbell", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.silverbell", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.tiger", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.tiger", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.willow", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.willow", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.darkwood", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.darkwood", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "trapdoor.fusewood", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(Natura.ID, "trapdoor.fusewood", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(MalisisDoors.ID, "trapdoor_acacia", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(MalisisDoors.ID, "trapdoor_acacia", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(MalisisDoors.ID, "trapdoor_birch", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(MalisisDoors.ID, "trapdoor_birch", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(MalisisDoors.ID, "trapdoor_dark_oak", 1, 0, missing),
-                        "stickWood", getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(MalisisDoors.ID, "trapdoor_dark_oak", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(MalisisDoors.ID, "trapdoor_jungle", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(MalisisDoors.ID, "trapdoor_jungle", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(MalisisDoors.ID, "trapdoor_spruce", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "chestWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(MalisisDoors.ID, "trapdoor_spruce", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "chestWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 3, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 3, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 3, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 3, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 3, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 3, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 3, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 3, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "watergarden", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "tropicalgarden", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "leafygarden", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "groundgarden", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "herbgarden", 1, 0, missing) });
+                getModItem(PamsHarvestCraft.ID, "tropicalgarden", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "leafygarden", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "groundgarden", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "herbgarden", 1, 0, missing));
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "potItem", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "plateAnyIron", "craftingToolFile", "ringIron", "bucketEmpty",
-                        "ringIron", "screwIron", "plateAnyIron", "screwIron" });
+                "craftingToolHardHammer",
+                "plateAnyIron",
+                "craftingToolFile",
+                "ringIron",
+                "bucketEmpty",
+                "ringIron",
+                "screwIron",
+                "plateAnyIron",
+                "screwIron");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "potItem", 1, 0, missing),
-                new Object[] { "craftingToolFile", "plateAnyIron", "craftingToolHardHammer", "ringIron", "bucketEmpty",
-                        "ringIron", "screwIron", "plateAnyIron", "screwIron" });
+                "craftingToolFile",
+                "plateAnyIron",
+                "craftingToolHardHammer",
+                "ringIron",
+                "bucketEmpty",
+                "ringIron",
+                "screwIron",
+                "plateAnyIron",
+                "screwIron");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "skilletItem", 1, 0, missing),
-                new Object[] { "stickWood", "stickIron", "craftingToolHardHammer", "stickIron", "bucketEmpty",
-                        "plateAnyIron", "stickWood", "craftingToolFile", "plateAnyIron" });
+                "stickWood",
+                "stickIron",
+                "craftingToolHardHammer",
+                "stickIron",
+                "bucketEmpty",
+                "plateAnyIron",
+                "stickWood",
+                "craftingToolFile",
+                "plateAnyIron");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "skilletItem", 1, 0, missing),
-                new Object[] { "stickWood", "stickIron", "craftingToolFile", "stickIron", "bucketEmpty", "plateAnyIron",
-                        "stickWood", "craftingToolHardHammer", "plateAnyIron" });
+                "stickWood",
+                "stickIron",
+                "craftingToolFile",
+                "stickIron",
+                "bucketEmpty",
+                "plateAnyIron",
+                "stickWood",
+                "craftingToolHardHammer",
+                "plateAnyIron");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "saucepanItem", 1, 0, missing),
-                new Object[] { "stickWood", "craftingToolFile", "screwIron", "stickIron", "bucketEmpty", "plateAnyIron",
-                        "stickWood", "craftingToolHardHammer", "plateAnyIron" });
+                "stickWood",
+                "craftingToolFile",
+                "screwIron",
+                "stickIron",
+                "bucketEmpty",
+                "plateAnyIron",
+                "stickWood",
+                "craftingToolHardHammer",
+                "plateAnyIron");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "saucepanItem", 1, 0, missing),
-                new Object[] { "stickWood", "craftingToolHardHammer", "screwIron", "stickIron", "bucketEmpty",
-                        "plateAnyIron", "stickWood", "craftingToolFile", "plateAnyIron" });
+                "stickWood",
+                "craftingToolHardHammer",
+                "screwIron",
+                "stickIron",
+                "bucketEmpty",
+                "plateAnyIron",
+                "stickWood",
+                "craftingToolFile",
+                "plateAnyIron");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
-                new Object[] { "screwIron", "craftingToolHardHammer", "screwIron", "plateAnyIron", "bucketEmpty",
-                        "plateAnyIron", "screwIron", "craftingToolFile", "screwIron" });
+                "screwIron",
+                "craftingToolHardHammer",
+                "screwIron",
+                "plateAnyIron",
+                "bucketEmpty",
+                "plateAnyIron",
+                "screwIron",
+                "craftingToolFile",
+                "screwIron");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
-                new Object[] { "screwIron", "craftingToolFile", "screwIron", "plateAnyIron", "bucketEmpty",
-                        "plateAnyIron", "screwIron", "craftingToolHardHammer", "screwIron" });
-        addShapelessCraftingRecipe(
+                "screwIron",
+                "craftingToolFile",
+                "screwIron",
+                "plateAnyIron",
+                "bucketEmpty",
+                "plateAnyIron",
+                "screwIron",
+                "craftingToolHardHammer",
+                "screwIron");
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "cuttingboardItem", 1, 0, missing),
-                new Object[] { createItemStack(
+                createItemStack(
                         GregTech.ID,
                         "gt.metatool.01",
                         1,
                         36,
                         "{ench:[0:{lvl:3s,id:16s},1:{lvl:3s,id:21s}],GT.ToolStats:{PrimaryMaterial:\"StainlessSteel\",MaxDamage:48000L,SecondaryMaterial:\"StainlessSteel\"}}",
-                        missing) });
+                        missing));
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "mortarandpestleItem", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "stickStainlessSteel", "craftingToolFile", "stoneGraniteBlack",
-                        "stickStainlessSteel", "stoneGraniteBlack", "stoneGraniteBlack", "stoneGraniteBlack",
-                        "stoneGraniteBlack" });
+                "craftingToolHardHammer",
+                "stickStainlessSteel",
+                "craftingToolFile",
+                "stoneGraniteBlack",
+                "stickStainlessSteel",
+                "stoneGraniteBlack",
+                "stoneGraniteBlack",
+                "stoneGraniteBlack",
+                "stoneGraniteBlack");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "bakewareItem", 1, 0, missing),
-                new Object[] { "plateStainlessSteel", null, "plateStainlessSteel", "plateStainlessSteel",
-                        "craftingToolHardHammer", "plateStainlessSteel", "boltStainlessSteel", "plateStainlessSteel",
-                        "boltStainlessSteel" });
+                "plateStainlessSteel",
+                null,
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "craftingToolHardHammer",
+                "plateStainlessSteel",
+                "boltStainlessSteel",
+                "plateStainlessSteel",
+                "boltStainlessSteel");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0, missing),
-                new Object[] { "plateStainlessSteel", "craftingToolHardHammer", "plateStainlessSteel",
-                        "plateStainlessSteel", getModItem(GregTech.ID, "gt.metaitem.02", 1, 8306, missing),
-                        "plateStainlessSteel", "boltStainlessSteel", "plateStainlessSteel", "boltStainlessSteel" });
+                "plateStainlessSteel",
+                "craftingToolHardHammer",
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 8306, missing),
+                "plateStainlessSteel",
+                "boltStainlessSteel",
+                "plateStainlessSteel",
+                "boltStainlessSteel");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeWhite",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeWhite" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeWhite",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeWhite");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco2", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeOrange",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeOrange" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeOrange",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeOrange");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco3", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeMagenta",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeMagenta" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeMagenta",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeMagenta");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco4", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeLightBlue",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeLightBlue" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeLightBlue",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeLightBlue");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco5", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeYellow",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeYellow" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeYellow",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeYellow");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco6", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeLime",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeLime" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeLime",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeLime");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco7", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyePink",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyePink" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyePink",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyePink");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco8", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeGray",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeGray" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeGray",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeGray");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco9", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeLightGray",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeLightGray" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeLightGray",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeLightGray");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco10", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeCyan",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeCyan" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeCyan",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeCyan");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco11", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyePurple",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyePurple" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyePurple",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyePurple");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco12", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeBlue",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeBlue" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeBlue",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeBlue");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco13", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeBrown",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeBrown" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeBrown",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeBrown");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco14", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeGreen",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeGreen" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeGreen",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeGreen");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco15", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeRed",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeRed" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeRed",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeRed");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "pamcandleDeco16", 4, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "string", 1, 0, missing), null, null,
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), null, "dyeBlack",
-                        getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing), "dyeBlack" });
+                null,
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                null,
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                null,
+                "dyeBlack",
+                getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing),
+                "dyeBlack");
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherhelmItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "craftingToolHardHammer",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), null, null, null });
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "craftingToolHardHammer",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherchestItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "craftingToolHardHammer", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing) });
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "craftingToolHardHammer",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing));
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherleggingsItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "craftingToolHardHammer",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing) });
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "craftingToolHardHammer",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                null,
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing));
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherbootsItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "craftingToolHardHammer",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), null, null, null });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                null,
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "craftingToolHardHammer",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                null,
+                null,
+                null);
+        addShapelessRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.EdibleSalt", 1, 0, missing),
-                new Object[] { "toolPot", "listAllwater" });
-        addShapelessCraftingRecipe(
+                "toolPot",
+                "listAllwater");
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing),
-                new Object[] { "craftingToolHardHammer", "cropSoybean" });
-        addShapelessCraftingRecipe(
+                "craftingToolHardHammer",
+                "cropSoybean");
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "bubblywaterItem", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 32107, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32107, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "freshmilkItem", 4, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "freshmilkItem", 2, 0, missing),
-                new Object[] { getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketMilk", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketMilk", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 4, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "water_bucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 2, 0, missing),
-                new Object[] { getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing),
-                new Object[] { "craftingToolSoftHammer",
-                        getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSoftHammer",
+                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
-                new Object[] { "craftingToolRollingPin",
-                        getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolRollingPin",
+                getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "boiledeggItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "potItem", 1, 0, missing),
-                        getModItem(Minecraft.ID, "egg", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "potItem", 1, 0, missing),
+                getModItem(Minecraft.ID, "egg", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 4, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 4, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketMilk", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketMilk", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 4, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
-                        getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
+                getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "heavycreamItem", 4, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketMilk", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "mixingbowlItem", 1, 0, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketMilk", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "onionsoupItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "potItem", 1, 0, missing), "cropOnion",
-                        getModItem(PamsHarvestCraft.ID, "stockItem", 1, 0, missing), "foodCheese" });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "potItem", 1, 0, missing),
+                "cropOnion",
+                getModItem(PamsHarvestCraft.ID, "stockItem", 1, 0, missing),
+                "foodCheese");
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "rainbowcurryItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "skilletItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "curryItem", 1, 0, missing),
-                        getModItem(Minecraft.ID, "bowl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "red_flower", 1, 1, missing),
-                        getModItem(Minecraft.ID, "tallgrass", 1, 1, missing),
-                        getModItem(BiomesOPlenty.ID, "flowers2", 1, 2, missing),
-                        getModItem(BiomesOPlenty.ID, "flowers2", 1, 3, missing),
-                        getModItem(Minecraft.ID, "red_flower", 1, 0, missing),
-                        getModItem(Minecraft.ID, "yellow_flower", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "skilletItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "curryItem", 1, 0, missing),
+                getModItem(Minecraft.ID, "bowl", 1, 0, missing),
+                getModItem(Minecraft.ID, "red_flower", 1, 1, missing),
+                getModItem(Minecraft.ID, "tallgrass", 1, 1, missing),
+                getModItem(BiomesOPlenty.ID, "flowers2", 1, 2, missing),
+                getModItem(BiomesOPlenty.ID, "flowers2", 1, 3, missing),
+                getModItem(Minecraft.ID, "red_flower", 1, 0, missing),
+                getModItem(Minecraft.ID, "yellow_flower", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "honeycombchocolatebarItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "saucepanItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "chocolatebarItem", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "food", 1, 9, missing) });
+                getModItem(PamsHarvestCraft.ID, "saucepanItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "chocolatebarItem", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "food", 1, 9, missing));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing)).noFluidInputs()

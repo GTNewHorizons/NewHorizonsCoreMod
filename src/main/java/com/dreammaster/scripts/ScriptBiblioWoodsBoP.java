@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.BiblioCraft;
 import static gregtech.api.enums.Mods.BiblioWoodsBoPEdition;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -214,108 +213,263 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
         for (int i = 0; i < 14; i++) {
             addShapedRecipe(
                     FClockBOP[i],
-                    new Object[] { BOBwood[i], getModItem(Minecraft.ID, "clock", 1), BOBwood[i], BOBwood[i],
-                            "stickWood", BOBwood[i], BOBwood[i], "plateGold", BOBwood[i] });
+                    BOBwood[i],
+                    getModItem(Minecraft.ID, "clock", 1),
+                    BOBwood[i],
+                    BOBwood[i],
+                    "stickWood",
+                    BOBwood[i],
+                    BOBwood[i],
+                    "plateGold",
+                    BOBwood[i]);
             addShapedRecipe(
                     PaintingBOP[i],
-                    new Object[] { BOBwood[i], BOBwood[i], BOBwood[i], BOBwood[i],
-                            getModItem(BiblioCraft.ID, "item.PaintingCanvas", 1), BOBwood[i], BOBwood[i], BOBwood[i],
-                            BOBwood[i] });
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    getModItem(BiblioCraft.ID, "item.PaintingCanvas", 1),
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i]);
             addShapedRecipe(
                     BOBPT1[i],
-                    new Object[] { "stickWood", "stickWood", "stickWood", "stickWood", PaintingBOP[i], "stickWood",
-                            "stickWood", "stickWood", "stickWood" });
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    PaintingBOP[i],
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood");
             addShapedRecipe(
                     BOBPT2[i],
-                    new Object[] { "stickWood", "stickWood", "stickWood", "stickWood", BOBPT1[i], "stickWood",
-                            "stickWood", "stickWood", "stickWood" });
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    BOBPT1[i],
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood");
             addShapedRecipe(
                     BOBPT3[i],
-                    new Object[] { "stickWood", "stickWood", "stickWood", "stickWood", BOBPT2[i], "stickWood",
-                            "stickWood", "stickWood", "stickWood" });
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    BOBPT2[i],
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood");
             addShapedRecipe(
                     BOBPT4[i],
-                    new Object[] { "stickWood", "stickWood", "stickWood", "stickWood", BOBPT3[i], "stickWood",
-                            "stickWood", "stickWood", "stickWood" });
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    BOBPT3[i],
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood");
             addShapedRecipe(
                     LableBOP[i],
-                    new Object[] { "stickWood", "stickWood", "stickWood", "stickWood", FrameBOP[i], "stickWood",
-                            "stickWood", "stickWood", "stickWood" });
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    FrameBOP[i],
+                    "stickWood",
+                    "stickWood",
+                    "stickWood",
+                    "stickWood");
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodtable", 1, i),
-                    new Object[] { BOBwood[i], BOBwood[i], BOBwood[i], null, BOPplanks[i], null, null, BOPplanks[i],
-                            null });
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    null,
+                    BOPplanks[i],
+                    null,
+                    null,
+                    BOPplanks[i],
+                    null);
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWooddesk", 1, i),
-                    new Object[] { torch, null, feather, BOBwood[i], BOBwood[i], BOBwood[i], BOPplanks[i], null,
-                            BOPplanks[i] });
+                    torch,
+                    null,
+                    feather,
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOPplanks[i],
+                    null,
+                    BOPplanks[i]);
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodFancyWorkbench", 1, i),
-                    new Object[] { ink, craftingTable, feather, BOBwood[i], bookCaseBOP[i], BOBwood[i], BOBwood[i],
-                            null, BOBwood[i] });
+                    ink,
+                    craftingTable,
+                    feather,
+                    BOBwood[i],
+                    bookCaseBOP[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    null,
+                    BOBwood[i]);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodFancyWorkbench", 1, i),
-                    new Object[] { feather, craftingTable, ink, BOBwood[i], bookCaseBOP[i], BOBwood[i], BOBwood[i],
-                            BOBwood[i], BOBwood[i] });
+                    feather,
+                    craftingTable,
+                    ink,
+                    BOBwood[i],
+                    bookCaseBOP[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i]);
 
             addShapedRecipe(
                     bookCaseBOP[i],
-                    new Object[] { BOPplanks[i], BOBwood[i], BOPplanks[i], BOPplanks[i], BOBwood[i], BOPplanks[i],
-                            BOPplanks[i], BOBwood[i], BOPplanks[i], });
+                    BOPplanks[i],
+                    BOBwood[i],
+                    BOPplanks[i],
+                    BOPplanks[i],
+                    BOBwood[i],
+                    BOPplanks[i],
+                    BOPplanks[i],
+                    BOBwood[i],
+                    BOPplanks[i]);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodpotshelf", 1, i),
-                    new Object[] { BOBwood[i], BOBwood[i], BOBwood[i], BOPplanks[i], emptyBottle, BOPplanks[i],
-                            BOBwood[i], BOBwood[i], BOBwood[i], });
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOPplanks[i],
+                    emptyBottle,
+                    BOPplanks[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i]);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodshelf", 1, i),
-                    new Object[] { BOBwood[i], BOBwood[i], BOBwood[i], null, BOPplanks[i], null, BOBwood[i], BOBwood[i],
-                            BOBwood[i], });
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    null,
+                    BOPplanks[i],
+                    null,
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i]);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodrack", 1, i),
-                    new Object[] { BOBwood[i], BOBwood[i], BOBwood[i], BOBwood[i], ironIngot, BOBwood[i], BOBwood[i],
-                            BOBwood[i], BOBwood[i], });
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    ironIngot,
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i]);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodcase", 1, i),
-                    new Object[] { BOBwood[i], glass, BOBwood[i], BOBwood[i], whiteWool, BOBwood[i], BOBwood[i],
-                            BOBwood[i], BOBwood[i], });
+                    BOBwood[i],
+                    glass,
+                    BOBwood[i],
+                    BOBwood[i],
+                    whiteWool,
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i],
+                    BOBwood[i]);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodMapFrame", 1, i),
-                    new Object[] { stick, stick, stick, stick, BOBwood[i], stick, stick, stick, stick });
+                    stick,
+                    stick,
+                    stick,
+                    stick,
+                    BOBwood[i],
+                    stick,
+                    stick,
+                    stick,
+                    stick);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodSeat", 1, i),
-                    new Object[] { null, whiteWool, null, null, BOBwood[i], null, stick, woodenPressurePlate, stick });
+                    null,
+                    whiteWool,
+                    null,
+                    null,
+                    BOBwood[i],
+                    null,
+                    stick,
+                    woodenPressurePlate,
+                    stick);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "seatBack1", 1, i),
-                    new Object[] { null, whiteWool, null, null, BOBwood[i], null, stick, null, stick });
+                    null,
+                    whiteWool,
+                    null,
+                    null,
+                    BOBwood[i],
+                    null,
+                    stick,
+                    null,
+                    stick);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i),
-                    new Object[] { stick, whiteWool, stick, stick, BOBwood[i], stick, stick, null, stick });
+                    stick,
+                    whiteWool,
+                    stick,
+                    stick,
+                    BOBwood[i],
+                    stick,
+                    stick,
+                    null,
+                    stick);
 
             addShapedRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "seatBack4", 1, i),
-                    new Object[] { null, whiteWool, null, null, BOBwood[i], null, null, null, null });
+                    null,
+                    whiteWool,
+                    null,
+                    null,
+                    BOBwood[i],
+                    null,
+                    null,
+                    null,
+                    null);
 
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "seatBack3", 1, i),
-                    new Object[] { BOBwood[i], getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i), });
+                    BOBwood[i],
+                    getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i));
 
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     getModItem(BiblioWoodsBoPEdition.ID, "seatBack5", 1, i),
-                    new Object[] { BOBwood[i], BOBwood[i], getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i), });
+                    BOBwood[i],
+                    BOBwood[i],
+                    getModItem(BiblioWoodsBoPEdition.ID, "seatBack2", 1, i));
 
-            addShapelessCraftingRecipe(
+            addShapelessRecipe(
                     fancySignBOP[i],
-                    new Object[] { getModItem(Minecraft.ID, "paper", 1), getModItem(Minecraft.ID, "sign", 1),
-                            LableBOP[i] });
+                    getModItem(Minecraft.ID, "paper", 1),
+                    getModItem(Minecraft.ID, "sign", 1),
+                    LableBOP[i]);
         }
     }
 }

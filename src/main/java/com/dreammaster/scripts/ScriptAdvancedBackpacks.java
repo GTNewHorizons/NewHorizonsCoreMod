@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SleepingBags;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBrewingRecipes;
 
@@ -68,17 +67,26 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         getModItem(AdventureBackpack.ID, "adventureBackpack", 1, 0, missing)));
         addShapedRecipe(
                 createItemStack(AdventureBackpack.ID, "adventureBackpack", 1, 0, "{wearableData:{type:0b}}", missing),
-                new Object[] { "materialHardenedleather", "plateAluminium", "materialHardenedleather",
-                        getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing), "chestIron",
-                        getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing), "materialHardenedleather",
-                        getModItem(AdventureBackpack.ID, "backpackComponent", 1, 1, missing),
-                        "materialHardenedleather" });
+                "materialHardenedleather",
+                "plateAluminium",
+                "materialHardenedleather",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
+                "chestIron",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
+                "materialHardenedleather",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 1, missing),
+                "materialHardenedleather");
         addShapedRecipe(
                 createItemStack(AdventureBackpack.ID, "adventureBackpack", 1, 0, "{wearableData:{type:0b}}", missing),
-                new Object[] { "materialHardenedleather", "plateAluminium", "materialHardenedleather",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "chestIron",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "materialHardenedleather",
-                        getModItem(SleepingBags.ID, "sleepingBag", 1, 0, missing), "materialHardenedleather" });
+                "materialHardenedleather",
+                "plateAluminium",
+                "materialHardenedleather",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "chestIron",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "materialHardenedleather",
+                getModItem(SleepingBags.ID, "sleepingBag", 1, 0, missing),
+                "materialHardenedleather");
         GameRegistry.addRecipe(
                 new AdvancedBackpackConversionRecipe(
                         getModItem(AdventureBackpack.ID, "adventureBackpack", 1, 2, missing),
@@ -137,36 +145,59 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         "blockWoolBlue",
                         'f',
                         getModItem(Minecraft.ID, "dye", 1, 0, missing)));
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
-                new Object[] { getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                new Object[] { getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 1, missing),
-                new Object[] { getModItem(SleepingBags.ID, "sleepingBag", 1, 0, missing) });
+                getModItem(SleepingBags.ID, "sleepingBag", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "machete", 1, 0, missing),
-                new Object[] { "screwAnyIron", "craftingToolFile", "plateAnyIron", "craftingToolScrewdriver",
-                        "plateAnyIron", "plateAnyIron",
-                        getModItem(AdventureBackpack.ID, "backpackComponent", 1, 4, missing), "screwAnyIron",
-                        "craftingToolHardHammer" });
+                "screwAnyIron",
+                "craftingToolFile",
+                "plateAnyIron",
+                "craftingToolScrewdriver",
+                "plateAnyIron",
+                "plateAnyIron",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 4, missing),
+                "screwAnyIron",
+                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 4, missing),
-                new Object[] { "dyeYellow", "screwAnyIron", "dyeYellow", "dyeBlue", "stickAnyIron", "dyeBlue", "dyeRed",
-                        "dyeBlack", "dyeRed" });
+                "dyeYellow",
+                "screwAnyIron",
+                "dyeYellow",
+                "dyeBlue",
+                "stickAnyIron",
+                "dyeBlue",
+                "dyeRed",
+                "dyeBlack",
+                "dyeRed");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "adventureHat", 1, 0, missing),
-                new Object[] { null, "craftingToolScrewdriver", null,
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Minecraft.ID, "leather_helmet", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), null, "screwGold", null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Minecraft.ID, "leather_helmet", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                null,
+                "screwGold",
+                null);
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 3, missing),
-                new Object[] { "screwAnyIron", "pipeTinyBronze", "screwAnyIron", "springSmallAnyIron",
-                        getModItem(Minecraft.ID, "stone_button", 1, 0, missing), "springSmallAnyIron", null,
-                        "craftingToolScrewdriver", null });
+                "screwAnyIron",
+                "pipeTinyBronze",
+                "screwAnyIron",
+                "springSmallAnyIron",
+                getModItem(Minecraft.ID, "stone_button", 1, 0, missing),
+                "springSmallAnyIron",
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 createItemStack(
                         AdventureBackpack.ID,
@@ -175,21 +206,37 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         0,
                         "{mode:-1L,amount:0,fluid:\"None\",tank:-1L}",
                         missing),
-                new Object[] { "plateAnyRubber", getModItem(AdventureBackpack.ID, "backpackComponent", 1, 3, missing),
-                        "plateAnyRubber", "plateAnyRubber", "dyeGreen", "plateAnyRubber", "plateAnyRubber", "dyeGreen",
-                        "plateAnyRubber" });
+                "plateAnyRubber",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 3, missing),
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "dyeGreen",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "dyeGreen",
+                "plateAnyRubber");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 5, missing),
-                new Object[] { "plateSteel", "plateSteel", "plateSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing), "pipeLargeSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing), "plateSteel",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1111, missing), "plateSteel" });
+                "plateSteel",
+                "plateSteel",
+                "plateSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                "pipeLargeSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                "plateSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 1111, missing),
+                "plateSteel");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 6, missing),
-                new Object[] { getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing), "screwSteel",
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing), "screwSteel", "gearSteel",
-                        "screwSteel", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
-                        "craftingToolScrewdriver", getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing) });
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
+                "screwSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
+                "screwSteel",
+                "gearSteel",
+                "screwSteel",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
+                "craftingToolScrewdriver",
+                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing));
         addShapedRecipe(
                 createItemStack(
                         AdventureBackpack.ID,
@@ -198,10 +245,15 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         0,
                         "{wearableData:{fuelTank:{Empty:\"\"}}}",
                         missing),
-                new Object[] { "screwDiamond", getModItem(AdventureBackpack.ID, "backpackComponent", 1, 6, missing),
-                        "screwDiamond", getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing), "pipeTinySteel", "pipeTinySteel",
-                        getModItem(AdventureBackpack.ID, "backpackComponent", 1, 5, missing), "pipeTinySteel" });
+                "screwDiamond",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 6, missing),
+                "screwDiamond",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "pipeTinySteel",
+                "pipeTinySteel",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 5, missing),
+                "pipeTinySteel");
         addShapedRecipe(
                 createItemStack(
                         AdventureBackpack.ID,
@@ -210,53 +262,92 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         0,
                         "{wearableData:{fuelTank:{Empty:\"\"}}}",
                         missing),
-                new Object[] { "screwDiamond", getModItem(AdventureBackpack.ID, "backpackComponent", 1, 6, missing),
-                        "screwDiamond", getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing), "pipeTinySteel", "pipeTinySteel",
-                        getModItem(AdventureBackpack.ID, "backpackComponent", 1, 5, missing), "pipeTinySteel" });
+                "screwDiamond",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 6, missing),
+                "screwDiamond",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "pipeTinySteel",
+                "pipeTinySteel",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 5, missing),
+                "pipeTinySteel");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 7, missing),
-                new Object[] { "plateAnyRubber", "craftingToolWrench", "plateAnyRubber", "plateAnyRubber",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing), "plateAnyRubber",
-                        "plateAnyRubber", "plateAnyRubber", "plateAnyRubber" });
+                "plateAnyRubber",
+                "craftingToolWrench",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber",
+                "plateAnyRubber");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 9, missing),
-                new Object[] { "turbineBladeSteel", "screwSteel", "turbineBladeSteel", "screwSteel", "gearGtSmallSteel",
-                        "screwSteel", "turbineBladeSteel", "craftingToolScrewdriver", "turbineBladeSteel" });
+                "turbineBladeSteel",
+                "screwSteel",
+                "turbineBladeSteel",
+                "screwSteel",
+                "gearGtSmallSteel",
+                "screwSteel",
+                "turbineBladeSteel",
+                "craftingToolScrewdriver",
+                "turbineBladeSteel");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "pistonBoots", 1, 0, missing),
-                new Object[] { getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "plateAnyRubber",
-                        getModItem(Minecraft.ID, "leather_boots", 1, 0, missing), "plateAnyRubber", "craftingPiston",
-                        "screwBronze", "craftingPiston" });
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "plateAnyRubber",
+                getModItem(Minecraft.ID, "leather_boots", 1, 0, missing),
+                "plateAnyRubber",
+                "craftingPiston",
+                "screwBronze",
+                "craftingPiston");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "pistonBoots", 1, 0, missing),
-                new Object[] { "string", getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "string",
-                        "plateAnyRubber", getModItem(AdventureBackpack.ID, "pistonBoots", 1, 32767, missing),
-                        "plateAnyRubber", null, null, null });
+                "string",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "string",
+                "plateAnyRubber",
+                getModItem(AdventureBackpack.ID, "pistonBoots", 1, wildcard, missing),
+                "plateAnyRubber",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "adventureSuit", 1, 0, missing),
-                new Object[] { getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "screwBronze",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing) });
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Minecraft.ID, "leather_chestplate", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "screwBronze",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "adventurePants", 1, 0, missing),
-                new Object[] { getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(Minecraft.ID, "leather_leggings", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "screwBronze",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing) });
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Minecraft.ID, "leather_leggings", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "screwBronze",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "clockworkCrossbow", 1, 0, missing),
-                new Object[] { "springSmallSteel", getModItem(Minecraft.ID, "bow", 1, 0, missing), "springSmallSteel",
-                        "stickSteel", "wireFineSteel", "stickSteel", "screwSteel", "craftingToolScrewdriver",
-                        "screwSteel" });
+                "springSmallSteel",
+                getModItem(Minecraft.ID, "bow", 1, 0, missing),
+                "springSmallSteel",
+                "stickSteel",
+                "wireFineSteel",
+                "stickSteel",
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel");
         addShapedRecipe(
                 createItemStack(
                         AdventureBackpack.ID,
@@ -265,11 +356,15 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         0,
                         "{wearableData:{waterTank:{Empty:\"\"}}}",
                         missing),
-                new Object[] { "plateAluminium", "screwSteel", "plateAluminium",
-                        getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing), "pipeTinySteel",
-                        getModItem(Railcraft.ID, "machine.beta", 1, 5, missing), "pipeTinySteel" });
+                "plateAluminium",
+                "screwSteel",
+                "plateAluminium",
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
+                "pipeTinySteel",
+                getModItem(Railcraft.ID, "machine.beta", 1, 5, missing),
+                "pipeTinySteel");
         addShapedRecipe(
                 createItemStack(
                         AdventureBackpack.ID,
@@ -278,11 +373,15 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         0,
                         "{wearableData:{waterTank:{Empty:\"\"}}}",
                         missing),
-                new Object[] { "plateAluminium", "screwSteel", "plateAluminium",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "pipeTinySteel",
-                        getModItem(Railcraft.ID, "machine.beta", 1, 5, missing), "pipeTinySteel" });
+                "plateAluminium",
+                "screwSteel",
+                "plateAluminium",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "pipeTinySteel",
+                getModItem(Railcraft.ID, "machine.beta", 1, 5, missing),
+                "pipeTinySteel");
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "melon", 1, 0, missing)).noItemOutputs()
                 .fluidInputs(FluidRegistry.getFluidStack("water", 750))

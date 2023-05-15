@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 
@@ -39,17 +38,21 @@ public class ScriptGadomancy implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 2, 1, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing), "craftingToolSaw" });
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
+                "craftingToolSaw");
         addShapedRecipe(
                 getModItem(Thaumcraft.ID, "blockStairsEldritch", 4, 0, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing), null, null,
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing), null,
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
-                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing) });
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
+                null,
+                null,
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
+                null,
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1, missing))

@@ -29,7 +29,6 @@ import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
@@ -99,110 +98,130 @@ public class ScriptBloodMagic implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(BloodMagic.ID, "telepositionFocus", 1, 0, missing),
-                new Object[] { getModItem(BloodMagic.ID, "telepositionFocus", 1, 0, missing) });
+                getModItem(BloodMagic.ID, "telepositionFocus", 1, 0, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 3, 2, missing),
-                new Object[] { "platePlastic", "platePlastic", "platePlastic",
-                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "magicales", 1, 0, missing), "platePlastic", "platePlastic",
-                        "platePlastic" });
+                "platePlastic",
+                "platePlastic",
+                "platePlastic",
+                getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
+                "platePlastic",
+                "platePlastic",
+                "platePlastic");
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                new Object[] { getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 32, missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
+                getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
+                getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
+                getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 32, missing),
+                getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
+                getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
+                getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
+                getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicIncenseItem", 1, 0, missing),
-                new Object[] { getModItem(Witchery.ID, "ingredient", 1, 18, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 18, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 18, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 18, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2816, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2816, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing) });
+                getModItem(Witchery.ID, "ingredient", 1, 18, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 18, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 18, missing),
+                getModItem(Witchery.ID, "ingredient", 1, 18, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2816, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2816, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 0, missing),
-                new Object[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 18, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing) });
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateRoseGold",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 18, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateRoseGold",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 1, missing),
-                new Object[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 19, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing) });
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateRoseGold",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 19, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateRoseGold",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 2, missing),
-                new Object[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 20, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing) });
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateRoseGold",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 20, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateRoseGold",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 3, missing),
-                new Object[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 21, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateRoseGold",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing) });
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateRoseGold",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 21, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateRoseGold",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 0, missing),
-                new Object[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 10, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing) });
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateBlueSteel",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 10, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateBlueSteel",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 1, missing),
-                new Object[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 11, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing) });
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateBlueSteel",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 11, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateBlueSteel",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 2, missing),
-                new Object[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 12, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing) });
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateBlueSteel",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 12, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateBlueSteel",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1, 3, missing),
-                new Object[] { getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 13, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing), "plateBlueSteel",
-                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing) });
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateBlueSteel",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 14, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 13, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 9, missing),
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
+                "plateBlueSteel",
+                getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing));
 
         BloodMagicHelper.removeAltarRecipe(getModItem(BloodMagic.ID, "weakBloodOrb", 1, 0, missing));
         BloodMagicHelper.removeAltarRecipe(getModItem(BloodMagic.ID, "apprenticeBloodOrb", 1, 0, missing));
@@ -4164,7 +4183,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 6, missing),
                         'b',
-                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                        getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         'c',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 6, missing),
                         'd',

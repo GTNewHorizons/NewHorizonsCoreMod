@@ -18,7 +18,6 @@ import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
@@ -60,284 +59,705 @@ public class ScriptLogisticPipes implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                new Object[] { getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing) });
+                getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing));
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 2, missing),
-                new Object[] { "boltRedSteel", "stickDiamond", "boltRedSteel", "craftingToolFile", "screwTitanium",
-                        "craftingToolSoftHammer", null, "craftingToolScrewdriver", null });
+                "boltRedSteel",
+                "stickDiamond",
+                "boltRedSteel",
+                "craftingToolFile",
+                "screwTitanium",
+                "craftingToolSoftHammer",
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.logisticsHUDGlasses", 1, 0, missing),
-                new Object[] { getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 2, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing), "screwTitanium",
-                        "circuitAdvanced", "screwTitanium",
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing) });
+                getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing),
+                getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 2, missing),
+                getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing),
+                "screwTitanium",
+                "circuitAdvanced",
+                "screwTitanium",
+                getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing));
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemDisk", 1, 0, missing),
-                new Object[] { "plateCarbon", "plateCarbon", "plateCarbon", "plateCarbon",
-                        getModItem(OpenComputers.ID, "item", 1, 19, missing), "plateCarbon", "plateCarbon",
-                        "circuitPrimitive", "plateCarbon" });
+                "plateCarbon",
+                "plateCarbon",
+                "plateCarbon",
+                "plateCarbon",
+                getModItem(OpenComputers.ID, "item", 1, 19, missing),
+                "plateCarbon",
+                "plateCarbon",
+                "circuitPrimitive",
+                "plateCarbon");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
-                        null, null, null, "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
-                        null, null, null, "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
-                        null, null, null, "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
-                        null, null, null, "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
-                        null, null, null, "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
-                        null, null, "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
-                        null, null, "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
-                        null, null, "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
-                        null, null, "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
-                        null, null, "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
-                        "craftingToolScrewdriver", null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
-                        "craftingToolScrewdriver", null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
-                        "craftingToolScrewdriver", null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
-                        "craftingToolScrewdriver", null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
-                new Object[] { null, null, null, null, getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
-                        "craftingToolScrewdriver", null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
-                new Object[] { null, null, "craftingToolScrewdriver", null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing), null, null, null, null });
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing), null, null, null,
-                        "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing), null, null, null,
-                        "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing), null, null, null,
-                        "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing), null, null, null,
-                        "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing), null, null, null,
-                        "craftingToolScrewdriver" });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing), null, null, null, null });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing), null, null,
-                        "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing), null, null,
-                        "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing), null, null,
-                        "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing), null, null,
-                        "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing), null, null,
-                        "craftingToolScrewdriver", null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
+                null,
+                null,
+                "craftingToolScrewdriver",
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing), "craftingToolScrewdriver",
-                        null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing), "craftingToolScrewdriver",
-                        null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing), "craftingToolScrewdriver",
-                        null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing), "craftingToolScrewdriver",
-                        null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
-                new Object[] { null, null, null, null,
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing), "craftingToolScrewdriver",
-                        null, null, null });
+                null,
+                null,
+                null,
+                null,
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
+                "craftingToolScrewdriver",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 11, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 12, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 13, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 14, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 15, missing),
-                new Object[] { null, null, null, "craftingToolScrewdriver",
-                        getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing), null, null, null, null });
+                null,
+                null,
+                null,
+                "craftingToolScrewdriver",
+                getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 10, missing),
+                null,
+                null,
+                null,
+                null);
 
         recipes1();
         recipes2();
@@ -980,7 +1400,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(Minecraft.ID, "enchanted_book", 1, 32767, missing))
+                        getModItem(Minecraft.ID, "enchanted_book", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
@@ -998,7 +1418,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 12, missing),
-                        getModItem(Minecraft.ID, "writable_book", 1, 32767, missing))
+                        getModItem(Minecraft.ID, "writable_book", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 13, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
@@ -2048,7 +2468,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemBatRE", 1, 32767, missing))
+                        getModItem(IndustrialCraft2.ID, "itemBatRE", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 300, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
     }
@@ -3246,7 +3666,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).noFluidOutputs().duration(1600)
                 .eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 32767, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("chlorine", 1000)).noFluidOutputs()
                 .duration(1600).eut(30).addTo(sChemicalBathRecipes);
@@ -3891,7 +4312,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 0, 32767, missing),
+                        getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 0, wildcard, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsRemoteOrdererLogistics", 1, 0, missing))
@@ -4473,7 +4894,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                        getModItem(Minecraft.ID, "wool", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "wool", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 29305, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 26, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))

@@ -37,19 +37,27 @@ public class ScriptTwilightForest implements IScriptLoader {
         final ItemStack TF_ROOF_TILE = getModItem(TwilightForest.ID, "tile.CastleBrick", 8, 3);
         addShapedRecipe(
                 TF_ROOF_TILE,
-                new Object[] { Blocks.cobblestone, Blocks.stone, Blocks.cobblestone, Blocks.cobblestone, "dyeBlack",
-                        Blocks.cobblestone, Blocks.cobblestone, Blocks.cobblestone, Blocks.cobblestone });
+                Blocks.cobblestone,
+                Blocks.stone,
+                Blocks.cobblestone,
+                Blocks.cobblestone,
+                "dyeBlack",
+                Blocks.cobblestone,
+                Blocks.cobblestone,
+                Blocks.cobblestone,
+                Blocks.cobblestone);
 
         addShapedRecipe(
                 getModItem(TwilightForest.ID, "tile.TFTowerDevice", 1, 12, missing),
-                new Object[] { getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing),
-                        getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing),
-                        getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing), "blockRedstone",
-                        getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing),
-                        getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing) });
+                getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing),
+                getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing),
+                getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
+                "blockRedstone",
+                getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing),
+                getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
+                getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

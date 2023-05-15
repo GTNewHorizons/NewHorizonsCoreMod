@@ -28,8 +28,15 @@ public class ScriptBinniesCore implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(BinnieCore.ID, "fieldKit", 1, 63, missing),
-                new Object[] { "lensGlass", "ringSteel", "screwSteel", "ringSteel", "stickSteel", "craftingToolSaw",
-                        "screwSteel", "craftingToolScrewdriver", "stickSteel" });
+                "lensGlass",
+                "ringSteel",
+                "screwSteel",
+                "ringSteel",
+                "stickSteel",
+                "craftingToolSaw",
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "stickSteel");
 
         RecipeManagers.carpenterManager.addRecipe(
                 5,

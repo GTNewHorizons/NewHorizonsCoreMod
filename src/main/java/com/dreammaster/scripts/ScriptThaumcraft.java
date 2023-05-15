@@ -26,7 +26,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
@@ -434,8 +433,15 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
-                new Object[] { "screwIron", "foilIron", "screwIron", "foilIron", "ringIron", "foilIron", "screwIron",
-                        "foilIron", "screwIron" });
+                "screwIron",
+                "foilIron",
+                "screwIron",
+                "foilIron",
+                "ringIron",
+                "foilIron",
+                "screwIron",
+                "foilIron",
+                "screwIron");
 
         addShapedRecipe(
                 createItemStack(
@@ -445,11 +451,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                         0,
                         "{aqua:0,terra:0,ignis:0,ordo:0,perditio:0,aer:0}",
                         missing),
-                new Object[] { getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing), "screwAluminium",
-                        getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing), "screwAluminium",
-                        getModItem(Forestry.ID, "oakStick", 1, 0, missing), "screwAluminium",
-                        getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing), "screwAluminium",
-                        getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing) });
+                getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing),
+                "screwAluminium",
+                getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
+                "screwAluminium",
+                getModItem(Forestry.ID, "oakStick", 1, 0, missing),
+                "screwAluminium",
+                getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
+                "screwAluminium",
+                getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing));
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "resource", 1, 2, missing));
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing));
@@ -1662,13 +1672,15 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void alchemy() {
         // ALCHEMY
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "ItemEssence", 1),
-                new Object[] { new ItemStack(Items.glass_bottle), "roundAnyRubber" });
+                new ItemStack(Items.glass_bottle),
+                "roundAnyRubber");
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                new Object[] { "craftingToolMortar", getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing) });
+                "craftingToolMortar",
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemResource", 9, 4, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5, missing)).noFluidInputs()
@@ -2384,25 +2396,37 @@ public class ScriptThaumcraft implements IScriptLoader {
     private void artifice() {
         // ARTIFICE
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "ItemInkwell", 1, 0, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
-                        getModItem(Minecraft.ID, "feather", 1, 0, missing), "dyeBlack" });
+                getModItem(Thaumcraft.ID, "ItemEssence", 1, 0, missing),
+                getModItem(Minecraft.ID, "feather", 1, 0, missing),
+                "dyeBlack");
         addShapedRecipe(
                 getModItem(Thaumcraft.ID, "ItemThaumometer", 1, 0, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing), "itemCasingGold", "lensDiamond",
-                        "itemCasingGold", getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing) });
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
+                "itemCasingGold",
+                "lensDiamond",
+                "itemCasingGold",
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing),
-                new Object[] { "slabWood", "slabWood", "slabWood", "stickWood", "screwAnyIron", "stickWood", "slabWood",
-                        "craftingToolScrewdriver", "slabWood" });
-        addShapelessCraftingRecipe(
+                "slabWood",
+                "slabWood",
+                "slabWood",
+                "stickWood",
+                "screwAnyIron",
+                "stickWood",
+                "slabWood",
+                "craftingToolScrewdriver",
+                "slabWood");
+        addShapelessRecipe(
                 getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 2, 0, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing), "craftingToolSaw" });
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                "craftingToolSaw");
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))
@@ -2760,7 +2784,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "stone",
                 'e',
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, wildcard, missing),
                 'f',
                 "stone",
                 'g',
@@ -3419,7 +3443,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
-                        getModItem(Minecraft.ID, "fish", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "fish", 1, wildcard, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing), });
         TCHelper.setResearchAspects(
                 "BOOTSTRAVELLER",
@@ -4380,7 +4404,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
                         getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
                         getModItem(Minecraft.ID, "lever", 1, 0, missing),
-                        getModItem(Minecraft.ID, "flint_and_steel", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "flint_and_steel", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing),
                         getModItem(Minecraft.ID, "shears", 1, 0, missing), });
         TCHelper.setResearchAspects(
@@ -6777,17 +6801,17 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
                         .add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.scepterTwilight", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.scepterTwilight", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("iter"), 35)
                         .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
                         .add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.scepterLifeDrain", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.scepterLifeDrain", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("victus"), 15)
                         .add(Aspect.getAspect("gula"), 20).add(Aspect.getAspect("praecantatio"), 25)
                         .add(Aspect.getAspect("mortuus"), 20).add(Aspect.getAspect("corpus"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.scepterZombie", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.scepterZombie", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 40).add(Aspect.getAspect("exanimis"), 35)
                         .add(Aspect.getAspect("praecantatio"), 25).add(Aspect.getAspect("mortuus"), 20)
                         .add(Aspect.getAspect("corpus"), 10));
@@ -6871,7 +6895,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("magneto"), 4)
                         .add(Aspect.getAspect("perfodio"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.oreMagnet", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.oreMagnet", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 6).add(Aspect.getAspect("magneto"), 4)
                         .add(Aspect.getAspect("perfodio"), 1));
         ThaumcraftApi.registerObjectTag(
@@ -6879,7 +6903,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("praecantatio"), 14)
                         .add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("auram"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.crumbleHorn", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.crumbleHorn", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("arbor"), 18).add(Aspect.getAspect("praecantatio"), 14)
                         .add(Aspect.getAspect("ordo"), 12).add(Aspect.getAspect("auram"), 8));
         ThaumcraftApi.registerObjectTag(
@@ -6888,7 +6912,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("praecantatio"), 6)
                         .add(Aspect.getAspect("arbor"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.peacockFan", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.peacockFan", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("aer"), 18).add(Aspect.getAspect("volatus"), 10)
                         .add(Aspect.getAspect("motus"), 10).add(Aspect.getAspect("praecantatio"), 6)
                         .add(Aspect.getAspect("arbor"), 4));
@@ -6897,7 +6921,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("victus"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("motus"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.moonwormQueen", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.moonwormQueen", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("victus"), 10).add(Aspect.getAspect("lux"), 10)
                         .add(Aspect.getAspect("motus"), 4));
         ThaumcraftApi.registerObjectTag(
@@ -7050,39 +7074,39 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("telum"), 14).add(Aspect.getAspect("vitreus"), 20)
                         .add(Aspect.getAspect("lucrum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.giantPick", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.giantPick", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("perfodio"), 32).add(Aspect.getAspect("terra"), 16)
                         .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.giantSword", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.giantSword", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 32).add(Aspect.getAspect("terra"), 16)
                         .add(Aspect.getAspect("perditio"), 16).add(Aspect.getAspect("arbor"), 8));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.enderBow", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.enderBow", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("alienis"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.iceBow", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.iceBow", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("gelum"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.tripleBow", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.tripleBow", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 6).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("arbor"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.seekerBow", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.seekerBow", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 3).add(Aspect.getAspect("volatus"), 1)
                         .add(Aspect.getAspect("pannus"), 2).add(Aspect.getAspect("bestia"), 2)
                         .add(Aspect.getAspect("iter"), 2));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.iceSword", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.iceSword", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 4).add(Aspect.getAspect("lucrum"), 2)
                         .add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("gelum"), 6));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.glassSword", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.glassSword", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 14).add(Aspect.getAspect("vitreus"), 20)
                         .add(Aspect.getAspect("lucrum"), 1));
         ThaumcraftApi.registerObjectTag(
@@ -7095,7 +7119,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("motus"), 4).add(Aspect.getAspect("lucrum"), 8)
                         .add(Aspect.getAspect("instrumentum"), 10));
         ThaumcraftApi.registerObjectTag(
-                getModItem(TwilightForest.ID, "item.chainBlock", 1, 32767, missing),
+                getModItem(TwilightForest.ID, "item.chainBlock", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("telum"), 10).add(Aspect.getAspect("metallum"), 20)
                         .add(Aspect.getAspect("motus"), 4).add(Aspect.getAspect("lucrum"), 8)
                         .add(Aspect.getAspect("instrumentum"), 10));

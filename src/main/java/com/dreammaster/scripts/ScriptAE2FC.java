@@ -188,9 +188,7 @@ public class ScriptAE2FC implements IScriptLoader {
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
                             "plateStainlessSteel", 'A', "plateAluminium", 'K', entry.getValue() });
-            GT_ModHandler.addShapelessCraftingRecipe(
-                    entry.getKey(),
-                    new Object[] { AE2FC_FLUID_STORAGE_HOUSING, entry.getValue() });
+            addShapelessRecipe(entry.getKey(), AE2FC_FLUID_STORAGE_HOUSING, entry.getValue());
         }
 
         // AE2FC_MULTI_FLUID_STORAGE_HOUSING
@@ -223,9 +221,7 @@ public class ScriptAE2FC implements IScriptLoader {
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
                             "plateTungstenSteel", 'A', "plateStainlessSteel", 'K', entry.getValue() });
-            GT_ModHandler.addShapelessCraftingRecipe(
-                    entry.getKey(),
-                    new Object[] { AE2FC_MULTI_FLUID_STORAGE_HOUSING, entry.getValue() });
+            addShapelessRecipe(entry.getKey(), AE2FC_MULTI_FLUID_STORAGE_HOUSING, entry.getValue());
         }
 
         // AE2FC_ADVANCED_FLUID_STORAGE_HOUSING
@@ -258,9 +254,7 @@ public class ScriptAE2FC implements IScriptLoader {
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
                             "plateInfinity", 'A', "plateNeutronium", 'K', entry.getValue() });
-            GT_ModHandler.addShapelessCraftingRecipe(
-                    entry.getKey(),
-                    new Object[] { AE2FC_ADVANCED_FLUID_STORAGE_HOUSING, entry.getValue() });
+            addShapelessRecipe(entry.getKey(), AE2FC_ADVANCED_FLUID_STORAGE_HOUSING, entry.getValue());
         }
 
         // AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING
@@ -293,9 +287,7 @@ public class ScriptAE2FC implements IScriptLoader {
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
                             "plateNeutronium", 'A', "plateTungstenSteel", 'K', entry.getValue() });
-            GT_ModHandler.addShapelessCraftingRecipe(
-                    entry.getKey(),
-                    new Object[] { AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING, entry.getValue() });
+            addShapelessRecipe(entry.getKey(), AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING, entry.getValue());
         }
 
         // recursive components for those who want to do this weird stuff
@@ -676,81 +668,185 @@ public class ScriptAE2FC implements IScriptLoader {
         // level maintainer
         addShapedRecipe(
                 AE2FC_MAINTAIN,
-                new Object[] { NIOBIUM_PLATE, AE2_CARD_CRAFTING, NIOBIUM_PLATE, AE2_CORE_ANN, AE2_INTERFACE,
-                        FLUID_CORE_1, NIOBIUM_PLATE, AE2_CARD_CRAFTING, NIOBIUM_PLATE });
+                NIOBIUM_PLATE,
+                AE2_CARD_CRAFTING,
+                NIOBIUM_PLATE,
+                AE2_CORE_ANN,
+                AE2_INTERFACE,
+                FLUID_CORE_1,
+                NIOBIUM_PLATE,
+                AE2_CARD_CRAFTING,
+                NIOBIUM_PLATE);
         // interface
         addShapedRecipe(
                 AE2FC_INTERFACE,
-                new Object[] { IRON_PLATE, LAPIS_PLATE, IRON_PLATE, FLUID_CORE_1, AE2_INTERFACE, FLUID_CORE_1,
-                        IRON_PLATE, LAPIS_PLATE, IRON_PLATE });
+                IRON_PLATE,
+                LAPIS_PLATE,
+                IRON_PLATE,
+                FLUID_CORE_1,
+                AE2_INTERFACE,
+                FLUID_CORE_1,
+                IRON_PLATE,
+                LAPIS_PLATE,
+                IRON_PLATE);
         // Fluid discretizer
         addShapedRecipe(
                 AE2FC_DISCRETIZER,
-                new Object[] { IRON_PLATE, BUCKET, IRON_PLATE, AE2_STORAGE_BUS, ItemList.Electric_Pump_EV.get(1),
-                        AE2_STORAGE_BUS, IRON_PLATE, AE2_PROCESS_ENG, IRON_PLATE });
+                IRON_PLATE,
+                BUCKET,
+                IRON_PLATE,
+                AE2_STORAGE_BUS,
+                ItemList.Electric_Pump_EV.get(1),
+                AE2_STORAGE_BUS,
+                IRON_PLATE,
+                AE2_PROCESS_ENG,
+                IRON_PLATE);
         // Fluid encoder
         addShapedRecipe(
                 AE2FC_ENCODER,
-                new Object[] { LAPIS_PLATE, ItemList.Machine_HV_Assembler.get(1), LAPIS_PLATE, IRON_PLATE,
-                        AE2_WORK_BENCH, IRON_PLATE, IRON_PLATE, IRON_PLATE, IRON_PLATE });
+                LAPIS_PLATE,
+                ItemList.Machine_HV_Assembler.get(1),
+                LAPIS_PLATE,
+                IRON_PLATE,
+                AE2_WORK_BENCH,
+                IRON_PLATE,
+                IRON_PLATE,
+                IRON_PLATE,
+                IRON_PLATE);
         // Fluid decoder
         addShapedRecipe(
                 AE2FC_DECODER,
-                new Object[] { IRON_PLATE, ItemList.Machine_HV_FluidExtractor.get(1), IRON_PLATE, AE2_GLASS_CABLE,
-                        AE2_WORK_BENCH, AE2_GLASS_CABLE, IRON_PLATE, IRON_PLATE, IRON_PLATE });
+                IRON_PLATE,
+                ItemList.Machine_HV_FluidExtractor.get(1),
+                IRON_PLATE,
+                AE2_GLASS_CABLE,
+                AE2_WORK_BENCH,
+                AE2_GLASS_CABLE,
+                IRON_PLATE,
+                IRON_PLATE,
+                IRON_PLATE);
         // Ingredient Buffer
         addShapedRecipe(
                 AE2FC_BUFFER,
-                new Object[] { IRON_PLATE, FLUID_CORE_1, IRON_PLATE, BUCKET, AE2_WORK_BENCH, BUCKET, IRON_PLATE,
-                        AE2_PROCESS_CAL, IRON_PLATE });
+                IRON_PLATE,
+                FLUID_CORE_1,
+                IRON_PLATE,
+                BUCKET,
+                AE2_WORK_BENCH,
+                BUCKET,
+                IRON_PLATE,
+                AE2_PROCESS_CAL,
+                IRON_PLATE);
         // Large Ingredient Buffer
         addShapedRecipe(
                 AE2FC_BUFFER_LARGE,
-                new Object[] { NIOBIUM_PLATE, FLUID_CORE_1, NIOBIUM_PLATE, ItemList.Super_Tank_LV.get(1), AE2FC_BUFFER,
-                        ItemList.Super_Chest_LV.get(1), NIOBIUM_PLATE, AE2_PROCESS_CAL, NIOBIUM_PLATE });
+                NIOBIUM_PLATE,
+                FLUID_CORE_1,
+                NIOBIUM_PLATE,
+                ItemList.Super_Tank_LV.get(1),
+                AE2FC_BUFFER,
+                ItemList.Super_Chest_LV.get(1),
+                NIOBIUM_PLATE,
+                AE2_PROCESS_CAL,
+                NIOBIUM_PLATE);
         // Fluid Buffer
         addShapedRecipe(
                 AE2FC_FLUID_BUFFER,
-                new Object[] { IRON_PLATE, LAPIS_PLATE, IRON_PLATE, FLUID_CORE_1, AE2FC_BUFFER, FLUID_CORE_1,
-                        IRON_PLATE, LAPIS_PLATE, IRON_PLATE });
+                IRON_PLATE,
+                LAPIS_PLATE,
+                IRON_PLATE,
+                FLUID_CORE_1,
+                AE2FC_BUFFER,
+                FLUID_CORE_1,
+                IRON_PLATE,
+                LAPIS_PLATE,
+                IRON_PLATE);
         // Fluid Terminal
         addShapedRecipe(
                 AE2FC_FLUID_TERMINAL,
-                new Object[] { LAPIS_PLATE, AE2_GLASS_CABLE, LAPIS_PLATE, AE2_CORE_FOM, AE2_TERM, AE2_CORE_ANN,
-                        LAPIS_PLATE, AE2_GLASS_CABLE, LAPIS_PLATE });
+                LAPIS_PLATE,
+                AE2_GLASS_CABLE,
+                LAPIS_PLATE,
+                AE2_CORE_FOM,
+                AE2_TERM,
+                AE2_CORE_ANN,
+                LAPIS_PLATE,
+                AE2_GLASS_CABLE,
+                LAPIS_PLATE);
         // Fluid Pattern Terminal
         addShapedRecipe(
                 AE2FC_TERMINAL,
-                new Object[] { NIOBIUM_PLATE, FLUID_CORE_1, NIOBIUM_PLATE, BUCKET, AE2_PATTERN_TERM, BUCKET,
-                        NIOBIUM_PLATE, AE2_PROCESS_CAL, NIOBIUM_PLATE });
+                NIOBIUM_PLATE,
+                FLUID_CORE_1,
+                NIOBIUM_PLATE,
+                BUCKET,
+                AE2_PATTERN_TERM,
+                BUCKET,
+                NIOBIUM_PLATE,
+                AE2_PROCESS_CAL,
+                NIOBIUM_PLATE);
         // Fluid Processing Pattern Terminal
         addShapedRecipe(
                 AE2FC_TERMINAL_PRO,
-                new Object[] { LAPIS_PLATE, AE2FC_TERMINAL, LAPIS_PLATE, ItemList.Conveyor_Module_LuV.get(1),
-                        AE2_CORE_ANN, ItemList.Conveyor_Module_LuV.get(1), ItemList.Electric_Motor_LuV.get(1),
-                        ItemList.Robot_Arm_LuV.get(1), ItemList.Electric_Motor_LuV.get(1) });
+                LAPIS_PLATE,
+                AE2FC_TERMINAL,
+                LAPIS_PLATE,
+                ItemList.Conveyor_Module_LuV.get(1),
+                AE2_CORE_ANN,
+                ItemList.Conveyor_Module_LuV.get(1),
+                ItemList.Electric_Motor_LuV.get(1),
+                ItemList.Robot_Arm_LuV.get(1),
+                ItemList.Electric_Motor_LuV.get(1));
         // Fluid Export Bus
         addShapedRecipe(
                 AE2FC_EXPORTBUS,
-                new Object[] { IRON_PLATE, LAPIS_PLATE, IRON_PLATE, LAPIS_SCREW, AE2_CORE_FOM, LAPIS_SCREW,
-                        NETHER_QUARTZ_PLATE, ItemList.Electric_Piston_LV.get(1), NETHER_QUARTZ_PLATE });
+                IRON_PLATE,
+                LAPIS_PLATE,
+                IRON_PLATE,
+                LAPIS_SCREW,
+                AE2_CORE_FOM,
+                LAPIS_SCREW,
+                NETHER_QUARTZ_PLATE,
+                ItemList.Electric_Piston_LV.get(1),
+                NETHER_QUARTZ_PLATE);
         // Fluid Import Bus
         addShapedRecipe(
                 AE2FC_IMPORTBUS,
-                new Object[] { IRON_PLATE, LAPIS_PLATE, IRON_PLATE, LAPIS_SCREW, AE2_CORE_ANN, LAPIS_SCREW,
-                        NETHER_QUARTZ_PLATE, ItemList.Electric_Piston_LV.get(1), NETHER_QUARTZ_PLATE });
+                IRON_PLATE,
+                LAPIS_PLATE,
+                IRON_PLATE,
+                LAPIS_SCREW,
+                AE2_CORE_ANN,
+                LAPIS_SCREW,
+                NETHER_QUARTZ_PLATE,
+                ItemList.Electric_Piston_LV.get(1),
+                NETHER_QUARTZ_PLATE);
         // Fluid Auto Filler
         addShapedRecipe(
                 AE2FC_AUTO_FILLER,
-                new Object[] { LAPIS_PLATE, AE2FC_FLUID_TERMINAL, LAPIS_PLATE, AE2_GLASS_CABLE, AE2FC_INTERFACE,
-                        AE2_GLASS_CABLE, LAPIS_PLATE, AE2FC_LEVEL_MAIN, LAPIS_PLATE });
+                LAPIS_PLATE,
+                AE2FC_FLUID_TERMINAL,
+                LAPIS_PLATE,
+                AE2_GLASS_CABLE,
+                AE2FC_INTERFACE,
+                AE2_GLASS_CABLE,
+                LAPIS_PLATE,
+                AE2FC_LEVEL_MAIN,
+                LAPIS_PLATE);
         // Walrus
-        addShapedRecipe(AE2FC_WALRUS, new Object[] { FISH, FISH, FISH, FISH, null, FISH, FISH, FISH, FISH });
+        addShapedRecipe(AE2FC_WALRUS, FISH, FISH, FISH, FISH, null, FISH, FISH, FISH, FISH);
         // Fluid Portable Cell
         addShapedRecipe(
                 AE2FC_PORTABLE_CELL,
-                new Object[] { null, CELL_1, null, LAPIS_SCREW, AE2_ME_CHEST, LAPIS_SCREW, "craftingToolScrewdriver",
-                        AE2_ENERGY_CELL, "craftingToolWrench" });
+                null,
+                CELL_1,
+                null,
+                LAPIS_SCREW,
+                AE2_ME_CHEST,
+                LAPIS_SCREW,
+                "craftingToolScrewdriver",
+                AE2_ENERGY_CELL,
+                "craftingToolWrench");
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { CELL_1, GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2), AE2_ME_CHEST,
                         AE2_ENERGY_CELL },

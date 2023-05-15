@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -37,1871 +36,2477 @@ public class ScriptNatura implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Natura.ID, "barleyFood", 1, 3, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "barley.seed", 1, 1, missing),
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 3, missing) });
+                getModItem(Natura.ID, "barleyFood", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "leather", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 6, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 6, missing),
-                        getModItem(Natura.ID, "barleyFood", 1, 6, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 6, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 6, missing),
+                getModItem(Natura.ID, "barleyFood", 1, 6, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "tree", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "tree", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "tree", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "tree", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing) });
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 0, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 0, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 0, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "tree", 1, 0, missing),
-                        getModItem(Natura.ID, "tree", 1, 0, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "tree", 1, 0, missing),
+                getModItem(Natura.ID, "tree", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab1", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 0, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.eucalyptus", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing), getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.eucalyptus", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing), getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.eucalyptus", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing), getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.eucalyptus", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.eucalyptus", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.eucalyptus", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 0, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 0, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 0, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.eucalyptus", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0, missing),
-                        null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 1, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "tree", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "tree", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 1, missing),
-                new Object[] { getModItem(Natura.ID, "tree", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "tree", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 1, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 1, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 1, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 1, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 1, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "tree", 1, 1, missing),
-                        getModItem(Natura.ID, "tree", 1, 1, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "tree", 1, 1, missing),
+                getModItem(Natura.ID, "tree", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 1, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 1, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 1, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab1", 2, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 1, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.sakura", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing), getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.sakura", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing), getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.sakura", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing), getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.sakura", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 1, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 1, missing), getModItem(Natura.ID, "planks", 1, 1, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.sakura", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.sakura", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.sakura", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 1, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 1, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 1, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.sakura", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.sakura", 1, 0, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.sakura", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.emptybowl", 1, 2, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 2, missing), "craftingToolKnife" });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "craftingToolKnife");
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 2, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "tree", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "tree", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 2, missing),
-                new Object[] { getModItem(Natura.ID, "tree", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "tree", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 2, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 2, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 2, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 2, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 2, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "tree", 1, 2, missing),
-                        getModItem(Natura.ID, "tree", 1, 2, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "tree", 1, 2, missing),
+                getModItem(Natura.ID, "tree", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 2, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 2, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 2, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab1", 2, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 2, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.ghostwood", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing), getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.ghostwood", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing), getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.ghostwood", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing), getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.ghostwood", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 2, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 2, missing), getModItem(Natura.ID, "planks", 1, 2, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.ghostwood", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing), "stickWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                "stickWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.ghostwood", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.ghostwood", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 2, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 2, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 2, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.ghostwood", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.ghostwood", 1, 0, missing),
-                        null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.ghostwood", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 3, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 3, missing),
-                new Object[] { getModItem(Natura.ID, "redwood", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "redwood", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 3, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing) });
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 3, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 3, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 3, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 3, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "redwood", 1, 1, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 3, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 3, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 3, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab1", 2, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 3, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.redwood", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing), getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.redwood", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing), getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.redwood", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing), getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.redwood", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 3, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 3, missing), getModItem(Natura.ID, "planks", 1, 3, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing),
-                        getModItem(Natura.ID, "planks", 1, 3, missing) });
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing),
+                getModItem(Natura.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.redwood", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.redwood", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.redwood", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 3, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 3, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 3, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.redwood", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.redwood", 1, 0, missing),
-                        null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.redwood", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "bloodwood", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "bloodwood", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 4, missing),
-                new Object[] { getModItem(Natura.ID, "bloodwood", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "bloodwood", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "bloodwood", 1, 15, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "bloodwood", 1, 15, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 4, missing),
-                new Object[] { getModItem(Natura.ID, "bloodwood", 1, 15, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "bloodwood", 1, 15, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "bloodwood", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "bloodwood", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 4, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 4, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 4, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 4, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 4, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "bloodwood", 1, 0, missing),
-                        getModItem(Natura.ID, "bloodwood", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "bloodwood", 1, 0, missing),
+                getModItem(Natura.ID, "bloodwood", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 4, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "bloodwood", 1, 15, missing),
-                        getModItem(Natura.ID, "bloodwood", 1, 15, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "bloodwood", 1, 15, missing),
+                getModItem(Natura.ID, "bloodwood", 1, 15, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 4, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 4, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 4, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab1", 2, 4, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 4, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.bloodwood", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing), getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.bloodwood", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing), getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.bloodwood", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing), getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.bloodwood", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 4, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 4, missing), getModItem(Natura.ID, "planks", 1, 4, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.bloodwood", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.bloodwood", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.bloodwood", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 4, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 4, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 4, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.bloodwood", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.bloodwood", 1, 0, missing),
-                        null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.bloodwood", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.emptybowl", 1, 4, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 4, missing), "craftingToolKnife" });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "craftingToolKnife");
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 5, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "tree", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "tree", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 5, missing),
-                new Object[] { getModItem(Natura.ID, "tree", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "tree", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 5, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 5, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 5, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 5, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 5, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "tree", 1, 3, missing),
-                        getModItem(Natura.ID, "tree", 1, 3, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "tree", 1, 3, missing),
+                getModItem(Natura.ID, "tree", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 5, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 5, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 5, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab1", 2, 5, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 5, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.hopseed", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing), getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.hopseed", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing), getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.hopseed", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing), getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.hopseed", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 5, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 5, missing), getModItem(Natura.ID, "planks", 1, 5, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.hopseed", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.hopseed", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.hopseed", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 5, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 5, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 5, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.hopseed", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.hopseed", 1, 0, missing),
-                        null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.hopseed", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 6, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "Rare Tree", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "Rare Tree", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 6, missing),
-                new Object[] { getModItem(Natura.ID, "Rare Tree", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "Rare Tree", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 6, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing) });
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 6, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 6, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 6, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 6, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "Rare Tree", 1, 0, missing),
-                        getModItem(Natura.ID, "Rare Tree", 1, 0, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "Rare Tree", 1, 0, missing),
+                getModItem(Natura.ID, "Rare Tree", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 6, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 6, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 6, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab1", 2, 6, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 6, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.maple", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing), getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.maple", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing), getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.maple", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing), getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.maple", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 6, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 6, missing), getModItem(Natura.ID, "planks", 1, 6, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing),
-                        getModItem(Natura.ID, "planks", 1, 6, missing) });
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing),
+                getModItem(Natura.ID, "planks", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.maple", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.maple", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.maple", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.maple", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 6, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 6, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 6, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.maple", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.maple", 1, 0, missing), null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.maple", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 7, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "Rare Tree", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "Rare Tree", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 7, missing),
-                new Object[] { getModItem(Natura.ID, "Rare Tree", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "Rare Tree", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 7, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing) });
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 7, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 7, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 7, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 7, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "Rare Tree", 1, 1, missing),
-                        getModItem(Natura.ID, "Rare Tree", 1, 1, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "Rare Tree", 1, 1, missing),
+                getModItem(Natura.ID, "Rare Tree", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 7, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 7, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 7, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab1", 2, 7, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 7, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.silverbell", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing), getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.silverbell", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing), getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.silverbell", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing), getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.silverbell", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 7, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 7, missing), getModItem(Natura.ID, "planks", 1, 7, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing),
-                        getModItem(Natura.ID, "planks", 1, 7, missing) });
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing),
+                getModItem(Natura.ID, "planks", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.silverbell", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.silverbell", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.silverbell", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.silverbell", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 7, missing),
-                        getModItem(Natura.ID, "plankSlab1", 1, 7, missing) });
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 7, missing),
+                getModItem(Natura.ID, "plankSlab1", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.silverbell", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.silverbell", 1, 0, missing),
-                        null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.silverbell", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 8, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "Rare Tree", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "Rare Tree", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 8, missing),
-                new Object[] { getModItem(Natura.ID, "Rare Tree", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "Rare Tree", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 8, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing) });
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 8, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 8, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 8, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 8, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "Rare Tree", 1, 2, missing),
-                        getModItem(Natura.ID, "Rare Tree", 1, 2, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "Rare Tree", 1, 2, missing),
+                getModItem(Natura.ID, "Rare Tree", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 8, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 8, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 8, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab2", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 8, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.amaranth", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing), getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.amaranth", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing), getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.amaranth", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing), getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.amaranth", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 8, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 8, missing), getModItem(Natura.ID, "planks", 1, 8, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing),
-                        getModItem(Natura.ID, "planks", 1, 8, missing) });
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing),
+                getModItem(Natura.ID, "planks", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.amaranth", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.amaranth", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.amaranth", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.amaranth", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 8, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 0, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 8, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.amaranth", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.amaranth", 1, 0, missing),
-                        null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.amaranth", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 9, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "Rare Tree", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "Rare Tree", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 9, missing),
-                new Object[] { getModItem(Natura.ID, "Rare Tree", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "Rare Tree", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 9, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing) });
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 9, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 9, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 9, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 9, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "Rare Tree", 1, 3, missing),
-                        getModItem(Natura.ID, "Rare Tree", 1, 3, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "Rare Tree", 1, 3, missing),
+                getModItem(Natura.ID, "Rare Tree", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 9, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 9, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 9, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab2", 2, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 9, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.tiger", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing), getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.tiger", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing), getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.tiger", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing), getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.tiger", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 9, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 9, missing), getModItem(Natura.ID, "planks", 1, 9, missing),
-                        null, getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing),
-                        getModItem(Natura.ID, "planks", 1, 9, missing) });
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing),
+                getModItem(Natura.ID, "planks", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.tiger", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.tiger", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.tiger", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.tiger", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 9, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 1, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 9, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.tiger", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.tiger", 1, 0, missing), null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.tiger", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 10, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "willow", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "willow", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 10, missing),
-                new Object[] { getModItem(Natura.ID, "willow", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "willow", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 10, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing) });
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 10, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 10, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 10, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 10, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "willow", 1, 0, missing),
-                        getModItem(Natura.ID, "willow", 1, 0, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "willow", 1, 0, missing),
+                getModItem(Natura.ID, "willow", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 10, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 10, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 10, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab2", 2, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 10, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.willow", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.willow", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.willow", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.willow", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 10, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing), null,
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing),
-                        getModItem(Natura.ID, "planks", 1, 10, missing) });
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing),
+                getModItem(Natura.ID, "planks", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.willow", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.willow", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.willow", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.willow", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 10, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 2, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 10, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.willow", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.willow", 1, 0, missing), null });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.willow", 1, 0, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 11, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "Dark Tree", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "Dark Tree", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 11, missing),
-                new Object[] { getModItem(Natura.ID, "Dark Tree", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "Dark Tree", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 11, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing) });
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 11, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 11, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 11, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 11, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "Dark Tree", 1, 0, missing),
-                        getModItem(Natura.ID, "Dark Tree", 1, 0, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "Dark Tree", 1, 0, missing),
+                getModItem(Natura.ID, "Dark Tree", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 11, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 11, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 11, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab2", 2, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 11, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.darkwood", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.darkwood", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.darkwood", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.darkwood", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 11, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing), null,
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing),
-                        getModItem(Natura.ID, "planks", 1, 11, missing) });
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                getModItem(Natura.ID, "planks", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.darkwood", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.darkwood", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.darkwood", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.darkwood", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 11, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 3, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 11, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.darkwood", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.darkwood", 1, 0, missing),
-                        null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.darkwood", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.emptybowl", 1, 11, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 11, missing), "craftingToolKnife" });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "planks", 1, 11, missing),
+                "craftingToolKnife");
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 12, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
-                        getModItem(Natura.ID, "Dark Tree", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                getModItem(Natura.ID, "Dark Tree", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 12, missing),
-                new Object[] { getModItem(Natura.ID, "Dark Tree", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "Dark Tree", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 12, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing) });
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 12, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing), null, null, null,
-                        getModItem(Natura.ID, "planks", 1, 12, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 12, missing), null });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                null,
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                null);
+        addShapelessRecipe(
                 getModItem(Natura.ID, "Natura.workbench", 1, 12, missing),
-                new Object[] { "itemFlint", "itemFlint", getModItem(Natura.ID, "Dark Tree", 1, 1, missing),
-                        getModItem(Natura.ID, "Dark Tree", 1, 1, missing) });
+                "itemFlint",
+                "itemFlint",
+                getModItem(Natura.ID, "Dark Tree", 1, 1, missing),
+                getModItem(Natura.ID, "Dark Tree", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 1, 12, missing),
-                new Object[] { getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing) });
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 2, 12, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "Natura.fence", 4, 12, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "plankSlab2", 2, 4, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "planks", 1, 12, missing), null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.fusewood", 1, 0, missing),
-                new Object[] { "itemFlint", null, "itemFlint", getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing) });
+                "itemFlint",
+                null,
+                "itemFlint",
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.fusewood", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolScrewdriver", "screwIron",
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing) });
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron",
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "fenceGate.fusewood", 4, 0, missing),
-                new Object[] { "screwSteel", "craftingToolScrewdriver", "screwSteel",
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing) });
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel",
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "stair.fusewood", 4, 0, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 12, missing), null, null,
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing), null,
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing),
-                        getModItem(Natura.ID, "planks", 1, 12, missing) });
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                null,
+                null,
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                null,
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                getModItem(Natura.ID, "planks", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "pressureplate.fusewood", 2, 0, missing),
-                new Object[] { "screwWood", "craftingToolHardHammer", "screwWood",
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing), "springAnyIron",
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing), "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
+                "screwWood",
+                "craftingToolHardHammer",
+                "screwWood",
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                "springAnyIron",
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.fusewood", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing), "itemFlint",
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                "itemFlint",
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.fusewood", 2, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing), "screwIron",
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                "screwIron",
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "trapdoor.fusewood", 3, 0, missing),
-                new Object[] { getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing), "screwSteel",
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
-                        getModItem(Natura.ID, "natura.stick", 1, 12, missing),
-                        getModItem(Natura.ID, "plankSlab2", 1, 4, missing) });
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                "screwSteel",
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing),
+                getModItem(Natura.ID, "natura.stick", 1, 12, missing),
+                getModItem(Natura.ID, "plankSlab2", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "button.fusewood", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "pressureplate.fusewood", 1, 0, missing),
-                        null });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "pressureplate.fusewood", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.emptybowl", 1, 12, missing),
-                new Object[] { getModItem(Natura.ID, "planks", 1, 12, missing), "craftingToolKnife" });
-        addShapelessCraftingRecipe(
+                getModItem(Natura.ID, "planks", 1, 12, missing),
+                "craftingToolKnife");
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "raspberryjuiceItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "raspberryItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "raspberryItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "blueberryjuiceItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "blueberryItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "blueberryItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "blackberryjuiceItem", 1, 0, missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(PamsHarvestCraft.ID, "juicerItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "barley.seed", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "barleyFood", 1, 0, missing) });
+                getModItem(Natura.ID, "barleyFood", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "NetherFurnace", 1, 0, missing),
-                new Object[] { "stoneNetherBrick", "stoneNetherBrick", "stoneNetherBrick", "itemFlint", "itemFlint",
-                        "itemFlint", "stoneNetherBrick", "stoneNetherBrick", "stoneNetherBrick" });
+                "stoneNetherBrick",
+                "stoneNetherBrick",
+                "stoneNetherBrick",
+                "itemFlint",
+                "itemFlint",
+                "itemFlint",
+                "stoneNetherBrick",
+                "stoneNetherBrick",
+                "stoneNetherBrick");
         addShapedRecipe(
                 getModItem(Natura.ID, "Obelisk", 1, 0, missing),
-                new Object[] { getModItem(Natura.ID, "tree", 1, 2, missing),
-                        getModItem(Natura.ID, "tree", 1, 2, missing), getModItem(Natura.ID, "tree", 1, 2, missing),
-                        getModItem(Natura.ID, "tree", 1, 2, missing), "gemEnderPearl",
-                        getModItem(Natura.ID, "tree", 1, 2, missing), getModItem(Natura.ID, "tree", 1, 2, missing),
-                        getModItem(Natura.ID, "tree", 1, 2, missing), getModItem(Natura.ID, "tree", 1, 2, missing) });
+                getModItem(Natura.ID, "tree", 1, 2, missing),
+                getModItem(Natura.ID, "tree", 1, 2, missing),
+                getModItem(Natura.ID, "tree", 1, 2, missing),
+                getModItem(Natura.ID, "tree", 1, 2, missing),
+                "gemEnderPearl",
+                getModItem(Natura.ID, "tree", 1, 2, missing),
+                getModItem(Natura.ID, "tree", 1, 2, missing),
+                getModItem(Natura.ID, "tree", 1, 2, missing),
+                getModItem(Natura.ID, "tree", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing),
-                new Object[] { "screwIron", "craftingToolHardHammer", "screwIron",
-                        getModItem(Minecraft.ID, "netherrack", 1, 0, missing), "springAnyIron",
-                        getModItem(Minecraft.ID, "netherrack", 1, 0, missing), "screwIron", "craftingToolScrewdriver",
-                        "screwIron" });
-        addShapelessCraftingRecipe(
+                "screwIron",
+                "craftingToolHardHammer",
+                "screwIron",
+                getModItem(Minecraft.ID, "netherrack", 1, 0, missing),
+                "springAnyIron",
+                getModItem(Minecraft.ID, "netherrack", 1, 0, missing),
+                "screwIron",
+                "craftingToolScrewdriver",
+                "screwIron");
+        addShapelessRecipe(
                 getModItem(Natura.ID, "NetherButton", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "NetherPressurePlate", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Natura.ID, "NetherPressurePlate", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Natura.ID, "NetherLever", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(Natura.ID, "NetherButton", 1, 0, missing) });
+                "stickWood",
+                getModItem(Natura.ID, "NetherButton", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "redwood", 1, 1, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "redwood", 1, 1, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 0, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "redwood", 1, 1, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "redwood", 1, 1, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "redwood", 1, 1, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "redwood", 1, 1, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "redwood", 1, 1, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "redwood", 1, 1, missing),
-                        getModItem(Natura.ID, "redwood", 1, 1, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "redwood", 1, 1, missing),
+                getModItem(Natura.ID, "redwood", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 1, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 0, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 1, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 0, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.eucalyptus", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 2, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 5, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 2, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 5, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 5, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 5, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 5, missing),
-                        getModItem(Natura.ID, "planks", 1, 5, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.hopseed", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 5, missing),
+                getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 3, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 1, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 3, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 1, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 1, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 1, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 1, missing),
-                        getModItem(Natura.ID, "planks", 1, 1, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.sakura", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 1, missing),
+                getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 4, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 2, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 4, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 2, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 4, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 2, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 4, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 2, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 2, missing),
-                        getModItem(Natura.ID, "planks", 1, 2, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.ghostwood", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 2, missing),
+                getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 5, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 4, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 5, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 4, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 5, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "planks", 1, 4, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 5, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "planks", 1, 4, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "planks", 1, 4, missing),
-                        getModItem(Natura.ID, "planks", 1, 4, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.bloodwood", 1, 0, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "planks", 1, 4, missing),
+                getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 6, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 0, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "redwood", 1, 0, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 0, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 6, missing),
-                new Object[] { "craftingToolScrewdriver", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 0, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "redwood", 1, 0, missing), "craftingToolSaw",
-                        getModItem(Natura.ID, "redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 0, missing) });
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                "craftingToolSaw",
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 6, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 0, missing), "screwCopper", "ringCopper",
-                        getModItem(Natura.ID, "redwood", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                "screwCopper",
+                "ringCopper",
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "redwoodDoorItem", 1, 6, missing),
-                new Object[] { "craftingToolSaw", getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 0, missing), "screwIron", "ringIron",
-                        getModItem(Natura.ID, "redwood", 1, 0, missing), "craftingToolScrewdriver",
-                        getModItem(Natura.ID, "redwood", 1, 0, missing),
-                        getModItem(Natura.ID, "redwood", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(Natura.ID, "trapdoor.redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                "screwIron",
+                "ringIron",
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                "craftingToolScrewdriver",
+                getModItem(Natura.ID, "redwood", 1, 0, missing),
+                getModItem(Natura.ID, "redwood", 1, 0, missing));
 
         ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 0, missing));
         ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 1, missing));
@@ -3292,37 +3897,37 @@ public class ScriptNatura implements IScriptLoader {
                 .itemOutputs(getModItem(Natura.ID, "plankSlab2", 2, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(25).eut(4)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "willow", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "willow", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, 32767, missing))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, wildcard, missing))
                 .itemOutputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))

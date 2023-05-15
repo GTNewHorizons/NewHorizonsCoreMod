@@ -32,9 +32,15 @@ public class ScriptAFSU implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(AFSU.ID, "AFSU", 1),
-                new Object[] { "cableGt01Platinum", "itemCasingTungstenSteel", "cableGt01Platinum",
-                        "itemCasingTungstenSteel", getModItem(GregTech.ID, "gt.blockmachines", 1, 15),
-                        "itemCasingTungstenSteel", "circuitMaster", getModItem(AFSU.ID, "ALC", 1), "circuitMaster" });
+                "cableGt01Platinum",
+                "itemCasingTungstenSteel",
+                "cableGt01Platinum",
+                "itemCasingTungstenSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 15),
+                "itemCasingTungstenSteel",
+                "circuitMaster",
+                getModItem(AFSU.ID, "ALC", 1),
+                "circuitMaster");
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),

@@ -63,7 +63,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing));
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.blockmetal8", 1, 13, missing),
@@ -2055,7 +2056,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
-                        getModItem(Minecraft.ID, "fish", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "fish", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "cake", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0, missing), });
@@ -2456,9 +2457,9 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new ItemStack[] { getModItem(Minecraft.ID, "stone", 1, 0, missing),
                         getModItem(Minecraft.ID, "dirt", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing),
-                        getModItem(Minecraft.ID, "sand", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "sand", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "cobblestone", 1, 0, missing),
-                        getModItem(Minecraft.ID, "log", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "log", 1, wildcard, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
                         getModItem(Minecraft.ID, "grass", 1, 0, missing), });
         TCHelper.setResearchAspects(

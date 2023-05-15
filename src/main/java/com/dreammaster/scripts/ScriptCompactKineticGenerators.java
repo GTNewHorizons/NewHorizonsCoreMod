@@ -28,18 +28,26 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
-                new Object[] { "plateAlloyIridium", "plateAlloyIridium", "plateAlloyIridium", "plateAlloyIridium",
-                        "ringOsmium", "plateAlloyIridium", "plateAlloyIridium", "plateAlloyIridium",
-                        "plateAlloyIridium" });
+                "plateAlloyIridium",
+                "plateAlloyIridium",
+                "plateAlloyIridium",
+                "plateAlloyIridium",
+                "ringOsmium",
+                "plateAlloyIridium",
+                "plateAlloyIridium",
+                "plateAlloyIridium",
+                "plateAlloyIridium");
         addShapedRecipe(
                 getModItem(CompactKineticGenerators.ID, "IridiumRotor", 1, 0, missing),
-                new Object[] { getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing),
-                        getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
-                        "craftingToolHardHammer",
-                        getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing), "ringChrome",
-                        getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing), "craftingToolWrench",
-                        getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing) });
+                getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing),
+                getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
+                "craftingToolHardHammer",
+                getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
+                "ringChrome",
+                getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
+                "craftingToolWrench",
+                getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 0, missing),

@@ -31,65 +31,91 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "advanced_solar_helmet", 1, 0, missing),
-                new Object[] { "craftingToolWrench",
-                        getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
-                        "craftingToolScrewdriver", "circuitAdvanced",
-                        getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, 32767, missing), "circuitAdvanced",
-                        "cableGt04Aluminium", getModItem(GregTech.ID, "gt.blockmachines", 1, 22, missing),
-                        "cableGt04Aluminium" });
+                "craftingToolWrench",
+                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "circuitAdvanced",
+                getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, wildcard, missing),
+                "circuitAdvanced",
+                "cableGt04Aluminium",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 22, missing),
+                "cableGt04Aluminium");
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, 0, missing),
-                new Object[] { "craftingToolWrench",
-                        getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
-                        "craftingToolScrewdriver", "circuitMaster",
-                        getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, 32767, missing), "circuitMaster",
-                        "cableGt04Platinum", getModItem(GregTech.ID, "gt.blockmachines", 1, 23, missing),
-                        "cableGt04Platinum" });
+                "craftingToolWrench",
+                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
+                "craftingToolScrewdriver",
+                "circuitMaster",
+                getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, wildcard, missing),
+                "circuitMaster",
+                "cableGt04Platinum",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 23, missing),
+                "cableGt04Platinum");
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "ultimate_solar_helmet", 1, 0, missing),
-                new Object[] { "craftingToolWrench", "circuitUltimate", "craftingToolScrewdriver",
-                        "craftingSolarPanelHV",
-                        getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, 32767, missing),
-                        "craftingSolarPanelHV", "cableGt04VanadiumGallium",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing), "cableGt04VanadiumGallium" });
+                "craftingToolWrench",
+                "circuitUltimate",
+                "craftingToolScrewdriver",
+                "craftingSolarPanelHV",
+                getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, wildcard, missing),
+                "craftingSolarPanelHV",
+                "cableGt04VanadiumGallium",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
+                "cableGt04VanadiumGallium");
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 5, missing),
-                new Object[] { "glassReinforced",
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing), "glassReinforced",
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing), "plateGlowstone",
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing), "glassReinforced",
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing), "glassReinforced" });
+                "glassReinforced",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing),
+                "glassReinforced",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing),
+                "plateGlowstone",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing),
+                "glassReinforced",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing),
+                "glassReinforced");
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 13, missing),
-                new Object[] { getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
-                        "plateNetherStar", getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
-                        "plateNetherStar", "circuitOptical", "plateNetherStar",
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing), "plateNetherStar",
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing) });
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
+                "plateNetherStar",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
+                "plateNetherStar",
+                "circuitOptical",
+                "plateNetherStar",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
+                "plateNetherStar",
+                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32752, missing),
-                new Object[] { "craftingToolCrowbar",
-                        getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
-                        "craftingToolScrewdriver", "craftingToolWrench", "craftingToolHardHammer",
-                        "craftingToolFile" });
+                "craftingToolCrowbar",
+                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32753, missing),
-                new Object[] { "craftingToolCrowbar",
-                        getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
-                        "craftingToolScrewdriver", "craftingToolWrench", "craftingToolHardHammer",
-                        "craftingToolFile" });
+                "craftingToolCrowbar",
+                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32754, missing),
-                new Object[] { "craftingToolCrowbar",
-                        getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 2, missing),
-                        "craftingToolScrewdriver", "craftingToolWrench", "craftingToolHardHammer",
-                        "craftingToolFile" });
+                "craftingToolCrowbar",
+                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 2, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32755, missing),
-                new Object[] { "craftingToolCrowbar",
-                        getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 3, missing),
-                        "craftingToolScrewdriver", "craftingToolWrench", "craftingToolHardHammer",
-                        "craftingToolFile" });
+                "craftingToolCrowbar",
+                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 3, missing),
+                "craftingToolScrewdriver",
+                "craftingToolWrench",
+                "craftingToolHardHammer",
+                "craftingToolFile");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

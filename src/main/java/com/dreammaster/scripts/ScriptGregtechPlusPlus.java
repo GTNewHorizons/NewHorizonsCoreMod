@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.RemoteIO;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
@@ -38,102 +37,139 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 875, missing),
-                new Object[] { getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 363, missing),
-                        getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing), "gearGtTungstenSteel", "circuitElite",
-                        "gearGtTungstenSteel", getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 363, missing),
-                        getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 363, missing),
+                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
+                "gearGtTungstenSteel",
+                "circuitElite",
+                "gearGtTungstenSteel",
+                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 363, missing),
+                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.CoinBeesI", 16, 0, missing),
-                new Object[] { getModItem(GTPlusPlus.ID, "frameUseless", 1, 0, missing) });
+                getModItem(GTPlusPlus.ID, "frameUseless", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                new Object[] { "craftingToolFile", null, null, null,
-                        getModItem(GTPlusPlus.ID, "itemIngotTumbaga", 1, 0, missing), null, null, null, null });
+                "craftingToolFile",
+                null,
+                null,
+                null,
+                getModItem(GTPlusPlus.ID, "itemIngotTumbaga", 1, 0, missing),
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "blockFrameGtTumbaga", 2, 0, missing),
-                new Object[] { getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing), "craftingToolWrench",
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing) });
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                "craftingToolWrench",
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemGearTumbaga", 1, 0, missing),
-                new Object[] { getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing), "craftingToolWrench",
-                        getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing) });
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
+                "craftingToolWrench",
+                getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
+                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 798, missing),
-                new Object[] { "plateBlueSteel", getModItem(GregTech.ID, "gt.blockcasings", 1, 5, missing),
-                        "plateBlueSteel", "circuitElite", getModItem(GregTech.ID, "gt.blockmachines", 1, 355, missing),
-                        "circuitElite", "plateBlueSteel", getModItem(GregTech.ID, "gt.blockcasings", 1, 5, missing),
-                        "plateBlueSteel" });
+                "plateBlueSteel",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 5, missing),
+                "plateBlueSteel",
+                "circuitElite",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 355, missing),
+                "circuitElite",
+                "plateBlueSteel",
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 5, missing),
+                "plateBlueSteel");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 753, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing), "circuitBasic",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
-                        getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5134, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5134, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                "circuitBasic",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5134, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5134, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
-                new Object[] { "plateDoubleLead", getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
-                        "plateDoubleLead", getModItem(GregTech.ID, "gt.blockmachines", 1, 5122, missing),
-                        getModItem(IronTanks.ID, "silverTank", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5122, missing), "plateDoubleLead",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing), "plateDoubleLead" });
+                "plateDoubleLead",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
+                "plateDoubleLead",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5122, missing),
+                getModItem(IronTanks.ID, "silverTank", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5122, missing),
+                "plateDoubleLead",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
+                "plateDoubleLead");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 754, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing), "circuitGood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
-                        getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 2, missing),
-                        getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5144, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5144, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                "circuitGood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 2, missing),
+                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5144, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5144, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
-                new Object[] { "plateDoubleStainlessSteel",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing), "plateDoubleStainlessSteel",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
-                        getModItem(IronTanks.ID, "stainlesssteelTank", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing), "plateDoubleStainlessSteel",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing), "plateDoubleStainlessSteel" });
+                "plateDoubleStainlessSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing),
+                "plateDoubleStainlessSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
+                getModItem(IronTanks.ID, "stainlesssteelTank", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
+                "plateDoubleStainlessSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing),
+                "plateDoubleStainlessSteel");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 755, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing), "circuitAdvanced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                        getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing),
-                        getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5154, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5154, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
+                getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing),
+                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5154, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5154, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
-                new Object[] { "plateDoubleTitanium", getModItem(GregTech.ID, "gt.blockmachines", 1, 5152, missing),
-                        "plateDoubleTitanium", getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing),
-                        getModItem(IronTanks.ID, "titaniumTank", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing), "plateDoubleTitanium",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5152, missing), "plateDoubleTitanium" });
+                "plateDoubleTitanium",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5152, missing),
+                "plateDoubleTitanium",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing),
+                getModItem(IronTanks.ID, "titaniumTank", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing),
+                "plateDoubleTitanium",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 5152, missing),
+                "plateDoubleTitanium");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 820, missing),
-                new Object[] { "circuitPrimitive", "plateAluminium", "circuitPrimitive", "plateDarkSteel",
-                        "pipeMediumSteel", "plateDarkSteel", "circuitPrimitive",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing), "circuitPrimitive" });
+                "circuitPrimitive",
+                "plateAluminium",
+                "circuitPrimitive",
+                "plateDarkSteel",
+                "pipeMediumSteel",
+                "plateDarkSteel",
+                "circuitPrimitive",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                "circuitPrimitive");
 
         RecipeManagers.carpenterManager.addRecipe(
                 60,

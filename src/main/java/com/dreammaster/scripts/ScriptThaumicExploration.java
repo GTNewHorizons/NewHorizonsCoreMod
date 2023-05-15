@@ -81,7 +81,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 3, 13, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 3, 14, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 3, 15, missing));
-        TCHelper.removeArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 3, 32767, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicExploration.ID, "floatCandle", 3, wildcard, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "replicator", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "trashJar", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicExploration.ID, "bootsMeteor", 1, 0, missing));
@@ -1450,7 +1450,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("ignis"), 32).add(Aspect.getAspect("iter"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("volatus"), 32)
                         .add(Aspect.getAspect("praecantatio"), 16),
-                getModItem(Thaumcraft.ID, "BootsTraveller", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "BootsTraveller", 1, wildcard, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusFire", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17347, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
@@ -1484,7 +1484,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("gelum"), 32).add(Aspect.getAspect("iter"), 32)
                         .add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("motus"), 32)
                         .add(Aspect.getAspect("praecantatio"), 16),
-                getModItem(Thaumcraft.ID, "BootsTraveller", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "BootsTraveller", 1, wildcard, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusFrost", 1, 0, missing),
                         getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),

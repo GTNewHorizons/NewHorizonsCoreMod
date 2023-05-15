@@ -28,14 +28,26 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(BetterBuildersWands.ID, "wandStone", 1, 0, missing),
-                new Object[] { "craftingToolSaw", "screwIron", "plateStone", null, "stickWood", "screwIron",
-                        "stickWood", null, "craftingToolScrewdriver" });
+                "craftingToolSaw",
+                "screwIron",
+                "plateStone",
+                null,
+                "stickWood",
+                "screwIron",
+                "stickWood",
+                null,
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(BetterBuildersWands.ID, "wandIron", 1, 0, missing),
-                new Object[] { "craftingToolSaw", "screwSteel",
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "toolRod", 1, 2, missing), "screwSteel",
-                        getModItem(TinkerConstruct.ID, "toolRod", 1, 2, missing), null, "craftingToolScrewdriver" });
+                "craftingToolSaw",
+                "screwSteel",
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "toolRod", 1, 2, missing),
+                "screwSteel",
+                getModItem(TinkerConstruct.ID, "toolRod", 1, 2, missing),
+                null,
+                "craftingToolScrewdriver");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
