@@ -30,15 +30,27 @@ public class ScriptIguanaTweaks implements IScriptLoader {
         // bucketClay.mSecondaryMaterial controls what the clay bucket pulverizes into.
         addShapedRecipe(
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketUnfired", 1),
-                new Object[] { null, null, null, "dustClay", null, "dustClay", "dustClay", "dustClay", "dustClay" });
+                null,
+                null,
+                null,
+                "dustClay",
+                null,
+                "dustClay",
+                "dustClay",
+                "dustClay",
+                "dustClay");
 
         addShapedRecipe(
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1),
-                new Object[] { getModItem(Natura.ID, "waterdrop", 1), getModItem(Natura.ID, "waterdrop", 1),
-                        getModItem(Natura.ID, "waterdrop", 1), getModItem(Natura.ID, "waterdrop", 1),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketFired", 1),
-                        getModItem(Natura.ID, "waterdrop", 1), getModItem(Natura.ID, "waterdrop", 1),
-                        getModItem(Natura.ID, "waterdrop", 1), getModItem(Natura.ID, "waterdrop", 1) });
+                getModItem(Natura.ID, "waterdrop", 1),
+                getModItem(Natura.ID, "waterdrop", 1),
+                getModItem(Natura.ID, "waterdrop", 1),
+                getModItem(Natura.ID, "waterdrop", 1),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketFired", 1),
+                getModItem(Natura.ID, "waterdrop", 1),
+                getModItem(Natura.ID, "waterdrop", 1),
+                getModItem(Natura.ID, "waterdrop", 1),
+                getModItem(Natura.ID, "waterdrop", 1));
 
         /*
          * oredict so the recipes modified in iguanatweaks will work those are exceptionnally in iguanatweaks because

@@ -48,20 +48,26 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(StevesFactoryManager.ID, "BlockMachineManagerName", 1, 0, missing),
-                new Object[] { "plateStainlessSteel", getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                        "plateStainlessSteel", "plateRedAlloy",
-                        getModItem(GregTech.ID, "gt.blockcasings2", 1, 6, missing), "plateRedAlloy",
-                        "plateStainlessSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        "plateStainlessSteel" });
+                "plateStainlessSteel",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "plateStainlessSteel",
+                "plateRedAlloy",
+                getModItem(GregTech.ID, "gt.blockcasings2", 1, 6, missing),
+                "plateRedAlloy",
+                "plateStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(StevesFactoryManager.ID, "BlockCableName", 2, 0, missing),
-                new Object[] { "plateStainlessSteel",
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "plateStainlessSteel", getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing), "plateStainlessSteel",
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "plateStainlessSteel" });
+                "plateStainlessSteel",
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                "plateStainlessSteel",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
+                "plateStainlessSteel",
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                "plateStainlessSteel");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

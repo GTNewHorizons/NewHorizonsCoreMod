@@ -60,162 +60,257 @@ public class ScriptIronChests implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(IronChestsMinecarts.ID, "minecart_chest_copper", 1, 0, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, "screwCopper",
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing), "screwCopper", "screwCopper",
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing), "screwCopper" });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                "screwCopper",
+                getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing),
+                "screwCopper",
+                "screwCopper",
+                getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                "screwCopper");
         addShapedRecipe(
                 getModItem(IronChestsMinecarts.ID, "minecart_chest_iron", 1, 0, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, "screwAnyIron",
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing), "screwAnyIron", "screwAnyIron",
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing), "screwAnyIron" });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                "screwAnyIron",
+                getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing),
+                "screwAnyIron",
+                "screwAnyIron",
+                getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                "screwAnyIron");
         addShapedRecipe(
                 getModItem(IronChestsMinecarts.ID, "minecart_chest_steel", 1, 0, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, "screwSteel",
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing), "screwSteel", "screwSteel",
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing), "screwSteel" });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                "screwSteel",
+                getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing),
+                "screwSteel",
+                "screwSteel",
+                getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                "screwSteel");
         addShapedRecipe(
                 getModItem(IronChestsMinecarts.ID, "minecart_chest_gold", 1, 0, missing),
-                new Object[] { null, "craftingToolScrewdriver", null, "screwGold",
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing), "screwGold", "screwGold",
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing), "screwGold" });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                "screwGold",
+                getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing),
+                "screwGold",
+                "screwGold",
+                getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                "screwGold");
         addShapedRecipe(
                 getModItem(IronChestsMinecarts.ID, "minecart_chest_diamond", 1, 0, missing),
-                new Object[] { null, "craftingToolScrewdriver", null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing) });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing));
         addShapedRecipe(
                 getModItem(IronChestsMinecarts.ID, "minecart_chest_crystal", 1, 0, missing),
-                new Object[] { null, "craftingToolScrewdriver", null,
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27890, missing),
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27890, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27890, missing),
-                        getModItem(Minecraft.ID, "minecart", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27890, missing) });
+                null,
+                "craftingToolScrewdriver",
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27890, missing),
+                getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27890, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27890, missing),
+                getModItem(Minecraft.ID, "minecart", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27890, missing));
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 7, missing),
-                new Object[] { getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing) });
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing),
-                new Object[] { "screwCopper", getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
-                        "screwCopper", getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing), "craftingToolScrewdriver" });
+                "screwCopper",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
+                "screwCopper",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing),
-                new Object[] { "screwCopper", getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
-                        "screwCopper", getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing), "plankWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing), "craftingToolScrewdriver" });
+                "screwCopper",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
+                "screwCopper",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
+                "plankWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18035, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing),
-                new Object[] { "screwIron", getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing), "screwIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing), "craftingToolScrewdriver" });
+                "screwIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
+                "screwIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing),
-                new Object[] { "screwIron", getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing), "screwIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing), "plankWood",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing), "craftingToolScrewdriver" });
+                "screwIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
+                "screwIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
+                "plankWood",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18032, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "copperIronUpgrade", 1, 0, missing),
-                new Object[] { "screwIron", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing), "screwIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing), "craftingToolScrewdriver" });
+                "screwIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
+                "screwIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing),
-                new Object[] { "screwSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 18305, missing), "screwSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18305, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18305, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18305, missing), "craftingToolScrewdriver" });
+                "screwSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18305, missing),
+                "screwSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18305, missing),
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18305, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18305, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "copperSteelUpgrade", 1, 0, missing),
-                new Object[] { "screwSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing), "screwSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing), "craftingToolScrewdriver" });
+                "screwSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                "screwSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing),
-                new Object[] { "screwGold", getModItem(GregTech.ID, "gt.metaitem.01", 1, 18086, missing), "screwGold",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18086, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18086, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18086, missing), "craftingToolScrewdriver" });
+                "screwGold",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18086, missing),
+                "screwGold",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18086, missing),
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18086, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 18086, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "ironGoldUpgrade", 1, 0, missing),
-                new Object[] { "screwGold", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), "screwGold",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), "craftingToolScrewdriver" });
+                "screwGold",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                "screwGold",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "steelGoldUpgrade", 1, 0, missing),
-                new Object[] { "screwGold", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), "screwGold",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), "craftingToolScrewdriver" });
+                "screwGold",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                "screwGold",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
-                new Object[] { "screwDiamond", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        "screwDiamond", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), "craftingToolScrewdriver" });
+                "screwDiamond",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "screwDiamond",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "goldDiamondUpgrade", 1, 0, missing),
-                new Object[] { "screwDiamond", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        "screwDiamond", null, getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), null,
-                        "craftingToolHardHammer", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        "craftingToolScrewdriver" });
+                "screwDiamond",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "screwDiamond",
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
+                null,
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing),
-                new Object[] { "screwGlass", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing), "screwGlass",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing), "craftingToolScrewdriver" });
+                "screwGlass",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
+                "screwGlass",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
+                getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "diamondCrystalUpgrade", 1, 0, missing),
-                new Object[] { "screwGlass", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing), "screwGlass",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing), "craftingToolHardHammer",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing), "craftingToolScrewdriver" });
+                "screwGlass",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
+                "screwGlass",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
+                "craftingToolHardHammer",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17890, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "BlockIronChest", 1, 6, missing),
-                new Object[] { "screwDiamond", getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
-                        "screwDiamond", getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing), "craftingToolHardHammer",
-                        getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing), "craftingToolScrewdriver" });
+                "screwDiamond",
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
+                "screwDiamond",
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
+                getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
+                "craftingToolHardHammer",
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
+                "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "diamondObsidianUpgrade", 1, 0, missing),
-                new Object[] { "screwDiamond", getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
-                        "screwDiamond", getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing), "craftingToolHardHammer",
-                        getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing), "craftingToolScrewdriver" });
+                "screwDiamond",
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
+                "screwDiamond",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                "craftingToolHardHammer",
+                getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
+                "craftingToolScrewdriver");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -231,7 +326,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "planks", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
@@ -378,28 +473,28 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Natura.ID, "planks", 1, 32767, missing),
+                        getModItem(Natura.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(BiomesOPlenty.ID, "planks", 1, 32767, missing),
+                        getModItem(BiomesOPlenty.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Forestry.ID, "planks", 1, 32767, missing),
+                        getModItem(Forestry.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Forestry.ID, "planksFireproof", 1, 32767, missing),
+                        getModItem(Forestry.ID, "planksFireproof", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
@@ -665,7 +760,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Witchery.ID, "witchwood", 1, 32767, missing),
+                        getModItem(Witchery.ID, "witchwood", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
@@ -693,21 +788,21 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 32767, missing),
+                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, 32767, missing),
+                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ForbiddenMagic.ID, "TaintPlank", 1, 32767, missing),
+                        getModItem(ForbiddenMagic.ID, "TaintPlank", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).noFluidInputs()
@@ -720,7 +815,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(150).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "planks", 1, 32767, missing),
+                        getModItem(Minecraft.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
@@ -867,28 +962,28 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Natura.ID, "planks", 1, 32767, missing),
+                        getModItem(Natura.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(BiomesOPlenty.ID, "planks", 1, 32767, missing),
+                        getModItem(BiomesOPlenty.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Forestry.ID, "planks", 1, 32767, missing),
+                        getModItem(Forestry.ID, "planks", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Forestry.ID, "planksFireproof", 1, 32767, missing),
+                        getModItem(Forestry.ID, "planksFireproof", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
@@ -1154,7 +1249,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Witchery.ID, "witchwood", 1, 32767, missing),
+                        getModItem(Witchery.ID, "witchwood", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
@@ -1182,21 +1277,21 @@ public class ScriptIronChests implements IScriptLoader {
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 32767, missing),
+                        getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, 32767, missing),
+                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(ForbiddenMagic.ID, "TaintPlank", 1, 32767, missing),
+                        getModItem(ForbiddenMagic.ID, "TaintPlank", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 18032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).noFluidInputs()

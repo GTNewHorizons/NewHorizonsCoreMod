@@ -29,7 +29,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.ThaumicHorizons;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBoxinatorRecipes;
@@ -159,984 +158,1578 @@ public class ScriptProjectRed implements IScriptLoader {
     private void craftingRecipes() {
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine1", 1, 1, missing),
-                new Object[] { getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
-                        getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
-                        getModItem(Minecraft.ID, "brick_block", 1, 0, missing), "itemCasingSteel",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        "itemCasingSteel", "circuitBasic",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        "circuitBasic" });
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                "itemCasingSteel",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                "itemCasingSteel",
+                "circuitBasic",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 0, missing),
-                new Object[] { "itemCasingSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        "itemCasingSteel", getModItem(NewHorizonsCoreMod.ID, "item.DiamondDrillTip", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing), "circuitBasic",
-                        "itemCasingSteel", "gearSteel", "itemCasingSteel" });
-        addShapelessCraftingRecipe(
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "itemCasingSteel",
+                getModItem(NewHorizonsCoreMod.ID, "item.DiamondDrillTip", 1, 0, missing),
+                getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing),
+                "circuitBasic",
+                "itemCasingSteel",
+                "gearSteel",
+                "itemCasingSteel");
+        addShapelessRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 0, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "blockbreaker", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "blockbreaker", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 1, missing),
-                new Object[] { "itemCasingSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        "itemCasingSteel", "circuitBasic", "pipeMediumTin",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing), "itemCasingSteel",
-                        "craftingPiston", "itemCasingSteel" });
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "itemCasingSteel",
+                "circuitBasic",
+                "pipeMediumTin",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "itemCasingSteel",
+                "craftingPiston",
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 2, missing),
-                new Object[] { "itemCasingSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        "itemCasingSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                        "pipeMediumTin", "circuitBasic", "itemCasingSteel", "craftingPiston", "itemCasingSteel" });
-        addShapelessCraftingRecipe(
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "pipeMediumTin",
+                "circuitBasic",
+                "itemCasingSteel",
+                "craftingPiston",
+                "itemCasingSteel");
+        addShapelessRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 2, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "blockPlacer", 1, 0, missing) });
+                getModItem(OpenBlocks.ID, "blockPlacer", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 3, missing),
-                new Object[] { "itemCasingAluminium", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        "itemCasingAluminium", "circuitGood",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32631, missing), "itemCasingAluminium",
-                        "craftingFilter", "itemCasingAluminium" });
+                "itemCasingAluminium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "itemCasingAluminium",
+                "circuitGood",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 1, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32631, missing),
+                "itemCasingAluminium",
+                "craftingFilter",
+                "itemCasingAluminium");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 4, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing), "circuitBasic",
-                        getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing), "itemCasingSteel",
-                        "craftingPiston", "itemCasingSteel" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
+                "circuitBasic",
+                getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                "itemCasingSteel",
+                "craftingPiston",
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 5, missing),
-                new Object[] { "plateSteel",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        "plateSteel",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        "plateSteel",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        "plateSteel" });
-        addShapelessCraftingRecipe(
+                "plateSteel",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                "plateSteel",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                "plateSteel",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                "plateSteel");
+        addShapelessRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing) });
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing));
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0, missing),
-                new Object[] { "stickWood", "stickSteel", "stickSteel", "stickWood",
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 7086, missing), "stickSteel", null, null, null });
+                "stickWood",
+                "stickSteel",
+                "stickSteel",
+                "stickWood",
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 7086, missing),
+                "stickSteel",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawruby", 1, 0, missing),
-                new Object[] { "stickWood", "stickSteel", "stickSteel", "stickWood",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SawBladeRuby", 1, 0, missing), "stickSteel", null, null,
-                        null });
+                "stickWood",
+                "stickSteel",
+                "stickSteel",
+                "stickWood",
+                getModItem(NewHorizonsCoreMod.ID, "item.SawBladeRuby", 1, 0, missing),
+                "stickSteel",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawsapphire", 1, 0, missing),
-                new Object[] { "stickWood", "stickSteel", "stickSteel", "stickWood",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SawBladeSapphire", 1, 0, missing), "stickSteel", null,
-                        null, null });
+                "stickWood",
+                "stickSteel",
+                "stickSteel",
+                "stickWood",
+                getModItem(NewHorizonsCoreMod.ID, "item.SawBladeSapphire", 1, 0, missing),
+                "stickSteel",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawperidot", 1, 0, missing),
-                new Object[] { "stickWood", "stickSteel", "stickSteel", "stickWood",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SawBladePeridot", 1, 0, missing), "stickSteel", null,
-                        null, null });
+                "stickWood",
+                "stickSteel",
+                "stickSteel",
+                "stickWood",
+                getModItem(NewHorizonsCoreMod.ID, "item.SawBladePeridot", 1, 0, missing),
+                "stickSteel",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyboots", 1, 0, missing),
-                new Object[] { "plateRuby", null, "plateRuby", "plateRuby", "craftingToolHardHammer", "plateRuby", null,
-                        null, null });
+                "plateRuby",
+                null,
+                "plateRuby",
+                "plateRuby",
+                "craftingToolHardHammer",
+                "plateRuby",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.rubychestplate", 1, 0, missing),
-                new Object[] { "plateRuby", "craftingToolHardHammer", "plateRuby", "plateRuby", "plateRuby",
-                        "plateRuby", "plateRuby", "plateRuby", "plateRuby" });
+                "plateRuby",
+                "craftingToolHardHammer",
+                "plateRuby",
+                "plateRuby",
+                "plateRuby",
+                "plateRuby",
+                "plateRuby",
+                "plateRuby",
+                "plateRuby");
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyhelmet", 1, 0, missing),
-                new Object[] { "plateRuby", "plateRuby", "plateRuby", "plateRuby", "craftingToolHardHammer",
-                        "plateRuby", null, null, null });
+                "plateRuby",
+                "plateRuby",
+                "plateRuby",
+                "plateRuby",
+                "craftingToolHardHammer",
+                "plateRuby",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.rubyleggings", 1, 0, missing),
-                new Object[] { "plateRuby", "plateRuby", "plateRuby", "plateRuby", "craftingToolHardHammer",
-                        "plateRuby", "plateRuby", null, "plateRuby" });
+                "plateRuby",
+                "plateRuby",
+                "plateRuby",
+                "plateRuby",
+                "craftingToolHardHammer",
+                "plateRuby",
+                "plateRuby",
+                null,
+                "plateRuby");
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphireboots", 1, 0, missing),
-                new Object[] { "plateSapphire", null, "plateSapphire", "plateSapphire", "craftingToolHardHammer",
-                        "plateSapphire", null, null, null });
+                "plateSapphire",
+                null,
+                "plateSapphire",
+                "plateSapphire",
+                "craftingToolHardHammer",
+                "plateSapphire",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphirechestplate", 1, 0, missing),
-                new Object[] { "plateSapphire", "craftingToolHardHammer", "plateSapphire", "plateSapphire",
-                        "plateSapphire", "plateSapphire", "plateSapphire", "plateSapphire", "plateSapphire" });
+                "plateSapphire",
+                "craftingToolHardHammer",
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire");
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphirehelmet", 1, 0, missing),
-                new Object[] { "plateSapphire", "plateSapphire", "plateSapphire", "plateSapphire",
-                        "craftingToolHardHammer", "plateSapphire", null, null, null });
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire",
+                "craftingToolHardHammer",
+                "plateSapphire",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sapphireleggings", 1, 0, missing),
-                new Object[] { "plateSapphire", "plateSapphire", "plateSapphire", "plateSapphire",
-                        "craftingToolHardHammer", "plateSapphire", "plateSapphire", null, "plateSapphire" });
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire",
+                "plateSapphire",
+                "craftingToolHardHammer",
+                "plateSapphire",
+                "plateSapphire",
+                null,
+                "plateSapphire");
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.peridotboots", 1, 0, missing),
-                new Object[] { "platePeridot", null, "platePeridot", "platePeridot", "craftingToolHardHammer",
-                        "platePeridot", null, null, null });
+                "platePeridot",
+                null,
+                "platePeridot",
+                "platePeridot",
+                "craftingToolHardHammer",
+                "platePeridot",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.peridotchestplate", 1, 0, missing),
-                new Object[] { "platePeridot", "craftingToolHardHammer", "platePeridot", "platePeridot", "platePeridot",
-                        "platePeridot", "platePeridot", "platePeridot", "platePeridot" });
+                "platePeridot",
+                "craftingToolHardHammer",
+                "platePeridot",
+                "platePeridot",
+                "platePeridot",
+                "platePeridot",
+                "platePeridot",
+                "platePeridot",
+                "platePeridot");
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.peridothelmet", 1, 0, missing),
-                new Object[] { "platePeridot", "platePeridot", "platePeridot", "platePeridot", "craftingToolHardHammer",
-                        "platePeridot", null, null, null });
+                "platePeridot",
+                "platePeridot",
+                "platePeridot",
+                "platePeridot",
+                "craftingToolHardHammer",
+                "platePeridot",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.peridotleggings", 1, 0, missing),
-                new Object[] { "platePeridot", "platePeridot", "platePeridot", "platePeridot", "craftingToolHardHammer",
-                        "platePeridot", "platePeridot", null, "platePeridot" });
+                "platePeridot",
+                "platePeridot",
+                "platePeridot",
+                "platePeridot",
+                "craftingToolHardHammer",
+                "platePeridot",
+                "platePeridot",
+                null,
+                "platePeridot");
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                new Object[] { "wireGt01Gold", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing), "wireGt01Gold",
-                        "circuitPrimitive", "wireGt01Gold", "screwSteel", "craftingToolScrewdriver", "screwSteel" });
+                "wireGt01Gold",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
+                "wireGt01Gold",
+                "circuitPrimitive",
+                "wireGt01Gold",
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel");
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.screwdriver", 1, 0, missing),
-                new Object[] { null, "craftingToolFile", "stickSteel", "stickAnyRubber", "stickSteel",
-                        "craftingToolHardHammer", "stickAnyRubber", "stickAnyRubber", null });
+                null,
+                "craftingToolFile",
+                "stickSteel",
+                "stickAnyRubber",
+                "stickSteel",
+                "craftingToolHardHammer",
+                "stickAnyRubber",
+                "stickAnyRubber",
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.wiredebugger", 1, 0, missing),
-                new Object[] { "wireGt01RedAlloy", "stickSteelMagnetic", "wireGt01RedAlloy", "itemCasingSteel",
-                        "plateGlowstone", "itemCasingSteel", "screwSteel", "craftingToolScrewdriver", "screwSteel" });
-        addShapelessCraftingRecipe(
+                "wireGt01RedAlloy",
+                "stickSteelMagnetic",
+                "wireGt01RedAlloy",
+                "itemCasingSteel",
+                "plateGlowstone",
+                "itemCasingSteel",
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "screwSteel");
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        "plateAnyRubber" });
-        addShapelessCraftingRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
+                "plateAnyRubber");
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 1, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeWhite" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                "dyeWhite");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 2, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeOrange" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                "dyeOrange");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 3, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeMagenta" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                "dyeMagenta");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 4, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeLightBlue" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 4, missing) });
-        addShapelessCraftingRecipe(
+                "dyeLightBlue");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 4, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 5, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeYellow" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 5, missing) });
-        addShapelessCraftingRecipe(
+                "dyeYellow");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 5, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 6, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeLime" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 6, missing) });
-        addShapelessCraftingRecipe(
+                "dyeLime");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 6, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 7, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyePink" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 7, missing) });
-        addShapelessCraftingRecipe(
+                "dyePink");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 7, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 8, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeGray" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 8, missing) });
-        addShapelessCraftingRecipe(
+                "dyeGray");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 8, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 9, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeLightGray" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 9, missing) });
-        addShapelessCraftingRecipe(
+                "dyeLightGray");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 9, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 10, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeCyan" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 10, missing) });
-        addShapelessCraftingRecipe(
+                "dyeCyan");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 10, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 11, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyePurple" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 11, missing) });
-        addShapelessCraftingRecipe(
+                "dyePurple");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 11, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 12, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeBlue" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 12, missing) });
-        addShapelessCraftingRecipe(
+                "dyeBlue");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 12, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 13, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeBrown" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 13, missing) });
-        addShapelessCraftingRecipe(
+                "dyeBrown");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 13, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 14, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeGreen" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 14, missing) });
-        addShapelessCraftingRecipe(
+                "dyeGreen");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 14, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 15, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                        "dyeRed" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 15, missing) });
-        addShapelessCraftingRecipe(
+                "dyeRed");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 15, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 18, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeWhite" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 18, missing) });
-        addShapelessCraftingRecipe(
+                "dyeWhite");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 18, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 19, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeOrange" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 19, missing) });
-        addShapelessCraftingRecipe(
+                "dyeOrange");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 19, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 20, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeMagenta" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 20, missing) });
-        addShapelessCraftingRecipe(
+                "dyeMagenta");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 20, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 21, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeLightBlue" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 21, missing) });
-        addShapelessCraftingRecipe(
+                "dyeLightBlue");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 21, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 22, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeYellow" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 22, missing) });
-        addShapelessCraftingRecipe(
+                "dyeYellow");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 22, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 23, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeLime" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 23, missing) });
-        addShapelessCraftingRecipe(
+                "dyeLime");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 23, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 24, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyePink" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 24, missing) });
-        addShapelessCraftingRecipe(
+                "dyePink");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 24, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 25, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeGray" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 25, missing) });
-        addShapelessCraftingRecipe(
+                "dyeGray");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 25, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 26, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeLightGray" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 26, missing) });
-        addShapelessCraftingRecipe(
+                "dyeLightGray");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 26, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 27, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeCyan" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 27, missing) });
-        addShapelessCraftingRecipe(
+                "dyeCyan");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 27, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 28, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyePurple" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 28, missing) });
-        addShapelessCraftingRecipe(
+                "dyePurple");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 28, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 29, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeBlue" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 29, missing) });
-        addShapelessCraftingRecipe(
+                "dyeBlue");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 29, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 30, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeBrown" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 30, missing) });
-        addShapelessCraftingRecipe(
+                "dyeBrown");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 30, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 31, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeGreen" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 31, missing) });
-        addShapelessCraftingRecipe(
+                "dyeGreen");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 31, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 32, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeRed" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 32, missing) });
-        addShapelessCraftingRecipe(
+                "dyeRed");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 32, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 33, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                        "dyeBlack" });
-        addShapelessCraftingRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
-                new Object[] { getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 33, missing) });
+                "dyeBlack");
+        addShapelessRecipe(
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing),
+                getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 33, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
-                new Object[] { null, "craftingToolFile", null, "stickLongIron",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickLongIron", null,
-                        "craftingToolSaw", null });
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongIron",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickLongIron",
+                null,
+                "craftingToolSaw",
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
-                new Object[] { null, "craftingToolFile", null, "stickLongIron", "paneGlass", "stickLongIron", null,
-                        "craftingToolSaw", null });
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongIron",
+                "paneGlass",
+                "stickLongIron",
+                null,
+                "craftingToolSaw",
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 1, missing),
-                new Object[] { getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing),
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing), "stickAluminium",
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing),
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing) });
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing),
+                "stickAluminium",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        "plateCopper", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        "circuitGood", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing) });
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                "plateCopper",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitGood",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
-                        "plateBronze", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        "circuitGood", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing) });
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
+                "plateBronze",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitGood",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
-                        "plateIron", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        "circuitGood", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing) });
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
+                "plateIron",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitGood",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing),
-                        "plateTin", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        "circuitBasic", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing) });
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing),
+                "plateTin",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitBasic",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
-                        "plateSteel", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        "circuitGood", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
-                        "wireGt01RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing) });
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
+                "plateSteel",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitGood",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
+                "wireGt01RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing),
-                        "wireGt02RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing),
-                        "plateGold", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        "circuitBasic", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing),
-                        "wireGt02RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing) });
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing),
+                "wireGt02RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing),
+                "plateGold",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitBasic",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing),
+                "wireGt02RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
-                        "wireGt02RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
-                        "plateAluminium", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        "circuitBasic", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
-                        "wireGt02RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing) });
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
+                "wireGt02RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
+                "plateAluminium",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitBasic",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
+                "wireGt02RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing),
-                new Object[] { getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing),
-                        "wireGt02RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing),
-                        "plateGlowstone", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        "circuitBasic", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing),
-                        "wireGt02RedAlloy", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing) });
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing),
+                "wireGt02RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing),
+                "plateGlowstone",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitBasic",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing),
+                "wireGt02RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routerutil", 1, 0, missing),
-                new Object[] { "wireGt01RedAlloy", "itemCasingSteel", "wireGt01RedAlloy", "circuitGood", "plateEmerald",
-                        "circuitGood", "itemCasingSteel",
-                        createItemStack(GregTech.ID, "gt.metaitem.01", 1, 32510, "{GT.ItemCharge:18000L}", missing),
-                        "itemCasingSteel" });
+                "wireGt01RedAlloy",
+                "itemCasingSteel",
+                "wireGt01RedAlloy",
+                "circuitGood",
+                "plateEmerald",
+                "circuitGood",
+                "itemCasingSteel",
+                createItemStack(GregTech.ID, "gt.metaitem.01", 1, 32510, "{GT.ItemCharge:18000L}", missing),
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.jetpack", 1, 6400, missing),
-                new Object[] { "circuitBasic", "wireGt04Gold", "circuitBasic",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        getModItem(Minecraft.ID, "diamond_chestplate", 1, 0, missing),
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        "plateGlowstone",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing) });
+                "circuitBasic",
+                "wireGt04Gold",
+                "circuitBasic",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                getModItem(Minecraft.ID, "diamond_chestplate", 1, 0, missing),
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                "plateGlowstone",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 6, missing),
-                new Object[] { "wireGt04Copper", "plateSteel", "wireGt04Copper",
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                        getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                        "circuitBasic", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
-                        "circuitBasic" });
+                "wireGt04Copper",
+                "plateSteel",
+                "wireGt04Copper",
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
+                "circuitBasic",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
+                "circuitBasic");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 8, missing),
-                new Object[] { "circuitBasic", "plateSteel", "circuitBasic",
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing), "wireGt04Copper",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "wireGt04Copper" });
+                "circuitBasic",
+                "plateSteel",
+                "circuitBasic",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
+                "wireGt04Copper",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "wireGt04Copper");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 9, missing),
-                new Object[] { "plateSteel", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing),
-                        "plateSteel", getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4401, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 18, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 18, missing) });
+                "plateSteel",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing),
+                "plateSteel",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4401, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 18, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 18, missing));
         addShapedRecipe(
                 getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 0, missing),
-                new Object[] { "plateSteel", "plateSteel", "plateSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing) });
+                "plateSteel",
+                "plateSteel",
+                "plateSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
         addShapedRecipe(
                 getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 1, missing),
-                new Object[] { "blockGlass", "blockGlass", "blockGlass", "plateObsidian", "stickSteel", "plateObsidian",
-                        "stickSteel", getModItem(GregTech.ID, "gt.blockmachines", 1, 321, missing), "stickSteel" });
-        addShapelessCraftingRecipe(
+                "blockGlass",
+                "blockGlass",
+                "blockGlass",
+                "plateObsidian",
+                "stickSteel",
+                "plateObsidian",
+                "stickSteel",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 321, missing),
+                "stickSteel");
+        addShapelessRecipe(
                 getModItem(MCFrames.ID, "mcframes.frame", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10, missing),
-                new Object[] { getModItem(Forestry.ID, "factory2", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Forestry.ID, "factory2", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11, missing),
-                new Object[] { getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing) });
+                getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 15, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 15, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 15, missing),
+                getModItem(Minecraft.ID, "dye", 1, 15, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 8, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 8, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 8, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 8, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 23, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 23, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 23, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 23, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 77, missing),
-                        getModItem(Botany.ID, "pigment", 1, 77, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 77, missing),
+                getModItem(Botany.ID, "pigment", 1, 77, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 0, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 14, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 14, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 14, missing),
+                getModItem(Minecraft.ID, "dye", 1, 14, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 1, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 51, missing),
-                        getModItem(Botany.ID, "pigment", 1, 51, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 51, missing),
+                getModItem(Botany.ID, "pigment", 1, 51, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 13, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 13, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 13, missing),
+                getModItem(Minecraft.ID, "dye", 1, 13, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 40, missing),
-                        getModItem(Botany.ID, "pigment", 1, 40, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 40, missing),
+                getModItem(Botany.ID, "pigment", 1, 40, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 2, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 12, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 12, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 12, missing),
+                getModItem(Minecraft.ID, "dye", 1, 12, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 22, missing),
-                        getModItem(Botany.ID, "pigment", 1, 22, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 22, missing),
+                getModItem(Botany.ID, "pigment", 1, 22, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 3, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 11, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 11, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 11, missing),
+                getModItem(Minecraft.ID, "dye", 1, 11, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 20, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 20, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 20, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 20, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 78, missing),
-                        getModItem(Botany.ID, "pigment", 1, 78, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 78, missing),
+                getModItem(Botany.ID, "pigment", 1, 78, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 4, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 10, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 10, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 10, missing),
+                getModItem(Minecraft.ID, "dye", 1, 10, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 38, missing),
-                        getModItem(Botany.ID, "pigment", 1, 38, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 38, missing),
+                getModItem(Botany.ID, "pigment", 1, 38, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 5, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 9, missing), getModItem(Minecraft.ID, "dye", 1, 9, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 9, missing),
+                getModItem(Minecraft.ID, "dye", 1, 9, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 29, missing),
-                        getModItem(Botany.ID, "pigment", 1, 29, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 29, missing),
+                getModItem(Botany.ID, "pigment", 1, 29, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 6, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 8, missing), getModItem(Minecraft.ID, "dye", 1, 8, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 8, missing),
+                getModItem(Minecraft.ID, "dye", 1, 8, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 10, missing),
-                        getModItem(Botany.ID, "pigment", 1, 10, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 10, missing),
+                getModItem(Botany.ID, "pigment", 1, 10, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 7, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 7, missing), getModItem(Minecraft.ID, "dye", 1, 7, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 7, missing),
+                getModItem(Minecraft.ID, "dye", 1, 7, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 8, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 35, missing),
-                        getModItem(Botany.ID, "pigment", 1, 35, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 35, missing),
+                getModItem(Botany.ID, "pigment", 1, 35, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 6, missing), getModItem(Minecraft.ID, "dye", 1, 6, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 6, missing),
+                getModItem(Minecraft.ID, "dye", 1, 6, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 8, missing),
-                        getModItem(Botany.ID, "pigment", 1, 8, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 8, missing),
+                getModItem(Botany.ID, "pigment", 1, 8, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 9, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 5, missing), getModItem(Minecraft.ID, "dye", 1, 5, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 5, missing),
+                getModItem(Minecraft.ID, "dye", 1, 5, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 20, missing),
-                        getModItem(Botany.ID, "pigment", 1, 20, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 20, missing),
+                getModItem(Botany.ID, "pigment", 1, 20, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 10, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 4, missing), getModItem(Minecraft.ID, "dye", 1, 15, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 4, missing),
+                getModItem(Minecraft.ID, "dye", 1, 15, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 5, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 5, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 5, missing),
+                getModItem(Minecraft.ID, "dye", 1, 5, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 21, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 21, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 21, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 21, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 24, missing),
-                        getModItem(Botany.ID, "pigment", 1, 24, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 24, missing),
+                getModItem(Botany.ID, "pigment", 1, 24, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 11, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32410, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32410, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32410, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32410, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 25, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 25, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 25, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 25, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 3, missing), getModItem(Minecraft.ID, "dye", 1, 3, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 3, missing),
+                getModItem(Minecraft.ID, "dye", 1, 3, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 65, missing),
-                        getModItem(Botany.ID, "pigment", 1, 65, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 65, missing),
+                getModItem(Botany.ID, "pigment", 1, 65, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 12, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 2, missing), getModItem(Minecraft.ID, "dye", 1, 2, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 2, missing),
+                getModItem(Minecraft.ID, "dye", 1, 2, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 7, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 7, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 7, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 7, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 22, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 22, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 22, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 22, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 28, missing),
-                        getModItem(Botany.ID, "pigment", 1, 28, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 28, missing),
+                getModItem(Botany.ID, "pigment", 1, 28, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 13, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 1, missing), getModItem(Minecraft.ID, "dye", 1, 1, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 1, missing),
+                getModItem(Minecraft.ID, "dye", 1, 1, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 19, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 19, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 19, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 19, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 59, missing),
-                        getModItem(Botany.ID, "pigment", 1, 59, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 59, missing),
+                getModItem(Botany.ID, "pigment", 1, 59, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 14, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dye", 1, 0, missing), getModItem(Minecraft.ID, "dye", 1, 0, missing),
-                        null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 0, missing),
+                getModItem(Minecraft.ID, "dye", 1, 0, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 9, missing),
-                        getModItem(BiomesOPlenty.ID, "misc", 1, 9, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 9, missing),
+                getModItem(BiomesOPlenty.ID, "misc", 1, 9, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 24, missing),
-                        getModItem(ExtraBees.ID, "misc", 1, 24, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 24, missing),
+                getModItem(ExtraBees.ID, "misc", 1, 24, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Botany.ID, "pigment", 1, 1, missing),
-                        getModItem(Botany.ID, "pigment", 1, 1, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Botany.ID, "pigment", 1, 1, missing),
+                getModItem(Botany.ID, "pigment", 1, 1, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15, missing),
-                        getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15, missing), null,
-                        null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15, missing),
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 1, 15, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing),
-                new Object[] { getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing), null, null, null, null, null });
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
+                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
+                null,
+                null,
+                null,
+                null,
+                null);
     }
 
     private void recipes1() {

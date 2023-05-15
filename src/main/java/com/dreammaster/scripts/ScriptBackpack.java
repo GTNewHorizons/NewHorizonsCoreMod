@@ -92,18 +92,26 @@ public class ScriptBackpack implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Backpack.ID, "boundLeather", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "string", 1, 0, missing), "itemLeather",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing), "itemLeather", "materialCloth",
-                        "itemLeather", getModItem(Minecraft.ID, "string", 1, 0, missing), "itemLeather",
-                        getModItem(Minecraft.ID, "string", 1, 0, missing) });
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "itemLeather",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "itemLeather",
+                "materialCloth",
+                "itemLeather",
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                "itemLeather",
+                getModItem(Minecraft.ID, "string", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Backpack.ID, "backpack", 1, 0, missing),
-                new Object[] { "materialCloth", "ringSteel", "materialCloth",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "materialCloth",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing) });
+                "materialCloth",
+                "ringSteel",
+                "materialCloth",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "materialCloth",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing));
 
         HashMap<Integer, String> IDOffsetToDyeMap = new HashMap<>();
         IDOffsetToDyeMap.put(1, "dyeBlack");
@@ -169,19 +177,26 @@ public class ScriptBackpack implements IScriptLoader {
         }
         addShapedRecipe(
                 getModItem(Backpack.ID, "workbenchbackpack", 1, 17, missing),
-                new Object[] { "materialCloth", "ringSteel", "materialCloth",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing), "materialCloth",
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
-                        getModItem(Backpack.ID, "tannedLeather", 1, 0, missing) });
+                "materialCloth",
+                "ringSteel",
+                "materialCloth",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                "materialCloth",
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Backpack.ID, "workbenchbackpack", 1, 217, missing),
-                new Object[] { "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "ringTitanium", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(Backpack.ID, "backpack", 1, 100, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringTitanium",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing), "ringTitanium" });
+                "ringTitanium",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "ringTitanium",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(Backpack.ID, "backpack", 1, 100, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "ringTitanium",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
+                "ringTitanium");
 
         DryingRackRecipes.addDryingRecipe(
                 getModItem(Backpack.ID, "boundLeather", 1, 0, missing),

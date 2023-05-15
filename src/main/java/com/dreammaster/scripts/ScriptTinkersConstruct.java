@@ -20,7 +20,6 @@ import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersMechworks;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -78,1207 +77,1592 @@ public class ScriptTinkersConstruct implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTank", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTankNether", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(Minecraft.ID, "furnace", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(Minecraft.ID, "furnace", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(Natura.ID, "NetherFurnace", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(Natura.ID, "NetherFurnace", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Smeltery", 2, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Smeltery", 2, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 2, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 2, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketLava", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketLava", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "CastingChannel", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "CastingChannel", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "CastingChannel", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "CastingChannel", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlock", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 4, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 4, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlockNether", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 37, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlock", 1, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlockNether", 1, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CastingChannel", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CastingChannel", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 37, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlock", 2, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "CastingChannel", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "CastingChannel", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlockNether", 2, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "CastingChannel", 1, 1, missing) });
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "CastingChannel", 1, 1, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlock", 1, 1, missing),
-                new Object[] { null, null, null, getModItem(TinkerConstruct.ID, "materials", 1, 2, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 2, missing) });
+                null,
+                null,
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlockNether", 1, 1, missing),
-                new Object[] { null, null, null, getModItem(TinkerConstruct.ID, "materials", 1, 37, missing), null,
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                        getModItem(TinkerConstruct.ID, "materials", 1, 37, missing) });
+                null,
+                null,
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTank", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), "glassReinforced", "blockGlass",
-                        "glassReinforced", getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                "glassReinforced",
+                "blockGlass",
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTankNether", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), "glassReinforced",
-                        "blockGlass", "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                "glassReinforced",
+                "blockGlass",
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTank", 1, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), "blockGlass",
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing), "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                "blockGlass",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTankNether", 1, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), "blockGlass",
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing), "glassReinforced",
-                        getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing) });
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                "blockGlass",
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
+                "glassReinforced",
+                getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "helmetWood", 1, 0, missing),
-                new Object[] { "logWood", "logWood", "logWood", "logWood", "craftingToolSoftHammer", "logWood", null,
-                        null, null });
+                "logWood",
+                "logWood",
+                "logWood",
+                "logWood",
+                "craftingToolSoftHammer",
+                "logWood",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "chestplateWood", 1, 0, missing),
-                new Object[] { "logWood", "craftingToolSoftHammer", "logWood", "logWood", "logWood", "logWood",
-                        "logWood", "logWood", "logWood" });
+                "logWood",
+                "craftingToolSoftHammer",
+                "logWood",
+                "logWood",
+                "logWood",
+                "logWood",
+                "logWood",
+                "logWood",
+                "logWood");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "leggingsWood", 1, 0, missing),
-                new Object[] { "logWood", "logWood", "logWood", "logWood", "craftingToolSoftHammer", "logWood",
-                        "logWood", null, "logWood" });
+                "logWood",
+                "logWood",
+                "logWood",
+                "logWood",
+                "craftingToolSoftHammer",
+                "logWood",
+                "logWood",
+                null,
+                "logWood");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "bootsWood", 1, 0, missing),
-                new Object[] { "logWood", "craftingToolSoftHammer", "logWood", "logWood", null, "logWood", null, null,
-                        null });
+                "logWood",
+                "craftingToolSoftHammer",
+                "logWood",
+                "logWood",
+                null,
+                "logWood",
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPane", 2, 0, missing),
-                new Object[] { "craftingToolSaw", null, null, null,
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), null });
+                "craftingToolSaw",
+                null,
+                null,
+                null,
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
-                new Object[] { "sand", "sand", "sand", "dustClay",
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing), "dustClay",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing) });
+                "sand",
+                "sand",
+                "sand",
+                "dustClay",
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                "dustClay",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
-                new Object[] { getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing), "dustClay",
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing), "dustClay", "sand", "sand", "sand" });
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "dustClay",
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                "dustClay",
+                "sand",
+                "sand",
+                "sand");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
-                new Object[] { "sand", "dustClay", getModItem(Minecraft.ID, "gravel", 1, 0, missing), "sand",
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing), "sand", "dustClay",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing) });
+                "sand",
+                "dustClay",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "sand",
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "sand",
+                "dustClay",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
-                new Object[] { getModItem(Minecraft.ID, "gravel", 1, 0, missing), "dustClay", "sand",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing), "sand",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing), "dustClay", "sand" });
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "dustClay",
+                "sand",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                "sand",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "dustClay",
+                "sand");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
-                new Object[] { "sand", "sand", "sand", "dustClay",
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing), "dustClay",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing) });
+                "sand",
+                "sand",
+                "sand",
+                "dustClay",
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing),
+                "dustClay",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
-                new Object[] { getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing), "dustClay",
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing), "dustClay",
-                        "sand", "sand", "sand" });
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "dustClay",
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing),
+                "dustClay",
+                "sand",
+                "sand",
+                "sand");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
-                new Object[] { "sand", "dustClay", getModItem(Minecraft.ID, "gravel", 1, 0, missing), "sand",
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing), "sand", "dustClay",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing) });
+                "sand",
+                "dustClay",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "sand",
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "sand",
+                "dustClay",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
-                new Object[] { getModItem(Minecraft.ID, "gravel", 1, 0, missing), "dustClay", "sand",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing), "sand",
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing), "dustClay", "sand" });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "dustClay",
+                "sand",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing),
+                "sand",
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                "dustClay",
+                "sand");
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing),
-                new Object[] { getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
-                        getModItem(Minecraft.ID, "soul_sand", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
+                getModItem(Minecraft.ID, "soul_sand", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing),
-                new Object[] { getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
-                        getModItem(Minecraft.ID, "soul_sand", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
+                getModItem(Minecraft.ID, "soul_sand", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing),
-                new Object[] { getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
-                        getModItem(Natura.ID, "soil.tainted", 1, 0, missing),
-                        getModItem(Natura.ID, "heatsand", 1, 0, missing),
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
+                getModItem(Natura.ID, "soil.tainted", 1, 0, missing),
+                getModItem(Natura.ID, "heatsand", 1, 0, missing),
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing),
-                new Object[] { getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
-                        getModItem(Natura.ID, "soil.tainted", 1, 0, missing),
-                        getModItem(Natura.ID, "heatsand", 1, 0, missing),
-                        getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
+                getModItem(Natura.ID, "soil.tainted", 1, 0, missing),
+                getModItem(Natura.ID, "heatsand", 1, 0, missing),
+                getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                new Object[] { "platePaper", "platePaper", "platePaper", "platePaper" });
-        addShapelessCraftingRecipe(
+                "platePaper",
+                "platePaper",
+                "platePaper",
+                "platePaper");
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing),
-                new Object[] { "craftingToolSaw", "craftingTableWood" });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                "craftingTableWood");
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        "stickWood", getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing), "stickWood",
-                        null, "craftingToolSoftHammer", null });
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing),
+                "stickWood",
+                null,
+                "craftingToolSoftHammer",
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        "stickWood", getModItem(Minecraft.ID, "crafting_table", 1, 0, missing), "stickWood", null,
-                        "craftingToolSoftHammer", null });
-        addShapelessCraftingRecipe(
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
+                "stickWood",
+                null,
+                "craftingToolSoftHammer",
+                null);
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing) });
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing), null,
-                        "craftingToolSoftHammer", null });
-        addShapelessCraftingRecipe(
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing),
+                null,
+                "craftingToolSoftHammer",
+                null);
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 4, missing) });
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 4, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 2, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing), null,
-                        "craftingToolSoftHammer", null });
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing),
+                null,
+                "craftingToolSoftHammer",
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 3, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "trap.barricade.birch", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "trap.barricade.birch", 1, 0, missing), null,
-                        "craftingToolSoftHammer", null });
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "trap.barricade.birch", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "trap.barricade.birch", 1, 0, missing),
+                null,
+                "craftingToolSoftHammer",
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 4, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "trap.barricade.jungle", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "trap.barricade.jungle", 1, 0, missing), null,
-                        "craftingToolSoftHammer", null });
-        addShapelessCraftingRecipe(
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "trap.barricade.jungle", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "trap.barricade.jungle", 1, 0, missing),
+                null,
+                "craftingToolSoftHammer",
+                null);
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 4, missing) });
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 4, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        "stickWood", getModItem(Minecraft.ID, "chest", 1, 0, missing), "stickWood", null,
-                        "craftingToolSoftHammer", null });
-        addShapelessCraftingRecipe(
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                "stickWood",
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                "stickWood",
+                null,
+                "craftingToolSoftHammer",
+                null);
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 4, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5, missing) });
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        "fenceWood", "stickWood", "fenceWood", null, "craftingToolSoftHammer", null });
-        addShapelessCraftingRecipe(
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                "fenceWood",
+                "stickWood",
+                "fenceWood",
+                null,
+                "craftingToolSoftHammer",
+                null);
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 11, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 11, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 12, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 12, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13, missing) });
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 11, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}", missing), "stickWood",
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}", missing), null,
-                        "craftingToolSoftHammer", null });
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}", missing),
+                "stickWood",
+                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}", missing),
+                null,
+                "craftingToolSoftHammer",
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 12, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}", missing), "stickWood",
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}", missing), null,
-                        "craftingToolSoftHammer", null });
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}", missing),
+                "stickWood",
+                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}", missing),
+                null,
+                "craftingToolSoftHammer",
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), "stickWood",
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}", missing), "stickWood",
-                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}", missing), null,
-                        "craftingToolSoftHammer", null });
-        addShapelessCraftingRecipe(
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}", missing),
+                "stickWood",
+                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}", missing),
+                null,
+                "craftingToolSoftHammer",
+                null);
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 11, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 11, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 12, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 12, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13, missing) });
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockIron",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockIron", "blockIron",
-                        "craftingToolHardHammer", "blockIron" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockIron",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockIron",
+                "blockIron",
+                "craftingToolHardHammer",
+                "blockIron");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockGold",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockGold", "blockGold",
-                        "craftingToolHardHammer", "blockGold" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockGold",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockGold",
+                "blockGold",
+                "craftingToolHardHammer",
+                "blockGold");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockDiamond",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockDiamond", "blockDiamond",
-                        "craftingToolHardHammer", "blockDiamond" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockDiamond",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockDiamond",
+                "blockDiamond",
+                "craftingToolHardHammer",
+                "blockDiamond");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 3, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockEmerald",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockEmerald", "blockEmerald",
-                        "craftingToolHardHammer", "blockEmerald" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockEmerald",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockEmerald",
+                "blockEmerald",
+                "craftingToolHardHammer",
+                "blockEmerald");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 4, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockCobalt",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockCobalt", "blockCobalt",
-                        "craftingToolHardHammer", "blockCobalt" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockCobalt",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockCobalt",
+                "blockCobalt",
+                "craftingToolHardHammer",
+                "blockCobalt");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 5, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockArdite",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockArdite", "blockArdite",
-                        "craftingToolHardHammer", "blockArdite" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockArdite",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockArdite",
+                "blockArdite",
+                "craftingToolHardHammer",
+                "blockArdite");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 6, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockManyullyn",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockManyullyn",
-                        "blockManyullyn", "craftingToolHardHammer", "blockManyullyn" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockManyullyn",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockManyullyn",
+                "blockManyullyn",
+                "craftingToolHardHammer",
+                "blockManyullyn");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 7, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockCopper",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockCopper", "blockCopper",
-                        "craftingToolHardHammer", "blockCopper" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockCopper",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockCopper",
+                "blockCopper",
+                "craftingToolHardHammer",
+                "blockCopper");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 8, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockBronze",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockBronze", "blockBronze",
-                        "craftingToolHardHammer", "blockBronze" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockBronze",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockBronze",
+                "blockBronze",
+                "craftingToolHardHammer",
+                "blockBronze");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 9, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockTin",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockTin", "blockTin",
-                        "craftingToolHardHammer", "blockTin" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockTin",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockTin",
+                "blockTin",
+                "craftingToolHardHammer",
+                "blockTin");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 10, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockAluminium",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockAluminium",
-                        "blockAluminium", "craftingToolHardHammer", "blockAluminium" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockAluminium",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockAluminium",
+                "blockAluminium",
+                "craftingToolHardHammer",
+                "blockAluminium");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 11, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockAluminiumBrass",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockAluminiumBrass",
-                        "blockAluminiumBrass", "craftingToolHardHammer", "blockAluminiumBrass" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockAluminiumBrass",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockAluminiumBrass",
+                "blockAluminiumBrass",
+                "craftingToolHardHammer",
+                "blockAluminiumBrass");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 12, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockAlumite",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockAlumite", "blockAlumite",
-                        "craftingToolHardHammer", "blockAlumite" });
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockAlumite",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockAlumite",
+                "blockAlumite",
+                "craftingToolHardHammer",
+                "blockAlumite");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 13, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
-                        getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing), "blockSteel",
-                        getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing), "blockSteel", "blockSteel",
-                        "craftingToolHardHammer", "blockSteel" });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
+                "blockSteel",
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
+                "blockSteel",
+                "blockSteel",
+                "craftingToolHardHammer",
+                "blockSteel");
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "FurnaceSlab", 1, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(Minecraft.ID, "furnace", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(Minecraft.ID, "furnace", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 5, missing),
-                new Object[] { "craftingToolSaw",
-                        getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 32767, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, wildcard, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "Smeltery", 1, 4, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 4, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "Smeltery", 1, 5, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 5, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "Smeltery", 1, 6, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 6, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 4, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "Smeltery", 1, 8, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 8, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 5, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "Smeltery", 1, 9, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 9, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 6, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "Smeltery", 1, 10, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 10, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SearedSlab", 2, 7, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "Smeltery", 1, 11, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 11, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 7, missing),
-                new Object[] { "craftingToolHardHammer", getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolHardHammer",
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 0, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 1, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 2, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 3, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 4, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 4, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 4, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 5, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 5, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 5, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 6, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 6, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 6, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 7, missing),
-                new Object[] { "craftingToolSaw", getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 7, missing) });
+                "craftingToolSaw",
+                getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 7, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "trap.punji", 2, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "reeds", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "reeds", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "reeds", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "reeds", 1, 0, missing), "stickWood",
-                        getModItem(Minecraft.ID, "reeds", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Minecraft.ID, "reeds", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "reeds", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "reeds", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "reeds", 1, 0, missing),
+                "stickWood",
+                getModItem(Minecraft.ID, "reeds", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 0, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 1, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 2, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 2, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 2, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 3, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 4, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 4, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 4, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 5, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 5, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 5, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 6, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 6, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 6, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 7, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 7, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 7, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 0, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 8, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 8, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 1, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 9, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 9, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 2, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 10, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 10, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 3, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 11, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 11, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 4, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 12, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 12, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 5, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 13, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 13, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 6, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 14, missing) });
-        addShapelessCraftingRecipe(
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 14, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 7, missing),
-                new Object[] { "craftingToolShears", getModItem(Minecraft.ID, "wool", 1, 15, missing) });
+                "craftingToolShears",
+                getModItem(Minecraft.ID, "wool", 1, 15, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "log", 1, 0, missing), null,
-                        getModItem(Minecraft.ID, "log", 1, 0, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "log", 1, 0, missing), null,
-                        getModItem(Minecraft.ID, "log", 1, 0, missing), null });
+                null,
+                getModItem(Minecraft.ID, "log", 1, 0, missing),
+                null,
+                getModItem(Minecraft.ID, "log", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "log", 1, 0, missing),
+                null,
+                getModItem(Minecraft.ID, "log", 1, 0, missing),
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "log", 1, 1, missing), null,
-                        getModItem(Minecraft.ID, "log", 1, 1, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "log", 1, 1, missing), null,
-                        getModItem(Minecraft.ID, "log", 1, 1, missing), null });
+                null,
+                getModItem(Minecraft.ID, "log", 1, 1, missing),
+                null,
+                getModItem(Minecraft.ID, "log", 1, 1, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "log", 1, 1, missing),
+                null,
+                getModItem(Minecraft.ID, "log", 1, 1, missing),
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "trap.barricade.birch", 1, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "log", 1, 2, missing), null,
-                        getModItem(Minecraft.ID, "log", 1, 2, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "log", 1, 2, missing), null,
-                        getModItem(Minecraft.ID, "log", 1, 2, missing), null });
+                null,
+                getModItem(Minecraft.ID, "log", 1, 2, missing),
+                null,
+                getModItem(Minecraft.ID, "log", 1, 2, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "log", 1, 2, missing),
+                null,
+                getModItem(Minecraft.ID, "log", 1, 2, missing),
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "trap.barricade.jungle", 1, 0, missing),
-                new Object[] { null, getModItem(Minecraft.ID, "log", 1, 3, missing), null,
-                        getModItem(Minecraft.ID, "log", 1, 3, missing),
-                        getModItem(Minecraft.ID, "string", 1, 0, missing),
-                        getModItem(Minecraft.ID, "log", 1, 3, missing), null,
-                        getModItem(Minecraft.ID, "log", 1, 3, missing), null });
+                null,
+                getModItem(Minecraft.ID, "log", 1, 3, missing),
+                null,
+                getModItem(Minecraft.ID, "log", 1, 3, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "log", 1, 3, missing),
+                null,
+                getModItem(Minecraft.ID, "log", 1, 3, missing),
+                null);
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing),
-                new Object[] { "slimeball", "slimeball", "slimeball", "dustRedstone",
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing), "dustRedstone", "slimeball",
-                        "slimeball", "slimeball" });
+                "slimeball",
+                "slimeball",
+                "slimeball",
+                "dustRedstone",
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                "dustRedstone",
+                "slimeball",
+                "slimeball",
+                "slimeball");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "blood.channel", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing), "dustRedstone",
-                        getModItem(Minecraft.ID, "water_bucket", 1, 0, missing), "dustRedstone",
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing) });
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
+                "dustRedstone",
+                getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
+                "dustRedstone",
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "slime.pad", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "slime.gel", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing) });
+                getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "slime.gel", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
-                        getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
-                        getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
-                        getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
-                        getModItem(Minecraft.ID, "slime_ball", 1, 0, missing) });
+                getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
+                getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
+                getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
+                getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
+                getModItem(Minecraft.ID, "slime_ball", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing) });
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 3, missing),
-                new Object[] { "dustBone", getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing), "dustBone",
-                        getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
-                        getModItem(Minecraft.ID, "dirt", 1, 0, missing),
-                        getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing), "dustBone",
-                        getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing), "dustBone" });
+                "dustBone",
+                getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
+                "dustBone",
+                getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
+                "dustBone",
+                getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
+                "dustBone");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeWhite",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeWhite",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeWhite" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeWhite");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeOrange",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeOrange",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeOrange" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeOrange");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeMagenta",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeMagenta",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeMagenta" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeMagenta");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 3, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeLightBlue",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeLightBlue",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 3, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeLightBlue" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeLightBlue");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 4, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeYellow",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeYellow",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 4, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeYellow" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeYellow");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 5, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeLime",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeLime",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 5, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeLime" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeLime");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 6, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyePink",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyePink",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 6, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyePink" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyePink");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 7, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeGray",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeGray",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 7, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeGray" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeGray");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 8, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeLightGray",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeLightGray",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 8, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeLightGray" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeLightGray");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 9, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeCyan",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeCyan",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 9, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeCyan" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeCyan");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 10, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyePurple",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyePurple",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 10, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyePurple" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyePurple");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 11, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeBlue",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeBlue",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 11, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeBlue" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeBlue");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 12, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeBrown",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeBrown",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 12, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeBrown" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeBrown");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 13, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeGreen",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeGreen",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 13, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeGreen" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeGreen");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 14, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeRed",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeRed",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 14, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeRed" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeRed");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 15, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeBlack",
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeBlack",
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 1, 15, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing), "dyeBlack" });
+                getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
+                "dyeBlack");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeWhite",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeWhite",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeWhite" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeWhite");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeOrange",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeOrange",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeOrange" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeOrange");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeMagenta",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeMagenta",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 2, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeMagenta" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeMagenta");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 3, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeLightBlue",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeLightBlue",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 3, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeLightBlue" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeLightBlue");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 4, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeYellow",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeYellow",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 4, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeYellow" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeYellow");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 5, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeLime",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeLime",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 5, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeLime" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeLime");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 6, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyePink",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyePink",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 6, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyePink" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyePink");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 7, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeGray",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeGray",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 7, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeGray" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeGray");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 8, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeLightGray",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeLightGray",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 8, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeLightGray" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeLightGray");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 9, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeCyan",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeCyan",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 9, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeCyan" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeCyan");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 10, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyePurple",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyePurple",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 10, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyePurple" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyePurple");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 11, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeBlue",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeBlue",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 11, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeBlue" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeBlue");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 12, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeBrown",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeBrown",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 12, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeBrown" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeBrown");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 13, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeGreen",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeGreen",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 13, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeGreen" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeGreen");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 14, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeRed",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeRed",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 14, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeRed" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeRed");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 7, 15, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeBlack",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeBlack",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ExtraUtilities.ID, "paintbrush", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 15, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "dyeBlack" });
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "dyeBlack");
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 0, missing),
-                new Object[] { "slabWood", "slabWood", "slabWood", "screwWood", "craftingToolScrewdriver",
-                        "screwWood" });
-        addShapelessCraftingRecipe(
+                "slabWood",
+                "slabWood",
+                "slabWood",
+                "screwWood",
+                "craftingToolScrewdriver",
+                "screwWood");
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 0, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 5, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 5, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 5, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 0, missing) });
+                getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 0, missing),
-                new Object[] { getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
-                        getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing),
-                        getModItem(Railcraft.ID, "detector", 1, 1, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing) });
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
+                getModItem(Railcraft.ID, "detector", 1, 1, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 1, missing),
-                new Object[] { getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
-                        getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing),
-                        getModItem(Railcraft.ID, "detector", 1, 3, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing) });
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
+                getModItem(Railcraft.ID, "detector", 1, 3, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 2, missing),
-                new Object[] { getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
-                        getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing),
-                        getModItem(Railcraft.ID, "detector", 1, 5, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing) });
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
+                getModItem(Railcraft.ID, "detector", 1, 5, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Redstone.Landmine", 1, 3, missing),
-                new Object[] { getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
-                        getModItem(Minecraft.ID, "repeater", 1, 0, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing),
-                        getModItem(Railcraft.ID, "detector", 1, 4, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing) });
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
+                getModItem(Minecraft.ID, "repeater", 1, 0, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
+                getModItem(Railcraft.ID, "detector", 1, 4, missing),
+                getModItem(Minecraft.ID, "stone", 1, 0, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "materials", 1, 40, missing),
-                new Object[] { null, null, getModItem(GregTech.ID, "gt.metaitem.01", 1, 2019, missing), null, null,
-                        null, null, null, null });
+                null,
+                null,
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2019, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2019, missing),
-                new Object[] { null, null, getModItem(TinkerConstruct.ID, "materials", 1, 40, missing), null, null,
-                        null, null, null, null });
-        addShapelessCraftingRecipe(
+                null,
+                null,
+                getModItem(TinkerConstruct.ID, "materials", 1, 40, missing),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing),
-                new Object[] { getModItem(RandomThings.ID, "ingredient", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing));
+        addShapelessRecipe(
                 getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing),
-                new Object[] { getModItem(RandomThings.ID, "ingredient", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                new Object[] { getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing) });
+                getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing));
         addShapedRecipe(
                 createItemStack(
                         TinkerConstruct.ID,
@@ -1287,10 +1671,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:0.0d,Built:1b,MaxDefense:4.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}",
                         missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "boltElectrum",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "ringElectrum",
-                        getModItem(Minecraft.ID, "diamond_helmet", 1, 0, missing), "ringElectrum", "lensDiamond",
-                        "circuitAdvanced", "lensDiamond" });
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "boltElectrum",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "ringElectrum",
+                getModItem(Minecraft.ID, "diamond_helmet", 1, 0, missing),
+                "ringElectrum",
+                "lensDiamond",
+                "circuitAdvanced",
+                "lensDiamond");
         addShapedRecipe(
                 createItemStack(
                         TinkerConstruct.ID,
@@ -1299,11 +1688,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:4.0d,Built:1b,MaxDefense:10.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}",
                         missing),
-                new Object[] { getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "circuitAdvanced",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "plateObsidian",
-                        getModItem(Minecraft.ID, "diamond_chestplate", 1, 0, missing), "plateObsidian",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "plateObsidian",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing) });
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "plateObsidian",
+                getModItem(Minecraft.ID, "diamond_chestplate", 1, 0, missing),
+                "plateObsidian",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "plateObsidian",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing));
         addShapedRecipe(
                 createItemStack(
                         TinkerConstruct.ID,
@@ -1312,11 +1705,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         0,
                         "{TinkerAccessory:{BaseDurability:500,Built:1b,Damage:0,BonusDurability:0,TotalDurability:500,ModDurability:0.0f,Modifiers:5,Broken:0b}}",
                         missing),
-                new Object[] { null, getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "plateDiamond", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "circuitAdvanced" });
+                null,
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "plateDiamond",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                null,
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "circuitAdvanced");
         addShapedRecipe(
                 createItemStack(
                         TinkerConstruct.ID,
@@ -1325,12 +1722,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}",
                         missing),
-                new Object[] { "plateDiamond", getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        "plateDiamond", getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing), "circuitAdvanced",
-                        getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing),
-                        getModItem(Minecraft.ID, "diamond_leggings", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing) });
+                "plateDiamond",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "plateDiamond",
+                getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing),
+                getModItem(Minecraft.ID, "diamond_leggings", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "fletching", 1, 0, missing));
         addShapedRecipe(
                 createItemStack(
                         TinkerConstruct.ID,
@@ -1339,11 +1739,15 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         0,
                         "{TinkerAccessory:{BaseDurability:500,Built:1b,Damage:0,BonusDurability:0,TotalDurability:500,ModDurability:0.0f,Modifiers:5,Broken:0b}}",
                         missing),
-                new Object[] { null, "circuitAdvanced", null,
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), "plateDiamond",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing), null,
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing) });
+                null,
+                "circuitAdvanced",
+                null,
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                "plateDiamond",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                null,
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing));
         addShapedRecipe(
                 createItemStack(
                         TinkerConstruct.ID,
@@ -1352,34 +1756,38 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:6.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}",
                         missing),
-                new Object[] { null, "plateDiamond", "plateDiamond", null,
-                        getModItem(Minecraft.ID, "diamond_boots", 1, 0, missing), "circuitAdvanced",
-                        getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing) });
-        addShapelessCraftingRecipe(
+                null,
+                "plateDiamond",
+                "plateDiamond",
+                null,
+                getModItem(Minecraft.ID, "diamond_boots", 1, 0, missing),
+                "circuitAdvanced",
+                getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "materials", 1, 3, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 11033, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11033, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 11033, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 3, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(TinkerConstruct.ID, "materials", 1, 3, missing));
+        addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "materials", 1, 5, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 11386, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11386, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 11386, missing),
-                new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 5, missing) });
+                getModItem(TinkerConstruct.ID, "materials", 1, 5, missing));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing),
-                new Object[] { getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing) });
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing));
 
         TConstructHelper.removeBasinRecipe(getModItem(Minecraft.ID, "iron_block", 1, 0, missing));
         TConstructHelper.removeBasinRecipe(getModItem(Minecraft.ID, "gold_block", 1, 0, missing));

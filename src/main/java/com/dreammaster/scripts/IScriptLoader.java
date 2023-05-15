@@ -7,20 +7,20 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.main.MainRegistry;
+import com.dreammaster.recipes.NBTItem;
+import com.dreammaster.recipes.ShapedUniversalRecipe;
+import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 import gregtech.common.items.GT_MetaGenerated_Item_02;
 
@@ -51,79 +51,35 @@ public interface IScriptLoader {
     void loadRecipes();
 
     /**
-     * Code strongly inspired from what did alkalus in GT++.
-     * 
-     * @param inputs       Object array that should contain only the 9 object representing the items in the crafting
-     *                     grid. Acceptable types are Item, Block, ItemStack, ItemData and null (for empty slots).
-     * @param aOutputStack The result of the crafting recipe
+     * Adds shaped crafting recipe using {@link ShapedUniversalRecipe}
+     *
+     * @param inputs  Crafting ingredient, maximum 9 accepted. Supports String (OreDict), ItemStack, Item, Block,
+     *                ItemData, {@link IItemContainer}, {@link ItemData}, {@link NBTItem}, null (empty slot)
+     * @param aOutput The result of the crafting recipe
      * @return a boolean
      */
-    default boolean addShapedRecipe(ItemStack aOutputStack, Object[] inputs) {
-        Object[] slots = new Object[9];
-        StringBuilder fullString = new StringBuilder();
-        String slotMappings = "abcdefghi";
+    default boolean addShapedRecipe(ItemStack aOutput, Object... inputs) {
         try {
-            for (int i = 0; i < 9; i++) {
-                if (i >= inputs.length) {
-                    slots[i] = null;
-                    fullString.append(" ");
-                    continue;
-                }
-                Object o = inputs[i];
-                if (o instanceof ItemStack) {
-                    final ItemStack itemStack = ((ItemStack) o).copy();
-                    itemStack.stackSize = 1;
-                    slots[i] = itemStack.copy();
-                    fullString.append(slotMappings.charAt(i));
-                } else if (o instanceof Item) {
-                    final ItemStack itemStack = new ItemStack((Item) o, 1);
-                    slots[i] = itemStack.copy();
-                    fullString.append(slotMappings.charAt(i));
-                } else if (o instanceof Block) {
-                    final ItemStack itemStack = new ItemStack((Block) o, 1);
-                    slots[i] = itemStack.copy();
-                    fullString.append(slotMappings.charAt(i));
-                } else if (o instanceof String) {
-                    slots[i] = o;
-                    fullString.append(slotMappings.charAt(i));
-                } else if (o instanceof ItemData) {
-                    ItemData data = (ItemData) o;
-                    ItemStack itemStack = GT_OreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
-                    if (itemStack == null) {
-                        throw new NullPointerException("bad item passed in the recipe");
-                    } else {
-                        slots[i] = itemStack;
-                        fullString.append(slotMappings.charAt(i));
-                    }
+            GameRegistry.addRecipe(new ShapedUniversalRecipe(aOutput, inputs));
+        } catch (Exception e) {
+            MainRegistry.Logger.error("a recipe went wrong:");
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
-                } else if (o == null) {
-                    slots[i] = null;
-                    fullString.append(" ");
-                } else {
-                    slots[i] = null;
-                    throw new NullPointerException("bad recipe generated");
-                }
-            }
-            String aRow1 = fullString.substring(0, 3);
-            String aRow2 = fullString.substring(3, 6);
-            String aRow3 = fullString.substring(6, 9);
-            String[] recipeRows = new String[] { aRow1, aRow2, aRow3 };
-            Object[] recipeInputs = new Object[19];
-            recipeInputs[0] = recipeRows;
-            int aIndex = 0;
-            for (int u = 1; u < 20; u += 2) {
-                if (aIndex == 9) {
-                    break;
-                }
-                if (fullString.charAt(aIndex) != (' ')) {
-                    recipeInputs[u] = fullString.charAt(aIndex);
-                    recipeInputs[u + 1] = slots[aIndex];
-                }
-                aIndex++;
-            }
-            recipeInputs = removeNulls(recipeInputs);
-            ShapedOreRecipe aRecipe = new ShapedOreRecipe(aOutputStack, recipeInputs);
-            GameRegistry.addRecipe(aRecipe);
+    /**
+     * Adds shapeless crafting recipe using {@link ShapelessUniversalRecipe}
+     *
+     * @param inputs  Crafting ingredient, maximum 9 accepted. Supports String (OreDict), ItemStack, Item, Block,
+     *                ItemData, {@link IItemContainer}, {@link ItemData}, {@link NBTItem}
+     * @param aOutput The result of the crafting recipe
+     * @return a boolean
+     */
+    default boolean addShapelessRecipe(ItemStack aOutput, Object... inputs) {
+        try {
+            GameRegistry.addRecipe(new ShapelessUniversalRecipe(aOutput, inputs));
         } catch (Exception e) {
             MainRegistry.Logger.error("a recipe went wrong:");
             e.printStackTrace();

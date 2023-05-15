@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.CatWalks;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
@@ -29,38 +28,70 @@ public class ScriptCatWalk implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(CatWalks.ID, "catwalk_unlit", 6, 0, missing),
-                new Object[] { getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "stickSteel",
-                        getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "screwSteel",
-                        getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "screwSteel", "craftingToolScrewdriver",
-                        "stickSteel", "craftingToolWrench" });
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "stickSteel",
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "screwSteel",
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "stickSteel",
+                "craftingToolWrench");
         addShapedRecipe(
                 getModItem(CatWalks.ID, "cagedLadder_north_unlit", 6, 0, missing),
-                new Object[] { getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
-                        getModItem(Minecraft.ID, "ladder", 1, 0, missing),
-                        getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "screwSteel",
-                        getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "screwSteel", "craftingToolScrewdriver",
-                        "stickSteel", "craftingToolWrench" });
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                getModItem(Minecraft.ID, "ladder", 1, 0, missing),
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "screwSteel",
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "stickSteel",
+                "craftingToolWrench");
         addShapedRecipe(
                 getModItem(CatWalks.ID, "scaffold", 1, 0, missing),
-                new Object[] { "screwSteel", getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "screwSteel",
-                        "craftingToolScrewdriver", "frameGtSteel", "craftingToolWrench" });
-        addShapelessCraftingRecipe(
+                "screwSteel",
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "screwSteel",
+                "craftingToolScrewdriver",
+                "frameGtSteel",
+                "craftingToolWrench");
+        addShapelessRecipe(
                 getModItem(CatWalks.ID, "scaffold", 1, 0, missing),
-                new Object[] { getModItem(CatWalks.ID, "scaffold", 1, 1, missing) });
+                getModItem(CatWalks.ID, "scaffold", 1, 1, missing));
         addShapedRecipe(
                 getModItem(CatWalks.ID, "support_column", 3, 0, missing),
-                new Object[] { "stickSteel", getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "stickSteel",
-                        "stickSteel", getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "stickSteel", "stickSteel",
-                        getModItem(CatWalks.ID, "steelgrate", 1, 0, missing), "stickSteel" });
+                "stickSteel",
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "stickSteel",
+                "stickSteel",
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "stickSteel",
+                "stickSteel",
+                getModItem(CatWalks.ID, "steelgrate", 1, 0, missing),
+                "stickSteel");
         addShapedRecipe(
                 getModItem(CatWalks.ID, "steelgrate", 5, 0, missing),
-                new Object[] { "stickSteel", "screwSteel", "stickSteel", "screwSteel", "stickSteel", "screwSteel",
-                        "stickSteel", "craftingToolScrewdriver", "stickSteel" });
+                "stickSteel",
+                "screwSteel",
+                "stickSteel",
+                "screwSteel",
+                "stickSteel",
+                "screwSteel",
+                "stickSteel",
+                "craftingToolScrewdriver",
+                "stickSteel");
         addShapedRecipe(
                 getModItem(CatWalks.ID, "blowtorch", 1, 0, missing),
-                new Object[] { null, "screwSteel", getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
-                        "craftingToolScrewdriver", "stickSteel", "screwSteel", "stickSteel", "craftingToolWrench",
-                        null });
+                null,
+                "screwSteel",
+                getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "stickSteel",
+                "screwSteel",
+                "stickSteel",
+                "craftingToolWrench",
+                null);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

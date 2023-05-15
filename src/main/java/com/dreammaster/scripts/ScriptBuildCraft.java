@@ -23,7 +23,6 @@ import static gregtech.api.enums.Mods.ProjectRedTransportation;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
@@ -72,228 +71,347 @@ public class ScriptBuildCraft implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessCraftingRecipe(
-                getModItem(BuildCraftCore.ID, "diamondGearItem", 1, 0, missing),
-                new Object[] { "gearGtDiamond" });
-        addShapelessCraftingRecipe(
-                getModItem(BuildCraftCore.ID, "goldGearItem", 1, 0, missing),
-                new Object[] { "gearGtGold" });
-        addShapelessCraftingRecipe(
-                getModItem(BuildCraftCore.ID, "ironGearItem", 1, 0, missing),
-                new Object[] { "gearGtIron" });
-        addShapelessCraftingRecipe(
-                getModItem(BuildCraftCore.ID, "stoneGearItem", 1, 0, missing),
-                new Object[] { "gearGtStone" });
-        addShapelessCraftingRecipe(
-                getModItem(BuildCraftCore.ID, "woodenGearItem", 1, 0, missing),
-                new Object[] { "gearGtWood" });
+        addShapelessRecipe(getModItem(BuildCraftCore.ID, "diamondGearItem", 1, 0, missing), "gearGtDiamond");
+        addShapelessRecipe(getModItem(BuildCraftCore.ID, "goldGearItem", 1, 0, missing), "gearGtGold");
+        addShapelessRecipe(getModItem(BuildCraftCore.ID, "ironGearItem", 1, 0, missing), "gearGtIron");
+        addShapelessRecipe(getModItem(BuildCraftCore.ID, "stoneGearItem", 1, 0, missing), "gearGtStone");
+        addShapelessRecipe(getModItem(BuildCraftCore.ID, "woodenGearItem", 1, 0, missing), "gearGtWood");
         addShapedRecipe(
                 getModItem(BuildCraftCore.ID, "engineBlock", 1, 2, missing),
-                new Object[] { "plateInvar", "plateLapis", "plateInvar", "springInvar",
-                        getModItem(Minecraft.ID, "piston", 1, 0, missing), "springInvar", "gearInvar",
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing), "gearInvar" });
+                "plateInvar",
+                "plateLapis",
+                "plateInvar",
+                "springInvar",
+                getModItem(Minecraft.ID, "piston", 1, 0, missing),
+                "springInvar",
+                "gearInvar",
+                getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
+                "gearInvar");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipestructurecobblestone", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowercobblestone", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "wireGt01Tin",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Tin",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing),
-                new Object[] { getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "wireGt01Nickel",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing) });
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Nickel",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerwood", 1, 0, missing),
-                new Object[] { "stickWood", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "wireGt01Copper",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickWood",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickWood" });
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Copper",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickWood");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowersandstone", 1, 0, missing),
-                new Object[] { getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "wireGt01Cupronickel",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing) });
+                getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Cupronickel",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerquartz", 1, 0, missing),
-                new Object[] { "stickNetherQuartz", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "stickNetherQuartz", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "wireGt01Silver", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "stickNetherQuartz", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "stickNetherQuartz" });
+                "stickNetherQuartz",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickNetherQuartz",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Silver",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickNetherQuartz",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickNetherQuartz");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepoweriron", 1, 0, missing),
-                new Object[] { "stickIron", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickIron",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "wireGt01Electrum",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickIron",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickIron" });
+                "stickIron",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickIron",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Electrum",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickIron",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickIron");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing),
-                new Object[] { "stickGold", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickGold",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "wireGt01Aluminium",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickGold",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickGold" });
+                "stickGold",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickGold",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Aluminium",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickGold",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickGold");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepoweremerald", 1, 0, missing),
-                new Object[] { "stickEmerald", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "stickEmerald", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "wireGt01Nichrome",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickEmerald",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickEmerald" });
+                "stickEmerald",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickEmerald",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Nichrome",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickEmerald",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickEmerald");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerdiamond", 1, 0, missing),
-                new Object[] { "stickDiamond", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "stickDiamond", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "wireGt01Platinum",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickDiamond",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickDiamond" });
+                "stickDiamond",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickDiamond",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "wireGt01Platinum",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickDiamond",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickDiamond");
         addShapedRecipe(
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                new Object[] { "screwIron", "ringIron", "screwIron", "craftingToolWrench",
-                        getModItem(Railcraft.ID, "glass", 1, 0, missing), "craftingToolScrewdriver", "screwIron",
-                        "ringIron", "screwIron" });
+                "screwIron",
+                "ringIron",
+                "screwIron",
+                "craftingToolWrench",
+                getModItem(Railcraft.ID, "glass", 1, 0, missing),
+                "craftingToolScrewdriver",
+                "screwIron",
+                "ringIron",
+                "screwIron");
         addShapedRecipe(
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                new Object[] { "screwIron", "ringIron", "screwIron", "craftingToolWrench",
-                        getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5, missing), "craftingToolScrewdriver",
-                        "screwIron", "ringIron", "screwIron" });
+                "screwIron",
+                "ringIron",
+                "screwIron",
+                "craftingToolWrench",
+                getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5, missing),
+                "craftingToolScrewdriver",
+                "screwIron",
+                "ringIron",
+                "screwIron");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsvoid", 1, 0, missing),
-                new Object[] { getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "gemEnderPearl",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing) });
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "gemEnderPearl",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                getModItem(RandomThings.ID, "ingredient", 1, 1, missing));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipefluidsvoid", 1, 0, missing),
-                new Object[] { "stickAnyRubber", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        "stickAnyRubber", getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "gemEnderPearl",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickAnyRubber",
-                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing), "stickAnyRubber" });
+                "stickAnyRubber",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickAnyRubber",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "gemEnderPearl",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickAnyRubber",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickAnyRubber");
         addShapedRecipe(
                 getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                new Object[] { "itemCasingAnyIron", "gearGtSmallAnyIron", "itemCasingAnyIron", "gearGtSmallAnyIron",
-                        getModItem(Forestry.ID, "factory2", 1, 2, missing), "gearGtSmallAnyIron", "itemCasingAnyIron",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing), "itemCasingAnyIron" });
-        addShapelessCraftingRecipe(
+                "itemCasingAnyIron",
+                "gearGtSmallAnyIron",
+                "itemCasingAnyIron",
+                "gearGtSmallAnyIron",
+                getModItem(Forestry.ID, "factory2", 1, 2, missing),
+                "gearGtSmallAnyIron",
+                "itemCasingAnyIron",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                "itemCasingAnyIron");
+        addShapelessRecipe(
                 getModItem(BuildCraftCore.ID, "paintbrush", 1, 0, missing),
-                new Object[] { getModItem(OpenBlocks.ID, "paintBrush", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(OpenBlocks.ID, "paintBrush", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                new Object[] { getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11, missing) });
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11, missing));
         addShapedRecipe(
                 getModItem(BuildCraftBuilders.ID, "fillerBlock", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing), "crystalRedstone",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing), "circuitGood",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing), "circuitGood",
-                        "gearGtSmallAluminium", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        "gearGtSmallAluminium" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                "crystalRedstone",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                "circuitGood",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
+                "circuitGood",
+                "gearGtSmallAluminium",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallAluminium");
         addShapedRecipe(
                 getModItem(BuildCraftBuilders.ID, "builderBlock", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "crystalRedstone",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "circuitAdvanced",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing), "circuitAdvanced",
-                        "gearGtSmallStainlessSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        "gearGtSmallStainlessSteel" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "crystalRedstone",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                "circuitAdvanced",
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(BuildCraftBuilders.ID, "architectBlock", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(BuildCraftBuilders.ID, "templateItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "circuitAdvanced",
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing), "circuitAdvanced", "gearGtDiamond",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing), "gearGtDiamond" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                getModItem(BuildCraftBuilders.ID, "templateItem", 1, 0, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                "circuitAdvanced",
+                "gearGtDiamond",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                "gearGtDiamond");
         addShapedRecipe(
                 getModItem(BuildCraftBuilders.ID, "libraryBlock", 1, 0, missing),
-                new Object[] { "itemCasingStainlessSteel", "crystalRedstone", "itemCasingStainlessSteel", "circuitData",
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing), "circuitData",
-                        "itemCasingStainlessSteel", "plateSteel", "itemCasingStainlessSteel" });
+                "itemCasingStainlessSteel",
+                "crystalRedstone",
+                "itemCasingStainlessSteel",
+                "circuitData",
+                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                "circuitData",
+                "itemCasingStainlessSteel",
+                "plateSteel",
+                "itemCasingStainlessSteel");
         addShapedRecipe(
                 getModItem(BuildCraftFactory.ID, "floodGateBlock", 1, 0, missing),
-                new Object[] { "itemCasingSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
-                        "itemCasingSteel", getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "itemCasingSteel",
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), "itemCasingSteel" });
+                "itemCasingSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                "itemCasingSteel",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "itemCasingSteel",
+                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                "itemCasingSteel");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserBlock", 1, 0, missing),
-                new Object[] { "screwStainlessSteel", "blockRedstone", "screwStainlessSteel", "lensDiamond",
-                        "circuitAdvanced", "lensDiamond", "plateDenseObsidian",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing), "plateDenseObsidian" });
+                "screwStainlessSteel",
+                "blockRedstone",
+                "screwStainlessSteel",
+                "lensDiamond",
+                "circuitAdvanced",
+                "lensDiamond",
+                "plateDenseObsidian",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                "plateDenseObsidian");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserTableBlock", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "blockRedstone",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "plateDiamond", "circuitAdvanced",
-                        "plateDiamond", "plateDenseObsidian",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing), "plateDenseObsidian" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "blockRedstone",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "plateDiamond",
+                "circuitAdvanced",
+                "plateDiamond",
+                "plateDenseObsidian",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                "plateDenseObsidian");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserTableBlock", 1, 3, missing),
-                new Object[] { "circuitAdvanced", "blockRedstone", "circuitAdvanced", "chipsetRed", "crystalRedstone",
-                        "chipsetRed", "plateDenseObsidian", "chipsetRed", "plateDenseObsidian" });
+                "circuitAdvanced",
+                "blockRedstone",
+                "circuitAdvanced",
+                "chipsetRed",
+                "crystalRedstone",
+                "chipsetRed",
+                "plateDenseObsidian",
+                "chipsetRed",
+                "plateDenseObsidian");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserTableBlock", 1, 2, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "blockRedstone",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing), "circuitAdvanced",
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing), "plateDenseObsidian",
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0, missing), "plateDenseObsidian" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "blockRedstone",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
+                "circuitAdvanced",
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
+                "plateDenseObsidian",
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0, missing),
+                "plateDenseObsidian");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserTableBlock", 1, 4, missing),
-                new Object[] { "circuitAdvanced", "blockRedstone", "circuitAdvanced",
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 6, missing), "plateDenseObsidian",
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0, missing), "plateDenseObsidian" });
+                "circuitAdvanced",
+                "blockRedstone",
+                "circuitAdvanced",
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 6, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 6, missing),
+                "plateDenseObsidian",
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0, missing),
+                "plateDenseObsidian");
         addShapedRecipe(
                 getModItem(BuildCraftRobotics.ID, "zonePlan", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "circuitAdvanced",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing), "gearGtDiamond",
-                        getModItem(Minecraft.ID, "map", 1, 0, missing), "gearGtDiamond",
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing) });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "circuitAdvanced",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                "gearGtDiamond",
+                getModItem(Minecraft.ID, "map", 1, 0, missing),
+                "gearGtDiamond",
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing),
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing));
         addShapedRecipe(
                 getModItem(BuildCraftRobotics.ID, "robot", 1, 0, missing),
-                new Object[] { "plateStainlessSteel", "plateStainlessSteel", "plateStainlessSteel",
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing), "circuitAdvanced",
-                        "plateStainlessSteel", "circuitAdvanced" });
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                "plateStainlessSteel",
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
+                getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0, missing),
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
+                "circuitAdvanced",
+                "plateStainlessSteel",
+                "circuitAdvanced");
         addShapedRecipe(
                 getModItem(BuildCraftRobotics.ID, "requester", 1, 0, missing),
-                new Object[] { "plateStainlessSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
-                        "plateStainlessSteel", "gearGtSteel", "chestSteel", "gearGtSteel", "plateStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing), "plateStainlessSteel" });
+                "plateStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                "plateStainlessSteel",
+                "gearGtSteel",
+                "chestSteel",
+                "gearGtSteel",
+                "plateStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(BuildCraftCore.ID, "wrenchItem", 1, 0, missing),
-                new Object[] { null, "ingotStainlessSteel", null, "ingotStainlessSteel", "ingotStainlessSteel",
-                        "ingotStainlessSteel", "ingotStainlessSteel", "craftingToolHardHammer",
-                        "ingotStainlessSteel" });
+                null,
+                "ingotStainlessSteel",
+                null,
+                "ingotStainlessSteel",
+                "ingotStainlessSteel",
+                "ingotStainlessSteel",
+                "ingotStainlessSteel",
+                "craftingToolHardHammer",
+                "ingotStainlessSteel");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
@@ -47,80 +46,130 @@ public class ScriptGenetics implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Genetics.ID, "database", 1, 0, missing),
-                new Object[] { getModItem(Genetics.ID, "database", 1, 0, missing) });
+                getModItem(Genetics.ID, "database", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
-                new Object[] { "screwStainlessSteel", "craftingToolScrewdriver", "screwStainlessSteel",
-                        "circuitAdvanced", getModItem(Forestry.ID, "chipsets", 1, 1, missing), "circuitAdvanced",
-                        "screwStainlessSteel", "craftingToolWrench", "screwStainlessSteel" });
+                "screwStainlessSteel",
+                "craftingToolScrewdriver",
+                "screwStainlessSteel",
+                "circuitAdvanced",
+                getModItem(Forestry.ID, "chipsets", 1, 1, missing),
+                "circuitAdvanced",
+                "screwStainlessSteel",
+                "craftingToolWrench",
+                "screwStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "machine", 1, 0, missing),
-                new Object[] { getModItem(Genetics.ID, "misc", 1, 3, missing), "chestIron",
-                        getModItem(Genetics.ID, "misc", 1, 3, missing), getModItem(Genetics.ID, "misc", 1, 9, missing),
-                        getModItem(Genetics.ID, "misc", 1, 0, missing), getModItem(Genetics.ID, "misc", 1, 9, missing),
-                        "gearGtSmallStainlessSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        "gearGtSmallStainlessSteel" });
+                getModItem(Genetics.ID, "misc", 1, 3, missing),
+                "chestIron",
+                getModItem(Genetics.ID, "misc", 1, 3, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "machine", 1, 1, missing),
-                new Object[] { getModItem(Genetics.ID, "misc", 1, 2, missing), "chestIron",
-                        getModItem(Genetics.ID, "misc", 1, 2, missing), getModItem(Genetics.ID, "misc", 1, 9, missing),
-                        getModItem(Genetics.ID, "misc", 1, 0, missing), getModItem(Genetics.ID, "misc", 1, 9, missing),
-                        "gearGtSmallStainlessSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        "gearGtSmallStainlessSteel" });
+                getModItem(Genetics.ID, "misc", 1, 2, missing),
+                "chestIron",
+                getModItem(Genetics.ID, "misc", 1, 2, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "machine", 1, 2, missing),
-                new Object[] { getModItem(Genetics.ID, "misc", 1, 7, missing), "chestIron",
-                        getModItem(Genetics.ID, "misc", 1, 7, missing), getModItem(Genetics.ID, "misc", 1, 9, missing),
-                        getModItem(Genetics.ID, "misc", 1, 0, missing), getModItem(Genetics.ID, "misc", 1, 9, missing),
-                        "gearGtSmallStainlessSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        "gearGtSmallStainlessSteel" });
+                getModItem(Genetics.ID, "misc", 1, 7, missing),
+                "chestIron",
+                getModItem(Genetics.ID, "misc", 1, 7, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "machine", 1, 3, missing),
-                new Object[] { "plateEmerald", "chestIron", "plateEmerald",
-                        getModItem(Genetics.ID, "misc", 1, 9, missing), getModItem(Genetics.ID, "misc", 1, 0, missing),
-                        getModItem(Genetics.ID, "misc", 1, 9, missing), "gearGtSmallStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing), "gearGtSmallStainlessSteel" });
+                "plateEmerald",
+                "chestIron",
+                "plateEmerald",
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 1, missing),
-                new Object[] { getModItem(Genetics.ID, "misc", 1, 1, missing), "chestIron",
-                        getModItem(Genetics.ID, "misc", 1, 1, missing), getModItem(Genetics.ID, "misc", 1, 9, missing),
-                        getModItem(Genetics.ID, "misc", 1, 0, missing), getModItem(Genetics.ID, "misc", 1, 9, missing),
-                        "gearGtSmallStainlessSteel", getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        "gearGtSmallStainlessSteel" });
+                getModItem(Genetics.ID, "misc", 1, 1, missing),
+                "chestIron",
+                getModItem(Genetics.ID, "misc", 1, 1, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 2, missing),
-                new Object[] { getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "craftingIronFurnace",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(Genetics.ID, "misc", 1, 9, missing), getModItem(Genetics.ID, "misc", 1, 0, missing),
-                        getModItem(Genetics.ID, "misc", 1, 9, missing), "gearGtSmallStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing), "gearGtSmallStainlessSteel" });
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "craftingIronFurnace",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 3, missing),
-                new Object[] { getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing), "chestIron",
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                        getModItem(Genetics.ID, "misc", 1, 9, missing), getModItem(Genetics.ID, "misc", 1, 0, missing),
-                        getModItem(Genetics.ID, "misc", 1, 9, missing), "gearGtSmallStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing), "gearGtSmallStainlessSteel" });
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                "chestIron",
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 4, missing),
-                new Object[] { "bucketWater", "bucketLava", "bucketWater",
-                        getModItem(Genetics.ID, "misc", 1, 9, missing), getModItem(Genetics.ID, "misc", 1, 0, missing),
-                        getModItem(Genetics.ID, "misc", 1, 9, missing), "gearGtSmallStainlessSteel",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing), "gearGtSmallStainlessSteel" });
+                "bucketWater",
+                "bucketLava",
+                "bucketWater",
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                getModItem(Genetics.ID, "misc", 1, 9, missing),
+                "gearGtSmallStainlessSteel",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 0, missing),
-                new Object[] { "plateStainlessSteel", "paneGlass", "plateStainlessSteel", "paneGlass",
-                        getModItem(Genetics.ID, "misc", 1, 0, missing), "paneGlass", "plateStainlessSteel", "paneGlass",
-                        "plateStainlessSteel" });
+                "plateStainlessSteel",
+                "paneGlass",
+                "plateStainlessSteel",
+                "paneGlass",
+                getModItem(Genetics.ID, "misc", 1, 0, missing),
+                "paneGlass",
+                "plateStainlessSteel",
+                "paneGlass",
+                "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "advMachine", 1, 0, missing),
-                new Object[] { "plateKanthal", "chestDiamond", "plateKanthal",
-                        getModItem(Genetics.ID, "misc", 1, 10, missing),
-                        getModItem(Genetics.ID, "misc", 1, 11, missing),
-                        getModItem(Genetics.ID, "misc", 1, 10, missing), "gearGtSmallDiamond",
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing), "gearGtSmallDiamond" });
+                "plateKanthal",
+                "chestDiamond",
+                "plateKanthal",
+                getModItem(Genetics.ID, "misc", 1, 10, missing),
+                getModItem(Genetics.ID, "misc", 1, 11, missing),
+                getModItem(Genetics.ID, "misc", 1, 10, missing),
+                "gearGtSmallDiamond",
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                "gearGtSmallDiamond");
 
         ForestryHelper.removeCarpenterRecipe(getModItem(Genetics.ID, "database", 1, 0, missing));
         RecipeManagers.carpenterManager.addRecipe(

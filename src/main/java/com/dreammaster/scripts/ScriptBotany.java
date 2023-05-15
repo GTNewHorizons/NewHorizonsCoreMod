@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
@@ -34,47 +33,82 @@ public class ScriptBotany implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(Botany.ID, "database", 1, 0, missing),
-                new Object[] { getModItem(Botany.ID, "database", 1, 0, missing) });
+                getModItem(Botany.ID, "database", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelWood", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing), "craftingToolHardHammer",
-                        null, "craftingToolFile", "stickWood", null, null, null, "stickWood" });
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                "craftingToolHardHammer",
+                null,
+                "craftingToolFile",
+                "stickWood",
+                null,
+                null,
+                null,
+                "stickWood");
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelStone", 1, 0, missing),
-                new Object[] { "plateStone", "craftingToolHardHammer", null, "craftingToolFile", "stickWood", null,
-                        null, null, "stickWood" });
+                "plateStone",
+                "craftingToolHardHammer",
+                null,
+                "craftingToolFile",
+                "stickWood",
+                null,
+                null,
+                null,
+                "stickWood");
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelIron", 1, 0, missing),
-                new Object[] { "plateIron", "craftingToolHardHammer", null, "craftingToolFile", "stickWood", null, null,
-                        null, "stickWood" });
+                "plateIron",
+                "craftingToolHardHammer",
+                null,
+                "craftingToolFile",
+                "stickWood",
+                null,
+                null,
+                null,
+                "stickWood");
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelGold", 1, 0, missing),
-                new Object[] { "plateGold", "craftingToolHardHammer", null, "craftingToolFile", "stickWood", null, null,
-                        null, "stickWood" });
+                "plateGold",
+                "craftingToolHardHammer",
+                null,
+                "craftingToolFile",
+                "stickWood",
+                null,
+                null,
+                null,
+                "stickWood");
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelDiamond", 1, 0, missing),
-                new Object[] { "plateDiamond", "craftingToolHardHammer", null, "craftingToolFile", "stickWood", null,
-                        null, null, "stickWood" });
-        addShapelessCraftingRecipe(
+                "plateDiamond",
+                "craftingToolHardHammer",
+                null,
+                "craftingToolFile",
+                "stickWood",
+                null,
+                null,
+                null,
+                "stickWood");
+        addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 0, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 1815, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1815, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1815, missing),
-                new Object[] { getModItem(Botany.ID, "misc", 1, 0, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Botany.ID, "misc", 1, 0, missing));
+        addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 1, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 1809, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1809, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1809, missing),
-                new Object[] { getModItem(Botany.ID, "misc", 1, 1, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Botany.ID, "misc", 1, 1, missing));
+        addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 3, missing),
-                new Object[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 1022, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1022, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1022, missing),
-                new Object[] { getModItem(Botany.ID, "misc", 1, 3, missing) });
+                getModItem(Botany.ID, "misc", 1, 3, missing));
 
         ForestryHelper.removeCarpenterRecipe(getModItem(Botany.ID, "database", 1, 0, missing));
         RecipeManagers.carpenterManager.addRecipe(

@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
@@ -51,9 +50,9 @@ public class ScriptExtraBees implements IScriptLoader {
     @Override
     public void loadRecipes() {
 
-        addShapelessCraftingRecipe(
+        addShapelessRecipe(
                 getModItem(ExtraBees.ID, "dictionary", 1, 0, missing),
-                new Object[] { getModItem(ExtraBees.ID, "dictionary", 1, 0, missing) });
+                getModItem(ExtraBees.ID, "dictionary", 1, 0, missing));
 
         ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "dictionary", 1, 0, missing));
         ForestryHelper.removeCarpenterRecipe(getModItem(ExtraBees.ID, "misc", 1, 0, missing));
@@ -81,7 +80,7 @@ public class ScriptExtraBees implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1440),
-                getModItem(Forestry.ID, "beealyzer", 1, 32767, missing),
+                getModItem(Forestry.ID, "beealyzer", 1, wildcard, missing),
                 getModItem(ExtraBees.ID, "dictionary", 1, 0, missing),
                 "abc",
                 "def",
@@ -193,19 +192,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing),
                 'b',
-                getModItem(Minecraft.ID, "stained_glass", 1, 32767, missing),
+                getModItem(Minecraft.ID, "stained_glass", 1, wildcard, missing),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing),
                 'd',
-                getModItem(Minecraft.ID, "stained_glass", 1, 32767, missing),
+                getModItem(Minecraft.ID, "stained_glass", 1, wildcard, missing),
                 'e',
                 getModItem(Minecraft.ID, "redstone_lamp", 1, 0, missing),
                 'f',
-                getModItem(Minecraft.ID, "stained_glass", 1, 32767, missing),
+                getModItem(Minecraft.ID, "stained_glass", 1, wildcard, missing),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing),
                 'h',
-                getModItem(Minecraft.ID, "stained_glass", 1, 32767, missing),
+                getModItem(Minecraft.ID, "stained_glass", 1, wildcard, missing),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing));
         RecipeManagers.carpenterManager.addRecipe(

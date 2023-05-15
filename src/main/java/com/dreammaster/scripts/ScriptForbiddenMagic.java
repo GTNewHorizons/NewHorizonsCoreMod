@@ -15,7 +15,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.util.GT_ModHandler.addShapelessCraftingRecipe;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
@@ -68,16 +67,18 @@ public class ScriptForbiddenMagic implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(ForbiddenMagic.ID, "Crystalwell", 1, 0, missing),
-                new Object[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing), "dyeBlack",
-                        getModItem(ForbiddenMagic.ID, "Crystalwell", 1, 32767, missing), "dyeBlack",
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing) });
-        addShapelessCraftingRecipe(
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
+                "dyeBlack",
+                getModItem(ForbiddenMagic.ID, "Crystalwell", 1, wildcard, missing),
+                "dyeBlack",
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
+                getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
+        addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing),
-                new Object[] { getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing) });
+                getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing));
 
         ChiselHelper.addGroup("netherstar");
         ChiselHelper.addVariationFromStack("netherstar", getModItem(ForbiddenMagic.ID, "StarBlock", 1, 0, missing));
@@ -549,7 +550,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 'd',
                 "dyeBlack",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemInkwell", 1, 32767, missing),
+                getModItem(Thaumcraft.ID, "ItemInkwell", 1, wildcard, missing),
                 'f',
                 "dyeBlack",
                 'g',
@@ -802,7 +803,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "WRATHCAGE",
                 getModItem(ForbiddenMagic.ID, "MobCrystal", 1, 0, missing),
-                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, 32767, missing),
+                getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                 new AspectList().add(Aspect.getAspect("cognitio"), 10).add(Aspect.getAspect("potentia"), 10)
                         .add(Aspect.getAspect("praecantatio"), 10).add(Aspect.getAspect("vitreus"), 10));
         TCHelper.setResearchAspects(
