@@ -50,6 +50,7 @@ import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -673,54 +674,12 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 18).add(Aspect.getAspect("victus"), 12)
                         .add(Aspect.getAspect("ignis"), 12),
                 getModItem(Minecraft.ID, "brewing_stand", 1, 0, missing),
-                new ItemStack[] {
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"lifeessence\",Amount:1000}}",
-                                missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"lifeessence\",Amount:1000}}",
-                                missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"lifeessence\",Amount:1000}}",
-                                missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"lifeessence\",Amount:1000}}",
-                                missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"lifeessence\",Amount:1000}}",
-                                missing),
-                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"lifeessence\",Amount:1000}}",
-                                missing),
+                new ItemStack[] { Materials.LifeEssence.getCells(1),
+                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing), Materials.LifeEssence.getCells(1),
+                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing), Materials.LifeEssence.getCells(1),
+                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing), Materials.LifeEssence.getCells(1),
+                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing), Materials.LifeEssence.getCells(1),
+                        getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing), Materials.LifeEssence.getCells(1),
                         getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "ALCHEMICCHEMSTRYSET",
@@ -1420,39 +1379,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 16),
                 getModItem(BloodMagic.ID, "voidSigil", 1, 0, missing),
                 new ItemStack[] { getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 30711, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"liquidoxygen\",Amount:1000}}",
-                                missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 30711, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"liquidoxygen\",Amount:1000}}",
-                                missing),
-                        getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"liquidoxygen\",Amount:1000}}",
-                                missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 30711, missing),
-                        createItemStack(
-                                IndustrialCraft2.ID,
-                                "itemFluidCell",
-                                1,
-                                0,
-                                "{Fluid:{FluidName:\"liquidoxygen\",Amount:1000}}",
-                                missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 30711, missing), });
+                        Materials.FishOil.getCells(1), Materials.LiquidOxygen.getCells(1),
+                        Materials.FishOil.getCells(1), Materials.LiquidOxygen.getCells(1),
+                        getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing), Materials.LiquidOxygen.getCells(1),
+                        Materials.FishOil.getCells(1), Materials.LiquidOxygen.getCells(1),
+                        Materials.FishOil.getCells(1), });
         TCHelper.addResearchPage(
                 "SIGILOFSWIMMING",
                 new ResearchPage(
@@ -4566,14 +4497,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                createItemStack(
-                        IndustrialCraft2.ID,
-                        "itemFluidCell",
-                        1,
-                        0,
-                        "{Fluid:{FluidName:\"lifeessence\",Amount:1000}}",
-                        missing),
-                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
+                Materials.LifeEssence.getCells(1),
+                Materials.Empty.getCells(1),
                 1,
                 1000,
                 20,

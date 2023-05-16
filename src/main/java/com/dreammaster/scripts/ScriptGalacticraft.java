@@ -481,17 +481,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "compressedAluminium",
                 "compressedAluminium");
         addShapedRecipe(
-                getModItem(GalacticraftCore.ID, "item.oxygenTankLightFull", 1, 1000, missing),
-                "compressedAluminium",
-                getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                "compressedAluminium",
-                "compressedAluminium",
-                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
-                "compressedAluminium",
-                "compressedAluminium",
-                "compressedAluminium",
-                "compressedAluminium");
-        addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenTankMedFull", 1, 2000, missing),
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
@@ -1255,17 +1244,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                 'h',
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 122, missing));
 
-        GT_Values.RA.addFuel(
-                createItemStack(
-                        IndustrialCraft2.ID,
-                        "itemFluidCell",
-                        1,
-                        0,
-                        "{Fluid:{FluidName:\"oil\",Amount:1000}}",
-                        missing),
-                getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing),
-                16,
-                0);
         GT_Values.RA.addFuel(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 30707, missing),
                 getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),

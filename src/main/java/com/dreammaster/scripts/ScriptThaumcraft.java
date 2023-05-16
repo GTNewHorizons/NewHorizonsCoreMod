@@ -45,6 +45,8 @@ import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.common.items.GT_MetaGenerated_Item_98;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -2722,23 +2724,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                createItemStack(
-                        IndustrialCraft2.ID,
-                        "itemFluidCell",
-                        1,
-                        0,
-                        "{Fluid:{FluidName:\"ender\",Amount:1000}}",
-                        missing),
+                GT_MetaGenerated_Item_98.FluidCell.LIQUID_ENDER.get(),
                 'b',
                 "gemMercury",
                 'c',
-                createItemStack(
-                        IndustrialCraft2.ID,
-                        "itemFluidCell",
-                        1,
-                        0,
-                        "{Fluid:{FluidName:\"ender\",Amount:1000}}",
-                        missing),
+                GT_MetaGenerated_Item_98.FluidCell.LIQUID_ENDER.get(),
                 'd',
                 "gemMercury",
                 'e',
@@ -2746,23 +2736,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "gemMercury",
                 'g',
-                createItemStack(
-                        IndustrialCraft2.ID,
-                        "itemFluidCell",
-                        1,
-                        0,
-                        "{Fluid:{FluidName:\"ender\",Amount:1000}}",
-                        missing),
+                GT_MetaGenerated_Item_98.FluidCell.LIQUID_ENDER.get(),
                 'h',
                 "gemMercury",
                 'i',
-                createItemStack(
-                        IndustrialCraft2.ID,
-                        "itemFluidCell",
-                        1,
-                        0,
-                        "{Fluid:{FluidName:\"ender\",Amount:1000}}",
-                        missing));
+                GT_MetaGenerated_Item_98.FluidCell.LIQUID_ENDER.get());
         TCHelper.addResearchPage(
                 "BASICARTIFACE",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing))));
@@ -4445,8 +4423,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                         getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketFired", 1, 0, missing),
                         getModItem(Minecraft.ID, "bucket", 1, 0, missing),
-                        getModItem(Forestry.ID, "canEmpty", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemFluidCell", 1, 0, missing), });
+                        getModItem(Forestry.ID, "canEmpty", 1, 0, missing), Materials.Empty.getCells(1), });
         TCHelper.addResearchPage(
                 "CORELIQUID",
                 new ResearchPage(
