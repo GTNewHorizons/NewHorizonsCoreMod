@@ -35,7 +35,7 @@ public class SpaceAssemblerRecipes implements Runnable {
             if (BartWorks.isModLoaded()) {
                 // Optically Perfected CPU
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Chip_Optical.get(1L),
+                        new ItemStack[]{ItemList.Circuit_Chip_Optical.get(1L),
                                 ItemList.Optical_Cpu_Containment_Housing.get(1L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.InfinityCatalyst, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4L),
@@ -44,8 +44,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 // Atomic Separation Catalyst screw
                                 GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10022),
                                 // Precious Metals Alloy screw
-                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10109) },
-                        new FluidStack[] { new FluidStack(solderUEV, 288) },
+                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10109)},
+                        new FluidStack[]{new FluidStack(solderUEV, 288)},
                         ItemList.Optically_Perfected_CPU.get(1L),
                         1,
                         20 * 20,
@@ -57,14 +57,14 @@ public class SpaceAssemblerRecipes implements Runnable {
             if (OpenComputers.isModLoaded() && SuperSolarPanels.isModLoaded()) {
                 // Optically Compatible Memory
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 39), // Memory tier 3.5
+                        new ItemStack[]{GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 39), // Memory tier 3.5
                                 ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(4L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 8L),
                                 GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 1L, 0) // Solar Light
-                                                                                                      // Splitter
+                                // Splitter
                         },
-                        new FluidStack[] { new FluidStack(solderUEV, 288) },
+                        new FluidStack[]{new FluidStack(solderUEV, 288)},
                         ItemList.Optically_Compatible_Memory.get(2),
                         1,
                         20 * 20,
@@ -73,14 +73,14 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null);
 
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(OpenComputers.ID, "item", 4L, 39), // Memory tier 3.5
+                        new ItemStack[]{GT_ModHandler.getModItem(OpenComputers.ID, "item", 4L, 39), // Memory tier 3.5
                                 ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(16L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 16L),
                                 GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 4L, 0) // Solar Light
-                                                                                                      // Splitter
+                                // Splitter
                         },
-                        new FluidStack[] { new FluidStack(solderUEV, 576) },
+                        new FluidStack[]{new FluidStack(solderUEV, 576)},
                         ItemList.Optically_Compatible_Memory.get(8),
                         2,
                         20 * 20,
@@ -89,15 +89,15 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null);
 
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(OpenComputers.ID, "item", 16L, 39), // Memory tier
-                                                                                                       // 3.5
+                        new ItemStack[]{GT_ModHandler.getModItem(OpenComputers.ID, "item", 16L, 39), // Memory tier
+                                // 3.5
                                 ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(64L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 32L),
                                 GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 16L, 0) // Solar Light
-                                                                                                       // Splitter
+                                // Splitter
                         },
-                        new FluidStack[] { new FluidStack(solderUEV, 1152) },
+                        new FluidStack[]{new FluidStack(solderUEV, 1152)},
                         ItemList.Optically_Compatible_Memory.get(32),
                         2,
                         20 * 20,
@@ -105,20 +105,21 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null,
                         null);
             }
-
-            // Memory Tier 3.5
-            IG_RecipeAdder.addSpaceAssemblerRecipe(
-                    new ItemStack[] { ItemList.Circuit_Board_Elite.get(4), ItemList.Circuit_Chip_Ram.get(64),
-                            ItemList.Circuit_Chip_SoC.get(64), ItemList.Circuit_Chip_NAND.get(64),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L) },
-                    new FluidStack[] { new FluidStack(solderIndalloy, 1152) },
-                    GT_ModHandler.getModItem(OpenComputers.ID, "item", 64L, 39),
-                    1,
-                    10 * SECONDS,
-                    (int) TierEU.RECIPE_UV,
-                    null,
-                    null);
+            if (OpenComputers.isModLoaded()) {
+                // Memory Tier 3.5
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[]{ItemList.Circuit_Board_Elite.get(4), ItemList.Circuit_Chip_Ram.get(64),
+                                ItemList.Circuit_Chip_SoC.get(64), ItemList.Circuit_Chip_NAND.get(64),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1L),
+                                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L)},
+                        new FluidStack[]{new FluidStack(solderIndalloy, 1152)},
+                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 64L, 39),
+                        1,
+                        10 * SECONDS,
+                        (int) TierEU.RECIPE_UV,
+                        null,
+                        null);
+            }
         }
     }
 }
