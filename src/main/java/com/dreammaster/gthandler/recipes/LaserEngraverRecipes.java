@@ -166,7 +166,7 @@ public class LaserEngraverRecipes implements Runnable {
 
         GT_Values.RA.addLaserEngraverRecipe(
                 ItemList.Circuit_Wafer_SoC2.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L).copy().splitStack(0),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)),
                 com.dreammaster.item.ItemList.RawPicoWafer.getIS(),
                 6000,
                 (int) (GT_Values.V[8] - (GT_Values.V[8] / 10)),
@@ -224,16 +224,16 @@ public class LaserEngraverRecipes implements Runnable {
                     983_040,
                     true);
 
-            GT_Values.RA
-                    .addLaserEngraverRecipe(
-                            new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L).copy()
-                                    .splitStack(0), ItemList.Circuit_Chip_CrystalSoC2.get(1L) },
-                            new FluidStack[] { Materials.BioMediumSterilized.getFluid(50L) },
-                            new ItemStack[] { ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1) },
-                            new FluidStack[] { NF },
-                            60 * 20,
-                            160000,
-                            true);
+            GT_Values.RA.addLaserEngraverRecipe(
+                    new ItemStack[] {
+                            GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1)),
+                            ItemList.Circuit_Chip_CrystalSoC2.get(1L) },
+                    new FluidStack[] { Materials.BioMediumSterilized.getFluid(50L) },
+                    new ItemStack[] { ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1) },
+                    new FluidStack[] { NF },
+                    60 * 20,
+                    160000,
+                    true);
         }
 
         // GC/GS Wafer
@@ -255,28 +255,28 @@ public class LaserEngraverRecipes implements Runnable {
         // Optical to Wafer Buff Recipes
         GT_Values.RA.addLaserEngraverRecipe(
                 ItemList.Circuit_Silicon_Wafer6.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L).copy(),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)),
                 CustomItemList.RawPicoWafer.get(16),
                 6000,
                 1887440,
                 true);
         GT_Values.RA.addLaserEngraverRecipe(
                 ItemList.Circuit_Silicon_Wafer6.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1L).copy(),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1)),
                 ItemList.Circuit_Wafer_SoC2.get(32),
                 45 * 20,
                 122880,
                 true);
         GT_Values.RA.addLaserEngraverRecipe(
                 ItemList.Circuit_Silicon_Wafer6.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1L).copy(),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1)),
                 ItemList.Circuit_Wafer_QPIC.get(16),
                 120 * 20,
                 1887440,
                 true);
         GT_Values.RA.addLaserEngraverRecipe(
                 ItemList.Circuit_Silicon_Wafer6.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L).copy(),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1)),
                 ItemList.Circuit_Wafer_NPIC.get(32),
                 60 * 20,
                 491520,
