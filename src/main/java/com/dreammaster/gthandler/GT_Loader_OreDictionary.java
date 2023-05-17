@@ -222,7 +222,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.ingot,
                 Materials.HeeEndium,
-                GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "tile.endium_ingot", 1L, 0));
+                GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 1L, 0));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.HeeEndium,
