@@ -1,12 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.GregTech_API.mGTPlusPlus;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GoodGenerator;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.enums.Mods.*;
+import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPlasmaForgeRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeConstants.COIL_HEAT;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -519,6 +518,23 @@ public class DTPFRecipes implements Runnable {
                         40 * 20,
                         256_000_000,
                         eternal_heat);
+
+                // Timepiece
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.5", 0, 14),
+                                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.DarkIron, 1L),
+                                Materials.Dilithium.getGems(32),
+                                MaterialsUEVplus.Universium.getNanite(1))
+                        .itemOutputs(ItemList.Timepiece.get(3))
+                        .fluidInputs(
+                                MaterialsUEVplus.Time.getMolten(18432L * 8),
+                                MaterialsUEVplus.ExcitedDTSC.getFluid(100000L))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(100000L * 2),
+                                MaterialsUEVplus.Space.getMolten(18432L * 8))
+                        .duration(80 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500)
+                        .addTo(sPlasmaForgeRecipes);
             }
 
             if (Avaritia.isModLoaded()) {
