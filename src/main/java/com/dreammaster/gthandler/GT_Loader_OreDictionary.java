@@ -367,7 +367,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.Amber,
-                GT_ModHandler.getModItem(Thaumcraft.ID, "item.blockCosmeticOpaque", 1L, 0));
+                GT_ModHandler.getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1L, 0));
 
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.ingot,
