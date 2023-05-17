@@ -25,10 +25,13 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import tconstruct.tools.TinkerTools;
 
 public class ScriptDraconicEvolution implements IScriptLoader {
 
@@ -132,13 +135,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDenseDraconiumAwakened",
                 'c',
-                createItemStack(
-                        TinkersGregworks.ID,
-                        "tGregToolPartLargePlate",
-                        1,
-                        1669,
-                        "{material:\"Infinity\"}",
-                        missing),
+                new ItemStack(TinkerTools.largePlate, 1, Tonkers.infinityMetalId),
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32677, missing),
                 'e',
