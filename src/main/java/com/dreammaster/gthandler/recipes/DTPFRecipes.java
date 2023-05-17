@@ -524,10 +524,10 @@ public class DTPFRecipes implements Runnable {
 
                 // Quantum + Astral Titanium
                 GT_Values.RA.stdBuilder().itemInputs(
-                                CI.getEnergyCore(9, 0),
-                                BlockList.Quantinum.getIS(2),
-                                // Quantum Anomaly
-                                GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 2, 32105))
+                        CI.getEnergyCore(9, 0),
+                        BlockList.Quantinum.getIS(2),
+                        // Quantum Anomaly
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 2, 32105))
                         .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
                         .fluidInputs(
                                 ALLOY.BLACK_TITANIUM.getFluidStack(144 * 320 * 7 / 10),
@@ -544,10 +544,10 @@ public class DTPFRecipes implements Runnable {
 
                 // Quantum + Astral Titanium v2
                 GT_Values.RA.stdBuilder().itemInputs(
-                                CI.getEnergyCore(9, 0),
-                                BlockList.Quantinum.getIS(4),
-                                // Quantum Anomaly
-                                GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 3, 32105))
+                        CI.getEnergyCore(9, 0),
+                        BlockList.Quantinum.getIS(4),
+                        // Quantum Anomaly
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 3, 32105))
                         .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(4))
                         .fluidInputs(
                                 ALLOY.BLACK_TITANIUM.getFluidStack(144 * 640 * 7 / 10),
