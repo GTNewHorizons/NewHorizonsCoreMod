@@ -1189,7 +1189,8 @@ public class GT_Recipe_Remover implements Runnable {
                 .removeRecipeByOutputDelayed(getModItem(GalacticraftMars.ID, "tile.mars", 1L, 8), true, false, true);
 
         // --- Desh Ingot
-        GT_ModHandler.removeRecipeByOutputDelayed(getModItem("ore", "ingotDesh", 1L, 0), true, false, true);
+        GT_ModHandler
+                .removeRecipeByOutputDelayed(getModItem(GalacticraftMars.ID, "item.null", 1L, 2), true, false, true);
 
         // --- Desh Stick
         GT_ModHandler
