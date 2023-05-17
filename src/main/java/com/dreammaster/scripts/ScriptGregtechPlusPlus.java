@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
@@ -15,11 +16,20 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.TierEU;
+import gregtech.api.util.GT_OreDictUnificator;
+import gtPlusPlus.core.item.chemistry.GenericChem;
+import gtPlusPlus.core.lib.CORE;
+import gtPlusPlus.core.util.minecraft.ItemUtils;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
 
@@ -30,7 +40,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.GTPlusPlus.ID, Forestry.ID, IndustrialCraft2.ID, IronTanks.ID, RemoteIO.ID);
+        return Arrays.asList(
+                Mods.GTPlusPlus.ID,
+                Forestry.ID,
+                IndustrialCraft2.ID,
+                IronTanks.ID,
+                RemoteIO.ID,
+                EternalSingularity.ID,
+                GregTech.ID);
     }
 
     @Override
@@ -364,6 +381,18 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GTPlusPlus.ID, "item.BasicMetaFood", 1, 0, missing))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(100).eut(4).addTo(sMaceratorRecipes);
+
+        // Shirabon and Eternity
+        CORE.RA.addQuantumTransformerRecipe(
+                new ItemStack[] { getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
+                        ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0) },
+                new FluidStack[] { MaterialsUEVplus.RawStarMatter.getFluid(1152) },
+                new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432) },
+                new ItemStack[] { GT_OreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1) },
+                new int[] { 2500, 2500, 2500, 2500 },
+                20 * 20,
+                (int) TierEU.RECIPE_UMV,
+                4);
 
     }
 }
