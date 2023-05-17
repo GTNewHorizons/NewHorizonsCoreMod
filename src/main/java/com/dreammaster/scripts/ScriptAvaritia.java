@@ -31,23 +31,42 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.*;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
 import com.dreammaster.thaumcraft.TCHelper;
+import com.rwtema.extrautils.ExtraUtils;
 
+import cpw.mods.fml.common.Optional;
+import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.CompressorManager;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.TierEU;
+import gregtech.api.util.GT_ModHandler;
+import tconstruct.smeltery.TinkerSmeltery;
+import tconstruct.tools.TinkerTools;
+import tconstruct.tools.items.Pattern;
+import tconstruct.weaponry.TinkerWeaponry;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import vexatos.tgregworks.reference.PartTypes;
+import vexatos.tgregworks.util.TGregUtils;
 
+@SuppressWarnings("PointlessArithmeticExpression")
 public class ScriptAvaritia implements IScriptLoader {
 
     @Override
@@ -409,35 +428,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'g',
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'h',
-                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 500, missing));
-
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("Avaritia", "Orb_Armok", 1, 0, missing),
-                "---aaa---",
-                "--ababa--",
-                "--aacaa--",
-                "-dababad-",
-                "ddeafagdd",
-                "-dddhddd-",
-                "---ddd---",
-                "---------",
-                "---------",
-                'a',
-                "plateInfinity",
-                'b',
-                getModItem("ForbiddenMagic", "EldritchOrb", 1, 0, missing),
-                'c',
-                getModItem("BloodArsenal", "blood_infused_diamond_block", 1, 0, missing),
-                'd',
-                "plateCosmicNeutronium",
-                'e',
-                getModItem("TaintedMagic", "ItemFocusTime", 1, 0, missing),
-                'f',
-                getModItem("Avaritia", "Resource", 1, 5, missing),
-                'g',
-                getModItem("TaintedMagic", "ItemFocusEldritch", 1, 0, missing),
-                'h',
-                getModItem("TConstruct", "heavyPlate", 1, 1671, missing));
+                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Sword", 1, 0, missing),
@@ -496,13 +487,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'a',
                 "plateInfinity",
                 'b',
-                createItemStack(
-                        TinkersGregworks.ID,
-                        "tGregToolPartLargePlate",
-                        1,
-                        1511,
-                        "{material:\"Neutronium\"}",
-                        missing),
+                TGregUtils.newItemStack(Materials.Neutronium, PartTypes.LargePlate, 1),
                 'c',
                 getModItem(BloodArsenal.ID, "blood_infused_pickaxe_diamond", 1, wildcard, missing),
                 'd',
@@ -799,9 +784,9 @@ public class ScriptAvaritia implements IScriptLoader {
                 'b',
                 getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
                 'c',
-                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 315, missing),
+                new ItemStack(TinkerTools.largePlate, 1, ExtraUtils.tcon_bedrock_material_id),
                 'd',
-                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 500, missing),
+                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId),
                 'e',
                 getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0, missing),
                 'f',
@@ -818,40 +803,6 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("Avaritia", "Neutron_Collector", 1, 0, missing),
-                "abcdedcba",
-                "b---c---b",
-                "c-f-g-f-c",
-                "d-h-g-h-d",
-                "eijikijie",
-                "d-h-g-h-d",
-                "c-f-g-f-c",
-                "b---c---b",
-                "abcdedcba",
-                'a',
-                "blockBlackPlutonium",
-                'b',
-                getModItem("Avaritia", "Resource_Block", 1, 0, missing),
-                'c',
-                getModItem("TConstruct", "heavyPlate", 1, 315, missing),
-                'd',
-                getModItem("TConstruct", "heavyPlate", 1, 1671, missing),
-                'e',
-                getModItem("Avaritia", "Crystal_Matrix", 1, 0, missing),
-                'f',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32697, missing),
-                'g',
-                "circuitInfinite",
-                'h',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32687, missing),
-                'i',
-                "plateInfinity",
-                'j',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32608, missing),
-                'k',
-                getModItem("Avaritia", "Resource", 1, 5, missing));
-
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing),
                 "abacdcaba",
                 "c-e-f-e-c",
@@ -865,21 +816,15 @@ public class ScriptAvaritia implements IScriptLoader {
                 'a',
                 getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
                 'b',
-                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 500, missing),
+                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId),
                 'c',
                 getModItem(Avaritia.ID, "Resource", 1, 1, missing),
                 'd',
-                getModItem(TinkerConstruct.ID, "heavyPlate", 1, 315, missing),
+                new ItemStack(TinkerTools.largePlate, 1, ExtraUtils.tcon_bedrock_material_id),
                 'e',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32647, missing),
                 'f',
-                createItemStack(
-                        TinkersGregworks.ID,
-                        "tGregToolPartLargePlate",
-                        1,
-                        1657,
-                        "{material:\"BlackPlutonium\"}",
-                        missing),
+                TGregUtils.newItemStack(Materials.BlackPlutonium, PartTypes.LargePlate, 1),
                 'g',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32637, missing),
                 'h',
@@ -890,46 +835,6 @@ public class ScriptAvaritia implements IScriptLoader {
                 "plateNeutronium",
                 'k',
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 10812, missing));
-
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem("Avaritia", "Neutronium_Compressor", 1, 0, missing),
-                "abacdcaba",
-                "c-e-f-e-c",
-                "dghgfghgd",
-                "b-eijie-b",
-                "bffjkjffb",
-                "b-eijie-b",
-                "dghgfghgd",
-                "c-e-f-e-c",
-                "abacdcaba",
-                'a',
-                getModItem("Avaritia", "Resource_Block", 1, 0, missing),
-                'b',
-                getModItem("TConstruct", "heavyPlate", 1, 1671, missing),
-                'c',
-                getModItem("Avaritia", "Resource", 1, 1, missing),
-                'd',
-                getModItem("TConstruct", "heavyPlate", 1, 315, missing),
-                'e',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32647, missing),
-                'f',
-                createItemStack(
-                        "TGregworks",
-                        "tGregToolPartLargePlate",
-                        1,
-                        1657,
-                        "{material:\"BlackPlutonium\"}",
-                        missing),
-                'g',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32637, missing),
-                'h',
-                getModItem("gregtech", "gt.metaitem.01", 1, 32608, missing),
-                'i',
-                "circuitInfinite",
-                'j',
-                "plateNeutronium",
-                'k',
-                getModItem("gregtech", "gt.blockmachines", 1, 10812, missing));
 
         CompressorManager.addRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
@@ -1044,5 +949,164 @@ public class ScriptAvaritia implements IScriptLoader {
                         getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
                         getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing), });
         TCHelper.refreshResearchPages("AKASHIC");
+
+        registerTinkerPartsRecipes();
+    }
+
+    // Don't ask me why optional is needed here
+    @Optional.Method(modid = "TConstruct")
+    private void registerTinkerPartsRecipes() {
+        List<TinkerMaterialWrapper> materials = Arrays.asList(
+                new TinkerMaterialWrapper(
+                        Materials.Iron.getIngots(1),
+                        TinkerTools.MaterialID.Iron,
+                        3 * MINUTES + 20 * SECONDS + 8 * TICKS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        Materials.Obsidian.getIngots(1),
+                        TinkerTools.MaterialID.Obsidian,
+                        1 * MINUTES + 11 * SECONDS + 12 * TICKS,
+                        TierEU.RECIPE_MV),
+                new TinkerMaterialWrapper(
+                        new ItemStack(Items.netherbrick, 1, 0),
+                        TinkerTools.MaterialID.Netherrack,
+                        1 * MINUTES + 38 * SECONDS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        Materials.Cobalt.getIngots(1),
+                        TinkerTools.MaterialID.Cobalt,
+                        10 * MINUTES + 40 * SECONDS,
+                        TierEU.RECIPE_MV),
+                new TinkerMaterialWrapper(
+                        Materials.Ardite.getIngots(1),
+                        TinkerTools.MaterialID.Ardite,
+                        8 * MINUTES + 5 * SECONDS + 4 * TICKS,
+                        TierEU.RECIPE_MV),
+                new TinkerMaterialWrapper(
+                        Materials.Manyullyn.getIngots(1),
+                        TinkerTools.MaterialID.Manyullyn,
+                        16 * MINUTES,
+                        TierEU.RECIPE_MV),
+                new TinkerMaterialWrapper(
+                        Materials.Copper.getIngots(1),
+                        TinkerTools.MaterialID.Copper,
+                        2 * MINUTES + 24 * SECONDS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        Materials.Bronze.getIngots(1),
+                        TinkerTools.MaterialID.Bronze,
+                        6 * MINUTES + 24 * SECONDS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        Materials.Alumite.getIngots(1),
+                        TinkerTools.MaterialID.Alumite,
+                        7 * MINUTES + 20 * SECONDS + 8 * TICKS,
+                        TierEU.RECIPE_MV),
+                new TinkerMaterialWrapper(
+                        Materials.Steel.getIngots(1),
+                        TinkerTools.MaterialID.Steel,
+                        5 * MINUTES + 20 * SECONDS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        Materials.PigIron.getIngots(1),
+                        TinkerTools.MaterialID.PigIron,
+                        8 * MINUTES + 53 * SECONDS + 4 * TICKS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        GT_ModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 0),
+                        314, // com.rwtema.extrautils.ExtraUtils.tcon_unstable_material_id
+                        1 * MINUTES + 20 * SECONDS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        GT_ModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2),
+                        314, // com.rwtema.extrautils.ExtraUtils.tcon_unstable_material_id
+                        1 * MINUTES + 20 * SECONDS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        GT_ModHandler.getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1L, 0),
+                        315, // com.rwtema.extrautils.ExtraUtils.tcon_bedrock_material_id
+                        1 * HOURS + 40 * MINUTES,
+                        TierEU.RECIPE_MV),
+                new TinkerMaterialWrapper(
+                        GT_ModHandler.getModItem(ExtraUtilities.ID, "decorativeBlock1", 1L, 8),
+                        316, // com.rwtema.extrautils.ExtraUtils.tcon_magical_wood_id
+                        1 * MINUTES + 18 * SECONDS,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        GT_ModHandler.getModItem(BloodArsenal.ID, "blood_infused_iron", 1L, 0),
+                        251, // com.arc.bloodarsenal.common.BloodArsenalConfig.bloodInfusedIronID
+                        24 * MINUTES,
+                        TierEU.RECIPE_LV),
+                new TinkerMaterialWrapper(
+                        Materials.CosmicNeutronium.getIngots(1),
+                        500, // fox.spiteful.avaritia.compat.ticon.Tonkers.neutroniumId
+                        40 * SECONDS,
+                        TierEU.RECIPE_ZPM),
+                new TinkerMaterialWrapper(
+                        Materials.Infinity.getIngots(1),
+                        501, // fox.spiteful.avaritia.compat.ticon.Tonkers.infinityMetalId
+                        10 * MINUTES + 40 * SECONDS,
+                        TierEU.RECIPE_ZPM));
+
+        // List of Pair<Pattern item, Tool item>
+        List<Pair<ItemStack, Item>> patterns = Arrays.asList(
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 1), TinkerTools.toolRod),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 2), TinkerTools.pickaxeHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 3), TinkerTools.shovelHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 4), TinkerTools.hatchetHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 5), TinkerTools.swordBlade),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 6), TinkerTools.wideGuard),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 7), TinkerTools.handGuard),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 8), TinkerTools.crossbar),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 9), TinkerTools.binding),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 10), TinkerTools.frypanHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 11), TinkerTools.signHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 12), TinkerTools.knifeBlade),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 13), TinkerTools.chiselHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 14), TinkerTools.toughRod),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 15), TinkerTools.toughBinding),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 16), TinkerTools.largePlate),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 17), TinkerTools.broadAxeHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 18), TinkerTools.scytheBlade),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 19), TinkerTools.excavatorHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 20), TinkerTools.largeSwordBlade),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 21), TinkerTools.hammerHead),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 22), TinkerTools.fullGuard),
+                ImmutablePair.of(new ItemStack(TinkerSmeltery.metalPattern, 0, 25), TinkerWeaponry.arrowhead),
+                ImmutablePair.of(new ItemStack(TinkerWeaponry.metalPattern, 0, 0), TinkerWeaponry.partShuriken),
+                ImmutablePair.of(new ItemStack(TinkerWeaponry.metalPattern, 0, 1), TinkerWeaponry.partCrossbowLimb),
+                ImmutablePair.of(new ItemStack(TinkerWeaponry.metalPattern, 0, 2), TinkerWeaponry.partCrossbowBody),
+                ImmutablePair.of(new ItemStack(TinkerWeaponry.metalPattern, 0, 3), TinkerWeaponry.partBowLimb));
+
+        for (Pair<ItemStack, Item> pattern : patterns) {
+            ItemStack patternItem = pattern.getLeft();
+            Item toolItem = pattern.getRight();
+            if (!(patternItem.getItem() instanceof Pattern)) throw new RuntimeException();
+            int cost = ((Pattern) patternItem.getItem()).getPatternCost(patternItem);
+            for (TinkerMaterialWrapper material : materials) {
+                if (material.ingot == null) continue;
+                ItemStack input = material.ingot.copy();
+                input.stackSize = (int) Math.ceil((float) cost / 2);
+                GT_Values.RA.stdBuilder().itemInputs(input, patternItem)
+                        .itemOutputs(new ItemStack(toolItem, 1, material.materialId)).noFluidInputs().noFluidOutputs()
+                        .duration(Math.min((long) material.durationPer16 * cost / 16, Integer.MAX_VALUE))
+                        .eut(material.voltage).addTo(sExtruderRecipes);
+            }
+        }
+    }
+
+    private static class TinkerMaterialWrapper {
+
+        private final ItemStack ingot;
+        private final int materialId;
+        private final int durationPer16;
+        private final long voltage;
+
+        private TinkerMaterialWrapper(ItemStack ingot, int materialId, int durationPer16, long voltage) {
+            this.ingot = ingot;
+            this.materialId = materialId;
+            this.durationPer16 = durationPer16;
+            this.voltage = voltage;
+        }
     }
 }
