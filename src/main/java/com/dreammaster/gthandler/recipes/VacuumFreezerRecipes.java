@@ -89,10 +89,6 @@ public class VacuumFreezerRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Tantalum, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(26 * SECONDS + 1 * TICKS).eut(TierEU.RECIPE_HV).addTo(sVacuumRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Samarium, 1L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Samarium, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(22 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sVacuumRecipes);
-
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.EnderiumBase, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.EnderiumBase, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20 * SECONDS + 2 * TICKS).eut(TierEU.RECIPE_HV).addTo(sVacuumRecipes);
