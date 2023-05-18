@@ -108,8 +108,9 @@ public class SpaceAssemblerRecipes implements Runnable {
             if (OpenComputers.isModLoaded()) {
                 // Memory Tier 3.5
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Elite.get(4), ItemList.Circuit_Chip_Ram.get(64),
-                                ItemList.Circuit_Chip_SoC.get(64), ItemList.Circuit_Chip_NAND.get(64),
+                        new ItemStack[] { ItemList.Circuit_Board_Multifiberglass_Elite.get(4),
+                                ItemList.Circuit_Chip_Ram.get(64), ItemList.Circuit_Chip_SoC.get(64),
+                                ItemList.Circuit_Chip_NAND.get(64),
                                 GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1L),
                                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L) },
                         new FluidStack[] { new FluidStack(solderIndalloy, 1152) },

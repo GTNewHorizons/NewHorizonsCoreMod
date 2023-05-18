@@ -3198,7 +3198,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0))
                     .noFluidInputs().noFluidOutputs()
                     .itemOutputs(GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2))
-                    .duration(5 * SECONDS).eut(480).addTo(sAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
         }
         // Solar Light Splitter
         if (SuperSolarPanels.isModLoaded()) {
