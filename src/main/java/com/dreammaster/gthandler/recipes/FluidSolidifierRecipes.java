@@ -515,7 +515,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     200,
                     120);
             GT_Values.RA.addFluidSolidifierRecipe(
-                    GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ShapeBotte", 1, 0),
+                    GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ShapeBottle", 1, 0),
                     Materials.Steel.getMolten(576L),
                     ItemList.Shape_Extruder_Bottle.get(1L),
                     200,
@@ -554,12 +554,6 @@ public class FluidSolidifierRecipes implements Runnable {
                     GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ShapeIngot", 1, 0),
                     Materials.Steel.getMolten(576L),
                     ItemList.Shape_Extruder_Ingot.get(1L),
-                    200,
-                    120);
-            GT_Values.RA.addFluidSolidifierRecipe(
-                    GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ShapeBottle", 1, 0),
-                    Materials.Steel.getMolten(576L),
-                    ItemList.Shape_Extruder_Bottle.get(1L),
                     200,
                     120);
             GT_Values.RA.addFluidSolidifierRecipe(
