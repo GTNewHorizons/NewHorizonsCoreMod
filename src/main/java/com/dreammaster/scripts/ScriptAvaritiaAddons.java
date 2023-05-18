@@ -8,6 +8,9 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +25,9 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
@@ -164,6 +169,26 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     getModItem(Witchery.ID, "chalkotherwhere", 1),
                     'I',
                     "plateInfinity");
+        }
+        // Chronic Singularity
+        {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(EternalSingularity.ID, "eternal_singularity", 8, 0, missing),
+                            ItemList.Timepiece.get(2))
+                    .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing))
+                    .fluidInputs(
+                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(576),
+                            MaterialsUEVplus.ExcitedDTSC.getFluid(10000))
+                    .fluidOutputs(Materials.Hydrogen.getPlasma(576), Materials.Helium.getPlasma(576))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(sHammerRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing))
+                    .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing))
+                    .fluidInputs(MaterialsUEVplus.Eternity.getMolten(144))
+                    .fluidOutputs(Materials.Infinity.getMolten(576)).duration(5 * SECONDS).eut(TierEU.RECIPE_UXV)
+                    .addTo(sPlasmaArcFurnaceRecipes);
         }
     }
 }

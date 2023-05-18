@@ -1,17 +1,18 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.GregTech_API.mGTPlusPlus;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GoodGenerator;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.enums.Mods.*;
+import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPlasmaForgeRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GT_RecipeConstants.COIL_HEAT;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 
 import gregtech.api.enums.*;
@@ -20,6 +21,7 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.core.material.ELEMENT;
+import gtPlusPlus.core.recipe.common.CI;
 
 public class DTPFRecipes implements Runnable {
 
@@ -519,6 +521,63 @@ public class DTPFRecipes implements Runnable {
                         40 * 20,
                         256_000_000,
                         eternal_heat);
+
+                // Quantum + Astral Titanium
+                GT_Values.RA.stdBuilder().itemInputs(
+                        CI.getEnergyCore(9, 0),
+                        BlockList.Quantinum.getIS(2),
+                        // Quantum Anomaly
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 2, 32105))
+                        .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
+                        .fluidInputs(
+                                ALLOY.BLACK_TITANIUM.getFluidStack(144 * 320 * 7 / 10),
+                                Materials.Americium.getMolten(144 * 320 / 10),
+                                Materials.Bismuth.getMolten(144 * 320 / 10),
+                                ELEMENT.STANDALONE.HYPOGEN.getFluidStack(144 * 320 / 10),
+                                Materials.Titanium.getPlasma(144 * 9 * 2 * 2),
+                                MaterialsUEVplus.ExcitedDTEC.getFluid(8547))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(8547),
+                                ALLOY.QUANTUM.getFluidStack(144 * 320))
+                        .duration(27 * SECONDS).eut(1_543_932_302).metadata(COIL_HEAT, eternal_heat)
+                        .addTo(sPlasmaForgeRecipes);
+
+                // Quantum + Astral Titanium v2
+                GT_Values.RA.stdBuilder().itemInputs(
+                        CI.getEnergyCore(9, 0),
+                        BlockList.Quantinum.getIS(4),
+                        // Quantum Anomaly
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 3, 32105))
+                        .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(4))
+                        .fluidInputs(
+                                ALLOY.BLACK_TITANIUM.getFluidStack(144 * 640 * 7 / 10),
+                                Materials.Americium.getMolten(144 * 640 / 10),
+                                Materials.Bismuth.getMolten(144 * 640 / 10),
+                                ELEMENT.STANDALONE.HYPOGEN.getFluidStack(144 * 640 / 10),
+                                Materials.Titanium.getPlasma(144 * 9 * 4 * 2),
+                                MaterialsUEVplus.ExcitedDTSC.getFluid(3801))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(3801 * 2),
+                                ALLOY.QUANTUM.getFluidStack(144 * 640))
+                        .duration(13 * SECONDS + 10 * TICKS).eut(1_543_932_303).metadata(COIL_HEAT, eternal_heat)
+                        .addTo(sPlasmaForgeRecipes);
+
+                // Timepiece
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.5", 0, 14),
+                                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.DarkIron, 1L),
+                                Materials.Dilithium.getGems(32),
+                                MaterialsUEVplus.Universium.getNanite(1))
+                        .itemOutputs(ItemList.Timepiece.get(3))
+                        .fluidInputs(
+                                MaterialsUEVplus.Time.getMolten(18432L * 8),
+                                MaterialsUEVplus.ExcitedDTSC.getFluid(100000L))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(100000L * 2),
+                                MaterialsUEVplus.Space.getMolten(18432L * 8))
+                        .duration(80 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500)
+                        .addTo(sPlasmaForgeRecipes);
             }
 
             if (Avaritia.isModLoaded()) {
