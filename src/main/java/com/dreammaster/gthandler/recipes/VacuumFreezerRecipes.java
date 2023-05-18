@@ -58,18 +58,10 @@ public class VacuumFreezerRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MelodicAlloy, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(36 * SECONDS + 19 * TICKS).eut(4096).addTo(sVacuumRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Americium, 1L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Americium, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(36 * SECONDS + 15 * TICKS).eut(4096).addTo(sVacuumRecipes);
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.CrystallinePinkSlime, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.CrystallinePinkSlime, 1L))
                 .noFluidInputs().noFluidOutputs().duration(29 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sVacuumRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Platinum, 1L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Platinum, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(29 * SECONDS + 5 * TICKS).eut(TierEU.RECIPE_HV).addTo(sVacuumRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Iridium, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iridium, 1L)).noFluidInputs()
@@ -96,10 +88,6 @@ public class VacuumFreezerRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tantalum, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Tantalum, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(26 * SECONDS + 1 * TICKS).eut(TierEU.RECIPE_HV).addTo(sVacuumRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Europium, 1L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Europium, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(22 * SECONDS + 13 * TICKS).eut(TierEU.RECIPE_EV).addTo(sVacuumRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Samarium, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Samarium, 1L)).noFluidInputs()
