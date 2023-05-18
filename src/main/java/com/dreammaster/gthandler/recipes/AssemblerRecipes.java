@@ -8473,7 +8473,8 @@ public class AssemblerRecipes implements Runnable {
                         480);
 
                 {
-                    if (IndustrialCraft2.isModLoaded()) if (GraviSuite.isModLoaded()) if (GalacticraftMars.isModLoaded())
+                    if (IndustrialCraft2.isModLoaded()) if (GraviSuite.isModLoaded()) if (GalacticraftMars
+                            .isModLoaded())
 
                         // Gravitational Engine
                         GT_Values.RA.stdBuilder()
