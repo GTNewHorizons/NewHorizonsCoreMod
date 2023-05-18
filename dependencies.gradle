@@ -16,7 +16,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.1.14:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly("curse.maven:witchery-69673:2234410") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:GTplusplus:1.9.11:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:GTplusplus:1.9.12:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Chisel:2.11.0-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Botania:1.9.22-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.4.1:dev") { transitive = false }
