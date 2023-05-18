@@ -36,7 +36,7 @@ public class LaserEngraverRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Tesseract.get(1),
-                        GT_Utility.copyAmount(0, GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01:>", 1, 32105)))
+                        GT_Utility.copyAmount(0, GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32105)))
                 .itemOutputs(ItemList.EnergisedTesseract.get(1)).noFluidInputs()
                 .fluidOutputs(MaterialsUEVplus.ExcitedDTEC.getFluid(100)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(32_000_000).noOptimize().addTo(sLaserEngraverRecipes);
