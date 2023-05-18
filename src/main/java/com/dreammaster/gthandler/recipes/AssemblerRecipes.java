@@ -8483,7 +8483,7 @@ public class AssemblerRecipes implements Runnable {
                                         GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 2))
                                 .noFluidInputs().noFluidOutputs()
                                 .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 3))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // IV Transformer
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8492,7 +8492,7 @@ public class AssemblerRecipes implements Runnable {
                                         ItemList.Circuit_Chip_PIC.get(2),
                                         ItemList.Hull_IV.get(1))
                                 .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Transformer_LuV_IV.get(1))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // Tesla Coil
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8502,7 +8502,7 @@ public class AssemblerRecipes implements Runnable {
                                         ItemList.Transformer_HV_MV.get(1))
                                 .noFluidInputs().noFluidOutputs()
                                 .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // MV Transformer
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8511,7 +8511,7 @@ public class AssemblerRecipes implements Runnable {
                                         ItemList.Hull_MV.get(1),
                                         ItemList.Circuit_Parts_InductorSMD.get(2))
                                 .noFluidOutputs().noFluidInputs().itemOutputs(ItemList.Transformer_HV_MV.get(1))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // Cooling Core With NaK
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8522,7 +8522,7 @@ public class AssemblerRecipes implements Runnable {
                                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 2, 0))
                                 .noFluidInputs().noFluidOutputs()
                                 .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // Cooling Core With Helium
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8533,7 +8533,7 @@ public class AssemblerRecipes implements Runnable {
                                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 2, 0))
                                 .noFluidInputs().noFluidOutputs()
                                 .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // Fluid Manipulator
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8542,7 +8542,7 @@ public class AssemblerRecipes implements Runnable {
                                         ItemList.Electric_Motor_HV.get(4))
                                 .noFluidOutputs().noFluidInputs()
                                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 1, 6))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // Quantum Tank V
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8552,7 +8552,7 @@ public class AssemblerRecipes implements Runnable {
                                         ItemList.Field_Generator_UV.get(1),
                                         ItemList.Casing_Tank_10.get(1))
                                 .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Quantum_Tank_IV.get(1))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // Quantum Chest V
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8561,7 +8561,7 @@ public class AssemblerRecipes implements Runnable {
                                         ItemList.Field_Generator_UV.get(1),
                                         CustomItemList.Automation_ChestBuffer_UEV.get(1L))
                                 .noFluidOutputs().noFluidInputs().itemOutputs(ItemList.Quantum_Chest_IV.get(1))
-                                .duration(5 * SECONDS).eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                         // Ultra High Voltage Chest Buffer
                         GT_Values.RA.stdBuilder()
                                 .itemInputs(
@@ -8571,7 +8571,7 @@ public class AssemblerRecipes implements Runnable {
                                         GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
                                 .noFluidOutputs().noFluidInputs()
                                 .itemOutputs(CustomItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS)
-                                .eut((int) TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                     }
                 }
 
