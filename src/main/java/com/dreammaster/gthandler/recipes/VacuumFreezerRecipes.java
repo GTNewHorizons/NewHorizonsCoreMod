@@ -139,11 +139,6 @@ public class VacuumFreezerRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.NaquadahAlloy, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(sVacuumRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.BlackPlutonium, 1L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.BlackPlutonium, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(sVacuumRecipes);
-
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Naquadria, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Naquadria, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_IV).addTo(sVacuumRecipes);
