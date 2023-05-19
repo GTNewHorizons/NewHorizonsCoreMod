@@ -4305,7 +4305,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { new ItemStack(Items.paper, 64, 0), new ItemStack(Items.paper, 64, 0),
                             new ItemStack(Items.paper, 64, 0), new ItemStack(Items.paper, 64, 0),
-                            GT_Utility.getIntegratedCircuit(3) },
+                            GT_Utility.getIntegratedCircuit(12) },
                     GT_Values.NF,
                     GT_ModHandler.getModItem(OpenPrinters.ID, "openprinter.printerPaperRoll", 1L, 0),
                     200,
