@@ -1479,7 +1479,7 @@ public class MixerRecipes implements Runnable {
 
         if (AppliedEnergistics2.isModLoaded()) {
             GT_Values.RA.addMixerRecipe(
-                    CustomItemList.ChargedCertusQuartzDust.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
                     GT_Values.NI,
@@ -1491,7 +1491,7 @@ public class MixerRecipes implements Runnable {
                     20,
                     16);
             GT_Values.RA.addMixerRecipe(
-                    CustomItemList.ChargedCertusQuartzDust.get(1L),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L),
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
                     GT_Values.NI,

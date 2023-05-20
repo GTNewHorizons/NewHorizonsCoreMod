@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.Computronics;
@@ -22,6 +23,7 @@ import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
+import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -151,14 +153,25 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator
                 .registerOre("dustQuartzSand", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.SandDust", 1L, 0));
         GT_OreDictUnificator.registerOre(
-                "dustChargedCertusQuartz",
+                OrePrefixes.dust,
+                Materials.CertusQuartzCharged,
                 GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1L, 0));
         GT_OreDictUnificator.registerOre(
-                "plateChargedCertusQuartz",
+                OrePrefixes.plate,
+                Materials.CertusQuartzCharged,
                 GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzPlate", 1L, 0));
         GT_OreDictUnificator.registerOre(
-                "stickChargedCertusQuartz",
+                OrePrefixes.stick,
+                Materials.CertusQuartzCharged,
                 GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzRod", 1L, 0));
+        GT_OreDictUnificator.registerOre(
+                OrePrefixes.crystal,
+                Materials.CertusQuartzCharged,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
+        GT_OreDictUnificator.registerOre(
+                OrePrefixes.gem,
+                Materials.CertusQuartzCharged,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
         GT_OreDictUnificator.registerOre(
                 "dustCokeOvenBrick",
                 GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrickDust", 1L, 0));
