@@ -20,6 +20,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sWiremillRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
@@ -37,8 +38,10 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_RecipeBuilder;
 import gregtech.api.util.GT_Utility;
 
 public class ScriptAppliedEnergistics2 implements IScriptLoader {
@@ -2009,51 +2012,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 260, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+        // ME Terminal
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 23522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27523, missing),
+                .itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Quartzite, 1),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Good), 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 23522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27523, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 23522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27523, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 23522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27523, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 23522, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27523, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
