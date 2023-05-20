@@ -29,6 +29,9 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptLogisticPipes implements IScriptLoader {
 
@@ -1057,15 +1060,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 22019, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17602, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19086, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 64, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(100).eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 22019, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassPlate", 4, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 4),
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19086, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 64, 0, missing))
