@@ -48,7 +48,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.Smeltery;
 
@@ -92,7 +95,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "sandstone",
                 "craftingToolSaw");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
                 "craftingToolFile",
                 "cobblestone",
                 "craftingToolSaw");
@@ -1908,7 +1911,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .noFluidOutputs().duration(160).eut(16).addTo(sLatheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23299, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 1299, missing))
                 .noFluidInputs().noFluidOutputs().duration(160).eut(16).addTo(sLatheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, wildcard, missing))

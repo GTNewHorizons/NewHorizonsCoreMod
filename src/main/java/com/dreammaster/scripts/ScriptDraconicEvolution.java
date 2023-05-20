@@ -31,6 +31,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import tconstruct.tools.TinkerTools;
 
 public class ScriptDraconicEvolution implements IScriptLoader {
@@ -1179,7 +1182,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17299, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 4),
                         getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infoTablet", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(480).addTo(sAssemblerRecipes);
