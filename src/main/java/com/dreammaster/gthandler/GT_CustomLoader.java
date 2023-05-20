@@ -156,8 +156,8 @@ public class GT_CustomLoader {
         MachineLoader.run();
         BatteryLoader.run();
         Remover.run();
+        OreDictionary.run();
         MachineRecipeLoader.run();
         CraftingRecipeLoader.run();
-        OreDictionary.run();
     }
 }

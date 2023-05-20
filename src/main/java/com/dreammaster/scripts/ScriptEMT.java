@@ -30,6 +30,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -2546,12 +2549,12 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("victus"), 16).add(Aspect.getAspect("vinculum"), 24)
                         .add(Aspect.getAspect("vitreus"), 16).add(Aspect.getAspect("praecantatio"), 8),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17602, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
                         getModItem(GregTech.ID, "gt.blockreinforced", 1, 3, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17383, missing),
                         getModItem(GregTech.ID, "gt.blockreinforced", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17602, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
                         getModItem(GregTech.ID, "gt.blockreinforced", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17383, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),

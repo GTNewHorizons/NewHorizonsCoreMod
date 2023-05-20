@@ -27,7 +27,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -883,11 +886,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.blockmetal7", 1, 4, missing),
                 new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17602, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17602, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), });
         TCHelper.setResearchAspects(
                 "REPAIRER",
