@@ -1013,23 +1013,23 @@ public class ScriptAvaritia implements IScriptLoader {
                         8 * MINUTES + 53 * SECONDS + 4 * TICKS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        GT_ModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 0),
-                        314, // com.rwtema.extrautils.ExtraUtils.tcon_unstable_material_id
+                        new ItemStack(ExtraUtils.unstableIngot, 1, 0),
+                        ExtraUtils.tcon_unstable_material_id,
                         1 * MINUTES + 20 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        GT_ModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2),
-                        314, // com.rwtema.extrautils.ExtraUtils.tcon_unstable_material_id
+                        new ItemStack(ExtraUtils.unstableIngot, 1, 2),
+                        ExtraUtils.tcon_unstable_material_id,
                         1 * MINUTES + 20 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
-                        GT_ModHandler.getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1L, 0),
-                        315, // com.rwtema.extrautils.ExtraUtils.tcon_bedrock_material_id
+                        Materials.Bedrockium.getIngots(1),
+                        ExtraUtils.tcon_bedrock_material_id,
                         1 * HOURS + 40 * MINUTES,
                         TierEU.RECIPE_MV),
                 new TinkerMaterialWrapper(
-                        GT_ModHandler.getModItem(ExtraUtilities.ID, "decorativeBlock1", 1L, 8),
-                        316, // com.rwtema.extrautils.ExtraUtils.tcon_magical_wood_id
+                        new ItemStack(ExtraUtils.decorative1, 1, 8),
+                        ExtraUtils.tcon_magical_wood_id,
                         1 * MINUTES + 18 * SECONDS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
@@ -1039,12 +1039,12 @@ public class ScriptAvaritia implements IScriptLoader {
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
                         Materials.CosmicNeutronium.getIngots(1),
-                        500, // fox.spiteful.avaritia.compat.ticon.Tonkers.neutroniumId
+                        Tonkers.neutroniumId,
                         40 * SECONDS,
                         TierEU.RECIPE_ZPM),
                 new TinkerMaterialWrapper(
                         Materials.Infinity.getIngots(1),
-                        501, // fox.spiteful.avaritia.compat.ticon.Tonkers.infinityMetalId
+                        Tonkers.infinityMetalId,
                         10 * MINUTES + 40 * SECONDS,
                         TierEU.RECIPE_ZPM));
 

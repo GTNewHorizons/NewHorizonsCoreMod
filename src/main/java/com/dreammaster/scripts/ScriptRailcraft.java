@@ -2026,7 +2026,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "stone", 5, 0, missing),
                         getModItem(Railcraft.ID, "part.rebar", 4, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "cube", 5, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(0).addTo(sAlloySmelterRecipes);
+                .duration(300).eut(30).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11305, missing),
