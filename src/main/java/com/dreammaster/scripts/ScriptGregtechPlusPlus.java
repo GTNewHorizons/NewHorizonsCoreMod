@@ -385,8 +385,9 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         // Shirabon and Eternity
         CORE.RA.addQuantumTransformerRecipe(
                 new ItemStack[] { getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
+                        ItemList.EnergisedTesseract.get(1),
                         ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0) },
-                new FluidStack[] { MaterialsUEVplus.RawStarMatter.getFluid(1152) },
+                new FluidStack[] { MaterialsUEVplus.PrimordialMatter.getFluid(1152) },
                 new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432) },
                 new ItemStack[] { GT_OreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1) },
                 new int[] { 2500, 2500, 2500, 2500 },
