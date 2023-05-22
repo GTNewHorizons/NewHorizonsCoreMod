@@ -39,21 +39,23 @@ public class GT_CustomLoader {
                 BartWorks.isModLoaded() ? "blockGlassUV" : "glassReinforced", Materials.Osmium, Materials.Neutronium),
 
         UHV(OrePrefixes.circuit.get(Materials.Infinite), OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
-                Materials.Bedrockium, Materials.Bedrockium, null, null,
+                Materials.Bedrockium, OrePrefixes.wireGt02.get(Materials.Bedrockium), null, null,
                 BartWorks.isModLoaded() ? "blockGlassUHV" : "glassReinforced", Materials.Neutronium,
                 Materials.Neutronium),
 
         UEV(OrePrefixes.circuit.get(Materials.Bio), OrePrefixes.wireGt04.get(Materials.Bedrockium), Materials.Draconium,
-                Materials.Draconium, null, null, BartWorks.isModLoaded() ? "blockGlassUEV" : "glassReinforced",
-                Materials.Bedrockium, Materials.Neutronium),
+                OrePrefixes.wireGt02.get(Materials.Draconium), null, null,
+                BartWorks.isModLoaded() ? "blockGlassUEV" : "glassReinforced", Materials.Bedrockium,
+                Materials.Neutronium),
 
         UIV(OrePrefixes.circuit.get(Materials.Optical), OrePrefixes.wireGt08.get(Materials.Bedrockium),
-                Materials.NetherStar, Materials.NetherStar, null, null,
+                Materials.NetherStar, OrePrefixes.wireGt02.get(Materials.NetherStar), null, null,
                 BartWorks.isModLoaded() ? "blockGlassUIV" : "glassReinforced", Materials.CosmicNeutronium,
                 Materials.CosmicNeutronium),
         UMV(OrePrefixes.circuit.get(Materials.Piko), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
-                Materials.Quantium, null, null, BartWorks.isModLoaded() ? "blockGlassUMV" : "glassReinforced",
-                MaterialsUEVplus.TranscendentMetal, Materials.Infinity);
+                OrePrefixes.wireGt02.get(Materials.Quantium), null, null,
+                BartWorks.isModLoaded() ? "blockGlassUMV" : "glassReinforced", MaterialsUEVplus.TranscendentMetal,
+                Materials.Infinity);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;
