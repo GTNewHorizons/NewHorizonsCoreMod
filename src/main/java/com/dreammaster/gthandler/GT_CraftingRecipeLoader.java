@@ -1187,11 +1187,25 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     bits4,
                     new Object[] { "SPS", "BdB", "SPS", 'S', OrePrefixes.screw.get(Materials.AnyIron), 'B',
                             new ItemStack(Blocks.iron_bars, 1, 0), 'P', OrePrefixes.pipeLarge.get(Materials.Bronze) });
+            // for recycling
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(Railcraft.ID, aTextMachineBeta, 1L, 3),
+                    GT_ModHandler.RecipeBits.REVERSIBLE,
+                    new Object[] { "PPP", " h ", "PPP", 'P', OrePrefixes.itemCasing.get(Materials.Iron) });
+            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(Railcraft.ID, aTextMachineBeta, 1L, 3));
+            // actual
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, aTextMachineBeta, 1L, 3),
                     bits4,
                     new Object[] { "PPP", "ShS", "PPP", 'P', OrePrefixes.itemCasing.get(Materials.Iron), 'S',
                             OrePrefixes.screw.get(Materials.AnyIron) });
+            // for recycling
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(Railcraft.ID, aTextMachineBeta, 1L, 4),
+                    GT_ModHandler.RecipeBits.REVERSIBLE,
+                    new Object[] { "PPP", " h ", "PPP", 'P', OrePrefixes.itemCasing.get(Materials.Steel) });
+            GT_ModHandler.removeRecipeByOutput(GT_ModHandler.getModItem(Railcraft.ID, aTextMachineBeta, 1L, 4));
+            // actual
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, aTextMachineBeta, 1L, 4),
                     bits4,
