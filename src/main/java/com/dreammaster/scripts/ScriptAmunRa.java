@@ -52,6 +52,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_RecipeConstants;
+import gregtech.api.util.GT_Utility;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 
 public class ScriptAmunRa implements IScriptLoader {
@@ -100,6 +101,17 @@ public class ScriptAmunRa implements IScriptLoader {
 
         final Fluid mutatedLivingSolder = FluidRegistry.getFluid("molten.mutatedlivingsolder");
 
+        addWoodRecipes(
+                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.log1", 1),
+                new ItemStack(wood1, 1, 2),
+                new ItemStack(woodSlab, 1, 1),
+                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.methanePlanks.stairs", 4));
+        addWoodRecipes(
+                new ItemStack(wood1),
+                new ItemStack(wood1, 1, 3),
+                new ItemStack(woodSlab),
+                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.podPlanks.stairs", 4));
+
         addSlabAndStairRecipes(
                 new ItemStack(baseBlockRock, 1, 1),
                 new ItemStack(rockSlab, 2, 0),
@@ -125,16 +137,6 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(rockSlab, 2, 4),
                 GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.alucrate.stairs", 4),
                 true);
-        addSlabAndStairRecipes(
-                new ItemStack(wood1, 1, 3),
-                new ItemStack(woodSlab, 2, 0),
-                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.podPlanks.stairs", 4),
-                false);
-        addSlabAndStairRecipes(
-                new ItemStack(wood1, 1, 2),
-                new ItemStack(woodSlab, 2, 1),
-                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.methanePlanks.stairs", 4),
-                false);
 
         /******************
          * Shape Crafting *
@@ -284,15 +286,6 @@ public class ScriptAmunRa implements IScriptLoader {
                 "plateBlackPlutonium",
                 'M',
                 ItemList.Electric_Motor_UV.get(1));
-
-        /**********************
-         * Shapeless Crafting *
-         **********************/
-
-        GameRegistry.addShapelessRecipe(
-                new ItemStack(wood1, 4, 2),
-                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.log1", 1));
-        GameRegistry.addShapelessRecipe(new ItemStack(wood1, 4, 3), new ItemStack(wood1, 1, 0));
 
         /************
          * Smelting *
@@ -549,12 +542,33 @@ public class ScriptAmunRa implements IScriptLoader {
         GameRegistry.addRecipe(new ShapelessOreRecipe(result, recipe));
     }
 
+    private static void addWoodRecipes(ItemStack log, ItemStack plank, ItemStack slab, ItemStack stair) {
+        // Log -> Planks
+        GameRegistry.addShapelessRecipe(GT_Utility.copyAmount(2, plank), log);
+        addShapedOredictRecipe(GT_Utility.copyAmount(4, plank), "S", "L", 'S', "craftingToolSaw", 'L', log);
+        GT_Values.RA.stdBuilder().itemInputs(log).fluidInputs(Materials.Lubricant.getFluid(1))
+                .itemOutputs(GT_Utility.copyAmount(6, plank), Materials.Wood.getDust(1)).noFluidOutputs()
+                .duration(10 * SECONDS).eut(7).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(log).fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3))
+                .itemOutputs(GT_Utility.copyAmount(4, plank), Materials.Wood.getDust(2)).noFluidOutputs()
+                .duration(20 * SECONDS).eut(7).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(log).fluidInputs(Materials.Water.getFluid(5))
+                .itemOutputs(GT_Utility.copyAmount(4, plank), Materials.Wood.getDust(2)).noFluidOutputs()
+                .duration(20 * SECONDS).eut(7).addTo(sCutterRecipes);
+
+        // Slabs -> Planks
+        GameRegistry.addShapedRecipe(plank, "S", "S", 'S', slab);
+
+        // Slabs and Staits
+        addSlabAndStairRecipes(plank, GT_Utility.copyAmount(2, slab), stair, false);
+    }
+
     private static void addSlabAndStairRecipes(ItemStack input, ItemStack slab, ItemStack stair, boolean isRock) {
         // Stair
         addShapedOredictRecipe(stair, "X  ", "XX ", "XXX", 'X', input);
 
         // Slab (inefficient)
-        addShapelessOredictRecipe(slab, "craftingToolSaw", input);
+        addShapelessOredictRecipe(GT_Utility.copyAmount(1, slab), "craftingToolSaw", input);
 
         // Slab (efficient)
         final int eut = isRock ? 7 : 4;
