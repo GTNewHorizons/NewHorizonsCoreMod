@@ -378,8 +378,8 @@ public class ScriptAmunRa implements IScriptLoader {
          * Mixer *
          *********/
 
-        GT_Values.RA.stdBuilder().itemInputs(Materials.Carbon.getNanite(1), Materials.Neutronium.getNanite(1))
-                .fluidInputs(Materials.Infinity.getMolten(INGOTS)).itemOutputs(new ItemStack(baseItem, 1, 27))
+        GT_Values.RA.stdBuilder().itemInputs(Materials.Carbon.getNanite(4), Materials.Neutronium.getNanite(1))
+                .fluidInputs(Materials.Infinity.getMolten(INGOTS)).itemOutputs(new ItemStack(baseItem, 5, 27))
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sMixerRecipes);
 
         /*****************
@@ -415,7 +415,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new Object[] { OrePrefixes.pipeHuge.get(Materials.Infinity), 8 },
                         ItemList.Electric_Pump_UHV.get(16),
                         new Object[] { OrePrefixes.circuit.get(Materials.Infinite), 8 },
-                        ItemList.StableAdhesive.get(32) },
+                        new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(512 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
@@ -435,7 +435,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         GameRegistry.findItemStack(GoodGenerator.ID, "FRF_Coil_2", 8),
                         new Object[] { OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 8 },
                         ItemList.Emitter_UHV.get(16), ItemList.Field_Generator_UHV.get(8),
-                        ItemList.StableAdhesive.get(32) },
+                        new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(512 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
@@ -452,7 +452,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new ItemStack(dysonSwarmParts, 16, 3), new ItemStack(dysonSwarmParts, 16, 3),
                         ItemList.Quantum_Tank_EV.get(2), ItemList.Electric_Pump_UHV.get(4),
                         new Object[] { OrePrefixes.circuit.get(Materials.Infinite), 2 },
-                        ItemList.StableAdhesive.get(8) },
+                        new ItemStack(baseItem, 1, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(512 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
@@ -470,7 +470,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new ItemStack(advancedRadiationProtectionPlate, 4),
                         new ItemStack(advancedRadiationProtectionPlate, 4), ItemList.Battery_Buffer_4by4_MAX.get(2),
                         ItemList.Emitter_UHV.get(4), ItemList.Field_Generator_UHV.get(2),
-                        ItemList.StableAdhesive.get(8) },
+                        new ItemStack(baseItem, 1, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(512 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
@@ -512,7 +512,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(4 * INGOTS))
                 .itemOutputs(com.dreammaster.item.ItemList.HeavyDutyAlloyIngotT9.getIS()).noFluidOutputs()
                 .metadata(GT_RecipeConstants.RESEARCH_ITEM, com.dreammaster.item.ItemList.HeavyDutyPlateTier8.getIS())
-                .metadata(GT_RecipeConstants.RESEARCH_TIME, 750 * SECONDS).duration(15 * SECONDS).eut(32000000)
+                .metadata(GT_RecipeConstants.RESEARCH_TIME, 750 * SECONDS).duration(15 * SECONDS).eut(8000000)
                 .addTo(GT_RecipeConstants.AssemblyLine);
     }
 
