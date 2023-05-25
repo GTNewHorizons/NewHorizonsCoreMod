@@ -2512,11 +2512,11 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "redwood", 1, 0, missing));
         addShapedRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
-                getModItem(Natura.ID, "cloud", 1, 3, missing),
-                getModItem(Natura.ID, "cloud", 1, 3, missing),
+                getModItem(Natura.ID, "Cloud", 1, 3, missing),
+                getModItem(Natura.ID, "Cloud", 1, 3, missing),
                 null,
-                getModItem(Natura.ID, "cloud", 1, 3, missing),
-                getModItem(Natura.ID, "cloud", 1, 3, missing),
+                getModItem(Natura.ID, "Cloud", 1, 3, missing),
+                getModItem(Natura.ID, "Cloud", 1, 3, missing),
                 null,
                 null,
                 null,
