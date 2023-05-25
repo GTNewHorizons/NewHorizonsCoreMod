@@ -1965,6 +1965,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("Natura", "natura.bow.bloodwood", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Natura", "natura.bow.darkwood", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Natura", "natura.bow.fusewood", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem("Natura", "barleyFood", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem("IC2NuclearControl", "blockNuclearControlMain", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("IC2NuclearControl", "blockNuclearControlMain", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem("IC2NuclearControl", "blockNuclearControlMain", 1, 2, missing));
