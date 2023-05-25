@@ -20,7 +20,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.chisel.ChiselHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptNatura implements IScriptLoader {
 
@@ -2507,6 +2510,17 @@ public class ScriptNatura implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Natura.ID, "redwood", 1, 0, missing),
                 getModItem(Natura.ID, "redwood", 1, 0, missing));
+        addShapedRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1),
+                getModItem(Natura.ID, "cloud", 1, 3, missing),
+                getModItem(Natura.ID, "cloud", 1, 3, missing),
+                null,
+                getModItem(Natura.ID, "cloud", 1, 3, missing),
+                getModItem(Natura.ID, "cloud", 1, 3, missing),
+                null,
+                null,
+                null,
+                null);
 
         ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 0, missing));
         ChiselHelper.addVariationFromStack("bookshelf", getModItem(Natura.ID, "Natura.bookshelf", 1, 1, missing));
