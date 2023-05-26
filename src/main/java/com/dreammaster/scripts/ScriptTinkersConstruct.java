@@ -1642,24 +1642,40 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing),
-                getModItem(RandomThings.ID, "ingredient", 1, 1, missing));
-        addShapelessRecipe(
-                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
-                getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing));
-        addShapelessRecipe(
-                getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing),
-                getModItem(RandomThings.ID, "ingredient", 1, 1, missing));
-        addShapelessRecipe(
-                getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing),
-                getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing));
+        // Obsidian Stick conversions
+        addShapedRecipe(
+                getModItem(TinkerConstruct.ID, "toolRod", 2, 6, missing),
+                "stickObsidian",
+                null,
+                null,
+                null,
+                "stickObsidian",
+                null,
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                getModItem(RandomThings.ID, "ingredient", 2, 1, missing),
+                null,
+                "stickObsidian",
+                null,
+                null,
+                "stickObsidian",
+                null,
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 2, 23804, missing),
+                null,
+                null,
+                "stickObsidian",
+                null,
+                "stickObsidian",
+                null,
+                null,
+                null,
+                null);
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
                 getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing));
