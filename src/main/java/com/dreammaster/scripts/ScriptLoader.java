@@ -12,7 +12,7 @@ public class ScriptLoader {
         IScriptLoader.missing.setStackDisplayName(EnumChatFormatting.RED + "Missing item! Please report it on github!");
 
         IScriptLoader[] scripts = new IScriptLoader[] { new ScriptAdvancedBackpacks(), new ScriptAdvancedSolarPanel(),
-                new ScriptAE2FC(), new ScriptAE2Stuff(), new ScriptAE2WC(), new ScriptAFSU(),
+                new ScriptAE2FC(), new ScriptAE2Stuff(), new ScriptAE2WC(), new ScriptAFSU(), new ScriptAmunRa(),
                 new ScriptIndustrialApiary(), new ScriptAppliedEnergistics2(), new ScriptArchitectureCraft(),
                 new ScriptAutomagy(), new ScriptAvaritia(), new ScriptAvaritiaAddons(), new ScriptBackpack(),
                 new ScriptBattleGear(), new ScriptBetterBuildersWands(), new ScriptBetterQuesting(),
