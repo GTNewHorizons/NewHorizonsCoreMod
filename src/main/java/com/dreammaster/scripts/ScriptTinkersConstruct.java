@@ -30,7 +30,6 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
@@ -1644,30 +1643,39 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null,
                 null);
         // Obsidian Stick conversions
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        getModItem(TinkerConstruct.ID, "toolRod", 1, 6, missing),
-                        "S  ",
-                        "   ",
-                        "   ",
-                        'S',
-                        "stickObsidian"));
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
-                        " S ",
-                        "   ",
-                        "   ",
-                        'S',
-                        "stickObsidian"));
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23804, missing),
-                        "  S",
-                        "   ",
-                        "   ",
-                        'S',
-                        "stickObsidian"));
+        addShapedRecipe(
+                getModItem(TinkerConstruct.ID, "toolRod", 2, 6, missing),
+                "stickObsidian",
+                null,
+                null,
+                null,
+                "stickObsidian",
+                null,
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                getModItem(RandomThings.ID, "ingredient", 2, 1, missing),
+                null,
+                "stickObsidian",
+                null,
+                null,
+                "stickObsidian",
+                null,
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                getModItem(GregTech.ID, "gt.metaitem.01", 2, 23804, missing),
+                null,
+                null,
+                "stickObsidian",
+                null,
+                "stickObsidian",
+                null,
+                null,
+                null,
+                null);
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
                 getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing));
