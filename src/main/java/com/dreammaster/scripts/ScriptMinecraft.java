@@ -19,7 +19,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -100,7 +99,7 @@ public class ScriptMinecraft implements IScriptLoader {
         craftingRecipes();
 
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.UnfiredClayBrick", 1, 0, missing),
+                CustomItemList.UnfiredClayBrick.get(1L),
                 getModItem(Minecraft.ID, "brick", 1, 0, missing));
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32561, missing),
@@ -263,7 +262,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing))
+                        CustomItemList.SteelBars.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing))
                 .fluidInputs(Materials.Steel.getMolten(16)).noFluidOutputs().duration(20 * SECONDS).eut(8)
                 .addTo(sAssemblerRecipes);
@@ -2405,7 +2404,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 4, 0, missing),
+                        CustomItemList.ArtificialLeather.get(4L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).noFluidInputs().noFluidOutputs()
@@ -4839,7 +4838,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0, missing),
                 "plateAnyIron",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "craftingToolHardHammer",
                 "plateAnyIron",
                 "ringSteel",
@@ -4850,7 +4849,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "iron_door", 1, 0, missing),
                 "plateAnyIron",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "craftingToolScrewdriver",
                 "plateAnyIron",
                 "ringSteel",
