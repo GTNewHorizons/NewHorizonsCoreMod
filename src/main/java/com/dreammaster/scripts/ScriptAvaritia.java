@@ -48,7 +48,6 @@ import com.dreammaster.avaritia.AvaritiaHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.rwtema.extrautils.ExtraUtils;
 
-import cpw.mods.fml.common.Optional;
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.CompressorManager;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -953,8 +952,6 @@ public class ScriptAvaritia implements IScriptLoader {
         registerTinkerPartsRecipes();
     }
 
-    // Don't ask me why optional is needed here
-    @Optional.Method(modid = "TConstruct,ExtraUtilities")
     private void registerTinkerPartsRecipes() {
         List<TinkerMaterialWrapper> materials = Arrays.asList(
                 new TinkerMaterialWrapper(
