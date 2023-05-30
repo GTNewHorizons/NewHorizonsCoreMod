@@ -50,6 +50,7 @@ import java.util.List;
 import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -117,21 +118,19 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glowstone, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "clay_ball", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                .itemInputs(getModItem(Minecraft.ID, "clay_ball", 1, 0, missing), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "brick", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(2).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2807, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                        ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "netherbrick", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(2).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodArsenal.ID, "glass_shard", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                        ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5).eut(64).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
@@ -224,44 +223,38 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2536, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 4, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2535, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 6, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2022, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 4, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2022, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "torch", 6, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17809, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
                         getModItem(Minecraft.ID, "trapdoor", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing))
                 .fluidInputs(Materials.Iron.getMolten(16)).noFluidOutputs().duration(20 * SECONDS).eut(4)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17809, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
                         getModItem(Minecraft.ID, "trapdoor", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing))
                 .fluidInputs(Materials.Copper.getMolten(16)).noFluidOutputs().duration(20 * SECONDS).eut(4)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         CustomItemList.SteelBars.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing))
                 .fluidInputs(Materials.Steel.getMolten(16)).noFluidOutputs().duration(20 * SECONDS).eut(8)
@@ -277,34 +270,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
-                .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0, missing))
-                .fluidInputs(Materials.Steel.getMolten(16)).noFluidOutputs().duration(30 * SECONDS).eut(4)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 4, wildcard, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 4, 0, missing))
-                .fluidInputs(Materials.Iron.getMolten(16)).noFluidOutputs().duration(30 * SECONDS).eut(4)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 4, wildcard, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0, missing))
-                .fluidInputs(Materials.Steel.getMolten(16)).noFluidOutputs().duration(30 * SECONDS).eut(4)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "bamboo", 4, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 4, 0, missing))
-                .fluidInputs(Materials.Iron.getMolten(16)).noFluidOutputs().duration(30 * SECONDS).eut(4)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "bamboo", 4, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0, missing))
                 .fluidInputs(Materials.Steel.getMolten(16)).noFluidOutputs().duration(30 * SECONDS).eut(4)
                 .addTo(sAssemblerRecipes);
@@ -2307,7 +2272,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17809, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
@@ -2377,35 +2342,25 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         getModItem(Minecraft.ID, "comparator", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 26086, missing),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Minecraft.ID, "clock", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(Minecraft.ID, "comparator", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "clock", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "leather", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.ArtificialLeather.get(4L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
@@ -2502,13 +2457,11 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "blaze_powder", 3, 0, missing),
                         getModItem(Minecraft.ID, "gunpowder", 3, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 2535, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 3L))
                 .itemOutputs(getModItem(Minecraft.ID, "fire_charge", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "melon_block", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32398, missing))
+                .itemInputs(getModItem(Minecraft.ID, "melon_block", 1, 0, missing), ItemList.Shape_Slicer_Flat.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "melon", 8, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(8).addTo(sSlicerRecipes);
         Module_CustomFuels
