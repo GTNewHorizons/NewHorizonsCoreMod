@@ -40,6 +40,9 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sSlicerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +50,11 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptMinecraft implements IScriptLoader {
 
@@ -98,28 +105,28 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "bread", 1, 0, missing));
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 2, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "hay_block", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wheat", 9, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "glowFlower", 2, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glowstone, 1L)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clay_ball", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "brick", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(2).addTo(sAlloySmelterRecipes);
+                .duration(10 * SECONDS).eut(2).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2807, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "netherbrick", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(2).addTo(sAlloySmelterRecipes);
+                .duration(10 * SECONDS).eut(2).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodArsenal.ID, "glass_shard", 2, 0, missing),
@@ -131,1694 +138,1694 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "iron_ingot", 5, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 0, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 0, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_chestplate", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 7, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_leggings", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 4, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 0, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_boots", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "gold_ingot", 5, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 0, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_helmet", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "gold_ingot", 8, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 0, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_chestplate", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "gold_ingot", 7, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_leggings", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "gold_ingot", 4, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 0, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_boots", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 2, 0, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("oxygen", 2)).noFluidOutputs().duration(20).eut(256)
+                .fluidInputs(FluidRegistry.getFluidStack("oxygen", 2)).noFluidOutputs().duration(1 * SECONDS).eut(256)
                 .addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 2, 0, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("oxygen", 2)).noFluidOutputs().duration(20).eut(256)
+                .fluidInputs(FluidRegistry.getFluidStack("oxygen", 2)).noFluidOutputs().duration(1 * SECONDS).eut(256)
                 .addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "barleyFood", 2, 3, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "string", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(24).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wheat", 9, 0, missing),
                         getModItem(Minecraft.ID, "string", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "hay_block", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "heatsand", 1, 0, missing),
                         getModItem(Natura.ID, "soil.tainted", 4, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(100).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(5 * SECONDS).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 6, 4, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "skull", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 216)).noFluidOutputs().duration(200).eut(96)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 216)).noFluidOutputs()
+                .duration(10 * SECONDS).eut(96).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(Minecraft.ID, "wool", 1, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 5, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("creosote", 500)).noFluidOutputs().duration(100).eut(4)
+                .fluidInputs(FluidRegistry.getFluidStack("creosote", 500)).noFluidOutputs().duration(5 * SECONDS).eut(4)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2536, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 4, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2535, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 6, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2022, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 4, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2022, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 6, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 17809, missing),
                         getModItem(Minecraft.ID, "trapdoor", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(400).eut(4)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(20 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 17809, missing),
                         getModItem(Minecraft.ID, "trapdoor", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).noFluidOutputs().duration(400).eut(4)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).noFluidOutputs().duration(20 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).noFluidOutputs().duration(400).eut(8)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).noFluidOutputs().duration(20 * SECONDS)
+                .eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
                         getModItem(Minecraft.ID, "stick", 4, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(600).eut(4)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
                         getModItem(Minecraft.ID, "stick", 4, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).noFluidOutputs().duration(600).eut(4)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
                         getModItem(Natura.ID, "natura.stick", 4, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(600).eut(4)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
                         getModItem(Natura.ID, "natura.stick", 4, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).noFluidOutputs().duration(600).eut(4)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
                         getModItem(BiomesOPlenty.ID, "bamboo", 4, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(600).eut(4)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_slab", 4, 0, missing),
                         getModItem(BiomesOPlenty.ID, "bamboo", 4, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "trapdoor", 6, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).noFluidOutputs().duration(600).eut(4)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 16)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "planks", 6, wildcard, missing),
                         getModItem(Minecraft.ID, "book", 3, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bookshelf", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(16).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftAmunRa.ID, "tile.log1", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 1, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "tree", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "redwood", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "willow", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "bloodwood", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "Rare Tree", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "Dark Tree", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 0, "{meta:0}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 1, "{meta:1}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 2, "{meta:2}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 3, "{meta:3}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 4, "{meta:4}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 5, "{meta:5}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 6, "{meta:6}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 7, "{meta:7}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 8, "{meta:8}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 9, "{meta:9}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 10, "{meta:10}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 11, "{meta:11}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 12, "{meta:12}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 13, "{meta:13}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 14, "{meta:14}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 15, "{meta:15}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 16, "{meta:16}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 17, "{meta:17}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 18, "{meta:18}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 19, "{meta:19}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 20, "{meta:20}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 21, "{meta:21}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 22, "{meta:22}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 23, "{meta:23}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 24, "{meta:24}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 25, "{meta:25}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 26, "{meta:26}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 27, "{meta:27}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 28, "{meta:28}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 29, "{meta:29}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 30, "{meta:30}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 31, "{meta:31}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 32, "{meta:32}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 33, "{meta:33}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 34, "{meta:34}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 35, "{meta:35}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 36, "{meta:36}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 37, "{meta:37}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 38, "{meta:38}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "log", 1, 39, "{meta:39}", missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pamMaple", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pamPaperbark", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pamCinnamon", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ThaumicBases.ID, "genLogs", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Witchery.ID, "witchlog", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalaxySpace.ID, "barnardaClog", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TaintedMagic.ID, "BlockWarpwoodLog", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "tile.TFLog", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "tile.TFMagicLog", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ForbiddenMagic.ID, "TaintLog", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockMagicalLog", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(4).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(8).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "log2", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs1", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs2", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs3", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "logs4", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "log", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logs", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "logsFireproof", 2, wildcard, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(50).eut(16).addTo(sAssemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(50).eut(16).addTo(sAssemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing),
                         getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(50).eut(16).addTo(sAssemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
                         getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(50).eut(16).addTo(sAssemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 2, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(8).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 4, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(16).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 8, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 32, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "brick", 8, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "brick_block", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 500)).noFluidOutputs().duration(300).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 500)).noFluidOutputs().duration(15 * SECONDS).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 32470, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 32470, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1826,7 +1833,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1834,7 +1841,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1842,7 +1849,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 1, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1850,7 +1857,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 2, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1858,7 +1865,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 3, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1866,7 +1873,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 4, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1874,7 +1881,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 5, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1882,7 +1889,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 6, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1890,7 +1897,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 7, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1898,7 +1905,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 8, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1906,7 +1913,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 9, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1914,7 +1921,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 10, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1922,7 +1929,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 11, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1930,7 +1937,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 12, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1938,7 +1945,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 13, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1946,7 +1953,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 14, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1954,7 +1961,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 15, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1962,7 +1969,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 2, 3, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1970,7 +1977,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 2, 2, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1978,7 +1985,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1986,7 +1993,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -1994,7 +2001,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Natura.ID, "planks", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2002,7 +2009,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2010,7 +2017,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2018,7 +2025,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2026,7 +2033,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 0, "{meta:0}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2034,7 +2041,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 1, "{meta:1}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2042,7 +2049,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 2, "{meta:2}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2050,7 +2057,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 3, "{meta:3}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2058,7 +2065,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 4, "{meta:4}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2066,7 +2073,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 5, "{meta:5}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2074,7 +2081,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 6, "{meta:6}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2082,7 +2089,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 7, "{meta:7}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2090,7 +2097,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 8, "{meta:8}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2098,7 +2105,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 9, "{meta:9}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2106,7 +2113,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 10, "{meta:10}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2114,7 +2121,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 11, "{meta:11}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2122,7 +2129,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 12, "{meta:12}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2130,7 +2137,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 13, "{meta:13}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2138,7 +2145,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 14, "{meta:14}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2146,7 +2153,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 15, "{meta:15}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2154,7 +2161,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 16, "{meta:16}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2162,7 +2169,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 17, "{meta:17}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2170,7 +2177,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 18, "{meta:18}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2178,7 +2185,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 19, "{meta:19}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2186,7 +2193,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 20, "{meta:20}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2194,7 +2201,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 21, "{meta:21}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2202,7 +2209,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 22, "{meta:22}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2210,7 +2217,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 23, "{meta:23}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2218,7 +2225,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 24, "{meta:24}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2226,7 +2233,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 25, "{meta:25}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2234,7 +2241,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 26, "{meta:26}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2242,7 +2249,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 27, "{meta:27}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2250,7 +2257,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 28, "{meta:28}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2258,7 +2265,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 29, "{meta:29}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2266,7 +2273,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 30, "{meta:30}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2274,7 +2281,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 31, "{meta:31}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2282,7 +2289,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 32, "{meta:32}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2290,7 +2297,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 33, "{meta:33}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2298,7 +2305,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         createItemStack(ExtraTrees.ID, "planks", 2, 34, "{meta:34}", missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2306,7 +2313,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17809, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2314,7 +2321,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ThaumicBases.ID, "enderPlanks", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2322,7 +2329,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2330,7 +2337,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GalaxySpace.ID, "barnardaCplanks", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2338,7 +2345,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(TaintedMagic.ID, "BlockWarpwoodPlanks", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2346,7 +2353,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2354,7 +2361,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(TwilightForest.ID, "tile.TFTowerStone", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2362,7 +2369,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(TwilightForest.ID, "tile.TFPlank", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
@@ -2370,7 +2377,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(ForbiddenMagic.ID, "TaintPlank", 2, wildcard, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
@@ -2380,7 +2387,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 26086, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "clock", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
@@ -2390,109 +2397,109 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 26086, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "clock", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "leather", 4, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 4, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(24).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(120).specialValue(1000).addTo(sBlastRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(120).specialValue(1000).addTo(sBlastRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Minecraft.ID, "bone", 8, 0, missing),
                         getModItem(Minecraft.ID, "bone", 6, 0, missing),
                         getModItem(Minecraft.ID, "bone", 4, 0, missing))
                 .outputChances(10000, 7500, 5000).fluidInputs(FluidRegistry.getFluidStack("hell_blood", 1000))
-                .noFluidOutputs().duration(200).eut(30).addTo(sChemicalBathRecipes);
+                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Minecraft.ID, "coal_block", 2, 0, missing),
                         getModItem(Minecraft.ID, "coal_block", 1, 0, missing),
                         getModItem(Minecraft.ID, "coal_block", 1, 0, missing))
                 .outputChances(10000, 7500, 5000).fluidInputs(FluidRegistry.getFluidStack("hell_blood", 1000))
-                .noFluidOutputs().duration(200).eut(30).addTo(sChemicalBathRecipes);
+                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 4, missing))
                 .itemOutputs(
                         getModItem(Minecraft.ID, "gunpowder", 4, 0, missing),
                         getModItem(Minecraft.ID, "gunpowder", 3, 0, missing),
                         getModItem(Minecraft.ID, "gunpowder", 2, 0, missing))
                 .outputChances(10000, 7500, 5000).fluidInputs(FluidRegistry.getFluidStack("hell_blood", 1000))
-                .noFluidOutputs().duration(200).eut(30).addTo(sChemicalBathRecipes);
+                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
                 .outputChances(10000, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("hell_blood", 1000))
-                .noFluidOutputs().duration(200).eut(30).addTo(sChemicalBathRecipes);
+                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 3, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing)).outputChances(1000)
-                .fluidInputs(FluidRegistry.getFluidStack("hell_blood", 1000)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sChemicalBathRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("hell_blood", 1000)).noFluidOutputs().duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 2, missing))
                 .itemOutputs(
                         getModItem(Minecraft.ID, "rotten_flesh", 4, 0, missing),
                         getModItem(Minecraft.ID, "leather", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 2892, missing))
                 .outputChances(10000, 3000, 5000).fluidInputs(FluidRegistry.getFluidStack("hell_blood", 1000))
-                .noFluidOutputs().duration(200).eut(30).addTo(sChemicalBathRecipes);
+                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 4)).noFluidOutputs().duration(50).eut(4)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("water", 4)).noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(50).eut(4)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(4).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(25).eut(4)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs()
+                .duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 4)).noFluidOutputs().duration(50).eut(8)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("water", 4)).noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(50).eut(8)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_button", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(25).eut(8)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs()
+                .duration(1 * SECONDS + 5 * TICKS).eut(8).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, wildcard, missing)).noItemOutputs()
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("molten.glass", 144)).duration(10000).eut(200)
-                .addTo(sFluidExtractionRecipes);
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("molten.glass", 144))
+                .duration(8 * MINUTES + 20 * SECONDS).eut(200).addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "obsidian", 1, 0, missing)).noItemOutputs()
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("obsidian.molten", 288)).duration(10000)
-                .eut(600).addTo(sFluidExtractionRecipes);
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("obsidian.molten", 288))
+                .duration(8 * MINUTES + 20 * SECONDS).eut(600).addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 4, wildcard, missing),
                         getModItem(Minecraft.ID, "dirt", 1, wildcard, missing),
                         getModItem(MagicBees.ID, "wax", 4, 1, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "soul_sand", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(100).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(5 * SECONDS).eut(16)
                 .addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2500,13 +2507,13 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "gunpowder", 3, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 2535, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "fire_charge", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(400).eut(30).addTo(sMixerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "melon_block", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 0, 32398, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "melon", 8, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(8).addTo(sSlicerRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(sSlicerRecipes);
         Module_CustomFuels
                 .registerCustomFuelValue(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing), (short) 75);
 
