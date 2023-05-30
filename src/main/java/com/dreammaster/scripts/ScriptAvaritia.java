@@ -954,7 +954,7 @@ public class ScriptAvaritia implements IScriptLoader {
     }
 
     // Don't ask me why optional is needed here
-    @Optional.Method(modid = "TConstruct")
+    @Optional.Method(modid = "TConstruct,ExtraUtilities")
     private void registerTinkerPartsRecipes() {
         List<TinkerMaterialWrapper> materials = Arrays.asList(
                 new TinkerMaterialWrapper(
