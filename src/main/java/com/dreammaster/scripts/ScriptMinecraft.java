@@ -49,12 +49,14 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptMinecraft implements IScriptLoader {
 
@@ -135,50 +137,50 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(5).eut(64).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "iron_ingot", 5, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 0, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 5L),
+                        CustomItemList.MoldHelmet.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 0, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 8L),
+                        CustomItemList.MoldChestplate.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_chestplate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "iron_ingot", 7, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 7L),
+                        CustomItemList.MoldLeggings.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_leggings", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "iron_ingot", 4, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 0, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 4L),
+                        CustomItemList.MoldBoots.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "iron_boots", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "gold_ingot", 5, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 0, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 5L),
+                        CustomItemList.MoldHelmet.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_helmet", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "gold_ingot", 8, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 0, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 8L),
+                        CustomItemList.MoldChestplate.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_chestplate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "gold_ingot", 7, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 7L),
+                        CustomItemList.MoldLeggings.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_leggings", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "gold_ingot", 4, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 0, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Gold, 4L),
+                        CustomItemList.MoldBoots.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_boots", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, 1, missing))
@@ -192,7 +194,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "barleyFood", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "string", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -211,7 +213,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 6, 4, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
+                        GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "skull", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 216)).noFluidOutputs()
                 .duration(10 * SECONDS).eut(96).addTo(sAssemblerRecipes);
@@ -1519,34 +1521,34 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
+                        GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 2, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
+                        GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 4, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
+                        GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 8, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
+                        GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 32, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "brick", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "brick_block", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 500)).noFluidOutputs().duration(15 * SECONDS).eut(16)
                 .addTo(sAssemblerRecipes);
@@ -1831,7 +1833,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1839,7 +1841,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1847,7 +1849,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1855,7 +1857,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1863,7 +1865,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1871,7 +1873,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1879,7 +1881,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1887,7 +1889,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1895,7 +1897,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1903,7 +1905,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 8, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1911,7 +1913,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 9, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1919,7 +1921,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 10, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1927,7 +1929,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 11, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1935,7 +1937,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 12, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1943,7 +1945,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 13, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1951,7 +1953,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 14, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1959,7 +1961,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, 15, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1967,7 +1969,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1975,7 +1977,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1983,7 +1985,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1991,7 +1993,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1999,7 +2001,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2007,7 +2009,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2015,7 +2017,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2023,7 +2025,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2031,7 +2033,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 0, "{meta:0}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2039,7 +2041,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 1, "{meta:1}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2047,7 +2049,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 2, "{meta:2}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2055,7 +2057,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 3, "{meta:3}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2063,7 +2065,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 4, "{meta:4}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2071,7 +2073,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 5, "{meta:5}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2079,7 +2081,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 6, "{meta:6}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2087,7 +2089,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 7, "{meta:7}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2095,7 +2097,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 8, "{meta:8}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2103,7 +2105,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 9, "{meta:9}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2111,7 +2113,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 10, "{meta:10}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2119,7 +2121,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 11, "{meta:11}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2127,7 +2129,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 12, "{meta:12}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2135,7 +2137,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 13, "{meta:13}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2143,7 +2145,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 14, "{meta:14}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2151,7 +2153,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 15, "{meta:15}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2159,7 +2161,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 16, "{meta:16}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2167,7 +2169,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 17, "{meta:17}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2175,7 +2177,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 18, "{meta:18}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2183,7 +2185,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 19, "{meta:19}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2191,7 +2193,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 20, "{meta:20}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2199,7 +2201,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 21, "{meta:21}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2207,7 +2209,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 22, "{meta:22}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2215,7 +2217,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 23, "{meta:23}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2223,7 +2225,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 24, "{meta:24}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2231,7 +2233,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 25, "{meta:25}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2239,7 +2241,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 26, "{meta:26}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2247,7 +2249,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 27, "{meta:27}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2255,7 +2257,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 28, "{meta:28}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2263,7 +2265,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 29, "{meta:29}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2271,7 +2273,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 30, "{meta:30}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2279,7 +2281,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 31, "{meta:31}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2287,7 +2289,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 32, "{meta:32}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2295,7 +2297,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 33, "{meta:33}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2303,7 +2305,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         createItemStack(ExtraTrees.ID, "planks", 2, 34, "{meta:34}", missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2311,7 +2313,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17809, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2319,7 +2321,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ThaumicBases.ID, "enderPlanks", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2327,7 +2329,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2335,7 +2337,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(GalaxySpace.ID, "barnardaCplanks", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2343,7 +2345,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(TaintedMagic.ID, "BlockWarpwoodPlanks", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2351,7 +2353,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2359,7 +2361,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(TwilightForest.ID, "tile.TFTowerStone", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2367,7 +2369,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(TwilightForest.ID, "tile.TFPlank", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2375,7 +2377,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
                         getModItem(ForbiddenMagic.ID, "TaintPlank", 2, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2385,7 +2387,7 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 28086, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 23086, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 26086, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "clock", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2395,33 +2397,33 @@ public class ScriptMinecraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 28086, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 23086, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 26086, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "clock", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "leather", 4, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 4, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(24).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 0, missing))
