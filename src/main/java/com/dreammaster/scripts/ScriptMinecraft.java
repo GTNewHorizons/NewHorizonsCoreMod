@@ -1463,18 +1463,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing),
-                        getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
                         getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
                         getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).noFluidInputs().noFluidOutputs()
