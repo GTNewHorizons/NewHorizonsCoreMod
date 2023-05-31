@@ -9,6 +9,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.List;
 
+import gregtech.GT_Mod;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -8573,6 +8574,39 @@ public class AssemblerRecipes implements Runnable {
                                 .itemOutputs(CustomItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS)
                                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
                     }
+                    if (HardcoreEnderExpansion.isModLoaded()) {
+                        // Biome Compass
+                        GT_Values.RA.stdBuilder()
+                                .itemInputs(
+                                        Materials.HeeEndium.getPlates(1),
+                                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.HeeEndium, 1),
+                                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.HeeEndium, 2),
+                                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 2),
+                                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
+                                        GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0))
+                                .noFluidInputs().noFluidOutputs()
+                                .itemOutputs(GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 1))
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                    }
+                        // Alternate Storage Template Recipe
+                        GT_Values.RA.stdBuilder()
+                                .itemInputs(
+                                ItemList.Electric_Motor_LV.get(1),
+                                        GT_OreDictUnificator.get("drawerBasic",1),
+                                        GT_Utility.getIntegratedCircuit(2))
+                                .noFluidOutputs().noFluidInputs()
+                                .itemOutputs(GT_OreDictUnificator.get("drawerBasic",1))
+                                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                        // Display
+                    GT_Values.RA.stdBuilder()
+                            .itemInputs(
+                                    ItemList.Cover_Screen.get(1),
+                                    GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic,2),
+                                    GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
+                                    GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 2))
+                            .fluidInputs(Materials.Plastic.getFluid(144L)).noFluidOutputs()
+                            .itemOutputs(CustomItemList.Display.get(1))
+                            .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
                 }
 
             }
