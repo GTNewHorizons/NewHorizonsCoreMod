@@ -158,12 +158,11 @@ public class ExtruderRecipes implements Runnable {
                     .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).noFluidInputs().noFluidOutputs()
                     .duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sExtruderRecipes);
         }
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Carbon, 4),
-                            ItemList.Shape_Extruder_Gear.get(0L))
-                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gear, Materials.Carbon,1))
-                    .noFluidOutputs().noFluidInputs()
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sExtruderRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Carbon, 4),
+                        ItemList.Shape_Extruder_Gear.get(0L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gear, Materials.Carbon, 1)).noFluidOutputs()
+                .noFluidInputs().duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sExtruderRecipes);
     }
 }
