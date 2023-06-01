@@ -1856,6 +1856,16 @@ public class AssemblerRecipes implements Runnable {
                 200,
                 30);
 
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
+                        ItemList.Electric_Motor_MV.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, 1L),
+                        new ItemStack(Blocks.iron_bars, 6), GT_Utility.getIntegratedCircuit(1) },
+                GT_Values.NF,
+                ItemList.Casing_Grate.get(1L),
+                200,
+                120);
+
         // Filter Machine Casing for cleanroom
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1L),
