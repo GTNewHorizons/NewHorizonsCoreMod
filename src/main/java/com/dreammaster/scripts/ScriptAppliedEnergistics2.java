@@ -102,7 +102,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 CustomItemList.MysteriousCrystal,
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11105, missing));
+                CustomItemList.AcceleratorLuV);
 
         // Quad Core
         GT_Values.RA.stdBuilder()
