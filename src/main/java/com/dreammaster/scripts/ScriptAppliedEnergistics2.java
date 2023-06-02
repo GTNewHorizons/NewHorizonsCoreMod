@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
@@ -63,8 +62,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 ExtraUtilities.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
-                Thaumcraft.ID,
-                GTPlusPlus.ID);
+                Thaumcraft.ID);
     }
 
     @Override
