@@ -95,10 +95,14 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         ItemStack[] FluixSmartCableColor = new ItemStack[16];
         ItemStack[] FluixDenseSmartCableColor = new ItemStack[16];
         ItemStack[] FluixBackboneSmartCableColor = new ItemStack[16];
+
+        // Hyper-Acceleration Card
         addShapelessRecipe(
                 SuperSpeedCard,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
-                CustomItemList.MysteriousCrystal);
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                CustomItemList.MysteriousCrystal,
+                CustomItemList.AcceleratorLuV);
 
         // Quad Core
         GT_Values.RA.stdBuilder()
