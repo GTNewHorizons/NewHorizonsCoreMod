@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
@@ -62,7 +63,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 ExtraUtilities.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
-                Thaumcraft.ID);
+                Thaumcraft.ID,
+                GTPlusPlus.ID);
     }
 
     @Override
@@ -95,10 +97,14 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         ItemStack[] FluixSmartCableColor = new ItemStack[16];
         ItemStack[] FluixDenseSmartCableColor = new ItemStack[16];
         ItemStack[] FluixBackboneSmartCableColor = new ItemStack[16];
+
+        // Hyper-Acceleration Card
         addShapelessRecipe(
                 SuperSpeedCard,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
-                CustomItemList.MysteriousCrystal);
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                CustomItemList.MysteriousCrystal,
+                getModItem(GregTech.ID, "gt.blockmachines", 1, 11105, missing));
 
         // Quad Core
         GT_Values.RA.stdBuilder()
