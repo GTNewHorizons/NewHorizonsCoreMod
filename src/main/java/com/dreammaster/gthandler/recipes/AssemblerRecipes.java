@@ -4992,7 +4992,7 @@ public class AssemblerRecipes implements Runnable {
                     new ItemStack[] { GT_ModHandler.getModItem(Railcraft.ID, "slab", 3L, 38),
                             GT_ModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1L),
                             GT_ModHandler.getModItem(Forestry.ID, "oakStick", 5L, 0) },
-                    Materials.SeedOil.getFluid(100L),
+                    Materials.SeedOil.getFluid(250L),
                     GT_ModHandler.getModItem(Forestry.ID, "frameImpregnated", 1L, 0),
                     1200,
                     64);
@@ -5032,7 +5032,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 2L),
                             GT_ModHandler.getModItem(Forestry.ID, "royalJelly", 2L, 0),
                             GT_ModHandler.getModItem(Forestry.ID, "frameProven", 1L, 0) },
-                    Materials.Honey.getFluid(2500L),
+                    Materials.Honey.getFluid(5000L),
                     GT_ModHandler.getModItem(Forestry.ID, "alveary", 1L, 2),
                     1200,
                     120);
@@ -5043,7 +5043,7 @@ public class AssemblerRecipes implements Runnable {
                             CustomItemList.SteelBars.get(3L),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Bronze, 1L),
                             ItemList.Electric_Motor_MV.get(1L) },
-                    Materials.Honey.getFluid(2500L),
+                    Materials.Honey.getFluid(5000L),
                     GT_ModHandler.getModItem(Forestry.ID, "alveary", 1L, 3),
                     1200,
                     120);
@@ -5054,7 +5054,7 @@ public class AssemblerRecipes implements Runnable {
                             CustomItemList.SteelBars.get(1L),
                             GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 3L),
                             ItemList.Electric_Motor_MV.get(1L) },
-                    Materials.Honey.getFluid(2500L),
+                    Materials.Honey.getFluid(5000L),
                     GT_ModHandler.getModItem(Forestry.ID, "alveary", 1L, 4),
                     1200,
                     120);
@@ -5066,7 +5066,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_ModHandler.getModItem(BuildCraftFactory.ID, "tankBlock", 2L, 0),
                             GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L) },
-                    Materials.Honey.getFluid(2500L),
+                    Materials.Honey.getFluid(5000L),
                     GT_ModHandler.getModItem(Forestry.ID, "alveary", 1L, 5),
                     1200,
                     120);
@@ -5077,7 +5077,7 @@ public class AssemblerRecipes implements Runnable {
                             com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(2),
                             ItemList.Component_Filter.get(2L),
                             GT_ModHandler.getModItem(Forestry.ID, "royalJelly", 1L, 0) },
-                    Materials.Honey.getFluid(2500L),
+                    Materials.Honey.getFluid(5000L),
                     GT_ModHandler.getModItem(Forestry.ID, "alveary", 1L, 6),
                     1200,
                     120);
@@ -5102,7 +5102,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 2L),
                             GT_ModHandler.getModItem(ExtraBees.ID, "hiveFrame.soul", 1L, 0) },
-                    Materials.Honey.getFluid(3750L),
+                    Materials.Honey.getFluid(7500L),
                     GT_ModHandler.getModItem(ExtraBees.ID, "alveary", 1L, 0),
                     1200,
                     120);
@@ -5115,7 +5115,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_ModHandler.getModItem(Forestry.ID, "frameProven", 1L, 0),
                             GT_ModHandler.getModItem(Forestry.ID, "frameProven", 1L, 0),
                             GT_ModHandler.getModItem(Forestry.ID, "frameProven", 1L, 0) },
-                    Materials.Honey.getFluid(3750L),
+                    Materials.Honey.getFluid(7500L),
                     GT_ModHandler.getModItem(ExtraBees.ID, "alveary", 1L, 1),
                     1200,
                     120);
@@ -5125,7 +5125,7 @@ public class AssemblerRecipes implements Runnable {
                     new ItemStack[] { alveary, GT_ModHandler.getModItem(Forestry.ID, "thermionicTubes", 4L, 8),
                             GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockRubber", 4L),
                             new ItemStack(Blocks.brick_block, 1, 0), },
-                    Materials.Honey.getFluid(3750L),
+                    Materials.Honey.getFluid(7500L),
                     GT_ModHandler.getModItem(ExtraBees.ID, "alveary", 1L, 2),
                     1200,
                     120);
@@ -5134,7 +5134,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { alveary, GT_ModHandler.getModItem(Forestry.ID, "thermionicTubes", 4L, 2),
                             new ItemStack(Blocks.stained_glass, 4, W), new ItemStack(Blocks.redstone_lamp, 1, 0) },
-                    Materials.Honey.getFluid(3750L),
+                    Materials.Honey.getFluid(7500L),
                     GT_ModHandler.getModItem(ExtraBees.ID, "alveary", 1L, 3),
                     1200,
                     120);
@@ -5145,7 +5145,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 2L),
                             GT_ModHandler.getModItem(Forestry.ID, "chipsets", 2L, 2),
                             ItemList.Electric_Motor_HV.get(1L) },
-                    Materials.Honey.getFluid(3750L),
+                    Materials.Honey.getFluid(7500L),
                     GT_ModHandler.getModItem(ExtraBees.ID, "alveary", 1L, 4),
                     1200,
                     120);
@@ -5156,7 +5156,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 2L),
                             ItemList.Conveyor_Module_MV.get(2L),
                             GT_ModHandler.getModItem(Forestry.ID, "apiculture", 1L, 0) },
-                    Materials.Honey.getFluid(3750L),
+                    Materials.Honey.getFluid(7500L),
                     GT_ModHandler.getModItem(ExtraBees.ID, "alveary", 1L, 5),
                     1200,
                     120);
@@ -5167,7 +5167,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 3L),
                             ItemList.Hull_HV.get(1L) },
-                    Materials.Honey.getFluid(3750L),
+                    Materials.Honey.getFluid(7500L),
                     GT_ModHandler.getModItem(ExtraBees.ID, "alveary", 1L, 6),
                     1200,
                     120);
