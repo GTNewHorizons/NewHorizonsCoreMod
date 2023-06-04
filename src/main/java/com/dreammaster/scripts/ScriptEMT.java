@@ -30,6 +30,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -1034,16 +1035,15 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("electrum"), 16)
                         .add(Aspect.getAspect("auram"), 8),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
-                        getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1462, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1120, missing),
-                        getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 4, missing),
+                new ItemStack[] { ItemList.IC2_EnergyCrystal.get(1), ItemList.MagicEnergyAbsorber_LV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Silver, 4L),
+                        ItemList.Generator_Steam_Turbine_LV.get(1),
+                        getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 1, missing),
                         getModItem(IndustrialCraft2.ID, "itemStaticBoots", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 2, missing),
                         getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32751, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Silver, 4L),
+                        ItemList.Cover_SolarPanel_LV.get(1) });
         TCHelper.addResearchPage(
                 "InventoryChargingRing",
                 new ResearchPage(
@@ -1071,16 +1071,15 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("electrum"), 16)
                         .add(Aspect.getAspect("auram"), 8),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 1, missing),
-                new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
-                        getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1482, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1120, missing),
-                        getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 4, missing),
+                new ItemStack[] { ItemList.IC2_EnergyCrystal.get(1), ItemList.MagicEnergyAbsorber_LV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.BlueAlloy, 4L),
+                        ItemList.Generator_Steam_Turbine_LV.get(1),
+                        getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 1, missing),
                         getModItem(IndustrialCraft2.ID, "itemStaticBoots", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 2, missing),
                         getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1482, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32751, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.BlueAlloy, 4L),
+                        ItemList.Cover_SolarPanel_LV.get(1) });
         TCHelper.addResearchPage(
                 "ArmorChargingRing",
                 new ResearchPage(
