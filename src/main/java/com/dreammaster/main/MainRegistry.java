@@ -465,6 +465,7 @@ public class MainRegistry {
         if (BartWorks.isModLoaded()) {
             BW_RadHatchMaterial.runRadHatchAdder();
         }
+        TCLoader.checkRecipeProblems();
     }
 
     /**
