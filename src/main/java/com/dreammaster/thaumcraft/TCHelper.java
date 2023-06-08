@@ -275,4 +275,18 @@ public class TCHelper {
             return false;
         });
     }
+
+    private static Field infusionRecipeResearchField = null;
+
+    public static void setRecipeResearch(final InfusionRecipe recipe, final String researchName) {
+        try {
+            if (infusionRecipeResearchField == null) {
+                infusionRecipeResearchField = InfusionRecipe.class.getDeclaredField("research");
+                infusionRecipeResearchField.setAccessible(true);
+            }
+            infusionRecipeResearchField.set(recipe, researchName);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

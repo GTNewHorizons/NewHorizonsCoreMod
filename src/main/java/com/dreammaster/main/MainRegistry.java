@@ -465,6 +465,7 @@ public class MainRegistry {
         if (BartWorks.isModLoaded()) {
             BW_RadHatchMaterial.runRadHatchAdder();
         }
+        if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
     }
 
     /**
