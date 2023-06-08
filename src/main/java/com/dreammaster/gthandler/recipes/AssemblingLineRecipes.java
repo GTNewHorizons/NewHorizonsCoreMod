@@ -26,20 +26,6 @@ public class AssemblingLineRecipes implements Runnable {
                 ? FluidRegistry.getFluid("molten.indalloy140")
                 : FluidRegistry.getFluid("molten.solderingalloy");
 
-        // why keep stuff like that? :concern:
-        if (!BartWorks.isModLoaded()) {
-            GT_Values.RA.addAssemblylineRecipe(
-                    GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),
-                    2500,
-                    new ItemStack[] { GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),
-                            CustomItemList.IceCompressedPlate.get(3L), CustomItemList.IceCompressedPlate.get(3L),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Osmiridium, 4) },
-                    new FluidStack[] { new FluidStack(solderIndalloy, 36) },
-                    CustomItemList.HeavyDutyAlloyIngotT4.get(1L),
-                    300,
-                    30720);
-        }
-
         GT_Values.RA.addAssemblylineRecipe(
                 CustomItemList.HeavyDutyPlateTier4.get(1L),
                 5000,
