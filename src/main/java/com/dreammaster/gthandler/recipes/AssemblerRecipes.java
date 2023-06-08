@@ -5175,7 +5175,7 @@ public class AssemblerRecipes implements Runnable {
             // Alveary Unlighting
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { alveary, GT_ModHandler.getModItem(Forestry.ID, "thermionicTubes", 4L, 8),
-                            GT_ModHandler.getModItem(ExtraUtilities.ID, "curtains", 1L, 0),
+                            GT_ModHandler.getModItem(ExtraUtilities.ID, "curtains", 4L, 0),
                             new ItemStack(Blocks.wool, 1, 15) },
                     Materials.Honey.getFluid(7500L),
                     GT_ModHandler.getModItem(ExtraBees.ID, "alveary", 1L, 7),
