@@ -34,6 +34,7 @@ import gregtech.api.enums.GT_Values;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
@@ -211,6 +212,8 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("ROD_livingwood", 2);
         TCHelper.orphanResearch("ROD_dreamwood");
         TCHelper.removeResearch("ROD_dreamwood");
+        InfusionRecipe ROD_dreamwood_recipe = TCHelper
+                .findInfusionRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 12, missing));
         new ResearchItem(
                 "ROD_dreamwood_v2",
                 "FORBIDDEN",
@@ -223,10 +226,9 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(ForbiddenMagic.ID, "WandCores", 1, 11, missing))
                         .setPages(
                                 new ResearchPage("derp.research_page.ROD_dreamwood_v2"),
-                                new ResearchPage(
-                                        TCHelper.findInfusionRecipe(
-                                                getModItem(ForbiddenMagic.ID, "WandCores", 1, 12, missing))))
+                                new ResearchPage(ROD_dreamwood_recipe))
                         .setConcealed().setParents("ROD_livingwood", "ROD_silverwood").registerResearchItem();
+        TCHelper.setRecipeResearch(ROD_dreamwood_recipe, "ROD_dreamwood_v2");
         TCHelper.orphanResearch("ROD_dreamwood_staff");
         TCHelper.removeResearch("ROD_dreamwood_staff");
         new ResearchItem(
