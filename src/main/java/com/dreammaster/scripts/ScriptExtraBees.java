@@ -1,13 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MagicBees;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
@@ -285,6 +278,32 @@ public class ScriptExtraBees implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 1587, missing),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing));
+        RecipeManagers.carpenterManager.addRecipe(
+                60,
+                FluidRegistry.getFluidStack("for.honey", 7500),
+                getModItem(Forestry.ID, "alveary", 1, 0, missing),
+                getModItem(ExtraBees.ID, "alveary", 1, 7, missing),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                'b',
+                getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
+                'c',
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                'd',
+                getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
+                'e',
+                getModItem(Minecraft.ID, "wool", 1, 15, missing),
+                'f',
+                getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
+                'g',
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing),
+                'h',
+                getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing),
+                'i',
+                getModItem(Forestry.ID, "thermionicTubes", 1, 8, missing));
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("for.honey", 1000),
