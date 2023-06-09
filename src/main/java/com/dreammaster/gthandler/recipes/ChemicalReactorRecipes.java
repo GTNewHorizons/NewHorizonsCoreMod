@@ -5,7 +5,7 @@ import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.IndustrialCraft2Classic;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TinkerConstruct;
@@ -398,10 +398,10 @@ public class ChemicalReactorRecipes implements Runnable {
                     true);
         }
 
-        if (Gendustry.isModLoaded() && IndustrialCraft2Classic.isModLoaded()) {
+        if (Gendustry.isModLoaded() && IndustrialCraft2.isModLoaded()) {
             GT_Values.RA.addChemicalRecipe(
                     CustomItemList.TheBigEgg.get(1L),
-                    GT_ModHandler.getModItem(IndustrialCraft2Classic.ID, "itemUran238", 64L, 0),
+                    GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemUran238", 64L, 0),
                     FluidRegistry.getFluidStack("mutagen", 1000),
                     GT_Values.NF,
                     CustomItemList.MutatedEgg.get(1L),
