@@ -127,8 +127,9 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.Circuit_Parts_ResistorASMD.get(8L),
                         ItemList.Circuit_Parts_TransistorASMD.get(8L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 64))
-                .fluidInputs(new FluidStack(solderIndalloy, 720)).noFluidOutputs().itemOutputs().eut(80_000)
-                .duration(50 * SECONDS).addTo(AssemblyLine);
+                .fluidInputs(new FluidStack(solderIndalloy, 720)).noFluidOutputs()
+                .itemOutputs(ItemList.Energy_LapotronicOrb2.get(1L)).eut(80_000).duration(50 * SECONDS)
+                .addTo(AssemblyLine);
 
         if (GraviSuite.isModLoaded()) {
             GT_Values.RA.stdBuilder()
@@ -148,8 +149,8 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Motor_ZPM.get(2L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Duranium, 4))
                     .fluidInputs(new FluidStack(solderIndalloy, 2304), Materials.Tritanium.getMolten(1440L))
-                    .noFluidOutputs().itemOutputs().eut(16_388).duration(1 * MINUTES + 15 * SECONDS)
-                    .addTo(AssemblyLine);
+                    .noFluidOutputs().itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "graviChestPlate", 1, 26))
+                    .eut(16_388).duration(1 * MINUTES + 15 * SECONDS).addTo(AssemblyLine);
 
             GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Casing_Coil_Superconductor.get(1L))
                     .metadata(RESEARCH_TIME, 4 * HOURS)
