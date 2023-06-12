@@ -111,7 +111,7 @@ public class AssemblingLineRecipes implements Runnable {
                         Materials.UUMatter.getFluid(500L),
                         new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
                 .noFluidOutputs().itemOutputs(ItemList.Circuit_Chip_BioCPU.get(1L)).eut(TierEU.UHV / 2)
-                .duration(15 * SECONDS).addTo(AssemblyLine);
+                .duration(30 * SECONDS).addTo(AssemblyLine);
 
         GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Energy_LapotronicOrb.get(1L))
                 .metadata(RESEARCH_TIME, 4 * HOURS)
