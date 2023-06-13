@@ -8606,15 +8606,17 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 0))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         }
-        // Alternate Storage Template Recipe
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Piston_LV.get(1),
-                        GT_OreDictUnificator.get("drawerBasic", 1),
-                        GT_Utility.getIntegratedCircuit(2))
-                .noFluidOutputs().noFluidInputs()
-                .itemOutputs(GT_ModHandler.getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        if (StorageDrawers.isModLoaded()) {
+            // Alternate Storage Template Recipe
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Electric_Piston_LV.get(1),
+                            GT_OreDictUnificator.get("drawerBasic", 1),
+                            GT_Utility.getIntegratedCircuit(2))
+                    .noFluidOutputs().noFluidInputs()
+                    .itemOutputs(GT_ModHandler.getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0))
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        }
         // Display
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -8658,19 +8660,20 @@ public class AssemblerRecipes implements Runnable {
                     .noFluidInputs().noFluidOutputs()
                     .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+            // 64A Zpm To LuV transformer
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt16, Materials.VanadiumGallium, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883),
+                            ItemList.Electric_Pump_LV.get(1))
+                    .fluidInputs(Materials.Lubricant.getFluid(2000)).noFluidOutputs()
+                    .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
         }
-        // 64A Zpm To LuV transformer
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.cableGt16, Materials.VanadiumGallium, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883),
-                        ItemList.Electric_Pump_LV.get(1))
-                .fluidInputs(Materials.Lubricant.getFluid(2000)).noFluidOutputs()
-                .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(sAssemblerRecipes);
         // Titanium Gear Box Casing
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -8680,7 +8683,7 @@ public class AssemblerRecipes implements Runnable {
                 .noFluidInputs().noFluidOutputs()
                 .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings2", 1, 4)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-        // Ultime Time Anomaly
+        // Ultimate Time Anomaly
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Motor_UV.get(2),
@@ -8691,15 +8694,17 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Hull_UV.get(1))
                 .noFluidInputs().noFluidOutputs().itemOutputs(CustomItemList.AcceleratorUV.get(1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-        // LSC controller
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.battery, Materials.Master, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
-                        ItemList.Circuit_Chip_PIC.get(2))
-                .noFluidInputs().noFluidOutputs()
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 13106)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        if (KekzTech.isModLoaded()) {
+            // LSC controller
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.battery, Materials.Master, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                            ItemList.Circuit_Chip_PIC.get(2))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 13106))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        }
 
     }
 }
