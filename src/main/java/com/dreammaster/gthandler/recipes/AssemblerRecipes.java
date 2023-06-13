@@ -8680,9 +8680,8 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Titanium, 2),
                         Materials.Steel.getPlates(4))
-                .noFluidInputs().noFluidOutputs()
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings2", 1, 4)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Titanium.get(1))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
         // Ultimate Time Anomaly
         GT_Values.RA.stdBuilder()
                 .itemInputs(
