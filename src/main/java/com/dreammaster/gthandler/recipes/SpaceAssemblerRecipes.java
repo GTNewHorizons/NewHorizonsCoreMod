@@ -2,6 +2,8 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
@@ -50,6 +52,80 @@ public class SpaceAssemblerRecipes implements Runnable {
                         1,
                         20 * 20,
                         (int) TierEU.RECIPE_UHV,
+                        null,
+                        null);
+            }
+            if (GTPlusPlus.isModLoaded()) {
+                // Alternate Energy Module Recipe
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { ItemList.Circuit_Board_Wetware_Extreme.get(1),
+                                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bedrockium, 64L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Chip_UHPIC.get(64L), ItemList.Circuit_Parts_DiodeXSMD.get(8L),
+                                ItemList.Circuit_Parts_CapacitorXSMD.get(8L),
+                                ItemList.Circuit_Parts_ResistorXSMD.get(8L),
+                                ItemList.Circuit_Parts_TransistorXSMD.get(8L),
+                                GT_OreDictUnificator.get("wireFineHypogen", 48), },
+                        new FluidStack[] { new FluidStack(solderUEV, 720) },
+                        ItemList.Energy_Module.get(1),
+                        1,
+                        50 * 20,
+                        (int) TierEU.RECIPE_UV,
+                        null,
+                        null);
+            }
+
+            // Alternate Energy Cluster Recipe
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { ItemList.Circuit_Board_Bio_Ultra.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 64L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L), ItemList.Circuit_Chip_NPIC.get(64L),
+                            ItemList.Circuit_Parts_DiodeXSMD.get(32L), ItemList.Circuit_Parts_CapacitorXSMD.get(32L),
+                            ItemList.Circuit_Parts_ResistorXSMD.get(32L),
+                            ItemList.Circuit_Parts_TransistorXSMD.get(32L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, MaterialsUEVplus.SpaceTime, 12L) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1440) },
+                    ItemList.Energy_Cluster.get(1),
+                    1,
+                    50 * 20,
+                    (int) TierEU.RECIPE_UHV,
+                    null,
+                    null);
+
+            if (GoodGenerator.isModLoaded()) {
+                // Alternate Ultimate Battery Recipe
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { ItemList.Circuit_Board_Optical.get(1),
+                                GT_OreDictUnificator.get("foilShirabon", 64),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinite, 4L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Chip_PPIC.get(64L), ItemList.Circuit_Parts_DiodeXSMD.get(64L),
+                                ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
+                                ItemList.Circuit_Parts_ResistorXSMD.get(64L),
+                                ItemList.Circuit_Parts_TransistorXSMD.get(64L),
+                                GT_OreDictUnificator.get(
+                                        OrePrefixes.bolt,
+                                        MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                        4L) },
+                        new FluidStack[] { new FluidStack(solderUEV, 2880),
+                                MaterialsUEVplus.WhiteDwarfMatter.getMolten(576),
+                                MaterialsUEVplus.BlackDwarfMatter.getMolten(576) },
+                        ItemList.ZPM2.get(1),
+                        2,
+                        50 * 20,
+                        (int) TierEU.RECIPE_UEV,
                         null,
                         null);
             }
