@@ -286,6 +286,7 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("limestone", getModItem(BiomesOPlenty.ID, "rocks", 1, 0, missing));
         ChiselHelper.addVariationFromStack("amber", getModItem(GregTech.ID, "gt.blockgem1", 1, 1, missing));
         ChiselHelper.addVariationFromStack("amber", getModItem(BiomesOPlenty.ID, "gemOre", 1, 15, missing));
+        CarvingUtils.getChiselRegistry().removeGroup("end_stone");
         ChiselHelper.addGroup("endstone");
         ChiselHelper.addVariationFromStack("endstone", getModItem(Minecraft.ID, "end_stone", 1, 0, missing));
         ChiselHelper.addVariationFromStack("endstone", getModItem(Chisel.ID, "end_Stone", 1, 1, missing));
