@@ -12,7 +12,15 @@ import com.dreammaster.main.NHItems;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
-import gregtech.api.enums.*;
+import gregtech.api.enums.Dyes;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
+import gregtech.api.enums.Mods;
+import gregtech.api.enums.OreDictNames;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -1474,6 +1482,15 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     bits,
                     new Object[] { "T  ", "C  ", "   ", 'T', ToolDictNames.craftingToolSoftHammer, 'C',
                             OrePrefixes.dust.get(Materials.Coal) });
+        }
+
+        if (Chisel.isModLoaded()) {
+            GT_ModHandler.addCraftingRecipe(
+                    GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 8),
+                    GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
+                    new Object[] { "SSS", "WBW", "GGG", 'G', new ItemStack(Blocks.gravel, 1, 0), 'S',
+                            GT_OreDictUnificator.get("sand", 1L), 'W', GT_OreDictUnificator.get("itemWheat", 1L), 'B',
+                            com.dreammaster.item.ItemList.RawBioFiber.getIS() });
         }
 
         if (TinkerConstruct.isModLoaded()) {
