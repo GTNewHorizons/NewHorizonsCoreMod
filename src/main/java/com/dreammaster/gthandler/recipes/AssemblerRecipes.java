@@ -5939,7 +5939,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get("itemWheat", 2L),
                             com.dreammaster.item.ItemList.RawBioFiber.getIS())
                     .noFluidOutputs().noFluidInputs()
-                    .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 8)).duration(5 * SECONDS)
+                    .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 12)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         }
     }
