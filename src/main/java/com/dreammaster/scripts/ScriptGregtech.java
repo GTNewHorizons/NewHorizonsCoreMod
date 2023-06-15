@@ -24,7 +24,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBenderRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
@@ -1605,15 +1604,5 @@ public class ScriptGregtech implements IScriptLoader {
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.blockores", 1, 4870, missing),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22874, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 24874, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sBenderRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 23028, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 23028, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sBenderRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "materials", 1, 18, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(24).addTo(sBenderRecipes);
-
     }
 }
