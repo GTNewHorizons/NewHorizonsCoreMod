@@ -39,10 +39,22 @@ public class BendingMachineRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).noFluidInputs()
+                .noFluidOutputs().duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sBenderRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 9L),
+                        GT_Utility.getIntegratedCircuit(9))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L)).noFluidInputs()
+                .noFluidOutputs().duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(sBenderRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 9L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(3 * MINUTES).eut(TierEU.RECIPE_MV * 3 / 4).addTo(sBenderRecipes);
+                .noFluidOutputs().duration(3 * MINUTES).eut(TierEU.RECIPE_MV).addTo(sBenderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 9L),
