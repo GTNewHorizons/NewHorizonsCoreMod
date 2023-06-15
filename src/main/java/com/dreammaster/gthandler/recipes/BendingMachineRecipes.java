@@ -76,12 +76,18 @@ public class BendingMachineRecipes implements Runnable {
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(sBenderRecipes);
 
         if (GalacticraftCore.isModLoaded()) {
-            GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7, missing))
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7, missing),
+                            GT_Utility.getIntegratedCircuit(2))
                     .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing)).noFluidInputs()
-                    .noFluidOutputs().duration(200).eut(8).addTo(sBenderRecipes);
-            GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6, missing))
+                    .noFluidOutputs().duration(10 * SECONDS).eut(8).addTo(sBenderRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6, missing),
+                            GT_Utility.getIntegratedCircuit(2))
                     .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing)).noFluidInputs()
-                    .noFluidOutputs().duration(200).eut(8).addTo(sBenderRecipes);
+                    .noFluidOutputs().duration(10 * SECONDS).eut(8).addTo(sBenderRecipes);
         }
     }
 }
