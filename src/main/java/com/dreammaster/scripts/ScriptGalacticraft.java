@@ -18,7 +18,6 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBenderRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCannerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
@@ -1264,7 +1263,6 @@ public class ScriptGalacticraft implements IScriptLoader {
         fluidCannerRecipes();
         maceratorRecipes();
         plasmaArcFurnaceRecipes();
-        benderRecipes();
     }
 
     private void arcFurnaceRecipes() {
@@ -2557,14 +2555,5 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
 
-    }
-
-    private void benderRecipes() {
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 7, missing))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sBenderRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 2, 6, missing))
-                .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sBenderRecipes);
     }
 }
