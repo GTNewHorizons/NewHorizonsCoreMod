@@ -25,7 +25,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBenderRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBrewingRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
@@ -2063,22 +2062,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzRod", 2, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.QuantinumPlate", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.QuantinumDensePlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(120).addTo(sBenderRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MytrylPlate", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MytrylDensePlate", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(120).addTo(sBenderRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.LedoxPlate", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.LedoxDensePlate", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sBenderRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BlackPlutoniumPlate", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.BlackPlutoniumDensePlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(1200).eut(480).addTo(sBenderRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 11804, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(24).addTo(sBenderRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 55, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(4).addTo(sWiremillRecipes);

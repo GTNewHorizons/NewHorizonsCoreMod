@@ -17,7 +17,6 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBenderRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
@@ -2043,12 +2042,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 23500, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 1500, missing))
                 .noFluidInputs().noFluidOutputs().duration(3830).eut(16).addTo(sLatheRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 17804, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(3600).eut(96).addTo(sBenderRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 17526, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8, missing)).noFluidInputs()
-                .noFluidOutputs().duration(3600).eut(96).addTo(sBenderRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockBasalt", 1, 0, missing))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2844, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
