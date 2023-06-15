@@ -42,7 +42,7 @@ public class BendingMachineRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sBenderRecipes);
+                .noFluidOutputs().duration(20 * SECONDS).eut(24).addTo(sBenderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 9L),
