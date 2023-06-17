@@ -5937,7 +5937,7 @@ public class AssemblerRecipes implements Runnable {
                             new ItemStack(Blocks.gravel, 3, 0),
                             GT_OreDictUnificator.get("sand", 3L),
                             GT_OreDictUnificator.get("itemWheat", 2L),
-                            com.dreammaster.item.ItemList.RawBioFiber.getIS())
+                            ItemList.IC2_Plantball.get(1L))
                     .noFluidOutputs().noFluidInputs()
                     .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 12)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
