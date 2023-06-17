@@ -4,6 +4,7 @@ import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMa
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraTrees;
@@ -16,6 +17,8 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -1502,6 +1505,13 @@ public class MixerRecipes implements Runnable {
                     GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 8),
                     20,
                     16);
+        }
+
+        if (Chisel.isModLoaded()) {
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 1L))
+                    .fluidInputs(Materials.Water.getFluid(100L)).noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcrete", 1L)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(sMixerRecipes);
         }
     }
 }
