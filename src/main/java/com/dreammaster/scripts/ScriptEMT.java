@@ -20,6 +20,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +34,7 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -108,7 +110,7 @@ public class ScriptEMT implements IScriptLoader {
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
                 .noItemOutputs().noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("refinedglue", 288))
-                .duration(10000).eut(100).addTo(sFluidExtractionRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 2880, missing),

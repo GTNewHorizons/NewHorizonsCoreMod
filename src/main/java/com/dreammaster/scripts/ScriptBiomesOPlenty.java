@@ -18,6 +18,8 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -281,12 +283,12 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(8).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1, 1, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing)).outputChances(2).noFluidInputs()
-                .fluidOutputs(FluidRegistry.getFluidStack("poison", 1000)).duration(10000).eut(20)
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing)).outputChances(10000)
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("poison", 1000)).duration(1 * SECONDS).eut(2)
                 .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing)).noItemOutputs()
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(10000).eut(1200)
-                .addTo(sFluidExtractionRecipes);
+                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(1 * MINUTES)
+                .eut(40).addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).noFluidOutputs().duration(1).eut(1)
