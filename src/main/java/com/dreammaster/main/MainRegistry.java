@@ -86,7 +86,8 @@ import gregtech.common.items.GT_MetaGenerated_Item_01;
                 + "required-after:YAMCore@[0.5.76,);"
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"
-                + "after:HardcoreEnderExpansion;")
+                + "after:HardcoreEnderExpansion;"
+                + "after:Thaumcraft;")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -348,8 +349,6 @@ public class MainRegistry {
         if (BartWorks.isModLoaded()) {
             BWGlassAdder.registerGlasses();
         }
-
-        if (Thaumcraft.isModLoaded()) TCLoader.run();
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -456,6 +455,8 @@ public class MainRegistry {
                     Materials.Palladium,
                     WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
         }
+
+        if (Thaumcraft.isModLoaded()) TCLoader.run();
     }
 
     @Mod.EventHandler
