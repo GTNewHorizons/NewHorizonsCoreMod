@@ -4318,31 +4318,11 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(Minecraft.ID, "web", 1, 0, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsFirewall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(
-                getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2, 17381, missing),
-                createItemStack(Minecraft.ID, "chest", 1, 0, "{display:{Name:\"Invalid OreDictionary Tag\"}}", missing),
-                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(
-                getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemPlateRedstoneAlloy", 2, 0, missing),
-                createItemStack(Minecraft.ID, "chest", 1, 0, "{display:{Name:\"Invalid OreDictionary Tag\"}}", missing),
-                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17381, missing),
-                        createItemStack(
-                                Minecraft.ID,
-                                "trapped_chest",
-                                1,
-                                0,
-                                "{display:{Name:\"Invalid OreDictionary Tag\"}}",
-                                missing),
+                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
@@ -4350,13 +4330,23 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
                         getModItem(GTPlusPlus.ID, "itemPlateRedstoneAlloy", 2, 0, missing),
-                        createItemStack(
-                                Minecraft.ID,
-                                "trapped_chest",
-                                1,
-                                0,
-                                "{display:{Name:\"Invalid OreDictionary Tag\"}}",
-                                missing),
+                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
+                .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17381, missing),
+                        getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
+                .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
+                        getModItem(GTPlusPlus.ID, "itemPlateRedstoneAlloy", 2, 0, missing),
+                        getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
@@ -4794,49 +4784,11 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
                 .eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(
-                getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                createItemStack(Minecraft.ID, "chest", 1, 0, "{display:{Name:\"Invalid OreDictionary Tag\"}}", missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
-                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(
-                getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
-                createItemStack(Minecraft.ID, "chest", 1, 0, "{display:{Name:\"Invalid OreDictionary Tag\"}}", missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
-                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(
-                getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
-                createItemStack(Minecraft.ID, "chest", 1, 0, "{display:{Name:\"Invalid OreDictionary Tag\"}}", missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
-                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(
-                getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                createItemStack(Minecraft.ID, "chest", 1, 0, "{display:{Name:\"Invalid OreDictionary Tag\"}}", missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
-                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        createItemStack(
-                                Minecraft.ID,
-                                "trapped_chest",
-                                1,
-                                0,
-                                "{display:{Name:\"Invalid OreDictionary Tag\"}}",
-                                missing),
+                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
@@ -4845,13 +4797,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
-                        createItemStack(
-                                Minecraft.ID,
-                                "trapped_chest",
-                                1,
-                                0,
-                                "{display:{Name:\"Invalid OreDictionary Tag\"}}",
-                                missing),
+                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
@@ -4860,13 +4806,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
-                        createItemStack(
-                                Minecraft.ID,
-                                "trapped_chest",
-                                1,
-                                0,
-                                "{display:{Name:\"Invalid OreDictionary Tag\"}}",
-                                missing),
+                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
@@ -4875,13 +4815,43 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        createItemStack(
-                                Minecraft.ID,
-                                "trapped_chest",
-                                1,
-                                0,
-                                "{display:{Name:\"Invalid OreDictionary Tag\"}}",
-                                missing),
+                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
+                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
+                        getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
+                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
+                        getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
+                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
+                        getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
+                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
+                        getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).noFluidInputs()
