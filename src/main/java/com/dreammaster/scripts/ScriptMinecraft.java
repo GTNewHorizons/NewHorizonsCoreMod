@@ -39,7 +39,6 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sSlicerRecipes;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
@@ -2428,11 +2427,8 @@ public class ScriptMinecraft implements IScriptLoader {
                 .fluidInputs(getFluidStack("lubricant", 1)).noFluidOutputs().duration(1 * SECONDS + 5 * TICKS).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, wildcard, missing)).noItemOutputs()
-                .noFluidInputs().fluidOutputs(Materials.Glass.getMolten(144)).duration(8 * MINUTES + 20 * SECONDS)
-                .eut(200).addTo(sFluidExtractionRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "obsidian", 1, 0, missing)).noItemOutputs()
-                .noFluidInputs().fluidOutputs(Materials.Obsidian.getMolten(288)).duration(8 * MINUTES + 20 * SECONDS)
-                .eut(600).addTo(sFluidExtractionRecipes);
+                .noFluidInputs().fluidOutputs(Materials.Glass.getMolten(144)).duration(10 * SECONDS).eut(48)
+                .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 4, wildcard, missing),
