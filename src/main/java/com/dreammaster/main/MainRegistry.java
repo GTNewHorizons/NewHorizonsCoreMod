@@ -348,8 +348,6 @@ public class MainRegistry {
         if (BartWorks.isModLoaded()) {
             BWGlassAdder.registerGlasses();
         }
-
-        if (Thaumcraft.isModLoaded()) TCLoader.run();
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -456,6 +454,8 @@ public class MainRegistry {
                     Materials.Palladium,
                     WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
         }
+
+        if (Thaumcraft.isModLoaded()) TCLoader.run();
     }
 
     @Mod.EventHandler
