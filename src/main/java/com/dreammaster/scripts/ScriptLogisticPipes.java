@@ -27,12 +27,12 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.enums.TierEU;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptLogisticPipes implements IScriptLoader {
@@ -780,183 +780,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32701, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32078, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32701, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32078, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32701, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32078, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32701, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32078, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -967,7 +791,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -978,7 +802,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -989,7 +813,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1000,7 +824,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1011,7 +835,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1022,7 +846,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1033,8 +857,184 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32701, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32078, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32701, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32078, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32701, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32078, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32701, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32078, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 22305, missing),
@@ -1084,8 +1084,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
@@ -1095,8 +1095,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
@@ -1106,8 +1106,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
@@ -1117,8 +1117,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
@@ -1128,8 +1128,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
@@ -1139,8 +1139,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
@@ -1150,8 +1150,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
@@ -1161,8 +1161,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
@@ -1172,8 +1172,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
@@ -1183,8 +1183,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
@@ -1194,8 +1194,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
@@ -1205,8 +1205,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
@@ -1216,8 +1216,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
@@ -1227,8 +1227,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
@@ -1238,8 +1238,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
@@ -1249,8 +1249,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
@@ -1260,8 +1260,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(40 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
@@ -1271,95 +1271,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1370,7 +1282,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1381,7 +1293,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1392,8 +1304,96 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
@@ -1445,8 +1445,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1456,8 +1456,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1467,8 +1467,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1478,8 +1478,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1489,8 +1489,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1500,8 +1500,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1511,8 +1511,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1522,8 +1522,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1533,8 +1533,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1544,8 +1544,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1555,8 +1555,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
@@ -1566,8 +1566,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing),
@@ -1583,183 +1583,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1770,7 +1594,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1781,7 +1605,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1792,7 +1616,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1803,7 +1627,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1814,7 +1638,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1825,7 +1649,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1836,200 +1660,184 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
@@ -2040,7 +1848,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2052,7 +1860,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2064,7 +1872,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2076,7 +1884,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2088,7 +1896,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2100,7 +1908,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2112,7 +1920,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2124,8 +1932,200 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 500, missing),
@@ -2141,183 +2141,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2328,7 +2152,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2339,7 +2163,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2350,7 +2174,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2361,7 +2185,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2372,7 +2196,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2383,7 +2207,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2394,8 +2218,184 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 3, missing),
@@ -2414,24 +2414,24 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 3, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 3, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 3, missing),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 3, missing),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 7, missing),
@@ -2479,83 +2479,28 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
@@ -2565,62 +2510,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2631,7 +2521,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2642,7 +2532,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2653,7 +2543,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2664,7 +2554,161 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32703, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32082, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2675,8 +2719,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -2686,8 +2730,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -2697,8 +2741,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -2708,8 +2752,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -2719,8 +2763,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -2730,8 +2774,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -2741,8 +2785,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -2752,51 +2796,18 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.GoldCoreChip", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32651, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32703, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32082, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2807,8 +2818,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 16, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -2818,18 +2829,18 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 16, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.GoldCoreChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32651, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 26348, missing),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.DiamondCoreChip", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 576)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2840,30 +2851,19 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 32, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.DiamondCoreChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 288)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.DiamondCoreChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 288)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.DiamondCoreChip", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
@@ -2938,183 +2938,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32703, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32082, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32703, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32082, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32703, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32082, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32703, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32082, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -3125,7 +2949,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -3136,7 +2960,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -3147,7 +2971,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -3158,7 +2982,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -3169,7 +2993,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -3180,7 +3004,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -3191,8 +3015,184 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(45 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32703, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32082, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32703, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32082, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32703, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32082, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32703, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32082, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing),
@@ -3265,8 +3265,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
@@ -3279,8 +3279,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
@@ -3293,8 +3293,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
@@ -3307,8 +3307,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
@@ -3321,8 +3321,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
@@ -3335,8 +3335,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
@@ -3349,8 +3349,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
@@ -3363,8 +3363,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing),
@@ -3429,8 +3429,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3441,8 +3441,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3453,8 +3453,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3465,8 +3465,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3477,8 +3477,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3489,8 +3489,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3501,8 +3501,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3513,8 +3513,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3525,8 +3525,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3537,8 +3537,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3549,8 +3549,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3561,8 +3561,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3573,8 +3573,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3585,8 +3585,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
@@ -3597,8 +3597,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 600, missing),
@@ -3753,8 +3753,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 3, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
@@ -3762,8 +3762,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
@@ -3771,8 +3771,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
@@ -3780,8 +3780,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
@@ -3789,8 +3789,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
@@ -3798,8 +3798,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
@@ -3808,8 +3808,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
@@ -3818,8 +3818,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
@@ -3828,8 +3828,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
@@ -3838,8 +3838,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
@@ -3848,8 +3848,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
@@ -3873,127 +3873,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4005,7 +3885,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4017,7 +3897,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4029,7 +3909,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4041,8 +3921,128 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4052,8 +4052,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4063,8 +4063,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4074,8 +4074,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4085,8 +4085,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4096,8 +4096,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4107,8 +4107,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4118,8 +4118,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4129,8 +4129,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4140,8 +4140,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4151,8 +4151,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(80 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4162,8 +4162,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4173,8 +4173,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4184,8 +4184,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
     }
 
     private void recipes3() {
@@ -4198,8 +4198,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
@@ -4209,8 +4209,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
@@ -4554,167 +4554,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4724,7 +4564,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4734,7 +4574,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4744,7 +4584,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4754,7 +4594,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4764,7 +4604,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4774,7 +4614,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4784,8 +4624,168 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(30 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32700, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32075, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
@@ -4874,8 +4874,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 20, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1000)).noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1000)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
@@ -5100,26 +5100,26 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 6, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 6, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 6, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(40 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 6, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 18, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 6, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 3, 0, missing),
