@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.util.GT_RecipeBuilder.HOURS;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 import static gregtech.api.util.GT_RecipeConstants.AssemblyLine;
 import static gregtech.api.util.GT_RecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GT_RecipeConstants.RESEARCH_TIME;
@@ -136,9 +137,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .metadata(RESEARCH_ITEM, GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, GT_Values.W))
                     .metadata(RESEARCH_TIME, 2 * HOURS)
                     .itemInputs(
-                            GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, 1),
+                            GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, WILDCARD),
                             ItemList.Transformer_ZPM_LuV.get(1L),
-                            GT_ModHandler.getModItem(GraviSuite.ID, "ultimateLappack", 1, 1),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "ultimateLappack", 1, WILDCARD),
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 6, 1),
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 2),
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 3),
