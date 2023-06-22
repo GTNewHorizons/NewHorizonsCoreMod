@@ -20,7 +20,6 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -3663,75 +3662,6 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).noFluidOutputs().duration(80 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, wildcard, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("chlorine", 1000)).noFluidOutputs()
-                .duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 1, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyeblack", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 2, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyered", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 3, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyegreen", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 4, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyebrown", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 5, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyeblue", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 6, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyepurple", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 7, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyecyan", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 8, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyelightgray", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 9, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyegray", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 10, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyepink", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 11, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyelime", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 12, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyeyellow", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 13, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyelightblue", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 14, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyemagenta", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 15, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyeorange", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 16, missing))
-                .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyewhite", 288))
-                .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
