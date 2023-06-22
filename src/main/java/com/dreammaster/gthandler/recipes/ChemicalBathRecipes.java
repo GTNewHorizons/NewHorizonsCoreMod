@@ -167,6 +167,17 @@ public class ChemicalBathRecipes implements Runnable {
                     .itemOutputs(GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 5))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72)).noFluidOutputs()
                     .duration(25 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemConduitFacade", 1, 0, missing))
+                    .itemOutputs(getModItem(EnderIO.ID, "itemConduitFacade", 1, 1, missing)).outputChances(10000)
+                    .fluidInputs(Materials.Obsidian.getMolten(576L)).noFluidOutputs().duration(10 * SECONDS).eut(2)
+                    .addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 2, missing))
+                    .itemOutputs(
+                            getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing),
+                            getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing),
+                            getModItem(EnderIO.ID, "itemMaterial", 1, 1, missing))
+                    .outputChances(10000, 9000, 5000).fluidInputs(Materials.Rubber.getMolten(144L)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(2).addTo(sChemicalBathRecipes);
         }
 
         if (PamsHarvestCraft.isModLoaded()) {
