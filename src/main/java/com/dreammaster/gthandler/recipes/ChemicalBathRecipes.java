@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.LogisticsPipes;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.OpenModularTurrets;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -340,6 +341,32 @@ public class ChemicalBathRecipes implements Runnable {
                     .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.chemical.dyewhite", 288))
                     .noFluidOutputs().duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_LV)
                     .addTo(sChemicalBathRecipes);
+        }
+        if (OpenModularTurrets.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L))
+                    .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierOne", 1, 0, missing))
+                    .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L))
+                    .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierTwo", 1, 0, missing))
+                    .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L))
+                    .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierThree", 1, 0, missing))
+                    .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_MV / 2).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.EnergeticAlloy, 1L))
+                    .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierFour", 1, 0, missing))
+                    .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.VibrantAlloy, 1L))
+                    .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierFive", 1, 0, missing))
+                    .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV / 2).addTo(sChemicalBathRecipes);
         }
     }
 }
