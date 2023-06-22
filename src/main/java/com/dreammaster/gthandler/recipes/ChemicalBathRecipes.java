@@ -1,15 +1,21 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -31,6 +37,8 @@ public class ChemicalBathRecipes implements Runnable {
 
     @Override
     public void run() {
+
+        ItemStack missing = new ItemStack(Blocks.fire);
 
         // tanned leather
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.leather, 2, 0))
@@ -88,6 +96,48 @@ public class ChemicalBathRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getIC2Item("carbonFiber", 1))
                 .itemOutputs(Materials.EpoxidFiberReinforced.getPlates(1)).fluidInputs(Materials.Epoxid.getMolten(144L))
                 .noFluidOutputs().duration(12 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(sChemicalBathRecipes);
+
+        if (BiomesOPlenty.isModLoaded() && HardcoreEnderExpansion.isModLoaded() && Thaumcraft.isModLoaded()) {
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 0, missing))
+                    .itemOutputs(
+                            getModItem(Minecraft.ID, "bone", 8, 0, missing),
+                            getModItem(Minecraft.ID, "bone", 6, 0, missing),
+                            getModItem(Minecraft.ID, "bone", 4, 0, missing))
+                    .outputChances(10000, 7500, 5000).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 1, missing))
+                    .itemOutputs(
+                            getModItem(Minecraft.ID, "coal_block", 2, 0, missing),
+                            getModItem(Minecraft.ID, "coal_block", 1, 0, missing),
+                            getModItem(Minecraft.ID, "coal_block", 1, 0, missing))
+                    .outputChances(10000, 7500, 5000).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 4, missing))
+                    .itemOutputs(
+                            getModItem(Minecraft.ID, "gunpowder", 4, 0, missing),
+                            getModItem(Minecraft.ID, "gunpowder", 3, 0, missing),
+                            getModItem(Minecraft.ID, "gunpowder", 2, 0, missing))
+                    .outputChances(10000, 7500, 5000).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0, missing))
+                    .itemOutputs(
+                            getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
+                            getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
+                            getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
+                    .outputChances(10000, 5000, 2500).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 3, missing))
+                    .itemOutputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing)).outputChances(1000)
+                    .fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs().duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 2, missing))
+                    .itemOutputs(
+                            getModItem(Minecraft.ID, "rotten_flesh", 4, 0, missing),
+                            getModItem(Minecraft.ID, "leather", 2, 0, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 4))
+                    .outputChances(10000, 3000, 5000).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
+        }
 
         if (Forestry.isModLoaded()) {
             GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 1L, 0))
