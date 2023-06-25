@@ -1,27 +1,27 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.43.81:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.43.99:dev")
     api("com.github.GTNewHorizons:Yamcl:0.5.86:dev")
     api("com.github.GTNewHorizons:Baubles:1.0.1.16:dev")
 
-    compileOnly("com.github.GTNewHorizons:Avaritia:1.42:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Avaritia:1.43:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.4.3:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.0.9:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.1.17:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TecTech:5.2.22:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:bartworks:0.7.17:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TecTech:5.2.26:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:bartworks:0.7.20:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.3.7:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.9.36-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.9.38-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.1.14:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly("curse.maven:witchery-69673:2234410") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:GTplusplus:1.9.38:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Chisel:2.11.0-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:GTplusplus:1.9.50:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Chisel:2.11.3-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Botania:1.9.23-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.4.1:dev") { transitive = false }
     compileOnly("curse.maven:extra-utilities-225561:2264384") { transitive = false }
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.23:deobf") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:amunra:0.4.29:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Galacticraft:3.0.69-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:amunra:0.4.32:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Galacticraft:3.0.71-GTNH:dev") { transitive = false }
 }
