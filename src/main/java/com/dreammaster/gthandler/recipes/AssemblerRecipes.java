@@ -38,6 +38,7 @@ public class AssemblerRecipes implements Runnable {
     public void run() {
         makeCoilRecipes();
         makePistonRecipes();
+        makeLootBagRecipes();
         registerMixedMetalIngotRecipes();
         registerReinforcedIronAlloyPlates();
         registerNEIPlanetRecipes();
@@ -6802,6 +6803,394 @@ public class AssemblerRecipes implements Runnable {
                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemIngot", 64L, 4),
                 100,
                 30);
+    }
+
+    private void makeLootBagRecipes() {
+        // Basic->Steam Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 1) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 2),
+                600,
+                32);
+        // Steam->Basic Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 2) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 1),
+                600,
+                32);
+        // Steam->LV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 2) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 4),
+                600,
+                32);
+        // LV->Steam Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 4) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 2),
+                600,
+                32);
+        // LV->MV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 4) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 5),
+                600,
+                128);
+        // MV->LV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 5) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 4),
+                600,
+                128);
+        // MV->HV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 5) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 6),
+                600,
+                512);
+        // HV->MV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 6) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 5),
+                600,
+                512);
+        // HV->EV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 6) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 7),
+                600,
+                2048);
+        // EV->HV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 7) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 6),
+                600,
+                2048);
+        // EV->IV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 7) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 8),
+                600,
+                8192);
+        // IV->EV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 8) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 7),
+                600,
+                8192);
+        // IV->LuV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 8) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 41),
+                600,
+                32768);
+        // LuV->IV Lootbag
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 41) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 8),
+                600,
+                32768);
+        // Forest Ranger Basic -> Forest Ranger Advanced
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 19) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 20),
+                600,
+                32);
+        // Forest Ranger Advanced -> Forest Ranger Basic
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 20) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 19),
+                600,
+                32);
+        // Forest Ranger Advanced -> Forest Ranger Expert
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 20) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 21),
+                600,
+                128);
+        // Forest Ranger Expert -> Forest Ranger Advanced
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 21) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 20),
+                600,
+                128);
+        // BM Novice -> BM Adept
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 16) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 17),
+                600,
+                128);
+        // BM Adept -> BM Novice
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 17) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 16),
+                600,
+                128);
+        // BM Adept -> BM Master
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 17) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 18),
+                600,
+                128);
+        // BM Master -> BM Adept
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 18) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 17),
+                600,
+                128);
+        // Bees Basic -> Bees Advanced
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 25) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 26),
+                600,
+                32);
+        // Bees Advanced -> Bees Basic
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 26) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 25),
+                600,
+                32);
+        // Bees Advanced -> Bees Expert
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 26) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 27),
+                600,
+                512);
+        // Bees Expert -> Bees Advanced
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 27) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 26),
+                600,
+                512);
+        // Space Invaders Moon -> Space Invaders Mars
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 22) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 23),
+                600,
+                2048);
+        // Space Invaders Mars -> Space Invaders Moon
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 23) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 22),
+                600,
+                2048);
+        // Space Invaders Mars -> Space Invaders Asteroids
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 23) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 24),
+                600,
+                2048);
+        // Space Invaders Asteroids -> Space Invaders Mars
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 24) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 23),
+                600,
+                2048);
+        // Fast Food -> Slow Food
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 28) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 29),
+                600,
+                32);
+        // Slow Food -> Fast Food
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 29) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 28),
+                600,
+                32);
+        // Slow Food -> Haute Cuisine
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 29) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 30),
+                600,
+                32);
+        // Haute Cuisine -> Slow Food
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 30) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 29),
+                600,
+                32);
+        // Haute Cuisine -> Dessert
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 30) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 31),
+                600,
+                32);
+        // Dessert -> Haute Cuisine
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 31) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 30),
+                600,
+                32);
+        // Transportation 3 -> Transportation 2
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 32) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 33),
+                600,
+                32);
+        // Transportation 2 -> Transportation 3
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 33) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 32),
+                600,
+                32);
+        // Transportation 2 -> Transportation 1
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 33) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 34),
+                600,
+                32);
+        // Transportation 1 -> Transportation 2
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 34) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 33),
+                600,
+                32);
+        // Magic Novice -> Magic Adept
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 9) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 10),
+                600,
+                32);
+        // Magic Adept -> Magic Novice
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 10) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 9),
+                600,
+                32);
+        // Magic Adept -> Magic Master
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 10) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 11),
+                600,
+                128);
+        // Magic Master -> Magic Adept
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 11) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 10),
+                600,
+                128);
+        // Magic Master -> Magic Grandmaster
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3, 11) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 12),
+                600,
+                128);
+        // Magic Grandmaster -> Magic Master
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 12) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 3L, 11),
+                600,
+                128);
+        // Magic Grandmaster -> Magic Grandmaster Unique
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(1),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 16, 12) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1L, 13),
+                600,
+                128);
+        // Magic Grandmaster Unique -> Magic Grandmaster
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_Utility.getIntegratedCircuit(2),
+                        GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 1, 13) },
+                GT_Values.NF,
+                GT_ModHandler.getModItem(EnhancedLootBags.ID, "lootbag", 16L, 12),
+                600,
+                128);
+
     }
 
     private void makePistonRecipes() {
