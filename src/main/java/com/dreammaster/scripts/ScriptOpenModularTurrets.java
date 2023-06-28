@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.OpenModularTurrets;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
 
 import java.util.Arrays;
@@ -628,26 +627,6 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                         getModItem(OpenModularTurrets.ID, "ioBus", 4, 0, missing))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "redstoneReactorAddon", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 4985, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierOne", 1, 0, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs().duration(200).eut(16)
-                .addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 4461, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierTwo", 1, 0, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 4460, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierThree", 1, 0, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs().duration(200).eut(64)
-                .addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 4462, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierFour", 1, 0, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs().duration(200).eut(120)
-                .addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 4463, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierFive", 1, 0, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).noFluidOutputs().duration(200).eut(256)
-                .addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 2805, missing),
