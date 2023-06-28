@@ -20,7 +20,6 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 
@@ -1886,17 +1885,6 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.integrated_circuit", 0, 17, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockReinforcedObsidian", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemConduitFacade", 1, 0, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "itemConduitFacade", 1, 1, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("obsidian.molten", 576)).noFluidOutputs().duration(200).eut(2)
-                .addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 2, missing))
-                .itemOutputs(
-                        getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 1, missing))
-                .outputChances(10000, 9000, 5000).fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144))
-                .noFluidOutputs().duration(200).eut(2).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32314, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelAnvil", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.darksteel", 4464)).noFluidOutputs().duration(900)

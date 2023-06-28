@@ -27,7 +27,6 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
@@ -1905,22 +1904,6 @@ public class ScriptStevesCarts implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 12, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).specialValue(1000).addTo(sBlastRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 34, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 37, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(200).eut(2)
-                .addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).noFluidOutputs().duration(300).eut(2)
-                .addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 42, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeorange", 864)).noFluidOutputs()
-                .duration(200).eut(2).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 65, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 864)).noFluidOutputs().duration(200)
-                .eut(2).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "diamond", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 18, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("obsidian.molten", 1152)).noFluidOutputs().duration(600)
