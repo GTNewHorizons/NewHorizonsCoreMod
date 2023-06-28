@@ -33,7 +33,6 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
@@ -2363,45 +2362,6 @@ public class ScriptMinecraft implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).addTo(sBlastRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 0, missing))
-                .itemOutputs(
-                        getModItem(Minecraft.ID, "bone", 8, 0, missing),
-                        getModItem(Minecraft.ID, "bone", 6, 0, missing),
-                        getModItem(Minecraft.ID, "bone", 4, 0, missing))
-                .outputChances(10000, 7500, 5000).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 1, missing))
-                .itemOutputs(
-                        getModItem(Minecraft.ID, "coal_block", 2, 0, missing),
-                        getModItem(Minecraft.ID, "coal_block", 1, 0, missing),
-                        getModItem(Minecraft.ID, "coal_block", 1, 0, missing))
-                .outputChances(10000, 7500, 5000).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 4, missing))
-                .itemOutputs(
-                        getModItem(Minecraft.ID, "gunpowder", 4, 0, missing),
-                        getModItem(Minecraft.ID, "gunpowder", 3, 0, missing),
-                        getModItem(Minecraft.ID, "gunpowder", 2, 0, missing))
-                .outputChances(10000, 7500, 5000).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1, 0, missing))
-                .itemOutputs(
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
-                .outputChances(10000, 5000, 2500).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 3, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing)).outputChances(1000)
-                .fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 2, missing))
-                .itemOutputs(
-                        getModItem(Minecraft.ID, "rotten_flesh", 4, 0, missing),
-                        getModItem(Minecraft.ID, "leather", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 2892, missing))
-                .outputChances(10000, 3000, 5000).fluidInputs(getFluidStack("hell_blood", 1000)).noFluidOutputs()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sChemicalBathRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_button", 2, 0, missing))
                 .fluidInputs(Materials.Water.getFluid(4)).noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(4)
