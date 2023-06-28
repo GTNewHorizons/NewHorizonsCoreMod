@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EnhancedLootBags;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
@@ -2066,101 +2065,5 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 55, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(4).addTo(sWiremillRecipes);
-        // Basic -> Steam Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 1, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Steam -> LV Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 2, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 4, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(32).addTo(sAssemblerRecipes);
-        // LV -> MV Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 4, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 5, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(128).addTo(sAssemblerRecipes);
-        // MV -> HV Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 5, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 6, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(512).addTo(sAssemblerRecipes);
-        // HV -> EV Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 6, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 7, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(2048).addTo(sAssemblerRecipes);
-        // EV -> IV Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 7, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 8, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(8192).addTo(sAssemblerRecipes);
-        // IV -> LuV Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 8, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 41, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32768).addTo(sAssemblerRecipes);
-        // Forest Ranger Basic -> Forest Ranger Advanced Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 19, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 20, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Forest Ranger Advanced -> Forest Ranger Expert Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 20, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 21, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(128).addTo(sAssemblerRecipes);
-        // BM Novice -> BM Adept Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 16, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(128).addTo(sAssemblerRecipes);
-        // BM Adept -> BM Master Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 17, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 18, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(128).addTo(sAssemblerRecipes);
-        // Bees Basic -> Bees Advanced Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 25, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 26, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Bees Advanced -> Bees Expert Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 26, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 27, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(512).addTo(sAssemblerRecipes);
-        // Space Invaders Moon -> Space Invaders Mars Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 22, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 23, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(2048).addTo(sAssemblerRecipes);
-        // Space Invaders Mars -> Space Invaders Asteroids Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 23, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 24, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(2048).addTo(sAssemblerRecipes);
-        // Fast Food -> Slow Food Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 28, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 29, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Slow Food -> Haute Cuisine Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 29, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 30, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Haute Cuisine -> Dessert Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 30, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 31, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Transportation 3 -> 2 Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 32, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 33, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Transportation 2 -> 1 Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 33, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 34, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Magic Novice -> Magic Adept Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 9, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 10, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(32).addTo(sAssemblerRecipes);
-        // Magic Adept -> Magic Master Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 10, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 11, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(128).addTo(sAssemblerRecipes);
-        // Magic Master -> Magic Grandmaster Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 11, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 12, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(128).addTo(sAssemblerRecipes);
-        // Magic Grandmaster -> Magic Grandmaster Unique Lootbags
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 16, 12, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 13, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(128).addTo(sAssemblerRecipes);
     }
 }
