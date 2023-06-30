@@ -17,6 +17,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLatheRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +25,11 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptHardcoreEnderExpansion implements IScriptLoader {
 
@@ -507,13 +512,13 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(480).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().noItemInputs()
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2770, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2533, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1841, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1770, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1533, missing))
-                .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("ender", 250))
-                .fluidOutputs(FluidRegistry.getFluidStack("endergoo", 1000)).duration(600).eut(480)
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Tungstate, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.HeeEndium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.EnderEye, 1L))
+                .outputChances(9000, 8000, 7500, 5000, 2500).fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000))
+                .fluidOutputs(FluidRegistry.getFluidStack("ender", 250)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
