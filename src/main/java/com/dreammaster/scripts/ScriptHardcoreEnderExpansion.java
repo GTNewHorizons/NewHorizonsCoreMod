@@ -504,12 +504,13 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .noFluidOutputs().duration(300).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_powder", 4, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1770, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 533, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1770, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 533, missing))
-                .outputChances(9000, 8000, 7500, 5000).fluidInputs(FluidRegistry.getFluidStack("ender", 100))
-                .noFluidOutputs().duration(200).eut(480).addTo(sCentrifugeRecipes);
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.HeeEndium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.EnderEye, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.HeeEndium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.EnderEye, 1L))
+                .outputChances(9000, 8000, 7500, 5000).noFluidInputs()
+                .fluidOutputs(FluidRegistry.getFluidStack("ender", 100)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().noItemInputs()
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 1L),
