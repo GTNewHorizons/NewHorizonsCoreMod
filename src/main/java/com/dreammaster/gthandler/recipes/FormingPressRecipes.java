@@ -437,6 +437,30 @@ public class FormingPressRecipes implements Runnable {
                 new ItemStack(Blocks.glass, 1, 0),
                 100,
                 30);
+        GT_Values.RA.addFormingPressRecipe(
+                GT_ModHandler.getIC2Item("carbonPlate", 4L),
+                CustomItemList.MoldBoots.get(0L),
+                CustomItemList.CarbonPartBoots.get(1L),
+                400,
+                120);
+        GT_Values.RA.addFormingPressRecipe(
+                GT_ModHandler.getIC2Item("carbonPlate", 8L),
+                CustomItemList.MoldChestplate.get(0L),
+                CustomItemList.CarbonPartChestplate.get(1L),
+                400,
+                120);
+        GT_Values.RA.addFormingPressRecipe(
+                GT_ModHandler.getIC2Item("carbonPlate", 5L),
+                CustomItemList.MoldHelmet.get(0L),
+                CustomItemList.CarbonPartHelmet.get(1L),
+                400,
+                120);
+        GT_Values.RA.addFormingPressRecipe(
+                GT_ModHandler.getIC2Item("carbonPlate", 7L),
+                CustomItemList.MoldLeggings.get(0L),
+                CustomItemList.CarbonPartLeggings.get(1L),
+                400,
+                120);
 
         if (BloodArsenal.isModLoaded()) {
             GT_Values.RA.addFormingPressRecipe(
