@@ -2065,6 +2065,5 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 55, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(4).addTo(sWiremillRecipes);
-
     }
 }
