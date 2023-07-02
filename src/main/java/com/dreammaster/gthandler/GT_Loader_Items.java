@@ -202,6 +202,7 @@ public class GT_Loader_Items {
         CustomItemList.CoinFlowerII.set(ItemList.CoinFlowerII.getIS());
         CustomItemList.CoinFlowerIII.set(ItemList.CoinFlowerIII.getIS());
         CustomItemList.CoinFlowerIV.set(ItemList.CoinFlowerIV.getIS());
+        CustomItemList.CoinDonation.set(ItemList.CoinDonation.getIS());
         CustomItemList.WetTofu.set(ItemList.WetTofu.getIS());
         CustomItemList.NetherStarFragment.set(ItemList.NetherStarFragment.getIS());
         CustomItemList.WeakOrb.set(ItemList.WeakOrb.getIS());
