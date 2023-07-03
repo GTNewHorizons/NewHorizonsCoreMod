@@ -1,11 +1,14 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
@@ -239,20 +242,14 @@ public class ElectrolyzerRecipes implements Runnable {
                 160,
                 120);
         // Clay
-        GT_Values.RA.addElectrolyzerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 13L),
-                ItemList.Cell_Empty.get(12L),
-                GT_Values.NF,
-                Materials.Oxygen.getFluid(3000L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 2L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lithium, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 2L),
-                GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 12L),
-                GT_Values.NI,
-                null,
-                156,
-                120);
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 16L))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lithium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 6L))
+                .noFluidInputs().fluidOutputs(Materials.Water.getFluid(2000L)).duration(8 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
         // Emerald
         GT_Values.RA.addElectrolyzerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 29L),
