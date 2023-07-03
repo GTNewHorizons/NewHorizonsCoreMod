@@ -40,7 +40,8 @@ public class AssemblerRecipes implements Runnable {
     @Override
     public void run() {
 
-        // New organized methods -- Most of these still need RA2 conversions done, but at least they're in more workable chunks.
+        // New organized methods -- Most of these still need RA2 conversions done, but at least they're in more workable
+        // chunks.
         if (OpenComputers.isModLoaded()) makeOpenComputersRecipes();
         if (JABBA.isModLoaded()) makeJabbaRecipes();
         if (ZTones.isModLoaded()) makeZTonesRecipes();
