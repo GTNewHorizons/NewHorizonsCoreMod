@@ -140,10 +140,11 @@ public interface CustomItem {
     class EnchantedBookMatcher implements CustomItem {
 
         final ItemStack book;
-        HashMap<Short, Short> enchantments;
+        final HashMap<Short, Short> enchantments;
 
         public EnchantedBookMatcher() {
             book = new ItemStack(Items.enchanted_book);
+            enchantments = new HashMap<>();
             book.stackTagCompound = new NBTTagCompound();
             NBTTagCompound display = new NBTTagCompound();
             NBTTagList lore = new NBTTagList();
@@ -188,7 +189,7 @@ public interface CustomItem {
                 short lvl = tag.getShort("lvl");
 
                 Short found = toFind.get(id);
-                if (found != null && found >= lvl) toFind.remove(id);
+                if (found != null && lvl >= found) toFind.remove(id);
 
             }
 
