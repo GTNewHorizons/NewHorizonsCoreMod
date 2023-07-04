@@ -16,7 +16,6 @@ import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTException;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.nbt.NBTTagString;
 
 import gregtech.api.util.GT_Utility;
 
@@ -145,14 +144,6 @@ public interface CustomItem {
         public EnchantedBookMatcher() {
             book = new ItemStack(Items.enchanted_book);
             enchantments = new HashMap<>();
-            book.stackTagCompound = new NBTTagCompound();
-            NBTTagCompound display = new NBTTagCompound();
-            NBTTagList lore = new NBTTagList();
-            lore.appendTag(new NBTTagString("Doesn't need to exactly match enchantment list,"));
-            lore.appendTag(new NBTTagString("but you will loose all other enchantments if used."));
-            display.setTag("lore", lore);
-            book.stackTagCompound.setTag("display", display);
-
         }
 
         public EnchantedBookMatcher addEnchantment(EnchantmentData enchantment) {
