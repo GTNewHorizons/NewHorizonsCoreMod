@@ -14,11 +14,11 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
-import gregtech.api.util.GT_ModHandler;
 
 public class ScriptGendustry implements IScriptLoader {
 
@@ -256,12 +256,14 @@ public class ScriptGendustry implements IScriptLoader {
                 'm',
                 getModItem(Gendustry.ID, "Extractor", 1, 0, missing));
 
-        GT_ModHandler.addSmeltingRecipe(
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(Gendustry.ID, "GeneSample", 1, 0, missing),
-                getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0, missing));
-        GT_ModHandler.addSmeltingRecipe(
+                getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0, missing),
+                0f);
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing),
-                getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing));
+                getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing),
+                0f);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
