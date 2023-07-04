@@ -22,13 +22,13 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptHardcoreEnderExpansion implements IScriptLoader {
@@ -439,9 +439,10 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(HardcoreEnderExpansion.ID, "arcane_shard", 1, 0, missing),
                 null);
 
-        GT_ModHandler.addSmeltingRecipe(
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11036, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11036, missing),
+                0f);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_ingot", 9, 0, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
