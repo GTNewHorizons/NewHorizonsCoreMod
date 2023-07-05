@@ -21,7 +21,7 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 /**
- * ShapelessOreRecipe implementation with NBT checking support. Use {@link NBTItem} in input objects to check for NBT
+ * ShapelessOreRecipe implementation with NBT checking support. Use {@link CustomItem} in input objects to check for NBT
  *
  * @author kuba6000
  */
@@ -72,9 +72,9 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                     this.recipe.add(itemStack);
                     this.recipeXY.add(itemStack);
                 }
-            } else if (value instanceof NBTItem) {
+            } else if (value instanceof CustomItem) {
                 this.recipe.add(value);
-                this.recipeXY.add(((NBTItem) value).getStack());
+                this.recipeXY.add(((CustomItem) value).getStack());
             } else {
                 throw new IllegalArgumentException("Wrong argument in recipe");
             }
@@ -104,8 +104,8 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                     }
                     iterator.remove();
                     continue invloop;
-                } else if (r instanceof NBTItem) {
-                    if (!((NBTItem) r).matches(stack)) continue;
+                } else if (r instanceof CustomItem) {
+                    if (!((CustomItem) r).matches(stack)) continue;
                     iterator.remove();
                     continue invloop;
                 } else {

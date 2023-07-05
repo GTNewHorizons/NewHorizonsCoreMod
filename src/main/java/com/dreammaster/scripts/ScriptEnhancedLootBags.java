@@ -29,7 +29,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.recipes.NBTItem;
+import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -140,7 +140,7 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
                                     "{ench:[0:{lvl:3s,id:35s}],RepairCost:2}",
                                     missing),
                             getModItem(EnhancedLootBags.ID, "lootbag", 1, entry.getKey(), missing),
-                            new NBTItem().item(Items.enchanted_book).setNBT("{StoredEnchantments:[0:{lvl:3s,id:35s}]}"),
+                            new CustomItem.EnchantedBookMatcher().addEnchantment(35, 3),
                             entry.getValue()));
         }
 
