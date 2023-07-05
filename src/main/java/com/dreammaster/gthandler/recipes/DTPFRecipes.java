@@ -578,6 +578,40 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.Space.getMolten(18432L * 8))
                         .duration(80 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500)
                         .addTo(sPlasmaForgeRecipes);
+
+                // Time to Space
+                GT_Values.RA.stdBuilder().itemInputs(
+                        // Spacetime Continuum Ripper
+                        getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.5", 0, 10),
+                        ItemList.EnergisedTesseract.get(2),
+                        // Quantum Anomaly
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 16, 32105))
+                        .itemOutputs(ItemList.Tesseract.get(1))
+                        .fluidInputs(
+                                MaterialsUEVplus.Time.getMolten(9216L * 64),
+                                MaterialsUEVplus.SpaceTime.getMolten(9216L * 16),
+                                MaterialsUEVplus.ExcitedDTSC.getFluid(1000L))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L * 2),
+                                MaterialsUEVplus.Space.getMolten(9216L * 64))
+                        .duration(10 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500)
+                        .addTo(sPlasmaForgeRecipes);
+
+                // Space to Time
+                GT_Values.RA.stdBuilder().itemInputs(
+                        // Spacetime Continuum Ripper
+                        getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.5", 0, 10),
+                        ItemList.EnergisedTesseract.get(2),
+                        ItemList.Timepiece.get(16)).itemOutputs(ItemList.Tesseract.get(1))
+                        .fluidInputs(
+                                MaterialsUEVplus.Space.getMolten(9216L * 64),
+                                MaterialsUEVplus.SpaceTime.getMolten(9216L * 16),
+                                MaterialsUEVplus.ExcitedDTSC.getFluid(1000L))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L * 2),
+                                MaterialsUEVplus.Time.getMolten(9216L * 64))
+                        .duration(10 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500)
+                        .addTo(sPlasmaForgeRecipes);
             }
 
             if (Avaritia.isModLoaded()) {
