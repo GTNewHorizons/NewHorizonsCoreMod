@@ -34,11 +34,11 @@ import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.util.GT_ModHandler;
 import tconstruct.library.TConstructRegistry;
 
 public class ScriptGregtech implements IScriptLoader {
@@ -1169,10 +1169,9 @@ public class ScriptGregtech implements IScriptLoader {
                 true,
                 100);
 
-        FurnaceRecipes.smelting().func_151394_a(
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2893, missing),
-                0f);
+                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2893, missing));
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3, missing),
@@ -1590,25 +1589,20 @@ public class ScriptGregtech implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockores", 1, 937, missing))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 5937, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
-        FurnaceRecipes.smelting().func_151394_a(
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.blockores", 1, 870, missing),
-                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
-                0f);
-        FurnaceRecipes.smelting().func_151394_a(
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.blockores", 1, 1870, missing),
-                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
-                0f);
-        FurnaceRecipes.smelting().func_151394_a(
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.blockores", 1, 2870, missing),
-                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
-                0f);
-        FurnaceRecipes.smelting().func_151394_a(
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.blockores", 1, 3870, missing),
-                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
-                0f);
-        FurnaceRecipes.smelting().func_151394_a(
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(GregTech.ID, "gt.blockores", 1, 4870, missing),
-                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
-                0f);
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
     }
 }
