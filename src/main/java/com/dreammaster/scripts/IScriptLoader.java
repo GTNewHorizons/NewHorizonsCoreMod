@@ -13,7 +13,7 @@ import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
 
 import com.dreammaster.main.MainRegistry;
-import com.dreammaster.recipes.NBTItem;
+import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.recipes.ShapedUniversalRecipe;
 import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
@@ -54,7 +54,7 @@ public interface IScriptLoader {
      * Adds shaped crafting recipe using {@link ShapedUniversalRecipe}
      *
      * @param inputs  Crafting ingredient, maximum 9 accepted. Supports String (OreDict), ItemStack, Item, Block,
-     *                ItemData, {@link IItemContainer}, {@link ItemData}, {@link NBTItem}, null (empty slot)
+     *                ItemData, {@link IItemContainer}, {@link ItemData}, {@link CustomItem}, null (empty slot)
      * @param aOutput The result of the crafting recipe
      * @return a boolean
      */
@@ -73,7 +73,7 @@ public interface IScriptLoader {
      * Adds shapeless crafting recipe using {@link ShapelessUniversalRecipe}
      *
      * @param inputs  Crafting ingredient, maximum 9 accepted. Supports String (OreDict), ItemStack, Item, Block,
-     *                ItemData, {@link IItemContainer}, {@link ItemData}, {@link NBTItem}
+     *                ItemData, {@link IItemContainer}, {@link ItemData}, {@link CustomItem}
      * @param aOutput The result of the crafting recipe
      * @return a boolean
      */
