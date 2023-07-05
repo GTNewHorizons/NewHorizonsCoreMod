@@ -45,6 +45,8 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.crafting.FurnaceRecipes;
+
 import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
@@ -52,7 +54,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
@@ -97,12 +98,14 @@ public class ScriptMinecraft implements IScriptLoader {
     public void loadRecipes() {
         craftingRecipes();
 
-        GT_ModHandler.addSmeltingRecipe(
+        FurnaceRecipes.smelting().func_151394_a(
                 CustomItemList.UnfiredClayBrick.get(1L),
-                getModItem(Minecraft.ID, "brick", 1, 0, missing));
-        GT_ModHandler.addSmeltingRecipe(
+                getModItem(Minecraft.ID, "brick", 1, 0, missing),
+                0f);
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32561, missing),
-                getModItem(Minecraft.ID, "bread", 1, 0, missing));
+                getModItem(Minecraft.ID, "bread", 1, 0, missing),
+                0f);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);

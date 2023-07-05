@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.thaumcraft.TCHelper;
@@ -29,7 +30,6 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -69,9 +69,10 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing));
 
-        GT_ModHandler.addSmeltingRecipe(
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(GregTech.ID, "gt.blockmetal8", 1, 13, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2, 11978, missing));
+                getModItem(GregTech.ID, "gt.metaitem.01", 2, 11978, missing),
+                0f);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 4, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing)).noFluidInputs()
