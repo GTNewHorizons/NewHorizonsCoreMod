@@ -16,7 +16,6 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBrewingRecipes;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -24,7 +23,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 
-import com.dreammaster.recipes.NBTItem;
+import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.recipes.ShapedUniversalRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -118,7 +117,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         'b',
                         getModItem(Minecraft.ID, "red_flower", 1, 0, missing),
                         'c',
-                        new NBTItem().item(Items.enchanted_book).setNBT("{StoredEnchantments:[0:{lvl:4s,id:2s}]}"),
+                        new CustomItem.EnchantedBookMatcher().addEnchantment(2, 4),
                         'd',
                         getModItem(AdventureBackpack.ID, "adventureBackpack", 1, 0, missing),
                         'e',
