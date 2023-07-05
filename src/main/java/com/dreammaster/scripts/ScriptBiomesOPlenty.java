@@ -24,10 +24,10 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
-import gregtech.api.util.GT_ModHandler;
 
 public class ScriptBiomesOPlenty implements IScriptLoader {
 
@@ -159,9 +159,10 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
                 getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing));
 
-        GT_ModHandler.addSmeltingRecipe(
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(BiomesOPlenty.ID, "driedDirt", 1, 0, missing),
-                getModItem(Minecraft.ID, "dirt", 1, 0, missing));
+                getModItem(Minecraft.ID, "dirt", 1, 0, missing),
+                0f);
         Module_CustomFuels.registerCustomFuelValue(getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing), (short) 100);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "packed_ice", 16, 0, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing)).noFluidInputs().noFluidOutputs()

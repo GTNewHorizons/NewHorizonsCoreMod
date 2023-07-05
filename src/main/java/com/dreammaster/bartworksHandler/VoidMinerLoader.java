@@ -30,7 +30,7 @@ public class VoidMinerLoader {
     private static final int DEEPDARK_ID = 100;
 
     private static boolean hasOres(Materials materials) {
-        return ((materials.mTypes & 8) != 0) && (materials.mMetaItemSubID > 0);
+        return ((materials.mTypes & 8) != 0) && (materials.mMetaItemSubID > 0) && materials.mHasParentMod;
     }
 
     private static boolean hasOres(Werkstoff werkstoff) {

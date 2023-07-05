@@ -22,11 +22,11 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Mods;
-import gregtech.api.util.GT_ModHandler;
 
 public class ScriptHarvestcraft implements IScriptLoader {
 
@@ -965,15 +965,18 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pistachiobutterItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
 
-        GT_ModHandler.addSmeltingRecipe(
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(PamsHarvestCraft.ID, "venisonrawItem", 1, 0, missing),
-                getModItem(PamsHarvestCraft.ID, "venisoncookedItem", 1, 0, missing));
-        GT_ModHandler.addSmeltingRecipe(
+                getModItem(PamsHarvestCraft.ID, "venisoncookedItem", 1, 0, missing),
+                0f);
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(PamsHarvestCraft.ID, "turkeyrawItem", 1, 0, missing),
-                getModItem(PamsHarvestCraft.ID, "turkeycookedItem", 1, 0, missing));
-        GT_ModHandler.addSmeltingRecipe(
+                getModItem(PamsHarvestCraft.ID, "turkeycookedItem", 1, 0, missing),
+                0f);
+        FurnaceRecipes.smelting().func_151394_a(
                 getModItem(PamsHarvestCraft.ID, "rabbitrawItem", 1, 0, missing),
-                getModItem(PamsHarvestCraft.ID, "rabbitcookedItem", 1, 0, missing));
+                getModItem(PamsHarvestCraft.ID, "rabbitcookedItem", 1, 0, missing),
+                0f);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing))
                 .itemOutputs(
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
