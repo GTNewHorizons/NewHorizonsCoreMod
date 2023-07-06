@@ -671,7 +671,6 @@ public class ScriptAE2FC implements IScriptLoader {
                 500000,
                 true);
         // Fluid Quantum Drive
-        GT_ModHandler.removeRecipeByOutput(AE2FC_QUANTUM_CELL);
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 (AE2FC_QUANTUM_CELL),
                 "---------",
