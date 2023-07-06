@@ -28,7 +28,6 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -37,6 +36,7 @@ import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.util.GT_ModHandler;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.DryingRackRecipes;
 import tconstruct.library.crafting.Smeltery;
@@ -3420,14 +3420,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 12000,
                 getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing));
 
-        FurnaceRecipes.smelting().func_151394_a(
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.UnfiredSearedBrick", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                0f);
-        FurnaceRecipes.smelting().func_151394_a(
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.UnfiredSlimeSoulBrick", 1, 0, missing),
-                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
-                0f);
+                getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 0, missing),
