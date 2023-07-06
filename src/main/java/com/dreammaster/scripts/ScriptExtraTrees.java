@@ -6,11 +6,9 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +18,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.forestry.ForestryHelper;
 
 import forestry.api.recipes.RecipeManagers;
-import gregtech.api.enums.GT_Values;
 
 public class ScriptExtraTrees implements IScriptLoader {
 
@@ -45,19 +42,6 @@ public class ScriptExtraTrees implements IScriptLoader {
 
         recipes1();
         recipes2();
-
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 5, 0, missing))
-                .itemOutputs(getModItem(ExtraTrees.ID, "misc", 1, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.wheatyjuice", 1000)).noFluidOutputs().duration(400)
-                .eut(16).addTo(sMixerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraTrees.ID, "misc", 1, 6, missing),
-                        getModItem(ExtraTrees.ID, "misc", 4, 12, missing))
-                .itemOutputs(getModItem(ExtraTrees.ID, "misc", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(600).eut(16)
-                .addTo(sMixerRecipes);
-
     }
 
     public void recipes1() {
