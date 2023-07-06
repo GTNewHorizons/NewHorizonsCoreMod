@@ -1,10 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.AE2FluidCraft;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -21,6 +17,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import com.dreammaster.gthandler.CustomItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -39,7 +36,8 @@ public class ScriptAE2FC implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, OpenComputers.ID);
+        return Arrays
+                .asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, OpenComputers.ID, GoodGenerator.ID, GTPlusPlus.ID);
     }
 
     @Override
@@ -140,6 +138,8 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
         final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 0);
+        final ItemStack AE2_ADVANCED_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 61);
+        final ItemStack T7_YOT = getModItem(GoodGenerator.ID, "yottaFluidTankCells", 1, 6);
         final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem(
                 AE2FluidCraft.ID,
                 "fluid_storage_housing",
@@ -664,6 +664,55 @@ public class ScriptAE2FC implements IScriptLoader {
                 200,
                 500000,
                 true);
+        // Fluid Quantum Drive
+        GT_ModHandler.removeRecipeByOutput(AE2FC_QUANTUM_CELL);
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                (AE2FC_QUANTUM_CELL),
+                "---------",
+                "----a----",
+                "---bdb---",
+                "--bcdcb--",
+                "-addedda-",
+                "--bcdcb--",
+                "---bdb---",
+                "----a----",
+                "---------",
+                'a',
+                "blockCosmicNeutronium",
+                'b',
+                "plateDenseNeutronium",
+                'c',
+                "circuitInfinite",
+                'd',
+                COMPONENT_16384,
+                'e',
+                AE2_ADVANCED_HOUSING);
+        // ME Digital Singularity
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                AE2FC_SINGULARITY_CELL,
+                "----a----",
+                "---aba---",
+                "--ecdce--",
+                "-acdgdca-",
+                "abdgfgdba",
+                "-acdgdca-",
+                "--ecdce--",
+                "---aba---",
+                "----a----",
+                'a',
+                "blockCosmicNeutronium",
+                'b',
+                getModItem("Avaritia", "Resource", 1, 5),
+                'c',
+                getModItem("gregtech", "gt.blockmachines", 1, 124),
+                'd',
+                COMPONENT_16384,
+                'e',
+                "blockInfinity",
+                'f',
+                getModItem("eternalsingularity", "eternal_singularity", 1),
+                'g',
+                T7_YOT);
 
         // level maintainer
         addShapedRecipe(
