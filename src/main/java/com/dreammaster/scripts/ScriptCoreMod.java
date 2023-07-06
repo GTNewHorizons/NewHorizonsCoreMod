@@ -42,7 +42,6 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sWiremillRecipes;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -50,6 +49,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.Smeltery;
@@ -583,10 +583,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 "craftingToolWireCutter",
                 null);
 
-        FurnaceRecipes.smelting().func_151394_a(
+        GT_ModHandler.addSmeltingRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.UnfiredCokeOvenBrick", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1, 0, missing),
-                0f);
+                getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1, 0, missing));
 
         Smeltery.addMelting(
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeBolt", 1, 0, missing),
