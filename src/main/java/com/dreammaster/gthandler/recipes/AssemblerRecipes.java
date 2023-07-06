@@ -52,7 +52,7 @@ public class AssemblerRecipes implements Runnable {
         makeAirFilterRecipes();
         makeMixedMetalIngotRecipes();
         makeReinforcedIronPlateRecipes();
-        if (NEIOrePlugin.isModLoaded() && GalaxySpace.isModLoaded() && Botania.isModLoaded()) makeNEIPlanetRecipes();
+        if (NEIOrePlugin.isModLoaded() && Botania.isModLoaded()) makeNEIPlanetRecipes();
         makeSolderingAlloyRecipes();
         makeElectricMachinePartRecipes();
         makeCircuitPartRecipes();
