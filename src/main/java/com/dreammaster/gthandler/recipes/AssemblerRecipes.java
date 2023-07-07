@@ -28,7 +28,6 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
-import gtPlusPlus.core.recipe.common.CI;
 
 public class AssemblerRecipes implements Runnable {
 
@@ -7278,7 +7277,7 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(Minecraft.ID, "stone", 64, 0),
                         getModItem(Minecraft.ID, "grass", 64, 0),
                         getModItem(Minecraft.ID, "sapling", 1, 0),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GT_Utility.getIntegratedCircuit(17))
                 .fluidInputs(Materials.Water.getFluid(10000))
                 .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ow", 1, 0)).noFluidOutputs()
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
@@ -7290,7 +7289,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "stone", 64, 0),
                             getModItem(Minecraft.ID, "grass", 64, 0),
                             getModItem(TwilightForest.ID, "tile.TFSapling", 1, 1),
-                            GT_Utility.getIntegratedCircuit(2))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Water.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TF", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
@@ -7303,7 +7302,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "netherrack", 64, 0),
                             getModItem(Minecraft.ID, "soul_sand", 64, 0),
                             getModItem(BiomesOPlenty.ID, "ash", 64, 0),
-                            GT_Utility.getIntegratedCircuit(3))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Lava.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ne", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
@@ -7316,7 +7315,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "end_stone", 64, 0),
                             getModItem(Minecraft.ID, "obsidian", 64, 0),
                             getModItem(Natura.ID, "Cloud", 64, 1),
-                            GT_Utility.getIntegratedCircuit(4))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(FluidRegistry.getFluidStack("ender", 10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_ED", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
@@ -7329,7 +7328,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 64, 0),
                             getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 64, 1),
                             getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 64, 2),
-                            GT_Utility.getIntegratedCircuit(5))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(FluidRegistry.getFluidStack("endergoo", 10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_EA", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
@@ -7344,7 +7343,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalacticraftCore.ID, "tile.moonBlock", 64, 3),
                             getModItem(GalacticraftCore.ID, "tile.moonBlock", 64, 4),
                             getModItem(GalacticraftCore.ID, "tile.moonBlock", 64, 14),
-                            GT_Utility.getIntegratedCircuit(6))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.SaltWater.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mo", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
@@ -7356,7 +7355,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "deimosblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "deimosblocks", 64, 1),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Uranium, 64),
-                            GT_Utility.getIntegratedCircuit(7))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.SulfuricAcid.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_De", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
@@ -7367,7 +7366,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "phobosblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "phobosblocks", 64, 1),
                             getModItem(GalaxySpace.ID, "phobosblocks", 64, 2),
-                            GT_Utility.getIntegratedCircuit(8))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.SulfuricAcid.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ph", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
@@ -7378,7 +7377,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalacticraftMars.ID, "tile.mars", 64, 5),
                             getModItem(GalacticraftMars.ID, "tile.mars", 64, 6),
                             getModItem(GalacticraftMars.ID, "tile.mars", 64, 7),
-                            GT_Utility.getIntegratedCircuit(9))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Chlorobenzene.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ma", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
@@ -7390,7 +7389,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "ceresblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "ceresblocks", 64, 1),
                             getModItem(GalaxySpace.ID, "ceresblocks", 64, 2),
-                            GT_Utility.getIntegratedCircuit(10))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Oxygen.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ce", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
@@ -7401,7 +7400,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "callistoblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "callistoblocks", 64, 1),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CallistoIce, 64L),
-                            GT_Utility.getIntegratedCircuit(11))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.LiquidAir.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ca", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
@@ -7412,7 +7411,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 64, 0),
                             getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 64, 1),
                             getModItem(GalacticraftMars.ID, "tile.denseIce", 64, 0),
-                            GT_Utility.getIntegratedCircuit(12))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(FluidRegistry.getFluidStack("ice", 10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_As", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
@@ -7423,7 +7422,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "ganymedeblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "ganymedeblocks", 64, 1),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Platinum, 64L),
-                            GT_Utility.getIntegratedCircuit(13))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Oxygen.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ga", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
@@ -7434,7 +7433,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "europagrunt", 64, 0),
                             getModItem(GalaxySpace.ID, "europagrunt", 64, 1),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Manganese, 64L),
-                            GT_Utility.getIntegratedCircuit(14))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Water.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Eu", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
@@ -7445,7 +7444,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "dirt", 64, 2),
                             getModItem(Minecraft.ID, "stone", 64, 0),
                             ItemList.Generator_Naquadah_Mark_I.get(1),
-                            GT_Utility.getIntegratedCircuit(15))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Lava.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Rb", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
@@ -7457,7 +7456,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "ioblocks", 64, 1),
                             getModItem(GalaxySpace.ID, "ioblocks", 64, 2),
                             getModItem(GalaxySpace.ID, "ioblocks", 64, 3),
-                            GT_Utility.getIntegratedCircuit(16))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Lead.getMolten(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Io", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
@@ -7479,7 +7478,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "venusblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "venusblocks", 64, 1),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Quantium, 64),
-                            GT_Utility.getIntegratedCircuit(18))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.CarbonDioxide.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ve", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
@@ -7491,7 +7490,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "mirandablocks", 64, 0),
                             getModItem(GalaxySpace.ID, "mirandablocks", 64, 1),
                             getModItem(GalaxySpace.ID, "mirandablocks", 64, 2),
-                            GT_Utility.getIntegratedCircuit(19))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.HydricSulfide.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mi", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
@@ -7502,7 +7501,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "oberonblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "oberonblocks", 64, 1),
                             getModItem(GalaxySpace.ID, "oberonblocks", 64, 2),
-                            GT_Utility.getIntegratedCircuit(20))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.CarbonMonoxide.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ob", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
@@ -7513,7 +7512,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "enceladusblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "enceladusblocks", 64, 1),
                             getModItem(GalaxySpace.ID, "enceladusblocks", 64, 2),
-                            GT_Utility.getIntegratedCircuit(21))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Oxygen.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_En", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
@@ -7524,7 +7523,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "titanblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "titanblocks", 64, 1),
                             getModItem(GalaxySpace.ID, "titanblocks", 64, 2),
-                            GT_Utility.getIntegratedCircuit(22))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Methane.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ti", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
@@ -7535,7 +7534,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalacticraftCore.ID, "tile.moonBlock", 64, 3),
                             getModItem(GalacticraftCore.ID, "tile.moonBlock", 64, 4),
                             getModItem(GalacticraftCore.ID, "tile.moonBlock", 64, 5),
-                            GT_Utility.getIntegratedCircuit(23))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Helium_3.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ra", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
@@ -7547,7 +7546,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "tritonblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "tritonblocks", 64, 1),
                             getModItem(GalaxySpace.ID, "tritonblocks", 64, 2),
-                            GT_Utility.getIntegratedCircuit(24))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Ethylene.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Tr", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
@@ -7558,7 +7557,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "proteusblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "proteusblocks", 64, 2),
                             getModItem(GalaxySpace.ID, "proteusblocks", 64, 3),
-                            CI.getNumberedAdvancedCircuit(1))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Deuterium.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pr", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
@@ -7570,7 +7569,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "haumeablocks", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.NetherStar, 64),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Naquadah, 64),
-                            CI.getNumberedAdvancedCircuit(2))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.InfusedGold.getMolten(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ha", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
@@ -7581,7 +7580,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "plutoblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "plutoblocks", 64, 4),
                             getModItem(GalaxySpace.ID, "plutoblocks", 64, 6),
-                            CI.getNumberedAdvancedCircuit(3))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Fluorine.getGas(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pl", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
@@ -7592,7 +7591,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "makemakegrunt", 64, 0),
                             getModItem(GalaxySpace.ID, "makemakegrunt", 64, 1),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Chrysotile, 64),
-                            CI.getNumberedAdvancedCircuit(4))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.HydrofluoricAcid.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_MM", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
@@ -7603,7 +7602,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 64, 0),
                             getModItem(GalacticraftMars.ID, "tile.denseIce", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Neutronium, 64),
-                            CI.getNumberedAdvancedCircuit(5))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.HydrofluoricAcid.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_KB", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
@@ -7615,7 +7614,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "vegabgrunt", 64, 0),
                             getModItem(GalaxySpace.ID, "vegabsubgrunt", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.InfinityCatalyst, 64),
-                            CI.getNumberedAdvancedCircuit(6))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Neutronium.getMolten(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_VB", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sAssemblerRecipes);
@@ -7626,7 +7625,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "stone", 64, 0),
                             getModItem(GalaxySpace.ID, "barnardaCgrass", 64, 0),
                             getModItem(GalaxySpace.ID, "barnardaCsapling", 1, 0),
-                            CI.getNumberedAdvancedCircuit(7))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BC", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sAssemblerRecipes);
@@ -7637,7 +7636,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "barnardaEgrunt", 64, 0),
                             getModItem(GalaxySpace.ID, "barnardaEsubgrunt", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.block, Materials.Unstable, 64),
-                            CI.getNumberedAdvancedCircuit(8))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.LiquidAir.getFluid(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BE", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sAssemblerRecipes);
@@ -7648,7 +7647,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "barnardaFgrunt", 64, 0),
                             getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Bedrockium, 64),
-                            CI.getNumberedAdvancedCircuit(9))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Tin.getMolten(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BF", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sAssemblerRecipes);
@@ -7659,7 +7658,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "tcetieblocks", 64, 0),
                             getModItem(GalaxySpace.ID, "tcetieblocks", 64, 2),
                             getModItem(GalaxySpace.ID, "tcetiedandelions", 64, 4),
-                            CI.getNumberedAdvancedCircuit(10))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(GT_ModHandler.getDistilledWater(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TE", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sAssemblerRecipes);
@@ -7670,7 +7669,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(GalaxySpace.ID, "acentauribbgrunt", 64, 0),
                             getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Samarium, 64),
-                            CI.getNumberedAdvancedCircuit(11))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Copper.getMolten(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_CB", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sAssemblerRecipes);
@@ -7682,7 +7681,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Minecraft.ID, "acentauribbgrunt", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Dilithium, 64),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Pumice, 64),
-                            CI.getNumberedAdvancedCircuit(12))
+                            GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
