@@ -3564,6 +3564,21 @@ public class AssemblerRecipes implements Runnable {
                 GT_ModHandler.getModItem(OpenComputers.ID, "cable", 1L, 0),
                 200,
                 120);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 9),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RedstoneAlloy, 1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "cable", 9L, 0)).noFluidInputs()
+                .noFluidOutputs().duration(90 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 9),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "cable", 9L, 0)).noFluidInputs()
+                .noFluidOutputs().duration(90 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
         // keyboard
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { new ItemStack(Blocks.stone_button, 64), new ItemStack(Blocks.stone_button, 40),
