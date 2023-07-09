@@ -8832,6 +8832,29 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 13106))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
         }
-
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 1),
+                            CustomItemList.Hull_UMV.get(1))
+                    .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).noFluidOutputs()
+                    .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UMV.get(1))
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        //Spacetime quadruple is temp replacement until Universium Pipes.
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 4),
+                        CustomItemList.Hull_UXV.get(1))
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).noFluidOutputs()
+                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UXV.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        if (BartWorks.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemRegistry.humongousInputHatch.copy(),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeHuge, MaterialsUEVplus.SpaceTime, 4))
+                    .fluidInputs(MaterialsUEVplus.Space.getMolten(5760)).noFluidOutputs()
+                    .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1))
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
+        }
     }
 }
