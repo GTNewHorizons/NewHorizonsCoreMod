@@ -25,6 +25,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 
 import java.util.Arrays;
 import java.util.List;
@@ -491,7 +492,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing));
         addShapedRecipe(
-                getModItem(GalacticraftCore.ID, "item.oxygenTankHeavyFull", 1, 3000, missing),
+                getModItem(GalacticraftCore.ID, "item.oxygenTankHeavyFull", 1, 4000, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
@@ -502,7 +503,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapedRecipe(
-                getModItem(GalacticraftCore.ID, "item.oxygenTankSuperHeavyFull", 1, 4000, missing),
+                getModItem(GalacticraftCore.ID, "item.oxygenTankSuperHeavyFull", 1, 8000, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
@@ -513,7 +514,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 5000, missing),
+                getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 16000, missing),
                 "plateTripleTrinium",
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 "plateTripleTrinium",
@@ -1233,7 +1234,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 'c',
                 getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyPlateTier8", 1, 0, missing),
                 'd',
-                getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 0, missing),
+                getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, WILDCARD, missing),
                 'e',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32616, missing),
                 'f',
