@@ -1,17 +1,22 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -41,10 +46,13 @@ public class CompressorRecipes implements Runnable {
     @Override
     public void run() {
         makeAdvancedSolarPanelRecipes();
+        makeAvaritiaRecipes();
         makeBiomesOPlentyRecipes();
         makeBloodMagicRecipes();
         makeExtraUtilitiesRecipes();
         makeGTPlusPlusRecipes();
+        makeHardcoreEnderExpansionRecipes();
+        makePamsHarvestCraftRecipes();
         makeRailcraftRecipes();
         makeTinkerConstructRecipes();
         makeThaumcraftRecipes();
@@ -175,6 +183,16 @@ public class CompressorRecipes implements Runnable {
         if (GalacticraftCore.isModLoaded()) {
             GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.cheeseCurd", 9, 0, missing))
                     .itemOutputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 2, missing)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        }
+        if (ProjectRedCore.isModLoaded()) {
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57, missing))
+                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 55, missing)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        }
+        if (StevesCarts2.isModLoaded()) {
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 9, 46, missing))
+                    .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48, missing)).noFluidInputs()
                     .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
         }
     }
@@ -339,6 +357,48 @@ public class CompressorRecipes implements Runnable {
                 .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 2, 1, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "bones", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+    }
+
+    private void makeAvaritiaRecipes() {
+        if (!Avaritia.isModLoaded()) {
+            return;
+        }
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.crafting_table, 9))
+                .itemOutputs(getModItem(Avaritia.ID, "Double_Craft", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Double_Craft", 9, 0, missing))
+                .itemOutputs(getModItem(Avaritia.ID, "Triple_Craft", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 9, 1, missing))
+                .itemOutputs(getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+    }
+
+    private void makeHardcoreEnderExpansionRecipes() {
+        if (!HardcoreEnderExpansion.isModLoaded()) {
+            return;
+        }
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.HeeEndium, 9L))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "dry_splinter", 9, 0, missing))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "spooky_log", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+    }
+
+    private void makePamsHarvestCraftRecipes() {
+        if (!PamsHarvestCraft.isModLoaded()) {
+            return;
+        }
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing))
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "beeswaxItem", 4, 0, missing))
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "beeswax", 4, 0, missing))
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "waxItem", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
     }
 }
