@@ -63,51 +63,42 @@ public class CompressorRecipes implements Runnable {
                 .noFluidOutputs().duration(15 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sCompressorRecipes);
 
         if (Natura.isModLoaded()) {
-            GT_ModHandler.addCompressionRecipe(
-                    GT_ModHandler.getModItem(Natura.ID, "barleyFood", 8, 0),
-                    ItemList.IC2_Plantball.get(1));
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Natura.ID, "barleyFood", 8, 0))
+                    .itemOutputs(ItemList.IC2_Plantball.get(1)).noFluidInputs().noFluidOutputs().duration(15 * SECONDS)
+                    .eut(2).addTo(sCompressorRecipes);
         }
 
         if (StevesCarts2.isModLoaded()) {
-            GT_Values.RA.addCompressorRecipe(
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnhancedGalgadorian, 9L),
-                    GT_ModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 48),
-                    300,
-                    2);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnhancedGalgadorian, 9L))
+                    .itemOutputs(GT_ModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 48)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
         }
 
         if (Thaumcraft.isModLoaded()) {
             // Arcane Slabs -> Arcane Stone
-            GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4L),
-                    GT_ModHandler.getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L, 6),
-                    160,
-                    4);
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4L))
+                    .itemOutputs(GT_ModHandler.getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1L, 6)).noFluidInputs()
+                    .noFluidOutputs().duration(8 * SECONDS).eut(4).addTo(sCompressorRecipes);
         }
 
         if (OpenComputers.isModLoaded()) {
             // Block of Chamelium
-            GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem(OpenComputers.ID, "item", 9L, 96),
-                    GT_ModHandler.getModItem(OpenComputers.ID, "chameliumBlock", 1L, 0),
-                    300,
-                    2);
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 9L, 96))
+                    .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "chameliumBlock", 1L, 0)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
         }
 
         if (IndustrialCraft2.isModLoaded()) {
-            GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemWeed", 16L),
-                    ItemList.IC2_Plantball.get(1L),
-                    300,
-                    2);
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemWeed", 16L))
+                    .itemOutputs(ItemList.IC2_Plantball.get(1L)).noFluidInputs().noFluidOutputs().duration(15 * SECONDS)
+                    .eut(2).addTo(sCompressorRecipes);
         }
 
         if (ExtraTrees.isModLoaded()) {
-            GT_Values.RA.addCompressorRecipe(
-                    GT_ModHandler.getModItem(ExtraTrees.ID, "food", 64L, 24),
-                    ItemList.IC2_Plantball.get(1L),
-                    300,
-                    2);
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(ExtraTrees.ID, "food", 64L, 24))
+                    .itemOutputs(ItemList.IC2_Plantball.get(1L)).noFluidInputs().noFluidOutputs().duration(15 * SECONDS)
+                    .eut(2).addTo(sCompressorRecipes);
         }
     }
 
@@ -115,21 +106,16 @@ public class CompressorRecipes implements Runnable {
         if (!AdvancedSolarPanel.isModLoaded()) {
             return;
         }
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L),
-                GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 0),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sunnarium, 1L),
-                GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 9),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9L, 9),
-                GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 0),
-                300,
-                2);
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 1L))
+                .itemOutputs(GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 0))
+                .noFluidInputs().noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sunnarium, 1L))
+                .itemOutputs(GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 9))
+                .noFluidInputs().noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 9L, 9))
+                .itemOutputs(GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1L, 0))
+                .noFluidInputs().noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
     }
 
     private void makeGTPlusPlusRecipes() {
@@ -137,56 +123,40 @@ public class CompressorRecipes implements Runnable {
             return;
         }
         // Compressed Glowstone
-        GT_Values.RA.addCompressorRecipe(
-                new ItemStack(Blocks.glowstone, 9),
-                GT_ModHandler.getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 6),
-                300,
-                2);
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glowstone, 9))
+                .itemOutputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 6)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
 
         // Double Compressed Glowstone
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 9L, 6),
-                GT_ModHandler.getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 7),
-                300,
-                2);
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 9L, 6))
+                .itemOutputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 7)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
     }
 
     private void makeTinkerConstructRecipes() {
         if (!TinkerConstruct.isModLoaded()) {
             return;
         }
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 9L, 14),
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 7),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 2),
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 12),
-                100,
-                2);
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 9L, 14))
+                .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 7)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 2))
+                .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))
+                .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 12)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(2).addTo(sCompressorRecipes);
 
         // Slime crystals
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 4L, 0),
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 1),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 4L, 2),
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 17),
-                300,
-                2);
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 4L, 0))
+                .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 1)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftedSoil", 4L, 2))
+                .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 17)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
 
-        GT_Values.RA.addCompressorRecipe(
-                new ItemStack(Items.paper, 64, 0),
-                GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 0),
-                300,
-                2);
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.paper, 64, 0))
+                .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 0)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
     }
 }
