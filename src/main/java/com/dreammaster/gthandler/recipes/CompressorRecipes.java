@@ -32,62 +32,31 @@ public class CompressorRecipes implements Runnable {
         makeGTPlusPlusRecipes();
         makeTinkerConstructRecipes();
 
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.WroughtIron, 9L),
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Quartzite, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lazurite, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Sodalite, 1L),
-                300,
-                2);
+        // custom dust to plate compression
+        Materials[] dustToPlateList = new Materials[] { Materials.CertusQuartz, Materials.NetherQuartz,
+                Materials.Quartzite, Materials.Lazurite, Materials.Sodalite };
+        for (Materials material : dustToPlateList) {
+            GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, material, 1L))
+                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, material, 1L)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        }
 
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Carbon, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 9L),
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Cobalt, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 9L),
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Manyullyn, 9L),
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Manyullyn, 1L),
-                300,
-                2);
-        GT_Values.RA.addCompressorRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Alumite, 9L),
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Alumite, 1L),
-                300,
-                2);
+        // custom ingot to block compression
+        Materials[] ingotToBlockList = new Materials[] { Materials.Cobalt, Materials.Ardite, Materials.Manyullyn,
+                Materials.Alumite };
+        for (Materials material : ingotToBlockList) {
+            GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingot, material, 9L))
+                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.block, material, 1L)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        }
+
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.WroughtIron, 9L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Carbon, 1L)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 9))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1)).noFluidInputs()
