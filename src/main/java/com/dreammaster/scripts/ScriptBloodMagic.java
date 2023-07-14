@@ -31,7 +31,6 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 
 import java.util.Arrays;
@@ -297,24 +296,6 @@ public class ScriptBloodMagic implements IScriptLoader {
         orbRecipes();
         altarAlchemyRecipes();
 
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.ArcaneSlate", 9, 0, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "blankSlate", 9, 0, missing))
-                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "reinforcedSlate", 9, 0, missing))
-                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "imbuedSlate", 9, 0, missing))
-                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "demonicSlate", 9, 0, missing))
-                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 3, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 9, 27, missing))
-                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),

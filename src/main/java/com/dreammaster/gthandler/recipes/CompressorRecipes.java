@@ -1,6 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.GTPlusPlus;
@@ -37,6 +39,7 @@ public class CompressorRecipes implements Runnable {
     @Override
     public void run() {
         makeAdvancedSolarPanelRecipes();
+        makeBloodMagicRecipes();
         makeExtraUtilitiesRecipes();
         makeGTPlusPlusRecipes();
         makeTinkerConstructRecipes();
@@ -257,6 +260,40 @@ public class CompressorRecipes implements Runnable {
                 .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "rotten_flesh", 9, 0, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.ArcaneSlate.get(9L))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing)).noFluidInputs()
+                .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+    }
+
+    private void makeBloodMagicRecipes() {
+        if (!BloodArsenal.isModLoaded() || !BloodMagic.isModLoaded()) {
+            return;
+        }
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "blankSlate", 9, 0, missing))
+                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "reinforcedSlate", 9, 0, missing))
+                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "imbuedSlate", 9, 0, missing))
+                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "demonicSlate", 9, 0, missing))
+                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 3, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 9, 27, missing))
+                .itemOutputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 4, 0, missing))
+                .itemOutputs(getModItem(BloodArsenal.ID, "blood_money", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 4, 1, missing))
+                .itemOutputs(getModItem(BloodArsenal.ID, "blood_money", 1, 2, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 4, 2, missing))
+                .itemOutputs(getModItem(BloodArsenal.ID, "blood_money", 1, 3, missing)).noFluidInputs().noFluidOutputs()
                 .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
     }
 }
