@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
@@ -163,15 +162,6 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "driedDirt", 1, 0, missing),
                 getModItem(Minecraft.ID, "dirt", 1, 0, missing));
         Module_CustomFuels.registerCustomFuelValue(getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing), (short) 100);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "packed_ice", 16, 0, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 2, 0, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "bones", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 2, 1, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "bones", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "beeswax", 2, 0, missing),

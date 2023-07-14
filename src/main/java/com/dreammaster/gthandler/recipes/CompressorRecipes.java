@@ -1,11 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
@@ -39,9 +41,11 @@ public class CompressorRecipes implements Runnable {
     @Override
     public void run() {
         makeAdvancedSolarPanelRecipes();
+        makeBiomesOPlentyRecipes();
         makeBloodMagicRecipes();
         makeExtraUtilitiesRecipes();
         makeGTPlusPlusRecipes();
+        makeRailcraftRecipes();
         makeTinkerConstructRecipes();
         makeThaumcraftRecipes();
 
@@ -167,6 +171,11 @@ public class CompressorRecipes implements Runnable {
             GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraTrees.ID, "food", 64L, 24))
                     .itemOutputs(ItemList.IC2_Plantball.get(1L)).noFluidInputs().noFluidOutputs().duration(15 * SECONDS)
                     .eut(2).addTo(sCompressorRecipes);
+        }
+        if (GalacticraftCore.isModLoaded()) {
+            GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.cheeseCurd", 9, 0, missing))
+                    .itemOutputs(getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 2, missing)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
         }
     }
 
@@ -294,6 +303,42 @@ public class CompressorRecipes implements Runnable {
                 .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 4, 2, missing))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_money", 1, 3, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+    }
+
+    private void makeRailcraftRecipes() {
+        if (!Railcraft.isModLoaded()) {
+            return;
+        }
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0, missing))
+                .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "slab", 2, 2, missing))
+                .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
+                .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 8, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.AdvancedCokeOvenBrick.get(4L))
+                .itemOutputs(getModItem(Railcraft.ID, "machine.alpha", 1, 12, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CokeOvenBrick.get(4L))
+                .itemOutputs(getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+    }
+
+    private void makeBiomesOPlentyRecipes() {
+        if (!BiomesOPlenty.isModLoaded()) {
+            return;
+        }
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "packed_ice", 16, 0, missing))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 2, 0, missing))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "bones", 1, 1, missing)).noFluidInputs().noFluidOutputs()
+                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 2, 1, missing))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "bones", 1, 2, missing)).noFluidInputs().noFluidOutputs()
                 .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
     }
 }
