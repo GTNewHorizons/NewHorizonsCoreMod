@@ -26,7 +26,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBrewingRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistilleryRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
@@ -965,81 +964,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 7,
                 500,
                 FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.LedoxDust", 1, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.LedoxIngot", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 11388, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BlackPlutonium", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MytrylIngot", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.Mytryl", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockgem3", 9, 4, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.CompressedCharcoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "coal_block", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.CompressedCoal", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.CompressedCoalCoke", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.CompressedCharcoal", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.DoubleCompressedCharcoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.CompressedCoal", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.DoubleCompressedCoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.CompressedCoalCoke", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.DoubleCompressedCoalCoke", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.DoubleCompressedCharcoal", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.TripleCompressedCharcoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.DoubleCompressedCoal", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.TripleCompressedCoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.DoubleCompressedCoalCoke", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.TripleCompressedCoalCoke", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.TripleCompressedCharcoal", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuadrupleCompressedCharcoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.TripleCompressedCoal", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuadrupleCompressedCoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.TripleCompressedCoalCoke", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuadrupleCompressedCoalCoke", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuadrupleCompressedCharcoal", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuintupleCompressedCharcoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuadrupleCompressedCoal", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuintupleCompressedCoal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuadrupleCompressedCoalCoke", 9, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.QuintupleCompressedCoalCoke", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzPlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioBall", 1, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CompressedBioBall", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioOrganicMesh", 1, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.BioCarbonPlate", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
+
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 4, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
