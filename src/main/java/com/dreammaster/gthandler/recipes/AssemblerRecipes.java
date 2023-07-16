@@ -936,7 +936,7 @@ public class AssemblerRecipes implements Runnable {
                         CustomItemList.RawLapotronCrystal.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L))
                 .itemOutputs(GT_ModHandler.getIC2Item("lapotronCrystal", 1L, 26)).noFluidInputs().noFluidOutputs()
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_EV / 2).addTo(sAssemblerRecipes);
+                .duration(16 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.addAssemblerRecipe(
                 ItemList.Firebrick.get(24),
