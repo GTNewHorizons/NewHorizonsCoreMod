@@ -931,14 +931,12 @@ public class AssemblerRecipes implements Runnable {
                 GT_ModHandler.getModItem(IronTanks.ID, "goldDiamondUpgrade", 1L, 0),
                 600,
                 120);
-
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { CustomItemList.RawLapotronCrystal.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L) },
-                GT_Values.NF,
-                GT_ModHandler.getIC2Item("lapotronCrystal", 1L),
-                600,
-                1024);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        CustomItemList.RawLapotronCrystal.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L))
+                .itemOutputs(GT_ModHandler.getIC2Item("lapotronCrystal", 1L, 26)).noFluidInputs().noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_EV / 2).addTo(sAssemblerRecipes);
 
         GT_Values.RA.addAssemblerRecipe(
                 ItemList.Firebrick.get(24),
