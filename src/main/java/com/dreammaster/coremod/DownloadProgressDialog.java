@@ -13,7 +13,7 @@ class DownloadProgressDialog extends JDialog {
      */
     private static final long serialVersionUID = 6041491111144915139L;
 
-    public static final String WINDOW_TITLE = "GregTech: New Horizon";
+    public static final String WINDOW_TITLE = "GT: New Horizons";
     private Thread netThread;
     private JProgressBar progressBar;
 
