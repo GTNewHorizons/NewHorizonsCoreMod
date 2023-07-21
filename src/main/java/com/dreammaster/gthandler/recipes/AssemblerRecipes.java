@@ -723,7 +723,7 @@ public class AssemblerRecipes implements Runnable {
                 30720);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { ItemList.OreDrill3.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Europium, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4L),
                         ItemList.Electric_Motor_ZPM.get(4L), ItemList.Electric_Pump_ZPM.get(4L),
                         ItemList.Conveyor_Module_ZPM.get(4L),
