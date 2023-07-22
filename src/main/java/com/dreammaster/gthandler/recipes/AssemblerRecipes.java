@@ -971,6 +971,15 @@ public class AssemblerRecipes implements Runnable {
                 200,
                 30);
 
+        // Extreme Engine Intake Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_RobustTungstenSteel.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 4))
+                .itemOutputs(ItemList.Casing_ExtremeEngineIntake.get(1)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
         // Filter Machine Casing for cleanroom
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1L),
@@ -1725,21 +1734,21 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Bronze, 1),
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Bronze, 2),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 4))
-                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Bronze.get(1))
+                .itemOutputs(ItemList.Casing_Gearbox_Bronze.get(1)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Steel, 2),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4))
-                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Steel.get(1))
+                .itemOutputs(ItemList.Casing_Gearbox_Steel.get(1)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Titanium, 2),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4))
-                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Titanium.get(1))
+                .itemOutputs(ItemList.Casing_Gearbox_Titanium.get(1)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
         // Quantum Armor
