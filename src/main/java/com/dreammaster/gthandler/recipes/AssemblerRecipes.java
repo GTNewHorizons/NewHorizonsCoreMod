@@ -2135,6 +2135,28 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Hatch_Input_Multi_2x2_UIV.get(1L),
                         600,
                         24);
+        // Gear Box Casings
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Bronze, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Bronze, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 4))
+                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Bronze.get(1))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Steel, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4))
+                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Steel.get(1))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Titanium, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4))
+                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Titanium.get(1))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
     }
 
@@ -8815,28 +8837,6 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
         }
-        // Gear Box Casings
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Bronze, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Bronze, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 4))
-                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Bronze.get(1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Steel, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4))
-                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Steel.get(1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Titanium, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4))
-                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Titanium.get(1))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
         // Ultimate Time Anomaly
         GT_Values.RA.stdBuilder()
                 .itemInputs(
