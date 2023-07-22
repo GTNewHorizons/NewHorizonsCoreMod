@@ -11,7 +11,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLatheRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
@@ -686,15 +685,6 @@ public class ScriptBloodArsenal implements IScriptLoader {
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "scytheBlade", 1, 251, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "binding", 1, 251, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "toolRod", 1, 251, missing));
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 4, 0, missing))
-                .itemOutputs(getModItem(BloodArsenal.ID, "blood_money", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 4, 1, missing))
-                .itemOutputs(getModItem(BloodArsenal.ID, "blood_money", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 4, 2, missing))
-                .itemOutputs(getModItem(BloodArsenal.ID, "blood_money", 1, 3, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 1, 1, missing))
                 .itemOutputs(

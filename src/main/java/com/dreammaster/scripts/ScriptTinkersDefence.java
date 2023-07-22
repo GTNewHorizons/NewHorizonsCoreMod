@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersDefence;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
 
 import java.util.Arrays;
@@ -30,15 +29,6 @@ public class ScriptTinkersDefence implements IScriptLoader {
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing));
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkersDefence.ID, "AeonSteelIngot", 9, 0, missing))
-                .itemOutputs(getModItem(TinkersDefence.ID, "AeonSteelBlock", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkersDefence.ID, "QueensGoldIngot", 9, 0, missing))
-                .itemOutputs(getModItem(TinkersDefence.ID, "QueensGoldBlock", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkersDefence.ID, "DogbeariumIngot", 9, 0, missing))
-                .itemOutputs(getModItem(TinkersDefence.ID, "DogbeariumBlock", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "AeonSteelIngot", 1, 0, missing),

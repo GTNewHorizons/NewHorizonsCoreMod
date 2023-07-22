@@ -14,7 +14,6 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 
 import java.util.Arrays;
@@ -69,10 +68,6 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                 getModItem(ThaumicBases.ID, "relocator", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing));
-
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemResource", 9, 3, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
 
         OreDictHelper.removeOreDict("gravel", getModItem(ThaumicBases.ID, "oldGravel", 1, 0, missing));
 

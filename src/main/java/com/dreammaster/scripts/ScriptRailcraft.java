@@ -19,7 +19,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
@@ -1638,22 +1637,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 'i',
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3, missing));
         GT_Values.RA.addFuel(Materials.Creosote.getCells(1), null, 8, 0);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "slab", 2, 2, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "cube", 1, 8, missing)).noFluidInputs().noFluidOutputs()
-                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.AdvancedCokeOvenBrick", 4, 0, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "machine.alpha", 1, 12, missing)).noFluidInputs().noFluidOutputs()
-                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 4, 0, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing)).noFluidInputs().noFluidOutputs()
-                .duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 0, missing));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 1, missing));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 2, missing));

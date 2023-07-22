@@ -27,7 +27,6 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
@@ -1364,10 +1363,6 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "upgrade", 1, 18, missing),
                 'f',
                 getModItem(IndustrialCraft2.ID, "blockReactorChamber", 1, 0, missing));
-
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 9, 46, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
