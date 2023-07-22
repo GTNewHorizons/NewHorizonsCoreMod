@@ -1362,93 +1362,93 @@ public class AssemblerRecipes implements Runnable {
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
 
         // Neutron reflector recipes
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 16L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
-                1200,
-                480,
-                true);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1)).noFluidInputs()
+                .noFluidOutputs().requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 8L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
-                900,
-                480,
-                true);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenCarbide, 1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1)).noFluidInputs()
+                .noFluidOutputs().requiresCleanRoom().duration(45 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenCarbide, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 4L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
-                400,
-                480,
-                true);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 2L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1)).noFluidInputs()
+                .noFluidOutputs().requiresCleanRoom().duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 2L),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0),
-                600,
-                1920,
-                true);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenCarbide, 2L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0))
+                .noFluidInputs().noFluidOutputs().requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenCarbide, 2L),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflector", 1L, 1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0),
-                600,
-                1920,
-                true);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0))
+                .noFluidInputs().noFluidOutputs().requiresCleanRoom().duration(30 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0),
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorReflectorThick", 1L, 0),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                ItemList.Neutron_Reflector.get(1L),
-                900,
-                7680,
-                true);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(ItemList.Neutron_Reflector.get(1L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.TungstenCarbide, 36L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 32L),
                         GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 48L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 32L),
-                        GT_Utility.getIntegratedCircuit(2) },
-                GT_Values.NF,
-                ItemList.Neutron_Reflector.get(1L),
-                3150,
-                30720,
-                true);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(ItemList.Neutron_Reflector.get(1L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(2 * MINUTES + 37 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Iridium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Beryllium, 36L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 32L),
@@ -1456,12 +1456,9 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 64L),
-                        GT_Utility.getIntegratedCircuit(2) },
-                GT_Values.NF,
-                ItemList.Neutron_Reflector.get(1L),
-                3750,
-                30720,
-                true);
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(ItemList.Neutron_Reflector.get(1L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(3 * MINUTES + 7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
 
         if (BartWorks.isModLoaded()) {
             // Humongous input hatch
@@ -1538,14 +1535,14 @@ public class AssemblerRecipes implements Runnable {
 
         if (PamsHarvestCraft.isModLoaded()) {
             for (int i = 0; i < OreDictionary.getOres("cropCotton").size(); ++i) {
-                GT_Values.RA.addAssemblerRecipe(
-                        new ItemStack[] { new ItemStack(Items.string, 4),
-                                OreDictionary.getOres("cropCotton").get(i).splitStack(3) },
-                        GT_Values.NF,
-                        GT_ModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1L, 0),
-                        400,
-                        30,
-                        false);
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                new ItemStack(Items.string, 4),
+                                OreDictionary.getOres("cropCotton").get(i).splitStack(3))
+                        .itemOutputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1L, 0))
+                        .noFluidInputs().noFluidOutputs().duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
+                        .addTo(sAssemblerRecipes);
+
             }
         }
 
