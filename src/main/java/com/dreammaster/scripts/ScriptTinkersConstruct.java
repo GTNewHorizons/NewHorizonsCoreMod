@@ -23,7 +23,6 @@ import static gregtech.api.enums.Mods.TinkersMechworks;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -3298,12 +3297,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 32305, missing),
                 false,
                 200);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 4, 0, missing))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "slime_ball", 4, 0, missing))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "slime.gel", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeHelmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 720),

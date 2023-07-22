@@ -29,7 +29,6 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
@@ -1683,10 +1682,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                 "craftingToolMortar",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing));
-
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemResource", 9, 4, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sCompressorRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing)).outputChances(10000)
@@ -4023,10 +4018,6 @@ public class ScriptThaumcraft implements IScriptLoader {
 
     private void golemancy() {
         // GOLEMANCY
-
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "rotten_flesh", 9, 0, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sCompressorRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(Thaumcraft.ID, "TrunkSpawner", 1, 0, missing));
