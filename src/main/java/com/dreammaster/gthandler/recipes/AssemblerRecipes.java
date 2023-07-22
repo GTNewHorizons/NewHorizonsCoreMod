@@ -2053,6 +2053,15 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
         }
+
+        // Diamond Gear
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Diamond, 1L))
+                .fluidInputs(Materials.Lubricant.getFluid(250L)).noFluidOutputs().duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
     }
 
     private void makeElectricMachinePartRecipes() {
