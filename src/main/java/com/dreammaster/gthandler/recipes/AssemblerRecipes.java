@@ -3633,6 +3633,18 @@ public class AssemblerRecipes implements Runnable {
                 ItemList.Hatch_Input_Bus_ME.get(1),
                 300,
                 480);
+
+        // Cell Workbench
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
+                        ItemList.Cover_Screen.get(1),
+                        getModItem(Minecraft.ID, "crafting_table", 1))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCellWorkbench", 1))
+                .fluidInputs(Materials.Titanium.getMolten(36L)).noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
         if (TinkerConstruct.isModLoaded()) {
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { GT_ModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 1L, 0),
