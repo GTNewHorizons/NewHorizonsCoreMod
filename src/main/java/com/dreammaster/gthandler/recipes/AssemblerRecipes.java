@@ -29,7 +29,6 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
-import gregtech.common.items.GT_MetaGenerated_Tool_01;
 
 public class AssemblerRecipes implements Runnable {
 
@@ -207,193 +206,207 @@ public class AssemblerRecipes implements Runnable {
                 1000,
                 9001);
 
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.SteelBars.get(4L),
-                400,
-                48);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.AluminiumBars.get(4L),
-                400,
-                64);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.StainlessSteelBars.get(4L),
-                400,
-                96);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.TitaniumBars.get(4L),
-                400,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Tungsten, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.TungstenBars.get(4L),
-                400,
-                192);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.TungstenSteelBars.get(4L),
-                400,
-                256);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Chrome, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.ChromeBars.get(4L),
-                400,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iridium, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.IridiumBars.get(4L),
-                400,
-                1024);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Osmium, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.OsmiumBars.get(4L),
-                400,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Neutronium, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.NeutroniumBars.get(4L),
-                400,
-                4096);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.RedstoneAlloy, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.RedstoneAlloyBars.get(4L),
-                400,
-                48);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.ElectricalSteel, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.ElectricalSteelBars.get(4L),
-                400,
-                64);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.ConductiveIron, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.ConductiveIronBars.get(4L),
-                400,
-                160);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnergeticAlloy, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.EnergeticAlloyBars.get(4L),
-                400,
-                384);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.VibrantAlloy, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.VibrantAlloyBars.get(4L),
-                400,
-                768);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.PulsatingIron, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.PulsatingIronBars.get(4L),
-                400,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Soularium, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.SoulariumBars.get(4L),
-                400,
-                64);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnderiumBase, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.EnderiumBaseBars.get(4L),
-                400,
-                256);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Enderium, 3L),
-                GT_Utility.getIntegratedCircuit(3),
-                CustomItemList.EnderiumBars.get(4L),
-                400,
-                1024);
-        GT_Values.RA.addFormingPressRecipe(
-                GT_ModHandler.getIC2Item("carbonPlate", 4L),
-                CustomItemList.MoldBoots.get(0L),
-                CustomItemList.CarbonPartBoots.get(1L),
-                400,
-                120);
-        GT_Values.RA.addFormingPressRecipe(
-                GT_ModHandler.getIC2Item("carbonPlate", 8L),
-                CustomItemList.MoldChestplate.get(0L),
-                CustomItemList.CarbonPartChestplate.get(1L),
-                400,
-                120);
-        GT_Values.RA.addFormingPressRecipe(
-                GT_ModHandler.getIC2Item("carbonPlate", 5L),
-                CustomItemList.MoldHelmet.get(0L),
-                CustomItemList.CarbonPartHelmet.get(1L),
-                400,
-                120);
-        GT_Values.RA.addFormingPressRecipe(
-                GT_ModHandler.getIC2Item("carbonPlate", 7L),
-                CustomItemList.MoldLeggings.get(0L),
-                CustomItemList.CarbonPartLeggings.get(1L),
-                400,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1L, 0),
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1L, W),
-                CustomItemList.NanoRubberBoots.get(1L),
-                800,
-                1024);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.SteelBars.get(4L)).noFluidInputs().noFluidOutputs().duration(20 * SECONDS)
+                .eut(48).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoLegs", 1L, W),
-                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.StainlessSteel, 4L),
-                CustomItemList.NanoPlatedLeggings.get(1L),
-                800,
-                1024);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1L, W),
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1L, 0),
-                CustomItemList.NanoScubaHelmet.get(1L),
-                800,
-                1024);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.NanoRubberBoots.get(1L),
-                CustomItemList.IridiumAlloyItemCasing.get(4L),
-                CustomItemList.QuantumPartBoots.get(1L),
-                1200,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem(GraviSuite.ID, "advNanoChestPlate", 1L, W),
-                CustomItemList.IridiumAlloyItemCasing.get(8L),
-                CustomItemList.QuantumPartChestplate.get(1L),
-                1200,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.NanoScubaHelmet.get(1L),
-                CustomItemList.IridiumAlloyItemCasing.get(5L),
-                CustomItemList.QuantumPartHelmetEmpty.get(1L),
-                1200,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.QuantumPartHelmetEmpty.get(1L),
-                CustomItemList.ReinforcedGlassLense.get(8L),
-                CustomItemList.QuantumPartHelmet.get(1L),
-                1200,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.NanoPlatedLeggings.get(1L),
-                CustomItemList.IridiumAlloyItemCasing.get(7L),
-                CustomItemList.QuantumPartLeggings.get(1L),
-                1200,
-                1920);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.AluminiumBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(64).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.StainlessSteelBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(96).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.TitaniumBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Tungsten, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.TungstenBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(192).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.TungstenSteelBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(256).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Chrome, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.ChromeBars.get(4L)).noFluidInputs().noFluidOutputs().duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iridium, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.IridiumBars.get(4L)).noFluidInputs().noFluidOutputs().duration(20 * SECONDS)
+                .eut(1024).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Osmium, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.OsmiumBars.get(4L)).noFluidInputs().noFluidOutputs().duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Neutronium, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.NeutroniumBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(4096).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.RedstoneAlloy, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.RedstoneAlloyBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(48).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.ElectricalSteel, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.ElectricalSteelBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(64).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.ConductiveIron, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.ConductiveIronBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(160).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnergeticAlloy, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.EnergeticAlloyBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(384).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.VibrantAlloy, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.VibrantAlloyBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(768).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.PulsatingIron, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.PulsatingIronBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Soularium, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.SoulariumBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(64).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnderiumBase, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.EnderiumBaseBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(256).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Enderium, 3L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(CustomItemList.EnderiumBars.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(1024).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_ModHandler.getIC2Item("carbonPlate", 4L), CustomItemList.MoldBoots.get(0L))
+                .itemOutputs(CustomItemList.CarbonPartBoots.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_ModHandler.getIC2Item("carbonPlate", 8L), CustomItemList.MoldChestplate.get(0L))
+                .itemOutputs(CustomItemList.CarbonPartChestplate.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_ModHandler.getIC2Item("carbonPlate", 5L), CustomItemList.MoldHelmet.get(0L))
+                .itemOutputs(CustomItemList.CarbonPartHelmet.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_ModHandler.getIC2Item("carbonPlate", 7L), CustomItemList.MoldLeggings.get(0L))
+                .itemOutputs(CustomItemList.CarbonPartLeggings.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1L, 0),
+                        GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1L, W))
+                .itemOutputs(CustomItemList.NanoRubberBoots.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(40 * SECONDS).eut(1024).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoLegs", 1L, W),
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.StainlessSteel, 4L))
+                .itemOutputs(CustomItemList.NanoPlatedLeggings.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(40 * SECONDS).eut(1024).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1L, W),
+                        GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1L, 0))
+                .itemOutputs(CustomItemList.NanoScubaHelmet.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(40 * SECONDS).eut(1024).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.NanoRubberBoots.get(1L), CustomItemList.IridiumAlloyItemCasing.get(4L))
+                .itemOutputs(CustomItemList.QuantumPartBoots.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(GraviSuite.ID, "advNanoChestPlate", 1L, W),
+                        CustomItemList.IridiumAlloyItemCasing.get(8L))
+                .itemOutputs(CustomItemList.QuantumPartChestplate.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.NanoScubaHelmet.get(1L), CustomItemList.IridiumAlloyItemCasing.get(5L))
+                .itemOutputs(CustomItemList.QuantumPartHelmetEmpty.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.QuantumPartHelmetEmpty.get(1L), CustomItemList.ReinforcedGlassLense.get(8L))
+                .itemOutputs(CustomItemList.QuantumPartHelmet.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.NanoPlatedLeggings.get(1L), CustomItemList.IridiumAlloyItemCasing.get(7L))
+                .itemOutputs(CustomItemList.QuantumPartLeggings.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
         GT_Values.RA.addAssemblerRecipe(
                 CustomItemList.NagaScaleChip.get(4L),
                 GT_Utility.getIntegratedCircuit(4),
@@ -422,12 +435,14 @@ public class AssemblerRecipes implements Runnable {
                 CustomItemList.LichBone.get(1L),
                 250,
                 256);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 4L, 14),
-                GT_ModHandler.getModItem(TwilightForest.ID, "item.trophy", 0L, 2),
-                CustomItemList.LichBone.get(1L),
-                900,
-                256);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 4L, 14),
+                        GT_ModHandler.getModItem(TwilightForest.ID, "item.trophy", 0L, 2))
+                .itemOutputs(CustomItemList.LichBone.get(1L)).noFluidInputs().noFluidOutputs().duration(45 * SECONDS)
+                .eut(256).addTo(sAssemblerRecipes);
+
         GT_Values.RA.addAssemblerRecipe(
                 CustomItemList.CarminiteChip.get(4L),
                 GT_Utility.getIntegratedCircuit(4),
@@ -449,18 +464,21 @@ public class AssemblerRecipes implements Runnable {
                 CustomItemList.SnowQueenBlood.get(1L),
                 400,
                 4096);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 10L, 14),
-                GT_ModHandler.getModItem(TwilightForest.ID, "item.trophy", 0L, 4),
-                CustomItemList.SnowQueenBlood.get(1L),
-                1800,
-                7680);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 16L, 14),
-                GT_ModHandler.getModItem(Witchery.ID, "ingredient", 1L, 130),
-                GT_OreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
-                900,
-                256);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 10L, 14),
+                        GT_ModHandler.getModItem(TwilightForest.ID, "item.trophy", 0L, 4))
+                .itemOutputs(CustomItemList.SnowQueenBlood.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(Thaumcraft.ID, "ItemResource", 16L, 14),
+                        GT_ModHandler.getModItem(Witchery.ID, "ingredient", 1L, 130))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1)).noFluidInputs()
+                .noFluidOutputs().duration(45 * SECONDS).eut(256).addTo(sAssemblerRecipes);
+
         GT_Values.RA.addAssemblerRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.slab, Materials.Wood, 3L),
@@ -749,31 +767,34 @@ public class AssemblerRecipes implements Runnable {
                 .noFluidOutputs().duration(20 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
 
         // LV Turbines
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Iron, 4L),
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L),
-                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(170, 1, Materials.Iron, Materials.Steel, null),
-                320,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.WroughtIron, 4L),
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L),
-                GT_MetaGenerated_Tool_01.INSTANCE
-                        .getToolWithStats(170, 1, Materials.WroughtIron, Materials.Steel, null),
-                320,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Bronze, 4L),
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L),
-                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(170, 1, Materials.Bronze, Materials.Steel, null),
-                320,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Steel, 4L),
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L),
-                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(170, 1, Materials.Steel, Materials.Steel, null),
-                320,
-                30);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Iron, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
+                .noItemOutputs().noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.WroughtIron, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
+                .noItemOutputs().noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Bronze, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
+                .noItemOutputs().noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Steel, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
+                .noItemOutputs().noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.addAssemblerRecipe(
                 CustomItemList.LedoxCompressedPlate.get(1L),
@@ -784,24 +805,28 @@ public class AssemblerRecipes implements Runnable {
                 7680);
 
         // UEV-UXV casings+hulls
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(CustomItemList.BedrockiumPlate.get(8L)),
-                GT_Utility.getIntegratedCircuit(8),
-                CustomItemList.Casing_UEV.get(1L),
-                50,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 8L),
-                GT_Utility.getIntegratedCircuit(8),
-                CustomItemList.Casing_UIV.get(1L),
-                50,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 8L),
-                GT_Utility.getIntegratedCircuit(8),
-                CustomItemList.Casing_UMV.get(1L),
-                50,
-                16);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(CustomItemList.BedrockiumPlate.get(8L)),
+                        GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(CustomItemList.Casing_UEV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 8L),
+                        GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(CustomItemList.Casing_UIV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 8L),
+                        GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(CustomItemList.Casing_UMV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
+
         if (GoodGenerator.isModLoaded()) {
             GT_Values.RA.stdBuilder().itemInputs(
                     GT_OreDictUnificator
@@ -922,18 +947,16 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Casing_Tank_10.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
                 .eut(16).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack(Items.diamond, 1, 0),
-                ItemList.Circuit_Basic.get(4L),
-                CustomItemList.TwilightCrystal.get(1L),
-                600,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack(Items.diamond, 1, 0),
-                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4L, 0),
-                CustomItemList.TwilightCrystal.get(1L),
-                600,
-                16);
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.diamond, 1, 0), ItemList.Circuit_Basic.get(4L))
+                .itemOutputs(CustomItemList.TwilightCrystal.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(30 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.diamond, 1, 0),
+                        GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4L, 0))
+                .itemOutputs(CustomItemList.TwilightCrystal.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(30 * SECONDS).eut(16).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1018,12 +1041,9 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Glue.getFluid(144L)).noFluidOutputs().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack(Items.string, 3, 0),
-                GT_Utility.getIntegratedCircuit(1),
-                new ItemStack(Blocks.wool, 1, 0),
-                100,
-                4);
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.string, 3, 0), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(new ItemStack(Blocks.wool, 1, 0)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(4).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1498,25 +1518,22 @@ public class AssemblerRecipes implements Runnable {
                 trophies[i].setTagCompound(tag[i]);
             }
 
-            GT_Values.RA.addAssemblerRecipe(
-                    trophies[0],
-                    new ItemStack(Items.golden_carrot),
-                    new ItemStack(Items.potionitem, 1, 8262),
-                    120,
-                    120);
-            GT_Values.RA.addAssemblerRecipe(
-                    trophies[1],
-                    new ItemStack(Items.iron_sword),
-                    new ItemStack(Items.leather, 64),
-                    120,
-                    120);
-            GT_Values.RA.addAssemblerRecipe(trophies[2], new ItemStack(Items.feather), flightpotion, 120, 120);
-            GT_Values.RA.addAssemblerRecipe(
-                    trophies[3],
-                    new ItemStack(Items.shears),
-                    new ItemStack(Blocks.wool, 64),
-                    120,
-                    120);
+            GT_Values.RA.stdBuilder().itemInputs(trophies[0], new ItemStack(Items.golden_carrot))
+                    .itemOutputs(new ItemStack(Items.potionitem, 1, 8262)).noFluidInputs().noFluidOutputs()
+                    .duration(6 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(trophies[1], new ItemStack(Items.iron_sword))
+                    .itemOutputs(new ItemStack(Items.leather, 64)).noFluidInputs().noFluidOutputs()
+                    .duration(6 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(trophies[2], new ItemStack(Items.feather)).itemOutputs(flightpotion)
+                    .noFluidInputs().noFluidOutputs().duration(6 * SECONDS).eut(TierEU.RECIPE_MV)
+                    .addTo(sAssemblerRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(trophies[3], new ItemStack(Items.shears))
+                    .itemOutputs(new ItemStack(Blocks.wool, 64)).noFluidInputs().noFluidOutputs().duration(6 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
         }
 
         if (PamsHarvestCraft.isModLoaded()) {
@@ -3599,12 +3616,14 @@ public class AssemblerRecipes implements Runnable {
                 .noFluidOutputs().duration(25 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         for (int i = 0; i < OreDictionary.getOres("dyeBlack").size(); i++) {
-            GT_Values.RA.addAssemblerRecipe(
-                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
-                    OreDictionary.getOres("dyeBlack").get(i).splitStack(4),
-                    GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 4),
-                    500,
-                    30);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L),
+                            OreDictionary.getOres("dyeBlack").get(i).splitStack(4))
+                    .itemOutputs(GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 4)).noFluidInputs()
+                    .noFluidOutputs().duration(25 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
         }
 
         GT_Values.RA.stdBuilder()
@@ -3745,12 +3764,13 @@ public class AssemblerRecipes implements Runnable {
             return;
         }
 
-        GT_Values.RA.addAssemblerRecipe(
-                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 24),
-                CustomItemList.EssentiaCircuit.get(1L),
-                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                100,
-                1920);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 24),
+                        CustomItemList.EssentiaCircuit.get(1L))
+                .itemOutputs(CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
         // AE2 Illuminated Panel Assembler Recipe
 
         GT_Values.RA.stdBuilder()
@@ -6940,678 +6960,478 @@ public class AssemblerRecipes implements Runnable {
 
     private void makeCoinRecipes() {
         // Coins
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinAdventure.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinAdventureI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinAdventureI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinAdventureII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinAdventureII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinAdventureIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinAdventureIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinAdventureIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBees.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinBeesI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBeesI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinBeesII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBeesII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinBeesIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBeesIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinBeesIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBlood.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinBloodI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBloodI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinBloodII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBloodII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinBloodIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBloodIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinBloodIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinChemist.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinChemistI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinChemistI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinChemistII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinChemistII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinChemistIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinChemistIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinChemistIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinCook.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinCookI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinCookI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinCookII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinCookII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinCookIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinCookIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinCookIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinDarkWizard.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinDarkWizardI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinDarkWizardI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinDarkWizardII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinDarkWizardII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinDarkWizardIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinDarkWizardIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinDarkWizardIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFarmer.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinFarmerI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFarmerI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinFarmerII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFarmerII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinFarmerIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFarmerIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinFarmerIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinForestry.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinForestryI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinForestryI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinForestryII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinForestryII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinForestryIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinForestryIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinForestryIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSpace.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSpaceI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSpaceI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSpaceII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSpaceII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSpaceIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSpaceIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSpaceIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSurvivor.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSurvivorI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSurvivorI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSurvivorII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSurvivorII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSurvivorIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSurvivorIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSurvivorIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinTechnician.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinTechnicianI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinTechnicianI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinTechnicianII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinTechnicianII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinTechnicianIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinTechnicianIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinTechnicianIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSmith.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSmithI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSmithI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSmithII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSmithII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSmithIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSmithIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinSmithIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinWitch.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinWitchI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinWitchI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinWitchII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinWitchII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinWitchIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinWitchIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinWitchIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFlower.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinFlowerI.get(1L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFlowerI.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinFlowerII.get(1L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFlowerII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinFlowerIII.get(1L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFlowerIII.get(10L),
-                GT_Utility.getIntegratedCircuit(10),
-                CustomItemList.CoinFlowerIV.get(1L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinAdventureI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinAdventure.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinAdventureII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinAdventureI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinAdventureIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinAdventureII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinAdventureIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinAdventureIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBeesI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinBees.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBeesII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinBeesI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBeesIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinBeesII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBeesIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinBeesIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBloodI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinBlood.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBloodII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinBloodI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBloodIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinBloodII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinBloodIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinBloodIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinChemistI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinChemist.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinChemistII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinChemistI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinChemistIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinChemistII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinChemistIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinChemistIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinCookI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinCook.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinCookII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinCookI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinCookIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinCookII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinCookIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinCookIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinDarkWizardI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinDarkWizard.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinDarkWizardII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinDarkWizardI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinDarkWizardIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinDarkWizardII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinDarkWizardIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinDarkWizardIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFarmerI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinFarmer.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFarmerII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinFarmerI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFarmerIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinFarmerII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFarmerIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinFarmerIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinForestryI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinForestry.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinForestryII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinForestryI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinForestryIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinForestryII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinForestryIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinForestryIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSpaceI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSpace.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSpaceII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSpaceI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSpaceIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSpaceII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSpaceIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSpaceIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSurvivorI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSurvivor.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSurvivorII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSurvivorI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSurvivorIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSurvivorII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSurvivorIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSurvivorIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinTechnicianI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinTechnician.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinTechnicianII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinTechnicianI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinTechnicianIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinTechnicianII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinTechnicianIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinTechnicianIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSmithI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSmith.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSmithII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSmithI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSmithIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSmithII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinSmithIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinSmithIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinWitchI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinWitch.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinWitchII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinWitchI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinWitchIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinWitchII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinWitchIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinWitchIII.get(10L),
-                100,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFlowerI.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinFlower.get(10L),
-                100,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFlowerII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinFlowerI.get(10L),
-                100,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFlowerIII.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinFlowerII.get(10L),
-                100,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                CustomItemList.CoinFlowerIV.get(1L),
-                GT_Utility.getIntegratedCircuit(1),
-                CustomItemList.CoinFlowerIII.get(10L),
-                100,
-                1920);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinAdventure.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinAdventureI.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinAdventureI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinAdventureII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinAdventureII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinAdventureIII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinAdventureIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinAdventureIV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBees.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinBeesI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBeesI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinBeesII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBeesII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinBeesIII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBeesIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinBeesIV.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBlood.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinBloodI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBloodI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinBloodII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBloodII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinBloodIII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBloodIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinBloodIV.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinChemist.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinChemistI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinChemistI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinChemistII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinChemistII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinChemistIII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinChemistIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinChemistIV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinCook.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinCookI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinCookI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinCookII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinCookII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinCookIII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinCookIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinCookIV.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinDarkWizard.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinDarkWizardI.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinDarkWizardI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinDarkWizardII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinDarkWizardII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinDarkWizardIII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinDarkWizardIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinDarkWizardIV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFarmer.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinFarmerI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFarmerI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinFarmerII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFarmerII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinFarmerIII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFarmerIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinFarmerIV.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinForestry.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinForestryI.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinForestryI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinForestryII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinForestryII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinForestryIII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinForestryIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinForestryIV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSpace.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSpaceI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSpaceI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSpaceII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSpaceII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSpaceIII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSpaceIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSpaceIV.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSurvivor.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSurvivorI.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSurvivorI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSurvivorII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinSurvivorII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSurvivorIII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinSurvivorIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSurvivorIV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinTechnician.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinTechnicianI.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinTechnicianI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinTechnicianII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinTechnicianII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinTechnicianIII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinTechnicianIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinTechnicianIV.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSmith.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSmithI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSmithI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSmithII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSmithII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSmithIII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSmithIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinSmithIV.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinWitch.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinWitchI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinWitchI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinWitchII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinWitchII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinWitchIII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinWitchIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinWitchIV.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFlower.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinFlowerI.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFlowerI.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinFlowerII.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFlowerII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinFlowerIII.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFlowerIII.get(10L), GT_Utility.getIntegratedCircuit(10))
+                .itemOutputs(CustomItemList.CoinFlowerIV.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinAdventureI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinAdventure.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinAdventureII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinAdventureI.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinAdventureIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinAdventureII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinAdventureIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinAdventureIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBeesI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinBees.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBeesII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinBeesI.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBeesIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinBeesII.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBeesIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinBeesIII.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBloodI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinBlood.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBloodII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinBloodI.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBloodIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinBloodII.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinBloodIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinBloodIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinChemistI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinChemist.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinChemistII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinChemistI.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinChemistIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinChemistII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinChemistIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinChemistIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinCookI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinCook.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinCookII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinCookI.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinCookIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinCookII.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinCookIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinCookIII.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinDarkWizardI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinDarkWizard.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinDarkWizardII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinDarkWizardI.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinDarkWizardIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinDarkWizardII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinDarkWizardIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinDarkWizardIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFarmerI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinFarmer.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFarmerII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinFarmerI.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFarmerIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinFarmerII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFarmerIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinFarmerIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinForestryI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinForestry.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinForestryII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinForestryI.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinForestryIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinForestryII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinForestryIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinForestryIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSpaceI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSpace.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSpaceII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSpaceI.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSpaceIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSpaceII.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSpaceIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSpaceIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSurvivorI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSurvivor.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSurvivorII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSurvivorI.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSurvivorIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSurvivorII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSurvivorIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSurvivorIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinTechnicianI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinTechnician.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinTechnicianII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinTechnicianI.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinTechnicianIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinTechnicianII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(CustomItemList.CoinTechnicianIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinTechnicianIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSmithI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSmith.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSmithII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSmithI.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSmithIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSmithII.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinSmithIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinSmithIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinWitchI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinWitch.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinWitchII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinWitchI.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinWitchIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinWitchII.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinWitchIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinWitchIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFlowerI.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinFlower.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFlowerII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinFlowerI.get(10L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFlowerIII.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinFlowerII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CoinFlowerIV.get(1L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(CustomItemList.CoinFlowerIII.get(10L)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
     }
 
     private void makePistonRecipes() {
