@@ -1062,48 +1062,6 @@ public class AssemblerRecipes implements Runnable {
                 200,
                 30);
 
-        // Field Generator
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.RedSteel.getMolten(288),
-                ItemList.Field_Generator_LV.get(1),
-                600,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.TungstenSteel.getMolten(288),
-                ItemList.Field_Generator_MV.get(1),
-                600,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { ItemList.QuantumEye.get(1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.NiobiumTitanium.getMolten(576),
-                ItemList.Field_Generator_HV.get(1),
-                600,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
-                        GT_Utility.getIntegratedCircuit(13) },
-                Materials.HSSG.getMolten(576),
-                ItemList.Field_Generator_EV.get(1),
-                600,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { ItemList.QuantumStar.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.HSSS.getMolten(576),
-                ItemList.Field_Generator_IV.get(1L),
-                600,
-                7680);
-
         // Covers
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { Materials.Aluminium.getPlates(4), Materials.Glass.getPlates(1),
@@ -1733,21 +1691,24 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Bronze, 1),
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Bronze, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 4))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 4),
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Gearbox_Bronze.get(1)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Steel, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Gearbox_Steel.get(1)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Titanium, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Gearbox_Titanium.get(1)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
@@ -2058,7 +2019,8 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Diamond, 1L))
                 .fluidInputs(Materials.Lubricant.getFluid(250L)).noFluidOutputs().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
@@ -2610,6 +2572,48 @@ public class AssemblerRecipes implements Runnable {
                 ItemList.Sensor_IV.get(1L),
                 20,
                 30);
+
+        // Field Generator
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
+                        GT_Utility.getIntegratedCircuit(1) },
+                Materials.RedSteel.getMolten(288),
+                ItemList.Field_Generator_LV.get(1),
+                600,
+                30);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                        GT_Utility.getIntegratedCircuit(1) },
+                Materials.TungstenSteel.getMolten(288),
+                ItemList.Field_Generator_MV.get(1),
+                600,
+                120);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { ItemList.QuantumEye.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                        GT_Utility.getIntegratedCircuit(1) },
+                Materials.NiobiumTitanium.getMolten(576),
+                ItemList.Field_Generator_HV.get(1),
+                600,
+                480);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_Utility.getIntegratedCircuit(13) },
+                Materials.HSSG.getMolten(576),
+                ItemList.Field_Generator_EV.get(1),
+                600,
+                1920);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { ItemList.QuantumStar.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4),
+                        GT_Utility.getIntegratedCircuit(1) },
+                Materials.HSSS.getMolten(576),
+                ItemList.Field_Generator_IV.get(1L),
+                600,
+                7680);
     }
 
     private void makeCircuitPartRecipes() {
@@ -3669,7 +3673,8 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
                         ItemList.Cover_Screen.get(1),
-                        getModItem(Minecraft.ID, "crafting_table", 1))
+                        getModItem(Minecraft.ID, "crafting_table", 1),
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCellWorkbench", 1))
                 .fluidInputs(Materials.Titanium.getMolten(36L)).noFluidOutputs().duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
