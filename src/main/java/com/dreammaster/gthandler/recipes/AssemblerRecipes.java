@@ -1983,6 +1983,17 @@ public class AssemblerRecipes implements Runnable {
                     .fluidInputs(Materials.Lubricant.getFluid(2000)).noFluidOutputs()
                     .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+            // Hastelloy-X Structural Block
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Casing_EV.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
+                            getModItem(GTPlusPlus.ID, "itemGearHastelloyX", 1L),
+                            getModItem(GTPlusPlus.ID, "blockFrameGtHastelloyC276", 1L),
+                            getModItem(GTPlusPlus.ID, "itemRingInconel792", 2L))
+                    .itemOutputs(getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.2", 1L, 2)).noFluidInputs()
+                    .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
         }
         // Ultimate Time Anomaly
         GT_Values.RA.stdBuilder()
