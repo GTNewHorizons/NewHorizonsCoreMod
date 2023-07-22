@@ -2158,6 +2158,297 @@ public class AssemblerRecipes implements Runnable {
                 .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Casing_Gearbox_Titanium.get(1))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
+        // Quantum Armor
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { CustomItemList.QuantumPartHelmet.get(1L), CustomItemList.QuantumCrystal.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4),
+                        ItemList.Energy_LapotronicOrb.get(1L), ItemList.Sensor_IV.get(1L),
+                        ItemList.Field_Generator_EV.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
+                        GT_Utility.getIntegratedCircuit(10) },
+                Materials.Titanium.getMolten(1728L),
+                GT_ModHandler.getIC2Item("quantumHelmet", 1L, 26),
+                1500,
+                7680);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { CustomItemList.QuantumPartChestplate.get(1L), CustomItemList.QuantumCrystal.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 6),
+                        ItemList.Energy_LapotronicOrb.get(1L), ItemList.Field_Generator_EV.get(3L),
+                        ItemList.Electric_Motor_IV.get(2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
+                        GT_Utility.getIntegratedCircuit(11) },
+                Materials.Titanium.getMolten(2880L),
+                GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, 26),
+                1500,
+                7680);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { CustomItemList.QuantumPartLeggings.get(1L), CustomItemList.QuantumCrystal.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 6),
+                        ItemList.Energy_LapotronicOrb.get(1L), ItemList.Field_Generator_EV.get(2L),
+                        ItemList.Electric_Motor_IV.get(4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
+                        GT_Utility.getIntegratedCircuit(12) },
+                Materials.Titanium.getMolten(2304L),
+                GT_ModHandler.getIC2Item("quantumLeggings", 1L, 26),
+                1500,
+                7680);
+        GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[] { CustomItemList.QuantumPartBoots.get(1L), CustomItemList.QuantumCrystal.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4),
+                        ItemList.Energy_LapotronicOrb.get(1L), ItemList.Field_Generator_EV.get(1L),
+                        ItemList.Electric_Piston_IV.get(2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
+                        GT_Utility.getIntegratedCircuit(13) },
+                Materials.Titanium.getMolten(1440L),
+                GT_ModHandler.getIC2Item("quantumBoots", 1L, 26),
+                1500,
+                7680);
+
+        if (GraviSuite.isModLoaded() && GalacticraftMars.isModLoaded()) {
+            // Gravitational Engine
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorLuV, 2),
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 4, 1),
+                            ItemList.Transformer_LuV_IV.get(1),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 2))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 3)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+            // IV Transformer
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.VanadiumGallium, 1),
+                            ItemList.Circuit_Chip_PIC.get(2),
+                            ItemList.Hull_IV.get(1))
+                    .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Transformer_LuV_IV.get(1))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+            // Tesla Coil
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1),
+                            ItemList.Circuit_Nanoprocessor.get(2),
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 5, 0),
+                            ItemList.Transformer_HV_MV.get(1))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+            // MV Transformer
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
+                            ItemList.Hull_MV.get(1),
+                            ItemList.Circuit_Parts_InductorSMD.get(2))
+                    .noFluidOutputs().noFluidInputs().itemOutputs(ItemList.Transformer_HV_MV.get(1))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+            // Cooling Core With NaK
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 2, 1),
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 2, 1),
+                            Materials.CallistoIce.getPlates(1),
+                            ItemList.Reactor_Coolant_NaK_3.get(2),
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 2, 0))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+            // Cooling Core With Helium
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 2, 1),
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 2, 1),
+                            Materials.CallistoIce.getPlates(1),
+                            ItemList.Reactor_Coolant_He_3.get(2),
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 2, 0))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+            // Fluid Manipulator
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Large_Fluid_Cell_Steel.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 4),
+                            ItemList.Electric_Motor_HV.get(4))
+                    .noFluidOutputs().noFluidInputs()
+                    .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 1, 6)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        }
+        // Quantum Tank V
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 4),
+                        Materials.Americium.getPlates(2),
+                        ItemList.Electric_Pump_UV.get(1),
+                        ItemList.Field_Generator_UV.get(1),
+                        ItemList.Casing_Tank_10.get(1))
+                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Quantum_Tank_IV.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Quantum Tank IV
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Infinite), 4),
+                        Materials.Europium.getPlates(2),
+                        ItemList.Electric_Pump_ZPM.get(1),
+                        ItemList.Field_Generator_ZPM.get(1),
+                        ItemList.Casing_Tank_9.get(1))
+                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Quantum_Tank_EV.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Quantum Chest V
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 4),
+                        Materials.Americium.getPlates(3),
+                        ItemList.Field_Generator_UV.get(1),
+                        CustomItemList.Automation_ChestBuffer_UEV.get(1L))
+                .noFluidOutputs().noFluidInputs().itemOutputs(ItemList.Quantum_Chest_IV.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Ultra High Voltage Chest Buffer
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Conveyor_Module_UEV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 1),
+                        CustomItemList.Hull_UEV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
+                .noFluidOutputs().noFluidInputs().itemOutputs(CustomItemList.Automation_ChestBuffer_UEV.get(1L))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        if (HardcoreEnderExpansion.isModLoaded()) {
+            // Biome Compass
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            Materials.HeeEndium.getPlates(1),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.HeeEndium, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.HeeEndium, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
+                            GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 0))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        }
+        if (StorageDrawers.isModLoaded()) {
+            // Alternate Storage Template Recipe
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Electric_Piston_LV.get(1),
+                            GT_OreDictUnificator.get("drawerBasic", 1),
+                            GT_Utility.getIntegratedCircuit(2))
+                    .noFluidOutputs().noFluidInputs()
+                    .itemOutputs(GT_ModHandler.getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0))
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        }
+        // Display
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Cover_Screen.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 2))
+                .fluidInputs(Materials.Plastic.getMolten(144)).noFluidOutputs()
+                .itemOutputs(CustomItemList.Display.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+
+        // Ender-Quantum Component
+        if (SuperSolarPanels.isModLoaded() && (AdvancedSolarPanel.isModLoaded())) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.InfinityCatalyst, 1),
+                            GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 3),
+                            Materials.ElectrumFlux.getPlates(4))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1, 0))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        }
+        // 4A Zpm to LuV transformer
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.VanadiumGallium, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Naquadah, 1),
+                        ItemList.Circuit_Chip_HPIC.get(2),
+                        ItemList.Hull_LuV.get(1))
+                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Transformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+        if (GTPlusPlus.isModLoaded()) {
+            // 16A Zpm to LuV transformer
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.VanadiumGallium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
+                            ItemList.Transformer_ZPM_LuV.get(1),
+                            ItemList.Casing_Coil_TungstenSteel.get(1))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+            // 64A Zpm To LuV transformer
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt16, Materials.VanadiumGallium, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883),
+                            ItemList.Electric_Pump_LV.get(1))
+                    .fluidInputs(Materials.Lubricant.getFluid(2000)).noFluidOutputs()
+                    .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+        }
+        // Ultimate Time Anomaly
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Electric_Motor_UV.get(2),
+                        ItemList.Electric_Pump_UV.get(1),
+                        ItemList.Conveyor_Module_UV.get(1),
+                        ItemList.Robot_Arm_UV.get(2),
+                        ItemList.Electric_Piston_UV.get(2),
+                        ItemList.Hull_UV.get(1))
+                .noFluidInputs().noFluidOutputs().itemOutputs(CustomItemList.AcceleratorUV.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        if (KekzTech.isModLoaded()) {
+            // LSC controller
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.battery, Materials.Master, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                            ItemList.Circuit_Chip_PIC.get(2))
+                    .noFluidInputs().noFluidOutputs()
+                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 13106))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        }
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 1),
+                        CustomItemList.Hull_UMV.get(1),
+                        GT_Utility.getIntegratedCircuit(4))
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).noFluidOutputs()
+                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UMV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+        // Spacetime quadruple is temp replacement until Universium Pipes.
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 4),
+                        CustomItemList.Hull_UXV.get(1),
+                        GT_Utility.getIntegratedCircuit(4))
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).noFluidOutputs()
+                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UXV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+        if (BartWorks.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemRegistry.humongousInputHatch.copy(),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeHuge, MaterialsUEVplus.SpaceTime, 4),
+                            GT_Utility.getIntegratedCircuit(4))
+                    .fluidInputs(MaterialsUEVplus.Space.getMolten(5760)).noFluidOutputs()
+                    .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
+        }
     }
 
     private void makeElectricMachinePartRecipes() {
@@ -7822,61 +8113,6 @@ public class AssemblerRecipes implements Runnable {
                         2000000);
             }
 
-            // Quantum Armor
-
-            GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { CustomItemList.QuantumPartHelmet.get(1L), CustomItemList.QuantumCrystal.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4),
-                            ItemList.Energy_LapotronicOrb.get(1L), ItemList.Sensor_IV.get(1L),
-                            ItemList.Field_Generator_EV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
-                            GT_Utility.getIntegratedCircuit(10) },
-                    Materials.Titanium.getMolten(1728L),
-                    GT_ModHandler.getIC2Item("quantumHelmet", 1L, 26),
-                    1500,
-                    7680);
-
-            GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { CustomItemList.QuantumPartChestplate.get(1L),
-                            CustomItemList.QuantumCrystal.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 6),
-                            ItemList.Energy_LapotronicOrb.get(1L), ItemList.Field_Generator_EV.get(3L),
-                            ItemList.Electric_Motor_IV.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
-                            GT_Utility.getIntegratedCircuit(11) },
-                    Materials.Titanium.getMolten(2880L),
-                    GT_ModHandler.getIC2Item("quantumBodyarmor", 1L, 26),
-                    1500,
-                    7680);
-
-            GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { CustomItemList.QuantumPartLeggings.get(1L), CustomItemList.QuantumCrystal.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 6),
-                            ItemList.Energy_LapotronicOrb.get(1L), ItemList.Field_Generator_EV.get(2L),
-                            ItemList.Electric_Motor_IV.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
-                            GT_Utility.getIntegratedCircuit(12) },
-                    Materials.Titanium.getMolten(2304L),
-                    GT_ModHandler.getIC2Item("quantumLeggings", 1L, 26),
-                    1500,
-                    7680);
-
-            GT_Values.RA.addAssemblerRecipe(
-                    new ItemStack[] { CustomItemList.QuantumPartBoots.get(1L), CustomItemList.QuantumCrystal.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4),
-                            ItemList.Energy_LapotronicOrb.get(1L), ItemList.Field_Generator_EV.get(1L),
-                            ItemList.Electric_Piston_IV.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TungstenSteel, 4),
-                            GT_Utility.getIntegratedCircuit(13) },
-                    Materials.Titanium.getMolten(1440L),
-                    GT_ModHandler.getIC2Item("quantumBoots", 1L, 26),
-                    1500,
-                    7680);
-
             // solar 1EU
             GT_Values.RA.addAssemblerRecipe(
                     new ItemStack[] { ItemList.Circuit_Silicon_Wafer.get(2),
@@ -8645,246 +8881,6 @@ public class AssemblerRecipes implements Runnable {
                         250,
                         480);
             }
-            if (GraviSuite.isModLoaded() && GalacticraftMars.isModLoaded()) {
-                // Gravitational Engine
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorLuV, 2),
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 4, 1),
-                                ItemList.Transformer_LuV_IV.get(1),
-                                GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 2))
-                        .noFluidInputs().noFluidOutputs()
-                        .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 3))
-                        .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-                // IV Transformer
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 4),
-                                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.VanadiumGallium, 1),
-                                ItemList.Circuit_Chip_PIC.get(2),
-                                ItemList.Hull_IV.get(1))
-                        .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Transformer_LuV_IV.get(1))
-                        .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-                // Tesla Coil
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1),
-                                ItemList.Circuit_Nanoprocessor.get(2),
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 5, 0),
-                                ItemList.Transformer_HV_MV.get(1))
-                        .noFluidInputs().noFluidOutputs()
-                        .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1))
-                        .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-                // MV Transformer
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 4),
-                                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
-                                ItemList.Hull_MV.get(1),
-                                ItemList.Circuit_Parts_InductorSMD.get(2))
-                        .noFluidOutputs().noFluidInputs().itemOutputs(ItemList.Transformer_HV_MV.get(1))
-                        .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-                // Cooling Core With NaK
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 2, 1),
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 2, 1),
-                                Materials.CallistoIce.getPlates(1),
-                                ItemList.Reactor_Coolant_NaK_3.get(2),
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 2, 0))
-                        .noFluidInputs().noFluidOutputs()
-                        .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2))
-                        .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-                // Cooling Core With Helium
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 2, 1),
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 2, 1),
-                                Materials.CallistoIce.getPlates(1),
-                                ItemList.Reactor_Coolant_He_3.get(2),
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 2, 0))
-                        .noFluidInputs().noFluidOutputs()
-                        .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2))
-                        .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-                // Fluid Manipulator
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Large_Fluid_Cell_Steel.get(1),
-                                GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 4),
-                                ItemList.Electric_Motor_HV.get(4))
-                        .noFluidOutputs().noFluidInputs()
-                        .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 1, 6))
-                        .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-            }
-            // Quantum Tank V
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 4),
-                            Materials.Americium.getPlates(2),
-                            ItemList.Electric_Pump_UV.get(1),
-                            ItemList.Field_Generator_UV.get(1),
-                            ItemList.Casing_Tank_10.get(1))
-                    .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Quantum_Tank_IV.get(1)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-            // Quantum Tank IV
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Infinite), 4),
-                            Materials.Europium.getPlates(2),
-                            ItemList.Electric_Pump_ZPM.get(1),
-                            ItemList.Field_Generator_ZPM.get(1),
-                            ItemList.Casing_Tank_9.get(1))
-                    .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Quantum_Tank_EV.get(1)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-            // Quantum Chest V
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 4),
-                            Materials.Americium.getPlates(3),
-                            ItemList.Field_Generator_UV.get(1),
-                            CustomItemList.Automation_ChestBuffer_UEV.get(1L))
-                    .noFluidOutputs().noFluidInputs().itemOutputs(ItemList.Quantum_Chest_IV.get(1))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-            // Ultra High Voltage Chest Buffer
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Conveyor_Module_UEV.get(1),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 1),
-                            CustomItemList.Hull_UEV.get(1),
-                            GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
-                    .noFluidOutputs().noFluidInputs().itemOutputs(CustomItemList.Automation_ChestBuffer_UEV.get(1L))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-        }
-        if (HardcoreEnderExpansion.isModLoaded()) {
-            // Biome Compass
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            Materials.HeeEndium.getPlates(1),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.HeeEndium, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.HeeEndium, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 1),
-                            GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0))
-                    .noFluidInputs().noFluidOutputs()
-                    .itemOutputs(GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "biome_compass", 1, 0))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
-        }
-        if (StorageDrawers.isModLoaded()) {
-            // Alternate Storage Template Recipe
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Electric_Piston_LV.get(1),
-                            GT_OreDictUnificator.get("drawerBasic", 1),
-                            GT_Utility.getIntegratedCircuit(2))
-                    .noFluidOutputs().noFluidInputs()
-                    .itemOutputs(GT_ModHandler.getModItem(StorageDrawers.ID, "upgradeTemplate", 3, 0))
-                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
-        }
-        // Display
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Cover_Screen.get(1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 2))
-                .fluidInputs(Materials.Plastic.getMolten(144)).noFluidOutputs()
-                .itemOutputs(CustomItemList.Display.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-
-        // Ender-Quantum Component
-        if (SuperSolarPanels.isModLoaded() && (AdvancedSolarPanel.isModLoaded())) {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.InfinityCatalyst, 1),
-                            GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 3),
-                            Materials.ElectrumFlux.getPlates(4))
-                    .noFluidInputs().noFluidOutputs()
-                    .itemOutputs(GT_ModHandler.getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1, 0))
-                    .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-
-        }
-        // 4A Zpm to LuV transformer
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.VanadiumGallium, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Naquadah, 1),
-                        ItemList.Circuit_Chip_HPIC.get(2),
-                        ItemList.Hull_LuV.get(1))
-                .noFluidInputs().noFluidOutputs().itemOutputs(ItemList.Transformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-        if (GTPlusPlus.isModLoaded()) {
-            // 16A Zpm to LuV transformer
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.VanadiumGallium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
-                            ItemList.Transformer_ZPM_LuV.get(1),
-                            ItemList.Casing_Coil_TungstenSteel.get(1))
-                    .noFluidInputs().noFluidOutputs()
-                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-
-            // 64A Zpm To LuV transformer
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.cableGt16, Materials.VanadiumGallium, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883),
-                            ItemList.Electric_Pump_LV.get(1))
-                    .fluidInputs(Materials.Lubricant.getFluid(2000)).noFluidOutputs()
-                    .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-        }
-        // Ultimate Time Anomaly
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Electric_Motor_UV.get(2),
-                        ItemList.Electric_Pump_UV.get(1),
-                        ItemList.Conveyor_Module_UV.get(1),
-                        ItemList.Robot_Arm_UV.get(2),
-                        ItemList.Electric_Piston_UV.get(2),
-                        ItemList.Hull_UV.get(1))
-                .noFluidInputs().noFluidOutputs().itemOutputs(CustomItemList.AcceleratorUV.get(1)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-        if (KekzTech.isModLoaded()) {
-            // LSC controller
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.battery, Materials.Master, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
-                            ItemList.Circuit_Chip_PIC.get(2))
-                    .noFluidInputs().noFluidOutputs()
-                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 13106))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
-        }
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 1),
-                        CustomItemList.Hull_UMV.get(1),
-                        GT_Utility.getIntegratedCircuit(4))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).noFluidOutputs()
-                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UMV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        // Spacetime quadruple is temp replacement until Universium Pipes.
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 4),
-                        CustomItemList.Hull_UXV.get(1),
-                        GT_Utility.getIntegratedCircuit(4))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).noFluidOutputs()
-                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UXV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
-        if (BartWorks.isModLoaded()) {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemRegistry.humongousInputHatch.copy(),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeHuge, MaterialsUEVplus.SpaceTime, 4),
-                            GT_Utility.getIntegratedCircuit(4))
-                    .fluidInputs(MaterialsUEVplus.Space.getMolten(5760)).noFluidOutputs()
-                    .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
         }
     }
 }
