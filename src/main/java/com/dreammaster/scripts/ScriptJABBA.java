@@ -183,8 +183,8 @@ public class ScriptJABBA implements IScriptLoader {
 
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_UV.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 64L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 64L),
                         GT_Utility.getIntegratedCircuit(1) },
                 GT_Values.NF,
                 getModItem(JABBA.ID, "upgradeCore", 1, 13),

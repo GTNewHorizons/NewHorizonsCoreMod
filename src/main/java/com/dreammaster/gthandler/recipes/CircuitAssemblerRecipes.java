@@ -1405,7 +1405,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Parts_PetriDish.get(8L),
                             ItemList.Electric_Pump_UV.get(1L),
                             ItemList.Sensor_LuV.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 32L))
                     .itemOutputs(ItemList.Circuit_Board_Bio.get(32L))
                     .fluidInputs(Materials.BioMediumSterilized.getFluid(16000L)).noFluidOutputs().requiresCleanRoom()
