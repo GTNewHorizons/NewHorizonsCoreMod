@@ -2030,7 +2030,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
                             (GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFineWireChromaticGlass", 2)))
-                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 64, 15470))
+                    .itemOutputs(com.github.technus.tectech.thing.CustomItemList.DATApipe.get(64))
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).noFluidOutputs().duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
         }
