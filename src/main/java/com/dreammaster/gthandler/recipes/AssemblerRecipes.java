@@ -29,6 +29,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
+import gregtech.common.items.GT_MetaGenerated_Tool_01;
 
 public class AssemblerRecipes implements Runnable {
 
@@ -742,29 +743,37 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Iron, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
-                .noItemOutputs().noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(
+                        GT_MetaGenerated_Tool_01.INSTANCE
+                                .getToolWithStats(170, 1, Materials.Iron, Materials.Steel, null))
+                .noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.WroughtIron, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
-                .noItemOutputs().noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(
+                        GT_MetaGenerated_Tool_01.INSTANCE
+                                .getToolWithStats(170, 1, Materials.WroughtIron, Materials.Steel, null))
+                .noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Bronze, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
-                .noItemOutputs().noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(
+                        GT_MetaGenerated_Tool_01.INSTANCE
+                                .getToolWithStats(170, 1, Materials.Bronze, Materials.Steel, null))
+                .noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Steel, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
-                .noItemOutputs().noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(
+                        GT_MetaGenerated_Tool_01.INSTANCE
+                                .getToolWithStats(170, 1, Materials.Steel, Materials.Steel, null))
+                .noFluidInputs().noFluidOutputs().duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
