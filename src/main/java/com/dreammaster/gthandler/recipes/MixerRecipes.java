@@ -807,7 +807,7 @@ public class MixerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(GT_Values.NI).fluidInputs(Materials.Water.getFluid(2000L))
+                .noItemOutputs().fluidInputs(Materials.Water.getFluid(2000L))
                 .fluidOutputs(Materials.Concrete.getMolten(2304L)).duration(5 * SECONDS).eut(16).addTo(sMixerRecipes);
 
         GT_Values.RA.stdBuilder()

@@ -102,9 +102,9 @@ public class BioItemLoader {
                 480);
         BIOTEMSSTACKS[1].stackSize = 1;
 
-        RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(11), BIOTEMSSTACKS[1], NI, NI, NI, NI)
-                .itemOutputs(BIOTEMSSTACKS[2]).fluidInputs(GT_ModHandler.getDistilledWater(1000)).fluidOutputs(NF)
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sMixerRecipes);
+        RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(11), BIOTEMSSTACKS[1]).itemOutputs(BIOTEMSSTACKS[2])
+                .fluidInputs(GT_ModHandler.getDistilledWater(1000)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sMixerRecipes);
 
         RA.addFluidExtractionRecipe(Materials.MeatRaw.getDust(1), NI, new FluidStack(BIOFLUIDS[1], 125), 0, 300, 120);
 
