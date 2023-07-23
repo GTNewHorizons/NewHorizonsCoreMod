@@ -153,14 +153,15 @@ public class VacuumFreezerRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Infinity, 1L))
                     .itemOutputs(GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 6)).noFluidInputs()
-                    .noFluidOutputs().duration(14 * SECONDS + 14 * TICKS).eut(2000000).addTo(sVacuumRecipes);
+                    .noFluidOutputs().duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_UHV).addTo(sVacuumRecipes);
 
         }
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.InfinityCatalyst, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.InfinityCatalyst, 1L))
-                .noFluidInputs().noFluidOutputs().duration(14 * SECONDS + 14 * TICKS).eut(500000).addTo(sVacuumRecipes);
+                .noFluidInputs().noFluidOutputs().duration(14 * SECONDS + 14 * TICKS).eut(TierEU.RECIPE_UV)
+                .addTo(sVacuumRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Adamantium, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Adamantium, 1L)).noFluidInputs()

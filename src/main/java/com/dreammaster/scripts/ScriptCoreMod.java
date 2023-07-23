@@ -48,6 +48,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import tconstruct.library.TConstructRegistry;
@@ -1037,7 +1038,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 22327, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(2000).eut(500000).addTo(sAssemblerRecipes);
+                .noFluidInputs().noFluidOutputs().duration(2000).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 1, 0, missing),
@@ -1049,7 +1050,7 @@ public class ScriptCoreMod implements IScriptLoader {
                                 1,
                                 0,
                                 missing))
-                .noFluidInputs().noFluidOutputs().duration(2400).eut(2000000).addTo(sAssemblerRecipes);
+                .noFluidInputs().noFluidOutputs().duration(2400).eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(
                 getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaNeutroniumSunnariumAlloy", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.BedrockiumPlate", 18, 0, missing))
@@ -1274,7 +1275,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216)).noFluidOutputs().duration(600)
-                .eut(500000).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedNaquadriaIronPlate", 1, 0, missing),
@@ -1284,7 +1285,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216)).noFluidOutputs().duration(600)
-                .eut(500000).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(
                 getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedNeutroniumIronPlate", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaNeutroniumSunnariumAlloy", 1, 0, missing),
@@ -1294,7 +1295,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 18432)).noFluidOutputs().duration(600)
-                .eut(2000000).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(
                 getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedNeutroniumIronPlate", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaNeutroniumSunnariumAlloy", 1, 0, missing),
@@ -1304,7 +1305,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 18432)).noFluidOutputs().duration(600)
-                .eut(2000000).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedBedrockiumIronPlate", 1, 0, missing),
@@ -1751,37 +1752,37 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17327, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NaquadriaIronPlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(500000).addTo(sPressRecipes);
+                .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17327, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NaquadriaIronPlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(500000).addTo(sPressRecipes);
+                .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17327, missing),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NaquadriaIronPlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(500000).addTo(sPressRecipes);
+                .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17129, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NeutroniumIronPlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(2000000).addTo(sPressRecipes);
+                .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UHV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17129, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NeutroniumIronPlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(2000000).addTo(sPressRecipes);
+                .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UHV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17129, missing),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NeutroniumIronPlate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(2000000).addTo(sPressRecipes);
+                .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UHV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17395, missing),

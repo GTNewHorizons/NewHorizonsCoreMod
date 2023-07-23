@@ -3246,7 +3246,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
-                .noFluidOutputs().duration(8 * SECONDS).eut(120000).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
         // Transistor
 
         GT_Values.RA.stdBuilder()
@@ -3258,7 +3258,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_TransistorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
-                .noFluidOutputs().duration(8 * SECONDS).eut(120000).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
         // Capacitor
 
         GT_Values.RA.stdBuilder()
@@ -3270,7 +3270,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_CapacitorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
-                .noFluidOutputs().duration(8 * SECONDS).eut(120000).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
         // Diode
 
         GT_Values.RA.stdBuilder()
@@ -3282,7 +3282,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_DiodeXSMD.get(64L)).fluidInputs(Xenoxene.getFluid(144L))
-                .noFluidOutputs().duration(8 * SECONDS).eut(120000).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
         // Inductor
 
         GT_Values.RA.stdBuilder()
@@ -3292,7 +3292,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_InductorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
-                .noFluidOutputs().duration(8 * SECONDS).eut(120000).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
 
     }
 
@@ -5325,7 +5325,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_ModHandler.getModItem(GalaxySpace.ID, "item.CompressedPlates", 1L, 3))
                 .itemOutputs(CustomItemList.LeadOriharukonPlate.get(2L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000)).noFluidOutputs()
-                .duration(15 * SECONDS).eut(500000).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
 
         // rocket parts
 
@@ -7813,7 +7813,7 @@ public class AssemblerRecipes implements Runnable {
                         CustomItemList.MicaInsulatorFoil.get(44L),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Coil_ElectrumFlux.get(1L)).fluidInputs(Materials.Trinium.getMolten(144L))
-                .noFluidOutputs().duration(55 * SECONDS).eut(500000).addTo(sAssemblerRecipes);
+                .noFluidOutputs().duration(55 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -7822,7 +7822,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Casing_Coil_AwakenedDraconium.get(1L))
                 .fluidInputs(Materials.ElectrumFlux.getMolten(144L)).noFluidOutputs().duration(60 * SECONDS)
-                .eut(2000000).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
 
     }
 
@@ -8364,7 +8364,7 @@ public class AssemblerRecipes implements Runnable {
                                 GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(GT_ModHandler.getModItem(SuperSolarPanels.ID, "AdminSolarPanel", 1L, 0))
                         .fluidInputs(tMat.getMolten(2016 * tMultiplier / 2L)).noFluidOutputs()
-                        .duration(1 * MINUTES + 40 * SECONDS).eut(500000).addTo(sAssemblerRecipes);
+                        .duration(1 * MINUTES + 40 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
@@ -8375,7 +8375,7 @@ public class AssemblerRecipes implements Runnable {
                                 GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(GT_ModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1L, 0))
                         .fluidInputs(tMat.getMolten(2304 * tMultiplier / 2L)).noFluidOutputs()
-                        .duration(1 * MINUTES + 50 * SECONDS).eut(2000000).addTo(sAssemblerRecipes);
+                        .duration(1 * MINUTES + 50 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sAssemblerRecipes);
 
             }
 

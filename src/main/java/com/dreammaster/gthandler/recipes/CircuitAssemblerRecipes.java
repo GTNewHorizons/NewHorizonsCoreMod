@@ -1409,7 +1409,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 32L))
                     .itemOutputs(ItemList.Circuit_Board_Bio.get(32L))
                     .fluidInputs(Materials.BioMediumSterilized.getFluid(16000L)).noFluidOutputs().requiresCleanRoom()
-                    .duration(60 * SECONDS).eut(500000).addTo(sCircuitAssemblerRecipes);
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sCircuitAssemblerRecipes);
 
             // PCBs Steve Carts
             if (StevesCarts2.isModLoaded()) {
