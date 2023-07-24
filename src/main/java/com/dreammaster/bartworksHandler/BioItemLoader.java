@@ -6,6 +6,8 @@ import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.addBacterial
 import static gregtech.api.enums.GT_Values.*;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -21,6 +23,7 @@ import com.github.bartimaeusnek.bartworks.util.BW_Util;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.TierEU;
 import gregtech.api.objects.GT_Fluid;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_Utility;
@@ -99,18 +102,9 @@ public class BioItemLoader {
                 480);
         BIOTEMSSTACKS[1].stackSize = 1;
 
-        RA.addMixerRecipe(
-                GT_Utility.getIntegratedCircuit(11),
-                BIOTEMSSTACKS[1],
-                NI,
-                NI,
-                NI,
-                NI,
-                GT_ModHandler.getDistilledWater(1000),
-                NF,
-                BIOTEMSSTACKS[2],
-                600,
-                480);
+        RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(11), BIOTEMSSTACKS[1]).itemOutputs(BIOTEMSSTACKS[2])
+                .fluidInputs(GT_ModHandler.getDistilledWater(1000)).noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sMixerRecipes);
 
         RA.addFluidExtractionRecipe(Materials.MeatRaw.getDust(1), NI, new FluidStack(BIOFLUIDS[1], 125), 0, 300, 120);
 
