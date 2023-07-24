@@ -114,7 +114,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CraftingUnit,
-                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Superconductor), 2))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.SuperconductorUHV), 2))
                 .itemOutputs(CoCraftingUnit16x).noFluidInputs().noFluidOutputs().duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
 
@@ -223,7 +223,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             // 16384k
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Bio_Ultra.get(1),

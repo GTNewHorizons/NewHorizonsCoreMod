@@ -158,7 +158,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Casing_Fusion_Coil.get(16L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 16L),
-                            new Object[] { OrePrefixes.circuit.get(Materials.Superconductor), 16L },
+                            new Object[] { OrePrefixes.circuit.get(Materials.SuperconductorUHV), 16L },
                             ItemList.Sensor_UV.get(16L),
                             ItemList.Emitter_UV.get(16L),
                             ItemList.Field_Generator_UV.get(8L),

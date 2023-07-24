@@ -641,7 +641,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         // 16384k ME Storage Component
         GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
                         ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1) },
@@ -652,7 +652,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 true);
 
         GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
                         ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1) },
@@ -663,7 +663,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 true);
 
         GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Superconductor, 4),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
                         ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1) },
