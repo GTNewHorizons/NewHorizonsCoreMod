@@ -27,7 +27,6 @@ import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
 
@@ -1449,12 +1448,13 @@ public class AssemblerRecipes implements Runnable {
         }
 
         // Wood Plates
-        GT_Values.RA.stdBuilder().itemInputs(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64),
-                GT_Utility.getIntegratedCircuit(2)
-        ).itemOutputs(
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64)
-        ).fluidInputs( Materials.Glue.getFluid(144L)).noFluidOutputs().duration(2*MINUTES).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64))
+                .fluidInputs(Materials.Glue.getFluid(144L)).noFluidOutputs().duration(2 * MINUTES).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
 
         if (OpenBlocks.isModLoaded() && BloodMagic.isModLoaded()) {
             ItemStack[] trophies = { GT_ModHandler.getModItem(OpenBlocks.ID, "trophy", 1L),
