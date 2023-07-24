@@ -22,6 +22,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 
 import gregtech.api.enums.*;
@@ -2055,6 +2056,15 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Diamond, 1L))
                 .fluidInputs(Materials.Lubricant.getFluid(250L)).noFluidOutputs().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        if (TecTech.isModLoaded() && GTPlusPlus.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
+                            (GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFineWireChromaticGlass", 2)))
+                    .itemOutputs(com.github.technus.tectech.thing.CustomItemList.DATApipe.get(64))
+                    .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).noFluidOutputs().duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
+        }
     }
 
     private void makeElectricMachinePartRecipes() {
