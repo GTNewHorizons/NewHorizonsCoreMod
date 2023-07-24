@@ -1449,17 +1449,12 @@ public class AssemblerRecipes implements Runnable {
         }
 
         // Wood Plates
-        GT_Recipe.GT_Recipe_Map.sAssemblerRecipes.addRecipe(
-                false,
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64),
-                        GT_Utility.getIntegratedCircuit(2) },
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64) },
-                null,
-                new FluidStack[] { Materials.Glue.getFluid(144L) },
-                null,
-                2400,
-                30,
-                0);
+        GT_Values.RA.stdBuilder().itemInputs(
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 64),
+                GT_Utility.getIntegratedCircuit(2)
+        ).itemOutputs(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 64)
+        ).fluidInputs( Materials.Glue.getFluid(144L)).noFluidOutputs().duration(2*MINUTES).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         if (OpenBlocks.isModLoaded() && BloodMagic.isModLoaded()) {
             ItemStack[] trophies = { GT_ModHandler.getModItem(OpenBlocks.ID, "trophy", 1L),
