@@ -8246,7 +8246,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "acentauribbgrunt", 64, 0),
+                            getModItem(Minecraft.ID, "cobblestone", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Dilithium, 64),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Pumice, 64),
                             GT_Utility.getIntegratedCircuit(17))
