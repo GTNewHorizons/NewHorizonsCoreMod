@@ -156,8 +156,7 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UIV);
 
         GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_Bus_ME.get(1L))
-                .metadata(RESEARCH_TIME, 1 * HOURS)
-                .itemInputs(
+                .metadata(RESEARCH_TIME, 1 * HOURS).itemInputs(
                         ItemList.Hatch_Input_Bus_ME.get(1L),
                         // 4096k Me Storage Component
                         GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 59),
@@ -166,7 +165,7 @@ public class AssemblingLineRecipes implements Runnable {
                         // Interface
                         GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
                         // Pattern capacity card
-                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54) )
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54))
                 .fluidInputs(new FluidStack(solderIndalloy, 1152)).noFluidOutputs()
                 .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L)).eut(TierEU.RECIPE_LuV)
                 .duration(30 * SECONDS).addTo(AssemblyLine);
