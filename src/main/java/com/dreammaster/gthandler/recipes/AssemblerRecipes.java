@@ -1664,17 +1664,15 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L),
                             GT_Utility.getIntegratedCircuit(1))
-                    .itemOutputs(GT_ModHandler.getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1L, 0))
-                    .fluidInputs(Materials.UUMatter.getFluid(1000L)).noFluidOutputs().duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
+                    .itemOutputs(GT_ModHandler.getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1L, 0)).noFluidInputs()
+                    .noFluidOutputs().duration(1 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 9L),
                             GT_Utility.getIntegratedCircuit(1))
-                    .itemOutputs(GT_ModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2))
-                    .fluidInputs(Materials.UUMatter.getFluid(1000L)).noFluidOutputs().duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
+                    .itemOutputs(GT_ModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2)).noFluidInputs()
+                    .noFluidOutputs().duration(1 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
 
         }
 
