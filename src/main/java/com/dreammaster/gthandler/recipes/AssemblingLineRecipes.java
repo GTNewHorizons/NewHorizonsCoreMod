@@ -1,7 +1,10 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.*;
-import static gregtech.api.util.GT_RecipeBuilder.*;
+import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.util.GT_RecipeBuilder.HOURS;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
 import static gregtech.api.util.GT_RecipeConstants.AssemblyLine;
 import static gregtech.api.util.GT_RecipeConstants.RESEARCH_ITEM;
