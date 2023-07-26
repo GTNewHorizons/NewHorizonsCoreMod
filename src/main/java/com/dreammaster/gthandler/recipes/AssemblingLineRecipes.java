@@ -132,28 +132,30 @@ public class AssemblingLineRecipes implements Runnable {
                 .itemOutputs(ItemList.Energy_LapotronicOrb2.get(1L)).eut(TierEU.RECIPE_ZPM).duration(50 * SECONDS)
                 .addTo(AssemblyLine);
 
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
-                2000 * 60 * 8,
-                2000,
-                3000000,
-                2,
-                new ItemStack[] { ItemList.Hatch_Input_Bus_ME.get(1L), ItemList.Hatch_Input_Multi_2x2_UEV.get(1L),
-                        // 16384k storage component
-                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
-                        // 16384k fluid storage component
-                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
-                        // ME Controller
-                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, WILDCARD),
-                        // Dual Interface
-                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, WILDCARD),
-                        // Pattern capacity card
-                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54) },
-                new FluidStack[] { FluidRegistry.getFluidStack("molten.spacetime", 16 * INGOTS),
-                        FluidRegistry.getFluidStack("molten.mutatedlivingsolder", 2000), },
-                ItemList.Hatch_CraftingInput_Bus_ME.get(1L),
-                30 * SECONDS,
-                (int) TierEU.RECIPE_UIV);
+        if (TecTech.isModLoaded()) {
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
+                    2000 * 60 * 8,
+                    2000,
+                    3000000,
+                    2,
+                    new ItemStack[] { ItemList.Hatch_Input_Bus_ME.get(1L), ItemList.Hatch_Input_Multi_2x2_UEV.get(1L),
+                            // 16384k storage component
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
+                            // 16384k fluid storage component
+                            GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                            // ME Controller
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, WILDCARD),
+                            // Dual Interface
+                            GT_ModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, WILDCARD),
+                            // Pattern capacity card
+                            GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54) },
+                    new FluidStack[] { FluidRegistry.getFluidStack("molten.spacetime", 16 * INGOTS),
+                            FluidRegistry.getFluidStack("molten.mutatedlivingsolder", 2000), },
+                    ItemList.Hatch_CraftingInput_Bus_ME.get(1L),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UIV);
+        }
 
         GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_Bus_ME.get(1L))
                 .metadata(RESEARCH_TIME, 1 * HOURS).itemInputs(
